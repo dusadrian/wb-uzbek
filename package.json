@@ -6,6 +6,7 @@
     "build": "tsc",
     "watch": "tsc -w",
     "lint": "eslint -c .eslintrc --ext .ts ./src",
+    "startail": "npx tailwindcss -i ./src/main.css -o ./dist/main.css --watch",
     "start": "npm run build && electron ./dist/main.js"
   },
   "author": "Emilian Adrian Hossu",
