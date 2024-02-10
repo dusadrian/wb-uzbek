@@ -6,12 +6,13 @@
     "build": "tsc",
     "watch": "tsc -w",
     "lint": "eslint -c .eslintrc --ext .ts ./src",
-    "startail": "npx tailwindcss -i ./src/main.css -o ./dist/main.css --watch",
+    "startail": "npx tailwindcss -i ./src/assets/main.css -o ./dist/main.css --watch",
     "start": "npm run build && electron ./dist/main.js"
   },
   "author": "Emilian Adrian Hossu",
   "license": "ISC",
   "devDependencies": {
+    "@types/i18n": "^0.13.10",
     "@typescript-eslint/eslint-plugin": "^6.21.0",
     "@typescript-eslint/parser": "^6.21.0",
     "autoprefixer": "^10.4.17",
@@ -23,6 +24,7 @@
     "typescript": "^5.3.3"
   },
   "dependencies": {
-    "duckdb": "^0.9.2"
+    "duckdb": "^0.9.2",
+    "i18n": "^0.15.1"
   }
 }

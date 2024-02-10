@@ -1,0 +1,14 @@
+{
+	"password": "Password",
+	"username": "Institution code",
+	"login": "Login",
+	"login_message": "Hello! Please log in",
+	"empty_username_password": "Please fill in all fields",
+	"logout": "Exit",
+	"back": "Back",
+	"menuScreen": "Please choose an option",
+	"dashboard" : "Dashboard",
+	"dataEntry" : "Data Entry",
+	"importData" : "Import Data",
+	"exportData" : "Export Data"
+}

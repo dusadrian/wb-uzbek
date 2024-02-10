@@ -1,0 +1,14 @@
+{
+	"password": "Пароль",
+	"username": "Код учреждения",
+	"login": "Авторизоваться",
+	"login_message": "Привет! Пожалуйста, войдите",
+	"empty_username_password": "Please fill in all fields",
+	"logout": "Выход",
+	"back": "Назад",
+	"menuScreen": "Пожалуйста, выберите опцию",
+	"dashboard" : "Панель приборов",
+	"dataEntry" : "Ввод данных",
+	"importData" : "Импортировать данные",
+	"exportData" : "Экспорт данных"
+}

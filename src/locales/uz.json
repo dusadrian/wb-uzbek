@@ -1,0 +1,14 @@
+{
+	"password": "Parol",
+	"username": "Tashkilot kodi",
+    "login": "Tizimga kirish",
+	"login_message": "Salom! Iltimos, tizimga kiring",
+	"empty_username_password": "Please fill in all fields",
+	"logout": "Chiqish",
+	"back": "Orqaga",
+	"menuScreen": "Iltimos, variantni tanlang",
+	"dashboard" : "Boshqaruv paneli",
+	"dataEntry" : "Kiritish",
+	"importData" : "Import qilish",
+	"exportData" : "Eksport qilish"
+}
