@@ -1,5 +1,15 @@
+process.env.NODE_ENV = "development";
+// Set env mode
+// process.env.NODE_ENV = 'production';
+
 import { app, BrowserWindow, dialog, ipcMain } from "electron";
 import * as path from "path";
+import { database } from "./database/database";
+import * as DI from "../src/interfaces/database";
+
+// translate pages
+// import { Eta } from "eta"
+// import * as en from "./locales/en.json";
 
 // only once instance of the app
 const gotTheLock = app.requestSingleInstanceLock();
@@ -7,8 +17,9 @@ let mainWindow: BrowserWindow = null;
 
 const appSession = {
     language: "en",
+    userName: "",
+    userType: "",
 };
-
 
 function createWindow() {
 
@@ -83,20 +94,21 @@ ipcMain.on('showDialogMessage', (event, args) => {
 
 ipcMain.on('login', (event, args) => {
     // check if user is authenticated
-    if(args.username !== 'admin' && args.password !== 'admin') {
-        dialog.showMessageBox(mainWindow, {
-            type: 'error',
-            message: 'Invalid username or password',
-        })
-        return
-    }
-    // TODO load institution data
-    // set appSession
-    console.log(args);
-    
-    appSession.language = args.language;
-    // go to next page
-    mainWindow.loadURL("file://" + path.join(__dirname, "../src/pages/01_menu_screen.html"));
+    database.checkUser(args.username, args.password).then((result: Array<DI.User>) => {
+        if (result.length === 0) {
+            dialog.showMessageBox(mainWindow, {
+                type: 'error',
+                message: 'Invalid username or password',
+            })
+            return
+        }
+        // TODO load institution data
+        appSession.userName = result[0].username;
+        appSession.userType = result[0].userType;
+        appSession.language = args.language;
+        // go to next page
+        mainWindow.loadURL("file://" + path.join(__dirname, "../src/pages/01_menu_screen.html"));
+    });
 });
 
 // change window - check if authenticated
@@ -107,18 +119,46 @@ ipcMain.on("changeWindow", (event, args) => {
             // go to login? -- reset session
             mainWindow.loadURL("file://" + path.join(__dirname, "../src/index.html"));
             break;
+        case "dashboard":
+            goToDashboard();
+            break;
         case "01_login":
-            goToLogin(newPage, args.lang);
+            goToLogin(newPage);
             break;
         default:
             mainWindow.loadURL("file://" + newPage);
     }
 });
 
-const goToLogin = (page: string, lang: string) => {
-    
+const goToLogin = (page: string) => {
     mainWindow.loadURL("file://" + page);
 }
+
+const goToDashboard = () => {
+
+
+    let page = '';
+    if (appSession.userType === "collector") {
+        page = path.join(__dirname, "../src/pages/collector/01_dashboard.html");
+    } else if (appSession.userType === "coordinator") {
+        page = path.join(__dirname, "../src/pages/coordinator/01_dashboard.html");
+    } else if (appSession.userType === "evaluator") {
+        page = path.join(__dirname, "../src/pages/evaluator/01_dashboard.html");
+    } else if (appSession.userType === "main") {
+        page = path.join(__dirname, "../src/pages/main/01_dashboard.html");
+    } else {
+        dialog.showMessageBox(mainWindow, {
+            type: 'error',
+            message: 'User error. Please login again.',
+        })
+        return;
+    }
+
+    mainWindow.loadURL("file://" + page);
+
+}
+
+
 // const goTo = () => {
 //     const newPage = path.join(__dirname, "../src/pages/login.html");
 //     mainWindow.loadURL("file://" + newPage);

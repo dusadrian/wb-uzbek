@@ -8,9 +8,25 @@ const i18n = new I18n({
     defaultLocale: 'en',
 });
 
-window.addEventListener("DOMContentLoaded", () => {
-    const file = path.basename(location.href);
 
+window.addEventListener("DOMContentLoaded", () => {
+
+    // get file name
+    let file = path.basename(location.href);
+
+    // set file path
+    if (location.href.includes('collector')) {
+        file = 'collector/' + file;
+    }
+    if (location.href.includes('coordinator')) {
+        file = 'coordinator/' + file;
+    }
+    if (location.href.includes('evaluator')) {
+        file = 'evaluator/' + file;
+    }
+    if (location.href.includes('main')) {
+        file = 'main/' + file;
+    }
 
     // set language
     const lang = localStorage.getItem('language');
@@ -21,12 +37,23 @@ window.addEventListener("DOMContentLoaded", () => {
 
     switch (file) {
         case 'index.html':
-            index()
+            index();
             break;
         case '01_menu_screen.html':
-            menuScreen()
+            menuScreen();
+            break;
+        case 'collector/01_dashboard.html':
+            collectorDashboard();
+            break;
+        case 'coordinator/01_dashboard.html':
+            coordinatorDashboard();
+            break;
+        case 'evaluator/01_dashboard.html':
+            evaluatorDashboard();
             break;
     }
+
+    console.log('am trecut pe aici');
 });
 
 const index = () => {
@@ -67,7 +94,7 @@ const index = () => {
             });
             return;
         }
-        
+
         ipcRenderer.send('login', {
             username: username,
             password: password,
@@ -102,4 +129,56 @@ const menuScreen = () => {
     document.getElementById('importData_text').innerText = i18n.__('importData');
     document.getElementById('exportData_text').innerText = i18n.__('exportData');
 
+    document.getElementById('dashboard').addEventListener('click', () => {
+        ipcRenderer.send('changeWindow', { name: 'dashboard' });
+    });
+
 };
+
+const collectorDashboard = () => {
+
+    topMenu('01_menu_screen');
+
+    translatePage();
+    
+    const importFile = async () => {
+        return await import("./pages/collector/01_dashboard");
+    };
+    importFile().then(result => result.collector.init().catch(error => {
+        console.log(error);
+    }));
+};
+
+const coordinatorDashboard = () => {
+
+    topMenu('01_menu_screen');
+
+    translatePage();
+    const importFile = async () => {
+        return await import("./pages/coordinator/01_dashboard");
+    };
+    importFile().then(result => result.coordinator.init().catch(error => {
+        console.log(error);
+    }));
+};
+const evaluatorDashboard = () => {
+
+    topMenu('01_menu_screen');
+
+    translatePage();
+    const importFile = async () => {
+        return await import("./pages/evaluator/01_dashboard");
+    };
+    importFile().then(result => result.evaluator.init().catch(error => {
+        console.log(error);
+    }));
+};
+
+const translatePage = () => {
+    const el = document.querySelectorAll("span[class^='t_']");
+    if (el.length > 0) {
+        el.forEach((element: HTMLElement) => {
+            element.innerText = i18n.__(element.className);
+        });
+    }
+}
