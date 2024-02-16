@@ -30,10 +30,14 @@
 	"t_young_people_who_left_care_system": "Young people who left care system",
 	"t_patronat_family_questionnaires": "Patronat family questionnaires",
 	"t_view": "View",
-	"t_regional_level_view_coordinators": "Regional level view / Coordinators",
+	"t_regionalCoordinator_level_view_regionalCoordinators": "regionalCoordinator level view / regionalCoordinators",
 	"t_details": "Details",
 	"t_export": "Export",
+	"t_export_data": "Export Data",
 	"t_filter": "Filter",
 	"t_external_evaluation_forms": "External evaluation forms",
-	"t_extenal_evaluators": "Extenal evaluators"
+	"t_extenal_evaluators": "Extenal evaluators",
+	"t_import": "Import",
+	"t_reports": "Reports",
+	"t_filter_by": "Filter by"
 }

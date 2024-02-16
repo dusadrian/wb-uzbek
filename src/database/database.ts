@@ -4,9 +4,9 @@ import * as DI from "../../src/interfaces/database";
 
 let dbFile = '';
 if (process.env.NODE_ENV == 'development') {
-    dbFile = path.join(path.resolve('./src/database/uzbek'));
+    dbFile = path.join(path.resolve('./src/database/uzbek.duckdb'));
 } else {
-    dbFile = path.join(path.resolve(__dirname), '../../../') + 'uzbek';
+    dbFile = path.join(path.resolve(__dirname), '../../../') + 'uzbek.duckdb';
 }
 
 console.log(dbFile);
@@ -33,6 +33,18 @@ export const database = {
                     console.log(error);
                 }
                 resolve(result as DI.User[]);
+            });
+        });
+        return await connection;
+    },
+
+    getUserInstitution: async (institutionId: number) => {
+        const connection = new Promise<Array<DI.Institution>>((resolve) => {
+            db.all(`SELECT * FROM institutions WHERE id = '${institutionId}'`, (error, result) => {
+                if(error){
+                    console.log(error);
+                }
+                resolve(result as DI.Institution[]);
             });
         });
         return await connection;

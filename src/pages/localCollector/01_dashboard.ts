@@ -1,12 +1,11 @@
 // import { ipcRenderer } from "electron";
 
-export const coordinator = {
+export const localCollector = {
     init: async () => {
 
 
-
-        
-
+        console.log('localCollector init');
+    
 
         // (<HTMLButtonElement>document.getElementById('sec2')).addEventListener('click', () => {
         //     ipcRenderer.send('changeWindow', {

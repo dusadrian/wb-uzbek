@@ -11,31 +11,12 @@
     </head>
 
     <body class="relative">
-        <div class="absolute top-0 right-0 left-0 bg-slate-200 h-10 flex justify-end items-center z-50">
-            <button class="flex items-center gap-2 text-white bg-gray-400 hover:bg-gray-500 focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-3 py-1 me-2 mr-3"
-                    id="back">
-                <svg class="fill-white w-4 h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-                    <!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
-                    <path
-                          d="M512 256A256 256 0 1 0 0 256a256 256 0 1 0 512 0zM217.4 376.9L117.5 269.8c-3.5-3.8-5.5-8.7-5.5-13.8s2-10.1 5.5-13.8l99.9-107.1c4.2-4.5 10.1-7.1 16.3-7.1c12.3 0 22.3 10 22.3 22.3l0 57.7 96 0c17.7 0 32 14.3 32 32l0 32c0 17.7-14.3 32-32 32l-96 0 0 57.7c0 12.3-10 22.3-22.3 22.3c-6.2 0-12.1-2.6-16.3-7.1z" />
-                </svg>
-                <span id="back_text"></span>
-            </button>
-            <button class="flex items-center gap-2 text-white bg-sky-400 hover:bg-sky-500 focus:ring-4 focus:ring-sky-300 font-medium rounded-lg text-sm px-3 py-1 me-2 mr-3"
-                    id="logout">
-                <svg class="fill-white w-4 h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-                    <!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
-                    <path
-                          d="M502.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-128-128c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L402.7 224 192 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l210.7 0-73.4 73.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l128-128zM160 96c17.7 0 32-14.3 32-32s-14.3-32-32-32L96 32C43 32 0 75 0 128L0 384c0 53 43 96 96 96l64 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-64 0c-17.7 0-32-14.3-32-32l0-256c0-17.7 14.3-32 32-32l64 0z" />
-                </svg>
-                <span id="logout_text"></span>
-            </button>
-        </div>
+        <div class="absolute top-0 right-0 left-0 bg-slate-200 h-10 z-50" id="header"></div>
         <div class="relative w-full pt-10 min-h-screen">
 
             <div class="grid grid-cols-2 mt-10">
                 <h1 class="px-5 text-xl flex items-center">
-                    <span class="t_regional_level_view_coordinators"></span>
+                    <span class="t_regionalCoordinator_level_view_regionalCoordinators"></span>
                 </h1>
                 <div class="flex gap-10">
                     <button class="bg-gray-200 hover:bg-gray-300 px-4 py-2 rounded w-28 flex items-center justify-center gap-4">

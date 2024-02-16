@@ -1,13 +1,16 @@
+.open uzbek.duckdb
+
 -- Create user table
 CREATE SEQUENCE id_users_sequence START 1;
 
 -- Creates new user defined type 'mood' as an Enum
 CREATE TYPE userTypeEnum AS ENUM (
-    'collector',
-    'coordinator',
+    'localCollector',
+    'localCoordinator',
+    'cityCollector',
+    'regionalCoordinator',
     'evaluator',
-    'main',
-    'admin'
+    'main'
 );
 
 CREATE TABLE uzbek.main.users (
@@ -16,14 +19,24 @@ CREATE TABLE uzbek.main.users (
     userType userTypeEnum,
     username VARCHAR NOT NULL,
     password VARCHAR NOT NULL,
+    institutionId INT,
     PRIMARY KEY (id)
 );
 
-INSERT INTO
-    uzbek.main.users (userType, username, password)
-VALUES
-    ('admin', 'admin', 'admin'),
-    ('main', 'main', 'main'),
-    ('evaluator', 'evaluator', 'evaluator'),
-    ('coordinator', 'coordinator', 'coordinator'),
-    ('collector', 'collector', 'collector');
+-- Create institution table table
+CREATE SEQUENCE id_institution_sequence START 1;
+
+CREATE TABLE uzbek.main.institutions (
+    id INT DEFAULT nextval('id_institution_sequence'),
+    uuid UUID DEFAULT uuid(),
+    name VARCHAR NOT NULL,
+    staffCount INT NOT NULL,
+    childrenCount INT NOT NULL,
+    youngAdultCount INT NOT NULL,
+    childrenHomeCount INT NOT NULL,
+    patronatCount INT NOT NULL,
+    PRIMARY KEY (id)
+);
+
+
+

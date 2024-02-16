@@ -1,6 +1,6 @@
 // import { ipcRenderer } from "electron";
 
-export const collector = {
+export const localCoordinator = {
     init: async () => {
 
 

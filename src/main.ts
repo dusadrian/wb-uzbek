@@ -19,6 +19,8 @@ const appSession = {
     language: "en",
     userName: "",
     userType: "",
+    userInstitution: 0,
+    institutionName: "",
 };
 
 function createWindow() {
@@ -105,9 +107,10 @@ ipcMain.on('login', (event, args) => {
         // TODO load institution data
         appSession.userName = result[0].username;
         appSession.userType = result[0].userType;
+        appSession.userInstitution = result[0].institutionId;
         appSession.language = args.language;
         // go to next page
-        mainWindow.loadURL("file://" + path.join(__dirname, "../src/pages/01_menu_screen.html"));
+        goToDashboard();
     });
 });
 
@@ -136,14 +139,17 @@ const goToLogin = (page: string) => {
 
 const goToDashboard = () => {
 
-
     let page = '';
-    if (appSession.userType === "collector") {
-        page = path.join(__dirname, "../src/pages/collector/01_dashboard.html");
-    } else if (appSession.userType === "coordinator") {
-        page = path.join(__dirname, "../src/pages/coordinator/01_dashboard.html");
+    if (appSession.userType === "localCollector") {
+        page = path.join(__dirname, "../src/pages/localCollector/01_dashboard.html");
+    } else if (appSession.userType === "localCoordinator") {
+        page = path.join(__dirname, "../src/pages/localCoordinator/01_dashboard.html");
+    } else if (appSession.userType === "cityCollector") {
+        page = path.join(__dirname, "../src/pages/cityCollector/01_dashboard.html");
     } else if (appSession.userType === "evaluator") {
         page = path.join(__dirname, "../src/pages/evaluator/01_dashboard.html");
+    } else if (appSession.userType === "regionalCoordinator") {
+        page = path.join(__dirname, "../src/pages/regionalCoordinator/01_dashboard.html");
     } else if (appSession.userType === "main") {
         page = path.join(__dirname, "../src/pages/main/01_dashboard.html");
     } else {
@@ -155,6 +161,26 @@ const goToDashboard = () => {
     }
 
     mainWindow.loadURL("file://" + page);
+    mainWindow.webContents.once("did-finish-load", () => {
+        if(appSession.userType === "localCollector" || appSession.userType === "localCoordinator" || appSession.userType === "cityCollector"){
+            database.getUserInstitution(appSession.userInstitution).then((result: Array<DI.Institution>) => {
+                if(result.length === 0){
+                    dialog.showMessageBox(mainWindow, {
+                        type: 'error',
+                        message: 'Institution error. Please login again.',
+                    })
+                    return;
+                }
+                appSession.institutionName = result[0].name;
+                mainWindow.webContents.send("appSession", appSession);
+            });
+        } else {
+            // there is no institution for this user
+            appSession.institutionName = "";
+            mainWindow.webContents.send("appSession", appSession);
+        }
+            
+    });
 
 }
 
