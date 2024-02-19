@@ -58,6 +58,9 @@ window.addEventListener("DOMContentLoaded", () => {
         case 'localCoordinator/01_dashboard.html':
             localCoordinatorDashboard();
             break;
+        case 'localCoordinator/02_institution_details.html':
+            institutionDetails();
+            break;
         case 'cityCollector/01_dashboard.html':
             cityCollectorDashboard();
             break;
@@ -167,6 +170,21 @@ const localCoordinatorDashboard = () => {
         console.log(error);
     }));
 };
+
+const institutionDetails = () => {
+
+    topMenu('localCoordinator/01_dashboard');
+
+    translatePage();
+
+    const importFile = async () => {
+        return await import("./pages/localCoordinator/02_institution_details");
+    };
+    importFile().then(result => result.institutionDetails.init().catch(error => {
+        console.log(error);
+    }));
+};
+
 const cityCollectorDashboard = () => {
 
     topMenu('index');
@@ -222,6 +240,19 @@ const translatePage = () => {
     if (el.length > 0) {
         el.forEach((element: HTMLElement) => {
             element.innerText = i18n.__(element.className);
+        });
+    }
+    const option = document.querySelectorAll("option[class^='t_']");
+    if (option.length > 0) {
+        option.forEach((element: HTMLOptionElement) => {
+            element.innerText = i18n.__(element.className);
+            element.value = i18n.__(element.className + '_value');
+        });
+    }
+    const optionGroup = document.querySelectorAll("optgroup[class^='t_']");
+    if (optionGroup.length > 0) {
+        optionGroup.forEach((element: HTMLOptionElement) => {
+            element.label = i18n.__(element.className);
         });
     }
 }

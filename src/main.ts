@@ -21,6 +21,7 @@ const appSession = {
     userType: "",
     userInstitution: 0,
     institutionName: "",
+    institutionDetails: {}
 };
 
 function createWindow() {
@@ -125,6 +126,9 @@ ipcMain.on("changeWindow", (event, args) => {
         case "dashboard":
             goToDashboard();
             break;
+        case "localCoordinator/02_institution_details":
+            institutionDetails();
+            break;
         case "01_login":
             goToLogin(newPage);
             break;
@@ -172,6 +176,7 @@ const goToDashboard = () => {
                     return;
                 }
                 appSession.institutionName = result[0].name;
+                appSession.institutionDetails = result[0];
                 mainWindow.webContents.send("appSession", appSession);
             });
         } else {
@@ -184,6 +189,23 @@ const goToDashboard = () => {
 
 }
 
+const institutionDetails = () => {
+    const newPage = path.join(__dirname, "../src/pages/localCoordinator/02_institution_details.html");
+    mainWindow.loadURL("file://" + newPage);
+    mainWindow.webContents.once("did-finish-load", () => {
+            mainWindow.webContents.send("institutionDetails", appSession.institutionDetails);
+    });
+}
+
+
+ipcMain.on('getRegionDistrict', (event, args) => {
+    // TODO get from DB
+    console.log(args);
+    mainWindow.webContents.send('regionDistrict', {
+        'region': 'Tashkent',
+        'district': 'Yunusabad'
+    });
+});
 
 // const goTo = () => {
 //     const newPage = path.join(__dirname, "../src/pages/login.html");

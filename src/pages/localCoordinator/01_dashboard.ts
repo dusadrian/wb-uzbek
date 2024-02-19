@@ -1,20 +1,20 @@
-// import { ipcRenderer } from "electron";
+import { ipcRenderer } from "electron";
 
 export const localCoordinator = {
     init: async () => {
 
 
+        // (<HTMLButtonElement>document.getElementById('viewEdit_QMR')).addEventListener('click', () => {
+        //     alert('viewEdit_QMR');
+        // });
 
-        
-        (<HTMLButtonElement>document.getElementById('viewEdit_QMR')).addEventListener('click', () => {
-            alert('viewEdit_QMR');
+        (<HTMLButtonElement>document.getElementById('viewEdit_ID')).addEventListener('click', () => {
+            ipcRenderer.send('changeWindow', {
+                'name': 'localCoordinator/02_institution_details'
+            });
         });
 
-        // (<HTMLButtonElement>document.getElementById('sec2')).addEventListener('click', () => {
-        //     ipcRenderer.send('changeWindow', {
-        //         'name': 'plan_di1/02_section_2'
-        //     });
-        // });
+
         // (<HTMLButtonElement>document.getElementById('sec3')).addEventListener('click', () => {
         //     ipcRenderer.send('changeWindow', {
         //         'name': 'plan_di1/03_section_3'

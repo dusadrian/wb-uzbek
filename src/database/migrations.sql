@@ -30,6 +30,12 @@ CREATE TABLE uzbek.main.institutions (
     id INT DEFAULT nextval('id_institution_sequence'),
     uuid UUID DEFAULT uuid(),
     name VARCHAR NOT NULL,
+    code VARCHAR NOT NULL,
+    address VARCHAR NOT NULL,
+    atuCode VARCHAR NOT NULL,
+    region VARCHAR NOT NULL,
+    district VARCHAR NOT NULL,
+    type VARCHAR NOT NULL,
     staffCount INT NOT NULL,
     childrenCount INT NOT NULL,
     youngAdultCount INT NOT NULL,
@@ -40,3 +46,18 @@ CREATE TABLE uzbek.main.institutions (
 
 
 
+INSERT INTO
+    uzbek.main.institutions (name, code, address, atuCode, region, district, type, staffCount, childrenCount, youngAdultCount, childrenHomeCount, patronatCount) 
+VALUES
+    ('Orphanage', '', '', '', '', '', '',10, 10, 0, 0, 0),
+    ('City', '', '', '', '', '', '', 0, 0, 10, 10, 10);
+    
+INSERT INTO
+    uzbek.main.users (userType, username, password, institutionId)
+VALUES
+    ('localCollector', 'localCollector', 'localCollector', 1),
+    ('localCoordinator', 'localCoordinator', 'localCoordinator', 1),
+    ('cityCollector', 'cityCollector', 'cityCollector', 2),
+    ('evaluator', 'evaluator', 'evaluator', NULL),
+    ('regionalCoordinator', 'regionalCoordinator', 'regionalCoordinator', NULL),
+    ('main', 'main', 'main', NULL);
