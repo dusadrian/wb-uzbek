@@ -15,11 +15,13 @@ export const localCoordinator = {
         });
 
 
-        // (<HTMLButtonElement>document.getElementById('sec3')).addEventListener('click', () => {
-        //     ipcRenderer.send('changeWindow', {
-        //         'name': 'plan_di1/03_section_3'
-        //     });
-        // });
+        (<HTMLButtonElement>document.getElementById('users')).addEventListener('click', () => {
+            ipcRenderer.send('changeWindow', {
+                'name': 'localCoordinator/03_users'
+            });
+        });
+
+
         // ipcRenderer.on("instrumentDataReady", (_event, args) => {
 
         //     console.log(args);

@@ -11,14 +11,12 @@ export interface Institution {
     id: number;
     uuid: string;
     name: string;
+    code?: string;
+    address?: string;
+    atuCode?: string;
     region?: string;
     district?: string;
-    address?: string;
-    phone?: string;
-    email?: string;
-    contactPerson?: string;
-    contactPersonPhone?: string;
-    contactPersonEmail?: string;
+    type?: string;
     staffCount: number;
     childrenCount: number;
     youngAdultCount: number;

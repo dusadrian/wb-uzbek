@@ -6,6 +6,7 @@ export const institutionDetails = {
 
         let institutionId: string = null;
         let institutionUUID: string = null;
+        let institutionATU = '';
 
         ipcRenderer.on('institutionDetails', (_event, args) => {
             console.log(args);
@@ -14,6 +15,8 @@ export const institutionDetails = {
             (document.getElementById('institution_name') as HTMLInputElement).value = args.name;
             (document.getElementById('institution_code') as HTMLInputElement).value = args.code;
             (document.getElementById('institution_address') as HTMLInputElement).value = args.address;
+            (document.getElementById('institution_atu_code') as HTMLInputElement).value = args.atuCode;
+            institutionATU = args.atuCode;
             (document.getElementById('institution_region') as HTMLInputElement).value = args.region;
             (document.getElementById('institution_district') as HTMLInputElement).value = args.district;
             setSelectValue('institution_type', args.type);
@@ -27,21 +30,28 @@ export const institutionDetails = {
         const atuCode = (<HTMLButtonElement>document.getElementById('institution_atu_code'));
         if (atuCode !== null) {
             atuCode.addEventListener('blur', () => {
-                if (atuCode.value.length !== 12) {
-                    ipcRenderer.send('showDialogMessage', {
-                        type: 'warning',
-                        message: 'ATU code must be 12 characters long'
-                    });
+                if (atuCode.value !== '') {
+                    if (atuCode.value.length !== 12) {
+                        ipcRenderer.send('showDialogMessage', {
+                            type: 'warning',
+                            message: 'ATU code must be 12 characters long'
+                        });
+                    } else if (institutionATU !== atuCode.value) {
+                        // update code
+                        institutionATU = atuCode.value;
+                        ipcRenderer.send('getRegionDistrict', {
+                            'atuCode': atuCode.value
+                        });
+                    }
                 } else {
-                    ipcRenderer.send('getRegionDistrict', {
-                        'atuCode': atuCode.value
-                    });
+                    institutionATU = '';
+                    (document.getElementById('institution_region') as HTMLInputElement).value = '';
+                    (document.getElementById('institution_district') as HTMLInputElement).value = '';
                 }
             });
         }
 
         ipcRenderer.on('regionDistrict', (_event, args) => {
-            console.log(args);
             (document.getElementById('institution_region') as HTMLInputElement).value = args.region;
             (document.getElementById('institution_district') as HTMLInputElement).value = args.district;
         });

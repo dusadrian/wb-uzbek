@@ -20,6 +20,13 @@ CREATE TABLE uzbek.main.users (
     username VARCHAR NOT NULL,
     password VARCHAR NOT NULL,
     institutionId INT,
+    firstName VARCHAR NULL,
+    patronymics VARCHAR NULL,
+    lastName VARCHAR NULL,
+    position VARCHAR NULL,
+    profession VARCHAR NULL,
+    phone VARCHAR NULL,
+    email VARCHAR NULL,
     PRIMARY KEY (id)
 );
 
@@ -61,3 +68,11 @@ VALUES
     ('evaluator', 'evaluator', 'evaluator', NULL),
     ('regionalCoordinator', 'regionalCoordinator', 'regionalCoordinator', NULL),
     ('main', 'main', 'main', NULL);
+
+
+
+
+
+
+
+

@@ -1,0 +1,17 @@
+{
+	"sProcessing": "Обработка...",
+	"sLengthMenu": "Показать _MENU_ записи на странице",
+	"sZeroRecords": "Ничего не найдено, извините",
+	"sInfo": "Показано от _START_ до _END_ из _TOTAL_ записей",
+	"sInfoEmpty": "Показано от 0 до 0 из 0 записей",
+	"sInfoFiltered": "(отфильтровано из _MAX_ записей)",
+	"sInfoPostFix": "",
+	"sSearch": "Искать:",
+	"sUrl": "",
+	"oPaginate": {
+		"sFirst": "Первый",
+		"sPrevious": "Приоритет",
+		"sNext": "следующий",
+		"sLast": "последний"
+	}
+}

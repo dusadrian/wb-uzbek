@@ -7,6 +7,14 @@ import * as path from "path";
 import { database } from "./database/database";
 import * as DI from "../src/interfaces/database";
 
+// language
+import { I18n } from "i18n";
+const i18n = new I18n({
+    locales: ['en', 'uz', 'ru'],
+    directory: path.join(__dirname, '../src/locales'),
+    defaultLocale: 'en',
+});
+
 // translate pages
 // import { Eta } from "eta"
 // import * as en from "./locales/en.json";
@@ -19,6 +27,7 @@ const appSession = {
     language: "en",
     userName: "",
     userType: "",
+    userId: 0,
     userInstitution: 0,
     institutionName: "",
     institutionDetails: {}
@@ -108,6 +117,7 @@ ipcMain.on('login', (event, args) => {
         // TODO load institution data
         appSession.userName = result[0].username;
         appSession.userType = result[0].userType;
+        appSession.userId = result[0].id;
         appSession.userInstitution = result[0].institutionId;
         appSession.language = args.language;
         // go to next page
@@ -128,6 +138,9 @@ ipcMain.on("changeWindow", (event, args) => {
             break;
         case "localCoordinator/02_institution_details":
             institutionDetails();
+            break;
+        case "localCoordinator/03_users":
+            localCoordinatorUsers();
             break;
         case "01_login":
             goToLogin(newPage);
@@ -159,16 +172,16 @@ const goToDashboard = () => {
     } else {
         dialog.showMessageBox(mainWindow, {
             type: 'error',
-            message: 'User error. Please login again.',
+            message: i18n.__('User error. Please login again.'),
         })
         return;
     }
 
     mainWindow.loadURL("file://" + page);
     mainWindow.webContents.once("did-finish-load", () => {
-        if(appSession.userType === "localCollector" || appSession.userType === "localCoordinator" || appSession.userType === "cityCollector"){
+        if (appSession.userType === "localCollector" || appSession.userType === "localCoordinator" || appSession.userType === "cityCollector") {
             database.getUserInstitution(appSession.userInstitution).then((result: Array<DI.Institution>) => {
-                if(result.length === 0){
+                if (result.length === 0) {
                     dialog.showMessageBox(mainWindow, {
                         type: 'error',
                         message: 'Institution error. Please login again.',
@@ -184,20 +197,20 @@ const goToDashboard = () => {
             appSession.institutionName = "";
             mainWindow.webContents.send("appSession", appSession);
         }
-            
+
     });
 
 }
 
+// Local Coordinator =================
+// -- institution details
 const institutionDetails = () => {
     const newPage = path.join(__dirname, "../src/pages/localCoordinator/02_institution_details.html");
     mainWindow.loadURL("file://" + newPage);
     mainWindow.webContents.once("did-finish-load", () => {
-            mainWindow.webContents.send("institutionDetails", appSession.institutionDetails);
+        mainWindow.webContents.send("institutionDetails", appSession.institutionDetails);
     });
 }
-
-
 ipcMain.on('getRegionDistrict', (event, args) => {
     // TODO get from DB
     console.log(args);
@@ -206,6 +219,26 @@ ipcMain.on('getRegionDistrict', (event, args) => {
         'district': 'Yunusabad'
     });
 });
+ipcMain.on('saveInstitutionDetails', (event, args) => {
+    console.log(args);
+    database.saveInstitutionDetails(args).then(() => {
+        dialog.showMessageBox(mainWindow, {
+            type: 'info',
+            message: i18n.__('Institution details saved.'),
+        }).then(() => {
+            goToDashboard();
+        });
+    });
+});
+const localCoordinatorUsers = () => {
+    const newPage = path.join(__dirname, "../src/pages/localCoordinator/03_users.html");
+    mainWindow.loadURL("file://" + newPage);
+    mainWindow.webContents.once("did-finish-load", () => {
+        database.getInstitutionUsers(appSession.userInstitution, appSession.userId).then((result) => {
+            mainWindow.webContents.send("users", result);
+        });
+    });
+}
 
 // const goTo = () => {
 //     const newPage = path.join(__dirname, "../src/pages/login.html");

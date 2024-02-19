@@ -9,11 +9,14 @@ const i18n = new I18n({
     defaultLocale: 'en',
 });
 
+let username = '';
 ipcRenderer.on('appSession', (event, arg) => {
     sessionStorage.setItem('appSession', JSON.stringify(arg));
-    console.log(arg);
-    
-    document.getElementById('username').innerText = (arg.institutionName ? arg.institutionName + ' | ' : '') + arg.userName;
+    username = (arg.institutionName ? arg.institutionName + ' | ' : '') + arg.userName;
+    const us = document.getElementById('username');
+    if(us){
+        us.innerText = username;
+    }
 });
 
 window.addEventListener("DOMContentLoaded", () => {
@@ -61,6 +64,12 @@ window.addEventListener("DOMContentLoaded", () => {
         case 'localCoordinator/02_institution_details.html':
             institutionDetails();
             break;
+        case 'localCoordinator/03_users.html':
+            localCoordinatorUsers();
+            break;
+        case 'localCoordinator/04_add_user.html':
+            localCoordinatorAddUser();
+            break;
         case 'cityCollector/01_dashboard.html':
             cityCollectorDashboard();
             break;
@@ -83,6 +92,11 @@ const index = () => {
     (document.getElementById("password") as HTMLInputElement).placeholder = i18n.__("password");
     (document.getElementById("login") as HTMLInputElement).innerText = i18n.__("login");
     (document.getElementById("login_message") as HTMLInputElement).innerText = i18n.__("login_message");
+
+    sessionStorage.removeItem('appSession');
+    if (!localStorage.getItem('language')) {
+        localStorage.setItem('language', 'en');
+    }
 
     document.getElementById("en").addEventListener("click", () => {
         i18n.setLocale('en');
@@ -139,7 +153,9 @@ const index = () => {
 }
 
 const topMenu = (backPage: string) => {
-    header.init(backPage).catch((error) => {
+    header.init(backPage).then(() => {
+        if (username !== '') document.getElementById('username').innerText = username;
+    }).catch((error) => {
         console.log(error);
     });
 }
@@ -170,7 +186,6 @@ const localCoordinatorDashboard = () => {
         console.log(error);
     }));
 };
-
 const institutionDetails = () => {
 
     topMenu('localCoordinator/01_dashboard');
@@ -181,6 +196,32 @@ const institutionDetails = () => {
         return await import("./pages/localCoordinator/02_institution_details");
     };
     importFile().then(result => result.institutionDetails.init().catch(error => {
+        console.log(error);
+    }));
+};
+const localCoordinatorUsers = () => {
+
+    topMenu('localCoordinator/01_dashboard');
+
+    translatePage();
+
+    const importFile = async () => {
+        return await import("./pages/localCoordinator/03_users");
+    };
+    importFile().then(result => result.users.init().catch(error => {
+        console.log(error);
+    }));
+};
+const localCoordinatorAddUser = () => {
+
+    topMenu('localCoordinator/03_users');
+
+    translatePage();
+
+    const importFile = async () => {
+        return await import("./pages/localCoordinator/04_add_user");
+    };
+    importFile().then(result => result.addUser.init().catch(error => {
         console.log(error);
     }));
 };

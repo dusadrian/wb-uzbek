@@ -48,5 +48,27 @@ export const database = {
             });
         });
         return await connection;
+    },
+    saveInstitutionDetails: async (institution: DI.Institution) => {
+        const connection = new Promise<boolean>((resolve) => {
+            db.run(`UPDATE institutions SET name = '${institution.name}', code = '${institution.code}', address = '${institution.address}', region = '${institution.region}', district = '${institution.district}', type = '${institution.type}', staffCount = '${institution.staffCount}', childrenCount = '${institution.childrenCount}', youngAdultCount = '${institution.youngAdultCount}', atuCode = '${institution.atuCode}' WHERE id = '${institution.id}'`, (error) => {
+                if(error){
+                    console.log(error);
+                }
+                resolve(true);
+            });
+        });
+        return await connection;
+    },
+    getInstitutionUsers: async (institutionId: number, userId: number) => {
+        const connection = new Promise<Array<DI.User>>((resolve) => {
+            db.all(`SELECT * FROM users WHERE institutionId = '${institutionId}' AND id != '${userId}'`, (error, result) => {
+                if(error){
+                    console.log(error);
+                }
+                resolve(result as DI.User[]);
+            });
+        });
+        return await connection;
     }
 }

@@ -1,0 +1,17 @@
+{
+	"sProcessing": "Qayta ishlanmoqda...",
+	"sLengthMenu": "Sahifada _MENU_ yozuvlarni ko'rsatish",
+	"sZeroRecords": "Hech narsa topilmadi - kechirasiz",
+	"sInfo": "TOTAL_ ta yozuvdan _START_ dan _END_ gacha koʻrsatilgan",
+	"sInfoEmpty": "0 ta yozuvdan 0 dan 0 gacha ko'rsatilgan",
+	"sInfoFiltered": "(jami _MAX_ ta yozuvdan filtrlangan)",
+	"sInfoPostFix": "",
+	"sSearch": "Ni qidirish:",
+	"sUrl": "",
+	"oPaginate": {
+		"sFirst": "Birinchi",
+		"sPrevious": "ustunlik",
+		"sNext": "Keyingisi",
+		"sLast": "oxirgisi"
+	}
+}

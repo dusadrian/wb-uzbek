@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8" />
+        <title>WorldBank</title>
+        <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src http: https: data: ; script-src 'self'; style-src 'self' 'unsafe-inline'" />
+        <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; img-src http: https: data: ; script-src 'self'; style-src 'self' 'unsafe-inline'" />
+        <link href="../../../dist/main.css" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="../../../node_modules/datatables.net-dt/css/dataTables.dataTables.min.css" />
+        <link rel="stylesheet" type="text/css" href="../../../node_modules/datatables.net-responsive-dt/css/responsive.dataTables.min.css" />
+    </head>
+
+    <body class="relative max-h-screen">
+        <div class="fixed top-0 right-0 left-0 bg-slate-200 h-10 z-50 shadow" id="header">
+        </div>
+        <div class="relative w-full mt-10 pb-10 h-[calc(100vh-5.5rem)] overflow-y-auto">
+
+            <div class="flex justify-between mt-10 px-5">
+                <h1 class="text-xl ">
+                    <span class="t_users"></span>
+                </h1>
+                <div>
+                    <button class="bg-menuButton text-white px-4 py-2 rounded" id="add_user">
+                        <span class="t_add_user"></span>
+                    </button>
+                </div>
+            </div>
+            
+
+            <div class="px-6 mt-5">
+                <table id="users_list" aria-describedby="users" style="width: 100%;" class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+                    <thead class="text-xs text-gray-700 uppercase bg-gray-50">
+                        <tr>
+                            <th scope="col" class="px-6 py-3">
+                                <span class="t_first_name"></span>
+                            </th>
+                            <th scope="col" class="px-6 py-3">
+                                <span class="t_patronymics"></span>
+                            </th>
+                            <th scope="col" class="px-6 py-3">
+                                <span class="t_last_name"></span>
+                            </th>
+                            <th scope="col" class="px-6 py-3">
+                                <span class="t_username"></span>
+                            </th>
+                            <th scope="col" class="px-6 py-3">
+                                <span class="t_actions"></span>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody id="users"></tbody>
+                </table>
+            </div>
+
+        </div>
+    </body>
+
+</html>
