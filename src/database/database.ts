@@ -92,4 +92,26 @@ export const database = {
         
         return await connection;
     },
+    updateUser: async (user: DI.User) => {
+        const connection = new Promise<boolean>((resolve) => {
+            db.run(`UPDATE users SET username = '${user.username}', password = '${user.password}', first_name = '${user.first_name}', patronymics = '${user.patronymics}', last_name = '${user.last_name}', position = '${user.position}', profession = '${user.profession}', phone = '${user.phone}', email = '${user.email}' WHERE id = '${user.id}'`, (error) => {
+                if(error){
+                    console.log(error);
+                }
+                resolve(true);
+            });
+        });
+        return await connection;
+    },
+    deleteUser: async (id: string) => {
+        const connection = new Promise<boolean>((resolve) => {
+            db.run(`DELETE FROM users WHERE id = '${id}' AND user_type = 'localCollector'`, (error) => {
+                if(error){
+                    console.log(error);
+                }
+                resolve(true);
+            });
+        });
+        return await connection;
+    },
 }

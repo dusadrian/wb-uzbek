@@ -17,10 +17,10 @@ export const header = {
         console.log('header init');
         
 
-        // set username and institution name
+        // set header_username and institution name
         const appSession = JSON.parse(sessionStorage.getItem('appSession'));
         if (appSession !== null) {
-            document.getElementById('username').innerText = (appSession.institutionName ? appSession.institutionName + ' | ' : '') + appSession.userName;
+            document.getElementById('header_username').innerText = (appSession.institutionName ? appSession.institutionName + ' | ' : '') + appSession.userName;
         }
 
         document.getElementById('logout_text').innerText = i18n.__("logout");

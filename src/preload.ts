@@ -13,7 +13,7 @@ let username = '';
 ipcRenderer.on('appSession', (event, arg) => {
     sessionStorage.setItem('appSession', JSON.stringify(arg));
     username = (arg.institutionName ? arg.institutionName + ' | ' : '') + arg.userName;
-    const us = document.getElementById('username');
+    const us = document.getElementById('header_username');
     if(us){
         us.innerText = username;
     }
@@ -157,7 +157,7 @@ const index = () => {
 
 const topMenu = (backPage: string) => {
     header.init(backPage).then(() => {
-        if (username !== '') document.getElementById('username').innerText = username;
+        if (username !== '') document.getElementById('header_username').innerText = username;
     }).catch((error) => {
         console.log(error);
     });

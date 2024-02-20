@@ -254,18 +254,49 @@ const localCoordinatorEditUser = (id: string) => {
 ipcMain.on('addUser', (event, args) => {
     console.log(args);
     // save to DB
-    const userObj = {...args, institution_id: appSession.userInstitution, user_type: "localCollector"};
+    const userObj = { ...args, institution_id: appSession.userInstitution, user_type: "localCollector" };
     database.addUser(userObj).then(() => {
         // send message
         dialog.showMessageBox(mainWindow, {
             type: 'info',
             message: i18n.__('User added.'),
         }).then(() => {
-            goToDashboard();
+            localCoordinatorUsers();
         });
     });
 });
-
+ipcMain.on('updateUser', (event, args) => {
+    // save to DB
+    database.updateUser(args).then(() => {
+        // send message
+        dialog.showMessageBox(mainWindow, {
+            type: 'info',
+            message: i18n.__('User updated.'),
+        }).then(() => {
+            localCoordinatorUsers();
+        });
+    });
+})
+ipcMain.on('deleteUser', (event, args) => {
+    // save to DB
+    dialog.showMessageBox(mainWindow, {
+        type: 'warning',
+        message: i18n.__('Are you sure you want to delete this user?'),
+        buttons: ['Yes', 'No']
+    }).then((result) => {
+        if (result.response === 0) {
+            database.deleteUser(args.id).then(() => {
+                // send message
+                dialog.showMessageBox(mainWindow, {
+                    type: 'info',
+                    message: i18n.__('User deleted.'),
+                }).then(() => {
+                    localCoordinatorUsers();
+                });
+            });
+        }
+    });
+});
 // Local Collector =================
 
 // City Collector =================
