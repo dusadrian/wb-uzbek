@@ -4,13 +4,13 @@ export const institutionDetails = {
     init: async () => {
 
 
-        let institutionId: string = null;
+        let institution_id: string = null;
         let institutionUUID: string = null;
         let institutionATU = '';
 
         ipcRenderer.on('institutionDetails', (_event, args) => {
             console.log(args);
-            institutionId = args.id
+            institution_id = args.id
             institutionUUID = args.uuid;
             (document.getElementById('institution_name') as HTMLInputElement).value = args.name;
             (document.getElementById('institution_code') as HTMLInputElement).value = args.code;
@@ -79,7 +79,7 @@ export const institutionDetails = {
             }
 
             ipcRenderer.send('saveInstitutionDetails', {
-                'id': institutionId,
+                'id': institution_id,
                 'uuid': institutionUUID,
                 'name': (document.getElementById('institution_name') as HTMLInputElement).value,
                 'code': (document.getElementById('institution_code') as HTMLInputElement).value,

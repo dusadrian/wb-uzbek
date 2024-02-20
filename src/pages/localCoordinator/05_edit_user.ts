@@ -1,7 +1,21 @@
 import { ipcRenderer } from "electron";
 
-export const addUser = {
+export const editUser = {
     init: async () => {
+
+
+        ipcRenderer.on('user', (event, user) => {
+            (<HTMLInputElement>document.getElementById('username')).value = user.username;
+            (<HTMLInputElement>document.getElementById('password')).value = user.password;
+            (<HTMLSelectElement>document.getElementById('first_name')).value = user.first_name;
+            (<HTMLSelectElement>document.getElementById('patronymics')).value = user.patronymics;
+            (<HTMLSelectElement>document.getElementById('last_name')).value = user.last_name;
+            (<HTMLSelectElement>document.getElementById('position')).value = user.position;
+            (<HTMLSelectElement>document.getElementById('profession')).value = user.profession;
+            (<HTMLSelectElement>document.getElementById('phone')).value = user.phone;
+            (<HTMLSelectElement>document.getElementById('email')).value = user.email;
+        });
+
 
         (<HTMLButtonElement>document.getElementById('saveForm')).addEventListener('click', () => {
             // validate all input and send to main process
@@ -26,7 +40,7 @@ export const addUser = {
                 return;
             }
 
-            ipcRenderer.send('addUser', {
+            ipcRenderer.send('updateUser', {
                 username,
                 password,
                 first_name,

@@ -26,7 +26,7 @@ let mainWindow: BrowserWindow = null;
 const appSession = {
     language: "en",
     userName: "",
-    userType: "",
+    user_type: "",
     userId: 0,
     userInstitution: 0,
     institutionName: "",
@@ -100,7 +100,7 @@ app.on("activate", () => {
 ipcMain.on('showDialogMessage', (event, args) => {
     dialog.showMessageBox(mainWindow, {
         type: args.type,
-        message: args.message,
+        message: i18n.__(args.message),
     })
 });
 
@@ -116,9 +116,9 @@ ipcMain.on('login', (event, args) => {
         }
         // TODO load institution data
         appSession.userName = result[0].username;
-        appSession.userType = result[0].userType;
+        appSession.user_type = result[0].user_type;
         appSession.userId = result[0].id;
-        appSession.userInstitution = result[0].institutionId;
+        appSession.userInstitution = result[0].institution_id;
         appSession.language = args.language;
         // go to next page
         goToDashboard();
@@ -142,6 +142,9 @@ ipcMain.on("changeWindow", (event, args) => {
         case "localCoordinator/03_users":
             localCoordinatorUsers();
             break;
+        case "localCoordinator/05_edit_user":
+            localCoordinatorEditUser(args.id);
+            break;
         case "01_login":
             goToLogin(newPage);
             break;
@@ -157,17 +160,17 @@ const goToLogin = (page: string) => {
 const goToDashboard = () => {
 
     let page = '';
-    if (appSession.userType === "localCollector") {
+    if (appSession.user_type === "localCollector") {
         page = path.join(__dirname, "../src/pages/localCollector/01_dashboard.html");
-    } else if (appSession.userType === "localCoordinator") {
+    } else if (appSession.user_type === "localCoordinator") {
         page = path.join(__dirname, "../src/pages/localCoordinator/01_dashboard.html");
-    } else if (appSession.userType === "cityCollector") {
+    } else if (appSession.user_type === "cityCollector") {
         page = path.join(__dirname, "../src/pages/cityCollector/01_dashboard.html");
-    } else if (appSession.userType === "evaluator") {
+    } else if (appSession.user_type === "evaluator") {
         page = path.join(__dirname, "../src/pages/evaluator/01_dashboard.html");
-    } else if (appSession.userType === "regionalCoordinator") {
+    } else if (appSession.user_type === "regionalCoordinator") {
         page = path.join(__dirname, "../src/pages/regionalCoordinator/01_dashboard.html");
-    } else if (appSession.userType === "main") {
+    } else if (appSession.user_type === "main") {
         page = path.join(__dirname, "../src/pages/main/01_dashboard.html");
     } else {
         dialog.showMessageBox(mainWindow, {
@@ -179,7 +182,7 @@ const goToDashboard = () => {
 
     mainWindow.loadURL("file://" + page);
     mainWindow.webContents.once("did-finish-load", () => {
-        if (appSession.userType === "localCollector" || appSession.userType === "localCoordinator" || appSession.userType === "cityCollector") {
+        if (appSession.user_type === "localCollector" || appSession.user_type === "localCoordinator" || appSession.user_type === "cityCollector") {
             database.getUserInstitution(appSession.userInstitution).then((result: Array<DI.Institution>) => {
                 if (result.length === 0) {
                     dialog.showMessageBox(mainWindow, {
@@ -239,6 +242,33 @@ const localCoordinatorUsers = () => {
         });
     });
 }
+const localCoordinatorEditUser = (id: string) => {
+    const newPage = path.join(__dirname, "../src/pages/localCoordinator/05_edit_user.html");
+    mainWindow.loadURL("file://" + newPage);
+    mainWindow.webContents.once("did-finish-load", () => {
+        database.getUser(id).then((result) => {
+            mainWindow.webContents.send("user", result[0]);
+        });
+    });
+}
+ipcMain.on('addUser', (event, args) => {
+    console.log(args);
+    // save to DB
+    const userObj = {...args, institution_id: appSession.userInstitution, user_type: "localCollector"};
+    database.addUser(userObj).then(() => {
+        // send message
+        dialog.showMessageBox(mainWindow, {
+            type: 'info',
+            message: i18n.__('User added.'),
+        }).then(() => {
+            goToDashboard();
+        });
+    });
+});
+
+// Local Collector =================
+
+// City Collector =================
 
 // const goTo = () => {
 //     const newPage = path.join(__dirname, "../src/pages/login.html");

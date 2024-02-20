@@ -1,3 +1,4 @@
+import { addUser } from './../pages/localCoordinator/04_add_user';
 import * as path from "path";
 import * as DuckDB from "duckdb";
 import * as DI from "../../src/interfaces/database";
@@ -8,9 +9,6 @@ if (process.env.NODE_ENV == 'development') {
 } else {
     dbFile = path.join(path.resolve(__dirname), '../../../') + 'uzbek.duckdb';
 }
-
-console.log(dbFile);
-
 
 const db = new DuckDB.Database(dbFile, {
     "access_mode": "READ_WRITE",
@@ -38,9 +36,9 @@ export const database = {
         return await connection;
     },
 
-    getUserInstitution: async (institutionId: number) => {
+    getUserInstitution: async (institution_id: number) => {
         const connection = new Promise<Array<DI.Institution>>((resolve) => {
-            db.all(`SELECT * FROM institutions WHERE id = '${institutionId}'`, (error, result) => {
+            db.all(`SELECT * FROM institutions WHERE id = '${institution_id}'`, (error, result) => {
                 if(error){
                     console.log(error);
                 }
@@ -60,9 +58,9 @@ export const database = {
         });
         return await connection;
     },
-    getInstitutionUsers: async (institutionId: number, userId: number) => {
+    getInstitutionUsers: async (institution_id: number, userId: number) => {
         const connection = new Promise<Array<DI.User>>((resolve) => {
-            db.all(`SELECT * FROM users WHERE institutionId = '${institutionId}' AND id != '${userId}'`, (error, result) => {
+            db.all(`SELECT * FROM users WHERE institution_id = '${institution_id}' AND id != '${userId}'`, (error, result) => {
                 if(error){
                     console.log(error);
                 }
@@ -70,5 +68,28 @@ export const database = {
             });
         });
         return await connection;
-    }
+    },
+    addUser: async (user: DI.User) => {
+        const connection = new Promise<boolean>((resolve) => {
+            db.run(`INSERT INTO users (user_type, username, password, institution_id, first_name, patronymics, last_name, position, profession, phone, email) VALUES ('${user.user_type}', '${user.username}', '${user.password}', '${user.institution_id}', '${user.first_name}', '${user.patronymics}', '${user.last_name}', '${user.position}', '${user.profession}', '${user.phone}', '${user.email}')`, (error) => {
+                if(error){
+                    console.log(error);
+                }
+                resolve(true);
+            });
+        });
+        return await connection;
+    },
+    getUser: async (id: string) => {
+        const connection = new Promise<Array<DI.User>>((resolve) => {
+            db.all(`SELECT * FROM users WHERE id = '${id}'`, (error, result) => {
+                if(error){
+                    console.log(error);
+                }
+                resolve(result as DI.User[]);
+            });
+        });
+        
+        return await connection;
+    },
 }

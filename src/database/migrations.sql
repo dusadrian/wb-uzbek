@@ -4,7 +4,7 @@
 CREATE SEQUENCE id_users_sequence START 1;
 
 -- Creates new user defined type 'mood' as an Enum
-CREATE TYPE userTypeEnum AS ENUM (
+CREATE TYPE user_typeEnum AS ENUM (
     'localCollector',
     'localCoordinator',
     'cityCollector',
@@ -16,13 +16,13 @@ CREATE TYPE userTypeEnum AS ENUM (
 CREATE TABLE uzbek.main.users (
     id INT DEFAULT nextval('id_users_sequence'),
     uuid UUID DEFAULT uuid(),
-    userType userTypeEnum,
+    user_type user_typeEnum,
     username VARCHAR NOT NULL,
     password VARCHAR NOT NULL,
-    institutionId INT,
-    firstName VARCHAR NULL,
+    institution_id INT,
+    first_name VARCHAR NULL,
     patronymics VARCHAR NULL,
-    lastName VARCHAR NULL,
+    last_name VARCHAR NULL,
     position VARCHAR NULL,
     profession VARCHAR NULL,
     phone VARCHAR NULL,
@@ -60,7 +60,7 @@ VALUES
     ('City', '', '', '', '', '', '', 0, 0, 10, 10, 10);
     
 INSERT INTO
-    uzbek.main.users (userType, username, password, institutionId)
+    uzbek.main.users (user_type, username, password, institution_id)
 VALUES
     ('localCollector', 'localCollector', 'localCollector', 1),
     ('localCoordinator', 'localCoordinator', 'localCoordinator', 1),

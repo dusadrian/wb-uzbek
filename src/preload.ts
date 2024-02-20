@@ -70,6 +70,9 @@ window.addEventListener("DOMContentLoaded", () => {
         case 'localCoordinator/04_add_user.html':
             localCoordinatorAddUser();
             break;
+        case 'localCoordinator/05_edit_user.html':
+            localCoordinatorEditUser();
+            break;
         case 'cityCollector/01_dashboard.html':
             cityCollectorDashboard();
             break;
@@ -222,6 +225,19 @@ const localCoordinatorAddUser = () => {
         return await import("./pages/localCoordinator/04_add_user");
     };
     importFile().then(result => result.addUser.init().catch(error => {
+        console.log(error);
+    }));
+};
+const localCoordinatorEditUser = () => {
+
+    topMenu('localCoordinator/03_users'); // back button
+
+    translatePage();
+
+    const importFile = async () => {
+        return await import("./pages/localCoordinator/05_edit_user");
+    };
+    importFile().then(result => result.editUser.init().catch(error => {
         console.log(error);
     }));
 };

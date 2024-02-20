@@ -6,7 +6,7 @@ VALUES
     ('City', '', '', '', '', '', 0, 0, 10, 10, 10);
     
 INSERT INTO
-    uzbek.main.users (userType, username, password, institutionId)
+    uzbek.main.users (user_type, username, password, institution_id)
 VALUES
     ('localCollector', 'localCollector', 'localCollector', 1),
     ('localCoordinator', 'localCoordinator', 'localCoordinator', 1),
