@@ -51,6 +51,23 @@ CREATE TABLE uzbek.main.institutions (
     PRIMARY KEY (id)
 );
 
+-- Create instrument table QMR
+CREATE SEQUENCE id_instrument_qmr_sequence START 1;
+
+CREATE TABLE uzbek.main.instrument_qmr (
+    id INT DEFAULT nextval('id_instrument_qmr_sequence'),
+    uuid UUID DEFAULT uuid(),
+    created_at TIMESTAMP DEFAULT current_timestamp,
+    updated_at TIMESTAMP DEFAULT current_timestamp,
+    PRIMARY KEY (id)
+);
+
+CREATE TABLE uzbek.main.values_qmr (
+    instrument_id INT NOT NULL,
+    variable VARCHAR NOT NULL,
+    value VARCHAR NOT NULL,
+    PRIMARY KEY (instrument_id, variable),
+);
 
 
 INSERT INTO

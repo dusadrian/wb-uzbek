@@ -14,6 +14,12 @@ export const localCoordinator = {
             });
         });
 
+        (<HTMLButtonElement>document.getElementById('viewEdit_QMR')).addEventListener('click', () => {
+            ipcRenderer.send('changeWindow', {
+                'name': 'instruments/01_qmr'
+            });
+        });
+
 
         (<HTMLButtonElement>document.getElementById('users')).addEventListener('click', () => {
             ipcRenderer.send('changeWindow', {

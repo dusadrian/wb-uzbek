@@ -4,7 +4,7 @@ process.env.NODE_ENV = "development";
 
 import { app, BrowserWindow, dialog, ipcMain } from "electron";
 import * as path from "path";
-import { database } from "./database/database";
+import { db, database } from "./database/database";
 import * as DI from "../src/interfaces/database";
 
 // language
@@ -148,6 +148,9 @@ ipcMain.on("changeWindow", (event, args) => {
         case "01_login":
             goToLogin(newPage);
             break;
+        case "instruments":
+            goToInstrument(args.name);
+            break;
         default:
             mainWindow.loadURL("file://" + newPage);
     }
@@ -204,6 +207,21 @@ const goToDashboard = () => {
     });
 
 }
+
+const goToInstrument = (name: string) => {
+
+    switch (name) {
+        case "01_qmr":
+            goToQMR();
+            break;
+        default:
+            dialog.showMessageBox(mainWindow, {
+                type: 'error',
+                message: i18n.__('Instrument error.'),
+            });
+    }
+};
+
 
 // Local Coordinator =================
 // -- institution details
@@ -297,6 +315,46 @@ ipcMain.on('deleteUser', (event, args) => {
         }
     });
 });
+
+
+// Instruments =================
+const goToQMR = () => {
+    // const newPage = path.join(__dirname, "../src/pages/instruments/01_qmr.html");
+    // mainWindow.loadURL("file://" + newPage);
+    // mainWindow.webContents.once("did-finish-load", () => {
+    //     database.getQMR().then((result) => {
+    //         mainWindow.webContents.send("qmr", result);
+    //     });
+    // });
+
+}
+
+(function test() {
+    database.instrumentSave({
+        instrument_id: null,
+        table: "qmr",
+        questions: {
+            "question1": {
+                value: "answer1"
+            },
+            "question2": {
+                value: "answer2"
+            },
+            "question3": {
+                value: "answer3"
+            },
+            "question4": {
+                value: "answer4"
+            },
+        },
+        // extras: {
+        //     cucu: 'bau',
+        // }
+    }, db)
+}());
+
+
+
 // Local Collector =================
 
 // City Collector =================
