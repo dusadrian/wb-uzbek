@@ -93,9 +93,9 @@ window.addEventListener("DOMContentLoaded", () => {
         case 'instruments/01_qmr_ru.html':
             instrumentQMR();
             break;
-        case 'instruments/01_dsee_en.html':
-        case 'instruments/01_dsee_uz.html':
-        case 'instruments/01_dsee_ru.html':
+        case 'instruments/02_dsee_en.html':
+        case 'instruments/02_dsee_uz.html':
+        case 'instruments/02_dsee_ru.html':
             instrumentDSEE();
             break;
     }
@@ -309,7 +309,7 @@ const mainDashboard = () => {
 const instrumentQMR = () => {
 
     topMenu('localCoordinator/01_dashboard');
-    
+
     const importFile = async () => {
         return await import("./pages/instruments/01_qmr");
     };
