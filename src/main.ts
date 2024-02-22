@@ -21,7 +21,7 @@ const i18n = new I18n({
 
 // only once instance of the app
 const gotTheLock = app.requestSingleInstanceLock();
-let mainWindow: BrowserWindow = null;
+let mainWindow: BrowserWindow;
 
 const appSession = {
     language: "en",

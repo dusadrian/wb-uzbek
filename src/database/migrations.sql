@@ -13,13 +13,13 @@ CREATE TYPE user_typeEnum AS ENUM (
     'main'
 );
 
-CREATE TABLE uzbek.main.users (
-    id INT DEFAULT nextval('id_users_sequence'),
+CREATE TABLE users (
+    id INTEGER DEFAULT nextval('id_users_sequence'),
     uuid UUID DEFAULT uuid(),
     user_type user_typeEnum,
     username VARCHAR NOT NULL,
     password VARCHAR NOT NULL,
-    institution_id INT,
+    institution_id INTEGER,
     first_name VARCHAR NULL,
     patronymics VARCHAR NULL,
     last_name VARCHAR NULL,
@@ -33,8 +33,8 @@ CREATE TABLE uzbek.main.users (
 -- Create institution table table
 CREATE SEQUENCE id_institution_sequence START 1;
 
-CREATE TABLE uzbek.main.institutions (
-    id INT DEFAULT nextval('id_institution_sequence'),
+CREATE TABLE institutions (
+    id INTEGER DEFAULT nextval('id_institution_sequence'),
     uuid UUID DEFAULT uuid(),
     name VARCHAR NOT NULL,
     code VARCHAR NOT NULL,
@@ -43,41 +43,41 @@ CREATE TABLE uzbek.main.institutions (
     region VARCHAR NOT NULL,
     district VARCHAR NOT NULL,
     type VARCHAR NOT NULL,
-    staffCount INT NOT NULL,
-    childrenCount INT NOT NULL,
-    youngAdultCount INT NOT NULL,
-    childrenHomeCount INT NOT NULL,
-    patronatCount INT NOT NULL,
+    staffCount INTEGER NOT NULL,
+    childrenCount INTEGER NOT NULL,
+    youngAdultCount INTEGER NOT NULL,
+    childrenHomeCount INTEGER NOT NULL,
+    patronatCount INTEGER NOT NULL,
     PRIMARY KEY (id)
 );
 
 -- Create instrument table QMR
 CREATE SEQUENCE id_instrument_qmr_sequence START 1;
 
-CREATE TABLE uzbek.main.instrument_qmr (
-    id INT DEFAULT nextval('id_instrument_qmr_sequence'),
+CREATE TABLE instrument_qmr (
+    id INTEGER DEFAULT nextval('id_instrument_qmr_sequence'),
     uuid UUID DEFAULT uuid(),
     created_at TIMESTAMP DEFAULT current_timestamp,
     updated_at TIMESTAMP DEFAULT current_timestamp,
     PRIMARY KEY (id)
 );
 
-CREATE TABLE uzbek.main.values_qmr (
-    instrument_id INT NOT NULL,
+CREATE TABLE values_qmr (
+    instrument_id INTEGER NOT NULL,
     variable VARCHAR NOT NULL,
     value VARCHAR NOT NULL,
-    PRIMARY KEY (instrument_id, variable),
+    PRIMARY KEY (instrument_id, variable)
 );
 
 
 INSERT INTO
-    uzbek.main.institutions (name, code, address, atuCode, region, district, type, staffCount, childrenCount, youngAdultCount, childrenHomeCount, patronatCount) 
+    institutions (name, code, address, atuCode, region, district, type, staffCount, childrenCount, youngAdultCount, childrenHomeCount, patronatCount) 
 VALUES
     ('Orphanage', '', '', '', '', '', '',10, 10, 0, 0, 0),
     ('City', '', '', '', '', '', '', 0, 0, 10, 10, 10);
     
 INSERT INTO
-    uzbek.main.users (user_type, username, password, institution_id)
+    users (user_type, username, password, institution_id)
 VALUES
     ('localCollector', 'localCollector', 'localCollector', 1),
     ('localCoordinator', 'localCoordinator', 'localCoordinator', 1),

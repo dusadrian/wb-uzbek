@@ -4,17 +4,22 @@ import * as DI from "../../src/interfaces/database";
 import { save as instrumentSave } from "./instruments";
 
 let dbFile = '';
+const duckdbOptions: {
+    access_mode: 'READ_WRITE' | 'READ_ONLY',
+    max_memory?: string
+} = {
+    'access_mode': 'READ_WRITE',
+    'max_memory': '4096MB',
+};
 if (process.env.NODE_ENV == 'development') {
     dbFile = path.join(path.resolve('./src/database/uzbek.duckdb'));
 } else {
     dbFile = path.join(path.resolve(__dirname), '../../../') + 'uzbek.duckdb';
+    duckdbOptions['access_mode'] = 'READ_WRITE';
+    delete duckdbOptions.max_memory;
 }
 
-export const db = new DuckDB.Database(dbFile, {
-    "access_mode": "READ_WRITE",
-    // "max_memory": "1024MB",
-    "threads": "16"
-},
+export const db = new DuckDB.Database(dbFile, duckdbOptions,
     (error) => {
         if (error) {
             console.log('DB failed to open');

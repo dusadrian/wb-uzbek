@@ -12,18 +12,22 @@ export const header = {
     init: async (backPage: string, filePath = "../_header.html") => {
         const resp = await fetch(filePath);
         const html = await resp.text();
-        document.getElementById('header').insertAdjacentHTML("beforeend", html);
 
-        console.log('header init');
-        
-
-        // set header_username and institution name
-        const appSession = JSON.parse(sessionStorage.getItem('appSession'));
-        if (appSession !== null) {
-            document.getElementById('header_username').innerText = (appSession.institutionName ? appSession.institutionName + ' | ' : '') + appSession.userName;
+        const headerDiv = document.getElementById('header') as HTMLDivElement;
+        if (headerDiv) {
+            headerDiv.insertAdjacentHTML("beforeend", html);
+        } else {
+            console.error('Header div not found');
         }
 
-        document.getElementById('logout_text').innerText = i18n.__("logout");
+        // set header_username and institution name
+        const appSessionStorage = sessionStorage.getItem('appSession');
+        if (appSessionStorage !== null) {
+            const appSession = JSON.parse(appSessionStorage);
+            (document.getElementById('header_username') as HTMLSpanElement).innerText = (appSession.institutionName ? appSession.institutionName + ' | ' : '') + appSession.userName;
+        }
+
+        (document.getElementById('logout_text') as HTMLSpanElement).innerText = i18n.__("logout");
         const logout = document.getElementById("logout") as HTMLInputElement;
         logout.addEventListener("click", () => {
             ipcRenderer.send("changeWindow", { name: "index" });
@@ -33,7 +37,7 @@ export const header = {
             if (backPage === 'index') {
                 back.style.display = 'none';
             }
-            document.getElementById('back_text').innerText = i18n.__("back");
+            (document.getElementById('back_text') as HTMLSpanElement).innerText = i18n.__("back");
             back.addEventListener("click", () => {
                 ipcRenderer.send("changeWindow", { name: backPage });
             });
