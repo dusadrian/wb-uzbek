@@ -5,10 +5,17 @@ export interface InstrumentData {
     table: string;
     extras?: Record<string, string>;
     questions: Record<string, { value: string }>;
-
+}
+export interface Instrument {
+    id: number;
+    uuid: string;
+    created_at: string;
+    updated_at: string;
+    instrument_id: number;
+    variable: string;
+    value: string;
 }
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const save = async (data: InstrumentData, db: DuckDB.Database) => {
     const connection = new Promise<number>((resolve) => {
 
@@ -96,3 +103,35 @@ export const save = async (data: InstrumentData, db: DuckDB.Database) => {
     return await connection;
 };
 
+export const get = async (id: string, table: string, db: DuckDB.Database) => {
+    const connection = new Promise<Array<Instrument>>((resolve) => {
+
+        const sql = `SELECT * FROM instrument_${table} LEFT JOIN values_${table} ON instrument_${table}.id = values_${table}.instrument_id WHERE id = ?`;
+        db.all(sql, id, (error, result) => {
+            if (error) {
+                console.log("===== Error get instrument =====");
+                console.log(error);
+            }
+            resolve(result as Array<Instrument>);
+        });
+    });
+    return await connection;
+}
+
+export const getExisting = async (db: DuckDB.Database) => {
+
+    const connection = new Promise<{qmr: number | null, dsee: number | null}>((resolve) => {
+        const sql = `SELECT (SELECT id FROM instrument_qmr) AS qmr, (SELECT id FROM instrument_dsee) AS dsee;`;
+        db.all(sql, (error, result) => {
+            if (error) {
+                console.log("===== Error get instrument id =====");
+                console.log(error);
+            }
+            resolve({
+                qmr: result[0].qmr,
+                dsee: result[0].dsee
+            });
+        });
+    });
+    return await connection;
+}

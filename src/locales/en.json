@@ -5,8 +5,8 @@
 	"login_message": "Hello! Please log in",
 	"empty_username_password": "Please fill in all fields",
 	"User error. Please login again.": "User error. Please login again.",
-	"logout": "Exit",
-	"back": "Back",
+	"t_logout": "Exit",
+	"t_back": "Back",
 	"menuScreen": "Please choose an option",
 	"dashboard": "Dashboard",
 	"dataEntry": "Data Entry",
@@ -101,5 +101,6 @@
 	"User deleted.": "User deleted.",
 	"Are you sure you want to delete this user?": "Are you sure you want to delete this user?",
 	"ATU code must be 12 characters long": "ATU code must be 12 characters long",
-	"Please enter a valid email address": "Please enter a valid email address"
+	"Please enter a valid email address": "Please enter a valid email address",
+	"Instrument error.": "Instrument error."
 }

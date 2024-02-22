@@ -151,7 +151,7 @@ ipcMain.on("changeWindow", (event, args) => {
             goToLogin(newPage);
             break;
         case "instruments":
-            goToInstrument(args.name);
+            goToInstrument(args.instrument, args.id);
             break;
         default:
             mainWindow.loadURL("file://" + newPage);
@@ -205,16 +205,23 @@ const goToDashboard = () => {
             appSession.institutionName = "";
             mainWindow.webContents.send("appSession", appSession);
         }
-
+        if (appSession.user_type === "localCoordinator") {
+            database.getExisting(db).then((result: { qmr: number | null, dsee: number | null }) => {
+                mainWindow.webContents.send('existing', result);
+            });
+        }
     });
 
 }
 
-const goToInstrument = (name: string) => {
+const goToInstrument = (instrument: string, id: string) => {
 
-    switch (name) {
-        case "01_qmr":
-            goToQMR();
+    switch (instrument) {
+        case "QMR":
+            goToQMR(id);
+            break;
+        case "DSEE":
+            goToDSEE(id);
             break;
         default:
             dialog.showMessageBox(mainWindow, {
@@ -320,15 +327,27 @@ ipcMain.on('deleteUser', (event, args) => {
 
 
 // Instruments =================
-const goToQMR = () => {
-    // const newPage = path.join(__dirname, "../src/pages/instruments/01_qmr.html");
-    // mainWindow.loadURL("file://" + newPage);
-    // mainWindow.webContents.once("did-finish-load", () => {
-    //     database.getQMR().then((result) => {
-    //         mainWindow.webContents.send("qmr", result);
-    //     });
-    // });
-
+const goToQMR = (id: string) => {
+    const newPage = path.join(__dirname, "../src/pages/instruments/01_qmr_" + appSession.language + ".html");
+    mainWindow.loadURL("file://" + newPage);
+    if (id) {
+        mainWindow.webContents.once("did-finish-load", () => {
+            database.instrumentGet(id, 'qmr', db).then((result) => {
+                mainWindow.webContents.send("qmr", result);
+            });
+        });
+    }
+}
+const goToDSEE = (id: string) => {
+    const newPage = path.join(__dirname, "../src/pages/instruments/02_dsee_" + appSession.language + ".html");
+    mainWindow.loadURL("file://" + newPage);
+    if (id) {
+        mainWindow.webContents.once("did-finish-load", () => {
+            database.instrumentGet(id, 'dsee', db).then((result) => {
+                mainWindow.webContents.send("dsee", result);
+            });
+        });
+    }
 }
 
 // (function test() {

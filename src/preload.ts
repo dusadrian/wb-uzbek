@@ -14,7 +14,7 @@ ipcRenderer.on('appSession', (event, arg) => {
     sessionStorage.setItem('appSession', JSON.stringify(arg));
     username = (arg.institutionName ? arg.institutionName + ' | ' : '') + arg.userName;
     const us = document.getElementById('header_username');
-    if(us){
+    if (us) {
         us.innerText = username;
     }
 });
@@ -42,6 +42,9 @@ window.addEventListener("DOMContentLoaded", () => {
     }
     if (location.href.includes('main')) {
         file = 'main/' + file;
+    }
+    if (location.href.includes('instruments')) {
+        file = 'instruments/' + file;
     }
 
     // set language
@@ -84,6 +87,16 @@ window.addEventListener("DOMContentLoaded", () => {
             break;
         case 'main/01_dashboard.html':
             mainDashboard();
+            break;
+        case 'instruments/01_qmr_en.html':
+        case 'instruments/01_qmr_uz.html':
+        case 'instruments/01_qmr_ru.html':
+            instrumentQMR();
+            break;
+        case 'instruments/01_dsee_en.html':
+        case 'instruments/01_dsee_uz.html':
+        case 'instruments/01_dsee_ru.html':
+            instrumentDSEE();
             break;
     }
 
@@ -291,6 +304,32 @@ const mainDashboard = () => {
         console.log(error);
     }));
 };
+
+// Instruments ==========
+const instrumentQMR = () => {
+
+    topMenu('localCoordinator/01_dashboard');
+    
+    const importFile = async () => {
+        return await import("./pages/instruments/01_qmr");
+    };
+    importFile().then(result => result.instrument.init().catch(error => {
+        console.log(error);
+    }));
+};
+const instrumentDSEE = () => {
+
+    topMenu('localCoordinator/01_dashboard');
+
+    const importFile = async () => {
+        return await import("./pages/instruments/02_dsee");
+    };
+    importFile().then(result => result.instrument.init().catch(error => {
+        console.log(error);
+    }));
+};
+
+
 
 const translatePage = () => {
     const el = document.querySelectorAll("span[class^='t_']");

@@ -1,12 +1,43 @@
 import { ipcRenderer } from "electron";
 
+interface IObj {
+    'name': string,
+    'instrument': string,
+    'id'?: string
+}
+
 export const localCoordinator = {
     init: async () => {
+        
+        const viewEdit_QMR = (<HTMLButtonElement>document.getElementById('viewEdit_QMR'))
+        if (viewEdit_QMR !== null) {
+            viewEdit_QMR.addEventListener('click', () => {
+                const obj: IObj = {
+                    'name': 'instruments',
+                    'instrument': 'QMR'
+                }
+                const instId = viewEdit_QMR.dataset.id;
+                if (instId && instId !== 'null') {
+                    obj['id'] = instId;
+                }
+                ipcRenderer.send('changeWindow', obj);
+            });
+        }
 
-
-        // (<HTMLButtonElement>document.getElementById('viewEdit_QMR')).addEventListener('click', () => {
-        //     alert('viewEdit_QMR');
-        // });
+        const viewEdit_DSEE = (<HTMLButtonElement>document.getElementById('viewEdit_DSEE'));
+        if (viewEdit_DSEE !== null) {
+            viewEdit_DSEE.addEventListener('click', () => {
+                const obj: IObj = {
+                    'name': 'instruments',
+                    'instrument': 'DSEE'
+                }
+                const instId = viewEdit_DSEE.dataset.id;
+                if (instId && instId !== 'null') {
+                    obj['id'] = instId;
+                }
+                ipcRenderer.send('changeWindow', obj);
+            });
+        }
 
         (<HTMLButtonElement>document.getElementById('viewEdit_ID')).addEventListener('click', () => {
             ipcRenderer.send('changeWindow', {
@@ -14,27 +45,15 @@ export const localCoordinator = {
             });
         });
 
-        (<HTMLButtonElement>document.getElementById('viewEdit_QMR')).addEventListener('click', () => {
-            ipcRenderer.send('changeWindow', {
-                'name': 'instruments/01_qmr'
-            });
-        });
-
-
         (<HTMLButtonElement>document.getElementById('users')).addEventListener('click', () => {
             ipcRenderer.send('changeWindow', {
                 'name': 'localCoordinator/03_users'
             });
         });
 
-
-        // ipcRenderer.on("instrumentDataReady", (_event, args) => {
-
-        //     console.log(args);
-
-        //     getStatus(args.sections.section1, 'section1', 4);
-        //     getStatus(args.sections.section2, 'section2', 6);
-        //     getStatus(args.sections.section3, 'section3', 4);
-        // })
+        ipcRenderer.on("existing", (_event, args) => {
+            viewEdit_QMR.dataset.id = args.qmr;
+            viewEdit_DSEE.dataset.id = args.dsee;
+        })
     }
 }
