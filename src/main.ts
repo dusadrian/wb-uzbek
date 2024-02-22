@@ -86,7 +86,9 @@ if (!gotTheLock) {
 }
 // Quit when all windows are closed.
 app.on("window-all-closed", () => {
-    app.quit();
+    db.close(() => {
+        app.quit();
+    });
 });
 app.on("activate", () => {
     if (BrowserWindow.getAllWindows().length === 0) {
@@ -329,29 +331,32 @@ const goToQMR = () => {
 
 }
 
-(function test() {
-    database.instrumentSave({
-        instrument_id: null,
-        table: "qmr",
-        questions: {
-            "question1": {
-                value: "answer1"
-            },
-            "question2": {
-                value: "answer2"
-            },
-            "question3": {
-                value: "answer3"
-            },
-            "question4": {
-                value: "answer4"
-            },
-        },
-        // extras: {
-        //     cucu: 'bau',
-        // }
-    }, db)
-}());
+// (function test() {
+//     database.instrumentSave({
+//         instrument_id: 3,
+//         table: "qmr",
+//         questions: {
+//             "question1": {
+//                 value: "answer1"
+//             },
+//             "question2": {
+//                 value: "answer2"
+//             },
+//             "question3": {
+//                 value: "answer3"
+//             },
+//             "question4": {
+//                 value: "4"
+//             },
+//             "question5": {
+//                 value: "answer5"
+//             },
+//         },
+//         // extras: {
+//         //     cucu: 'bau',
+//         // }
+//     }, db)
+// }());
 
 
 
