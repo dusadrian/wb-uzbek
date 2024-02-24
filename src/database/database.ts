@@ -3,7 +3,7 @@ import * as DuckDB from "duckdb";
 import * as DI from "../../src/interfaces/database";
 import { save as instrumentSave, get as instrumentGet, getExisting } from "./instruments";
 
-let dbFile = '';
+
 const duckdbOptions: {
     access_mode: 'READ_WRITE' | 'READ_ONLY',
     max_memory?: string
@@ -11,13 +11,24 @@ const duckdbOptions: {
     'access_mode': 'READ_WRITE',
     'max_memory': '4096MB',
 };
-if (process.env.NODE_ENV == 'development') {
-    dbFile = path.join(path.resolve('./src/database/uzbek.duckdb'));
-} else {
-    dbFile = path.join(path.resolve(__dirname), '../../../') + 'uzbek.duckdb';
+
+
+let dbDir = path.resolve("./src/database/");
+
+if (process.env.NODE_ENV == 'production') {
+    dbDir = path.join(path.resolve(__dirname), '../../../');
     duckdbOptions['access_mode'] = 'READ_WRITE';
     delete duckdbOptions.max_memory;
 }
+
+const dbFile = path.join(dbDir, "uzbek.duckdb");
+
+// TODO function to export (transposed) tables into parquet files for R:
+// `
+//  COPY (PIVOT values_qmr ON variable USING MAX(value) GROUP BY instrument_id)
+//  TO '${path.join(dbDir, "qmr.parquet")}'
+//  (FORMAT 'parquet')
+// `
 
 export const db = new DuckDB.Database(dbFile, duckdbOptions,
     (error) => {
