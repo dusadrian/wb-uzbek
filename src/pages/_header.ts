@@ -17,7 +17,7 @@ export const header = {
         if (headerDiv) {
             headerDiv.insertAdjacentHTML("beforeend", html);
             console.log('Header found');
-            
+
         } else {
             console.error('Header div not found');
         }
@@ -29,7 +29,7 @@ export const header = {
             (document.getElementById('header_username') as HTMLSpanElement).innerText = (appSession.institutionName ? appSession.institutionName + ' | ' : '') + appSession.userName;
         }
 
-        (document.getElementById('logout_text') as HTMLSpanElement).innerText = i18n.__("t_logout");
+        (document.getElementById('logout_text') as HTMLSpanElement).innerText = i18n.__("logout");
         const logout = document.getElementById("logout") as HTMLInputElement;
         logout.addEventListener("click", () => {
             ipcRenderer.send("changeWindow", { name: "index" });
@@ -39,7 +39,7 @@ export const header = {
             if (backPage === 'index') {
                 back.style.display = 'none';
             }
-            (document.getElementById('back_text') as HTMLSpanElement).innerText = i18n.__("t_back");
+            (document.getElementById('back_text') as HTMLSpanElement).innerText = i18n.__("back");
             back.addEventListener("click", () => {
                 ipcRenderer.send("changeWindow", { name: backPage });
             });
