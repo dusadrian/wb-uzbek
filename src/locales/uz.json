@@ -3,7 +3,8 @@
 	"username": "Tashkilot kodi",
 	"login": "Tizimga kirish",
 	"login_message": "Salom! Iltimos, tizimga kiring",
-	"empty_username_password": "Please fill in all fields",
+	"empty_username_password": "Iltimos, barcha maydonlarni to'ldiring",
+	"User error. Please login again.": "Foydalanuvchi xatosi. Iltimos, qayta kiring.",
 	"logout": "Chiqish",
 	"back": "Orqaga",
 	"menuScreen": "Iltimos, variantni tanlang",
@@ -21,7 +22,6 @@
 	"Instrument error.": "Asbob xatosi.",
 	"User added.": "Foydalanuvchi qo'shildi.",
 	"Institution": " ========================================== ",
-
 
 
 	"t_service_level_view_data_collectors": "Xizmat darajasi ko'rinishi / Ma'lumot yig'uvchilar",
