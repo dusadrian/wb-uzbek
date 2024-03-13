@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>WorldBank</title>
+    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'" />
+    <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self'" />
+    <link href="../dist/main.css" rel="stylesheet">
+</head>
+
+<body>
+    <form class="px-6 mt-10">
+        <div class="grid grid-cols-12 border">
+            <div class="col-span-1 bg-stone-200 p-2"></div>
+            <div class="col-span-11 p-2">
+                <h1 class="text-4xl text-gray-700 pl-4 tracking-wide"><%= it.t1 %></h1>
+            </div>
+        </div>
+
+        <p class="mt-4 mb-2 text-xl"><%= it.t2 %></p>
+        <p class="mb-2"><%= it.t3 %></p>
+        <p class="mb-2"><%= it.t4 %></p>
+        <p class="mb-2"><%= it.t5 %></p>
+        <p class="mb-2"><%= it.t6 %></p>
+        <p class="mb-2"><%= it.t7 %></p>
+        <p class="mb-2"><%= it.t8 %></p>
+        <p class="mb-2"><%= it.t9 %></p>
+        <p class="mb-2"><%= it.t10 %></p>
+
+        <div class="grid grid-cols-2 gap-4 items-center mt-10">
+            <div><%= it.t11 %> <%= it.t12 %></div>
+            <div>
+                <input type="text" id="q1" name="q1" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+            </div>
+        </div>
+        <div class="grid grid-cols-2 gap-4 items-center mt-4">
+            <div><%= it.t13 %> <%= it.t14 %></div>
+            <div>
+                <input type="text" id="q2" name="q2" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+            </div>
+        </div>
+        <div class="grid grid-cols-2 gap-4 items-center mt-4">
+            <div>
+                <div class="grid grid-cols-5 gap-4 items-center mt-4">
+                    <div class="col-span-2"><%= it.t15 %> <%= it.t16 %></div>
+                    <div class="col-span-3">
+                        <input type="text" id="q3" name="q3" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="grid grid-cols-5 gap-4 items-center mt-4">
+                    <div class="col-span-2"><%= it.t17 %> <%= it.t18 %></div>
+                    <div class="col-span-3">
+                        <input type="text" id="q4" name="q4" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="grid grid-cols-2 gap-4 items-center mt-4">
+            <div>
+                <div class="grid grid-cols-5 gap-4 items-center mt-4">
+                    <div class="col-span-2"><%= it.t19 %> <%= it.t20 %></div>
+                    <div class="col-span-3">
+                        <input type="text" id="q5" name="q5" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="grid grid-cols-5 gap-4 items-center mt-4">
+                    <div class="col-span-2"><%= it.t21 %> <%= it.t22 %></div>
+                    <div class="col-span-3">
+                        <input type="text" id="q6" name="q6" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <h2 class="mt-10 mb-4 text-xl font-medium text-gray-700"><%= it.t23 %></h2>
+
+        <div class="grid grid-cols-2 gap-4 items-center mt-4">
+            <div><%= it.t24 %>. <%= it.t25 %></div>
+            <div>
+                <input type="text" id="i1" name="i1" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+            </div>
+        </div>
+        <div class="grid grid-cols-2 gap-4 items-center mt-4">
+            <div><%= it.t26 %>. <%= it.t27 %></div>
+            <div>
+                <input type="text" id="i2" name="i2" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+            </div>
+        </div>
+        <div class="grid grid-cols-2 gap-4 items-center mt-4">
+            <div><%= it.t28 %>. <%= it.t29 %></div>
+            <div>
+                <input type="text" id="i3" name="i3" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+            </div>
+        </div>
+        <div class="grid grid-cols-2 gap-4 items-center mt-4">
+            <div><%= it.t30 %>. <%= it.t31 %></div>
+            <div>
+                <input type="text" id="i4" name="i4" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+            </div>
+        </div>
+        <div class="grid grid-cols-2 gap-4 items-center mt-4">
+            <div>
+                <div class="grid grid-cols-5 gap-4 mt-4">
+                    <div class="col-span-2"><%= it.t32 %>. <%= it.t33 %></div>
+                    <div class="col-span-3">
+                        <input type="text" id="i4a" name="i4a" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+                        <small class="italic text-red-500"><%= it.t34 %></small>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="grid grid-cols-5 gap-4 mt-4">
+                    <div class="col-span-2"><%= it.t35 %>. <%= it.t36 %></div>
+                    <div class="col-span-3">
+                        <input type="text" id="i4b" name="i4b" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+                        <small class="italic text-red-500"><%= it.t37 %></small>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="grid grid-cols-2 gap-4 items-center mt-4">
+            <div><%= it.t38 %>. <%= it.t39 %></div>
+            <div>
+                <select id="i9" name="i9" class="border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+                    <option selected><%= it.t40 %></option>
+                    <optgroup label="<%= it.t41 %>">
+                        <option value="11"><%= it.t42 %></option>
+                        <option value="12"><%= it.t43 %></option>
+                        <option value="13"><%= it.t44 %></option>
+                    </optgroup>
+                    <optgroup label="<%= it.t45 %>">
+                        <option value="21"><%= it.t46 %></option>
+                        <option value="22"><%= it.t47 %></option>
+                        <option value="23"><%= it.t48 %></option>
+                        <option value="24"><%= it.t49 %></option>
+                        <option value="25"><%= it.t50 %></option>
+                        <option value="26"><%= it.t51 %></option>
+                    </optgroup>
+                </select>
+            </div>
+        </div>
+
+
+
+    </form>
+</body>
+
+</html>

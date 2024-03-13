@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>WorldBank</title>
+    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'" />
+    <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self'" />
+    <link href="../dist/main.css" rel="stylesheet">
+</head>
+
+<body>
+    <form class="px-6 mt-10">
+        <div class="grid grid-cols-12 border">
+            <div class="col-span-1 bg-stone-200 p-2"></div>
+            <div class="col-span-11 p-2">
+                <h1 class="text-4xl text-gray-700 pl-4 tracking-wide">Лист сбора сводных данных о поступлении и выходе из детского учреждения и специализированной школы-интерната</h1>
+            </div>
+        </div>
+
+        <p class="mt-4 mb-2 text-xl">ВВЕДЕНИЕ</p>
+        <p class="mb-2">Основной целью данного сбора данных является оказание поддержки Правительству Узбекистана в переходе от интернатной опеки к семейным видам опеки над детьми, лишенных родительской опеки Для достижения этой цели мы намерены создать надежный механизм мониторинга на национальном уровне Собирая подробные данные, мы можем принимать обоснованные решения и разрабатывать политику, способствующие распространению альтернативных семейных форм опеки</p>
+        <p class="mb-2">Еще одной важнейшей задачей является повышение качества услуг, предоставляемых детям с инвалидностью в специализированных учреждениях Понимая их уникальные потребности и опыт, мы можем разработать целенаправленные виды вмешательства и улучшить их общее самочувствие Кроме того, мы стремимся использовать и продвигать адекватные альтернативы семейного типа опеки для этих детей</p>
+        <p class="mb-2">Целью данного информационного бюллетеня является всестороннее отслеживание динамики поступления и выхода детей из детских учреждений и школ-интернатов Собирая важную информацию, мы стремимся принимать обоснованные решения, основанные на фактических данных, совершенствовать политику и улучшать общее функционирование служб по опеке над детьми</p>
+        <p class="mb-2">ЦЕЛЬ: Данные, собранные с помощью этого инструмента, способствуют пониманию динамики перевода детей в интернатные центры и из них Это помогает нам выявить закономерности, тенденции и потенциальные области, требующие внимания или улучшения</p>
+        <p class="mb-2">Как заполнять: Данный вопросник необходимо заполнять индивидуально для каждого учреждения, действующего на момент проведения исследования (1 января 2024 г)</p>
+        <p class="mb-2">Источник информации: документы учреждения</p>
+        <p class="mb-2">Ответственный за выполнение: руководитель учреждения, координатор или уполномоченное ими лицо</p>
+        <p class="mb-2">Примерное среднее время выполнения: 40 минут</p>
+
+        <div class="grid grid-cols-2 gap-4 items-center mt-10">
+            <div>Q1 Дата заполнения анкеты</div>
+            <div>
+                <input type="text" id="q1" name="q1" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+            </div>
+        </div>
+        <div class="grid grid-cols-2 gap-4 items-center mt-4">
+            <div>Q2 Имя, отчество и фамилия лица, заполнившего анкету</div>
+            <div>
+                <input type="text" id="q2" name="q2" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+            </div>
+        </div>
+        <div class="grid grid-cols-2 gap-4 items-center mt-4">
+            <div>
+                <div class="grid grid-cols-5 gap-4 items-center mt-4">
+                    <div class="col-span-2">Q3 Должность</div>
+                    <div class="col-span-3">
+                        <input type="text" id="q3" name="q3" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="grid grid-cols-5 gap-4 items-center mt-4">
+                    <div class="col-span-2">Q4 Профессия</div>
+                    <div class="col-span-3">
+                        <input type="text" id="q4" name="q4" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="grid grid-cols-2 gap-4 items-center mt-4">
+            <div>
+                <div class="grid grid-cols-5 gap-4 items-center mt-4">
+                    <div class="col-span-2">Q5 Телефон</div>
+                    <div class="col-span-3">
+                        <input type="text" id="q5" name="q5" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="grid grid-cols-5 gap-4 items-center mt-4">
+                    <div class="col-span-2">Q6 Электронная почта</div>
+                    <div class="col-span-3">
+                        <input type="text" id="q6" name="q6" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <h2 class="mt-10 mb-4 text-xl font-medium text-gray-700">1 ОБЩАЯ ИНФОРМАЦИЯ ОБ УЧРЕЖДЕНИИ</h2>
+
+        <div class="grid grid-cols-2 gap-4 items-center mt-4">
+            <div>I1. Название специализированного учебного заведения</div>
+            <div>
+                <input type="text" id="i1" name="i1" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+            </div>
+        </div>
+        <div class="grid grid-cols-2 gap-4 items-center mt-4">
+            <div>I2. Код учреждения из реестра</div>
+            <div>
+                <input type="text" id="i2" name="i2" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+            </div>
+        </div>
+        <div class="grid grid-cols-2 gap-4 items-center mt-4">
+            <div>I3. Адрес учреждения</div>
+            <div>
+                <input type="text" id="i3" name="i3" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+            </div>
+        </div>
+        <div class="grid grid-cols-2 gap-4 items-center mt-4">
+            <div>I4. Код административно-территориальной единицы (МҲОБТ)</div>
+            <div>
+                <input type="text" id="i4" name="i4" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+            </div>
+        </div>
+        <div class="grid grid-cols-2 gap-4 items-center mt-4">
+            <div>
+                <div class="grid grid-cols-5 gap-4 mt-4">
+                    <div class="col-span-2">I4a. Область</div>
+                    <div class="col-span-3">
+                        <input type="text" id="i4a" name="i4a" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+                        <small class="italic text-red-500">(Автоматически извлекается из I4)</small>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="grid grid-cols-5 gap-4 mt-4">
+                    <div class="col-span-2">I4b. Район</div>
+                    <div class="col-span-3">
+                        <input type="text" id="i4b" name="i4b" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+                        <small class="italic text-red-500">(Автоматически извлекается из I4)</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="grid grid-cols-2 gap-4 items-center mt-4">
+            <div>I9. Тип учреждения</div>
+            <div>
+                <select id="i9" name="i9" class="border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+                    <option selected>Пожалуйста, выберите один из следующих кодов</option>
+                    <optgroup label="Детские учреждения:">
+                        <option value="11">11 Детский дом (Дом ребенка)</option>
+                        <option value="12">12 Дом «Мехрибонлик»</option>
+                        <option value="13">13 Дом-интернат «Мурувват» для детей с инвалидностью</option>
+                    </optgroup>
+                    <optgroup label="Школы-интернаты:">
+                        <option value="21">21 Тип I-II для глухих или слабослышащих детей</option>
+                        <option value="22">22 Тип III-IV для слепых или слабовидящих детей</option>
+                        <option value="23">23 V тип для детей с тяжелыми нарушениями речи</option>
+                        <option value="24">24 VI тип для детей с нарушениями опорно-двигательного аппарата</option>
+                        <option value="25">25 Тип VII для детей с детьми с задержкой психического развития/психическими нарушениями</option>
+                        <option value="26">26 Тип VIII для детей с ограниченными интеллектуальными возможностями</option>
+                    </optgroup>
+                </select>
+            </div>
+        </div>
+
+
+
+    </form>
+</body>
+
+</html>

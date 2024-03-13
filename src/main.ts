@@ -17,6 +17,16 @@ const i18n = new I18n({
 
 // translate pages
 // import { Eta } from "eta"
+// import { writeFileSync } from "original-fs";
+// import * as six_en from "./templates/6_UZ_ChildDI_Entries_Exists_Sheet_en.json";
+// import * as six_ru from "./templates/6_UZ_ChildDI_Entries_Exists_Sheet_ru.json";
+// import * as six_uz from "./templates/6_UZ_ChildDI_Entries_Exists_Sheet_uz.json";
+// const etaObj = new Eta({ views: path.join(__dirname, "../src/templates") })
+
+// writeFileSync(path.join(__dirname, "../src/templates/6_UZ_ChildDI_Entries_Exists_Sheet_en.html"), etaObj.render("6_UZ_ChildDI_Entries_Exists_Sheet.eta", six_en))
+// writeFileSync(path.join(__dirname, "../src/templates/6_UZ_ChildDI_Entries_Exists_Sheet_ru.html"), etaObj.render("6_UZ_ChildDI_Entries_Exists_Sheet.eta", six_ru))
+// writeFileSync(path.join(__dirname, "../src/templates/6_UZ_ChildDI_Entries_Exists_Sheet_uz.html"), etaObj.render("6_UZ_ChildDI_Entries_Exists_Sheet.eta", six_uz))
+
 // import * as en from "./locales/en.json";
 
 // only once instance of the app

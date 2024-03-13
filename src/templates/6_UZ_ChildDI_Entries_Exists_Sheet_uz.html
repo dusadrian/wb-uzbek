@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>WorldBank</title>
+    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'" />
+    <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self'" />
+    <link href="../dist/main.css" rel="stylesheet">
+</head>
+
+<body>
+    <form class="px-6 mt-10">
+        <div class="grid grid-cols-12 border">
+            <div class="col-span-1 bg-stone-200 p-2"></div>
+            <div class="col-span-11 p-2">
+                <h1 class="text-4xl text-gray-700 pl-4 tracking-wide">Bolalar muassasasi va ixtisoslashtirilgan maktab-internatlarga qabul qilish va ulardan chiqarish bo&#39;yicha umumlashgan ma&#39;lumotlarni yig&#39;ish varaqasi</h1>
+            </div>
+        </div>
+
+        <p class="mt-4 mb-2 text-xl">KIRISH</p>
+        <p class="mb-2">Ushbu ma&#39;lumotlarni to&#39;plashning asosiy maqsadi O&#39;zbekiston Hukumatini ota-ona qaramog&#39;idan mahrum bo&#39;lgan bolalarga institutsional g&#39;amxo&#39;rlik qilishdan oila tipidagi parvarishga o&#39;tishda qo&#39;llab-quvvatlashdan iborat Bunga erishish uchun milliy darajada mustahkam nazorat mexanizmini qurishni maqsad qilganmiz Batafsil ma&#39;lumotlarni to&#39;plash orqali biz oilaga asoslangan alternativalarni targ&#39;ib qiluvchi dalillarga asoslangan qarorlar va qoidalarni ishlab chiqishimiz mumkin</p>
+        <p class="mb-2">Yana bir muhim vazifa nogironligi boʻlgan bolalarga koʻrsatilayotgan xizmatlar sifatini oshirishdir Ularning o&#39;ziga xos ehtiyojlari va tajribalarini tushunish orqali biz maqsadli aralashuvlarni ishlab chiqishimiz va ularning umumiy farovonligini oshirishimiz mumkin Bundan tashqari, biz ushbu bolalar uchun etarli oilaviy turdagi vasiylik alternativalarni tadqiq qilishga va targ&#39;ib qilishga harakat qilamiz</p>
+        <p class="mb-2">Ushbu ma&#39;lumotlarni to&#39;plash varaqasining maqsadi bolalarning bolalarni parvarishlash muassasalari va internat maktablariga kirish va chiqishlari dinamikasini kompleks izlashdan iborat Zarur ma&#39;lumotlarni qo&#39;lga kiritish orqali biz dalillarga asoslangan qarorlarni xabardor qilish, siyosatni takomillashtirish va bolalarga vasiylik qilish xizmatlarining umumiy faoliyatini yaxshilashni maqsad qilganmiz</p>
+        <p class="mb-2">MAQSAD: Ushbu vosita orqali to&#39;plangan ma&#39;lumotlar bolalarning internat markazlariga o&#39;tkazish va undan chiqish dinamikasini tushunishga yordam beradi Bu bizga e&#39;tibor yoki yaxshilash talab etadigan qonuniyatlar, tendentsiyalar va salohiyat sohalarini   aniqlashga yordam beradi</p>
+        <p class="mb-2">To&#39;ldirilishi: Ushbu so&#39;rovnoma tadqiqot vaqtida (2024 yil 1 yanvar) faoliyat yuritayotgan har bir muassasa uchun individual tarzda to&#39;ldirilishi kerak </p>
+        <p class="mb-2">Ma&#39;lumot manbai: muassasa hujjatlari</p>
+        <p class="mb-2">To&#39;ldirish uchun mas&#39;ul: muassasa rahbari, muvofiqlashtiruvchi yoki ular tomonidan vakolat berilgan shaxs</p>
+        <p class="mb-2">Taxminan o&#39;rtacha bajarish vaqti: 40 daqiqa</p>
+
+        <div class="grid grid-cols-2 gap-4 items-center mt-10">
+            <div>Q1 Anketani to&#39;ldirish sanasi</div>
+            <div>
+                <input type="text" id="q1" name="q1" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+            </div>
+        </div>
+        <div class="grid grid-cols-2 gap-4 items-center mt-4">
+            <div>Q2 Anketani to&#39;ldirgan shaxsning ismi, otasining ismi va familiyasi</div>
+            <div>
+                <input type="text" id="q2" name="q2" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+            </div>
+        </div>
+        <div class="grid grid-cols-2 gap-4 items-center mt-4">
+            <div>
+                <div class="grid grid-cols-5 gap-4 items-center mt-4">
+                    <div class="col-span-2">Q3 Lavozimi</div>
+                    <div class="col-span-3">
+                        <input type="text" id="q3" name="q3" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="grid grid-cols-5 gap-4 items-center mt-4">
+                    <div class="col-span-2">Q4 Kasbi</div>
+                    <div class="col-span-3">
+                        <input type="text" id="q4" name="q4" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="grid grid-cols-2 gap-4 items-center mt-4">
+            <div>
+                <div class="grid grid-cols-5 gap-4 items-center mt-4">
+                    <div class="col-span-2">Q5 Telefoni</div>
+                    <div class="col-span-3">
+                        <input type="text" id="q5" name="q5" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="grid grid-cols-5 gap-4 items-center mt-4">
+                    <div class="col-span-2">Q6 Electron manzili</div>
+                    <div class="col-span-3">
+                        <input type="text" id="q6" name="q6" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <h2 class="mt-10 mb-4 text-xl font-medium text-gray-700">1 MUASSASA HAQIDA UMUMIY MA&#39;LUMOT</h2>
+
+        <div class="grid grid-cols-2 gap-4 items-center mt-4">
+            <div>I1. Ixtisoslashgan ta&#39;lim muassasasining nomi</div>
+            <div>
+                <input type="text" id="i1" name="i1" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+            </div>
+        </div>
+        <div class="grid grid-cols-2 gap-4 items-center mt-4">
+            <div>I2. Reyestrdagi muassasa kodi</div>
+            <div>
+                <input type="text" id="i2" name="i2" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+            </div>
+        </div>
+        <div class="grid grid-cols-2 gap-4 items-center mt-4">
+            <div>I3. Tashkilot manzili</div>
+            <div>
+                <input type="text" id="i3" name="i3" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+            </div>
+        </div>
+        <div class="grid grid-cols-2 gap-4 items-center mt-4">
+            <div>I4. Maʼmuriy-hududiy birlik kodi (MHOBT)</div>
+            <div>
+                <input type="text" id="i4" name="i4" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+            </div>
+        </div>
+        <div class="grid grid-cols-2 gap-4 items-center mt-4">
+            <div>
+                <div class="grid grid-cols-5 gap-4 mt-4">
+                    <div class="col-span-2">I4a. Viloyat</div>
+                    <div class="col-span-3">
+                        <input type="text" id="i4a" name="i4a" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+                        <small class="italic text-red-500">(I4 dan avtomatik ravishda olinadi)</small>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="grid grid-cols-5 gap-4 mt-4">
+                    <div class="col-span-2">I4b. Tuman</div>
+                    <div class="col-span-3">
+                        <input type="text" id="i4b" name="i4b" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+                        <small class="italic text-red-500">(I4 dan avtomatik ravishda olinadi)</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="grid grid-cols-2 gap-4 items-center mt-4">
+            <div>I9. Tashkilot turi</div>
+            <div>
+                <select id="i9" name="i9" class="border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+                    <option selected>Quyidagi kodlardan birini tanlang</option>
+                    <optgroup label="Bolalar muassasasi:">
+                        <option value="11">11 Bolalar uyi (Bolalar uyi)</option>
+                        <option value="12">12 Mehribonlik uyi</option>
+                        <option value="13">13 &quot;Muruvvat&quot; nogironligi bo&#39;lgan bolalar uchun  internat uyi</option>
+                    </optgroup>
+                    <optgroup label="Maktab-internatlar:">
+                        <option value="21">21 Kar yoki eshitish qobiliyati zaif bolalar uchun I-II toifa</option>
+                        <option value="22">22 Ko&#39;zi ojiz yoki zaif ko&#39;ruvchi bolalar uchun III-IV toifa</option>
+                        <option value="23">23 Og&#39;ir nutq nuqsonlari bo&#39;lgan bolalar uchun V toifa</option>
+                        <option value="24">24 Tayanch-harakat apparati nuqsonlari bo&#39;lgan bolalar uchun VI toifa</option>
+                        <option value="25">25 Aqliy rivojlanishi sust/ruhiy buzuqliklari bo&#39;lgan bolalar uchun VII toifa</option>
+                        <option value="26">26 Aqli zaif bolalar uchun VIII toifa</option>
+                    </optgroup>
+                </select>
+            </div>
+        </div>
+
+
+
+    </form>
+</body>
+
+</html>
