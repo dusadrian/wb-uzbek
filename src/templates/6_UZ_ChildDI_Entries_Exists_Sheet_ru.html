@@ -108,7 +108,7 @@
                 <div class="grid grid-cols-5 gap-4 mt-4">
                     <div class="col-span-2">I4a. Область</div>
                     <div class="col-span-3">
-                        <input type="text" id="i4a" name="i4a" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+                        <input type="text" id="i4a" name="i4a" disabled class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
                         <small class="italic text-red-500">(Автоматически извлекается из I4)</small>
                     </div>
                 </div>
@@ -117,7 +117,7 @@
                 <div class="grid grid-cols-5 gap-4 mt-4">
                     <div class="col-span-2">I4b. Район</div>
                     <div class="col-span-3">
-                        <input type="text" id="i4b" name="i4b" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+                        <input type="text" id="i4b" name="i4b" disabled class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
                         <small class="italic text-red-500">(Автоматически извлекается из I4)</small>
                     </div>
                 </div>
@@ -145,6 +145,179 @@
             </div>
         </div>
 
+        <h2 class="mt-10 mb-4 text-xl font-medium text-gray-700">2 ПОСТУПЛЕНИЯ И ВЫХОДЫ ИЗ ЭТОГО УЧРЕЖДЕНИЯ С 1 ЯНВАРЯ ПО 31 ДЕКАБРЯ ОТЧЕТНОГО ГОДА</h2>
+        <div class="grid grid-cols-3 gap-4 items-center mt-4">
+            <div class="col-span-2">TNR0. Общее количество детей в данном учреждении на 31 декабря года, предшествующему отчетному году</div>
+            <div class="col-span-1">
+                <input type="text" id="tnr0" name="tnr0" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+            </div>
+        </div>
+        <div class="grid grid-cols-3 gap-4 items-center mt-4">
+            <div class="col-span-2">NET1. Были ли какие-либо поступления (какими-либо способами) в это заведение в период с 1 января 2023 года по 31 декабря отчетного года?</div>
+            <div class="col-span-1 flex gap-4">
+                <div class="flex items-center">
+                    <input id="net1-1" type="radio" value="1" name="net1" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="net1-1" class="ms-2 text-sm font-medium text-gray-900">1 Да</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="net1-2" type="radio" value="0" name="net1" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="net1-2" class="ms-2 text-sm font-medium text-gray-900">0 Нет</label>
+                </div>
+            </div>
+        </div>
+        <small class="italic">Если да,</small>
+        <p class="font-medium mt-6">Количество поступлений в это учреждение в течение отчетного года</p>
+        <table class="w-full" aria-describedby="Количество поступлений в это учреждение в течение отчетного года">
+            <thead>
+                <tr class="border-b pb-1 mb-1">
+                    <th class="p-2"></th>
+                    <th class="p-2">Мальчики</th>
+                    <th class="p-2">Девочки</th>
+                    <th class="p-2">Всего</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="border-b">
+                    <td class="p-2">NET1a. Поступление детей 0-2 лет</td>
+                    <td class="p-2 text-center">
+                        <input type="text" id="net1a_boys" name="net1a_boys" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
+                    </td>
+                    <td class="p-2 text-center">
+                        <input type="text" id="net1a_girls" name="net1a_girls" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
+                    </td>
+                    <td class="p-2 text-center">
+                        <input type="text" id="net1a_total" name="net1a_total" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
+                    </td>
+                </tr>
+                <tr class="border-b">
+                    <td>NET1b. Поступление детей 3-6 лет</td>
+                    <td class="p-2 text-center">
+                        <input type="text" id="net1b_boys" name="net1b_boys" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
+                    </td>
+                    <td class="p-2 text-center">
+                        <input type="text" id="net1b_girls" name="net1b_girls" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
+                    </td>
+                    <td class="p-2 text-center">
+                        <input type="text" id="net1b_total" name="net1b_total" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
+                    </td>
+                </tr>
+                <tr class="border-b">
+                    <td>NET1c. Поступление детей 7-10 лет</td>
+                    <td class="p-2 text-center">
+                        <input type="text" id="net1c_boys" name="net1c_boys" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
+                    </td>
+                    <td class="p-2 text-center">
+                        <input type="text" id="net1c_girls" name="net1c_girls" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
+                    </td>
+                    <td class="p-2 text-center">
+                        <input type="text" id="net1c_total" name="net1c_total" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
+                    </td>
+                </tr>
+                <tr class="border-b">
+                    <td>NET1d. Поступление детей 11-14 лет</td>
+                    <td class="p-2 text-center">
+                        <input type="text" id="net1d_boys" name="net1d_boys" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
+                    </td>
+                    <td class="p-2 text-center">
+                        <input type="text" id="net1d_girls" name="net1d_girls" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
+                    </td>
+                    <td class="p-2 text-center">
+                        <input type="text" id="net1d_total" name="net1d_total" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
+                    </td>
+                </tr>
+                <tr class="border-b">
+                    <td>NET1e. Поступление детей 15-17 лет</td>
+                    <td class="p-2 text-center">
+                        <input type="text" id="net1e_boys" name="net1e_boys" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
+                    </td>
+                    <td class="p-2 text-center">
+                        <input type="text" id="net1e_girls" name="net1e_girls" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
+                    </td>
+                    <td class="p-2 text-center">
+                        <input type="text" id="net1e_total" name="net1e_total" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
+                    </td>
+                </tr>
+                <tr class="border-b">
+                    <td>
+                        <p class="block">ТНЕТ. Всего поступлений в это учреждение в течение отчетного года</p>
+                        <small class="italic">Рассчитывается автоматически</small>
+                    </td>
+                    <td class="p-2 text-center">
+                        <input type="text" id="tnet_boys" name="tnet_boys" disabled class="bg-white border disabled:bg-gray-100 border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
+                    </td>
+                    <td class="p-2 text-center">
+                        <input type="text" id="tnet_girls" name="tnet_girls" disabled class="bg-white border disabled:bg-gray-100 border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
+                    </td>
+                    <td class="p-2 text-center">
+                        <input type="text" id="tnet_total" name="tnet_total" disabled class="bg-white border disabled:bg-gray-100 border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="mt-6 font-medium">Новые поступления в систему альтернативной опеки детей/специализированные школы-интернаты</p>
+        <table class="w-full" aria-describedby="Новые поступления в систему альтернативной опеки детей/специализированные школы-интернаты">
+            <thead>
+                <tr class="border-b pb-1 mb-1">
+                    <th class="p-2"></th>
+                    <th class="p-2">Мальчики</th>
+                    <th class="p-2">Девочки</th>
+                    <th class="p-2">Всего</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="border-b">
+                    <td class="p-2">NES1. Поступления из семей</td>
+                    <td class="p-2 text-center">
+                        <input type="text" id="nes1_boys" name="nes1_boys" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
+                    </td>
+                    <td class="p-2 text-center">
+                        <input type="text" id="nes1_girls" name="nes1_girls" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
+                    </td>
+                    <td class="p-2 text-center">
+                        <input type="text" id="nes1_total" name="nes1_total" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
+                    </td>
+                </tr>
+                <tr class="border-b">
+                    <td>NES2. Поступления из родильного дома/больницы или брошенные дети</td>
+                    <td class="p-2 text-center">
+                        <input type="text" id="nes2_boys" name="nes2_boys" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
+                    </td>
+                    <td class="p-2 text-center">
+                        <input type="text" id="nes2_girls" name="nes2_girls" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
+                    </td>
+                    <td class="p-2 text-center">
+                        <input type="text" id="nes2_total" name="nes2_total" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
+                    </td>
+                </tr>
+                <tr class="border-b">
+                    <td>NES3. Поступление детей в других ситуациях</td>
+                    <td class="p-2 text-center">
+                        <input type="text" id="nes3_boys" name="nes3_boys" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
+                    </td>
+                    <td class="p-2 text-center">
+                        <input type="text" id="nes3_girls" name="nes3_girls" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
+                    </td>
+                    <td class="p-2 text-center">
+                        <input type="text" id="nes3_total" name="nes3_total" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
+                    </td>
+                </tr>
+                <tr class="border-b">
+                    <td>
+                        <p class="block">NEST. Новые поступления в систему - Всего</p>
+                        <small class="italic">Рассчитывается автоматически</small>
+                    </td>
+                    <td class="p-2 text-center">
+                        <input type="text" id="nest_boys" name="nest_boys" disabled class="bg-white border disabled:bg-gray-100 border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
+                    </td>
+                    <td class="p-2 text-center">
+                        <input type="text" id="nest_girls" name="nest_girls" disabled class="bg-white border disabled:bg-gray-100 border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
+                    </td>
+                    <td class="p-2 text-center">
+                        <input type="text" id="nest_total" name="nest_total" disabled class="bg-white border disabled:bg-gray-100 border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
+                    </td>
+                </tr>
+            </tbody>
+        </table>
 
 
     </form>

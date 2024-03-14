@@ -89,6 +89,7 @@
                         </div>
                     </div>
                 </div>
+
                 <h2 class="mt-10 mb-4 text-xl font-medium text-gray-700">1 GENERAL INFORMATION ABOUT THE INSTITUTION</h2>
         
                 <div class="grid grid-cols-2 gap-4 items-center mt-4">
@@ -156,10 +157,183 @@
                         </select>
                     </div>
                 </div>
-                
-                <!-- Ramas aici -->
- 
 
+                <h2 class="mt-10 mb-4 text-xl font-medium text-gray-700">2 ENTRIES AND EXITS FROM THIS INSTITUTION BETWEEN JANUARY 1 AND DECEMBER 31 OF THE REFERENCE YEAR</h2>
+        <div class="grid grid-cols-3 gap-4 items-center mt-4">
+            <div class="col-span-2">TNR0. Total number of children in this institution, on December 31, the year before the reference year</div>
+            <div class="col-span-1">
+                <input type="text" id="tnr0" name="tnr0" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+            </div>
+        </div>
+        <div class="grid grid-cols-3 gap-4 items-center mt-4">
+            <div class="col-span-2">NET1. Have there been any entries (by any means) in this institution between January 1, 2023 and December 31 of the reference year?</div>
+            <div class="col-span-1 flex gap-4">
+                <div class="flex items-center">
+                    <input id="net1-1" type="radio" value="1" name="net1" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="net1-1" class="ms-2 text-sm font-medium text-gray-900">1 Yes</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="net1-2" type="radio" value="0" name="net1" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="net1-2" class="ms-2 text-sm font-medium text-gray-900">0 No</label>
+                </div>
+            </div>
+        </div>
+        <small class="italic">If Yes, </small>
+        <p class="font-medium mt-6">Number of entries in this institution during the reference year</p>
+        <table class="w-full" aria-describedby="Number of entries in this institution during the reference year">
+            <thead>
+                <tr class="border-b pb-1 mb-1">
+                    <th class="p-2"></th>
+                    <th class="p-2">Boys</th>
+                    <th class="p-2">Girls</th>
+                    <th class="p-2">Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="border-b">
+                    <td class="p-2">NET1a. Entries children 0-2 years</td>
+                    <td class="p-2 text-center">
+                        <input type="text" id="net1a_boys" name="net1a_boys" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
+                    </td>
+                    <td class="p-2 text-center">
+                        <input type="text" id="net1a_girls" name="net1a_girls" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
+                    </td>
+                    <td class="p-2 text-center">
+                        <input type="text" id="net1a_total" name="net1a_total" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
+                    </td>
+                </tr>
+                <tr class="border-b">
+                    <td>NET1b. Entries children 3-6 years</td>
+                    <td class="p-2 text-center">
+                        <input type="text" id="net1b_boys" name="net1b_boys" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
+                    </td>
+                    <td class="p-2 text-center">
+                        <input type="text" id="net1b_girls" name="net1b_girls" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
+                    </td>
+                    <td class="p-2 text-center">
+                        <input type="text" id="net1b_total" name="net1b_total" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
+                    </td>
+                </tr>
+                <tr class="border-b">
+                    <td>NET1c. Entries children 7-10 years</td>
+                    <td class="p-2 text-center">
+                        <input type="text" id="net1c_boys" name="net1c_boys" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
+                    </td>
+                    <td class="p-2 text-center">
+                        <input type="text" id="net1c_girls" name="net1c_girls" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
+                    </td>
+                    <td class="p-2 text-center">
+                        <input type="text" id="net1c_total" name="net1c_total" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
+                    </td>
+                </tr>
+                <tr class="border-b">
+                    <td>NET1d. Entries children11-14 years</td>
+                    <td class="p-2 text-center">
+                        <input type="text" id="net1d_boys" name="net1d_boys" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
+                    </td>
+                    <td class="p-2 text-center">
+                        <input type="text" id="net1d_girls" name="net1d_girls" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
+                    </td>
+                    <td class="p-2 text-center">
+                        <input type="text" id="net1d_total" name="net1d_total" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
+                    </td>
+                </tr>
+                <tr class="border-b">
+                    <td>NET1e. Entries children 15-17 years</td>
+                    <td class="p-2 text-center">
+                        <input type="text" id="net1e_boys" name="net1e_boys" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
+                    </td>
+                    <td class="p-2 text-center">
+                        <input type="text" id="net1e_girls" name="net1e_girls" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
+                    </td>
+                    <td class="p-2 text-center">
+                        <input type="text" id="net1e_total" name="net1e_total" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
+                    </td>
+                </tr>
+                <tr class="border-b">
+                    <td>
+                        <p class="block">TNET. Total entries in this institution during the reference year</p>
+                        <small class="italic">It is automatically calculated</small>
+                    </td>
+                    <td class="p-2 text-center">
+                        <input type="text" id="tnet_boys" name="tnet_boys" disabled class="bg-white border disabled:bg-gray-100 border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
+                    </td>
+                    <td class="p-2 text-center">
+                        <input type="text" id="tnet_girls" name="tnet_girls" disabled class="bg-white border disabled:bg-gray-100 border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
+                    </td>
+                    <td class="p-2 text-center">
+                        <input type="text" id="tnet_total" name="tnet_total" disabled class="bg-white border disabled:bg-gray-100 border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="mt-6 font-medium">New Entries in the child alternative care system / specialized boarding schools system</p>
+        <table class="w-full" aria-describedby="New Entries in the child alternative care system / specialized boarding schools system">
+            <thead>
+                <tr class="border-b pb-1 mb-1">
+                    <th class="p-2"></th>
+                    <th class="p-2">Boys</th>
+                    <th class="p-2">Girls</th>
+                    <th class="p-2">Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="border-b">
+                    <td class="p-2">NES1. Entries from families</td>
+                    <td class="p-2 text-center">
+                        <input type="text" id="nes1_boys" name="nes1_boys" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
+                    </td>
+                    <td class="p-2 text-center">
+                        <input type="text" id="nes1_girls" name="nes1_girls" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
+                    </td>
+                    <td class="p-2 text-center">
+                        <input type="text" id="nes1_total" name="nes1_total" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
+                    </td>
+                </tr>
+                <tr class="border-b">
+                    <td>NES2. Entries from maternity/hospital or child found</td>
+                    <td class="p-2 text-center">
+                        <input type="text" id="nes2_boys" name="nes2_boys" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
+                    </td>
+                    <td class="p-2 text-center">
+                        <input type="text" id="nes2_girls" name="nes2_girls" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
+                    </td>
+                    <td class="p-2 text-center">
+                        <input type="text" id="nes2_total" name="nes2_total" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
+                    </td>
+                </tr>
+                <tr class="border-b">
+                    <td>NES3. Entries of children in other situations</td>
+                    <td class="p-2 text-center">
+                        <input type="text" id="nes3_boys" name="nes3_boys" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
+                    </td>
+                    <td class="p-2 text-center">
+                        <input type="text" id="nes3_girls" name="nes3_girls" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
+                    </td>
+                    <td class="p-2 text-center">
+                        <input type="text" id="nes3_total" name="nes3_total" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
+                    </td>
+                </tr>
+                <tr class="border-b">
+                    <td>
+                        <p class="block">NEST. New entries into the system - Total</p>
+                        <small class="italic">It is automatically calculated</small>
+                    </td>
+                    <td class="p-2 text-center">
+                        <input type="text" id="nest_boys" name="nest_boys" disabled class="bg-white border disabled:bg-gray-100 border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
+                    </td>
+                    <td class="p-2 text-center">
+                        <input type="text" id="nest_girls" name="nest_girls" disabled class="bg-white border disabled:bg-gray-100 border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
+                    </td>
+                    <td class="p-2 text-center">
+                        <input type="text" id="nest_total" name="nest_total" disabled class="bg-white border disabled:bg-gray-100 border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        
+                <!-- Ramas aici -->
+                
 
             </form>
 
