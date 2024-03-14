@@ -16,16 +16,16 @@ const i18n = new I18n({
 });
 
 // translate pages
-import { Eta } from "eta"
-import { writeFileSync } from "original-fs";
-import * as six_en from "./templates/6_UZ_ChildDI_Entries_Exists_Sheet_en.json";
-import * as six_ru from "./templates/6_UZ_ChildDI_Entries_Exists_Sheet_ru.json";
-import * as six_uz from "./templates/6_UZ_ChildDI_Entries_Exists_Sheet_uz.json";
-const etaObj = new Eta({ views: path.join(__dirname, "../src/templates") })
+// import { Eta } from "eta"
+// import { writeFileSync } from "original-fs";
+// import * as six_en from "./templates/6_UZ_ChildDI_Entries_Exists_Sheet_en.json";
+// import * as six_ru from "./templates/6_UZ_ChildDI_Entries_Exists_Sheet_ru.json";
+// import * as six_uz from "./templates/6_UZ_ChildDI_Entries_Exists_Sheet_uz.json";
+// const etaObj = new Eta({ views: path.join(__dirname, "../src/templates") })
 
-writeFileSync(path.join(__dirname, "../src/templates/6_UZ_ChildDI_Entries_Exists_Sheet_en.html"), etaObj.render("6_UZ_ChildDI_Entries_Exists_Sheet.eta", six_en))
-writeFileSync(path.join(__dirname, "../src/templates/6_UZ_ChildDI_Entries_Exists_Sheet_ru.html"), etaObj.render("6_UZ_ChildDI_Entries_Exists_Sheet.eta", six_ru))
-writeFileSync(path.join(__dirname, "../src/templates/6_UZ_ChildDI_Entries_Exists_Sheet_uz.html"), etaObj.render("6_UZ_ChildDI_Entries_Exists_Sheet.eta", six_uz))
+// writeFileSync(path.join(__dirname, "../src/templates/6_UZ_ChildDI_Entries_Exists_Sheet_en.html"), etaObj.render("6_UZ_ChildDI_Entries_Exists_Sheet.eta", six_en))
+// writeFileSync(path.join(__dirname, "../src/templates/6_UZ_ChildDI_Entries_Exists_Sheet_ru.html"), etaObj.render("6_UZ_ChildDI_Entries_Exists_Sheet.eta", six_ru))
+// writeFileSync(path.join(__dirname, "../src/templates/6_UZ_ChildDI_Entries_Exists_Sheet_uz.html"), etaObj.render("6_UZ_ChildDI_Entries_Exists_Sheet.eta", six_uz))
 
 // import * as en from "./locales/en.json";
 
@@ -227,6 +227,9 @@ const goToDashboard = () => {
 const goToInstrument = (instrument: string, id: string) => {
 
     switch (instrument) {
+        case "CPIS":
+            goToCPIS(id);
+            break;
         case "QMR":
             goToQMR(id);
             break;
@@ -338,7 +341,7 @@ ipcMain.on('deleteUser', (event, args) => {
 
 // Instruments =================
 const goToQMR = (id: string) => {
-    const newPage = path.join(__dirname, "../src/pages/instruments/01_qmr_" + appSession.language + ".html");
+    const newPage = path.join(__dirname, "../src/pages/instruments/04_qmr_" + appSession.language + ".html");
     mainWindow.loadURL("file://" + newPage);
     if (id) {
         mainWindow.webContents.once("did-finish-load", () => {
@@ -349,12 +352,23 @@ const goToQMR = (id: string) => {
     }
 }
 const goToDSEE = (id: string) => {
-    const newPage = path.join(__dirname, "../src/pages/instruments/02_dsee_" + appSession.language + ".html");
+    const newPage = path.join(__dirname, "../src/pages/instruments/06_dsee_" + appSession.language + ".html");
     mainWindow.loadURL("file://" + newPage);
     if (id) {
         mainWindow.webContents.once("did-finish-load", () => {
             database.instrumentGet(id, 'dsee', db).then((result) => {
                 mainWindow.webContents.send("dsee", result);
+            });
+        });
+    }
+}
+const goToCPIS = (id: string) => {
+    const newPage = path.join(__dirname, "../src/pages/instruments/01_cpis_" + appSession.language + ".html");
+    mainWindow.loadURL("file://" + newPage);
+    if (id) {
+        mainWindow.webContents.once("did-finish-load", () => {
+            database.instrumentGet(id, 'cpis', db).then((result) => {
+                mainWindow.webContents.send("cpis", result);
             });
         });
     }

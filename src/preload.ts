@@ -88,14 +88,19 @@ window.addEventListener("DOMContentLoaded", () => {
         case 'main/01_dashboard.html':
             mainDashboard();
             break;
-        case 'instruments/01_qmr_en.html':
-        case 'instruments/01_qmr_uz.html':
-        case 'instruments/01_qmr_ru.html':
+        case 'instruments/04_qmr_en.html':
+        case 'instruments/04_qmr_uz.html':
+        case 'instruments/04_qmr_ru.html':
             instrumentQMR();
             break;
-        case 'instruments/02_dsee_en.html':
-        case 'instruments/02_dsee_uz.html':
-        case 'instruments/02_dsee_ru.html':
+        case 'instruments/01_cpis_en.html':
+        case 'instruments/01_cpis_uz.html':
+        case 'instruments/01_cpis_ru.html':
+            instrumentCPIS();
+            break;
+        case 'instruments/06_dsee_en.html':
+        case 'instruments/06_dsee_uz.html':
+        case 'instruments/06_dsee_ru.html':
             instrumentDSEE();
             break;
     }
@@ -311,7 +316,7 @@ const instrumentQMR = () => {
     topMenu('localCoordinator/01_dashboard');
 
     const importFile = async () => {
-        return await import("./pages/instruments/01_qmr");
+        return await import("./pages/instruments/04_qmr");
     };
     importFile().then(result => result.instrument.init().catch(error => {
         console.log(error);
@@ -322,7 +327,18 @@ const instrumentDSEE = () => {
     topMenu('localCoordinator/01_dashboard');
 
     const importFile = async () => {
-        return await import("./pages/instruments/02_dsee");
+        return await import("./pages/instruments/06_dsee");
+    };
+    importFile().then(result => result.instrument.init().catch(error => {
+        console.log(error);
+    }));
+};
+const instrumentCPIS = () => {
+
+    topMenu('localCoordinator/01_dashboard');
+
+    const importFile = async () => {
+        return await import("./pages/instruments/01_cpis");
     };
     importFile().then(result => result.instrument.init().catch(error => {
         console.log(error);
