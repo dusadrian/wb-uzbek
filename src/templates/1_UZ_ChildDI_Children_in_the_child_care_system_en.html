@@ -16,21 +16,21 @@
         <div class="grid grid-cols-12 border">
             <div class="col-span-1 bg-stone-200 p-2"></div>
             <div class="col-span-11 p-2">
-                <h1 class="text-4xl text-gray-700 pl-4 tracking-wide"><%= it.t1 %></h1>
+                <h1 class="text-4xl text-gray-700 pl-4 tracking-wide">Questionnaire about the child placed into the child care system</h1>
             </div>
         </div>
 
-        <p class="mt-4 mb-2 text-xl"><%= it.t2 %> </p>
-        <p class="mb-2"><%= it.t3 %></p>
-        <p class="mb-2"><%= it.t4 %></p>
-        <p class="mb-2"><%= it.t5 %></p>
-        <p class="mb-2"><%= it.t6 %></p>
-        <p class="mb-2"><%= it.t7 %></p>
+        <p class="mt-4 mb-2 text-xl">INTRODUCTION  </p>
+        <p class="mb-2">The primary goal of this data collection is to support the Government of Uzbekistan in transitioning from institutional care to family-type care for children deprived of parental care. To achieve this, we aim to build a robust monitoring mechanism at the national level. By collecting detailed data, we can inform evidence-based decisions and policies that promote family-based alternatives.</p>
+        <p class="mb-2">Another critical objective is to enhance the quality of services provided to children with disabilities in institutional care. By understanding their unique needs and experiences, we can develop targeted interventions and improve their overall well-being. Additionally, we seek to explore and promote adequate family-type alternatives for these children.</p>
+        <p class="mb-2">The data collection process involves gathering comprehensive information about children placed in institutional care and specialized boarding schools. We explore various aspects, including demographics, family background, health, education, living conditions, and risk behaviors, as well as the availability and effectiveness of recovery and rehabilitation services.</p>
+        <p class="mb-2">Please complete this questionnaire separately for each child currently in the child care system, regardless of the type of service they receive (residential or family-based) and whether it&#39;s provided by the state or a private provider. This questionnaire will be completed for children in the following types of services of the child care system: children&#39;s homes/baby homes, mehribonlik houses, muruvat houses for children with disabilities, family-type children&#39;s homes, SOS children&#39;s villages/families.</p>
+        <p class="mb-2">Complete the information based only on documents and data found in the child&#39;s file. If there is no information in the file regarding a specific question, please encircle the &quot;Unspecified/Unknown&quot; answer. Please do not include information from sources other than the child&#39;s file.</p>
 
         <div class="grid grid-cols-2 gap-4 items-center mt-4">
             <div>
                 <div class="grid grid-cols-5 gap-4 mt-4">
-                    <div class="col-span-2 flex items-center"><%= it.t8 %>. <%= it.t9 %></div>
+                    <div class="col-span-2 flex items-center">REG. Region</div>
                     <div class="col-span-3">
                         <input type="text" id="reg" name="reg" disabled class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
                     </div>
@@ -38,7 +38,7 @@
             </div>
             <div>
                 <div class="grid grid-cols-5 gap-4 mt-4">
-                    <div class="col-span-2 flex items-center"><%= it.t10 %>. <%= it.t11 %></div>
+                    <div class="col-span-2 flex items-center">DIS. District</div>
                     <div class="col-span-3">
                         <input type="text" id="dis" name="dis" disabled class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
                     </div>
@@ -47,27 +47,27 @@
         </div>
 
         <div class="grid grid-cols-2 gap-4 items-center mt-10">
-            <div><%= it.t12 %>. <%= it.t13 %></div>
+            <div>DATA. Completion date of questionnaire</div>
             <div>
                 <input type="text" id="data" name="data" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
             </div>
         </div>
 
-        <h2 class="mt-10 mb-4 text-xl font-medium text-gray-700"><%= it.t14 %></h2>
+        <h2 class="mt-10 mb-4 text-xl font-medium text-gray-700">1. PERSON WHO COMPLETED THE INFORMATION ABOUT THIS CHILD</h2>
         <div class="grid grid-cols-2 gap-4 items-center mt-4">
-            <div><%= it.t15 %>. <%= it.t16 %></div>
+            <div>OMR1. Name</div>
             <div>
                 <input type="text" id="omr1" name="omr1" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
             </div>
         </div>
         <div class="grid grid-cols-2 gap-4 items-center mt-4">
-            <div><%= it.t17 %>. <%= it.t18 %></div>
+            <div>OMR2. Patronymics</div>
             <div>
                 <input type="text" id="omr2" name="omr2" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
             </div>
         </div>
         <div class="grid grid-cols-2 gap-4 items-center mt-4">
-            <div><%= it.t19 %>. <%= it.t20 %></div>
+            <div>OMR3. Surname</div>
             <div>
                 <input type="text" id="omr3" name="omr3" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
             </div>
@@ -76,8 +76,8 @@
             <div>
                 <div class="grid grid-cols-5 gap-4 items-center mt-4">
                     <div class="col-span-2">
-                        <p><%= it.t21 %>. <%= it.t22 %></p>
-                        <small class="italic text-red-500"><%= it.t23 %></small>
+                        <p>OMR4. Position/role</p>
+                        <small class="italic text-red-500">Fill in case manager if the person plays this role</small>
                     </div>
                     <div class="col-span-3">
                         <input type="text" id="omr4" name="omr4" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
@@ -86,7 +86,7 @@
             </div>
             <div>
                 <div class="grid grid-cols-5 gap-4 items-center mt-4">
-                    <div class="col-span-2"><%= it.t24 %>. <%= it.t25 %></div>
+                    <div class="col-span-2">OMR5. Profession</div>
                     <div class="col-span-3">
                         <input type="text" id="omr5" name="omr5" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
                     </div>
@@ -96,7 +96,7 @@
         <div class="grid grid-cols-2 gap-4 items-center mt-4">
             <div>
                 <div class="grid grid-cols-5 gap-4 items-center mt-4">
-                    <div class="col-span-2"><%= it.t26 %>. <%= it.t27 %></div>
+                    <div class="col-span-2">OMR6. Phone</div>
                     <div class="col-span-3">
                         <input type="text" id="omr6" name="omr6" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
                     </div>
@@ -104,7 +104,7 @@
             </div>
             <div>
                 <div class="grid grid-cols-5 gap-4 items-center mt-4">
-                    <div class="col-span-2"><%= it.t28 %>. <%= it.t29 %></div>
+                    <div class="col-span-2">OMR7. E-mail</div>
                     <div class="col-span-3">
                         <input type="text" id="omr7" name="omr7" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
                     </div>
@@ -113,81 +113,81 @@
         </div>
 
         <div class="grid grid-cols-3 gap-4 items-center mt-6">
-            <div class="col-span-2"><%= it.t30 %>. <%= it.t31 %></div>
+            <div class="col-span-2">OMR8. Does the person work in the service where the child is currently placed?</div>
             <div class="col-span-1 flex gap-4">
                 <div class="flex items-center">
                     <input id="omr8-1" type="radio" value="1" name="omr8" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
-                    <label for="omr8-1" class="ms-2 text-sm font-medium text-gray-900"><%= it.t32 %></label>
+                    <label for="omr8-1" class="ms-2 text-sm font-medium text-gray-900">1. Yes</label>
                 </div>
                 <div class="flex items-center">
                     <input id="omr8-2" type="radio" value="0" name="omr8" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
-                    <label for="omr8-2" class="ms-2 text-sm font-medium text-gray-900"><%= it.t33 %></label>
+                    <label for="omr8-2" class="ms-2 text-sm font-medium text-gray-900">0. No</label>
                 </div>
             </div>
         </div>
 
-        <small class="italic text-red-500"><%= it.t34 %></small>
+        <small class="italic text-red-500">If NO in OMR8</small>
 
 
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
-            <div><%= it.t35 %>. <%= it.t36 %></div>
+            <div>OMR9. Name of the institution where the person works</div>
             <div>
                 <input type="text" id="omr9" name="omr9" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
             </div>
         </div>
 
-        <h2 class="mt-10 mb-4 text-xl font-medium text-gray-700"><%= it.t37 %></h2>
+        <h2 class="mt-10 mb-4 text-xl font-medium text-gray-700">2. MAIN INFORMATION ABOUT THE CHILD</h2>
 
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
-            <div><%= it.t38 %>. <%= it.t39 %></div>
+            <div>PIN. Birth certificate/Passport/Identification document</div>
             <div>
                 <input type="text" id="pin" name="pin" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
             </div>
         </div>
 
-        <p class="italic text-red-500"><%= it.t40 %></p>
+        <p class="italic text-red-500">Fill in the child&#39;s birth certification/ID/Passport Number. If the child does not have one, fill in 0 (zero).</p>
 
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
-            <div><%= it.t41 %>. <%= it.t42 %></div>
+            <div>LK1a. Child&#39;s name</div>
             <div>
                 <input type="text" id="lk1a" name="lk1a" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
             </div>
         </div>
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
-            <div><%= it.t43 %>. <%= it.t44 %></div>
+            <div>LK1b. Child&#39;s patronymics</div>
             <div>
                 <input type="text" id="lk1b" name="lk1b" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
             </div>
         </div>
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
-            <div><%= it.t45 %>. <%= it.t46 %></div>
+            <div>LK1c. Child&#39;s surname</div>
             <div>
                 <input type="text" id="lk1c" name="lk1c" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
             </div>
         </div>
         <div class="grid grid-cols-3 gap-4 items-center mt-6">
-            <div class="col-span-2"><%= it.t47 %>. <%= it.t48 %></div>
+            <div class="col-span-2">LK2. Child&#39;s gender</div>
             <div class="col-span-1 flex gap-4">
                 <div class="flex items-center">
                     <input id="lk2-1" type="radio" value="1" name="lk2" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
-                    <label for="lk2-1" class="ms-2 text-sm font-medium text-gray-900"><%= it.t49 %></label>
+                    <label for="lk2-1" class="ms-2 text-sm font-medium text-gray-900">1. Male</label>
                 </div>
                 <div class="flex items-center">
                     <input id="lk2-2" type="radio" value="0" name="lk2" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
-                    <label for="lk2-2" class="ms-2 text-sm font-medium text-gray-900"><%= it.t50 %></label>
+                    <label for="lk2-2" class="ms-2 text-sm font-medium text-gray-900">2. Female</label>
                 </div>
             </div>
         </div>
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
-            <div><%= it.t51 %>. <%= it.t52 %></div>
+            <div>LK3. Date of birth (dd/mm/yyyy)</div>
             <div>
                 <input type="text" id="lk3" name="lk3" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
             </div>
         </div>
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
             <div>
-                <p><%= it.t53 %>. <%= it.t54 %></p>
-                <small class="italic text-red-500"><%= it.t55 %></small>
+                <p>LK13a. Child&#39;s age (at the date of the monitoring round)</p>
+                <small class="italic text-red-500">Automatically calculated.</small>
             </div>
             <div>
                 <input type="text" id="lk13a" name="lk13a" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
@@ -195,8 +195,8 @@
         </div>
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
             <div>
-                <p><%= it.t56 %>. <%= it.t57 %></p>
-                <small class="italic text-red-500"><%= it.t58 %></small>
+                <p>LK14a. Place of birth</p>
+                <small class="italic text-red-500">Fill in the 10-digit code of the administrative-territorial unit (МҲОБТ)</small>
             </div>
 
             <div class="grid grid-cols-2 gap-4 items-center">
@@ -205,7 +205,7 @@
                 </div>
                 <div class="flex items-center">
                     <input id="default-checkbox" type="checkbox" value="9" class="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500">
-                    <label for="default-checkbox" class="ms-2 text-sm font-medium text-gray-900"><%= it.t59 %></label>
+                    <label for="default-checkbox" class="ms-2 text-sm font-medium text-gray-900">9. Not known</label>
                 </div>
             </div>
         </div>
@@ -214,59 +214,59 @@
         <div class="grid grid-cols-2 gap-4 items-center mt-4">
             <div>
                 <div class="grid grid-cols-5 gap-4 mt-4">
-                    <div class="col-span-2"><%= it.t60 %>. <%= it.t61 %></div>
+                    <div class="col-span-2">LK14b. Region</div>
                     <div class="col-span-3">
                         <input type="text" id="i4a" name="i4a" disabled class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
-                        <small class="italic text-red-500"><%= it.t62 %></small>
+                        <small class="italic text-red-500">(Automatically retrieved from LK14a)</small>
                     </div>
                 </div>
             </div>
             <div>
                 <div class="grid grid-cols-5 gap-4 mt-4">
-                    <div class="col-span-2"><%= it.t63 %>. <%= it.t64 %></div>
+                    <div class="col-span-2">LK14c. District</div>
                     <div class="col-span-3">
                         <input type="text" id="i4b" name="i4b" disabled class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
-                        <small class="italic text-red-500"><%= it.t65 %></small>
+                        <small class="italic text-red-500">(Automatically retrieved from LK14a)</small>
                     </div>
                 </div>
             </div>
         </div>
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
-            <div><%= it.t66 %>. <%= it.t67 %></div>
+            <div>LK12. Child&#39;s ethnicity (nationality)</div>
             <div>
                 <select id="lk12" name="lk12" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-                    <option value="1"><%= it.t68 %></option>
-                    <option value="2"><%= it.t69 %></option>
-                    <option value="3"><%= it.t70 %></option>
-                    <option value="4"><%= it.t71 %></option>
-                    <option value="5"><%= it.t72 %></option>
-                    <option value="6"><%= it.t73 %></option>
-                    <option value="7"><%= it.t74 %></option>
-                    <option value="8"><%= it.t75 %></option>
-                    <option value="9"><%= it.t76 %></option>
-                    <option value="0"><%= it.t77 %></option>
+                    <option value="1">1. Uzbek</option>
+                    <option value="2">2. Russian</option>
+                    <option value="3">3. Kazakh</option>
+                    <option value="4">4. Tajik</option>
+                    <option value="5">5. Tatar</option>
+                    <option value="6">6. Karakalpaks</option>
+                    <option value="7">7. Kyrgyz</option>
+                    <option value="8">8. Korean</option>
+                    <option value="9">9. Other</option>
+                    <option value="0">0. Not declared/unknown</option>
                 </select>
             </div>
         </div>
 
         <div class="grid grid-cols-2 gap-4 mt-6">
-            <div class="col-span-1 flex items-center"><%= it.t78 %>. <%= it.t79 %></div>
+            <div class="col-span-1 flex items-center">LK15. Who is the legal guardian of the child?</div>
             <div class="col-span-1 flex flex-col gap-4">
                 <div class="flex items-center">
                     <input id="lk15-1" type="radio" value="1" name="lk15" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
-                    <label for="lk15-1" class="ms-2 text-sm font-medium text-gray-900"><%= it.t80 %></label>
+                    <label for="lk15-1" class="ms-2 text-sm font-medium text-gray-900">1. His/her parents</label>
                 </div>
                 <div class="flex items-center">
                     <input id="lk15-2" type="radio" value="2" name="lk15" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
-                    <label for="lk15-2" class="ms-2 text-sm font-medium text-gray-900"><%= it.t81 %></label>
+                    <label for="lk15-2" class="ms-2 text-sm font-medium text-gray-900">2. Another relative</label>
                 </div>
                 <div class="flex items-center">
                     <input id="lk15-3" type="radio" value="3" name="lk15" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
-                    <label for="lk15-3" class="ms-2 text-sm font-medium text-gray-900"><%= it.t82 %></label>
+                    <label for="lk15-3" class="ms-2 text-sm font-medium text-gray-900">3. The director of the institution</label>
                 </div>
                 <div class="flex items-center">
                     <input id="lk15-4" type="radio" value="4" name="lk15" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
-                    <label for="lk15-4" class="ms-2 text-sm font-medium text-gray-900"><%= it.t83 %></label>
+                    <label for="lk15-4" class="ms-2 text-sm font-medium text-gray-900">4. Other, please specify</label>
                 </div>
             </div>
         </div>

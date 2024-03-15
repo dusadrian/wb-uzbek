@@ -16,21 +16,21 @@
         <div class="grid grid-cols-12 border">
             <div class="col-span-1 bg-stone-200 p-2"></div>
             <div class="col-span-11 p-2">
-                <h1 class="text-4xl text-gray-700 pl-4 tracking-wide"><%= it.t1 %></h1>
+                <h1 class="text-4xl text-gray-700 pl-4 tracking-wide">Анкета о ребенке, помещенном в систему опеки детей</h1>
             </div>
         </div>
 
-        <p class="mt-4 mb-2 text-xl"><%= it.t2 %> </p>
-        <p class="mb-2"><%= it.t3 %></p>
-        <p class="mb-2"><%= it.t4 %></p>
-        <p class="mb-2"><%= it.t5 %></p>
-        <p class="mb-2"><%= it.t6 %></p>
-        <p class="mb-2"><%= it.t7 %></p>
+        <p class="mt-4 mb-2 text-xl">ВВЕДЕНИЕ </p>
+        <p class="mb-2">Основной целью данного сбора данных является оказание поддержки Правительству Узбекистана в переходе от интернатной опеки к семейным видам опеки над детьми, лишенных родительской опеки. Для достижения этой цели мы намерены создать надежный механизм мониторинга на национальном уровне. Собирая подробные данные, мы можем принимать обоснованные решения и разрабатывать политику, способствующие распространению альтернативных семейных форм опеки.</p>
+        <p class="mb-2">Еще одной важнейшей задачей является повышение качества услуг, предоставляемых детям с инвалидностью в специализированных учреждениях. Понимая их уникальные потребности и опыт, мы можем разработать целенаправленные виды вмешательства и улучшить их общее самочувствие. Кроме того, мы стремимся использовать и продвигать адекватные альтернативы семейного типа опеки для этих детей.</p>
+        <p class="mb-2">Процесс сбора данных включает в себя сбор исчерпывающей информации о детях, помещенных в интернатные учреждения и специализированные школы-интернаты. Мы изучаем различные аспекты, включая демографию, информацию о семье, здоровье, образование, условия жизни и рискованное поведение, а также доступность и эффективность услуг по восстановлению и реабилитации.</p>
+        <p class="mb-2">Пожалуйста, заполните данную анкету отдельно для каждого, в настоящее время находящегося в системе опеки детей, независимо от типа получаемых ими услуг (в учреждениях или в семьях) и от того, предоставляются ли услуги государством или частным поставщиком. Анкета заполняется для детей, которым оказываются  следующие виды услуг системы опеки детей: детские дома/дома ребенка, дома милосердия «Мехрибонлик», дома-интернаты «Мурувват» для детей с инвалидностью, детские дома семейного типа, детские деревни/семьи SOS.</p>
+        <p class="mb-2">Заполните информацию, основываясь только на документах и данных, найденных в досье ребенка. Если по отдельно взятому вопросу информация отсутствует, обведите ответ «Не указано/Неизвестно». Пожалуйста, не включайте информацию из других источников, кроме как из личного дела (досье)ребенка.</p>
 
         <div class="grid grid-cols-2 gap-4 items-center mt-4">
             <div>
                 <div class="grid grid-cols-5 gap-4 mt-4">
-                    <div class="col-span-2 flex items-center"><%= it.t8 %>. <%= it.t9 %></div>
+                    <div class="col-span-2 flex items-center">ОБЛ. Область</div>
                     <div class="col-span-3">
                         <input type="text" id="reg" name="reg" disabled class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
                     </div>
@@ -38,7 +38,7 @@
             </div>
             <div>
                 <div class="grid grid-cols-5 gap-4 mt-4">
-                    <div class="col-span-2 flex items-center"><%= it.t10 %>. <%= it.t11 %></div>
+                    <div class="col-span-2 flex items-center">РАЙ. Район </div>
                     <div class="col-span-3">
                         <input type="text" id="dis" name="dis" disabled class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
                     </div>
@@ -47,27 +47,27 @@
         </div>
 
         <div class="grid grid-cols-2 gap-4 items-center mt-10">
-            <div><%= it.t12 %>. <%= it.t13 %></div>
+            <div>СВЕДЕНИЯ. Дата заполнения анкеты</div>
             <div>
                 <input type="text" id="data" name="data" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
             </div>
         </div>
 
-        <h2 class="mt-10 mb-4 text-xl font-medium text-gray-700"><%= it.t14 %></h2>
+        <h2 class="mt-10 mb-4 text-xl font-medium text-gray-700">1. ЛИЦО, ЗАПОЛНИВШЕЕ СВЕДЕНИЯ ОБ ЭТОМ РЕБЕНКЕ</h2>
         <div class="grid grid-cols-2 gap-4 items-center mt-4">
-            <div><%= it.t15 %>. <%= it.t16 %></div>
+            <div>ОМР1. Имя</div>
             <div>
                 <input type="text" id="omr1" name="omr1" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
             </div>
         </div>
         <div class="grid grid-cols-2 gap-4 items-center mt-4">
-            <div><%= it.t17 %>. <%= it.t18 %></div>
+            <div>ОМР2. Отчество</div>
             <div>
                 <input type="text" id="omr2" name="omr2" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
             </div>
         </div>
         <div class="grid grid-cols-2 gap-4 items-center mt-4">
-            <div><%= it.t19 %>. <%= it.t20 %></div>
+            <div>ОМР3. Фамилия</div>
             <div>
                 <input type="text" id="omr3" name="omr3" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
             </div>
@@ -76,8 +76,8 @@
             <div>
                 <div class="grid grid-cols-5 gap-4 items-center mt-4">
                     <div class="col-span-2">
-                        <p><%= it.t21 %>. <%= it.t22 %></p>
-                        <small class="italic text-red-500"><%= it.t23 %></small>
+                        <p>ОМР4. Должность/функции</p>
+                        <small class="italic text-red-500">Укажите кейс менеджера, если данное лицо выполняет такую функцию</small>
                     </div>
                     <div class="col-span-3">
                         <input type="text" id="omr4" name="omr4" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
@@ -86,7 +86,7 @@
             </div>
             <div>
                 <div class="grid grid-cols-5 gap-4 items-center mt-4">
-                    <div class="col-span-2"><%= it.t24 %>. <%= it.t25 %></div>
+                    <div class="col-span-2">ОМР5. Профессия</div>
                     <div class="col-span-3">
                         <input type="text" id="omr5" name="omr5" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
                     </div>
@@ -96,7 +96,7 @@
         <div class="grid grid-cols-2 gap-4 items-center mt-4">
             <div>
                 <div class="grid grid-cols-5 gap-4 items-center mt-4">
-                    <div class="col-span-2"><%= it.t26 %>. <%= it.t27 %></div>
+                    <div class="col-span-2">ОМР6. Телефон</div>
                     <div class="col-span-3">
                         <input type="text" id="omr6" name="omr6" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
                     </div>
@@ -104,7 +104,7 @@
             </div>
             <div>
                 <div class="grid grid-cols-5 gap-4 items-center mt-4">
-                    <div class="col-span-2"><%= it.t28 %>. <%= it.t29 %></div>
+                    <div class="col-span-2">ОМР7. Электронная почта</div>
                     <div class="col-span-3">
                         <input type="text" id="omr7" name="omr7" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
                     </div>
@@ -113,81 +113,81 @@
         </div>
 
         <div class="grid grid-cols-3 gap-4 items-center mt-6">
-            <div class="col-span-2"><%= it.t30 %>. <%= it.t31 %></div>
+            <div class="col-span-2">ОМР8. Работает ли данное лицо в службе, куда сейчас помещен ребенок?</div>
             <div class="col-span-1 flex gap-4">
                 <div class="flex items-center">
                     <input id="omr8-1" type="radio" value="1" name="omr8" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
-                    <label for="omr8-1" class="ms-2 text-sm font-medium text-gray-900"><%= it.t32 %></label>
+                    <label for="omr8-1" class="ms-2 text-sm font-medium text-gray-900">1. Да</label>
                 </div>
                 <div class="flex items-center">
                     <input id="omr8-2" type="radio" value="0" name="omr8" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
-                    <label for="omr8-2" class="ms-2 text-sm font-medium text-gray-900"><%= it.t33 %></label>
+                    <label for="omr8-2" class="ms-2 text-sm font-medium text-gray-900">0. Нет</label>
                 </div>
             </div>
         </div>
 
-        <small class="italic text-red-500"><%= it.t34 %></small>
+        <small class="italic text-red-500">Если НЕТ в OMR8</small>
 
 
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
-            <div><%= it.t35 %>. <%= it.t36 %></div>
+            <div>ОМР9. Наименование учреждения, в котором работает данное лицо</div>
             <div>
                 <input type="text" id="omr9" name="omr9" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
             </div>
         </div>
 
-        <h2 class="mt-10 mb-4 text-xl font-medium text-gray-700"><%= it.t37 %></h2>
+        <h2 class="mt-10 mb-4 text-xl font-medium text-gray-700">2. ОСНОВНАЯ ИНФОРМАЦИЯ О РЕБЕНКЕ</h2>
 
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
-            <div><%= it.t38 %>. <%= it.t39 %></div>
+            <div>Личный идентификационный номер. Свидетельство о рождении/Паспорт/Документ, удостоверяющий личность</div>
             <div>
                 <input type="text" id="pin" name="pin" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
             </div>
         </div>
 
-        <p class="italic text-red-500"><%= it.t40 %></p>
+        <p class="italic text-red-500">Введите номер свидетельства о рождении/удостоверения личности/ паспорта ребенка. Если у ребенка его нет, введите 0 (ноль).</p>
 
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
-            <div><%= it.t41 %>. <%= it.t42 %></div>
+            <div>LK1a. Имя ребенка</div>
             <div>
                 <input type="text" id="lk1a" name="lk1a" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
             </div>
         </div>
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
-            <div><%= it.t43 %>. <%= it.t44 %></div>
+            <div>LK1b. Отчество ребенка</div>
             <div>
                 <input type="text" id="lk1b" name="lk1b" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
             </div>
         </div>
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
-            <div><%= it.t45 %>. <%= it.t46 %></div>
+            <div>LK1c. Фамилия ребенка</div>
             <div>
                 <input type="text" id="lk1c" name="lk1c" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
             </div>
         </div>
         <div class="grid grid-cols-3 gap-4 items-center mt-6">
-            <div class="col-span-2"><%= it.t47 %>. <%= it.t48 %></div>
+            <div class="col-span-2">LK2. Пол ребенка</div>
             <div class="col-span-1 flex gap-4">
                 <div class="flex items-center">
                     <input id="lk2-1" type="radio" value="1" name="lk2" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
-                    <label for="lk2-1" class="ms-2 text-sm font-medium text-gray-900"><%= it.t49 %></label>
+                    <label for="lk2-1" class="ms-2 text-sm font-medium text-gray-900">1. Мужской</label>
                 </div>
                 <div class="flex items-center">
                     <input id="lk2-2" type="radio" value="0" name="lk2" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
-                    <label for="lk2-2" class="ms-2 text-sm font-medium text-gray-900"><%= it.t50 %></label>
+                    <label for="lk2-2" class="ms-2 text-sm font-medium text-gray-900">2. Женский</label>
                 </div>
             </div>
         </div>
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
-            <div><%= it.t51 %>. <%= it.t52 %></div>
+            <div>LK3. Дата рождения (дд/мм/гггг)</div>
             <div>
                 <input type="text" id="lk3" name="lk3" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
             </div>
         </div>
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
             <div>
-                <p><%= it.t53 %>. <%= it.t54 %></p>
-                <small class="italic text-red-500"><%= it.t55 %></small>
+                <p>LK13a. Возраст ребенка (на дату проведения мониторинга)</p>
+                <small class="italic text-red-500">Рассчитывается автоматически.</small>
             </div>
             <div>
                 <input type="text" id="lk13a" name="lk13a" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
@@ -195,8 +195,8 @@
         </div>
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
             <div>
-                <p><%= it.t56 %>. <%= it.t57 %></p>
-                <small class="italic text-red-500"><%= it.t58 %></small>
+                <p>LK14a. Место рождения</p>
+                <small class="italic text-red-500">Введите 10-значный код административно-территориальной единицы (МҲОБТ)</small>
             </div>
 
             <div class="grid grid-cols-2 gap-4 items-center">
@@ -205,7 +205,7 @@
                 </div>
                 <div class="flex items-center">
                     <input id="default-checkbox" type="checkbox" value="9" class="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500">
-                    <label for="default-checkbox" class="ms-2 text-sm font-medium text-gray-900"><%= it.t59 %></label>
+                    <label for="default-checkbox" class="ms-2 text-sm font-medium text-gray-900">9. Неизвестно</label>
                 </div>
             </div>
         </div>
@@ -214,59 +214,59 @@
         <div class="grid grid-cols-2 gap-4 items-center mt-4">
             <div>
                 <div class="grid grid-cols-5 gap-4 mt-4">
-                    <div class="col-span-2"><%= it.t60 %>. <%= it.t61 %></div>
+                    <div class="col-span-2">LK14b. Область</div>
                     <div class="col-span-3">
                         <input type="text" id="i4a" name="i4a" disabled class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
-                        <small class="italic text-red-500"><%= it.t62 %></small>
+                        <small class="italic text-red-500">(Автоматически извлекается из LK14a)</small>
                     </div>
                 </div>
             </div>
             <div>
                 <div class="grid grid-cols-5 gap-4 mt-4">
-                    <div class="col-span-2"><%= it.t63 %>. <%= it.t64 %></div>
+                    <div class="col-span-2">LK14c. Район </div>
                     <div class="col-span-3">
                         <input type="text" id="i4b" name="i4b" disabled class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
-                        <small class="italic text-red-500"><%= it.t65 %></small>
+                        <small class="italic text-red-500">(Автоматически извлекается из LK14a)</small>
                     </div>
                 </div>
             </div>
         </div>
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
-            <div><%= it.t66 %>. <%= it.t67 %></div>
+            <div>LK12. Этническая принадлежность (национальность) ребенка</div>
             <div>
                 <select id="lk12" name="lk12" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-                    <option value="1"><%= it.t68 %></option>
-                    <option value="2"><%= it.t69 %></option>
-                    <option value="3"><%= it.t70 %></option>
-                    <option value="4"><%= it.t71 %></option>
-                    <option value="5"><%= it.t72 %></option>
-                    <option value="6"><%= it.t73 %></option>
-                    <option value="7"><%= it.t74 %></option>
-                    <option value="8"><%= it.t75 %></option>
-                    <option value="9"><%= it.t76 %></option>
-                    <option value="0"><%= it.t77 %></option>
+                    <option value="1">1. Узбек/Узбечка</option>
+                    <option value="2">2. Русский/Русская</option>
+                    <option value="3">3. Казах/Казашка</option>
+                    <option value="4">4. Таджик/Таджичка</option>
+                    <option value="5">5. Татарин/Татарка</option>
+                    <option value="6">6. Каракалпак/Каракалпачка</option>
+                    <option value="7">7. Кыргыз/Кыргызка</option>
+                    <option value="8">8. Кореец/Кореянка</option>
+                    <option value="9">9. Другое</option>
+                    <option value="0">0. Не заявлено/неизвестно</option>
                 </select>
             </div>
         </div>
 
         <div class="grid grid-cols-2 gap-4 mt-6">
-            <div class="col-span-1 flex items-center"><%= it.t78 %>. <%= it.t79 %></div>
+            <div class="col-span-1 flex items-center">LK15. Кто является законным опекуном ребенка?</div>
             <div class="col-span-1 flex flex-col gap-4">
                 <div class="flex items-center">
                     <input id="lk15-1" type="radio" value="1" name="lk15" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
-                    <label for="lk15-1" class="ms-2 text-sm font-medium text-gray-900"><%= it.t80 %></label>
+                    <label for="lk15-1" class="ms-2 text-sm font-medium text-gray-900">1. Его/ее родители</label>
                 </div>
                 <div class="flex items-center">
                     <input id="lk15-2" type="radio" value="2" name="lk15" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
-                    <label for="lk15-2" class="ms-2 text-sm font-medium text-gray-900"><%= it.t81 %></label>
+                    <label for="lk15-2" class="ms-2 text-sm font-medium text-gray-900">2. Другой родственник</label>
                 </div>
                 <div class="flex items-center">
                     <input id="lk15-3" type="radio" value="3" name="lk15" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
-                    <label for="lk15-3" class="ms-2 text-sm font-medium text-gray-900"><%= it.t82 %></label>
+                    <label for="lk15-3" class="ms-2 text-sm font-medium text-gray-900">3. Директор учреждения</label>
                 </div>
                 <div class="flex items-center">
                     <input id="lk15-4" type="radio" value="4" name="lk15" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
-                    <label for="lk15-4" class="ms-2 text-sm font-medium text-gray-900"><%= it.t83 %></label>
+                    <label for="lk15-4" class="ms-2 text-sm font-medium text-gray-900">4. Если другой, укажите</label>
                 </div>
             </div>
         </div>
