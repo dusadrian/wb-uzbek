@@ -14,7 +14,7 @@
         <div class="fixed top-0 right-0 left-0 bg-slate-200 h-10 z-50 shadow" id="header">
         </div>
         <div class="relative w-full mt-10 pb-10 h-[calc(100vh-5.5rem)] overflow-y-auto">
-            
+
             <form class="px-6 mt-10">
 
                 <div class="grid grid-cols-12 border">
@@ -1097,7 +1097,7 @@
                 </div>
         
                 <!-- FATHER -->
-                 <h3 class="text-xl mt-10 font-semibold bg-gray-100 px-2 py-1 text-gray-700">3.2. THE CHILD&#39;S FATHER</h3>
+                <h3 class="text-xl mt-10 font-semibold bg-gray-100 px-2 py-1 text-gray-700">3.2. THE CHILD&#39;S FATHER</h3>
         
                 <div class="grid grid-cols-2 gap-4 items-center mt-6">
                     <div>CT1a. Was the child&#39;s father known at the time of the child&#39;s entry into the child care system?</div>
@@ -1923,6 +1923,757 @@
                         <input type="text" id="ct11h" name="ct11h" class="bg-white disabled:bg-gray-100 border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
                     </div>
                 </div>
+        
+        
+                <!-- CAREGIVER -->
+                <h3 class="text-xl mt-10 mb-2 font-semibold bg-gray-100 px-2 py-1 text-gray-700">3.3. THE PERSON WHO WAS TAKING CARE OF THE CHILD</h3>
+                <small class="block italic text-red-500">This section is to be filled in only if before entering the system, the child was under the care of someone other than the child&#39;s mother or father. Otherwise, skip to Section 4.</small>
+        
+                <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                    <div>CG1a. What is the relationship between the child and the person taking care of them?</div>
+                    <div class="flex gap-4">
+                        <div class="flex items-center">
+                            <input id="cg1a-1" type="radio" value="1" name="cg1a" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="cg1a-1" class="ms-2 text-sm text-gray-900">1. Child&#39;s relative</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="cg1a-2" type="radio" value="0" name="cg1a" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="cg1a-2" class="ms-2 text-sm text-gray-900">2. Other</label>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                    <div>CG1b. Was the person the child&#39;s legal guardian?</div>
+                    <div class="flex gap-4">
+                        <div class="flex items-center">
+                            <input id="cg1b-1" type="radio" value="1" name="cg1b" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="cg1b-1" class="ms-2 text-sm text-gray-900">1. Yes</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="cg1b-2" type="radio" value="0" name="cg1b" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="cg1b-2" class="ms-2 text-sm text-gray-900">2. No</label>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                    <div>CG1c. Since when was the person assigned as the child&#39;s legal guardian? (dd/mm/yyyy)</div>
+                    <div>
+                        <input type="text" id="cg1c" name="cg1c" class="bg-white disabled:bg-gray-100 border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+                    </div>
+                </div>
+                <small class="block italic text-red-500">If the person is a relative, code 1 in CG1a</small>
+        
+                <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                    <div>CG1d. Kinship relation: </div>
+                    <div>
+                        <input type="text" id="cg1d" name="cg1d" class="bg-white disabled:bg-gray-100 border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+                    </div>
+                </div>
+        
+                <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                    <div>CG2a. Caregiver&#39;s name:</div>
+                    <div>
+                        <input type="text" id="cg2a" name="cg2a" class="bg-white disabled:bg-gray-100 border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+                    </div>
+                </div>
+        
+                <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                    <div>CG2b. Caregiver&#39;s patronymics:</div>
+                    <div>
+                        <input type="text" id="cg2b" name="cg2b" class="bg-white disabled:bg-gray-100 border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+                    </div>
+                </div>
+        
+                <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                    <div>CG2c. Caregiver&#39;s surname:</div>
+                    <div>
+                        <input type="text" id="cg2c" name="cg2c" class="bg-white disabled:bg-gray-100 border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+                    </div>
+                </div>
+        
+                <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                    <div class="col-span-1">CG3a. Gender</div>
+                    <div class="col-span-1 flex gap-4">
+                        <div class="flex items-center">
+                            <input id="cg3a-1" type="radio" value="1" name="cg3a" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="cg3a-1" class="ms-2 text-sm text-gray-900">1. Male</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="cg3a-2" type="radio" value="0" name="cg3a" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="cg3a-2" class="ms-2 text-sm text-gray-900">2. Female</label>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                    <div>CG3b. Date of birth (dd/mm/yyyy):</div>
+                    <div>
+                        <input type="text" id="cg3b" name="cg3b" class="bg-white disabled:bg-gray-100 border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+                    </div>
+                </div>
+        
+                <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                    <div>CG4. Caregiver&#39;s ethnicity (nationality)</div>
+                    <div>
+                        <select id="cg4" name="cg4" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                            <option value="1">1. Uzbek</option>
+                            <option value="2">2. Russian</option>
+                            <option value="3">3. Kazakh</option>
+                            <option value="4">4. Tajik</option>
+                            <option value="5">5. Tatar</option>
+                            <option value="6">6. Karakalpaks</option>
+                            <option value="7">7. Kyrgyz</option>
+                            <option value="8">8. Korean</option>
+                            <option value="9">9. Other</option>
+                            <option value="0">0. Not declared/unknown</option>
+                        </select>
+                    </div>
+                </div>
+        
+                <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                    <div class="col-span-1">CGAD. At the time of the child's entry into the childcare system, was the caregiver alive or deceased?</div>
+                    <div class="col-span-1 flex gap-4">
+                        <div class="flex items-center">
+                            <input id="cgad-1" type="radio" value="1" name="cgad" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="cgad-1" class="ms-2 text-sm text-gray-900">1. Alive</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="cgad-2" type="radio" value="0" name="cgad" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="cgad-2" class="ms-2 text-sm text-gray-900">2. Deceased</label>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="grid grid-cols-2 gap-4 items-center mt-10">
+                    <div>
+                        CG5a. Caregiver&#39;s marital status at the time of the child&#39;s entry into the child care system                <small class="italic block text-red-500">* &quot;Separated&quot; means he is still legally married but does not live together with his spouse.</small>
+                    </div>
+                    <div class="col-span-1 flex flex-col gap-2">
+                        <div class="flex items-center">
+                            <input id="cg5a-1" type="radio" value="0" name="cg5a" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="cg5a-1" class="ms-2 text-sm text-gray-900">1. Married</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="cg5a-2" type="radio" value="1" name="cg5a" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="cg5a-2" class="ms-2 text-sm text-gray-900">2. Married, consanguineous</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="cg5a-3" type="radio" value="2" name="cg5a" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="cg5a-3" class="ms-2 text-sm text-gray-900">3. Living with a partner</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="cg5a-4" type="radio" value="3" name="cg5a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500">
+                            <label for="cg5a-4" class="ms-2 text-sm text-gray-900">4. Living with a partner, consanguineous</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="cg5a-5" type="radio" value="4" name="cg5a" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="cg5a-5" class="ms-2 text-sm text-gray-900">5. Single</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="cg5a-6" type="radio" value="5" name="cg5a" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="cg5a-6" class="ms-2 text-sm text-gray-900">6. Divorced</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="cg5a-7" type="radio" value="6" name="cg5a" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="cg5a-7" class="ms-2 text-sm text-gray-900">7. Separated*</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="cg5a-8" type="radio" value="8" name="cg5a" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="cg5a-8" class="ms-2 text-sm text-gray-900">8. Widowed</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="cg5a-0" type="radio" value="0" name="cg5a" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="cg5a-0" class="ms-2 text-sm text-gray-900">0. Not declared/unknown</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="cg5a-90" type="radio" value="90" name="cg5a" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="cg5a-90" class="ms-2 text-sm text-gray-900">90. Deceased</label>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="grid grid-cols-2 gap-4 items-center mt-10">
+                    <div>
+                        CG5b. Caregiver&#39;s current marital status                <small class="italic block text-red-500">* &quot;Separated&quot; means she is still legally married but does not live together with her spouse.</small>
+                    </div>
+                    <div class="col-span-1 flex flex-col gap-2">
+                        <div class="flex items-center">
+                            <input id="cg5b-1" type="radio" value="0" name="cg5b" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="cg5b-1" class="ms-2 text-sm text-gray-900">1. Married</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="cg5b-2" type="radio" value="1" name="cg5b" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="cg5b-2" class="ms-2 text-sm text-gray-900">2. Married, consanguineous</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="cg5b-3" type="radio" value="2" name="cg5b" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="cg5b-3" class="ms-2 text-sm text-gray-900">3. Living with a partner</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="cg5b-4" type="radio" value="3" name="cg5b" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500">
+                            <label for="cg5b-4" class="ms-2 text-sm text-gray-900">4. Living with a partner, consanguineous</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="cg5b-5" type="radio" value="4" name="cg5b" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="cg5b-5" class="ms-2 text-sm text-gray-900">5. Single</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="cg5b-6" type="radio" value="5" name="cg5b" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="cg5b-6" class="ms-2 text-sm text-gray-900">6. Divorced</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="cg5b-7" type="radio" value="6" name="cg5b" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="cg5b-7" class="ms-2 text-sm text-gray-900">7. Separated*</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="cg5b-8" type="radio" value="8" name="cg5b" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="cg5b-8" class="ms-2 text-sm text-gray-900">8. Widowed</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="cg5b-0" type="radio" value="0" name="cg5b" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="cg5b-0" class="ms-2 text-sm text-gray-900">0. Not declared/unknown</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="cg5b-90" type="radio" value="90" name="cg5b" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="cg5b-90" class="ms-2 text-sm text-gray-900">90. Deceased</label>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="grid grid-cols-2 gap-4 items-center mt-10">
+                    <div>
+                        CG6a. Caregiver&#39;s health at the time of the child&#39;s entry into the child care system            </div>
+                    <div class="col-span-1 flex flex-col gap-2">
+                        <div class="flex items-center">
+                            <input id="cg6a-1" type="radio" value="0" name="cg6a" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="cg6a-1" class="ms-2 text-sm text-gray-900">0. The person is apparently healthy</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="cg6a-2" type="radio" value="1" name="cg6a" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="cg6a-2" class="ms-2 text-sm text-gray-900">1. The person is diagnosed with a current disease (e.g., tuberculosis)</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="cg6a-3" type="radio" value="2" name="cg6a" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="cg6a-3" class="ms-2 text-sm text-gray-900">2. The person is suffering from a mental disorder or disability</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="cg6a-4" type="radio" value="3" name="cg6a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500">
+                            <label for="cg6a-4" class="ms-2 text-sm text-gray-900">3. The person is suffering from a physical impairment or disability</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="cg6a-5" type="radio" value="4" name="cg6a" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="cg6a-5" class="ms-2 text-sm text-gray-900">4. The person is suffering from both a mental and a physical impairment or disability</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="cg6a-9" type="radio" value="9" name="cg6a" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="cg6a-9" class="ms-2 text-sm text-gray-900">9. Unspecified/unknown</label>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="grid grid-cols-2 gap-4 items-center mt-10">
+                    <div>
+                        CG6b. Caregiver&#39;s current health            </div>
+                    <div class="col-span-1 flex flex-col gap-2">
+                        <div class="flex items-center">
+                            <input id="cg6b-1" type="radio" value="0" name="cg6b" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="cg6b-1" class="ms-2 text-sm text-gray-900">0. The person is apparently healthy</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="cg6b-2" type="radio" value="1" name="cg6b" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="cg6b-2" class="ms-2 text-sm text-gray-900">1. The person is diagnosed with a current disease (e.g., tuberculosis)</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="cg6b-3" type="radio" value="2" name="cg6b" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="cg6b-3" class="ms-2 text-sm text-gray-900">2. The person is suffering from a mental disorder or disability</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="cg6b-4" type="radio" value="3" name="cg6b" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500">
+                            <label for="cg6b-4" class="ms-2 text-sm text-gray-900">3. The person is suffering from a physical impairment or disability</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="cg6b-5" type="radio" value="4" name="cg6b" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="cg6b-5" class="ms-2 text-sm text-gray-900">4. The person is suffering from both a mental and a physical impairment or disability</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="cg6b-9" type="radio" value="9" name="cg6b" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="cg6b-9" class="ms-2 text-sm text-gray-900">9. Unspecified/unknown</label>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="grid grid-cols-2 gap-4 items-center mt-10">
+                    <div>
+                        CG6c. What group of disability does the person have?            </div>
+                    <div class="col-span-1 flex flex-col gap-2">
+                        <div class="flex items-center">
+                            <input id="cg6c-1" type="radio" value="0" name="cg6c" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="cg6c-1" class="ms-2 text-sm text-gray-900">1. Disabled since childhood</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="cg6c-2" type="radio" value="1" name="cg6c" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="cg6c-2" class="ms-2 text-sm text-gray-900">2. First group</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="cg6c-3" type="radio" value="2" name="cg6c" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="cg6c-3" class="ms-2 text-sm text-gray-900">3. Second group</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="cg6c-4" type="radio" value="3" name="cg6c" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500">
+                            <label for="cg6c-4" class="ms-2 text-sm text-gray-900">4. Third group</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 gap-4 items-center mt-10">
+                    <div>
+                        CG7a. Caregiver&#39;s education at the time of the child&#39;s entry into the child care system            </div>
+                    <div class="col-span-1 flex flex-col gap-2">
+                        <div class="flex items-center">
+                            <input id="cg7a-1" type="radio" value="0" name="cg7a" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="cg7a-1" class="ms-2 text-sm text-gray-900">0. No education</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="cg7a-2" type="radio" value="1" name="cg7a" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="cg7a-2" class="ms-2 text-sm text-gray-900">1. Unfinished secondary education</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="cg7a-3" type="radio" value="2" name="cg7a" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="cg7a-3" class="ms-2 text-sm text-gray-900">2. General secondary education</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="cg7a-4" type="radio" value="3" name="cg7a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500">
+                            <label for="cg7a-4" class="ms-2 text-sm text-gray-900">3. Specialized secondary/vocational education</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="cg7a-5" type="radio" value="4" name="cg7a" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="cg7a-5" class="ms-2 text-sm text-gray-900">4. Unfinished specialized secondary/vocational education </label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="cg7a-6" type="radio" value="5" name="cg7a" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="cg7a-6" class="ms-2 text-sm text-gray-900">5. Higher education</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="cg7a-7" type="radio" value="6" name="cg7a" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="cg7a-7" class="ms-2 text-sm text-gray-900">6. Unfinished higher education</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="cg7a-9" type="radio" value="9" name="cg7a" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="cg7a-9" class="ms-2 text-sm text-gray-900">9. Unspecified/unknown</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 gap-4 items-center mt-10">
+                    <div>
+                        CG7b. Please use one of the codes below            </div>
+                    <div class="col-span-1 flex flex-col gap-2">
+                        <div class="flex items-center">
+                            <input id="cg7b-1" type="radio" value="0" name="cg7b" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="cg7b-1" class="ms-2 text-sm text-gray-900">0. No education</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="cg7b-2" type="radio" value="1" name="cg7b" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="cg7b-2" class="ms-2 text-sm text-gray-900">1. Unfinished secondary education</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="cg7b-3" type="radio" value="2" name="cg7b" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="cg7b-3" class="ms-2 text-sm text-gray-900">2. General secondary education</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="cg7b-4" type="radio" value="3" name="cg7b" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500">
+                            <label for="cg7b-4" class="ms-2 text-sm text-gray-900">3. Specialized secondary/vocational education</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="cg7b-5" type="radio" value="4" name="cg7b" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="cg7b-5" class="ms-2 text-sm text-gray-900">4. Unfinished specialized secondary/vocational education </label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="cg7b-6" type="radio" value="5" name="cg7b" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="cg7b-6" class="ms-2 text-sm text-gray-900">5. Higher education</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="cg7b-7" type="radio" value="6" name="cg7b" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="cg7b-7" class="ms-2 text-sm text-gray-900">6. Unfinished higher education</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="cg7b-9" type="radio" value="9" name="cg7b" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="cg7b-9" class="ms-2 text-sm text-gray-900">9. Unspecified/unknown</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 gap-4 items-center mt-10">
+                    <div>
+                        CG8a. Caregiver&#39;s occupational status at the time of the child&#39;s entry into the child care system            </div>
+                    <div class="col-span-1 flex flex-col gap-2">
+                        <div class="flex items-center">
+                            <input id="cg8a-1" type="radio" value="1" name="cg8a" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="cg8a-1" class="ms-2 text-sm text-gray-900">1. Employed, permanent</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="cg8a-2" type="radio" value="2" name="cg8a" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="cg8a-2" class="ms-2 text-sm text-gray-900">2. Employed, temporary</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="cg8a-3" type="radio" value="3" name="cg8a" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="cg8a-3" class="ms-2 text-sm text-gray-900">3. Employed, seasonal</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="cg8a-4" type="radio" value="4" name="cg8a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500">
+                            <label for="cg8a-4" class="ms-2 text-sm text-gray-900">4. Employed, informal</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="cg8a-5" type="radio" value="5" name="cg8a" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="cg8a-5" class="ms-2 text-sm text-gray-900">5. Official labor migrant</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="cg8a-6" type="radio" value="6" name="cg8a" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="cg8a-6" class="ms-2 text-sm text-gray-900">6. Unofficial labor migrant</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="cg8a-7" type="radio" value="7" name="cg8a" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="cg8a-7" class="ms-2 text-sm text-gray-900">7. Self-employed</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="cg8a-8" type="radio" value="8" name="cg8a" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="cg8a-8" class="ms-2 text-sm text-gray-900">8. Unpaid family worker</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="cg8a-9" type="radio" value="9" name="cg8a" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="cg8a-9" class="ms-2 text-sm text-gray-900">9. Unemployed</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="cg8a-10" type="radio" value="10" name="cg8a" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="cg8a-10" class="ms-2 text-sm text-gray-900">10. Student</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="cg8a-11" type="radio" value="11" name="cg8a" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="cg8a-11" class="ms-2 text-sm text-gray-900">11. Caring for a child with disability</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="cg8a-12" type="radio" value="12" name="cg8a" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="cg8a-12" class="ms-2 text-sm text-gray-900">12. Homemaker / Looking after the household</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="cg8a-13" type="radio" value="13" name="cg8a" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="cg8a-13" class="ms-2 text-sm text-gray-900">13. Retired</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="cg8a-14" type="radio" value="14" name="cg8a" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="cg8a-14" class="ms-2 text-sm text-gray-900">14. Maternity / Paternity leave</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="cg8a-15" type="radio" value="15" name="cg8a" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="cg8a-15" class="ms-2 text-sm text-gray-900">15. In prison</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="cg8a-16" type="radio" value="16" name="cg8a" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="cg8a-16" class="ms-2 text-sm text-gray-900">16. Another situation, please specify</label>
+                        </div>
+                        <div>
+                            <input type="text" id="cg8a_other" name="cg8a_other" class="bg-white disabled:bg-gray-100 border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+                        </div>
+                        <div class="flex items-center">
+                            <input id="cg8a-90" type="radio" value="90" name="cg8a" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="cg8a-90" class="ms-2 text-sm text-gray-900">90. Unspecified/Unknown</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 gap-4 items-center mt-10">
+                    <div>
+                        CG8b. Caregiver&#39;s current occupational status            </div>
+                    <div class="col-span-1 flex flex-col gap-2">
+                        <div class="flex items-center">
+                            <input id="cg8b-1" type="radio" value="1" name="cg8b" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="cg8b-1" class="ms-2 text-sm text-gray-900">1. Employed, permanent</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="cg8b-2" type="radio" value="2" name="cg8b" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="cg8b-2" class="ms-2 text-sm text-gray-900">2. Employed, temporary</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="cg8b-3" type="radio" value="3" name="cg8b" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="cg8b-3" class="ms-2 text-sm text-gray-900">3. Employed, seasonal</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="cg8b-4" type="radio" value="4" name="cg8b" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500">
+                            <label for="cg8b-4" class="ms-2 text-sm text-gray-900">4. Employed, informal</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="cg8b-5" type="radio" value="5" name="cg8b" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="cg8b-5" class="ms-2 text-sm text-gray-900">5. Official labor migrant</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="cg8b-6" type="radio" value="6" name="cg8b" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="cg8b-6" class="ms-2 text-sm text-gray-900">6. Unofficial labor migrant</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="cg8b-7" type="radio" value="7" name="cg8b" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="cg8b-7" class="ms-2 text-sm text-gray-900">7. Self-employed</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="cg8b-8" type="radio" value="8" name="cg8b" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="cg8b-8" class="ms-2 text-sm text-gray-900">8. Unpaid family worker</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="cg8b-9" type="radio" value="9" name="cg8b" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="cg8b-9" class="ms-2 text-sm text-gray-900">9. Unemployed</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="cg8b-10" type="radio" value="10" name="cg8b" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="cg8b-10" class="ms-2 text-sm text-gray-900">10. Student</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="cg8b-11" type="radio" value="11" name="cg8b" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="cg8b-11" class="ms-2 text-sm text-gray-900">11. Caring for a child with disability</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="cg8b-12" type="radio" value="12" name="cg8b" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="cg8b-12" class="ms-2 text-sm text-gray-900">12. Homemaker / Looking after the household</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="cg8b-13" type="radio" value="13" name="cg8b" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="cg8b-13" class="ms-2 text-sm text-gray-900">13. Retired</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="cg8b-14" type="radio" value="14" name="cg8b" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="cg8b-14" class="ms-2 text-sm text-gray-900">14. Maternity / Paternity leave</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="cg8b-15" type="radio" value="15" name="cg8b" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="cg8b-15" class="ms-2 text-sm text-gray-900">15. In prison</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="cg8b-16" type="radio" value="16" name="cg8b" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="cg8b-16" class="ms-2 text-sm text-gray-900">16. Another situation, please specify</label>
+                        </div>
+                        <div>
+                            <input type="text" id="cg8b_other" name="cg8b_other" class="bg-white disabled:bg-gray-100 border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+                        </div>
+                        <div class="flex items-center">
+                            <input id="cg8b-90" type="radio" value="90" name="cg8b" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="cg8b-90" class="ms-2 text-sm text-gray-900">90. Unspecified/Unknown</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 gap-4 items-center mt-10">
+                    <div>
+                        CG9. Caregiver&#39;s risk behaviors at the time of the child&#39;s entry into the child care system:            </div>
+                    <div>
+                        <div class="mb-4">
+                            <div class="mb-2">a. Consuming alcohol in excess?</div>
+                            <div class="flex gap-4">
+                                <div class="flex items-center">
+                                    <input id="cg9a-1" type="radio" value="1" name="cg9a" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                                    <label for="cg9a-1" class="ms-2 text-sm text-gray-900">1. Yes</label>
+                                </div>
+                                <div class="flex items-center">
+                                    <input id="cg9a-2" type="radio" value="2" name="cg9a" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                                    <label for="cg9a-2" class="ms-2 text-sm text-gray-900">2. No</label>
+                                </div>
+                                <div class="flex items-center">
+                                    <input id="cg9a-3" type="radio" value="9" name="cg9a" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                                    <label for="cg9a-3" class="ms-2 text-sm text-gray-900">9. Unknown</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mb-4">
+                            <div class="mb-2">b. Consuming drugs?</div>
+                            <div class="flex gap-4">
+                                <div class="flex items-center">
+                                    <input id="cg9b-1" type="radio" value="1" name="cg9b" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                                    <label for="cg9b-1" class="ms-2 text-sm text-gray-900">1. Yes</label>
+                                </div>
+                                <div class="flex items-center">
+                                    <input id="cg9b-2" type="radio" value="2" name="cg9b" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                                    <label for="cg9b-2" class="ms-2 text-sm text-gray-900">2. No</label>
+                                </div>
+                                <div class="flex items-center">
+                                    <input id="cg9b-3" type="radio" value="9" name="cg9b" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                                    <label for="cg9b-3" class="ms-2 text-sm text-gray-900">9. Unknown</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mb-4">
+                            <div class="mb-2">c. Having a criminal record?</div>
+                            <div class="flex gap-4">
+                                <div class="flex items-center">
+                                    <input id="cg9c-1" type="radio" value="1" name="cg9c" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                                    <label for="cg9c-1" class="ms-2 text-sm text-gray-900">1. Yes</label>
+                                </div>
+                                <div class="flex items-center">
+                                    <input id="cg9c-2" type="radio" value="2" name="cg9c" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                                    <label for="cg9c-2" class="ms-2 text-sm text-gray-900">2. No</label>
+                                </div>
+                                <div class="flex items-center">
+                                    <input id="cg9c-3" type="radio" value="9" name="cg9c" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                                    <label for="cg9c-3" class="ms-2 text-sm text-gray-900">9. Unknown</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mb-4">
+                            <div class="mb-2">d. Vagrancy, wandering, changing places frequently</div>
+                            <div class="flex gap-4">
+                                <div class="flex items-center">
+                                    <input id="cg9d-1" type="radio" value="1" name="cg9d" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                                    <label for="cg9d-1" class="ms-2 text-sm text-gray-900">1. Yes</label>
+                                </div>
+                                <div class="flex items-center">
+                                    <input id="cg9d-2" type="radio" value="2" name="cg9d" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                                    <label for="cg9d-2" class="ms-2 text-sm text-gray-900">2. No</label>
+                                </div>
+                                <div class="flex items-center">
+                                    <input id="cg9d-3" type="radio" value="9" name="cg9d" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                                    <label for="cg9d-3" class="ms-2 text-sm text-gray-900">9. Unknown</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="grid grid-cols-2 gap-4 items-center mt-10">
+                    <div>
+                        CG10. Caregiver&#39;s domicile at the time of the child&#39;s entry into the child care system            </div>
+                    <div>
+                        <div class="mb-2">a. Was the person living…?</div>
+                        <div class="flex gap-4">
+                            <div class="flex items-center">
+                                <input id="cg10a-1" type="radio" value="1" name="cg10a" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                                <label for="cg10a-1" class="ms-2 text-sm text-gray-900">1. In the country </label>
+                            </div>
+                            <div class="flex items-center">
+                                <input id="cg10a-2" type="radio" value="2" name="cg10a" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                                <label for="cg10a-2" class="ms-2 text-sm text-gray-900">2. Abroad</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                    <div></div>
+                    <div>b. Legal domicile - City/Village:</div>
+                </div>
+        
+                <div class="grid grid-cols-2 items-center gap-4 mt-6">
+                    <div>c. Region:</div>
+                    <div>
+                        <select id="cg10c" name="cg10c" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                            <option value="1">-- choose ---</option>
+                        </select>
+                    </div>
+                </div>
+        
+                <div class="grid grid-cols-2 items-center gap-4 mt-6">
+                    <div>d. District:</div>
+                    <div>
+                        <select id="cg10d" name="cg10d" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                            <option value="1">-- choose ---</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 items-center gap-4 mt-6">
+                    <div>cg10e. City/Town/Village</div>
+                    <div>
+                        <select id="cg10e" name="cg10e" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                            <option value="1">-- choose ---</option>
+                        </select>
+        
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                    <div>cg10f. Type of settlment</div>
+                    <div class="flex gap-4">
+                        <div class="flex items-center">
+                            <input id="cg10f-1" type="radio" value="1" name="cg10f" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="cg10f-1" class="ms-2 text-sm text-gray-900">1. Urban</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="cg10f-2" type="radio" value="0" name="cg10f" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="cg10f-2" class="ms-2 text-sm text-gray-900">2. Rural</label>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="grid grid-cols-2 gap-4 items-center mt-10">
+                    <div>
+                        CG11. Caregiver&#39;s current domicile            </div>
+                    <div>
+                        <div class="mb-2">a. Is the person living…?</div>
+                        <div class="flex gap-4">
+                            <div class="flex items-center">
+                                <input id="cg11a-1" type="radio" value="1" name="cg11a" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                                <label for="cg11a-1" class="ms-2 text-sm text-gray-900">1. In the country </label>
+                            </div>
+                            <div class="flex items-center">
+                                <input id="cg11a-2" type="radio" value="2" name="cg11a" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                                <label for="cg11a-2" class="ms-2 text-sm text-gray-900">2. Abroad</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                    <div></div>
+                    <div>b. Legal domicile - City/Village:</div>
+                </div>
+        
+                <div class="grid grid-cols-2 items-center gap-4 mt-6">
+                    <div>c. Region:</div>
+                    <div>
+                        <select id="cg11c" name="cg11c" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                            <option value="1">-- choose ---</option>
+                        </select>
+                    </div>
+                </div>
+        
+                <div class="grid grid-cols-2 items-center gap-4 mt-6">
+                    <div>d. District:</div>
+                    <div>
+                        <select id="cg11d" name="cg11d" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                            <option value="1">-- choose ---</option>
+                        </select>
+                    </div>
+                </div>
+        
+                <div class="grid grid-cols-2 items-center gap-4 mt-6">
+                    <div>cg11e. City/Town/Village</div>
+                    <div>
+                        <select id="cg11e" name="cg11e" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                            <option value="1">-- choose ---</option>
+                        </select>
+        
+                    </div>
+                </div>
+        
+                <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                    <div>cg11f. Type of settlment</div>
+                    <div class="flex gap-4">
+                        <div class="flex items-center">
+                            <input id="cg11f-1" type="radio" value="1" name="cg11f" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="cg11f-1" class="ms-2 text-sm text-gray-900">1. Urban</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="cg11f-2" type="radio" value="0" name="cg11f" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="cg11f-2" class="ms-2 text-sm text-gray-900">2. Rural</label>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                    <div>Address:</div>
+                    <div>
+                        <input type="text" id="cg11g" name="cg11g" class="bg-white disabled:bg-gray-100 border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                    <div>Phone number:</div>
+                    <div>
+                        <input type="text" id="cg11h" name="cg11h" class="bg-white disabled:bg-gray-100 border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+                    </div>
+                </div>
+        
+                        <h2 class="mt-10 mb-4 text-2xl font-bold text-gray-700">4. THE CHILD&#39;S FIRST ADMISSION INTO THE CHILD CARE SYSTEM</h2>
+        
         
         
             </form>

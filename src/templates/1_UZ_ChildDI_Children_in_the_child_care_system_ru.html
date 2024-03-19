@@ -1093,7 +1093,7 @@
         </div>
 
         <!-- FATHER -->
-         <h3 class="text-xl mt-10 font-semibold bg-gray-100 px-2 py-1 text-gray-700">3.2. ОТЕЦ РЕБЕНКА</h3>
+        <h3 class="text-xl mt-10 font-semibold bg-gray-100 px-2 py-1 text-gray-700">3.2. ОТЕЦ РЕБЕНКА</h3>
 
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
             <div>CT1a. Было ли известно об отце ребенка на момент поступления ребенка в систему опеки?</div>
@@ -1919,6 +1919,757 @@
                 <input type="text" id="ct11h" name="ct11h" class="bg-white disabled:bg-gray-100 border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
             </div>
         </div>
+
+
+        <!-- CAREGIVER -->
+        <h3 class="text-xl mt-10 mb-2 font-semibold bg-gray-100 px-2 py-1 text-gray-700">3.3. ЛИЦО, КОТОРОЕ ЗАБОТИЛОСЬ О РЕБЕНКЕ</h3>
+        <small class="block italic text-red-500">Этот раздел заполняется только в том случае, если до поступления в систему ребенок находился под опекой  кого-либо, кроме матери или отца ребенка. В ином случае перейдите к разделу 4.</small>
+
+        <div class="grid grid-cols-2 gap-4 items-center mt-6">
+            <div>CG1a. Каково взаимоотношение между ребенком и лицом, которое заботится  о нем?</div>
+            <div class="flex gap-4">
+                <div class="flex items-center">
+                    <input id="cg1a-1" type="radio" value="1" name="cg1a" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="cg1a-1" class="ms-2 text-sm text-gray-900">1. Родственник ребенка</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="cg1a-2" type="radio" value="0" name="cg1a" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="cg1a-2" class="ms-2 text-sm text-gray-900">2. Другое</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 items-center mt-6">
+            <div>CG1b. Было ли это лицо законным опекуном ребенка?</div>
+            <div class="flex gap-4">
+                <div class="flex items-center">
+                    <input id="cg1b-1" type="radio" value="1" name="cg1b" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="cg1b-1" class="ms-2 text-sm text-gray-900">1. Да</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="cg1b-2" type="radio" value="0" name="cg1b" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="cg1b-2" class="ms-2 text-sm text-gray-900">2. Нет</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 items-center mt-6">
+            <div>CG1c. С какого момента это лицо было назначено законным опекуном ребенка? (дд/мм/гггг)</div>
+            <div>
+                <input type="text" id="cg1c" name="cg1c" class="bg-white disabled:bg-gray-100 border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+            </div>
+        </div>
+        <small class="block italic text-red-500">Если человек является родственником, используйте код 1 в CG1a</small>
+
+        <div class="grid grid-cols-2 gap-4 items-center mt-6">
+            <div>CG1d. Родственные связи: </div>
+            <div>
+                <input type="text" id="cg1d" name="cg1d" class="bg-white disabled:bg-gray-100 border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+            </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 items-center mt-6">
+            <div>CG2a. Имя опекуна:</div>
+            <div>
+                <input type="text" id="cg2a" name="cg2a" class="bg-white disabled:bg-gray-100 border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+            </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 items-center mt-6">
+            <div>CG2b. Отчество опекуна:</div>
+            <div>
+                <input type="text" id="cg2b" name="cg2b" class="bg-white disabled:bg-gray-100 border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+            </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 items-center mt-6">
+            <div>CG2c. Фамилия опекуна:</div>
+            <div>
+                <input type="text" id="cg2c" name="cg2c" class="bg-white disabled:bg-gray-100 border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+            </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 items-center mt-6">
+            <div class="col-span-1">CG3a. Пол</div>
+            <div class="col-span-1 flex gap-4">
+                <div class="flex items-center">
+                    <input id="cg3a-1" type="radio" value="1" name="cg3a" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="cg3a-1" class="ms-2 text-sm text-gray-900">1. Мужской</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="cg3a-2" type="radio" value="0" name="cg3a" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="cg3a-2" class="ms-2 text-sm text-gray-900">2. Женский</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 items-center mt-6">
+            <div>CG3b. Дата рождения (дд/мм/гггг):</div>
+            <div>
+                <input type="text" id="cg3b" name="cg3b" class="bg-white disabled:bg-gray-100 border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+            </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 items-center mt-6">
+            <div>CG4. Этническая принадлежность (национальность) опекуна</div>
+            <div>
+                <select id="cg4" name="cg4" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                    <option value="1">1. Узбек/Узбечка</option>
+                    <option value="2">2. Русский/Русская</option>
+                    <option value="3">3. Казах/Казашка</option>
+                    <option value="4">4. Таджик/Таджичка</option>
+                    <option value="5">5. Татарин/Татарка</option>
+                    <option value="6">6. Каракалпак/Каракалпачка</option>
+                    <option value="7">7. Кыргыз/Кыргызка</option>
+                    <option value="8">8. Кореец/Кореянка</option>
+                    <option value="9">9. Другое</option>
+                    <option value="0">0. Не заявлено/неизвестно</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 items-center mt-6">
+            <div class="col-span-1">CGAD. At the time of the child's entry into the childcare system, was the caregiver alive or deceased?</div>
+            <div class="col-span-1 flex gap-4">
+                <div class="flex items-center">
+                    <input id="cgad-1" type="radio" value="1" name="cgad" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="cgad-1" class="ms-2 text-sm text-gray-900">1. Alive</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="cgad-2" type="radio" value="0" name="cgad" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="cgad-2" class="ms-2 text-sm text-gray-900">2. Deceased</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 items-center mt-10">
+            <div>
+                CG5a. Семейное положение опекуна на момент поступления ребенка в систему опеки                <small class="italic block text-red-500">* «Живет отдельно» означает, что он/она все еще состоит в законном браке, но не проживает вместе с супругой(-ом).</small>
+            </div>
+            <div class="col-span-1 flex flex-col gap-2">
+                <div class="flex items-center">
+                    <input id="cg5a-1" type="radio" value="0" name="cg5a" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="cg5a-1" class="ms-2 text-sm text-gray-900">1.  Замужем /Женат</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="cg5a-2" type="radio" value="1" name="cg5a" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="cg5a-2" class="ms-2 text-sm text-gray-900">2. Женат/Замужем за кровнородственным лицом</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="cg5a-3" type="radio" value="2" name="cg5a" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="cg5a-3" class="ms-2 text-sm text-gray-900">3. Сожительствует с партнером(-шей)</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="cg5a-4" type="radio" value="3" name="cg5a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500">
+                    <label for="cg5a-4" class="ms-2 text-sm text-gray-900">4. Сожительствует с партнером(-шей) -  кровнородственным лицом</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="cg5a-5" type="radio" value="4" name="cg5a" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="cg5a-5" class="ms-2 text-sm text-gray-900">5. Холост/Не замужем</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="cg5a-6" type="radio" value="5" name="cg5a" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="cg5a-6" class="ms-2 text-sm text-gray-900">6. Разведен(-а)</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="cg5a-7" type="radio" value="6" name="cg5a" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="cg5a-7" class="ms-2 text-sm text-gray-900">7. Живет отдельно*</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="cg5a-8" type="radio" value="8" name="cg5a" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="cg5a-8" class="ms-2 text-sm text-gray-900">8. Вдовец/Вдова</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="cg5a-0" type="radio" value="0" name="cg5a" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="cg5a-0" class="ms-2 text-sm text-gray-900">0. Не заявлено/неизвестно</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="cg5a-90" type="radio" value="90" name="cg5a" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="cg5a-90" class="ms-2 text-sm text-gray-900">90. Deceased</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 items-center mt-10">
+            <div>
+                CG5b. Текущее семейное положение опекуна                <small class="italic block text-red-500">* &quot;Separated&quot; means she is still legally married but does not live together with her spouse.</small>
+            </div>
+            <div class="col-span-1 flex flex-col gap-2">
+                <div class="flex items-center">
+                    <input id="cg5b-1" type="radio" value="0" name="cg5b" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="cg5b-1" class="ms-2 text-sm text-gray-900">1.  Замужем /Женат</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="cg5b-2" type="radio" value="1" name="cg5b" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="cg5b-2" class="ms-2 text-sm text-gray-900">2. Женат/Замужем за кровнородственным лицом</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="cg5b-3" type="radio" value="2" name="cg5b" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="cg5b-3" class="ms-2 text-sm text-gray-900">3. Сожительствует с партнером(-шей)</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="cg5b-4" type="radio" value="3" name="cg5b" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500">
+                    <label for="cg5b-4" class="ms-2 text-sm text-gray-900">4. Сожительствует с партнером(-шей) -  кровнородственным лицом</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="cg5b-5" type="radio" value="4" name="cg5b" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="cg5b-5" class="ms-2 text-sm text-gray-900">5. Холост/Не замужем</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="cg5b-6" type="radio" value="5" name="cg5b" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="cg5b-6" class="ms-2 text-sm text-gray-900">6. Разведен(-а)</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="cg5b-7" type="radio" value="6" name="cg5b" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="cg5b-7" class="ms-2 text-sm text-gray-900">7. Живет отдельно*</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="cg5b-8" type="radio" value="8" name="cg5b" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="cg5b-8" class="ms-2 text-sm text-gray-900">8. Вдовец/Вдова</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="cg5b-0" type="radio" value="0" name="cg5b" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="cg5b-0" class="ms-2 text-sm text-gray-900">0. Не заявлено/неизвестно</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="cg5b-90" type="radio" value="90" name="cg5b" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="cg5b-90" class="ms-2 text-sm text-gray-900">90. Deceased</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 items-center mt-10">
+            <div>
+                CG6a. Состояние здоровья опекуна на момент поступления ребенка в систему опеки            </div>
+            <div class="col-span-1 flex flex-col gap-2">
+                <div class="flex items-center">
+                    <input id="cg6a-1" type="radio" value="0" name="cg6a" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="cg6a-1" class="ms-2 text-sm text-gray-900">0. Лицо внешне здоровое</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="cg6a-2" type="radio" value="1" name="cg6a" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="cg6a-2" class="ms-2 text-sm text-gray-900">1. У лица диагностировано текущее заболевание (например, туберкулез)</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="cg6a-3" type="radio" value="2" name="cg6a" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="cg6a-3" class="ms-2 text-sm text-gray-900">2. Лицо страдает психическим расстройством или инвалидностью.</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="cg6a-4" type="radio" value="3" name="cg6a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500">
+                    <label for="cg6a-4" class="ms-2 text-sm text-gray-900">3. Лицо страдает физическим недостатком или инвалидностью</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="cg6a-5" type="radio" value="4" name="cg6a" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="cg6a-5" class="ms-2 text-sm text-gray-900">4. Лицо страдает как психическим, так и физическим нарушением или инвалидностью</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="cg6a-9" type="radio" value="9" name="cg6a" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="cg6a-9" class="ms-2 text-sm text-gray-900">9. Не указано/неизвестно</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 items-center mt-10">
+            <div>
+                CG6b. Текущее состояние здоровья опекуна            </div>
+            <div class="col-span-1 flex flex-col gap-2">
+                <div class="flex items-center">
+                    <input id="cg6b-1" type="radio" value="0" name="cg6b" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="cg6b-1" class="ms-2 text-sm text-gray-900">0. Лицо внешне здоровое</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="cg6b-2" type="radio" value="1" name="cg6b" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="cg6b-2" class="ms-2 text-sm text-gray-900">1. У лица диагностировано текущее заболевание (например, туберкулез)</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="cg6b-3" type="radio" value="2" name="cg6b" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="cg6b-3" class="ms-2 text-sm text-gray-900">2. Лицо страдает психическим расстройством или инвалидностью.</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="cg6b-4" type="radio" value="3" name="cg6b" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500">
+                    <label for="cg6b-4" class="ms-2 text-sm text-gray-900">3. Лицо страдает физическим недостатком или инвалидностью</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="cg6b-5" type="radio" value="4" name="cg6b" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="cg6b-5" class="ms-2 text-sm text-gray-900">4. Лицо страдает как психическим, так и физическим нарушением или инвалидностью</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="cg6b-9" type="radio" value="9" name="cg6b" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="cg6b-9" class="ms-2 text-sm text-gray-900">9. Не указано/неизвестно</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 items-center mt-10">
+            <div>
+                CG6c. Какая группа инвалидности у лица?            </div>
+            <div class="col-span-1 flex flex-col gap-2">
+                <div class="flex items-center">
+                    <input id="cg6c-1" type="radio" value="0" name="cg6c" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="cg6c-1" class="ms-2 text-sm text-gray-900">1. Инвалид с детства</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="cg6c-2" type="radio" value="1" name="cg6c" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="cg6c-2" class="ms-2 text-sm text-gray-900">2. Первая группа</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="cg6c-3" type="radio" value="2" name="cg6c" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="cg6c-3" class="ms-2 text-sm text-gray-900">3. Вторая группа</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="cg6c-4" type="radio" value="3" name="cg6c" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500">
+                    <label for="cg6c-4" class="ms-2 text-sm text-gray-900">4. Третья группа</label>
+                </div>
+            </div>
+        </div>
+        <div class="grid grid-cols-2 gap-4 items-center mt-10">
+            <div>
+                CG7a. Образование опекуна на момент поступления ребенка в систему опеки            </div>
+            <div class="col-span-1 flex flex-col gap-2">
+                <div class="flex items-center">
+                    <input id="cg7a-1" type="radio" value="0" name="cg7a" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="cg7a-1" class="ms-2 text-sm text-gray-900">0. Без образования</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="cg7a-2" type="radio" value="1" name="cg7a" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="cg7a-2" class="ms-2 text-sm text-gray-900">1. Незаконченное среднее образование</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="cg7a-3" type="radio" value="2" name="cg7a" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="cg7a-3" class="ms-2 text-sm text-gray-900">2. Общее среднее образование</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="cg7a-4" type="radio" value="3" name="cg7a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500">
+                    <label for="cg7a-4" class="ms-2 text-sm text-gray-900">3. Среднее специальное/профессиональное образование</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="cg7a-5" type="radio" value="4" name="cg7a" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="cg7a-5" class="ms-2 text-sm text-gray-900">4.Незаконченное специальное / профессиональное образование</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="cg7a-6" type="radio" value="5" name="cg7a" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="cg7a-6" class="ms-2 text-sm text-gray-900">5. Высшее образование</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="cg7a-7" type="radio" value="6" name="cg7a" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="cg7a-7" class="ms-2 text-sm text-gray-900">6. Незаконченное высшее образование</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="cg7a-9" type="radio" value="9" name="cg7a" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="cg7a-9" class="ms-2 text-sm text-gray-900">9. Не указано/неизвестно</label>
+                </div>
+            </div>
+        </div>
+        <div class="grid grid-cols-2 gap-4 items-center mt-10">
+            <div>
+                CG7b. Пожалуйста, используйте один из нижеуказанных кодов             </div>
+            <div class="col-span-1 flex flex-col gap-2">
+                <div class="flex items-center">
+                    <input id="cg7b-1" type="radio" value="0" name="cg7b" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="cg7b-1" class="ms-2 text-sm text-gray-900">0. Без образования</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="cg7b-2" type="radio" value="1" name="cg7b" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="cg7b-2" class="ms-2 text-sm text-gray-900">1. Незаконченное среднее образование</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="cg7b-3" type="radio" value="2" name="cg7b" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="cg7b-3" class="ms-2 text-sm text-gray-900">2. Общее среднее образование</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="cg7b-4" type="radio" value="3" name="cg7b" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500">
+                    <label for="cg7b-4" class="ms-2 text-sm text-gray-900">3. Среднее специальное/профессиональное образование</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="cg7b-5" type="radio" value="4" name="cg7b" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="cg7b-5" class="ms-2 text-sm text-gray-900">4.Незаконченное специальное / профессиональное образование</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="cg7b-6" type="radio" value="5" name="cg7b" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="cg7b-6" class="ms-2 text-sm text-gray-900">5. Высшее образование</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="cg7b-7" type="radio" value="6" name="cg7b" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="cg7b-7" class="ms-2 text-sm text-gray-900">6. Незаконченное высшее образование</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="cg7b-9" type="radio" value="9" name="cg7b" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="cg7b-9" class="ms-2 text-sm text-gray-900">9. Не указано/неизвестно</label>
+                </div>
+            </div>
+        </div>
+        <div class="grid grid-cols-2 gap-4 items-center mt-10">
+            <div>
+                CG8a. Трудовая занятость  опекуна на момент поступления ребенка в систему опеки            </div>
+            <div class="col-span-1 flex flex-col gap-2">
+                <div class="flex items-center">
+                    <input id="cg8a-1" type="radio" value="1" name="cg8a" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="cg8a-1" class="ms-2 text-sm text-gray-900">1. Занятый(-ая), на постоянной основе</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="cg8a-2" type="radio" value="2" name="cg8a" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="cg8a-2" class="ms-2 text-sm text-gray-900">2. Занятый, на временной основе</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="cg8a-3" type="radio" value="3" name="cg8a" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="cg8a-3" class="ms-2 text-sm text-gray-900">3. Занятый, на сезонной работе</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="cg8a-4" type="radio" value="4" name="cg8a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500">
+                    <label for="cg8a-4" class="ms-2 text-sm text-gray-900">4. Занятый, неофициально</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="cg8a-5" type="radio" value="5" name="cg8a" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="cg8a-5" class="ms-2 text-sm text-gray-900">5. Официальный трудовой мигрант</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="cg8a-6" type="radio" value="6" name="cg8a" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="cg8a-6" class="ms-2 text-sm text-gray-900">6. Неофициальный трудовой мигрант</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="cg8a-7" type="radio" value="7" name="cg8a" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="cg8a-7" class="ms-2 text-sm text-gray-900">7. Самозанятый(-ая)</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="cg8a-8" type="radio" value="8" name="cg8a" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="cg8a-8" class="ms-2 text-sm text-gray-900">8.  Неоплачиваемый участник семейного предпринимательства</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="cg8a-9" type="radio" value="9" name="cg8a" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="cg8a-9" class="ms-2 text-sm text-gray-900">9. Безработный(-ая)</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="cg8a-10" type="radio" value="10" name="cg8a" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="cg8a-10" class="ms-2 text-sm text-gray-900">10. Студент(-ка)</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="cg8a-11" type="radio" value="11" name="cg8a" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="cg8a-11" class="ms-2 text-sm text-gray-900">11. Ухаживает за ребенком-инвалидом</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="cg8a-12" type="radio" value="12" name="cg8a" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="cg8a-12" class="ms-2 text-sm text-gray-900">12. Домохозяйка (Домохозяин) / Забота о домашнем хозяйстве</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="cg8a-13" type="radio" value="13" name="cg8a" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="cg8a-13" class="ms-2 text-sm text-gray-900">13. Пенсионер(-ка)</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="cg8a-14" type="radio" value="14" name="cg8a" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="cg8a-14" class="ms-2 text-sm text-gray-900">14. в декретном отпуске /в отцовском отпуске</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="cg8a-15" type="radio" value="15" name="cg8a" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="cg8a-15" class="ms-2 text-sm text-gray-900">15. В тюрьме</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="cg8a-16" type="radio" value="16" name="cg8a" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="cg8a-16" class="ms-2 text-sm text-gray-900">16. Другая ситуация, просьба уточнить</label>
+                </div>
+                <div>
+                    <input type="text" id="cg8a_other" name="cg8a_other" class="bg-white disabled:bg-gray-100 border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+                </div>
+                <div class="flex items-center">
+                    <input id="cg8a-90" type="radio" value="90" name="cg8a" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="cg8a-90" class="ms-2 text-sm text-gray-900">90. Не указано/Неизвестно</label>
+                </div>
+            </div>
+        </div>
+        <div class="grid grid-cols-2 gap-4 items-center mt-10">
+            <div>
+                CG8b. Текущая трудовая занятостьопекуна            </div>
+            <div class="col-span-1 flex flex-col gap-2">
+                <div class="flex items-center">
+                    <input id="cg8b-1" type="radio" value="1" name="cg8b" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="cg8b-1" class="ms-2 text-sm text-gray-900">1. Занятый(-ая), на постоянной основе</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="cg8b-2" type="radio" value="2" name="cg8b" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="cg8b-2" class="ms-2 text-sm text-gray-900">2. Занятый, на временной основе</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="cg8b-3" type="radio" value="3" name="cg8b" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="cg8b-3" class="ms-2 text-sm text-gray-900">3. Занятый, на сезонной работе</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="cg8b-4" type="radio" value="4" name="cg8b" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500">
+                    <label for="cg8b-4" class="ms-2 text-sm text-gray-900">4. Занятый, неофициально</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="cg8b-5" type="radio" value="5" name="cg8b" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="cg8b-5" class="ms-2 text-sm text-gray-900">5. Официальный трудовой мигрант</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="cg8b-6" type="radio" value="6" name="cg8b" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="cg8b-6" class="ms-2 text-sm text-gray-900">6. Неофициальный трудовой мигрант</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="cg8b-7" type="radio" value="7" name="cg8b" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="cg8b-7" class="ms-2 text-sm text-gray-900">7. Самозанятый(-ая)</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="cg8b-8" type="radio" value="8" name="cg8b" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="cg8b-8" class="ms-2 text-sm text-gray-900">8.  Неоплачиваемый участник семейного предпринимательства</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="cg8b-9" type="radio" value="9" name="cg8b" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="cg8b-9" class="ms-2 text-sm text-gray-900">9. Безработный(-ая)</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="cg8b-10" type="radio" value="10" name="cg8b" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="cg8b-10" class="ms-2 text-sm text-gray-900">10. Студент(-ка)</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="cg8b-11" type="radio" value="11" name="cg8b" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="cg8b-11" class="ms-2 text-sm text-gray-900">11. Ухаживает за ребенком-инвалидом</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="cg8b-12" type="radio" value="12" name="cg8b" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="cg8b-12" class="ms-2 text-sm text-gray-900">12. Домохозяйка (Домохозяин) / Забота о домашнем хозяйстве</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="cg8b-13" type="radio" value="13" name="cg8b" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="cg8b-13" class="ms-2 text-sm text-gray-900">13. Пенсионер(-ка)</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="cg8b-14" type="radio" value="14" name="cg8b" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="cg8b-14" class="ms-2 text-sm text-gray-900">14. в декретном отпуске /в отцовском отпуске</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="cg8b-15" type="radio" value="15" name="cg8b" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="cg8b-15" class="ms-2 text-sm text-gray-900">15. В тюрьме</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="cg8b-16" type="radio" value="16" name="cg8b" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="cg8b-16" class="ms-2 text-sm text-gray-900">16. Другая ситуация, просьба уточнить</label>
+                </div>
+                <div>
+                    <input type="text" id="cg8b_other" name="cg8b_other" class="bg-white disabled:bg-gray-100 border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+                </div>
+                <div class="flex items-center">
+                    <input id="cg8b-90" type="radio" value="90" name="cg8b" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="cg8b-90" class="ms-2 text-sm text-gray-900">90. Не указано/Неизвестно</label>
+                </div>
+            </div>
+        </div>
+        <div class="grid grid-cols-2 gap-4 items-center mt-10">
+            <div>
+                CG9. Рискованное поведение опекуна на момент поступления ребенка в систему опеки:            </div>
+            <div>
+                <div class="mb-4">
+                    <div class="mb-2">а. Злоупотребляет ли алкоголем?</div>
+                    <div class="flex gap-4">
+                        <div class="flex items-center">
+                            <input id="cg9a-1" type="radio" value="1" name="cg9a" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="cg9a-1" class="ms-2 text-sm text-gray-900">1. Да</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="cg9a-2" type="radio" value="2" name="cg9a" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="cg9a-2" class="ms-2 text-sm text-gray-900">2. Нет</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="cg9a-3" type="radio" value="9" name="cg9a" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="cg9a-3" class="ms-2 text-sm text-gray-900">9. Неизвестно</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="mb-4">
+                    <div class="mb-2">б. Употребляет ли наркотики?</div>
+                    <div class="flex gap-4">
+                        <div class="flex items-center">
+                            <input id="cg9b-1" type="radio" value="1" name="cg9b" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="cg9b-1" class="ms-2 text-sm text-gray-900">1. Да</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="cg9b-2" type="radio" value="2" name="cg9b" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="cg9b-2" class="ms-2 text-sm text-gray-900">2. Нет</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="cg9b-3" type="radio" value="9" name="cg9b" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="cg9b-3" class="ms-2 text-sm text-gray-900">9. Неизвестно</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="mb-4">
+                    <div class="mb-2">в. Имеет ли судимость?</div>
+                    <div class="flex gap-4">
+                        <div class="flex items-center">
+                            <input id="cg9c-1" type="radio" value="1" name="cg9c" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="cg9c-1" class="ms-2 text-sm text-gray-900">1. Да</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="cg9c-2" type="radio" value="2" name="cg9c" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="cg9c-2" class="ms-2 text-sm text-gray-900">2. Нет</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="cg9c-3" type="radio" value="9" name="cg9c" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="cg9c-3" class="ms-2 text-sm text-gray-900">9. Неизвестно</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="mb-4">
+                    <div class="mb-2">д. Бродяжничество, скитания, частая смена места жительства</div>
+                    <div class="flex gap-4">
+                        <div class="flex items-center">
+                            <input id="cg9d-1" type="radio" value="1" name="cg9d" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="cg9d-1" class="ms-2 text-sm text-gray-900">1. Да</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="cg9d-2" type="radio" value="2" name="cg9d" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="cg9d-2" class="ms-2 text-sm text-gray-900">2. Нет</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="cg9d-3" type="radio" value="9" name="cg9d" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="cg9d-3" class="ms-2 text-sm text-gray-900">9. Неизвестно</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 items-center mt-10">
+            <div>
+                CG10. Место жительства опекуна на момент поступления ребенка в систему опеки            </div>
+            <div>
+                <div class="mb-2">а. Проживало ли лицо...?</div>
+                <div class="flex gap-4">
+                    <div class="flex items-center">
+                        <input id="cg10a-1" type="radio" value="1" name="cg10a" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                        <label for="cg10a-1" class="ms-2 text-sm text-gray-900">1. В стране</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="cg10a-2" type="radio" value="2" name="cg10a" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                        <label for="cg10a-2" class="ms-2 text-sm text-gray-900">2. За границей</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 items-center mt-6">
+            <div></div>
+            <div>б. Регистрация по месту жительства - Город/Деревня:</div>
+        </div>
+
+        <div class="grid grid-cols-2 items-center gap-4 mt-6">
+            <div>в. Область:</div>
+            <div>
+                <select id="cg10c" name="cg10c" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                    <option value="1">-- choose ---</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-2 items-center gap-4 mt-6">
+            <div>д. Район:</div>
+            <div>
+                <select id="cg10d" name="cg10d" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                    <option value="1">-- choose ---</option>
+                </select>
+            </div>
+        </div>
+        <div class="grid grid-cols-2 items-center gap-4 mt-6">
+            <div>cg10e. City/Town/Village</div>
+            <div>
+                <select id="cg10e" name="cg10e" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                    <option value="1">-- choose ---</option>
+                </select>
+
+            </div>
+        </div>
+        <div class="grid grid-cols-2 gap-4 items-center mt-6">
+            <div>cg10f. Type of settlment</div>
+            <div class="flex gap-4">
+                <div class="flex items-center">
+                    <input id="cg10f-1" type="radio" value="1" name="cg10f" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="cg10f-1" class="ms-2 text-sm text-gray-900">1. Urban</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="cg10f-2" type="radio" value="0" name="cg10f" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="cg10f-2" class="ms-2 text-sm text-gray-900">2. Rural</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 items-center mt-10">
+            <div>
+                CG11. Текущее место жительства опекуна            </div>
+            <div>
+                <div class="mb-2">а. Проживает ли лицо...?</div>
+                <div class="flex gap-4">
+                    <div class="flex items-center">
+                        <input id="cg11a-1" type="radio" value="1" name="cg11a" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                        <label for="cg11a-1" class="ms-2 text-sm text-gray-900">1. В стране</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="cg11a-2" type="radio" value="2" name="cg11a" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                        <label for="cg11a-2" class="ms-2 text-sm text-gray-900">2. За границей</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 items-center mt-6">
+            <div></div>
+            <div>б. Регистрация по месту жительства - Город/Деревня:</div>
+        </div>
+
+        <div class="grid grid-cols-2 items-center gap-4 mt-6">
+            <div>в. Область:</div>
+            <div>
+                <select id="cg11c" name="cg11c" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                    <option value="1">-- choose ---</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-2 items-center gap-4 mt-6">
+            <div>д. Район:</div>
+            <div>
+                <select id="cg11d" name="cg11d" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                    <option value="1">-- choose ---</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-2 items-center gap-4 mt-6">
+            <div>cg11e. City/Town/Village</div>
+            <div>
+                <select id="cg11e" name="cg11e" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                    <option value="1">-- choose ---</option>
+                </select>
+
+            </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 items-center mt-6">
+            <div>cg11f. Type of settlment</div>
+            <div class="flex gap-4">
+                <div class="flex items-center">
+                    <input id="cg11f-1" type="radio" value="1" name="cg11f" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="cg11f-1" class="ms-2 text-sm text-gray-900">1. Urban</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="cg11f-2" type="radio" value="0" name="cg11f" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="cg11f-2" class="ms-2 text-sm text-gray-900">2. Rural</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 items-center mt-6">
+            <div>Адрес:</div>
+            <div>
+                <input type="text" id="cg11g" name="cg11g" class="bg-white disabled:bg-gray-100 border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+            </div>
+        </div>
+        <div class="grid grid-cols-2 gap-4 items-center mt-6">
+            <div>Номер телефона:</div>
+            <div>
+                <input type="text" id="cg11h" name="cg11h" class="bg-white disabled:bg-gray-100 border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+            </div>
+        </div>
+
+                <h2 class="mt-10 mb-4 text-2xl font-bold text-gray-700">4. ПЕРВЫЙ ПРИЕМ РЕБЕНКА В СИСТЕМУ ОПЕКИ</h2>
+
 
 
     </form>
