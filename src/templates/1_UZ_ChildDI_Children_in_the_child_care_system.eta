@@ -3102,6 +3102,852 @@
             </div>
         </div>
 
+
+                <h2 class="mt-10 mb-4 text-2xl font-bold text-gray-700"><%= it.t696 %></h2>
+                <h3 class="text-xl font-semibold bg-gray-100 px-2 py-1 text-gray-700"><%= it.t697 %></h3>
+
+                <p class="mt-10"><%= it.t698 %>: <%= it.t699 %></p>
+                <div class="grid grid-cols-2 gap-4 items-center mt-10">
+                    <div>
+                        <%= it.t700 %>
+                    </div>
+                    <div class="col-span-1 flex flex-col gap-2">
+                        <div class="flex items-center">
+                            <input id="qhealth1-1" type="radio" value="1" name="qhealth1" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="qhealth1-1" class="ms-2 text-sm text-gray-900"><%= it.t701 %></label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="qhealth1-2" type="radio" value="2" name="qhealth1" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="qhealth1-2" class="ms-2 text-sm text-gray-900"><%= it.t702 %></label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="qhealth1-3" type="radio" value="3" name="qhealth1" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="qhealth1-3" class="ms-2 text-sm text-gray-900"><%= it.t703 %></label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="qhealth1-9" type="radio" value="9" name="qhealth1" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="qhealth1-9" class="ms-2 text-sm text-gray-900"><%= it.t704 %></label>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 gap-4 items-center mt-10">
+                    <div>
+                        <%= it.t705 %>
+                    </div>
+                    <div class="col-span-1 flex items-center gap-4">
+                        <div class="flex items-center">
+                            <input id="qhealth2-1" type="radio" value="1" name="qhealth2" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="qhealth2-1" class="ms-2 text-sm text-gray-900"><%= it.t706 %></label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="qhealth2-2" type="radio" value="2" name="qhealth2" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="qhealth2-2" class="ms-2 text-sm text-gray-900"><%= it.t707 %></label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="qhealth2-9" type="radio" value="9" name="qhealth2" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="qhealth2-9" class="ms-2 text-sm text-gray-900"><%= it.t708 %></label>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 gap-4 items-center mt-10">
+                    <div>
+                        <%= it.t709 %>
+                    </div>
+                    <div class="col-span-1 flex items-center gap-4">
+                        <div class="flex items-center">
+                            <input id="qhealth3-1" type="radio" value="1" name="qhealth3" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="qhealth3-1" class="ms-2 text-sm text-gray-900"><%= it.t710 %></label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="qhealth3-2" type="radio" value="2" name="qhealth3" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="qhealth3-2" class="ms-2 text-sm text-gray-900"><%= it.t711 %></label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="qhealth3-9" type="radio" value="9" name="qhealth3" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="qhealth3-9" class="ms-2 text-sm text-gray-900"><%= it.t712 %></label>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 gap-4 items-center mt-10">
+                    <div>
+                        <%= it.t713 %>
+                    </div>
+                    <div class="col-span-1 flex items-center gap-4">
+                        <div class="flex items-center">
+                            <input id="qhealth4-1" type="radio" value="1" name="qhealth4" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="qhealth4-1" class="ms-2 text-sm text-gray-900"><%= it.t714 %></label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="qhealth4-2" type="radio" value="2" name="qhealth4" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="qhealth4-2" class="ms-2 text-sm text-gray-900"><%= it.t715 %></label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="qhealth4-9" type="radio" value="9" name="qhealth4" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="qhealth4-9" class="ms-2 text-sm text-gray-900"><%= it.t716 %></label>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 gap-4 items-center mt-10">
+                    <div>
+                        <%= it.t717 %>
+                    </div>
+                    <div class="col-span-1 flex items-center gap-4">
+                        <div class="flex items-center">
+                            <input id="qhealth5-1" type="radio" value="1" name="qhealth5" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="qhealth5-1" class="ms-2 text-sm text-gray-900"><%= it.t718 %></label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="qhealth5-2" type="radio" value="2" name="qhealth5" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="qhealth5-2" class="ms-2 text-sm text-gray-900"><%= it.t719 %></label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="qhealth5-9" type="radio" value="9" name="qhealth5" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="qhealth5-9" class="ms-2 text-sm text-gray-900"><%= it.t720 %></label>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 gap-4 items-center mt-10">
+                    <div>
+                        <%= it.t721 %>
+                    </div>
+                    <div class="col-span-1 flex items-center gap-4">
+                        <div class="flex items-center">
+                            <input id="qhealth6-1" type="radio" value="1" name="qhealth6" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="qhealth6-1" class="ms-2 text-sm text-gray-900"><%= it.t722 %></label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="qhealth6-2" type="radio" value="2" name="qhealth6" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="qhealth6-2" class="ms-2 text-sm text-gray-900"><%= it.t723 %></label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="qhealth6-9" type="radio" value="9" name="qhealth6" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="qhealth6-9" class="ms-2 text-sm text-gray-900"><%= it.t724 %></label>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 gap-4 items-center mt-10">
+                    <div>
+                        <%= it.t725 %>
+                        <small class="block italic text-red-500"><%= it.t726 %></small>
+                    </div>
+                    <div class="col-span-1 flex flex-col gap-2">
+                        <div class="flex items-center">
+                            <input id="qhealth7-1" type="radio" value="1" name="qhealth7" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="qhealth7-1" class="ms-2 text-sm text-gray-900"><%= it.t727 %></label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="qhealth7-2" type="radio" value="2" name="qhealth7" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="qhealth7-2" class="ms-2 text-sm text-gray-900"><%= it.t728 %></label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="qhealth7-3" type="radio" value="3" name="qhealth7" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="qhealth7-3" class="ms-2 text-sm text-gray-900"><%= it.t729 %></label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="qhealth7-9" type="radio" value="9" name="qhealth7" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="qhealth7-9" class="ms-2 text-sm text-gray-900"><%= it.t730 %></label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-2 gap-4 items-center mt-10">
+                    <div>
+                       <%= it.t731 %>
+                    </div>
+                    <div class="col-span-1 flex items-center gap-4">
+                        <div class="flex items-center">
+                            <input id="qhealth8-1" type="radio" value="1" name="qhealth8" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="qhealth8-1" class="ms-2 text-sm text-gray-900"><%= it.t732 %></label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="qhealth8-2" type="radio" value="2" name="qhealth8" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="qhealth8-2" class="ms-2 text-sm text-gray-900"><%= it.t733 %></label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-2 gap-4 items-center mt-10">
+                    <div>
+                        <%= it.t735 %>
+                    </div>
+                    <div class="col-span-1 flex flex-col gap-2">
+                        <p><%= it.t736 %></p>
+                        <div class="flex items-center">
+                            <input id="qhealth9a-1" type="radio" value="1" name="qhealth9a" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="qhealth9a-1" class="ms-2 text-sm text-gray-900"><%= it.t744 %></label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="qhealth9a-2" type="radio" value="2" name="qhealth9a" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="qhealth9a-2" class="ms-2 text-sm text-gray-900"><%= it.t745 %></label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="qhealth9a-3" type="radio" value="3" name="qhealth9a" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="qhealth9a-3" class="ms-2 text-sm text-gray-900"><%= it.t746 %></label>
+                        </div>
+                        <p><%= it.t737 %></p>
+                        <div class="flex items-center">
+                            <input id="qhealth9b-1" type="radio" value="1" name="qhealth9b" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="qhealth9b-1" class="ms-2 text-sm text-gray-900"><%= it.t744 %></label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="qhealth9b-2" type="radio" value="2" name="qhealth9b" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="qhealth9b-2" class="ms-2 text-sm text-gray-900"><%= it.t745 %></label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="qhealth9b-3" type="radio" value="3" name="qhealth9b" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="qhealth9b-3" class="ms-2 text-sm text-gray-900"><%= it.t746 %></label>
+                        </div>
+                        <p><%= it.t738 %></p>
+                        <div class="flex items-center">
+                            <input id="qhealth9c-1" type="radio" value="1" name="qhealth9c" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="qhealth9c-1" class="ms-2 text-sm text-gray-900"><%= it.t744 %></label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="qhealth9c-2" type="radio" value="2" name="qhealth9c" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="qhealth9c-2" class="ms-2 text-sm text-gray-900"><%= it.t745 %></label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="qhealth9c-3" type="radio" value="3" name="qhealth9c" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="qhealth9c-3" class="ms-2 text-sm text-gray-900"><%= it.t746 %></label>
+                        </div>
+                        <p><%= it.t739 %></p>
+                        <div class="flex items-center">
+                            <input id="qhealth9d-1" type="radio" value="1" name="qhealth9d" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="qhealth9d-1" class="ms-2 text-sm text-gray-900"><%= it.t744 %></label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="qhealth9d-2" type="radio" value="2" name="qhealth9d" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="qhealth9d-2" class="ms-2 text-sm text-gray-900"><%= it.t745 %></label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="qhealth9d-3" type="radio" value="3" name="qhealth9d" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="qhealth9d-3" class="ms-2 text-sm text-gray-900"><%= it.t746 %></label>
+                        </div>
+                        <p><%= it.t740 %></p>
+                        <div class="flex items-center">
+                            <input id="qhealth9e-1" type="radio" value="1" name="qhealth9e" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="qhealth9e-1" class="ms-2 text-sm text-gray-900"><%= it.t744 %></label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="qhealth9e-2" type="radio" value="2" name="qhealth9e" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="qhealth9e-2" class="ms-2 text-sm text-gray-900"><%= it.t745 %></label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="qhealth9e-3" type="radio" value="3" name="qhealth9e" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="qhealth9e-3" class="ms-2 text-sm text-gray-900"><%= it.t746 %></label>
+                        </div>
+                        <p><%= it.t741 %></p>
+                        <div class="flex items-center">
+                            <input id="qhealth9f-1" type="radio" value="1" name="qhealth9f" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="qhealth9f-1" class="ms-2 text-sm text-gray-900"><%= it.t744 %></label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="qhealth9f-2" type="radio" value="2" name="qhealth9f" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="qhealth9f-2" class="ms-2 text-sm text-gray-900"><%= it.t745 %></label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="qhealth9f-3" type="radio" value="3" name="qhealth9f" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="qhealth9f-3" class="ms-2 text-sm text-gray-900"><%= it.t746 %></label>
+                        </div>
+                        <p><%= it.t742 %></p>
+                        <div class="flex items-center">
+                            <input id="qhealth9g-1" type="radio" value="1" name="qhealth9g" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="qhealth9g-1" class="ms-2 text-sm text-gray-900"><%= it.t744 %></label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="qhealth9g-2" type="radio" value="2" name="qhealth9g" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="qhealth9g-2" class="ms-2 text-sm text-gray-900"><%= it.t745 %></label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="qhealth9g-3" type="radio" value="3" name="qhealth9g" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="qhealth9g-3" class="ms-2 text-sm text-gray-900"><%= it.t746 %></label>
+                        </div>
+                    </div>
+                </div>
+
+                <h3 class="text-xl font-semibold bg-gray-100 px-2 py-1 text-gray-700"><%= it.t747 %></h3>
+
+                <small class="mt-2 block italic text-red-500"><%= it.t748 %></small>
+
+                <p class="mt-10"><%= it.t749 %>: <%= it.t750 %></p>
+
+                <div class="grid grid-cols-2 gap-4 items-center mt-10">
+                    <div>
+                        <%= it.t751 %>
+                    </div>
+                    <div class="col-span-1 flex items-center gap-4">
+                        <div class="flex items-center">
+                            <input id="qeduc1-1" type="radio" value="1" name="qeduc1" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="qeduc1-1" class="ms-2 text-sm text-gray-900"><%= it.t752 %></label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="qeduc1-2" type="radio" value="2" name="qeduc1" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="qeduc1-2" class="ms-2 text-sm text-gray-900"><%= it.t753 %></label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="qeduc1-9" type="radio" value="9" name="qeduc1" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="qeduc1-9" class="ms-2 text-sm text-gray-900"><%= it.t754 %></label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-2 gap-4 items-center mt-10">
+                    <div>
+                        <small class="mb-1 block italic text-red-500"><%= it.t755 %></small>
+                        <%= it.t756 %>
+                    </div>
+                    <div class="col-span-1 flex flex-col gap-2">
+                        <div class="flex items-center">
+                            <input id="qeduc1a-1" type="radio" value="1" name="qeduc1a" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="qeduc1a-1" class="ms-2 text-sm text-gray-900"><%= it.t757 %>,</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="qeduc1a-2" type="radio" value="2" name="qeduc1a" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="qeduc1a-2" class="ms-2 text-sm text-gray-900"><%= it.t758 %>)</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="qeduc1a-3" type="radio" value="3" name="qeduc1a" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="qeduc1a-3" class="ms-2 text-sm text-gray-900"><%= it.t759 %></label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="qeduc1a-4" type="radio" value="4" name="qeduc1a" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="qeduc1a-4" class="ms-2 text-sm text-gray-900"><%= it.t760 %></label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="qeduc1a-5" type="radio" value="5" name="qeduc1a" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="qeduc1a-5" class="ms-2 text-sm text-gray-900"><%= it.t761 %></label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-2 gap-4 items-center mt-10">
+                    <div>
+                        <%= it.t762 %>
+                    </div>
+                    <div class="col-span-1 flex flex-col gap-2">
+                        <div class="flex items-center">
+                            <input id="qeduc2-1" type="radio" value="1" name="qeduc2" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="qeduc2-1" class="ms-2 text-sm text-gray-900"><%= it.t763 %></label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="qeduc2-2" type="radio" value="2" name="qeduc2" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="qeduc2-2" class="ms-2 text-sm text-gray-900"><%= it.t764 %></label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="qeduc2-7" type="radio" value="7" name="qeduc2" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="qeduc2-7" class="ms-2 text-sm text-gray-900"><%= it.t765 %></label>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="grid grid-cols-2 gap-4 items-center mt-10">
+                    <div>
+                        <small class="mb-1 block italic text-red-500"><%= it.t766 %></small>
+                        <%= it.t767 %>
+                    </div>
+                    <div class="col-span-1 flex flex-col gap-2">
+                        <div class="flex items-center">
+                            <input id="qeduc2a-1" type="radio" value="1" name="qeduc2a" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="qeduc1a-1" class="ms-2 text-sm text-gray-900"><%= it.t768 %></label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="qeduc2a-2" type="radio" value="2" name="qeduc2a" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="qeduc1a-2" class="ms-2 text-sm text-gray-900"><%= it.t769 %></label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="qeduc2a-3" type="radio" value="3" name="qeduc2a" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="qeduc1a-3" class="ms-2 text-sm text-gray-900"><%= it.t770 %></label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="qeduc2a-4" type="radio" value="4" name="qeduc2a" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="qeduc1a-4" class="ms-2 text-sm text-gray-900"><%= it.t771 %></label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="qeduc2a-5" type="radio" value="5" name="qeduc2a" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="qeduc1a-5" class="ms-2 text-sm text-gray-900"><%= it.t772 %></label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="qeduc2a-6" type="radio" value="6" name="qeduc2a" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="qeduc1a-6" class="ms-2 text-sm text-gray-900"><%= it.t773 %></label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                    <div><%= it.t774 %></div>
+                    <div>
+                        <input type="text" id="qeduc2b" name="qeduc2b"
+                               class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-2 gap-4 items-center mt-10">
+                    <div>
+                        <%= it.t775 %>
+                    </div>
+                    <div class="col-span-1 flex items-center gap-4">
+                        <div class="flex items-center">
+                            <input id="qeduc2c-1" type="radio" value="1" name="qeduc2c" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="qeduc2c-1" class="ms-2 text-sm text-gray-900"><%= it.t776 %></label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="qeduc2c-2" type="radio" value="2" name="qeduc2c" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="qeduc2c-2" class="ms-2 text-sm text-gray-900"><%= it.t777 %></label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="qeduc2c-9" type="radio" value="9" name="qeduc2c" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="qeduc2c-9" class="ms-2 text-sm text-gray-900"><%= it.t778 %></label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-2 gap-4 items-center mt-10">
+                    <div>
+                        <%= it.t779 %>
+                    </div>
+                    <div class="col-span-1 flex items-center gap-4">
+                        <div class="flex items-center">
+                            <input id="qeduc2d-1" type="radio" value="1" name="qeduc2d" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="qeduc2d-1" class="ms-2 text-sm text-gray-900"><%= it.t780 %></label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="qeduc2d-2" type="radio" value="2" name="qeduc2d" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="qeduc2d-2" class="ms-2 text-sm text-gray-900"><%= it.t781 %></label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="qeduc2d-9" type="radio" value="9" name="qeduc2d" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="qeduc2d-9" class="ms-2 text-sm text-gray-900"><%= it.t782 %></label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-2 gap-4 items-center mt-10">
+                    <div>
+                        <%= it.t783 %>
+                    </div>
+                    <div class="col-span-1 flex items-center gap-4">
+                        <div class="flex items-center">
+                            <input id="qeduc2e-1" type="radio" value="1" name="qeduc2e" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="qeduc2e-1" class="ms-2 text-sm text-gray-900"><%= it.t784 %></label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="qeduc2e-2" type="radio" value="2" name="qeduc2e" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="qeduc2e-2" class="ms-2 text-sm text-gray-900"><%= it.t785 %></label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="qeduc2e-9" type="radio" value="9" name="qeduc2e" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="qeduc2e-9" class="ms-2 text-sm text-gray-900"><%= it.t786 %></label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-2 gap-4 items-center mt-10">
+                    <div>
+                        <%= it.t788 %>
+                    </div>
+                    <div class="col-span-1 flex flex-col gap-2">
+                        <div class="flex items-center">
+                            <input id="qeduc2f-1" type="radio" value="1" name="qeduc2f" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="qeduc2f-1" class="ms-2 text-sm text-gray-900"><%= it.t789 %>.</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="qeduc2f-2" type="radio" value="2" name="qeduc2f" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="qeduc2f-2" class="ms-2 text-sm text-gray-900"><%= it.t790 %>.</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="qeduc2f-3" type="radio" value="3" name="qeduc2f" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="qeduc2f-3" class="ms-2 text-sm text-gray-900"><%= it.t791 %>.</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="qeduc2f-4" type="radio" value="4" name="qeduc2f" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="qeduc2f-4" class="ms-2 text-sm text-gray-900"><%= it.t792 %></label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="qeduc2f-5" type="radio" value="5" name="qeduc2f" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="qeduc2f-5" class="ms-2 text-sm text-gray-900"><%= it.t793 %></label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="qeduc2f-6" type="radio" value="6" name="qeduc2f" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="qeduc2f-6" class="ms-2 text-sm text-gray-900"><%= it.t794 %></label>
+                        </div>
+                        <input type="text" id="qeduc2f_other" name="qeduc2f_other"
+                               class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+                    </div>
+                </div>
+
+
+                <div class="grid grid-cols-2 gap-4 items-center mt-10">
+                    <div>
+                        <%= it.t795 %>
+                    </div>
+                    <div class="col-span-1 flex items-center gap-4">
+                        <div class="flex items-center">
+                            <input id="qeduc3-1" type="radio" value="1" name="qeduc3" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="qeduc3-1" class="ms-2 text-sm text-gray-900"><%= it.t796 %></label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="qeduc3-2" type="radio" value="2" name="qeduc3" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="qeduc3-2" class="ms-2 text-sm text-gray-900"><%= it.t797 %></label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="qeduc3-9" type="radio" value="9" name="qeduc3" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="qeduc3-9" class="ms-2 text-sm text-gray-900"><%= it.t798 %></label>
+                        </div>
+                    </div>
+                </div>
+
+                <h3 class="mt-10 text-xl font-semibold bg-gray-100 px-2 py-1 text-gray-700"><%= it.t799 %></h3>
+
+                <p class="mt-10"><%= it.t800 %>: <%= it.t801 %></p>
+
+                <div class="grid grid-cols-2 gap-4 items-center mt-10">
+                    <div>
+                        <%= it.t802 %>
+                    </div>
+                    <div class="col-span-1 flex flex-col gap-2">
+                        <div class="flex items-center">
+                            <input id="qhouse1-1" type="radio" value="1" name="qhouse1" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="qhouse1-1" class="ms-2 text-sm text-gray-900"><%= it.t803 %></label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="qhouse1-2" type="radio" value="2" name="qhouse1" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="qhouse1-2" class="ms-2 text-sm text-gray-900"><%= it.t804 %></label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="qhouse1-3" type="radio" value="3" name="qhouse1" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="qhouse1-3" class="ms-2 text-sm text-gray-900"><%= it.t805 %></label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="qhouse1-4" type="radio" value="4" name="qhouse1" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="qhouse1-4" class="ms-2 text-sm text-gray-900"><%= it.t806 %></label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="qhouse1-5" type="radio" value="5" name="qhouse1" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="qhouse1-5" class="ms-2 text-sm text-gray-900"><%= it.t807 %></label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="qhouse1-9" type="radio" value="9" name="qhouse1" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="qhouse1-9" class="ms-2 text-sm text-gray-900"><%= it.t808 %></label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-2 gap-4 items-center mt-10">
+                    <div>
+                        <%= it.t810 %>
+                    </div>
+                    <div class="col-span-1 flex flex-col gap-2">
+                        <div class="flex items-center">
+                            <input id="qhouse2-1" type="radio" value="1" name="qhouse2" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="qhouse2-1" class="ms-2 text-sm text-gray-900"><%= it.t811 %></label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="qhouse2-2" type="radio" value="2" name="qhouse2" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="qhouse2-2" class="ms-2 text-sm text-gray-900"><%= it.t812 %></label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="qhouse2-3" type="radio" value="3" name="qhouse2" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="qhouse2-3" class="ms-2 text-sm text-gray-900"><%= it.t813 %></label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="qhouse2-4" type="radio" value="4" name="qhouse2" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="qhouse2-4" class="ms-2 text-sm text-gray-900"><%= it.t814 %></label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="qhouse2-9" type="radio" value="9" name="qhouse2" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="qhouse2-9" class="ms-2 text-sm text-gray-900"><%= it.t815 %></label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-2 gap-4 items-center mt-10">
+                    <div>
+                        <%= it.t817 %>
+                    </div>
+                    <div class="col-span-1 flex gap-4">
+                        <div class="flex items-center">
+                            <input id="qhouse3-1" type="radio" value="1" name="qhouse3" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="qhouse3-1" class="ms-2 text-sm text-gray-900"><%= it.t818 %></label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="qhouse3-2" type="radio" value="2" name="qhouse3" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="qhouse3-2" class="ms-2 text-sm text-gray-900"><%= it.t819 %></label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="qhouse3-3" type="radio" value="3" name="qhouse3" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="qhouse3-3" class="ms-2 text-sm text-gray-900"><%= it.t820 %></label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                    <div><%= it.t822 %></div>
+                    <div class="flex items-center gap-4">
+                        <input type="text" id="qhouse4" name="qhouse4"
+                               class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-20 p-2.5" />
+                        <%= it.t823 %>
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                    <div class="ml-6"><%= it.t824 %></div>
+                    <div class="flex items-center gap-4">
+                        <input type="text" id="qhouse4a" name="qhouse4a"
+                               class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-20 p-2.5" />
+                        <%= it.t825 %>
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                    <div class="ml-6"><%= it.t826 %></div>
+                    <div class="flex items-center gap-4">
+                        <input type="text" id="qhouse4b" name="qhouse4b"
+                               class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-20 p-2.5" />
+                        <%= it.t827 %>
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                    <div><%= it.t829 %></div>
+                    <div class="flex items-center gap-4">
+                        <input type="text" id="qhouse5" name="qhouse5"
+                               class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-20 p-2.5" />
+                        <%= it.t830 %>
+                    </div>
+                </div>
+
+                <small class="mt-6 block italic text-red-500"><%= it.t831 %></small>
+
+                <h3 class="mt-10 text-xl font-semibold bg-gray-100 px-2 py-1 text-gray-700"><%= it.t832 %></h3>
+
+                <p class="mt-10"><%= it.t833 %>: <%= it.t834 %></p>
+
+                <div class="grid grid-cols-2 gap-4 items-center mt-10">
+                    <div>
+                        <%= it.t835 %>
+                    </div>
+                    <div class="col-span-1 flex flex-col gap-2">
+                        <div class="flex items-center">
+                            <input id="qfam1-1" type="radio" value="1" name="qfam1" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="qfam1-1" class="ms-2 text-sm text-gray-900"><%= it.t836 %></label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="qfam1-2" type="radio" value="2" name="qfam1" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="qfam1-2" class="ms-2 text-sm text-gray-900"><%= it.t837 %></label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="qfam1-3" type="radio" value="3" name="qfam1" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="qfam1-3" class="ms-2 text-sm text-gray-900"><%= it.t838 %></label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="qfam1-4" type="radio" value="4" name="qfam1" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="qfam1-4" class="ms-2 text-sm text-gray-900"><%= it.t839 %></label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="qfam1-5" type="radio" value="5" name="qfam1" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="qfam1-5" class="ms-2 text-sm text-gray-900"><%= it.t840 %></label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="qfam1-6" type="radio" value="6" name="qfam1" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="qfam1-6" class="ms-2 text-sm text-gray-900"><%= it.t841 %></label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="qfam1-7" type="radio" value="7" name="qfam1" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="qfam1-7" class="ms-2 text-sm text-gray-900"><%= it.t842 %></label>
+                        </div>
+                        <input type="text" id="qfam1_other" name="qfam1_other"
+                               class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+                        <div class="flex items-center">
+                            <input id="qfam1-9" type="radio" value="9" name="qfam1" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="qfam1-9" class="ms-2 text-sm text-gray-900"><%= it.t843 %></label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-2 gap-4 items-center mt-10">
+                    <div>
+                        <%= it.t845 %>
+                        <small class="block italic text-red-500"><%= it.t846 %></small>
+                    </div>
+                    <div class="col-span-1 flex flex-col gap-2">
+                        <div class="flex items-center">
+                            <input id="qfam2_1-1" type="checkbox" value="1" name="qfam2_1" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="qfam2_1-1" class="ms-2 text-sm text-gray-900"><%= it.t847 %></label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="qfam2_2-2" type="checkbox" value="2" name="qfam2_2" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="qfam2_2-2" class="ms-2 text-sm text-gray-900"><%= it.t848 %></label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="qfam2_3-3" type="checkbox" value="3" name="qfam2_3" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="qfam2_3-3" class="ms-2 text-sm text-gray-900"><%= it.t849 %></label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="qfam2_4-4" type="checkbox" value="4" name="qfam2_4" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500">
+                            <label for="qfam2_4-4" class="ms-2 text-sm text-gray-900"><%= it.t850 %></label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="qfam2_5-5" type="checkbox" value="5" name="qfam2_5" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="qfam2_5-5" class="ms-2 text-sm text-gray-900"><%= it.t851 %></label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="qfam2_6-6" type="checkbox" value="6" name="qfam2_6" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="qfam2_6-6" class="ms-2 text-sm text-gray-900"><%= it.t852 %></label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="qfam2_7-7" type="checkbox" value="7" name="qfam2_7" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="qfam2_7-7" class="ms-2 text-sm text-gray-900"><%= it.t853 %></label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="qfam2_8-8" type="checkbox" value="8" name="qfam2_8" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="qfam2_8-8" class="ms-2 text-sm text-gray-900"><%= it.t854 %></label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="qfam2_9-9" type="checkbox" value="9" name="qfam2_9" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="qfam2_9-9" class="ms-2 text-sm text-gray-900"><%= it.t855 %></label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="qfam2_90-90" type="checkbox" value="90" name="qfam2_90" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="qfam2_90-90" class="ms-2 text-sm text-gray-900"><%= it.t856 %></label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-2 gap-4 items-center mt-10">
+                    <div>
+                        <%= it.t857 %>
+                        <small class="block italic text-red-500"><%= it.t858 %></small>
+                    </div>
+                    <div class="col-span-1 flex flex-col gap-2">
+                        <div class="flex items-center">
+                            <input id="qfam3_1-1" type="checkbox" value="1" name="qfam3_1" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="qfam3_1-1" class="ms-2 text-sm text-gray-900"><%= it.t859 %></label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="qfam3_2-2" type="checkbox" value="2" name="qfam3_2" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="qfam3_2-2" class="ms-2 text-sm text-gray-900"><%= it.t860 %></label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="qfam3_3-3" type="checkbox" value="3" name="qfam3_3" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="qfam3_3-3" class="ms-2 text-sm text-gray-900"><%= it.t861 %></label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="qfam3_4-4" type="checkbox" value="4" name="qfam3_4" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500">
+                            <label for="qfam3_4-4" class="ms-2 text-sm text-gray-900"><%= it.t862 %></label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="qfam3_5-5" type="checkbox" value="5" name="qfam3_5" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="qfam3_5-5" class="ms-2 text-sm text-gray-900"><%= it.t863 %></label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="qfam3_9-9" type="checkbox" value="9" name="qfam3_9" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="qfam3_9-9" class="ms-2 text-sm text-gray-900"><%= it.t864 %></label>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="grid grid-cols-2 gap-4 items-center mt-10">
+                    <div>
+                        <%= it.t865 %>
+                    </div>
+                    <div class="col-span-1 flex gap-4">
+                        <div class="flex items-center">
+                            <input id="qfam4-1" type="radio" value="1" name="qfam4" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="qfam4-1" class="ms-2 text-sm text-gray-900"><%= it.t866 %></label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="qfam4-2" type="radio" value="2" name="qfam4" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="qfam4-2" class="ms-2 text-sm text-gray-900"><%= it.t867 %></label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="qfam4-9" type="radio" value="9" name="qfam4" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="qfam4-9" class="ms-2 text-sm text-gray-900"><%= it.t868 %></label>
+                        </div>
+                    </div>
+                </div>
+
+                <p class="mt-10"><%= it.t869 %></p>
+                
+                <div class="grid grid-cols-2 gap-4 items-center mt-6 ml-4">
+                    <div>
+                        <%= it.t870 %>
+                    </div>
+                    <div class="col-span-1 flex item-center gap-4">
+                        <div class="flex items-center">
+                            <input id="qfam5a-1" type="radio" value="1" name="qfam5a" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="qfam5a-1" class="ms-2 text-sm text-gray-900"><%= it.t871 %></label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="qfam5a-2" type="radio" value="2" name="qfam5a" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="qfam5a-2" class="ms-2 text-sm text-gray-900"><%= it.t872 %></label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="grid grid-cols-2 gap-4 items-center mt-6 ml-4">
+                    <div>
+                        <%= it.t873 %>
+                    </div>
+                    <div class="col-span-1 flex item-center gap-4">
+                        <div class="flex items-center">
+                            <input id="qfam5b-1" type="radio" value="1" name="qfam5b" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="qfam5b-1" class="ms-2 text-sm text-gray-900"><%= it.t874 %></label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="qfam5b-2" type="radio" value="2" name="qfam5b" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="qfam5b-2" class="ms-2 text-sm text-gray-900"><%= it.t875 %></label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="grid grid-cols-2 gap-4 items-center mt-6 ml-4">
+                    <div>
+                        <%= it.t876 %>
+                    </div>
+                    <div class="col-span-1 flex item-center gap-4">
+                        <div class="flex items-center">
+                            <input id="qfam5c-1" type="radio" value="1" name="qfam5c" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="qfam5c-1" class="ms-2 text-sm text-gray-900"><%= it.t877 %></label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="qfam5c-2" type="radio" value="2" name="qfam5c" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="qfam5c-2" class="ms-2 text-sm text-gray-900"><%= it.t878 %></label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="grid grid-cols-2 gap-4 items-center mt-6 ml-4">
+                    <div>
+                        <%= it.t879 %>
+                    </div>
+                    <div class="col-span-1 flex item-center gap-4">
+                        <div class="flex items-center">
+                            <input id="qfam5d-1" type="radio" value="1" name="qfam5d" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="qfam5d-1" class="ms-2 text-sm text-gray-900"><%= it.t880 %></label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="qfam5d-2" type="radio" value="2" name="qfam5d" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="qfam5d-2" class="ms-2 text-sm text-gray-900"><%= it.t881 %></label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="grid grid-cols-2 gap-4 items-center mt-6 ml-4">
+                    <div>
+                        <%= it.t882 %>
+                    </div>
+                    <div class="col-span-1 flex item-center gap-4">
+                        <div class="flex items-center">
+                            <input id="qfam5e-1" type="radio" value="1" name="qfam5e" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="qfam5e-1" class="ms-2 text-sm text-gray-900"><%= it.t883 %></label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="qfam5e-2" type="radio" value="2" name="qfam5e" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="qfam5e-2" class="ms-2 text-sm text-gray-900"><%= it.t884 %></label>
+                        </div>
+                    </div>
+                </div>
+
+
     </form>
 </body>
 
