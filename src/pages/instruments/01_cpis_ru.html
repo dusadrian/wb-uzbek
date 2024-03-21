@@ -2675,6 +2675,379 @@
                         <h2 class="mt-10 mb-4 text-2xl font-bold text-gray-700">4. ПЕРВЫЙ ПРИЕМ РЕБЕНКА В СИСТЕМУ ОПЕКИ</h2>
         
         
+                <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                    <div>SA1. Дата первого приема ребенка в систему опеки</div>
+                    <div>
+                        <input type="text" id="sa1" name="sa1" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+                    </div>
+                </div>
+                <small class="block italic text-red-500">Если ребенок вышел из системы, и позже вернулся (один или несколько раз), запишите дату первого приема, а не даты последующих возвращений (т. е. второй, третьей и т. д. записей). День/месяц/год</small>
+        
+                <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                    <div>SA1a. Возраст ребенка на момент его первого приема в систему опеки</div>
+                    <div>
+                        <input type="text" id="sa1a" name="sa1a" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+                    </div>
+                </div>
+        
+                <div class="grid grid-cols-2 gap-4 items-center mt-10">
+                    <div>
+                        (Автоматически рассчитывается на основе SA1-LK3). SA2            </div>
+                    <div class="col-span-1 flex flex-col gap-2">
+                        <div class="flex items-center">
+                            <input id="sa2-1" type="radio" value="1" name="sa2" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="sa2-1" class="ms-2 text-sm text-gray-900">1. Из семьи</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="sa2-2" type="radio" value="2" name="sa2" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="sa2-2" class="ms-2 text-sm text-gray-900">2. Был брошен в родильном доме/больнице</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="sa2-3" type="radio" value="3" name="sa2" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="sa2-3" class="ms-2 text-sm text-gray-900">3. Был брошен в общественном месте</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="sa2-4" type="radio" value="4" name="sa2" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500">
+                            <label for="sa2-4" class="ms-2 text-sm text-gray-900">4. Жил на улице</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="sa2-5" type="radio" value="5" name="sa2" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="sa2-5" class="ms-2 text-sm text-gray-900">5. Был оставлен на попечение родственников</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="sa2-6" type="radio" value="6" name="sa2" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="sa2-6" class="ms-2 text-sm text-gray-900">6. Был оставлен на попечение знакомых или друзей</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="sa2-7" type="radio" value="7" name="sa2" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="sa2-7" class="ms-2 text-sm text-gray-900">7. Другое, просьба уточнить…</label>
+                        </div>
+                        <input type="text" id="sa2_other" name="sa2_other" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+                    </div>
+                </div>
+        
+                <div class="mt-6">SA3. Где проживал ребенок до его поступления в систему опеки?</div>
+                <div class="grid grid-cols-2 items-center gap-4 mt-6">
+                    <div>SA3a. Область:</div>
+                    <div>
+                        <select id="sa3a" name="sa3a" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                            <option value="1">-- choose ---</option>
+                        </select>
+                        <input type="hidden" aria-hidden="true" name="sa3a_name" id="sa3a_name">
+                    </div>
+                </div>
+        
+                <div class="grid grid-cols-2 items-center gap-4 mt-6">
+                    <div>SA3b. Район:</div>
+                    <div>
+                        <select id="sa3b" name="sa3b" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                            <option value="1">-- choose ---</option>
+                        </select>
+                        <input type="hidden" aria-hidden="true" name="sa3b_name" id="sa3b_name">
+                    </div>
+                </div>
+        
+                <div class="grid grid-cols-2 items-center gap-4 mt-6">
+                    <div>SA3c. City/Town/Village</div>
+                    <div>
+                        <select id="sa3c" name="sa3c" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                            <option value="1">-- choose ---</option>
+                        </select>
+                        <input type="hidden" aria-hidden="true" name="sa3c_name" id="sa3c_name">
+                    </div>
+                </div>
+        
+                <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                    <div>SA3d. Type of settlment</div>
+                    <div class="flex gap-4">
+                        <div class="flex items-center">
+                            <input id="sa3d-1" type="radio" value="1" name="sa3d" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="sa3d-1" class="ms-2 text-sm text-gray-900">1. Urban</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="sa3d-2" type="radio" value="0" name="sa3d" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="sa3d-2" class="ms-2 text-sm text-gray-900">2. Rural</label>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="grid grid-cols-2 gap-4 items-center mt-10">
+                    <div>
+                        SA4. Каковы были причины разлучения ребенка с семьей?            </div>
+                    <div class="col-span-1 flex flex-col gap-2">
+                        <div class="flex items-center">
+                            <input id="sa4_1-1" type="checkbox" value="1" name="sa4_1" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="sa4_1-1" class="ms-2 text-sm text-gray-900">1. Смерть родителей.</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="sa4_2-2" type="checkbox" value="2" name="sa4_2" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="sa4_2-2" class="ms-2 text-sm text-gray-900">2. Лишение родителей родительских прав.</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="sa4_3-3" type="checkbox" value="3" name="sa4_3" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="sa4_3-3" class="ms-2 text-sm text-gray-900">3. Родители были временно ограничены в правах.</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="sa4_4-4" type="checkbox" value="4" name="sa4_4" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500">
+                            <label for="sa4_4-4" class="ms-2 text-sm text-gray-900">4. Неспособность родителей выполнять родительские обязанности вследствие длительной болезни или инвалидности.</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="sa4_5-5" type="checkbox" value="5" name="sa4_5" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="sa4_5-5" class="ms-2 text-sm text-gray-900">5. Длительное отсутствие родителей (более 6 месяцев).</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="sa4_6-6" type="checkbox" value="6" name="sa4_6" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="sa4_6-6" class="ms-2 text-sm text-gray-900">6. Отказ родителей от воспитания ребенка или защиты его прав и законных интересов, в том числе отказ родителей забрать ребенка из государственных образовательных, медицинских и социальных учреждений.</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="sa4_7-7" type="checkbox" value="7" name="sa4_7" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="sa4_7-7" class="ms-2 text-sm text-gray-900">7. Жестокое обращение, пренебрежение, эксплуатация или насилие (физическое, сексуальное, эмоциональное или психологическое) в отношении ребенка.</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="sa4_8-8" type="checkbox" value="8" name="sa4_8" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="sa4_8-8" class="ms-2 text-sm text-gray-900">8. Бедственное положение родителей, мешающее им воспитывать ребенка.</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="sa4_9-9" type="checkbox" value="9" name="sa4_9" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="sa4_9-9" class="ms-2 text-sm text-gray-900">9. Дополнительные причины (просьба уточнить): …</label>
+                        </div>
+                        <input type="text" id="sa4_9_other" name="sa4_9_other" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+                    </div>
+                </div>
+        
+                <div class="grid grid-cols-2 gap-4 items-center mt-10">
+                    <div>
+                        SA5a. В какой вид услуг  был помещен ребенок?            </div>
+                    <div class="col-span-1 flex flex-col gap-2">
+                        <div class="flex items-center">
+                            <input id="sa5a-1" type="radio" value="1" name="sa5a" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="sa5a-1" class="ms-2 text-sm text-gray-900">1. Детский дом/ Дом ребенка</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="sa5a-2" type="radio" value="2" name="sa5a" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="sa5a-2" class="ms-2 text-sm text-gray-900">2. Дом « Мехрибонлик»</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="sa5a-3" type="radio" value="3" name="sa5a" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="sa5a-3" class="ms-2 text-sm text-gray-900">3. Дом-интернат «Мурувват» для детей с инвалидностью</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="sa5a-4" type="radio" value="4" name="sa5a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500">
+                            <label for="sa5a-4" class="ms-2 text-sm text-gray-900">4. SOS Детские деревни/семьи</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="sa5a-5" type="radio" value="5" name="sa5a" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="sa5a-5" class="ms-2 text-sm text-gray-900">5. Детский дом семейного типа</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="sa5a-6" type="radio" value="6" name="sa5a" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="sa5a-6" class="ms-2 text-sm text-gray-900">6. Патронатная семья</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="sa5a-7" type="radio" value="7" name="sa5a" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="sa5a-7" class="ms-2 text-sm text-gray-900">7. Опека/попечительство </label>
+                        </div>
+                    </div>
+                </div>
+        
+        
+                <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                    <div>SA5b. Введите код учреждения/семейного дома из реестра:</div>
+                    <div>
+                        <input type="text" id="sa5b" name="sa5b" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+                    </div>
+                </div>
+        
+                <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                    <div>SA5c. Для учреждений, которых нет в реестре, укажите название:</div>
+                    <div>
+                        <input type="text" id="sa5c" name="sa5c" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+                    </div>
+                </div>
+        
+                <div class="grid grid-cols-2 gap-4 items-center mt-10">
+                    <div>
+                        SA6a. Была ли проведена социальная оценка положения ребенка и его семьи до поступления в систему опеки?            </div>
+                    <div class="col-span-1 flex flex-col gap-2">
+                        <div class="flex items-center">
+                            <input id="sa6a-1" type="radio" value="1" name="sa6a" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="sa6a-1" class="ms-2 text-sm text-gray-900">1. Да</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="sa6a-2" type="radio" value="2" name="sa6a" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="sa6a-2" class="ms-2 text-sm text-gray-900">2. Нет</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="sa6a-3" type="radio" value="3" name="sa6a" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="sa6a-3" class="ms-2 text-sm text-gray-900">9. Неизвестно</label>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="grid grid-cols-2 gap-4 items-center mt-10">
+                    <div>
+                        SA6b. Какое учреждение/орган провело социальную оценку?            </div>
+                    <div class="col-span-1 flex flex-col gap-2">
+                        <div class="flex items-center">
+                            <input id="sa6b-1" type="radio" value="1" name="sa6b" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="sa6b-1" class="ms-2 text-sm text-gray-900">1. Органы опеки и попечительства</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="sa6b-2" type="radio" value="2" name="sa6b" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="sa6b-2" class="ms-2 text-sm text-gray-900">2. Сообщество/Махаллинский работник</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="sa6b-3" type="radio" value="3" name="sa6b" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="sa6b-3" class="ms-2 text-sm text-gray-900">3. Инспектор профилактики</label>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="grid grid-cols-2 gap-4 items-center mt-10">
+                    <div>
+                        SA6c. Были ли потребности ребенка четко определены в ходе социальной оценки?            </div>
+                    <div class="col-span-1 flex flex-col gap-2">
+                        <div class="flex items-center">
+                            <input id="sa6c-1" type="radio" value="1" name="sa6c" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="sa6c-1" class="ms-2 text-sm text-gray-900">1. Да</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="sa6c-2" type="radio" value="2" name="sa6c" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="sa6c-2" class="ms-2 text-sm text-gray-900">2. Нет</label>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="grid grid-cols-2 gap-4 items-center mt-10">
+                    <div>
+                        SA6d. Были ли потребности семьи четко определены в ходе социальной оценки?            </div>
+                    <div class="col-span-1 flex flex-col gap-2">
+                        <div class="flex items-center">
+                            <input id="sa6d-1" type="radio" value="1" name="sa6d" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="sa6d-1" class="ms-2 text-sm text-gray-900">1. Да</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="sa6d-2" type="radio" value="2" name="sa6d" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="sa6d-2" class="ms-2 text-sm text-gray-900">2. Нет</label>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="grid grid-cols-2 gap-4 items-center mt-10">
+                    <div>
+                        SA6e. Удалось ли социальной оценке выявить услуги, которые могли бы удовлетворить настоящие потребности?            </div>
+                    <div class="col-span-1 flex flex-col gap-2">
+                        <div class="flex items-center">
+                            <input id="sa6e-1" type="radio" value="1" name="sa6e" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="sa6e-1" class="ms-2 text-sm text-gray-900">1. Да</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="sa6e-2" type="radio" value="2" name="sa6e" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="sa6e-2" class="ms-2 text-sm text-gray-900">2. Нет</label>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="grid grid-cols-2 gap-4 items-center mt-10">
+                    <div>
+                        SA6f. Содержит ли досье ребенка индивидуальный план защиты с момента его первоначального приема?            </div>
+                    <div class="col-span-1 flex flex-col gap-2">
+                        <div class="flex items-center">
+                            <input id="sa6f-1" type="radio" value="1" name="sa6f" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="sa6f-1" class="ms-2 text-sm text-gray-900">1. Да</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="sa6f-2" type="radio" value="2" name="sa6f" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="sa6f-2" class="ms-2 text-sm text-gray-900">2. Нет</label>
+                        </div>
+                    </div>
+                </div>
+        
+        
+                <div class="grid grid-cols-2 gap-4 items-center mt-10">
+                    <div>
+                        SA6g. Оказывалась ли какая-либо поддержка ребенку и семье, чтобы предотвратить разлучение ребенка до приема в систему опеки?            </div>
+                    <div class="col-span-1 flex flex-col gap-2">
+                        <div class="flex items-center">
+                            <input id="sa6g-1" type="radio" value="1" name="sa6g" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="sa6g-1" class="ms-2 text-sm text-gray-900">1. Да</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="sa6g-2" type="radio" value="2" name="sa6g" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="sa6g-2" class="ms-2 text-sm text-gray-900">2. Нет</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="sa6g-3" type="radio" value="3" name="sa6g" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="sa6g-3" class="ms-2 text-sm text-gray-900">9. Неизвестно</label>
+                        </div>
+                    </div>
+                </div>
+        
+        
+                <div class="grid grid-cols-2 gap-4 items-center mt-10">
+                    <div>
+                        SA6h. Если да, то какую поддержку они получили?            </div>
+                    <div class="col-span-1 flex flex-col gap-2">
+                        <div class="flex items-center">
+                            <input id="sa6h_1-1" type="checkbox" value="1" name="sa6h_1" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="sa6h_1-1" class="ms-2 text-sm text-gray-900">Временное опекунство</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="sa6h_2-2" type="checkbox" value="2" name="sa6h_2" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="sa6h_2-2" class="ms-2 text-sm text-gray-900">Психологическая поддержка, оказываемая ребенку и/или родителям</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="sa6h_3-3" type="checkbox" value="3" name="sa6h_3" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="sa6h_3-3" class="ms-2 text-sm text-gray-900">Пособия по уходу за ребенком до 18 лет или инвалидом/ВИЧ-инфицированным, или из малообеспеченной семьи</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="sa6h_4-4" type="checkbox" value="4" name="sa6h_4" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500">
+                            <label for="sa6h_4-4" class="ms-2 text-sm text-gray-900">Поддержка в натурaльной форме (продукты питания, одежда, школьные принадлежности, стройматериалы для ремонта дома), поддержка жильем</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="sa6h_5-5" type="checkbox" value="5" name="sa6h_5" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="sa6h_5-5" class="ms-2 text-sm text-gray-900">Помощь в трудоустройстве</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="sa6h_6-6" type="checkbox" value="6" name="sa6h_6" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="sa6h_6-6" class="ms-2 text-sm text-gray-900">Помощь в открытии домашнего бизнеса</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="sa6h_7-7" type="checkbox" value="7" name="sa6h_7" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="sa6h_7-7" class="ms-2 text-sm text-gray-900">Поддержка дневного ухода за ребенком</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="sa6h_8-8" type="checkbox" value="8" name="sa6h_8" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="sa6h_8-8" class="ms-2 text-sm text-gray-900">Другое, просьба уточнить…</label>
+                        </div>
+                        <input type="text" id="sa6h_8_other" name="sa6h_8_other" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+                    </div>
+                </div>
+        
+        
+                <div class="grid grid-cols-2 gap-4 items-center mt-10">
+                    <div>
+                        SA6i. Проводилась ли оценка альтернатив ухода за ребенком до его приема в систему опеки?            </div>
+                    <div class="col-span-1 flex flex-col gap-2">
+                        <div class="flex items-center">
+                            <input id="sa6i-1" type="radio" value="1" name="sa6i" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="sa6i-1" class="ms-2 text-sm text-gray-900">1. Да</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="sa6i-2" type="radio" value="2" name="sa6i" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="sa6i-2" class="ms-2 text-sm text-gray-900">2. Нет</label>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                    <div>
+                        SA6. Примечания                <small class="block italic text-red-500">Пожалуйста, запишите все уточняющие примечания о приеме ребенка в систему.</small>
+                    </div>
+                    <div>
+                        <textarea id="sa6" name="sa6" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"></textarea>
+                    </div>
+                </div>
         
             </form>
 

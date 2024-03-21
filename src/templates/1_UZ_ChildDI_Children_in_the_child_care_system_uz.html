@@ -2671,6 +2671,379 @@
                 <h2 class="mt-10 mb-4 text-2xl font-bold text-gray-700">4. BOLANING VASIYLIK TIZIMIGA DASTLABKI QABULI</h2>
 
 
+        <div class="grid grid-cols-2 gap-4 items-center mt-6">
+            <div>SA1. Bolaning vasiylik tizimga dastlabki qabul qilingan sanasi</div>
+            <div>
+                <input type="text" id="sa1" name="sa1" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+            </div>
+        </div>
+        <small class="block italic text-red-500">Agar bola tizimdan chiqqan bo&#39;lsa va keyinroq yana qaytgan bo&#39;lsa (bir yoki bir necha marta), iltimos, keyingi qaytish sanalarini (ya&#39;ni, ikkinchi, uchinchi va h.k. qayd yozuvlari) emas, balki uning dastlabki qabul qilingan sanasini yozing. Kun/oy/yil</small>
+
+        <div class="grid grid-cols-2 gap-4 items-center mt-6">
+            <div>SA1a. Bolaning vasiylik tizimga dastlabki qabul qilingan paytidagi yoshi</div>
+            <div>
+                <input type="text" id="sa1a" name="sa1a" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+            </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 items-center mt-10">
+            <div>
+                (SA1-LK3 asosida avtomatik hisoblab chiqiladi). SA2            </div>
+            <div class="col-span-1 flex flex-col gap-2">
+                <div class="flex items-center">
+                    <input id="sa2-1" type="radio" value="1" name="sa2" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="sa2-1" class="ms-2 text-sm text-gray-900">1. Oiladan</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="sa2-2" type="radio" value="2" name="sa2" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="sa2-2" class="ms-2 text-sm text-gray-900">2. Tug&#39;ruqxonada/kasalxonada tashlab ketilgan</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="sa2-3" type="radio" value="3" name="sa2" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="sa2-3" class="ms-2 text-sm text-gray-900">3. Jamoat joylarida tashlab ketilgan</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="sa2-4" type="radio" value="4" name="sa2" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500">
+                    <label for="sa2-4" class="ms-2 text-sm text-gray-900">4. Ko&#39;chada yashab kelgan</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="sa2-5" type="radio" value="5" name="sa2" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="sa2-5" class="ms-2 text-sm text-gray-900">5. Qarindoshlari qaramog&#39;ida qolgan</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="sa2-6" type="radio" value="6" name="sa2" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="sa2-6" class="ms-2 text-sm text-gray-900">6. Tanishlar yoki do&#39;stlar qaramog&#39;ida qolgan</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="sa2-7" type="radio" value="7" name="sa2" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="sa2-7" class="ms-2 text-sm text-gray-900">7. Boshqasi bo&#39;lsa, yozib ko&#39;rsatilsin…</label>
+                </div>
+                <input type="text" id="sa2_other" name="sa2_other" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+            </div>
+        </div>
+
+        <div class="mt-6">SA3. Vasiylik tizimga qabul qilinishidan oldin bola qayerda yashagan?</div>
+        <div class="grid grid-cols-2 items-center gap-4 mt-6">
+            <div>SA3a. Viloyat:</div>
+            <div>
+                <select id="sa3a" name="sa3a" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                    <option value="1">-- choose ---</option>
+                </select>
+                <input type="hidden" aria-hidden="true" name="sa3a_name" id="sa3a_name">
+            </div>
+        </div>
+
+        <div class="grid grid-cols-2 items-center gap-4 mt-6">
+            <div>SA3b. Tuman:</div>
+            <div>
+                <select id="sa3b" name="sa3b" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                    <option value="1">-- choose ---</option>
+                </select>
+                <input type="hidden" aria-hidden="true" name="sa3b_name" id="sa3b_name">
+            </div>
+        </div>
+
+        <div class="grid grid-cols-2 items-center gap-4 mt-6">
+            <div>SA3c. City/Town/Village</div>
+            <div>
+                <select id="sa3c" name="sa3c" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                    <option value="1">-- choose ---</option>
+                </select>
+                <input type="hidden" aria-hidden="true" name="sa3c_name" id="sa3c_name">
+            </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 items-center mt-6">
+            <div>SA3d. Type of settlment</div>
+            <div class="flex gap-4">
+                <div class="flex items-center">
+                    <input id="sa3d-1" type="radio" value="1" name="sa3d" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="sa3d-1" class="ms-2 text-sm text-gray-900">1. Urban</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="sa3d-2" type="radio" value="0" name="sa3d" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="sa3d-2" class="ms-2 text-sm text-gray-900">2. Rural</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 items-center mt-10">
+            <div>
+                SA4. Bola oilasidan ajratilishining sabablari nimada?            </div>
+            <div class="col-span-1 flex flex-col gap-2">
+                <div class="flex items-center">
+                    <input id="sa4_1-1" type="checkbox" value="1" name="sa4_1" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="sa4_1-1" class="ms-2 text-sm text-gray-900">1. Ota-ona vafoti.</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="sa4_2-2" type="checkbox" value="2" name="sa4_2" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="sa4_2-2" class="ms-2 text-sm text-gray-900">2. Ota-onaning ota-onalik huquqidan mahrum qilinganligi.</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="sa4_3-3" type="checkbox" value="3" name="sa4_3" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="sa4_3-3" class="ms-2 text-sm text-gray-900">3. Ota-ona huquqlarining vaqtincha cheklanganligi.</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="sa4_4-4" type="checkbox" value="4" name="sa4_4" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500">
+                    <label for="sa4_4-4" class="ms-2 text-sm text-gray-900">4. Ota-onaning surunkali kasalligi yoki nogironligi tufayli ota-onalik burchini bajara olmasligi.</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="sa4_5-5" type="checkbox" value="5" name="sa4_5" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="sa4_5-5" class="ms-2 text-sm text-gray-900">5. Ota-onalarning uzoq vaqt yo&#39;qligi (6 oydan ortiq).</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="sa4_6-6" type="checkbox" value="6" name="sa4_6" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="sa4_6-6" class="ms-2 text-sm text-gray-900">6. Ota-onalarning bolani tarbiyalashdan yoki uning huquqlari va qonuniy manfaatlarini himoya qilishdan bosh tortishi, shu jumladan ota-onalar o&#39;z farzandini davlat ta&#39;lim, tibbiy-ijtimoiy muassasalardan olishdan bosh tortishi.</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="sa4_7-7" type="checkbox" value="7" name="sa4_7" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="sa4_7-7" class="ms-2 text-sm text-gray-900">7. Bolaga nisbatan shafqatsiz munosabat, beparvolik, ekspluatatsiya yoki zo&#39;ravonlik (jismoniy, jinsiy, hissiy yoki psixologik) qo&#39;llanilishi.</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="sa4_8-8" type="checkbox" value="8" name="sa4_8" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="sa4_8-8" class="ms-2 text-sm text-gray-900">8. Ota-onalarning farzand tarbiyasiga to&#39;sqinlik qiluvchi qashshoqlik holati.</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="sa4_9-9" type="checkbox" value="9" name="sa4_9" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="sa4_9-9" class="ms-2 text-sm text-gray-900">9. Qo&#39;shimcha sabablar (ko&#39;rsatilsin): …</label>
+                </div>
+                <input type="text" id="sa4_9_other" name="sa4_9_other" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+            </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 items-center mt-10">
+            <div>
+                SA5a. Bola qanday xizmat turiga joylashtirilgan?            </div>
+            <div class="col-span-1 flex flex-col gap-2">
+                <div class="flex items-center">
+                    <input id="sa5a-1" type="radio" value="1" name="sa5a" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="sa5a-1" class="ms-2 text-sm text-gray-900">1. Bolalar uyi</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="sa5a-2" type="radio" value="2" name="sa5a" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="sa5a-2" class="ms-2 text-sm text-gray-900">2. Mehribonlik uyi</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="sa5a-3" type="radio" value="3" name="sa5a" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="sa5a-3" class="ms-2 text-sm text-gray-900">3. &quot;Muruvvat&quot; nogironligi bo&#39;lgan bolalar uchun internat uyi</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="sa5a-4" type="radio" value="4" name="sa5a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500">
+                    <label for="sa5a-4" class="ms-2 text-sm text-gray-900">4. SOS Bolalar makhallalari/oilalari</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="sa5a-5" type="radio" value="5" name="sa5a" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="sa5a-5" class="ms-2 text-sm text-gray-900">5. Oilaviy bolalar uyi</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="sa5a-6" type="radio" value="6" name="sa5a" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="sa5a-6" class="ms-2 text-sm text-gray-900">6. Patronat oila</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="sa5a-7" type="radio" value="7" name="sa5a" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="sa5a-7" class="ms-2 text-sm text-gray-900">7. Vasiylik/homiylik</label>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="grid grid-cols-2 gap-4 items-center mt-6">
+            <div>SA5b. Iltimos, ro&#39;yxatdan muassasa/oila uyi kodini kiriting:</div>
+            <div>
+                <input type="text" id="sa5b" name="sa5b" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+            </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 items-center mt-6">
+            <div>SA5c. Ro&#39;yxatda ko&#39;rsatilmagan muassasalar uchun nomini yozing:</div>
+            <div>
+                <input type="text" id="sa5c" name="sa5c" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+            </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 items-center mt-10">
+            <div>
+                SA6a. Bolani vasiylik tizimga qabul qilishdan oldin, uning va oilasining ahvoli yuzasidan ijtimoiy baholash o&#39;tkazildimi?            </div>
+            <div class="col-span-1 flex flex-col gap-2">
+                <div class="flex items-center">
+                    <input id="sa6a-1" type="radio" value="1" name="sa6a" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="sa6a-1" class="ms-2 text-sm text-gray-900">1. Ha</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="sa6a-2" type="radio" value="2" name="sa6a" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="sa6a-2" class="ms-2 text-sm text-gray-900">2. Yo&#39;q</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="sa6a-3" type="radio" value="3" name="sa6a" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="sa6a-3" class="ms-2 text-sm text-gray-900">9. Noma&#39;lum</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 items-center mt-10">
+            <div>
+                SA6b. Qaysi muassasa/organ ijtimoiy baholashni o&#39;tkazdi?            </div>
+            <div class="col-span-1 flex flex-col gap-2">
+                <div class="flex items-center">
+                    <input id="sa6b-1" type="radio" value="1" name="sa6b" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="sa6b-1" class="ms-2 text-sm text-gray-900">1. Vasiylik va homiylik organlari</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="sa6b-2" type="radio" value="2" name="sa6b" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="sa6b-2" class="ms-2 text-sm text-gray-900">2. Jamoat/Mahalla xodimi</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="sa6b-3" type="radio" value="3" name="sa6b" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="sa6b-3" class="ms-2 text-sm text-gray-900">3. Profilaktika inspektori</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 items-center mt-10">
+            <div>
+                SA6c. Ijtimoiy baholash chog&#39;ida bolaning ehtiyojlari aniq belgilanganmi?            </div>
+            <div class="col-span-1 flex flex-col gap-2">
+                <div class="flex items-center">
+                    <input id="sa6c-1" type="radio" value="1" name="sa6c" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="sa6c-1" class="ms-2 text-sm text-gray-900">1. Ha</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="sa6c-2" type="radio" value="2" name="sa6c" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="sa6c-2" class="ms-2 text-sm text-gray-900">2. Yo&#39;q</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 items-center mt-10">
+            <div>
+                SA6d. Ijtimoiy baholash chog&#39;ida oilaning ehtiyojlari aniq belgilanganmi?            </div>
+            <div class="col-span-1 flex flex-col gap-2">
+                <div class="flex items-center">
+                    <input id="sa6d-1" type="radio" value="1" name="sa6d" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="sa6d-1" class="ms-2 text-sm text-gray-900">1. Ha</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="sa6d-2" type="radio" value="2" name="sa6d" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="sa6d-2" class="ms-2 text-sm text-gray-900">2. Yo&#39;q</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 items-center mt-10">
+            <div>
+                SA6e. Ijtimoiy baholash ushbu ehtiyojlarni qondira oladigan xizmatlarni aniqlay oldimi?            </div>
+            <div class="col-span-1 flex flex-col gap-2">
+                <div class="flex items-center">
+                    <input id="sa6e-1" type="radio" value="1" name="sa6e" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="sa6e-1" class="ms-2 text-sm text-gray-900">1. Ha</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="sa6e-2" type="radio" value="2" name="sa6e" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="sa6e-2" class="ms-2 text-sm text-gray-900">2. Yo&#39;q</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 items-center mt-10">
+            <div>
+                SA6f. Bolaning hujjatlar jildiga dastlabki qabul qilingan paytidan boshlab individual himoya rejasi kiritilganmi?            </div>
+            <div class="col-span-1 flex flex-col gap-2">
+                <div class="flex items-center">
+                    <input id="sa6f-1" type="radio" value="1" name="sa6f" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="sa6f-1" class="ms-2 text-sm text-gray-900">1. Ha</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="sa6f-2" type="radio" value="2" name="sa6f" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="sa6f-2" class="ms-2 text-sm text-gray-900">2. Yo&#39;q</label>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="grid grid-cols-2 gap-4 items-center mt-10">
+            <div>
+                SA6g. Bolaning vasiylik tizimga qabul qilinishidan oldin uning oilasidan ajralishini oldini olish uchun bola va oilaga yordam ko&#39;rsatildimi, qo&#39;llab-quvvatlandimi?            </div>
+            <div class="col-span-1 flex flex-col gap-2">
+                <div class="flex items-center">
+                    <input id="sa6g-1" type="radio" value="1" name="sa6g" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="sa6g-1" class="ms-2 text-sm text-gray-900">1. Ha</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="sa6g-2" type="radio" value="2" name="sa6g" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="sa6g-2" class="ms-2 text-sm text-gray-900">2. Yo&#39;q</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="sa6g-3" type="radio" value="3" name="sa6g" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="sa6g-3" class="ms-2 text-sm text-gray-900">9. Noma&#39;lum</label>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="grid grid-cols-2 gap-4 items-center mt-10">
+            <div>
+                SA6h. Ha bo&#39;lsa, ular qanday yordam oldilar/qo&#39;llab-quvvatlandilar?            </div>
+            <div class="col-span-1 flex flex-col gap-2">
+                <div class="flex items-center">
+                    <input id="sa6h_1-1" type="checkbox" value="1" name="sa6h_1" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="sa6h_1-1" class="ms-2 text-sm text-gray-900">Vaqtinchalik vasiylik</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="sa6h_2-2" type="checkbox" value="2" name="sa6h_2" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="sa6h_2-2" class="ms-2 text-sm text-gray-900">Bolaga va / yoki ota-onaga psixologik yordam </label>
+                </div>
+                <div class="flex items-center">
+                    <input id="sa6h_3-3" type="checkbox" value="3" name="sa6h_3" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="sa6h_3-3" class="ms-2 text-sm text-gray-900">18 yoshga to&#39;lgunga qadar yoki nogironlikka / OIVga chalingan yoki kam ta&#39;minlangan oilalardan bo&#39;lgan bolani parvarish qilish uchun nafaqalar</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="sa6h_4-4" type="checkbox" value="4" name="sa6h_4" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500">
+                    <label for="sa6h_4-4" class="ms-2 text-sm text-gray-900">Moddiy yordam (oziq-ovqat, kiyim-kechak, o&#39;quv qurollari, uyni ta&#39;mirlash uchun qurilish materiallari), uy-joy bilan ta&#39;minlash</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="sa6h_5-5" type="checkbox" value="5" name="sa6h_5" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="sa6h_5-5" class="ms-2 text-sm text-gray-900">Ishga joylashishda ko&#39;maklashish</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="sa6h_6-6" type="checkbox" value="6" name="sa6h_6" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="sa6h_6-6" class="ms-2 text-sm text-gray-900">Oilaviy tadbirkorlik ochishda ko&#39;maklashish</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="sa6h_7-7" type="checkbox" value="7" name="sa6h_7" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="sa6h_7-7" class="ms-2 text-sm text-gray-900">Kunduz kunlari bolani parvarishlashda ko&#39;maklashish</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="sa6h_8-8" type="checkbox" value="8" name="sa6h_8" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="sa6h_8-8" class="ms-2 text-sm text-gray-900">Boshqa, belgilang</label>
+                </div>
+                <input type="text" id="sa6h_8_other" name="sa6h_8_other" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+            </div>
+        </div>
+
+
+        <div class="grid grid-cols-2 gap-4 items-center mt-10">
+            <div>
+                SA6i. Vasiylik tizimiga qabul qilishdan oldin bola uchun muqobil vasiylik imkoniyatlari baholanganmi?            </div>
+            <div class="col-span-1 flex flex-col gap-2">
+                <div class="flex items-center">
+                    <input id="sa6i-1" type="radio" value="1" name="sa6i" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="sa6i-1" class="ms-2 text-sm text-gray-900">1. Ha</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="sa6i-2" type="radio" value="2" name="sa6i" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="sa6i-2" class="ms-2 text-sm text-gray-900">2. Yo&#39;q</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 items-center mt-6">
+            <div>
+                SA6. Izohlar                <small class="block italic text-red-500">Iltimos, bolaning tizimga qabul qilinishi yuzasidan aniqlashtiruvchi izohlarni yozib qoldiring.</small>
+            </div>
+            <div>
+                <textarea id="sa6" name="sa6" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"></textarea>
+            </div>
+        </div>
 
     </form>
 </body>

@@ -2671,6 +2671,379 @@
                 <h2 class="mt-10 mb-4 text-2xl font-bold text-gray-700">4. THE CHILD&#39;S FIRST ADMISSION INTO THE CHILD CARE SYSTEM</h2>
 
 
+        <div class="grid grid-cols-2 gap-4 items-center mt-6">
+            <div>SA1. Date of the child&#39;s first admission into the child care system</div>
+            <div>
+                <input type="text" id="sa1" name="sa1" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+            </div>
+        </div>
+        <small class="block italic text-red-500">If the child exited the system and later returned (whether once or multiple times), please record the date of the first admission and not of the subsequent return dates (i.e. the second, third, etc. entries). Day/Month/Year</small>
+
+        <div class="grid grid-cols-2 gap-4 items-center mt-6">
+            <div>SA1a. Child&#39;s age upon his/her first admission into the child care system</div>
+            <div>
+                <input type="text" id="sa1a" name="sa1a" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+            </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 items-center mt-10">
+            <div>
+                (Automatically computed from SA1-LK3). SA2            </div>
+            <div class="col-span-1 flex flex-col gap-2">
+                <div class="flex items-center">
+                    <input id="sa2-1" type="radio" value="1" name="sa2" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="sa2-1" class="ms-2 text-sm text-gray-900">1. A family</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="sa2-2" type="radio" value="2" name="sa2" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="sa2-2" class="ms-2 text-sm text-gray-900">2. Was abandoned in the maternity/hospital</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="sa2-3" type="radio" value="3" name="sa2" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="sa2-3" class="ms-2 text-sm text-gray-900">3. Was abandoned in public spaces</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="sa2-4" type="radio" value="4" name="sa2" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500">
+                    <label for="sa2-4" class="ms-2 text-sm text-gray-900">4. Was living in the street</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="sa2-5" type="radio" value="5" name="sa2" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="sa2-5" class="ms-2 text-sm text-gray-900">5. Was left in the care of relatives</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="sa2-6" type="radio" value="6" name="sa2" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="sa2-6" class="ms-2 text-sm text-gray-900">6. Was left in the care of acquaintances or friends</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="sa2-7" type="radio" value="7" name="sa2" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="sa2-7" class="ms-2 text-sm text-gray-900">7. Other, please specify…</label>
+                </div>
+                <input type="text" id="sa2_other" name="sa2_other" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+            </div>
+        </div>
+
+        <div class="mt-6">SA3. Where did the child live before being admitted to the child care system?</div>
+        <div class="grid grid-cols-2 items-center gap-4 mt-6">
+            <div>SA3a. Region:</div>
+            <div>
+                <select id="sa3a" name="sa3a" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                    <option value="1">-- choose ---</option>
+                </select>
+                <input type="hidden" aria-hidden="true" name="sa3a_name" id="sa3a_name">
+            </div>
+        </div>
+
+        <div class="grid grid-cols-2 items-center gap-4 mt-6">
+            <div>SA3b. District:</div>
+            <div>
+                <select id="sa3b" name="sa3b" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                    <option value="1">-- choose ---</option>
+                </select>
+                <input type="hidden" aria-hidden="true" name="sa3b_name" id="sa3b_name">
+            </div>
+        </div>
+
+        <div class="grid grid-cols-2 items-center gap-4 mt-6">
+            <div>SA3c. City/Town/Village</div>
+            <div>
+                <select id="sa3c" name="sa3c" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                    <option value="1">-- choose ---</option>
+                </select>
+                <input type="hidden" aria-hidden="true" name="sa3c_name" id="sa3c_name">
+            </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 items-center mt-6">
+            <div>SA3d. Type of settlment</div>
+            <div class="flex gap-4">
+                <div class="flex items-center">
+                    <input id="sa3d-1" type="radio" value="1" name="sa3d" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="sa3d-1" class="ms-2 text-sm text-gray-900">1. Urban</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="sa3d-2" type="radio" value="0" name="sa3d" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="sa3d-2" class="ms-2 text-sm text-gray-900">2. Rural</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 items-center mt-10">
+            <div>
+                SA4. What were the causes for the separation of the child from his/her family?            </div>
+            <div class="col-span-1 flex flex-col gap-2">
+                <div class="flex items-center">
+                    <input id="sa4_1-1" type="checkbox" value="1" name="sa4_1" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="sa4_1-1" class="ms-2 text-sm text-gray-900">1. The death of parents.</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="sa4_2-2" type="checkbox" value="2" name="sa4_2" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="sa4_2-2" class="ms-2 text-sm text-gray-900">2. The deprivation of parental rights.</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="sa4_3-3" type="checkbox" value="3" name="sa4_3" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="sa4_3-3" class="ms-2 text-sm text-gray-900">3. The temporary restriction of parental rights.</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="sa4_4-4" type="checkbox" value="4" name="sa4_4" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500">
+                    <label for="sa4_4-4" class="ms-2 text-sm text-gray-900">4. The inability of parents to perform parental duties due to long-term illness or disability.</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="sa4_5-5" type="checkbox" value="5" name="sa4_5" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="sa4_5-5" class="ms-2 text-sm text-gray-900">5. The prolonged absence of parents (more than 6 months).</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="sa4_6-6" type="checkbox" value="6" name="sa4_6" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="sa4_6-6" class="ms-2 text-sm text-gray-900">6. The refusal of parents to raise the child or protect his/her rights and legal interests, including when parents refuse to take their child from state education, medical and social institutions.</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="sa4_7-7" type="checkbox" value="7" name="sa4_7" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="sa4_7-7" class="ms-2 text-sm text-gray-900">7. The abuse, neglect, exploitation or violence against the child (physical, sexual, emotional, or psychological).</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="sa4_8-8" type="checkbox" value="8" name="sa4_8" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="sa4_8-8" class="ms-2 text-sm text-gray-900">8. The poverty of parents that prevents them from raising the child.</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="sa4_9-9" type="checkbox" value="9" name="sa4_9" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="sa4_9-9" class="ms-2 text-sm text-gray-900">9. Additional causes (please specify): …</label>
+                </div>
+                <input type="text" id="sa4_9_other" name="sa4_9_other" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+            </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 items-center mt-10">
+            <div>
+                SA5a. In what type of service was the child placed?            </div>
+            <div class="col-span-1 flex flex-col gap-2">
+                <div class="flex items-center">
+                    <input id="sa5a-1" type="radio" value="1" name="sa5a" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="sa5a-1" class="ms-2 text-sm text-gray-900">1. Children&#39;s home/Baby home</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="sa5a-2" type="radio" value="2" name="sa5a" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="sa5a-2" class="ms-2 text-sm text-gray-900">2. Mehribonlik house</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="sa5a-3" type="radio" value="3" name="sa5a" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="sa5a-3" class="ms-2 text-sm text-gray-900">3. Muruvat house for children with disabilities</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="sa5a-4" type="radio" value="4" name="sa5a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500">
+                    <label for="sa5a-4" class="ms-2 text-sm text-gray-900">4. SOS children&#39;s villages/families</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="sa5a-5" type="radio" value="5" name="sa5a" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="sa5a-5" class="ms-2 text-sm text-gray-900">5. Family-type children&#39;s home</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="sa5a-6" type="radio" value="6" name="sa5a" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="sa5a-6" class="ms-2 text-sm text-gray-900">6. Patronat family</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="sa5a-7" type="radio" value="7" name="sa5a" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="sa5a-7" class="ms-2 text-sm text-gray-900">7. Trusteeship/Guardianship care</label>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="grid grid-cols-2 gap-4 items-center mt-6">
+            <div>SA5b. Please enter the code of the institution/family home from the registry:</div>
+            <div>
+                <input type="text" id="sa5b" name="sa5b" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+            </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 items-center mt-6">
+            <div>SA5c. For institutions that don&#39;t appear in the registry, please write the name:</div>
+            <div>
+                <input type="text" id="sa5c" name="sa5c" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+            </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 items-center mt-10">
+            <div>
+                SA6a. Was a social assessment of the situation of the child and his/her family conducted before the admission into the care system?            </div>
+            <div class="col-span-1 flex flex-col gap-2">
+                <div class="flex items-center">
+                    <input id="sa6a-1" type="radio" value="1" name="sa6a" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="sa6a-1" class="ms-2 text-sm text-gray-900">1. Yes</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="sa6a-2" type="radio" value="2" name="sa6a" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="sa6a-2" class="ms-2 text-sm text-gray-900">2. No</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="sa6a-3" type="radio" value="3" name="sa6a" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="sa6a-3" class="ms-2 text-sm text-gray-900">9. Unknown</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 items-center mt-10">
+            <div>
+                SA6b. What institution/body conducted the social assessment?            </div>
+            <div class="col-span-1 flex flex-col gap-2">
+                <div class="flex items-center">
+                    <input id="sa6b-1" type="radio" value="1" name="sa6b" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="sa6b-1" class="ms-2 text-sm text-gray-900">1. Guardianship and trusteeship bodies</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="sa6b-2" type="radio" value="2" name="sa6b" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="sa6b-2" class="ms-2 text-sm text-gray-900">2. Community/Makhala worker</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="sa6b-3" type="radio" value="3" name="sa6b" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="sa6b-3" class="ms-2 text-sm text-gray-900">3. Police inspector</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 items-center mt-10">
+            <div>
+                SA6c. Were the child&#39;s needs clearly identified in the social assessment?            </div>
+            <div class="col-span-1 flex flex-col gap-2">
+                <div class="flex items-center">
+                    <input id="sa6c-1" type="radio" value="1" name="sa6c" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="sa6c-1" class="ms-2 text-sm text-gray-900">1. Yes</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="sa6c-2" type="radio" value="2" name="sa6c" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="sa6c-2" class="ms-2 text-sm text-gray-900">2. No</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 items-center mt-10">
+            <div>
+                SA6d. Were the family&#39;s needs clearly identified in the social assessment?            </div>
+            <div class="col-span-1 flex flex-col gap-2">
+                <div class="flex items-center">
+                    <input id="sa6d-1" type="radio" value="1" name="sa6d" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="sa6d-1" class="ms-2 text-sm text-gray-900">1. Yes</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="sa6d-2" type="radio" value="2" name="sa6d" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="sa6d-2" class="ms-2 text-sm text-gray-900">2. No</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 items-center mt-10">
+            <div>
+                SA6e. Was the social assessment able to identify services that could address these needs?            </div>
+            <div class="col-span-1 flex flex-col gap-2">
+                <div class="flex items-center">
+                    <input id="sa6e-1" type="radio" value="1" name="sa6e" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="sa6e-1" class="ms-2 text-sm text-gray-900">1. Yes</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="sa6e-2" type="radio" value="2" name="sa6e" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="sa6e-2" class="ms-2 text-sm text-gray-900">2. No</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 items-center mt-10">
+            <div>
+                SA6f. Does the child&#39;s file contain an Individual Protection Plan from their initial admission?            </div>
+            <div class="col-span-1 flex flex-col gap-2">
+                <div class="flex items-center">
+                    <input id="sa6f-1" type="radio" value="1" name="sa6f" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="sa6f-1" class="ms-2 text-sm text-gray-900">1. Yes</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="sa6f-2" type="radio" value="2" name="sa6f" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="sa6f-2" class="ms-2 text-sm text-gray-900">2. No</label>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="grid grid-cols-2 gap-4 items-center mt-10">
+            <div>
+                SA6g. Was there any support provided to the child and family to prevent separation before the child&#39;s entry into the child care system?            </div>
+            <div class="col-span-1 flex flex-col gap-2">
+                <div class="flex items-center">
+                    <input id="sa6g-1" type="radio" value="1" name="sa6g" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="sa6g-1" class="ms-2 text-sm text-gray-900">1. Yes</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="sa6g-2" type="radio" value="2" name="sa6g" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="sa6g-2" class="ms-2 text-sm text-gray-900">2. No</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="sa6g-3" type="radio" value="3" name="sa6g" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="sa6g-3" class="ms-2 text-sm text-gray-900">9. Unknown</label>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="grid grid-cols-2 gap-4 items-center mt-10">
+            <div>
+                SA6h. If yes, what kind of support did they receive?            </div>
+            <div class="col-span-1 flex flex-col gap-2">
+                <div class="flex items-center">
+                    <input id="sa6h_1-1" type="checkbox" value="1" name="sa6h_1" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="sa6h_1-1" class="ms-2 text-sm text-gray-900">Temporary guardianship</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="sa6h_2-2" type="checkbox" value="2" name="sa6h_2" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="sa6h_2-2" class="ms-2 text-sm text-gray-900">Psychological support provided to the child and/or parents</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="sa6h_3-3" type="checkbox" value="3" name="sa6h_3" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="sa6h_3-3" class="ms-2 text-sm text-gray-900">Allowances for childcare up to 18 years of age or with a disability/HIV, or from low-income families</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="sa6h_4-4" type="checkbox" value="4" name="sa6h_4" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500">
+                    <label for="sa6h_4-4" class="ms-2 text-sm text-gray-900">In-kind support (food, clothes, school supplies, construction materials to repair the house), support with housing</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="sa6h_5-5" type="checkbox" value="5" name="sa6h_5" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="sa6h_5-5" class="ms-2 text-sm text-gray-900">Support with finding employment</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="sa6h_6-6" type="checkbox" value="6" name="sa6h_6" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="sa6h_6-6" class="ms-2 text-sm text-gray-900">Support with opening home-based business</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="sa6h_7-7" type="checkbox" value="7" name="sa6h_7" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="sa6h_7-7" class="ms-2 text-sm text-gray-900">Day care support for the child</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="sa6h_8-8" type="checkbox" value="8" name="sa6h_8" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="sa6h_8-8" class="ms-2 text-sm text-gray-900">Other, please specify …</label>
+                </div>
+                <input type="text" id="sa6h_8_other" name="sa6h_8_other" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+            </div>
+        </div>
+
+
+        <div class="grid grid-cols-2 gap-4 items-center mt-10">
+            <div>
+                SA6i. Was there an assessment of care alternatives for the child before the admission into child care system?            </div>
+            <div class="col-span-1 flex flex-col gap-2">
+                <div class="flex items-center">
+                    <input id="sa6i-1" type="radio" value="1" name="sa6i" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="sa6i-1" class="ms-2 text-sm text-gray-900">1. Yes</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="sa6i-2" type="radio" value="2" name="sa6i" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="sa6i-2" class="ms-2 text-sm text-gray-900">2. No</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 items-center mt-6">
+            <div>
+                SA6. Remarks                <small class="block italic text-red-500">Please write down any clarifying notes about the child&#39;s admission to the system.</small>
+            </div>
+            <div>
+                <textarea id="sa6" name="sa6" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"></textarea>
+            </div>
+        </div>
 
     </form>
 </body>
