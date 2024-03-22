@@ -4291,6 +4291,561 @@
             </div>
         </div>
 
+        <h2 class="mt-10 mb-4 text-2xl font-bold text-gray-700"><%= it.t964 %></h2>
+
+        <div class="grid grid-cols-2 gap-4 items-center mt-6">
+            <div>
+                <%= it.t965 %>. <%= it.t966 %>
+                <small class="block italic text-red-500 mt-4"><%= it.t967 %></small>
+            </div>
+            <div>
+                <input type="text" id="sh1" name="sh1" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+            </div>
+        </div>
+        <div class="grid grid-cols-2 gap-4 items-center mt-10">
+            <div class="ml-3">
+                <%= it.t968 %>. <%= it.t969 %>
+            </div>
+            <div class="col-span-1 flex gap-4">
+                <div class="flex items-center">
+                    <input id="sh2-1" type="radio" value="0" name="sh2" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="sh2-1" class="ms-2 text-sm text-gray-900"><%= it.t970 %></label>
+                </div>
+                <div class="flex items-center">
+                    <input id="sh2-2" type="radio" value="1" name="sh2" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="sh2-2" class="ms-2 text-sm text-gray-900"><%= it.t971 %></label>
+                </div>
+            </div>
+        </div>
+
+        <p class="mt-10"><%= it.t972 %>. <%= it.t973 %></p>
+        <small class="block italic text-red-500 mt-4"><%= it.t974 %></small>
+
+        <table class="mt-4 w-full" aria-label="list all the care services">
+            <thead>
+                <tr>
+                    <th class="p-1"><%= it.t975 %></th>
+                    <th class="p-1"><%= it.t976 %></th>
+                    <th class="p-1"><%= it.t977 %></th>
+                    <th class="p-1"><%= it.t979 %></th>
+                    <th class="p-1"><%= it.t981 %></th>
+                    <th class="p-1"><%= it.t982 %></th>
+                    <th class="p-1"><%= it.t984 %></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="p-1 text-center">1</td>
+                    <td>
+                        <input type="text" id="sh3_s1a" name="sh3_s1a" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+                    </td>
+                    <td class="p-1">
+                        <select id="sh3_s1b" name="sh3_s1b" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                            <option value="">-----</option>
+                            <option value="1"><%= it.t992 %></option>
+                            <option value="2"><%= it.t993 %></option>
+                            <option value="3"><%= it.t994 %></option>
+                            <option value="4"><%= it.t995 %></option>
+                            <option value="5"><%= it.t996 %></option>
+                            <option value="6"><%= it.t997 %></option>
+                            <option value="7"><%= it.t998 %></option>
+                            <option value="8"><%= it.t999 %></option>
+                        </select>
+                    </td>
+                    <td class="p-1">
+                        <select id="sh3_s1c" name="sh3_s1c" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                            <option value="">-----</option>
+                            <option value="0"><%= it.t1001 %></option>
+                            <option value="1"><%= it.t1002 %></option>
+                            <option value="2"><%= it.t1003 %></option>
+                            <option value="3"><%= it.t1004 %></option>
+                        </select>
+                    </td>
+                    <td class="p-1">
+                        <input type="text" id="sh3_s1d" name="sh3_s1d" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+                    </td>
+                    <td class="p-1">
+                        <select id="sh3_s1e" name="sh3_s1e" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                            <option value="">-----</option>
+                            <option value="1"><%= it.t1006 %></option>
+                            <option value="2"><%= it.t1007 %></option>
+                            <option value="3"><%= it.t1008 %></option>
+                            <option value="4"><%= it.t1009 %></option>
+                        </select>
+                    </td>
+                    <td class="p-1">
+                        <input type="text" id="sh3_s1f" name="sh3_s1f" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="p-1 text-center">2</td>
+                    <td>
+                        <input type="text" id="sh3_s2a" name="sh3_s2a" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+                    </td>
+                    <td class="p-1">
+                        <select id="sh3_s2b" name="sh3_s2b" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                            <option value="">-----</option>
+                            <option value="1"><%= it.t992 %></option>
+                            <option value="2"><%= it.t993 %></option>
+                            <option value="3"><%= it.t994 %></option>
+                            <option value="4"><%= it.t995 %></option>
+                            <option value="5"><%= it.t996 %></option>
+                            <option value="6"><%= it.t997 %></option>
+                            <option value="7"><%= it.t998 %></option>
+                            <option value="8"><%= it.t999 %></option>
+                        </select>
+                    </td>
+                    <td class="p-1">
+                        <select id="sh3_s2c" name="sh3_s2c" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                            <option value="">-----</option>
+                            <option value="0"><%= it.t1001 %></option>
+                            <option value="1"><%= it.t1002 %></option>
+                            <option value="2"><%= it.t1003 %></option>
+                            <option value="3"><%= it.t1004 %></option>
+                        </select>
+                    </td>
+                    <td class="p-1">
+                        <input type="text" id="sh3_s2d" name="sh3_s2d" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+                    </td>
+                    <td class="p-1">
+                        <select id="sh3_s2e" name="sh3_s2e" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                            <option value="">-----</option>
+                            <option value="1"><%= it.t1006 %></option>
+                            <option value="2"><%= it.t1007 %></option>
+                            <option value="3"><%= it.t1008 %></option>
+                            <option value="4"><%= it.t1009 %></option>
+                        </select>
+                    </td>
+                    <td class="p-1">
+                        <input type="text" id="sh3_s2f" name="sh3_s2f" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="p-1 text-center">3</td>
+                    <td>
+                        <input type="text" id="sh3_s3a" name="sh3_s3a" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+                    </td>
+                    <td class="p-1">
+                        <select id="sh3_s3b" name="sh3_s3b" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                            <option value="">-----</option>
+                            <option value="1"><%= it.t992 %></option>
+                            <option value="2"><%= it.t993 %></option>
+                            <option value="3"><%= it.t994 %></option>
+                            <option value="4"><%= it.t995 %></option>
+                            <option value="5"><%= it.t996 %></option>
+                            <option value="6"><%= it.t997 %></option>
+                            <option value="7"><%= it.t998 %></option>
+                            <option value="8"><%= it.t999 %></option>
+                        </select>
+                    </td>
+                    <td class="p-1">
+                        <select id="sh3_s3c" name="sh3_s3c" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                            <option value="">-----</option>
+                            <option value="0"><%= it.t1001 %></option>
+                            <option value="1"><%= it.t1002 %></option>
+                            <option value="2"><%= it.t1003 %></option>
+                            <option value="3"><%= it.t1004 %></option>
+                        </select>
+                    </td>
+                    <td class="p-1">
+                        <input type="text" id="sh3_s3d" name="sh3_s3d" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+                    </td>
+                    <td class="p-1">
+                        <select id="sh3_s3e" name="sh3_s3e" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                            <option value="">-----</option>
+                            <option value="1"><%= it.t1006 %></option>
+                            <option value="2"><%= it.t1007 %></option>
+                            <option value="3"><%= it.t1008 %></option>
+                            <option value="4"><%= it.t1009 %></option>
+                        </select>
+                    </td>
+                    <td class="p-1">
+                        <input type="text" id="sh3_s3f" name="sh3_s3f" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="p-1 text-center">4</td>
+                    <td>
+                        <input type="text" id="sh3_s4a" name="sh3_s4a" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+                    </td>
+                    <td class="p-1">
+                        <select id="sh3_s4b" name="sh3_s4b" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                            <option value="">-----</option>
+                            <option value="1"><%= it.t992 %></option>
+                            <option value="2"><%= it.t993 %></option>
+                            <option value="3"><%= it.t994 %></option>
+                            <option value="4"><%= it.t995 %></option>
+                            <option value="5"><%= it.t996 %></option>
+                            <option value="6"><%= it.t997 %></option>
+                            <option value="7"><%= it.t998 %></option>
+                            <option value="8"><%= it.t999 %></option>
+                        </select>
+                    </td>
+                    <td class="p-1">
+                        <select id="sh3_s4c" name="sh3_s4c" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                            <option value="">-----</option>
+                            <option value="0"><%= it.t1001 %></option>
+                            <option value="1"><%= it.t1002 %></option>
+                            <option value="2"><%= it.t1003 %></option>
+                            <option value="3"><%= it.t1004 %></option>
+                        </select>
+                    </td>
+                    <td class="p-1">
+                        <input type="text" id="sh3_s4d" name="sh3_s4d" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+                    </td>
+                    <td class="p-1">
+                        <select id="sh3_s4e" name="sh3_s4e" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                            <option value="">-----</option>
+                            <option value="1"><%= it.t1006 %></option>
+                            <option value="2"><%= it.t1007 %></option>
+                            <option value="3"><%= it.t1008 %></option>
+                            <option value="4"><%= it.t1009 %></option>
+                        </select>
+                    </td>
+                    <td class="p-1">
+                        <input type="text" id="sh3_s4f" name="sh3_s4f" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="p-1 text-center">5</td>
+                    <td>
+                        <input type="text" id="sh3_s5a" name="sh3_s5a" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+                    </td>
+                    <td class="p-1">
+                        <select id="sh3_s5b" name="sh3_s5b" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                            <option value="">-----</option>
+                            <option value="1"><%= it.t992 %></option>
+                            <option value="2"><%= it.t993 %></option>
+                            <option value="3"><%= it.t994 %></option>
+                            <option value="4"><%= it.t995 %></option>
+                            <option value="5"><%= it.t996 %></option>
+                            <option value="6"><%= it.t997 %></option>
+                            <option value="7"><%= it.t998 %></option>
+                            <option value="8"><%= it.t999 %></option>
+                        </select>
+                    </td>
+                    <td class="p-1">
+                        <select id="sh3_s5c" name="sh3_s5c" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                            <option value="">-----</option>
+                            <option value="0"><%= it.t1001 %></option>
+                            <option value="1"><%= it.t1002 %></option>
+                            <option value="2"><%= it.t1003 %></option>
+                            <option value="3"><%= it.t1004 %></option>
+                        </select>
+                    </td>
+                    <td class="p-1">
+                        <input type="text" id="sh3_s5d" name="sh3_s5d" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+                    </td>
+                    <td class="p-1">
+                        <select id="sh3_s5e" name="sh3_s5e" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                            <option value="">-----</option>
+                            <option value="1"><%= it.t1006 %></option>
+                            <option value="2"><%= it.t1007 %></option>
+                            <option value="3"><%= it.t1008 %></option>
+                            <option value="4"><%= it.t1009 %></option>
+                        </select>
+                    </td>
+                    <td class="p-1">
+                        <input type="text" id="sh3_s5f" name="sh3_s5f" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="p-1 text-center">6</td>
+                    <td>
+                        <input type="text" id="sh3_s6a" name="sh3_s6a" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+                    </td>
+                    <td class="p-1">
+                        <select id="sh3_s6b" name="sh3_s6b" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                            <option value="">-----</option>
+                            <option value="1"><%= it.t992 %></option>
+                            <option value="2"><%= it.t993 %></option>
+                            <option value="3"><%= it.t994 %></option>
+                            <option value="4"><%= it.t995 %></option>
+                            <option value="5"><%= it.t996 %></option>
+                            <option value="6"><%= it.t997 %></option>
+                            <option value="7"><%= it.t998 %></option>
+                            <option value="8"><%= it.t999 %></option>
+                        </select>
+                    </td>
+                    <td class="p-1">
+                        <select id="sh3_s6c" name="sh3_s6c" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                            <option value="">-----</option>
+                            <option value="0"><%= it.t1001 %></option>
+                            <option value="1"><%= it.t1002 %></option>
+                            <option value="2"><%= it.t1003 %></option>
+                            <option value="3"><%= it.t1004 %></option>
+                        </select>
+                    </td>
+                    <td class="p-1">
+                        <input type="text" id="sh3_s6d" name="sh3_s6d" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+                    </td>
+                    <td class="p-1">
+                        <select id="sh3_s6e" name="sh3_s6e" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                            <option value="">-----</option>
+                            <option value="1"><%= it.t1006 %></option>
+                            <option value="2"><%= it.t1007 %></option>
+                            <option value="3"><%= it.t1008 %></option>
+                            <option value="4"><%= it.t1009 %></option>
+                        </select>
+                    </td>
+                    <td class="p-1">
+                        <input type="text" id="sh3_s6f" name="sh3_s6f" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="p-1 text-center">7</td>
+                    <td>
+                        <input type="text" id="sh3_s7a" name="sh3_s7a" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+                    </td>
+                    <td class="p-1">
+                        <select id="sh3_s7b" name="sh3_s7b" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                            <option value="">-----</option>
+                            <option value="1"><%= it.t992 %></option>
+                            <option value="2"><%= it.t993 %></option>
+                            <option value="3"><%= it.t994 %></option>
+                            <option value="4"><%= it.t995 %></option>
+                            <option value="5"><%= it.t996 %></option>
+                            <option value="6"><%= it.t997 %></option>
+                            <option value="7"><%= it.t998 %></option>
+                            <option value="8"><%= it.t999 %></option>
+                        </select>
+                    </td>
+                    <td class="p-1">
+                        <select id="sh3_s7c" name="sh3_s7c" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                            <option value="">-----</option>
+                            <option value="0"><%= it.t1001 %></option>
+                            <option value="1"><%= it.t1002 %></option>
+                            <option value="2"><%= it.t1003 %></option>
+                            <option value="3"><%= it.t1004 %></option>
+                        </select>
+                    </td>
+                    <td class="p-1">
+                        <input type="text" id="sh3_s7d" name="sh3_s7d" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+                    </td>
+                    <td class="p-1">
+                        <select id="sh3_s7e" name="sh3_s7e" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                            <option value="">-----</option>
+                            <option value="1"><%= it.t1006 %></option>
+                            <option value="2"><%= it.t1007 %></option>
+                            <option value="3"><%= it.t1008 %></option>
+                            <option value="4"><%= it.t1009 %></option>
+                        </select>
+                    </td>
+                    <td class="p-1">
+                        <input type="text" id="sh3_s7f" name="sh3_s7f" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="p-1 text-center">8</td>
+                    <td>
+                        <input type="text" id="sh3_s8a" name="sh3_s8a" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+                    </td>
+                    <td class="p-1">
+                        <select id="sh3_s8b" name="sh3_s8b" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                            <option value="">-----</option>
+                            <option value="1"><%= it.t992 %></option>
+                            <option value="2"><%= it.t993 %></option>
+                            <option value="3"><%= it.t994 %></option>
+                            <option value="4"><%= it.t995 %></option>
+                            <option value="5"><%= it.t996 %></option>
+                            <option value="6"><%= it.t997 %></option>
+                            <option value="7"><%= it.t998 %></option>
+                            <option value="8"><%= it.t999 %></option>
+                        </select>
+                    </td>
+                    <td class="p-1">
+                        <select id="sh3_s8c" name="sh3_s8c" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                            <option value="">-----</option>
+                            <option value="0"><%= it.t1001 %></option>
+                            <option value="1"><%= it.t1002 %></option>
+                            <option value="2"><%= it.t1003 %></option>
+                            <option value="3"><%= it.t1004 %></option>
+                        </select>
+                    </td>
+                    <td class="p-1">
+                        <input type="text" id="sh3_s8d" name="sh3_s8d" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+                    </td>
+                    <td class="p-1">
+                        <select id="sh3_s8e" name="sh3_s8e" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                            <option value="">-----</option>
+                            <option value="1"><%= it.t1006 %></option>
+                            <option value="2"><%= it.t1007 %></option>
+                            <option value="3"><%= it.t1008 %></option>
+                            <option value="4"><%= it.t1009 %></option>
+                        </select>
+                    </td>
+                    <td class="p-1">
+                        <input type="text" id="sh3_s8f" name="sh3_s8f" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="p-1 text-center">9</td>
+                    <td>
+                        <input type="text" id="sh3_s9a" name="sh3_s9a" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+                    </td>
+                    <td class="p-1">
+                        <select id="sh3_s9b" name="sh3_s9b" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                            <option value="">-----</option>
+                            <option value="1"><%= it.t992 %></option>
+                            <option value="2"><%= it.t993 %></option>
+                            <option value="3"><%= it.t994 %></option>
+                            <option value="4"><%= it.t995 %></option>
+                            <option value="5"><%= it.t996 %></option>
+                            <option value="6"><%= it.t997 %></option>
+                            <option value="7"><%= it.t998 %></option>
+                            <option value="8"><%= it.t999 %></option>
+                        </select>
+                    </td>
+                    <td class="p-1">
+                        <select id="sh3_s9c" name="sh3_s9c" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                            <option value="">-----</option>
+                            <option value="0"><%= it.t1001 %></option>
+                            <option value="1"><%= it.t1002 %></option>
+                            <option value="2"><%= it.t1003 %></option>
+                            <option value="3"><%= it.t1004 %></option>
+                        </select>
+                    </td>
+                    <td class="p-1">
+                        <input type="text" id="sh3_s9d" name="sh3_s9d" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+                    </td>
+                    <td class="p-1">
+                        <select id="sh3_s9e" name="sh3_s9e" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                            <option value="">-----</option>
+                            <option value="1"><%= it.t1006 %></option>
+                            <option value="2"><%= it.t1007 %></option>
+                            <option value="3"><%= it.t1008 %></option>
+                            <option value="4"><%= it.t1009 %></option>
+                        </select>
+                    </td>
+                    <td class="p-1">
+                        <input type="text" id="sh3_s9f" name="sh3_s9f" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="p-1 text-center">10</td>
+                    <td>
+                        <input type="text" id="sh3_s10a" name="sh3_s10a" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+                    </td>
+                    <td class="p-1">
+                        <select id="sh3_s10b" name="sh3_s10b" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                            <option value="">-----</option>
+                            <option value="1"><%= it.t992 %></option>
+                            <option value="2"><%= it.t993 %></option>
+                            <option value="3"><%= it.t994 %></option>
+                            <option value="4"><%= it.t995 %></option>
+                            <option value="5"><%= it.t996 %></option>
+                            <option value="6"><%= it.t997 %></option>
+                            <option value="7"><%= it.t998 %></option>
+                            <option value="8"><%= it.t999 %></option>
+                        </select>
+                    </td>
+                    <td class="p-1">
+                        <select id="sh3_s10c" name="sh3_s10c" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                            <option value="">-----</option>
+                            <option value="0"><%= it.t1001 %></option>
+                            <option value="1"><%= it.t1002 %></option>
+                            <option value="2"><%= it.t1003 %></option>
+                            <option value="3"><%= it.t1004 %></option>
+                        </select>
+                    </td>
+                    <td class="p-1">
+                        <input type="text" id="sh3_s10d" name="sh3_s10d" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+                    </td>
+                    <td class="p-1">
+                        <select id="sh3_s10e" name="sh3_s10e" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                            <option value="">-----</option>
+                            <option value="1"><%= it.t1006 %></option>
+                            <option value="2"><%= it.t1007 %></option>
+                            <option value="3"><%= it.t1008 %></option>
+                            <option value="4"><%= it.t1009 %></option>
+                        </select>
+                    </td>
+                    <td class="p-1">
+                        <input type="text" id="sh3_s10f" name="sh3_s10f" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="p-1 text-center"><%= it.t990 %></td>
+                    <td>
+                        <input type="text" id="sh3_csa" name="sh3_csa" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+                    </td>
+                    <td class="p-1">
+                        <select id="sh3_csb" name="sh3_csb" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                            <option value="">-----</option>
+                            <option value="1"><%= it.t992 %></option>
+                            <option value="2"><%= it.t993 %></option>
+                            <option value="3"><%= it.t994 %></option>
+                            <option value="4"><%= it.t995 %></option>
+                            <option value="5"><%= it.t996 %></option>
+                            <option value="6"><%= it.t997 %></option>
+                            <option value="7"><%= it.t998 %></option>
+                            <option value="8"><%= it.t999 %></option>
+                        </select>
+                    </td>
+                    <td class="p-1">
+                        <select id="sh3_csc" name="sh3_csc" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                            <option value="">-----</option>
+                            <option value="0"><%= it.t1001 %></option>
+                            <option value="1"><%= it.t1002 %></option>
+                            <option value="2"><%= it.t1003 %></option>
+                            <option value="3"><%= it.t1004 %></option>
+                        </select>
+                    </td>
+                    <td class="p-1">
+                        <input type="text" id="sh3_csd" name="sh3_csd" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+                    </td>
+                    <td class="p-1">
+                        <select id="sh3_cse" name="sh3_cse" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                            <option value="">-----</option>
+                            <option value="1"><%= it.t1006 %></option>
+                            <option value="2"><%= it.t1007 %></option>
+                            <option value="3"><%= it.t1008 %></option>
+                            <option value="4"><%= it.t1009 %></option>
+                        </select>
+                    </td>
+                    <td class="p-1">
+                        <input type="text" id="sh3_csf" name="sh3_csf" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="grid grid-cols-2 gap-4 items-center mt-6">
+            <div>
+                <%= it.t1010 %>. <%= it.t1011 %>
+            </div>
+            <div>
+                <input type="text" id="sh4" name="sh4" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+            </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 items-center mt-6">
+            <div>
+                <%= it.t1013 %>. <%= it.t1014 %>
+            </div>
+            <div>
+                <input type="text" id="sh5" name="sh5" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+            </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 items-center mt-6">
+            <div>
+                <%= it.t1015 %>. <%= it.t1016 %>
+            </div>
+            <div>
+                <input type="text" id="sh5a" name="sh5a" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+            </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 items-center mt-6">
+            <div>
+                <%= it.t1018 %>. <%= it.t1019 %>
+            </div>
+            <div>
+                <input type="text" id="sh5b" name="sh5b" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+            </div>
+        </div>
+
 
 
     </form>

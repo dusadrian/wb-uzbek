@@ -4179,6 +4179,555 @@
             </div>
         </div>
 
+        <h2 class="mt-10 mb-4 text-2xl font-bold text-gray-700">6. THE CHILD&#39;S HISTORY WITHIN THE CARE SYSTEM</h2>
+
+        <div class="grid grid-cols-2 gap-4 items-center mt-6">
+            <div>
+                SH1. How many services (residential or family-based) had the child gone through from their first admission into the system until their admission into the current child care service?                <small class="block italic text-red-500 mt-4">Fill in the number. Services prior to the current service include all transfers between any two services within the system (residential or family-based), including transfers between two services of the same type. Attention, the service they are currently admitted in does not count! </small>
+            </div>
+            <div>
+                <input type="text" id="sh1" name="sh1" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+            </div>
+        </div>
+        <div class="grid grid-cols-2 gap-4 items-center mt-10">
+            <div class="ml-3">
+                SH2. Has the child ever left the child care system and returned after their first admission until present?            </div>
+            <div class="col-span-1 flex gap-4">
+                <div class="flex items-center">
+                    <input id="sh2-1" type="radio" value="0" name="sh2" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="sh2-1" class="ms-2 text-sm text-gray-900">0. No, the child has been continuously admitted in the system until present.</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="sh2-2" type="radio" value="1" name="sh2" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="sh2-2" class="ms-2 text-sm text-gray-900">1. The child has had at least one exit from the system, with subsequent returns.</label>
+                </div>
+            </div>
+        </div>
+
+        <p class="mt-10">SH3. Please list all the care services in which the child was admitted, since their admission in the child care system until present. </p>
+        <small class="block italic text-red-500 mt-4">Please fill in chronological order. The number of rows filled in should be equal to the number of services specified in SH1. If the child was only admitted into the current service, please fill in only the last row of the table.</small>
+
+        <table class="mt-4 w-full" aria-label="list all the care services">
+            <thead>
+                <tr>
+                    <th class="p-1">Service</th>
+                    <th class="p-1">a. Admission date DD / MM / YYYY</th>
+                    <th class="p-1">b. Type of service</th>
+                    <th class="p-1">c. Individual Protection Plan</th>
+                    <th class="p-1">d. Exit date DD / MM / YYYY</th>
+                    <th class="p-1">e. Reason for exit</th>
+                    <th class="p-1">f. Time spent within the service</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="p-1 text-center">1</td>
+                    <td>
+                        <input type="text" id="sh3_s1a" name="sh3_s1a" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+                    </td>
+                    <td class="p-1">
+                        <select id="sh3_s1b" name="sh3_s1b" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                            <option value="">-----</option>
+                            <option value="1">1. Children&#39;s home (Baby home)</option>
+                            <option value="2">2. Mehribonlik house</option>
+                            <option value="3">3. Muruvat house for children with disabilities</option>
+                            <option value="4">4. SOS children&#39;s villages/families</option>
+                            <option value="5">5. Family children&#39;s home</option>
+                            <option value="6">6. Patronat family</option>
+                            <option value="7">7. Trusteeship/Guardianship care</option>
+                            <option value="8">8. Other service</option>
+                        </select>
+                    </td>
+                    <td class="p-1">
+                        <select id="sh3_s1c" name="sh3_s1c" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                            <option value="">-----</option>
+                            <option value="0">0. No IPP</option>
+                            <option value="1">1. New IPP</option>
+                            <option value="2">2. The previous IPP, unchanged</option>
+                            <option value="3">3. The previous IPP, revised</option>
+                        </select>
+                    </td>
+                    <td class="p-1">
+                        <input type="text" id="sh3_s1d" name="sh3_s1d" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+                    </td>
+                    <td class="p-1">
+                        <select id="sh3_s1e" name="sh3_s1e" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                            <option value="">-----</option>
+                            <option value="1">1. Transfer to another service within the child care system</option>
+                            <option value="2">2. Reintegration within the family</option>
+                            <option value="3">3. Adoption</option>
+                            <option value="4">4. Other</option>
+                        </select>
+                    </td>
+                    <td class="p-1">
+                        <input type="text" id="sh3_s1f" name="sh3_s1f" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="p-1 text-center">2</td>
+                    <td>
+                        <input type="text" id="sh3_s2a" name="sh3_s2a" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+                    </td>
+                    <td class="p-1">
+                        <select id="sh3_s2b" name="sh3_s2b" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                            <option value="">-----</option>
+                            <option value="1">1. Children&#39;s home (Baby home)</option>
+                            <option value="2">2. Mehribonlik house</option>
+                            <option value="3">3. Muruvat house for children with disabilities</option>
+                            <option value="4">4. SOS children&#39;s villages/families</option>
+                            <option value="5">5. Family children&#39;s home</option>
+                            <option value="6">6. Patronat family</option>
+                            <option value="7">7. Trusteeship/Guardianship care</option>
+                            <option value="8">8. Other service</option>
+                        </select>
+                    </td>
+                    <td class="p-1">
+                        <select id="sh3_s2c" name="sh3_s2c" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                            <option value="">-----</option>
+                            <option value="0">0. No IPP</option>
+                            <option value="1">1. New IPP</option>
+                            <option value="2">2. The previous IPP, unchanged</option>
+                            <option value="3">3. The previous IPP, revised</option>
+                        </select>
+                    </td>
+                    <td class="p-1">
+                        <input type="text" id="sh3_s2d" name="sh3_s2d" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+                    </td>
+                    <td class="p-1">
+                        <select id="sh3_s2e" name="sh3_s2e" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                            <option value="">-----</option>
+                            <option value="1">1. Transfer to another service within the child care system</option>
+                            <option value="2">2. Reintegration within the family</option>
+                            <option value="3">3. Adoption</option>
+                            <option value="4">4. Other</option>
+                        </select>
+                    </td>
+                    <td class="p-1">
+                        <input type="text" id="sh3_s2f" name="sh3_s2f" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="p-1 text-center">3</td>
+                    <td>
+                        <input type="text" id="sh3_s3a" name="sh3_s3a" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+                    </td>
+                    <td class="p-1">
+                        <select id="sh3_s3b" name="sh3_s3b" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                            <option value="">-----</option>
+                            <option value="1">1. Children&#39;s home (Baby home)</option>
+                            <option value="2">2. Mehribonlik house</option>
+                            <option value="3">3. Muruvat house for children with disabilities</option>
+                            <option value="4">4. SOS children&#39;s villages/families</option>
+                            <option value="5">5. Family children&#39;s home</option>
+                            <option value="6">6. Patronat family</option>
+                            <option value="7">7. Trusteeship/Guardianship care</option>
+                            <option value="8">8. Other service</option>
+                        </select>
+                    </td>
+                    <td class="p-1">
+                        <select id="sh3_s3c" name="sh3_s3c" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                            <option value="">-----</option>
+                            <option value="0">0. No IPP</option>
+                            <option value="1">1. New IPP</option>
+                            <option value="2">2. The previous IPP, unchanged</option>
+                            <option value="3">3. The previous IPP, revised</option>
+                        </select>
+                    </td>
+                    <td class="p-1">
+                        <input type="text" id="sh3_s3d" name="sh3_s3d" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+                    </td>
+                    <td class="p-1">
+                        <select id="sh3_s3e" name="sh3_s3e" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                            <option value="">-----</option>
+                            <option value="1">1. Transfer to another service within the child care system</option>
+                            <option value="2">2. Reintegration within the family</option>
+                            <option value="3">3. Adoption</option>
+                            <option value="4">4. Other</option>
+                        </select>
+                    </td>
+                    <td class="p-1">
+                        <input type="text" id="sh3_s3f" name="sh3_s3f" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="p-1 text-center">4</td>
+                    <td>
+                        <input type="text" id="sh3_s4a" name="sh3_s4a" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+                    </td>
+                    <td class="p-1">
+                        <select id="sh3_s4b" name="sh3_s4b" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                            <option value="">-----</option>
+                            <option value="1">1. Children&#39;s home (Baby home)</option>
+                            <option value="2">2. Mehribonlik house</option>
+                            <option value="3">3. Muruvat house for children with disabilities</option>
+                            <option value="4">4. SOS children&#39;s villages/families</option>
+                            <option value="5">5. Family children&#39;s home</option>
+                            <option value="6">6. Patronat family</option>
+                            <option value="7">7. Trusteeship/Guardianship care</option>
+                            <option value="8">8. Other service</option>
+                        </select>
+                    </td>
+                    <td class="p-1">
+                        <select id="sh3_s4c" name="sh3_s4c" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                            <option value="">-----</option>
+                            <option value="0">0. No IPP</option>
+                            <option value="1">1. New IPP</option>
+                            <option value="2">2. The previous IPP, unchanged</option>
+                            <option value="3">3. The previous IPP, revised</option>
+                        </select>
+                    </td>
+                    <td class="p-1">
+                        <input type="text" id="sh3_s4d" name="sh3_s4d" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+                    </td>
+                    <td class="p-1">
+                        <select id="sh3_s4e" name="sh3_s4e" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                            <option value="">-----</option>
+                            <option value="1">1. Transfer to another service within the child care system</option>
+                            <option value="2">2. Reintegration within the family</option>
+                            <option value="3">3. Adoption</option>
+                            <option value="4">4. Other</option>
+                        </select>
+                    </td>
+                    <td class="p-1">
+                        <input type="text" id="sh3_s4f" name="sh3_s4f" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="p-1 text-center">5</td>
+                    <td>
+                        <input type="text" id="sh3_s5a" name="sh3_s5a" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+                    </td>
+                    <td class="p-1">
+                        <select id="sh3_s5b" name="sh3_s5b" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                            <option value="">-----</option>
+                            <option value="1">1. Children&#39;s home (Baby home)</option>
+                            <option value="2">2. Mehribonlik house</option>
+                            <option value="3">3. Muruvat house for children with disabilities</option>
+                            <option value="4">4. SOS children&#39;s villages/families</option>
+                            <option value="5">5. Family children&#39;s home</option>
+                            <option value="6">6. Patronat family</option>
+                            <option value="7">7. Trusteeship/Guardianship care</option>
+                            <option value="8">8. Other service</option>
+                        </select>
+                    </td>
+                    <td class="p-1">
+                        <select id="sh3_s5c" name="sh3_s5c" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                            <option value="">-----</option>
+                            <option value="0">0. No IPP</option>
+                            <option value="1">1. New IPP</option>
+                            <option value="2">2. The previous IPP, unchanged</option>
+                            <option value="3">3. The previous IPP, revised</option>
+                        </select>
+                    </td>
+                    <td class="p-1">
+                        <input type="text" id="sh3_s5d" name="sh3_s5d" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+                    </td>
+                    <td class="p-1">
+                        <select id="sh3_s5e" name="sh3_s5e" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                            <option value="">-----</option>
+                            <option value="1">1. Transfer to another service within the child care system</option>
+                            <option value="2">2. Reintegration within the family</option>
+                            <option value="3">3. Adoption</option>
+                            <option value="4">4. Other</option>
+                        </select>
+                    </td>
+                    <td class="p-1">
+                        <input type="text" id="sh3_s5f" name="sh3_s5f" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="p-1 text-center">6</td>
+                    <td>
+                        <input type="text" id="sh3_s6a" name="sh3_s6a" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+                    </td>
+                    <td class="p-1">
+                        <select id="sh3_s6b" name="sh3_s6b" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                            <option value="">-----</option>
+                            <option value="1">1. Children&#39;s home (Baby home)</option>
+                            <option value="2">2. Mehribonlik house</option>
+                            <option value="3">3. Muruvat house for children with disabilities</option>
+                            <option value="4">4. SOS children&#39;s villages/families</option>
+                            <option value="5">5. Family children&#39;s home</option>
+                            <option value="6">6. Patronat family</option>
+                            <option value="7">7. Trusteeship/Guardianship care</option>
+                            <option value="8">8. Other service</option>
+                        </select>
+                    </td>
+                    <td class="p-1">
+                        <select id="sh3_s6c" name="sh3_s6c" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                            <option value="">-----</option>
+                            <option value="0">0. No IPP</option>
+                            <option value="1">1. New IPP</option>
+                            <option value="2">2. The previous IPP, unchanged</option>
+                            <option value="3">3. The previous IPP, revised</option>
+                        </select>
+                    </td>
+                    <td class="p-1">
+                        <input type="text" id="sh3_s6d" name="sh3_s6d" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+                    </td>
+                    <td class="p-1">
+                        <select id="sh3_s6e" name="sh3_s6e" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                            <option value="">-----</option>
+                            <option value="1">1. Transfer to another service within the child care system</option>
+                            <option value="2">2. Reintegration within the family</option>
+                            <option value="3">3. Adoption</option>
+                            <option value="4">4. Other</option>
+                        </select>
+                    </td>
+                    <td class="p-1">
+                        <input type="text" id="sh3_s6f" name="sh3_s6f" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="p-1 text-center">7</td>
+                    <td>
+                        <input type="text" id="sh3_s7a" name="sh3_s7a" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+                    </td>
+                    <td class="p-1">
+                        <select id="sh3_s7b" name="sh3_s7b" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                            <option value="">-----</option>
+                            <option value="1">1. Children&#39;s home (Baby home)</option>
+                            <option value="2">2. Mehribonlik house</option>
+                            <option value="3">3. Muruvat house for children with disabilities</option>
+                            <option value="4">4. SOS children&#39;s villages/families</option>
+                            <option value="5">5. Family children&#39;s home</option>
+                            <option value="6">6. Patronat family</option>
+                            <option value="7">7. Trusteeship/Guardianship care</option>
+                            <option value="8">8. Other service</option>
+                        </select>
+                    </td>
+                    <td class="p-1">
+                        <select id="sh3_s7c" name="sh3_s7c" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                            <option value="">-----</option>
+                            <option value="0">0. No IPP</option>
+                            <option value="1">1. New IPP</option>
+                            <option value="2">2. The previous IPP, unchanged</option>
+                            <option value="3">3. The previous IPP, revised</option>
+                        </select>
+                    </td>
+                    <td class="p-1">
+                        <input type="text" id="sh3_s7d" name="sh3_s7d" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+                    </td>
+                    <td class="p-1">
+                        <select id="sh3_s7e" name="sh3_s7e" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                            <option value="">-----</option>
+                            <option value="1">1. Transfer to another service within the child care system</option>
+                            <option value="2">2. Reintegration within the family</option>
+                            <option value="3">3. Adoption</option>
+                            <option value="4">4. Other</option>
+                        </select>
+                    </td>
+                    <td class="p-1">
+                        <input type="text" id="sh3_s7f" name="sh3_s7f" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="p-1 text-center">8</td>
+                    <td>
+                        <input type="text" id="sh3_s8a" name="sh3_s8a" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+                    </td>
+                    <td class="p-1">
+                        <select id="sh3_s8b" name="sh3_s8b" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                            <option value="">-----</option>
+                            <option value="1">1. Children&#39;s home (Baby home)</option>
+                            <option value="2">2. Mehribonlik house</option>
+                            <option value="3">3. Muruvat house for children with disabilities</option>
+                            <option value="4">4. SOS children&#39;s villages/families</option>
+                            <option value="5">5. Family children&#39;s home</option>
+                            <option value="6">6. Patronat family</option>
+                            <option value="7">7. Trusteeship/Guardianship care</option>
+                            <option value="8">8. Other service</option>
+                        </select>
+                    </td>
+                    <td class="p-1">
+                        <select id="sh3_s8c" name="sh3_s8c" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                            <option value="">-----</option>
+                            <option value="0">0. No IPP</option>
+                            <option value="1">1. New IPP</option>
+                            <option value="2">2. The previous IPP, unchanged</option>
+                            <option value="3">3. The previous IPP, revised</option>
+                        </select>
+                    </td>
+                    <td class="p-1">
+                        <input type="text" id="sh3_s8d" name="sh3_s8d" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+                    </td>
+                    <td class="p-1">
+                        <select id="sh3_s8e" name="sh3_s8e" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                            <option value="">-----</option>
+                            <option value="1">1. Transfer to another service within the child care system</option>
+                            <option value="2">2. Reintegration within the family</option>
+                            <option value="3">3. Adoption</option>
+                            <option value="4">4. Other</option>
+                        </select>
+                    </td>
+                    <td class="p-1">
+                        <input type="text" id="sh3_s8f" name="sh3_s8f" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="p-1 text-center">9</td>
+                    <td>
+                        <input type="text" id="sh3_s9a" name="sh3_s9a" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+                    </td>
+                    <td class="p-1">
+                        <select id="sh3_s9b" name="sh3_s9b" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                            <option value="">-----</option>
+                            <option value="1">1. Children&#39;s home (Baby home)</option>
+                            <option value="2">2. Mehribonlik house</option>
+                            <option value="3">3. Muruvat house for children with disabilities</option>
+                            <option value="4">4. SOS children&#39;s villages/families</option>
+                            <option value="5">5. Family children&#39;s home</option>
+                            <option value="6">6. Patronat family</option>
+                            <option value="7">7. Trusteeship/Guardianship care</option>
+                            <option value="8">8. Other service</option>
+                        </select>
+                    </td>
+                    <td class="p-1">
+                        <select id="sh3_s9c" name="sh3_s9c" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                            <option value="">-----</option>
+                            <option value="0">0. No IPP</option>
+                            <option value="1">1. New IPP</option>
+                            <option value="2">2. The previous IPP, unchanged</option>
+                            <option value="3">3. The previous IPP, revised</option>
+                        </select>
+                    </td>
+                    <td class="p-1">
+                        <input type="text" id="sh3_s9d" name="sh3_s9d" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+                    </td>
+                    <td class="p-1">
+                        <select id="sh3_s9e" name="sh3_s9e" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                            <option value="">-----</option>
+                            <option value="1">1. Transfer to another service within the child care system</option>
+                            <option value="2">2. Reintegration within the family</option>
+                            <option value="3">3. Adoption</option>
+                            <option value="4">4. Other</option>
+                        </select>
+                    </td>
+                    <td class="p-1">
+                        <input type="text" id="sh3_s9f" name="sh3_s9f" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="p-1 text-center">10</td>
+                    <td>
+                        <input type="text" id="sh3_s10a" name="sh3_s10a" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+                    </td>
+                    <td class="p-1">
+                        <select id="sh3_s10b" name="sh3_s10b" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                            <option value="">-----</option>
+                            <option value="1">1. Children&#39;s home (Baby home)</option>
+                            <option value="2">2. Mehribonlik house</option>
+                            <option value="3">3. Muruvat house for children with disabilities</option>
+                            <option value="4">4. SOS children&#39;s villages/families</option>
+                            <option value="5">5. Family children&#39;s home</option>
+                            <option value="6">6. Patronat family</option>
+                            <option value="7">7. Trusteeship/Guardianship care</option>
+                            <option value="8">8. Other service</option>
+                        </select>
+                    </td>
+                    <td class="p-1">
+                        <select id="sh3_s10c" name="sh3_s10c" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                            <option value="">-----</option>
+                            <option value="0">0. No IPP</option>
+                            <option value="1">1. New IPP</option>
+                            <option value="2">2. The previous IPP, unchanged</option>
+                            <option value="3">3. The previous IPP, revised</option>
+                        </select>
+                    </td>
+                    <td class="p-1">
+                        <input type="text" id="sh3_s10d" name="sh3_s10d" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+                    </td>
+                    <td class="p-1">
+                        <select id="sh3_s10e" name="sh3_s10e" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                            <option value="">-----</option>
+                            <option value="1">1. Transfer to another service within the child care system</option>
+                            <option value="2">2. Reintegration within the family</option>
+                            <option value="3">3. Adoption</option>
+                            <option value="4">4. Other</option>
+                        </select>
+                    </td>
+                    <td class="p-1">
+                        <input type="text" id="sh3_s10f" name="sh3_s10f" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="p-1 text-center">Current service</td>
+                    <td>
+                        <input type="text" id="sh3_csa" name="sh3_csa" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+                    </td>
+                    <td class="p-1">
+                        <select id="sh3_csb" name="sh3_csb" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                            <option value="">-----</option>
+                            <option value="1">1. Children&#39;s home (Baby home)</option>
+                            <option value="2">2. Mehribonlik house</option>
+                            <option value="3">3. Muruvat house for children with disabilities</option>
+                            <option value="4">4. SOS children&#39;s villages/families</option>
+                            <option value="5">5. Family children&#39;s home</option>
+                            <option value="6">6. Patronat family</option>
+                            <option value="7">7. Trusteeship/Guardianship care</option>
+                            <option value="8">8. Other service</option>
+                        </select>
+                    </td>
+                    <td class="p-1">
+                        <select id="sh3_csc" name="sh3_csc" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                            <option value="">-----</option>
+                            <option value="0">0. No IPP</option>
+                            <option value="1">1. New IPP</option>
+                            <option value="2">2. The previous IPP, unchanged</option>
+                            <option value="3">3. The previous IPP, revised</option>
+                        </select>
+                    </td>
+                    <td class="p-1">
+                        <input type="text" id="sh3_csd" name="sh3_csd" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+                    </td>
+                    <td class="p-1">
+                        <select id="sh3_cse" name="sh3_cse" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                            <option value="">-----</option>
+                            <option value="1">1. Transfer to another service within the child care system</option>
+                            <option value="2">2. Reintegration within the family</option>
+                            <option value="3">3. Adoption</option>
+                            <option value="4">4. Other</option>
+                        </select>
+                    </td>
+                    <td class="p-1">
+                        <input type="text" id="sh3_csf" name="sh3_csf" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="grid grid-cols-2 gap-4 items-center mt-6">
+            <div>
+                SH4. Total time spent within the child care system (in months)            </div>
+            <div>
+                <input type="text" id="sh4" name="sh4" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+            </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 items-center mt-6">
+            <div>
+                SH5. The unique code of the current service according to the corresponding Register            </div>
+            <div>
+                <input type="text" id="sh5" name="sh5" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+            </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 items-center mt-6">
+            <div>
+                SH5a. Service name            </div>
+            <div>
+                <input type="text" id="sh5a" name="sh5a" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+            </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 items-center mt-6">
+            <div>
+                SH5b. Service location            </div>
+            <div>
+                <input type="text" id="sh5b" name="sh5b" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+            </div>
+        </div>
+
 
 
     </form>

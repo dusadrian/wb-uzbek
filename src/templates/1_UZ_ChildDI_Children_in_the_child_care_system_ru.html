@@ -4179,6 +4179,555 @@
             </div>
         </div>
 
+        <h2 class="mt-10 mb-4 text-2xl font-bold text-gray-700">6. ИСТОРИЯ РЕБЕНКА В СИСТЕМЕ ОПЕКИ</h2>
+
+        <div class="grid grid-cols-2 gap-4 items-center mt-6">
+            <div>
+                SH1. Сколько услуг (проживание в интернате или в семейной форме опеки) прошел ребенок с момента его первого приема в систему до приема в текущую службу опеки?                <small class="block italic text-red-500 mt-4">Введите номер. Услуги, предшествующие текущей услуге, включают все переводы между любыми двумя услугами в рамках системы (проживание в интернате или с семьей), включая переводы между двумя услугами одного и того же типа. Внимание, служба, на которую они в данный момент приняты, не засчитывается!</small>
+            </div>
+            <div>
+                <input type="text" id="sh1" name="sh1" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+            </div>
+        </div>
+        <div class="grid grid-cols-2 gap-4 items-center mt-10">
+            <div class="ml-3">
+                SH2. Выходил ли ребенок когда-либо из системы опеки и возвращался ли он после первого приема до настоящего времени?            </div>
+            <div class="col-span-1 flex gap-4">
+                <div class="flex items-center">
+                    <input id="sh2-1" type="radio" value="0" name="sh2" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="sh2-1" class="ms-2 text-sm text-gray-900">0. Нет, до сих пор ребенок постоянно находился в системе.</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="sh2-2" type="radio" value="1" name="sh2" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="sh2-2" class="ms-2 text-sm text-gray-900">1. У ребенка был хотя бы один выход из системы с последующими возвращениями.</label>
+                </div>
+            </div>
+        </div>
+
+        <p class="mt-10">SH3. Пожалуйста, перечислите все службы по опеке, в которые был принят ребенок, с момента его приема в систему опекии до настоящего времени.</p>
+        <small class="block italic text-red-500 mt-4">Пожалуйста, заполните в хронологическом порядке. Количество заполняемых строк должно быть равно количеству услуг, указанных в SH1. Если ребенок был принят только на текущую форму услуг , заполните, пожалуйста, только последнюю строку таблицы.</small>
+
+        <table class="mt-4 w-full" aria-label="list all the care services">
+            <thead>
+                <tr>
+                    <th class="p-1">Услуга</th>
+                    <th class="p-1">а. Дата приема ДД/ММ/ГГГГ</th>
+                    <th class="p-1">б. Тип обслуживания</th>
+                    <th class="p-1">в. Индивидуальный План защиты</th>
+                    <th class="p-1">д. Дата ухода ДД/ММ/ГГГГ</th>
+                    <th class="p-1">е. Причина ухода</th>
+                    <th class="p-1">ф. Время, проведенное в системе </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="p-1 text-center">1</td>
+                    <td>
+                        <input type="text" id="sh3_s1a" name="sh3_s1a" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+                    </td>
+                    <td class="p-1">
+                        <select id="sh3_s1b" name="sh3_s1b" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                            <option value="">-----</option>
+                            <option value="1">1. Детский дом (Дом ребенка)</option>
+                            <option value="2">2. Дом «Мехрибонлик»</option>
+                            <option value="3">3. Дом-интернат «Мурувват» для детей с инвалидностью</option>
+                            <option value="4">4. SOS Детские деревни/семьи</option>
+                            <option value="5">5. Детский дом семейного типа</option>
+                            <option value="6">6. Патронатная семья</option>
+                            <option value="7">7.  Опека/попечительство</option>
+                            <option value="8">8. Прочие услуги</option>
+                        </select>
+                    </td>
+                    <td class="p-1">
+                        <select id="sh3_s1c" name="sh3_s1c" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                            <option value="">-----</option>
+                            <option value="0">0. ИПЗ отсутствует</option>
+                            <option value="1">1. Новый ИПЗ</option>
+                            <option value="2">2. Предыдущий ИПЗ, неизмененный </option>
+                            <option value="3">3. Предыдущий ИПЗ, пересмотренный </option>
+                        </select>
+                    </td>
+                    <td class="p-1">
+                        <input type="text" id="sh3_s1d" name="sh3_s1d" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+                    </td>
+                    <td class="p-1">
+                        <select id="sh3_s1e" name="sh3_s1e" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                            <option value="">-----</option>
+                            <option value="1">1. Перевод в другую службу системы опеки </option>
+                            <option value="2">2. Ре-интеграция в семью</option>
+                            <option value="3">3. Усыновление/удочерение</option>
+                            <option value="4">4. Другое</option>
+                        </select>
+                    </td>
+                    <td class="p-1">
+                        <input type="text" id="sh3_s1f" name="sh3_s1f" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="p-1 text-center">2</td>
+                    <td>
+                        <input type="text" id="sh3_s2a" name="sh3_s2a" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+                    </td>
+                    <td class="p-1">
+                        <select id="sh3_s2b" name="sh3_s2b" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                            <option value="">-----</option>
+                            <option value="1">1. Детский дом (Дом ребенка)</option>
+                            <option value="2">2. Дом «Мехрибонлик»</option>
+                            <option value="3">3. Дом-интернат «Мурувват» для детей с инвалидностью</option>
+                            <option value="4">4. SOS Детские деревни/семьи</option>
+                            <option value="5">5. Детский дом семейного типа</option>
+                            <option value="6">6. Патронатная семья</option>
+                            <option value="7">7.  Опека/попечительство</option>
+                            <option value="8">8. Прочие услуги</option>
+                        </select>
+                    </td>
+                    <td class="p-1">
+                        <select id="sh3_s2c" name="sh3_s2c" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                            <option value="">-----</option>
+                            <option value="0">0. ИПЗ отсутствует</option>
+                            <option value="1">1. Новый ИПЗ</option>
+                            <option value="2">2. Предыдущий ИПЗ, неизмененный </option>
+                            <option value="3">3. Предыдущий ИПЗ, пересмотренный </option>
+                        </select>
+                    </td>
+                    <td class="p-1">
+                        <input type="text" id="sh3_s2d" name="sh3_s2d" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+                    </td>
+                    <td class="p-1">
+                        <select id="sh3_s2e" name="sh3_s2e" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                            <option value="">-----</option>
+                            <option value="1">1. Перевод в другую службу системы опеки </option>
+                            <option value="2">2. Ре-интеграция в семью</option>
+                            <option value="3">3. Усыновление/удочерение</option>
+                            <option value="4">4. Другое</option>
+                        </select>
+                    </td>
+                    <td class="p-1">
+                        <input type="text" id="sh3_s2f" name="sh3_s2f" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="p-1 text-center">3</td>
+                    <td>
+                        <input type="text" id="sh3_s3a" name="sh3_s3a" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+                    </td>
+                    <td class="p-1">
+                        <select id="sh3_s3b" name="sh3_s3b" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                            <option value="">-----</option>
+                            <option value="1">1. Детский дом (Дом ребенка)</option>
+                            <option value="2">2. Дом «Мехрибонлик»</option>
+                            <option value="3">3. Дом-интернат «Мурувват» для детей с инвалидностью</option>
+                            <option value="4">4. SOS Детские деревни/семьи</option>
+                            <option value="5">5. Детский дом семейного типа</option>
+                            <option value="6">6. Патронатная семья</option>
+                            <option value="7">7.  Опека/попечительство</option>
+                            <option value="8">8. Прочие услуги</option>
+                        </select>
+                    </td>
+                    <td class="p-1">
+                        <select id="sh3_s3c" name="sh3_s3c" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                            <option value="">-----</option>
+                            <option value="0">0. ИПЗ отсутствует</option>
+                            <option value="1">1. Новый ИПЗ</option>
+                            <option value="2">2. Предыдущий ИПЗ, неизмененный </option>
+                            <option value="3">3. Предыдущий ИПЗ, пересмотренный </option>
+                        </select>
+                    </td>
+                    <td class="p-1">
+                        <input type="text" id="sh3_s3d" name="sh3_s3d" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+                    </td>
+                    <td class="p-1">
+                        <select id="sh3_s3e" name="sh3_s3e" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                            <option value="">-----</option>
+                            <option value="1">1. Перевод в другую службу системы опеки </option>
+                            <option value="2">2. Ре-интеграция в семью</option>
+                            <option value="3">3. Усыновление/удочерение</option>
+                            <option value="4">4. Другое</option>
+                        </select>
+                    </td>
+                    <td class="p-1">
+                        <input type="text" id="sh3_s3f" name="sh3_s3f" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="p-1 text-center">4</td>
+                    <td>
+                        <input type="text" id="sh3_s4a" name="sh3_s4a" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+                    </td>
+                    <td class="p-1">
+                        <select id="sh3_s4b" name="sh3_s4b" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                            <option value="">-----</option>
+                            <option value="1">1. Детский дом (Дом ребенка)</option>
+                            <option value="2">2. Дом «Мехрибонлик»</option>
+                            <option value="3">3. Дом-интернат «Мурувват» для детей с инвалидностью</option>
+                            <option value="4">4. SOS Детские деревни/семьи</option>
+                            <option value="5">5. Детский дом семейного типа</option>
+                            <option value="6">6. Патронатная семья</option>
+                            <option value="7">7.  Опека/попечительство</option>
+                            <option value="8">8. Прочие услуги</option>
+                        </select>
+                    </td>
+                    <td class="p-1">
+                        <select id="sh3_s4c" name="sh3_s4c" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                            <option value="">-----</option>
+                            <option value="0">0. ИПЗ отсутствует</option>
+                            <option value="1">1. Новый ИПЗ</option>
+                            <option value="2">2. Предыдущий ИПЗ, неизмененный </option>
+                            <option value="3">3. Предыдущий ИПЗ, пересмотренный </option>
+                        </select>
+                    </td>
+                    <td class="p-1">
+                        <input type="text" id="sh3_s4d" name="sh3_s4d" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+                    </td>
+                    <td class="p-1">
+                        <select id="sh3_s4e" name="sh3_s4e" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                            <option value="">-----</option>
+                            <option value="1">1. Перевод в другую службу системы опеки </option>
+                            <option value="2">2. Ре-интеграция в семью</option>
+                            <option value="3">3. Усыновление/удочерение</option>
+                            <option value="4">4. Другое</option>
+                        </select>
+                    </td>
+                    <td class="p-1">
+                        <input type="text" id="sh3_s4f" name="sh3_s4f" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="p-1 text-center">5</td>
+                    <td>
+                        <input type="text" id="sh3_s5a" name="sh3_s5a" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+                    </td>
+                    <td class="p-1">
+                        <select id="sh3_s5b" name="sh3_s5b" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                            <option value="">-----</option>
+                            <option value="1">1. Детский дом (Дом ребенка)</option>
+                            <option value="2">2. Дом «Мехрибонлик»</option>
+                            <option value="3">3. Дом-интернат «Мурувват» для детей с инвалидностью</option>
+                            <option value="4">4. SOS Детские деревни/семьи</option>
+                            <option value="5">5. Детский дом семейного типа</option>
+                            <option value="6">6. Патронатная семья</option>
+                            <option value="7">7.  Опека/попечительство</option>
+                            <option value="8">8. Прочие услуги</option>
+                        </select>
+                    </td>
+                    <td class="p-1">
+                        <select id="sh3_s5c" name="sh3_s5c" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                            <option value="">-----</option>
+                            <option value="0">0. ИПЗ отсутствует</option>
+                            <option value="1">1. Новый ИПЗ</option>
+                            <option value="2">2. Предыдущий ИПЗ, неизмененный </option>
+                            <option value="3">3. Предыдущий ИПЗ, пересмотренный </option>
+                        </select>
+                    </td>
+                    <td class="p-1">
+                        <input type="text" id="sh3_s5d" name="sh3_s5d" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+                    </td>
+                    <td class="p-1">
+                        <select id="sh3_s5e" name="sh3_s5e" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                            <option value="">-----</option>
+                            <option value="1">1. Перевод в другую службу системы опеки </option>
+                            <option value="2">2. Ре-интеграция в семью</option>
+                            <option value="3">3. Усыновление/удочерение</option>
+                            <option value="4">4. Другое</option>
+                        </select>
+                    </td>
+                    <td class="p-1">
+                        <input type="text" id="sh3_s5f" name="sh3_s5f" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="p-1 text-center">6</td>
+                    <td>
+                        <input type="text" id="sh3_s6a" name="sh3_s6a" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+                    </td>
+                    <td class="p-1">
+                        <select id="sh3_s6b" name="sh3_s6b" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                            <option value="">-----</option>
+                            <option value="1">1. Детский дом (Дом ребенка)</option>
+                            <option value="2">2. Дом «Мехрибонлик»</option>
+                            <option value="3">3. Дом-интернат «Мурувват» для детей с инвалидностью</option>
+                            <option value="4">4. SOS Детские деревни/семьи</option>
+                            <option value="5">5. Детский дом семейного типа</option>
+                            <option value="6">6. Патронатная семья</option>
+                            <option value="7">7.  Опека/попечительство</option>
+                            <option value="8">8. Прочие услуги</option>
+                        </select>
+                    </td>
+                    <td class="p-1">
+                        <select id="sh3_s6c" name="sh3_s6c" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                            <option value="">-----</option>
+                            <option value="0">0. ИПЗ отсутствует</option>
+                            <option value="1">1. Новый ИПЗ</option>
+                            <option value="2">2. Предыдущий ИПЗ, неизмененный </option>
+                            <option value="3">3. Предыдущий ИПЗ, пересмотренный </option>
+                        </select>
+                    </td>
+                    <td class="p-1">
+                        <input type="text" id="sh3_s6d" name="sh3_s6d" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+                    </td>
+                    <td class="p-1">
+                        <select id="sh3_s6e" name="sh3_s6e" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                            <option value="">-----</option>
+                            <option value="1">1. Перевод в другую службу системы опеки </option>
+                            <option value="2">2. Ре-интеграция в семью</option>
+                            <option value="3">3. Усыновление/удочерение</option>
+                            <option value="4">4. Другое</option>
+                        </select>
+                    </td>
+                    <td class="p-1">
+                        <input type="text" id="sh3_s6f" name="sh3_s6f" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="p-1 text-center">7</td>
+                    <td>
+                        <input type="text" id="sh3_s7a" name="sh3_s7a" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+                    </td>
+                    <td class="p-1">
+                        <select id="sh3_s7b" name="sh3_s7b" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                            <option value="">-----</option>
+                            <option value="1">1. Детский дом (Дом ребенка)</option>
+                            <option value="2">2. Дом «Мехрибонлик»</option>
+                            <option value="3">3. Дом-интернат «Мурувват» для детей с инвалидностью</option>
+                            <option value="4">4. SOS Детские деревни/семьи</option>
+                            <option value="5">5. Детский дом семейного типа</option>
+                            <option value="6">6. Патронатная семья</option>
+                            <option value="7">7.  Опека/попечительство</option>
+                            <option value="8">8. Прочие услуги</option>
+                        </select>
+                    </td>
+                    <td class="p-1">
+                        <select id="sh3_s7c" name="sh3_s7c" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                            <option value="">-----</option>
+                            <option value="0">0. ИПЗ отсутствует</option>
+                            <option value="1">1. Новый ИПЗ</option>
+                            <option value="2">2. Предыдущий ИПЗ, неизмененный </option>
+                            <option value="3">3. Предыдущий ИПЗ, пересмотренный </option>
+                        </select>
+                    </td>
+                    <td class="p-1">
+                        <input type="text" id="sh3_s7d" name="sh3_s7d" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+                    </td>
+                    <td class="p-1">
+                        <select id="sh3_s7e" name="sh3_s7e" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                            <option value="">-----</option>
+                            <option value="1">1. Перевод в другую службу системы опеки </option>
+                            <option value="2">2. Ре-интеграция в семью</option>
+                            <option value="3">3. Усыновление/удочерение</option>
+                            <option value="4">4. Другое</option>
+                        </select>
+                    </td>
+                    <td class="p-1">
+                        <input type="text" id="sh3_s7f" name="sh3_s7f" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="p-1 text-center">8</td>
+                    <td>
+                        <input type="text" id="sh3_s8a" name="sh3_s8a" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+                    </td>
+                    <td class="p-1">
+                        <select id="sh3_s8b" name="sh3_s8b" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                            <option value="">-----</option>
+                            <option value="1">1. Детский дом (Дом ребенка)</option>
+                            <option value="2">2. Дом «Мехрибонлик»</option>
+                            <option value="3">3. Дом-интернат «Мурувват» для детей с инвалидностью</option>
+                            <option value="4">4. SOS Детские деревни/семьи</option>
+                            <option value="5">5. Детский дом семейного типа</option>
+                            <option value="6">6. Патронатная семья</option>
+                            <option value="7">7.  Опека/попечительство</option>
+                            <option value="8">8. Прочие услуги</option>
+                        </select>
+                    </td>
+                    <td class="p-1">
+                        <select id="sh3_s8c" name="sh3_s8c" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                            <option value="">-----</option>
+                            <option value="0">0. ИПЗ отсутствует</option>
+                            <option value="1">1. Новый ИПЗ</option>
+                            <option value="2">2. Предыдущий ИПЗ, неизмененный </option>
+                            <option value="3">3. Предыдущий ИПЗ, пересмотренный </option>
+                        </select>
+                    </td>
+                    <td class="p-1">
+                        <input type="text" id="sh3_s8d" name="sh3_s8d" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+                    </td>
+                    <td class="p-1">
+                        <select id="sh3_s8e" name="sh3_s8e" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                            <option value="">-----</option>
+                            <option value="1">1. Перевод в другую службу системы опеки </option>
+                            <option value="2">2. Ре-интеграция в семью</option>
+                            <option value="3">3. Усыновление/удочерение</option>
+                            <option value="4">4. Другое</option>
+                        </select>
+                    </td>
+                    <td class="p-1">
+                        <input type="text" id="sh3_s8f" name="sh3_s8f" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="p-1 text-center">9</td>
+                    <td>
+                        <input type="text" id="sh3_s9a" name="sh3_s9a" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+                    </td>
+                    <td class="p-1">
+                        <select id="sh3_s9b" name="sh3_s9b" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                            <option value="">-----</option>
+                            <option value="1">1. Детский дом (Дом ребенка)</option>
+                            <option value="2">2. Дом «Мехрибонлик»</option>
+                            <option value="3">3. Дом-интернат «Мурувват» для детей с инвалидностью</option>
+                            <option value="4">4. SOS Детские деревни/семьи</option>
+                            <option value="5">5. Детский дом семейного типа</option>
+                            <option value="6">6. Патронатная семья</option>
+                            <option value="7">7.  Опека/попечительство</option>
+                            <option value="8">8. Прочие услуги</option>
+                        </select>
+                    </td>
+                    <td class="p-1">
+                        <select id="sh3_s9c" name="sh3_s9c" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                            <option value="">-----</option>
+                            <option value="0">0. ИПЗ отсутствует</option>
+                            <option value="1">1. Новый ИПЗ</option>
+                            <option value="2">2. Предыдущий ИПЗ, неизмененный </option>
+                            <option value="3">3. Предыдущий ИПЗ, пересмотренный </option>
+                        </select>
+                    </td>
+                    <td class="p-1">
+                        <input type="text" id="sh3_s9d" name="sh3_s9d" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+                    </td>
+                    <td class="p-1">
+                        <select id="sh3_s9e" name="sh3_s9e" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                            <option value="">-----</option>
+                            <option value="1">1. Перевод в другую службу системы опеки </option>
+                            <option value="2">2. Ре-интеграция в семью</option>
+                            <option value="3">3. Усыновление/удочерение</option>
+                            <option value="4">4. Другое</option>
+                        </select>
+                    </td>
+                    <td class="p-1">
+                        <input type="text" id="sh3_s9f" name="sh3_s9f" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="p-1 text-center">10</td>
+                    <td>
+                        <input type="text" id="sh3_s10a" name="sh3_s10a" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+                    </td>
+                    <td class="p-1">
+                        <select id="sh3_s10b" name="sh3_s10b" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                            <option value="">-----</option>
+                            <option value="1">1. Детский дом (Дом ребенка)</option>
+                            <option value="2">2. Дом «Мехрибонлик»</option>
+                            <option value="3">3. Дом-интернат «Мурувват» для детей с инвалидностью</option>
+                            <option value="4">4. SOS Детские деревни/семьи</option>
+                            <option value="5">5. Детский дом семейного типа</option>
+                            <option value="6">6. Патронатная семья</option>
+                            <option value="7">7.  Опека/попечительство</option>
+                            <option value="8">8. Прочие услуги</option>
+                        </select>
+                    </td>
+                    <td class="p-1">
+                        <select id="sh3_s10c" name="sh3_s10c" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                            <option value="">-----</option>
+                            <option value="0">0. ИПЗ отсутствует</option>
+                            <option value="1">1. Новый ИПЗ</option>
+                            <option value="2">2. Предыдущий ИПЗ, неизмененный </option>
+                            <option value="3">3. Предыдущий ИПЗ, пересмотренный </option>
+                        </select>
+                    </td>
+                    <td class="p-1">
+                        <input type="text" id="sh3_s10d" name="sh3_s10d" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+                    </td>
+                    <td class="p-1">
+                        <select id="sh3_s10e" name="sh3_s10e" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                            <option value="">-----</option>
+                            <option value="1">1. Перевод в другую службу системы опеки </option>
+                            <option value="2">2. Ре-интеграция в семью</option>
+                            <option value="3">3. Усыновление/удочерение</option>
+                            <option value="4">4. Другое</option>
+                        </select>
+                    </td>
+                    <td class="p-1">
+                        <input type="text" id="sh3_s10f" name="sh3_s10f" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="p-1 text-center">Текущая услуга</td>
+                    <td>
+                        <input type="text" id="sh3_csa" name="sh3_csa" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+                    </td>
+                    <td class="p-1">
+                        <select id="sh3_csb" name="sh3_csb" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                            <option value="">-----</option>
+                            <option value="1">1. Детский дом (Дом ребенка)</option>
+                            <option value="2">2. Дом «Мехрибонлик»</option>
+                            <option value="3">3. Дом-интернат «Мурувват» для детей с инвалидностью</option>
+                            <option value="4">4. SOS Детские деревни/семьи</option>
+                            <option value="5">5. Детский дом семейного типа</option>
+                            <option value="6">6. Патронатная семья</option>
+                            <option value="7">7.  Опека/попечительство</option>
+                            <option value="8">8. Прочие услуги</option>
+                        </select>
+                    </td>
+                    <td class="p-1">
+                        <select id="sh3_csc" name="sh3_csc" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                            <option value="">-----</option>
+                            <option value="0">0. ИПЗ отсутствует</option>
+                            <option value="1">1. Новый ИПЗ</option>
+                            <option value="2">2. Предыдущий ИПЗ, неизмененный </option>
+                            <option value="3">3. Предыдущий ИПЗ, пересмотренный </option>
+                        </select>
+                    </td>
+                    <td class="p-1">
+                        <input type="text" id="sh3_csd" name="sh3_csd" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+                    </td>
+                    <td class="p-1">
+                        <select id="sh3_cse" name="sh3_cse" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                            <option value="">-----</option>
+                            <option value="1">1. Перевод в другую службу системы опеки </option>
+                            <option value="2">2. Ре-интеграция в семью</option>
+                            <option value="3">3. Усыновление/удочерение</option>
+                            <option value="4">4. Другое</option>
+                        </select>
+                    </td>
+                    <td class="p-1">
+                        <input type="text" id="sh3_csf" name="sh3_csf" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="grid grid-cols-2 gap-4 items-center mt-6">
+            <div>
+                SH4. Общее время пребывания в системе опеки (в месяцах)            </div>
+            <div>
+                <input type="text" id="sh4" name="sh4" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+            </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 items-center mt-6">
+            <div>
+                SH5. Уникальный код текущей услуги согласно соответствующему Реестру.            </div>
+            <div>
+                <input type="text" id="sh5" name="sh5" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+            </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 items-center mt-6">
+            <div>
+                SH5a. Наименование услуги            </div>
+            <div>
+                <input type="text" id="sh5a" name="sh5a" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+            </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 items-center mt-6">
+            <div>
+                SH5b. Местоположение услуги            </div>
+            <div>
+                <input type="text" id="sh5b" name="sh5b" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+            </div>
+        </div>
+
 
 
     </form>
