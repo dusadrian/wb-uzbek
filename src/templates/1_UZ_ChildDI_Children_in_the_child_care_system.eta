@@ -4847,6 +4847,510 @@
         </div>
 
 
+        <h2 class="mt-10 mb-4 text-2xl font-bold text-gray-700"><%= it.t1021 %></h2>
+
+        <div class="grid grid-cols-2 gap-4 items-center mt-10">
+            <div>
+                <%= it.t1022 %>. <%= it.t1023 %>
+            </div>
+            <div class="col-span-1 flex items-center gap-4">
+                <div class="flex items-center">
+                    <input id="lk21a-1" type="radio" value="1" name="lk21a" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="lk21a-1" class="ms-2 text-sm text-gray-900"><%= it.t1024 %></label>
+                </div>
+                <div class="flex items-center">
+                    <input id="lk21a-2" type="radio" value="0" name="lk21a" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="lk21a-2" class="ms-2 text-sm text-gray-900"><%= it.t1025 %></label>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 items-center mt-10">
+            <div>
+                <%= it.t1027 %>. <%= it.t1028 %>
+            </div>
+            <div class="col-span-1 flex items-center gap-4">
+                <div class="flex items-center">
+                    <input id="lk21a1-1" type="radio" value="1" name="lk21a1" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="lk21a1-1" class="ms-2 text-sm text-gray-900"><%= it.t1029 %></label>
+                </div>
+                <div class="flex items-center">
+                    <input id="lk21a1-2" type="radio" value="0" name="lk21a1" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="lk21a1-2" class="ms-2 text-sm text-gray-900"><%= it.t1030 %></label>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 items-center mt-10">
+            <div>
+                <%= it.t1032 %>. <%= it.t1033 %>
+            </div>
+            <div class="col-span-1 flex items-center gap-4">
+                <div class="flex items-center">
+                    <input id="lk21a1_1-1" type="radio" value="1" name="lk21a1_1" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="lk21a1_1-1" class="ms-2 text-sm text-gray-900"><%= it.t1034 %></label>
+                </div>
+                <div class="flex items-center">
+                    <input id="lk21a1_1-2" type="radio" value="0" name="lk21a1_1" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="lk21a1_1-2" class="ms-2 text-sm text-gray-900"><%= it.t1035 %></label>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 items-center mt-10">
+            <div>
+                <%= it.t1036 %>. <%= it.t1037 %>
+            </div>
+            <div class="col-span-1 flex items-center gap-4">
+                <div class="flex items-center">
+                    <input id="lk21a3-1" type="radio" value="1" name="lk21a3" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="lk21a3-1" class="ms-2 text-sm text-gray-900"><%= it.t1038 %></label>
+                </div>
+                <div class="flex items-center">
+                    <input id="lk21a3-2" type="radio" value="0" name="lk21a3" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="lk21a3-2" class="ms-2 text-sm text-gray-900"><%= it.t1039 %></label>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 items-center mt-10">
+            <div>
+                <%= it.t1041 %>. <%= it.t1042 %>
+            </div>
+            <div class="col-span-1 flex items-center gap-4">
+                <div class="flex items-center">
+                    <input id="lk21a3_3-1" type="radio" value="1" name="lk21a3_3" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="lk21a3_3-1" class="ms-2 text-sm text-gray-900"><%= it.t1043 %></label>
+                </div>
+                <div class="flex items-center">
+                    <input id="lk21a3_3-2" type="radio" value="0" name="lk21a3_3" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="lk21a3_3-2" class="ms-2 text-sm text-gray-900"><%= it.t1044 %></label>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 items-center mt-10">
+            <div>
+                <%= it.t1045 %>. <%= it.t1046 %>
+            </div>
+            <div class="col-span-1 flex items-center gap-4">
+                <div class="flex items-center">
+                    <input id="lk21a5-1" type="radio" value="1" name="lk21a5" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="lk21a5-1" class="ms-2 text-sm text-gray-900"><%= it.t1047 %></label>
+                </div>
+                <div class="flex items-center">
+                    <input id="lk21a5-2" type="radio" value="0" name="lk21a5" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="lk21a5-2" class="ms-2 text-sm text-gray-900"><%= it.t1048 %></label>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 items-center mt-10">
+            <div>
+                <%= it.t1050 %>. <%= it.t1051 %>
+            </div>
+            <div class="col-span-1 flex items-center gap-4">
+                <div class="flex items-center">
+                    <input id="lk21a5_5-1" type="radio" value="1" name="lk21a5_5" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="lk21a5_5-1" class="ms-2 text-sm text-gray-900"><%= it.t1052 %></label>
+                </div>
+                <div class="flex items-center">
+                    <input id="lk21a5_5-2" type="radio" value="0" name="lk21a5_5" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="lk21a5_5-2" class="ms-2 text-sm text-gray-900"><%= it.t1053 %></label>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 items-center mt-10">
+            <div>
+                <%= it.t1054 %>. <%= it.t1055 %>
+            </div>
+            <div class="col-span-1 flex items-center gap-4">
+                <div class="flex items-center">
+                    <input id="lk21a6-1" type="radio" value="1" name="lk21a6" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="lk21a6-1" class="ms-2 text-sm text-gray-900"><%= it.t1056 %></label>
+                </div>
+                <div class="flex items-center">
+                    <input id="lk21a6-2" type="radio" value="0" name="lk21a6" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="lk21a6-2" class="ms-2 text-sm text-gray-900"><%= it.t1057 %></label>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 items-center mt-10">
+            <div>
+                <%= it.t1059 %>. <%= it.t1060 %>
+                <small class="mt-2 block italic text-red-500"><%= it.t1061 %></small>
+            </div>
+            <div class="col-span-1 flex items-center gap-4">
+                <textarea id="lk21a6a" name="lk21a6a" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"></textarea>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 items-center mt-10">
+            <div>
+                <%= it.t1062 %>. <%= it.t1063 %>
+            </div>
+            <div class="col-span-1 flex items-center gap-4">
+                <div class="flex items-center">
+                    <input id="lk21a6_6-1" type="radio" value="1" name="lk21a6_6" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="lk21a6_6-1" class="ms-2 text-sm text-gray-900"><%= it.t1064 %></label>
+                </div>
+                <div class="flex items-center">
+                    <input id="lk21a6_6-2" type="radio" value="0" name="lk21a6_6" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="lk21a6_6-2" class="ms-2 text-sm text-gray-900"><%= it.t1065 %></label>
+                </div>
+            </div>
+        </div>
+
+        <h2 class="mt-10 mb-4 text-2xl font-bold text-gray-700"><%= it.t1066 %></h2>
+
+        <div class="grid grid-cols-2 gap-4 items-center mt-10">
+            <div>
+                <%= it.t1067 %>. <%= it.t1068 %>
+            </div>
+            <div class="col-span-1 flex items-center gap-4">
+                <div class="flex items-center">
+                    <input id="lk22_1-1" type="radio" value="1" name="lk22_1" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="lk22_1-1" class="ms-2 text-sm text-gray-900"><%= it.t1069 %></label>
+                </div>
+                <div class="flex items-center">
+                    <input id="lk22_1-2" type="radio" value="0" name="lk22_1" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="lk22_1-2" class="ms-2 text-sm text-gray-900"><%= it.t1070 %></label>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="grid grid-cols-2 gap-4 items-center mt-10">
+            <div>
+                <%= it.t1071 %>. <%= it.t1072 %>
+                <small class="mt-2 block italic text-red-500"><%= it.t1073 %></small>
+            </div>
+            <div class="col-span-1 flex flex-col gap-2">
+                <div class="flex items-center">
+                    <input id="lk22_2_1-1" type="checkbox" value="1" name="lk22_2_1" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="lk22_2_1-1" class="ms-2 text-sm text-gray-900"><%= it.t1074 %></label>
+                </div>
+                <div class="flex items-center">
+                    <input id="lk22_2_2-2" type="checkbox" value="2" name="lk22_2_2" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="lk22_2_2-2" class="ms-2 text-sm text-gray-900"><%= it.t1075 %></label>
+                </div>
+                <div class="flex items-center">
+                    <input id="lk22_2_3-3" type="checkbox" value="3" name="lk22_2_3" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="lk22_2_3-3" class="ms-2 text-sm text-gray-900"><%= it.t1076 %></label>
+                </div>
+                <div class="flex items-center">
+                    <input id="lk22_2_4-4" type="checkbox" value="4" name="lk22_2_4" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500">
+                    <label for="lk22_2_4-4" class="ms-2 text-sm text-gray-900"><%= it.t1077 %></label>
+                </div>
+                <div class="flex items-center">
+                    <input id="lk22_2_5-5" type="checkbox" value="5" name="lk22_2_5" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="lk22_2_5-5" class="ms-2 text-sm text-gray-900"><%= it.t1078 %></label>
+                </div>
+                <div>
+                    <input type="text" id="lk22_2_5_other" name="lk22_2_5_other" class="bg-white disabled:bg-gray-100 border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+                </div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 items-center mt-10">
+            <div>
+                <%= it.t1079 %>. <%= it.t1080 %>
+            </div>
+            <div class="col-span-1 flex flex-col gap-2">
+                <div class="flex items-center">
+                    <input id="lk22_2_7-1" type="radio" value="1" name="lk22_2_7" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="lk22_2_7-1" class="ms-2 text-sm text-gray-900"><%= it.t1081 %></label>
+                </div>
+                <div class="flex items-center">
+                    <input id="lk22_2_7-2" type="radio" value="0" name="lk22_2_7" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="lk22_2_7-2" class="ms-2 text-sm text-gray-900"><%= it.t1082 %></label>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 items-center mt-10">
+            <div>
+                <%= it.t1085 %>. <%= it.t1086 %>
+            </div>
+            <div class="col-span-1 flex flex-col gap-2">
+                <div class="flex items-center">
+                    <input id="lk22_2m-1" type="radio" value="1" name="lk22_2m" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="lk22_2m-1" class="ms-2 text-sm text-gray-900"><%= it.t1087 %></label>
+                </div>
+                <div class="flex items-center">
+                    <input id="lk22_2m-2" type="radio" value="2" name="lk22_2m" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="lk22_2m-2" class="ms-2 text-sm text-gray-900"><%= it.t1088 %></label>
+                </div>
+                <div class="flex items-center">
+                    <input id="lk22_2m-3" type="radio" value="3" name="lk22_2m" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="lk22_2m-3" class="ms-2 text-sm text-gray-900"><%= it.t1089 %></label>
+                </div>
+                <div class="flex items-center">
+                    <input id="lk22_2m-4" type="radio" value="4" name="lk22_2m" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="lk22_2m-4" class="ms-2 text-sm text-gray-900"><%= it.t1090 %></label>
+                </div>
+                <div class="flex items-center">
+                    <input id="lk22_2m-9" type="radio" value="9" name="lk22_2m" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="lk22_2m-9" class="ms-2 text-sm text-gray-900"><%= it.t1091 %></label>
+                </div>
+            </div>
+        </div>
+
+        <small class="mt-10 block italic text-red-500"><%= it.t1092 %></small>
+
+        <div class="grid grid-cols-2 gap-4 items-center mt-10">
+            <div>
+                <%= it.t1093 %>. <%= it.t1094 %>
+            </div>
+            <div class="col-span-1 flex items-center gap-4">
+                <div class="flex items-center">
+                    <input id="lk22_3_1-1" type="radio" value="1" name="lk22_3_1" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="lk22_3_1-1" class="ms-2 text-sm text-gray-900"><%= it.t1095 %></label>
+                </div>
+                <div class="flex items-center">
+                    <input id="lk22_3_1-2" type="radio" value="0" name="lk22_3_1" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="lk22_3_1-2" class="ms-2 text-sm text-gray-900"><%= it.t1096 %></label>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 items-center mt-10">
+            <div>
+                <%= it.t1097 %>. <%= it.t1097 %>
+            </div>
+            <div class="col-span-1 flex items-center gap-4">
+                <div class="flex items-center">
+                    <input id="lk22_3_2-1" type="radio" value="1" name="lk22_3_2" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="lk22_3_2-1" class="ms-2 text-sm text-gray-900"><%= it.t1099 %></label>
+                </div>
+                <div class="flex items-center">
+                    <input id="lk22_3_2-2" type="radio" value="0" name="lk22_3_2" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="lk22_3_2-2" class="ms-2 text-sm text-gray-900"><%= it.t1100 %></label>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 items-center mt-10">
+            <div>
+                <%= it.t1101 %>. <%= it.t1102 %>
+            </div>
+            <div class="col-span-1 flex items-center gap-4">
+                <div class="flex items-center">
+                    <input id="lk22_3_3-1" type="radio" value="1" name="lk22_3_3" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="lk22_3_3-1" class="ms-2 text-sm text-gray-900"><%= it.t1103 %></label>
+                </div>
+                <div class="flex items-center">
+                    <input id="lk22_3_3-2" type="radio" value="0" name="lk22_3_3" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="lk22_3_3-2" class="ms-2 text-sm text-gray-900"><%= it.t1104 %></label>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 items-center mt-10">
+            <div>
+                <%= it.t1105 %>. <%= it.t1106 %>
+            </div>
+            <div class="col-span-1 flex items-center gap-4">
+                <div class="flex items-center">
+                    <input id="lk22_3_4-1" type="radio" value="1" name="lk22_3_4" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="lk22_3_4-1" class="ms-2 text-sm text-gray-900"><%= it.t1107 %></label>
+                </div>
+                <div class="flex items-center">
+                    <input id="lk22_3_4-2" type="radio" value="0" name="lk22_3_4" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="lk22_3_4-2" class="ms-2 text-sm text-gray-900"><%= it.t1108 %></label>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 items-center mt-10">
+            <div>
+                <%= it.t1109 %>. <%= it.t1110 %>
+            </div>
+            <div class="col-span-1 flex items-center gap-4">
+                <div class="flex items-center">
+                    <input id="lk22_3_5-1" type="radio" value="1" name="lk22_3_5" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="lk22_3_5-1" class="ms-2 text-sm text-gray-900"><%= it.t1111 %></label>
+                </div>
+                <div class="flex items-center">
+                    <input id="lk22_3_5-2" type="radio" value="0" name="lk22_3_5" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="lk22_3_5-2" class="ms-2 text-sm text-gray-900"><%= it.t1112 %></label>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 items-center mt-10">
+            <div>
+                <%= it.t1113 %>. <%= it.t1114 %>
+            </div>
+            <div class="col-span-1 flex items-center gap-4">
+                <div class="flex items-center">
+                    <input id="lk22_3_6-1" type="radio" value="1" name="lk22_3_6" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="lk22_3_6-1" class="ms-2 text-sm text-gray-900"><%= it.t1115 %></label>
+                </div>
+                <div class="flex items-center">
+                    <input id="lk22_3_6-2" type="radio" value="0" name="lk22_3_6" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="lk22_3_6-2" class="ms-2 text-sm text-gray-900"><%= it.t1116 %></label>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 items-center mt-10">
+            <div>
+                <%= it.t1117 %>. <%= it.t1118 %>
+            </div>
+            <div class="col-span-1 flex items-center gap-4">
+                <div class="flex items-center">
+                    <input id="lk22_3_7-1" type="radio" value="1" name="lk22_3_7" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="lk22_3_7-1" class="ms-2 text-sm text-gray-900"><%= it.t1119 %></label>
+                </div>
+                <div class="flex items-center">
+                    <input id="lk22_3_7-2" type="radio" value="0" name="lk22_3_7" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="lk22_3_7-2" class="ms-2 text-sm text-gray-900"><%= it.t1120 %></label>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 items-center mt-10">
+            <div>
+                <%= it.t1121 %>. <%= it.t1122 %>
+            </div>
+            <div class="col-span-1 flex items-center gap-4">
+                <div class="flex items-center">
+                    <input id="lk22_3_8-1" type="radio" value="1" name="lk22_3_8" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="lk22_3_8-1" class="ms-2 text-sm text-gray-900"><%= it.t1123 %></label>
+                </div>
+                <div class="flex items-center">
+                    <input id="lk22_3_8-2" type="radio" value="0" name="lk22_3_8" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="lk22_3_8-2" class="ms-2 text-sm text-gray-900"><%= it.t1124 %></label>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 items-center mt-10">
+            <div>
+                <%= it.t1126 %>. <%= it.t1127 %>
+            </div>
+            <div class="col-span-1 flex items-center gap-4">
+                <input type="text" id="lk22_3_9" name="lk22_3_9" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+            </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 items-center mt-10">
+            <div>
+                <%= it.t1128 %>. <%= it.t1129 %>
+            </div>
+            <div class="col-span-1 flex items-center gap-4">
+                <div class="flex items-center">
+                    <input id="lk22_4-1" type="radio" value="1" name="lk22_4" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="lk22_4-1" class="ms-2 text-sm text-gray-900"><%= it.t1130 %></label>
+                </div>
+                <div class="flex items-center">
+                    <input id="lk22_4-2" type="radio" value="0" name="lk22_4" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="lk22_4-2" class="ms-2 text-sm text-gray-900"><%= it.t1131 %></label>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 items-center mt-10">
+            <div>
+                <%= it.t1132 %>. <%= it.t1133 %>
+            </div>
+            <div class="col-span-1 flex items-center gap-4">
+                <div class="flex items-center">
+                    <input id="lk22_5-1" type="radio" value="1" name="lk22_5" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="lk22_5-1" class="ms-2 text-sm text-gray-900"><%= it.t1134 %></label>
+                </div>
+                <div class="flex items-center">
+                    <input id="lk22_5-2" type="radio" value="0" name="lk22_5" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="lk22_5-2" class="ms-2 text-sm text-gray-900"><%= it.t1135 %></label>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 items-center mt-10">
+            <div>
+                <%= it.t1136 %>. <%= it.t1137 %>
+            </div>
+            <div class="col-span-1 flex items-center gap-4">
+                <div class="flex items-center">
+                    <input id="lk22_6-1" type="radio" value="1" name="lk22_6" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="lk22_6-1" class="ms-2 text-sm text-gray-900"><%= it.t1138 %></label>
+                </div>
+                <div class="flex items-center">
+                    <input id="lk22_6-2" type="radio" value="0" name="lk22_6" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="lk22_6-2" class="ms-2 text-sm text-gray-900"><%= it.t1139 %></label>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 items-center mt-10">
+            <div>
+                <%= it.t1140 %>. <%= it.t1141 %>
+            </div>
+            <div class="col-span-1 flex items-center gap-4">
+                <div class="flex items-center">
+                    <input id="lk22_7-1" type="radio" value="1" name="lk22_7" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="lk22_7-1" class="ms-2 text-sm text-gray-900"><%= it.t1142 %></label>
+                </div>
+                <div class="flex items-center">
+                    <input id="lk22_7-2" type="radio" value="0" name="lk22_7" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="lk22_7-2" class="ms-2 text-sm text-gray-900"><%= it.t1143 %></label>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 items-center mt-10">
+            <div>
+                <%= it.t1144 %>. <%= it.t1145 %>
+            </div>
+            <div class="col-span-1 flex items-center gap-4">
+                <div class="flex items-center">
+                    <input id="lk22_8-1" type="radio" value="1" name="lk22_8" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="lk22_8-1" class="ms-2 text-sm text-gray-900"><%= it.t1147 %></label>
+                </div>
+                <div class="flex items-center">
+                    <input id="lk22_8-2" type="radio" value="0" name="lk22_8" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="lk22_8-2" class="ms-2 text-sm text-gray-900"><%= it.t1148 %></label>
+                </div>
+            </div>
+        </div>
+
+        <small class="mt-6 block italic text-red-500"><%= it.t1146 %></small>
+
+        <div class="grid grid-cols-2 gap-4 items-center mt-6">
+            <div>
+                <%= it.t1149 %>. <%= it.t1150 %>
+            </div>
+            <div class="col-span-1 flex items-center gap-4">
+                <div class="flex items-center">
+                    <input id="lk22_9-1" type="radio" value="1" name="lk22_9" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="lk22_9-1" class="ms-2 text-sm text-gray-900"><%= it.t1151 %></label>
+                </div>
+                <div class="flex items-center">
+                    <input id="lk22_9-2" type="radio" value="0" name="lk22_9" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="lk22_9-2" class="ms-2 text-sm text-gray-900"><%= it.t1152 %></label>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 items-center mt-10">
+            <div>
+                <%= it.t1153 %>. <%= it.t1154 %>
+            </div>
+            <div class="col-span-1 flex items-center gap-4">
+                <div class="flex items-center">
+                    <input id="lk22_10-1" type="radio" value="1" name="lk22_10" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="lk22_10-1" class="ms-2 text-sm text-gray-900"><%= it.t1155 %></label>
+                </div>
+                <div class="flex items-center">
+                    <input id="lk22_10-2" type="radio" value="0" name="lk22_10" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="lk22_10-2" class="ms-2 text-sm text-gray-900"><%= it.t1156 %></label>
+                </div>
+            </div>
+        </div>
+
 
     </form>
 </body>
