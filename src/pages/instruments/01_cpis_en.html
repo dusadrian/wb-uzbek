@@ -5740,7 +5740,8 @@
                 <div class="grid grid-cols-2 gap-4 items-center mt-6">
                     <div>
                         EWM4. Does the student have a history of school sanctions?
-                        <small class="my-2 block italic text-red-500">History of school sanctions = expulsion, reprimand, removal for disciplinary reasons, low behavior grade or complaints made by other students and/or parents and/or teachers for violence, bullying, theft, goods destruction, etc.</small>
+                        <small class="my-2 block italic text-red-500">History of school sanctions = expulsion, reprimand, removal for disciplinary reasons, low behavior grade or
+                            complaints made by other students and/or parents and/or teachers for violence, bullying, theft, goods destruction, etc.</small>
                     </div>
                     <div class="col-span-1 flex items-center gap-4">
                         <div class="flex items-center">
@@ -5772,62 +5773,1056 @@
 
                 <h2 class="mt-10 mb-4 text-2xl font-bold text-gray-700">11. INDEPENDENT LIVING SKILLS</h2>
                 <small class="my-2 block italic text-red-500">The section only applies to youth aged 16 and over.</small>
-                <p>DVI. On a scale from 1 = not at all to 10 = total, how do you assess the level of development of the youth in the following areas of independent living skills/abilities?</p>
+                <p>DVI. On a scale from 1 = not at all to 10 = total, how do you assess the level of development of the youth in the following areas of independent living
+                    skills/abilities?</p>
                 <div class="grid grid-cols-2 gap-4 items-center mt-6">
-                    <div>
+                    <div class="ml-3">
                         DVI1. Preparing and serving food (Food selection, cooking, arranging/serving meals)
                     </div>
-                    <div class="col-span-1 flex flex-col gap-2">
+                    <select id="dvi1" name="dvi1"
+                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="-1">-1. I don't know / No answer</option>
+                    </select>
+                </div>
+                <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                    <div class="ml-3">
+                        DVI2. Use of household appliances (Stove, refrigerator, washing machine, etc.)
+                    </div>
+                    <select id="dvi2" name="dvi2"
+                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="-1">-1. I don't know / No answer</option>
+                    </select>
+                </div>
+                <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                    <div class="ml-3">
+                        DVI3. Washing and ironing (Clothes care)
+                    </div>
+                    <select id="dvi3" name="dvi3"
+                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="-1">-1. I don't know / No answer</option>
+                    </select>
+                </div>
+                <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                    <div class="ml-3">
+                        DVI4. Living space hygiene (Room/house cleaning, including tidying things up or changing linen)
+                    </div>
+                    <select id="dvi4" name="dvi4"
+                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="-1">-1. I don't know / No answer</option>
+                    </select>
+                </div>
+                <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                    <div class="ml-3">
+                        DVI5. Financial management (Familiar with money, budgeting, paying bills, shopping)
+                    </div>
+                    <select id="dvi5" name="dvi5"
+                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="-1">-1. I don't know / No answer</option>
+                    </select>
+                </div>
+                <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                    <div class="ml-3">
+                        DVI6. Orientation in the city and use of transportation
+                    </div>
+                    <select id="dvi6" name="dvi6"
+                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="-1">-1. I don't know / No answer</option>
+                    </select>
+                </div>
+                <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                    <div class="ml-3">
+                        DVI7. Personal hygiene(Washing/cleansing the body, maintaining hygiene)
+                    </div>
+                    <select id="dvi7" name="dvi7"
+                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="-1">-1. I don't know / No answer</option>
+                    </select>
+                </div>
+                <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                    <div class="ml-3">
+                        DVI8. Healthy lifestyle(Sports, nutrition)
+                    </div>
+                    <select id="dvi8" name="dvi8"
+                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="-1">-1. I don't know / No answer</option>
+                    </select>
+                </div>
+                <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                    <div class="ml-3">
+                        DVI9. Reproductive health(Prevention of unwanted pregnancies, prevention, identification and treatment of sexually transmitted diseases)
+                    </div>
+                    <select id="dvi9" name="dvi9"
+                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="-1">-1. I don't know / No answer</option>
+                    </select>
+                </div>
+                <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                    <div class="ml-3">
+                        DVI10. Free time(Meeting friends, playing sports, going to the movies, going out, going to concerts, etc.)
+                    </div>
+                    <select id="dvi10" name="dvi10"
+                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="-1">-1. I don't know / No answer</option>
+                    </select>
+                </div>
+                <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                    <div class="ml-3">
+                        DVI11. Time management(Punctuality)
+                    </div>
+                    <select id="dvi11" name="dvi11"
+                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="-1">-1. I don't know / No answer</option>
+                    </select>
+                </div>
+                <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                    <div class="ml-3">
+                        DVI12. Behavior in public(At the store, at school, etc.)
+                    </div>
+                    <select id="dvi12" name="dvi12"
+                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="-1">-1. I don't know / No answer</option>
+                    </select>
+                </div>
+                <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                    <div class="ml-3">
+                        DVI13. Use of social networks(Development and use of a support system, community)
+                    </div>
+                    <select id="dvi13" name="dvi13"
+                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="-1">-1. I don't know / No answer</option>
+                    </select>
+                </div>
+                <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                    <div class="ml-3">
+                        DVI14. Developing and maintaining social relationships(Friends, family, neighbors, colleagues etc.)
+                    </div>
+                    <select id="dvi14" name="dvi14"
+                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="-1">-1. I don't know / No answer</option>
+                    </select>
+                </div>
+                <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                    <div class="ml-3">
+                        DVI15. Self-respect
+                    </div>
+                    <select id="dvi15" name="dvi15"
+                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="-1">-1. I don't know / No answer</option>
+                    </select>
+                </div>
+                <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                    <div class="ml-3">
+                        DVI16. Attitude towards school/learning
+                    </div>
+                    <select id="dvi16" name="dvi16"
+                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="-1">-1. I don't know / No answer</option>
+                    </select>
+                </div>
+                <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                    <div class="ml-3">
+                        DVI17. Knowledge of the benefits of a job
+                    </div>
+                    <select id="dvi17" name="dvi17"
+                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="-1">-1. I don't know / No answer</option>
+                    </select>
+                </div>
+                <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                    <div class="ml-3">
+                        DVI18. Finding a job(How and where)
+                    </div>
+                    <select id="dvi18" name="dvi18"
+                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="-1">-1. I don't know / No answer</option>
+                    </select>
+                </div>
+                <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                    <div class="ml-3">
+                        DVI19. Relationships at work
+                    </div>
+                    <select id="dvi19" name="dvi19"
+                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="-1">-1. I don't know / No answer</option>
+                    </select>
+                </div>
+                <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                    <div class="ml-3">
+                        DVI20. Keeping a job
+                    </div>
+                    <select id="dvi20" name="dvi20"
+                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="-1">-1. I don't know / No answer</option>
+                    </select>
+                </div>
+               
+
+                <h2 class="mt-10 mb-4 text-2xl font-bold text-gray-700">12. RISK BEHAVIORS</h2>
+                <small class="my-2 block italic text-red-500">Attention! This section is to be filled in only for children older than 10.</small>
+                <p>QRISKP: During the child’s time into the system (from their last admission until present), has the child had any of the following risk behaviors:</p>
+                <div class="grid grid-cols-2 gap-4 items-center mt-10">
+                    <div class="ml-3">
+                        1. Early sexual activity (initiation before the age of 16)
+                    </div>
+                    <div class="col-span-1 flex items-center gap-4">
                         <div class="flex items-center">
-                            <input id="dvi1-1" type="radio" value="1" name="dvi1" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
-                            <label for="dvi1-1" class="ms-2 text-sm text-gray-900">1</label>
+                            <input id="qriskp1-1" type="radio" value="1" name="qriskp1" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="qriskp1-1" class="ms-2 text-sm text-gray-900">1. Yes</label>
                         </div>
                         <div class="flex items-center">
-                            <input id="dvi1-2" type="radio" value="2" name="dvi1" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
-                            <label for="dvi1-2" class="ms-2 text-sm text-gray-900">2</label>
+                            <input id="qriskp1-2" type="radio" value="2" name="qriskp1" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="qriskp1-2" class="ms-2 text-sm text-gray-900">2. No</label>
                         </div>
                         <div class="flex items-center">
-                            <input id="dvi1-3" type="radio" value="3" name="dvi1" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
-                            <label for="dvi1-3" class="ms-2 text-sm text-gray-900">3</label>
+                            <input id="qriskp1-9" type="radio" value="9" name="qriskp1" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="qriskp1-9" class="ms-2 text-sm text-gray-900">9. Not known</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 gap-4 items-center mt-10">
+                    <div class="ml-3">
+                        3. Alcohol, tobacco or drugs consumption
+                    </div>
+                    <div class="col-span-1 flex items-center gap-4">
+                        <div class="flex items-center">
+                            <input id="qriskp3-1" type="radio" value="1" name="qriskp3" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="qriskp3-1" class="ms-2 text-sm text-gray-900">1. Yes</label>
                         </div>
                         <div class="flex items-center">
-                            <input id="dvi1-4" type="radio" value="4" name="dvi1" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
-                            <label for="dvi1-4" class="ms-2 text-sm text-gray-900">4</label>
+                            <input id="qriskp3-2" type="radio" value="2" name="qriskp3" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="qriskp3-2" class="ms-2 text-sm text-gray-900">2. No</label>
                         </div>
                         <div class="flex items-center">
-                            <input id="dvi1-5" type="radio" value="5" name="dvi1" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
-                            <label for="dvi1-5" class="ms-2 text-sm text-gray-900">5</label>
+                            <input id="qriskp3-9" type="radio" value="9" name="qriskp3" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="qriskp3-9" class="ms-2 text-sm text-gray-900">9. Not known</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 gap-4 items-center mt-10">
+                    <div class="ml-3">
+                        4. Fights or violence with other children or young people
+                    </div>
+                    <div class="col-span-1 flex items-center gap-4">
+                        <div class="flex items-center">
+                            <input id="qriskp4-1" type="radio" value="1" name="qriskp4" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="qriskp4-1" class="ms-2 text-sm text-gray-900">1. Yes</label>
                         </div>
                         <div class="flex items-center">
-                            <input id="dvi1-6" type="radio" value="6" name="dvi1" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
-                            <label for="dvi1-6" class="ms-2 text-sm text-gray-900">6</label>
+                            <input id="qriskp4-2" type="radio" value="2" name="qriskp4" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="qriskp4-2" class="ms-2 text-sm text-gray-900">2. No</label>
                         </div>
                         <div class="flex items-center">
-                            <input id="dvi1-7" type="radio" value="7" name="dvi1" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
-                            <label for="dvi1-7" class="ms-2 text-sm text-gray-900">7</label>
+                            <input id="qriskp4-9" type="radio" value="9" name="qriskp4" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="qriskp4-9" class="ms-2 text-sm text-gray-900">9. Not known</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 gap-4 items-center mt-10">
+                    <div class="ml-3">
+                        5. Joining a “gang” or a risk-exposed group of friends
+                    </div>
+                    <div class="col-span-1 flex items-center gap-4">
+                        <div class="flex items-center">
+                            <input id="qriskp5-1" type="radio" value="1" name="qriskp5" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="qriskp5-1" class="ms-2 text-sm text-gray-900">1. Yes</label>
                         </div>
                         <div class="flex items-center">
-                            <input id="dvi1-8" type="radio" value="8" name="dvi1" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
-                            <label for="dvi1-8" class="ms-2 text-sm text-gray-900">8</label>
+                            <input id="qriskp5-2" type="radio" value="2" name="qriskp5" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="qriskp5-2" class="ms-2 text-sm text-gray-900">2. No</label>
                         </div>
                         <div class="flex items-center">
-                            <input id="dvi1-9" type="radio" value="9" name="dvi1" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
-                            <label for="dvi1-9" class="ms-2 text-sm text-gray-900">9</label>
+                            <input id="qriskp5-9" type="radio" value="9" name="qriskp5" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="qriskp5-9" class="ms-2 text-sm text-gray-900">9. Not known</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 gap-4 items-center mt-10">
+                    <div class="ml-3">
+                        6. Running away from the service
+                    </div>
+                    <div class="col-span-1 flex items-center gap-4">
+                        <div class="flex items-center">
+                            <input id="qriskp6-1" type="radio" value="1" name="qriskp6" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="qriskp6-1" class="ms-2 text-sm text-gray-900">1. Yes</label>
                         </div>
                         <div class="flex items-center">
-                            <input id="dvi1-10" type="radio" value="10" name="dvi1" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
-                            <label for="dvi1-10" class="ms-2 text-sm text-gray-900">10</label>
+                            <input id="qriskp6-2" type="radio" value="2" name="qriskp6" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="qriskp6-2" class="ms-2 text-sm text-gray-900">2. No</label>
                         </div>
                         <div class="flex items-center">
-                            <input id="dvi1-11" type="radio" value="-1" name="dvi1" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
-                            <label for="dvi1-11" class="ms-2 text-sm text-gray-900">-1. I don't know / No answer</label>
+                            <input id="qriskp6-9" type="radio" value="9" name="qriskp6" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="qriskp6-9" class="ms-2 text-sm text-gray-900">9. Not known</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 gap-4 items-center mt-10">
+                    <div class="ml-3">
+                        7. Problems with the police
+                    </div>
+                    <div class="col-span-1 flex items-center gap-4">
+                        <div class="flex items-center">
+                            <input id="qriskp7-1" type="radio" value="1" name="qriskp7" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="qriskp7-1" class="ms-2 text-sm text-gray-900">1. Yes</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="qriskp7-2" type="radio" value="2" name="qriskp7" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="qriskp7-2" class="ms-2 text-sm text-gray-900">2. No</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="qriskp7-9" type="radio" value="9" name="qriskp7" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="qriskp7-9" class="ms-2 text-sm text-gray-900">9. Not known</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 gap-4 items-center mt-10">
+                    <div class="ml-3">
+                        8. Street work or begging
+                    </div>
+                    <div class="col-span-1 flex items-center gap-4">
+                        <div class="flex items-center">
+                            <input id="qriskp8-1" type="radio" value="1" name="qriskp8" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="qriskp8-1" class="ms-2 text-sm text-gray-900">1. Yes</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="qriskp8-2" type="radio" value="2" name="qriskp8" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="qriskp8-2" class="ms-2 text-sm text-gray-900">2. No</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="qriskp8-9" type="radio" value="9" name="qriskp8" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="qriskp8-9" class="ms-2 text-sm text-gray-900">9. Not known</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 gap-4 items-center mt-10">
+                    <div class="ml-3">
+                        9. Self-harm behavior
+                    </div>
+                    <div class="col-span-1 flex items-center gap-4">
+                        <div class="flex items-center">
+                            <input id="qriskp9-1" type="radio" value="1" name="qriskp9" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="qriskp9-1" class="ms-2 text-sm text-gray-900">1. Yes</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="qriskp9-2" type="radio" value="2" name="qriskp9" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="qriskp9-2" class="ms-2 text-sm text-gray-900">2. No</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="qriskp9-9" type="radio" value="9" name="qriskp9" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="qriskp9-9" class="ms-2 text-sm text-gray-900">9. Not known</label>
                         </div>
                     </div>
                 </div>
 
+                <h2 class="mt-10 mb-4 text-2xl font-bold text-gray-700">13. CASE MONITORING</h2>
 
+                <div class="grid grid-cols-2 gap-4 items-center mt-10">
+                    <div>
+                        CMGT1. Does the child currently have a specialist who monitors his/her case?
+                    </div>
+                    <div class="col-span-1 flex items-center gap-4">
+                        <div class="flex items-center">
+                            <input id="cmgt1-1" type="radio" value="1" name="cmgt1" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="cmgt1-1" class="ms-2 text-sm text-gray-900">1. Yes</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="cmgt1-2" type="radio" value="0" name="cmgt1" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="cmgt1-2" class="ms-2 text-sm text-gray-900">0. No</label>
+                        </div>
+                    </div>
+                </div>
 
+                <div class="grid grid-cols-2 gap-4 items-center mt-10">
+                    <div>
+                        CMGT1a. What is the date starting which the current specialist was appointed to the child?
+                        <small class="my-2 block italic text-red-500">Fill in the date of the current specialist's appointment.</small>
+                    </div>
+                    <div class="col-span-1 flex items-center gap-4">
+                        <input type="text" id="cmgt1a" name="cmgt1a"
+                               class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+                    </div>
+                </div>
 
+                <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                    <div>
+                        CMGT1b. What is the total period during which the child was monitored by the current specialist (in months)?
+                    </div>
+                    <div class="col-span-1 flex items-center gap-4">
+                        <input type="text" id="cmgt1b" name="cmgt1b"
+                               class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                    <div>
+                        CMGT1c. Name, patronymics and surname of the current specialist who monitors the child’s case
+                    </div>
+                    <div class="col-span-1 flex items-center gap-4">
+                        <input type="text" id="cmgt1c" name="cmgt1c"
+                               class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                    <div>
+                        CMGT2. Does the child have an individual protection plan or other document that establishes objectives and plans the necessary interventions for the child?
+                    </div>
+                    <div class="col-span-1 flex items-center gap-4">
+                        <div class="flex items-center">
+                            <input id="cmgt2-1" type="radio" value="1" name="cmgt2" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="cmgt2-1" class="ms-2 text-sm text-gray-900">1. Yes</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="cmgt2-2" type="radio" value="0" name="cmgt2" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="cmgt2-2" class="ms-2 text-sm text-gray-900">0. No</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-2 gap-4 items-center mt-10">
+                    <div>
+                        CMGT2a. Which is the Individual Protection Plan objective?
+                    </div>
+                    <div class="col-span-1 flex flex-col gap-2">
+                        <div class="flex items-center">
+                            <input id="cmgt2a-1" type="radio" value="1" name="cmgt2a" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="cmgt2a-1" class="ms-2 text-sm text-gray-900">1. Family reintegration</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="cmgt2a-2" type="radio" value="2" name="cmgt2a" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="cmgt2a-2" class="ms-2 text-sm text-gray-900">2. Adoption</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="cmgt2a-3" type="radio" value="3" name="cmgt2a" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="cmgt2a-3" class="ms-2 text-sm text-gray-900">3. Transition to independent living/Integration into society after reaching the age of 18</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="cmgt2a-4" type="radio" value="4" name="cmgt2a" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="cmgt2a-4" class="ms-2 text-sm text-gray-900">4. Another objective, please specify: …</label>
+                        </div>
+                        <input type="text" id="cmgt2a_other" name="cmgt2a_other"
+                               class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                    <div>
+                        CMGT3a. In the past six months, did the specialist who monitors the case perform a reassessment of the situation for this child/young person?
+                    </div>
+                    <div class="col-span-1 flex items-center gap-4">
+                        <div class="flex items-center">
+                            <input id="cmgt3a-1" type="radio" value="1" name="cmgt3a" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="cmgt3a-1" class="ms-2 text-sm text-gray-900">1. Yes, at least once</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="cmgt3a-2" type="radio" value="0" name="cmgt3a" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="cmgt3a-2" class="ms-2 text-sm text-gray-900">0. No</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                    <div>
+                        CMGT3b. In the past six months, did the specialist who monitors the case revise the Individual Protection Plan for this child/young person?
+                    </div>
+                    <div class="col-span-1 flex items-center gap-4">
+                        <div class="flex items-center">
+                            <input id="cmgt3b-1" type="radio" value="1" name="cmgt3b" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="cmgt3b-1" class="ms-2 text-sm text-gray-900">1. Yes, at least once</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="cmgt3b-2" type="radio" value="0" name="cmgt3b" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="cmgt3b-2" class="ms-2 text-sm text-gray-900">0. No</label>
+                        </div>
+                    </div>
+                </div>
+
+                <h2 class="mt-10 mb-4 text-2xl font-bold text-gray-700">14. QUALITY OF SERVICES</h2>
+
+                <div class="grid grid-cols-2 gap-4 items-center mt-10">
+                    <div>
+                        SQ1. In the past six months, did the child receive in a timely manner the necessary services and interventions, appropriate to their real situation, in
+                        accordance with their assessed needs (Individual Protection Plan, Rehabilitation plan, etc.)?
+                    </div>
+                    <div class="col-span-1 flex flex-col gap-2">
+                        <div class="flex items-center">
+                            <input id="sq1-1" type="radio" value="0" name="sq1" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="sq1-1" class="ms-2 text-sm text-gray-900">0. No</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="sq1-2" type="radio" value="1" name="sq1" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="sq1-2" class="ms-2 text-sm text-gray-900">1. They have received part of the services and interventions they need</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="sq1-3" type="radio" value="2" name="sq1" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="sq1-3" class="ms-2 text-sm text-gray-900">2. They have received all the services and interventions they need</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                    <div>
+                        SQ2. In the past six months, for this child/young person, did the specialist who monitors the case or other Makhala/district level specialist manage to verify
+                        the way in which the services/activities were provided to them (progress, achievement of objectives, problems encountered)?
+                    </div>
+                    <div class="col-span-1 flex items-center gap-4">
+                        <div class="flex items-center">
+                            <input id="sq2-1" type="radio" value="1" name="sq2" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="sq2-1" class="ms-2 text-sm text-gray-900">1. Yes, at least once</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="sq2-2" type="radio" value="0" name="sq2" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="sq2-2" class="ms-2 text-sm text-gray-900">0. No</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                    <div>
+                        SQ3. In the past six months, was the child victim of violence, neglect, abuse or suspected abuse within the service, at school or in the community?
+                    </div>
+                    <div class="col-span-1 flex items-center gap-4">
+                        <div class="flex items-center">
+                            <input id="sq3-1" type="radio" value="1" name="sq3" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="sq3-1" class="ms-2 text-sm text-gray-900">1. Yes, at least once</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="sq3-2" type="radio" value="0" name="sq3" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="sq3-2" class="ms-2 text-sm text-gray-900">0. No</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                    <div>
+                        SQ4. In the past six months, did the child make any complaint/notification related to the social service they are admitted in (including about the relationship
+                        with carers or colleagues)?
+                    </div>
+                    <div class="col-span-1 flex items-center gap-4">
+                        <div class="flex items-center">
+                            <input id="sq4-1" type="radio" value="1" name="sq4" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="sq4-1" class="ms-2 text-sm text-gray-900">1. Yes, at least once</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="sq4-2" type="radio" value="0" name="sq4" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="sq4-2" class="ms-2 text-sm text-gray-900">0. No</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                    <div>
+                        SQ5. In the past six months, did the child benefit from independent living activities?
+                        <small class="my-2 block italic text-red-500">Independent living activities include tasks such as food preparation and serving, cleaning, using the washing
+                            machine, ironing or arranging clothes, going shopping, being able to use money and manage a budget, etc.</small>
+                    </div>
+                    <div class="col-span-1 flex items-center gap-4">
+                        <div class="flex items-center">
+                            <input id="sq5-1" type="radio" value="1" name="sq5" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="sq5-1" class="ms-2 text-sm text-gray-900">1. Yes</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="sq5-2" type="radio" value="0" name="sq5" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="sq5-2" class="ms-2 text-sm text-gray-900">0. No</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                    <div>
+                        SQ6. Is there any document showing the child’s opinion on his/her separation from the family and the protection measure setting?
+                    </div>
+                    <div class="col-span-1 flex items-center gap-4">
+                        <div class="flex items-center">
+                            <input id="sq6-1" type="radio" value="1" name="sq6" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="sq6-1" class="ms-2 text-sm text-gray-900">1. Yes</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="sq6-2" type="radio" value="0" name="sq6" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="sq6-2" class="ms-2 text-sm text-gray-900">0. No</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                    <div>
+                        SQ7. Is there any record or document indicating the child’s meaningful participation to decision-making and consultation on aspects concerning them (e.g.,
+                        preparation of the IPP, the service, education, health plan etc.)?
+                    </div>
+                    <div class="col-span-1 flex items-center gap-4">
+                        <div class="flex items-center">
+                            <input id="sq7-1" type="radio" value="1" name="sq7" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="sq7-1" class="ms-2 text-sm text-gray-900">1. Yes</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="sq7-2" type="radio" value="0" name="sq7" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="sq7-2" class="ms-2 text-sm text-gray-900">0. No</label>
+                        </div>
+                    </div>
+                </div>
+
+                <h2 class="mt-10 mb-4 text-2xl font-bold text-gray-700">15. THE CHILD’S RELATIONSHIP WITH THEIR FAMILY AND CHANCES FOR (RE)INTEGRATION IN A FAMILY ENVIRONMENT</h2>
+
+                <div class="grid grid-cols-2 gap-4 items-center mt-10">
+                    <div>
+                        SK1. In the past six months, has the specialist who monitors the case or other Makhala/district level specialist paid a home visit and talked face-to-face with
+                        this child’s parents, grandparents, aunts or extended family?
+                    </div>
+                    <div class="col-span-1 flex flex-col gap-2">
+                        <div class="flex items-center">
+                            <input id="sk1-1" type="radio" value="-7" name="sk1" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="sk1-1" class="ms-2 text-sm text-gray-900">- 7. The child has no family</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="sk1-2" type="radio" value="0" name="sk1" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="sk1-2" class="ms-2 text-sm text-gray-900">0. No</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="sk1-3" type="radio" value="1" name="sk1" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="sk1-3" class="ms-2 text-sm text-gray-900">1. Yes, at least once</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-2 gap-4 items-center mt-10">
+                    <div>
+                        SK2. In the past six months, has the child visited or has been visited by the parents or another adult family member?
+                    </div>
+                    <div class="col-span-1 flex flex-col gap-2">
+                        <div class="flex items-center">
+                            <input id="sk2-1" type="radio" value="-7" name="sk2" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="sk2-1" class="ms-2 text-sm text-gray-900">- 7. The child has no family</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="sk2-2" type="radio" value="2" name="sk2" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="sk2-2" class="ms-2 text-sm text-gray-900">2. Yes, more than once</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="sk2-3" type="radio" value="1" name="sk2" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="sk2-3" class="ms-2 text-sm text-gray-900">1. Yes</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="sk2-4" type="radio" value="0" name="sk2" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="sk2-4" class="ms-2 text-sm text-gray-900">0. No</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-2 gap-4 items-center mt-10">
+                    <div>
+                        SK3. Does the child have brothers and/or sisters in the child care system? If yes, how many brothers and how many sisters?
+                    </div>
+                    <div class="col-span-1 flex flex-col gap-2">
+                        <div class="flex items-center">
+                            <input id="sk3-1" type="radio" value="1" name="sk3" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="sk3-1" class="ms-2 text-sm text-gray-900">1. Yes, brothers</label>
+                        </div>
+                        <input type="text" id="sk3_1" name="sk3_1"
+                               class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+                        <div class="flex items-center">
+                            <input id="sk3-2" type="radio" value="2" name="sk3" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="sk3-2" class="ms-2 text-sm text-gray-900">2. Yes, sisters</label>
+                        </div>
+                        <input type="text" id="sk3_2" name="sk3_2"
+                               class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+                        <div class="flex items-center">
+                            <input id="sk3-3" type="radio" value="3" name="sk3" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="sk3-3" class="ms-2 text-sm text-gray-900">3. Neither brothers, nor sisters</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="sk3-4" type="radio" value="9" name="sk3" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="sk3-4" class="ms-2 text-sm text-gray-900">9. Unspecified/Unknown </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-2 gap-4 items-center mt-10">
+                    <div>
+                        SK4. Are one or more of these siblings living in the same service as the child?
+                    </div>
+                    <div class="col-span-1 flex items-center gap-4">
+                        <div class="flex items-center">
+                            <input id="sk4-1" type="radio" value="1" name="sk4" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="sk4-1" class="ms-2 text-sm text-gray-900">1. Yes</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="sk4-2" type="radio" value="2" name="sk4" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="sk4-2" class="ms-2 text-sm text-gray-900">2. No</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-2 gap-4 items-center mt-10">
+                    <div>
+                        SK5. Is there any information available regarding how the child’s relationship with their siblings who are living in different services, is maintained or
+                        facilitated?
+                    </div>
+                    <div class="col-span-1 flex flex-col gap-2">
+                        <div class="flex items-center">
+                            <input id="sk5-1" type="radio" value="-7" name="sk5" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="sk5-1" class="ms-2 text-sm text-gray-900">-7. The child has no siblings in other services</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="sk5-2" type="radio" value="0" name="sk5" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="sk5-2" class="ms-2 text-sm text-gray-900">0. No</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="sk5-3" type="radio" value="1" name="sk5" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="sk5-3" class="ms-2 text-sm text-gray-900">1. Yes</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-2 gap-4 items-center mt-10">
+                    <div>
+                        SK6. In the past six months, did the child meet with siblings?
+                    </div>
+                    <div class="col-span-1 flex flex-col gap-2">
+                        <div class="flex items-center">
+                            <input id="sk6-1" type="radio" value="-7" name="sk6" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="sk6-1" class="ms-2 text-sm text-gray-900">- 7. The child lives together with their siblings or very close to them</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="sk6-2" type="radio" value="0" name="sk6" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="sk6-2" class="ms-2 text-sm text-gray-900">0. No</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="sk6-3" type="radio" value="1" name="sk6" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="sk6-3" class="ms-2 text-sm text-gray-900">1. Yes, at least once</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-2 gap-4 items-center mt-10">
+                    <div>
+                        SK7. Since the child’s admission into the system, living conditions of the origin family/mother/father/caregiver have…
+                    </div>
+                    <div class="col-span-1 flex flex-col gap-2">
+                        <div class="flex items-center">
+                            <input id="sk7-1" type="radio" value="1" name="sk7" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="sk7-1" class="ms-2 text-sm text-gray-900">1. Worsened</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="sk7-2" type="radio" value="2" name="sk7" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="sk7-2" class="ms-2 text-sm text-gray-900">2. Remained as they were at the time of the child’s admission</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="sk7-3" type="radio" value="3" name="sk7" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="sk7-3" class="ms-2 text-sm text-gray-900">3. Improved</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="sk7-4" type="radio" value="9" name="sk7" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="sk7-4" class="ms-2 text-sm text-gray-900">9. No information</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="sk7-5" type="radio" value="-7" name="sk7" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="sk7-5" class="ms-2 text-sm text-gray-900">- 7. The child has no family</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-2 gap-4 items-center mt-10">
+                    <div>
+                        SK8. Has a list of relatives from the extended family (aunts, uncles, grandparents, cousins etc) been identified for the child?
+                    </div>
+                    <div class="col-span-1 flex items-center gap-4">
+                        <div class="flex items-center">
+                            <input id="sk8-1" type="radio" value="1" name="sk8" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="sk8-1" class="ms-2 text-sm text-gray-900">1. Yes</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="sk8-2" type="radio" value="2" name="sk8" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="sk8-2" class="ms-2 text-sm text-gray-900">2. No</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-2 gap-4 items-center mt-10">
+                    <div>
+                        SK9. Does the child have an identified family (with names and address) engaged in working towards a possible (re)integration?
+                    </div>
+                    <div class="col-span-1 flex flex-col gap-2">
+                        <div class="flex items-center">
+                            <input id="sk9-1" type="radio" value="1" name="sk9" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="sk9-1" class="ms-2 text-sm text-gray-900">1. Yes, one or both parents</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="sk9-2" type="radio" value="2" name="sk9" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="sk9-2" class="ms-2 text-sm text-gray-900">2. Yes, relatives up to the 4th degree</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="sk9-3" type="radio" value="3" name="sk9" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="sk9-3" class="ms-2 text-sm text-gray-900">3. Yes, another family</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="sk9-4" type="radio" value="4" name="sk9" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="sk9-4" class="ms-2 text-sm text-gray-900">4. No</label>
+                        </div>
+                    </div>
+                </div>
+
+                <p class="mt-10">SK10. Is there an assessment provided by the specialist who monitors the case/Makhala social worker or the person in charge of implementing the IPP
+                    regarding the actual chances for the child’s (re)integration...</p>
+                <div class="grid grid-cols-2 gap-4 items-center mt-10">
+                    <div class="ml-3">
+                        a. With one or both parents?
+                    </div>
+                    <div class="col-span-1 flex items-center gap-4">
+                        <div class="flex items-center">
+                            <input id="sk10a-1" type="radio" value="1" name="sk10a" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="sk10a-1" class="ms-2 text-sm text-gray-900">1. Yes, there is an assessment</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="sk10a-2" type="radio" value="0" name="sk10a" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="sk10a-2" class="ms-2 text-sm text-gray-900">0. It does not exist</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 gap-4 items-center mt-10">
+                    <div class="ml-3">
+                        b. With relatives up to the 4th degree?
+                    </div>
+                    <div class="col-span-1 flex items-center gap-4">
+                        <div class="flex items-center">
+                            <input id="sk10b-1" type="radio" value="1" name="sk10b" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="sk10b-1" class="ms-2 text-sm text-gray-900">1. Yes, there is an assessment</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="sk10b-2" type="radio" value="0" name="sk10b" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="sk10b-2" class="ms-2 text-sm text-gray-900">0. It does not exist</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 gap-4 items-center mt-10">
+                    <div class="ml-3">
+                        c. With another family?
+                    </div>
+                    <div class="col-span-1 flex items-center gap-4">
+                        <div class="flex items-center">
+                            <input id="sk10c-1" type="radio" value="1" name="sk10c" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="sk10c-1" class="ms-2 text-sm text-gray-900">1. Yes, there is an assessment</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="sk10c-2" type="radio" value="0" name="sk10c" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="sk10c-2" class="ms-2 text-sm text-gray-900">0. It does not exist</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-2 gap-4 items-center mt-10">
+                    <div>
+                        SK11. Does the child have an identified family (with names and address) engaged in working towards a possible adoption?
+                    </div>
+                    <div class="col-span-1 flex items-center gap-4">
+                        <div class="flex items-center">
+                            <input id="sk11-1" type="radio" value="1" name="sk11" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="sk11-1" class="ms-2 text-sm text-gray-900">1. Yes</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="sk11-2" type="radio" value="2" name="sk11" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <label for="sk11-2" class="ms-2 text-sm text-gray-900">2. No</label>
+                        </div>
+                    </div>
+                </div>
 
             </form>
 
