@@ -3365,7 +3365,7 @@
             </div>
         </div>
 
-        <h3 class="text-xl font-semibold bg-gray-100 px-2 py-1 text-gray-700"><%= it.t747 %></h3>
+        <h3 class="mt-10 text-xl font-semibold bg-gray-100 px-2 py-1 text-gray-700"><%= it.t747 %></h3>
 
         <small class="mt-2 block italic text-red-500"><%= it.t748 %></small>
 
@@ -5118,7 +5118,7 @@
 
         <div class="grid grid-cols-2 gap-4 items-center mt-10">
             <div>
-                <%= it.t1097 %>. <%= it.t1097 %>
+                <%= it.t1097 %>. <%= it.t1098 %>
             </div>
             <div class="col-span-1 flex items-center gap-4">
                 <div class="flex items-center">
@@ -5351,258 +5351,257 @@
             </div>
         </div>
 
-        <h2 class="mt-10 mb-4 text-2xl font-bold text-gray-700">9. THE CHILD’S CURRENT HEALTH STATUS</h2>
+        <h2 class="mt-10 mb-4 text-2xl font-bold text-gray-700"><%= it.t1157 %></h2>
 
-        <p>QHEALTHP: At present...</p>
+        <p><%= it.t1158 %>: <%= it.t1159 %></p>
         <div class="grid grid-cols-2 gap-4 items-center mt-4">
             <div class="ml-3">
-                1. Does the child have mandatory vaccines done to date?
+                <%= it.t1160 %>
             </div>
             <div class="col-span-1 flex flex-col gap-2">
                 <div class="flex items-center">
                     <input id="qhealthp1-1" type="radio" value="1" name="qhealthp1" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
-                    <label for="qhealthp1-1" class="ms-2 text-sm text-gray-900">1. Yes, all of them</label>
+                    <label for="qhealthp1-1" class="ms-2 text-sm text-gray-900"><%= it.t1161 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="qhealthp1-2" type="radio" value="2" name="qhealthp1" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
-                    <label for="qhealthp1-2" class="ms-2 text-sm text-gray-900">2. Yes, some</label>
+                    <label for="qhealthp1-2" class="ms-2 text-sm text-gray-900"><%= it.t1162 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="qhealthp1-3" type="radio" value="3" name="qhealthp1" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
-                    <label for="qhealthp1-3" class="ms-2 text-sm text-gray-900">3. No, none</label>
+                    <label for="qhealthp1-3" class="ms-2 text-sm text-gray-900"><%= it.t1163 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="qhealthp1-9" type="radio" value="9" name="qhealthp1" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
-                    <label for="qhealthp1-9" class="ms-2 text-sm text-gray-900">9. Not known</label>
+                    <label for="qhealthp1-9" class="ms-2 text-sm text-gray-900"><%= it.t1164 %></label>
                 </div>
             </div>
         </div>
 
         <div class="grid grid-cols-2 gap-4 items-center mt-10">
             <div class="ml-3">
-                2. Is the child enrolled with a general practitioner/visiting nurse/family doctor?
+                <%= it.t1165 %>
             </div>
             <div class="col-span-1 flex items-center gap-4">
                 <div class="flex items-center">
                     <input id="qhealthp2-1" type="radio" value="1" name="qhealthp2" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
-                    <label for="qhealthp2-1" class="ms-2 text-sm text-gray-900">1. Yes</label>
+                    <label for="qhealthp2-1" class="ms-2 text-sm text-gray-900"><%= it.t1166 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="qhealthp2-2" type="radio" value="2" name="qhealthp2" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
-                    <label for="qhealthp2-2" class="ms-2 text-sm text-gray-900">2. No</label>
+                    <label for="qhealthp2-2" class="ms-2 text-sm text-gray-900"><%= it.t1167 %></label>
                 </div>
             </div>
         </div>
 
         <div class="grid grid-cols-2 gap-4 items-center mt-10">
             <div class="ml-3">
-                3. In his/her daily activities, is the child...?
-                <small class="my-2 block italic text-red-500">Attention! Autonomous means that he/she eats, gets dressed or walks by him/herself.</small>
+               <%= it.t1168 %>
+                <small class="my-2 block italic text-red-500"><%= it.t1169 %></small>
             </div>
             <div class="col-span-1 flex flex-col gap-2">
                 <div class="flex items-center">
                     <input id="qhealthp3-1" type="radio" value="1" name="qhealthp3" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
-                    <label for="qhealthp3-1" class="ms-2 text-sm text-gray-900">1. Autonomous</label>
+                    <label for="qhealthp3-1" class="ms-2 text-sm text-gray-900"><%= it.t1170 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="qhealthp3-2" type="radio" value="2" name="qhealthp3" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
-                    <label for="qhealthp3-2" class="ms-2 text-sm text-gray-900">2. In need of support</label>
+                    <label for="qhealthp3-2" class="ms-2 text-sm text-gray-900"><%= it.t1171 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="qhealthp3-3" type="radio" value="3" name="qhealthp3" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
-                    <label for="qhealthp3-3" class="ms-2 text-sm text-gray-900">3. Totally dependent on others</label>
+                    <label for="qhealthp3-3" class="ms-2 text-sm text-gray-900"><%= it.t1172 %></label>
                 </div>
             </div>
         </div>
 
         <div class="grid grid-cols-2 gap-4 items-center mt-10">
             <div>
-                4. Compared to the assessment conducted at the time of the child’s first admission into the system, does the most recent assessment show progress or regress in
-                the following areas...?
+                <%= it.t1173 %>
             </div>
             <div class="col-span-1 flex flex-col gap-2">
-                <p>a. Physical</p>
+                <p><%= it.t1174 %></p>
                 <div class="flex gap-4 mb-3">
                     <div class="flex items-center">
                         <input id="qhealthp4a-1" type="radio" value="1" name="qhealthp4a" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
-                        <label for="qhealthp4a-1" class="ms-2 text-sm text-gray-900">1. Progress</label>
+                        <label for="qhealthp4a-1" class="ms-2 text-sm text-gray-900"><%= it.t1182 %></label>
                     </div>
                     <div class="flex items-center">
                         <input id="qhealthp4a-2" type="radio" value="2" name="qhealthp4a" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
-                        <label for="qhealthp4a-2" class="ms-2 text-sm text-gray-900">2. No change</label>
+                        <label for="qhealthp4a-2" class="ms-2 text-sm text-gray-900"><%= it.t1183 %></label>
                     </div>
                     <div class="flex items-center">
                         <input id="qhealthp4a-3" type="radio" value="3" name="qhealthp4a" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
-                        <label for="qhealthp4a-3" class="ms-2 text-sm text-gray-900">3. Regress</label>
+                        <label for="qhealthp4a-3" class="ms-2 text-sm text-gray-900"><%= it.t1184 %></label>
                     </div>
                 </div>
-                <p>b. Emotional</p>
+                <p><%= it.t1175 %></p>
                 <div class="flex gap-4 mb-3">
                     <div class="flex items-center">
                         <input id="qhealthp4b-1" type="radio" value="1" name="qhealthp4b" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
-                        <label for="qhealthp4b-1" class="ms-2 text-sm text-gray-900">1. Progress</label>
+                        <label for="qhealthp4b-1" class="ms-2 text-sm text-gray-900"><%= it.t1182 %></label>
                     </div>
                     <div class="flex items-center">
                         <input id="qhealthp4b-2" type="radio" value="2" name="qhealthp4b" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
-                        <label for="qhealthp4b-2" class="ms-2 text-sm text-gray-900">2. No change</label>
+                        <label for="qhealthp4b-2" class="ms-2 text-sm text-gray-900"><%= it.t1183 %></label>
                     </div>
                     <div class="flex items-center">
                         <input id="qhealthp4b-3" type="radio" value="3" name="qhealthp4b" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
-                        <label for="qhealthp4b-3" class="ms-2 text-sm text-gray-900">3. Regress</label>
+                        <label for="qhealthp4b-3" class="ms-2 text-sm text-gray-900"><%= it.t1184 %></label>
                     </div>
                 </div>
-                <p>c. Cognitive</p>
+                <p><%= it.t1176 %></p>
                 <div class="flex gap-4 mb-3">
                     <div class="flex items-center">
                         <input id="qhealthp4c-1" type="radio" value="1" name="qhealthp4c" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
-                        <label for="qhealthp4c-1" class="ms-2 text-sm text-gray-900">1. Progress</label>
+                        <label for="qhealthp4c-1" class="ms-2 text-sm text-gray-900"><%= it.t1182 %></label>
                     </div>
                     <div class="flex items-center">
                         <input id="qhealthp4c-2" type="radio" value="2" name="qhealthp4c" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
-                        <label for="qhealthp4c-2" class="ms-2 text-sm text-gray-900">2. No change</label>
+                        <label for="qhealthp4c-2" class="ms-2 text-sm text-gray-900"><%= it.t1183 %></label>
                     </div>
                     <div class="flex items-center">
                         <input id="qhealthp4c-3" type="radio" value="3" name="qhealthp4c" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
-                        <label for="qhealthp4c-3" class="ms-2 text-sm text-gray-900">3. Regress</label>
+                        <label for="qhealthp4c-3" class="ms-2 text-sm text-gray-900"><%= it.t1184 %></label>
                     </div>
                 </div>
-                <p>d. Behavioral</p>
+                <p><%= it.t1177 %></p>
                 <div class="flex gap-4 mb-3">
                     <div class="flex items-center">
                         <input id="qhealthp4d-1" type="radio" value="1" name="qhealthp4d" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
-                        <label for="qhealthp4d-1" class="ms-2 text-sm text-gray-900">1. Progress</label>
+                        <label for="qhealthp4d-1" class="ms-2 text-sm text-gray-900"><%= it.t1182 %></label>
                     </div>
                     <div class="flex items-center">
                         <input id="qhealthp4d-2" type="radio" value="2" name="qhealthp4d" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
-                        <label for="qhealthp4d-2" class="ms-2 text-sm text-gray-900">2. No change</label>
+                        <label for="qhealthp4d-2" class="ms-2 text-sm text-gray-900"><%= it.t1183 %></label>
                     </div>
                     <div class="flex items-center">
                         <input id="qhealthp4d-3" type="radio" value="3" name="qhealthp4d" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
-                        <label for="qhealthp4d-3" class="ms-2 text-sm text-gray-900">3. Regress</label>
+                        <label for="qhealthp4d-3" class="ms-2 text-sm text-gray-900"><%= it.t1184 %></label>
                     </div>
                 </div>
-                <p>e. Psycho-physiological</p>
+                <p><%= it.t1178 %></p>
                 <div class="flex gap-4 mb-3">
                     <div class="flex items-center">
                         <input id="qhealthp4e-1" type="radio" value="1" name="qhealthp4e" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
-                        <label for="qhealthp4e-1" class="ms-2 text-sm text-gray-900">1. Progress</label>
+                        <label for="qhealthp4e-1" class="ms-2 text-sm text-gray-900"><%= it.t1182 %></label>
                     </div>
                     <div class="flex items-center">
                         <input id="qhealthp4e-2" type="radio" value="2" name="qhealthp4e" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
-                        <label for="qhealthp4e-2" class="ms-2 text-sm text-gray-900">2. No change</label>
+                        <label for="qhealthp4e-2" class="ms-2 text-sm text-gray-900"><%= it.t1183 %></label>
                     </div>
                     <div class="flex items-center">
                         <input id="qhealthp4e-3" type="radio" value="3" name="qhealthp4e" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
-                        <label for="qhealthp4e-3" class="ms-2 text-sm text-gray-900">3. Regress</label>
+                        <label for="qhealthp4e-3" class="ms-2 text-sm text-gray-900"><%= it.t1184 %></label>
                     </div>
                 </div>
-                <p>f. Personality-related</p>
+                <p><%= it.t1179 %></p>
                 <div class="flex gap-4 mb-3">
                     <div class="flex items-center">
                         <input id="qhealthp4f-1" type="radio" value="1" name="qhealthp4f" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
-                        <label for="qhealthp4f-1" class="ms-2 text-sm text-gray-900">1. Progress</label>
+                        <label for="qhealthp4f-1" class="ms-2 text-sm text-gray-900"><%= it.t1182 %></label>
                     </div>
                     <div class="flex items-center">
                         <input id="qhealthp4f-2" type="radio" value="2" name="qhealthp4f" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
-                        <label for="qhealthp4f-2" class="ms-2 text-sm text-gray-900">2. No change</label>
+                        <label for="qhealthp4f-2" class="ms-2 text-sm text-gray-900"><%= it.t1183 %></label>
                     </div>
                     <div class="flex items-center">
                         <input id="qhealthp4f-3" type="radio" value="3" name="qhealthp4f" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
-                        <label for="qhealthp4f-3" class="ms-2 text-sm text-gray-900">3. Regress</label>
+                        <label for="qhealthp4f-3" class="ms-2 text-sm text-gray-900"><%= it.t1184 %></label>
                     </div>
                 </div>
-                <p>g. Interpersonal relations</p>
+                <p><%= it.t1180 %></p>
                 <div class="flex gap-4 mb-3">
                     <div class="flex items-center">
                         <input id="qhealthp4g-1" type="radio" value="1" name="qhealthp4g" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
-                        <label for="qhealthp4g-1" class="ms-2 text-sm text-gray-900">1. Progress</label>
+                        <label for="qhealthp4g-1" class="ms-2 text-sm text-gray-900"><%= it.t1182 %></label>
                     </div>
                     <div class="flex items-center">
                         <input id="qhealthp4g-2" type="radio" value="2" name="qhealthp4g" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
-                        <label for="qhealthp4g-2" class="ms-2 text-sm text-gray-900">2. No change</label>
+                        <label for="qhealthp4g-2" class="ms-2 text-sm text-gray-900"><%= it.t1183 %></label>
                     </div>
                     <div class="flex items-center">
                         <input id="qhealthp4g-3" type="radio" value="3" name="qhealthp4g" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
-                        <label for="qhealthp4g-3" class="ms-2 text-sm text-gray-900">3. Regress</label>
+                        <label for="qhealthp4g-3" class="ms-2 text-sm text-gray-900"><%= it.t1184 %></label>
                     </div>
                 </div>
             </div>
         </div>
 
-        <h2 class="mt-10 mb-4 text-2xl font-bold text-gray-700">10. THE CHILD’S CURRENT EDUCATION</h2>
+        <h2 class="mt-10 mb-4 text-2xl font-bold text-gray-700"><%= it.t1185 %></h2>
 
         <div class="grid grid-cols-2 gap-4 items-center mt-10">
             <div class="ml-3">
-                EDK0. Is the child enrolled in preschool/school?
-                <small class="my-2 block italic text-red-500">Check 1. Yes also for homeschooled children.</small>
+                <%= it.t1186 %>. Is the child enrolled in preschool/school?
+                <small class="my-2 block italic text-red-500"><%= it.t1187 %></small>
             </div>
             <div class="col-span-1 flex items-center gap-4">
                 <div class="flex items-center">
                     <input id="edk0-1" type="radio" value="1" name="edk0" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
-                    <label for="edk0-1" class="ms-2 text-sm text-gray-900">1. Yes</label>
+                    <label for="edk0-1" class="ms-2 text-sm text-gray-900"><%= it.t1189 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="edk0-2" type="radio" value="2" name="edk0" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
-                    <label for="edk0-2" class="ms-2 text-sm text-gray-900">2. No</label>
+                    <label for="edk0-2" class="ms-2 text-sm text-gray-900"><%= it.t1190 %></label>
                 </div>
             </div>
         </div>
 
         <div class="grid grid-cols-2 gap-4 items-center mt-10">
             <div class="ml-3">
-                EDK1. What type of education is the child admitted in?
+                <%= it.t1192 %>. <%= it.t1193 %>
             </div>
             <div class="col-span-1 flex flex-col gap-2">
                 <div class="flex items-center">
                     <input id="edk1-1" type="radio" value="1" name="edk1" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
-                    <label for="edk1-1" class="ms-2 text-sm text-gray-900">1. In mainstream education</label>
+                    <label for="edk1-1" class="ms-2 text-sm text-gray-900"><%= it.t1194 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="edk1-2" type="radio" value="2" name="edk1" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
-                    <label for="edk1-2" class="ms-2 text-sm text-gray-900">2. In specialized education</label>
+                    <label for="edk1-2" class="ms-2 text-sm text-gray-900"><%= it.t1195 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="edk1-3" type="radio" value="3" name="edk1" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
-                    <label for="edk1-3" class="ms-2 text-sm text-gray-900">3. Inclusive education</label>
+                    <label for="edk1-3" class="ms-2 text-sm text-gray-900"><%= it.t1196 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="edk1-4" type="radio" value="4" name="edk1" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
-                    <label for="edk1-4" class="ms-2 text-sm text-gray-900">4. Homeschooling</label>
+                    <label for="edk1-4" class="ms-2 text-sm text-gray-900"><%= it.t1197 %></label>
                 </div>
             </div>
         </div>
 
         <div class="grid grid-cols-2 gap-4 items-center mt-10">
             <div class="ml-3">
-                EDK2. In what educational cycle is the child enrolled?
+                <%= it.t1198 %>. <%= it.t1199 %>
             </div>
             <div class="col-span-1 flex flex-col gap-2">
                 <div class="flex items-center">
                     <input id="edk2-1" type="radio" value="0" name="edk2" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
-                    <label for="edk2-1" class="ms-2 text-sm text-gray-900">0. Preschool</label>
+                    <label for="edk2-1" class="ms-2 text-sm text-gray-900"><%= it.t1200 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="edk2-2" type="radio" value="1" name="edk2" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
-                    <label for="edk2-2" class="ms-2 text-sm text-gray-900">1. Primary education (grades 1-4)</label>
+                    <label for="edk2-2" class="ms-2 text-sm text-gray-900"><%= it.t1201 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="edk2-3" type="radio" value="2" name="edk2" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
-                    <label for="edk2-3" class="ms-2 text-sm text-gray-900">2. Secondary education (grades 5-9)</label>
+                    <label for="edk2-3" class="ms-2 text-sm text-gray-900"><%= it.t1202 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="edk2-4" type="radio" value="3" name="edk2" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
-                    <label for="edk2-4" class="ms-2 text-sm text-gray-900">3. Secondary/vocational (grades 10-11)</label>
+                    <label for="edk2-4" class="ms-2 text-sm text-gray-900"><%= it.t1203 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="edk2-5" type="radio" value="4" name="edk2" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
-                    <label for="edk2-5" class="ms-2 text-sm text-gray-900">4. Tertiary education</label>
+                    <label for="edk2-5" class="ms-2 text-sm text-gray-900"><%= it.t1204 %></label>
                 </div>
             </div>
         </div>
 
         <div class="grid grid-cols-2 gap-4 items-center mt-10">
             <div>
-                EDK3. And in what grade?
+                <%= it.t1206 %>. <%= it.t1207 %>
             </div>
             <div class="col-span-1 flex items-center gap-4">
                 <input type="text" id="edk3" name="edk3" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
@@ -5611,97 +5610,95 @@
 
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
             <div>
-                EWM1. In the past six months, did the student have low school attendance?
+                <%= it.t1208 %>. <%= it.t1209 %>
             </div>
             <div class="col-span-1 flex items-center gap-4">
                 <div class="flex items-center">
                     <input id="ewm1-1" type="radio" value="1" name="ewm1" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
-                    <label for="ewm1-1" class="ms-2 text-sm text-gray-900">1. Yes</label>
+                    <label for="ewm1-1" class="ms-2 text-sm text-gray-900"><%= it.t1210 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="ewm1-2" type="radio" value="0" name="ewm1" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
-                    <label for="ewm1-2" class="ms-2 text-sm text-gray-900">0. No</label>
+                    <label for="ewm1-2" class="ms-2 text-sm text-gray-900"><%= it.t1211 %></label>
                 </div>
             </div>
         </div>
 
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
             <div>
-                EWM2. Did the student have poor or below average school performances?
+                <%= it.t1212 %>. <%= it.t1213 %>
             </div>
             <div class="col-span-1 flex items-center gap-4">
                 <div class="flex items-center">
                     <input id="ewm2-1" type="radio" value="1" name="ewm2" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
-                    <label for="ewm2-1" class="ms-2 text-sm text-gray-900">1. Yes</label>
+                    <label for="ewm2-1" class="ms-2 text-sm text-gray-900"><%= it.t1214 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="ewm2-2" type="radio" value="0" name="ewm2" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
-                    <label for="ewm2-2" class="ms-2 text-sm text-gray-900">0. No</label>
+                    <label for="ewm2-2" class="ms-2 text-sm text-gray-900"><%= it.t1215 %></label>
                 </div>
             </div>
         </div>
 
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
             <div>
-                EWM3. Has the student ever repeated a school year since he is in school?
+                <%= it.t1216 %>. <%= it.t1217 %>
             </div>
             <div class="col-span-1 flex items-center gap-4">
                 <div class="flex items-center">
                     <input id="ewm3-1" type="radio" value="0" name="ewm2" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
-                    <label for="ewm3-1" class="ms-2 text-sm text-gray-900">0. No</label>
+                    <label for="ewm3-1" class="ms-2 text-sm text-gray-900"><%= it.t1218 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="ewm3-2" type="radio" value="1" name="ewm2" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
-                    <label for="ewm3-2" class="ms-2 text-sm text-gray-900">1. Yes, once</label>
+                    <label for="ewm3-2" class="ms-2 text-sm text-gray-900"><%= it.t1219 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="ewm3-3" type="radio" value="2" name="ewm2" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
-                    <label for="ewm3-3" class="ms-2 text-sm text-gray-900">2. Yes, repeatedly</label>
+                    <label for="ewm3-3" class="ms-2 text-sm text-gray-900"><%= it.t1220 %></label>
                 </div>
             </div>
         </div>
 
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
             <div>
-                EWM4. Does the student have a history of school sanctions?
-                <small class="my-2 block italic text-red-500">History of school sanctions = expulsion, reprimand, removal for disciplinary reasons, low behavior grade or
-                    complaints made by other students and/or parents and/or teachers for violence, bullying, theft, goods destruction, etc.</small>
+                <%= it.t1221 %>. <%= it.t1222 %>
+                <small class="my-2 block italic text-red-500"><%= it.t1223 %></small>
             </div>
             <div class="col-span-1 flex items-center gap-4">
                 <div class="flex items-center">
                     <input id="ewm4-1" type="radio" value="1" name="ewm4" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
-                    <label for="ewm4-1" class="ms-2 text-sm text-gray-900">1. Yes</label>
+                    <label for="ewm4-1" class="ms-2 text-sm text-gray-900"><%= it.t1224 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="ewm4-2" type="radio" value="0" name="ewm4" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
-                    <label for="ewm4-2" class="ms-2 text-sm text-gray-900">0. No</label>
+                    <label for="ewm4-2" class="ms-2 text-sm text-gray-900"><%= it.t1225 %></label>
                 </div>
             </div>
         </div>
 
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
             <div>
-                EWM5. Is the student at risk of early school leaving?
+                <%= it.t1226 %>. <%= it.t1227 %>
             </div>
             <div class="col-span-1 flex items-center gap-4">
                 <div class="flex items-center">
                     <input id="ewm5-1" type="radio" value="1" name="ewm5" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
-                    <label for="ewm5-1" class="ms-2 text-sm text-gray-900">1. Yes</label>
+                    <label for="ewm5-1" class="ms-2 text-sm text-gray-900"><%= it.t1229 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="ewm5-2" type="radio" value="0" name="ewm5" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
-                    <label for="ewm5-2" class="ms-2 text-sm text-gray-900">0. No</label>
+                    <label for="ewm5-2" class="ms-2 text-sm text-gray-900"><%= it.t1230 %></label>
                 </div>
             </div>
         </div>
 
-        <h2 class="mt-10 mb-4 text-2xl font-bold text-gray-700">11. INDEPENDENT LIVING SKILLS</h2>
-        <small class="my-2 block italic text-red-500">The section only applies to youth aged 16 and over.</small>
-        <p>DVI. On a scale from 1 = not at all to 10 = total, how do you assess the level of development of the youth in the following areas of independent living
-            skills/abilities?</p>
+        <h2 class="mt-10 mb-4 text-2xl font-bold text-gray-700"><%= it.t1231 %></h2>
+        <small class="my-2 block italic text-red-500"><%= it.t1232 %></small>
+        <p><%= it.t1233 %>. <%= it.t1234 %></p>
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
             <div class="ml-3">
-                DVI1. Preparing and serving food (Food selection, cooking, arranging/serving meals)
+                <%= it.t1235 %>. <%= it.t1236 %>
             </div>
             <select id="dvi1" name="dvi1" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                 <option value="1">1</option>
@@ -5714,12 +5711,12 @@
                 <option value="8">8</option>
                 <option value="9">9</option>
                 <option value="10">10</option>
-                <option value="-1">-1. I don't know / No answer</option>
+                <option value="-1"><%= it.t1238 %></option>
             </select>
         </div>
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
             <div class="ml-3">
-                DVI2. Use of household appliances (Stove, refrigerator, washing machine, etc.)
+                <%= it.t1239 %>. <%= it.t1240 %>
             </div>
             <select id="dvi2" name="dvi2" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                 <option value="1">1</option>
@@ -5732,12 +5729,12 @@
                 <option value="8">8</option>
                 <option value="9">9</option>
                 <option value="10">10</option>
-                <option value="-1">-1. I don't know / No answer</option>
+                <option value="-1"><%= it.t1242 %></option>
             </select>
         </div>
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
             <div class="ml-3">
-                DVI3. Washing and ironing (Clothes care)
+                <%= it.t1243 %>. <%= it.t1244 %>
             </div>
             <select id="dvi3" name="dvi3" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                 <option value="1">1</option>
@@ -5750,12 +5747,12 @@
                 <option value="8">8</option>
                 <option value="9">9</option>
                 <option value="10">10</option>
-                <option value="-1">-1. I don't know / No answer</option>
+                <option value="-1"><%= it.t1246 %></option>
             </select>
         </div>
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
             <div class="ml-3">
-                DVI4. Living space hygiene (Room/house cleaning, including tidying things up or changing linen)
+                <%= it.t1247 %>. <%= it.t1248 %>
             </div>
             <select id="dvi4" name="dvi4" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                 <option value="1">1</option>
@@ -5768,12 +5765,12 @@
                 <option value="8">8</option>
                 <option value="9">9</option>
                 <option value="10">10</option>
-                <option value="-1">-1. I don't know / No answer</option>
+                <option value="-1"><%= it.t1250 %></option>
             </select>
         </div>
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
             <div class="ml-3">
-                DVI5. Financial management (Familiar with money, budgeting, paying bills, shopping)
+                <%= it.t1251 %>. <%= it.t1252 %>
             </div>
             <select id="dvi5" name="dvi5" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                 <option value="1">1</option>
@@ -5786,12 +5783,12 @@
                 <option value="8">8</option>
                 <option value="9">9</option>
                 <option value="10">10</option>
-                <option value="-1">-1. I don't know / No answer</option>
+                <option value="-1"><%= it.t1254 %></option>
             </select>
         </div>
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
             <div class="ml-3">
-                DVI6. Orientation in the city and use of transportation
+                <%= it.t1255 %>. <%= it.t1256 %>
             </div>
             <select id="dvi6" name="dvi6" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                 <option value="1">1</option>
@@ -5804,12 +5801,12 @@
                 <option value="8">8</option>
                 <option value="9">9</option>
                 <option value="10">10</option>
-                <option value="-1">-1. I don't know / No answer</option>
+                <option value="-1"><%= it.t1258 %></option>
             </select>
         </div>
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
             <div class="ml-3">
-                DVI7. Personal hygiene(Washing/cleansing the body, maintaining hygiene)
+                <%= it.t1259 %>. <%= it.t1260 %>
             </div>
             <select id="dvi7" name="dvi7" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                 <option value="1">1</option>
@@ -5822,12 +5819,12 @@
                 <option value="8">8</option>
                 <option value="9">9</option>
                 <option value="10">10</option>
-                <option value="-1">-1. I don't know / No answer</option>
+                <option value="-1"><%= it.t1262 %></option>
             </select>
         </div>
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
             <div class="ml-3">
-                DVI8. Healthy lifestyle(Sports, nutrition)
+                <%= it.t1263 %>. <%= it.t1264 %>
             </div>
             <select id="dvi8" name="dvi8" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                 <option value="1">1</option>
@@ -5840,12 +5837,12 @@
                 <option value="8">8</option>
                 <option value="9">9</option>
                 <option value="10">10</option>
-                <option value="-1">-1. I don't know / No answer</option>
+                <option value="-1"><%= it.t1266 %></option>
             </select>
         </div>
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
             <div class="ml-3">
-                DVI9. Reproductive health(Prevention of unwanted pregnancies, prevention, identification and treatment of sexually transmitted diseases)
+                <%= it.t1267 %>. <%= it.t1268 %>
             </div>
             <select id="dvi9" name="dvi9" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                 <option value="1">1</option>
@@ -5858,12 +5855,12 @@
                 <option value="8">8</option>
                 <option value="9">9</option>
                 <option value="10">10</option>
-                <option value="-1">-1. I don't know / No answer</option>
+                <option value="-1"><%= it.t1270 %></option>
             </select>
         </div>
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
             <div class="ml-3">
-                DVI10. Free time(Meeting friends, playing sports, going to the movies, going out, going to concerts, etc.)
+                <%= it.t1271 %>. <%= it.t1272 %>
             </div>
             <select id="dvi10" name="dvi10" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                 <option value="1">1</option>
@@ -5876,12 +5873,12 @@
                 <option value="8">8</option>
                 <option value="9">9</option>
                 <option value="10">10</option>
-                <option value="-1">-1. I don't know / No answer</option>
+                <option value="-1"><%= it.t1274 %></option>
             </select>
         </div>
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
             <div class="ml-3">
-                DVI11. Time management(Punctuality)
+                <%= it.t1275 %>. <%= it.t1276 %>
             </div>
             <select id="dvi11" name="dvi11" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                 <option value="1">1</option>
@@ -5894,12 +5891,12 @@
                 <option value="8">8</option>
                 <option value="9">9</option>
                 <option value="10">10</option>
-                <option value="-1">-1. I don't know / No answer</option>
+                <option value="-1"><%= it.t1278 %></option>
             </select>
         </div>
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
             <div class="ml-3">
-                DVI12. Behavior in public(At the store, at school, etc.)
+                <%= it.t1279 %>. <%= it.t1280 %>
             </div>
             <select id="dvi12" name="dvi12" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                 <option value="1">1</option>
@@ -5912,12 +5909,12 @@
                 <option value="8">8</option>
                 <option value="9">9</option>
                 <option value="10">10</option>
-                <option value="-1">-1. I don't know / No answer</option>
+                <option value="-1"><%= it.t1282 %></option>
             </select>
         </div>
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
             <div class="ml-3">
-                DVI13. Use of social networks(Development and use of a support system, community)
+                <%= it.t1283 %>. <%= it.t1284 %>
             </div>
             <select id="dvi13" name="dvi13" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                 <option value="1">1</option>
@@ -5930,12 +5927,12 @@
                 <option value="8">8</option>
                 <option value="9">9</option>
                 <option value="10">10</option>
-                <option value="-1">-1. I don't know / No answer</option>
+                <option value="-1"><%= it.t1286 %></option>
             </select>
         </div>
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
             <div class="ml-3">
-                DVI14. Developing and maintaining social relationships(Friends, family, neighbors, colleagues etc.)
+                <%= it.t1287 %>. <%= it.t1288 %>
             </div>
             <select id="dvi14" name="dvi14" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                 <option value="1">1</option>
@@ -5948,12 +5945,12 @@
                 <option value="8">8</option>
                 <option value="9">9</option>
                 <option value="10">10</option>
-                <option value="-1">-1. I don't know / No answer</option>
+                <option value="-1"><%= it.t1290 %></option>
             </select>
         </div>
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
             <div class="ml-3">
-                DVI15. Self-respect
+                <%= it.t1291 %>. <%= it.t1292 %>
             </div>
             <select id="dvi15" name="dvi15" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                 <option value="1">1</option>
@@ -5966,12 +5963,12 @@
                 <option value="8">8</option>
                 <option value="9">9</option>
                 <option value="10">10</option>
-                <option value="-1">-1. I don't know / No answer</option>
+                <option value="-1"><%= it.t1294 %></option>
             </select>
         </div>
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
             <div class="ml-3">
-                DVI16. Attitude towards school/learning
+                <%= it.t1295 %>. <%= it.t1296 %>
             </div>
             <select id="dvi16" name="dvi16" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                 <option value="1">1</option>
@@ -5984,12 +5981,12 @@
                 <option value="8">8</option>
                 <option value="9">9</option>
                 <option value="10">10</option>
-                <option value="-1">-1. I don't know / No answer</option>
+                <option value="-1"><%= it.t1298 %></option>
             </select>
         </div>
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
             <div class="ml-3">
-                DVI17. Knowledge of the benefits of a job
+                <%= it.t1299 %>. <%= it.t1300 %>
             </div>
             <select id="dvi17" name="dvi17" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                 <option value="1">1</option>
@@ -6002,12 +5999,12 @@
                 <option value="8">8</option>
                 <option value="9">9</option>
                 <option value="10">10</option>
-                <option value="-1">-1. I don't know / No answer</option>
+                <option value="-1"><%= it.t1302 %></option>
             </select>
         </div>
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
             <div class="ml-3">
-                DVI18. Finding a job(How and where)
+                <%= it.t1303 %>. <%= it.t1304 %>
             </div>
             <select id="dvi18" name="dvi18" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                 <option value="1">1</option>
@@ -6020,12 +6017,12 @@
                 <option value="8">8</option>
                 <option value="9">9</option>
                 <option value="10">10</option>
-                <option value="-1">-1. I don't know / No answer</option>
+                <option value="-1"><%= it.t1306 %></option>
             </select>
         </div>
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
             <div class="ml-3">
-                DVI19. Relationships at work
+                <%= it.t1307 %>. <%= it.t1308 %>
             </div>
             <select id="dvi19" name="dvi19" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                 <option value="1">1</option>
@@ -6038,12 +6035,13 @@
                 <option value="8">8</option>
                 <option value="9">9</option>
                 <option value="10">10</option>
-                <option value="-1">-1. I don't know / No answer</option>
+                <option value="-1"><%= it.t1310 %></option>
+                <option value="-7"><%= it.t1311 %></option>
             </select>
         </div>
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
             <div class="ml-3">
-                DVI20. Keeping a job
+                <%= it.t1312 %>. <%= it.t1313 %>
             </div>
             <select id="dvi20" name="dvi20" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                 <option value="1">1</option>
@@ -6056,189 +6054,190 @@
                 <option value="8">8</option>
                 <option value="9">9</option>
                 <option value="10">10</option>
-                <option value="-1">-1. I don't know / No answer</option>
+                <option value="-1"><%= it.t1315 %></option>
+                <option value="-7"><%= it.t1316 %></option>
             </select>
         </div>
 
 
-        <h2 class="mt-10 mb-4 text-2xl font-bold text-gray-700">12. RISK BEHAVIORS</h2>
-        <small class="my-2 block italic text-red-500">Attention! This section is to be filled in only for children older than 10.</small>
-        <p>QRISKP: During the child’s time into the system (from their last admission until present), has the child had any of the following risk behaviors:</p>
+        <h2 class="mt-10 mb-4 text-2xl font-bold text-gray-700"><%= it.t1317 %></h2>
+        <small class="my-2 block italic text-red-500"><%= it.t1318 %></small>
+        <p><%= it.t1319 %>: <%= it.t1320 %></p>
         <div class="grid grid-cols-2 gap-4 items-center mt-10">
             <div class="ml-3">
-                1. Early sexual activity (initiation before the age of 16)
+                <%= it.t1321 %>
             </div>
             <div class="col-span-1 flex items-center gap-4">
                 <div class="flex items-center">
                     <input id="qriskp1-1" type="radio" value="1" name="qriskp1" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
-                    <label for="qriskp1-1" class="ms-2 text-sm text-gray-900">1. Yes</label>
+                    <label for="qriskp1-1" class="ms-2 text-sm text-gray-900"><%= it.t1322 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="qriskp1-2" type="radio" value="2" name="qriskp1" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
-                    <label for="qriskp1-2" class="ms-2 text-sm text-gray-900">2. No</label>
+                    <label for="qriskp1-2" class="ms-2 text-sm text-gray-900"><%= it.t1323 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="qriskp1-9" type="radio" value="9" name="qriskp1" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
-                    <label for="qriskp1-9" class="ms-2 text-sm text-gray-900">9. Not known</label>
+                    <label for="qriskp1-9" class="ms-2 text-sm text-gray-900"><%= it.t1324 %></label>
                 </div>
             </div>
         </div>
         <div class="grid grid-cols-2 gap-4 items-center mt-10">
             <div class="ml-3">
-                3. Alcohol, tobacco or drugs consumption
+                <%= it.t1325 %>
             </div>
             <div class="col-span-1 flex items-center gap-4">
                 <div class="flex items-center">
                     <input id="qriskp3-1" type="radio" value="1" name="qriskp3" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
-                    <label for="qriskp3-1" class="ms-2 text-sm text-gray-900">1. Yes</label>
+                    <label for="qriskp3-1" class="ms-2 text-sm text-gray-900"><%= it.t1326 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="qriskp3-2" type="radio" value="2" name="qriskp3" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
-                    <label for="qriskp3-2" class="ms-2 text-sm text-gray-900">2. No</label>
+                    <label for="qriskp3-2" class="ms-2 text-sm text-gray-900"><%= it.t1327 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="qriskp3-9" type="radio" value="9" name="qriskp3" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
-                    <label for="qriskp3-9" class="ms-2 text-sm text-gray-900">9. Not known</label>
+                    <label for="qriskp3-9" class="ms-2 text-sm text-gray-900"><%= it.t1328 %></label>
                 </div>
             </div>
         </div>
         <div class="grid grid-cols-2 gap-4 items-center mt-10">
             <div class="ml-3">
-                4. Fights or violence with other children or young people
+                <%= it.t1329 %>
             </div>
             <div class="col-span-1 flex items-center gap-4">
                 <div class="flex items-center">
                     <input id="qriskp4-1" type="radio" value="1" name="qriskp4" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
-                    <label for="qriskp4-1" class="ms-2 text-sm text-gray-900">1. Yes</label>
+                    <label for="qriskp4-1" class="ms-2 text-sm text-gray-900"><%= it.t1330 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="qriskp4-2" type="radio" value="2" name="qriskp4" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
-                    <label for="qriskp4-2" class="ms-2 text-sm text-gray-900">2. No</label>
+                    <label for="qriskp4-2" class="ms-2 text-sm text-gray-900"><%= it.t1331 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="qriskp4-9" type="radio" value="9" name="qriskp4" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
-                    <label for="qriskp4-9" class="ms-2 text-sm text-gray-900">9. Not known</label>
+                    <label for="qriskp4-9" class="ms-2 text-sm text-gray-900"><%= it.t1332 %></label>
                 </div>
             </div>
         </div>
         <div class="grid grid-cols-2 gap-4 items-center mt-10">
             <div class="ml-3">
-                5. Joining a “gang” or a risk-exposed group of friends
+                <%= it.t1333 %>
             </div>
             <div class="col-span-1 flex items-center gap-4">
                 <div class="flex items-center">
                     <input id="qriskp5-1" type="radio" value="1" name="qriskp5" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
-                    <label for="qriskp5-1" class="ms-2 text-sm text-gray-900">1. Yes</label>
+                    <label for="qriskp5-1" class="ms-2 text-sm text-gray-900"><%= it.t1334 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="qriskp5-2" type="radio" value="2" name="qriskp5" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
-                    <label for="qriskp5-2" class="ms-2 text-sm text-gray-900">2. No</label>
+                    <label for="qriskp5-2" class="ms-2 text-sm text-gray-900"><%= it.t1335 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="qriskp5-9" type="radio" value="9" name="qriskp5" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
-                    <label for="qriskp5-9" class="ms-2 text-sm text-gray-900">9. Not known</label>
+                    <label for="qriskp5-9" class="ms-2 text-sm text-gray-900"><%= it.t1336 %></label>
                 </div>
             </div>
         </div>
         <div class="grid grid-cols-2 gap-4 items-center mt-10">
             <div class="ml-3">
-                6. Running away from the service
+                <%= it.t1337 %>
             </div>
             <div class="col-span-1 flex items-center gap-4">
                 <div class="flex items-center">
                     <input id="qriskp6-1" type="radio" value="1" name="qriskp6" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
-                    <label for="qriskp6-1" class="ms-2 text-sm text-gray-900">1. Yes</label>
+                    <label for="qriskp6-1" class="ms-2 text-sm text-gray-900"><%= it.t1338 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="qriskp6-2" type="radio" value="2" name="qriskp6" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
-                    <label for="qriskp6-2" class="ms-2 text-sm text-gray-900">2. No</label>
+                    <label for="qriskp6-2" class="ms-2 text-sm text-gray-900"><%= it.t1339 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="qriskp6-9" type="radio" value="9" name="qriskp6" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
-                    <label for="qriskp6-9" class="ms-2 text-sm text-gray-900">9. Not known</label>
+                    <label for="qriskp6-9" class="ms-2 text-sm text-gray-900"><%= it.t1340 %></label>
                 </div>
             </div>
         </div>
         <div class="grid grid-cols-2 gap-4 items-center mt-10">
             <div class="ml-3">
-                7. Problems with the police
+                <%= it.t1341 %>
             </div>
             <div class="col-span-1 flex items-center gap-4">
                 <div class="flex items-center">
                     <input id="qriskp7-1" type="radio" value="1" name="qriskp7" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
-                    <label for="qriskp7-1" class="ms-2 text-sm text-gray-900">1. Yes</label>
+                    <label for="qriskp7-1" class="ms-2 text-sm text-gray-900"><%= it.t1342 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="qriskp7-2" type="radio" value="2" name="qriskp7" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
-                    <label for="qriskp7-2" class="ms-2 text-sm text-gray-900">2. No</label>
+                    <label for="qriskp7-2" class="ms-2 text-sm text-gray-900"><%= it.t1343 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="qriskp7-9" type="radio" value="9" name="qriskp7" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
-                    <label for="qriskp7-9" class="ms-2 text-sm text-gray-900">9. Not known</label>
+                    <label for="qriskp7-9" class="ms-2 text-sm text-gray-900"><%= it.t1344 %></label>
                 </div>
             </div>
         </div>
         <div class="grid grid-cols-2 gap-4 items-center mt-10">
             <div class="ml-3">
-                8. Street work or begging
+                <%= it.t1345 %>
             </div>
             <div class="col-span-1 flex items-center gap-4">
                 <div class="flex items-center">
                     <input id="qriskp8-1" type="radio" value="1" name="qriskp8" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
-                    <label for="qriskp8-1" class="ms-2 text-sm text-gray-900">1. Yes</label>
+                    <label for="qriskp8-1" class="ms-2 text-sm text-gray-900"><%= it.t1346 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="qriskp8-2" type="radio" value="2" name="qriskp8" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
-                    <label for="qriskp8-2" class="ms-2 text-sm text-gray-900">2. No</label>
+                    <label for="qriskp8-2" class="ms-2 text-sm text-gray-900"><%= it.t1347 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="qriskp8-9" type="radio" value="9" name="qriskp8" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
-                    <label for="qriskp8-9" class="ms-2 text-sm text-gray-900">9. Not known</label>
+                    <label for="qriskp8-9" class="ms-2 text-sm text-gray-900"><%= it.t1348 %></label>
                 </div>
             </div>
         </div>
         <div class="grid grid-cols-2 gap-4 items-center mt-10">
             <div class="ml-3">
-                9. Self-harm behavior
+                <%= it.t1349 %>
             </div>
             <div class="col-span-1 flex items-center gap-4">
                 <div class="flex items-center">
                     <input id="qriskp9-1" type="radio" value="1" name="qriskp9" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
-                    <label for="qriskp9-1" class="ms-2 text-sm text-gray-900">1. Yes</label>
+                    <label for="qriskp9-1" class="ms-2 text-sm text-gray-900"><%= it.t1350 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="qriskp9-2" type="radio" value="2" name="qriskp9" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
-                    <label for="qriskp9-2" class="ms-2 text-sm text-gray-900">2. No</label>
+                    <label for="qriskp9-2" class="ms-2 text-sm text-gray-900"><%= it.t1351 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="qriskp9-9" type="radio" value="9" name="qriskp9" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
-                    <label for="qriskp9-9" class="ms-2 text-sm text-gray-900">9. Not known</label>
+                    <label for="qriskp9-9" class="ms-2 text-sm text-gray-900"><%= it.t1352 %></label>
                 </div>
             </div>
         </div>
 
-        <h2 class="mt-10 mb-4 text-2xl font-bold text-gray-700">13. CASE MONITORING</h2>
+        <h2 class="mt-10 mb-4 text-2xl font-bold text-gray-700"><%= it.t1353 %></h2>
 
         <div class="grid grid-cols-2 gap-4 items-center mt-10">
             <div>
-                CMGT1. Does the child currently have a specialist who monitors his/her case?
+                <%= it.t1354 %>. <%= it.t1355 %>
             </div>
             <div class="col-span-1 flex items-center gap-4">
                 <div class="flex items-center">
                     <input id="cmgt1-1" type="radio" value="1" name="cmgt1" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
-                    <label for="cmgt1-1" class="ms-2 text-sm text-gray-900">1. Yes</label>
+                    <label for="cmgt1-1" class="ms-2 text-sm text-gray-900"><%= it.t1356 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="cmgt1-2" type="radio" value="0" name="cmgt1" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
-                    <label for="cmgt1-2" class="ms-2 text-sm text-gray-900">0. No</label>
+                    <label for="cmgt1-2" class="ms-2 text-sm text-gray-900"><%= it.t1357 %></label>
                 </div>
             </div>
         </div>
 
         <div class="grid grid-cols-2 gap-4 items-center mt-10">
             <div>
-                CMGT1a. What is the date starting which the current specialist was appointed to the child?
-                <small class="my-2 block italic text-red-500">Fill in the date of the current specialist's appointment.</small>
+                <%= it.t1359 %>. <%= it.t1360 %>
+                <small class="my-2 block italic text-red-500"><%= it.t1361 %></small>
             </div>
             <div class="col-span-1 flex items-center gap-4">
                 <input type="text" id="cmgt1a" name="cmgt1a" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
@@ -6247,7 +6246,7 @@
 
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
             <div>
-                CMGT1b. What is the total period during which the child was monitored by the current specialist (in months)?
+                <%= it.t1362 %>. <%= it.t1363 %>
             </div>
             <div class="col-span-1 flex items-center gap-4">
                 <input type="text" id="cmgt1b" name="cmgt1b" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
@@ -6256,7 +6255,7 @@
 
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
             <div>
-                CMGT1c. Name, patronymics and surname of the current specialist who monitors the child’s case
+                <%= it.t1365 %>. <%= it.t1366 %>
             </div>
             <div class="col-span-1 flex items-center gap-4">
                 <input type="text" id="cmgt1c" name="cmgt1c" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
@@ -6265,40 +6264,40 @@
 
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
             <div>
-                CMGT2. Does the child have an individual protection plan or other document that establishes objectives and plans the necessary interventions for the child?
+                <%= it.t1367 %>. <%= it.t1368 %>
             </div>
             <div class="col-span-1 flex items-center gap-4">
                 <div class="flex items-center">
                     <input id="cmgt2-1" type="radio" value="1" name="cmgt2" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
-                    <label for="cmgt2-1" class="ms-2 text-sm text-gray-900">1. Yes</label>
+                    <label for="cmgt2-1" class="ms-2 text-sm text-gray-900"><%= it.t1369 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="cmgt2-2" type="radio" value="0" name="cmgt2" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
-                    <label for="cmgt2-2" class="ms-2 text-sm text-gray-900">0. No</label>
+                    <label for="cmgt2-2" class="ms-2 text-sm text-gray-900"><%= it.t1370 %></label>
                 </div>
             </div>
         </div>
 
         <div class="grid grid-cols-2 gap-4 items-center mt-10">
             <div>
-                CMGT2a. Which is the Individual Protection Plan objective?
+                <%= it.t1372 %>. <%= it.t1373 %>
             </div>
             <div class="col-span-1 flex flex-col gap-2">
                 <div class="flex items-center">
                     <input id="cmgt2a-1" type="radio" value="1" name="cmgt2a" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
-                    <label for="cmgt2a-1" class="ms-2 text-sm text-gray-900">1. Family reintegration</label>
+                    <label for="cmgt2a-1" class="ms-2 text-sm text-gray-900"><%= it.t1374 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="cmgt2a-2" type="radio" value="2" name="cmgt2a" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
-                    <label for="cmgt2a-2" class="ms-2 text-sm text-gray-900">2. Adoption</label>
+                    <label for="cmgt2a-2" class="ms-2 text-sm text-gray-900"><%= it.t1375 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="cmgt2a-3" type="radio" value="3" name="cmgt2a" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
-                    <label for="cmgt2a-3" class="ms-2 text-sm text-gray-900">3. Transition to independent living/Integration into society after reaching the age of 18</label>
+                    <label for="cmgt2a-3" class="ms-2 text-sm text-gray-900"><%= it.t1376 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="cmgt2a-4" type="radio" value="4" name="cmgt2a" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
-                    <label for="cmgt2a-4" class="ms-2 text-sm text-gray-900">4. Another objective, please specify: …</label>
+                    <label for="cmgt2a-4" class="ms-2 text-sm text-gray-900"><%= it.t1377 %></label>
                 </div>
                 <input type="text" id="cmgt2a_other" name="cmgt2a_other" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
             </div>
@@ -6306,422 +6305,413 @@
 
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
             <div>
-                CMGT3a. In the past six months, did the specialist who monitors the case perform a reassessment of the situation for this child/young person?
+                <%= it.t1379 %>. <%= it.t1380 %>
             </div>
             <div class="col-span-1 flex items-center gap-4">
                 <div class="flex items-center">
                     <input id="cmgt3a-1" type="radio" value="1" name="cmgt3a" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
-                    <label for="cmgt3a-1" class="ms-2 text-sm text-gray-900">1. Yes, at least once</label>
+                    <label for="cmgt3a-1" class="ms-2 text-sm text-gray-900"><%= it.t1381 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="cmgt3a-2" type="radio" value="0" name="cmgt3a" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
-                    <label for="cmgt3a-2" class="ms-2 text-sm text-gray-900">0. No</label>
+                    <label for="cmgt3a-2" class="ms-2 text-sm text-gray-900"><%= it.t1382 %></label>
                 </div>
             </div>
         </div>
 
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
             <div>
-                CMGT3b. In the past six months, did the specialist who monitors the case revise the Individual Protection Plan for this child/young person?
+                <%= it.t1384 %>. <%= it.t1385 %>
             </div>
             <div class="col-span-1 flex items-center gap-4">
                 <div class="flex items-center">
                     <input id="cmgt3b-1" type="radio" value="1" name="cmgt3b" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
-                    <label for="cmgt3b-1" class="ms-2 text-sm text-gray-900">1. Yes, at least once</label>
+                    <label for="cmgt3b-1" class="ms-2 text-sm text-gray-900"><%= it.t1386 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="cmgt3b-2" type="radio" value="0" name="cmgt3b" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
-                    <label for="cmgt3b-2" class="ms-2 text-sm text-gray-900">0. No</label>
+                    <label for="cmgt3b-2" class="ms-2 text-sm text-gray-900"><%= it.t1387 %></label>
                 </div>
             </div>
         </div>
 
-        <h2 class="mt-10 mb-4 text-2xl font-bold text-gray-700">14. QUALITY OF SERVICES</h2>
+        <h2 class="mt-10 mb-4 text-2xl font-bold text-gray-700"><%= it.t1388 %></h2>
 
         <div class="grid grid-cols-2 gap-4 items-center mt-10">
             <div>
-                SQ1. In the past six months, did the child receive in a timely manner the necessary services and interventions, appropriate to their real situation, in
-                accordance with their assessed needs (Individual Protection Plan, Rehabilitation plan, etc.)?
+                <%= it.t1389 %>. <%= it.t1390 %>
             </div>
             <div class="col-span-1 flex flex-col gap-2">
                 <div class="flex items-center">
                     <input id="sq1-1" type="radio" value="0" name="sq1" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
-                    <label for="sq1-1" class="ms-2 text-sm text-gray-900">0. No</label>
+                    <label for="sq1-1" class="ms-2 text-sm text-gray-900"><%= it.t1391 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="sq1-2" type="radio" value="1" name="sq1" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
-                    <label for="sq1-2" class="ms-2 text-sm text-gray-900">1. They have received part of the services and interventions they need</label>
+                    <label for="sq1-2" class="ms-2 text-sm text-gray-900"><%= it.t1392 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="sq1-3" type="radio" value="2" name="sq1" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
-                    <label for="sq1-3" class="ms-2 text-sm text-gray-900">2. They have received all the services and interventions they need</label>
+                    <label for="sq1-3" class="ms-2 text-sm text-gray-900"><%= it.t1393 %></label>
                 </div>
             </div>
         </div>
 
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
             <div>
-                SQ2. In the past six months, for this child/young person, did the specialist who monitors the case or other Makhala/district level specialist manage to verify
-                the way in which the services/activities were provided to them (progress, achievement of objectives, problems encountered)?
+                <%= it.t1394 %>. <%= it.t1395 %>
             </div>
             <div class="col-span-1 flex items-center gap-4">
                 <div class="flex items-center">
                     <input id="sq2-1" type="radio" value="1" name="sq2" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
-                    <label for="sq2-1" class="ms-2 text-sm text-gray-900">1. Yes, at least once</label>
+                    <label for="sq2-1" class="ms-2 text-sm text-gray-900"><%= it.t1396 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="sq2-2" type="radio" value="0" name="sq2" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
-                    <label for="sq2-2" class="ms-2 text-sm text-gray-900">0. No</label>
+                    <label for="sq2-2" class="ms-2 text-sm text-gray-900"><%= it.t1397 %></label>
                 </div>
             </div>
         </div>
 
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
             <div>
-                SQ3. In the past six months, was the child victim of violence, neglect, abuse or suspected abuse within the service, at school or in the community?
+                <%= it.t1398 %>. <%= it.t1399 %>
             </div>
             <div class="col-span-1 flex items-center gap-4">
                 <div class="flex items-center">
                     <input id="sq3-1" type="radio" value="1" name="sq3" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
-                    <label for="sq3-1" class="ms-2 text-sm text-gray-900">1. Yes, at least once</label>
+                    <label for="sq3-1" class="ms-2 text-sm text-gray-900"><%= it.t1400 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="sq3-2" type="radio" value="0" name="sq3" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
-                    <label for="sq3-2" class="ms-2 text-sm text-gray-900">0. No</label>
+                    <label for="sq3-2" class="ms-2 text-sm text-gray-900"><%= it.t1401 %></label>
                 </div>
             </div>
         </div>
 
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
             <div>
-                SQ4. In the past six months, did the child make any complaint/notification related to the social service they are admitted in (including about the relationship
-                with carers or colleagues)?
+                <%= it.t1402 %>. <%= it.t1403 %>
             </div>
             <div class="col-span-1 flex items-center gap-4">
                 <div class="flex items-center">
                     <input id="sq4-1" type="radio" value="1" name="sq4" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
-                    <label for="sq4-1" class="ms-2 text-sm text-gray-900">1. Yes, at least once</label>
+                    <label for="sq4-1" class="ms-2 text-sm text-gray-900"><%= it.t1404 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="sq4-2" type="radio" value="0" name="sq4" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
-                    <label for="sq4-2" class="ms-2 text-sm text-gray-900">0. No</label>
+                    <label for="sq4-2" class="ms-2 text-sm text-gray-900"><%= it.t1405 %></label>
                 </div>
             </div>
         </div>
 
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
             <div>
-                SQ5. In the past six months, did the child benefit from independent living activities?
-                <small class="my-2 block italic text-red-500">Independent living activities include tasks such as food preparation and serving, cleaning, using the washing
-                    machine, ironing or arranging clothes, going shopping, being able to use money and manage a budget, etc.</small>
+                <%= it.t1407 %>. <%= it.t1408 %>
+                <small class="my-2 block italic text-red-500"><%= it.t1409 %></small>
             </div>
             <div class="col-span-1 flex items-center gap-4">
                 <div class="flex items-center">
                     <input id="sq5-1" type="radio" value="1" name="sq5" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
-                    <label for="sq5-1" class="ms-2 text-sm text-gray-900">1. Yes</label>
+                    <label for="sq5-1" class="ms-2 text-sm text-gray-900"><%= it.t1410 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="sq5-2" type="radio" value="0" name="sq5" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
-                    <label for="sq5-2" class="ms-2 text-sm text-gray-900">0. No</label>
+                    <label for="sq5-2" class="ms-2 text-sm text-gray-900"><%= it.t1411 %></label>
                 </div>
             </div>
         </div>
 
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
             <div>
-                SQ6. Is there any document showing the child’s opinion on his/her separation from the family and the protection measure setting?
+                <%= it.t1412 %>. <%= it.t1413 %>
             </div>
             <div class="col-span-1 flex items-center gap-4">
                 <div class="flex items-center">
                     <input id="sq6-1" type="radio" value="1" name="sq6" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
-                    <label for="sq6-1" class="ms-2 text-sm text-gray-900">1. Yes</label>
+                    <label for="sq6-1" class="ms-2 text-sm text-gray-900"><%= it.t1414 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="sq6-2" type="radio" value="0" name="sq6" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
-                    <label for="sq6-2" class="ms-2 text-sm text-gray-900">0. No</label>
+                    <label for="sq6-2" class="ms-2 text-sm text-gray-900"><%= it.t1415 %></label>
                 </div>
             </div>
         </div>
 
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
             <div>
-                SQ7. Is there any record or document indicating the child’s meaningful participation to decision-making and consultation on aspects concerning them (e.g.,
-                preparation of the IPP, the service, education, health plan etc.)?
+                <%= it.t1416 %>. <%= it.t1417 %>
             </div>
             <div class="col-span-1 flex items-center gap-4">
                 <div class="flex items-center">
                     <input id="sq7-1" type="radio" value="1" name="sq7" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
-                    <label for="sq7-1" class="ms-2 text-sm text-gray-900">1. Yes</label>
+                    <label for="sq7-1" class="ms-2 text-sm text-gray-900"><%= it.t1418 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="sq7-2" type="radio" value="0" name="sq7" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
-                    <label for="sq7-2" class="ms-2 text-sm text-gray-900">0. No</label>
+                    <label for="sq7-2" class="ms-2 text-sm text-gray-900"><%= it.t1419 %></label>
                 </div>
             </div>
         </div>
 
-        <h2 class="mt-10 mb-4 text-2xl font-bold text-gray-700">15. THE CHILD’S RELATIONSHIP WITH THEIR FAMILY AND CHANCES FOR (RE)INTEGRATION IN A FAMILY ENVIRONMENT</h2>
+        <h2 class="mt-10 mb-4 text-2xl font-bold text-gray-700"><%= it.t1420 %></h2>
 
         <div class="grid grid-cols-2 gap-4 items-center mt-10">
             <div>
-                SK1. In the past six months, has the specialist who monitors the case or other Makhala/district level specialist paid a home visit and talked face-to-face with
-                this child’s parents, grandparents, aunts or extended family?
+                <%= it.t1421 %>. <%= it.t1422 %>
             </div>
             <div class="col-span-1 flex flex-col gap-2">
                 <div class="flex items-center">
                     <input id="sk1-1" type="radio" value="-7" name="sk1" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
-                    <label for="sk1-1" class="ms-2 text-sm text-gray-900">- 7. The child has no family</label>
+                    <label for="sk1-1" class="ms-2 text-sm text-gray-900"><%= it.t1423 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="sk1-2" type="radio" value="0" name="sk1" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
-                    <label for="sk1-2" class="ms-2 text-sm text-gray-900">0. No</label>
+                    <label for="sk1-2" class="ms-2 text-sm text-gray-900"><%= it.t1424 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="sk1-3" type="radio" value="1" name="sk1" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
-                    <label for="sk1-3" class="ms-2 text-sm text-gray-900">1. Yes, at least once</label>
+                    <label for="sk1-3" class="ms-2 text-sm text-gray-900"><%= it.t1425 %></label>
                 </div>
             </div>
         </div>
 
         <div class="grid grid-cols-2 gap-4 items-center mt-10">
             <div>
-                SK2. In the past six months, has the child visited or has been visited by the parents or another adult family member?
+                <%= it.t1426 %>. <%= it.t1427 %>
             </div>
             <div class="col-span-1 flex flex-col gap-2">
                 <div class="flex items-center">
                     <input id="sk2-1" type="radio" value="-7" name="sk2" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
-                    <label for="sk2-1" class="ms-2 text-sm text-gray-900">- 7. The child has no family</label>
+                    <label for="sk2-1" class="ms-2 text-sm text-gray-900"><%= it.t1428 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="sk2-2" type="radio" value="2" name="sk2" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
-                    <label for="sk2-2" class="ms-2 text-sm text-gray-900">2. Yes, more than once</label>
+                    <label for="sk2-2" class="ms-2 text-sm text-gray-900"><%= it.t1429 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="sk2-3" type="radio" value="1" name="sk2" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
-                    <label for="sk2-3" class="ms-2 text-sm text-gray-900">1. Yes</label>
+                    <label for="sk2-3" class="ms-2 text-sm text-gray-900"><%= it.t1430 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="sk2-4" type="radio" value="0" name="sk2" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
-                    <label for="sk2-4" class="ms-2 text-sm text-gray-900">0. No</label>
+                    <label for="sk2-4" class="ms-2 text-sm text-gray-900"><%= it.t1431 %></label>
                 </div>
             </div>
         </div>
 
         <div class="grid grid-cols-2 gap-4 items-center mt-10">
             <div>
-                SK3. Does the child have brothers and/or sisters in the child care system? If yes, how many brothers and how many sisters?
+                <%= it.t1432 %>. <%= it.t1433 %>
             </div>
             <div class="col-span-1 flex flex-col gap-2">
                 <div class="flex items-center">
                     <input id="sk3-1" type="radio" value="1" name="sk3" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
-                    <label for="sk3-1" class="ms-2 text-sm text-gray-900">1. Yes, brothers</label>
+                    <label for="sk3-1" class="ms-2 text-sm text-gray-900"><%= it.t1434 %></label>
                 </div>
                 <input type="text" id="sk3_1" name="sk3_1" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
                 <div class="flex items-center">
                     <input id="sk3-2" type="radio" value="2" name="sk3" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
-                    <label for="sk3-2" class="ms-2 text-sm text-gray-900">2. Yes, sisters</label>
+                    <label for="sk3-2" class="ms-2 text-sm text-gray-900"><%= it.t1435 %></label>
                 </div>
                 <input type="text" id="sk3_2" name="sk3_2" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
                 <div class="flex items-center">
                     <input id="sk3-3" type="radio" value="3" name="sk3" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
-                    <label for="sk3-3" class="ms-2 text-sm text-gray-900">3. Neither brothers, nor sisters</label>
+                    <label for="sk3-3" class="ms-2 text-sm text-gray-900"><%= it.t1436 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="sk3-4" type="radio" value="9" name="sk3" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
-                    <label for="sk3-4" class="ms-2 text-sm text-gray-900">9. Unspecified/Unknown </label>
+                    <label for="sk3-4" class="ms-2 text-sm text-gray-900"><%= it.t1437 %></label>
                 </div>
             </div>
         </div>
 
         <div class="grid grid-cols-2 gap-4 items-center mt-10">
             <div>
-                SK4. Are one or more of these siblings living in the same service as the child?
+                <%= it.t1439 %>. <%= it.t1440 %>
             </div>
             <div class="col-span-1 flex items-center gap-4">
                 <div class="flex items-center">
                     <input id="sk4-1" type="radio" value="1" name="sk4" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
-                    <label for="sk4-1" class="ms-2 text-sm text-gray-900">1. Yes</label>
+                    <label for="sk4-1" class="ms-2 text-sm text-gray-900"><%= it.t1441 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="sk4-2" type="radio" value="2" name="sk4" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
-                    <label for="sk4-2" class="ms-2 text-sm text-gray-900">2. No</label>
+                    <label for="sk4-2" class="ms-2 text-sm text-gray-900"><%= it.t1442 %></label>
                 </div>
             </div>
         </div>
 
         <div class="grid grid-cols-2 gap-4 items-center mt-10">
             <div>
-                SK5. Is there any information available regarding how the child’s relationship with their siblings who are living in different services, is maintained or
-                facilitated?
+                <%= it.t1443 %>. <%= it.t1444 %>
             </div>
             <div class="col-span-1 flex flex-col gap-2">
                 <div class="flex items-center">
                     <input id="sk5-1" type="radio" value="-7" name="sk5" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
-                    <label for="sk5-1" class="ms-2 text-sm text-gray-900">-7. The child has no siblings in other services</label>
+                    <label for="sk5-1" class="ms-2 text-sm text-gray-900"><%= it.t1445 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="sk5-2" type="radio" value="0" name="sk5" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
-                    <label for="sk5-2" class="ms-2 text-sm text-gray-900">0. No</label>
+                    <label for="sk5-2" class="ms-2 text-sm text-gray-900"><%= it.t1446 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="sk5-3" type="radio" value="1" name="sk5" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
-                    <label for="sk5-3" class="ms-2 text-sm text-gray-900">1. Yes</label>
+                    <label for="sk5-3" class="ms-2 text-sm text-gray-900"><%= it.t1447 %></label>
                 </div>
             </div>
         </div>
 
         <div class="grid grid-cols-2 gap-4 items-center mt-10">
             <div>
-                SK6. In the past six months, did the child meet with siblings?
+                <%= it.t1448 %>. <%= it.t1449 %>
             </div>
             <div class="col-span-1 flex flex-col gap-2">
                 <div class="flex items-center">
                     <input id="sk6-1" type="radio" value="-7" name="sk6" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
-                    <label for="sk6-1" class="ms-2 text-sm text-gray-900">- 7. The child lives together with their siblings or very close to them</label>
+                    <label for="sk6-1" class="ms-2 text-sm text-gray-900"><%= it.t1450 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="sk6-2" type="radio" value="0" name="sk6" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
-                    <label for="sk6-2" class="ms-2 text-sm text-gray-900">0. No</label>
+                    <label for="sk6-2" class="ms-2 text-sm text-gray-900"><%= it.t1451 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="sk6-3" type="radio" value="1" name="sk6" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
-                    <label for="sk6-3" class="ms-2 text-sm text-gray-900">1. Yes, at least once</label>
+                    <label for="sk6-3" class="ms-2 text-sm text-gray-900"><%= it.t1452 %></label>
                 </div>
             </div>
         </div>
 
         <div class="grid grid-cols-2 gap-4 items-center mt-10">
             <div>
-                SK7. Since the child’s admission into the system, living conditions of the origin family/mother/father/caregiver have…
+                <%= it.t1453 %>. <%= it.t1454 %>
             </div>
             <div class="col-span-1 flex flex-col gap-2">
                 <div class="flex items-center">
                     <input id="sk7-1" type="radio" value="1" name="sk7" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
-                    <label for="sk7-1" class="ms-2 text-sm text-gray-900">1. Worsened</label>
+                    <label for="sk7-1" class="ms-2 text-sm text-gray-900"><%= it.t1455 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="sk7-2" type="radio" value="2" name="sk7" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
-                    <label for="sk7-2" class="ms-2 text-sm text-gray-900">2. Remained as they were at the time of the child’s admission</label>
+                    <label for="sk7-2" class="ms-2 text-sm text-gray-900"><%= it.t1456 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="sk7-3" type="radio" value="3" name="sk7" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
-                    <label for="sk7-3" class="ms-2 text-sm text-gray-900">3. Improved</label>
+                    <label for="sk7-3" class="ms-2 text-sm text-gray-900"><%= it.t1457 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="sk7-4" type="radio" value="9" name="sk7" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
-                    <label for="sk7-4" class="ms-2 text-sm text-gray-900">9. No information</label>
+                    <label for="sk7-4" class="ms-2 text-sm text-gray-900"><%= it.t1458 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="sk7-5" type="radio" value="-7" name="sk7" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
-                    <label for="sk7-5" class="ms-2 text-sm text-gray-900">- 7. The child has no family</label>
+                    <label for="sk7-5" class="ms-2 text-sm text-gray-900"><%= it.t1459 %></label>
                 </div>
             </div>
         </div>
 
         <div class="grid grid-cols-2 gap-4 items-center mt-10">
             <div>
-                SK8. Has a list of relatives from the extended family (aunts, uncles, grandparents, cousins etc) been identified for the child?
+                <%= it.t1460 %>. <%= it.t1461 %>
             </div>
             <div class="col-span-1 flex items-center gap-4">
                 <div class="flex items-center">
                     <input id="sk8-1" type="radio" value="1" name="sk8" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
-                    <label for="sk8-1" class="ms-2 text-sm text-gray-900">1. Yes</label>
+                    <label for="sk8-1" class="ms-2 text-sm text-gray-900"><%= it.t1462 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="sk8-2" type="radio" value="2" name="sk8" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
-                    <label for="sk8-2" class="ms-2 text-sm text-gray-900">2. No</label>
+                    <label for="sk8-2" class="ms-2 text-sm text-gray-900"><%= it.t1463 %></label>
                 </div>
             </div>
         </div>
 
         <div class="grid grid-cols-2 gap-4 items-center mt-10">
             <div>
-                SK9. Does the child have an identified family (with names and address) engaged in working towards a possible (re)integration?
+                <%= it.t1464 %>. <%= it.t1465 %>
             </div>
             <div class="col-span-1 flex flex-col gap-2">
                 <div class="flex items-center">
                     <input id="sk9-1" type="radio" value="1" name="sk9" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
-                    <label for="sk9-1" class="ms-2 text-sm text-gray-900">1. Yes, one or both parents</label>
+                    <label for="sk9-1" class="ms-2 text-sm text-gray-900"><%= it.t1466 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="sk9-2" type="radio" value="2" name="sk9" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
-                    <label for="sk9-2" class="ms-2 text-sm text-gray-900">2. Yes, relatives up to the 4th degree</label>
+                    <label for="sk9-2" class="ms-2 text-sm text-gray-900"><%= it.t1467 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="sk9-3" type="radio" value="3" name="sk9" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
-                    <label for="sk9-3" class="ms-2 text-sm text-gray-900">3. Yes, another family</label>
+                    <label for="sk9-3" class="ms-2 text-sm text-gray-900"><%= it.t1468 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="sk9-4" type="radio" value="4" name="sk9" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
-                    <label for="sk9-4" class="ms-2 text-sm text-gray-900">4. No</label>
+                    <label for="sk9-4" class="ms-2 text-sm text-gray-900"><%= it.t1469 %></label>
                 </div>
             </div>
         </div>
 
-        <p class="mt-10">SK10. Is there an assessment provided by the specialist who monitors the case/Makhala social worker or the person in charge of implementing the IPP
-            regarding the actual chances for the child’s (re)integration...</p>
+        <p class="mt-10"><%= it.t1470 %>. <%= it.t1471 %></p>
         <div class="grid grid-cols-2 gap-4 items-center mt-10">
             <div class="ml-3">
-                a. With one or both parents?
+                <%= it.t1472 %>
             </div>
             <div class="col-span-1 flex items-center gap-4">
                 <div class="flex items-center">
                     <input id="sk10a-1" type="radio" value="1" name="sk10a" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
-                    <label for="sk10a-1" class="ms-2 text-sm text-gray-900">1. Yes, there is an assessment</label>
+                    <label for="sk10a-1" class="ms-2 text-sm text-gray-900"><%= it.t1473 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="sk10a-2" type="radio" value="0" name="sk10a" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
-                    <label for="sk10a-2" class="ms-2 text-sm text-gray-900">0. It does not exist</label>
+                    <label for="sk10a-2" class="ms-2 text-sm text-gray-900"><%= it.t1474 %></label>
                 </div>
             </div>
         </div>
         <div class="grid grid-cols-2 gap-4 items-center mt-10">
             <div class="ml-3">
-                b. With relatives up to the 4th degree?
+                <%= it.t1475 %>
             </div>
             <div class="col-span-1 flex items-center gap-4">
                 <div class="flex items-center">
                     <input id="sk10b-1" type="radio" value="1" name="sk10b" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
-                    <label for="sk10b-1" class="ms-2 text-sm text-gray-900">1. Yes, there is an assessment</label>
+                    <label for="sk10b-1" class="ms-2 text-sm text-gray-900"><%= it.t1476 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="sk10b-2" type="radio" value="0" name="sk10b" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
-                    <label for="sk10b-2" class="ms-2 text-sm text-gray-900">0. It does not exist</label>
+                    <label for="sk10b-2" class="ms-2 text-sm text-gray-900"><%= it.t1477 %></label>
                 </div>
             </div>
         </div>
         <div class="grid grid-cols-2 gap-4 items-center mt-10">
             <div class="ml-3">
-                c. With another family?
+                <%= it.t1478 %>
             </div>
             <div class="col-span-1 flex items-center gap-4">
                 <div class="flex items-center">
                     <input id="sk10c-1" type="radio" value="1" name="sk10c" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
-                    <label for="sk10c-1" class="ms-2 text-sm text-gray-900">1. Yes, there is an assessment</label>
+                    <label for="sk10c-1" class="ms-2 text-sm text-gray-900"><%= it.t1479 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="sk10c-2" type="radio" value="0" name="sk10c" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
-                    <label for="sk10c-2" class="ms-2 text-sm text-gray-900">0. It does not exist</label>
+                    <label for="sk10c-2" class="ms-2 text-sm text-gray-900"><%= it.t1480 %></label>
                 </div>
             </div>
         </div>
 
         <div class="grid grid-cols-2 gap-4 items-center mt-10">
             <div>
-                SK11. Does the child have an identified family (with names and address) engaged in working towards a possible adoption?
+                <%= it.t1481 %>. <%= it.t1482 %>
             </div>
             <div class="col-span-1 flex items-center gap-4">
                 <div class="flex items-center">
                     <input id="sk11-1" type="radio" value="1" name="sk11" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
-                    <label for="sk11-1" class="ms-2 text-sm text-gray-900">1. Yes</label>
+                    <label for="sk11-1" class="ms-2 text-sm text-gray-900"><%= it.t1483 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="sk11-2" type="radio" value="2" name="sk11" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
-                    <label for="sk11-2" class="ms-2 text-sm text-gray-900">2. No</label>
+                    <label for="sk11-2" class="ms-2 text-sm text-gray-900"><%= it.t1484 %></label>
                 </div>
             </div>
         </div>
-
 
     </form>
 </body>
