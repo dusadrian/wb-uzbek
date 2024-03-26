@@ -2,7 +2,7 @@ process.env.NODE_ENV = "development";
 // Set env mode
 // process.env.NODE_ENV = 'production';
 
-import { app, BrowserWindow, dialog, ipcMain } from "electron";
+import { app, BrowserWindow, dialog, ipcMain, ipcRenderer } from "electron";
 import * as path from "path";
 import { db, database } from "./database/database";
 import * as DI from "../src/interfaces/database";
@@ -170,6 +170,9 @@ ipcMain.on("changeWindow", (event, args) => {
         case "instruments":
             goToInstrument(args.instrument, args.id);
             break;
+        case "cpis":
+            goToCPISList();
+            break;
         default:
             mainWindow.loadURL("file://" + newPage);
     }
@@ -230,7 +233,15 @@ const goToDashboard = () => {
     });
 
 }
-
+const goToCPISList = () => {
+    const newPage = path.join(__dirname, "../src/pages/instruments/01_cpis.html");
+    mainWindow.loadURL("file://" + newPage);
+};
+ipcMain.on('getChildren', (event, args) => {
+    database.cpisList(db).then((result) => {
+        mainWindow.webContents.send("children", result);
+    });
+});
 const goToInstrument = (instrument: string, id: string) => {
 
     switch (instrument) {
@@ -375,11 +386,31 @@ const goToCPIS = (id: string) => {
     if (id) {
         mainWindow.webContents.once("did-finish-load", () => {
             database.instrumentGet(id, 'cpis', db).then((result) => {
-                mainWindow.webContents.send("cpis", result);
+                mainWindow.webContents.send("instrumentDataReady", {
+                    id: id,
+                    questions: result,
+                });
             });
+        });
+    } else {
+        mainWindow.webContents.once("did-finish-load", () => {
+            mainWindow.webContents.send("instrumentDataReady", {});
         });
     }
 }
+
+// save instrument
+ipcMain.on('saveInstrument', (event, args) => {
+    console.log(args);
+    database.instrumentSave(args, db).then(() => {
+        dialog.showMessageBox(mainWindow, {
+            type: 'info',
+            message: i18n.__('Instrument saved.'),
+        }).then(() => {
+            goToCPISList();
+        });
+    });
+});
 
 // (function test() {
 //     database.instrumentSave({

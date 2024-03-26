@@ -22,8 +22,6 @@
 	"Instrument error.": "Ошибка прибора.",
 	"User added.": "Пользователь добавлен.",
 	"Institution": " ========================================== ",
-
-
 	"t_service_level_view_data_collectors": "Просмотр уровня обслуживания/Сборщики данных",
 	"t_service_level_questionnaires": "Анкеты уровня обслуживания",
 	"t_status": "Положение дел",
@@ -104,5 +102,8 @@
 	"t_position": "Позиция",
 	"t_profession": "Профессия",
 	"t_phone": "Телефон",
-	"t_edit_user": "Изменить пользователя"
+	"t_edit_user": "Изменить пользователя",
+	"t_cpis_list": "t_cpis_list",
+	"t_add_child": "t_add_child",
+	"t_pin": "t_pin"
 }

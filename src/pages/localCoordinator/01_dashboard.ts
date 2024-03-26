@@ -8,7 +8,7 @@ interface IObj {
 
 export const localCoordinator = {
     init: async () => {
-        
+
         const viewEdit_QMR = (<HTMLButtonElement>document.getElementById('viewEdit_QMR'))
         if (viewEdit_QMR !== null) {
             viewEdit_QMR.addEventListener('click', () => {
@@ -42,15 +42,9 @@ export const localCoordinator = {
         const viewEdit_CPIS = (<HTMLButtonElement>document.getElementById('viewEdit_CPIS'));
         if (viewEdit_CPIS !== null) {
             viewEdit_CPIS.addEventListener('click', () => {
-                const obj: IObj = {
-                    'name': 'instruments',
-                    'instrument': 'CPIS'
-                }
-                const instId = viewEdit_CPIS.dataset.id;
-                if (instId && instId !== 'null') {
-                    obj['id'] = instId;
-                }
-                ipcRenderer.send('changeWindow', obj);
+                ipcRenderer.send('changeWindow', {
+                    'name': 'cpis',
+                });
             });
         }
 

@@ -16,8 +16,6 @@ export const header = {
         const headerDiv = document.getElementById('header') as HTMLDivElement;
         if (headerDiv) {
             headerDiv.insertAdjacentHTML("beforeend", html);
-            console.log('Header found');
-
         } else {
             console.error('Header div not found');
         }

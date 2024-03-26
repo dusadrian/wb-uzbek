@@ -93,6 +93,9 @@ window.addEventListener("DOMContentLoaded", () => {
         case 'instruments/04_qmr_ru.html':
             instrumentQMR();
             break;
+        case 'instruments/01_cpis.html':
+            CPIS();
+            break;
         case 'instruments/01_cpis_en.html':
         case 'instruments/01_cpis_uz.html':
         case 'instruments/01_cpis_ru.html':
@@ -333,14 +336,27 @@ const instrumentDSEE = () => {
         console.log(error);
     }));
 };
-const instrumentCPIS = () => {
+const CPIS = () => {
 
     topMenu('localCoordinator/01_dashboard');
 
+    translatePage();
     const importFile = async () => {
         return await import("./pages/instruments/01_cpis");
     };
-    importFile().then(result => result.instrument.init().catch(error => {
+    importFile().then(result => result.cpis.init().catch(error => {
+        console.log(error);
+    }));
+};
+const instrumentCPIS = () => {
+
+    topMenu('instruments/01_cpis');
+
+    translatePage();
+    const importFile = async () => {
+        return await import("./pages/instruments/01_cpis_instrument");
+    };
+    importFile().then(result => result.instrument1.init().catch(error => {
         console.log(error);
     }));
 };

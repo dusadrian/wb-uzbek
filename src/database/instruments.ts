@@ -120,7 +120,7 @@ export const get = async (id: string, table: string, db: DuckDB.Database) => {
 
 export const getExisting = async (db: DuckDB.Database) => {
 
-    const connection = new Promise<{qmr: number | null, dsee: number | null}>((resolve) => {
+    const connection = new Promise<{ qmr: number | null, dsee: number | null }>((resolve) => {
         const sql = `SELECT (SELECT id FROM instrument_qmr) AS qmr, (SELECT id FROM instrument_dsee) AS dsee;`;
         db.all(sql, (error, result) => {
             if (error) {
@@ -131,6 +131,32 @@ export const getExisting = async (db: DuckDB.Database) => {
                 qmr: result[0].qmr,
                 dsee: result[0].dsee
             });
+        });
+    });
+    return await connection;
+}
+
+
+export const cpisList = async (db: DuckDB.Database) => {
+    const connection = new Promise<Array<Instrument>>((resolve) => {
+
+        const sql = `
+        SELECT c.id,
+            c.uuid,
+            MAX(CASE WHEN variable = 'pin' THEN value ELSE NULL END) pin,
+            MAX(CASE WHEN variable = 'lk1a' THEN value ELSE NULL END) first_name,
+            MAX(CASE WHEN variable = 'lk1b' THEN value ELSE NULL END) patronymics,
+            MAX(CASE WHEN variable = 'lk1c' THEN value ELSE NULL END) last_name,
+        FROM instrument_cpis AS c
+        LEFT JOIN values_cpis AS v ON v.instrument_id = c.id
+        GROUP BY c.id, c.uuid;`;
+
+        db.all(sql, (error, result) => {
+            if (error) {
+                console.log("===== Error get instrument =====");
+                console.log(error);
+            }
+            resolve(result as Array<Instrument>);
         });
     });
     return await connection;

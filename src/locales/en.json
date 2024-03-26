@@ -22,8 +22,6 @@
 	"Instrument error.": "Instrument error.",
 	"User added.": "User added.",
 	"Institution": " ========================================== ",
-
-
 	"t_service_level_view_data_collectors": "Service level view / Data collectors",
 	"t_service_level_questionnaires": "Service level questionnaires",
 	"t_status": "Status",
@@ -104,5 +102,11 @@
 	"t_position": "Position",
 	"t_profession": "Profession",
 	"t_phone": "Phone",
-	"t_edit_user": "Edit user"
+	"t_edit_user": "Edit user",
+	"t_cpis_list": "CPIS list",
+	"t_add_child": "Add child",
+	"t_pin": "PIN",
+	"Instrument saved.": "Instrument saved.",
+	"Completati corect toate campurile!": "Completati corect toate campurile!",
+	"The following fields are mandatory: PIN, LK1a, LK1b, LK1c!": "The following fields are mandatory: PIN, LK1a, LK1b, LK1c!"
 }
