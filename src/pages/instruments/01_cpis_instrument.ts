@@ -81,7 +81,13 @@ export const instrument1 = {
 
                 const option2 = document.createElement("option");
                 option2.value = "-9";
-                option2.text = "---";
+                if (lang == "uz") {
+                    option2.text = "--- tanlang ---";
+                } else if (lang == "ru") {
+                    option2.text = "--- выбирать ---";
+                } else {
+                    option2.text = "--- choose ---";
+                }
                 atu.appendChild(option2);
 
                 for (let i = 0; i < diskeys.length; i++) {
