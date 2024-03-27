@@ -69,7 +69,14 @@ export const instrument1 = {
                 atu.innerHTML = "";
                 const option = document.createElement("option");
                 option.value = "-9";
-                option.text = "---";
+                if (lang == "uz") {
+                    option.text = "--- tanlang ---";
+                } else if (lang == "ru") {
+                    option.text = "--- выбирать ---";
+                } else {
+                    option.text = "--- choose ---";
+                }
+
                 district.appendChild(option);
 
                 const option2 = document.createElement("option");
@@ -102,7 +109,13 @@ export const instrument1 = {
                 atu.innerHTML = "";
                 const option = document.createElement("option");
                 option.value = "-9";
-                option.text = "---";
+                if (lang == "uz") {
+                    option.text = "--- tanlang ---";
+                } else if (lang == "ru") {
+                    option.text = "--- выбирать ---";
+                } else {
+                    option.text = "--- choose ---";
+                }
                 atu.appendChild(option);
                 for (let i = 0; i < atukeys.length; i++) {
                     const option = document.createElement("option");
