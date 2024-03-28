@@ -189,6 +189,283 @@
                 </div>
             </div>
         </div>
+
+
+        <h2 class="mt-10 mb-4 text-2xl font-bold text-gray-700"><%= it.t82 %></h2>
+
+        <p class="mt-6"><%= it.t83 %> <%= it.t84 %></p>
+
+        <div class="ml-4">
+            <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                <div class="col-span-1"><%= it.t85 %></div>
+                <div class="col-span-1 flex gap-4">
+                    <div class="flex items-center">
+                        <input id="la1a-1" type="radio" value="1" name="la1a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <label for="la1a-1" class="ms-2 text-sm text-gray-900"><%= it.t86 %></label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="la1a-2" type="radio" value="2" name="la1a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <label for="la1a-2" class="ms-2 text-sm text-gray-900"><%= it.t87 %></label>
+                    </div>
+                </div>
+            </div>
+            <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                <div class="col-span-1"><%= it.t88 %></div>
+                <div class="col-span-1 flex gap-4">
+                    <div class="flex items-center">
+                        <input id="la1b-1" type="radio" value="1" name="la1b" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <label for="la1b-1" class="ms-2 text-sm text-gray-900"><%= it.t89 %></label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="la1b-2" type="radio" value="2" name="la1b" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <label for="la1b-2" class="ms-2 text-sm text-gray-900"><%= it.t90 %></label>
+                    </div>
+                </div>
+            </div>
+            <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                <div class="col-span-1"><%= it.t91 %></div>
+                <div class="col-span-1 flex gap-4">
+                    <div class="flex items-center">
+                        <input id="la1c-1" type="radio" value="1" name="la1c" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <label for="la1c-1" class="ms-2 text-sm text-gray-900"><%= it.t92 %></label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="la1c-2" type="radio" value="2" name="la1c" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <label for="la1c-2" class="ms-2 text-sm text-gray-900"><%= it.t93 %></label>
+                    </div>
+                </div>
+            </div>
+            <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                <div class="col-span-1"><%= it.t94 %></div>
+                <div class="col-span-1 flex gap-4">
+                    <div class="flex items-center">
+                        <input id="la1d-1" type="radio" value="1" name="la1d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <label for="la1d-1" class="ms-2 text-sm text-gray-900"><%= it.t95 %></label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="la1d-2" type="radio" value="2" name="la1d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <label for="la1d-2" class="ms-2 text-sm text-gray-900"><%= it.t96 %></label>
+                    </div>
+                </div>
+            </div>
+            <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                <div class="col-span-1"><%= it.t97 %></div>
+                <div class="col-span-1 flex gap-4">
+                    <div class="flex items-center">
+                        <input id="la1e-1" type="radio" value="1" name="la1e" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <label for="la1e-1" class="ms-2 text-sm text-gray-900"><%= it.t98 %></label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="la1e-2" type="radio" value="2" name="la1e" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <label for="la1e-2" class="ms-2 text-sm text-gray-900"><%= it.t99 %></label>
+                    </div>
+                </div>
+            </div>
+            <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                <div class="col-span-1"><%= it.t100 %></div>
+                <div class="col-span-1 flex gap-4">
+                    <div class="flex items-center">
+                        <input id="la1f-1" type="radio" value="1" name="la1f" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <label for="la1f-1" class="ms-2 text-sm text-gray-900"><%= it.t101 %></label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="la1f-2" type="radio" value="2" name="la1f" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <label for="la1f-2" class="ms-2 text-sm text-gray-900"><%= it.t102 %></label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <p class="mt-6"><%= it.t103 %>. <%= it.t104 %></p>
+        <p class="my-2 italic text-sm"><%= it.t105 %></p>
+        <div class="ml-4">
+            <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                <div class="col-span-1"><%= it.t106 %></div>
+                <div class="col-span-1 flex items-center gap-4">
+                    <input type="text" id="la2a" name="la2a" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                    <span><%= it.t107 %></span>
+                </div>
+            </div>
+            <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                <div class="col-span-1"><%= it.t108 %></div>
+                <div class="col-span-1 flex items-center gap-4">
+                    <input type="text" id="la2b" name="la2b" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                    <span><%= it.t109 %></span>
+                </div>
+            </div>
+            <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                <div class="col-span-1"><%= it.t110 %></div>
+                <div class="col-span-1 flex items-center gap-4">
+                    <input type="text" id="la2c" name="la2c" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                    <span><%= it.t111 %></span>
+                </div>
+            </div>
+            <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                <div class="col-span-1"><%= it.t112 %></div>
+                <div class="col-span-1 flex items-center gap-4">
+                    <input type="text" id="la2d" name="la2d" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                    <span><%= it.t113 %></span>
+                </div>
+            </div>
+            <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                <div class="col-span-1"><%= it.t114 %></div>
+                <div class="col-span-1 flex items-center gap-4">
+                    <input type="text" id="la2e" name="la2e" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                    <span><%= it.t115 %></span>
+                </div>
+            </div>
+            <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                <div class="col-span-1"><%= it.t116 %></div>
+                <div class="col-span-1 flex items-center gap-4">
+                    <input type="text" id="la2f" name="la2f" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                    <span><%= it.t117 %></span>
+                </div>
+            </div>
+            <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                <div class="col-span-1"><%= it.t118 %></div>
+                <div class="col-span-1 flex items-center gap-4">
+                    <input type="text" id="la2g" name="la2g" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                    <span><%= it.t119 %></span>
+                </div>
+            </div>
+            <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                <div class="col-span-1"><%= it.t120 %></div>
+                <div class="col-span-1 flex items-center gap-4">
+                    <input type="text" id="la2h" name="la2h" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                    <span><%= it.t121 %></span>
+                </div>
+            </div>
+            <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                <div class="col-span-1"><%= it.t122 %></div>
+                <div class="col-span-1 flex items-center gap-4">
+                    <input type="text" id="la2i" name="la2i" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                    <span><%= it.t123 %></span>
+                </div>
+            </div>
+            <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                <div class="col-span-1"><%= it.t124 %></div>
+                <div class="col-span-1 flex items-center gap-4">
+                    <input type="text" id="la2j" name="la2j" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                    <span><%= it.t125 %></span>
+                </div>
+            </div>
+            <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                <div class="col-span-1"><%= it.t126 %></div>
+                <div class="col-span-1 flex items-center gap-4">
+                    <input type="text" id="la2k" name="la2k" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                    <span><%= it.t127 %></span>
+                </div>
+            </div>
+            <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                <div class="col-span-1"><%= it.t128 %></div>
+                <div class="col-span-1 flex items-center gap-4">
+                    <input type="text" id="la2l" name="la2l" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                    <span><%= it.t129 %></span>
+                </div>
+            </div>
+            <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                <div class="col-span-1"><%= it.t130 %></div>
+                <div class="col-span-1 flex items-center gap-4">
+                    <input type="text" id="la2m" name="la2m" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                    <span><%= it.t131 %></span>
+                </div>
+            </div>
+            <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                <div class="col-span-1"><%= it.t132 %></div>
+                <div class="col-span-1 flex items-center gap-4">
+                    <input type="text" id="la2n" name="la2n" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                    <span><%= it.t133 %></span>
+                </div>
+            </div>
+        </div>
+        <div class="grid grid-cols-2 gap-4 items-center mt-6">
+            <div class="col-span-1"><%= it.t134 %>. <%= it.t135 %></div>
+            <div class="col-span-1 flex gap-4">
+                <div class="flex items-center">
+                    <input id="la3-1" type="radio" value="1" name="la3" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="la3-1" class="ms-2 text-sm text-gray-900"><%= it.t136 %></label>
+                </div>
+                <div class="flex items-center">
+                    <input id="la3-2" type="radio" value="2" name="la3" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="la3-2" class="ms-2 text-sm text-gray-900"><%= it.t137 %></label>
+                </div>
+            </div>
+        </div>
+        <div class="grid grid-cols-2 gap-4 items-center mt-6">
+            <div class="col-span-1"><%= it.t138 %>. <%= it.t139 %></div>
+            <div class="col-span-1 flex flex-col gap-2">
+                <div class="flex items-center">
+                    <input id="la4-1" type="radio" value="1" name="la4" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="la4-1" class="ms-2 text-sm text-gray-900"><%= it.t140 %></label>
+                </div>
+                <div class="flex items-center">
+                    <input id="la4-2" type="radio" value="2" name="la4" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="la4-2" class="ms-2 text-sm text-gray-900"><%= it.t141 %></label>
+                </div>
+                <div class="flex items-center">
+                    <input id="la4-3" type="radio" value="3" name="la4" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="la4-3" class="ms-2 text-sm text-gray-900"><%= it.t142 %></label>
+                </div>
+                <div class="flex items-center">
+                    <input id="la4-4" type="radio" value="4" name="la4" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="la4-4" class="ms-2 text-sm text-gray-900"><%= it.t143 %></label>
+                </div>
+                <div class="flex items-center">
+                    <input id="la4-5" type="radio" value="5" name="la4" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="la4-5" class="ms-2 text-sm text-gray-900"><%= it.t144 %></label>
+                </div>
+            </div>
+        </div>
+
+        <p class="italic uppercase text-gray-400 mt-6"><%= it.t145 %></p>
+        <div class="grid grid-cols-2 gap-4 items-center mt-2">
+            <div class="col-span-1"><%= it.t146 %>. <%= it.t147 %></div>
+            <div class="col-span-1 flex items-center gap-4">
+                <input type="text" id="la5" name="la5" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                <span><%= it.t149 %></span>
+            </div>
+        </div>
+        <p class="italic text-gray-400 text-sm"><%= it.t148 %></p>
+
+        <p class="mt-6"><%= it.t150 %>. <%= it.t151 %></p>
+        <div class="ml-4">
+            <div class="grid grid-cols-2 gap-4 items-center mt-2">
+                <div class="col-span-1"><%= it.t152 %></div>
+                <div class="col-span-1 flex items-center gap-4">
+                    <input type="text" id="la6a" name="la6a" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                    <span><%= it.t153 %></span>
+                </div>
+            </div>
+            <div class="grid grid-cols-2 gap-4 items-center mt-2">
+                <div class="col-span-1"><%= it.t154 %></div>
+                <div class="col-span-1 flex items-center gap-4">
+                    <input type="text" id="la6b" name="la6b" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                    <span><%= it.t155 %></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 items-center mt-6">
+            <div class="col-span-1"><%= it.t156 %>. <%= it.t157 %></div>
+            <div class="col-span-1 flex items-center gap-4">
+                <input type="text" id="la7" name="la7" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                <span><%= it.t158 %></span>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 items-center mt-6">
+            <div class="col-span-1"><%= it.t159 %>. <%= it.t160 %></div>
+            <div class="col-span-1 flex items-center gap-4">
+                <input type="text" id="la8" name="la8" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                <span><%= it.t161 %></span>
+            </div>
+        </div>
+
+        <h2 class="mt-10 mb-4 text-2xl font-bold text-gray-700"><%= it.t162 %></h2>
+
+
+
+
     </form>
 </body>
 
