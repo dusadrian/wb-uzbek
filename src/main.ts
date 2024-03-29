@@ -2,10 +2,15 @@ process.env.NODE_ENV = "development";
 // Set env mode
 // process.env.NODE_ENV = 'production';
 
-import { app, BrowserWindow, dialog, ipcMain, ipcRenderer } from "electron";
+import { app, BrowserWindow, dialog, ipcMain } from "electron";
 import * as path from "path";
 import { db, database } from "./database/database";
 import * as DI from "../src/interfaces/database";
+import build_templates from "./libraries/build_templates";
+
+if (process.env.NODE_ENV === "development") {
+    build_templates();
+}
 
 // language
 import { I18n } from "i18n";
@@ -15,31 +20,6 @@ const i18n = new I18n({
     defaultLocale: 'en',
 });
 
-// translate pages
-import { Eta } from "eta"
-import { writeFileSync } from "original-fs";
-const etaObj = new Eta({ views: path.join(__dirname, "../src/templates") })
-
-import * as one_en from "./templates/4_UZ_ChildDI_Material_Resources_en.json";
-import * as one_ru from "./templates/4_UZ_ChildDI_Material_Resources_ru.json";
-import * as one_uz from "./templates/4_UZ_ChildDI_Material_Resources_uz.json";
-writeFileSync(path.join(__dirname, "../src/templates/4_UZ_ChildDI_Material_Resources_en.html"), etaObj.render("4_UZ_ChildDI_Material_Resources.eta", one_en))
-writeFileSync(path.join(__dirname, "../src/templates/4_UZ_ChildDI_Material_Resources_ru.html"), etaObj.render("4_UZ_ChildDI_Material_Resources.eta", one_ru))
-writeFileSync(path.join(__dirname, "../src/templates/4_UZ_ChildDI_Material_Resources_uz.html"), etaObj.render("4_UZ_ChildDI_Material_Resources.eta", one_uz))
-
-// import * as one_en from "./templates/1_UZ_ChildDI_Children_in_the_child_care_system_en.json";
-// import * as one_ru from "./templates/1_UZ_ChildDI_Children_in_the_child_care_system_ru.json";
-// import * as one_uz from "./templates/1_UZ_ChildDI_Children_in_the_child_care_system_uz.json";
-// writeFileSync(path.join(__dirname, "../src/templates/1_UZ_ChildDI_Children_in_the_child_care_system_en.html"), etaObj.render("1_UZ_ChildDI_Children_in_the_child_care_system.eta", one_en))
-// writeFileSync(path.join(__dirname, "../src/templates/1_UZ_ChildDI_Children_in_the_child_care_system_ru.html"), etaObj.render("1_UZ_ChildDI_Children_in_the_child_care_system.eta", one_ru))
-// writeFileSync(path.join(__dirname, "../src/templates/1_UZ_ChildDI_Children_in_the_child_care_system_uz.html"), etaObj.render("1_UZ_ChildDI_Children_in_the_child_care_system.eta", one_uz))
-
-// import * as six_en from "./templates/6_UZ_ChildDI_Entries_Exists_Sheet_en.json";
-// import * as six_ru from "./templates/6_UZ_ChildDI_Entries_Exists_Sheet_ru.json";
-// import * as six_uz from "./templates/6_UZ_ChildDI_Entries_Exists_Sheet_uz.json";
-// writeFileSync(path.join(__dirname, "../src/templates/6_UZ_ChildDI_Entries_Exists_Sheet_en.html"), etaObj.render("6_UZ_ChildDI_Entries_Exists_Sheet.eta", six_en))
-// writeFileSync(path.join(__dirname, "../src/templates/6_UZ_ChildDI_Entries_Exists_Sheet_ru.html"), etaObj.render("6_UZ_ChildDI_Entries_Exists_Sheet.eta", six_ru))
-// writeFileSync(path.join(__dirname, "../src/templates/6_UZ_ChildDI_Entries_Exists_Sheet_uz.html"), etaObj.render("6_UZ_ChildDI_Entries_Exists_Sheet.eta", six_uz))
 
 // import * as en from "./locales/en.json";
 
