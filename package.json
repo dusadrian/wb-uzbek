@@ -11,8 +11,8 @@
     "dist": "npm run build && electron-builder",
     "pack": "npm run build && electron-builder --dir"
   },
-  "author": "Emilian Adrian Hossu",
-  "license": "ISC",
+  "author": "World Bank",
+  "license": "UNLICENSED",
   "main": "./dist/main.js",
   "build": {
     "appId": "wb-uzbek",
@@ -21,24 +21,24 @@
       "output": "build/output"
     },
     "extraResources": [
-    {
-     "from": "src/database/uzbek.duckdb",
-     "to": "uzbek.duckdb"
-    },
-    {
-     "from": "src/assets/",
-     "to": "assets"
-    }
+      {
+        "from": "src/database/uzbek.duckdb",
+        "to": "uzbek.duckdb"
+      },
+      {
+        "from": "src/assets/",
+        "to": "assets"
+      }
     ],
     "win": {
-    "icon": "build/icon.png",
-    "legalTrademarks": "MIT Licence",
-    "target": {
-      "target": "dir",
-      "arch": [
-      "x64"
-      ]
-    }
+      "icon": "build/icon.png",
+      "legalTrademarks": "MIT Licence",
+      "target": {
+        "target": "dir",
+        "arch": [
+          "x64"
+        ]
+      }
     }
   },
   "devDependencies": {
@@ -59,7 +59,7 @@
     "datatables.net": "^2.0.0",
     "datatables.net-dt": "^2.0.0",
     "datatables.net-responsive-dt": "^3.0.0",
-    "duckdb": "^0.10.0",
+    "duckdb": "^0.10.1",
     "eta": "^3.2.0",
     "flatpickr": "^4.6.13",
     "i18n": "^0.15.1"
