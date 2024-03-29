@@ -1,0 +1,12 @@
+
+LK13a varsta copilului (la data rundei de monitorizare)
+CARE este data rundei?
+Trebuie sa fie setata de utilizatori, sau este predefinita?
+
+LK14d. City/Town/Village
+in regulile de validare apare ca trebuie inlocuit cu "Settlement"
+dar ambele LIPSESC din fisierul cu standard translations
+daca este o modificare ulterioara a chestionarului, trebuie stabilita o procedura de lucru
+in sensul ca NU se adauga nimic pana cand nu apare ca intrare separata si unica in traduceri
+
+La fel pentru LK14e. Type of settlement
