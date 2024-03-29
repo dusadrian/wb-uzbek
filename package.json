@@ -17,6 +17,8 @@
   "build": {
     "appId": "wb-uzbek",
     "productName": "CRM",
+    "nodeGypRebuild": false,
+    "npmRebuild": true,
     "directories": {
       "output": "build/output"
     },
