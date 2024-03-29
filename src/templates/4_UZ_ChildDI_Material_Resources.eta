@@ -463,6 +463,672 @@
 
         <h2 class="mt-10 mb-4 text-2xl font-bold text-gray-700"><%= it.t162 %></h2>
 
+        <div class="grid grid-cols-2 gap-4 items-center mt-6">
+            <div class="col-span-1"><%= it.t163 %>. <%= it.t164 %></div>
+            <div class="col-span-1 flex items-center gap-4">
+                <input type="text" id="af1" name="af1" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                <span><%= it.t166 %></span>
+            </div>
+        </div>
+        <p class="italic text-gray-400 text-sm"><%= it.t165 %></p>
+
+        <div class="grid grid-cols-2 gap-4 items-center mt-6">
+            <div class="col-span-1"><%= it.t167 %>. <%= it.t168 %></div>
+            <div class="col-span-1 flex flex-col gap-2">
+                <div class="flex items-center">
+                    <input id="af3-1" type="radio" value="1" name="af3" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="af3-1" class="ms-2 text-sm text-gray-900"><%= it.t169 %></label>
+                </div>
+                <div class="flex items-center">
+                    <input id="af3-2" type="radio" value="2" name="af3" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="af3-2" class="ms-2 text-sm text-gray-900"><%= it.t170 %></label>
+                </div>
+                <div class="flex items-center">
+                    <input id="af3-3" type="radio" value="3" name="af3" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="af3-3" class="ms-2 text-sm text-gray-900"><%= it.t171 %></label>
+                </div>
+            </div>
+        </div>
+
+        <p class="mt-6"><%= it.t172 %>. <%= it.t173 %></p>
+        <div class="ml-4">
+            <div class="grid grid-cols-2 gap-4 items-center mt-2">
+                <div class="col-span-1"><%= it.t174 %></div>
+                <div class="col-span-1 flex items-center gap-4">
+                    <input type="text" id="af4a" name="af4a" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                </div>
+            </div>
+            <div class="grid grid-cols-2 gap-4 items-center mt-2">
+                <div class="col-span-1"><%= it.t175 %></div>
+                <div class="col-span-1 flex items-center gap-4">
+                    <input type="text" id="af4b" name="af4b" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                </div>
+            </div>
+        </div>
+        <p class="mt-6"><%= it.t176 %>. <%= it.t177 %></p>
+        <table class="w-full mt-2" aria-label="<%= it.t176 %>. <%= it.t177 %>">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th><%= it.t178 %></th>
+                    <th><%= it.t179 %></th>
+                    <th><%= it.t180 %></th>
+                    <th><%= it.t181 %></th>
+                    <th><%= it.t182 %></th>
+                    <th><%= it.t183 %></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="py-1 px-2">1</td>
+                    <td class="p-1">
+                        <input type="text" id="af5_1_a" name="af5_1_a" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                    </td>
+                    <td class="p-1">
+                        <input type="text" id="af5_1_b" name="af5_1_b" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                    </td>
+                    <td class="p-1">
+                        <input type="text" id="af5_1_c" name="af5_1_c" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                    </td>
+                    <td class="p-1">
+                        <input type="text" id="af5_1_d" name="af5_1_d" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                    </td>
+                    <td class="p-1">
+                        <input type="text" id="af5_1_e" name="af5_1_e" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                    </td>
+                    <td class="p-1">
+                        <select id="af5_1_g" name="af5_1_g" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+                            <option value="-9">-- choose ---</option>
+                            <option value="1"><%= it.t186 %></option>
+                            <option value="2"><%= it.t187 %></option>
+                            <option value="3"><%= it.t188 %></option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="py-1 px-2">2</td>
+                    <td class="p-1">
+                        <input type="text" id="af5_2_a" name="af5_2_a" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                    </td>
+                    <td class="p-1">
+                        <input type="text" id="af5_2_b" name="af5_2_b" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                    </td>
+                    <td class="p-1">
+                        <input type="text" id="af5_2_c" name="af5_2_c" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                    </td>
+                    <td class="p-1">
+                        <input type="text" id="af5_2_d" name="af5_2_d" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                    </td>
+                    <td class="p-1">
+                        <input type="text" id="af5_2_e" name="af5_2_e" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                    </td>
+                    <td class="p-1">
+                        <select id="af5_2_g" name="af5_2_g" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+                            <option value="-9">-- choose ---</option>
+                            <option value="1"><%= it.t186 %></option>
+                            <option value="2"><%= it.t187 %></option>
+                            <option value="3"><%= it.t188 %></option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="py-1 px-2">3</td>
+                    <td class="p-1">
+                        <input type="text" id="af5_3_a" name="af5_3_a" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                    </td>
+                    <td class="p-1">
+                        <input type="text" id="af5_3_b" name="af5_3_b" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                    </td>
+                    <td class="p-1">
+                        <input type="text" id="af5_3_c" name="af5_3_c" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                    </td>
+                    <td class="p-1">
+                        <input type="text" id="af5_3_d" name="af5_3_d" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                    </td>
+                    <td class="p-1">
+                        <input type="text" id="af5_3_e" name="af5_3_e" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                    </td>
+                    <td class="p-1">
+                        <select id="af5_3_g" name="af5_3_g" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+                            <option value="-9">-- choose ---</option>
+                            <option value="1"><%= it.t186 %></option>
+                            <option value="2"><%= it.t187 %></option>
+                            <option value="3"><%= it.t188 %></option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="py-1 px-2">4</td>
+                    <td class="p-1">
+                        <input type="text" id="af5_4_a" name="af5_4_a" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                    </td>
+                    <td class="p-1">
+                        <input type="text" id="af5_4_b" name="af5_4_b" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                    </td>
+                    <td class="p-1">
+                        <input type="text" id="af5_4_c" name="af5_4_c" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                    </td>
+                    <td class="p-1">
+                        <input type="text" id="af5_4_d" name="af5_4_d" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                    </td>
+                    <td class="p-1">
+                        <input type="text" id="af5_4_e" name="af5_4_e" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                    </td>
+                    <td class="p-1">
+                        <select id="af5_4_g" name="af5_4_g" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+                            <option value="-9">-- choose ---</option>
+                            <option value="1"><%= it.t186 %></option>
+                            <option value="2"><%= it.t187 %></option>
+                            <option value="3"><%= it.t188 %></option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="py-1 px-2">5</td>
+                    <td class="p-1">
+                        <input type="text" id="af5_5_a" name="af5_5_a" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                    </td>
+                    <td class="p-1">
+                        <input type="text" id="af5_5_b" name="af5_5_b" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                    </td>
+                    <td class="p-1">
+                        <input type="text" id="af5_5_c" name="af5_5_c" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                    </td>
+                    <td class="p-1">
+                        <input type="text" id="af5_5_d" name="af5_5_d" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                    </td>
+                    <td class="p-1">
+                        <input type="text" id="af5_5_e" name="af5_5_e" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                    </td>
+                    <td class="p-1">
+                        <select id="af5_5_g" name="af5_5_g" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+                            <option value="-9">-- choose ---</option>
+                            <option value="1"><%= it.t186 %></option>
+                            <option value="2"><%= it.t187 %></option>
+                            <option value="3"><%= it.t188 %></option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="py-1 px-2">6</td>
+                    <td class="p-1">
+                        <input type="text" id="af5_6_a" name="af5_6_a" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                    </td>
+                    <td class="p-1">
+                        <input type="text" id="af5_6_b" name="af5_6_b" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                    </td>
+                    <td class="p-1">
+                        <input type="text" id="af5_6_c" name="af5_6_c" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                    </td>
+                    <td class="p-1">
+                        <input type="text" id="af5_6_d" name="af5_6_d" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                    </td>
+                    <td class="p-1">
+                        <input type="text" id="af5_6_e" name="af5_6_e" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                    </td>
+                    <td class="p-1">
+                        <select id="af5_6_g" name="af5_6_g" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+                            <option value="-9">-- choose ---</option>
+                            <option value="1"><%= it.t186 %></option>
+                            <option value="2"><%= it.t187 %></option>
+                            <option value="3"><%= it.t188 %></option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="py-1 px-2">7</td>
+                    <td class="p-1">
+                        <input type="text" id="af5_7_a" name="af5_7_a" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                    </td>
+                    <td class="p-1">
+                        <input type="text" id="af5_7_b" name="af5_7_b" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                    </td>
+                    <td class="p-1">
+                        <input type="text" id="af5_7_c" name="af5_7_c" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                    </td>
+                    <td class="p-1">
+                        <input type="text" id="af5_7_d" name="af5_7_d" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                    </td>
+                    <td class="p-1">
+                        <input type="text" id="af5_7_e" name="af5_7_e" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                    </td>
+                    <td class="p-1">
+                        <select id="af5_7_g" name="af5_7_g" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+                            <option value="-9">-- choose ---</option>
+                            <option value="1"><%= it.t186 %></option>
+                            <option value="2"><%= it.t187 %></option>
+                            <option value="3"><%= it.t188 %></option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="py-1 px-2">8</td>
+                    <td class="p-1">
+                        <input type="text" id="af5_8_a" name="af5_8_a" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                    </td>
+                    <td class="p-1">
+                        <input type="text" id="af5_8_b" name="af5_8_b" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                    </td>
+                    <td class="p-1">
+                        <input type="text" id="af5_8_c" name="af5_8_c" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                    </td>
+                    <td class="p-1">
+                        <input type="text" id="af5_8_d" name="af5_8_d" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                    </td>
+                    <td class="p-1">
+                        <input type="text" id="af5_8_e" name="af5_8_e" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                    </td>
+                    <td class="p-1">
+                        <select id="af5_8_g" name="af5_8_g" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+                            <option value="-9">-- choose ---</option>
+                            <option value="1"><%= it.t186 %></option>
+                            <option value="2"><%= it.t187 %></option>
+                            <option value="3"><%= it.t188 %></option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="py-1 px-2">9</td>
+                    <td class="p-1">
+                        <input type="text" id="af5_9_a" name="af5_9_a" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                    </td>
+                    <td class="p-1">
+                        <input type="text" id="af5_9_b" name="af5_9_b" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                    </td>
+                    <td class="p-1">
+                        <input type="text" id="af5_9_c" name="af5_9_c" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                    </td>
+                    <td class="p-1">
+                        <input type="text" id="af5_9_d" name="af5_9_d" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                    </td>
+                    <td class="p-1">
+                        <input type="text" id="af5_9_e" name="af5_9_e" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                    </td>
+                    <td class="p-1">
+                        <select id="af5_9_g" name="af5_9_g" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+                            <option value="-9">-- choose ---</option>
+                            <option value="1"><%= it.t186 %></option>
+                            <option value="2"><%= it.t187 %></option>
+                            <option value="3"><%= it.t188 %></option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="py-1 px-2">10</td>
+                    <td class="p-1">
+                        <input type="text" id="af5_10_a" name="af5_10_a" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                    </td>
+                    <td class="p-1">
+                        <input type="text" id="af5_10_b" name="af5_10_b" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                    </td>
+                    <td class="p-1">
+                        <input type="text" id="af5_10_c" name="af5_10_c" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                    </td>
+                    <td class="p-1">
+                        <input type="text" id="af5_10_d" name="af5_10_d" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                    </td>
+                    <td class="p-1">
+                        <input type="text" id="af5_10_e" name="af5_10_e" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                    </td>
+                    <td class="p-1">
+                        <select id="af5_10_g" name="af5_10_g" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+                            <option value="-9">-- choose ---</option>
+                            <option value="1"><%= it.t186 %></option>
+                            <option value="2"><%= it.t187 %></option>
+                            <option value="3"><%= it.t188 %></option>
+                        </select>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p class="bg-stone-100 p-2 mt-2 italic text-gray-600"><%= it.t184 %></p>
+
+        <p class="bg-stone-100 p-2 mt-2 text-gray-600"><%= it.t189 %></p>
+        <div class="bg-stone-100 p-2 mt-2 text-gray-600">
+            <ul class="list-disc pl-4">
+                <li><%= it.t190 %></li>
+                <li><%= it.t191 %></li>
+                <li><%= it.t192 %></li>
+                <li><%= it.t193 %></li>
+                <li><%= it.t194 %></li>
+            </ul>
+        </div>
+        <p class="mt-6"><%= it.t195 %>. <%= it.t196 %></p>
+        <table class="w-full mt-2" aria-label="<%= it.t195 %>. <%= it.t196 %>">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th><%= it.t197 %></th>
+                    <th><%= it.t198 %></th>
+                    <th><%= it.t199 %></th>
+                    <th><%= it.t200 %></th>
+                    <th><%= it.t201 %></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="p-1"><%= it.t202 %></td>
+                    <td class="p-1 text-center"><input id="af6_a-1" type="radio" value="1" name="af6_a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                    <td class="p-1 text-center"><input id="af6_a-2" type="radio" value="2" name="af6_a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                    <td class="p-1 text-center"><input id="af6_a-3" type="radio" value="3" name="af6_a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                    <td class="p-1 text-center"><input id="af6_a-4" type="radio" value="4" name="af6_a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                    <td class="p-1 text-center"><input id="af6_a-5" type="radio" value="5" name="af6_a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                </tr>
+                <tr>
+                    <td class="p-1"><%= it.t203 %></td>
+                    <td class="p-1 text-center"><input id="af6_b-1" type="radio" value="1" name="af6_b" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                    <td class="p-1 text-center"><input id="af6_b-2" type="radio" value="2" name="af6_b" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                    <td class="p-1 text-center"><input id="af6_b-3" type="radio" value="3" name="af6_b" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                    <td class="p-1 text-center"><input id="af6_b-4" type="radio" value="4" name="af6_b" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                    <td class="p-1 text-center"><input id="af6_b-5" type="radio" value="5" name="af6_b" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                </tr>
+                <tr>
+                    <td class="p-1"><%= it.t204 %>)</td>
+                    <td class="p-1 text-center"><input id="af6_c-1" type="radio" value="1" name="af6_c" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                    <td class="p-1 text-center"><input id="af6_c-2" type="radio" value="2" name="af6_c" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                    <td class="p-1 text-center"><input id="af6_c-3" type="radio" value="3" name="af6_c" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                    <td class="p-1 text-center"><input id="af6_c-4" type="radio" value="4" name="af6_c" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                    <td class="p-1 text-center"><input id="af6_c-5" type="radio" value="5" name="af6_c" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                </tr>
+                <tr>
+                    <td class="p-1"><%= it.t205 %></td>
+                    <td class="p-1 text-center"><input id="af6_d-1" type="radio" value="1" name="af6_d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                    <td class="p-1 text-center"><input id="af6_d-2" type="radio" value="2" name="af6_d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                    <td class="p-1 text-center"><input id="af6_d-3" type="radio" value="3" name="af6_d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                    <td class="p-1 text-center"><input id="af6_d-4" type="radio" value="4" name="af6_d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                    <td class="p-1 text-center"><input id="af6_d-5" type="radio" value="5" name="af6_d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                </tr>
+                <tr>
+                    <td class="p-1"><%= it.t206 %></td>
+                    <td class="p-1 text-center"><input id="af6_e-1" type="radio" value="1" name="af6_e" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                    <td class="p-1 text-center"><input id="af6_e-2" type="radio" value="2" name="af6_e" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                    <td class="p-1 text-center"><input id="af6_e-3" type="radio" value="3" name="af6_e" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                    <td class="p-1 text-center"><input id="af6_e-4" type="radio" value="4" name="af6_e" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                    <td class="p-1 text-center"><input id="af6_e-5" type="radio" value="5" name="af6_e" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                </tr>
+                <tr>
+                    <td class="p-1"><%= it.t207 %></td>
+                    <td class="p-1 text-center"><input id="af6_f-1" type="radio" value="1" name="af6_f" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                    <td class="p-1 text-center"><input id="af6_f-2" type="radio" value="2" name="af6_f" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                    <td class="p-1 text-center"><input id="af6_f-3" type="radio" value="3" name="af6_f" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                    <td class="p-1 text-center"><input id="af6_f-4" type="radio" value="4" name="af6_f" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                    <td class="p-1 text-center"><input id="af6_f-5" type="radio" value="5" name="af6_f" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                </tr>
+                <tr>
+                    <td class="p-1"><%= it.t208 %></td>
+                    <td class="p-1 text-center"><input id="af6_g-1" type="radio" value="1" name="af6_g" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                    <td class="p-1 text-center"><input id="af6_g-2" type="radio" value="2" name="af6_g" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                    <td class="p-1 text-center"><input id="af6_g-3" type="radio" value="3" name="af6_g" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                    <td class="p-1 text-center"><input id="af6_g-4" type="radio" value="4" name="af6_g" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                    <td class="p-1 text-center"><input id="af6_g-5" type="radio" value="5" name="af6_g" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                </tr>
+                <tr>
+                    <td class="p-1"><%= it.t209 %>.)</td>
+                    <td class="p-1 text-center"><input id="af6_h-1" type="radio" value="1" name="af6_h" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                    <td class="p-1 text-center"><input id="af6_h-2" type="radio" value="2" name="af6_h" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                    <td class="p-1 text-center"><input id="af6_h-3" type="radio" value="3" name="af6_h" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                    <td class="p-1 text-center"><input id="af6_h-4" type="radio" value="4" name="af6_h" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                    <td class="p-1 text-center"><input id="af6_h-5" type="radio" value="5" name="af6_h" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                </tr>
+                <tr>
+                    <td class="p-1"><%= it.t210 %></td>
+                    <td class="p-1 text-center"><input id="af6_i-1" type="radio" value="1" name="af6_i" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                    <td class="p-1 text-center"><input id="af6_i-2" type="radio" value="2" name="af6_i" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                    <td class="p-1 text-center"><input id="af6_i-3" type="radio" value="3" name="af6_i" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                    <td class="p-1 text-center"><input id="af6_i-4" type="radio" value="4" name="af6_i" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                    <td class="p-1 text-center"><input id="af6_i-5" type="radio" value="5" name="af6_i" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                </tr>
+                <tr>
+                    <td class="p-1"><%= it.t211 %></td>
+                    <td class="p-1 text-center"><input id="af6_j-1" type="radio" value="1" name="af6_j" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                    <td class="p-1 text-center"><input id="af6_j-2" type="radio" value="2" name="af6_j" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                    <td class="p-1 text-center"><input id="af6_j-3" type="radio" value="3" name="af6_j" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                    <td class="p-1 text-center"><input id="af6_j-4" type="radio" value="4" name="af6_j" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                    <td class="p-1 text-center"><input id="af6_j-5" type="radio" value="5" name="af6_j" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                </tr>
+                <tr>
+                    <td class="p-1"><%= it.t212 %></td>
+                    <td class="p-1 text-center"><input id="af6_k-1" type="radio" value="1" name="af6_k" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                    <td class="p-1 text-center"><input id="af6_k-2" type="radio" value="2" name="af6_k" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                    <td class="p-1 text-center"><input id="af6_k-3" type="radio" value="3" name="af6_k" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                    <td class="p-1 text-center"><input id="af6_k-4" type="radio" value="4" name="af6_k" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                    <td class="p-1 text-center"><input id="af6_k-5" type="radio" value="5" name="af6_k" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="grid grid-cols-2 gap-4 items-center mt-10">
+            <div class="col-span-1">
+                <%= it.t213 %>. <%= it.t214 %>
+                <small class="block"><%= it.t215 %></small>
+
+            </div>
+            <div class="col-span-1 flex flex-col gap-2">
+                <div class="flex items-center">
+                    <input id="af7_1-1" type="checkbox" value="1" name="af7_1" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="af7_1-1" class="ms-2 text-sm text-gray-900"><%= it.t216 %></label>
+                </div>
+                <div class="flex items-center">
+                    <input id="af7_2-2" type="checkbox" value="2" name="af7_2" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="af7_2-2" class="ms-2 text-sm text-gray-900"><%= it.t217 %></label>
+                </div>
+                <div class="flex items-center">
+                    <input id="af7_3-3" type="checkbox" value="3" name="af7_3" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="af7_3-3" class="ms-2 text-sm text-gray-900"><%= it.t218 %></label>
+                </div>
+                <div class="flex items-center">
+                    <input id="af7_4-4" type="checkbox" value="4" name="af7_4" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="af7_4-4" class="ms-2 text-sm text-gray-900"><%= it.t219 %></label>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 items-center mt-6">
+            <div class="col-span-1"><%= it.t220 %>. <%= it.t221 %></div>
+            <div class="col-span-1 flex flex-col gap-2">
+                <div class="flex items-center">
+                    <input id="af8-1" type="radio" value="1" name="af8" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="af8-1" class="ms-2 text-sm text-gray-900"><%= it.t222 %></label>
+                </div>
+                <div class="flex items-center">
+                    <input id="af8-2" type="radio" value="2" name="af8" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="af8-2" class="ms-2 text-sm text-gray-900"><%= it.t223 %></label>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 items-center mt-6">
+            <div class="col-span-1"><%= it.t224 %>. <%= it.t225 %></div>
+            <div class="col-span-1 flex flex-col gap-2">
+                <div class="flex items-center">
+                    <input id="af9-1" type="radio" value="1" name="af9" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="af9-1" class="ms-2 text-sm text-gray-900"><%= it.t226 %></label>
+                </div>
+                <div class="flex items-center">
+                    <input id="af9-2" type="radio" value="2" name="af9" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="af9-2" class="ms-2 text-sm text-gray-900"><%= it.t227 %></label>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 items-center mt-6">
+            <div class="col-span-1"><%= it.t228 %>. <%= it.t229 %></div>
+            <div class="col-span-1 flex flex-col gap-2">
+                <div class="flex items-center">
+                    <input id="af10-1" type="radio" value="1" name="af10" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="af10-1" class="ms-2 text-sm text-gray-900"><%= it.t230 %></label>
+                </div>
+                <div class="flex items-center">
+                    <input id="af10-2" type="radio" value="2" name="af10" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="af10-2" class="ms-2 text-sm text-gray-900"><%= it.t231 %></label>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 items-center mt-6">
+            <div class="col-span-1"><%= it.t232 %>. <%= it.t233 %></div>
+            <div class="col-span-1 flex flex-col gap-2">
+                <div class="flex items-center">
+                    <input id="af11-1" type="radio" value="1" name="af10" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="af11-1" class="ms-2 text-sm text-gray-900"><%= it.t234 %></label>
+                </div>
+                <div class="flex items-center">
+                    <input id="af11-2" type="radio" value="2" name="af10" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="af11-2" class="ms-2 text-sm text-gray-900"><%= it.t235 %></label>
+                </div>
+                <div class="flex items-center">
+                    <input id="af11-3" type="radio" value="3" name="af10" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="af11-3" class="ms-2 text-sm text-gray-900"><%= it.t236 %></label>
+                </div>
+                <div class="flex items-center">
+                    <input id="af11-4" type="radio" value="4" name="af10" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="af11-4" class="ms-2 text-sm text-gray-900"><%= it.t237 %></label>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 items-center mt-10">
+            <div class="col-span-1">
+                <%= it.t238 %>. <%= it.t239 %>
+                <small class="block"><%= it.t240 %></small>
+            </div>
+            <div class="col-span-1 flex flex-col gap-2">
+                <div class="flex items-center">
+                    <input id="af12_1-1" type="checkbox" value="1" name="af12_1" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="af12_1-1" class="ms-2 text-sm text-gray-900"><%= it.t241 %></label>
+                </div>
+                <div class="flex items-center">
+                    <input id="af12_2-2" type="checkbox" value="1" name="af12_2" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="af12_2-2" class="ms-2 text-sm text-gray-900"><%= it.t242 %></label>
+                </div>
+                <div class="flex items-center">
+                    <input id="af12_3-3" type="checkbox" value="1" name="af12_3" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="af12_3-3" class="ms-2 text-sm text-gray-900"><%= it.t243 %></label>
+                </div>
+                <div class="flex items-center">
+                    <input id="af12_4-4" type="checkbox" value="1" name="af12_4" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="af12_4-4" class="ms-2 text-sm text-gray-900"><%= it.t244 %></label>
+                </div>
+                <div class="flex items-center">
+                    <input id="af12_5-5" type="checkbox" value="1" name="af12_5" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="af12_5-5" class="ms-2 text-sm text-gray-900"><%= it.t245 %></label>
+                </div>
+                <div class="flex items-center">
+                    <input id="af12_6-6" type="checkbox" value="1" name="af12_6" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="af12_6-6" class="ms-2 text-sm text-gray-900"><%= it.t246 %></label>
+                </div>
+                <div class="flex items-center">
+                    <input id="af12_7-7" type="checkbox" value="1" name="af12_7" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="af12_7-7" class="ms-2 text-sm text-gray-900"><%= it.t247 %></label>
+                </div>
+                <div class="flex items-center">
+                    <input id="af12_8-8" type="checkbox" value="1" name="af12_8" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="af12_8-8" class="ms-2 text-sm text-gray-900"><%= it.t248 %></label>
+                </div>
+                <div class="flex items-center">
+                    <input id="af12_9-9" type="checkbox" value="1" name="af12_9" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="af12_9-9" class="ms-2 text-sm text-gray-900"><%= it.t249 %>..</label>
+                </div>
+                <textarea id="af12_9_other" name="af12_9_other" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"></textarea>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 items-center mt-6">
+            <div class="col-span-1"><%= it.t250 %>. <%= it.t251 %></div>
+            <div class="col-span-1 flex flex-col gap-2">
+                <div class="flex items-center">
+                    <input id="af13a-1" type="radio" value="1" name="af13a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="af13a-1" class="ms-2 text-sm text-gray-900"><%= it.t252 %></label>
+                </div>
+                <div class="flex items-center">
+                    <input id="af13a-2" type="radio" value="2" name="af13a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="af13a-2" class="ms-2 text-sm text-gray-900"><%= it.t253 %></label>
+                </div>
+                <div class="flex items-center">
+                    <input id="af13a-3" type="radio" value="3" name="af13a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="af13a-3" class="ms-2 text-sm text-gray-900"><%= it.t254 %></label>
+                </div>
+                <div class="flex items-center">
+                    <input id="af13a-4" type="radio" value="4" name="af13a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="af13a-4" class="ms-2 text-sm text-gray-900"><%= it.t255 %></label>
+                </div>
+                <div class="flex items-center">
+                    <input id="af13a-5" type="radio" value="5" name="af13a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="af13a-5" class="ms-2 text-sm text-gray-900"><%= it.t256 %></label>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 items-center mt-6">
+            <div><%= it.t257 %>. <%= it.t258 %>
+                <small class="block"><%= it.t259 %></small>
+            </div>
+            <div class="flex items-center gap-4">
+                <input type="text" id="af13b" name="af13b" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 disabled:bg-gray-100" />
+                <p>(Month / Year) --- nu am traducere</p>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 items-center mt-10">
+            <div class="col-span-1">
+                <%= it.t260 %>. <%= it.t261 %>
+                <small class="block"><%= it.t262 %></small>
+            </div>
+            <div class="col-span-1 flex flex-col gap-2">
+                <div class="flex items-center">
+                    <input id="af14_1-1" type="checkbox" value="1" name="af14_1" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="af14_1-1" class="ms-2 text-sm text-gray-900"><%= it.t263 %></label>
+                </div>
+                <div class="flex items-center">
+                    <input id="af14_2-2" type="checkbox" value="1" name="af14_2" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="af14_2-2" class="ms-2 text-sm text-gray-900"><%= it.t264 %></label>
+                </div>
+                <div class="flex items-center">
+                    <input id="af14_3-3" type="checkbox" value="1" name="af14_3" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="af14_3-3" class="ms-2 text-sm text-gray-900"><%= it.t265 %></label>
+                </div>
+                <div class="flex items-center">
+                    <input id="af14_4-4" type="checkbox" value="1" name="af14_4" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="af14_4-4" class="ms-2 text-sm text-gray-900"><%= it.t266 %></label>
+                </div>
+                <div class="flex items-center">
+                    <input id="af14_5-5" type="checkbox" value="1" name="af14_5" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="af14_5-5" class="ms-2 text-sm text-gray-900"><%= it.t267 %></label>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 items-center mt-10">
+            <div class="col-span-1">
+                <%= it.t268 %>. <%= it.t269 %>
+                <small class="block"><%= it.t270 %></small>
+            </div>
+            <div class="col-span-1 flex flex-col gap-2">
+                <div class="flex items-center">
+                    <input id="af15_1-1" type="checkbox" value="1" name="af15_1" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="af15_1-1" class="ms-2 text-sm text-gray-900"><%= it.t271 %></label>
+                </div>
+                <div class="flex items-center">
+                    <input id="af15_2-2" type="checkbox" value="1" name="af15_2" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="af15_2-2" class="ms-2 text-sm text-gray-900"><%= it.t272 %></label>
+                </div>
+                <div class="flex items-center">
+                    <input id="af15_3-3" type="checkbox" value="1" name="af15_3" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="af15_3-3" class="ms-2 text-sm text-gray-900"><%= it.t273 %></label>
+                </div>
+                <div class="flex items-center">
+                    <input id="af15_4-4" type="checkbox" value="1" name="af15_4" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="af15_4-4" class="ms-2 text-sm text-gray-900"><%= it.t274 %></label>
+                </div>
+                <div class="flex items-center">
+                    <input id="af15_5-5" type="checkbox" value="1" name="af15_5" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="af15_5-5" class="ms-2 text-sm text-gray-900"><%= it.t275 %></label>
+                </div>
+            </div>
+        </div>
+
+        <h2 class="mt-10 mb-4 text-2xl font-bold text-gray-700"><%= it.t276 %></h2>
 
 
 

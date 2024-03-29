@@ -449,7 +449,7 @@
                     </div>
                 </div>
         
-                <div class="grid grid-cols-2 gap-4 items-center mt-2">
+                <div class="grid grid-cols-2 gap-4 items-center mt-6">
                     <div class="col-span-1">LA7. Сколько из этих пассажирских транспортных средств приспособлено для людей с ограниченными возможностями передвижения?</div>
                     <div class="col-span-1 flex items-center gap-4">
                         <input type="text" id="la7" name="la7" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
@@ -457,7 +457,7 @@
                     </div>
                 </div>
         
-                <div class="grid grid-cols-2 gap-4 items-center mt-2">
+                <div class="grid grid-cols-2 gap-4 items-center mt-6">
                     <div class="col-span-1">LA8. Сколько таких легковых автомобилей используется для перевозки детей, проживающих в учреждении?</div>
                     <div class="col-span-1 flex items-center gap-4">
                         <input type="text" id="la8" name="la8" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
@@ -467,6 +467,667 @@
         
                 <h2 class="mt-10 mb-4 text-2xl font-bold text-gray-700">3. ЗЕМЛЯ, ЗДАНИЯ И СООРУЖЕНИЯ</h2>
         
+                <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                    <div class="col-span-1">AF1. Какова общая площадь земельного участка, на котором расположено учреждение?</div>
+                    <div class="col-span-1 flex items-center gap-4">
+                        <input type="text" id="af1" name="af1" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                        <span>кв.м.</span>
+                    </div>
+                </div>
+                <p class="italic text-gray-400 text-sm">Укажите площадь в квадратных метрах</p>
+        
+                <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                    <div class="col-span-1">AF3. Помещение, где размещаются дети, …</div>
+                    <div class="col-span-1 flex flex-col gap-2">
+                        <div class="flex items-center">
+                            <input id="af3-1" type="radio" value="1" name="af3" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                            <label for="af3-1" class="ms-2 text-sm text-gray-900">1. является частью (этаж, крыло и т.п.) здания</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="af3-2" type="radio" value="2" name="af3" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                            <label for="af3-2" class="ms-2 text-sm text-gray-900">2. находится в отдельно стоящем здании</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="af3-3" type="radio" value="3" name="af3" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                            <label for="af3-3" class="ms-2 text-sm text-gray-900">3. находится в нескольких зданиях (занятых полностью или частично)</label>
+                        </div>
+                    </div>
+                </div>
+        
+                <p class="mt-6">AF4. Застроенная площадь учреждения</p>
+                <div class="ml-4">
+                    <div class="grid grid-cols-2 gap-4 items-center mt-2">
+                        <div class="col-span-1">а. Количество отдельных зданий, которыми располагает учреждение</div>
+                        <div class="col-span-1 flex items-center gap-4">
+                            <input type="text" id="af4a" name="af4a" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4 items-center mt-2">
+                        <div class="col-span-1">б. Количество зданий, в которых проживают дети</div>
+                        <div class="col-span-1 flex items-center gap-4">
+                            <input type="text" id="af4b" name="af4b" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                        </div>
+                    </div>
+                </div>
+                <p class="mt-6">AF5. Для каждого строения, в котором проживают дети, пожалуйста, заполните информацию в таблице ниже</p>
+                <table class="w-full mt-2" aria-label="AF5. Для каждого строения, в котором проживают дети, пожалуйста, заполните информацию в таблице ниже">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>а. Площадь здания (кв.м.)</th>
+                            <th>б. Режим высоты*</th>
+                            <th>в. Общая полезная площадь (кв.м.)</th>
+                            <th>д. Год постройки</th>
+                            <th>е. Год последних работ по укреплению, расширению, капитальному ремонту или модернизации</th>
+                            <th>г. Уровень доступности (используйте коды ниже)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="py-1 px-2">1</td>
+                            <td class="p-1">
+                                <input type="text" id="af5_1_a" name="af5_1_a" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                            </td>
+                            <td class="p-1">
+                                <input type="text" id="af5_1_b" name="af5_1_b" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                            </td>
+                            <td class="p-1">
+                                <input type="text" id="af5_1_c" name="af5_1_c" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                            </td>
+                            <td class="p-1">
+                                <input type="text" id="af5_1_d" name="af5_1_d" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                            </td>
+                            <td class="p-1">
+                                <input type="text" id="af5_1_e" name="af5_1_e" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                            </td>
+                            <td class="p-1">
+                                <select id="af5_1_g" name="af5_1_g" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+                                    <option value="-9">-- choose ---</option>
+                                    <option value="1">1. Полностью доступно (соответствует всем стандартам физической и информационной доступности)</option>
+                                    <option value="2">2. Частично доступно</option>
+                                    <option value="3">3. Совсем не доступно</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="py-1 px-2">2</td>
+                            <td class="p-1">
+                                <input type="text" id="af5_2_a" name="af5_2_a" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                            </td>
+                            <td class="p-1">
+                                <input type="text" id="af5_2_b" name="af5_2_b" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                            </td>
+                            <td class="p-1">
+                                <input type="text" id="af5_2_c" name="af5_2_c" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                            </td>
+                            <td class="p-1">
+                                <input type="text" id="af5_2_d" name="af5_2_d" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                            </td>
+                            <td class="p-1">
+                                <input type="text" id="af5_2_e" name="af5_2_e" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                            </td>
+                            <td class="p-1">
+                                <select id="af5_2_g" name="af5_2_g" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+                                    <option value="-9">-- choose ---</option>
+                                    <option value="1">1. Полностью доступно (соответствует всем стандартам физической и информационной доступности)</option>
+                                    <option value="2">2. Частично доступно</option>
+                                    <option value="3">3. Совсем не доступно</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="py-1 px-2">3</td>
+                            <td class="p-1">
+                                <input type="text" id="af5_3_a" name="af5_3_a" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                            </td>
+                            <td class="p-1">
+                                <input type="text" id="af5_3_b" name="af5_3_b" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                            </td>
+                            <td class="p-1">
+                                <input type="text" id="af5_3_c" name="af5_3_c" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                            </td>
+                            <td class="p-1">
+                                <input type="text" id="af5_3_d" name="af5_3_d" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                            </td>
+                            <td class="p-1">
+                                <input type="text" id="af5_3_e" name="af5_3_e" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                            </td>
+                            <td class="p-1">
+                                <select id="af5_3_g" name="af5_3_g" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+                                    <option value="-9">-- choose ---</option>
+                                    <option value="1">1. Полностью доступно (соответствует всем стандартам физической и информационной доступности)</option>
+                                    <option value="2">2. Частично доступно</option>
+                                    <option value="3">3. Совсем не доступно</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="py-1 px-2">4</td>
+                            <td class="p-1">
+                                <input type="text" id="af5_4_a" name="af5_4_a" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                            </td>
+                            <td class="p-1">
+                                <input type="text" id="af5_4_b" name="af5_4_b" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                            </td>
+                            <td class="p-1">
+                                <input type="text" id="af5_4_c" name="af5_4_c" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                            </td>
+                            <td class="p-1">
+                                <input type="text" id="af5_4_d" name="af5_4_d" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                            </td>
+                            <td class="p-1">
+                                <input type="text" id="af5_4_e" name="af5_4_e" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                            </td>
+                            <td class="p-1">
+                                <select id="af5_4_g" name="af5_4_g" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+                                    <option value="-9">-- choose ---</option>
+                                    <option value="1">1. Полностью доступно (соответствует всем стандартам физической и информационной доступности)</option>
+                                    <option value="2">2. Частично доступно</option>
+                                    <option value="3">3. Совсем не доступно</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="py-1 px-2">5</td>
+                            <td class="p-1">
+                                <input type="text" id="af5_5_a" name="af5_5_a" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                            </td>
+                            <td class="p-1">
+                                <input type="text" id="af5_5_b" name="af5_5_b" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                            </td>
+                            <td class="p-1">
+                                <input type="text" id="af5_5_c" name="af5_5_c" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                            </td>
+                            <td class="p-1">
+                                <input type="text" id="af5_5_d" name="af5_5_d" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                            </td>
+                            <td class="p-1">
+                                <input type="text" id="af5_5_e" name="af5_5_e" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                            </td>
+                            <td class="p-1">
+                                <select id="af5_5_g" name="af5_5_g" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+                                    <option value="-9">-- choose ---</option>
+                                    <option value="1">1. Полностью доступно (соответствует всем стандартам физической и информационной доступности)</option>
+                                    <option value="2">2. Частично доступно</option>
+                                    <option value="3">3. Совсем не доступно</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="py-1 px-2">6</td>
+                            <td class="p-1">
+                                <input type="text" id="af5_6_a" name="af5_6_a" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                            </td>
+                            <td class="p-1">
+                                <input type="text" id="af5_6_b" name="af5_6_b" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                            </td>
+                            <td class="p-1">
+                                <input type="text" id="af5_6_c" name="af5_6_c" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                            </td>
+                            <td class="p-1">
+                                <input type="text" id="af5_6_d" name="af5_6_d" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                            </td>
+                            <td class="p-1">
+                                <input type="text" id="af5_6_e" name="af5_6_e" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                            </td>
+                            <td class="p-1">
+                                <select id="af5_6_g" name="af5_6_g" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+                                    <option value="-9">-- choose ---</option>
+                                    <option value="1">1. Полностью доступно (соответствует всем стандартам физической и информационной доступности)</option>
+                                    <option value="2">2. Частично доступно</option>
+                                    <option value="3">3. Совсем не доступно</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="py-1 px-2">7</td>
+                            <td class="p-1">
+                                <input type="text" id="af5_7_a" name="af5_7_a" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                            </td>
+                            <td class="p-1">
+                                <input type="text" id="af5_7_b" name="af5_7_b" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                            </td>
+                            <td class="p-1">
+                                <input type="text" id="af5_7_c" name="af5_7_c" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                            </td>
+                            <td class="p-1">
+                                <input type="text" id="af5_7_d" name="af5_7_d" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                            </td>
+                            <td class="p-1">
+                                <input type="text" id="af5_7_e" name="af5_7_e" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                            </td>
+                            <td class="p-1">
+                                <select id="af5_7_g" name="af5_7_g" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+                                    <option value="-9">-- choose ---</option>
+                                    <option value="1">1. Полностью доступно (соответствует всем стандартам физической и информационной доступности)</option>
+                                    <option value="2">2. Частично доступно</option>
+                                    <option value="3">3. Совсем не доступно</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="py-1 px-2">8</td>
+                            <td class="p-1">
+                                <input type="text" id="af5_8_a" name="af5_8_a" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                            </td>
+                            <td class="p-1">
+                                <input type="text" id="af5_8_b" name="af5_8_b" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                            </td>
+                            <td class="p-1">
+                                <input type="text" id="af5_8_c" name="af5_8_c" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                            </td>
+                            <td class="p-1">
+                                <input type="text" id="af5_8_d" name="af5_8_d" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                            </td>
+                            <td class="p-1">
+                                <input type="text" id="af5_8_e" name="af5_8_e" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                            </td>
+                            <td class="p-1">
+                                <select id="af5_8_g" name="af5_8_g" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+                                    <option value="-9">-- choose ---</option>
+                                    <option value="1">1. Полностью доступно (соответствует всем стандартам физической и информационной доступности)</option>
+                                    <option value="2">2. Частично доступно</option>
+                                    <option value="3">3. Совсем не доступно</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="py-1 px-2">9</td>
+                            <td class="p-1">
+                                <input type="text" id="af5_9_a" name="af5_9_a" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                            </td>
+                            <td class="p-1">
+                                <input type="text" id="af5_9_b" name="af5_9_b" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                            </td>
+                            <td class="p-1">
+                                <input type="text" id="af5_9_c" name="af5_9_c" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                            </td>
+                            <td class="p-1">
+                                <input type="text" id="af5_9_d" name="af5_9_d" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                            </td>
+                            <td class="p-1">
+                                <input type="text" id="af5_9_e" name="af5_9_e" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                            </td>
+                            <td class="p-1">
+                                <select id="af5_9_g" name="af5_9_g" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+                                    <option value="-9">-- choose ---</option>
+                                    <option value="1">1. Полностью доступно (соответствует всем стандартам физической и информационной доступности)</option>
+                                    <option value="2">2. Частично доступно</option>
+                                    <option value="3">3. Совсем не доступно</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="py-1 px-2">10</td>
+                            <td class="p-1">
+                                <input type="text" id="af5_10_a" name="af5_10_a" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                            </td>
+                            <td class="p-1">
+                                <input type="text" id="af5_10_b" name="af5_10_b" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                            </td>
+                            <td class="p-1">
+                                <input type="text" id="af5_10_c" name="af5_10_c" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                            </td>
+                            <td class="p-1">
+                                <input type="text" id="af5_10_d" name="af5_10_d" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                            </td>
+                            <td class="p-1">
+                                <input type="text" id="af5_10_e" name="af5_10_e" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                            </td>
+                            <td class="p-1">
+                                <select id="af5_10_g" name="af5_10_g" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+                                    <option value="-9">-- choose ---</option>
+                                    <option value="1">1. Полностью доступно (соответствует всем стандартам физической и информационной доступности)</option>
+                                    <option value="2">2. Частично доступно</option>
+                                    <option value="3">3. Совсем не доступно</option>
+                                </select>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+        
+                <p class="bg-stone-100 p-2 mt-2 italic text-gray-600">* Пожалуйста, опишите количество этажей или уровней в здании, используя комбинацию букв и цифр, например, B — подвал, G — цокольный этаж, F — верхние этажи, R — подвальные этажи, M — мезонин (промежуточный этаж между первым и вторым этажом) A — чердак. Например, здание, имеющее подвал, цокольный этаж и два верхних этажа, имеет категорию высотности B+G+2F.</p>
+        
+                <p class="bg-stone-100 p-2 mt-2 text-gray-600">Стандарты доступности, которые следует учитывать:</p>
+                <div class="bg-stone-100 p-2 mt-2 text-gray-600">
+                    <ul class="list-disc pl-4">
+                        <li>Безбарьерная планировка: Здание должно быть спланировано так, чтобы им могли пользоваться люди с различными физическими нарушениями. Это включает наличие таких приспособлений, как пандусы, лифты, широкие дверные проемы и доступные ванные комнаты.</li>
+                        <li>Доступность для инвалидных колясок: Все помещения в здании, включая помещения общего пользования, спальни и открытые площадки, должны быть легко доступны для людей, пользующихся инвалидными колясками.</li>
+                        <li>Визуальная и слуховая доступность: необходимо учитывать потребности людей с нарушениями зрения или слуха. Это включает в себя такие приспособления, как вывески со шрифтом Брайля, звуковые сигналы и четкие визуальные подсказки.</li>
+                        <li>Меры безопасности: В здании должны быть предусмотрены средства безопасности, такие как поручни, нескользящие поверхности и аварийные выходы, доступные для всех лиц.</li>
+                        <li>Четкая коммуникация: информация внутри здания должна передаваться четко и эффективно. Сюда входят письменные материалы, указатели и инструкции.</li>
+                    </ul>
+                </div>
+                <p class="mt-6">AF6. Что касается здания(й), в котором проживают дети, как вы оцениваете состояние следующих объектов?</p>
+                <table class="w-full mt-2" aria-label="AF6. Что касается здания(й), в котором проживают дети, как вы оцениваете состояние следующих объектов?">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>1. Очень плохо</th>
+                            <th>2. Плохо</th>
+                            <th>3. Средне</th>
+                            <th>4. Хорошо</th>
+                            <th>5. Очень хорошо</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="p-1">a. Фасад здания</td>
+                            <td class="p-1 text-center"><input id="af6_a-1" type="radio" value="1" name="af6_a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                            <td class="p-1 text-center"><input id="af6_a-2" type="radio" value="2" name="af6_a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                            <td class="p-1 text-center"><input id="af6_a-3" type="radio" value="3" name="af6_a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                            <td class="p-1 text-center"><input id="af6_a-4" type="radio" value="4" name="af6_a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                            <td class="p-1 text-center"><input id="af6_a-5" type="radio" value="5" name="af6_a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                        </tr>
+                        <tr>
+                            <td class="p-1">b. Крыша</td>
+                            <td class="p-1 text-center"><input id="af6_b-1" type="radio" value="1" name="af6_b" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                            <td class="p-1 text-center"><input id="af6_b-2" type="radio" value="2" name="af6_b" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                            <td class="p-1 text-center"><input id="af6_b-3" type="radio" value="3" name="af6_b" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                            <td class="p-1 text-center"><input id="af6_b-4" type="radio" value="4" name="af6_b" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                            <td class="p-1 text-center"><input id="af6_b-5" type="radio" value="5" name="af6_b" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                        </tr>
+                        <tr>
+                            <td class="p-1">c. Столярные элементы (окна, двери))</td>
+                            <td class="p-1 text-center"><input id="af6_c-1" type="radio" value="1" name="af6_c" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                            <td class="p-1 text-center"><input id="af6_c-2" type="radio" value="2" name="af6_c" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                            <td class="p-1 text-center"><input id="af6_c-3" type="radio" value="3" name="af6_c" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                            <td class="p-1 text-center"><input id="af6_c-4" type="radio" value="4" name="af6_c" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                            <td class="p-1 text-center"><input id="af6_c-5" type="radio" value="5" name="af6_c" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                        </tr>
+                        <tr>
+                            <td class="p-1">d. Сантехнические установки</td>
+                            <td class="p-1 text-center"><input id="af6_d-1" type="radio" value="1" name="af6_d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                            <td class="p-1 text-center"><input id="af6_d-2" type="radio" value="2" name="af6_d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                            <td class="p-1 text-center"><input id="af6_d-3" type="radio" value="3" name="af6_d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                            <td class="p-1 text-center"><input id="af6_d-4" type="radio" value="4" name="af6_d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                            <td class="p-1 text-center"><input id="af6_d-5" type="radio" value="5" name="af6_d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                        </tr>
+                        <tr>
+                            <td class="p-1">e. Канализационная система</td>
+                            <td class="p-1 text-center"><input id="af6_e-1" type="radio" value="1" name="af6_e" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                            <td class="p-1 text-center"><input id="af6_e-2" type="radio" value="2" name="af6_e" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                            <td class="p-1 text-center"><input id="af6_e-3" type="radio" value="3" name="af6_e" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                            <td class="p-1 text-center"><input id="af6_e-4" type="radio" value="4" name="af6_e" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                            <td class="p-1 text-center"><input id="af6_e-5" type="radio" value="5" name="af6_e" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                        </tr>
+                        <tr>
+                            <td class="p-1">f. Электропроводка</td>
+                            <td class="p-1 text-center"><input id="af6_f-1" type="radio" value="1" name="af6_f" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                            <td class="p-1 text-center"><input id="af6_f-2" type="radio" value="2" name="af6_f" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                            <td class="p-1 text-center"><input id="af6_f-3" type="radio" value="3" name="af6_f" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                            <td class="p-1 text-center"><input id="af6_f-4" type="radio" value="4" name="af6_f" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                            <td class="p-1 text-center"><input id="af6_f-5" type="radio" value="5" name="af6_f" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                        </tr>
+                        <tr>
+                            <td class="p-1">g. Отопительные установки</td>
+                            <td class="p-1 text-center"><input id="af6_g-1" type="radio" value="1" name="af6_g" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                            <td class="p-1 text-center"><input id="af6_g-2" type="radio" value="2" name="af6_g" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                            <td class="p-1 text-center"><input id="af6_g-3" type="radio" value="3" name="af6_g" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                            <td class="p-1 text-center"><input id="af6_g-4" type="radio" value="4" name="af6_g" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                            <td class="p-1 text-center"><input id="af6_g-5" type="radio" value="5" name="af6_g" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                        </tr>
+                        <tr>
+                            <td class="p-1">h. Общие внутренние помещения (коридоры, лестницы и т.д.).)</td>
+                            <td class="p-1 text-center"><input id="af6_h-1" type="radio" value="1" name="af6_h" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                            <td class="p-1 text-center"><input id="af6_h-2" type="radio" value="2" name="af6_h" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                            <td class="p-1 text-center"><input id="af6_h-3" type="radio" value="3" name="af6_h" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                            <td class="p-1 text-center"><input id="af6_h-4" type="radio" value="4" name="af6_h" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                            <td class="p-1 text-center"><input id="af6_h-5" type="radio" value="5" name="af6_h" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                        </tr>
+                        <tr>
+                            <td class="p-1">i. Теплоизоляция</td>
+                            <td class="p-1 text-center"><input id="af6_i-1" type="radio" value="1" name="af6_i" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                            <td class="p-1 text-center"><input id="af6_i-2" type="radio" value="2" name="af6_i" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                            <td class="p-1 text-center"><input id="af6_i-3" type="radio" value="3" name="af6_i" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                            <td class="p-1 text-center"><input id="af6_i-4" type="radio" value="4" name="af6_i" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                            <td class="p-1 text-center"><input id="af6_i-5" type="radio" value="5" name="af6_i" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                        </tr>
+                        <tr>
+                            <td class="p-1">j. Спальни</td>
+                            <td class="p-1 text-center"><input id="af6_j-1" type="radio" value="1" name="af6_j" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                            <td class="p-1 text-center"><input id="af6_j-2" type="radio" value="2" name="af6_j" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                            <td class="p-1 text-center"><input id="af6_j-3" type="radio" value="3" name="af6_j" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                            <td class="p-1 text-center"><input id="af6_j-4" type="radio" value="4" name="af6_j" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                            <td class="p-1 text-center"><input id="af6_j-5" type="radio" value="5" name="af6_j" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                        </tr>
+                        <tr>
+                            <td class="p-1">k. Ванные комнаты и туалеты</td>
+                            <td class="p-1 text-center"><input id="af6_k-1" type="radio" value="1" name="af6_k" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                            <td class="p-1 text-center"><input id="af6_k-2" type="radio" value="2" name="af6_k" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                            <td class="p-1 text-center"><input id="af6_k-3" type="radio" value="3" name="af6_k" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                            <td class="p-1 text-center"><input id="af6_k-4" type="radio" value="4" name="af6_k" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                            <td class="p-1 text-center"><input id="af6_k-5" type="radio" value="5" name="af6_k" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                        </tr>
+                    </tbody>
+                </table>
+        
+                <div class="grid grid-cols-2 gap-4 items-center mt-10">
+                    <div class="col-span-1">
+                        AF7.. Как обеспечивается обогрев жилого помещения?                <small class="block">ОТМЕТЬТЕ ВСЕ НУЖНОЕ</small>
+        
+                    </div>
+                    <div class="col-span-1 flex flex-col gap-2">
+                        <div class="flex items-center">
+                            <input id="af7_1-1" type="checkbox" value="1" name="af7_1" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                            <label for="af7_1-1" class="ms-2 text-sm text-gray-900">1. Собственная котельная</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="af7_2-2" type="checkbox" value="2" name="af7_2" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                            <label for="af7_2-2" class="ms-2 text-sm text-gray-900">2. Центральная система отопления</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="af7_3-3" type="checkbox" value="3" name="af7_3" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                            <label for="af7_3-3" class="ms-2 text-sm text-gray-900">3. Газовые или другие топливные печи</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="af7_4-4" type="checkbox" value="4" name="af7_4" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                            <label for="af7_4-4" class="ms-2 text-sm text-gray-900">4. Другие средства</label>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                    <div class="col-span-1">AF8. В жилых помещениях ЖК водоснабжение обеспечивается…</div>
+                    <div class="col-span-1 flex flex-col gap-2">
+                        <div class="flex items-center">
+                            <input id="af8-1" type="radio" value="1" name="af8" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                            <label for="af8-1" class="ms-2 text-sm text-gray-900">1. Из центральной сети</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="af8-2" type="radio" value="2" name="af8" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                            <label for="af8-2" class="ms-2 text-sm text-gray-900">2. Из автономных источников/ собственных источников</label>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                    <div class="col-span-1">AF9. Водопроводная вода…</div>
+                    <div class="col-span-1 flex flex-col gap-2">
+                        <div class="flex items-center">
+                            <input id="af9-1" type="radio" value="1" name="af9" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                            <label for="af9-1" class="ms-2 text-sm text-gray-900">1. Питьевая</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="af9-2" type="radio" value="2" name="af9" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                            <label for="af9-2" class="ms-2 text-sm text-gray-900">2. Не пригодна для питья</label>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                    <div class="col-span-1">AF10. Как осуществляется подача или предоставление горячей воды для использования?</div>
+                    <div class="col-span-1 flex flex-col gap-2">
+                        <div class="flex items-center">
+                            <input id="af10-1" type="radio" value="1" name="af10" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                            <label for="af10-1" class="ms-2 text-sm text-gray-900">1. Постоянно</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="af10-2" type="radio" value="2" name="af10" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                            <label for="af10-2" class="ms-2 text-sm text-gray-900">2. По графику</label>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                    <div class="col-span-1">AF11. Как утилизируются бытовые сточные воды?</div>
+                    <div class="col-span-1 flex flex-col gap-2">
+                        <div class="flex items-center">
+                            <input id="af11-1" type="radio" value="1" name="af10" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                            <label for="af11-1" class="ms-2 text-sm text-gray-900">1. Через централизованную канализационную сеть</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="af11-2" type="radio" value="2" name="af10" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                            <label for="af11-2" class="ms-2 text-sm text-gray-900">2. В септический отстойник</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="af11-3" type="radio" value="3" name="af10" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                            <label for="af11-3" class="ms-2 text-sm text-gray-900">3. В выгребную яму</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="af11-4" type="radio" value="4" name="af10" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                            <label for="af11-4" class="ms-2 text-sm text-gray-900">4. По другой системе</label>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="grid grid-cols-2 gap-4 items-center mt-10">
+                    <div class="col-span-1">
+                        AF12. Какими возможностями в плане доступности обладает заведение?                <small class="block">ВЫБРАТЬ ВСЕ, ЧТО ПОДХОДИТ</small>
+                    </div>
+                    <div class="col-span-1 flex flex-col gap-2">
+                        <div class="flex items-center">
+                            <input id="af12_1-1" type="checkbox" value="1" name="af12_1" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                            <label for="af12_1-1" class="ms-2 text-sm text-gray-900">Пандусы доступа</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="af12_2-2" type="checkbox" value="1" name="af12_2" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                            <label for="af12_2-2" class="ms-2 text-sm text-gray-900">Тактильно-визуальные предупреждающие поверхности</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="af12_3-3" type="checkbox" value="1" name="af12_3" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                            <label for="af12_3-3" class="ms-2 text-sm text-gray-900">Двери с широким проемом </label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="af12_4-4" type="checkbox" value="1" name="af12_4" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                            <label for="af12_4-4" class="ms-2 text-sm text-gray-900">Лифты</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="af12_5-5" type="checkbox" value="1" name="af12_5" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                            <label for="af12_5-5" class="ms-2 text-sm text-gray-900">Наклонные плоскости</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="af12_6-6" type="checkbox" value="1" name="af12_6" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                            <label for="af12_6-6" class="ms-2 text-sm text-gray-900">Поручни</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="af12_7-7" type="checkbox" value="1" name="af12_7" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                            <label for="af12_7-7" class="ms-2 text-sm text-gray-900">Звуковые системы</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="af12_8-8" type="checkbox" value="1" name="af12_8" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                            <label for="af12_8-8" class="ms-2 text-sm text-gray-900">Адаптированные туалеты</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="af12_9-9" type="checkbox" value="1" name="af12_9" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                            <label for="af12_9-9" class="ms-2 text-sm text-gray-900">Другие, пожалуйста, укажите..</label>
+                        </div>
+                        <textarea id="af12_9_other" name="af12_9_other" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"></textarea>
+                    </div>
+                </div>
+        
+                <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                    <div class="col-span-1">AF13a. Как часто в заведении проводится дезинсекция?</div>
+                    <div class="col-span-1 flex flex-col gap-2">
+                        <div class="flex items-center">
+                            <input id="af13a-1" type="radio" value="1" name="af13a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                            <label for="af13a-1" class="ms-2 text-sm text-gray-900">1. Хотя бы раз в месяц</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="af13a-2" type="radio" value="2" name="af13a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                            <label for="af13a-2" class="ms-2 text-sm text-gray-900">2. Раз в 2-3 месяца</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="af13a-3" type="radio" value="3" name="af13a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                            <label for="af13a-3" class="ms-2 text-sm text-gray-900">3. Раз в 4-6 месяцев</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="af13a-4" type="radio" value="4" name="af13a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                            <label for="af13a-4" class="ms-2 text-sm text-gray-900">4. Раз в год</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="af13a-5" type="radio" value="5" name="af13a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                            <label for="af13a-5" class="ms-2 text-sm text-gray-900">5. Всякий раз, когда это необходимо</label>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                    <div>AF13b. Когда в последний раз учреждение подвергалось дезинсекции?                <small class="block">Укажите, пожалуйста, месяц и год</small>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <input type="text" id="af13b" name="af13b" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 disabled:bg-gray-100" />
+                        <p>(Month / Year) --- nu am traducere</p>
+                    </div>
+                </div>
+        
+                <div class="grid grid-cols-2 gap-4 items-center mt-10">
+                    <div class="col-span-1">
+                        AF14. Какое из следующих утверждений описывает ситуацию верно для в учреждения в отношении сбора, хранения и утилизации медицинских отходов?                <small class="block">ВЫБРАТЬ ВСЕ, ЧТО ПОДХОДИТ</small>
+                    </div>
+                    <div class="col-span-1 flex flex-col gap-2">
+                        <div class="flex items-center">
+                            <input id="af14_1-1" type="checkbox" value="1" name="af14_1" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                            <label for="af14_1-1" class="ms-2 text-sm text-gray-900">Опасные медицинские отходы собираются отдельно от неопасных и бытовых отходов.</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="af14_2-2" type="checkbox" value="1" name="af14_2" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                            <label for="af14_2-2" class="ms-2 text-sm text-gray-900">Опасные медицинские отходы сортируются по типам.</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="af14_3-3" type="checkbox" value="1" name="af14_3" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                            <label for="af14_3-3" class="ms-2 text-sm text-gray-900">Имеется специально отведенное место для временного хранения опасных медицинских отходов, доступ к которому имеет только уполномоченный персонал</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="af14_4-4" type="checkbox" value="1" name="af14_4" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                            <label for="af14_4-4" class="ms-2 text-sm text-gray-900">У учреждения заключен договор с лицензированной компанией, занимающейся транспортировкой, переработкой и утилизацией медицинских отходов</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="af14_5-5" type="checkbox" value="1" name="af14_5" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                            <label for="af14_5-5" class="ms-2 text-sm text-gray-900">Ни одно из вышеперечисленного</label>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="grid grid-cols-2 gap-4 items-center mt-10">
+                    <div class="col-span-1">
+                        AF15. Имеются ли на территории учреждения какие-либо из следующих объектов?                <small class="block">Пожалуйста, отметьте все, что относится</small>
+                    </div>
+                    <div class="col-span-1 flex flex-col gap-2">
+                        <div class="flex items-center">
+                            <input id="af15_1-1" type="checkbox" value="1" name="af15_1" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                            <label for="af15_1-1" class="ms-2 text-sm text-gray-900">Огород (с овощами, цветами и т.д.)</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="af15_2-2" type="checkbox" value="1" name="af15_2" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                            <label for="af15_2-2" class="ms-2 text-sm text-gray-900">Теплица или политоннель</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="af15_3-3" type="checkbox" value="1" name="af15_3" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                            <label for="af15_3-3" class="ms-2 text-sm text-gray-900">Фруктовый сад</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="af15_4-4" type="checkbox" value="1" name="af15_4" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                            <label for="af15_4-4" class="ms-2 text-sm text-gray-900">Конюшня/будка/загон для скота/курятник</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="af15_5-5" type="checkbox" value="1" name="af15_5" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                            <label for="af15_5-5" class="ms-2 text-sm text-gray-900">Ни одно из вышеперечисленного</label>
+                        </div>
+                    </div>
+                </div>
+        
+                <h2 class="mt-10 mb-4 text-2xl font-bold text-gray-700">4. РАЗМЕЩЕНИЕ И УСЛОВИЯ ПРОЖИВАНИЯ</h2>
         
         
         

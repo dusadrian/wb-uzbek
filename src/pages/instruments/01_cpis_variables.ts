@@ -187,7 +187,7 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 16,
-        active: function () { return (true) },
+        active: function () {  return (true) },
         error: ''
     },
     'lk3': {
