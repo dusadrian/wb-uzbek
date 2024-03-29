@@ -318,6 +318,7 @@ const instrumentQMR = () => {
 
     topMenu('localCoordinator/01_dashboard');
 
+    translatePage();
     const importFile = async () => {
         return await import("./pages/instruments/04_qmr");
     };
