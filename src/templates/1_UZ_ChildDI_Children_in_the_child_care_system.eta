@@ -210,7 +210,7 @@
             </div>
         </div>
         <div class="grid grid-cols-2 items-center gap-4 mt-6">
-            <div>LK14d. City/Town/Village</div>
+            <div><%= it.LK14d %>. <%= it.LK14d_text %></div>
             <div>
                 <select id="lk14d" name="lk14d" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
                     <option value="1">-- choose ---</option>
@@ -219,7 +219,7 @@
             </div>
         </div>
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
-            <div>LK14e. Type of settlment</div>
+            <div><%= it.LK14e %>. <%= it.LK14e_text %></div>
             <div class="flex gap-4">
                 <div class="flex items-center">
                     <input id="lk14e-1" type="radio" value="1" name="lk14e" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
