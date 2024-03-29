@@ -105,5 +105,6 @@
 	"t_edit_user": "Изменить пользователя",
 	"t_cpis_list": "t_cpis_list",
 	"t_add_child": "t_add_child",
-	"t_pin": "t_pin"
+	"t_pin": "t_pin",
+	"t_choose": "--- chooseRU ---"
 }

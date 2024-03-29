@@ -108,5 +108,6 @@
 	"t_pin": "PIN",
 	"Instrument saved.": "Instrument saved.",
 	"Completati corect toate campurile!": "Completati corect toate campurile!",
-	"The following fields are mandatory: PIN, LK1a, LK1b, LK1c!": "The following fields are mandatory: PIN, LK1a, LK1b, LK1c!"
+	"The following fields are mandatory: PIN, LK1a, LK1b, LK1c!": "The following fields are mandatory: PIN, LK1a, LK1b, LK1c!",
+	"t_choose": "--- choose ---"
 }
