@@ -1131,6 +1131,613 @@
         <h2 class="mt-10 mb-4 text-2xl font-bold text-gray-700"><%= it.t276 %></h2>
 
 
+        <table class="w-full mt-6" aria-label="AC1. Please provide the following information about the institution’s accommodation capacity">
+            <thead>
+                <tr class="border-b">
+                    <th class="p-2 text-left">AC1. Please provide the following information about the institution’s accommodation capacity</th>
+                    <th class="p-2 text-center">Total number of rooms</th>
+                    <th class="p-2 text-center">Total ares (sqm)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="p-1">a. Total number of sleeping quarters</td>
+                    <td class="p-1">
+                        <input type="text" id="ac1a1" name="ac1a1" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 disabled:bg-gray-100" />
+                    </td>
+                    <td class="p-1">
+                        <input type="text" id="ac1a2" name="ac1a2" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 disabled:bg-gray-100" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="ml-2">
+                            Of which, sleeping quarters…
+                        </div>
+                    </td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td class="p-1">
+                        <div class="ml-4">
+                            b. … With one bed
+                        </div>
+                    </td>
+                    <td class="p-1">
+                        <input type="text" id="ac1b1" name="ac1b1" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 disabled:bg-gray-100" />
+                    </td>
+                    <td class="p-1">
+                        <input type="text" id="ac1b2" name="ac1b2" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 disabled:bg-gray-100" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="p-1">
+                        <div class="ml-4">
+                            c. … With two beds
+                        </div>
+                    </td>
+                    <td class="p-1">
+                        <input type="text" id="ac1c1" name="ac1c1" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 disabled:bg-gray-100" />
+                    </td>
+                    <td class="p-1">
+                        <input type="text" id="ac1c2" name="ac1c2" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 disabled:bg-gray-100" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="p-1">
+                        <div class="ml-4">
+                            d. … With three beds
+                        </div>
+                    </td>
+                    <td class="p-1">
+                        <input type="text" id="ac1d1" name="ac1d1" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 disabled:bg-gray-100" />
+                    </td>
+                    <td class="p-1">
+                        <input type="text" id="ac1d2" name="ac1d2" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 disabled:bg-gray-100" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="p-1">
+                        <div class="ml-4">
+                            e. … With four or more beds
+                        </div>
+                    </td>
+                    <td class="p-1">
+                        <input type="text" id="ac1e1" name="ac1e1" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 disabled:bg-gray-100" />
+                    </td>
+                    <td class="p-1">
+                        <input type="text" id="ac1e2" name="ac1e2" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 disabled:bg-gray-100" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="p-1">
+                        <div class="ml-4">
+                            f. … With adaptations for those in wheelchairs
+                        </div>
+                    </td>
+                    <td class="p-1">
+                        <input type="text" id="ac1f1" name="ac1f1" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 disabled:bg-gray-100" />
+                    </td>
+                    <td class="p-1">
+                        <input type="text" id="ac1f2" name="ac1f2" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 disabled:bg-gray-100" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="p-1">
+                        <div class="ml-4">
+                            g. … With private toilet and bathroom/shower
+                        </div>
+                    </td>
+                    <td class="p-1">
+                        <input type="text" id="ac1g1" name="ac1g1" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 disabled:bg-gray-100" />
+                    </td>
+                    <td class="p-1">
+                        <input type="text" id="ac1g2" name="ac1g2" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 disabled:bg-gray-100" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="p-1">h. Total number of beds</td>
+                    <td class="p-1">
+                        <input type="text" id="ac1h1" name="ac1h1" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 disabled:bg-gray-100" />
+                    </td>
+                    <td class="p-1">
+                        <input type="text" id="ac1h2" name="ac1h2" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 disabled:bg-gray-100" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="p-1">i. Isolation chambers for solitary confinement of children with behavioral problems</td>
+                    <td class="p-1">
+                        <input type="text" id="ac1i1" name="ac1i1" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 disabled:bg-gray-100" />
+                    </td>
+                    <td class="p-1">
+                        <input type="text" id="ac1i2" name="ac1i2" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 disabled:bg-gray-100" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="p-1">j. Isolation rooms for medical reasons</td>
+                    <td class="p-1">
+                        <input type="text" id="ac1j1" name="ac1j1" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 disabled:bg-gray-100" />
+                    </td>
+                    <td class="p-1">
+                        <input type="text" id="ac1j2" name="ac1j2" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 disabled:bg-gray-100" />
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="grid grid-cols-2 gap-4 items-center mt-6">
+            <div>AC2. Within the premises of the institution, what is the maximum number of beds in a sleeping quarter?</div>
+            <div class="flex items-center gap-4">
+                <input type="text" id="ac2" name="ac2" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full disabled:bg-gray-100" />
+            </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 items-center mt-10">
+            <div class="col-span-1">
+                AC3. How are children allocated to dormitories in your institution
+                <small class="block">SELECT ALL THAT APPLY</small>
+            </div>
+            <div class="col-span-1 flex flex-col gap-2">
+                <div class="flex items-center">
+                    <input id="ac3_1-1" type="checkbox" value="1" name="ac3_1" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="ac3_1-1" class="ms-2 text-sm text-gray-900">By gender</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="ac3_2-2" type="checkbox" value="1" name="ac3_2" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="ac3_2-2" class="ms-2 text-sm text-gray-900">By age</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="ac3_3-3" type="checkbox" value="1" name="ac3_3" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="ac3_3-3" class="ms-2 text-sm text-gray-900">By disability</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="ac3_4-4" type="checkbox" value="1" name="ac3_4" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="ac3_4-4" class="ms-2 text-sm text-gray-900">By affinity to each other</label>
+                </div>
+                <div class="flex flex-col gap-2">
+                    <div>
+                        <input id="ac3_5-5" type="checkbox" value="1" name="ac3_5" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <label for="ac3_5-5" class="ms-2 text-sm text-gray-900">By other criteria (please specify)</label>
+                    </div>
+                    <input type="text" id="ac3_5_other" name="ac3_5_other" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full disabled:bg-gray-100" />
+                </div>
+                <div class="flex items-center">
+                    <input id="ac3_5-6" type="checkbox" value="1" name="ac3_6" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="ac3_5-6" class="ms-2 text-sm text-gray-900">No specific criteria</label>
+                </div>
+            </div>
+        </div>
+        <div class="grid grid-cols-2 gap-4 items-center mt-6">
+            <div class="col-span-1">AC4. Do children in your institution have a say on whom they stay with in the bedroom?</div>
+            <div class="col-span-1 flex flex-col gap-2">
+                <div class="flex items-center">
+                    <input id="ac4-1" type="radio" value="1" name="ac4" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="ac4-1" class="ms-2 text-sm text-gray-900">1. Yes, always</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="ac4-2" type="radio" value="2" name="ac4" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="ac4-2" class="ms-2 text-sm text-gray-900">2. Yes, sometimes</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="ac4-3" type="radio" value="3" name="ac4" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="ac4-3" class="ms-2 text-sm text-gray-900">3. No, never</label>
+                </div>
+            </div>
+        </div>
+
+        <p class="mt-6">AC5. How many of the following items are there in the space where children are accommodated?</p>
+        <div class="grid grid-cols-2 gap-4 items-center mt-6">
+            <div>a. Total number of restrooms</div>
+            <div class="flex items-center gap-4">
+                <input type="text" id="ac5a" name="ac5a" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full disabled:bg-gray-100" />
+            </div>
+        </div>
+        <div class="grid grid-cols-2 gap-4 items-center mt-6">
+            <div>b. Total number of toilet stalls, of which</div>
+            <div class="flex items-center gap-4">
+                <input type="text" id="ac5b" name="ac5b" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full disabled:bg-gray-100" />
+            </div>
+        </div>
+        <div class="grid grid-cols-2 gap-4 items-center mt-6">
+            <div class="pl-6">b1. adapted for children with motor disabilities</div>
+            <div class="flex items-center gap-4">
+                <input type="text" id="ac5b1" name="ac5b1" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full disabled:bg-gray-100" />
+            </div>
+        </div>
+        <div class="grid grid-cols-2 gap-4 items-center mt-6">
+            <div>c. Total number of sinks, of which</div>
+            <div class="flex items-center gap-4">
+                <input type="text" id="ac5c" name="ac5c" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full disabled:bg-gray-100" />
+            </div>
+        </div>
+        <div class="grid grid-cols-2 gap-4 items-center mt-6">
+            <div class="pl-6">c1. adapted for children with motor disabilitie</div>
+            <div class="flex items-center gap-4">
+                <input type="text" id="ac5c1" name="ac5c1" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full disabled:bg-gray-100" />
+            </div>
+        </div>
+        <div class="grid grid-cols-2 gap-4 items-center mt-6">
+            <div>d. Total number of bathrooms</div>
+            <div class="flex items-center gap-4">
+                <input type="text" id="ac5d" name="ac5d" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full disabled:bg-gray-100" />
+            </div>
+        </div>
+        <div class="grid grid-cols-2 gap-4 items-center mt-6">
+            <div>e. Total number of showers, of which</div>
+            <div class="flex items-center gap-4">
+                <input type="text" id="ac5e" name="ac5e" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full disabled:bg-gray-100" />
+            </div>
+        </div>
+        <div class="grid grid-cols-2 gap-4 items-center mt-6">
+            <div class="pl-6">e1. adapted for children with motor disabilities</div>
+            <div class="flex items-center gap-4">
+                <input type="text" id="ac5e1" name="ac5e1" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full disabled:bg-gray-100" />
+            </div>
+        </div>
+        <div class="grid grid-cols-2 gap-4 items-center mt-6">
+            <div>f. Total number of bathtubs, of which</div>
+            <div class="flex items-center gap-4">
+                <input type="text" id="ac5f" name="ac5f" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full disabled:bg-gray-100" />
+            </div>
+        </div>
+        <div class="grid grid-cols-2 gap-4 items-center mt-6">
+            <div class="pl-6">f1. adapted for children with motor disabilities</div>
+            <div class="flex items-center gap-4">
+                <input type="text" id="ac5f1" name="ac5f1" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full disabled:bg-gray-100" />
+            </div>
+        </div>
+        <div class="grid grid-cols-2 gap-4 items-center mt-6">
+            <div>f. Total number of squat toilets</div>
+            <div class="flex items-center gap-4">
+                <input type="text" id="ac5g" name="ac5g" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full disabled:bg-gray-100" />
+            </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 items-center mt-6">
+            <div class="col-span-1">AC6. Do all children residing in the institution have their own bed, not shared with other children?</div>
+            <div class="col-span-1 flex items-center gap-4">
+                <div class="flex items-center">
+                    <input id="ac6-1" type="radio" value="1" name="ac6" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="ac6-1" class="ms-2 text-sm text-gray-900">1. Yes</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="ac6-2" type="radio" value="2" name="ac6" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="ac6-2" class="ms-2 text-sm text-gray-900">2. No</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 items-center mt-6">
+            <div>AC6a. How many children share a bed with another child?</div>
+            <div class="flex items-center gap-4">
+                <input type="text" id="ac6a" name="ac6a" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full disabled:bg-gray-100" />
+            </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 items-center mt-6">
+            <div class="col-span-1">AC7a. Does each child residing in the institution have at least two towels for their own use</div>
+            <div class="col-span-1 flex items-center gap-4">
+                <div class="flex items-center">
+                    <input id="ac7a-1" type="radio" value="1" name="ac7a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="ac7a-1" class="ms-2 text-sm text-gray-900">1. Yes</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="ac7a-2" type="radio" value="2" name="ac7a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="ac7a-2" class="ms-2 text-sm text-gray-900">2. No</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 items-center mt-6">
+            <div>AC7b. How often do children get clean towels?</div>
+            <div class="flex items-center gap-4">
+                Every
+                <input type="text" id="ac7b" name="ac7b" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-20 disabled:bg-gray-100" />
+                days
+            </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 items-center mt-6">
+            <div class="col-span-1">AC8a. How would you rate the quality and condition of the bed linen, pillows, blankets, and other bedding items for each bed?</div>
+            <div class="col-span-1 flex flex-col gap-2">
+                <div class="flex items-center">
+                    <input id="ac8a-5" type="radio" value="5" name="ac8a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="ac8a-5" class="ms-2 text-sm text-gray-900">5. Excellent</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="ac8a-4" type="radio" value="4" name="ac8a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="ac8a-4" class="ms-2 text-sm text-gray-900">4. Good</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="ac8a-3" type="radio" value="3" name="ac8a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="ac8a-3" class="ms-2 text-sm text-gray-900">3. Fair</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="ac8a-1" type="radio" value="1" name="ac8a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="ac8a-1" class="ms-2 text-sm text-gray-900">2. Poor</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="ac8a-2" type="radio" value="2" name="ac8a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="ac8a-2" class="ms-2 text-sm text-gray-900">1. Very poor</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 items-center mt-6">
+            <div>AC8b. How often do children get clean bed linen?</div>
+            <div class="flex items-center gap-4">
+                Every
+                <input type="text" id="ac8b" name="ac8b" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-20 disabled:bg-gray-100" />
+                days
+            </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 items-center mt-6">
+            <div class="col-span-1">AC9a. Does every child residing in the institution have enough quality and suitable (both in terms of size and season) clothes for their own?
+            </div>
+            <div class="col-span-1 flex items-center gap-4">
+                <div class="flex items-center">
+                    <input id="ac9a-1" type="radio" value="1" name="ac9a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="ac9a-1" class="ms-2 text-sm text-gray-900">1. Yes</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="ac9a-2" type="radio" value="2" name="ac9a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="ac9a-2" class="ms-2 text-sm text-gray-900">2. No</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 items-center mt-6">
+            <div class="col-span-1">AC9b. Does the institution provide clothes for all, some, or none of the children residing in the institution?</div>
+            <div class="col-span-1 flex items-center gap-4">
+                <div class="flex items-center">
+                    <input id="ac9b-1" type="radio" value="1" name="ac9b" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="ac9b-1" class="ms-2 text-sm text-gray-900">1. All</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="ac9b-2" type="radio" value="2" name="ac9b" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="ac9b-2" class="ms-2 text-sm text-gray-900">2. Some</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="ac9b-3" type="radio" value="3" name="ac9b" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="ac9b-3" class="ms-2 text-sm text-gray-900">3. None</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 items-center mt-6">
+            <div>AC9c. How often do the children get new clothes from the institution?</div>
+            <div class="flex items-center gap-4">
+                Every
+                <input type="text" id="ac9c" name="ac9c" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-20 disabled:bg-gray-100" />
+                months
+            </div>
+        </div>
+        <small class="text-sm italic">“New clothes” means not previously worn by another child</small>
+
+        <div class="grid grid-cols-2 gap-4 items-center mt-6">
+            <div class="col-span-1">AC9d. How often does the institution provide clothing to children from older children who have previously worn it?</div>
+            <div class="col-span-1 flex flex-col gap-2">
+                <div class="flex items-center">
+                    <input id="ac9d-1" type="radio" value="1" name="ac9d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="ac9d-5" class="ms-2 text-sm text-gray-900">1. Never</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="ac9d-2" type="radio" value="2" name="ac9d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="ac9d-4" class="ms-2 text-sm text-gray-900">2. Rarely</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="ac9d-3" type="radio" value="3" name="ac9d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="ac9d-3" class="ms-2 text-sm text-gray-900">3. Sometimes</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="ac9d-4" type="radio" value="4" name="ac9d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="ac9d-1" class="ms-2 text-sm text-gray-900">4. Often</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="ac9d-5" type="radio" value="5" name="ac9d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="ac9d-2" class="ms-2 text-sm text-gray-900">5. Always</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 items-center mt-6">
+            <div class="col-span-1">AC10a. Does every child residing in the institution have at least two pairs of quality and suitable shoes for their own?</div>
+            <div class="col-span-1 flex items-center gap-4">
+                <div class="flex items-center">
+                    <input id="ac10a-1" type="radio" value="1" name="ac10a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="ac10a-1" class="ms-2 text-sm text-gray-900">1. Yes</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="ac10a-2" type="radio" value="2" name="ac10a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="ac10a-2" class="ms-2 text-sm text-gray-900">2. No</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 items-center mt-6">
+            <div class="col-span-1">AC10b. Does the institution provide footwear for all, some, or none of the children residing in the institution?</div>
+            <div class="col-span-1 flex items-center gap-4">
+                <div class="flex items-center">
+                    <input id="ac10b-1" type="radio" value="1" name="ac10b" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="ac10b-1" class="ms-2 text-sm text-gray-900">1. All</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="ac10b-2" type="radio" value="2" name="ac10b" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="ac10b-2" class="ms-2 text-sm text-gray-900">2. Some</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="ac10b-3" type="radio" value="3" name="ac10b" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="ac10b-3" class="ms-2 text-sm text-gray-900">3. None</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 items-center mt-6">
+            <div>AC10c. How often do the children get new footwear from the institution?</div>
+            <div class="flex items-center gap-4">
+                Every
+                <input type="text" id="ac10c" name="ac10c" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-20 disabled:bg-gray-100" />
+                months
+            </div>
+        </div>
+        <small class="text-sm italic">“New clothes” means not previously worn by another child</small>
+
+
+        <div class="grid grid-cols-2 gap-4 items-center mt-6">
+            <div class="col-span-1">AC10d. How often does the institution provide footwear to children from older children who have previously worn it?</div>
+            <div class="col-span-1 flex flex-col gap-2">
+                <div class="flex items-center">
+                    <input id="ac10d-1" type="radio" value="1" name="ac10d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="ac10d-5" class="ms-2 text-sm text-gray-900">1. Never</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="ac10d-2" type="radio" value="2" name="ac10d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="ac10d-4" class="ms-2 text-sm text-gray-900">2. Rarely</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="ac10d-3" type="radio" value="3" name="ac10d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="ac10d-3" class="ms-2 text-sm text-gray-900">3. Sometimes</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="ac10d-4" type="radio" value="4" name="ac10d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="ac10d-1" class="ms-2 text-sm text-gray-900">4. Often</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="ac10d-5" type="radio" value="5" name="ac10d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="ac10d-2" class="ms-2 text-sm text-gray-900">5. Always</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 items-center mt-6">
+            <div class="col-span-1">AC11. Do children have a say in the selection of their clothes and footwear?</div>
+            <div class="col-span-1 flex items-center gap-4">
+                <div class="flex items-center">
+                    <input id="ac11-1" type="radio" value="1" name="ac11" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="ac11-1" class="ms-2 text-sm text-gray-900">1. Yes</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="ac11-2" type="radio" value="2" name="ac11" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="ac11-2" class="ms-2 text-sm text-gray-900">2. No</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 items-center mt-6">
+            <div class="col-span-1">AC111. Do children have wardrobes, bedside tables or other pieces of furniture in their room, where they can keep their own clothes and other
+                personal belongings?</div>
+            <div class="col-span-1 flex items-center gap-4">
+                <div class="flex items-center">
+                    <input id="ac111-1" type="radio" value="1" name="ac111" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="ac111-1" class="ms-2 text-sm text-gray-900">1. Yes</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="ac111-2" type="radio" value="2" name="ac111" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="ac111-2" class="ms-2 text-sm text-gray-900">2. No</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 items-center mt-6">
+            <div class="col-span-1">AC12a. Does every child residing in the institution have their own toothbrush?</div>
+            <div class="col-span-1 flex items-center gap-4">
+                <div class="flex items-center">
+                    <input id="ac12a-1" type="radio" value="1" name="ac12a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="ac12a-1" class="ms-2 text-sm text-gray-900">1. Yes</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="ac12a-2" type="radio" value="2" name="ac12a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="ac12a-2" class="ms-2 text-sm text-gray-900">2. No</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 items-center mt-6">
+            <div class="col-span-1">AC12b. Does the institution provide toothbrushes for all, some, or none of the children residing in the institution?</div>
+            <div class="col-span-1 flex items-center gap-4">
+                <div class="flex items-center">
+                    <input id="ac12b-1" type="radio" value="1" name="ac12b" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="ac12b-1" class="ms-2 text-sm text-gray-900">1. All</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="ac12b-2" type="radio" value="2" name="ac12b" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="ac12b-2" class="ms-2 text-sm text-gray-900">2. Some</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="ac12b-3" type="radio" value="3" name="ac12b" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="ac12b-3" class="ms-2 text-sm text-gray-900">3. None</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 items-center mt-6">
+            <div>AC12c. How often do the children get new toothbrushes from the institution?</div>
+            <div class="flex items-center gap-4">
+                Every
+                <input type="text" id="ac12c" name="ac12c" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-20 disabled:bg-gray-100" />
+                months
+            </div>
+        </div>
+
+
+        <div class="grid grid-cols-2 gap-4 items-center mt-6">
+            <div class="col-span-1">AC13. Does the institution allow the child to lock their belongings and have access to them whenever they want?</div>
+            <div class="col-span-1 flex items-center gap-4">
+                <div class="flex items-center">
+                    <input id="ac13-1" type="radio" value="1" name="ac13" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="ac13-1" class="ms-2 text-sm text-gray-900">1. Yes</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="ac13-2" type="radio" value="2" name="ac13" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="ac13-2" class="ms-2 text-sm text-gray-900">2. No</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 items-center mt-6">
+            <div class="col-span-1">
+                AC14a. Does the institution provide pocket money for all, some, or none of the children residing in the institution?
+                <small class="text-sm italic">Pocket money is money that the children can use for their personal expenses, such as buying snacks, toys, or gifts</small>
+            </div>
+            <div class="col-span-1 flex items-center gap-4">
+                <div class="flex items-center">
+                    <input id="ac14a-1" type="radio" value="1" name="ac14a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="ac14a-1" class="ms-2 text-sm text-gray-900">1. All</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="ac14a-2" type="radio" value="2" name="ac14a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="ac14a-2" class="ms-2 text-sm text-gray-900">2. Some</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="ac14a-3" type="radio" value="3" name="ac14a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="ac14a-3" class="ms-2 text-sm text-gray-900">3. None</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="ac14a-4" type="radio" value="4" name="ac14a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="ac14a-4" class="ms-2 text-sm text-gray-900">4. Not applicable (for baby homes only)</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 items-center mt-6">
+            <div>AC14b. How much pocket money does the institution provide for a child and with what frequency?</div>
+            <div class="flex items-center gap-6">
+                <div class="flex items-center gap-4">
+                    <input type="text" id="ac14b1" name="ac14b1" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-32 disabled:bg-gray-100" />
+                    UZS
+                </div>
+                <div class="flex items-center gap-4">
+                    Every
+                    <input type="text" id="ac14b2" name="ac14b2" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-20 disabled:bg-gray-100" />
+                    weeks
+                </div>
+            </div>
+        </div>
+
+        <h2 class="mt-10 mb-4 text-2xl font-bold text-gray-700">5. CATERING CONDITIONS</h2>
+
 
     </form>
 </body>
