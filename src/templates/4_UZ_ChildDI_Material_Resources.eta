@@ -1454,12 +1454,12 @@
                     <label for="ac8a-3" class="ms-2 text-sm text-gray-900"><%= it.t339 %></label>
                 </div>
                 <div class="flex items-center">
-                    <input id="ac8a-1" type="radio" value="1" name="ac8a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="ac8a-1" class="ms-2 text-sm text-gray-900"><%= it.t340 %></label>
+                    <input id="ac8a-2" type="radio" value="2" name="ac8a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="ac8a-2" class="ms-2 text-sm text-gray-900"><%= it.t340 %></label>
                 </div>
                 <div class="flex items-center">
-                    <input id="ac8a-2" type="radio" value="2" name="ac8a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="ac8a-2" class="ms-2 text-sm text-gray-900"><%= it.t341 %></label>
+                    <input id="ac8a-1" type="radio" value="1" name="ac8a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="ac8a-1" class="ms-2 text-sm text-gray-900"><%= it.t341 %></label>
                 </div>
             </div>
         </div>
@@ -1736,6 +1736,1237 @@
         </div>
 
         <h2 class="mt-10 mb-4 text-2xl font-bold text-gray-700"><%= it.t427 %></h2>
+
+        <div class="grid grid-cols-2 gap-4 items-center mt-10">
+            <div class="col-span-1">
+                CC1. Which of the following spaces/facilities exist in your institution?
+                <small class="block">SELECT ALL THAT APPLY</small>
+            </div>
+            <div class="col-span-1 flex flex-col gap-2">
+                <div class="flex items-center">
+                    <input id="cc1_1-1" type="checkbox" value="1" name="cc1_1" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="cc1_1-1" class="ms-2 text-sm text-gray-900">Kitchen</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="cc1_2-2" type="checkbox" value="1" name="cc1_2" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="cc1_2-2" class="ms-2 text-sm text-gray-900">Special spaces for storing food (pantry, cellar etc.)</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="cc1_3-3" type="checkbox" value="1" name="cc1_3" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="cc1_3-3" class="ms-2 text-sm text-gray-900">Dining hall</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 items-center mt-6">
+            <div class="col-span-1">
+                <small class="text-sm italic block">IF THERE IS A KITCHEN</small>
+                CC2. How well does the equipment in your institution's kitchen meet the needs of preparing food?
+            </div>
+            <div class="col-span-1 flex flex-col gap-2">
+                <div class="flex items-center">
+                    <input id="cc2-1" type="radio" value="1" name="cc2" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="cc2-1" class="ms-2 text-sm text-gray-900">1. Fully functional and meets all cooking needs</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="cc2-2" type="radio" value="2" name="cc2" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="cc2-2" class="ms-2 text-sm text-gray-900">2. Functional but does not meet all cooking needs</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="cc2-3" type="radio" value="3" name="cc2" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="cc2-3" class="ms-2 text-sm text-gray-900">3. Functional but needs repair to meet all cooking needs</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="cc2-4" type="radio" value="4" name="cc2" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="cc2-4" class="ms-2 text-sm text-gray-900">4. Not functional and needs repair or replacement</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="cc2-5" type="radio" value="5" name="cc2" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="cc2-5" class="ms-2 text-sm text-gray-900">5. Missing essential cooking equipment</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 items-center mt-6">
+            <div class="col-span-1">
+                <small class="text-sm italic block">IF THERE IS A FOOD STORAGE SPACE</small>
+                CC3. How well does the available space and equipment in your institution meet the needs of storing food?
+            </div>
+            <div class="col-span-1 flex flex-col gap-2">
+                <div class="flex items-center">
+                    <input id="cc3-1" type="radio" value="1" name="cc3" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="cc3-1" class="ms-2 text-sm text-gray-900">1. Fully functional and meets all food storage needs</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="cc3-2" type="radio" value="2" name="cc3" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="cc3-2" class="ms-2 text-sm text-gray-900">2. Functional but does not meet all food storage needs</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="cc3-3" type="radio" value="3" name="cc3" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="cc3-3" class="ms-2 text-sm text-gray-900">3. Functional but needs repair to meet all food storage needs</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="cc3-4" type="radio" value="4" name="cc3" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="cc3-4" class="ms-2 text-sm text-gray-900">4. Not functional and needs repair or replacement</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="cc3-5" type="radio" value="5" name="cc3" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="cc3-5" class="ms-2 text-sm text-gray-900">5. Missing essential food storage space and equipment</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 items-center mt-6">
+            <div>
+                <small class="text-sm italic block">IF THERE IS A DINING HALL</small>
+                CC4. How many seats are available in the dining hall for the children in your institution?
+            </div>
+            <div class="flex items-center gap-4">
+                <input type="text" id="cc4" name="cc4" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-20 disabled:bg-gray-100" />
+                seats
+            </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 items-center mt-6">
+            <div>
+                CC5. How many children residing in the institution receive food or are fed in their own rooms?
+            </div>
+            <div class="flex items-center gap-4">
+                <input type="text" id="cc5" name="cc5" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-20 disabled:bg-gray-100" />
+                seats
+            </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 items-center mt-6">
+            <div>
+                CC6. How many main meals and snacks do children receive in a day?
+            </div>
+            <div class="flex items-center gap-4">
+                <div class="flex items-center gap-2">
+                    <input type="text" id="cc61" name="cc61" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-20 disabled:bg-gray-100" />
+                    meals
+                </div>
+                <div class="flex items-center gap-2">
+                    <input type="text" id="cc62" name="cc62" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-20 disabled:bg-gray-100" />
+                    snacks
+                </div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 items-center mt-6">
+            <div class="col-span-1">
+                CC66. Do children have a say about the daily menu the institution serves them?
+            </div>
+            <div class="col-span-1 flex flex-col gap-2">
+                <div class="flex items-center">
+                    <input id="cc66-1" type="radio" value="1" name="cc66" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="cc66-1" class="ms-2 text-sm text-gray-900">1. Yes, children participate in the decision regarding the daily menu</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="cc66-2" type="radio" value="2" name="cc66" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="cc66-2" class="ms-2 text-sm text-gray-900">2. No, children do not participate in the decision regarding the daily menu</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="cc66-3" type="radio" value="3" name="cc66" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="cc66-3" class="ms-2 text-sm text-gray-900">3. Sometimes, children are consulted about the daily menu</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 items-center mt-6">
+            <div class="col-span-1">
+                CC7. Please indicate the daily average number of calories in the food served by the institution last week, for each of the following age group?
+            </div>
+            <div class="col-span-1 flex flex-col gap-2">
+                <div class="flex flex-col gap-4">
+                    <div class="grid grid-cols-2">
+                        <div>a. Up to 3 years</div>
+                        <div class="flex items-center gap-2">
+                            <input type="text" id="cc7a" name="cc7a" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-20 disabled:bg-gray-100" />
+                            calories
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-2">
+                        <div>b. 4 to 8 years</div>
+                        <div class="flex items-center gap-2">
+                            <input type="text" id="cc7b" name="cc7b" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-20 disabled:bg-gray-100" />
+                            calories
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-2">
+                        <div>c. 9 to 13 years</div>
+                        <div class="flex items-center gap-2">
+                            <input type="text" id="cc7c" name="cc7c" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-20 disabled:bg-gray-100" />
+                            calories
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-2">
+                        <div>d. 14 year or more</div>
+                        <div class="flex items-center gap-2">
+                            <input type="text" id="cc7d" name="cc7d" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-20 disabled:bg-gray-100" />
+                            calories
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 items-center mt-6">
+            <div class="col-span-1">CC8. Usually, do children get additional servings if they ask?</div>
+            <div class="col-span-1 flex items-center gap-4">
+                <div class="flex items-center">
+                    <input id="cc8-1" type="radio" value="1" name="cc8" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="cc8-1" class="ms-2 text-sm text-gray-900">1. Yes</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="cc8-2" type="radio" value="2" name="cc8" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="cc8-2" class="ms-2 text-sm text-gray-900">2. No</label>
+                </div>
+            </div>
+        </div>
+
+        <table class="w-full mt-6" aria-label="CC10. How often do children receive each of the following…?">
+            <thead>
+                <tr class="border-b">
+                    <th class="p-2 text-left">CC10. How often do children receive each of the following…?</th>
+                    <th class="p-2">Daily or almost daily</th>
+                    <th class="p-2">3 to 5 times a week</th>
+                    <th class="p-2">1 to 2 times a week</th>
+                    <th class="p-2">Less often</th>
+                    <th class="p-2">Never</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>a. Fresh fruits (such as apples, bananas, oranges,grapes, etc.)</td>
+                    <td class="text-center p-1"><input id="cc10a-1" type="radio" value="1" name="c10a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                    <td class="text-center p-1"><input id="cc10a-2" type="radio" value="2" name="c10a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                    <td class="text-center p-1"><input id="cc10a-3" type="radio" value="3" name="c10a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                    <td class="text-center p-1"><input id="cc10a-4" type="radio" value="4" name="c10a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                    <td class="text-center p-1"><input id="cc10a-5" type="radio" value="5" name="c10a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                </tr>
+                <tr>
+                    <td>b. Homemade desserts (such as cakes, pies, puddings, etc.)</td>
+                    <td class="text-center p-1"><input id="cc10b-1" type="radio" value="1" name="c10b" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                    <td class="text-center p-1"><input id="cc10b-2" type="radio" value="2" name="c10b" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                    <td class="text-center p-1"><input id="cc10b-3" type="radio" value="3" name="c10b" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                    <td class="text-center p-1"><input id="cc10b-4" type="radio" value="4" name="c10b" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                    <td class="text-center p-1"><input id="cc10b-5" type="radio" value="5" name="c10b" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                </tr>
+                <tr class="border-b">
+                    <td>c. Ready-made or processed foods (such as frozen meals, canned foods, processed meats, etc.)</td>
+                    <td class="text-center p-1"><input id="cc10c-1" type="radio" value="1" name="c10c" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                    <td class="text-center p-1"><input id="cc10c-2" type="radio" value="2" name="c10c" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                    <td class="text-center p-1"><input id="cc10c-3" type="radio" value="3" name="c10c" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                    <td class="text-center p-1"><input id="cc10c-4" type="radio" value="4" name="c10c" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                    <td class="text-center p-1"><input id="cc10c-5" type="radio" value="5" name="c10c" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="grid grid-cols-2 gap-4 items-center mt-6">
+            <div>
+                CC11. What is the daily food cost per child established by the institution?
+            </div>
+            <div class="flex items-center gap-4">
+                <input type="text" id="cc11" name="cc11" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-32 disabled:bg-gray-100" />
+                UZS
+            </div>
+        </div>
+
+        <h2 class="mt-10 mb-4 text-2xl font-bold text-gray-700">6. FACILITIES FOR EDUCATION AND OTHER SPECIFIC ACTIVITIE</h2>
+        <div class="grid grid-cols-2 gap-4 items-center mt-6">
+            <div>
+                <small class="italic block uppercase">FOR BOARDING SCHOOLS ONLY</small>
+                <p class="mb-2">DE1. For each of the following educational levels, how many classes / groups of study are in your institution?</p>
+            </div>
+            <div>DE2. How many students are currently enrolled at each level?</div>
+        </div>
+
+        <div class="grid grid-cols-3 gap-4 items-center mt-2">
+            <div class="ml-6">a. Pre-school / Kindergartens</div>
+            <div class="flex items-center gap-3">
+                <input type="text" id="de1a" name="de1a" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-20 disabled:bg-gray-100" />
+                classes
+            </div>
+            <div class="flex items-center gap-3">
+                <input type="text" id="de2a" name="de2a" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-20 disabled:bg-gray-100" />
+                students
+            </div>
+        </div>
+        <div class="grid grid-cols-3 gap-4 items-center mt-2">
+            <div class="ml-6">b. Preparatory</div>
+            <div class="flex items-center gap-3">
+                <input type="text" id="de1b" name="de1b" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-20 disabled:bg-gray-100" />
+                classes
+            </div>
+            <div class="flex items-center gap-3">
+                <input type="text" id="de2b" name="de2b" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-20 disabled:bg-gray-100" />
+                students
+            </div>
+        </div>
+        <div class="grid grid-cols-3 gap-4 items-center mt-2">
+            <div class="ml-6">c. Primary-school</div>
+            <div class="flex items-center gap-3">
+                <input type="text" id="de1c" name="de1c" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-20 disabled:bg-gray-100" />
+                classes
+            </div>
+            <div class="flex items-center gap-3">
+                <input type="text" id="de2c" name="de2c" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-20 disabled:bg-gray-100" />
+                students
+            </div>
+        </div>
+        <div class="grid grid-cols-3 gap-4 items-center mt-2">
+            <div class="ml-6">d. Secondary school</div>
+            <div class="flex items-center gap-3">
+                <input type="text" id="de1d" name="de1d" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-20 disabled:bg-gray-100" />
+                classes
+            </div>
+            <div class="flex items-center gap-3">
+                <input type="text" id="de2d" name="de2d" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-20 disabled:bg-gray-100" />
+                students
+            </div>
+        </div>
+        <div class="grid grid-cols-3 gap-4 items-center mt-2">
+            <div class="ml-6">e. Specialized vocational school (colleges)</div>
+            <div class="flex items-center gap-3">
+                <input type="text" id="de1e" name="de1e" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-20 disabled:bg-gray-100" />
+                classes
+            </div>
+            <div class="flex items-center gap-3">
+                <input type="text" id="de2e" name="de2e" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-20 disabled:bg-gray-100" />
+                students
+            </div>
+        </div>
+        <div class="grid grid-cols-2 gap-4 items-center mt-6">
+            <div>
+                DE3. How many classrooms are there in the institution
+            </div>
+            <div class="flex items-center gap-4">
+                <input type="text" id="de3" name="de3" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-32 disabled:bg-gray-100" />
+                classrooms
+            </div>
+        </div>
+        <div class="grid grid-cols-2 gap-4 items-center mt-6">
+            <div>
+                DE4. How many specialized rooms, labs and workshops such as art room, computer or science lab are there in the institution?
+            </div>
+            <div class="flex items-center gap-4">
+                <input type="text" id="de4" name="de4" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-32 disabled:bg-gray-100" />
+                spaces
+            </div>
+        </div>
+        <div class="grid grid-cols-2 gap-4 items-center mt-6">
+            <div>
+                <small class="italic block uppercase">FOR CHILDCARE INSTITUTIONS ONLY</small>
+                RCE1. What is the number of children who live in the institution and go to school elsewhere?
+            </div>
+            <div class="flex items-center gap-4">
+                <input type="text" id="rce1" name="rce1" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-32 disabled:bg-gray-100" />
+                children
+            </div>
+        </div>
+        <div class="grid grid-cols-2 gap-4 items-center mt-6">
+            <div class="ml-6">
+                RCE1a. What is the number of children who attend a mainstream school?
+            </div>
+            <div class="flex items-center gap-4">
+                <input type="text" id="rce1a" name="rce1a" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-32 disabled:bg-gray-100" />
+                children
+            </div>
+        </div>
+        <div class="grid grid-cols-2 gap-4 items-center mt-6">
+            <div class="ml-6">
+                RCE1b. What is the number of children who attend a specialized school?
+            </div>
+            <div class="flex items-center gap-4">
+                <input type="text" id="rce1b" name="rce1b" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-32 disabled:bg-gray-100" />
+                children
+            </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 items-center mt-10">
+            <div class="col-span-1">
+                RCE2. For those children who do not attend school outside the institution, what kinds of education activities are organized inside the institution?
+                <small class="block italic">Please select all that apply.</small>
+            </div>
+            <div class="col-span-1 flex flex-col gap-2">
+                <div class="flex items-center">
+                    <input id="rce2_1" type="checkbox" value="1" name="rce2_1" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="rce2_1" class="ms-2 text-sm text-gray-900">Formal education activities (e.g., following a curriculum, having a teacher, receiving a certificate,
+                        etc.)</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="rce2_2" type="checkbox" value="1" name="rce2_2" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="rce2_2" class="ms-2 text-sm text-gray-900">Informal education activities (e.g., learning through play, exploration, or interaction, etc.)</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="rce2_3" type="checkbox" value="1" name="rce2_3" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="rce2_3" class="ms-2 text-sm text-gray-900">Non-formal education activities (e.g., attending workshops, clubs, or courses, etc.)</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="rce2_4" type="checkbox" value="1" name="rce2_4" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="rce2_4" class="ms-2 text-sm text-gray-900">No education activities</label>
+                </div>
+            </div>
+        </div>
+
+        <p class="mt-6">THE FOLLOWING QUESTIONS REFFERS TO EDUCATION ACTIVITIES FOR CHILDREN WHO DO NOT ATTEND SCHOOL OUTSIDE THE INSTITUTION</p>
+
+        <div class="grid grid-cols-2 gap-4 items-center mt-6">
+            <div class="col-span-1">
+                RCE3. How may spaces for education activities ar there in the institution?
+            </div>
+            <div class="col-span-1 flex flex-col gap-2">
+                <div class="flex flex-col gap-4">
+                    <div class="grid grid-cols-2">
+                        <div>a. Dedicated spaces</div>
+                        <div class="flex items-center gap-2">
+                            <input type="text" id="rce3a" name="rce3a" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-20 disabled:bg-gray-100" />
+                            calories
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-2">
+                        <div>b. Shared spaces</div>
+                        <div class="flex items-center gap-2">
+                            <input type="text" id="rce3b" name="rce3b" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-20 disabled:bg-gray-100" />
+                            calories
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <p class="mt-6">RCE4. How would you rate the available resources for education activities within the institution?</p>
+        <small class="italic mt-2">Please use the following scale of 1 (very bad) to 5 (excellent).</small>
+        <div class="grid grid-cols-2 gap-4 items-center mt-6">
+            <div class="col-span-1 ml-4">a. The spaces are adequate in size and number for the education activities.</div>
+            <div class="col-span-1 flex items-center gap-4">
+                <div class="flex items-center">
+                    <input id="rce4a-1" type="radio" value="1" name="rce4a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="rce4a-1" class="ms-2 text-sm text-gray-900">1</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="rce4a-2" type="radio" value="2" name="rce4a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="rce4a-2" class="ms-2 text-sm text-gray-900">2</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="rce4a-3" type="radio" value="3" name="rce4a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="rce4a-3" class="ms-2 text-sm text-gray-900">3</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="rce4a-4" type="radio" value="4" name="rce4a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="rce4a-4" class="ms-2 text-sm text-gray-900">4</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="rce4a-5" type="radio" value="5" name="rce4a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="rce4a-5" class="ms-2 text-sm text-gray-900">5</label>
+                </div>
+            </div>
+        </div>
+        <div class="grid grid-cols-2 gap-4 items-center mt-6">
+            <div class="col-span-1 ml-4">b. The spaces are well-equipped and well-maintained for the education activities.</div>
+            <div class="col-span-1 flex items-center gap-4">
+                <div class="flex items-center">
+                    <input id="rce4b-1" type="radio" value="1" name="rce4b" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="rce4b-1" class="ms-2 text-sm text-gray-900">1</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="rce4b-2" type="radio" value="2" name="rce4b" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="rce4b-2" class="ms-2 text-sm text-gray-900">2</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="rce4b-3" type="radio" value="3" name="rce4b" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="rce4b-3" class="ms-2 text-sm text-gray-900">3</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="rce4b-4" type="radio" value="4" name="rce4b" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="rce4b-4" class="ms-2 text-sm text-gray-900">4</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="rce4b-5" type="radio" value="5" name="rce4b" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="rce4b-5" class="ms-2 text-sm text-gray-900">5</label>
+                </div>
+            </div>
+        </div>
+        <div class="grid grid-cols-2 gap-4 items-center mt-6">
+            <div class="col-span-1 ml-4">c. The number of staff dealing with education activities</div>
+            <div class="col-span-1 flex items-center gap-4">
+                <div class="flex items-center">
+                    <input id="rce4c-1" type="radio" value="1" name="rce4c" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="rce4c-1" class="ms-2 text-sm text-gray-900">1</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="rce4c-2" type="radio" value="2" name="rce4c" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="rce4c-2" class="ms-2 text-sm text-gray-900">2</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="rce4c-3" type="radio" value="3" name="rce4c" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="rce4c-3" class="ms-2 text-sm text-gray-900">3</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="rce4c-4" type="radio" value="4" name="rce4c" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="rce4c-4" class="ms-2 text-sm text-gray-900">4</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="rce4c-5" type="radio" value="5" name="rce4c" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="rce4c-5" class="ms-2 text-sm text-gray-900">5</label>
+                </div>
+            </div>
+        </div>
+        <div class="grid grid-cols-2 gap-4 items-center mt-6">
+            <div class="col-span-1 ml-4">d. The qualifications of staff dealing with education activities</div>
+            <div class="col-span-1 flex items-center gap-4">
+                <div class="flex items-center">
+                    <input id="rce4d-1" type="radio" value="1" name="rce4d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="rce4d-1" class="ms-2 text-sm text-gray-900">1</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="rce4d-2" type="radio" value="2" name="rce4d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="rce4d-2" class="ms-2 text-sm text-gray-900">2</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="rce4d-3" type="radio" value="3" name="rce4d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="rce4d-3" class="ms-2 text-sm text-gray-900">3</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="rce4d-4" type="radio" value="4" name="rce4d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="rce4d-4" class="ms-2 text-sm text-gray-900">4</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="rce4d-5" type="radio" value="5" name="rce4d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="rce4d-5" class="ms-2 text-sm text-gray-900">5</label>
+                </div>
+            </div>
+        </div>
+        <div class="grid grid-cols-2 gap-4 items-center mt-10">
+            <div class="col-span-1">
+                RCE5. What are the criteria that are used to organize the education activities in specific study groups/formations?
+                <small class="block italic">MULTIPLE ANSWER POSSIBLE</small>
+            </div>
+            <div class="col-span-1 flex flex-col gap-2">
+                <div class="flex items-center">
+                    <input id="rce5_1" type="checkbox" value="1" name="rce5_1" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="rce5_1" class="ms-2 text-sm text-gray-900">Age</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="rce5_2" type="checkbox" value="1" name="rce5_2" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="rce5_2" class="ms-2 text-sm text-gray-900">Level of development / ability</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="rce5_3" type="checkbox" value="1" name="rce5_3" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="rce5_3" class="ms-2 text-sm text-gray-900">Disability group</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="rce5_4" type="checkbox" value="1" name="rce5_4" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="rce5_4" class="ms-2 text-sm text-gray-900">Children's interests or preferences</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="rce5_5" type="checkbox" value="1" name="rce5_5" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="rce5_5" class="ms-2 text-sm text-gray-900">Language</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="rce5_6" type="checkbox" value="1" name="rce5_6" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="rce5_6" class="ms-2 text-sm text-gray-900">Other, please specify</label>
+                </div>
+                <textarea id="rce5_6_other" name="rce5_6_other" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full disabled:bg-gray-100"></textarea>
+            </div>
+        </div>
+        <div class="grid grid-cols-2 gap-4 items-center mt-6">
+            <div class="col-span-1">
+                RCE6. What is the minimum and maximum number of children participating in one study group/formation?
+            </div>
+            <div class="col-span-1 flex flex-col gap-2">
+                <div class="flex items-center gap-2">
+                    <div>Minimum</div>
+                    <input type="text" id="rce61" name="rce61" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-32 disabled:bg-gray-100" />
+                </div>
+                <div class="flex items-center gap-2">
+                    <div>Maximum</div>
+                    <input type="text" id="rce62" name="rce62" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-32 disabled:bg-gray-100" />
+                </div>
+            </div>
+        </div>
+        <div class="grid grid-cols-2 gap-4 items-center mt-6">
+            <div class="col-span-1">RCE7. How often do children participate in education activities within the institution?</div>
+            <div class="col-span-1 flex flex-col gap-2">
+                <div class="flex items-center">
+                    <input id="rce7-5" type="radio" value="5" name="rce7" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="rce7-5" class="ms-2 text-sm text-gray-900">5. daily </label>
+                </div>
+                <div class="flex items-center">
+                    <input id="rce7-4" type="radio" value="4" name="rce7" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="rce7-4" class="ms-2 text-sm text-gray-900">4. Four days a week </label>
+                </div>
+                <div class="flex items-center">
+                    <input id="rce7-3" type="radio" value="3" name="rce7" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="rce7-3" class="ms-2 text-sm text-gray-900">3. Three days a week </label>
+                </div>
+                <div class="flex items-center">
+                    <input id="rce7-2" type="radio" value="2" name="rce7" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="rce7-2" class="ms-2 text-sm text-gray-900">2. Two days a week </label>
+                </div>
+                <div class="flex items-center">
+                    <input id="rce7-1" type="radio" value="1" name="rce7" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="rce7-1" class="ms-2 text-sm text-gray-900">1. Once a week </label>
+                </div>
+                <div class="flex items-center">
+                    <input id="rce7-0" type="radio" value="0" name="rce7" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="rce7-0" class="ms-2 text-sm text-gray-900">0. Another situation, please specify…………………</label>
+                </div>
+                <input type="text" id="rce7_0_another" name="rce7_0_another" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full disabled:bg-gray-100" />
+            </div>
+        </div>
+        <div class="grid grid-cols-2 gap-4 items-center mt-6">
+            <div>
+                RCE8. How many hours of education activities do the children participate in, per week?
+            </div>
+            <div class="flex items-center gap-4">
+                <input type="text" id="rce8" name="rce8" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-32 disabled:bg-gray-100" />
+                classrooms
+            </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 items-center mt-10">
+            <div class="col-span-1">
+                <small class="block italic uppercase">THE FOLLOWING QUESTIONS APPLY TO ALL INSTITUTIONS</small>
+                EDU1. Which of the following facilities are there on th institution's premises?
+                <small class="block italic">Please select all that apply.</small>
+            </div>
+            <div class="col-span-1 flex flex-col gap-2">
+                <div class="flex items-center">
+                    <input id="edu1_1" type="checkbox" value="1" name="edu1_1" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="edu1_1" class="ms-2 text-sm text-gray-900">Library </label>
+                </div>
+                <div class="flex items-center">
+                    <input id="edu1_2" type="checkbox" value="1" name="edu1_2" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="edu1_2" class="ms-2 text-sm text-gray-900">Sports hall </label>
+                </div>
+                <div class="flex items-center">
+                    <input id="edu1_3" type="checkbox" value="1" name="edu1_3" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="edu1_3" class="ms-2 text-sm text-gray-900">Sports field / court </label>
+                </div>
+                <div class="flex items-center">
+                    <input id="edu1_4" type="checkbox" value="1" name="edu1_4" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="edu1_4" class="ms-2 text-sm text-gray-900">Auditorium / Hall / Assembly hall </label>
+                </div>
+                <div class="flex items-center">
+                    <input id="edu1_5" type="checkbox" value="1" name="edu1_5" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="edu1_5" class="ms-2 text-sm text-gray-900">Pool </label>
+                </div>
+                <div class="flex items-center">
+                    <input id="edu1_6" type="checkbox" value="1" name="edu1_6" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="edu1_6" class="ms-2 text-sm text-gray-900">Other, please specify</label>
+                </div>
+                <textarea id="edu1_6_other" name="edu1_6_other" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full disabled:bg-gray-100"></textarea>
+            </div>
+        </div>
+
+        <table class="w-full mt-6" aria-label="EDU2. Which of the following spaces for specific rehabilitation and development activities are there in the institution?">
+            <thead>
+                <tr class="border-b">
+                    <th class="p-2 align-bottom text-left" rowspan="2" scope="col">EDU2. Which of the following spaces for specific rehabilitation and development activities are
+                        there in the institution?</th>
+                    <th class="p-2 align-bottom" rowspan="2" scope="col">Yes, dedicated</th>
+                    <th class="p-2 align-bottom" rowspan="2" scope="col">Yes, shared</th>
+                    <th class="px-4 py-2 align-bottom" rowspan="2" scope="col">No</th>
+                    <th class=" p-2 align-bottom text-left border-l" scope="col" colspan="5">EDU3. Please rate the available space and the existing facilities for each activity,
+                        on a scale of 1 (very bad) to 5 (excellent)</th>
+                </tr>
+                <tr class="border-b">
+                    <th class="p-2 border-l" scope="col">1</th>
+                    <th class="p-2" scope="col">2</th>
+                    <th class="p-2" scope="col">3</th>
+                    <th class="p-2" scope="col">4</th>
+                    <th class="p-2" scope="col">5</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="p-2">a. Medical office</td>
+                    <td class="p-2 text-center"><input id="edu2a-1" type="radio" value="1" name="edu2a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                    <td class="p-2 text-center"><input id="edu2a-2" type="radio" value="2" name="edu2a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                    <td class="p-2 text-center"><input id="edu2a-3" type="radio" value="3" name="edu2a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                    <td class="p-2 text-center border-l"><input id="edu3a-1" type="radio" value="1" name="edu3a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                    <td class="p-2 text-center"><input id="edu3a-2" type="radio" value="2" name="edu3a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                    <td class="p-2 text-center"><input id="edu3a-3" type="radio" value="3" name="edu3a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                    <td class="p-2 text-center"><input id="edu3a-4" type="radio" value="4" name="edu3a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                    <td class="p-2 text-center"><input id="edu3a-5" type="radio" value="5" name="edu3a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                </tr>
+                <tr>
+                    <td class="p-2">b. Information and counseling office</td>
+                    <td class="p-2 text-center"><input id="edu2b-1" type="radio" value="1" name="edu2b" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                    <td class="p-2 text-center"><input id="edu2b-2" type="radio" value="2" name="edu2b" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                    <td class="p-2 text-center"><input id="edu2b-3" type="radio" value="3" name="edu2b" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                    <td class="p-2 text-center border-l"><input id="edu3b-1" type="radio" value="1" name="edu3b" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                    <td class="p-2 text-center"><input id="edu3b-2" type="radio" value="2" name="edu3b" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                    <td class="p-2 text-center"><input id="edu3b-3" type="radio" value="3" name="edu3b" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                    <td class="p-2 text-center"><input id="edu3b-4" type="radio" value="4" name="edu3b" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                    <td class="p-2 text-center"><input id="edu3b-5" type="radio" value="5" name="edu3b" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                </tr>
+                <tr>
+                    <td class="p-2">c. Psychological counseling office</td>
+                    <td class="p-2 text-center"><input id="edu2c-1" type="radio" value="1" name="edu2c" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                    <td class="p-2 text-center"><input id="edu2c-2" type="radio" value="2" name="edu2c" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                    <td class="p-2 text-center"><input id="edu2c-3" type="radio" value="3" name="edu2c" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                    <td class="p-2 text-center border-l"><input id="edu3c-1" type="radio" value="1" name="edu3c" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                    <td class="p-2 text-center"><input id="edu3c-2" type="radio" value="2" name="edu3c" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                    <td class="p-2 text-center"><input id="edu3c-3" type="radio" value="3" name="edu3c" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                    <td class="p-2 text-center"><input id="edu3c-4" type="radio" value="4" name="edu3c" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                    <td class="p-2 text-center"><input id="edu3c-5" type="radio" value="5" name="edu3c" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                </tr>
+                <tr>
+                    <td class="p-2">d. Speech therapy office</td>
+                    <td class="p-2 text-center"><input id="edu2d-1" type="radio" value="1" name="edu2d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                    <td class="p-2 text-center"><input id="edu2d-2" type="radio" value="2" name="edu2d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                    <td class="p-2 text-center"><input id="edu2d-3" type="radio" value="3" name="edu2d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                    <td class="p-2 text-center border-l"><input id="edu3d-1" type="radio" value="1" name="edu3d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                    <td class="p-2 text-center"><input id="edu3d-2" type="radio" value="2" name="edu3d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                    <td class="p-2 text-center"><input id="edu3d-3" type="radio" value="3" name="edu3d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                    <td class="p-2 text-center"><input id="edu3d-4" type="radio" value="4" name="edu3d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                    <td class="p-2 text-center"><input id="edu3d-5" type="radio" value="5" name="edu3d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                </tr>
+                <tr>
+                    <td class="p-2">e. Psychotherapy office</td>
+                    <td class="p-2 text-center"><input id="edu2e-1" type="radio" value="1" name="edu2e" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                    <td class="p-2 text-center"><input id="edu2e-2" type="radio" value="2" name="edu2e" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                    <td class="p-2 text-center"><input id="edu2e-3" type="radio" value="3" name="edu2e" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                    <td class="p-2 text-center border-l"><input id="edu3e-1" type="radio" value="1" name="edu3e" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                    <td class="p-2 text-center"><input id="edu3e-2" type="radio" value="2" name="edu3e" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                    <td class="p-2 text-center"><input id="edu3e-3" type="radio" value="3" name="edu3e" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                    <td class="p-2 text-center"><input id="edu3e-4" type="radio" value="4" name="edu3e" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                    <td class="p-2 text-center"><input id="edu3e-5" type="radio" value="5" name="edu3e" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                </tr>
+                <tr>
+                    <td class="p-2">f. Massage / kinesiotherapy or physiotherapy room</td>
+                    <td class="p-2 text-center"><input id="edu2f-1" type="radio" value="1" name="edu2f" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                    <td class="p-2 text-center"><input id="edu2f-2" type="radio" value="2" name="edu2f" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                    <td class="p-2 text-center"><input id="edu2f-3" type="radio" value="3" name="edu2f" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                    <td class="p-2 text-center border-l"><input id="edu3f-1" type="radio" value="1" name="edu3f" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                    <td class="p-2 text-center"><input id="edu3f-2" type="radio" value="2" name="edu3f" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                    <td class="p-2 text-center"><input id="edu3f-3" type="radio" value="3" name="edu3f" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                    <td class="p-2 text-center"><input id="edu3f-4" type="radio" value="4" name="edu3f" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                    <td class="p-2 text-center"><input id="edu3f-5" type="radio" value="5" name="edu3f" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                </tr>
+                <tr>
+                    <td class="p-2">g. Multisensory room (for psycho-sensory-motor stimulation)</td>
+                    <td class="p-2 text-center"><input id="edu2g-1" type="radio" value="1" name="edu2g" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                    <td class="p-2 text-center"><input id="edu2g-2" type="radio" value="2" name="edu2g" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                    <td class="p-2 text-center"><input id="edu2g-3" type="radio" value="3" name="edu2g" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                    <td class="p-2 text-center border-l"><input id="edu3g-1" type="radio" value="1" name="edu3g" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                    <td class="p-2 text-center"><input id="edu3g-2" type="radio" value="2" name="edu3g" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                    <td class="p-2 text-center"><input id="edu3g-3" type="radio" value="3" name="edu3g" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                    <td class="p-2 text-center"><input id="edu3g-4" type="radio" value="4" name="edu3g" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                    <td class="p-2 text-center"><input id="edu3g-5" type="radio" value="5" name="edu3g" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                </tr>
+                <tr>
+                    <td class="p-2">h. Art therapy or other special therapies office</td>
+                    <td class="p-2 text-center"><input id="edu2h-1" type="radio" value="1" name="edu2h" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                    <td class="p-2 text-center"><input id="edu2h-2" type="radio" value="2" name="edu2h" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                    <td class="p-2 text-center"><input id="edu2h-3" type="radio" value="3" name="edu2h" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                    <td class="p-2 text-center border-l"><input id="edu3h-1" type="radio" value="1" name="edu3h" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                    <td class="p-2 text-center"><input id="edu3h-2" type="radio" value="2" name="edu3h" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                    <td class="p-2 text-center"><input id="edu3h-3" type="radio" value="3" name="edu3h" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                    <td class="p-2 text-center"><input id="edu3h-4" type="radio" value="4" name="edu3h" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                    <td class="p-2 text-center"><input id="edu3h-5" type="radio" value="5" name="edu3h" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                </tr>
+                <tr>
+                    <td class="p-2">i. Vocational counseling office</td>
+                    <td class="p-2 text-center"><input id="edu2i-1" type="radio" value="1" name="edu2i" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                    <td class="p-2 text-center"><input id="edu2i-2" type="radio" value="2" name="edu2i" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                    <td class="p-2 text-center"><input id="edu2i-3" type="radio" value="3" name="edu2i" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                    <td class="p-2 text-center border-l"><input id="edu3i-1" type="radio" value="1" name="edu3i" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                    <td class="p-2 text-center"><input id="edu3i-2" type="radio" value="2" name="edu3i" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                    <td class="p-2 text-center"><input id="edu3i-3" type="radio" value="3" name="edu3i" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                    <td class="p-2 text-center"><input id="edu3i-4" type="radio" value="4" name="edu3i" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                    <td class="p-2 text-center"><input id="edu3i-5" type="radio" value="5" name="edu3i" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                </tr>
+                <tr>
+                    <td class="p-2">
+                        <p class="mb-2">j. Other spaces, please specify</p>
+                        <textarea name="edu2j_other" id="edu2j_other" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full disabled:bg-gray-100"></textarea>
+                    </td>
+                    <td class="p-2 align-middle text-center"><input id="edu2j-1" type="radio" value="1" name="edu2j" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                    <td class="p-2 align-middle text-center"><input id="edu2j-2" type="radio" value="2" name="edu2j" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                    <td class="p-2 align-middle text-center"><input id="edu2j-3" type="radio" value="3" name="edu2j" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                    <td class="p-2 align-middle text-center border-l"><input id="edu3j-1" type="radio" value="1" name="edu3j" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                    <td class="p-2 align-middle text-center"><input id="edu3j-2" type="radio" value="2" name="edu3j" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                    <td class="p-2 align-middle text-center"><input id="edu3j-3" type="radio" value="3" name="edu3j" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                    <td class="p-2 align-middle text-center"><input id="edu3j-4" type="radio" value="4" name="edu3j" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                    <td class="p-2 align-middle text-center"><input id="edu3j-5" type="radio" value="5" name="edu3j" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="grid grid-cols-2 gap-4 items-center mt-6">
+            <div>
+                EDU4. How many spaces/rooms for conducting counseling and habilitation, rehabilitation, development activities do you have within the institution?
+            </div>
+            <div class="flex items-center gap-4">
+                <input type="text" id="edu4" name="edu4" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-32 disabled:bg-gray-100" />
+                spaces
+            </div>
+        </div>
+        <div class="grid grid-cols-2 gap-4 items-center mt-6">
+            <div>
+                EDU5. What is the approximate total area of these spaces?
+                <small class="italic block">Please provide the area in square meters</small>
+            </div>
+            <div class="flex items-center gap-4">
+                <input type="text" id="edu5" name="edu5" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-32 disabled:bg-gray-100" />
+                sqm
+            </div>
+        </div>
+
+        <h2 class="mt-10 mb-4 text-2xl font-bold text-gray-700">7. FACILITIES TO SPEND FREE TIME AND SOCIALIZING</h2>
+
+        <div class="grid grid-cols-2 gap-4 items-center mt-6">
+            <div>
+                FT1. How many dedicated indoor and outdoor spaces for children to spend free time and socialize are there within the institution (such as playrooms, tv rooms,
+                playgrounds etc.)?
+            </div>
+            <div class="flex items-center gap-4">
+                <input type="text" id="ft1" name="ft1" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-32 disabled:bg-gray-100" />
+                spaces
+            </div>
+        </div>
+        <div class="grid grid-cols-2 gap-4 items-center mt-6">
+            <div>
+                FT2. What is the approximate total area of these spaces?
+                <small class="italic block">Please provide the area in square meters</small>
+            </div>
+            <div class="flex items-center gap-4">
+                <input type="text" id="ft2" name="ft2" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-32 disabled:bg-gray-100" />
+                sqm
+            </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 items-center mt-10">
+            <div class="col-span-1">
+                FT3. What kinds of equipment, materials, or resources are available in the dedicated spaces for children within the institution
+                <small class="block italic">Please select all that apply.</small>
+            </div>
+            <div class="col-span-1 flex flex-col gap-2">
+                <div class="flex items-center">
+                    <input id="ft3_1" type="checkbox" value="1" name="ft3_1" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="edu1_1" class="ms-2 text-sm text-gray-900">Toys </label>
+                </div>
+                <div class="flex items-center">
+                    <input id="ft3_2" type="checkbox" value="1" name="ft3_2" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="edu1_2" class="ms-2 text-sm text-gray-900">Games </label>
+                </div>
+                <div class="flex items-center">
+                    <input id="ft3_3" type="checkbox" value="1" name="ft3_3" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="edu1_3" class="ms-2 text-sm text-gray-900">Books </label>
+                </div>
+                <div class="flex items-center">
+                    <input id="ft3_4" type="checkbox" value="1" name="ft3_4" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="edu1_4" class="ms-2 text-sm text-gray-900">Art supplies </label>
+                </div>
+                <div class="flex items-center">
+                    <input id="ft3_5" type="checkbox" value="1" name="ft3_5" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="edu1_5" class="ms-2 text-sm text-gray-900">Musical instruments </label>
+                </div>
+                <div class="flex items-center">
+                    <input id="ft3_6" type="checkbox" value="1" name="ft3_6" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="edu1_6" class="ms-2 text-sm text-gray-900">Sports equipment </label>
+                </div>
+                <div class="flex items-center">
+                    <input id="ft3_7" type="checkbox" value="1" name="ft3_7" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="edu1_7" class="ms-2 text-sm text-gray-900">Computers </label>
+                </div>
+                <div class="flex items-center">
+                    <input id="ft3_8" type="checkbox" value="1" name="ft3_8" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="edu1_8" class="ms-2 text-sm text-gray-900">TVs </label>
+                </div>
+                <div class="flex items-center">
+                    <input id="ft3_9" type="checkbox" value="1" name="ft3_9" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="edu1_9" class="ms-2 text-sm text-gray-900">Internet</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 items-center mt-6">
+            <div class="col-span-1">
+                FT4a. How often do the children have access to the dedicated indoor spaces for leisure activities?
+            </div>
+            <div class="col-span-1 flex flex-col gap-2">
+                <div class="flex items-center">
+                    <input id="ft4a-1" type="radio" value="1" name="ft4a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="ft4a-1" class="ms-2 text-sm text-gray-900">1. daily</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="ft4a-2" type="radio" value="2" name="ft4a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="ft4a-2" class="ms-2 text-sm text-gray-900">2. few days a week</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="ft4a-3" type="radio" value="3" name="ft4a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="ft4a-3" class="ms-2 text-sm text-gray-900">3. once a week</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="ft4a-4" type="radio" value="4" name="ft4a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="ft4a-4" class="ms-2 text-sm text-gray-900">4. occasionally</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 items-center mt-6">
+            <div class="col-span-1">
+                FT4b. How often do the children have access to the dedicated outdoor spaces for leisure activities?
+            </div>
+            <div class="col-span-1 flex flex-col gap-2">
+                <div class="flex items-center">
+                    <input id="ft4b-1" type="radio" value="1" name="ft4b" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="ft4b-1" class="ms-2 text-sm text-gray-900">1. daily</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="ft4b-2" type="radio" value="2" name="ft4b" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="ft4b-2" class="ms-2 text-sm text-gray-900">2. few days a week</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="ft4b-3" type="radio" value="3" name="ft4b" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="ft4b-3" class="ms-2 text-sm text-gray-900">3. once a week</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="ft4b-4" type="radio" value="4" name="ft4b" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="ft4b-4" class="ms-2 text-sm text-gray-900">4. occasionally</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 items-center mt-6">
+            <div class="col-span-1">FT5a. Do the children have access to indoor leisure facilities anytime they want in their free time?</div>
+            <div class="col-span-1 flex items-center gap-4">
+                <div class="flex items-center">
+                    <input id="ft5a-1" type="radio" value="1" name="ft5a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="ft5a-1" class="ms-2 text-sm text-gray-900">1. Yes</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="ft5a-2" type="radio" value="2" name="ft5a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="ft5a-2" class="ms-2 text-sm text-gray-900">2. No</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 items-center mt-6">
+            <div class="col-span-1">FT5b. Do the children have access to outdoor leisure facilitiesanytime they want in their free time?</div>
+            <div class="col-span-1 flex items-center gap-4">
+                <div class="flex items-center">
+                    <input id="ft5b-1" type="radio" value="1" name="ft5b" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="ft5b-1" class="ms-2 text-sm text-gray-900">1. Yes</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="ft5b-2" type="radio" value="2" name="ft5b" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="ft5b-2" class="ms-2 text-sm text-gray-900">2. No</label>
+                </div>
+            </div>
+        </div>
+
+
+        <p class="mt-6">FT6. In the past three months, how many trips were organized for children…</p>
+        <div class="grid grid-cols-2 gap-4 items-center mt-6">
+            <div class="ml-6">
+                a. Within the community where the institution is located
+            </div>
+            <div class="flex items-center gap-4">
+                <input type="text" id="ft6a" name="ft6a" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-32 disabled:bg-gray-100" />
+                trips
+            </div>
+        </div>
+        <div class="grid grid-cols-2 gap-4 items-center mt-6">
+            <div class="ml-6">
+                b. Outside the community where the institution is located?
+            </div>
+            <div class="flex items-center gap-4">
+                <input type="text" id="ft6b" name="ft6b" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-32 disabled:bg-gray-100" />
+                trips
+            </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 items-center mt-6">
+            <div>FT7. In the past three months, how many children residing in the institution went on a trip outside the community?</div>
+            <div class="flex items-center gap-4">
+                <input type="text" id="ft7" name="ft7" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-32 disabled:bg-gray-100" />
+                children
+            </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 items-center mt-6">
+            <div>FT8. During the last 12 months, how many children residing in the institution went to a camp?</div>
+            <div class="flex items-center gap-4">
+                <input type="text" id="ft8" name="ft8" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-32 disabled:bg-gray-100" />
+                children
+            </div>
+        </div>
+
+        <h2 class="mt-10 mb-4 text-2xl font-bold text-gray-700">8. FINANCIAL RESOURCES - INSTITUTION'S EXPENDITURES IN THE REPORTING YEAR</h2>
+
+        <p class="mt-6">Please fill in the following table with the actual amount of money spent on each budgetary line in the reporting year</p>
+
+
+        <table class="w-full mt-6" aria-label="FINANCIAL RESOURCES - INSTITUTION'S EXPENDITURES IN THE REPORTING YEAR">
+            <thead class="bg-black text-white">
+                <tr>
+                    <th class="w-32 p-2 text-left" scole="col">Indicator code </th>
+                    <th class="w-3/4 p-2 text-left" scole="col">Indicator name </th>
+                    <th class="w-1/4 p-2 text-center" scole="col">Amount in UZS</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="bg-green-500 text-white font-bold">
+                    <td class="text-left p-2">00</td>
+                    <td class="text-left p-2">TOTAL EXPENDITURES (CODE 01+02+03)</td>
+                    <td class="text-center p-2">
+                        <input type="text" id="I00" name="I00" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full disabled:bg-gray-100" />
+                    </td>
+                </tr>
+                <tr class="bg-lime-200 text-black font-bold">
+                    <td class="text-left p-2">01</td>
+                    <td class="text-left p-2">TOTAL OPERATING EXPENDITURES (code 10+20)</td>
+                    <td class="text-center p-2">
+                        <input type="text" id="I01" name="I01" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full disabled:bg-gray-100" />
+                    </td>
+                </tr>
+                <tr class="text-black font-bold">
+                    <td class="text-left p-2">10</td>
+                    <td class="text-left p-2">TOTAL PERSONNEL EXPENDITURES (code 10.1+10.2+10.3+10.4)</td>
+                    <td class="text-center p-2">
+                        <input type="text" id="I10" name="I10" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full disabled:bg-gray-100" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="text-left p-2">10.1</td>
+                    <td class="text-left p-2">Salary expenditures in cash (base salary + bonuses + other salary rights in cash)</td>
+                    <td class="text-center p-2">
+                        <input type="text" id="I10_1" name="I10_1" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full disabled:bg-gray-100" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="text-left p-2">10.2</td>
+                    <td class="text-left p-2">Salary expenditures in kind (meal vouchers, holiday vouchers, gift vouchers, employee transportation to and from work, etc.)</td>
+                    <td class="text-center p-2">
+                        <input type="text" id="I10_2" name="I10_2" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full disabled:bg-gray-100" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="text-left p-2">10.3</td>
+                    <td class="text-left p-2">Social security contributions</td>
+                    <td class="text-center p-2">
+                        <input type="text" id="I10_3" name="I10_3" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full disabled:bg-gray-100" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="text-left p-2">10.4</td>
+                    <td class="text-left p-2">Other labor mandatory contributions</td>
+                    <td class="text-center p-2">
+                        <input type="text" id="I10_4" name="I10_4" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full disabled:bg-gray-100" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="text-left p-2">10.5</td>
+                    <td class="text-left p-2">Training, education and supervision expenditures for staff</td>
+                    <td class="text-center p-2">
+                        <input type="text" id="I10_5" name="I10_5" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full disabled:bg-gray-100" />
+                    </td>
+                </tr>
+                <tr class="text-black font-bold">
+                    <td class="text-left p-2">20</td>
+                    <td class="text-left p-2">TOTAL GOODS AND SERVICES EXPENDITURES (code 20.1+...+20.19)</td>
+                    <td class="text-center p-2">
+                        <input type="text" id="I20" name="I20" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full disabled:bg-gray-100" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="text-left p-2">20.1</td>
+                    <td class="text-left p-2">Rent/Property tax</td>
+                    <td class="text-center p-2">
+                        <input type="text" id="I20_1" name="I20_1" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full disabled:bg-gray-100" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="text-left p-2">20.2</td>
+                    <td class="text-left p-2">Utilities (electricity, heating, water, sewerage and sanitation)</td>
+                    <td class="text-center p-2">
+                        <input type="text" id="I20_2" name="I20_2" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full disabled:bg-gray-100" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="text-left p-2">20.3</td>
+                    <td class="text-left p-2">Phone, TV, internet subscriptions</td>
+                    <td class="text-center p-2">
+                        <input type="text" id="I20_3" name="I20_3" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full disabled:bg-gray-100" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="text-left p-2">20.4</td>
+                    <td class="text-left p-2">Food (food and dietary supplements, including catering services if applicable)</td>
+                    <td class="text-center p-2">
+                        <input type="text" id="I20_4" name="I20_4" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full disabled:bg-gray-100" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="text-left p-2">20.5</td>
+                    <td class="text-left p-2">Medicines</td>
+                    <td class="text-center p-2">
+                        <input type="text" id="I20_5" name="I20_5" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full disabled:bg-gray-100" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="text-left p-2">20.6</td>
+                    <td class="text-left p-2">Medical supplies</td>
+                    <td class="text-center p-2">
+                        <input type="text" id="I20_6" name="I20_6" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full disabled:bg-gray-100" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="text-left p-2">20.7</td>
+                    <td class="text-left p-2">Body hygiene products</td>
+                    <td class="text-center p-2">
+                        <input type="text" id="I20_7" name="I20_7" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full disabled:bg-gray-100" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="text-left p-2">20.8</td>
+                    <td class="text-left p-2">Cleaning products and materials</td>
+                    <td class="text-center p-2">
+                        <input type="text" id="I20_8" name="I20_8" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full disabled:bg-gray-100" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="text-left p-2">20.9</td>
+                    <td class="text-left p-2">Clothing and footwear</td>
+                    <td class="text-center p-2">
+                        <input type="text" id="I20_9" name="I20_9" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full disabled:bg-gray-100" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="text-left p-2">20.10</td>
+                    <td class="text-left p-2">Bedding and accessories</td>
+                    <td class="text-center p-2">
+                        <input type="text" id="I20_10" name="I20_10" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full disabled:bg-gray-100" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="text-left p-2">20.11</td>
+                    <td class="text-left p-2">Medical services (including dental)</td>
+                    <td class="text-center p-2">
+                        <input type="text" id="I20_11" name="I20_11" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full disabled:bg-gray-100" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="text-left p-2">20.12</td>
+                    <td class="text-left p-2">Specialized contractors</td>
+                    <td class="text-center p-2">
+                        <input type="text" id="I20_12" name="I20_12" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full disabled:bg-gray-100" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="text-left p-2">20.13</td>
+                    <td class="text-left p-2">Transportation (fuel, transport subscriptions, etc.)</td>
+                    <td class="text-center p-2">
+                        <input type="text" id="I20_13" name="I20_13" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full disabled:bg-gray-100" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="text-left p-2">20.14</td>
+                    <td class="text-left p-2">Recreational, social and/or family bonding activities (community outings, trips, travel expenses, gym subscriptions, etc.)</td>
+                    <td class="text-center p-2">
+                        <input type="text" id="I20_14" name="I20_14" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full disabled:bg-gray-100" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="text-left p-2">20.15</td>
+                    <td class="text-left p-2">Current repairs and maintenance of the building, equipment and outdoor spaces</td>
+                    <td class="text-center p-2">
+                        <input type="text" id="I20_15" name="I20_15" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full disabled:bg-gray-100" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="text-left p-2">20.16</td>
+                    <td class="text-left p-2">Equipment and facilities (furniture, computer and office equipment, appliances, etc.)</td>
+                    <td class="text-center p-2">
+                        <input type="text" id="I20_16" name="I20_16" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full disabled:bg-gray-100" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="text-left p-2">20.17</td>
+                    <td class="text-left p-2">Training and education courses for residing children</td>
+                    <td class="text-center p-2">
+                        <input type="text" id="I20_17" name="I20_17" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full disabled:bg-gray-100" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="text-left p-2">20.18</td>
+                    <td class="text-left p-2">Materials for therapeutic and activities with children</td>
+                    <td class="text-center p-2">
+                        <input type="text" id="I20_18" name="I20_18" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full disabled:bg-gray-100" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="text-left p-2">20.19</td>
+                    <td class="text-left p-2">Other goods and services</td>
+                    <td class="text-center p-2">
+                        <input type="text" id="I20_19" name="I20_19" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full disabled:bg-gray-100" />
+                    </td>
+                </tr>
+                <tr class="bg-lime-200 text-black font-bold">
+                    <td class="text-left p-2">02</td>
+                    <td class="text-left p-2">TOTAL DEVELOPMENT EXPENDITURES (COD 2.1+2.2)</td>
+                    <td class="text-center p-2">
+                        <input type="text" id="I02" name="I02" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full disabled:bg-gray-100" />
+                    </td>
+                </tr>
+                <tr class="text-black font-bold">
+                    <td class="text-left p-2">2.1</td>
+                    <td class="text-left p-2">Fixed assets (cod 2.1.1+...+2.1.4)</td>
+                    <td class="text-center p-2">
+                        <input type="text" id="I2_1" name="I2_1" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full disabled:bg-gray-100" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="text-left p-2">2.1.1</td>
+                    <td class="text-left p-2">Buildings, land and land improvements</td>
+                    <td class="text-center p-2">
+                        <input type="text" id="I2_1_1" name="I2_1_1" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full disabled:bg-gray-100" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="text-left p-2">2.1.2</td>
+                    <td class="text-left p-2">Machines, equipment and vehicles</td>
+                    <td class="text-center p-2">
+                        <input type="text" id="I2_1_2" name="I2_1_2" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full disabled:bg-gray-100" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="text-left p-2">2.1.3</td>
+                    <td class="text-left p-2">Larg-size furniture, office equipment and other tangible assets</td>
+                    <td class="text-center p-2">
+                        <input type="text" id="I2_1_3" name="I2_1_3" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full disabled:bg-gray-100" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="text-left p-2">2.1.4</td>
+                    <td class="text-left p-2">Other expenses for the acquisition of fixed assets</td>
+                    <td class="text-center p-2">
+                        <input type="text" id="I2_1_4" name="I2_1_4" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full disabled:bg-gray-100" />
+                    </td>
+                </tr>
+                <tr class="text-black font-bold">
+                    <td class="text-left p-2">2.2</td>
+                    <td class="text-left p-2">Capital repairs for fixed assets</td>
+                    <td class="text-center p-2">
+                        <input type="text" id="I2_2" name="I2_2" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full disabled:bg-gray-100" />
+                    </td>
+                </tr>
+                <tr class="text-black font-bold">
+                    <td class="text-left p-2">03</td>
+                    <td class="text-left p-2">Other expenditures (damage compensations, regulatory fines and penalties, etc.)</td>
+                    <td class="text-center p-2">
+                        <input type="text" id="I03" name="I03" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full disabled:bg-gray-100" />
+                    </td>
+                </tr>
+            </tbody>
+        </table>
 
 
     </form>
