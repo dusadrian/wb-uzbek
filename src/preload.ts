@@ -322,7 +322,7 @@ const instrumentQMR = () => {
     const importFile = async () => {
         return await import("./pages/instruments/04_qmr");
     };
-    importFile().then(result => result.instrument.init().catch(error => {
+    importFile().then(result => result.instrument4.init().catch(error => {
         console.log(error);
     }));
 };
