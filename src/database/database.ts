@@ -51,6 +51,17 @@ export const database = {
         });
         return await connection;
     },
+    getUserData: async (userId: number) => {
+        const connection = new Promise<Array<DI.User>>((resolve) => {
+            db.all(`SELECT * FROM users WHERE id = '${userId}'`, (error, result) => {
+                if (error) {
+                    console.log(error);
+                }
+                resolve(result as DI.User[]);
+            });
+        });
+        return await connection;
+    },
 
     getUserInstitution: async (institution_id: number) => {
         const connection = new Promise<Array<DI.Institution>>((resolve) => {
@@ -76,7 +87,9 @@ export const database = {
     },
     getInstitutionUsers: async (institution_id: number, userId: number) => {
         const connection = new Promise<Array<DI.User>>((resolve) => {
-            db.all(`SELECT * FROM users WHERE institution_id = '${institution_id}' AND id != '${userId}'`, (error, result) => {
+            // db.all(`SELECT * FROM users WHERE institution_id = '${institution_id}' AND id != '${userId}'`, (error, result) => {
+            // TODO -- testing only
+            db.all(`SELECT * FROM users WHERE institution_id = '${institution_id}'`, (error, result) => {
                 if (error) {
                     console.log(error);
                 }

@@ -61,6 +61,8 @@ export const localCoordinator = {
         });
 
         ipcRenderer.on("existing", (_event, args) => {
+            console.log('existing', args);
+            
             viewEdit_QMR.dataset.id = args.qmr;
             viewEdit_DSEE.dataset.id = args.dsee;
         })

@@ -8,6 +8,7 @@
         <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src http: https: data: ; script-src 'self';" />
         <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; img-src http: https: data: ; script-src 'self';" />
         <link href="../../../dist/main.css" rel="stylesheet">
+        <link rel="stylesheet" href="../../../node_modules/flatpickr/dist/flatpickr.min.css">
     </head>
 
     <body class="relative max-h-screen">
@@ -109,13 +110,13 @@
                     </div>
                 </div>
                 <div class="grid grid-cols-2 gap-4 items-center mt-6">
-                    <div>I4c.</div>
+                    <div>I4c. Settlement</div>
                     <div>
                         <input type="text" id="i4c" name="i4c" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
                     </div>
                 </div>
                 <div class="grid grid-cols-2 gap-4 items-center mt-6">
-                    <div>I4d</div>
+                    <div>I4d. Type of settlement</div>
                     <div>
                         <input type="text" id="i4d" name="i4d" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
                     </div>
@@ -123,7 +124,22 @@
                 <div class="grid grid-cols-2 gap-4 items-center mt-6">
                     <div>I9. Тип учреждения</div>
                     <div>
-                        <input type="text" id="i9" name="i9" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                        <select id="i9" name="i9" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100">
+                            <option selected>Пожалуйста, выберите один из следующих кодов</option>
+                            <optgroup label="Детские учреждения:">
+                                <option value="11">11. Детский дом (Дом ребенка)</option>
+                                <option value="12">12. Дом «Мехрибонлик»</option>
+                                <option value="13">13. Дом-интерант «Муруват» для детей с инвалидностью </option>
+                            </optgroup>
+                            <optgroup label="Школы-интернаты:">
+                                <option value="21">21. Тип I-II для глухих или слабослышащих детей</option>
+                                <option value="22">22. Тип III-IV для слепых или слабовидящих детей</option>
+                                <option value="23">23. Тип V для детей с тяжелыми нарушениями речи</option>
+                                <option value="24">24. Тип VI для детей с нарушениями опорно-двигательного аппарата</option>
+                                <option value="25">25. Тип VII для детей с задержкой психического развития/психическими нарушениями</option>
+                                <option value="26">26. Тип VIII для детей с умственной отсталостью</option>
+                            </optgroup>
+                        </select>
                     </div>
                 </div>
                 <div class="grid grid-cols-2 gap-4 items-center mt-6">
@@ -1067,7 +1083,6 @@
                     </div>
                     <div class="flex items-center gap-4">
                         <input type="text" id="af13b" name="af13b" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 disabled:bg-gray-100" />
-                        <p>(Month / Year) --- nu am traducere</p>
                     </div>
                 </div>
         
@@ -2628,252 +2643,252 @@
                             <td class="text-left p-2">00</td>
                             <td class="text-left p-2">ИТОГО РАСХОДЫ (КОД 01+02+03)</td>
                             <td class="text-center p-2">
-                                <input type="text" id="I00" name="I00" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full disabled:bg-gray-100" />
+                                <input type="text" id="e00" name="e00" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full disabled:bg-gray-100" />
                             </td>
                         </tr>
                         <tr class="bg-lime-200 text-black font-bold">
                             <td class="text-left p-2">01</td>
                             <td class="text-left p-2">ИТОГО ОПЕРАЦИОННЫЕ РАСХОДЫ (код 10+20)</td>
                             <td class="text-center p-2">
-                                <input type="text" id="I01" name="I01" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full disabled:bg-gray-100" />
+                                <input type="text" id="e01" name="e01" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full disabled:bg-gray-100" />
                             </td>
                         </tr>
                         <tr class="text-black font-bold">
                             <td class="text-left p-2">10</td>
                             <td class="text-left p-2">ИТОГО РАСХОДЫ НА ПЕРСОНАЛ (код 10.1+10.2+10.3+10.4)</td>
                             <td class="text-center p-2">
-                                <input type="text" id="I10" name="I10" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full disabled:bg-gray-100" />
+                                <input type="text" id="e10" name="e10" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full disabled:bg-gray-100" />
                             </td>
                         </tr>
                         <tr>
                             <td class="text-left p-2">10.1</td>
                             <td class="text-left p-2">Расходы на заработную плату наличными (базовый оклад + бонусы + другие права на заработную плату наличными)</td>
                             <td class="text-center p-2">
-                                <input type="text" id="I10_1" name="I10_1" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full disabled:bg-gray-100" />
+                                <input type="text" id="e10_1" name="e10_1" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full disabled:bg-gray-100" />
                             </td>
                         </tr>
                         <tr>
                             <td class="text-left p-2">10.2</td>
                             <td class="text-left p-2">Расходы на заработную плату в натуральной форме (талоны на питание, отпускные, подарочные сертификаты, проезд сотрудников на работу и обратно и т.д.)</td>
                             <td class="text-center p-2">
-                                <input type="text" id="I10_2" name="I10_2" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full disabled:bg-gray-100" />
+                                <input type="text" id="e10_2" name="e10_2" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full disabled:bg-gray-100" />
                             </td>
                         </tr>
                         <tr>
                             <td class="text-left p-2">10.3</td>
                             <td class="text-left p-2">Взносы на социальное обеспечение</td>
                             <td class="text-center p-2">
-                                <input type="text" id="I10_3" name="I10_3" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full disabled:bg-gray-100" />
+                                <input type="text" id="e10_3" name="e10_3" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full disabled:bg-gray-100" />
                             </td>
                         </tr>
                         <tr>
                             <td class="text-left p-2">10.4</td>
                             <td class="text-left p-2">Прочие обязательные трудовые взносы</td>
                             <td class="text-center p-2">
-                                <input type="text" id="I10_4" name="I10_4" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full disabled:bg-gray-100" />
+                                <input type="text" id="e10_4" name="e10_4" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full disabled:bg-gray-100" />
                             </td>
                         </tr>
                         <tr>
                             <td class="text-left p-2">10.5</td>
                             <td class="text-left p-2">Расходы на подготовку, обучение и курирование персонала</td>
                             <td class="text-center p-2">
-                                <input type="text" id="I10_5" name="I10_5" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full disabled:bg-gray-100" />
+                                <input type="text" id="e10_5" name="e10_5" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full disabled:bg-gray-100" />
                             </td>
                         </tr>
                         <tr class="text-black font-bold">
                             <td class="text-left p-2">20</td>
                             <td class="text-left p-2">ИТОГО РАСХОДЫ НА ТОВАРЫ И УСЛУГИ (код 20.1+...+20.19)</td>
                             <td class="text-center p-2">
-                                <input type="text" id="I20" name="I20" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full disabled:bg-gray-100" />
+                                <input type="text" id="e20" name="e20" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full disabled:bg-gray-100" />
                             </td>
                         </tr>
                         <tr>
                             <td class="text-left p-2">20.1</td>
                             <td class="text-left p-2">Арендная плата/Налог на имущество</td>
                             <td class="text-center p-2">
-                                <input type="text" id="I20_1" name="I20_1" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full disabled:bg-gray-100" />
+                                <input type="text" id="e20_1" name="e20_1" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full disabled:bg-gray-100" />
                             </td>
                         </tr>
                         <tr>
                             <td class="text-left p-2">20.2</td>
                             <td class="text-left p-2">Коммунальные услуги (электричество, отопление, вода, канализация и санитария)</td>
                             <td class="text-center p-2">
-                                <input type="text" id="I20_2" name="I20_2" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full disabled:bg-gray-100" />
+                                <input type="text" id="e20_2" name="e20_2" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full disabled:bg-gray-100" />
                             </td>
                         </tr>
                         <tr>
                             <td class="text-left p-2">20.3</td>
                             <td class="text-left p-2">Абонентская плата за телефон, телевидение, интернет</td>
                             <td class="text-center p-2">
-                                <input type="text" id="I20_3" name="I20_3" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full disabled:bg-gray-100" />
+                                <input type="text" id="e20_3" name="e20_3" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full disabled:bg-gray-100" />
                             </td>
                         </tr>
                         <tr>
                             <td class="text-left p-2">20.4</td>
                             <td class="text-left p-2">Питание (продукты питания и диетические пищевые добавки, включая услуги общественного питания, если применимо)</td>
                             <td class="text-center p-2">
-                                <input type="text" id="I20_4" name="I20_4" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full disabled:bg-gray-100" />
+                                <input type="text" id="e20_4" name="e20_4" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full disabled:bg-gray-100" />
                             </td>
                         </tr>
                         <tr>
                             <td class="text-left p-2">20.5</td>
                             <td class="text-left p-2">Лекарства</td>
                             <td class="text-center p-2">
-                                <input type="text" id="I20_5" name="I20_5" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full disabled:bg-gray-100" />
+                                <input type="text" id="e20_5" name="e20_5" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full disabled:bg-gray-100" />
                             </td>
                         </tr>
                         <tr>
                             <td class="text-left p-2">20.6</td>
                             <td class="text-left p-2">Медикаменты</td>
                             <td class="text-center p-2">
-                                <input type="text" id="I20_6" name="I20_6" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full disabled:bg-gray-100" />
+                                <input type="text" id="e20_6" name="e20_6" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full disabled:bg-gray-100" />
                             </td>
                         </tr>
                         <tr>
                             <td class="text-left p-2">20.7</td>
                             <td class="text-left p-2">Средства гигиены тела</td>
                             <td class="text-center p-2">
-                                <input type="text" id="I20_7" name="I20_7" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full disabled:bg-gray-100" />
+                                <input type="text" id="e20_7" name="e20_7" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full disabled:bg-gray-100" />
                             </td>
                         </tr>
                         <tr>
                             <td class="text-left p-2">20.8</td>
                             <td class="text-left p-2">Чистящие средства и материалы</td>
                             <td class="text-center p-2">
-                                <input type="text" id="I20_8" name="I20_8" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full disabled:bg-gray-100" />
+                                <input type="text" id="e20_8" name="e20_8" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full disabled:bg-gray-100" />
                             </td>
                         </tr>
                         <tr>
                             <td class="text-left p-2">20.9</td>
                             <td class="text-left p-2">Одежда и обувь</td>
                             <td class="text-center p-2">
-                                <input type="text" id="I20_9" name="I20_9" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full disabled:bg-gray-100" />
+                                <input type="text" id="e20_9" name="e20_9" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full disabled:bg-gray-100" />
                             </td>
                         </tr>
                         <tr>
                             <td class="text-left p-2">20.10</td>
                             <td class="text-left p-2">Постельное белье и аксессуары</td>
                             <td class="text-center p-2">
-                                <input type="text" id="I20_10" name="I20_10" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full disabled:bg-gray-100" />
+                                <input type="text" id="e20_10" name="e20_10" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full disabled:bg-gray-100" />
                             </td>
                         </tr>
                         <tr>
                             <td class="text-left p-2">20.11</td>
                             <td class="text-left p-2">Медицинские услуги (в том числе стоматологические)</td>
                             <td class="text-center p-2">
-                                <input type="text" id="I20_11" name="I20_11" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full disabled:bg-gray-100" />
+                                <input type="text" id="e20_11" name="e20_11" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full disabled:bg-gray-100" />
                             </td>
                         </tr>
                         <tr>
                             <td class="text-left p-2">20.12</td>
                             <td class="text-left p-2">Специализированные подрядчики</td>
                             <td class="text-center p-2">
-                                <input type="text" id="I20_12" name="I20_12" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full disabled:bg-gray-100" />
+                                <input type="text" id="e20_12" name="e20_12" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full disabled:bg-gray-100" />
                             </td>
                         </tr>
                         <tr>
                             <td class="text-left p-2">20.13</td>
                             <td class="text-left p-2">Транспорт (топливо, транспортные абонементы и т.д.)</td>
                             <td class="text-center p-2">
-                                <input type="text" id="I20_13" name="I20_13" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full disabled:bg-gray-100" />
+                                <input type="text" id="e20_13" name="e20_13" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full disabled:bg-gray-100" />
                             </td>
                         </tr>
                         <tr>
                             <td class="text-left p-2">20.14</td>
                             <td class="text-left p-2">Развлекательные, социальные и/или семейные мероприятия (поездки, экскурсии, командировочные расходы, абонементы в тренажерный зал и т.д.)</td>
                             <td class="text-center p-2">
-                                <input type="text" id="I20_14" name="I20_14" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full disabled:bg-gray-100" />
+                                <input type="text" id="e20_14" name="e20_14" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full disabled:bg-gray-100" />
                             </td>
                         </tr>
                         <tr>
                             <td class="text-left p-2">20.15</td>
                             <td class="text-left p-2">Текущий ремонт и содержание здания, оборудования и открытых площадей</td>
                             <td class="text-center p-2">
-                                <input type="text" id="I20_15" name="I20_15" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full disabled:bg-gray-100" />
+                                <input type="text" id="e20_15" name="e20_15" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full disabled:bg-gray-100" />
                             </td>
                         </tr>
                         <tr>
                             <td class="text-left p-2">20.16</td>
                             <td class="text-left p-2">Оборудование и помещения (мебель, компьютерная и оргтехника, бытовая техника и т.д.)</td>
                             <td class="text-center p-2">
-                                <input type="text" id="I20_16" name="I20_16" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full disabled:bg-gray-100" />
+                                <input type="text" id="e20_16" name="e20_16" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full disabled:bg-gray-100" />
                             </td>
                         </tr>
                         <tr>
                             <td class="text-left p-2">20.17</td>
                             <td class="text-left p-2">Учебно-воспитательные курсы занятия для воспитанников</td>
                             <td class="text-center p-2">
-                                <input type="text" id="I20_17" name="I20_17" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full disabled:bg-gray-100" />
+                                <input type="text" id="e20_17" name="e20_17" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full disabled:bg-gray-100" />
                             </td>
                         </tr>
                         <tr>
                             <td class="text-left p-2">20.18</td>
                             <td class="text-left p-2">Материалы для лечебных мероприятий с детьми</td>
                             <td class="text-center p-2">
-                                <input type="text" id="I20_18" name="I20_18" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full disabled:bg-gray-100" />
+                                <input type="text" id="e20_18" name="e20_18" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full disabled:bg-gray-100" />
                             </td>
                         </tr>
                         <tr>
                             <td class="text-left p-2">20.19</td>
                             <td class="text-left p-2">Прочие товары и услуги</td>
                             <td class="text-center p-2">
-                                <input type="text" id="I20_19" name="I20_19" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full disabled:bg-gray-100" />
+                                <input type="text" id="e20_19" name="e20_19" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full disabled:bg-gray-100" />
                             </td>
                         </tr>
                         <tr class="bg-lime-200 text-black font-bold">
                             <td class="text-left p-2">02</td>
                             <td class="text-left p-2">ОБЩИЕ РАСХОДЫ НА РАЗВИТИЕ (КОД 2.1+2.2)</td>
                             <td class="text-center p-2">
-                                <input type="text" id="I02" name="I02" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full disabled:bg-gray-100" />
+                                <input type="text" id="e02" name="e02" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full disabled:bg-gray-100" />
                             </td>
                         </tr>
                         <tr class="text-black font-bold">
                             <td class="text-left p-2">2.1</td>
                             <td class="text-left p-2">Основные средства (код 2.1.1+...+2.1.4)</td>
                             <td class="text-center p-2">
-                                <input type="text" id="I2_1" name="I2_1" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full disabled:bg-gray-100" />
+                                <input type="text" id="e2_1" name="e2_1" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full disabled:bg-gray-100" />
                             </td>
                         </tr>
                         <tr>
                             <td class="text-left p-2">2.1.1</td>
                             <td class="text-left p-2">Здания, земля и благоустройство территории</td>
                             <td class="text-center p-2">
-                                <input type="text" id="I2_1_1" name="I2_1_1" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full disabled:bg-gray-100" />
+                                <input type="text" id="e2_1_1" name="e2_1_1" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full disabled:bg-gray-100" />
                             </td>
                         </tr>
                         <tr>
                             <td class="text-left p-2">2.1.2</td>
                             <td class="text-left p-2">Механизмы, оборудование и транспортные средства</td>
                             <td class="text-center p-2">
-                                <input type="text" id="I2_1_2" name="I2_1_2" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full disabled:bg-gray-100" />
+                                <input type="text" id="e2_1_2" name="e2_1_2" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full disabled:bg-gray-100" />
                             </td>
                         </tr>
                         <tr>
                             <td class="text-left p-2">2.1.3</td>
                             <td class="text-left p-2">Габаритная мебель, офисное оборудование и другие материальные активы</td>
                             <td class="text-center p-2">
-                                <input type="text" id="I2_1_3" name="I2_1_3" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full disabled:bg-gray-100" />
+                                <input type="text" id="e2_1_3" name="e2_1_3" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full disabled:bg-gray-100" />
                             </td>
                         </tr>
                         <tr>
                             <td class="text-left p-2">2.1.4</td>
                             <td class="text-left p-2">Прочие расходы на приобретение основных средств</td>
                             <td class="text-center p-2">
-                                <input type="text" id="I2_1_4" name="I2_1_4" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full disabled:bg-gray-100" />
+                                <input type="text" id="e2_1_4" name="e2_1_4" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full disabled:bg-gray-100" />
                             </td>
                         </tr>
                         <tr class="text-black font-bold">
                             <td class="text-left p-2">2.2</td>
                             <td class="text-left p-2">Капитальный ремонт основных средств</td>
                             <td class="text-center p-2">
-                                <input type="text" id="I2_2" name="I2_2" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full disabled:bg-gray-100" />
+                                <input type="text" id="e2_2" name="e2_2" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full disabled:bg-gray-100" />
                             </td>
                         </tr>
                         <tr class="text-black font-bold">
                             <td class="text-left p-2">3</td>
                             <td class="text-left p-2">Прочие расходы (компенсация ущерба, штрафы, пенни и т.д.)</td>
                             <td class="text-center p-2">
-                                <input type="text" id="I03" name="I03" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full disabled:bg-gray-100" />
+                                <input type="text" id="e03" name="e03" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full disabled:bg-gray-100" />
                             </td>
                         </tr>
                     </tbody>

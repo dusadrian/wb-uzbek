@@ -212,8 +212,14 @@ const goToDashboard = () => {
             appSession.institutionName = "";
             mainWindow.webContents.send("appSession", appSession);
         }
+
+        // TODO -- to be updated -- only first time not working on back!!!!
+        console.log(appSession.user_type);
+        console.log(appSession.user_type === "localCoordinator");
         if (appSession.user_type === "localCoordinator") {
             database.getExisting(db).then((result: { qmr: number | null, dsee: number | null }) => {
+                console.log(result);
+
                 mainWindow.webContents.send('existing', result);
             });
         }
@@ -348,17 +354,28 @@ ipcMain.on('deleteUser', (event, args) => {
 const goToQMR = (id: string) => {
     const newPage = path.join(__dirname, "../src/pages/instruments/04_qmr_" + appSession.language + ".html");
     mainWindow.loadURL("file://" + newPage);
-    if (id) {
-        mainWindow.webContents.once("did-finish-load", () => {
-            database.instrumentGet(id, 'qmr', db).then((result) => {
-                mainWindow.webContents.send("qmr", result);
-            });
+    database.getUserData(appSession.userId).then((userDataArray) => {
+        database.getUserInstitution(appSession.userInstitution).then((institutionDataArray) => {
+            if (id) {
+                mainWindow.webContents.once("did-finish-load", () => {
+                    database.instrumentGet(id, 'qmr', db).then((instrument) => {
+                        mainWindow.webContents.send("instrumentDataReady", {
+                            instrument: instrument,
+                            userData: userDataArray[0],
+                            institutionData: institutionDataArray[0],
+                        });
+                    });
+                });
+            } else {
+                mainWindow.webContents.once("did-finish-load", () => {
+                    mainWindow.webContents.send("instrumentDataReady", {
+                        userData: userDataArray[0],
+                        institutionData: institutionDataArray[0],
+                    });
+                });
+            }
         });
-    }else {
-        mainWindow.webContents.once("did-finish-load", () => {
-            mainWindow.webContents.send("instrumentDataReady", {});
-        });
-    }
+    });
 }
 const goToDSEE = (id: string) => {
     const newPage = path.join(__dirname, "../src/pages/instruments/06_dsee_" + appSession.language + ".html");
@@ -403,7 +420,12 @@ ipcMain.on('saveInstrument', (event, args) => {
             type: 'info',
             message: i18n.__('Instrument saved.'),
         }).then(() => {
-            goToCPISList();
+            if (args.table === 'cpis') {
+                goToCPISList();
+            }
+            if (args.table === 'qmr' || args.table === 'dsee') {
+                goToDashboard();
+            }
         });
     });
 });

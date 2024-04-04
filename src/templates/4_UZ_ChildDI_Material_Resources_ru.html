@@ -105,13 +105,13 @@
             </div>
         </div>
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
-            <div>I4c.</div>
+            <div>I4c. Settlement</div>
             <div>
                 <input type="text" id="i4c" name="i4c" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
             </div>
         </div>
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
-            <div>I4d</div>
+            <div>I4d. Type of settlement</div>
             <div>
                 <input type="text" id="i4d" name="i4d" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
             </div>
@@ -119,7 +119,22 @@
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
             <div>I9. Тип учреждения</div>
             <div>
-                <input type="text" id="i9" name="i9" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                <select id="i9" name="i9" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100">
+                    <option selected>Пожалуйста, выберите один из следующих кодов</option>
+                    <optgroup label="Детские учреждения:">
+                        <option value="11">11. Детский дом (Дом ребенка)</option>
+                        <option value="12">12. Дом «Мехрибонлик»</option>
+                        <option value="13">13. Дом-интерант «Муруват» для детей с инвалидностью </option>
+                    </optgroup>
+                    <optgroup label="Школы-интернаты:">
+                        <option value="21">21. Тип I-II для глухих или слабослышащих детей</option>
+                        <option value="22">22. Тип III-IV для слепых или слабовидящих детей</option>
+                        <option value="23">23. Тип V для детей с тяжелыми нарушениями речи</option>
+                        <option value="24">24. Тип VI для детей с нарушениями опорно-двигательного аппарата</option>
+                        <option value="25">25. Тип VII для детей с задержкой психического развития/психическими нарушениями</option>
+                        <option value="26">26. Тип VIII для детей с умственной отсталостью</option>
+                    </optgroup>
+                </select>
             </div>
         </div>
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
@@ -969,19 +984,19 @@
             <div class="col-span-1">AF11. Как утилизируются бытовые сточные воды?</div>
             <div class="col-span-1 flex flex-col gap-2">
                 <div class="flex items-center">
-                    <input id="af11-1" type="radio" value="1" name="af10" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <input id="af11-1" type="radio" value="1" name="af11" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                     <label for="af11-1" class="ms-2 text-sm text-gray-900">1. Через централизованную канализационную сеть</label>
                 </div>
                 <div class="flex items-center">
-                    <input id="af11-2" type="radio" value="2" name="af10" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <input id="af11-2" type="radio" value="2" name="af11" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                     <label for="af11-2" class="ms-2 text-sm text-gray-900">2. В септический отстойник</label>
                 </div>
                 <div class="flex items-center">
-                    <input id="af11-3" type="radio" value="3" name="af10" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <input id="af11-3" type="radio" value="3" name="af11" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                     <label for="af11-3" class="ms-2 text-sm text-gray-900">3. В выгребную яму</label>
                 </div>
                 <div class="flex items-center">
-                    <input id="af11-4" type="radio" value="4" name="af10" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <input id="af11-4" type="radio" value="4" name="af11" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                     <label for="af11-4" class="ms-2 text-sm text-gray-900">4. По другой системе</label>
                 </div>
             </div>
@@ -1063,7 +1078,6 @@
             </div>
             <div class="flex items-center gap-4">
                 <input type="text" id="af13b" name="af13b" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 disabled:bg-gray-100" />
-                <p>(Month / Year) --- nu am traducere</p>
             </div>
         </div>
 
@@ -1896,27 +1910,27 @@
             <tbody>
                 <tr>
                     <td>а. Свежие фрукты (например, яблоки, бананы, апельсины, виноград и т.д.)</td>
-                    <td class="text-center p-1"><input id="cc10a-1" type="radio" value="1" name="c10a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
-                    <td class="text-center p-1"><input id="cc10a-2" type="radio" value="2" name="c10a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
-                    <td class="text-center p-1"><input id="cc10a-3" type="radio" value="3" name="c10a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
-                    <td class="text-center p-1"><input id="cc10a-4" type="radio" value="4" name="c10a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
-                    <td class="text-center p-1"><input id="cc10a-5" type="radio" value="5" name="c10a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                    <td class="text-center p-1"><input id="cc10a-1" type="radio" value="1" name="cc10a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                    <td class="text-center p-1"><input id="cc10a-2" type="radio" value="2" name="cc10a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                    <td class="text-center p-1"><input id="cc10a-3" type="radio" value="3" name="cc10a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                    <td class="text-center p-1"><input id="cc10a-4" type="radio" value="4" name="cc10a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                    <td class="text-center p-1"><input id="cc10a-5" type="radio" value="5" name="cc10a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
                 </tr>
                 <tr>
                     <td>б. Домашние десерты (например, торты, пироги, пудинги и т.д.)</td>
-                    <td class="text-center p-1"><input id="cc10b-1" type="radio" value="1" name="c10b" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
-                    <td class="text-center p-1"><input id="cc10b-2" type="radio" value="2" name="c10b" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
-                    <td class="text-center p-1"><input id="cc10b-3" type="radio" value="3" name="c10b" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
-                    <td class="text-center p-1"><input id="cc10b-4" type="radio" value="4" name="c10b" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
-                    <td class="text-center p-1"><input id="cc10b-5" type="radio" value="5" name="c10b" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                    <td class="text-center p-1"><input id="cc10b-1" type="radio" value="1" name="cc10b" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                    <td class="text-center p-1"><input id="cc10b-2" type="radio" value="2" name="cc10b" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                    <td class="text-center p-1"><input id="cc10b-3" type="radio" value="3" name="cc10b" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                    <td class="text-center p-1"><input id="cc10b-4" type="radio" value="4" name="cc10b" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                    <td class="text-center p-1"><input id="cc10b-5" type="radio" value="5" name="cc10b" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
                 </tr>
                 <tr class="border-b">
                     <td>в. Готовые или обработанные пищевые продукты (например, замороженные блюда, консервы, обработанное мясо и т.д.)</td>
-                    <td class="text-center p-1"><input id="cc10c-1" type="radio" value="1" name="c10c" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
-                    <td class="text-center p-1"><input id="cc10c-2" type="radio" value="2" name="c10c" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
-                    <td class="text-center p-1"><input id="cc10c-3" type="radio" value="3" name="c10c" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
-                    <td class="text-center p-1"><input id="cc10c-4" type="radio" value="4" name="c10c" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
-                    <td class="text-center p-1"><input id="cc10c-5" type="radio" value="5" name="c10c" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                    <td class="text-center p-1"><input id="cc10c-1" type="radio" value="1" name="cc10c" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                    <td class="text-center p-1"><input id="cc10c-2" type="radio" value="2" name="cc10c" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                    <td class="text-center p-1"><input id="cc10c-3" type="radio" value="3" name="cc10c" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                    <td class="text-center p-1"><input id="cc10c-4" type="radio" value="4" name="cc10c" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                    <td class="text-center p-1"><input id="cc10c-5" type="radio" value="5" name="cc10c" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
                 </tr>
             </tbody>
         </table>

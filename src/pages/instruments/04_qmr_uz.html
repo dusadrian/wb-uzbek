@@ -8,6 +8,7 @@
         <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src http: https: data: ; script-src 'self';" />
         <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; img-src http: https: data: ; script-src 'self';" />
         <link href="../../../dist/main.css" rel="stylesheet">
+        <link rel="stylesheet" href="../../../node_modules/flatpickr/dist/flatpickr.min.css">
     </head>
 
     <body class="relative max-h-screen">
@@ -109,13 +110,13 @@
                     </div>
                 </div>
                 <div class="grid grid-cols-2 gap-4 items-center mt-6">
-                    <div>I4c.</div>
+                    <div>I4c. Settlement</div>
                     <div>
                         <input type="text" id="i4c" name="i4c" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
                     </div>
                 </div>
                 <div class="grid grid-cols-2 gap-4 items-center mt-6">
-                    <div>I4d</div>
+                    <div>I4d. Type of settlement</div>
                     <div>
                         <input type="text" id="i4d" name="i4d" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
                     </div>
@@ -123,7 +124,22 @@
                 <div class="grid grid-cols-2 gap-4 items-center mt-6">
                     <div>I9. Tashkilot turi</div>
                     <div>
-                        <input type="text" id="i9" name="i9" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                        <select id="i9" name="i9" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100">
+                            <option selected>Quyidagi kodlardan birini tanlang</option>
+                            <optgroup label="Bolalar muassasasi:">
+                                <option value="11">11. Bolalar uyi (Bolalar uyi)</option>
+                                <option value="12">12. Mehribonlik uyi</option>
+                                <option value="13">13. Nogironligi bor bolalar uchun &quot;Muruvvat&quot; internat-uyi</option>
+                            </optgroup>
+                            <optgroup label="Maktab-internatlar:">
+                                <option value="21">21. Kar yoki eshitish qobiliyati zaif bolalar uchun I-II toifa</option>
+                                <option value="22">22. Ko&#39;zi ojiz yoki zaif ko&#39;ruvchi bolalar uchun III-IV toifa</option>
+                                <option value="23">23. Og&#39;ir nutq buzilishlari bo&#39;lgan bolalar uchun V toifa</option>
+                                <option value="24">24. Tayanch-harakat apparati buzilishlari bo&#39;lgan bolalar uchun VI toifa</option>
+                                <option value="25">25. Psixik rivojlanishida orqada qolgan /psixik buzulishlari bo&#39;lgan bolalar uchun VII toifa</option>
+                                <option value="26">26. Aqli zaifligi bo&#39;lgan bolalar uchun VIII toifa</option>
+                            </optgroup>
+                        </select>
                     </div>
                 </div>
                 <div class="grid grid-cols-2 gap-4 items-center mt-6">
@@ -1067,7 +1083,6 @@
                     </div>
                     <div class="flex items-center gap-4">
                         <input type="text" id="af13b" name="af13b" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 disabled:bg-gray-100" />
-                        <p>(Month / Year) --- nu am traducere</p>
                     </div>
                 </div>
         
@@ -2628,252 +2643,252 @@
                             <td class="text-left p-2">00</td>
                             <td class="text-left p-2">JAMI XARAJATLAR (KOD 01+02+30)</td>
                             <td class="text-center p-2">
-                                <input type="text" id="I00" name="I00" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full disabled:bg-gray-100" />
+                                <input type="text" id="e00" name="e00" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full disabled:bg-gray-100" />
                             </td>
                         </tr>
                         <tr class="bg-lime-200 text-black font-bold">
                             <td class="text-left p-2">01</td>
                             <td class="text-left p-2">JAMI OPERATSION XARAJATLAR (kod 10+20)</td>
                             <td class="text-center p-2">
-                                <input type="text" id="I01" name="I01" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full disabled:bg-gray-100" />
+                                <input type="text" id="e01" name="e01" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full disabled:bg-gray-100" />
                             </td>
                         </tr>
                         <tr class="text-black font-bold">
                             <td class="text-left p-2">10</td>
                             <td class="text-left p-2">JAMI HODIMLARGA XARAJATLAR (kod 10.1+10.2+10.3+10.4)</td>
                             <td class="text-center p-2">
-                                <input type="text" id="I10" name="I10" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full disabled:bg-gray-100" />
+                                <input type="text" id="e10" name="e10" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full disabled:bg-gray-100" />
                             </td>
                         </tr>
                         <tr>
                             <td class="text-left p-2">10.1</td>
                             <td class="text-left p-2">Pulda ish haqi xarajatlari (asosiy ish haqi + bonuslar + naqd puldagi boshqa ish haqi huquqlari)</td>
                             <td class="text-center p-2">
-                                <input type="text" id="I10_1" name="I10_1" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full disabled:bg-gray-100" />
+                                <input type="text" id="e10_1" name="e10_1" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full disabled:bg-gray-100" />
                             </td>
                         </tr>
                         <tr>
                             <td class="text-left p-2">10.2</td>
                             <td class="text-left p-2">Ish haqining natura ko&#39;rinishidagi xarajatlari (ovqatlanish vaucherlari, bayram vaucherlari, sovg&#39;a vaucherlari, xodimlarni ish joyiga olib borish va qaytarish va boshqalar)</td>
                             <td class="text-center p-2">
-                                <input type="text" id="I10_2" name="I10_2" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full disabled:bg-gray-100" />
+                                <input type="text" id="e10_2" name="e10_2" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full disabled:bg-gray-100" />
                             </td>
                         </tr>
                         <tr>
                             <td class="text-left p-2">10.3</td>
                             <td class="text-left p-2">Ijtimoiy ta&#39;minot badallari</td>
                             <td class="text-center p-2">
-                                <input type="text" id="I10_3" name="I10_3" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full disabled:bg-gray-100" />
+                                <input type="text" id="e10_3" name="e10_3" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full disabled:bg-gray-100" />
                             </td>
                         </tr>
                         <tr>
                             <td class="text-left p-2">10.4</td>
                             <td class="text-left p-2">Boshqa majburiy mehnat badallari</td>
                             <td class="text-center p-2">
-                                <input type="text" id="I10_4" name="I10_4" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full disabled:bg-gray-100" />
+                                <input type="text" id="e10_4" name="e10_4" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full disabled:bg-gray-100" />
                             </td>
                         </tr>
                         <tr>
                             <td class="text-left p-2">10.5</td>
                             <td class="text-left p-2">Xodimlarni tayyorlash, o&#39;qitish va ustozlik qilish xarajatlari</td>
                             <td class="text-center p-2">
-                                <input type="text" id="I10_5" name="I10_5" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full disabled:bg-gray-100" />
+                                <input type="text" id="e10_5" name="e10_5" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full disabled:bg-gray-100" />
                             </td>
                         </tr>
                         <tr class="text-black font-bold">
                             <td class="text-left p-2">20</td>
                             <td class="text-left p-2">JAMI TOVAR VA XIZMATLAR UCHUN XARAJATLAR (kod 20.1+...+20.19)</td>
                             <td class="text-center p-2">
-                                <input type="text" id="I20" name="I20" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full disabled:bg-gray-100" />
+                                <input type="text" id="e20" name="e20" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full disabled:bg-gray-100" />
                             </td>
                         </tr>
                         <tr>
                             <td class="text-left p-2">20.1</td>
                             <td class="text-left p-2">Ijara to&#39;lovi/mulk solig&#39;i</td>
                             <td class="text-center p-2">
-                                <input type="text" id="I20_1" name="I20_1" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full disabled:bg-gray-100" />
+                                <input type="text" id="e20_1" name="e20_1" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full disabled:bg-gray-100" />
                             </td>
                         </tr>
                         <tr>
                             <td class="text-left p-2">20.2</td>
                             <td class="text-left p-2">Kommunal xizmatlar (elektr, isitish, suv, kanalizatsiya va sanitariya)</td>
                             <td class="text-center p-2">
-                                <input type="text" id="I20_2" name="I20_2" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full disabled:bg-gray-100" />
+                                <input type="text" id="e20_2" name="e20_2" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full disabled:bg-gray-100" />
                             </td>
                         </tr>
                         <tr>
                             <td class="text-left p-2">20.3</td>
                             <td class="text-left p-2">Telefon, televizor, internet obuna to&#39;lovlari</td>
                             <td class="text-center p-2">
-                                <input type="text" id="I20_3" name="I20_3" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full disabled:bg-gray-100" />
+                                <input type="text" id="e20_3" name="e20_3" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full disabled:bg-gray-100" />
                             </td>
                         </tr>
                         <tr>
                             <td class="text-left p-2">20.4</td>
                             <td class="text-left p-2">Ovqatlanish (oziq-ovqat va parhez qo&#39;shimchalari, shu jumladan, agar mavjud bo&#39;lsa, ovqatlanish xizmatlari)</td>
                             <td class="text-center p-2">
-                                <input type="text" id="I20_4" name="I20_4" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full disabled:bg-gray-100" />
+                                <input type="text" id="e20_4" name="e20_4" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full disabled:bg-gray-100" />
                             </td>
                         </tr>
                         <tr>
                             <td class="text-left p-2">20.5</td>
                             <td class="text-left p-2">Dorilar</td>
                             <td class="text-center p-2">
-                                <input type="text" id="I20_5" name="I20_5" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full disabled:bg-gray-100" />
+                                <input type="text" id="e20_5" name="e20_5" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full disabled:bg-gray-100" />
                             </td>
                         </tr>
                         <tr>
                             <td class="text-left p-2">20.6</td>
                             <td class="text-left p-2">Tibbiy buyumlar</td>
                             <td class="text-center p-2">
-                                <input type="text" id="I20_6" name="I20_6" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full disabled:bg-gray-100" />
+                                <input type="text" id="e20_6" name="e20_6" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full disabled:bg-gray-100" />
                             </td>
                         </tr>
                         <tr>
                             <td class="text-left p-2">20.7</td>
                             <td class="text-left p-2">Tana gigienasi mahsulotlari</td>
                             <td class="text-center p-2">
-                                <input type="text" id="I20_7" name="I20_7" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full disabled:bg-gray-100" />
+                                <input type="text" id="e20_7" name="e20_7" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full disabled:bg-gray-100" />
                             </td>
                         </tr>
                         <tr>
                             <td class="text-left p-2">20.8</td>
                             <td class="text-left p-2">Tozalash mahsulotlari va materiallari</td>
                             <td class="text-center p-2">
-                                <input type="text" id="I20_8" name="I20_8" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full disabled:bg-gray-100" />
+                                <input type="text" id="e20_8" name="e20_8" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full disabled:bg-gray-100" />
                             </td>
                         </tr>
                         <tr>
                             <td class="text-left p-2">20.9</td>
                             <td class="text-left p-2">Kiyim va poyabzal</td>
                             <td class="text-center p-2">
-                                <input type="text" id="I20_9" name="I20_9" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full disabled:bg-gray-100" />
+                                <input type="text" id="e20_9" name="e20_9" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full disabled:bg-gray-100" />
                             </td>
                         </tr>
                         <tr>
                             <td class="text-left p-2">20.10</td>
                             <td class="text-left p-2">Choyshab va aksessuarlar</td>
                             <td class="text-center p-2">
-                                <input type="text" id="I20_10" name="I20_10" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full disabled:bg-gray-100" />
+                                <input type="text" id="e20_10" name="e20_10" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full disabled:bg-gray-100" />
                             </td>
                         </tr>
                         <tr>
                             <td class="text-left p-2">20.11</td>
                             <td class="text-left p-2">Tibbiy xizmatlar (shu jumladan stomatologiya xizmatlari)</td>
                             <td class="text-center p-2">
-                                <input type="text" id="I20_11" name="I20_11" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full disabled:bg-gray-100" />
+                                <input type="text" id="e20_11" name="e20_11" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full disabled:bg-gray-100" />
                             </td>
                         </tr>
                         <tr>
                             <td class="text-left p-2">20.12</td>
                             <td class="text-left p-2">Ixtisoslashgan pudratchilar</td>
                             <td class="text-center p-2">
-                                <input type="text" id="I20_12" name="I20_12" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full disabled:bg-gray-100" />
+                                <input type="text" id="e20_12" name="e20_12" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full disabled:bg-gray-100" />
                             </td>
                         </tr>
                         <tr>
                             <td class="text-left p-2">20.13</td>
                             <td class="text-left p-2">Transport (yoqilg&#39;i, transport abonementlari va boshqalar)</td>
                             <td class="text-center p-2">
-                                <input type="text" id="I20_13" name="I20_13" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full disabled:bg-gray-100" />
+                                <input type="text" id="e20_13" name="e20_13" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full disabled:bg-gray-100" />
                             </td>
                         </tr>
                         <tr>
                             <td class="text-left p-2">20.14</td>
                             <td class="text-left p-2">Dam olish, ijtimoiy va/yoki oilaviytadbirlar (jamoa safarlari, sayohatlar, sayohat xarajatlari, sport zaliga obunalar va boshqalar)</td>
                             <td class="text-center p-2">
-                                <input type="text" id="I20_14" name="I20_14" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full disabled:bg-gray-100" />
+                                <input type="text" id="e20_14" name="e20_14" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full disabled:bg-gray-100" />
                             </td>
                         </tr>
                         <tr>
                             <td class="text-left p-2">20.15</td>
                             <td class="text-left p-2">Bino, jihozlar va tashqi makonlarni joriy ta&#39;mirlash va tutish</td>
                             <td class="text-center p-2">
-                                <input type="text" id="I20_15" name="I20_15" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full disabled:bg-gray-100" />
+                                <input type="text" id="e20_15" name="e20_15" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full disabled:bg-gray-100" />
                             </td>
                         </tr>
                         <tr>
                             <td class="text-left p-2">20.16</td>
                             <td class="text-left p-2">Uskunalar va xonalar (mebel, kompyuter va orgtexnika, maishiy texnika va boshqalar)</td>
                             <td class="text-center p-2">
-                                <input type="text" id="I20_16" name="I20_16" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full disabled:bg-gray-100" />
+                                <input type="text" id="e20_16" name="e20_16" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full disabled:bg-gray-100" />
                             </td>
                         </tr>
                         <tr>
                             <td class="text-left p-2">20.17</td>
                             <td class="text-left p-2">Istiqomat qiluvchi bolalar uchun o&#39;quv va ta&#39;lim kurslari</td>
                             <td class="text-center p-2">
-                                <input type="text" id="I20_17" name="I20_17" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full disabled:bg-gray-100" />
+                                <input type="text" id="e20_17" name="e20_17" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full disabled:bg-gray-100" />
                             </td>
                         </tr>
                         <tr>
                             <td class="text-left p-2">20.18</td>
                             <td class="text-left p-2">Bolalar bilan davolash tadbirlar uchun materiallar</td>
                             <td class="text-center p-2">
-                                <input type="text" id="I20_18" name="I20_18" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full disabled:bg-gray-100" />
+                                <input type="text" id="e20_18" name="e20_18" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full disabled:bg-gray-100" />
                             </td>
                         </tr>
                         <tr>
                             <td class="text-left p-2">20.19</td>
                             <td class="text-left p-2">Boshqa tovarlar va xizmatlar</td>
                             <td class="text-center p-2">
-                                <input type="text" id="I20_19" name="I20_19" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full disabled:bg-gray-100" />
+                                <input type="text" id="e20_19" name="e20_19" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full disabled:bg-gray-100" />
                             </td>
                         </tr>
                         <tr class="bg-lime-200 text-black font-bold">
                             <td class="text-left p-2">02</td>
                             <td class="text-left p-2">RIVOJLANISHGA UMUMIY XARAJATLAR (COD 2,1+2,2)</td>
                             <td class="text-center p-2">
-                                <input type="text" id="I02" name="I02" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full disabled:bg-gray-100" />
+                                <input type="text" id="e02" name="e02" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full disabled:bg-gray-100" />
                             </td>
                         </tr>
                         <tr class="text-black font-bold">
                             <td class="text-left p-2">2.1</td>
                             <td class="text-left p-2">Asosiy vositalar (kod 2.1.1+...+2.1.4)</td>
                             <td class="text-center p-2">
-                                <input type="text" id="I2_1" name="I2_1" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full disabled:bg-gray-100" />
+                                <input type="text" id="e2_1" name="e2_1" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full disabled:bg-gray-100" />
                             </td>
                         </tr>
                         <tr>
                             <td class="text-left p-2">2.1.1</td>
                             <td class="text-left p-2">Binolar, yer va yerni obodonlashtirish</td>
                             <td class="text-center p-2">
-                                <input type="text" id="I2_1_1" name="I2_1_1" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full disabled:bg-gray-100" />
+                                <input type="text" id="e2_1_1" name="e2_1_1" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full disabled:bg-gray-100" />
                             </td>
                         </tr>
                         <tr>
                             <td class="text-left p-2">2.1.2</td>
                             <td class="text-left p-2">Mashinalar, uskunalar va transport vositalari</td>
                             <td class="text-center p-2">
-                                <input type="text" id="I2_1_2" name="I2_1_2" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full disabled:bg-gray-100" />
+                                <input type="text" id="e2_1_2" name="e2_1_2" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full disabled:bg-gray-100" />
                             </td>
                         </tr>
                         <tr>
                             <td class="text-left p-2">2.1.3</td>
                             <td class="text-left p-2">Gabarit mebel, orgtexnika va boshqa moddiy boyliklar</td>
                             <td class="text-center p-2">
-                                <input type="text" id="I2_1_3" name="I2_1_3" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full disabled:bg-gray-100" />
+                                <input type="text" id="e2_1_3" name="e2_1_3" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full disabled:bg-gray-100" />
                             </td>
                         </tr>
                         <tr>
                             <td class="text-left p-2">2.1.4</td>
                             <td class="text-left p-2">Asosiy vositalarni sotib olish uchun boshqa xarajatlari</td>
                             <td class="text-center p-2">
-                                <input type="text" id="I2_1_4" name="I2_1_4" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full disabled:bg-gray-100" />
+                                <input type="text" id="e2_1_4" name="e2_1_4" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full disabled:bg-gray-100" />
                             </td>
                         </tr>
                         <tr class="text-black font-bold">
                             <td class="text-left p-2">2.2</td>
                             <td class="text-left p-2">Asosiy vositalarni kapital ta&#39;mirlash</td>
                             <td class="text-center p-2">
-                                <input type="text" id="I2_2" name="I2_2" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full disabled:bg-gray-100" />
+                                <input type="text" id="e2_2" name="e2_2" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full disabled:bg-gray-100" />
                             </td>
                         </tr>
                         <tr class="text-black font-bold">
                             <td class="text-left p-2">3</td>
                             <td class="text-left p-2">Boshqa xarajatlar (zararni qoplash, jarimalar va boshqalar)</td>
                             <td class="text-center p-2">
-                                <input type="text" id="I03" name="I03" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full disabled:bg-gray-100" />
+                                <input type="text" id="e03" name="e03" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full disabled:bg-gray-100" />
                             </td>
                         </tr>
                     </tbody>
@@ -2881,6 +2896,7 @@
         
         
             </form>
+            
             <footer id="footer" class="fixed bottom-0 w-full h-12 bg-slate-200 shadow">
                 <div class="flex justify-center h-full items-center">
 
