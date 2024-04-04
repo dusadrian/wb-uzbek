@@ -970,19 +970,19 @@
             <div class="col-span-1"><%= it.t232 %>. <%= it.t233 %></div>
             <div class="col-span-1 flex flex-col gap-2">
                 <div class="flex items-center">
-                    <input id="af11-1" type="radio" value="1" name="af10" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <input id="af11-1" type="radio" value="1" name="af11" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                     <label for="af11-1" class="ms-2 text-sm text-gray-900"><%= it.t234 %></label>
                 </div>
                 <div class="flex items-center">
-                    <input id="af11-2" type="radio" value="2" name="af10" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <input id="af11-2" type="radio" value="2" name="af11" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                     <label for="af11-2" class="ms-2 text-sm text-gray-900"><%= it.t235 %></label>
                 </div>
                 <div class="flex items-center">
-                    <input id="af11-3" type="radio" value="3" name="af10" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <input id="af11-3" type="radio" value="3" name="af11" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                     <label for="af11-3" class="ms-2 text-sm text-gray-900"><%= it.t236 %></label>
                 </div>
                 <div class="flex items-center">
-                    <input id="af11-4" type="radio" value="4" name="af10" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <input id="af11-4" type="radio" value="4" name="af11" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                     <label for="af11-4" class="ms-2 text-sm text-gray-900"><%= it.t237 %></label>
                 </div>
             </div>
@@ -1940,27 +1940,27 @@
             <tbody>
                 <tr>
                     <td><%= it.t483 %></td>
-                    <td class="text-center p-1"><input id="cc10a-1" type="radio" value="1" name="c10a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
-                    <td class="text-center p-1"><input id="cc10a-2" type="radio" value="2" name="c10a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
-                    <td class="text-center p-1"><input id="cc10a-3" type="radio" value="3" name="c10a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
-                    <td class="text-center p-1"><input id="cc10a-4" type="radio" value="4" name="c10a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
-                    <td class="text-center p-1"><input id="cc10a-5" type="radio" value="5" name="c10a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                    <td class="text-center p-1"><input id="cc10a-1" type="radio" value="1" name="cc10a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                    <td class="text-center p-1"><input id="cc10a-2" type="radio" value="2" name="cc10a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                    <td class="text-center p-1"><input id="cc10a-3" type="radio" value="3" name="cc10a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                    <td class="text-center p-1"><input id="cc10a-4" type="radio" value="4" name="cc10a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                    <td class="text-center p-1"><input id="cc10a-5" type="radio" value="5" name="cc10a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
                 </tr>
                 <tr>
                     <td><%= it.t484 %></td>
-                    <td class="text-center p-1"><input id="cc10b-1" type="radio" value="1" name="c10b" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
-                    <td class="text-center p-1"><input id="cc10b-2" type="radio" value="2" name="c10b" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
-                    <td class="text-center p-1"><input id="cc10b-3" type="radio" value="3" name="c10b" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
-                    <td class="text-center p-1"><input id="cc10b-4" type="radio" value="4" name="c10b" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
-                    <td class="text-center p-1"><input id="cc10b-5" type="radio" value="5" name="c10b" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                    <td class="text-center p-1"><input id="cc10b-1" type="radio" value="1" name="cc10b" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                    <td class="text-center p-1"><input id="cc10b-2" type="radio" value="2" name="cc10b" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                    <td class="text-center p-1"><input id="cc10b-3" type="radio" value="3" name="cc10b" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                    <td class="text-center p-1"><input id="cc10b-4" type="radio" value="4" name="cc10b" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                    <td class="text-center p-1"><input id="cc10b-5" type="radio" value="5" name="cc10b" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
                 </tr>
                 <tr class="border-b">
                     <td><%= it.t485 %></td>
-                    <td class="text-center p-1"><input id="cc10c-1" type="radio" value="1" name="c10c" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
-                    <td class="text-center p-1"><input id="cc10c-2" type="radio" value="2" name="c10c" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
-                    <td class="text-center p-1"><input id="cc10c-3" type="radio" value="3" name="c10c" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
-                    <td class="text-center p-1"><input id="cc10c-4" type="radio" value="4" name="c10c" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
-                    <td class="text-center p-1"><input id="cc10c-5" type="radio" value="5" name="c10c" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                    <td class="text-center p-1"><input id="cc10c-1" type="radio" value="1" name="cc10c" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                    <td class="text-center p-1"><input id="cc10c-2" type="radio" value="2" name="cc10c" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                    <td class="text-center p-1"><input id="cc10c-3" type="radio" value="3" name="cc10c" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                    <td class="text-center p-1"><input id="cc10c-4" type="radio" value="4" name="cc10c" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
+                    <td class="text-center p-1"><input id="cc10c-5" type="radio" value="5" name="cc10c" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
                 </tr>
             </tbody>
         </table>

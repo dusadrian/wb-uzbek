@@ -354,6 +354,10 @@ const goToQMR = (id: string) => {
                 mainWindow.webContents.send("qmr", result);
             });
         });
+    }else {
+        mainWindow.webContents.once("did-finish-load", () => {
+            mainWindow.webContents.send("instrumentDataReady", {});
+        });
     }
 }
 const goToDSEE = (id: string) => {
@@ -364,6 +368,11 @@ const goToDSEE = (id: string) => {
             database.instrumentGet(id, 'dsee', db).then((result) => {
                 mainWindow.webContents.send("dsee", result);
             });
+        });
+    }
+    else {
+        mainWindow.webContents.once("did-finish-load", () => {
+            mainWindow.webContents.send("instrumentDataReady", {});
         });
     }
 }

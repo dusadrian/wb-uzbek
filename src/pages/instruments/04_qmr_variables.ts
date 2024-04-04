@@ -211,9 +211,8 @@ export const questions: QuestionObjectType = {
         active: function () { return (true) },
         error: ''
     },
-    // TODO -- TO BE UPDATED - just for the app to start
-    'i10_s1': {
-        name: 'i10_s1',
+    'i10': {
+        name: 'i10',
         type: 'input',
         value: '-9',
         disabled: false,

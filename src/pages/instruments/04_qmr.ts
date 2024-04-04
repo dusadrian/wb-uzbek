@@ -37,6 +37,7 @@ export const instrument4 = {
 
 
         ipcRenderer.on("instrumentDataReady", (_event, args) => {
+console.log('am ajuns aici');
 
             // set instrument question !!!!!!
             instrument.setQuestions(questions, questionOrder);
