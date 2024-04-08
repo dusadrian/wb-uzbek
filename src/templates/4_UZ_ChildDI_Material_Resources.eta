@@ -1759,15 +1759,15 @@
             <div class="col-span-1 flex flex-col gap-2">
                 <div class="flex items-center">
                     <input id="cc1_1-1" type="checkbox" value="1" name="cc1_1" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="cc1_1-1" class="ms-2 text-sm text-gray-900"><%= it.t4431 %></label>
+                    <label for="cc1_1-1" class="ms-2 text-sm text-gray-900"><%= it.t431 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="cc1_2-2" type="checkbox" value="1" name="cc1_2" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="cc1_2-2" class="ms-2 text-sm text-gray-900"><%= it.t4432 %></label>
+                    <label for="cc1_2-2" class="ms-2 text-sm text-gray-900"><%= it.t432 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="cc1_3-3" type="checkbox" value="1" name="cc1_3" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="cc1_3-3" class="ms-2 text-sm text-gray-900"><%= it.t4433 %></label>
+                    <label for="cc1_3-3" class="ms-2 text-sm text-gray-900"><%= it.t433 %></label>
                 </div>
             </div>
         </div>
