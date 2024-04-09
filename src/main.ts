@@ -160,6 +160,9 @@ ipcMain.on("changeWindow", (event, args) => {
         case "cpis":
             goToCPISList();
             break;
+        case "csr":
+            goToCSRList();
+            break;
         default:
             mainWindow.loadURL("file://" + newPage);
     }
@@ -235,11 +238,45 @@ ipcMain.on('getChildren', (event, args) => {
         mainWindow.webContents.send("children", result);
     });
 });
+
+const goToCSRList = () => {
+    const newPage = path.join(__dirname, "../src/pages/instruments/03_csr.html");
+    mainWindow.loadURL("file://" + newPage);
+};
+ipcMain.on('getStaff', (event, args) => {
+    database.csrList(db).then((result) => {
+        mainWindow.webContents.send("staff", result);
+    });
+});
+ipcMain.on('deleteStaff', (event, args) => {
+    // save to DB
+    dialog.showMessageBox(mainWindow, {
+        type: 'warning',
+        message: i18n.__('Are you sure you want to delete this item?'),
+        buttons: ['Yes', 'No']
+    }).then((result) => {
+        if (result.response === 0) {
+            database.deleteStaff(args.id, db).then(() => {
+                // send message
+                dialog.showMessageBox(mainWindow, {
+                    type: 'info',
+                    message: i18n.__('Item deleted.'),
+                }).then(() => {
+                    goToCSRList();
+                });
+            });
+        }
+    });
+});
+
 const goToInstrument = (instrument: string, id: string) => {
 
     switch (instrument) {
         case "CPIS":
             goToCPIS(id);
+            break;
+        case "CSR":
+            goToCSR(id);
             break;
         case "QMR":
             goToQMR(id);
@@ -411,6 +448,32 @@ const goToCPIS = (id: string) => {
         });
     }
 }
+const goToCSR = (id: string) => {
+    const newPage = path.join(__dirname, "../src/pages/instruments/03_csr_" + appSession.language + ".html");
+    mainWindow.loadURL("file://" + newPage);
+    database.getUserData(appSession.userId).then((userDataArray) => {
+        database.getUserInstitution(appSession.userInstitution).then((institutionDataArray) => {
+            if (id) {
+                mainWindow.webContents.once("did-finish-load", () => {
+                    database.instrumentGet(id, 'csr', db).then((instrument) => {
+                        mainWindow.webContents.send("instrumentDataReady", {
+                            instrument: instrument,
+                            userData: userDataArray[0],
+                            institutionData: institutionDataArray[0],
+                        });
+                    });
+                });
+            } else {
+                mainWindow.webContents.once("did-finish-load", () => {
+                    mainWindow.webContents.send("instrumentDataReady", {
+                        userData: userDataArray[0],
+                        institutionData: institutionDataArray[0],
+                    });
+                });
+            }
+        });
+    });
+}
 
 // save instrument
 ipcMain.on('saveInstrument', (event, args) => {
@@ -422,6 +485,9 @@ ipcMain.on('saveInstrument', (event, args) => {
         }).then(() => {
             if (args.table === 'cpis') {
                 goToCPISList();
+            }
+            if (args.table === 'csr') {
+                goToCSRList();
             }
             if (args.table === 'qmr' || args.table === 'dsee') {
                 goToDashboard();

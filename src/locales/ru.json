@@ -106,5 +106,7 @@
 	"t_cpis_list": "t_cpis_list",
 	"t_add_child": "t_add_child",
 	"t_pin": "t_pin",
-	"t_choose": "--- chooseRU ---"
+	"t_choose": "--- chooseRU ---",
+	"t_csr_list": "t_csr_list",
+	"t_add_staff": "t_add_staff"
 }

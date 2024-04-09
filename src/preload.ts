@@ -101,6 +101,14 @@ window.addEventListener("DOMContentLoaded", () => {
         case 'instruments/01_cpis_ru.html':
             instrumentCPIS();
             break;
+        case 'instruments/03_csr.html':
+            CSR();
+            break;
+        case 'instruments/03_csr_en.html':
+        case 'instruments/03_csr_uz.html':
+        case 'instruments/03_csr_ru.html':
+            instrumentCSR();
+            break;
         case 'instruments/06_dsee_en.html':
         case 'instruments/06_dsee_uz.html':
         case 'instruments/06_dsee_ru.html':
@@ -337,6 +345,7 @@ const instrumentDSEE = () => {
         console.log(error);
     }));
 };
+// Instrument1 1_UZ_ChildDI_Children_in_the_child_care_system
 const CPIS = () => {
 
     topMenu('localCoordinator/01_dashboard');
@@ -358,6 +367,32 @@ const instrumentCPIS = () => {
         return await import("./pages/instruments/01_cpis_instrument");
     };
     importFile().then(result => result.instrument1.init().catch(error => {
+        console.log(error);
+    }));
+};
+
+// Instrument 3 3_UZ_ChildDI_Staff_Registry
+const CSR = () => {
+
+    topMenu('localCoordinator/01_dashboard');
+
+    translatePage();
+    const importFile = async () => {
+        return await import("./pages/instruments/03_csr");
+    };
+    importFile().then(result => result.csr.init().catch(error => {
+        console.log(error);
+    }));
+};
+const instrumentCSR = () => {
+
+    topMenu('instruments/03_csr');
+
+    translatePage();
+    const importFile = async () => {
+        return await import("./pages/instruments/03_csr_instrument");
+    };
+    importFile().then(result => result.instrument3.init().catch(error => {
         console.log(error);
     }));
 };

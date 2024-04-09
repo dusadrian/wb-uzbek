@@ -105,6 +105,24 @@ CREATE TABLE values_cpis (
     PRIMARY KEY (instrument_id, variable)
 );
 
+-- Create instrument 3
+CREATE SEQUENCE id_instrument_csr_sequence START 1;
+
+CREATE TABLE instrument_csr (
+    id INTEGER DEFAULT nextval('id_instrument_csr_sequence'),
+    uuid UUID DEFAULT uuid(),
+    created_at TIMESTAMP DEFAULT current_timestamp,
+    updated_at TIMESTAMP DEFAULT current_timestamp,
+    PRIMARY KEY (id)
+);
+
+CREATE TABLE values_csr (
+    instrument_id INTEGER NOT NULL,
+    variable VARCHAR NOT NULL,
+    value VARCHAR NOT NULL,
+    PRIMARY KEY (instrument_id, variable)
+);
+
 
 INSERT INTO
     institutions (name, code, address, atuCode, region, district, type, staffCount, childrenCount, youngAdultCount, childrenHomeCount, patronatCount) 

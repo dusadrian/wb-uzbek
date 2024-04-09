@@ -147,8 +147,8 @@ export const cpisList = async (db: DuckDB.Database) => {
             MAX(CASE WHEN variable = 'lk1a' THEN value ELSE NULL END) first_name,
             MAX(CASE WHEN variable = 'lk1b' THEN value ELSE NULL END) patronymics,
             MAX(CASE WHEN variable = 'lk1c' THEN value ELSE NULL END) last_name,
-        FROM instrument_cpis AS c
-        LEFT JOIN values_cpis AS v ON v.instrument_id = c.id
+        FROM instrument_csr AS c
+        LEFT JOIN values_csr AS v ON v.instrument_id = c.id
         GROUP BY c.id, c.uuid;`;
 
         db.all(sql, (error, result) => {
@@ -157,6 +157,45 @@ export const cpisList = async (db: DuckDB.Database) => {
                 console.log(error);
             }
             resolve(result as Array<Instrument>);
+        });
+    });
+    return await connection;
+}
+
+export const csrList = async (db: DuckDB.Database) => {
+    const connection = new Promise<Array<Instrument>>((resolve) => {
+
+        const sql = `
+        SELECT c.id,
+            c.uuid,
+            MAX(CASE WHEN variable = 'e1' THEN value ELSE NULL END) e1,
+            MAX(CASE WHEN variable = 'euid' THEN value ELSE NULL END) euid,
+        FROM instrument_csr AS c
+        LEFT JOIN values_csr AS v ON v.instrument_id = c.id
+        GROUP BY c.id, c.uuid;`;
+
+        db.all(sql, (error, result) => {
+            if (error) {
+                console.log("===== Error get instrument CSR =====");
+                console.log(error);
+            }
+            resolve(result as Array<Instrument>);
+        });
+    });
+    return await connection;
+}
+export const deleteStaff = async (id: string, db: DuckDB.Database) => {
+    const connection = new Promise<boolean>((resolve) => {
+        db.run(`DELETE FROM instrument_csr WHERE id = '${id}'`, (error) => {
+            if (error) {
+                console.log(error);
+            }
+            db.run(`DELETE FROM values_csr WHERE instrument_id = '${id}'`, (error) => {
+                if (error) {
+                    console.log(error);
+                }
+                resolve(true);
+            });
         });
     });
     return await connection;

@@ -9,6 +9,9 @@ interface IObj {
 export const localCoordinator = {
     init: async () => {
 
+        ipcRenderer.send('getExisting');
+
+        // Questionnaire on the material resources
         const viewEdit_QMR = (<HTMLButtonElement>document.getElementById('viewEdit_QMR'))
         if (viewEdit_QMR !== null) {
             viewEdit_QMR.addEventListener('click', () => {
@@ -24,6 +27,7 @@ export const localCoordinator = {
             });
         }
 
+        // Data sheet on entries and exits
         const viewEdit_DSEE = (<HTMLButtonElement>document.getElementById('viewEdit_DSEE'));
         if (viewEdit_DSEE !== null) {
             viewEdit_DSEE.addEventListener('click', () => {
@@ -39,6 +43,7 @@ export const localCoordinator = {
             });
         }
 
+        // Children placed in the service
         const viewEdit_CPIS = (<HTMLButtonElement>document.getElementById('viewEdit_CPIS'));
         if (viewEdit_CPIS !== null) {
             viewEdit_CPIS.addEventListener('click', () => {
@@ -48,12 +53,24 @@ export const localCoordinator = {
             });
         }
 
+        // Staff working in the service
+        const viewEdit_CSR = (<HTMLButtonElement>document.getElementById('viewEdit_CSR'));
+        if (viewEdit_CSR !== null) {
+            viewEdit_CSR.addEventListener('click', () => {
+                ipcRenderer.send('changeWindow', {
+                    'name': 'csr',
+                });
+            });
+        }
+
+        // Institution details
         (<HTMLButtonElement>document.getElementById('viewEdit_ID')).addEventListener('click', () => {
             ipcRenderer.send('changeWindow', {
                 'name': 'localCoordinator/02_institution_details'
             });
         });
 
+        // Users
         (<HTMLButtonElement>document.getElementById('users')).addEventListener('click', () => {
             ipcRenderer.send('changeWindow', {
                 'name': 'localCoordinator/03_users'
@@ -61,8 +78,6 @@ export const localCoordinator = {
         });
 
         ipcRenderer.on("existing", (_event, args) => {
-            console.log('existing', args);
-            
             viewEdit_QMR.dataset.id = args.qmr;
             viewEdit_DSEE.dataset.id = args.dsee;
         })

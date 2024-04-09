@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8" />
+        <title>WorldBank</title>
+        <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src http: https: data: ; script-src 'self';" />
+        <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; img-src http: https: data: ; script-src 'self';" />
+        <link href="../../../dist/main.css" rel="stylesheet">
+        <link rel="stylesheet" href="../../../node_modules/flatpickr/dist/flatpickr.min.css">
+    </head>
+
+    <body class="relative max-h-screen">
+        <div class="fixed top-0 right-0 left-0 bg-slate-200 h-10 z-50 shadow" id="header">
+        </div>
+        <div class="relative w-full mt-10 pb-10 h-[calc(100vh-5.5rem)] overflow-y-auto">
+
+            <form class="px-6 mt-10">
+                <div class="grid grid-cols-12 border">
+                    <div class="col-span-1 bg-stone-200 p-2"></div>
+                    <div class="col-span-11 p-2">
+                        <h1 class="text-4xl text-gray-700 pl-4 tracking-wide mb-4">Human resources of the institution</h1>
+                        <p class="pl-4 text-red-800 text-sm font-medium">Staff registry of the childcare institutions and specialized boarding-schools</p>
+                    </div>
+                </div>
+        
+                <p class="mt-4 mb-2 text-xl">INTRODUCTION</p>
+                <p class="mb-2">The primary goal of this data collection is to support the Government of Uzbekistan in transitioning from institutional care to family-type care for children deprived of parental care. To achieve this, we aim to build a robust monitoring mechanism at the national level. By collecting detailed data, we can inform evidence-based decisions and policies that promote family-based alternatives.</p>
+                <p class="mb-2">Another critical objective is to enhance the quality of services provided to children with disabilities in institutional care. By understanding their unique needs and experiences, we can develop targeted interventions and improve their overall well-being. Additionally, we seek to explore and promote adequate family-type alternatives for these children. </p>
+                <p class="mb-2">This questionnaire serves as a crucial tool for understanding the organizational structure and individual profiles within each child care institution and boarding school. By collecting comprehensive data, we aim to enhance decision-making, improve staff management, and ensure the well-being of both employees and the children placed into care.</p>
+                <p class="mb-2">This questionnaire aims to gather information about each position within the staff structure of the institution. Whether a position is currently occupied or vacant, please complete a separate questionnaire for each position.</p>
+        
+                <div class="grid grid-cols-2 gap-4 items-center mt-12">
+                    <div>Q1. Completion date of questionnaire</div>
+                    <div>
+                        <input type="text" id="q1" name="q1" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                    <div>Q2. Name, patronymics, and surname of the person who filled in the questionnaire</div>
+                    <div>
+                        <input type="text" id="q2" name="q2" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                    <div>Q3. Job title</div>
+                    <div>
+                        <input type="text" id="q3" name="q3" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                    <div>Q4. Profession</div>
+                    <div>
+                        <input type="text" id="q4" name="q4" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                    <div>Q5. Phone</div>
+                    <div>
+                        <input type="text" id="q5" name="q5" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                    <div>Q6. E-mail</div>
+                    <div>
+                        <input type="text" id="q6" name="q6" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                    </div>
+                </div>
+        
+                <h2 class="mt-10 mb-4 text-2xl font-bold text-gray-700">1. GENERAL INFORMATION ABOUT THE INSTITUTION</h2>
+                <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                    <div>I1. Name of the institution</div>
+                    <div>
+                        <input type="text" id="i1" name="i1" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                    <div>I2. Institution code from the registry</div>
+                    <div>
+                        <input type="text" id="i2" name="i2" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                    <div>I3. Address of the institution</div>
+                    <div>
+                        <input type="text" id="i3" name="i3" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                    <div>I4. The code of the administrative-territorial unit (МҲОБТ)</div>
+                    <div>
+                        <input type="text" id="i4" name="i4" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                    <div>I4a. Region</div>
+                    <div>
+                        <input type="text" id="i4a" name="i4a" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                    <div>I4b. District</div>
+                    <div>
+                        <input type="text" id="i4b" name="i4b" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                    <div>I4c. Settlement</div>
+                    <div>
+                        <input type="text" id="i4c" name="i4c" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                    <div>I4d. Type of settlement</div>
+                    <div>
+                        <input type="text" id="i4d" name="i4d" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                    <div>I5. Type of institution</div>
+                    <div>
+                        <select id="i5" name="i5" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100">
+                            <option selected>Please select one of the following codes</option>
+                            <optgroup label="Childcare institutions:">
+                                <option value="11">11. Children&#39;s home (Baby home))</option>
+                                <option value="12">12. Mehribonlik house</option>
+                                <option value="13">13. Muruvat house for children with disabilities</option>
+                            </optgroup>
+                            <optgroup label="Boarding schools:">
+                                <option value="21">21. Type I-II for deaf or with hearing impairments children</option>
+                                <option value="22">22. Type III-IV for blind or visually impaired children</option>
+                                <option value="23">23. Type V for children with severe speech impairments</option>
+                                <option value="24">24. Type VI for children with musculoskeletal disorders</option>
+                                <option value="25">25. Type VII for children with children with slow mental development/mental disorders</option>
+                                <option value="26">26. Type VIII for children with intellectual disabilities</option>
+                            </optgroup>
+                        </select>
+                    </div>
+                </div>
+        
+                <h2 class="mt-10 mb-4 text-2xl font-bold text-gray-700">2. INFORMATION ABOUT THE POSITION</h2>
+        
+                <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                    <div>J1. Job title</div>
+                    <div>
+                        <input type="text" id="j1" name="j1" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                    </div>
+                </div>
+        
+                <div class="grid grid-cols-2 gap-4 items-center mt-10">
+                    <div>Name of the department within the institution. 80. Not applicable</div>
+                    <div class="col-span-1 flex items-center gap-4">
+                        <div class="flex items-center gap-4">
+                            <input type="text" id="j2" name="j2" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                        </div>
+                        <div class="flex items-center">
+                            <input id="j2_na" type="checkbox" name="j2_na" value="80" class="w-4 h-4 text-blue-600 border-gray-400 rounded focus:ring-blue-500 disabled:bg-gray-100">
+                            <label for="j2_na" class="ms-2 text-sm text-gray-900">80. Not applicable</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 gap-4 items-center mt-10">
+                    <div>J3. Job class:</div>
+                    <div class="col-span-1 flex flex-col gap-2">
+                        <div class="flex items-center">
+                            <input id="j3-1" type="radio" value="1" name="j3" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                            <label for="j3-1" class="ms-2 text-sm text-gray-900">1. Executive / Management</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="j3-2" type="radio" value="2" name="j3" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                            <label for="j3-2" class="ms-2 text-sm text-gray-900">2. Healthcare / Medical</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="j3-3" type="radio" value="3" name="j3" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                            <label for="j3-3" class="ms-2 text-sm text-gray-900">3. Care / Assistance</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="j3-4" type="radio" value="4" name="j3" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                            <label for="j3-4" class="ms-2 text-sm text-gray-900">4. Education / Teaching</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="j3-5" type="radio" value="5" name="j3" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                            <label for="j3-5" class="ms-2 text-sm text-gray-900">5. Psychosocial support</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="j3-6" type="radio" value="6" name="j3" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                            <label for="j3-6" class="ms-2 text-sm text-gray-900">6. Administrative / Technical / Support</label>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="grid grid-cols-2 gap-4 items-center mt-10">
+                    <div>J4. Is there an approved job description available for this position?</div>
+                    <div class="col-span-1 flex items-center gap-4">
+                        <div class="flex items-center">
+                            <input id="j4-1" type="radio" value="1" name="j4" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                            <label for="j4-1" class="ms-2 text-sm text-gray-900">1. Yes</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="j4-2" type="radio" value="2" name="j4" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                            <label for="j4-2" class="ms-2 text-sm text-gray-900">2. No</label>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                    <div>J5. Number of weekly working hours</div>
+                    <div>
+                        <input type="text" id="j5" name="j5" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                    </div>
+                </div>
+        
+                <div class="grid grid-cols-2 gap-4 items-center mt-10">
+                    <div>J6. Level of qualification / education required</div>
+                    <div class="col-span-1 flex flex-col gap-2">
+                        <div class="flex items-center">
+                            <input id="j6-1" type="radio" value="0" name="j6" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                            <label for="j6-1" class="ms-2 text-sm text-gray-900">0. None</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="j6-2" type="radio" value="1" name="j6" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                            <label for="j6-2" class="ms-2 text-sm text-gray-900">1. Unfinished secondary education</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="j6-3" type="radio" value="2" name="j6" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                            <label for="j6-3" class="ms-2 text-sm text-gray-900">2. General secondary education</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="j6-4" type="radio" value="3" name="j6" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                            <label for="j6-4" class="ms-2 text-sm text-gray-900">3. Specialized secondary/vocational education</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="j6-5" type="radio" value="4" name="j6" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                            <label for="j6-5" class="ms-2 text-sm text-gray-900">4. Higher education</label>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                    <div>J7. Required level of experience (minimum number of years of work experience) for this position</div>
+                    <div class="flex items-center gap-4">
+                        <input type="text" id="j7" name="j7" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-1/2 p-2.5 disabled:bg-gray-100" />
+                        years            </div>
+                </div>
+        
+                <div class="grid grid-cols-2 gap-4 items-center mt-10">
+                    <div>J8. Current status of the job:</div>
+                    <div class="col-span-1 flex flex-col gap-2">
+                        <div class="flex items-center">
+                            <input id="j8-1" type="radio" value="1" name="j8" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                            <label for="j8-1" class="ms-2 text-sm text-gray-900">1. Permanent employment</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="j8-2" type="radio" value="2" name="j8" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                            <label for="j8-2" class="ms-2 text-sm text-gray-900">2. Temporary employment</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="j8-3" type="radio" value="3" name="j8" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                            <label for="j8-3" class="ms-2 text-sm text-gray-900">3. Temporarily not occupied</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="j8-4" type="radio" value="4" name="j8" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                            <label for="j8-4" class="ms-2 text-sm text-gray-900">4. Vacant</label>
+                        </div>
+                    </div>
+                </div>
+        
+                <h2 class="mt-10 mb-4 text-2xl font-bold text-gray-700">3. INFORMATION ABOUT THE EMPLOYEE</h2>
+        
+        
+                <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                    <div>E1. First name, patronymic and surname of the employee</div>
+                    <div>
+                        <input type="text" id="e1" name="e1" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                    <div>EUID. Anonymized employee unique identifier</div>
+                    <div>
+                        <input type="text" id="euid" name="euid" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                    </div>
+                </div>
+                <small class="italic uppercase block">AUTOMATICALLY GENERATED </small>
+        
+                <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                    <div>E2. Birth date</div>
+                    <div>
+                        <input type="text" id="e2" name="e2" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                    </div>
+                </div>
+        
+                <div class="grid grid-cols-2 gap-4 items-center mt-10">
+                    <div>E3. Gender</div>
+                    <div class="col-span-1 flex items-center gap-4">
+                        <div class="flex items-center">
+                            <input id="e3-1" type="radio" value="1" name="e3" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                            <label for="e3-1" class="ms-2 text-sm text-gray-900">1. Male</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="e3-2" type="radio" value="2" name="e3" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                            <label for="e3-2" class="ms-2 text-sm text-gray-900">2. Female</label>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="grid grid-cols-2 gap-4 items-center mt-10">
+                    <div>E4. Education level</div>
+                    <div class="col-span-1 flex flex-col gap-2">
+                        <div class="flex items-center">
+                            <input id="e4-1" type="radio" value="0" name="e4" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                            <label for="e4-1" class="ms-2 text-sm text-gray-900">0. None</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="e4-2" type="radio" value="1" name="e4" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                            <label for="e4-2" class="ms-2 text-sm text-gray-900">1. Unfinished secondary education</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="e4-3" type="radio" value="2" name="e4" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                            <label for="e4-3" class="ms-2 text-sm text-gray-900">2. General secondary education</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="e4-4" type="radio" value="3" name="e4" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                            <label for="e4-4" class="ms-2 text-sm text-gray-900">3. Specialized secondary/vocational education</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="e4-5" type="radio" value="4" name="e4" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                            <label for="e4-5" class="ms-2 text-sm text-gray-900">4. Higher education</label>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                    <div>E5. Profession/Specialization (as per formal qualifications, diploma obtained)</div>
+                    <div>
+                        <input type="text" id="e5" name="e5" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                    </div>
+                </div>
+        
+                <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                    <div>E6. Total number of years of experience in this area of work (including similar positions in other organizations)</div>
+                    <div class="flex items-center gap-4">
+                        <input type="text" id="e6" name="e6" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-1/2 p-2.5 disabled:bg-gray-100" /> years            </div>
+                </div>
+        
+                <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                    <div>E7. Date of hiring within the institution</div>
+                    <div>
+                        <input type="text" id="e7" name="e7" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                    </div>
+                </div>
+        
+        
+                <div class="grid grid-cols-2 gap-4 items-center mt-10">
+                    <div>E8. Type of contract:</div>
+                    <div class="col-span-1 flex flex-col gap-2">
+                        <div class="flex items-center">
+                            <input id="e8-1" type="radio" value="1" name="e8" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                            <label for="e8-1" class="ms-2 text-sm text-gray-900">1. Permanent, full-time</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="e8-2" type="radio" value="2" name="e8" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                            <label for="e8-2" class="ms-2 text-sm text-gray-900">2. Permanent, part-time</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="e8-3" type="radio" value="3" name="e8" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                            <label for="e8-3" class="ms-2 text-sm text-gray-900">3. Fixed-term, full-time</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="e8-4" type="radio" value="4" name="e8" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                            <label for="e8-4" class="ms-2 text-sm text-gray-900">4. Fixed-term, part-time</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="e8-5" type="radio" value="5" name="e8" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                            <label for="e8-5" class="ms-2 text-sm text-gray-900">5. Concurrent internal contract</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="e8-6" type="radio" value="6" name="e8" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                            <label for="e8-6" class="ms-2 text-sm text-gray-900">6. Concurrent external contract</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="e8-7" type="radio" value="7" name="e8" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                            <label for="e8-7" class="ms-2 text-sm text-gray-900">7. Service contract / Freelance</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="e8-8" type="radio" value="8" name="e8" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                            <label for="e8-8" class="ms-2 text-sm text-gray-900">8. Other, specify ……</label>
+                        </div>
+                        <input type="text" id="e8_other" name="e8_other" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                    </div>
+                </div>
+        
+        
+                <div class="grid grid-cols-2 gap-4 items-center mt-10">
+                    <div>E9. Position/Specialty level or rank</div>
+                    <div class="col-span-1 flex flex-col gap-2">
+                        <div class="flex items-center">
+                            <input id="e9-1" type="radio" value="1" name="e9" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                            <label for="e4-1" class="ms-2 text-sm text-gray-900">1. Higher category</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="e9-2" type="radio" value="2" name="e9" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                            <label for="e4-2" class="ms-2 text-sm text-gray-900">2. First category</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="e9-3" type="radio" value="3" name="e9" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                            <label for="e4-3" class="ms-2 text-sm text-gray-900">3. Second category </label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="e9-4" type="radio" value="4" name="e9" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                            <label for="e4-4" class="ms-2 text-sm text-gray-900">4. Not applicable</label>
+                        </div>
+                    </div>
+                </div>
+        
+        
+                <div class="grid grid-cols-2 gap-4 items-center mt-10">
+                    <div>E10. Is the employee directly involved in working with children?</div>
+                    <div class="col-span-1 flex items-center gap-4">
+                        <div class="flex items-center">
+                            <input id="e10-1" type="radio" value="1" name="e10" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                            <label for="e10-1" class="ms-2 text-sm text-gray-900">1. Yes</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="e10-2" type="radio" value="2" name="e10" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                            <label for="e10-2" class="ms-2 text-sm text-gray-900">2. No</label>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="grid grid-cols-2 gap-4 items-center mt-10">
+                    <div>E11. Does the employee work in night shifts?</div>
+                    <div class="col-span-1 flex items-center gap-4">
+                        <div class="flex items-center">
+                            <input id="e11-1" type="radio" value="1" name="e11" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                            <label for="e11-1" class="ms-2 text-sm text-gray-900">1. Yes</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="e11-2" type="radio" value="2" name="e11" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                            <label for="e11-2" class="ms-2 text-sm text-gray-900">2. No</label>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="grid grid-cols-2 gap-4 items-center mt-10">
+                    <div>E12. Does the employee work during weekends?</div>
+                    <div class="col-span-1 flex items-center gap-4">
+                        <div class="flex items-center">
+                            <input id="e12-1" type="radio" value="1" name="e12" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                            <label for="e12-1" class="ms-2 text-sm text-gray-900">1. Yes</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="e12-2" type="radio" value="2" name="e12" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                            <label for="e12-2" class="ms-2 text-sm text-gray-900">2. No</label>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="grid grid-cols-2 gap-4 items-center mt-10">
+                    <div>E13. Have the employee undergone advanced training courses in their specialization in the last three years?</div>
+                    <div class="col-span-1 flex items-center gap-4">
+                        <div class="flex items-center">
+                            <input id="e13-1" type="radio" value="1" name="e13" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                            <label for="e13-1" class="ms-2 text-sm text-gray-900">1. Yes</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="e13-2" type="radio" value="2" name="e13" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                            <label for="e13-2" class="ms-2 text-sm text-gray-900">2. No</label>
+                        </div>
+                    </div>
+                </div>
+        
+        
+                <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                    <div>E14. What is the total number of paid calendar leave days the employee is entitled to?</div>
+                    <div class="flex items-center gap-4">
+                        <input type="text" id="e14" name="e14" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-1/2 p-2.5 disabled:bg-gray-100" /> calendar days            </div>
+                </div>
+        
+                <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                    <div>E15. What was the employee&#39;s overall gross monthly salary in March 2024?</div>
+                    <div>
+                        <input type="text" id="e15" name="e15" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                    </div>
+                </div>
+        
+                <div class="grid grid-cols-2 gap-4 items-center mt-10">
+                    <div>E16. In the last three years, have there been any complaints against the employees regarding misconducts, bad treatments or abuses against the children placed in the institution?</div>
+                    <div class="col-span-1 flex items-center gap-4">
+                        <div class="flex items-center">
+                            <input id="e16-1" type="radio" value="1" name="e16" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                            <label for="e16-1" class="ms-2 text-sm text-gray-900">1. Yes</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="e16-2" type="radio" value="2" name="e16" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                            <label for="e16-2" class="ms-2 text-sm text-gray-900">2. No</label>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="grid grid-cols-2 gap-4 items-center mt-10">
+                    <div>E17. In the last three years, have the employee been sanctioned for any misconduct, bad treatments or abuse against the children placed in the institution?</div>
+                    <div class="col-span-1 flex items-center gap-4">
+                        <div class="flex items-center">
+                            <input id="e17-1" type="radio" value="1" name="e17" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                            <label for="e17-1" class="ms-2 text-sm text-gray-900">1. Yes</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="e17-2" type="radio" value="2" name="e17" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                            <label for="e17-2" class="ms-2 text-sm text-gray-900">2. No</label>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="grid grid-cols-2 gap-4 items-center mt-10">
+                    <div>E18. Is the staff eligible for retirement within the next three years due to reaching pension age or already being of pension age?</div>
+                    <div class="col-span-1 flex items-center gap-4">
+                        <div class="flex items-center">
+                            <input id="e18-1" type="radio" value="1" name="e18" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                            <label for="e18-1" class="ms-2 text-sm text-gray-900">1. Yes</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="e18-2" type="radio" value="2" name="e18" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                            <label for="e18-2" class="ms-2 text-sm text-gray-900">2. No</label>
+                        </div>
+                    </div>
+                </div>
+        
+            </form>
+
+            <footer id="footer" class="fixed bottom-0 w-full h-12 bg-slate-200 shadow">
+                <div class="flex justify-center h-full items-center">
+
+                    <button type="button"
+                            class="flex items-center gap-2 text-white bg-menuButton/80 hover:bg-menuButton focus:ring-4 focus:ring-menuButton/50 font-medium rounded-lg text-sm px-3 py-1"
+                            id="salveazaForm">
+                        <svg class="fill-white w-4 h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                            <!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                            <path
+                                  d="M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V173.3c0-17-6.7-33.3-18.7-45.3L352 50.7C340 38.7 323.7 32 306.7 32H64zm0 96c0-17.7 14.3-32 32-32H288c17.7 0 32 14.3 32 32v64c0 17.7-14.3 32-32 32H96c-17.7 0-32-14.3-32-32V128zM224 288a64 64 0 1 1 0 128 64 64 0 1 1 0-128z" />
+                        </svg>
+                        <span class="t_button_save"></span>
+                    </button>
+                    <button type="button"
+                            class="flex items-center gap-2 text-white bg-red-500 hover:bg-red-500 focus:ring-4 focus:ring-red-500/50 font-medium rounded-lg text-sm px-3 py-1 ml-4"
+                            id="debugForm">
+                        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="bug" class="fill-white w-4 h-4" role="img" xmlns="http://www.w3.org/2000/svg"
+                             viewbox="0 0 512 512">
+                            <path fill="currentColor"
+                                  d="M511.988 288.9c-.478 17.43-15.217 31.1-32.653 31.1H424v16c0 21.864-4.882 42.584-13.6 61.145l60.228 60.228c12.496 12.497 12.496 32.758 0 45.255-12.498 12.497-32.759 12.496-45.256 0l-54.736-54.736C345.886 467.965 314.351 480 280 480V236c0-6.627-5.373-12-12-12h-24c-6.627 0-12 5.373-12 12v244c-34.351 0-65.886-12.035-90.636-32.108l-54.736 54.736c-12.498 12.497-32.759 12.496-45.256 0-12.496-12.497-12.496-32.758 0-45.255l60.228-60.228C92.882 378.584 88 357.864 88 336v-16H32.666C15.23 320 .491 306.33.013 288.9-.484 270.816 14.028 256 32 256h56v-58.745l-46.628-46.628c-12.496-12.497-12.496-32.758 0-45.255 12.498-12.497 32.758-12.497 45.256 0L141.255 160h229.489l54.627-54.627c12.498-12.497 32.758-12.497 45.256 0 12.496 12.497 12.496 32.758 0 45.255L424 197.255V256h56c17.972 0 32.484 14.816 31.988 32.9zM257 0c-61.856 0-112 50.144-112 112h224C369 50.144 318.856 0 257 0z">
+                            </path>
+                        </svg>&nbsp;debug</button>
+                </div>
+            </footer>
+
+        </div>
+    </body>
+
+</html>
