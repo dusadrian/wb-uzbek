@@ -1,32 +1,35 @@
-// import { ipcRenderer } from "electron";
+import { ipcRenderer } from "electron";
 
 export const cityCollector = {
     init: async () => {
 
+        // 07 - Family-Type Children's Home questionnaire
+        const viewEdit_FTCH = (<HTMLButtonElement>document.getElementById('viewEdit_FTCH'));
+        if (viewEdit_FTCH !== null) {
+            viewEdit_FTCH.addEventListener('click', () => {
+                ipcRenderer.send('changeWindow', {
+                    'name': 'ftch',
+                });
+            });
+        }
+        // 08 - Patronat family questionnaires
+        const viewEdit_PF = (<HTMLButtonElement>document.getElementById('viewEdit_PF'));
+        if (viewEdit_PF !== null) {
+            viewEdit_PF.addEventListener('click', () => {
+                ipcRenderer.send('changeWindow', {
+                    'name': 'pf',
+                });
+            });
+        }
 
-
-        
-        (<HTMLButtonElement>document.getElementById('viewEdit_QMR')).addEventListener('click', () => {
-            alert('viewEdit_QMR');
-        });
-
-        // (<HTMLButtonElement>document.getElementById('sec2')).addEventListener('click', () => {
-        //     ipcRenderer.send('changeWindow', {
-        //         'name': 'plan_di1/02_section_2'
+        // - Young people who left care system
+        // const viewEdit_FTCH = (<HTMLButtonElement>document.getElementById('viewEdit_FTCH'));
+        // if (viewEdit_FTCH !== null) {
+        //     viewEdit_FTCH.addEventListener('click', () => {
+        //         ipcRenderer.send('changeWindow', {
+        //             'name': 'ftch',
+        //         });
         //     });
-        // });
-        // (<HTMLButtonElement>document.getElementById('sec3')).addEventListener('click', () => {
-        //     ipcRenderer.send('changeWindow', {
-        //         'name': 'plan_di1/03_section_3'
-        //     });
-        // });
-        // ipcRenderer.on("instrumentDataReady", (_event, args) => {
-
-        //     console.log(args);
-
-        //     getStatus(args.sections.section1, 'section1', 4);
-        //     getStatus(args.sections.section2, 'section2', 6);
-        //     getStatus(args.sections.section3, 'section3', 4);
-        // })
+        // }
     }
 }

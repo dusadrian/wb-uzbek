@@ -163,6 +163,9 @@ ipcMain.on("changeWindow", (event, args) => {
         case "csr":
             goToCSRList();
             break;
+        case "ftch":
+            goToFTCHList();
+            break;
         default:
             mainWindow.loadURL("file://" + newPage);
     }
@@ -269,6 +272,36 @@ ipcMain.on('deleteStaff', (event, args) => {
     });
 });
 
+const goToFTCHList = () => {
+    const newPage = path.join(__dirname, "../src/pages/instruments/07_ftch.html");
+    mainWindow.loadURL("file://" + newPage);
+};
+ipcMain.on('getFTCH', (event, args) => {
+    database.csrList(db).then((result) => {
+        mainWindow.webContents.send("ftch", result);
+    });
+});
+ipcMain.on('deleteFTCH', (event, args) => {
+    // save to DB
+    dialog.showMessageBox(mainWindow, {
+        type: 'warning',
+        message: i18n.__('Are you sure you want to delete this item?'),
+        buttons: ['Yes', 'No']
+    }).then((result) => {
+        if (result.response === 0) {
+            database.deleteStaff(args.id, db).then(() => {
+                // send message
+                dialog.showMessageBox(mainWindow, {
+                    type: 'info',
+                    message: i18n.__('Item deleted.'),
+                }).then(() => {
+                    goToCSRList();
+                });
+            });
+        }
+    });
+});
+
 const goToInstrument = (instrument: string, id: string) => {
 
     switch (instrument) {
@@ -283,6 +316,9 @@ const goToInstrument = (instrument: string, id: string) => {
             break;
         case "DSEE":
             goToDSEE(id);
+            break;
+        case "FTCH":
+            goToFTCH(id);
             break;
         default:
             dialog.showMessageBox(mainWindow, {
@@ -472,6 +508,28 @@ const goToCSR = (id: string) => {
                 });
             }
         });
+    });
+}
+const goToFTCH = (id: string) => {
+    const newPage = path.join(__dirname, "../src/pages/instruments/07_ftch_" + appSession.language + ".html");
+    mainWindow.loadURL("file://" + newPage);
+    database.getUserData(appSession.userId).then((userDataArray) => {
+        if (id) {
+            mainWindow.webContents.once("did-finish-load", () => {
+                database.instrumentGet(id, 'ftch', db).then((instrument) => {
+                    mainWindow.webContents.send("instrumentDataReady", {
+                        instrument: instrument,
+                        userData: userDataArray[0],
+                    });
+                });
+            });
+        } else {
+            mainWindow.webContents.once("did-finish-load", () => {
+                mainWindow.webContents.send("instrumentDataReady", {
+                    userData: userDataArray[0],
+                });
+            });
+        }
     });
 }
 

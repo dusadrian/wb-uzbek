@@ -114,6 +114,14 @@ window.addEventListener("DOMContentLoaded", () => {
         case 'instruments/06_dsee_ru.html':
             instrumentDSEE();
             break;
+        case 'instruments/07_ftch.html':
+            FTCH();
+            break;
+        case 'instruments/07_ftch_en.html':
+        case 'instruments/07_ftch_uz.html':
+        case 'instruments/07_ftch_ru.html':
+            instrumentFTCH();
+            break;
     }
 
 });
@@ -393,6 +401,32 @@ const instrumentCSR = () => {
         return await import("./pages/instruments/03_csr_instrument");
     };
     importFile().then(result => result.instrument3.init().catch(error => {
+        console.log(error);
+    }));
+};
+
+// Instrument 7 Family-Type Children's Home Questionnaire
+const FTCH = () => {
+
+    topMenu('cityCollector/01_dashboard');
+
+    translatePage();
+    const importFile = async () => {
+        return await import("./pages/instruments/07_ftch");
+    };
+    importFile().then(result => result.ftch.init().catch(error => {
+        console.log(error);
+    }));
+};
+const instrumentFTCH = () => {
+
+    topMenu('instruments/07_ftch');
+
+    translatePage();
+    const importFile = async () => {
+        return await import("./pages/instruments/07_ftch_instrument");
+    };
+    importFile().then(result => result.instrument7.init().catch(error => {
         console.log(error);
     }));
 };
