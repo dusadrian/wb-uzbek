@@ -108,5 +108,7 @@
 	"t_pin": "t_pin",
 	"t_choose": "--- chooseRU ---",
 	"t_csr_list": "t_csr_list",
-	"t_add_staff": "t_add_staff"
+	"t_add_staff": "t_add_staff",
+	"t_id": "t_id",
+	"t_euid": "t_euid"
 }

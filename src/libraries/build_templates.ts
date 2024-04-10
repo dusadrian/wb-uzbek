@@ -4,9 +4,9 @@ import { Eta } from "eta"
 import { writeFileSync } from "original-fs";
 import * as path from "path";
 
-import * as one_en from "../templates/3_UZ_ChildDI_Staff_Registry_en.json";
-import * as one_ru from "../templates/3_UZ_ChildDI_Staff_Registry_ru.json";
-import * as one_uz from "../templates/3_UZ_ChildDI_Staff_Registry_uz.json";
+// import * as one_en from "../templates/3_UZ_ChildDI_Staff_Registry_en.json";
+// import * as one_ru from "../templates/3_UZ_ChildDI_Staff_Registry_ru.json";
+// import * as one_uz from "../templates/3_UZ_ChildDI_Staff_Registry_uz.json";
 
 // import * as one_en from "../templates/4_UZ_ChildDI_Material_Resources_en.json";
 // import * as one_ru from "../templates/4_UZ_ChildDI_Material_Resources_ru.json";
