@@ -331,7 +331,7 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 29,
-        active: function () { return (true) },
+        active: function () { return (Number(instrument.questions.cm1a.value) < 3) },
         error: ''
     },
     'cm1d': {

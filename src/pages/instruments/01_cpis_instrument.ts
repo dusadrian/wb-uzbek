@@ -188,7 +188,36 @@ const validateChestionar = (_questions: QuestionObjectType) => {
     return true;
 };
 
+
 const saveChestionar = (obj: SaveInstrumentType): void => {
     obj.table = "cpis";
     ipcRenderer.send("saveInstrument", obj);
 }
+
+
+document.querySelectorAll('input[name="cm1a"]').forEach((elem) => {
+    elem.addEventListener("myChange", function() {
+        const val = this.value;
+
+        if (val == "1") {
+            const cm1c1 = document.getElementById("cm1c-1-disabled") as HTMLInputElement;
+            cm1c1.removeAttribute("disabled");
+            cm1c1.id = "cm1c-1";
+        }
+        else if (val == "2") {
+            const cm1c1 = document.getElementById("cm1c-1") as HTMLInputElement;
+            cm1c1.setAttribute("disabled", "true");
+            if (cm1c1.checked) {
+                cm1c1.checked = false;
+                instrument.questions["cm1c"].value = "-9";
+            }
+
+            cm1c1.id = "cm1c-1-disabled";
+        }
+        else {
+            const cm1c3 = document.getElementById("cm1c-3") as HTMLInputElement;
+            cm1c3.checked = true;
+            instrument.questions["cm1c"].value = "3";
+        }
+    });
+});
