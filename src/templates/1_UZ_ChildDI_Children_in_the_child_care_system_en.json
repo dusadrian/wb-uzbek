@@ -777,6 +777,7 @@
     "t772": "5. Sanatorium-type specialized state educational institutions",
     "t773": "6. Home-based education",
     "t774": "2b. What grade was the child in?",
+    "t774_instruction": "Fill in 0 (zero) for preparatory class",
     "t775": "2c. Did he/she repeat the school year?",
     "t776": "1. Yes",
     "t777": "2. No",
