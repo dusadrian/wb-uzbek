@@ -2321,7 +2321,7 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 208,
-        active: function () { return (Number(instrument.questions.sa1a.value) >= 3) },
+        active: function () { return (Number(instrument.questions.sa1a.value) >= 7) },
         error: ''
     },
     'qeduc2a': {
