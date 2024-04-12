@@ -110,5 +110,7 @@
 	"t_csr_list": "t_csr_list",
 	"t_add_staff": "t_add_staff",
 	"t_id": "t_id",
-	"t_euid": "t_euid"
+	"t_euid": "t_euid",
+	"t_ftch_list": "t_ftch_list",
+	"t_add_family_home": "t_add_family_home"
 }

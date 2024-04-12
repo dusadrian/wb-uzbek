@@ -20,6 +20,11 @@ import * as path from "path";
 // import * as one_ru from "../templates/6_UZ_ChildDI_Entries_Exists_Sheet_ru.json";
 // import * as one_uz from "../templates/6_UZ_ChildDI_Entries_Exists_Sheet_uz.json";
 
+import * as one_en from "../templates/7_UZ_ChildDI_Family_Type_Homes_en.json";
+import * as one_ru from "../templates/7_UZ_ChildDI_Family_Type_Homes_ru.json";
+import * as one_uz from "../templates/7_UZ_ChildDI_Family_Type_Homes_uz.json";
+
+
 export default function build_templates() {
 
     const etaObj = new Eta({ views: path.join(__dirname, "../../src/templates") })
@@ -43,5 +48,9 @@ export default function build_templates() {
     // writeFileSync(path.join(__dirname, "../src/templates/6_UZ_ChildDI_Entries_Exists_Sheet_en.html"), etaObj.render("6_UZ_ChildDI_Entries_Exists_Sheet.eta", six_en))
     // writeFileSync(path.join(__dirname, "../src/templates/6_UZ_ChildDI_Entries_Exists_Sheet_ru.html"), etaObj.render("6_UZ_ChildDI_Entries_Exists_Sheet.eta", six_ru))
     // writeFileSync(path.join(__dirname, "../src/templates/6_UZ_ChildDI_Entries_Exists_Sheet_uz.html"), etaObj.render("6_UZ_ChildDI_Entries_Exists_Sheet.eta", six_uz))
+
+    // writeFileSync(path.join(__dirname, "../../src/templates/7_UZ_ChildDI_Family_Type_Homes_en.html"), etaObj.render("7_UZ_ChildDI_Family_Type_Homes.eta", one_en))
+    // writeFileSync(path.join(__dirname, "../../src/templates/7_UZ_ChildDI_Family_Type_Homes_ru.html"), etaObj.render("7_UZ_ChildDI_Family_Type_Homes.eta", one_ru))
+    // writeFileSync(path.join(__dirname, "../../src/templates/7_UZ_ChildDI_Family_Type_Homes_uz.html"), etaObj.render("7_UZ_ChildDI_Family_Type_Homes.eta", one_uz))
 
 }
