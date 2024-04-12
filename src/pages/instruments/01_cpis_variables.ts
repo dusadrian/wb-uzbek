@@ -3625,7 +3625,7 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 325,
-        active: function () { return (Number(instrument.questions.sh1.value) == 10) },
+        active: function () { return (Number(instrument.questions.sh1.value) >= 10) },
         error: ''
     },
     'sh3_s10b': {
@@ -3636,7 +3636,7 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 326,
-        active: function () { return (Number(instrument.questions.sh1.value) == 10) },
+        active: function () { return (Number(instrument.questions.sh1.value) >= 10) },
         error: ''
     },
     'sh3_s10c': {
@@ -3647,7 +3647,7 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 327,
-        active: function () { return (Number(instrument.questions.sh1.value) == 10) },
+        active: function () { return (Number(instrument.questions.sh1.value) >= 10) },
         error: ''
     },
     'sh3_s10d': {
@@ -3658,7 +3658,7 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 328,
-        active: function () { return (Number(instrument.questions.sh1.value) == 10) },
+        active: function () { return (Number(instrument.questions.sh1.value) >= 10) },
         error: ''
     },
     'sh3_s10e': {
@@ -3669,7 +3669,7 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 329,
-        active: function () { return (Number(instrument.questions.sh1.value) == 10) },
+        active: function () { return (Number(instrument.questions.sh1.value) >= 10) },
         error: ''
     },
     'sh3_s10f': {
