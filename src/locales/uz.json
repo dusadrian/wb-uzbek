@@ -112,5 +112,7 @@
 	"t_id": "t_id",
 	"t_euid": "t_euid",
 	"t_ftch_list": "t_ftch_list",
-	"t_add_family_home": "t_add_family_home"
+	"t_add_family_home": "t_add_family_home",
+	"Value_up_to_ten": "The value must be up to 10",
+	"Start_before_end": "Admission date before exit date"
 }
