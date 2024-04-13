@@ -62,7 +62,7 @@
                 <div class="grid grid-cols-2 gap-4 items-center mt-6">
                     <div>DATA. Completion date of questionnaire</div>
                     <div>
-                        <input type="text" id="data" name="data"
+                        <input type="text" id="data" name="data" disabled
                                class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
                     </div>
                 </div>
@@ -5637,10 +5637,6 @@
                             <label for="ewm1-0" class="ms-2 text-sm text-gray-900">0. No</label>
                         </div>
                         <div class="flex items-center">
-                            <input id="ewm1-0" type="radio" value="0" name="ewm1" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-000">
-                            <label for="ewm1-0" class="ms-2 text-sm text-gray-900">0. No</label>
-                        </div>
-                        <div class="flex items-center">
                             <input id="ewm1-1" type="radio" value="1" name="ewm1" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                             <label for="ewm1-1" class="ms-2 text-sm text-gray-900">1. Yes</label>
                         </div>
@@ -5723,7 +5719,8 @@
                         DVI1. Preparing and serving food (Food selection, cooking, arranging/serving meals) </div>
                     <select id="dvi1" name="dvi1"
                             class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                        <option value="1">1</option>
+                        <option value="-9" class="t_choose">--- choose ---</option>
+                        <option value="1" class="t_notatall">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
                         <option value="4">4</option>
@@ -5732,7 +5729,7 @@
                         <option value="7">7</option>
                         <option value="8">8</option>
                         <option value="9">9</option>
-                        <option value="10">10</option>
+                        <option value="10" class="t_total">10</option>
                         <option value="-1">-1. I don&#39;t know / No answer</option>
                     </select>
                 </div>
@@ -5741,7 +5738,8 @@
                         DVI2. Use of household appliances (Stove, refrigerator, washing machine, etc.) </div>
                     <select id="dvi2" name="dvi2"
                             class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                        <option value="1">1</option>
+                        <option value="-9" class="t_choose">--- choose ---</option>
+                        <option value="1" class="t_notatall">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
                         <option value="4">4</option>
@@ -5750,7 +5748,7 @@
                         <option value="7">7</option>
                         <option value="8">8</option>
                         <option value="9">9</option>
-                        <option value="10">10</option>
+                        <option value="10" class="t_total">10</option>
                         <option value="-1">-1. I don&#39;t know / No answer</option>
                     </select>
                 </div>
@@ -5759,7 +5757,8 @@
                         DVI3. Washing and ironing (Clothes care) </div>
                     <select id="dvi3" name="dvi3"
                             class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                        <option value="1">1</option>
+                        <option value="-9" class="t_choose">--- choose ---</option>
+                        <option value="1" class="t_notatall">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
                         <option value="4">4</option>
@@ -5768,7 +5767,7 @@
                         <option value="7">7</option>
                         <option value="8">8</option>
                         <option value="9">9</option>
-                        <option value="10">10</option>
+                        <option value="10" class="t_total">10</option>
                         <option value="-1">-1. I don&#39;t know / No answer</option>
                     </select>
                 </div>
@@ -5777,7 +5776,8 @@
                         DVI4. Living space hygiene (Room/house cleaning, including tidying things up or changing linen) </div>
                     <select id="dvi4" name="dvi4"
                             class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                        <option value="1">1</option>
+                        <option value="-9" class="t_choose">--- choose ---</option>
+                        <option value="1" class="t_notatall">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
                         <option value="4">4</option>
@@ -5786,7 +5786,7 @@
                         <option value="7">7</option>
                         <option value="8">8</option>
                         <option value="9">9</option>
-                        <option value="10">10</option>
+                        <option value="10" class="t_total">10</option>
                         <option value="-1">-1. I don&#39;t know / No answer</option>
                     </select>
                 </div>
@@ -5795,7 +5795,8 @@
                         DVI5. Financial management (Familiar with money, budgeting, paying bills, shopping) </div>
                     <select id="dvi5" name="dvi5"
                             class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                        <option value="1">1</option>
+                        <option value="-9" class="t_choose">--- choose ---</option>
+                        <option value="1" class="t_notatall">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
                         <option value="4">4</option>
@@ -5804,7 +5805,7 @@
                         <option value="7">7</option>
                         <option value="8">8</option>
                         <option value="9">9</option>
-                        <option value="10">10</option>
+                        <option value="10" class="t_total">10</option>
                         <option value="-1">-1. I don&#39;t know / No answer</option>
                     </select>
                 </div>
@@ -5813,7 +5814,8 @@
                         DVI6. Orientation in the city and use of transportation </div>
                     <select id="dvi6" name="dvi6"
                             class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                        <option value="1">1</option>
+                        <option value="-9" class="t_choose">--- choose ---</option>
+                        <option value="1" class="t_notatall">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
                         <option value="4">4</option>
@@ -5822,7 +5824,7 @@
                         <option value="7">7</option>
                         <option value="8">8</option>
                         <option value="9">9</option>
-                        <option value="10">10</option>
+                        <option value="10" class="t_total">10</option>
                         <option value="-1">-1. I don&#39;t know / No answer</option>
                     </select>
                 </div>
@@ -5831,7 +5833,8 @@
                         DVI7. Personal hygiene (Washing/cleansing the body, maintaining hygiene) </div>
                     <select id="dvi7" name="dvi7"
                             class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                        <option value="1">1</option>
+                        <option value="-9" class="t_choose">--- choose ---</option>
+                        <option value="1" class="t_notatall">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
                         <option value="4">4</option>
@@ -5840,7 +5843,7 @@
                         <option value="7">7</option>
                         <option value="8">8</option>
                         <option value="9">9</option>
-                        <option value="10">10</option>
+                        <option value="10" class="t_total">10</option>
                         <option value="-1">-1. I don&#39;t know / No answer</option>
                     </select>
                 </div>
@@ -5849,7 +5852,8 @@
                         DVI8. Healthy lifestyle (Sports, nutrition) </div>
                     <select id="dvi8" name="dvi8"
                             class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                        <option value="1">1</option>
+                        <option value="-9" class="t_choose">--- choose ---</option>
+                        <option value="1" class="t_notatall">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
                         <option value="4">4</option>
@@ -5858,7 +5862,7 @@
                         <option value="7">7</option>
                         <option value="8">8</option>
                         <option value="9">9</option>
-                        <option value="10">10</option>
+                        <option value="10" class="t_total">10</option>
                         <option value="-1">-1. I don&#39;t know / No answer</option>
                     </select>
                 </div>
@@ -5867,7 +5871,8 @@
                         DVI9. Reproductive health (Prevention of unwanted pregnancies, prevention, identification and treatment of sexually transmitted diseases) </div>
                     <select id="dvi9" name="dvi9"
                             class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                        <option value="1">1</option>
+                        <option value="-9" class="t_choose">--- choose ---</option>
+                        <option value="1" class="t_notatall">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
                         <option value="4">4</option>
@@ -5876,7 +5881,7 @@
                         <option value="7">7</option>
                         <option value="8">8</option>
                         <option value="9">9</option>
-                        <option value="10">10</option>
+                        <option value="10" class="t_total">10</option>
                         <option value="-1">-1. I don&#39;t know / No answer</option>
                     </select>
                 </div>
@@ -5885,7 +5890,8 @@
                         DVI10. Free time (Meeting friends, playing sports, going to the movies, going out, going to concerts, etc.) </div>
                     <select id="dvi10" name="dvi10"
                             class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                        <option value="1">1</option>
+                        <option value="-9" class="t_choose">--- choose ---</option>
+                        <option value="1" class="t_notatall">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
                         <option value="4">4</option>
@@ -5894,7 +5900,7 @@
                         <option value="7">7</option>
                         <option value="8">8</option>
                         <option value="9">9</option>
-                        <option value="10">10</option>
+                        <option value="10" class="t_total">10</option>
                         <option value="-1">-1. I don&#39;t know / No answer</option>
                     </select>
                 </div>
@@ -5903,7 +5909,8 @@
                         DVI11. Time management (Punctuality) </div>
                     <select id="dvi11" name="dvi11"
                             class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                        <option value="1">1</option>
+                        <option value="-9" class="t_choose">--- choose ---</option>
+                        <option value="1" class="t_notatall">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
                         <option value="4">4</option>
@@ -5912,7 +5919,7 @@
                         <option value="7">7</option>
                         <option value="8">8</option>
                         <option value="9">9</option>
-                        <option value="10">10</option>
+                        <option value="10" class="t_total">10</option>
                         <option value="-1">-1. I don&#39;t know / No answer</option>
                     </select>
                 </div>
@@ -5921,7 +5928,8 @@
                         DVI12. Behavior in public (At the store, at school, etc.) </div>
                     <select id="dvi12" name="dvi12"
                             class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                        <option value="1">1</option>
+                        <option value="-9" class="t_choose">--- choose ---</option>
+                        <option value="1" class="t_notatall">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
                         <option value="4">4</option>
@@ -5930,7 +5938,7 @@
                         <option value="7">7</option>
                         <option value="8">8</option>
                         <option value="9">9</option>
-                        <option value="10">10</option>
+                        <option value="10" class="t_total">10</option>
                         <option value="-1">-1. I don&#39;t know / No answer</option>
                     </select>
                 </div>
@@ -5939,7 +5947,8 @@
                         DVI13. Use of social networks (Development and use of a support system, community) </div>
                     <select id="dvi13" name="dvi13"
                             class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                        <option value="1">1</option>
+                        <option value="-9" class="t_choose">--- choose ---</option>
+                        <option value="1" class="t_notatall">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
                         <option value="4">4</option>
@@ -5948,7 +5957,7 @@
                         <option value="7">7</option>
                         <option value="8">8</option>
                         <option value="9">9</option>
-                        <option value="10">10</option>
+                        <option value="10" class="t_total">10</option>
                         <option value="-1">-1. I don&#39;t know / No answer</option>
                     </select>
                 </div>
@@ -5957,7 +5966,8 @@
                         DVI14. Developing and maintaining social relationships (Friends, family, neighbors, colleagues etc.) </div>
                     <select id="dvi14" name="dvi14"
                             class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                        <option value="1">1</option>
+                        <option value="-9" class="t_choose">--- choose ---</option>
+                        <option value="1" class="t_notatall">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
                         <option value="4">4</option>
@@ -5966,7 +5976,7 @@
                         <option value="7">7</option>
                         <option value="8">8</option>
                         <option value="9">9</option>
-                        <option value="10">10</option>
+                        <option value="10" class="t_total">10</option>
                         <option value="-1">-1. I don&#39;t know / No answer</option>
                     </select>
                 </div>
@@ -5975,7 +5985,8 @@
                         DVI15. Self-respect </div>
                     <select id="dvi15" name="dvi15"
                             class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                        <option value="1">1</option>
+                        <option value="-9" class="t_choose">--- choose ---</option>
+                        <option value="1" class="t_notatall">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
                         <option value="4">4</option>
@@ -5984,7 +5995,7 @@
                         <option value="7">7</option>
                         <option value="8">8</option>
                         <option value="9">9</option>
-                        <option value="10">10</option>
+                        <option value="10" class="t_total">10</option>
                         <option value="-1">-1. I don&#39;t know / No answer</option>
                     </select>
                 </div>
@@ -5993,7 +6004,8 @@
                         DVI16. Attitude towards school/learning </div>
                     <select id="dvi16" name="dvi16"
                             class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                        <option value="1">1</option>
+                        <option value="-9" class="t_choose">--- choose ---</option>
+                        <option value="1" class="t_notatall">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
                         <option value="4">4</option>
@@ -6002,7 +6014,7 @@
                         <option value="7">7</option>
                         <option value="8">8</option>
                         <option value="9">9</option>
-                        <option value="10">10</option>
+                        <option value="10" class="t_total">10</option>
                         <option value="-1">-1. I don&#39;t know / No answer</option>
                     </select>
                 </div>
@@ -6011,7 +6023,8 @@
                         DVI17. Knowledge of the benefits of a job </div>
                     <select id="dvi17" name="dvi17"
                             class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                        <option value="1">1</option>
+                        <option value="-9" class="t_choose">--- choose ---</option>
+                        <option value="1" class="t_notatall">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
                         <option value="4">4</option>
@@ -6020,7 +6033,7 @@
                         <option value="7">7</option>
                         <option value="8">8</option>
                         <option value="9">9</option>
-                        <option value="10">10</option>
+                        <option value="10" class="t_total">10</option>
                         <option value="-1">-1. I don&#39;t know / No answer</option>
                     </select>
                 </div>
@@ -6029,7 +6042,8 @@
                         DVI18. Finding a job (How and where) </div>
                     <select id="dvi18" name="dvi18"
                             class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                        <option value="1">1</option>
+                        <option value="-9" class="t_choose">--- choose ---</option>
+                        <option value="1" class="t_notatall">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
                         <option value="4">4</option>
@@ -6038,7 +6052,7 @@
                         <option value="7">7</option>
                         <option value="8">8</option>
                         <option value="9">9</option>
-                        <option value="10">10</option>
+                        <option value="10" class="t_total">10</option>
                         <option value="-1">-1. I don&#39;t know / No answer</option>
                     </select>
                 </div>
@@ -6047,7 +6061,8 @@
                         DVI19. Relationships at work </div>
                     <select id="dvi19" name="dvi19"
                             class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                        <option value="1">1</option>
+                        <option value="-9" class="t_choose">--- choose ---</option>
+                        <option value="1" class="t_notatall">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
                         <option value="4">4</option>
@@ -6056,7 +6071,7 @@
                         <option value="7">7</option>
                         <option value="8">8</option>
                         <option value="9">9</option>
-                        <option value="10">10</option>
+                        <option value="10" class="t_total">10</option>
                         <option value="-1">-1. I don&#39;t know / No answer</option>
                         <option value="-77">-7. Not necessary</option>
                     </select>
@@ -6066,7 +6081,8 @@
                         DVI20. Keeping a job </div>
                     <select id="dvi20" name="dvi20"
                             class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                        <option value="1">1</option>
+                        <option value="-9" class="t_choose">--- choose ---</option>
+                        <option value="1" class="t_notatall">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
                         <option value="4">4</option>
@@ -6075,7 +6091,7 @@
                         <option value="7">7</option>
                         <option value="8">8</option>
                         <option value="9">9</option>
-                        <option value="10">10</option>
+                        <option value="10" class="t_total">10</option>
                         <option value="-1">-1. I don&#39;t know / No answer</option>
                         <option value="-77">-7. Not necessary</option>
                     </select>

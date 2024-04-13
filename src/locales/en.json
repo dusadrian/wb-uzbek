@@ -112,6 +112,7 @@
 	"Completati corect toate campurile!": "Completati corect toate campurile!",
 	"The following fields are mandatory: PIN, LK1a, LK1b, LK1c!": "The following fields are mandatory: PIN, LK1a, LK1b, LK1c!",
 	"t_choose": "--- choose ---",
+	"t_choose_value": "-9",
 	"The following fields are mandatory: E1, EUID!": "The following fields are mandatory: E1, EUID!",
 	"t_euid": "EUID",
 	"t_id": "ID",
@@ -120,5 +121,9 @@
 	"t_ftch_list": "Family-Type Children's Home List",
 	"t_add_family_home": "Add Family Home",
 	"Value_up_to_ten": "The value must be up to 10",
-	"Start_before_end": "Admission date before exit date"
+	"Start_before_end": "Admission date before exit date",
+	"t_notatall": "1. Not at all",
+	"t_notatall_value": "1",
+	"t_total": "10. Total",
+	"t_total_value": "10"
 }

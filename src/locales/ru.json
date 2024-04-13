@@ -107,6 +107,7 @@
 	"t_add_child": "t_add_child",
 	"t_pin": "t_pin",
 	"t_choose": "--- chooseRU ---",
+	"t_choose_value": "-9",
 	"t_csr_list": "t_csr_list",
 	"t_add_staff": "t_add_staff",
 	"t_id": "t_id",
@@ -114,5 +115,9 @@
 	"t_ftch_list": "t_ftch_list",
 	"t_add_family_home": "t_add_family_home",
 	"Value_up_to_ten": "The value must be up to 10",
-	"Start_before_end": "Admission date before exit date"
+	"Start_before_end": "Admission date before exit date",
+    "t_notatall": "1. Cовсем нет",
+	"t_notatall_value": "1",
+    "t_total": "10. Всего",
+	"t_total_value": "10"
 }
