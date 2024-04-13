@@ -332,6 +332,8 @@ lk3.addEventListener("myChange", function () {
         lk13a.value = age.toString();
         instrument.questions["lk13a"].value = age.toString();
 
+        lk13a.dispatchEvent(new Event('change'));
+        // TODO cine este sa1 si de ce faci dispatch myChange pe el?
         sa1.dispatchEvent(new Event('myChange'));
     }
 });
