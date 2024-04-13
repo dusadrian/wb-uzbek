@@ -58,7 +58,23 @@ export const instrument1 = {
 
         const date_elements = [...general_dates, ...sh3_start_dates, ...sh3_end_dates];
 
-        const flatpickr_elements = date_elements.map((el) => flatpickr((<HTMLInputElement>document.getElementById(el)), flatpickrConfig));
+        // const flatpickr_elements = date_elements.map((el) => flatpickr((<HTMLInputElement>document.getElementById(el)), flatpickrConfig));
+
+
+        const flatpickr_elements = date_elements.map((el) => {
+            const element = document.getElementById(el) as HTMLInputElement;
+            let config;
+            if (el == "cm3") {
+                config = { ...flatpickrConfig, minDate: "01/01/1950" };
+                config.maxDate = "31/12/2023";
+            } else if (el == "ct3" || el == "cg3b") {
+                config = { ...flatpickrConfig, minDate: "01/01/1930" };
+                config.maxDate = "31/12/2023";
+            } else {
+                config = { ...flatpickrConfig, minDate: "01/01/2000" };
+            }
+            return flatpickr(element, config);
+        });
 
         // TODO: de modificat activatorii pentru district si localitate, implicit -7
         // iar la localitate, daca districtul nu are localitati, sa ramana dezactivat
@@ -432,6 +448,8 @@ sh3_start_dates.forEach((startel) => {
 
             const startdate = new Date(start.value.replace(/(\d{2})\/(\d{2})\/(\d{4})/,'$3-$2-$1'));
             const enddate = new Date(end.value.replace(/(\d{2})\/(\d{2})\/(\d{4})/,'$3-$2-$1'));
+            const timespent = document.getElementById(startel.replace("a", "f")) as HTMLInputElement;
+            const sh4 = document.getElementById("sh4") as HTMLInputElement;
 
             const error = locales[lang]['Start_before_end'];
 
@@ -439,15 +457,96 @@ sh3_start_dates.forEach((startel) => {
                 errorHandler.addArrayError([startel, endel], error);
                 instrument.questions[startel].value = '-9';
                 instrument.questions[endel].value = '-9';
+                timespent.value = "";
+                instrument.questions[startel.replace("a", "f")].value = "-7";
             }
             else {
                 errorHandler.removeArrayError([startel, endel], error);
                 instrument.questions[startel].value = start.value;
                 instrument.questions[endel].value = end.value;
+
+
+                let monthDiff = (enddate.getFullYear() - startdate.getFullYear()) * 12 + enddate.getMonth() - startdate.getMonth();
+                if (monthDiff > 0 && enddate.getDate() < startdate.getDate()) {
+                    monthDiff--;
+                }
+
+                timespent.value = monthDiff.toString();
+
+                instrument.questions[startel].value = start.value;
+                instrument.questions[endel].value = end.value;
+                instrument.questions[startel.replace("a", "f")].value = timespent.value;
+
+                let totalmonths = 0;
+                sh3_start_dates.forEach((item) => {
+                    const nofmonths = Number(instrument.questions[item.replace("a", "f")].value);
+                    if (nofmonths > 0) {
+                        totalmonths += nofmonths;
+                    }
+                });
+
+                sh4.value = totalmonths.toString();
+                instrument.questions["sh4"].value = sh4.value;
             }
         }
     }
 
     start.addEventListener("myChange", check);
     end.addEventListener("myChange", check);
+});
+
+const lk22_2 = ['lk22_2_1', 'lk22_2_2', 'lk22_2_3', 'lk22_2_4', 'lk22_2_5'];
+// TODO validare, trebuie verificat la final ca cel putin un checkbox sa fie bifat
+lk22_2.forEach((el) => {
+    const elem = document.getElementById(el) as HTMLInputElement;
+    elem.addEventListener("myChange", function() {
+        let suma = 0;
+        lk22_2.forEach((item) => {
+            suma += Number(instrument.questions[item].value);
+        });
+
+        const lk22_2_7_1 = document.getElementById("lk22_2_7-1") as HTMLInputElement;
+        const lk22_2_7_0 = document.getElementById("lk22_2_7-0") as HTMLInputElement;
+
+        if (suma > 1) {
+            lk22_2_7_1.checked = true;
+            lk22_2_7_0.checked = false;
+        }
+        else {
+            lk22_2_7_1.checked = false;
+            lk22_2_7_0.checked = true;
+        }
+
+        instrument.questions["lk22_2_7"].value = Number(suma > 1).toString();
+    });
+});
+
+
+const ewm = ['ewm1', 'ewm2', 'ewm3', 'ewm4'];
+ewm.forEach((el) => {
+    document.querySelectorAll('input[name="' + el + '"]').forEach((elem) => {
+        elem.addEventListener("myChange", function() {
+            let suma = 0;
+            ewm.forEach((item) => {
+                const valoare = Number(instrument.questions[item].value);
+                if (valoare > 0) {
+                    suma += valoare;
+                }
+            });
+
+            const ewm5_0 = document.getElementById("ewm5-0") as HTMLInputElement;
+            const ewm5_1 = document.getElementById("ewm5-1") as HTMLInputElement;
+
+            if (suma > 0) {
+                ewm5_1.checked = true;
+                ewm5_0.checked = false;
+            }
+            else {
+                ewm5_1.checked = false;
+                ewm5_0.checked = true;
+            }
+
+            instrument.questions["ewm5"].value = Number(suma > 0).toString();
+        });
+    });
 });
