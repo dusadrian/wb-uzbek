@@ -1,12 +1,17 @@
 
-LK13a varsta copilului (la data rundei de monitorizare)
-CARE este data rundei?
+
 Trebuie sa fie setata de utilizatori, sau este predefinita?
 
-LK14d. City/Town/Village
-in regulile de validare apare ca trebuie inlocuit cu "Settlement"
-dar ambele LIPSESC din fisierul cu standard translations
-daca este o modificare ulterioara a chestionarului, trebuie stabilita o procedura de lucru
-in sensul ca NU se adauga nimic pana cand nu apare ca intrare separata si unica in traduceri
 
-La fel pentru LK14e. Type of settlement
+Problema cu skip = true, facut din cod, este ca nu se mai poate face validarea.
+Exemplu cm1a care, daca e pus pe 2, se face skip la cm1c, pentru ca
+butonul 1 radio (Unknown) trebuie sa ramana dezactivat.
+Insa cm1c are (acum) regula de validare.
+
+
+TODO: de adaugat poate in seteazaValoareElement, pentru input de tip date...?
+si poate chiar type = "date" eventual, in variabile
+
+TODO: daca modificarea la un camp face o modificare in alt camp, de facut o functie
+care sa faca modificarea in HTML, modificarea in instrument.questions SI sa faca si trigger
+pe change (eventual asta sa fie un parametru boolean)
