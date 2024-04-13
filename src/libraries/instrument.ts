@@ -271,6 +271,9 @@ const instrument: InstrumentObjectType = {
 					const basename = jumpName.split("_")[0];
 					if (basename == "" || (instrument.questions[basename] && instrument.questions[basename].type != "radio")) {
 						nextElDOM.focus();
+						if (nextEl.type == "checkbox") {
+							nextElDOM.blur();
+						}
 					}
 
 					nextElDOM.scrollIntoView({
