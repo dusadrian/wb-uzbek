@@ -4992,22 +4992,23 @@
 
         <div class="grid grid-cols-2 gap-4 items-center mt-10">
             <div>
-                <%= it.t1079 %>. <%= it.t1080 %>
+                <%= it.t1079 %>. <%= it.t1080 %><%= it.t1081 %></small>
             </div>
             <div class="col-span-1 flex flex-col gap-2">
                 <div class="flex items-center">
                     <input id="lk22_2_7-1" type="radio" value="1" name="lk22_2_7" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="lk22_2_7-1" class="ms-2 text-sm text-gray-900"><%= it.t1081 %></label>
+                    <label for="lk22_2_7-1" class="ms-2 text-sm text-gray-900"><%= it.t1082 %></label>
                 </div>
                 <div class="flex items-center">
-                    <input id="lk22_2_7-2" type="radio" value="0" name="lk22_2_7" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="lk22_2_7-2" class="ms-2 text-sm text-gray-900"><%= it.t1082 %></label>
+                    <input id="lk22_2_7-0" type="radio" value="0" name="lk22_2_7" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="lk22_2_7-0" class="ms-2 text-sm text-gray-900"><%= it.t1083 %></label>
                 </div>
             </div>
         </div>
 
         <div class="grid grid-cols-2 gap-4 items-center mt-10">
             <div>
+                <%= it.t1084 %></label>
                 <%= it.t1085 %>. <%= it.t1086 %>
             </div>
             <div class="col-span-1 flex flex-col gap-2">
@@ -5473,12 +5474,12 @@
             </div>
             <div class="col-span-1 flex items-center gap-4">
                 <div class="flex items-center">
-                    <input id="edk0-1" type="radio" value="1" name="edk0" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="edk0-1" class="ms-2 text-sm text-gray-900"><%= it.t1189 %></label>
+                    <input id="edk0-0" type="radio" value="2" name="edk0" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="edk0-0" class="ms-2 text-sm text-gray-900"><%= it.t1190 %></label>
                 </div>
                 <div class="flex items-center">
-                    <input id="edk0-2" type="radio" value="2" name="edk0" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="edk0-2" class="ms-2 text-sm text-gray-900"><%= it.t1190 %></label>
+                    <input id="edk0-1" type="radio" value="1" name="edk0" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="edk0-1" class="ms-2 text-sm text-gray-900"><%= it.t1189 %></label>
                 </div>
             </div>
         </div>
@@ -5513,24 +5514,24 @@
             </div>
             <div class="col-span-1 flex flex-col gap-2">
                 <div class="flex items-center">
-                    <input id="edk2-1" type="radio" value="0" name="edk2" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="edk2-1" class="ms-2 text-sm text-gray-900"><%= it.t1200 %></label>
+                    <input id="edk2-0" type="radio" value="0" name="edk2" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="edk2-0" class="ms-2 text-sm text-gray-900"><%= it.t1200 %></label>
                 </div>
                 <div class="flex items-center">
-                    <input id="edk2-2" type="radio" value="1" name="edk2" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="edk2-2" class="ms-2 text-sm text-gray-900"><%= it.t1201 %></label>
+                    <input id="edk2-1" type="radio" value="1" name="edk2" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="edk2-1" class="ms-2 text-sm text-gray-900"><%= it.t1201 %></label>
                 </div>
                 <div class="flex items-center">
-                    <input id="edk2-3" type="radio" value="2" name="edk2" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="edk2-3" class="ms-2 text-sm text-gray-900"><%= it.t1202 %></label>
+                    <input id="edk2-2" type="radio" value="2" name="edk2" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="edk2-2" class="ms-2 text-sm text-gray-900"><%= it.t1202 %></label>
                 </div>
                 <div class="flex items-center">
-                    <input id="edk2-4" type="radio" value="3" name="edk2" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="edk2-4" class="ms-2 text-sm text-gray-900"><%= it.t1203 %></label>
+                    <input id="edk2-3" type="radio" value="3" name="edk2" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="edk2-3" class="ms-2 text-sm text-gray-900"><%= it.t1203 %></label>
                 </div>
                 <div class="flex items-center">
-                    <input id="edk2-5" type="radio" value="4" name="edk2" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="edk2-5" class="ms-2 text-sm text-gray-900"><%= it.t1204 %></label>
+                    <input id="edk2-4" type="radio" value="4" name="edk2" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="edk2-4" class="ms-2 text-sm text-gray-900"><%= it.t1204 %></label>
                 </div>
             </div>
         </div>
@@ -5550,12 +5551,12 @@
             </div>
             <div class="col-span-1 flex items-center gap-4">
                 <div class="flex items-center">
-                    <input id="ewm1-1" type="radio" value="1" name="ewm1" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="ewm1-1" class="ms-2 text-sm text-gray-900"><%= it.t1210 %></label>
+                    <input id="ewm1-0" type="radio" value="0" name="ewm1" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="ewm1-0" class="ms-2 text-sm text-gray-900"><%= it.t1211 %></label>
                 </div>
                 <div class="flex items-center">
-                    <input id="ewm1-2" type="radio" value="0" name="ewm1" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="ewm1-2" class="ms-2 text-sm text-gray-900"><%= it.t1211 %></label>
+                    <input id="ewm1-1" type="radio" value="1" name="ewm1" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="ewm1-1" class="ms-2 text-sm text-gray-900"><%= it.t1210 %></label>
                 </div>
             </div>
         </div>
@@ -5566,12 +5567,12 @@
             </div>
             <div class="col-span-1 flex items-center gap-4">
                 <div class="flex items-center">
-                    <input id="ewm2-1" type="radio" value="1" name="ewm2" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="ewm2-1" class="ms-2 text-sm text-gray-900"><%= it.t1214 %></label>
+                    <input id="ewm2-0" type="radio" value="0" name="ewm2" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="ewm2-0" class="ms-2 text-sm text-gray-900"><%= it.t1215 %></label>
                 </div>
                 <div class="flex items-center">
-                    <input id="ewm2-2" type="radio" value="0" name="ewm2" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="ewm2-2" class="ms-2 text-sm text-gray-900"><%= it.t1215 %></label>
+                    <input id="ewm2-1" type="radio" value="1" name="ewm2" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="ewm2-1" class="ms-2 text-sm text-gray-900"><%= it.t1214 %></label>
                 </div>
             </div>
         </div>
@@ -5582,16 +5583,16 @@
             </div>
             <div class="col-span-1 flex items-center gap-4">
                 <div class="flex items-center">
-                    <input id="ewm3-1" type="radio" value="0" name="ewm3" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="ewm3-1" class="ms-2 text-sm text-gray-900"><%= it.t1218 %></label>
+                    <input id="ewm3-0" type="radio" value="0" name="ewm3" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="ewm3-0" class="ms-2 text-sm text-gray-900"><%= it.t1218 %></label>
                 </div>
                 <div class="flex items-center">
-                    <input id="ewm3-2" type="radio" value="1" name="ewm3" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="ewm3-2" class="ms-2 text-sm text-gray-900"><%= it.t1219 %></label>
+                    <input id="ewm3-1" type="radio" value="1" name="ewm3" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="ewm3-1" class="ms-2 text-sm text-gray-900"><%= it.t1219 %></label>
                 </div>
                 <div class="flex items-center">
-                    <input id="ewm3-3" type="radio" value="2" name="ewm3" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="ewm3-3" class="ms-2 text-sm text-gray-900"><%= it.t1220 %></label>
+                    <input id="ewm3-2" type="radio" value="2" name="ewm3" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="ewm3-2" class="ms-2 text-sm text-gray-900"><%= it.t1220 %></label>
                 </div>
             </div>
         </div>
@@ -5603,12 +5604,12 @@
             </div>
             <div class="col-span-1 flex items-center gap-4">
                 <div class="flex items-center">
-                    <input id="ewm4-1" type="radio" value="1" name="ewm4" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="ewm4-1" class="ms-2 text-sm text-gray-900"><%= it.t1224 %></label>
+                    <input id="ewm4-0" type="radio" value="0" name="ewm4" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="ewm4-0" class="ms-2 text-sm text-gray-900"><%= it.t1225 %></label>
                 </div>
                 <div class="flex items-center">
-                    <input id="ewm4-2" type="radio" value="0" name="ewm4" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="ewm4-2" class="ms-2 text-sm text-gray-900"><%= it.t1225 %></label>
+                    <input id="ewm4-1" type="radio" value="1" name="ewm4" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="ewm4-1" class="ms-2 text-sm text-gray-900"><%= it.t1224 %></label>
                 </div>
             </div>
         </div>
@@ -5619,12 +5620,12 @@
             </div>
             <div class="col-span-1 flex items-center gap-4">
                 <div class="flex items-center">
-                    <input id="ewm5-1" type="radio" value="1" name="ewm5" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="ewm5-1" class="ms-2 text-sm text-gray-900"><%= it.t1229 %></label>
+                    <input id="ewm5-0" type="radio" value="0" name="ewm5" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="ewm5-0" class="ms-2 text-sm text-gray-900"><%= it.t1230 %></label>
                 </div>
                 <div class="flex items-center">
-                    <input id="ewm5-2" type="radio" value="0" name="ewm5" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="ewm5-2" class="ms-2 text-sm text-gray-900"><%= it.t1230 %></label>
+                    <input id="ewm5-1" type="radio" value="1" name="ewm5" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="ewm5-1" class="ms-2 text-sm text-gray-900"><%= it.t1229 %></label>
                 </div>
             </div>
         </div>
