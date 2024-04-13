@@ -25,7 +25,7 @@ const lang = localStorage.getItem("language");
 
 
 const general_dates = [
-    'lk3', 'cm3', 'ct3', 'cg1c', 'cg3b', 'sa1'
+    'data', 'lk3', 'cm3', 'ct3', 'cg1c', 'cg3b', 'sa1', 'cmgt1a'
 ];
 
 const sh3_start_dates = [
@@ -40,9 +40,12 @@ const sh3_end_dates = [
 export const instrument1 = {
     init: async () => {
 
-
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        const flatpickrConfig: { enableTime: boolean; dateFormat: string; maxDate: string; locale?: any } = {
+        const flatpickrConfig: {
+            enableTime: boolean;
+            dateFormat: string;
+            maxDate: string;
+            locale?: typeof Russian | typeof UzbekLatin
+        } = {
             enableTime: false,
             dateFormat: "d/m/Y",
             maxDate: "31/03/2024"
@@ -58,23 +61,31 @@ export const instrument1 = {
 
         const date_elements = [...general_dates, ...sh3_start_dates, ...sh3_end_dates];
 
-        // const flatpickr_elements = date_elements.map((el) => flatpickr((<HTMLInputElement>document.getElementById(el)), flatpickrConfig));
-
-
         const flatpickr_elements = date_elements.map((el) => {
             const element = document.getElementById(el) as HTMLInputElement;
             let config;
-            if (el == "cm3") {
+            if (el == "data") {
+                config = { ...flatpickrConfig, minDate: "01/04/2024" };
+                config.maxDate = "31/12/2025";
+            } else if (el == "cm3") {
                 config = { ...flatpickrConfig, minDate: "01/01/1950" };
                 config.maxDate = "31/12/2023";
             } else if (el == "ct3" || el == "cg3b") {
                 config = { ...flatpickrConfig, minDate: "01/01/1930" };
                 config.maxDate = "31/12/2023";
+            } else if (el == "cmgt1a") {
+                config = { ...flatpickrConfig, minDate: "01/01/2000" };
+                config.dateFormat = "m/Y";
             } else {
                 config = { ...flatpickrConfig, minDate: "01/01/2000" };
             }
             return flatpickr(element, config);
         });
+
+        const today = new Date();
+        flatpickr_elements[date_elements.indexOf('data')].setDate(today);
+        const data = document.getElementById("data") as HTMLInputElement;
+        instrument.questions["data"].value = data.value;
 
         // TODO: de modificat activatorii pentru district si localitate, implicit -7
         // iar la localitate, daca districtul nu are localitati, sa ramana dezactivat
@@ -552,3 +563,8 @@ ewm.forEach((el) => {
         });
     });
 });
+
+const dvi1 = document.getElementById("dvi1") as HTMLInputElement;
+dvi1.addEventListener("change", function() {
+    console.log(dvi1.value);
+})
