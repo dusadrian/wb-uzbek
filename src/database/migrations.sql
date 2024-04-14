@@ -122,6 +122,23 @@ CREATE TABLE values_csr (
     value VARCHAR NOT NULL,
     PRIMARY KEY (instrument_id, variable)
 );
+-- Create instrument 7
+CREATE SEQUENCE id_instrument_ftch_sequence START 1;
+
+CREATE TABLE instrument_ftch (
+    id INTEGER DEFAULT nextval('id_instrument_ftch_sequence'),
+    uuid UUID DEFAULT uuid(),
+    created_at TIMESTAMP DEFAULT current_timestamp,
+    updated_at TIMESTAMP DEFAULT current_timestamp,
+    PRIMARY KEY (id)
+);
+
+CREATE TABLE values_ftch (
+    instrument_id INTEGER NOT NULL,
+    variable VARCHAR NOT NULL,
+    value VARCHAR NOT NULL,
+    PRIMARY KEY (instrument_id, variable)
+);
 
 
 INSERT INTO
