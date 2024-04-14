@@ -139,6 +139,23 @@ CREATE TABLE values_ftch (
     value VARCHAR NOT NULL,
     PRIMARY KEY (instrument_id, variable)
 );
+-- Create instrument 8
+CREATE SEQUENCE id_instrument_pfq_sequence START 1;
+
+CREATE TABLE instrument_pfq (
+    id INTEGER DEFAULT nextval('id_instrument_pfq_sequence'),
+    uuid UUID DEFAULT uuid(),
+    created_at TIMESTAMP DEFAULT current_timestamp,
+    updated_at TIMESTAMP DEFAULT current_timestamp,
+    PRIMARY KEY (id)
+);
+
+CREATE TABLE values_pfq (
+    instrument_id INTEGER NOT NULL,
+    variable VARCHAR NOT NULL,
+    value VARCHAR NOT NULL,
+    PRIMARY KEY (instrument_id, variable)
+);
 
 
 INSERT INTO

@@ -122,6 +122,14 @@ window.addEventListener("DOMContentLoaded", () => {
         case 'instruments/07_ftch_ru.html':
             instrumentFTCH();
             break;
+        case 'instruments/08_pfq.html':
+            PFQ();
+            break;
+        case 'instruments/08_pfq_en.html':
+        case 'instruments/08_pfq_uz.html':
+        case 'instruments/08_pfq_ru.html':
+            instrumentPFQ();
+            break;
     }
 
 });
@@ -427,6 +435,32 @@ const instrumentFTCH = () => {
         return await import("./pages/instruments/07_ftch_instrument");
     };
     importFile().then(result => result.instrument7.init().catch(error => {
+        console.log(error);
+    }));
+};
+
+// Instrument 8 Patronat Family Questionnaire
+const PFQ = () => {
+
+    topMenu('cityCollector/01_dashboard');
+
+    translatePage();
+    const importFile = async () => {
+        return await import("./pages/instruments/08_pfq");
+    };
+    importFile().then(result => result.pfq.init().catch(error => {
+        console.log(error);
+    }));
+};
+const instrumentPFQ = () => {
+
+    topMenu('instruments/08_pfq');
+
+    translatePage();
+    const importFile = async () => {
+        return await import("./pages/instruments/08_pfq_instrument");
+    };
+    importFile().then(result => result.instrument8.init().catch(error => {
         console.log(error);
     }));
 };

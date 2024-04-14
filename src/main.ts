@@ -166,6 +166,9 @@ ipcMain.on("changeWindow", (event, args) => {
         case "ftch":
             goToFTCHList();
             break;
+        case "pfq":
+            goToPFQList();
+            break;
         default:
             mainWindow.loadURL("file://" + newPage);
     }
@@ -267,7 +270,7 @@ ipcMain.on('deleteCPIS', (event, args) => {
     });
 });
 
-// instrument 3
+// Instrument 3
 const goToCSRList = () => {
     const newPage = path.join(__dirname, "../src/pages/instruments/03_csr.html");
     mainWindow.loadURL("file://" + newPage);
@@ -298,7 +301,7 @@ ipcMain.on('deleteStaff', (event, args) => {
     });
 });
 
-//Instrument 7
+// Instrument 7
 const goToFTCHList = () => {
     const newPage = path.join(__dirname, "../src/pages/instruments/07_ftch.html");
     mainWindow.loadURL("file://" + newPage);
@@ -329,6 +332,37 @@ ipcMain.on('deleteFTCH', (event, args) => {
     });
 });
 
+// Instrument 8
+const goToPFQList = () => {
+    const newPage = path.join(__dirname, "../src/pages/instruments/08_pfq.html");
+    mainWindow.loadURL("file://" + newPage);
+};
+ipcMain.on('getPFQ', () => {
+    database.pfqList(db).then((result) => {
+        mainWindow.webContents.send("pfq", result);
+    });
+});
+ipcMain.on('deletePFQ', (event, args) => {
+    // save to DB
+    dialog.showMessageBox(mainWindow, {
+        type: 'warning',
+        message: i18n.__('Are you sure you want to delete this item?'),
+        buttons: ['Yes', 'No']
+    }).then((result) => {
+        if (result.response === 0) {
+            database.deletePFQ(args.id, db).then(() => {
+                // send message
+                dialog.showMessageBox(mainWindow, {
+                    type: 'info',
+                    message: i18n.__('Item deleted.'),
+                }).then(() => {
+                    goToPFQList();
+                });
+            });
+        }
+    });
+});
+
 const goToInstrument = (instrument: string, id: string) => {
 
     switch (instrument) {
@@ -346,6 +380,9 @@ const goToInstrument = (instrument: string, id: string) => {
             break;
         case "FTCH":
             goToFTCH(id);
+            break;
+        case "PFQ":
+            goToPFQ(id);
             break;
         default:
             dialog.showMessageBox(mainWindow, {
@@ -544,6 +581,28 @@ const goToFTCH = (id: string) => {
         if (id) {
             mainWindow.webContents.once("did-finish-load", () => {
                 database.instrumentGet(id, 'ftch', db).then((questions) => {
+                    mainWindow.webContents.send("instrumentDataReady", {
+                        questions: questions,
+                        userData: userDataArray[0],
+                    });
+                });
+            });
+        } else {
+            mainWindow.webContents.once("did-finish-load", () => {
+                mainWindow.webContents.send("instrumentDataReady", {
+                    userData: userDataArray[0],
+                });
+            });
+        }
+    });
+}
+const goToPFQ = (id: string) => {
+    const newPage = path.join(__dirname, "../src/pages/instruments/08_pfq_" + appSession.language + ".html");
+    mainWindow.loadURL("file://" + newPage);
+    database.getUserData(appSession.userId).then((userDataArray) => {
+        if (id) {
+            mainWindow.webContents.once("did-finish-load", () => {
+                database.instrumentGet(id, 'pfq', db).then((questions) => {
                     mainWindow.webContents.send("instrumentDataReady", {
                         questions: questions,
                         userData: userDataArray[0],

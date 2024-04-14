@@ -17,7 +17,7 @@ export const cityCollector = {
         if (viewEdit_PF !== null) {
             viewEdit_PF.addEventListener('click', () => {
                 ipcRenderer.send('changeWindow', {
-                    'name': 'pf',
+                    'name': 'pfq',
                 });
             });
         }
