@@ -34,21 +34,32 @@ export const cpis = {
             "language": {
                 "url": langpath
             },
-            "createdRow": function (row: any) {
+            "createdRow": function (row: HTMLTableRowElement) {
                 // $(row).addClass('text-center');
                 $(row).addClass('align-middle');
             }
         });
 
-        ipcRenderer.on('children', (event, children) => { 
+        ipcRenderer.on('children', (event, children) => {
+            // console.log('children');
+            // console.log(children);
             fillTable(table, children);
         });
 
     }
 }
 
+type ChildType = {
+    id: number;
+    pin: string;
+    first_name: string;
+    patronymics: string;
+    last_name: string;
+};
 
-const fillTable = (table: any, children: Array<any>) => {
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const fillTable = (table: any, children: Array<ChildType>) => {
     table.clear().draw();
     children.forEach((child) => {
 
@@ -63,7 +74,7 @@ const fillTable = (table: any, children: Array<any>) => {
         buttonEdit.classList.add('editButton');
         buttonEdit.setAttribute("data-myId", child.id + '');
         buttonEdit.setAttribute("title", "Edit child");
-        
+
         const buttonDelete = document.createElement('button');
         buttonDelete.innerHTML = '<svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="trash-alt" class="fill-white w-4 h-4" role="img" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 448 512"><path fill="currentColor" d="M268 416h24a12 12 0 0 0 12-12V188a12 12 0 0 0-12-12h-24a12 12 0 0 0-12 12v216a12 12 0 0 0 12 12zM432 80h-82.41l-34-56.7A48 48 0 0 0 274.41 0H173.59a48 48 0 0 0-41.16 23.3L98.41 80H16A16 16 0 0 0 0 96v16a16 16 0 0 0 16 16h16v336a48 48 0 0 0 48 48h288a48 48 0 0 0 48-48V128h16a16 16 0 0 0 16-16V96a16 16 0 0 0-16-16zM171.84 50.91A6 6 0 0 1 177 48h94a6 6 0 0 1 5.15 2.91L293.61 80H154.39zM368 464H80V128h288zm-212-48h24a12 12 0 0 0 12-12V188a12 12 0 0 0-12-12h-24a12 12 0 0 0-12 12v216a12 12 0 0 0 12 12z"></path></svg>';
         buttonDelete.classList.add('bg-red-500');

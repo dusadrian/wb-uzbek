@@ -235,8 +235,13 @@ const goToDashboard = () => {
 const goToCPISList = () => {
     const newPage = path.join(__dirname, "../src/pages/instruments/01_cpis.html");
     mainWindow.loadURL("file://" + newPage);
+    // mainWindow.webContents.once("did-finish-load", () => {
+    //     mainWindow.webContents.send("getFromDB-reply", {
+    //         foo: "bar"
+    //     });
+    // });
 };
-ipcMain.on('getChildren', (event, args) => {
+ipcMain.on('getChildren', () => {
     database.cpisList(db).then((result) => {
         mainWindow.webContents.send("children", result);
     });
@@ -246,7 +251,7 @@ const goToCSRList = () => {
     const newPage = path.join(__dirname, "../src/pages/instruments/03_csr.html");
     mainWindow.loadURL("file://" + newPage);
 };
-ipcMain.on('getStaff', (event, args) => {
+ipcMain.on('getStaff', () => {
     database.csrList(db).then((result) => {
         mainWindow.webContents.send("staff", result);
     });
@@ -276,7 +281,7 @@ const goToFTCHList = () => {
     const newPage = path.join(__dirname, "../src/pages/instruments/07_ftch.html");
     mainWindow.loadURL("file://" + newPage);
 };
-ipcMain.on('getFTCH', (event, args) => {
+ipcMain.on('getFTCH', () => {
     database.csrList(db).then((result) => {
         mainWindow.webContents.send("ftch", result);
     });
