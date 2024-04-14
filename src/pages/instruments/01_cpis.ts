@@ -41,8 +41,6 @@ export const cpis = {
         });
 
         ipcRenderer.on('children', (event, children) => {
-            // console.log('children');
-            // console.log(children);
             fillTable(table, children);
         });
 

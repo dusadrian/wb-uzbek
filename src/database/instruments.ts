@@ -147,8 +147,8 @@ export const cpisList = async (db: DuckDB.Database) => {
             MAX(CASE WHEN variable = 'lk1a' THEN value ELSE NULL END) first_name,
             MAX(CASE WHEN variable = 'lk1b' THEN value ELSE NULL END) patronymics,
             MAX(CASE WHEN variable = 'lk1c' THEN value ELSE NULL END) last_name,
-        FROM instrument_csr AS c
-        LEFT JOIN values_csr AS v ON v.instrument_id = c.id
+        FROM instrument_cpis AS c
+        LEFT JOIN values_cpis AS v ON v.instrument_id = c.id
         GROUP BY c.id, c.uuid;`;
 
         db.all(sql, (error, result) => {
