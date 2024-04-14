@@ -136,7 +136,7 @@ export const getExisting = async (db: DuckDB.Database) => {
     return await connection;
 }
 
-
+// instrument 1
 export const cpisList = async (db: DuckDB.Database) => {
     const connection = new Promise<Array<Instrument>>((resolve) => {
 
@@ -161,7 +161,25 @@ export const cpisList = async (db: DuckDB.Database) => {
     });
     return await connection;
 }
+export const deleteCPIS = async (id: string, db: DuckDB.Database) => {
+    const connection = new Promise<boolean>((resolve) => {
+        db.run(`DELETE FROM instrument_cpis WHERE id = '${id}'`, (error) => {
+            if (error) {
+                console.log(error);
+            }
+            db.run(`DELETE FROM values_cpis WHERE instrument_id = '${id}'`, (error) => {
+                if (error) {
+                    console.log(error);
+                }
+                resolve(true);
+            });
+        });
+    });
+    return await connection;
+}
 
+
+// instrument 3
 export const csrList = async (db: DuckDB.Database) => {
     const connection = new Promise<Array<Instrument>>((resolve) => {
 
@@ -191,6 +209,47 @@ export const deleteStaff = async (id: string, db: DuckDB.Database) => {
                 console.log(error);
             }
             db.run(`DELETE FROM values_csr WHERE instrument_id = '${id}'`, (error) => {
+                if (error) {
+                    console.log(error);
+                }
+                resolve(true);
+            });
+        });
+    });
+    return await connection;
+}
+
+// Instrument 7
+export const ftchList = async (db: DuckDB.Database) => {
+    const connection = new Promise<Array<Instrument>>((resolve) => {
+
+        const sql = `
+        SELECT c.id,
+            c.uuid,
+            MAX(CASE WHEN variable = 'ifm1' THEN value ELSE NULL END) ifm1,
+            MAX(CASE WHEN variable = 'ifm2' THEN value ELSE NULL END) ifm2,
+            MAX(CASE WHEN variable = 'ifm3' THEN value ELSE NULL END) ifm3,
+        FROM instrument_ftch AS c
+        LEFT JOIN values_ftch AS v ON v.instrument_id = c.id
+        GROUP BY c.id, c.uuid;`;
+
+        db.all(sql, (error, result) => {
+            if (error) {
+                console.log("===== Error get instrument FTCH =====");
+                console.log(error);
+            }
+            resolve(result as Array<Instrument>);
+        });
+    });
+    return await connection;
+}
+export const deleteFTCH = async (id: string, db: DuckDB.Database) => {
+    const connection = new Promise<boolean>((resolve) => {
+        db.run(`DELETE FROM instrument_ftch WHERE id = '${id}'`, (error) => {
+            if (error) {
+                console.log(error);
+            }
+            db.run(`DELETE FROM values_ftch WHERE instrument_id = '${id}'`, (error) => {
                 if (error) {
                     console.log(error);
                 }

@@ -1,7 +1,7 @@
 import * as path from "path";
 import * as DuckDB from "duckdb";
 import * as DI from "../../src/interfaces/database";
-import { save as instrumentSave, get as instrumentGet, getExisting, cpisList, csrList, deleteStaff } from "./instruments";
+import { save as instrumentSave, get as instrumentGet, getExisting, cpisList, deleteCPIS, csrList, deleteStaff, ftchList, deleteFTCH } from "./instruments";
 
 
 const duckdbOptions: {
@@ -149,6 +149,9 @@ export const database = {
     instrumentGet,
     getExisting,
     cpisList,
+    deleteCPIS,
     csrList,
     deleteStaff,
+    ftchList,
+    deleteFTCH,
 }

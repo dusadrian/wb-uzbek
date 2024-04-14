@@ -1,5 +1,5 @@
 import { ipcRenderer } from "electron";
-import { questions, questionOrder } from "./01_cpis_variables";
+import { questions, questionOrder } from "./07_ftch_variables";
 import instrument from "../../libraries/instrument";
 import { QuestionObjectType, SaveInstrumentType } from "../../libraries/interfaces";
 
@@ -36,6 +36,7 @@ export const instrument7 = {
 
 
         ipcRenderer.on("instrumentDataReady", (_event, args) => {
+console.log(args);
 
             // set instrument question !!!!!!
             instrument.setQuestions(questions, questionOrder);
@@ -71,6 +72,6 @@ const validateChestionar = (_questions: QuestionObjectType) => {
 };
 
 const saveChestionar = (obj: SaveInstrumentType): void => {
-    obj.table = "cpis";
+    obj.table = "ftch";
     ipcRenderer.send("saveInstrument", obj);
 }

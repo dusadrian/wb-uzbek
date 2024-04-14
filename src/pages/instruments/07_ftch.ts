@@ -34,7 +34,7 @@ export const ftch = {
             "language": {
                 "url": langpath
             },
-            "createdRow": function (row: any) {
+            "createdRow": function (row: HTMLTableRowElement) {
                 // $(row).addClass('text-center');
                 $(row).addClass('align-middle');
             }
@@ -48,9 +48,10 @@ export const ftch = {
 }
 
 
-const fillTable = (table: any, children: Array<any>) => {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const fillTable = (table: any, ftch: Array<any>) => {
     table.clear().draw();
-    children.forEach((child) => {
+    ftch.forEach((item) => {
 
         const buttonEdit = document.createElement('button');
         buttonEdit.innerHTML = '<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="pen" class="fill-white w-4 h-4" role="img" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><path fill="currentColor" d="M290.74 93.24l128.02 128.02-277.99 277.99-114.14 12.6C11.35 513.54-1.56 500.62.14 485.34l12.7-114.22 277.9-277.88zm207.2-19.06l-60.11-60.11c-18.75-18.75-49.16-18.75-67.91 0l-56.55 56.55 128.02 128.02 56.55-56.55c18.75-18.76 18.75-49.16 0-67.91z"></path></svg>';
@@ -61,8 +62,8 @@ const fillTable = (table: any, children: Array<any>) => {
         buttonEdit.classList.add('py-1.5');
         buttonEdit.classList.add('rounded');
         buttonEdit.classList.add('editButton');
-        buttonEdit.setAttribute("data-myId", child.id + '');
-        buttonEdit.setAttribute("title", "Edit child");
+        buttonEdit.setAttribute("data-myId", item.id + '');
+        buttonEdit.setAttribute("title", "Edit item");
         
         const buttonDelete = document.createElement('button');
         buttonDelete.innerHTML = '<svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="trash-alt" class="fill-white w-4 h-4" role="img" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 448 512"><path fill="currentColor" d="M268 416h24a12 12 0 0 0 12-12V188a12 12 0 0 0-12-12h-24a12 12 0 0 0-12 12v216a12 12 0 0 0 12 12zM432 80h-82.41l-34-56.7A48 48 0 0 0 274.41 0H173.59a48 48 0 0 0-41.16 23.3L98.41 80H16A16 16 0 0 0 0 96v16a16 16 0 0 0 16 16h16v336a48 48 0 0 0 48 48h288a48 48 0 0 0 48-48V128h16a16 16 0 0 0 16-16V96a16 16 0 0 0-16-16zM171.84 50.91A6 6 0 0 1 177 48h94a6 6 0 0 1 5.15 2.91L293.61 80H154.39zM368 464H80V128h288zm-212-48h24a12 12 0 0 0 12-12V188a12 12 0 0 0-12-12h-24a12 12 0 0 0-12 12v216a12 12 0 0 0 12 12z"></path></svg>';
@@ -72,8 +73,8 @@ const fillTable = (table: any, children: Array<any>) => {
         buttonDelete.classList.add('py-1.5');
         buttonDelete.classList.add('rounded');
         buttonDelete.classList.add('deleteButton');
-        buttonDelete.setAttribute("data-myId", child.id + '');
-        buttonDelete.setAttribute("title", "Delete child");
+        buttonDelete.setAttribute("data-myId", item.id + '');
+        buttonDelete.setAttribute("title", "Delete item");
 
         const buttons = document.createElement('div');
         buttons.classList.add('flex');
@@ -83,10 +84,10 @@ const fillTable = (table: any, children: Array<any>) => {
         buttons.appendChild(buttonDelete);
 
         table.row.add([
-            child.pin,
-            child.first_name,
-            child.patronymics,
-            child.last_name,
+            item.id,
+            item.ifm1,
+            item.ifm2,
+            item.ifm3,
             buttons.outerHTML
         ]).draw();
 
@@ -106,14 +107,14 @@ const fillTable = (table: any, children: Array<any>) => {
 const editItem = function (id: number) {
     ipcRenderer.send('changeWindow', {
         'name': 'instruments',
-        'instrument': 'CPIS',
+        'instrument': 'FTCH',
         'id': id,
     });
 };
 
 // sterge eveniment
 const deleteItem = function (id: number) {
-    ipcRenderer.send('deleteChild', {
+    ipcRenderer.send('deleteFTCH', {
         'id': id,
     });
 };

@@ -246,7 +246,28 @@ ipcMain.on('getChildren', () => {
         mainWindow.webContents.send("children", result);
     });
 });
+ipcMain.on('deleteCPIS', (event, args) => {
+    // save to DB
+    dialog.showMessageBox(mainWindow, {
+        type: 'warning',
+        message: i18n.__('Are you sure you want to delete this item?'),
+        buttons: ['Yes', 'No']
+    }).then((result) => {
+        if (result.response === 0) {
+            database.deleteCPIS(args.id, db).then(() => {
+                // send message
+                dialog.showMessageBox(mainWindow, {
+                    type: 'info',
+                    message: i18n.__('Item deleted.'),
+                }).then(() => {
+                    goToCPISList();
+                });
+            });
+        }
+    });
+});
 
+// instrument 3
 const goToCSRList = () => {
     const newPage = path.join(__dirname, "../src/pages/instruments/03_csr.html");
     mainWindow.loadURL("file://" + newPage);
@@ -277,12 +298,13 @@ ipcMain.on('deleteStaff', (event, args) => {
     });
 });
 
+//Instrument 7
 const goToFTCHList = () => {
     const newPage = path.join(__dirname, "../src/pages/instruments/07_ftch.html");
     mainWindow.loadURL("file://" + newPage);
 };
 ipcMain.on('getFTCH', () => {
-    database.csrList(db).then((result) => {
+    database.ftchList(db).then((result) => {
         mainWindow.webContents.send("ftch", result);
     });
 });
@@ -294,13 +316,13 @@ ipcMain.on('deleteFTCH', (event, args) => {
         buttons: ['Yes', 'No']
     }).then((result) => {
         if (result.response === 0) {
-            database.deleteStaff(args.id, db).then(() => {
+            database.deleteFTCH(args.id, db).then(() => {
                 // send message
                 dialog.showMessageBox(mainWindow, {
                     type: 'info',
                     message: i18n.__('Item deleted.'),
                 }).then(() => {
-                    goToCSRList();
+                    goToFTCHList();
                 });
             });
         }
@@ -521,9 +543,9 @@ const goToFTCH = (id: string) => {
     database.getUserData(appSession.userId).then((userDataArray) => {
         if (id) {
             mainWindow.webContents.once("did-finish-load", () => {
-                database.instrumentGet(id, 'ftch', db).then((instrument) => {
+                database.instrumentGet(id, 'ftch', db).then((questions) => {
                     mainWindow.webContents.send("instrumentDataReady", {
-                        instrument: instrument,
+                        questions: questions,
                         userData: userDataArray[0],
                     });
                 });
@@ -554,6 +576,9 @@ ipcMain.on('saveInstrument', (event, args) => {
             }
             if (args.table === 'qmr' || args.table === 'dsee') {
                 goToDashboard();
+            }
+            if (args.table === 'ftch') {
+                goToFTCHList();
             }
         });
     });
