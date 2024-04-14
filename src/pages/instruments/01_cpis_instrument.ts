@@ -36,9 +36,18 @@ const sh3_end_dates = [
     'sh3_s1d', 'sh3_s2d', 'sh3_s3d', 'sh3_s4d', 'sh3_s5d', 'sh3_s6d', 'sh3_s7d', 'sh3_s8d', 'sh3_s9d', 'sh3_s10d', 'sh3_csd'
 ];
 
+let institutionDetails;
 
 export const instrument1 = {
     init: async () => {
+
+        const appSessionStorage = sessionStorage.getItem('appSession');
+        if (appSessionStorage !== null) {
+            const parsed = JSON.parse(appSessionStorage);
+            institutionDetails = parsed.institutionDetails;
+            // console.log(institutionDetails);
+            // prepopulate the institution details
+        }
 
         const flatpickrConfig: {
             enableTime: boolean;
@@ -84,8 +93,7 @@ export const instrument1 = {
 
         const today = new Date();
         flatpickr_elements[date_elements.indexOf('data')].setDate(today);
-        const data = document.getElementById("data") as HTMLInputElement;
-        data.dispatchEvent(new Event('change'));
+        document.getElementById("data").dispatchEvent(new Event('change'));
 
         // TODO: de modificat activatorii pentru district si localitate, implicit -7
         // iar la localitate, daca districtul nu are localitati, sa ramana dezactivat
@@ -221,7 +229,7 @@ export const instrument1 = {
                     // seteaza valorile pentru elementele de tip data
                     for (let i = 0; i < date_elements.length; i++) {
                         if (item.variable == date_elements[i]) {
-                            if (item.value != "-9") {
+                            if (item.value != "-9" && item.value != "-7") {
                                 flatpickr_elements[i].setDate(item.value);
                             }
                         }
@@ -233,7 +241,8 @@ export const instrument1 = {
     }
 }
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
+const lk22_2 = ['lk22_2_1', 'lk22_2_2', 'lk22_2_3', 'lk22_2_4', 'lk22_2_5'];
+
 const validateChestionar = (_questions: QuestionObjectType) => {
 
     if (_questions.pin.value == '-9' || _questions.lk1a.value == '-9' || _questions.lk1b.value == '-9' || _questions.lk1c.value == '-9') {
@@ -246,9 +255,49 @@ const validateChestionar = (_questions: QuestionObjectType) => {
         return false;
     }
 
+    const check_lk22_2_result = check_lk22_2();
+    if (!check_lk22_2_result) {
+        return false;
+    }
+
     return true;
 };
 
+
+const check_lk22_2 = function() {
+
+    const lk22_2_7_1 = document.getElementById("lk22_2_7-1") as HTMLInputElement;
+    const lk22_2_7_0 = document.getElementById("lk22_2_7-0") as HTMLInputElement;
+
+    let suma = 0;
+    lk22_2.forEach((item) => {
+        suma += Number(instrument.questions[item].value);
+    });
+
+    const error = locales[lang]['At_least_one_disability'];
+
+    if (suma > 1) {
+        lk22_2_7_1.checked = true;
+        lk22_2_7_0.checked = false;
+    } else if (suma == 0) {
+        errorHandler.addArrayError(lk22_2, error);
+        (<HTMLInputElement>document.getElementById('lk22_2_1')).scrollIntoView({ behavior: "smooth", block: "center", inline: "nearest" });
+        return(false);
+    } else {
+        errorHandler.removeArrayError(lk22_2, error);
+        lk22_2_7_1.checked = false;
+        lk22_2_7_0.checked = true;
+    }
+
+    instrument.questions["lk22_2_7"].value = Number(suma > 1).toString();
+    return(true);
+
+}
+
+lk22_2.forEach((el) => {
+    const elem = document.getElementById(el) as HTMLInputElement;
+    elem.addEventListener("myChange", check_lk22_2);
+});
 
 const saveChestionar = (obj: SaveInstrumentType): void => {
     obj.table = "cpis";
@@ -344,7 +393,6 @@ lk3.addEventListener("myChange", function () {
         instrument.questions["lk13a"].value = age.toString();
 
         lk13a.dispatchEvent(new Event('change'));
-        // TODO cine este sa1 si de ce faci dispatch myChange pe el?
         sa1.dispatchEvent(new Event('myChange'));
     }
 });
@@ -508,32 +556,6 @@ sh3_start_dates.forEach((startel) => {
     end.addEventListener("myChange", check);
 });
 
-const lk22_2 = ['lk22_2_1', 'lk22_2_2', 'lk22_2_3', 'lk22_2_4', 'lk22_2_5'];
-// TODO validare, trebuie verificat la final ca cel putin un checkbox sa fie bifat
-lk22_2.forEach((el) => {
-    const elem = document.getElementById(el) as HTMLInputElement;
-    elem.addEventListener("myChange", function() {
-        let suma = 0;
-        lk22_2.forEach((item) => {
-            suma += Number(instrument.questions[item].value);
-        });
-
-        const lk22_2_7_1 = document.getElementById("lk22_2_7-1") as HTMLInputElement;
-        const lk22_2_7_0 = document.getElementById("lk22_2_7-0") as HTMLInputElement;
-
-        if (suma > 1) {
-            lk22_2_7_1.checked = true;
-            lk22_2_7_0.checked = false;
-        }
-        else {
-            lk22_2_7_1.checked = false;
-            lk22_2_7_0.checked = true;
-        }
-
-        instrument.questions["lk22_2_7"].value = Number(suma > 1).toString();
-    });
-});
-
 
 const ewm = ['ewm1', 'ewm2', 'ewm3', 'ewm4'];
 ewm.forEach((el) => {
@@ -564,7 +586,24 @@ ewm.forEach((el) => {
     });
 });
 
-const dvi1 = document.getElementById("dvi1") as HTMLInputElement;
-dvi1.addEventListener("change", function() {
-    console.log(dvi1.value);
-})
+const sk3 = ["sk3_1", "sk3_2"]
+sk3.forEach(item => {
+    (document.getElementById(item) as HTMLInputElement).addEventListener('change', () => {
+        if (util.inputsHaveValue(sk3)) {
+            const suma = Number(util.makeInputSumDecimal(sk3));
+            const error = locales[lang]['At_least_one_brother_or_sister'];
+            const sk3_1 = document.getElementById("sk3_1") as HTMLInputElement;
+            const sk3_2 = document.getElementById("sk3_2") as HTMLInputElement;
+
+            if (suma == 0) {
+                errorHandler.addArrayError(sk3, error);
+                instrument.questions["sk3_1"].value = "-9";
+                instrument.questions["sk3_2"].value = "-9";
+            } else {
+                errorHandler.removeArrayError(sk3, error);
+                instrument.questions["sk3_1"].value = sk3_1.value;
+                instrument.questions["sk3_2"].value = sk3_2.value;
+            }
+        }
+    })
+});

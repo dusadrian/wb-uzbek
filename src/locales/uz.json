@@ -119,5 +119,7 @@
 	"t_notatall": "1. Not al all",
 	"t_notatall_value": "1",
 	"t_total": "10. Total",
-	"t_total_value": "10"
+	"t_total_value": "10",
+	"At_least_one_disability": "At least one disability",
+	"At_least_one_brother_or_sister": "At least one brother or sister"
 }
