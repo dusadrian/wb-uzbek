@@ -125,5 +125,6 @@
 	"t_notatall": "1. Not at all",
 	"t_notatall_value": "1",
 	"t_total": "10. Total",
-	"t_total_value": "10"
+	"t_total_value": "10",
+	"The following fields are mandatory: IFM1, IFM2, IFM3!": "The following fields are mandatory: IFM1, IFM2, IFM3!"
 }

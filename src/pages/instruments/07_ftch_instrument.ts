@@ -43,12 +43,18 @@ console.log(args);
             let instrumentID = null;
 
             if (args.questions && args.questions.length > 0) {
-                instrumentID = parseInt(args.id);
+                instrumentID = parseInt(args.questions[0].id);
 
                 for (const item of args.questions) {
                     instrument.seteazaValoareElement(item.variable, item.value);
                 }
 
+            } else {
+                if (args.userData) {
+                    // set default values for user
+                    const q2 = (<HTMLInputElement>document.getElementById('q2'));
+                    q2.value = args.userData.first_name + " " + args.userData.patronymics + " " + args.userData.last_name;
+                }
             }
             instrument.start(instrumentID, instrument.trimis, saveChestionar, validateChestionar);
         });
@@ -58,15 +64,15 @@ console.log(args);
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 const validateChestionar = (_questions: QuestionObjectType) => {
 
-    // if (_questions.pin.value == '-9' || _questions.lk1a.value == '-9' || _questions.lk1b.value == '-9' || _questions.lk1c.value == '-9') {
-    //     ipcRenderer.send("showDialogMessage", { type: "error", message: "The following fields are mandatory: PIN, LK1a, LK1b, LK1c!" });
-    //     const elPin = document.getElementById("pin");
-    //     elPin.scrollIntoView({ behavior: "smooth", block: "center", inline: "nearest" });
-    //     setTimeout(function () {
-    //         elPin.focus();
-    //     }, 1000);
-    //     return false;
-    // }
+    if (_questions.ifm1.value == '-9' || _questions.ifm2.value == '-9' || _questions.ifm3.value == '-9') {
+        ipcRenderer.send("showDialogMessage", { type: "error", message: "The following fields are mandatory: IFM1, IFM2, IFM3!" });
+        const el = document.getElementById("ifm1");
+        el.scrollIntoView({ behavior: "smooth", block: "center", inline: "nearest" });
+        setTimeout(function () {
+            el.focus();
+        }, 1000);
+        return false;
+    }
 
     return true;
 };
@@ -75,3 +81,7 @@ const saveChestionar = (obj: SaveInstrumentType): void => {
     obj.table = "ftch";
     ipcRenderer.send("saveInstrument", obj);
 }
+
+
+
+

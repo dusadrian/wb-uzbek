@@ -50,8 +50,14 @@
                 <input type="text" id="q2" name="q2" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
             </div>
         </div>
-        
-        <p class="mt-6"><%= it.t16 %></p>
+
+        <div class="grid grid-cols-2 gap-4 items-center mt-6">
+            <div><%= it.t16 %></div>
+            <div>
+                <input type="text" id="inst" name="inst" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+            </div>
+        </div>
+
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
             <div><%= it.t17 %>. <%= it.t18 %></div>
             <div>
@@ -87,19 +93,25 @@
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
             <div><%= it.t29 %>. <%= it.t30 %>:</div>
             <div>
-                <input type="text" id="ifp1a" name="ifp1a" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                <select id="ifp1a" name="ifp1a" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+                    <option value="1">-- choose ---</option>
+                </select>
             </div>
         </div>
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
             <div><%= it.t32 %>. <%= it.t33 %></div>
             <div>
-                <input type="text" id="ifp1b" name="ifp1b" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                <select id="ifp1b" name="ifp1b" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+                    <option value="1">-- choose ---</option>
+                </select>
             </div>
         </div>
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
             <div>IFP1c. <%= it.settlement %></div>
             <div>
-                <input type="text" id="ifp1c" name="ifp1c" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                <select id="ifp1c" name="ifp1c" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+                    <option value="1">-- choose ---</option>
+                </select>
             </div>
         </div>
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
@@ -289,6 +301,7 @@
                     <input id="ifm6-16" type="radio" value="16" name="ifm6" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                     <label for="ifm6-16" class="ms-2 text-sm text-gray-900"><%= it.t86 %></label>
                 </div>
+                <input type="text" id="ifm6_other" name="ifm6_other" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
                 <div class="flex items-center">
                     <input id="ifm6-17" type="radio" value="90" name="ifm6" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                     <label for="ifm6-17" class="ms-2 text-sm text-gray-900"><%= it.t87 %></label>
@@ -433,6 +446,7 @@
                     <input id="ift6-16" type="radio" value="16" name="ift6" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                     <label for="ift6-16" class="ms-2 text-sm text-gray-900"><%= it.t127 %></label>
                 </div>
+                <input type="text" id="ift6_other" name="ift6_other" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
                 <div class="flex items-center">
                     <input id="ift6-17" type="radio" value="90" name="ift6" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                     <label for="ift6-17" class="ms-2 text-sm text-gray-900"><%= it.t128 %></label>
@@ -611,8 +625,7 @@
                             <option value="4"><%= it.t184 %></option>
                             <option value="5"><%= it.t185 %></option>
                         </select>
-                        <input type="text" id="fc4_c1e_other" name="fc4_c1e_other"
-                                class="bg-white border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                        <input type="text" id="fc4_c1e_other" name="fc4_c1e_other" class="bg-white border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
                     </td>
                     <td class="p-2">
                         <select id="fc4_c1f" name="fc4_c1f" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100">
@@ -666,8 +679,7 @@
                             <option value="4"><%= it.t184 %></option>
                             <option value="5"><%= it.t185 %></option>
                         </select>
-                        <input type="text" id="fc4_c2e_other" name="fc4_c2e_other"
-                                class="bg-white border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                        <input type="text" id="fc4_c2e_other" name="fc4_c2e_other" class="bg-white border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
                     </td>
                     <td class="p-2">
                         <select id="fc4_c2f" name="fc4_c2f" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100">
@@ -721,8 +733,7 @@
                             <option value="4"><%= it.t184 %></option>
                             <option value="5"><%= it.t185 %></option>
                         </select>
-                        <input type="text" id="fc4_c3e_other" name="fc4_c3e_other"
-                                class="bg-white border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                        <input type="text" id="fc4_c3e_other" name="fc4_c3e_other" class="bg-white border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
                     </td>
                     <td class="p-2">
                         <select id="fc4_c3f" name="fc4_c3f" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100">
@@ -776,8 +787,7 @@
                             <option value="4"><%= it.t184 %></option>
                             <option value="5"><%= it.t185 %></option>
                         </select>
-                        <input type="text" id="fc4_c4e_other" name="fc4_c4e_other"
-                                class="bg-white border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                        <input type="text" id="fc4_c4e_other" name="fc4_c4e_other" class="bg-white border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
                     </td>
                     <td class="p-2">
                         <select id="fc4_c4f" name="fc4_c4f" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100">
@@ -831,8 +841,7 @@
                             <option value="4"><%= it.t184 %></option>
                             <option value="5"><%= it.t185 %></option>
                         </select>
-                        <input type="text" id="fc4_c5e_other" name="fc4_c5e_other"
-                                class="bg-white border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                        <input type="text" id="fc4_c5e_other" name="fc4_c5e_other" class="bg-white border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
                     </td>
                     <td class="p-2">
                         <select id="fc4_c5f" name="fc4_c5f" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100">
@@ -927,8 +936,7 @@
                             <option value="9"><%= it.t223 %></option>
                             <option value="10"><%= it.t224 %></option>
                         </select>
-                        <input type="text" id="ex3_c1d_other" name="ex3_c1d_other"
-                                class="bg-white border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                        <input type="text" id="ex3_c1d_other" name="ex3_c1d_other" class="bg-white border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
                     </td>
                 </tr>
                 <tr>
@@ -974,8 +982,7 @@
                             <option value="9"><%= it.t223 %></option>
                             <option value="10"><%= it.t224 %></option>
                         </select>
-                        <input type="text" id="ex3_c2d_other" name="ex3_c2d_other"
-                                class="bg-white border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                        <input type="text" id="ex3_c2d_other" name="ex3_c2d_other" class="bg-white border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
                     </td>
                 </tr>
                 <tr>
@@ -1021,8 +1028,7 @@
                             <option value="9"><%= it.t223 %></option>
                             <option value="10"><%= it.t224 %></option>
                         </select>
-                        <input type="text" id="ex3_c3d_other" name="ex3_c3d_other"
-                                class="bg-white border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                        <input type="text" id="ex3_c3d_other" name="ex3_c3d_other" class="bg-white border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
                     </td>
                 </tr>
                 <tr>
@@ -1068,8 +1074,7 @@
                             <option value="9"><%= it.t223 %></option>
                             <option value="10"><%= it.t224 %></option>
                         </select>
-                        <input type="text" id="ex3_c3d_other" name="ex3_c3d_other"
-                                class="bg-white border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                        <input type="text" id="ex3_c4d_other" name="ex3_c4d_other" class="bg-white border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
                     </td>
                 </tr>
                 <tr>
@@ -1115,8 +1120,7 @@
                             <option value="9"><%= it.t223 %></option>
                             <option value="10"><%= it.t224 %></option>
                         </select>
-                        <input type="text" id="ex3_c3d_other" name="ex3_c3d_other"
-                                class="bg-white border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                        <input type="text" id="ex3_c5d_other" name="ex3_c5d_other" class="bg-white border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
                     </td>
                 </tr>
             </tbody>

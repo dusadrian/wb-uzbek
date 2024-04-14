@@ -69,7 +69,14 @@
                     </div>
                 </div>
 
-                <p class="mt-6">Название учреждения, в котором работает человек</p>
+                <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                    <div>Название учреждения, в котором работает человек</div>
+                    <div>
+                        <input type="text" id="inst" name="inst"
+                               class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                    </div>
+                </div>
+
                 <div class="grid grid-cols-2 gap-4 items-center mt-6">
                     <div>Q3. Должность</div>
                     <div>
@@ -110,26 +117,32 @@
                 <div class="grid grid-cols-2 gap-4 items-center mt-6">
                     <div>IFP1а. Область:</div>
                     <div>
-                        <input type="text" id="ifp1a" name="ifp1a"
-                               class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                        <select id="ifp1a" name="ifp1a"
+                                class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+                            <option value="1">-- choose ---</option>
+                        </select>
                     </div>
                 </div>
                 <div class="grid grid-cols-2 gap-4 items-center mt-6">
                     <div>IFP1b. Район</div>
                     <div>
-                        <input type="text" id="ifp1b" name="ifp1b"
-                               class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                        <select id="ifp1b" name="ifp1b"
+                                class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+                            <option value="1">-- choose ---</option>
+                        </select>
                     </div>
                 </div>
                 <div class="grid grid-cols-2 gap-4 items-center mt-6">
-                    <div>IFP1c. undefined</div>
+                    <div>IFP1c. Settlement</div>
                     <div>
-                        <input type="text" id="ifp1c" name="ifp1c"
-                               class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                        <select id="ifp1c" name="ifp1c"
+                                class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+                            <option value="1">-- choose ---</option>
+                        </select>
                     </div>
                 </div>
                 <div class="grid grid-cols-2 gap-4 items-center mt-6">
-                    <div>IFP1d. undefined</div>
+                    <div>IFP1d. Type of settlement</div>
                     <div>
                         <input type="text" id="ifp1d" name="ifp1d"
                                class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
@@ -323,6 +336,8 @@
                             <input id="ifm6-16" type="radio" value="16" name="ifm6" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                             <label for="ifm6-16" class="ms-2 text-sm text-gray-900">16. Другая ситуация, пожалуйста уточните</label>
                         </div>
+                        <input type="text" id="ifm6_other" name="ifm6_other"
+                               class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
                         <div class="flex items-center">
                             <input id="ifm6-17" type="radio" value="90" name="ifm6" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                             <label for="ifm6-17" class="ms-2 text-sm text-gray-900">90. Не указано Неизвестно </label>
@@ -472,6 +487,8 @@
                             <input id="ift6-16" type="radio" value="16" name="ift6" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                             <label for="ift6-16" class="ms-2 text-sm text-gray-900">16. Другая ситуация, пожалуйста уточните</label>
                         </div>
+                        <input type="text" id="ift6_other" name="ift6_other"
+                               class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
                         <div class="flex items-center">
                             <input id="ift6-17" type="radio" value="90" name="ift6" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                             <label for="ift6-17" class="ms-2 text-sm text-gray-900">90. Не указано/неизвестно</label>
@@ -1178,7 +1195,7 @@
                                     <option value="9">9. Смерть</option>
                                     <option value="10">10. Другая причина, укажите</option>
                                 </select>
-                                <input type="text" id="ex3_c3d_other" name="ex3_c3d_other"
+                                <input type="text" id="ex3_c4d_other" name="ex3_c4d_other"
                                        class="bg-white border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
                             </td>
                         </tr>
@@ -1231,7 +1248,7 @@
                                     <option value="9">9. Смерть</option>
                                     <option value="10">10. Другая причина, укажите</option>
                                 </select>
-                                <input type="text" id="ex3_c3d_other" name="ex3_c3d_other"
+                                <input type="text" id="ex3_c5d_other" name="ex3_c5d_other"
                                        class="bg-white border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
                             </td>
                         </tr>
