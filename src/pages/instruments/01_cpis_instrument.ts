@@ -85,7 +85,7 @@ export const instrument1 = {
         const today = new Date();
         flatpickr_elements[date_elements.indexOf('data')].setDate(today);
         const data = document.getElementById("data") as HTMLInputElement;
-        instrument.questions["data"].value = data.value;
+        data.dispatchEvent(new Event('change'));
 
         // TODO: de modificat activatorii pentru district si localitate, implicit -7
         // iar la localitate, daca districtul nu are localitati, sa ramana dezactivat
