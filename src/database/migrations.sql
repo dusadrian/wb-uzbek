@@ -40,9 +40,9 @@ CREATE TABLE institutions (
     code VARCHAR NOT NULL,
     address VARCHAR NOT NULL,
     atuCode VARCHAR NOT NULL,
-    region VARCHAR NOT NULL,
-    district VARCHAR NOT NULL,
-    type VARCHAR NOT NULL,
+    region INTEGER NOT NULL,
+    district INTEGER NOT NULL,
+    type INTEGER NOT NULL,
     staffCount INTEGER NOT NULL,
     childrenCount INTEGER NOT NULL,
     youngAdultCount INTEGER NOT NULL,
@@ -142,11 +142,11 @@ CREATE TABLE values_ftch (
 
 
 INSERT INTO
-    institutions (name, code, address, atuCode, region, district, type, staffCount, childrenCount, youngAdultCount, childrenHomeCount, patronatCount) 
+    institutions (name, code, address, atuCode, region, district, type, staffCount, childrenCount, youngAdultCount, childrenHomeCount, patronatCount)
 VALUES
     ('Orphanage', '', '', '', '', '', '',10, 10, 0, 0, 0),
     ('City', '', '', '', '', '', '', 0, 0, 10, 10, 10);
-    
+
 INSERT INTO
     users (user_type, username, password, institution_id)
 VALUES
