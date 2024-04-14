@@ -23,7 +23,6 @@ const locales: { [key: string]: typeof en | typeof uz | typeof ru} = {
 
 const lang = localStorage.getItem("language");
 
-
 const general_dates = [
     'data', 'lk3', 'cm3', 'ct3', 'cg1c', 'cg3b', 'sa1', 'cmgt1a'
 ];
@@ -45,7 +44,7 @@ export const instrument1 = {
         if (appSessionStorage !== null) {
             const parsed = JSON.parse(appSessionStorage);
             institutionDetails = parsed.institutionDetails;
-            // console.log(institutionDetails);
+            console.log(institutionDetails);
             // prepopulate the institution details
         }
 
@@ -584,6 +583,28 @@ ewm.forEach((el) => {
             instrument.questions["ewm5"].value = Number(suma > 0).toString();
         });
     });
+});
+
+const cmgt1a = document.getElementById('cmgt1a') as HTMLInputElement;
+cmgt1a.addEventListener("myChange", function() {
+
+    const start = document.getElementById("data") as HTMLInputElement;
+    const end = document.getElementById("cmgt1a") as HTMLInputElement;
+    const cmgt1b = document.getElementById("cmgt1b") as HTMLInputElement;
+
+    const startdate = new Date(start.value.replace(/(\d{2})\/(\d{2})\/(\d{4})/,'$3-$2-$1'));
+    const enddate = new Date(end.value.replace(/(\d{2})\/(\d{2})\/(\d{4})/,'$3-$2-$1'));
+
+
+    let monthDiff = (enddate.getFullYear() - startdate.getFullYear()) * 12 + enddate.getMonth() - startdate.getMonth();
+    if (monthDiff > 0 && enddate.getDate() < startdate.getDate()) {
+        monthDiff--;
+    }
+
+    cmgt1b.value = monthDiff.toString();
+    instrument.questions["cmgt1b"].value = cmgt1b.value;
+    cmgt1b.dispatchEvent(new Event('change'));
+
 });
 
 const sk3 = ["sk3_1", "sk3_2"]
