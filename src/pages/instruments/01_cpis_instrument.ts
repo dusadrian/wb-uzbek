@@ -224,17 +224,21 @@ const validateChestionar = (_questions: QuestionObjectType) => {
         return false;
     }
 
-    const check_lk22_2_result = check_lk22_2();
-    if (!check_lk22_2_result) {
+    if (_questions.lk22_1.value == "1" && !check_lk22_2()) {
         return false;
     }
 
     return true;
 };
 
+const saveChestionar = (obj: SaveInstrumentType): void => {
+    obj.table = "cpis";
+    ipcRenderer.send("saveInstrument", obj);
+}
 
-const check_lk22_2 = function() {
 
+function check_lk22_2(): boolean {
+    const lk22_2_1 = document.getElementById("lk22_2_1") as HTMLInputElement;
     const lk22_2_7_1 = document.getElementById("lk22_2_7-1") as HTMLInputElement;
     const lk22_2_7_0 = document.getElementById("lk22_2_7-0") as HTMLInputElement;
 
@@ -245,33 +249,31 @@ const check_lk22_2 = function() {
 
     const error = locales[lang]['At_least_one_disability'];
 
-    if (suma > 1) {
-        lk22_2_7_1.checked = true;
-        lk22_2_7_0.checked = false;
-    } else if (suma == 0) {
+    if (suma == 0) {
         errorHandler.addArrayError(lk22_2, error);
-        (<HTMLInputElement>document.getElementById('lk22_2_1')).scrollIntoView({ behavior: "smooth", block: "center", inline: "nearest" });
-        return(false);
-    } else {
+        lk22_2_1.scrollIntoView({ behavior: "smooth", block: "center", inline: "nearest" });
+    }
+    else {
         errorHandler.removeArrayError(lk22_2, error);
-        lk22_2_7_1.checked = false;
-        lk22_2_7_0.checked = true;
+
+        if (suma > 1) {
+            lk22_2_7_1.checked = true;
+            lk22_2_7_0.checked = false;
+        } else {
+            lk22_2_7_1.checked = false;
+            lk22_2_7_0.checked = true;
+        }
+
+        instrument.questions["lk22_2_7"].value = Number(suma > 1).toString();
     }
 
-    instrument.questions["lk22_2_7"].value = Number(suma > 1).toString();
-    return(true);
-
+    return(suma > 0);
 }
 
 lk22_2.forEach((el) => {
     const elem = document.getElementById(el) as HTMLInputElement;
     elem.addEventListener("myChange", check_lk22_2);
 });
-
-const saveChestionar = (obj: SaveInstrumentType): void => {
-    obj.table = "cpis";
-    ipcRenderer.send("saveInstrument", obj);
-}
 
 
 document.querySelectorAll('input[name="cm1a"]').forEach((elem) => {
