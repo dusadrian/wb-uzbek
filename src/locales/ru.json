@@ -116,10 +116,12 @@
 	"t_add_family_home": "t_add_family_home",
 	"Value_up_to_ten": "The value must be up to 10",
 	"Start_before_end": "Admission date before exit date",
-    "t_notatall": "1. Cовсем нет",
+	"t_notatall": "1. Cовсем нет",
 	"t_notatall_value": "1",
-    "t_total": "10. Всего",
+	"t_total": "10. Всего",
 	"t_total_value": "10",
 	"At_least_one_disability": "At least one disability",
-	"At_least_one_brother_or_sister": "At least one brother or sister"
+	"At_least_one_brother_or_sister": "At least one brother or sister",
+	"t_pfq_list": "t_pfq_list",
+	"t_add_patronat_family": "t_add_patronat_family"
 }

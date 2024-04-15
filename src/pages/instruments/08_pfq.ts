@@ -40,6 +40,8 @@ export const pfq = {
         });
 
         ipcRenderer.on('pfq', (event, pfq) => { 
+            console.log(pfq);
+            
             fillTable(table, pfq);
         });
 
@@ -84,9 +86,9 @@ const fillTable = (table: any, pfq: Array<any>) => {
 
         table.row.add([
             item.id,
-            item.ifm1,
-            item.ifm2,
-            item.ifm3,
+            item.ig1,
+            item.ig2,
+            item.ig3,
             buttons.outerHTML
         ]).draw();
 
@@ -106,7 +108,7 @@ const fillTable = (table: any, pfq: Array<any>) => {
 const editItem = function (id: number) {
     ipcRenderer.send('changeWindow', {
         'name': 'instruments',
-        'instrument': 'FTCH',
+        'instrument': 'PFQ',
         'id': id,
     });
 };

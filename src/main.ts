@@ -639,6 +639,9 @@ ipcMain.on('saveInstrument', (event, args) => {
             if (args.table === 'ftch') {
                 goToFTCHList();
             }
+            if (args.table === 'pfq') {
+                goToPFQList();
+            }
         });
     });
 });
