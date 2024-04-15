@@ -104,20 +104,18 @@ export const instrument1 = {
         const regions = Object.keys(administrative);
         for (let x = 0; x < regElements.length; x++) {
             const regel = document.getElementById(regElements[x]);
+
+            regel.innerHTML = "";
+            const option = document.createElement("option");
+            option.value = "-9";
+            option.text = locales[lang]['t_choose'];
+            regel.appendChild(option);
+
             for (let i = 0; i < regions.length; i++) {
                 const option = document.createElement("option");
                 option.value = regions[i];
-                const reg = administrative[regions[i]];
-                let name = "";
-                if (lang == "uz") {
-                    name = reg.uz;
-                } else if (lang == "ru") {
-                    name = reg.ru;
-                } else {
-                    name = reg.en;
-                }
-
-                option.text = name;
+                // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                option.text = (administrative[regions[i]] as any)[lang];
                 regel.appendChild(option);
             }
 
@@ -126,79 +124,49 @@ export const instrument1 = {
 
             regel.addEventListener("change", function () {
                 const selectedRegion = (<HTMLSelectElement>regel).value;
-                const districts = administrative[selectedRegion].districts;
-                const diskeys = Object.keys(districts);
-                district.innerHTML = "";
-                atu.innerHTML = "";
-                const option = document.createElement("option");
-                option.value = "-9";
-                if (lang == "uz") {
-                    option.text = "--- tanlang ---";
-                } else if (lang == "ru") {
-                    option.text = "--- выбирать ---";
-                } else {
-                    option.text = "--- choose ---";
-                }
-
-                district.appendChild(option);
-
-                const option2 = document.createElement("option");
-                option2.value = "-9";
-                if (lang == "uz") {
-                    option2.text = "--- tanlang ---";
-                } else if (lang == "ru") {
-                    option2.text = "--- выбирать ---";
-                } else {
-                    option2.text = "--- choose ---";
-                }
-                atu.appendChild(option2);
-
-                for (let i = 0; i < diskeys.length; i++) {
+                if (selectedRegion != "-9") {
+                    const districts = administrative[selectedRegion].districts;
+                    const diskeys = Object.keys(districts);
+                    district.innerHTML = "";
+                    atu.innerHTML = "";
                     const option = document.createElement("option");
-                    option.value = diskeys[i];
-                    let name = "";
-                    if (lang == "uz") {
-                        name = districts[diskeys[i]].uz;
-                    } else if (lang == "ru") {
-                        name = districts[diskeys[i]].ru;
-                    } else {
-                        name = districts[diskeys[i]].en;
-                    }
-                    option.text = name;
+                    option.value = "-9";
+                    option.text = locales[lang]['t_choose'];
                     district.appendChild(option);
-                }
 
+                    const option2 = document.createElement("option");
+                    option2.value = "-9";
+                    option2.text = locales[lang]['t_choose'];
+                    atu.appendChild(option2);
+
+                    for (let i = 0; i < diskeys.length; i++) {
+                        const option = document.createElement("option");
+                        option.value = diskeys[i];
+                        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                        option.text = (districts[diskeys[i]] as any)[lang];
+                        district.appendChild(option);
+                    }
+                }
             })
 
             district.addEventListener("change", function () {
                 const selectedRegion = (<HTMLSelectElement>regel).value;
                 const selectedDistrict = (<HTMLSelectElement>district).value;
-                const atus = administrative[selectedRegion].districts[selectedDistrict].settlements;
-                const atukeys = Object.keys(atus);
-                atu.innerHTML = "";
-                const option = document.createElement("option");
-                option.value = "-9";
-                if (lang == "uz") {
-                    option.text = "--- tanlang ---";
-                } else if (lang == "ru") {
-                    option.text = "--- выбирать ---";
-                } else {
-                    option.text = "--- choose ---";
-                }
-                atu.appendChild(option);
-                for (let i = 0; i < atukeys.length; i++) {
+                if (selectedRegion != "-9" && selectedDistrict != "-9") {
+                    const atus = administrative[selectedRegion].districts[selectedDistrict].settlements;
+                    const atukeys = Object.keys(atus);
+                    atu.innerHTML = "";
                     const option = document.createElement("option");
-                    option.value = atukeys[i];
-                    let name = "";
-                    if (lang == "uz") {
-                        name = atus[atukeys[i]].uz;
-                    } else if (lang == "ru") {
-                        name = atus[atukeys[i]].ru;
-                    } else {
-                        name = atus[atukeys[i]].en;
-                    }
-                    option.text = name;
+                    option.value = "-9";
+                    option.text = locales[lang]['t_choose'];
                     atu.appendChild(option);
+
+                    for (let i = 0; i < atukeys.length; i++) {
+                        const option = document.createElement("option");
+                        option.value = atukeys[i];
+                        option.text = (atus[atukeys[i]] as { [key: string]: string })[lang];
+                        atu.appendChild(option);
+                    }
                 }
             })
         }
@@ -236,6 +204,8 @@ export const instrument1 = {
                 }
             }
             instrument.start(instrumentID, instrument.trimis, saveChestionar, validateChestionar);
+            document.getElementById("omr1").focus();
+            document.getElementById("omr1").blur();
         });
     }
 }
