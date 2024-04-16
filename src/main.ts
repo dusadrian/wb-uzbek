@@ -54,6 +54,7 @@ function createWindow() {
         backgroundColor: "#fff",
         webPreferences: {
             nodeIntegration: true,
+            contextIsolation: process.env.NODE_ENV !== "development"? true : false,
             preload: path.join(__dirname, "./preload.js"),
         },
     });
@@ -533,6 +534,7 @@ const goToDSEE = (id: string) => {
 const goToCPIS = (id: string) => {
     const newPage = path.join(__dirname, "../src/pages/instruments/01_cpis_" + appSession.language + ".html");
     mainWindow.loadURL("file://" + newPage);
+
     if (id) {
         mainWindow.webContents.once("did-finish-load", () => {
             database.instrumentGet(id, 'cpis', db).then((result) => {
@@ -621,7 +623,7 @@ const goToPFQ = (id: string) => {
 
 // save instrument
 ipcMain.on('saveInstrument', (event, args) => {
-    console.log(args);
+    // console.log(args);
     database.instrumentSave(args, db).then(() => {
         dialog.showMessageBox(mainWindow, {
             type: 'info',
@@ -629,18 +631,23 @@ ipcMain.on('saveInstrument', (event, args) => {
         }).then(() => {
             if (args.table === 'cpis') {
                 goToCPISList();
+                return;
             }
             if (args.table === 'csr') {
                 goToCSRList();
+                return;
             }
             if (args.table === 'qmr' || args.table === 'dsee') {
                 goToDashboard();
+                return;
             }
             if (args.table === 'ftch') {
                 goToFTCHList();
+                return;
             }
             if (args.table === 'pfq') {
                 goToPFQList();
+                return;
             }
         });
     });
