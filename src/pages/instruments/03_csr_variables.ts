@@ -375,7 +375,7 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 33,
-        active: function () { return (true) },
+        active: function () { return Number(instrument.questions.e8.value) == 8; },
         error: ''
     },
     'e9': {
