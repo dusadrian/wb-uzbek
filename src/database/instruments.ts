@@ -308,9 +308,7 @@ export const eefList = async (db: DuckDB.Database) => {
         const sql = `
         SELECT c.id,
             c.uuid,
-            MAX(CASE WHEN variable = 'ig1' THEN value ELSE NULL END) ig1,
-            MAX(CASE WHEN variable = 'ig2' THEN value ELSE NULL END) ig2,
-            MAX(CASE WHEN variable = 'ig3' THEN value ELSE NULL END) ig3,
+            MAX(CASE WHEN variable = 'i1' THEN value ELSE NULL END) i1,
         FROM instrument_eef AS c
         LEFT JOIN values_eef AS v ON v.instrument_id = c.id
         GROUP BY c.id, c.uuid;`;

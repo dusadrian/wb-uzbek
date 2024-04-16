@@ -50,14 +50,6 @@ export const instrument9 = {
                     // set default values for user
                     const q2 = (<HTMLInputElement>document.getElementById('q2'));
                     q2.value = args.userData.first_name + " " + args.userData.patronymics + " " + args.userData.last_name;
-                    const q3 = (<HTMLInputElement>document.getElementById('q3'));
-                    q3.value = args.userData.position;
-                    const q4 = (<HTMLInputElement>document.getElementById('q4'));
-                    q4.value = args.userData.profession;
-                    const q5 = (<HTMLInputElement>document.getElementById('q5'));
-                    q5.value = args.userData.phone;
-                    const q6 = (<HTMLInputElement>document.getElementById('q6'));
-                    q6.value = args.userData.email;
                 }
             }
             instrument.start(instrumentID, instrument.trimis, saveChestionar, validateChestionar);
@@ -68,21 +60,21 @@ export const instrument9 = {
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 const validateChestionar = (_questions: QuestionObjectType) => {
 
-    if (_questions.ig1.value == '-9' || _questions.ig2.value == '-9' || _questions.ig3.value == '-9') {
-        ipcRenderer.send("showDialogMessage", { type: "error", message: "The following fields are mandatory: IG1, IG2, IG3!" });
-        const el = document.getElementById("ig1");
-        el.scrollIntoView({ behavior: "smooth", block: "center", inline: "nearest" });
-        setTimeout(function () {
-            el.focus();
-        }, 1000);
-        return false;
-    }
+    // if (_questions.ig1.value == '-9' || _questions.ig2.value == '-9' || _questions.ig3.value == '-9') {
+    //     ipcRenderer.send("showDialogMessage", { type: "error", message: "The following fields are mandatory: IG1, IG2, IG3!" });
+    //     const el = document.getElementById("ig1");
+    //     el.scrollIntoView({ behavior: "smooth", block: "center", inline: "nearest" });
+    //     setTimeout(function () {
+    //         el.focus();
+    //     }, 1000);
+    //     return false;
+    // }
 
     return true;
 };
 
 const saveChestionar = (obj: SaveInstrumentType): void => {
-    obj.table = "pfq";
+    obj.table = "eef";
     ipcRenderer.send("saveInstrument", obj);
 }
 

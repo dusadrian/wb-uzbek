@@ -473,28 +473,28 @@ const instrumentPFQ = () => {
     }));
 };
 
-// Instrument 8 Patronat Family Questionnaire
+// Instrument 9 External evaluation form of the childcare institutions and boarding schools
 const EEF = () => {
 
-    topMenu('cityCollector/01_dashboard');
+    topMenu('evaluator/01_dashboard');
 
     translatePage();
     const importFile = async () => {
-        return await import("./pages/instruments/08_pfq");
+        return await import("./pages/instruments/09_eef");
     };
-    importFile().then(result => result.pfq.init().catch(error => {
+    importFile().then(result => result.eef.init().catch(error => {
         console.log(error);
     }));
 };
 const instrumentEEF = () => {
 
-    topMenu('instruments/08_pfq');
+    topMenu('instruments/09_eef');
 
     translatePage();
     const importFile = async () => {
-        return await import("./pages/instruments/08_pfq_instrument");
+        return await import("./pages/instruments/09_eef_instrument");
     };
-    importFile().then(result => result.instrument8.init().catch(error => {
+    importFile().then(result => result.instrument9.init().catch(error => {
         console.log(error);
     }));
 };

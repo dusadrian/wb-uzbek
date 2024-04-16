@@ -110,7 +110,7 @@
 	"t_choose_value": "-9",
 	"t_csr_list": "t_csr_list",
 	"t_add_staff": "t_add_staff",
-	"t_id": "t_id",
+	"t_id": "ID",
 	"t_euid": "t_euid",
 	"t_ftch_list": "t_ftch_list",
 	"t_add_family_home": "t_add_family_home",
@@ -123,5 +123,8 @@
 	"At_least_one_disability": "At least one disability",
 	"At_least_one_brother_or_sister": "At least one brother or sister",
 	"t_pfq_list": "t_pfq_list",
-	"t_add_patronat_family": "t_add_patronat_family"
+	"t_add_patronat_family": "t_add_patronat_family",
+	"t_eef_list": "External evaluation form of the childcare institutions and boarding schools",
+	"t_add_evaluation": "Add evaluation",
+	"t_institution": "Tashkilot"
 }

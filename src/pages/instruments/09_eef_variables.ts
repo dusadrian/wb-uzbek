@@ -102,9 +102,10 @@ export const questions: QuestionObjectType = {
         active: function () { return (true) },
         error: ''
     },
+    // TODO -- input sau select?
     'i9': {
         name: 'i9',
-        type: 'input',
+        type: 'select',
         value: '-9',
         disabled: true,
         hidden: false,

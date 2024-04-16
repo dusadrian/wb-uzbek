@@ -13,12 +13,12 @@ dt(window, $);
 export const eef = {
     init: async () => {
 
-        ipcRenderer.send('getPFQ');
+        ipcRenderer.send('getEEF');
 
-        (<HTMLButtonElement>document.getElementById('add_patronat_family')).addEventListener('click', () => {
+        (<HTMLButtonElement>document.getElementById('add_evaluation')).addEventListener('click', () => {
             ipcRenderer.send('changeWindow', {
                 'name': 'instruments',
-                'instrument': 'PFQ'
+                'instrument': 'EEF'
             });
         });
 
@@ -30,7 +30,7 @@ export const eef = {
             langpath = '../../locales/tables_uz.json';
         }
 
-        const table = $('#patronat_family_list').DataTable({
+        const table = $('#evaluation_list').DataTable({
             "language": {
                 "url": langpath
             },
@@ -39,10 +39,10 @@ export const eef = {
             }
         });
 
-        ipcRenderer.on('pfq', (event, pfq) => { 
-            console.log(pfq);
+        ipcRenderer.on('eef', (event, eef) => { 
+            console.log(eef);
             
-            fillTable(table, pfq);
+            fillTable(table, eef);
         });
 
     }
@@ -50,9 +50,9 @@ export const eef = {
 
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-const fillTable = (table: any, pfq: Array<any>) => {
+const fillTable = (table: any, items: Array<any>) => {
     table.clear().draw();
-    pfq.forEach((item) => {
+    items.forEach((item) => {
 
         const buttonEdit = document.createElement('button');
         buttonEdit.innerHTML = '<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="pen" class="fill-white w-4 h-4" role="img" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><path fill="currentColor" d="M290.74 93.24l128.02 128.02-277.99 277.99-114.14 12.6C11.35 513.54-1.56 500.62.14 485.34l12.7-114.22 277.9-277.88zm207.2-19.06l-60.11-60.11c-18.75-18.75-49.16-18.75-67.91 0l-56.55 56.55 128.02 128.02 56.55-56.55c18.75-18.76 18.75-49.16 0-67.91z"></path></svg>';
@@ -86,9 +86,7 @@ const fillTable = (table: any, pfq: Array<any>) => {
 
         table.row.add([
             item.id,
-            item.ig1,
-            item.ig2,
-            item.ig3,
+            item.i1,
             buttons.outerHTML
         ]).draw();
 
@@ -108,14 +106,14 @@ const fillTable = (table: any, pfq: Array<any>) => {
 const editItem = function (id: number) {
     ipcRenderer.send('changeWindow', {
         'name': 'instruments',
-        'instrument': 'PFQ',
+        'instrument': 'EEF',
         'id': id,
     });
 };
 
 // sterge eveniment
 const deleteItem = function (id: number) {
-    ipcRenderer.send('deleteFTCH', {
+    ipcRenderer.send('deleteEEF', {
         'id': id,
     });
 };
