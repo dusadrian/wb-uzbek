@@ -35,9 +35,9 @@ import * as path from "path";
 // import * as one_uz from "../templates/8_UZ_ChildDI_Patronat_Family_uz.json";
 
 // Instrument 9
-import * as one_en from "../templates/9_UZ_ChildDI_External_Evaluation_Form_en.json";
-import * as one_ru from "../templates/9_UZ_ChildDI_External_Evaluation_Form_ru.json";
-import * as one_uz from "../templates/9_UZ_ChildDI_External_Evaluation_Form_uz.json";
+// import * as one_en from "../templates/9_UZ_ChildDI_External_Evaluation_Form_en.json";
+// import * as one_ru from "../templates/9_UZ_ChildDI_External_Evaluation_Form_ru.json";
+// import * as one_uz from "../templates/9_UZ_ChildDI_External_Evaluation_Form_uz.json";
 
 
 export default function build_templates() {
@@ -76,8 +76,8 @@ export default function build_templates() {
     // writeFileSync(path.join(__dirname, "../../src/templates/8_UZ_ChildDI_Patronat_Family_uz.html"), etaObj.render("8_UZ_ChildDI_Patronat_Family.eta", one_uz))
     
     // Instrument 9
-    writeFileSync(path.join(__dirname, "../../src/templates/9_UZ_ChildDI_External_Evaluation_Form_en.html"), etaObj.render("9_UZ_ChildDI_External_Evaluation_Form.eta", one_en))
-    writeFileSync(path.join(__dirname, "../../src/templates/9_UZ_ChildDI_External_Evaluation_Form_ru.html"), etaObj.render("9_UZ_ChildDI_External_Evaluation_Form.eta", one_ru))
-    writeFileSync(path.join(__dirname, "../../src/templates/9_UZ_ChildDI_External_Evaluation_Form_uz.html"), etaObj.render("9_UZ_ChildDI_External_Evaluation_Form.eta", one_uz))
+    // writeFileSync(path.join(__dirname, "../../src/templates/9_UZ_ChildDI_External_Evaluation_Form_en.html"), etaObj.render("9_UZ_ChildDI_External_Evaluation_Form.eta", one_en))
+    // writeFileSync(path.join(__dirname, "../../src/templates/9_UZ_ChildDI_External_Evaluation_Form_ru.html"), etaObj.render("9_UZ_ChildDI_External_Evaluation_Form.eta", one_ru))
+    // writeFileSync(path.join(__dirname, "../../src/templates/9_UZ_ChildDI_External_Evaluation_Form_uz.html"), etaObj.render("9_UZ_ChildDI_External_Evaluation_Form.eta", one_uz))
 
 }

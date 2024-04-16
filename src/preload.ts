@@ -313,6 +313,7 @@ const evaluatorDashboard = () => {
     topMenu('index');
 
     translatePage();
+    
     const importFile = async () => {
         return await import("./pages/evaluator/01_dashboard");
     };
