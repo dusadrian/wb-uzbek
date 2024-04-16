@@ -20,6 +20,12 @@ export const header = {
             console.error('Header div not found');
         }
 
+        // set language
+        const lang = localStorage.getItem('language');
+        if (lang) {
+            i18n.setLocale(lang);
+        }
+
         // set header_username and institution name
         const appSessionStorage = sessionStorage.getItem('appSession');
         if (appSessionStorage !== null) {
