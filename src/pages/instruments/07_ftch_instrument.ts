@@ -54,6 +54,14 @@ console.log(args);
                     // set default values for user
                     const q2 = (<HTMLInputElement>document.getElementById('q2'));
                     q2.value = args.userData.first_name + " " + args.userData.patronymics + " " + args.userData.last_name;
+                    const q3 = (<HTMLInputElement>document.getElementById('q3'));
+                    q3.value = args.userData.position;
+                    const q4 = (<HTMLInputElement>document.getElementById('q4'));
+                    q4.value = args.userData.profession;
+                    const q5 = (<HTMLInputElement>document.getElementById('q5'));
+                    q5.value = args.userData.phone;
+                    const q6 = (<HTMLInputElement>document.getElementById('q6'));
+                    q6.value = args.userData.email;
                 }
             }
             instrument.start(instrumentID, instrument.trimis, saveChestionar, validateChestionar);
