@@ -98,15 +98,13 @@ const fillTable = (table: any, children: Array<ChildType>) => {
             child.last_name,
             buttons.outerHTML
         ]).draw();
-
-
+    });
 
     document.querySelectorAll('.editButton').forEach(item => {
         item.addEventListener('click', editItem.bind(this, (<HTMLButtonElement>item).dataset.myid));
     });
     document.querySelectorAll('.deleteButton').forEach(item => {
         item.addEventListener('click', deleteItem.bind(this, (<HTMLButtonElement>item).dataset.myid));
-    });
     });
 };
 
