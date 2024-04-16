@@ -1,30 +1,16 @@
-// import { ipcRenderer } from "electron";
+import { ipcRenderer } from "electron";
 
 export const evaluator = {
     init: async () => {
 
-
-
-        
-
-
-        // (<HTMLButtonElement>document.getElementById('sec2')).addEventListener('click', () => {
-        //     ipcRenderer.send('changeWindow', {
-        //         'name': 'plan_di1/02_section_2'
-        //     });
-        // });
-        // (<HTMLButtonElement>document.getElementById('sec3')).addEventListener('click', () => {
-        //     ipcRenderer.send('changeWindow', {
-        //         'name': 'plan_di1/03_section_3'
-        //     });
-        // });
-        // ipcRenderer.on("instrumentDataReady", (_event, args) => {
-
-        //     console.log(args);
-
-        //     getStatus(args.sections.section1, 'section1', 4);
-        //     getStatus(args.sections.section2, 'section2', 6);
-        //     getStatus(args.sections.section3, 'section3', 4);
-        // })
+        // 09 - External evaluation form of the childcare institutions and boarding schools
+        const view_list_EEF = (<HTMLButtonElement>document.getElementById('view_list_EEF'));
+        if (view_list_EEF !== null) {
+            view_list_EEF.addEventListener('click', () => {
+                ipcRenderer.send('changeWindow', {
+                    'name': 'eef',
+                });
+            });
+        }
     }
 }

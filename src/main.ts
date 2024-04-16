@@ -170,6 +170,9 @@ ipcMain.on("changeWindow", (event, args) => {
         case "pfq":
             goToPFQList();
             break;
+        case "eef":
+            goToEEFList();
+            break;
         default:
             mainWindow.loadURL("file://" + newPage);
     }
@@ -364,6 +367,37 @@ ipcMain.on('deletePFQ', (event, args) => {
     });
 });
 
+// Instrument 9
+const goToEEFList = () => {
+    const newPage = path.join(__dirname, "../src/pages/instruments/09_eef.html");
+    mainWindow.loadURL("file://" + newPage);
+};
+ipcMain.on('getEEF', () => {
+    database.eefList(db).then((result) => {
+        mainWindow.webContents.send("eef", result);
+    });
+});
+ipcMain.on('deleteEEF', (event, args) => {
+    // save to DB
+    dialog.showMessageBox(mainWindow, {
+        type: 'warning',
+        message: i18n.__('Are you sure you want to delete this item?'),
+        buttons: ['Yes', 'No']
+    }).then((result) => {
+        if (result.response === 0) {
+            database.deleteEEF(args.id, db).then(() => {
+                // send message
+                dialog.showMessageBox(mainWindow, {
+                    type: 'info',
+                    message: i18n.__('Item deleted.'),
+                }).then(() => {
+                    goToEEFList();
+                });
+            });
+        }
+    });
+});
+
 const goToInstrument = (instrument: string, id: string) => {
 
     switch (instrument) {
@@ -384,6 +418,9 @@ const goToInstrument = (instrument: string, id: string) => {
             break;
         case "PFQ":
             goToPFQ(id);
+            break;
+        case "EEF":
+            goToEEF(id);
             break;
         default:
             dialog.showMessageBox(mainWindow, {
@@ -605,6 +642,28 @@ const goToPFQ = (id: string) => {
         if (id) {
             mainWindow.webContents.once("did-finish-load", () => {
                 database.instrumentGet(id, 'pfq', db).then((questions) => {
+                    mainWindow.webContents.send("instrumentDataReady", {
+                        questions: questions,
+                        userData: userDataArray[0],
+                    });
+                });
+            });
+        } else {
+            mainWindow.webContents.once("did-finish-load", () => {
+                mainWindow.webContents.send("instrumentDataReady", {
+                    userData: userDataArray[0],
+                });
+            });
+        }
+    });
+}
+const goToEEF = (id: string) => {
+    const newPage = path.join(__dirname, "../src/pages/instruments/09_eef_" + appSession.language + ".html");
+    mainWindow.loadURL("file://" + newPage);
+    database.getUserData(appSession.userId).then((userDataArray) => {
+        if (id) {
+            mainWindow.webContents.once("did-finish-load", () => {
+                database.instrumentGet(id, 'eef', db).then((questions) => {
                     mainWindow.webContents.send("instrumentDataReady", {
                         questions: questions,
                         userData: userDataArray[0],

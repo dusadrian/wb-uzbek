@@ -130,6 +130,14 @@ window.addEventListener("DOMContentLoaded", () => {
         case 'instruments/08_pfq_ru.html':
             instrumentPFQ();
             break;
+        case 'instruments/09_eef.html':
+            EEF();
+            break;
+        case 'instruments/09_eef_en.html':
+        case 'instruments/09_eef_uz.html':
+        case 'instruments/09_eef_ru.html':
+            instrumentEEF();
+            break;
     }
 
 });
@@ -453,6 +461,32 @@ const PFQ = () => {
     }));
 };
 const instrumentPFQ = () => {
+
+    topMenu('instruments/08_pfq');
+
+    translatePage();
+    const importFile = async () => {
+        return await import("./pages/instruments/08_pfq_instrument");
+    };
+    importFile().then(result => result.instrument8.init().catch(error => {
+        console.log(error);
+    }));
+};
+
+// Instrument 8 Patronat Family Questionnaire
+const EEF = () => {
+
+    topMenu('cityCollector/01_dashboard');
+
+    translatePage();
+    const importFile = async () => {
+        return await import("./pages/instruments/08_pfq");
+    };
+    importFile().then(result => result.pfq.init().catch(error => {
+        console.log(error);
+    }));
+};
+const instrumentEEF = () => {
 
     topMenu('instruments/08_pfq');
 

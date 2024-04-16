@@ -1,0 +1,1048 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>WorldBank</title>
+    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'" />
+    <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self'" />
+    <link href="../dist/main.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <form class="px-6 mt-10">
+        <div class="grid grid-cols-12 border">
+            <div class="col-span-1 bg-stone-200 p-2"></div>
+            <div class="col-span-11 p-2">
+                <h1 class="text-4xl text-gray-700 pl-4 tracking-wide">External evaluation form of the childcare institutions and boarding schools</h1>
+            </div>
+        </div>
+
+        <p class="mt-4 mb-2 text-xl">INTRODUCTION </p>
+        <p class="mb-2">The primary goal of this data collection is to support the Government of Uzbekistan in transitioning from institutional care to family-type care for children deprived of parental care. To achieve this, we aim to build a robust monitoring mechanism at the national level. By collecting detailed data, we can inform evidence-based decisions and policies that promote family-based alternatives.</p>
+        <p class="mb-2">Another critical objective is to enhance the quality of services provided to children with disabilities in institutional care. By understanding their unique needs and experiences, we can develop targeted interventions and improve their overall well-being. Additionally, we seek to explore and promote adequate family-type alternatives for these children.</p>
+        <p class="mb-2">PURPOSE: The data collected through this instrument contributes to the assessment of childcare institutions and specialized boarding schools in terms of the material resources available to them and the living conditions they provide to those living in these institutions.</p>
+        <p class="mb-2">How to complete: This observation form is to be completed individually for each institution operating at the time of the research (1 January 2024), by an external evaluator who visits the institution.</p>
+        <p class="mb-2">Source of information: direct observation and discussion with residents and staff</p>
+        <p class="mb-2">Responsible for completion: the evaluator</p>
+        <p class="mb-2">Approximate average completion time: visit duration - one day, about 60 minutes the completion of the form</p>
+
+        <div class="grid grid-cols-2 gap-4 items-center mt-12">
+            <div>Responsible for completion: the evaluator. Approximate average completion time: visit duration - one day, about 60 minutes the completion of the formG</div>
+            <div>
+                <input type="text" id="reg" name="reg" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+            </div>
+        </div>
+        <div class="grid grid-cols-2 gap-4 items-center mt-6">
+            <div>Q1. Date of the visit</div>
+            <div>
+                <input type="text" id="dis" name="dis" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+            </div>
+        </div>
+        <div class="grid grid-cols-2 gap-4 items-center mt-6">
+            <div>Q2. Name, patronymics, and surname of the person who filled in the questionnaire</div>
+            <div>
+                <input type="text" id="data" name="data" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+            </div>
+        </div>
+        <div class="grid grid-cols-2 gap-4 items-center mt-6">
+            <div>I1: Name of the institution</div>
+            <div>
+                <input type="text" id="q2" name="q2" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+            </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 items-center mt-6">
+            <div>I2</div>
+            <div>
+                <input type="text" id="inst" name="inst" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+            </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 items-center mt-6">
+            <div>Institution code from the registry. I3</div>
+            <div>
+                <input type="text" id="q3" name="q3" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+            </div>
+        </div>
+        <div class="grid grid-cols-2 gap-4 items-center mt-6">
+            <div>Address of the institution. I4a</div>
+            <div>
+                <input type="text" id="q4" name="q4" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+            </div>
+        </div>
+        <div class="grid grid-cols-2 gap-4 items-center mt-6">
+            <div>Region. I4b</div>
+            <div>
+                <input type="text" id="q5" name="q5" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+            </div>
+        </div>
+        <div class="grid grid-cols-2 gap-4 items-center mt-6">
+            <div>District. I9</div>
+            <div>
+                <input type="text" id="q6" name="q6" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+            </div>
+        </div>
+
+        <h2 class="mt-10 mb-4 text-2xl font-bold text-gray-700">Type of institution</h2>
+        <div class="grid grid-cols-2 gap-4 items-center mt-6">
+            <div>Please select one of the following codes. Childcare institutions:</div>
+            <div>
+                <input type="text" id="pf1" name="pf1" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+            </div>
+        </div>
+        <div class="grid grid-cols-2 gap-4 items-center mt-6">
+            <div>12. Mehribonlik house. 13. Muruvat house for children with disabilities:</div>
+            <div>
+                <select id="pf1a" name="pf1a" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+                    <option value="1">-- choose ---</option>
+                </select>
+            </div>
+        </div>
+        <div class="grid grid-cols-2 gap-4 items-center mt-6">
+            <div>21. Type I-II for deaf or with hearing impairments children. 22. Type III-IV for blind or visually impaired children</div>
+            <div>
+                <select id="pf1b" name="pf1b" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+                    <option value="1">-- choose ---</option>
+                </select>
+            </div>
+        </div>
+        <div class="grid grid-cols-2 gap-4 items-center mt-6">
+            <div>PF1c. undefined</div>
+            <div>
+                <select id="pf1c" name="pf1c" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+                    <option value="1">-- choose ---</option>
+                </select>
+            </div>
+        </div>
+        <div class="grid grid-cols-2 gap-4 items-center mt-6">
+            <div>PF1d. undefined</div>
+            <div>
+                <input type="text" id="pf1d" name="pf1d" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+            </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 items-center mt-6">
+            <div>23. Type V for children with severe speech impairments. 24. Type VI for children with musculoskeletal disorders</div>
+            <div>
+                <input type="text" id="pf2" name="pf2" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+            </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 items-center mt-10">
+            <div>25. Type VII for children with children with slow mental development/mental disorders. 26. Type VIII for children with intellectual disabilities</div>
+            <div class="col-span-1 flex flex-col gap-2">
+                <div class="flex items-center">
+                    <input id="pf3-1" type="radio" value="1" name="pf3" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="pf3-1" class="ms-2 text-sm text-gray-900">Based on your personal observations and interactions with the children and staff of the institution, please evaluate the following items on a scale from 1 to 5. A score of 1 indicates that the criterion is not met at all, while a score of 5 indicates that the criterion is fully met. If you dont have enough information to make an assessment, please check 0 (Non-observed). Please write down on the Notes column, any observations which helps clarify your assessment.</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="pf3-2" type="radio" value="2" name="pf3" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="pf3-2" class="ms-2 text-sm text-gray-900">Item</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="pf3-3" type="radio" value="3" name="pf3" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="pf3-2" class="ms-2 text-sm text-gray-900">Assessment</label>
+                </div>
+            </div>
+        </div>
+
+        <p class="font-bold mt-6">Notes</p>
+        <div class="grid grid-cols-2 gap-4 items-center mt-6">
+            <div>1. The institution is located in community, in close proximity to residential buildings, commerce and services 2. The institution is easily accessible by public transportation</div>
+            <div>
+                <input type="text" id="ig1" name="ig1" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+            </div>
+        </div>
+        <div class="grid grid-cols-2 gap-4 items-center mt-6">
+            <div>3. The building(s) are well maintained 4. The building(s) are accessible for children with disabilities</div>
+            <div>
+                <input type="text" id="ig2" name="ig2" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+            </div>
+        </div>
+        <div class="grid grid-cols-2 gap-4 items-center mt-6">
+            <div>5. Heating, ventilation, and lighting systems (natural and artificial) ensure a comfortable living and learning environment 6. Fire and other hazard protection measures are implemented</div>
+            <div>
+                <input type="text" id="ig3" name="ig3" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+            </div>
+        </div>
+        <div class="grid grid-cols-2 gap-4 items-center mt-10">
+            <div>7. Bedrooms are not overcrowded and provide enough space for each child (including those with mobility aids) 8. Boys and girls have separate bedrooms</div>
+            <div class="col-span-1 flex flex-col gap-2">
+                <div class="flex items-center">
+                    <input id="ig4-1" type="radio" value="1" name="ig4" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="ig4-1" class="ms-2 text-sm text-gray-900">9. Children can decide on the sleeping schedule within reasonable limits</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="ig4-2" type="radio" value="2" name="ig4" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="ig4-2" class="ms-2 text-sm text-gray-900">10. Bedrooms provide privacy for children</label>
+                </div>
+            </div>
+        </div>
+        <div class="grid grid-cols-2 gap-4 items-center mt-6">
+            <div>11. Children have sufficient blankets and bedding available and mattresses are in good condition 12. Children can keep personal items that they can store in secure spaces</div>
+            <div>
+                <input type="text" id="ig5" name="ig5" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+            </div>
+        </div>
+        <div class="grid grid-cols-2 gap-4 items-center mt-6">
+            <div>13. Institution spaces are clean and sanitized 14. Toilets and sanitary facilities are functional and clean</div>
+            <div>
+                <input type="text" id="ig5_age" name="ig5_age" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+            </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 items-center mt-10">
+            <div>16. There are separate toilets and washrooms for boys and girls, and these ensure privacy 17. Children with reduced mobility or other special needs have assistance to meet their needs related to the use of toilets and sanitary units</div>
+            <div class="col-span-1 flex flex-col gap-2">
+                <div class="flex items-center">
+                    <input id="ig6-1" type="radio" value="1" name="ig6" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="ig6-1" class="ms-2 text-sm text-gray-900">18. Drinking water and food are available in sufficient quantities, are of good quality, and meet children&#39;s cultural preferences and dietary requirements</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="ig6-2" type="radio" value="2" name="ig6" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="ig6-2" class="ms-2 text-sm text-gray-900">19. The institution maintains proper food storage facilities in order to preserve food quality and ensure the safety of childrens meals.</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="ig6-3" type="radio" value="3" name="ig6" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="ig6-3" class="ms-2 text-sm text-gray-900">20. Food is prepared and served in satisfactory conditions, and dining areas are child-friendly and community-style</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="ig6-4" type="radio" value="4" name="ig6" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="ig6-4" class="ms-2 text-sm text-gray-900">21. Choice of quality clothing and footwear appropriate to the season and cultural preferences are provided to children who do not have personal clothing</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="ig6-5" type="radio" value="5" name="ig6" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="ig6-5" class="ms-2 text-sm text-gray-900">22. Children have the right to communicate freely and access various communication channels (telephone, internet, e-mail, and sending/receiving letters) within the residential facility.</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="ig6-6" type="radio" value="0" name="ig6" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="ig6-6" class="ms-2 text-sm text-gray-900">23. Children&#39;s private communication is respected</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 items-center mt-10">
+            <div>24. Children can communicate in their preferred language and the institution provides support (e.g., interpreters) to ensure children can express their needs 25. Children have the right to receive visits from family members, friends, and other significant individuals. They can independently decide whom they want to meet, and this choice is respected</div>
+            <div class="col-span-1 flex flex-col gap-2">
+                <div class="flex items-center">
+                    <input id="ig7-1" type="radio" value="0" name="ig7" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="ig7-1" class="ms-2 text-sm text-gray-900">26. The building(s) are furnished with sufficient, comfortable furniture in good condition</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="ig7-2" type="radio" value="1" name="ig7" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="ig7-2" class="ms-2 text-sm text-gray-900">27. The general plan of the building (the way spaces are arranged) facilitates interaction between and among children, staff, visitors</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="ig7-3" type="radio" value="2" name="ig7" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="ig7-3" class="ms-2 text-sm text-gray-900">28. The institution provides children with the necessary resources, including equipment, to interact and participate in recreational activities</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="ig7-4" type="radio" value="3" name="ig7" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="ig7-4" class="ms-2 text-sm text-gray-900">29. There are special rooms in the institution intended for recreational and leisure activities</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="ig7-5" type="radio" value="4" name="ig7" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="ig7-5" class="ms-2 text-sm text-gray-900">30. Children can choose the recreational and leisure activities in which they want to engage</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="ig7-6" type="radio" value="5" name="ig7" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="ig7-6" class="ms-2 text-sm text-gray-900">31. Child-relevant and age-appropriate activities are organized regularly, both within the institution and in the community, at childrens request and at the initiative of the institution</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="ig7-7" type="radio" value="6" name="ig7" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="ig7-7" class="ms-2 text-sm text-gray-900">32. Staff informs and facilitates children&#39;s access to community activities</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="ig7-8" type="radio" value="9" name="ig7" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="ig7-8" class="ms-2 text-sm text-gray-900">33. Staff facilitate children&#39;s access to community entertainment activities and community entertainment activities are organized in the institution</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 items-center mt-10">
+            <div>34. Children have frequent opportunities to participate in community visits under appropriate supervision, considering their age, developmental level, and specific needs 35. Children are informed and have access to mechanisms through which they can express their opinion about the provision of services and their improvement</div>
+            <div class="col-span-1 flex flex-col gap-2">
+                <div class="flex items-center">
+                    <input id="ig8-1" type="radio" value="1" name="ig8" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="ig8-1" class="ms-2 text-sm text-gray-900">36. Children get the support they need in order to improve their school performance and the relations with teachers and other students</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="ig8-2" type="radio" value="2" name="ig8" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="ig8-2" class="ms-2 text-sm text-gray-900">37. Children have access to medical treatment, including immunizations, in the institution or in the community </label>
+                </div>
+                <div class="flex items-center">
+                    <input id="ig8-3" type="radio" value="3" name="ig8" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="ig8-3" class="ms-2 text-sm text-gray-900">38. The institution promptly facilitates access to community services for children requiring surgical or other procedures and specialty medical evaluations/treatments that cannot be provided in the institution</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="ig8-4" type="radio" value="4" name="ig8" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="ig8-4" class="ms-2 text-sm text-gray-900">39. Regular health information and education sessions are held in the institution</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="ig8-5" type="radio" value="5" name="ig8" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="ig8-5" class="ms-2 text-sm text-gray-900">40. Children are informed and counseled on general health issues, healthy lifestyles, reproductive health and family planning issues, as appropriate</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="ig8-6" type="radio" value="6" name="ig8" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="ig8-6" class="ms-2 text-sm text-gray-900">41. Staff interact with children respectfully at all times, recognizing their ability to understand information and make decisions and choices</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="ig8-7" type="radio" value="7" name="ig8" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="ig8-7" class="ms-2 text-sm text-gray-900">42. Children are provided with clear and age-appropriate information about their rights, including through alternative formats (visual aids, simplified language etc) for those with intellectual disabilities</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="ig8-8" type="radio" value="8" name="ig8" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="ig8-8" class="ms-2 text-sm text-gray-900">43. Child information is confidential</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="ig8-9" type="radio" value="9" name="ig8" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="ig8-9" class="ms-2 text-sm text-gray-900">44. Staff treat children with humanity, dignity and respect</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="ig8-10" type="radio" value="10" name="ig8" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="ig8-10" class="ms-2 text-sm text-gray-900">45. No child is subject to verbal, physical, sexual or psychological abuse</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="ig8-11" type="radio" value="11" name="ig8" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="ig8-11" class="ms-2 text-sm text-gray-900">46. No child is subjected to physical or emotional neglect</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="ig8-12" type="radio" value="12" name="ig8" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="ig8-12" class="ms-2 text-sm text-gray-900">47. Adequate measures are taken to prevent any situations of abuse</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="ig8-13" type="radio" value="13" name="ig8" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="ig8-13" class="ms-2 text-sm text-gray-900">48. Staff support children who have been abused to access the support they need</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="ig8-14" type="radio" value="14" name="ig8" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="ig8-14" class="ms-2 text-sm text-gray-900">49. Children are not subject to isolation or restraint</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="ig8-15" type="radio" value="15" name="ig8" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="ig8-15" class="ms-2 text-sm text-gray-900">50. There are alternatives to seclusion and containment practiced in the institution, and staff are trained in de-escalation techniques to intervene in crisis situations and prevent injury to children or staff</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="ig8-16" type="radio" value="16" name="ig8" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="ig8-16" class="ms-2 text-sm text-gray-900">51. Children and their family or legal guardians are informed and have access to procedures to file a complaint/notify, confidentially, independent authorities and other relevant authorities (Police, Prosecutors, courts, etc.) regarding situations of neglect, abuse, isolation or contention, admission or treatment without informed consent or other relevant situations</label>
+                </div>
+                <input type="text" id="ig8_other" name="ig8_other" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                <div class="flex items-center">
+                    <input id="ig8-17" type="radio" value="90" name="ig8" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="ig8-17" class="ms-2 text-sm text-gray-900">52. Children have access to independent representatives to inform them of their rights, discuss issues and support them in exercising their human rights and making complaints</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 items-center mt-6">
+            <div>53. Staff support children in accessing educational opportunities, including primary, secondary and tertiary education 54. Staff actively guide and assist children in developing essential life skills tailored to promote their future independence</div>
+            <div>
+                <input type="text" id="pf4a" name="pf4a" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+            </div>
+        </div>
+        <div class="grid grid-cols-2 gap-4 items-center mt-6">
+            <div>55. Staff facilitate and encourage children&#39;s connections with their biological family, siblings, and other significant individuals in their lives 56. The staff supports older children in the process of career development and access to employment opportunities on the labor market</div>
+            <div>
+                <input type="text" id="pf4b" name="pf4b" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+            </div>
+        </div>
+        <div class="grid grid-cols-2 gap-4 items-center mt-6">
+            <div>57. Staff provide older children with the information they need to participate fully in political and public life and enjoy the benefits of freedom of association 58. Staff provide children with clear and age-appropriate information on social, cultural, religious and leisure activities available for them in the community (local festivals, museums, workshops for children, hobby clubs, religious practices, rituals and holidays, outdoor adventures, sports clubs and events etc.)</div>
+            <div>
+                <input type="text" id="pf5" name="pf5" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+            </div>
+        </div>
+
+        <h2 class="mt-10 mb-4 text-2xl font-bold text-gray-700">59. Staff support and facilitate children to participate in these activities</h2>
+        <p class="mt-6">undefined undefined</p>
+        <table class="w-full mt-6" aria-label="For each child currently placed into care in this family-type home, please record the following information">
+            <thead>
+                <tr class="border-b">
+                    <th class="p-2"></th>
+                    <th class="w-40 p-2">undefined</th>
+                    <th class="p-2">undefined</th>
+                    <th class="p-2">undefined</th>
+                    <th class="p-2">undefined</th>
+                    <th class="w-48 p-2">undefined</th>
+                    <th class="p-2">undefined</th>
+                    <th class="w-44 p-2">undefined</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="p-2">undefined</td>
+                    <td class="p-2">
+                        <div class="flex items-center justify-center gap-2">
+                            <div class="flex items-center">
+                                <input id="fc4_c1a-1" type="radio" value="1" name="fc4_c1a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                                <label for="fc4_c1a-1" class="ms-2 text-sm text-gray-900">undefined</label>
+                            </div>
+                            <div class="flex items-center">
+                                <input id="fc4_c1a-2" type="radio" value="2" name="fc4_c1a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                                <label for="fc4_c1a-2" class="ms-2 text-sm text-gray-900">undefined</label>
+                            </div>
+                        </div>
+                    </td>
+                    <td class="p-2">
+                        <input type="text" id="fc4_c1b" name="fc4_c1b" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                    </td>
+                    <td class="p-2">
+                        <input type="text" id="fc4_c1c" name="fc4_c1c" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                    </td>
+                    <td class="p-2">
+                        <div class="flex items-center gap-2">
+                            <div class="flex items-center">
+                                <input id="fc4_c1d-1" type="radio" value="1" name="fc4_c1d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                                <label for="fc4_c1d-1" class="ms-2 text-sm text-gray-900">undefined</label>
+                            </div>
+                            <div class="flex items-center">
+                                <input id="fc4_c1d-2" type="radio" value="2" name="fc4_c1d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                                <label for="fc4_c1d-2" class="ms-2 text-sm text-gray-900">undefined</label>
+                            </div>
+                        </div>
+                    </td>
+                    <td class="p-2">
+                        <select id="fc4_c1e" name="fc4_c1e" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100">
+                            <option selected>------</option>
+                            <option value="1">undefined</option>
+                            <option value="2">undefined</option>
+                            <option value="3">undefined</option>
+                            <option value="4">undefined</option>
+                            <option value="5">undefined</option>
+                        </select>
+                        <input type="text" id="fc4_c1e_other" name="fc4_c1e_other" class="bg-white border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                    </td>
+                    <td class="p-2">
+                        <input type="text" id="fc4_c1f" name="fc4_c1f" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                    </td>
+                    <td class="p-2">
+                        <select id="fc4_c1g" name="fc4_c1g" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100">
+                            <option selected>------</option>
+                            <option value="1">undefined</option>
+                            <option value="2">undefined</option>
+                            <option value="3">undefined</option>
+                            <option value="4">undefined</option>
+                            <option value="5">undefined</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="p-2">undefined</td>
+                    <td class="p-2">
+                        <div class="flex items-center justify-center gap-2">
+                            <div class="flex items-center">
+                                <input id="fc4_c2a-1" type="radio" value="1" name="fc4_c2a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                                <label for="fc4_c2a-1" class="ms-2 text-sm text-gray-900">undefined</label>
+                            </div>
+                            <div class="flex items-center">
+                                <input id="fc4_c2a-2" type="radio" value="2" name="fc4_c2a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                                <label for="fc4_c2a-2" class="ms-2 text-sm text-gray-900">undefined</label>
+                            </div>
+                        </div>
+                    </td>
+                    <td class="p-2">
+                        <input type="text" id="fc4_c2b" name="fc4_c2b" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                    </td>
+                    <td class="p-2">
+                        <input type="text" id="fc4_c2c" name="fc4_c2c" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                    </td>
+                    <td class="p-2">
+                        <div class="flex items-center gap-2">
+                            <div class="flex items-center">
+                                <input id="fc4_c2d-1" type="radio" value="1" name="fc4_c2d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                                <label for="fc4_c2d-1" class="ms-2 text-sm text-gray-900">undefined</label>
+                            </div>
+                            <div class="flex items-center">
+                                <input id="fc4_c2d-2" type="radio" value="2" name="fc4_c2d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                                <label for="fc4_c2d-2" class="ms-2 text-sm text-gray-900">undefined</label>
+                            </div>
+                        </div>
+                    </td>
+                    <td class="p-2">
+                        <select id="fc4_c2e" name="fc4_c2e" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100">
+                            <option selected>------</option>
+                            <option value="1">undefined</option>
+                            <option value="2">undefined</option>
+                            <option value="3">undefined</option>
+                            <option value="4">undefined</option>
+                            <option value="5">undefined</option>
+                        </select>
+                        <input type="text" id="fc4_c2e_other" name="fc4_c2e_other" class="bg-white border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                    </td>
+                    <td class="p-2">
+                        <input type="text" id="fc4_c2f" name="fc4_c2f" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                    </td>
+                    <td class="p-2">
+                        <select id="fc4_c2g" name="fc4_c2g" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100">
+                            <option selected>------</option>
+                            <option value="1">undefined</option>
+                            <option value="2">undefined</option>
+                            <option value="3">undefined</option>
+                            <option value="4">undefined</option>
+                            <option value="5">undefined</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="p-2">undefined</td>
+                    <td class="p-2">
+                        <div class="flex items-center justify-center gap-2">
+                            <div class="flex items-center">
+                                <input id="fc4_c3a-1" type="radio" value="1" name="fc4_c3a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                                <label for="fc4_c3a-1" class="ms-2 text-sm text-gray-900">undefined</label>
+                            </div>
+                            <div class="flex items-center">
+                                <input id="fc4_c3a-2" type="radio" value="2" name="fc4_c3a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                                <label for="fc4_c3a-2" class="ms-2 text-sm text-gray-900">undefined</label>
+                            </div>
+                        </div>
+                    </td>
+                    <td class="p-2">
+                        <input type="text" id="fc4_c3b" name="fc4_c3b" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                    </td>
+                    <td class="p-2">
+                        <input type="text" id="fc4_c3c" name="fc4_c3c" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                    </td>
+                    <td class="p-2">
+                        <div class="flex items-center gap-2">
+                            <div class="flex items-center">
+                                <input id="fc4_c3d-1" type="radio" value="1" name="fc4_c3d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                                <label for="fc4_c3d-1" class="ms-2 text-sm text-gray-900">undefined</label>
+                            </div>
+                            <div class="flex items-center">
+                                <input id="fc4_c3d-2" type="radio" value="2" name="fc4_c3d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                                <label for="fc4_c3d-2" class="ms-2 text-sm text-gray-900">undefined</label>
+                            </div>
+                        </div>
+                    </td>
+                    <td class="p-2">
+                        <select id="fc4_c3e" name="fc4_c3e" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100">
+                            <option selected>------</option>
+                            <option value="1">undefined</option>
+                            <option value="2">undefined</option>
+                            <option value="3">undefined</option>
+                            <option value="4">undefined</option>
+                            <option value="5">undefined</option>
+                        </select>
+                        <input type="text" id="fc4_c3e_other" name="fc4_c3e_other" class="bg-white border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                    </td>
+                    <td class="p-2">
+                        <input type="text" id="fc4_c3f" name="fc4_c3f" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                    </td>
+                    <td class="p-2">
+                        <select id="fc4_c3g" name="fc4_c3g" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100">
+                            <option selected>------</option>
+                            <option value="1">undefined</option>
+                            <option value="2">undefined</option>
+                            <option value="3">undefined</option>
+                            <option value="4">undefined</option>
+                            <option value="5">undefined</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="p-2">undefined</td>
+                    <td class="p-2">
+                        <div class="flex items-center justify-center gap-2">
+                            <div class="flex items-center">
+                                <input id="fc4_c4a-1" type="radio" value="1" name="fc4_c4a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                                <label for="fc4_c4a-1" class="ms-2 text-sm text-gray-900">undefined</label>
+                            </div>
+                            <div class="flex items-center">
+                                <input id="fc4_c4a-2" type="radio" value="2" name="fc4_c4a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                                <label for="fc4_c4a-2" class="ms-2 text-sm text-gray-900">undefined</label>
+                            </div>
+                        </div>
+                    </td>
+                    <td class="p-2">
+                        <input type="text" id="fc4_c4b" name="fc4_c4b" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                    </td>
+                    <td class="p-2">
+                        <input type="text" id="fc4_c4c" name="fc4_c4c" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                    </td>
+                    <td class="p-2">
+                        <div class="flex items-center gap-2">
+                            <div class="flex items-center">
+                                <input id="fc4_c4d-1" type="radio" value="1" name="fc4_c4d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                                <label for="fc4_c4d-1" class="ms-2 text-sm text-gray-900">undefined</label>
+                            </div>
+                            <div class="flex items-center">
+                                <input id="fc4_c4d-2" type="radio" value="2" name="fc4_c4d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                                <label for="fc4_c4d-2" class="ms-2 text-sm text-gray-900">undefined</label>
+                            </div>
+                        </div>
+                    </td>
+                    <td class="p-2">
+                        <select id="fc4_c4e" name="fc4_c4e" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100">
+                            <option selected>------</option>
+                            <option value="1">undefined</option>
+                            <option value="2">undefined</option>
+                            <option value="3">undefined</option>
+                            <option value="4">undefined</option>
+                            <option value="5">undefined</option>
+                        </select>
+                        <input type="text" id="fc4_c4e_other" name="fc4_c4e_other" class="bg-white border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                    </td>
+                    <td class="p-2">
+                        <input type="text" id="fc4_c4f" name="fc4_c4f" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                    </td>
+                    <td class="p-2">
+                        <select id="fc4_c4g" name="fc4_c4g" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100">
+                            <option selected>------</option>
+                            <option value="1">undefined</option>
+                            <option value="2">undefined</option>
+                            <option value="3">undefined</option>
+                            <option value="4">undefined</option>
+                            <option value="5">undefined</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="p-2">undefined</td>
+                    <td class="p-2">
+                        <div class="flex items-center justify-center gap-2">
+                            <div class="flex items-center">
+                                <input id="fc4_c5a-1" type="radio" value="1" name="fc4_c5a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                                <label for="fc4_c5a-1" class="ms-2 text-sm text-gray-900">undefined</label>
+                            </div>
+                            <div class="flex items-center">
+                                <input id="fc4_c5a-2" type="radio" value="2" name="fc4_c5a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                                <label for="fc4_c5a-2" class="ms-2 text-sm text-gray-900">undefined</label>
+                            </div>
+                        </div>
+                    </td>
+                    <td class="p-2">
+                        <input type="text" id="fc4_c5b" name="fc4_c5b" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                    </td>
+                    <td class="p-2">
+                        <input type="text" id="fc4_c5c" name="fc4_c5c" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                    </td>
+                    <td class="p-2">
+                        <div class="flex items-center gap-2">
+                            <div class="flex items-center">
+                                <input id="fc4_c5d-1" type="radio" value="1" name="fc4_c5d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                                <label for="fc4_c5d-1" class="ms-2 text-sm text-gray-900">undefined</label>
+                            </div>
+                            <div class="flex items-center">
+                                <input id="fc4_c5d-2" type="radio" value="2" name="fc4_c5d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                                <label for="fc4_c5d-2" class="ms-2 text-sm text-gray-900">undefined</label>
+                            </div>
+                        </div>
+                    </td>
+                    <td class="p-2">
+                        <select id="fc4_c5e" name="fc4_c5e" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100">
+                            <option selected>------</option>
+                            <option value="1">undefined</option>
+                            <option value="2">undefined</option>
+                            <option value="3">undefined</option>
+                            <option value="4">undefined</option>
+                            <option value="5">undefined</option>
+                        </select>
+                        <input type="text" id="fc4_c5e_other" name="fc4_c5e_other" class="bg-white border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                    </td>
+                    <td class="p-2">
+                        <input type="text" id="fc4_c5f" name="fc4_c5f" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                    </td>
+                    <td class="p-2">
+                        <select id="fc4_c5g" name="fc4_c5g" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100">
+                            <option selected>------</option>
+                            <option value="1">undefined</option>
+                            <option value="2">undefined</option>
+                            <option value="3">undefined</option>
+                            <option value="4">undefined</option>
+                            <option value="5">undefined</option>
+                        </select>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+
+        <h2 class="mt-10 mb-4 text-2xl font-bold text-gray-700">undefined</h2>
+
+        <div class="grid grid-cols-2 gap-4 items-center mt-10">
+            <div>undefined undefined</div>
+            <div class="col-span-1 flex items-center gap-4">
+                <div class="flex items-center">
+                    <input id="ex1-1" type="radio" value="1" name="ex1" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="ex1-1" class="ms-2 text-sm text-gray-900">undefined</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="ex1-2" type="radio" value="2" name="ex1" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="ex1-2" class="ms-2 text-sm text-gray-900">undefined</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 items-center mt-6">
+            <div>undefined. undefined</div>
+            <div>
+                <input type="text" id="ex2" name="ex2" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+            </div>
+        </div>
+
+        <p class="mt-6">undefined. undefined</p>
+        <table class="w-full mt-6" aria-label="For each child who left this family-type home during the reporting year, please record the following information">
+            <thead>
+                <tr class="border-b">
+                    <th class="p-2"></th>
+                    <th class="w-40 p-2">undefined.</th>
+                    <th class="p-2">undefined.</th>
+                    <th class="w-52 p-2">undefined.?</th>
+                    <th class="p-2">undefined.</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="p-2">undefined</td>
+                    <td class="p-2">
+                        <div class="flex items-center justify-center gap-2">
+                            <div class="flex items-center">
+                                <input id="ex3_c1a-1" type="radio" value="1" name="ex3_c1a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                                <label for="ex3_c1a-1" class="ms-2 text-sm text-gray-900">undefined</label>
+                            </div>
+                            <div class="flex items-center">
+                                <input id="ex3_c1a-2" type="radio" value="2" name="ex3_c1a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                                <label for="ex3_c1a-2" class="ms-2 text-sm text-gray-900">undefined</label>
+                            </div>
+                        </div>
+                    </td>
+                    <td class="p-2">
+                        <input type="text" id="ex3_c1b" name="ex3_c1b" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                    </td>
+                    <td class="p-2">
+                        <div class="flex items-center justify-center gap-2">
+                            <div class="flex items-center">
+                                <input id="ex3_c1c-1" type="radio" value="1" name="ex3_c1c" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                                <label for="ex3_c1c-1" class="ms-2 text-sm text-gray-900">undefined</label>
+                            </div>
+                            <div class="flex items-center">
+                                <input id="ex3_c1c-2" type="radio" value="2" name="ex3_c1c" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                                <label for="ex3_c1c-2" class="ms-2 text-sm text-gray-900">undefined</label>
+                            </div>
+                        </div>
+                    </td>
+                    <td class="p-2">
+                        <select id="ex3_c1d" name="ex3_c1d" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100">
+                            <option selected>------</option>
+                            <option value="1">undefined</option>
+                            <option value="2">undefined</option>
+                            <option value="3">undefined</option>
+                            <option value="4">undefined</option>
+                            <option value="5">undefined</option>
+                            <option value="6">undefined</option>
+                            <option value="7">undefined</option>
+                            <option value="8">undefined</option>
+                            <option value="9">undefined</option>
+                            <option value="10">undefined</option>
+                        </select>
+                        <input type="text" id="ex3_c1d_other" name="ex3_c1d_other" class="bg-white border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="p-2">undefined</td>
+                    <td class="p-2">
+                        <div class="flex items-center justify-center gap-2">
+                            <div class="flex items-center">
+                                <input id="ex3_c2a-1" type="radio" value="1" name="ex3_c2a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                                <label for="ex3_c2a-1" class="ms-2 text-sm text-gray-900">undefined</label>
+                            </div>
+                            <div class="flex items-center">
+                                <input id="ex3_c2a-2" type="radio" value="2" name="ex3_c2a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                                <label for="ex3_c2a-2" class="ms-2 text-sm text-gray-900">undefined</label>
+                            </div>
+                        </div>
+                    </td>
+                    <td class="p-2">
+                        <input type="text" id="ex3_c2b" name="ex3_c2b" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                    </td>
+                    <td class="p-2">
+                        <div class="flex items-center justify-center gap-2">
+                            <div class="flex items-center">
+                                <input id="ex3_c2c-1" type="radio" value="1" name="ex3_c2c" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                                <label for="ex3_c2c-1" class="ms-2 text-sm text-gray-900">undefined</label>
+                            </div>
+                            <div class="flex items-center">
+                                <input id="ex3_c2c-2" type="radio" value="2" name="ex3_c2c" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                                <label for="ex3_c2c-2" class="ms-2 text-sm text-gray-900">undefined</label>
+                            </div>
+                        </div>
+                    </td>
+                    <td class="p-2">
+                        <select id="ex3_c2d" name="ex3_c2d" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100">
+                            <option selected>------</option>
+                            <option value="1">undefined</option>
+                            <option value="2">undefined</option>
+                            <option value="3">undefined</option>
+                            <option value="4">undefined</option>
+                            <option value="5">undefined</option>
+                            <option value="6">undefined</option>
+                            <option value="7">undefined</option>
+                            <option value="8">undefined</option>
+                            <option value="9">undefined</option>
+                            <option value="10">undefined</option>
+                        </select>
+                        <input type="text" id="ex3_c2d_other" name="ex3_c2d_other" class="bg-white border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="p-2">undefined</td>
+                    <td class="p-2">
+                        <div class="flex items-center justify-center gap-2">
+                            <div class="flex items-center">
+                                <input id="ex3_c3a-1" type="radio" value="1" name="ex3_c3a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                                <label for="ex3_c3a-1" class="ms-2 text-sm text-gray-900">undefined</label>
+                            </div>
+                            <div class="flex items-center">
+                                <input id="ex3_c3a-2" type="radio" value="2" name="ex3_c3a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                                <label for="ex3_c3a-2" class="ms-2 text-sm text-gray-900">undefined</label>
+                            </div>
+                        </div>
+                    </td>
+                    <td class="p-2">
+                        <input type="text" id="ex3_c3b" name="ex3_c3b" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                    </td>
+                    <td class="p-2">
+                        <div class="flex items-center justify-center gap-2">
+                            <div class="flex items-center">
+                                <input id="ex3_c3c-1" type="radio" value="1" name="ex3_c3c" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                                <label for="ex3_c3c-1" class="ms-2 text-sm text-gray-900">undefined</label>
+                            </div>
+                            <div class="flex items-center">
+                                <input id="ex3_c3c-2" type="radio" value="2" name="ex3_c3c" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                                <label for="ex3_c3c-2" class="ms-2 text-sm text-gray-900">undefined</label>
+                            </div>
+                        </div>
+                    </td>
+                    <td class="p-2">
+                        <select id="ex3_c3d" name="ex3_c3d" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100">
+                            <option selected>------</option>
+                            <option value="1">undefined</option>
+                            <option value="2">undefined</option>
+                            <option value="3">undefined</option>
+                            <option value="4">undefined</option>
+                            <option value="5">undefined</option>
+                            <option value="6">undefined</option>
+                            <option value="7">undefined</option>
+                            <option value="8">undefined</option>
+                            <option value="9">undefined</option>
+                            <option value="10">undefined</option>
+                        </select>
+                        <input type="text" id="ex3_c3d_other" name="ex3_c3d_other" class="bg-white border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="p-2">undefined</td>
+                    <td class="p-2">
+                        <div class="flex items-center justify-center gap-2">
+                            <div class="flex items-center">
+                                <input id="ex3_c4a-1" type="radio" value="1" name="ex3_c4a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                                <label for="ex3_c4a-1" class="ms-2 text-sm text-gray-900">undefined</label>
+                            </div>
+                            <div class="flex items-center">
+                                <input id="ex3_c4a-2" type="radio" value="2" name="ex3_c4a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                                <label for="ex3_c4a-2" class="ms-2 text-sm text-gray-900">undefined</label>
+                            </div>
+                        </div>
+                    </td>
+                    <td class="p-2">
+                        <input type="text" id="ex3_c4b" name="ex3_c4b" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                    </td>
+                    <td class="p-2">
+                        <div class="flex items-center justify-center gap-2">
+                            <div class="flex items-center">
+                                <input id="ex3_c4c-1" type="radio" value="1" name="ex3_c4c" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                                <label for="ex3_c4c-1" class="ms-2 text-sm text-gray-900">undefined</label>
+                            </div>
+                            <div class="flex items-center">
+                                <input id="ex3_c4c-2" type="radio" value="2" name="ex3_c4c" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                                <label for="ex3_c4c-2" class="ms-2 text-sm text-gray-900">undefined</label>
+                            </div>
+                        </div>
+                    </td>
+                    <td class="p-2">
+                        <select id="ex3_c4d" name="ex3_c4d" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100">
+                            <option selected>------</option>
+                            <option value="1">undefined</option>
+                            <option value="2">undefined</option>
+                            <option value="3">undefined</option>
+                            <option value="4">undefined</option>
+                            <option value="5">undefined</option>
+                            <option value="6">undefined</option>
+                            <option value="7">undefined</option>
+                            <option value="8">undefined</option>
+                            <option value="9">undefined</option>
+                            <option value="10">undefined</option>
+                        </select>
+                        <input type="text" id="ex3_c4d_other" name="ex3_c4d_other" class="bg-white border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="p-2">undefined</td>
+                    <td class="p-2">
+                        <div class="flex items-center justify-center gap-2">
+                            <div class="flex items-center">
+                                <input id="ex3_c5a-1" type="radio" value="1" name="ex3_c5a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                                <label for="ex3_c5a-1" class="ms-2 text-sm text-gray-900">undefined</label>
+                            </div>
+                            <div class="flex items-center">
+                                <input id="ex3_c5a-2" type="radio" value="2" name="ex3_c5a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                                <label for="ex3_c5a-2" class="ms-2 text-sm text-gray-900">undefined</label>
+                            </div>
+                        </div>
+                    </td>
+                    <td class="p-2">
+                        <input type="text" id="ex3_c5b" name="ex3_c5b" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                    </td>
+                    <td class="p-2">
+                        <div class="flex items-center justify-center gap-2">
+                            <div class="flex items-center">
+                                <input id="ex3_c5c-1" type="radio" value="1" name="ex3_c5c" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                                <label for="ex3_c5c-1" class="ms-2 text-sm text-gray-900">undefined</label>
+                            </div>
+                            <div class="flex items-center">
+                                <input id="ex3_c5c-2" type="radio" value="2" name="ex3_c5c" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                                <label for="ex3_c5c-2" class="ms-2 text-sm text-gray-900">undefined</label>
+                            </div>
+                        </div>
+                    </td>
+                    <td class="p-2">
+                        <select id="ex3_c5d" name="ex3_c5d" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100">
+                            <option selected>------</option>
+                            <option value="1">undefined</option>
+                            <option value="2">undefined</option>
+                            <option value="3">undefined</option>
+                            <option value="4">undefined</option>
+                            <option value="5">undefined</option>
+                            <option value="6">undefined</option>
+                            <option value="7">undefined</option>
+                            <option value="8">undefined</option>
+                            <option value="9">undefined</option>
+                            <option value="10">undefined</option>
+                        </select>
+                        <input type="text" id="ex3_c5d_other" name="ex3_c5d_other" class="bg-white border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+
+        <h2 class="mt-10 mb-4 text-2xl font-bold text-gray-700">undefined</h2>
+
+        <div class="grid grid-cols-2 gap-4 items-center mt-10">
+            <div>undefined. undefined</div>
+            <div class="col-span-1 flex items-center gap-4">
+                <div class="flex items-center">
+                    <input id="qs1-1" type="radio" value="1" name="qs1" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="qs1-1" class="ms-2 text-sm text-gray-900">undefined</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="qs1-3" type="radio" value="0" name="qs1" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="qs1-3" class="ms-2 text-sm text-gray-900">undefined</label>
+                </div>
+            </div>
+        </div>
+        <div class="grid grid-cols-2 gap-4 items-center mt-6">
+            <div>
+                undefined. undefined                <small class="text-sm italic">undefined</small>
+            </div>
+            <div>
+                <input type="text" id="qs1a" name="qs1a" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+            </div>
+        </div>
+        <div class="grid grid-cols-2 gap-4 items-center mt-6">
+            <div>
+                undefined. undefined                <small class="text-sm italic">undefined</small>
+            </div>
+            <div class="flex items-center gap-4">
+                <input type="text" id="qs2" name="qs2" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                undefined            </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 items-center mt-10">
+            <div>undefined. undefined</div>
+            <div class="col-span-1 flex items-center gap-4">
+                <div class="flex items-center">
+                    <input id="qs3-1" type="radio" value="1" name="qs3" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="qs3-1" class="ms-2 text-sm text-gray-900">undefined</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="qs3-2" type="radio" value="2" name="qs3" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="qs3-2" class="ms-2 text-sm text-gray-900">undefined</label>
+                </div>
+            </div>
+        </div>
+        <div class="grid grid-cols-2 gap-4 items-center mt-10">
+            <div>undefined. undefined</div>
+            <div class="col-span-1 flex items-center gap-4">
+                <div class="flex items-center">
+                    <input id="qs4-1" type="radio" value="1" name="qs4" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="qs4-1" class="ms-2 text-sm text-gray-900">undefined</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="qs4-2" type="radio" value="2" name="qs4" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="qs4-2" class="ms-2 text-sm text-gray-900">undefined</label>
+                </div>
+            </div>
+        </div>
+        <div class="grid grid-cols-2 gap-4 items-center mt-10">
+            <div>undefined. undefined</div>
+            <div class="col-span-1 flex items-center gap-4">
+                <div class="flex items-center">
+                    <input id="qs5-1" type="radio" value="1" name="qs5" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="qs5-1" class="ms-2 text-sm text-gray-900">undefined</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="qs5-2" type="radio" value="2" name="qs5" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="qs5-2" class="ms-2 text-sm text-gray-900">undefined</label>
+                </div>
+            </div>
+        </div>
+        <div class="grid grid-cols-2 gap-4 items-center mt-10">
+            <div>undefined. undefined</div>
+            <div class="col-span-1 flex items-center gap-4">
+                <div class="flex items-center">
+                    <input id="qs6-1" type="radio" value="1" name="qs6" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="qs6-1" class="ms-2 text-sm text-gray-900">undefined</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="qs6-2" type="radio" value="2" name="qs6" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="qs6-2" class="ms-2 text-sm text-gray-900">undefined</label>
+                </div>
+            </div>
+        </div>
+        <div class="grid grid-cols-2 gap-4 items-center mt-10">
+            <div>undefined. undefined</div>
+            <div class="col-span-1 flex items-center gap-4">
+                <div class="flex items-center">
+                    <input id="qs7-1" type="radio" value="1" name="qs7" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="qs7-1" class="ms-2 text-sm text-gray-900">undefined</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="qs7-2" type="radio" value="2" name="qs7" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="qs7-2" class="ms-2 text-sm text-gray-900">undefined</label>
+                </div>
+            </div>
+        </div>
+        <div class="grid grid-cols-2 gap-4 items-center mt-10">
+            <div>undefined. undefined</div>
+            <div class="col-span-1 flex items-center gap-4">
+                <div class="flex items-center">
+                    <input id="qs8-1" type="radio" value="1" name="qs8" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="qs8-1" class="ms-2 text-sm text-gray-900">undefined</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="qs8-2" type="radio" value="2" name="qs8" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="qs8-2" class="ms-2 text-sm text-gray-900">undefined</label>
+                </div>
+            </div>
+        </div>
+
+    </form>
+
+</body>
+
+</html>

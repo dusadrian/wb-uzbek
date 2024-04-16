@@ -156,6 +156,23 @@ CREATE TABLE values_pfq (
     value VARCHAR NOT NULL,
     PRIMARY KEY (instrument_id, variable)
 );
+-- Create instrument 9
+CREATE SEQUENCE id_instrument_eef_sequence START 1;
+
+CREATE TABLE instrument_eef (
+    id INTEGER DEFAULT nextval('id_instrument_eef_sequence'),
+    uuid UUID DEFAULT uuid(),
+    created_at TIMESTAMP DEFAULT current_timestamp,
+    updated_at TIMESTAMP DEFAULT current_timestamp,
+    PRIMARY KEY (id)
+);
+
+CREATE TABLE values_eef (
+    instrument_id INTEGER NOT NULL,
+    variable VARCHAR NOT NULL,
+    value VARCHAR NOT NULL,
+    PRIMARY KEY (instrument_id, variable)
+);
 
 
 INSERT INTO
