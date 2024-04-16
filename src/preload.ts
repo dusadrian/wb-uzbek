@@ -366,7 +366,7 @@ const instrumentDSEE = () => {
     const importFile = async () => {
         return await import("./pages/instruments/06_dsee");
     };
-    importFile().then(result => result.instrument.init().catch(error => {
+    importFile().then(result => result.instrument6.init().catch(error => {
         console.log(error);
     }));
 };

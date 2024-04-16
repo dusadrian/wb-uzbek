@@ -36,6 +36,8 @@
     "t35": "I4b",
     "t36": "District",
     "t37": "(Automatically retrieved from I4)",
+    "settlement": "Settlement",
+    "typeofsettlement": "Type of settlement",
     "t38": "I9",
     "t39": "Type of institution",
     "t40": "Please select one of the following codes",

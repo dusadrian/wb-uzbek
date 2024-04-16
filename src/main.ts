@@ -54,7 +54,7 @@ function createWindow() {
         backgroundColor: "#fff",
         webPreferences: {
             nodeIntegration: true,
-            contextIsolation: process.env.NODE_ENV !== "development"? true : false,
+            contextIsolation: process.env.NODE_ENV !== "development" ? true : false,
             preload: path.join(__dirname, "./preload.js"),
         },
     });
@@ -555,18 +555,29 @@ const goToQMR = (id: string) => {
 const goToDSEE = (id: string) => {
     const newPage = path.join(__dirname, "../src/pages/instruments/06_dsee_" + appSession.language + ".html");
     mainWindow.loadURL("file://" + newPage);
-    if (id) {
-        mainWindow.webContents.once("did-finish-load", () => {
-            database.instrumentGet(id, 'dsee', db).then((result) => {
-                mainWindow.webContents.send("dsee", result);
-            });
+    database.getUserData(appSession.userId).then((userDataArray) => {
+        database.getUserInstitution(appSession.userInstitution).then((institutionDataArray) => {
+            if (id) {
+                mainWindow.webContents.once("did-finish-load", () => {
+                    database.instrumentGet(id, 'dsee', db).then((result) => {
+                        mainWindow.webContents.send("dsee", {
+                            instrument: result,
+                            userData: userDataArray[0],
+                            institutionData: institutionDataArray[0],
+                        });
+                    });
+                });
+            }
+            else {
+                mainWindow.webContents.once("did-finish-load", () => {
+                    mainWindow.webContents.send("instrumentDataReady", {
+                        userData: userDataArray[0],
+                        institutionData: institutionDataArray[0],
+                    });
+                });
+            }
         });
-    }
-    else {
-        mainWindow.webContents.once("did-finish-load", () => {
-            mainWindow.webContents.send("instrumentDataReady", {});
-        });
-    }
+    });
 }
 const goToCPIS = (id: string) => {
     const newPage = path.join(__dirname, "../src/pages/instruments/01_cpis_" + appSession.language + ".html");
