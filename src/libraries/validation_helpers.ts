@@ -25,6 +25,7 @@ interface ValidationMessageType {
     }
 }
 interface ErrorTippyType {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     [element: string]: Array<any>
 }
 
@@ -56,8 +57,8 @@ const errorHelperFunctions = {
                 isRadio = true;
             }
             if (document.querySelector(".eroare" + element)) {
-                console.trace(element);
-                console.log(validation_messages);
+                // console.trace(element);
+                // console.log(validation_messages);
 
                 validation_messages[element].errors.splice(errIndex, 1);
 
@@ -203,10 +204,10 @@ export const util: UtilHelpersInterface = {
         let suma = 0;
         array.forEach(item => {
             suma += util.getInputDecimalValue(item);
-            console.log(util.getInputDecimalValue(item));
-            console.log(suma);
-            
-            
+            // console.log(util.getInputDecimalValue(item));
+            // console.log(suma);
+
+
         })
         return suma.toFixed(2);
     },
@@ -233,7 +234,7 @@ export const util: UtilHelpersInterface = {
         return false;
     },
     inputsHaveValue: (array: string[]) => {
-        
+
         const response: boolean[] = [];
         array.forEach(el => {
             const input = (document.getElementById(el) as HTMLInputElement);
@@ -253,7 +254,7 @@ export const util: UtilHelpersInterface = {
     exists: function (x: unknown): boolean {
         return x !== void 0 && x !== undefined;
     },
-    
+
     seq: function (from: number, to: number): Array<number> {
         const length = to - from + 1;
         const result = new Array(length);
