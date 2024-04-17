@@ -125,8 +125,8 @@ export const instrument1 = {
             regel.addEventListener("change", function () {
                 const selectedRegion = (<HTMLSelectElement>regel).value;
                 if (selectedRegion != "-9") {
-                    const districts = administrative[selectedRegion].districts;
-                    const diskeys = Object.keys(districts);
+                    const regdist = administrative[selectedRegion].districts;
+                    const districts = Object.keys(regdist);
                     district.innerHTML = "";
                     atu.innerHTML = "";
                     const option = document.createElement("option");
@@ -139,11 +139,11 @@ export const instrument1 = {
                     option2.text = locales[lang]['t_choose'];
                     atu.appendChild(option2);
 
-                    for (let i = 0; i < diskeys.length; i++) {
+                    for (let i = 0; i < districts.length; i++) {
                         const option = document.createElement("option");
-                        option.value = diskeys[i];
+                        option.value = districts[i];
                         // eslint-disable-next-line @typescript-eslint/no-explicit-any
-                        option.text = (districts[diskeys[i]] as any)[lang];
+                        option.text = (regdist[districts[i]] as any)[lang];
                         district.appendChild(option);
                     }
                 }
@@ -153,19 +153,24 @@ export const instrument1 = {
                 const selectedRegion = (<HTMLSelectElement>regel).value;
                 const selectedDistrict = (<HTMLSelectElement>district).value;
                 if (selectedRegion != "-9" && selectedDistrict != "-9") {
-                    const atus = administrative[selectedRegion].districts[selectedDistrict].settlements;
-                    const atukeys = Object.keys(atus);
-                    atu.innerHTML = "";
-                    const option = document.createElement("option");
-                    option.value = "-9";
-                    option.text = locales[lang]['t_choose'];
-                    atu.appendChild(option);
-
-                    for (let i = 0; i < atukeys.length; i++) {
+                    const regdisatu = administrative[selectedRegion].districts[selectedDistrict].settlements;
+                    if (regdisatu) {
+                        const settlements = Object.keys(regdisatu);
+                        atu.innerHTML = "";
                         const option = document.createElement("option");
-                        option.value = atukeys[i];
-                        option.text = (atus[atukeys[i]] as { [key: string]: string })[lang];
+                        option.value = "-9";
+                        option.text = locales[lang]['t_choose'];
                         atu.appendChild(option);
+
+                        for (let i = 0; i < settlements.length; i++) {
+                            const option = document.createElement("option");
+                            option.value = settlements[i];
+                            option.text = (regdisatu[settlements[i]] as { [key: string]: string })[lang];
+                            atu.appendChild(option);
+                        }
+                    }
+                    else {
+                        // dezactiveaza select-ul pentru settlement
                     }
                 }
             })
@@ -248,14 +253,13 @@ function check_lk22_2(): boolean {
     });
 
     const error = locales[lang]['At_least_one_disability'];
+    errorHandler.removeArrayError(lk22_2, error);
 
     if (suma == 0) {
         errorHandler.addArrayError(lk22_2, error);
         lk22_2_1.scrollIntoView({ behavior: "smooth", block: "center", inline: "nearest" });
     }
     else {
-        errorHandler.removeArrayError(lk22_2, error);
-
         if (suma > 1) {
             lk22_2_7_1.checked = true;
             lk22_2_7_0.checked = false;
@@ -436,10 +440,9 @@ qhouse4ArrayFull.forEach(item => {
         if (util.inputsHaveValue(qhouse4ArrayFull)) {
             const qhouse4 = util.getInputNumericValue('qhouse4');
 
+            errorHandler.removeArrayError(qhouse4Array, '4 = 4a + 4b')
             if (qhouse4 != Number(util.makeInputSumDecimal(qhouse4Array))) {
                 errorHandler.addArrayError(qhouse4Array, '4 = 4a + 4b')
-            } else {
-                errorHandler.removeArrayError(qhouse4Array, '4 = 4a + 4b')
             }
         }
     })
@@ -449,14 +452,16 @@ const sh1 = document.getElementById('sh1') as HTMLInputElement;
 
 sh1.addEventListener("myChange", function() {
     const sh1value = Number(util.getInputDecimalValue('sh1'));
+
     const error = locales[lang]['Value_up_to_ten'];
+    errorHandler.removeError('sh1', error);
+
     if (sh1value > 10) {
         instrument.questions["sh1"].value = '-9';
         errorHandler.addError('sh1', error);
     }
     else {
         instrument.questions["sh1"].value = sh1value.toString();
-        errorHandler.removeError('sh1', error);
     }
 
     // dupa ce dispare eroarea, mai trebuie facut un dispatch change pe orice element
@@ -484,6 +489,7 @@ sh3_start_dates.forEach((startel) => {
             const sh4 = document.getElementById("sh4") as HTMLInputElement;
 
             const error = locales[lang]['Start_before_end'];
+            errorHandler.removeArrayError([startel, endel], error);
 
             if (startdate > enddate) {
                 errorHandler.addArrayError([startel, endel], error);
@@ -493,7 +499,6 @@ sh3_start_dates.forEach((startel) => {
                 instrument.questions[startel.replace("a", "f")].value = "-7";
             }
             else {
-                errorHandler.removeArrayError([startel, endel], error);
                 instrument.questions[startel].value = start.value;
                 instrument.questions[endel].value = end.value;
 
@@ -587,13 +592,13 @@ sk3.forEach(item => {
             const error = locales[lang]['At_least_one_brother_or_sister'];
             const sk3_1 = document.getElementById("sk3_1") as HTMLInputElement;
             const sk3_2 = document.getElementById("sk3_2") as HTMLInputElement;
+            errorHandler.removeArrayError(sk3, error);
 
             if (suma == 0) {
                 errorHandler.addArrayError(sk3, error);
                 instrument.questions["sk3_1"].value = "-9";
                 instrument.questions["sk3_2"].value = "-9";
             } else {
-                errorHandler.removeArrayError(sk3, error);
                 instrument.questions["sk3_1"].value = sk3_1.value;
                 instrument.questions["sk3_2"].value = sk3_2.value;
             }
