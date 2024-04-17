@@ -17,7 +17,7 @@ span.errorSpan {
 
 .inputErrorStyle {
     border: 1px solid red !important;
-    background-color: rgba(255, 0, 0, 0.1);
+    background-color: rgba(255, 0, 0, 0.1) !important;
 }
 
 .overrideBorder {
@@ -26,24 +26,24 @@ span.errorSpan {
 }
 
 .error-in-field {
-    border: 1px solid red;
-    background-color: rgba(255, 0, 0, 0.1);
+    border: 1px solid red!important;
+    background-color: rgba(255, 0, 0, 0.1)!important;
 }
 
 .error-in-field:focus {
-    border: 1px solid red;
-    background-color: rgba(255, 0, 0, 0.1);
-    box-shadow: 0 0 0 0.25rem rgb(255 0 0 / 25%);
+    border: 1px solid red!important;
+    background-color: rgba(255, 0, 0, 0.1)!important;
+    box-shadow: 0 0 0 0.25rem rgb(255 0 0 / 25%)!important;
 }
 
 .error-in-radio {
-    background-color: rgba(255, 0, 0, 0.1);
-    border-radius: 3px;
-    padding: 5px;
+    background-color: rgba(255, 0, 0, 0.1)!important;
+    border-radius: 3px!important;
+    padding: 5px!important;
 }
 
 .error-in-radio .form-check-inline {
-    margin-bottom: 0px;
+    margin-bottom: 0px!important;
 }
 
 /* #debugForm {
