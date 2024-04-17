@@ -1,171 +1,119 @@
 import { ipcRenderer } from "electron";
-import { questions, questionOrder } from "./04_qmr_variables";
-import instrument from "../../libraries/instrument";
-import { QuestionObjectType, SaveInstrumentType } from "../../libraries/interfaces";
-import { util, errorHandler } from "../../libraries/validation_helpers";
-
-import * as _flatpickr from 'flatpickr';
-import { FlatpickrFn } from 'flatpickr/dist/types/instance';
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-const flatpickr: FlatpickrFn = _flatpickr as any;
-import { Russian } from "flatpickr/dist/l10n/ru";
-import { UzbekLatin } from "flatpickr/dist/l10n/uz_latn";
-import { administrative } from "../../libraries/administrative";
-
-const i9 = (<HTMLInputElement>document.getElementById('i9'));
+declare global {
+    interface Window {
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        require: any;
+    }
+}
+const $ = window.require('jquery');
+const dt = window.require('datatables.net-dt');
+dt(window, $);
 
 
 export const yplcs = {
     init: async () => {
 
-        const lang = localStorage.getItem("language");
+        ipcRenderer.send('getYPLCS');
 
-        const flatpickrConfig1: {
-            enableTime: boolean;
-            dateFormat: string;
-            maxDate: string;
-            locale?: typeof Russian | typeof UzbekLatin
-        } = {
-            enableTime: false,
-            dateFormat: "Y",
-            maxDate: "31/03/2024"
-        }
-
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        const flatpickrConfig2: {
-            enableTime: boolean;
-            dateFormat: string;
-            maxDate: string;
-            locale?: typeof Russian | typeof UzbekLatin
-        } = {
-            enableTime: false,
-            dateFormat: "m/Y",
-            maxDate: "31/03/2024"
-        }
-
-        if (lang == "uz") {
-            flatpickrConfig1.locale = UzbekLatin;
-            flatpickrConfig2.locale = UzbekLatin;
-        }
-        if (lang == "ru") {
-            flatpickrConfig1.locale = Russian;
-            flatpickrConfig2.locale = Russian;
-        }
-
-        const af5_dates = [
-            'af5_1_d', 'af5_2_d', 'af5_3_d', 'af5_4_d', 'af5_5_d',
-            'af5_6_d', 'af5_7_d', 'af5_8_d', 'af5_9_d', 'af5_10_d'
-        ]
-
-        af5_dates.forEach(item => {
-            flatpickr((<HTMLInputElement>document.getElementById(item)), flatpickrConfig1);
+        (<HTMLButtonElement>document.getElementById('add_young_people')).addEventListener('click', () => {
+            ipcRenderer.send('changeWindow', {
+                'name': 'instruments',
+                'instrument': 'YPLCS',
+            });
         });
 
-        flatpickr((<HTMLInputElement>document.getElementById('i10')), flatpickrConfig1);
-        flatpickr((<HTMLInputElement>document.getElementById('af13b')), flatpickrConfig2);
+        const lang = localStorage.getItem('language');
+        let langpath = '';
+        if (lang === 'ru') {
+            langpath = '../../locales/tables_ru.json';
+        } else if (lang === 'uz') {
+            langpath = '../../locales/tables_uz.json';
+        }
 
-        ipcRenderer.on("instrumentDataReady", (_event, args) => {
-
-            // set instrument question !!!!!!
-            instrument.setQuestions(questions, questionOrder);
-            let instrumentID = null;
-
-            if (args.instrument && args.instrument.length > 0) {
-                instrumentID = parseInt(args.instrument[0].id);
-
-                for (const item of args.instrument) {
-                    instrument.seteazaValoareElement(item.variable, item.value);
-                }
-
-            } else {
-                const q1 = (<HTMLInputElement>document.getElementById('q1'));
-                // two digit day & month
-                q1.value = new Date().getDate().toString().padStart(2, '0') + "/" + (new Date().getMonth() + 1).toString().padStart(2, '0') + "/" + new Date().getFullYear().toString();
-
-                if (args.userData) {
-                    // set default values for user
-                    const q2 = (<HTMLInputElement>document.getElementById('q2'));
-                    q2.value = args.userData.first_name + " " + args.userData.patronymics + " " + args.userData.last_name;
-                    const q3 = (<HTMLInputElement>document.getElementById('q3'));
-                    q3.value = args.userData.position;
-                    const q4 = (<HTMLInputElement>document.getElementById('q4'));
-                    q4.value = args.userData.profession;
-                    const q5 = (<HTMLInputElement>document.getElementById('q5'));
-                    q5.value = args.userData.phone;
-                    const q6 = (<HTMLInputElement>document.getElementById('q6'));
-                    q6.value = args.userData.email;
-                }
-                if (args.institutionData) {
-                    // set default values for institution
-                    const i1 = (<HTMLInputElement>document.getElementById('i1'));
-                    i1.value = args.institutionData.name;
-                    const i2 = (<HTMLInputElement>document.getElementById('i2'));
-                    i2.value = args.institutionData.code;
-                    const i3 = (<HTMLInputElement>document.getElementById('i3'));
-                    i3.value = args.institutionData.address;
-                    const i4 = (<HTMLInputElement>document.getElementById('i4'));
-                    i4.value = args.institutionData.atuCode;
-
-                    const i4a = (<HTMLInputElement>document.getElementById('i4a'));
-                    const i4b = (<HTMLInputElement>document.getElementById('i4b'));
-                    const i4c = (<HTMLInputElement>document.getElementById('i4c'));
-
-                    const regions = Object.keys(administrative);
-                    if (regions.indexOf(args.institutionData.region) >= 0) {
-
-                        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-                        i4a.value = (administrative[args.institutionData.region] as any)[lang];
-                        const regdist = administrative[i4a.value].districts;
-                        const districts = Object.keys(regdist);
-
-                        if (districts.indexOf(args.institutionData.district) >= 0) {
-                            // eslint-disable-next-line @typescript-eslint/no-explicit-any
-                            i4b.value = (regdist[args.institutionData.district] as any)[lang];
-
-                            const regdisatu = administrative[i4a.value].districts[i4b.value].settlements;
-
-                            if (regdisatu) {
-                                const settlements = Object.keys(regdisatu);
-                                // TODO -- To be updated -- Type of settlement
-                                if (settlements.indexOf(args.institutionData.settlement) >= 0) {
-                                    i4c.value = (regdisatu[args.institutionData.settlement] as { [key: string]: string })[lang];
-                                }
-                            }
-                        }
-                    }
-
-                    const i4d = (<HTMLInputElement>document.getElementById('i4d'));
-                    i4d.value = args.institutionData.district;
-
-                    // Type of institution
-                    i9.value = args.institutionData.type;
-
-                }
-
+        const table = $('#young_people_list').DataTable({
+            "language": {
+                "url": langpath
+            },
+            "createdRow": function (row: any) {
+                // $(row).addClass('text-center');
+                $(row).addClass('align-middle');
             }
-
-            instrument.start(instrumentID, instrument.trimis, saveChestionar, validateChestionar);
-
-            //TODO: functie de i4d (type of settlement, completata automat)
-            // daca NU e comunitate rurala atunci sa se inchida la5 (si sa fie setat cu "-7")
         });
+
+        ipcRenderer.on('yplcs', (event, yplcs) => {
+            fillTable(table, yplcs);
+        });
+
     }
 }
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-const validateChestionar = (_questions: QuestionObjectType) => {
-    return true;
+
+const fillTable = (table: any, yplcs: Array<any>) => {
+    table.clear().draw();
+    yplcs.forEach((item) => {
+
+        const buttonEdit = document.createElement('button');
+        buttonEdit.innerHTML = '<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="pen" class="fill-white w-4 h-4" role="img" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><path fill="currentColor" d="M290.74 93.24l128.02 128.02-277.99 277.99-114.14 12.6C11.35 513.54-1.56 500.62.14 485.34l12.7-114.22 277.9-277.88zm207.2-19.06l-60.11-60.11c-18.75-18.75-49.16-18.75-67.91 0l-56.55 56.55 128.02 128.02 56.55-56.55c18.75-18.76 18.75-49.16 0-67.91z"></path></svg>';
+        //  text-white px-4 py-2 rounded
+        buttonEdit.classList.add('bg-sky-500');
+        buttonEdit.classList.add('text-white');
+        buttonEdit.classList.add('px-2');
+        buttonEdit.classList.add('py-1.5');
+        buttonEdit.classList.add('rounded');
+        buttonEdit.classList.add('editButton');
+        buttonEdit.setAttribute("data-myId", item.id + '');
+        buttonEdit.setAttribute("title", "Edit item");
+
+        const buttonDelete = document.createElement('button');
+        buttonDelete.innerHTML = '<svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="trash-alt" class="fill-white w-4 h-4" role="img" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 448 512"><path fill="currentColor" d="M268 416h24a12 12 0 0 0 12-12V188a12 12 0 0 0-12-12h-24a12 12 0 0 0-12 12v216a12 12 0 0 0 12 12zM432 80h-82.41l-34-56.7A48 48 0 0 0 274.41 0H173.59a48 48 0 0 0-41.16 23.3L98.41 80H16A16 16 0 0 0 0 96v16a16 16 0 0 0 16 16h16v336a48 48 0 0 0 48 48h288a48 48 0 0 0 48-48V128h16a16 16 0 0 0 16-16V96a16 16 0 0 0-16-16zM171.84 50.91A6 6 0 0 1 177 48h94a6 6 0 0 1 5.15 2.91L293.61 80H154.39zM368 464H80V128h288zm-212-48h24a12 12 0 0 0 12-12V188a12 12 0 0 0-12-12h-24a12 12 0 0 0-12 12v216a12 12 0 0 0 12 12z"></path></svg>';
+        buttonDelete.classList.add('bg-red-500');
+        buttonDelete.classList.add('text-white');
+        buttonDelete.classList.add('px-2');
+        buttonDelete.classList.add('py-1.5');
+        buttonDelete.classList.add('rounded');
+        buttonDelete.classList.add('deleteButton');
+        buttonDelete.setAttribute("data-myId", item.id + '');
+        buttonDelete.setAttribute("title", "Delete item");
+
+        const buttons = document.createElement('div');
+        buttons.classList.add('flex');
+        buttons.classList.add('justify-end');
+        buttons.classList.add('gap-2');
+        buttons.appendChild(buttonEdit);
+        buttons.appendChild(buttonDelete);
+
+        table.row.add([
+            item.pi1,
+            item.pi1a,
+            item.pi1b,
+            item.pi1c,
+            buttons.outerHTML
+        ]).draw();
+
+
+
+        document.querySelectorAll('.editButton').forEach(item => {
+            item.addEventListener('click', editItem.bind(this, (<HTMLButtonElement>item).dataset.myid));
+        });
+        document.querySelectorAll('.deleteButton').forEach(item => {
+            item.addEventListener('click', deleteItem.bind(this, (<HTMLButtonElement>item).dataset.myid));
+        });
+    });
 };
 
-const saveChestionar = (obj: SaveInstrumentType): void => {
-    obj.table = "qmr";
-    ipcRenderer.send("saveInstrument", obj);
-}
 
+// modifica modifica
+const editItem = function (id: number) {
+    ipcRenderer.send('changeWindow', {
+        'name': 'instruments',
+        'instrument': 'YPLCS',
+        'id': id,
+    });
+};
 
-
-
-
-// Validari custom
-
-
+// sterge eveniment
+const deleteItem = function (id: number) {
+    ipcRenderer.send('deleteYPLCS', {
+        'id': id,
+    });
+};

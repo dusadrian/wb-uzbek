@@ -134,5 +134,7 @@
 	"The following fields are mandatory: IG1, IG2, IG3!": "The following fields are mandatory: IG1, IG2, IG3!",
 	"t_eef_list": "External evaluation form of the childcare institutions and boarding schools",
 	"t_add_evaluation": "Add evaluation",
-	"t_institution": "Institution"
+	"t_institution": "Institution",
+	"t_add_young_people": "Add young people",
+	"t_yplcs_list": "Questionnaire about the young person leaving the child care system"
 }

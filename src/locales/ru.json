@@ -126,5 +126,7 @@
 	"t_add_patronat_family": "t_add_patronat_family",
 	"t_eef_list": "External evaluation form of the childcare institutions and boarding schools",
 	"t_add_evaluation": "Add evaluation",
-	"t_institution": "учреждение"
+	"t_institution": "учреждение",
+	"t_add_young_people": "Add young people",
+	"t_yplcs_list": "Questionnaire about the young person leaving the child care system"
 }

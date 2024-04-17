@@ -173,6 +173,9 @@ ipcMain.on("changeWindow", (event, args) => {
         case "eef":
             goToEEFList();
             break;
+        case "yplcs":
+            goToYPLCSList();
+            break;
         default:
             mainWindow.loadURL("file://" + newPage);
     }
