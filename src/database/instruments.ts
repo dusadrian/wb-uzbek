@@ -339,3 +339,45 @@ export const deleteEEF = async (id: string, db: DuckDB.Database) => {
     });
     return await connection;
 }
+
+// Instrument 5
+export const yplcsList = async (db: DuckDB.Database) => {
+    const connection = new Promise<Array<Instrument>>((resolve) => {
+
+        const sql = `
+        SELECT c.id,
+            c.uuid,
+            MAX(CASE WHEN variable = 'pi1' THEN value ELSE NULL END) pi1,
+            MAX(CASE WHEN variable = 'pi1a' THEN value ELSE NULL END) pi1a,
+            MAX(CASE WHEN variable = 'pi1b' THEN value ELSE NULL END) pi1b,
+            MAX(CASE WHEN variable = 'pi1c' THEN value ELSE NULL END) pi1c,
+        FROM instrument_yplcs AS c
+        LEFT JOIN values_yplcs AS v ON v.instrument_id = c.id
+        GROUP BY c.id, c.uuid;`;
+
+        db.all(sql, (error, result) => {
+            if (error) {
+                console.log("===== Error get instrument PFQ (Patronat Family Questionnaire) =====");
+                console.log(error);
+            }
+            resolve(result as Array<Instrument>);
+        });
+    });
+    return await connection;
+}
+export const deleteYPLCS = async (id: string, db: DuckDB.Database) => {
+    const connection = new Promise<boolean>((resolve) => {
+        db.run(`DELETE FROM instrument_yplcs WHERE id = '${id}'`, (error) => {
+            if (error) {
+                console.log(error);
+            }
+            db.run(`DELETE FROM values_yplcs WHERE instrument_id = '${id}'`, (error) => {
+                if (error) {
+                    console.log(error);
+                }
+                resolve(true);
+            });
+        });
+    });
+    return await connection;
+}

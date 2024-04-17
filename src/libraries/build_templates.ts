@@ -19,6 +19,11 @@ import * as path from "path";
 // import * as one_ru from "../templates/4_UZ_ChildDI_Material_Resources_ru.json";
 // import * as one_uz from "../templates/4_UZ_ChildDI_Material_Resources_uz.json";
 
+// Instrument 5
+// import * as one_en from "../templates/5_UZ_ChildDI_Youth_Leaving_Care_en.json";
+// import * as one_ru from "../templates/5_UZ_ChildDI_Youth_Leaving_Care_ru.json";
+// import * as one_uz from "../templates/5_UZ_ChildDI_Youth_Leaving_Care_uz.json";
+
 // Instrument 6
 // import * as one_en from "../templates/6_UZ_ChildDI_Entries_Exists_Sheet_en.json";
 // import * as one_ru from "../templates/6_UZ_ChildDI_Entries_Exists_Sheet_ru.json";
@@ -58,6 +63,11 @@ export default function build_templates() {
     // writeFileSync(path.join(__dirname, "../../src/templates/4_UZ_ChildDI_Material_Resources_en.html"), etaObj.render("4_UZ_ChildDI_Material_Resources.eta", one_en))
     // writeFileSync(path.join(__dirname, "../../src/templates/4_UZ_ChildDI_Material_Resources_ru.html"), etaObj.render("4_UZ_ChildDI_Material_Resources.eta", one_ru))
     // writeFileSync(path.join(__dirname, "../../src/templates/4_UZ_ChildDI_Material_Resources_uz.html"), etaObj.render("4_UZ_ChildDI_Material_Resources.eta", one_uz))
+
+    // Instrument 5
+    // writeFileSync(path.join(__dirname, "../../src/templates/5_UZ_ChildDI_Youth_Leaving_Care_en.html"), etaObj.render("5_UZ_ChildDI_Youth_Leaving_Care.eta", one_en))
+    // writeFileSync(path.join(__dirname, "../../src/templates/5_UZ_ChildDI_Youth_Leaving_Care_ru.html"), etaObj.render("5_UZ_ChildDI_Youth_Leaving_Care.eta", one_ru))
+    // writeFileSync(path.join(__dirname, "../../src/templates/5_UZ_ChildDI_Youth_Leaving_Care_uz.html"), etaObj.render("5_UZ_ChildDI_Youth_Leaving_Care.eta", one_uz))
 
     // Instrument 6
     // writeFileSync(path.join(__dirname, "../../src/templates/6_UZ_ChildDI_Entries_Exists_Sheet_en.html"), etaObj.render("6_UZ_ChildDI_Entries_Exists_Sheet.eta", one_en))

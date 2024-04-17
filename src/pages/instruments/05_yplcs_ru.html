@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8" />
+        <title>WorldBank</title>
+        <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src http: https: data: ; script-src 'self';" />
+        <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; img-src http: https: data: ; script-src 'self';" />
+        <link href="../../../dist/main.css" rel="stylesheet">
+        <link rel="stylesheet" href="../../../node_modules/flatpickr/dist/flatpickr.min.css">
+    </head>
+
+    <body class="relative max-h-screen">
+        <div class="fixed top-0 right-0 left-0 bg-slate-200 h-10 z-50 shadow" id="header">
+        </div>
+        <div class="relative w-full mt-10 pb-10 h-[calc(100vh-5.5rem)] overflow-y-auto">
+
+            <footer id="footer" class="fixed bottom-0 w-full h-12 bg-slate-200 shadow">
+                <div class="flex justify-center h-full items-center">
+                    <button type="button"
+                            class="flex items-center gap-2 text-white bg-menuButton/80 hover:bg-menuButton focus:ring-4 focus:ring-menuButton/50 font-medium rounded-lg text-sm px-3 py-1"
+                            id="salveazaForm">
+                        <svg class="fill-white w-4 h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                            <!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                            <path
+                                  d="M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V173.3c0-17-6.7-33.3-18.7-45.3L352 50.7C340 38.7 323.7 32 306.7 32H64zm0 96c0-17.7 14.3-32 32-32H288c17.7 0 32 14.3 32 32v64c0 17.7-14.3 32-32 32H96c-17.7 0-32-14.3-32-32V128zM224 288a64 64 0 1 1 0 128 64 64 0 1 1 0-128z" />
+                        </svg>
+                        <span class="t_button_save"></span>
+                    </button>
+                    <button type="button"
+                            class="flex items-center gap-2 text-white bg-red-500 hover:bg-red-500 focus:ring-4 focus:ring-red-500/50 font-medium rounded-lg text-sm px-3 py-1 ml-4"
+                            id="debugForm">
+                        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="bug" class="fill-white w-4 h-4" role="img" xmlns="http://www.w3.org/2000/svg"
+                             viewbox="0 0 512 512">
+                            <path fill="currentColor"
+                                  d="M511.988 288.9c-.478 17.43-15.217 31.1-32.653 31.1H424v16c0 21.864-4.882 42.584-13.6 61.145l60.228 60.228c12.496 12.497 12.496 32.758 0 45.255-12.498 12.497-32.759 12.496-45.256 0l-54.736-54.736C345.886 467.965 314.351 480 280 480V236c0-6.627-5.373-12-12-12h-24c-6.627 0-12 5.373-12 12v244c-34.351 0-65.886-12.035-90.636-32.108l-54.736 54.736c-12.498 12.497-32.759 12.496-45.256 0-12.496-12.497-12.496-32.758 0-45.255l60.228-60.228C92.882 378.584 88 357.864 88 336v-16H32.666C15.23 320 .491 306.33.013 288.9-.484 270.816 14.028 256 32 256h56v-58.745l-46.628-46.628c-12.496-12.497-12.496-32.758 0-45.255 12.498-12.497 32.758-12.497 45.256 0L141.255 160h229.489l54.627-54.627c12.498-12.497 32.758-12.497 45.256 0 12.496 12.497 12.496 32.758 0 45.255L424 197.255V256h56c17.972 0 32.484 14.816 31.988 32.9zM257 0c-61.856 0-112 50.144-112 112h224C369 50.144 318.856 0 257 0z">
+                            </path>
+                        </svg>&nbsp;debug</button>
+                </div>
+            </footer>
+
+        </div>
+    </body>
+
+</html>

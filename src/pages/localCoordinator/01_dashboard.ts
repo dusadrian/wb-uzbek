@@ -63,6 +63,16 @@ export const localCoordinator = {
             });
         }
 
+        // Staff working in the service
+        const viewEdit_YPLCS = (<HTMLButtonElement>document.getElementById('viewEdit_YPLCS'));
+        if (viewEdit_YPLCS !== null) {
+            viewEdit_YPLCS.addEventListener('click', () => {
+                ipcRenderer.send('changeWindow', {
+                    'name': 'yplcs',
+                });
+            });
+        }
+
         // Institution details
         (<HTMLButtonElement>document.getElementById('viewEdit_ID')).addEventListener('click', () => {
             ipcRenderer.send('changeWindow', {

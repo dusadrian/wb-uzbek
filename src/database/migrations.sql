@@ -174,6 +174,24 @@ CREATE TABLE values_eef (
     PRIMARY KEY (instrument_id, variable)
 );
 
+-- Create instrument 5
+CREATE SEQUENCE id_instrument_yplcs_sequence START 1;
+
+CREATE TABLE instrument_yplcs (
+    id INTEGER DEFAULT nextval('id_instrument_yplcs_sequence'),
+    uuid UUID DEFAULT uuid(),
+    created_at TIMESTAMP DEFAULT current_timestamp,
+    updated_at TIMESTAMP DEFAULT current_timestamp,
+    PRIMARY KEY (id)
+);
+
+CREATE TABLE values_yplcs (
+    instrument_id INTEGER NOT NULL,
+    variable VARCHAR NOT NULL,
+    value VARCHAR NOT NULL,
+    PRIMARY KEY (instrument_id, variable)
+);
+
 
 INSERT INTO
     institutions (name, code, address, atuCode, region, district, type, staffCount, childrenCount, youngAdultCount, childrenHomeCount, patronatCount)

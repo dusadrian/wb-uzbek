@@ -88,11 +88,7 @@ window.addEventListener("DOMContentLoaded", () => {
         case 'main/01_dashboard.html':
             mainDashboard();
             break;
-        case 'instruments/04_qmr_en.html':
-        case 'instruments/04_qmr_uz.html':
-        case 'instruments/04_qmr_ru.html':
-            instrumentQMR();
-            break;
+
         case 'instruments/01_cpis.html':
             CPIS();
             break;
@@ -108,6 +104,19 @@ window.addEventListener("DOMContentLoaded", () => {
         case 'instruments/03_csr_uz.html':
         case 'instruments/03_csr_ru.html':
             instrumentCSR();
+            break;
+        case 'instruments/04_qmr_en.html':
+        case 'instruments/04_qmr_uz.html':
+        case 'instruments/04_qmr_ru.html':
+            instrumentQMR();
+            break;
+        case 'instruments/05_yplcs.html':
+            YPLCS();
+            break;
+        case 'instruments/05_yplcs_en.html':
+        case 'instruments/05_yplcs_uz.html':
+        case 'instruments/05_yplcs_ru.html':
+            instrumentYPLCS();
             break;
         case 'instruments/06_dsee_en.html':
         case 'instruments/06_dsee_uz.html':
@@ -313,7 +322,7 @@ const evaluatorDashboard = () => {
     topMenu('index');
 
     translatePage();
-    
+
     const importFile = async () => {
         return await import("./pages/evaluator/01_dashboard");
     };
@@ -496,6 +505,32 @@ const instrumentEEF = () => {
         return await import("./pages/instruments/09_eef_instrument");
     };
     importFile().then(result => result.instrument9.init().catch(error => {
+        console.log(error);
+    }));
+};
+
+// Instrument 5 Questionnaire about the young person leaving the child care system
+const YPLCS = () => {
+
+    topMenu('localCoordinator/01_dashboard');
+
+    translatePage();
+    const importFile = async () => {
+        return await import("./pages/instruments/05_yplcs");
+    };
+    importFile().then(result => result.yplcs.init().catch(error => {
+        console.log(error);
+    }));
+};
+const instrumentYPLCS = () => {
+
+    topMenu('instruments/05_yplcs');
+
+    translatePage();
+    const importFile = async () => {
+        return await import("./pages/instruments/05_yplcs_instrument");
+    };
+    importFile().then(result => result.instrument5.init().catch(error => {
         console.log(error);
     }));
 };

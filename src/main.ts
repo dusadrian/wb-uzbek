@@ -305,6 +305,37 @@ ipcMain.on('deleteStaff', (event, args) => {
     });
 });
 
+// Instrument 5
+const goToYPLCSList = () => {
+    const newPage = path.join(__dirname, "../src/pages/instruments/05_yplcs.html");
+    mainWindow.loadURL("file://" + newPage);
+};
+ipcMain.on('getYPLCS', () => {
+    database.yplcsList(db).then((result) => {
+        mainWindow.webContents.send("yplcs", result);
+    });
+});
+ipcMain.on('deleteYPLCS', (event, args) => {
+    // save to DB
+    dialog.showMessageBox(mainWindow, {
+        type: 'warning',
+        message: i18n.__('Are you sure you want to delete this item?'),
+        buttons: ['Yes', 'No']
+    }).then((result) => {
+        if (result.response === 0) {
+            database.deleteYPLCS(args.id, db).then(() => {
+                // send message
+                dialog.showMessageBox(mainWindow, {
+                    type: 'info',
+                    message: i18n.__('Item deleted.'),
+                }).then(() => {
+                    goToYPLCSList();
+                });
+            });
+        }
+    });
+});
+
 // Instrument 7
 const goToFTCHList = () => {
     const newPage = path.join(__dirname, "../src/pages/instruments/07_ftch.html");
@@ -421,6 +452,9 @@ const goToInstrument = (instrument: string, id: string) => {
             break;
         case "EEF":
             goToEEF(id);
+            break;
+        case "YPLCS":
+            goToYPLCS(id);
             break;
         default:
             dialog.showMessageBox(mainWindow, {
@@ -675,6 +709,28 @@ const goToEEF = (id: string) => {
         if (id) {
             mainWindow.webContents.once("did-finish-load", () => {
                 database.instrumentGet(id, 'eef', db).then((questions) => {
+                    mainWindow.webContents.send("instrumentDataReady", {
+                        questions: questions,
+                        userData: userDataArray[0],
+                    });
+                });
+            });
+        } else {
+            mainWindow.webContents.once("did-finish-load", () => {
+                mainWindow.webContents.send("instrumentDataReady", {
+                    userData: userDataArray[0],
+                });
+            });
+        }
+    });
+}
+const goToYPLCS = (id: string) => {
+    const newPage = path.join(__dirname, "../src/pages/instruments/05_yplcs_" + appSession.language + ".html");
+    mainWindow.loadURL("file://" + newPage);
+    database.getUserData(appSession.userId).then((userDataArray) => {
+        if (id) {
+            mainWindow.webContents.once("did-finish-load", () => {
+                database.instrumentGet(id, 'yplcs', db).then((questions) => {
                     mainWindow.webContents.send("instrumentDataReady", {
                         questions: questions,
                         userData: userDataArray[0],
