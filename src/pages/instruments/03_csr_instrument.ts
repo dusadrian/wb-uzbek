@@ -9,15 +9,19 @@ import { FlatpickrFn } from 'flatpickr/dist/types/instance';
 const flatpickr: FlatpickrFn = _flatpickr as any;
 import { Russian } from "flatpickr/dist/l10n/ru";
 import { UzbekLatin } from "flatpickr/dist/l10n/uz_latn";
-import { administrative, Administrative } from "../../libraries/administrative";
+import { administrative } from "../../libraries/administrative";
 
 export const instrument3 = {
     init: async () => {
 
         const lang = localStorage.getItem("language");
 
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        const flatpickrConfig: { enableTime: boolean; dateFormat: string; locale?: any; maxDate?: string; } = {
+        const flatpickrConfig: {
+            enableTime: boolean;
+            dateFormat: string;
+            maxDate: string;
+            locale?: typeof Russian | typeof UzbekLatin
+        } = {
             enableTime: false,
             dateFormat: "d/m/Y",
             maxDate: 'today'
@@ -26,6 +30,7 @@ export const instrument3 = {
         if (lang == "uz") {
             flatpickrConfig.locale = UzbekLatin;
         }
+
         if (lang == "ru") {
             flatpickrConfig.locale = Russian;
         }
@@ -36,7 +41,7 @@ export const instrument3 = {
         ipcRenderer.on("instrumentDataReady", (_event, args) => {
 
             console.log(args);
-            
+
 
             // set instrument question !!!!!!
             instrument.setQuestions(questions, questionOrder);
@@ -67,7 +72,9 @@ export const instrument3 = {
                     const q6 = (<HTMLInputElement>document.getElementById('q6'));
                     q6.value = args.userData.email;
                 }
+
                 if (args.institutionData) {
+
                     // set default values for institution
                     const i1 = (<HTMLInputElement>document.getElementById('i1'));
                     i1.value = args.institutionData.name;
@@ -78,12 +85,32 @@ export const instrument3 = {
                     const i4 = (<HTMLInputElement>document.getElementById('i4'));
                     i4.value = args.institutionData.atuCode;
                     const i4a = (<HTMLInputElement>document.getElementById('i4a'));
-                    i4a.value = args.institutionData.region;
                     const i4b = (<HTMLInputElement>document.getElementById('i4b'));
-                    i4b.value = args.institutionData.district;
-                    // TODO -- To be updated -- Settlement
                     const i4c = (<HTMLInputElement>document.getElementById('i4c'));
-                    i4c.value = args.institutionData.district;
+
+                    const regions = Object.keys(administrative);
+                    if (regions.indexOf(args.institutionData.region) >= 0) {
+
+                        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                        i4a.value = (administrative[args.institutionData.region] as any)[lang];
+                        const regdist = administrative[i4a.value].districts;
+                        const districts = Object.keys(regdist);
+
+                        if (districts.indexOf(args.institutionData.district) >= 0) {
+                            // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                            i4b.value = (regdist[args.institutionData.district] as any)[lang];
+
+                            const regdisatu = administrative[i4a.value].districts[i4b.value].settlements;
+
+                            if (regdisatu) {
+                                const settlements = Object.keys(regdisatu);
+                                if (settlements.indexOf(args.institutionData.settlement) >= 0) {
+                                    i4c.value = (regdisatu[args.institutionData.settlement] as { [key: string]: string })[lang];
+                                }
+                            }
+                        }
+                    }
+
                     // TODO -- To be updated -- Type of settlement
                     const i4d = (<HTMLInputElement>document.getElementById('i4d'));
                     i4d.value = args.institutionData.district;
