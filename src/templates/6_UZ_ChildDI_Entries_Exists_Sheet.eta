@@ -240,13 +240,13 @@
                         <small class="italic"><%= it.t76 %></small>
                     </td>
                     <td class="p-2 text-center">
-                        <input type="text" id="tnet_b" name="tnet_b" disabled class="bg-white border disabled:bg-gray-100 border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
+                        <input type="text" id="tnet_b" name="tnet_b" readonly class="read-only:bg-gray-100 bg-white border disabled:bg-gray-100 border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
                     </td>
                     <td class="p-2 text-center">
-                        <input type="text" id="tnet_g" name="tnet_g" disabled class="bg-white border disabled:bg-gray-100 border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
+                        <input type="text" id="tnet_g" name="tnet_g" readonly class="read-only:bg-gray-100 bg-white border disabled:bg-gray-100 border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
                     </td>
                     <td class="p-2 text-center">
-                        <input type="text" id="tnet_t" name="tnet_t" disabled class="bg-white border disabled:bg-gray-100 border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
+                        <input type="text" id="tnet_t" name="tnet_t" readonly class="read-only:bg-gray-100 bg-white border disabled:bg-gray-100 border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
                     </td>
                 </tr>
             </tbody>
@@ -304,19 +304,18 @@
                         <small class="italic"><%= it.t89 %></small>
                     </td>
                     <td class="p-2 text-center">
-                        <input type="text" id="nest_b" name="nest_b" disabled class="bg-white border disabled:bg-gray-100 border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
+                        <input type="text" id="nest_b" name="nest_b" readonly class="read-only:bg-gray-100 bg-white border disabled:bg-gray-100 border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
                     </td>
                     <td class="p-2 text-center">
-                        <input type="text" id="nest_g" name="nest_g" disabled class="bg-white border disabled:bg-gray-100 border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
+                        <input type="text" id="nest_g" name="nest_g" readonly class="read-only:bg-gray-100 bg-white border disabled:bg-gray-100 border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
                     </td>
                     <td class="p-2 text-center">
-                        <input type="text" id="nest_t" name="nest_t" disabled class="bg-white border disabled:bg-gray-100 border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
+                        <input type="text" id="nest_t" name="nest_t" readonly class="read-only:bg-gray-100 bg-white border disabled:bg-gray-100 border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
                     </td>
                 </tr>
             </tbody>
         </table>
 
-        <% /* Aici ====== */ %>
         <p class="mt-6 font-medium"><%= it.t90 %></p>
         <table class="w-full" aria-describedby="<%= it.t90 %>">
             <thead>
@@ -430,13 +429,13 @@
                         <small class="italic"><%= it.t112 %></small>
                     </td>
                     <td class="p-2 text-center">
-                        <input type="text" id="neo_b" name="neo_b" disabled class="bg-white border disabled:bg-gray-100 border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
+                        <input type="text" id="neo_b" name="neo_b" readonly class="read-only:bg-gray-100 bg-white border disabled:bg-gray-100 border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
                     </td>
                     <td class="p-2 text-center">
-                        <input type="text" id="neo_g" name="neo_g" disabled class="bg-white border disabled:bg-gray-100 border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
+                        <input type="text" id="neo_g" name="neo_g" readonly class="read-only:bg-gray-100 bg-white border disabled:bg-gray-100 border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
                     </td>
                     <td class="p-2 text-center">
-                        <input type="text" id="neo_t" name="neo_t" disabled class="bg-white border disabled:bg-gray-100 border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
+                        <input type="text" id="neo_t" name="neo_t" readonly class="read-only:bg-gray-100 bg-white border disabled:bg-gray-100 border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
                     </td>
                 </tr>
             </tbody>
@@ -543,13 +542,13 @@
                         <small class="italic"><%= it.t135 %></small>
                     </td>
                     <td class="p-2 text-center">
-                        <input type="text" id="next_b" name="next_b" disabled class="bg-white border disabled:bg-gray-100 border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
+                        <input type="text" id="next_b" name="next_b" readonly class="read-only:bg-gray-100 bg-white border disabled:bg-gray-100 border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
                     </td>
                     <td class="p-2 text-center">
-                        <input type="text" id="next_g" name="next_g" disabled class="bg-white border disabled:bg-gray-100 border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
+                        <input type="text" id="next_g" name="next_g" readonly class="read-only:bg-gray-100 bg-white border disabled:bg-gray-100 border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
                     </td>
                     <td class="p-2 text-center">
-                        <input type="text" id="next_t" name="next_t" disabled class="bg-white border disabled:bg-gray-100 border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
+                        <input type="text" id="next_t" name="next_t" readonly class="read-only:bg-gray-100 bg-white border disabled:bg-gray-100 border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
                     </td>
                 </tr>
             </tbody>
@@ -620,13 +619,13 @@
                         <small class="italic"><%= it.t150 %></small>
                     </td>
                     <td class="p-2 text-center">
-                        <input type="text" id="eost_b" name="eost_b" disabled class="bg-white border disabled:bg-gray-100 border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
+                        <input type="text" id="eost_b" name="eost_b" readonly class="read-only:bg-gray-100 bg-white border disabled:bg-gray-100 border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
                     </td>
                     <td class="p-2 text-center">
-                        <input type="text" id="eost_g" name="eost_g" disabled class="bg-white border disabled:bg-gray-100 border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
+                        <input type="text" id="eost_g" name="eost_g" readonly class="read-only:bg-gray-100 bg-white border disabled:bg-gray-100 border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
                     </td>
                     <td class="p-2 text-center">
-                        <input type="text" id="eost_t" name="eost_t" disabled class="bg-white border disabled:bg-gray-100 border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
+                        <input type="text" id="eost_t" name="eost_t" readonly class="read-only:bg-gray-100 bg-white border disabled:bg-gray-100 border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
                     </td>
                 </tr>
             </tbody>
@@ -744,13 +743,13 @@
                         <p class="block"><%= it.t171 %>. <%= it.t172 %></p>
                     </td>
                     <td class="p-2 text-center">
-                        <input type="text" id="extt_b" name="extt_b" disabled class="bg-white border disabled:bg-gray-100 border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
+                        <input type="text" id="extt_b" name="extt_b" readonly class="read-only:bg-gray-100 bg-white border disabled:bg-gray-100 border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
                     </td>
                     <td class="p-2 text-center">
-                        <input type="text" id="extt_g" name="extt_g" disabled class="bg-white border disabled:bg-gray-100 border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
+                        <input type="text" id="extt_g" name="extt_g" readonly class="read-only:bg-gray-100 bg-white border disabled:bg-gray-100 border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
                     </td>
                     <td class="p-2 text-center">
-                        <input type="text" id="extt_t" name="extt_t" disabled class="bg-white border disabled:bg-gray-100 border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
+                        <input type="text" id="extt_t" name="extt_t" readonly class="read-only:bg-gray-100 bg-white border disabled:bg-gray-100 border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
                     </td>
                 </tr>
             </tbody>
@@ -808,13 +807,13 @@
                         <p class="block"><%= it.t183 %>. <%= it.t184 %></p>
                     </td>
                     <td class="p-2 text-center">
-                        <input type="text" id="tnr1_b" name="tnr1_b" disabled class="bg-white border disabled:bg-gray-100 border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
+                        <input type="text" id="tnr1_b" name="tnr1_b" readonly class="read-only:bg-gray-100 bg-white border disabled:bg-gray-100 border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
                     </td>
                     <td class="p-2 text-center">
-                        <input type="text" id="tnr1_g" name="tnr1_g" disabled class="bg-white border disabled:bg-gray-100 border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
+                        <input type="text" id="tnr1_g" name="tnr1_g" readonly class="read-only:bg-gray-100 bg-white border disabled:bg-gray-100 border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
                     </td>
                     <td class="p-2 text-center">
-                        <input type="text" id="tnr1_t" name="tnr1_t" disabled class="bg-white border disabled:bg-gray-100 border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
+                        <input type="text" id="tnr1_t" name="tnr1_t" readonly class="read-only:bg-gray-100 bg-white border disabled:bg-gray-100 border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
                     </td>
                 </tr>
             </tbody>

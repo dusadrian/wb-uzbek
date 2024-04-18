@@ -366,12 +366,12 @@ const instrument: InstrumentObjectType = {
 						const make = !!instrument.questions[key].readonly;
 						instrument.questions[key].disabled = make;
 						instrument.questions[key].value = instrument.enableRadioElement(key, make);
-					} else if (key != "codchest" && key != "uat_siruta" && key != "jud_siruta") {
+					// } else if (key != "codchest" && key != "uat_siruta" && key != "jud_siruta") { // nu mai e nevoie dar ca exemplu
+					} else {
 						// verificam daca nu este readonly, altfel nu il mai activam
 						const make = !!instrument.questions[key].readonly;
 						instrument.questions[key].disabled = make;
 						instrument.questions[key].value = instrument.enableElement(key, make);
-						if (key == "codchest") console.log(instrument.questions[key].value);
 					}
 				} catch (err) {
 					console.log(key);

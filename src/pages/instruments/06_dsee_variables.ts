@@ -357,10 +357,10 @@ export const questions: QuestionObjectType = {
     'tnet_b': {
         name: 'tnet_b',
         type: 'number',
-        value: '-7',
-        disabled: true,
+        value: '-9',
+        disabled: false,
         hidden: false,
-        readonly: true,
+        readonly: false,
         order: 32,
         active: function () { return (true) },
         error: ''
@@ -368,10 +368,10 @@ export const questions: QuestionObjectType = {
     'tnet_g': {
         name: 'tnet_g',
         type: 'number',
-        value: '-7',
-        disabled: true,
+        value: '-9',
+        disabled: false,
         hidden: false,
-        readonly: true,
+        readonly: false,
         order: 33,
         active: function () { return (true) },
         error: ''
@@ -379,10 +379,10 @@ export const questions: QuestionObjectType = {
     'tnet_t': {
         name: 'tnet_t',
         type: 'number',
-        value: '-7',
-        disabled: true,
+        value: '-9',
+        disabled: false,
         hidden: false,
-        readonly: true,
+        readonly: false,
         order: 34,
         active: function () { return (true) },
         error: ''
@@ -479,7 +479,7 @@ export const questions: QuestionObjectType = {
         name: 'nes3_t',
         type: 'number',
         value: '-7',
-        disabled: true,
+        disabled: false,
         hidden: false,
         readonly: true,
         order: 43,
@@ -489,10 +489,10 @@ export const questions: QuestionObjectType = {
     'nest_b': {
         name: 'nest_b',
         type: 'number',
-        value: '-7',
-        disabled: true,
+        value: '-9',
+        disabled: false,
         hidden: false,
-        readonly: true,
+        readonly: false,
         order: 44,
         active: function () { return (true) },
         error: ''
@@ -500,10 +500,10 @@ export const questions: QuestionObjectType = {
     'nest_g': {
         name: 'nest_g',
         type: 'number',
-        value: '-7',
-        disabled: true,
+        value: '-9',
+        disabled: false,
         hidden: false,
-        readonly: true,
+        readonly: false,
         order: 45,
         active: function () { return (true) },
         error: ''
@@ -511,10 +511,10 @@ export const questions: QuestionObjectType = {
     'nest_t': {
         name: 'nest_t',
         type: 'number',
-        value: '-7',
-        disabled: true,
+        value: '-9',
+        disabled: false,
         hidden: false,
-        readonly: true,
+        readonly: false,
         order: 46,
         active: function () { return (true) },
         error: ''
@@ -786,10 +786,10 @@ export const questions: QuestionObjectType = {
     'neo_b': {
         name: 'neo_b',
         type: 'number',
-        value: '-7',
-        disabled: true,
+        value: '-9',
+        disabled: false,
         hidden: false,
-        readonly: true,
+        readonly: false,
         order: 71,
         active: function () { return (true) },
         error: ''
@@ -797,10 +797,10 @@ export const questions: QuestionObjectType = {
     'neo_g': {
         name: 'neo_g',
         type: 'number',
-        value: '-7',
-        disabled: true,
+        value: '-9',
+        disabled: false,
         hidden: false,
-        readonly: true,
+        readonly: false,
         order: 72,
         active: function () { return (true) },
         error: ''
@@ -808,10 +808,10 @@ export const questions: QuestionObjectType = {
     'neo_t': {
         name: 'neo_t',
         type: 'number',
-        value: '-7',
-        disabled: true,
+        value: '-9',
+        disabled: false,
         hidden: false,
-        readonly: true,
+        readonly: false,
         order: 73,
         active: function () { return (true) },
         error: ''
