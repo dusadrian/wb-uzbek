@@ -84,31 +84,22 @@ export const instrument4 = {
 
                 if (args.userData) {
                     // set default values for user
-                    const q2 = (<HTMLInputElement>document.getElementById('q2'));
-                    q2.value = args.userData.first_name + " " + args.userData.patronymics + " " + args.userData.last_name;
-                    const q3 = (<HTMLInputElement>document.getElementById('q3'));
-                    q3.value = args.userData.position;
-                    const q4 = (<HTMLInputElement>document.getElementById('q4'));
-                    q4.value = args.userData.profession;
-                    const q5 = (<HTMLInputElement>document.getElementById('q5'));
-                    q5.value = args.userData.phone;
-                    const q6 = (<HTMLInputElement>document.getElementById('q6'));
-                    q6.value = args.userData.email;
+                    util.htmlElement('q2').value = args.userData.first_name + " " + args.userData.patronymics + " " + args.userData.last_name;
+                    util.htmlElement('q3').value = args.userData.position;
+                    util.htmlElement('q4').value = args.userData.profession;
+                    util.htmlElement('q5').value = args.userData.phone;
+                    util.htmlElement('q6').value = args.userData.email;
                 }
                 if (args.institutionData) {
                     // set default values for institution
-                    const i1 = (<HTMLInputElement>document.getElementById('i1'));
-                    i1.value = args.institutionData.name;
-                    const i2 = (<HTMLInputElement>document.getElementById('i2'));
-                    i2.value = args.institutionData.code;
-                    const i3 = (<HTMLInputElement>document.getElementById('i3'));
-                    i3.value = args.institutionData.address;
-                    const i4 = (<HTMLInputElement>document.getElementById('i4'));
-                    i4.value = args.institutionData.atuCode;
+                    util.htmlElement('i1').value = args.institutionData.name;
+                    util.htmlElement('i2').value = args.institutionData.code;
+                    util.htmlElement('i3').value = args.institutionData.address;
+                    util.htmlElement('i4').value = args.institutionData.atuCode;
 
-                    const i4a = (<HTMLInputElement>document.getElementById('i4a'));
-                    const i4b = (<HTMLInputElement>document.getElementById('i4b'));
-                    const i4c = (<HTMLInputElement>document.getElementById('i4c'));
+                    const i4a = util.htmlElement('i4a');
+                    const i4b = util.htmlElement('i4b');
+                    const i4c = util.htmlElement('i4c');
 
                     const regions = Object.keys(administrative);
                     if (regions.indexOf(args.institutionData.region) >= 0) {
@@ -171,15 +162,13 @@ const saveChestionar = (obj: SaveInstrumentType): void => {
 
 const i13bf = ['i13b', 'i13c', 'i13d', 'i13e', 'i13f'];
 const i13 = [...i13bf, 'i13a'];
-i13.forEach(item => {
-    (document.getElementById(item) as HTMLInputElement).addEventListener('change', () => {
+util.listenArray(i13, util.repString('change', i13.length), () => {
         if (util.inputsHaveValue(i13)) {
             errorHandler.removeArrayError(i13, 'a >= b + c + d + e + f')
             if (util.getInputDecimalValue('i13a') < util.makeSumFromElements(i13bf)) {
                 errorHandler.addArrayError(i13, 'a >= b + c + d + e + f');
             }
         }
-    })
 })
 
 const la6 = ['la6a', 'la6b'];
