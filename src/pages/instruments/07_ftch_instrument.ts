@@ -2,6 +2,7 @@ import { ipcRenderer } from "electron";
 import { questions, questionOrder } from "./07_ftch_variables";
 import instrument from "../../libraries/instrument";
 import { QuestionObjectType, SaveInstrumentType } from "../../libraries/interfaces";
+import { util, errorHandler } from "../../libraries/validation_helpers";
 
 import * as _flatpickr from 'flatpickr';
 import { FlatpickrFn } from 'flatpickr/dist/types/instance';
@@ -9,17 +10,32 @@ import { FlatpickrFn } from 'flatpickr/dist/types/instance';
 const flatpickr: FlatpickrFn = _flatpickr as any;
 import { Russian } from "flatpickr/dist/l10n/ru";
 import { UzbekLatin } from "flatpickr/dist/l10n/uz_latn";
-import { administrative } from "../../libraries/administrative";
+// import { administrative } from "../../libraries/administrative";
+
+
+const general_dates = [
+    'data', 'ifp2', 'ifm4', 'ift4'
+]
+
+const admission_dates = [
+    'fc4_c1c', 'fc4_c2c', 'fc4_c3c', 'fc4_c4c', 'fc4_c5c'
+]
+
 
 export const instrument7 = {
     init: async () => {
 
         const lang = localStorage.getItem("language");
 
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        const flatpickrConfig: { enableTime: boolean; dateFormat: string; locale?: any } = {
+        const flatpickrConfig: {
+            enableTime: boolean;
+            dateFormat: string;
+            maxDate: string;
+            locale?: typeof Russian | typeof UzbekLatin
+        } = {
             enableTime: false,
             dateFormat: "d/m/Y",
+            maxDate: "30/04/2024"
         }
 
         if (lang == "uz") {
@@ -29,8 +45,25 @@ export const instrument7 = {
             flatpickrConfig.locale = Russian;
         }
 
-        // flatpickr((<HTMLInputElement>document.getElementById('lk3')), flatpickrConfig);
+        const date_elements = [...general_dates, ...admission_dates];
 
+        const flatpickr_elements = date_elements.map((el) => {
+            const element = document.getElementById(el) as HTMLInputElement;
+            let config;
+            if (el == "ifp2") {
+                config = { ...flatpickrConfig, minDate: "01/01/1950" };
+            } else if (admission_dates.indexOf(el) >= 0) {
+                config = { ...flatpickrConfig, minDate: "01/01/1990" };
+                config.maxDate = "30/04/2024";
+            } else if (el != "data") {
+                config = { ...flatpickrConfig, minDate: "01/01/1930" };
+            }
+            return flatpickr(element, config);
+        });
+
+        const today = new Date();
+        flatpickr_elements[date_elements.indexOf('data')].setDate(today);
+        util.trigger("data", "change");
 
 
 
@@ -52,16 +85,11 @@ console.log(args);
             } else {
                 if (args.userData) {
                     // set default values for user
-                    const q2 = (<HTMLInputElement>document.getElementById('q2'));
-                    q2.value = args.userData.first_name + " " + args.userData.patronymics + " " + args.userData.last_name;
-                    const q3 = (<HTMLInputElement>document.getElementById('q3'));
-                    q3.value = args.userData.position;
-                    const q4 = (<HTMLInputElement>document.getElementById('q4'));
-                    q4.value = args.userData.profession;
-                    const q5 = (<HTMLInputElement>document.getElementById('q5'));
-                    q5.value = args.userData.phone;
-                    const q6 = (<HTMLInputElement>document.getElementById('q6'));
-                    q6.value = args.userData.email;
+                    util.htmlElement('q2').value = args.userData.first_name + " " + args.userData.patronymics + " " + args.userData.last_name;
+                    util.htmlElement('q3').value = args.userData.position;
+                    util.htmlElement('q4').value = args.userData.profession;
+                    util.htmlElement('q5').value = args.userData.phone;
+                    util.htmlElement('q6').value = args.userData.email;
                 }
             }
             instrument.start(instrumentID, instrument.trimis, saveChestionar, validateChestionar);
@@ -69,12 +97,12 @@ console.log(args);
     }
 }
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
+
 const validateChestionar = (_questions: QuestionObjectType) => {
 
     if (_questions.ifm1.value == '-9' || _questions.ifm2.value == '-9' || _questions.ifm3.value == '-9') {
         ipcRenderer.send("showDialogMessage", { type: "error", message: "The following fields are mandatory: IFM1, IFM2, IFM3!" });
-        const el = document.getElementById("ifm1");
+        const el = util.htmlElement("ifm1");
         el.scrollIntoView({ behavior: "smooth", block: "center", inline: "nearest" });
         setTimeout(function () {
             el.focus();
@@ -92,4 +120,91 @@ const saveChestionar = (obj: SaveInstrumentType): void => {
 
 
 
+// validari custom
 
+util.listen("ifp2", "myChange", () => {
+    if (instrument.questions.ifp2.value != "-9") {
+
+        const years = util.diffDates(
+            util.standardDate(instrument.questions.ifp2.value),
+            new Date(2024, 5, 1),
+            "years"
+        )
+
+        const months = util.diffDates(
+            util.standardDate(instrument.questions.ifp2.value),
+            new Date(2024, 5, 1),
+            "months"
+        )
+
+        util.htmlElement('ifp2am').value = months.toString();
+        instrument.questions.ifp2am.value = months.toString();
+        util.htmlElement('ifp2ay').value = years.toString();
+        util.trigger("ifp2ay", "change");
+    }
+});
+
+
+util.listen("ifm4", "myChange", () => {
+    if (instrument.questions.ifm4.value != "-9") {
+
+        const age = util.diffDates(
+            util.standardDate(instrument.questions.ifm4.value),
+            new Date(2024, 5, 1),
+            "years"
+        )
+
+        const ifm4_age = util.htmlElement('ifm4_age');
+        ifm4_age.value = age.toString();
+        util.trigger("ifm4_age", "change");
+
+    }
+});
+
+
+util.listen("ift4", "myChange", () => {
+    if (instrument.questions.ift4.value != "-9") {
+
+        const age = util.diffDates(
+            util.standardDate(instrument.questions.ift4.value),
+            new Date(2024, 5, 1),
+            "years"
+        )
+
+        const ift4_age = util.htmlElement('ift4_age');
+        ift4_age.value = age.toString();
+        util.trigger("ift4_age", "change");
+    }
+});
+
+
+
+const ifp4 = ['ifp4a', 'ifp4b'];
+const ifp = [...ifp4, 'ifp5'];
+
+util.listenArray(ifp, ["myChange"], () => {
+    if (util.inputsHaveValue(ifp)) {
+        const message = "IFP5 <= IFP4a + IFP4b";
+        const error = util.getInputNumericValue('ifp5') > util.makeSumFromElements(ifp4);
+
+        errorHandler.removeArrayError(ifp, message);
+        if (error) {
+            errorHandler.addArrayError(ifp, message);
+        }
+
+        return error;
+    }
+});
+
+
+const fc = ['fc1', 'fc3'];
+util.listenArray(fc, ["myChange"], () => {
+    if (util.inputsHaveValue(fc)) {
+        const message = "FC3 <= FC1";
+        const error = util.getInputDecimalValue('fc3') > util.getInputDecimalValue('fc1');
+        errorHandler.removeArrayError(fc, message);
+        if (error) {
+            errorHandler.addArrayError(fc, message);
+        }
+    }
+});
