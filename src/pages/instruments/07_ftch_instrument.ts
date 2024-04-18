@@ -154,8 +154,7 @@ util.listen("ifm4", "myChange", () => {
             "years"
         )
 
-        const ifm4_age = util.htmlElement('ifm4_age');
-        ifm4_age.value = age.toString();
+        util.htmlElement('ifm4_age').value = age.toString();
         util.trigger("ifm4_age", "change");
 
     }
@@ -171,8 +170,7 @@ util.listen("ift4", "myChange", () => {
             "years"
         )
 
-        const ift4_age = util.htmlElement('ift4_age');
-        ift4_age.value = age.toString();
+        util.htmlElement('ift4_age').value = age.toString();
         util.trigger("ift4_age", "change");
     }
 });
