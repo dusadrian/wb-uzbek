@@ -5,7 +5,6 @@ interface ValidationHelpers {
     valueInInterval: (value: number, interval: [min: number, max: number]) => boolean;
 }
 
-type Event = 'change' | 'myChange' | 'click';
 
 interface UtilHelpersInterface {
     makeSum: (array: number[]) => number;
@@ -16,11 +15,17 @@ interface UtilHelpersInterface {
     getInputDecimalValue: (el: string) => number;
     inputHasValue: (el: string) => boolean;
     inputsHaveValue: (array: string[]) => boolean;
-    eventListener: (element: string, event: Event, callback: () => void, trigger?:Array<string>, what?: Array<Event>) => void;
+    htmlElement: (element: string) => HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement;
+    trigger: (element: string, change: string) => void;
+    triggerArray: (elements: Array<string>, changes: Array<string>) => void;
+    listen: (element: string, event: string, callback: () => void) => void;
+    listenArray: (elements:Array<string>, events:Array<string>, callback: () => void) => void;
     standardDate: (date: string) => Date;
     diffDates: (startDate: Date, endDate: Date, type?:string) => number;
     missing: (x: unknown) => boolean;
     exists: (x: unknown) => boolean;
+    repString: (value: string, times: number) => Array<string>;
+    repNumber: (value: number, times: number) => Array<number>;
     seq: (from: number, to: number) => number[];
 }
 
@@ -253,23 +258,45 @@ export const util: UtilHelpersInterface = {
         return response.every(item => item === true);
     },
 
-    eventListener: (element:string, event:Event, callback, trigger?:Array<string>, what?: Array<Event>) => {
-        document.getElementById(element).addEventListener(event, callback);
-        if (trigger && trigger.length > 0) {
-            for (let i = 0; i < trigger.length; i++) {
-                const trel = document.getElementById(trigger[i]) as HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement;
-                trel.dispatchEvent(new Event(what[i]));
-            }
+    htmlElement: (element) => {
+        return document.getElementById(element) as HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement;
+    },
+    trigger: (element, change) => {
+        util.htmlElement(element).dispatchEvent(new Event(change));
+    },
+    triggerArray: (elements, changes) => {
+        for (let i = 0; i < elements.length; i++) {
+            util.htmlElement(elements[i]).dispatchEvent(new Event(changes[i]));
+        }
+    },
+    listen: (element, event, callback) => {
+        util.htmlElement(element).addEventListener(event, callback);
+        // if (trigger && trigger.length > 0) {
+        //     for (let i = 0; i < trigger.length; i++) {
+        //         const trel = document.getElementById(trigger[i]) as HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement;
+        //         trel.dispatchEvent(new Event(what[i]));
+        //     }
+        // }
+    },
+    listenArray: (elements, events, callback) => {
+        let event;
+        if (events.length !== elements.length) {
+            event = util.repString(events[0], elements.length);
+        } else {
+            event = events;
+        }
+        for (let i = 0; i < elements.length; i++) {
+            util.htmlElement(elements[i]).addEventListener(event[i], callback);
         }
     },
 
-    standardDate: (date: string) => {
+    standardDate: (date) => {
         // const eldate = date.split('/');
         // const stdate = new Date(Number(eldate[2]), Number(eldate[1]) - 1, Number(eldate[0]));
         return new Date(date.replace(/(\d{2})\/(\d{2})\/(\d{4})/,'$3-$2-$1'));
     },
 
-    diffDates: (startDate: Date, endDate: Date, type?:string) => {
+    diffDates: (startDate, endDate, type?) => {
         if (!type) {
             type = "years";
         }
@@ -294,15 +321,23 @@ export const util: UtilHelpersInterface = {
     },
 
 
-    missing: function (x: unknown): boolean {
+    missing: function (x) {
         return x === void 0 || x === undefined;
     },
 
-    exists: function (x: unknown): boolean {
+    exists: function (x) {
         return x !== void 0 && x !== undefined;
     },
 
-    seq: function (from: number, to: number): Array<number> {
+    repString: function(value, times) {
+        return new Array(times).fill(value);
+    },
+
+    repNumber: function(value, times) {
+        return new Array(times).fill(value);
+    },
+
+    seq: function (from, to) {
         const length = to - from + 1;
         const result = new Array(length);
         for (let i = 0; i < length; i++) {
