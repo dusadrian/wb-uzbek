@@ -9,7 +9,7 @@ import { FlatpickrFn } from 'flatpickr/dist/types/instance';
 const flatpickr: FlatpickrFn = _flatpickr as any;
 import { Russian } from "flatpickr/dist/l10n/ru";
 import { UzbekLatin } from "flatpickr/dist/l10n/uz_latn";
-import { administrative, Administrative } from "../../libraries/administrative";
+import { administrative } from "../../libraries/administrative";
 
 export const instrument9 = {
     init: async () => {

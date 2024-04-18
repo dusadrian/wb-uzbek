@@ -95,7 +95,7 @@
             <div><%= it.t29 %>. <%= it.t30 %>:</div>
             <div>
                 <select id="pf1a" name="pf1a" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                    <option value="1">-- choose ---</option>
+                    <option value="-9" class="t_choose">--- choose ---</option>
                 </select>
             </div>
         </div>
@@ -103,7 +103,7 @@
             <div><%= it.t32 %>. <%= it.t33 %></div>
             <div>
                 <select id="pf1b" name="pf1b" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                    <option value="1">-- choose ---</option>
+                    <option value="-9" class="t_choose">--- choose ---</option>
                 </select>
             </div>
         </div>
@@ -111,7 +111,7 @@
             <div>PF1c. <%= it.settlement %></div>
             <div>
                 <select id="pf1c" name="pf1c" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                    <option value="1">-- choose ---</option>
+                    <option value="-9" class="t_choose">--- choose ---</option>
                 </select>
             </div>
         </div>

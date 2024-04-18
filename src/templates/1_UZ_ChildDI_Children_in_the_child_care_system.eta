@@ -196,7 +196,7 @@
             <div><%= it.t60 %>. <%= it.t61 %></div>
             <div>
                 <select id="lk14b" name="lk14b" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                    <option value="1">-- choose ---</option>
+                    <option value="-9" class="t_choose">--- choose ---</option>
                 </select>
             </div>
         </div>
@@ -205,7 +205,7 @@
             <div><%= it.t63 %>. <%= it.t64 %></div>
             <div>
                 <select id="lk14c" name="lk14c" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                    <option value="1">-- choose ---</option>
+                    <option value="-9" class="t_choose">--- choose ---</option>
                 </select>
             </div>
         </div>
@@ -213,7 +213,7 @@
             <div><%= it.tLK14d %>. <%= it.settlement %></div>
             <div>
                 <select id="lk14d" name="lk14d" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                    <option value="1">-- choose ---</option>
+                    <option value="-9" class="t_choose">--- choose ---</option>
                 </select>
 
             </div>
@@ -421,7 +421,7 @@
             <div><%= it.t130 %>. <%= it.t131 %></div>
             <div>
                 <select id="cm3b" name="cm3b" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                    <option value="1">-- choose ---</option>
+                    <option value="-9" class="t_choose">--- choose ---</option>
                 </select>
             </div>
         </div>
@@ -430,7 +430,7 @@
             <div><%= it.t133 %>. <%= it.t134 %></div>
             <div>
                 <select id="cm3c" name="cm3c" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                    <option value="1">-- choose ---</option>
+                    <option value="-9" class="t_choose">--- choose ---</option>
                 </select>
             </div>
         </div>
@@ -438,7 +438,7 @@
             <div>CM3d. <%= it.settlement %></div>
             <div>
                 <select id="cm3d" name="cm3d" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                    <option value="1">-- choose ---</option>
+                    <option value="-9" class="t_choose">--- choose ---</option>
                 </select>
 
             </div>
@@ -983,7 +983,7 @@
             <div><%= it.t245 %></div>
             <div>
                 <select id="cm10c" name="cm10c" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                    <option value="1">-- choose ---</option>
+                    <option value="-9" class="t_choose">--- choose ---</option>
                 </select>
             </div>
         </div>
@@ -992,7 +992,7 @@
             <div><%= it.t247 %></div>
             <div>
                 <select id="cm10d" name="cm10d" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                    <option value="1">-- choose ---</option>
+                    <option value="-9" class="t_choose">--- choose ---</option>
                 </select>
             </div>
         </div>
@@ -1000,7 +1000,7 @@
             <div>CM10e. <%= it.settlement %></div>
             <div>
                 <select id="cm10e" name="cm10e" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                    <option value="1">-- choose ---</option>
+                    <option value="-9" class="t_choose">--- choose ---</option>
                 </select>
 
             </div>
@@ -1041,7 +1041,7 @@
             <div><%= it.t256 %></div>
             <div>
                 <select id="cm11c" name="cm11c" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                    <option value="1">-- choose ---</option>
+                    <option value="-9" class="t_choose">--- choose ---</option>
                 </select>
             </div>
         </div>
@@ -1050,7 +1050,7 @@
             <div><%= it.t258 %></div>
             <div>
                 <select id="cm11d" name="cm11d" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                    <option value="1">-- choose ---</option>
+                    <option value="-9" class="t_choose">--- choose ---</option>
                 </select>
             </div>
         </div>
@@ -1059,7 +1059,7 @@
             <div>CM11e. <%= it.settlement %></div>
             <div>
                 <select id="cm11e" name="cm11e" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                    <option value="1">-- choose ---</option>
+                    <option value="-9" class="t_choose">--- choose ---</option>
                 </select>
 
             </div>
@@ -1244,7 +1244,7 @@
             <div><%= it.t309 %>. <%= it.t310 %></div>
             <div>
                 <select id="ct3b" name="ct3b" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                    <option value="1">-- choose ---</option>
+                    <option value="-9" class="t_choose">--- choose ---</option>
                 </select>
             </div>
         </div>
@@ -1253,7 +1253,7 @@
             <div><%= it.t312 %>. <%= it.t313 %></div>
             <div>
                 <select id="ct3c" name="ct3c" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                    <option value="1">-- choose ---</option>
+                    <option value="-9" class="t_choose">--- choose ---</option>
                 </select>
             </div>
         </div>
@@ -1261,7 +1261,7 @@
             <div>CT3d. <%= it.settlement %></div>
             <div>
                 <select id="ct3d" name="ct3d" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                    <option value="1">-- choose ---</option>
+                    <option value="-9" class="t_choose">--- choose ---</option>
                 </select>
 
             </div>
@@ -1802,7 +1802,7 @@
             <div><%= it.t424 %></div>
             <div>
                 <select id="ct10c" name="ct10c" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                    <option value="1">-- choose ---</option>
+                    <option value="-9" class="t_choose">--- choose ---</option>
                 </select>
             </div>
         </div>
@@ -1811,7 +1811,7 @@
             <div><%= it.t426 %></div>
             <div>
                 <select id="ct10d" name="ct10d" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                    <option value="1">-- choose ---</option>
+                    <option value="-9" class="t_choose">--- choose ---</option>
                 </select>
             </div>
         </div>
@@ -1819,7 +1819,7 @@
             <div>CT10e. <%= it.settlement %></div>
             <div>
                 <select id="ct10e" name="ct10e" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                    <option value="1">-- choose ---</option>
+                    <option value="-9" class="t_choose">--- choose ---</option>
                 </select>
 
             </div>
@@ -1860,7 +1860,7 @@
             <div><%= it.t435 %></div>
             <div>
                 <select id="ct11c" name="ct11c" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                    <option value="1">-- choose ---</option>
+                    <option value="-9" class="t_choose">--- choose ---</option>
                 </select>
             </div>
         </div>
@@ -1869,7 +1869,7 @@
             <div><%= it.t437 %></div>
             <div>
                 <select id="ct11d" name="ct11d" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                    <option value="1">-- choose ---</option>
+                    <option value="-9" class="t_choose">--- choose ---</option>
                 </select>
             </div>
         </div>
@@ -1878,7 +1878,7 @@
             <div>CT11e. <%= it.settlement %></div>
             <div>
                 <select id="ct11e" name="ct11e" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                    <option value="1">-- choose ---</option>
+                    <option value="-9" class="t_choose">--- choose ---</option>
                 </select>
 
             </div>
@@ -2549,7 +2549,7 @@
             <div><%= it.t580 %></div>
             <div>
                 <select id="cg10c" name="cg10c" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                    <option value="1">-- choose ---</option>
+                    <option value="-9" class="t_choose">--- choose ---</option>
                 </select>
             </div>
         </div>
@@ -2558,7 +2558,7 @@
             <div><%= it.t582 %></div>
             <div>
                 <select id="cg10d" name="cg10d" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                    <option value="1">-- choose ---</option>
+                    <option value="-9" class="t_choose">--- choose ---</option>
                 </select>
             </div>
         </div>
@@ -2566,7 +2566,7 @@
             <div>cg10e. <%= it.settlement %></div>
             <div>
                 <select id="cg10e" name="cg10e" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                    <option value="1">-- choose ---</option>
+                    <option value="-9" class="t_choose">--- choose ---</option>
                 </select>
 
             </div>
@@ -2606,7 +2606,7 @@
             <div><%= it.t591 %></div>
             <div>
                 <select id="cg11c" name="cg11c" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                    <option value="1">-- choose ---</option>
+                    <option value="-9" class="t_choose">--- choose ---</option>
                 </select>
             </div>
         </div>
@@ -2615,7 +2615,7 @@
             <div><%= it.t593 %></div>
             <div>
                 <select id="cg11d" name="cg11d" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                    <option value="1">-- choose ---</option>
+                    <option value="-9" class="t_choose">--- choose ---</option>
                 </select>
             </div>
         </div>
@@ -2624,7 +2624,7 @@
             <div>cg11e. <%= it.settlement %></div>
             <div>
                 <select id="cg11e" name="cg11e" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                    <option value="1">-- choose ---</option>
+                    <option value="-9" class="t_choose">--- choose ---</option>
                 </select>
 
             </div>
@@ -2711,7 +2711,7 @@
             <div><%= it.t616 %>. <%= it.t617 %></div>
             <div>
                 <select id="sa3a" name="sa3a" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                    <option value="1">-- choose ---</option>
+                    <option value="-9" class="t_choose">--- choose ---</option>
                 </select>
             </div>
         </div>
@@ -2720,7 +2720,7 @@
             <div><%= it.t619 %>. <%= it.t620 %></div>
             <div>
                 <select id="sa3b" name="sa3b" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                    <option value="1">-- choose ---</option>
+                    <option value="-9" class="t_choose">--- choose ---</option>
                 </select>
             </div>
         </div>
@@ -2729,7 +2729,7 @@
             <div>SA3c. <%= it.settlement %></div>
             <div>
                 <select id="sa3c" name="sa3c" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                    <option value="1">-- choose ---</option>
+                    <option value="-9" class="t_choose">--- choose ---</option>
                 </select>
             </div>
         </div>
