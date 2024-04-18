@@ -687,10 +687,10 @@
             <thead>
                 <tr class="border-b">
                     <th class="p-2"></th>
-                    <th class="w-40 p-2"><%= it.t141 %>.</th>
-                    <th class="p-2"><%= it.t142 %>.</th>
-                    <th class="w-52 p-2"><%= it.t143 %>.?</th>
-                    <th class="p-2"><%= it.t144 %>.</th>
+                    <th class="w-40 p-2"><%= it.t141 %></th>
+                    <th class="p-2"><%= it.t142 %></th>
+                    <th class="w-52 p-2"><%= it.t143 %></th>
+                    <th class="p-2"><%= it.t144 %></th>
                 </tr>
             </thead>
             <tbody>

@@ -319,7 +319,7 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 28,
-        active: function () { return (Number(instrument.questions.pf2.value) > 0) },
+        active: function () { return (Number(instrument.questions.pf2.value) >= 1) },
         error: ''
     },
     'fc4_c1b': {
@@ -330,7 +330,7 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 29,
-        active: function () { return (Number(instrument.questions.pf2.value) > 0) },
+        active: function () { return (Number(instrument.questions.pf2.value) >= 1) },
         error: ''
     },
     'fc4_c1c': {
@@ -341,7 +341,7 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 30,
-        active: function () { return (Number(instrument.questions.pf2.value) > 0) },
+        active: function () { return (Number(instrument.questions.pf2.value) >= 1) },
         error: ''
     },
     'fc4_c1d': {
@@ -352,7 +352,7 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 31,
-        active: function () { return (Number(instrument.questions.pf2.value) > 0) },
+        active: function () { return (Number(instrument.questions.pf2.value) >= 1) },
         error: ''
     },
     'fc4_c1e': {
@@ -363,7 +363,7 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 32,
-        active: function () { return (Number(instrument.questions.pf2.value) > 0) },
+        active: function () { return (Number(instrument.questions.pf2.value) >= 1) },
         error: ''
     },
     'fc4_c1e_other': {
@@ -374,7 +374,7 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 33,
-        active: function () { return (Number(instrument.questions.pf2.value) > 0 && Number(instrument.questions.fc4_c1e.value) == 5) },
+        active: function () { return (Number(instrument.questions.pf2.value) >= 1 && Number(instrument.questions.fc4_c1e.value) == 5) },
         error: ''
     },
     'fc4_c1f': {
@@ -385,7 +385,7 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 34,
-        active: function () { return (Number(instrument.questions.pf2.value) > 0) },
+        active: function () { return (Number(instrument.questions.pf2.value) >= 1) },
         error: ''
     },
     'fc4_c1g': {
@@ -396,7 +396,7 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 35,
-        active: function () { return (Number(instrument.questions.pf2.value) > 0) },
+        active: function () { return (Number(instrument.questions.pf2.value) >= 1) },
         error: ''
     },
     'fc4_c2a': {
@@ -407,7 +407,7 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 36,
-        active: function () { return (Number(instrument.questions.pf2.value) > 0) },
+        active: function () { return (Number(instrument.questions.pf2.value) >= 2) },
         error: ''
     },
     'fc4_c2b': {
@@ -418,7 +418,7 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 37,
-        active: function () { return (Number(instrument.questions.pf2.value) > 0) },
+        active: function () { return (Number(instrument.questions.pf2.value) >= 2) },
         error: ''
     },
     'fc4_c2c': {
@@ -429,7 +429,7 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 38,
-        active: function () { return (Number(instrument.questions.pf2.value) > 0) },
+        active: function () { return (Number(instrument.questions.pf2.value) >= 2) },
         error: ''
     },
     'fc4_c2d': {
@@ -440,7 +440,7 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 39,
-        active: function () { return (Number(instrument.questions.pf2.value) > 0) },
+        active: function () { return (Number(instrument.questions.pf2.value) >= 2) },
         error: ''
     },
     'fc4_c2e': {
@@ -451,7 +451,7 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 40,
-        active: function () { return (Number(instrument.questions.pf2.value) > 0) },
+        active: function () { return (Number(instrument.questions.pf2.value) >= 2) },
         error: ''
     },
     'fc4_c2e_other': {
@@ -462,7 +462,7 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 41,
-        active: function () { return (Number(instrument.questions.pf2.value) > 0 && Number(instrument.questions.fc4_c2e.value) == 5) },
+        active: function () { return (Number(instrument.questions.pf2.value) >= 2 && Number(instrument.questions.fc4_c2e.value) == 5) },
         error: ''
     },
     'fc4_c2f': {
@@ -473,7 +473,7 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 42,
-        active: function () { return (Number(instrument.questions.pf2.value) > 0) },
+        active: function () { return (Number(instrument.questions.pf2.value) >= 2) },
         error: ''
     },
     'fc4_c2g': {
@@ -484,7 +484,7 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 43,
-        active: function () { return (Number(instrument.questions.pf2.value) > 0) },
+        active: function () { return (Number(instrument.questions.pf2.value) >= 2) },
         error: ''
     },
     'fc4_c3a': {
@@ -495,7 +495,7 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 44,
-        active: function () { return (Number(instrument.questions.pf2.value) > 0) },
+        active: function () { return (Number(instrument.questions.pf2.value) >= 3) },
         error: ''
     },
     'fc4_c3b': {
@@ -506,7 +506,7 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 45,
-        active: function () { return (Number(instrument.questions.pf2.value) > 0) },
+        active: function () { return (Number(instrument.questions.pf2.value) >= 3) },
         error: ''
     },
     'fc4_c3c': {
@@ -517,7 +517,7 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 46,
-        active: function () { return (Number(instrument.questions.pf2.value) > 0) },
+        active: function () { return (Number(instrument.questions.pf2.value) >= 3) },
         error: ''
     },
     'fc4_c3d': {
@@ -528,7 +528,7 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 47,
-        active: function () { return (Number(instrument.questions.pf2.value) > 0) },
+        active: function () { return (Number(instrument.questions.pf2.value) >= 3) },
         error: ''
     },
     'fc4_c3e': {
@@ -539,7 +539,7 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 48,
-        active: function () { return (Number(instrument.questions.pf2.value) > 0) },
+        active: function () { return (Number(instrument.questions.pf2.value) >= 3) },
         error: ''
     },
     'fc4_c3e_other': {
@@ -550,7 +550,7 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 49,
-        active: function () { return (Number(instrument.questions.pf2.value) > 0 && Number(instrument.questions.fc4_c3e.value) == 5) },
+        active: function () { return (Number(instrument.questions.pf2.value) >= 3 && Number(instrument.questions.fc4_c3e.value) == 5) },
         error: ''
     },
     'fc4_c3f': {
@@ -561,7 +561,7 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 50,
-        active: function () { return (Number(instrument.questions.pf2.value) > 0) },
+        active: function () { return (Number(instrument.questions.pf2.value) >= 3) },
         error: ''
     },
     'fc4_c3g': {
@@ -572,7 +572,7 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 51,
-        active: function () { return (Number(instrument.questions.pf2.value) > 0) },
+        active: function () { return (Number(instrument.questions.pf2.value) >= 3) },
         error: ''
     },
     'fc4_c4a': {
@@ -583,7 +583,7 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 52,
-        active: function () { return (Number(instrument.questions.pf2.value) > 0) },
+        active: function () { return (Number(instrument.questions.pf2.value) >= 4) },
         error: ''
     },
     'fc4_c4b': {
@@ -594,7 +594,7 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 53,
-        active: function () { return (Number(instrument.questions.pf2.value) > 0) },
+        active: function () { return (Number(instrument.questions.pf2.value) >= 4) },
         error: ''
     },
     'fc4_c4c': {
@@ -605,7 +605,7 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 54,
-        active: function () { return (Number(instrument.questions.pf2.value) > 0) },
+        active: function () { return (Number(instrument.questions.pf2.value) >= 4) },
         error: ''
     },
     'fc4_c4d': {
@@ -616,7 +616,7 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 55,
-        active: function () { return (Number(instrument.questions.pf2.value) > 0) },
+        active: function () { return (Number(instrument.questions.pf2.value) >= 4) },
         error: ''
     },
     'fc4_c4e': {
@@ -627,7 +627,7 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 56,
-        active: function () { return (Number(instrument.questions.pf2.value) > 0) },
+        active: function () { return (Number(instrument.questions.pf2.value) >= 4) },
         error: ''
     },
     'fc4_c4e_other': {
@@ -638,7 +638,7 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 57,
-        active: function () { return (Number(instrument.questions.pf2.value) > 0 && Number(instrument.questions.fc4_c4e.value) == 5) },
+        active: function () { return (Number(instrument.questions.pf2.value) >= 4 && Number(instrument.questions.fc4_c4e.value) == 5) },
         error: ''
     },
     'fc4_c4f': {
@@ -649,7 +649,7 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 58,
-        active: function () { return (Number(instrument.questions.pf2.value) > 0) },
+        active: function () { return (Number(instrument.questions.pf2.value) >= 4) },
         error: ''
     },
     'fc4_c4g': {
@@ -660,7 +660,7 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 59,
-        active: function () { return (Number(instrument.questions.pf2.value) > 0) },
+        active: function () { return (Number(instrument.questions.pf2.value) >= 4) },
         error: ''
     },
     'fc4_c5a': {
@@ -671,7 +671,7 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 60,
-        active: function () { return (Number(instrument.questions.pf2.value) > 0) },
+        active: function () { return (Number(instrument.questions.pf2.value) >= 5) },
         error: ''
     },
     'fc4_c5b': {
@@ -682,7 +682,7 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 61,
-        active: function () { return (Number(instrument.questions.pf2.value) > 0) },
+        active: function () { return (Number(instrument.questions.pf2.value) >= 5) },
         error: ''
     },
     'fc4_c5c': {
@@ -693,7 +693,7 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 62,
-        active: function () { return (Number(instrument.questions.pf2.value) > 0) },
+        active: function () { return (Number(instrument.questions.pf2.value) >= 5) },
         error: ''
     },
     'fc4_c5d': {
@@ -704,7 +704,7 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 63,
-        active: function () { return (Number(instrument.questions.pf2.value) > 0) },
+        active: function () { return (Number(instrument.questions.pf2.value) >= 5) },
         error: ''
     },
     'fc4_c5e': {
@@ -715,7 +715,7 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 64,
-        active: function () { return (Number(instrument.questions.pf2.value) > 0) },
+        active: function () { return (Number(instrument.questions.pf2.value) >= 5) },
         error: ''
     },
     'fc4_c5e_other': {
@@ -726,7 +726,7 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 65,
-        active: function () { return (Number(instrument.questions.pf2.value) > 0 && Number(instrument.questions.fc4_c5e.value) == 5) },
+        active: function () { return (Number(instrument.questions.pf2.value) >= 5 && Number(instrument.questions.fc4_c5e.value) == 5) },
         error: ''
     },
     'fc4_c5f': {
@@ -737,7 +737,7 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 66,
-        active: function () { return (Number(instrument.questions.pf2.value) > 0) },
+        active: function () { return (Number(instrument.questions.pf2.value) >= 5) },
         error: ''
     },
     'fc4_c5g': {
@@ -748,7 +748,7 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 67,
-        active: function () { return (Number(instrument.questions.pf2.value) > 0) },
+        active: function () { return (Number(instrument.questions.pf2.value) >= 5) },
         error: ''
     },
     'ex1': {
@@ -781,7 +781,7 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 70,
-        active: function () { return (Number(instrument.questions.ex2.value) > 0) },
+        active: function () { return (Number(instrument.questions.ex2.value) >= 1) },
         error: ''
     },
     'ex3_c1b': {
@@ -792,7 +792,7 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 71,
-        active: function () { return (Number(instrument.questions.ex2.value) > 0) },
+        active: function () { return (Number(instrument.questions.ex2.value) >= 1) },
         error: ''
     },
     'ex3_c1c': {
@@ -803,7 +803,7 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 72,
-        active: function () { return (Number(instrument.questions.ex2.value) > 0) },
+        active: function () { return (Number(instrument.questions.ex2.value) >= 1) },
         error: ''
     },
     'ex3_c1d': {
@@ -814,7 +814,7 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 73,
-        active: function () { return (Number(instrument.questions.ex2.value) > 0) },
+        active: function () { return (Number(instrument.questions.ex2.value) >= 1) },
         error: ''
     },
     'ex3_c1d_other': {
@@ -825,7 +825,7 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 74,
-        active: function () { return (Number(instrument.questions.ex2.value) > 0 && Number(instrument.questions.ex3_c1d.value) == 10) },
+        active: function () { return (Number(instrument.questions.ex2.value) >= 1 && Number(instrument.questions.ex3_c1d.value) == 10) },
         error: ''
     },
     'ex3_c2a': {
@@ -836,7 +836,7 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 75,
-        active: function () { return (Number(instrument.questions.ex2.value) > 0) },
+        active: function () { return (Number(instrument.questions.ex2.value) >= 2) },
         error: ''
     },
     'ex3_c2b': {
@@ -847,7 +847,7 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 76,
-        active: function () { return (Number(instrument.questions.ex2.value) > 0) },
+        active: function () { return (Number(instrument.questions.ex2.value) >= 2) },
         error: ''
     },
     'ex3_c2c': {
@@ -858,7 +858,7 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 77,
-        active: function () { return (Number(instrument.questions.ex2.value) > 0) },
+        active: function () { return (Number(instrument.questions.ex2.value) >= 2) },
         error: ''
     },
     'ex3_c2d': {
@@ -869,7 +869,7 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 78,
-        active: function () { return (Number(instrument.questions.ex2.value) > 0) },
+        active: function () { return (Number(instrument.questions.ex2.value) >= 2) },
         error: ''
     },
     'ex3_c2d_other': {
@@ -880,7 +880,7 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 79,
-        active: function () { return (Number(instrument.questions.ex2.value) > 0 && Number(instrument.questions.ex3_c2d.value) == 10) },
+        active: function () { return (Number(instrument.questions.ex2.value) >= 2 && Number(instrument.questions.ex3_c2d.value) == 10) },
         error: ''
     },
     'ex3_c3a': {
@@ -891,7 +891,7 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 80,
-        active: function () { return (Number(instrument.questions.ex2.value) > 0) },
+        active: function () { return (Number(instrument.questions.ex2.value) >= 3) },
         error: ''
     },
     'ex3_c3b': {
@@ -902,7 +902,7 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 81,
-        active: function () { return (Number(instrument.questions.ex2.value) > 0) },
+        active: function () { return (Number(instrument.questions.ex2.value) >= 3) },
         error: ''
     },
     'ex3_c3c': {
@@ -913,7 +913,7 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 82,
-        active: function () { return (Number(instrument.questions.ex2.value) > 0) },
+        active: function () { return (Number(instrument.questions.ex2.value) >= 3) },
         error: ''
     },
     'ex3_c3d': {
@@ -924,7 +924,7 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 83,
-        active: function () { return (Number(instrument.questions.ex2.value) > 0) },
+        active: function () { return (Number(instrument.questions.ex2.value) >= 3) },
         error: ''
     },
     'ex3_c3d_other': {
@@ -935,7 +935,7 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 84,
-        active: function () { return (Number(instrument.questions.ex2.value) > 0 && Number(instrument.questions.ex3_c3d.value) == 10) },
+        active: function () { return (Number(instrument.questions.ex2.value) >= 3 && Number(instrument.questions.ex3_c3d.value) == 10) },
         error: ''
     },
     'ex3_c4a': {
@@ -946,7 +946,7 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 85,
-        active: function () { return (Number(instrument.questions.ex2.value) > 0) },
+        active: function () { return (Number(instrument.questions.ex2.value) >= 4) },
         error: ''
     },
     'ex3_c4b': {
@@ -957,7 +957,7 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 86,
-        active: function () { return (Number(instrument.questions.ex2.value) > 0) },
+        active: function () { return (Number(instrument.questions.ex2.value) >= 4) },
         error: ''
     },
     'ex3_c4c': {
@@ -968,7 +968,7 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 87,
-        active: function () { return (Number(instrument.questions.ex2.value) > 0) },
+        active: function () { return (Number(instrument.questions.ex2.value) >= 4) },
         error: ''
     },
     'ex3_c4d': {
@@ -979,7 +979,7 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 88,
-        active: function () { return (Number(instrument.questions.ex2.value) > 0) },
+        active: function () { return (Number(instrument.questions.ex2.value) >= 4) },
         error: ''
     },
     'ex3_c4d_other': {
@@ -990,7 +990,7 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 89,
-        active: function () { return (Number(instrument.questions.ex2.value) > 0 && Number(instrument.questions.ex3_c4d.value) == 10) },
+        active: function () { return (Number(instrument.questions.ex2.value) >= 4 && Number(instrument.questions.ex3_c4d.value) == 10) },
         error: ''
     },
     'ex3_c5a': {
@@ -1001,7 +1001,7 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 90,
-        active: function () { return (Number(instrument.questions.ex2.value) > 0) },
+        active: function () { return (Number(instrument.questions.ex2.value) >= 5) },
         error: ''
     },
     'ex3_c5b': {
@@ -1012,7 +1012,7 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 91,
-        active: function () { return (Number(instrument.questions.ex2.value) > 0) },
+        active: function () { return (Number(instrument.questions.ex2.value) >= 5) },
         error: ''
     },
     'ex3_c5c': {
@@ -1023,7 +1023,7 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 92,
-        active: function () { return (Number(instrument.questions.ex2.value) > 0) },
+        active: function () { return (Number(instrument.questions.ex2.value) >= 5) },
         error: ''
     },
     'ex3_c5d': {
@@ -1034,7 +1034,7 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 93,
-        active: function () { return (Number(instrument.questions.ex2.value) > 0) },
+        active: function () { return (Number(instrument.questions.ex2.value) >= 5) },
         error: ''
     },
     'ex3_c5d_other': {
@@ -1045,7 +1045,7 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 94,
-        active: function () { return (Number(instrument.questions.ex2.value) > 0 && Number(instrument.questions.ex3_c5d.value) == 10) },
+        active: function () { return (Number(instrument.questions.ex2.value) >= 5 && Number(instrument.questions.ex3_c5d.value) == 10) },
         error: ''
     },
     'qs1': {
