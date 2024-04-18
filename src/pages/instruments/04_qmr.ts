@@ -28,7 +28,7 @@ export const instrument4 = {
         } = {
             enableTime: false,
             dateFormat: "Y",
-            maxDate: "31/03/2024"
+            maxDate: "30/04/2024"
         }
 
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -40,7 +40,7 @@ export const instrument4 = {
         } = {
             enableTime: false,
             dateFormat: "m/Y",
-            maxDate: "31/03/2024"
+            maxDate: "30/04/2024"
         }
 
         if (lang == "uz") {
@@ -224,7 +224,6 @@ af5af1.forEach(item => {
             const af5_deschis_af1 = [...af5_deschis, 'af1'];
 
             if (util.inputsHaveValue(af5_deschis_af1)) {
-                console.log(111);
                 errorHandler.removeArrayError(af5_deschis_af1, 'AF1 >= AF5 (a.)')
                 if (util.getInputDecimalValue('af1') < util.makeSumFromElements(af5_deschis)) {
                     errorHandler.addArrayError(af5_deschis_af1, 'AF1 >= AF5 (a.)');

@@ -56,7 +56,7 @@ export const instrument1 = {
         } = {
             enableTime: false,
             dateFormat: "d/m/Y",
-            maxDate: "31/03/2024"
+            maxDate: "30/04/2024"
         }
 
         if (lang == "uz") {
@@ -353,16 +353,10 @@ const sa1 = document.getElementById('sa1') as HTMLInputElement;
 
 lk3.addEventListener("myChange", function () {
     if (instrument.questions.lk3.value != "-9") {
-        const bdate = instrument.questions.lk3.value.split('/');
-        const birthDate = new Date(Number(bdate[2]), Number(bdate[1]) - 1, Number(bdate[0]));
-        const collectionRoundDate = new Date(2024, 3, 1);
-
-        let age = collectionRoundDate.getFullYear() - birthDate.getFullYear();
-        const monthDiff = collectionRoundDate.getMonth() - birthDate.getMonth();
-
-        if (monthDiff < 0 || (monthDiff === 0 && collectionRoundDate.getDate() < birthDate.getDate())) {
-            age--;
-        }
+        const age = util.diffDates(
+            util.standardDate(instrument.questions.lk3.value),
+            new Date(2024, 5, 1)
+        )
 
         lk13a.value = age.toString();
         instrument.questions["lk13a"].value = age.toString();
@@ -375,18 +369,10 @@ lk3.addEventListener("myChange", function () {
 
 sa1.addEventListener("myChange", function() {
     if (instrument.questions.lk3.value != "-9" && instrument.questions.sa1.value != "-9") {
-        const bdate = instrument.questions.lk3.value.split('/');
-        const edate = instrument.questions.sa1.value.split('/');
-
-        const systemEntry = new Date(Number(edate[2]), Number(edate[1]) - 1, Number(edate[0]));
-        const birthDate = new Date(Number(bdate[2]), Number(bdate[1]) - 1, Number(bdate[0]));
-
-        let age = systemEntry.getFullYear() - birthDate.getFullYear();
-        const monthDiff = systemEntry.getMonth() - birthDate.getMonth();
-
-        if (monthDiff < 0 || (monthDiff === 0 && systemEntry.getDate() < birthDate.getDate())) {
-            age--;
-        }
+        const age = util.diffDates(
+            util.standardDate(instrument.questions.lk3.value),
+            util.standardDate(instrument.questions.sa1.value)
+        )
 
         if (!Number.isNaN(age)) {
             const sa1a = document.getElementById('sa1a') as HTMLInputElement;
@@ -441,7 +427,7 @@ qhouse4ArrayFull.forEach(item => {
             const qhouse4 = util.getInputNumericValue('qhouse4');
 
             errorHandler.removeArrayError(qhouse4Array, '4 = 4a + 4b')
-            if (qhouse4 != Number(util.makeInputSumDecimal(qhouse4Array))) {
+            if (qhouse4 != util.makeSumFromElements(qhouse4Array)) {
                 errorHandler.addArrayError(qhouse4Array, '4 = 4a + 4b')
             }
         }
@@ -451,7 +437,7 @@ qhouse4ArrayFull.forEach(item => {
 const sh1 = document.getElementById('sh1') as HTMLInputElement;
 
 sh1.addEventListener("myChange", function() {
-    const sh1value = Number(util.getInputDecimalValue('sh1'));
+    const sh1value = util.getInputDecimalValue('sh1');
 
     const error = locales[lang]['Value_up_to_ten'];
     errorHandler.removeError('sh1', error);
@@ -483,8 +469,8 @@ sh3_start_dates.forEach((startel) => {
     const check = function() {
         if (util.inputsHaveValue([startel, endel])) {
 
-            const startdate = new Date(start.value.replace(/(\d{2})\/(\d{2})\/(\d{4})/,'$3-$2-$1'));
-            const enddate = new Date(end.value.replace(/(\d{2})\/(\d{2})\/(\d{4})/,'$3-$2-$1'));
+            const startdate = util.standardDate(start.value);
+            const enddate = util.standardDate(end.value);
             const timespent = document.getElementById(startel.replace("a", "f")) as HTMLInputElement;
             const sh4 = document.getElementById("sh4") as HTMLInputElement;
 
@@ -502,13 +488,7 @@ sh3_start_dates.forEach((startel) => {
                 instrument.questions[startel].value = start.value;
                 instrument.questions[endel].value = end.value;
 
-
-                let monthDiff = (enddate.getFullYear() - startdate.getFullYear()) * 12 + enddate.getMonth() - startdate.getMonth();
-                if (monthDiff > 0 && enddate.getDate() < startdate.getDate()) {
-                    monthDiff--;
-                }
-
-                timespent.value = monthDiff.toString();
+                timespent.value = util.diffDates(startdate, enddate, "months").toString();
 
                 instrument.questions[startel].value = start.value;
                 instrument.questions[endel].value = end.value;
