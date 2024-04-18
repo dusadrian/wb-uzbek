@@ -283,9 +283,9 @@ unu_bt.forEach((item) => {
         if (util.inputsHaveValue(unu_b)) {
             const tnet_b = util.getInputNumericValue('tnet_b');
 
-            errorHandler.removeArrayError(unu_bt, 'NESb + NEOb = NETb')
+            errorHandler.removeArrayError(unu_bt, 'NESTb + NEOb = TNETb')
             if (tnet_b != Number(util.makeInputSumDecimal(unu_bt))) {
-                errorHandler.addArrayError(unu_b, 'NESb + NEOb = NETb');
+                errorHandler.addArrayError(unu_bt, 'NESTSb + NEOb = TNETb');
             }
         }
     });
@@ -300,9 +300,9 @@ unu_gt.forEach((item) => {
         if (util.inputsHaveValue(unu_g)) {
             const tnet_g = util.getInputNumericValue('tnet_g');
 
-            errorHandler.removeArrayError(unu_gt, 'NESg + NEOg = NETg')
+            errorHandler.removeArrayError(unu_gt, 'NESTg + NEOg = TNETg')
             if (tnet_g != Number(util.makeInputSumDecimal(unu_gt))) {
-                errorHandler.addArrayError(unu_g, 'NESg + NEOg = NETg');
+                errorHandler.addArrayError(unu_gt, 'NESTg + NEOg = TNETg');
             }
         }
     });
@@ -317,9 +317,9 @@ unu_tt.forEach((item) => {
         if (util.inputsHaveValue(unu_t)) {
             const tnet_t = util.getInputNumericValue('tnet_t');
 
-            errorHandler.removeArrayError(unu_tt, 'NES + NEO = NET')
+            errorHandler.removeArrayError(unu_tt, 'NEST + NEO = TNET')
             if (tnet_t != Number(util.makeInputSumDecimal(unu_tt))) {
-                errorHandler.addArrayError(unu_t, 'NES + NEO = NET');
+                errorHandler.addArrayError(unu_tt, 'NEST + NEO = TNET');
             }
         }
     });
