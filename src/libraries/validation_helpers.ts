@@ -4,6 +4,9 @@ import * as _ from "lodash";
 interface ValidationHelpers {
     valueInInterval: (value: number, interval: [min: number, max: number]) => boolean;
 }
+
+type Event = 'change' | 'myChange' | 'click';
+
 interface UtilHelpersInterface {
     makeSum: (array: number[]) => number;
     makeSumFromElements: (array: string[]) => number;
@@ -13,6 +16,9 @@ interface UtilHelpersInterface {
     getInputDecimalValue: (el: string) => number;
     inputHasValue: (el: string) => boolean;
     inputsHaveValue: (array: string[]) => boolean;
+    eventListener: (element: string, event: Event, callback: () => void, trigger?:Array<string>, what?: Array<Event>) => void;
+    standardDate: (date: string) => Date;
+    diffDates: (startDate: Date, endDate: Date, type?:string) => number;
     missing: (x: unknown) => boolean;
     exists: (x: unknown) => boolean;
     seq: (from: number, to: number) => number[];
@@ -192,10 +198,10 @@ export const util: UtilHelpersInterface = {
     makeSumFromElements: (array: string[]): number => {
         const elements = new Array(array.length);
         for (let i = 0; i < array.length; i++) {
-            elements[i] = util.getInputNumericValue(array[i]);
+            const value = util.getInputNumericValue(array[i]);
+            elements[i] = (value >= 0) ? value : 0;
         }
         return(util.makeSum(elements));
-
     },
     makeSumDecimal: (array: number[]) => {
         return array.reduce((accumulator, currentValue) => accumulator + currentValue, 0).toFixed(2);
@@ -246,6 +252,47 @@ export const util: UtilHelpersInterface = {
         });
         return response.every(item => item === true);
     },
+
+    eventListener: (element:string, event:Event, callback, trigger?:Array<string>, what?: Array<Event>) => {
+        document.getElementById(element).addEventListener(event, callback);
+        if (trigger && trigger.length > 0) {
+            for (let i = 0; i < trigger.length; i++) {
+                const trel = document.getElementById(trigger[i]) as HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement;
+                trel.dispatchEvent(new Event(what[i]));
+            }
+        }
+    },
+
+    standardDate: (date: string) => {
+        // const eldate = date.split('/');
+        // const stdate = new Date(Number(eldate[2]), Number(eldate[1]) - 1, Number(eldate[0]));
+        return new Date(date.replace(/(\d{2})\/(\d{2})\/(\d{4})/,'$3-$2-$1'));
+    },
+
+    diffDates: (startDate: Date, endDate: Date, type?:string) => {
+        if (!type) {
+            type = "years";
+        }
+
+        let yearDiff = endDate.getFullYear() - startDate.getFullYear();
+        let monthDiff = endDate.getMonth() - startDate.getMonth();
+        const dayDiff = endDate.getDate() - startDate.getDate();
+
+        if (type == "years") {
+            if (monthDiff < 0 || (monthDiff === 0 && dayDiff < 0)) {
+                yearDiff--;
+            }
+            return(yearDiff);
+        }
+        else if (type == "months") {
+            monthDiff += yearDiff * 12;
+            if (dayDiff < 0) {
+                monthDiff--;
+            }
+            return(monthDiff);
+        }
+    },
+
 
     missing: function (x: unknown): boolean {
         return x === void 0 || x === undefined;
