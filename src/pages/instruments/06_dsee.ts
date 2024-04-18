@@ -120,17 +120,13 @@ net1_b.forEach((b) => {
         const g = net1_g[index];
         const t = net1_t[index];
 
-        if (util.inputsHaveValue([b, g])) {
-            const rowsum = document.getElementById(t) as HTMLInputElement;
-            rowsum.value = util.makeSumFromElements([b, g]).toString();
-            rowsum.dispatchEvent(new Event('change'));
-        }
+        const rowsum = document.getElementById(t) as HTMLInputElement;
+        rowsum.value = util.makeSumFromElements([b, g]).toString();
+        rowsum.dispatchEvent(new Event('change'));
 
-        if (util.inputsHaveValue(net1_b)) {
-            const colsum = document.getElementById('tnet_b') as HTMLInputElement;
-            colsum.value = util.makeSumFromElements(net1_b).toString();
-            colsum.dispatchEvent(new Event('change'));
-        }
+        const colsum = document.getElementById('tnet_b') as HTMLInputElement;
+        colsum.value = util.makeSumFromElements(net1_b).toString();
+        colsum.dispatchEvent(new Event('change'));
     });
 });
 
@@ -140,27 +136,21 @@ net1_g.forEach((g) => {
         const b = net1_b[index];
         const t = net1_t[index];
 
-        if (util.inputsHaveValue([b, g])) {
-            const rowsum = document.getElementById(t) as HTMLInputElement;
-            rowsum.value = util.makeSumFromElements([b, g]).toString();
-            rowsum.dispatchEvent(new Event('change'));
-        }
+        const rowsum = document.getElementById(t) as HTMLInputElement;
+        rowsum.value = util.makeSumFromElements([b, g]).toString();
+        rowsum.dispatchEvent(new Event('change'));
 
-        if (util.inputsHaveValue(net1_g)) {
-            const colsum = document.getElementById('tnet_g') as HTMLInputElement;
-            colsum.value = util.makeSumFromElements(net1_g).toString();
-            colsum.dispatchEvent(new Event('change'));
-        }
+        const colsum = document.getElementById('tnet_g') as HTMLInputElement;
+        colsum.value = util.makeSumFromElements(net1_g).toString();
+        colsum.dispatchEvent(new Event('change'));
     });
 });
 
 net1_t.forEach((t) => {
     document.getElementById(t).addEventListener('change', () => {
-        if (util.inputsHaveValue(net1_t)) {
-            const colsum = document.getElementById('tnet_t') as HTMLInputElement;
-            colsum.value = util.makeSumFromElements(net1_t).toString();
-            colsum.dispatchEvent(new Event('change'));
-        }
+        const colsum = document.getElementById('tnet_t') as HTMLInputElement;
+        colsum.value = util.makeSumFromElements(net1_t).toString();
+        colsum.dispatchEvent(new Event('change'));
     });
 });
 
@@ -174,17 +164,13 @@ nes_b.forEach((b) => {
         const g = nes_g[index];
         const t = nes_t[index];
 
-        if (util.inputsHaveValue([b, g])) {
-            const rowsum = document.getElementById(t) as HTMLInputElement;
-            rowsum.value = util.makeSumFromElements([b, g]).toString();
-            rowsum.dispatchEvent(new Event('change'));
-        }
+        const rowsum = document.getElementById(t) as HTMLInputElement;
+        rowsum.value = util.makeSumFromElements([b, g]).toString();
+        rowsum.dispatchEvent(new Event('change'));
 
-        if (util.inputsHaveValue(nes_b)) {
-            const colsum = document.getElementById('nest_b') as HTMLInputElement;
-            colsum.value = util.makeSumFromElements(nes_b).toString();
-            colsum.dispatchEvent(new Event('change'));
-        }
+        const colsum = document.getElementById('nest_b') as HTMLInputElement;
+        colsum.value = util.makeSumFromElements(nes_b).toString();
+        colsum.dispatchEvent(new Event('change'));
     });
 });
 
@@ -194,27 +180,21 @@ nes_g.forEach((g) => {
         const b = nes_b[index];
         const t = nes_t[index];
 
-        if (util.inputsHaveValue([b, g])) {
-            const rowsum = document.getElementById(t) as HTMLInputElement;
-            rowsum.value = util.makeSumFromElements([b, g]).toString();
-            rowsum.dispatchEvent(new Event('change'));
-        }
+        const rowsum = document.getElementById(t) as HTMLInputElement;
+        rowsum.value = util.makeSumFromElements([b, g]).toString();
+        rowsum.dispatchEvent(new Event('change'));
 
-        if (util.inputsHaveValue(nes_g)) {
-            const colsum = document.getElementById('nest_g') as HTMLInputElement;
-            colsum.value = util.makeSumFromElements(nes_g).toString();
-            colsum.dispatchEvent(new Event('change'));
-        }
+        const colsum = document.getElementById('nest_g') as HTMLInputElement;
+        colsum.value = util.makeSumFromElements(nes_g).toString();
+        colsum.dispatchEvent(new Event('change'));
     });
 });
 
 nes_t.forEach((t) => {
     document.getElementById(t).addEventListener('change', () => {
-        if (util.inputsHaveValue(nes_t)) {
-            const colsum = document.getElementById('nest_t') as HTMLInputElement;
-            colsum.value = util.makeSumFromElements(nes_t).toString();
-            colsum.dispatchEvent(new Event('change'));
-        }
+        const colsum = document.getElementById('nest_t') as HTMLInputElement;
+        colsum.value = util.makeSumFromElements(nes_t).toString();
+        colsum.dispatchEvent(new Event('change'));
     });
 });
 
