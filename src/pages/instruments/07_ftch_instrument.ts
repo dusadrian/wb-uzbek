@@ -10,7 +10,7 @@ import { FlatpickrFn } from 'flatpickr/dist/types/instance';
 const flatpickr: FlatpickrFn = _flatpickr as any;
 import { Russian } from "flatpickr/dist/l10n/ru";
 import { UzbekLatin } from "flatpickr/dist/l10n/uz_latn";
-// import { administrative } from "../../libraries/administrative";
+// import { administrative, regions, districts, settlements, settlement_types } from "../../libraries/administrative";
 
 
 const general_dates = [
