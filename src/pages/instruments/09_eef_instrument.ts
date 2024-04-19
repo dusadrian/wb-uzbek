@@ -2,6 +2,7 @@ import { ipcRenderer } from "electron";
 import { questions, questionOrder } from "./09_eef_variables";
 import instrument from "../../libraries/instrument";
 import { QuestionObjectType, SaveInstrumentType } from "../../libraries/interfaces";
+import { util } from "../../libraries/validation_helpers";
 
 import * as _flatpickr from 'flatpickr';
 import { FlatpickrFn } from 'flatpickr/dist/types/instance';
@@ -29,7 +30,7 @@ export const instrument9 = {
             flatpickrConfig.locale = Russian;
         }
 
-        // flatpickr((<HTMLInputElement>document.getElementById('lk3')), flatpickrConfig);
+        // flatpickr(util.htmlElement('lk3'), flatpickrConfig);
 
         ipcRenderer.on("instrumentDataReady", (_event, args) => {
             console.log(args);
@@ -48,8 +49,7 @@ export const instrument9 = {
             } else {
                 if (args.userData) {
                     // set default values for user
-                    const q2 = (<HTMLInputElement>document.getElementById('q2'));
-                    q2.value = args.userData.first_name + " " + args.userData.patronymics + " " + args.userData.last_name;
+                    util.setValue('q2', args.userData.first_name + " " + args.userData.patronymics + " " + args.userData.last_name);
                 }
             }
             instrument.start(instrumentID, instrument.trimis, saveChestionar, validateChestionar);

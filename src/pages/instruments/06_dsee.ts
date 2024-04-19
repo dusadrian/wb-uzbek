@@ -8,36 +8,50 @@ import * as _flatpickr from 'flatpickr';
 import { FlatpickrFn } from 'flatpickr/dist/types/instance';
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const flatpickr: FlatpickrFn = _flatpickr as any;
+
 import { Russian } from "flatpickr/dist/l10n/ru";
 import { UzbekLatin } from "flatpickr/dist/l10n/uz_latn";
+import { regions, districts, settlements, settlement_types } from "../../libraries/administrative";
 
 export const instrument6 = {
     init: async () => {
 
         const lang = localStorage.getItem("language");
 
+        const flatpickrConfig1: {
+            enableTime: boolean;
+            dateFormat: string;
+            maxDate: string;
+            locale?: typeof Russian | typeof UzbekLatin
+        } = {
+            enableTime: false,
+            dateFormat: "Y",
+            maxDate: "30/04/2024"
+        }
+
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        // const flatpickrConfig1: { enableTime: boolean; dateFormat: string; locale?: any } = {
-        //     enableTime: false,
-        //     dateFormat: "Y",
-        // }
-        // // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        // const flatpickrConfig2: { enableTime: boolean; dateFormat: string; locale?: any } = {
-        //     enableTime: false,
-        //     dateFormat: "m/Y",
-        // }
+        const flatpickrConfig2: {
+            enableTime: boolean;
+            dateFormat: string;
+            maxDate: string;
+            locale?: typeof Russian | typeof UzbekLatin
+        } = {
+            enableTime: false,
+            dateFormat: "m/Y",
+            maxDate: "30/04/2024"
+        }
 
-        // if (lang == "uz") {
-        //     flatpickrConfig1.locale = UzbekLatin;
-        //     flatpickrConfig2.locale = UzbekLatin;
-        // }
-        // if (lang == "ru") {
-        //     flatpickrConfig1.locale = Russian;
-        //     flatpickrConfig2.locale = Russian;
-        // }
+        if (lang == "uz") {
+            flatpickrConfig1.locale = UzbekLatin;
+            flatpickrConfig2.locale = UzbekLatin;
+        }
+        if (lang == "ru") {
+            flatpickrConfig1.locale = Russian;
+            flatpickrConfig2.locale = Russian;
+        }
 
-        // flatpickr((<HTMLInputElement>document.getElementById('i10')), flatpickrConfig1);
-        // flatpickr((<HTMLInputElement>document.getElementById('af13b')), flatpickrConfig2);
+        flatpickr(util.htmlElement('i10'), flatpickrConfig1);
+        flatpickr(util.htmlElement('af13b'), flatpickrConfig2);
 
         ipcRenderer.on("instrumentDataReady", (_event, args) => {
 
@@ -53,47 +67,46 @@ export const instrument6 = {
                 }
 
             } else {
-                const q1 = (<HTMLInputElement>document.getElementById('q1'));
                 // two digit day & month
-                q1.value = new Date().getDate().toString().padStart(2, '0') + "/" + (new Date().getMonth() + 1).toString().padStart(2, '0') + "/" + new Date().getFullYear().toString();
+                const today = new Date().getDate().toString().padStart(2, '0') + "/" +
+                            (new Date().getMonth() + 1).toString().padStart(2, '0') + "/" +
+                            new Date().getFullYear().toString()
+                util.setValue("q1", today);
 
                 if (args.userData) {
                     // set default values for user
-                    const q2 = (<HTMLInputElement>document.getElementById('q2'));
-                    q2.value = args.userData.first_name + " " + args.userData.patronymics + " " + args.userData.last_name;
-                    const q3 = (<HTMLInputElement>document.getElementById('q3'));
-                    q3.value = args.userData.position;
-                    const q4 = (<HTMLInputElement>document.getElementById('q4'));
-                    q4.value = args.userData.profession;
-                    const q5 = (<HTMLInputElement>document.getElementById('q5'));
-                    q5.value = args.userData.phone;
-                    const q6 = (<HTMLInputElement>document.getElementById('q6'));
-                    q6.value = args.userData.email;
+                    util.setValue('q2', args.userData.first_name + " " + args.userData.patronymics + " " + args.userData.last_name);
+                    util.setValue('q3', args.userData.position);
+                    util.setValue('q4', args.userData.profession);
+                    util.setValue('q5', args.userData.phone);
+                    util.setValue('q6', args.userData.email);
                 }
-                if (args.institutionData) {
-                    // set default values for institution
-                    const i1 = (<HTMLInputElement>document.getElementById('i1'));
-                    i1.value = args.institutionData.name;
-                    const i2 = (<HTMLInputElement>document.getElementById('i2'));
-                    i2.value = args.institutionData.code;
-                    const i3 = (<HTMLInputElement>document.getElementById('i3'));
-                    i3.value = args.institutionData.address;
-                    const i4 = (<HTMLInputElement>document.getElementById('i4'));
-                    i4.value = args.institutionData.atuCode;
-                    const i4a = (<HTMLInputElement>document.getElementById('i4a'));
-                    i4a.value = args.institutionData.region;
-                    const i4b = (<HTMLInputElement>document.getElementById('i4b'));
-                    i4b.value = args.institutionData.district;
-                    // TODO -- To be updated -- Settlement
-                    const i4c = (<HTMLInputElement>document.getElementById('i4c'));
-                    i4c.value = args.institutionData.district;
-                    // TODO -- To be updated -- Type of settlement
-                    const i4d = (<HTMLInputElement>document.getElementById('i4d'));
-                    i4d.value = args.institutionData.district;
-                    // Type of institution
-                    const i9 = (<HTMLInputElement>document.getElementById('i9'));
-                    i9.value = args.institutionData.type;
 
+                if (args.institutionData) {
+                    type keystring = { [key: string]: string };
+
+                    // set default values for institution
+                    util.setValue('i1', args.institutionData.name);
+                    util.setValue('i2', args.institutionData.code);
+                    util.setValue('i3', args.institutionData.address);
+
+                    if (Object.keys(regions).indexOf(args.institutionData.region) >= 0) {
+                        util.setValue('i4a', (regions[args.institutionData.region] as keystring)[lang]);
+                    }
+
+                    if (Object.keys(districts).indexOf(args.institutionData.district) >= 0) {
+                        util.setValue('i4', args.institutionData.district);
+                        util.setValue('i4b', (districts[args.institutionData.district] as keystring)[lang]);
+                    }
+
+                    if (Object.keys(settlements).indexOf(args.institutionData.settlement) >= 0) {
+                        util.setValue('i4', args.institutionData.settlement);
+                        util.setValue('i4c', (settlements[args.institutionData.settlement] as keystring)[lang]);
+                        util.setValue('i4d', (settlement_types[settlements[args.institutionData.settlement].type] as keystring)[lang]);
+                    }
+
+                    // Type of institution
+                    util.setValue('i9', args.institutionData.type);
                 }
 
             }

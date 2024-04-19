@@ -2,6 +2,7 @@ import { ipcRenderer } from "electron";
 import { questions, questionOrder } from "./05_yplcs_variables";
 import instrument from "../../libraries/instrument";
 import { QuestionObjectType, SaveInstrumentType } from "../../libraries/interfaces";
+import { util } from "../../libraries/validation_helpers";
 
 import * as _flatpickr from 'flatpickr';
 import { FlatpickrFn } from 'flatpickr/dist/types/instance';
@@ -35,7 +36,7 @@ export const instrument5 = {
             flatpickrConfig.locale = Russian;
         }
 
-        flatpickr((<HTMLInputElement>document.getElementById('pi3')), flatpickrConfig);
+        flatpickr(util.htmlElement('pi3'), flatpickrConfig);
         // flatpickr((<HTMLInputElement>document.getElementById('e7')), flatpickrConfig);
 
         ipcRenderer.on("instrumentDataReady", (_event, args) => {
@@ -55,26 +56,21 @@ export const instrument5 = {
                 }
 
             } else {
-                const data = (<HTMLInputElement>document.getElementById('data'));
                 // two digit day & month
-                data.value = new Date().getDate().toString().padStart(2, '0') + "/" + (new Date().getMonth() + 1).toString().padStart(2, '0') + "/" + new Date().getFullYear().toString();
+                const today = new Date().getDate().toString().padStart(2, '0') + "/" +
+                            (new Date().getMonth() + 1).toString().padStart(2, '0') + "/" +
+                            new Date().getFullYear().toString()
+                util.setValue("data", today);
 
                 if (args.userData) {
                     // set default values for user
-                    const omr1 = (<HTMLInputElement>document.getElementById('omr1'));
-                    omr1.value = args.userData.first_name;
-                    const omr2 = (<HTMLInputElement>document.getElementById('omr2'));
-                    omr2.value = args.userData.patronymics;
-                    const omr3 = (<HTMLInputElement>document.getElementById('omr3'));
-                    omr3.value = args.userData.last_name;
-                    const omr4 = (<HTMLInputElement>document.getElementById('omr4'));
-                    omr4.value = args.userData.position;
-                    const omr5 = (<HTMLInputElement>document.getElementById('omr5'));
-                    omr5.value = args.userData.profession;
-                    const omr6 = (<HTMLInputElement>document.getElementById('omr6'));
-                    omr6.value = args.userData.phone;
-                    const omr7 = (<HTMLInputElement>document.getElementById('omr7'));
-                    omr7.value = args.userData.email;
+                    util.setValue("omr1", args.userData.first_name);
+                    util.setValue("omr2", args.userData.patronymics);
+                    util.setValue("omr3", args.userData.last_name);
+                    util.setValue("omr4", args.userData.position);
+                    util.setValue("omr5", args.userData.profession);
+                    util.setValue("omr6", args.userData.phone);
+                    util.setValue("omr7", args.userData.email);
                 }
 
             }

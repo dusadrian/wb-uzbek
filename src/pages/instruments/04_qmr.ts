@@ -10,9 +10,7 @@ import { FlatpickrFn } from 'flatpickr/dist/types/instance';
 const flatpickr: FlatpickrFn = _flatpickr as any;
 import { Russian } from "flatpickr/dist/l10n/ru";
 import { UzbekLatin } from "flatpickr/dist/l10n/uz_latn";
-import { administrative, regions, districts, settlements, settlement_types } from "../../libraries/administrative";
-
-const i9 = (<HTMLInputElement>document.getElementById('i9'));
+import { regions, districts, settlements, settlement_types } from "../../libraries/administrative";
 
 
 export const instrument4 = {
@@ -58,11 +56,11 @@ export const instrument4 = {
         ]
 
         af5_dates.forEach(item => {
-            flatpickr((<HTMLInputElement>document.getElementById(item)), flatpickrConfig1);
+            flatpickr(util.htmlElement(item), flatpickrConfig1);
         });
 
-        flatpickr((<HTMLInputElement>document.getElementById('i10')), flatpickrConfig1);
-        flatpickr((<HTMLInputElement>document.getElementById('af13b')), flatpickrConfig2);
+        flatpickr(util.htmlElement('i10'), flatpickrConfig1);
+        flatpickr(util.htmlElement('af13b'), flatpickrConfig2);
 
         ipcRenderer.on("instrumentDataReady", (_event, args) => {
 
@@ -78,58 +76,46 @@ export const instrument4 = {
                 }
 
             } else {
-                const q1 = (<HTMLInputElement>document.getElementById('q1'));
                 // two digit day & month
-                q1.value = new Date().getDate().toString().padStart(2, '0') + "/" + (new Date().getMonth() + 1).toString().padStart(2, '0') + "/" + new Date().getFullYear().toString();
+                const today = new Date().getDate().toString().padStart(2, '0') + "/" +
+                            (new Date().getMonth() + 1).toString().padStart(2, '0') + "/" +
+                            new Date().getFullYear().toString()
+                util.setValue("q1", today);
 
                 if (args.userData) {
                     // set default values for user
-                    util.htmlElement('q2').value = args.userData.first_name + " " + args.userData.patronymics + " " + args.userData.last_name;
-                    util.htmlElement('q3').value = args.userData.position;
-                    util.htmlElement('q4').value = args.userData.profession;
-                    util.htmlElement('q5').value = args.userData.phone;
-                    util.htmlElement('q6').value = args.userData.email;
+                    util.setValue('q2', args.userData.first_name + " " + args.userData.patronymics + " " + args.userData.last_name);
+                    util.setValue('q3', args.userData.position);
+                    util.setValue('q4', args.userData.profession);
+                    util.setValue('q5', args.userData.phone);
+                    util.setValue('q6', args.userData.email);
                 }
+
                 if (args.institutionData) {
+                    type keystring = { [key: string]: string };
+
                     // set default values for institution
-                    util.htmlElement('i1').value = args.institutionData.name;
-                    util.htmlElement('i2').value = args.institutionData.code;
-                    util.htmlElement('i3').value = args.institutionData.address;
-                    util.htmlElement('i4').value = args.institutionData.atuCode;
+                    util.setValue('i1', args.institutionData.name);
+                    util.setValue('i2', args.institutionData.code);
+                    util.setValue('i3', args.institutionData.address);
 
-                    const i4a = util.htmlElement('i4a');
-                    const i4b = util.htmlElement('i4b');
-                    const i4c = util.htmlElement('i4c');
-
-                    const regions = Object.keys(administrative);
-                    if (regions.indexOf(args.institutionData.region) >= 0) {
-
-                        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-                        i4a.value = (administrative[args.institutionData.region] as any)[lang];
-                        const regdist = administrative[i4a.value].districts;
-                        const districts = Object.keys(regdist);
-
-                        if (districts.indexOf(args.institutionData.district) >= 0) {
-                            // eslint-disable-next-line @typescript-eslint/no-explicit-any
-                            i4b.value = (regdist[args.institutionData.district] as any)[lang];
-
-                            const regdisatu = administrative[i4a.value].districts[i4b.value].settlements;
-
-                            if (regdisatu) {
-                                const settlements = Object.keys(regdisatu);
-                                // TODO -- To be updated -- Type of settlement
-                                if (settlements.indexOf(args.institutionData.settlement) >= 0) {
-                                    i4c.value = (regdisatu[args.institutionData.settlement] as { [key: string]: string })[lang];
-                                }
-                            }
-                        }
+                    if (Object.keys(regions).indexOf(args.institutionData.region) >= 0) {
+                        util.setValue('i4a', (regions[args.institutionData.region] as keystring)[lang]);
                     }
 
-                    const i4d = (<HTMLInputElement>document.getElementById('i4d'));
-                    i4d.value = args.institutionData.district;
+                    if (Object.keys(districts).indexOf(args.institutionData.district) >= 0) {
+                        util.setValue('i4', args.institutionData.district);
+                        util.setValue('i4b', (districts[args.institutionData.district] as keystring)[lang]);
+                    }
+
+                    if (Object.keys(settlements).indexOf(args.institutionData.settlement) >= 0) {
+                        util.setValue('i4', args.institutionData.settlement);
+                        util.setValue('i4c', (settlements[args.institutionData.settlement] as keystring)[lang]);
+                        util.setValue('i4d', (settlement_types[settlements[args.institutionData.settlement].type] as keystring)[lang]);
+                    }
 
                     // Type of institution
-                    i9.value = args.institutionData.type;
+                    util.setValue('i9', args.institutionData.type);
 
                 }
 

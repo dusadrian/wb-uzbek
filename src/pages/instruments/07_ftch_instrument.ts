@@ -45,10 +45,8 @@ export const instrument7 = {
             flatpickrConfig.locale = Russian;
         }
 
-        const date_elements = [...general_dates, ...admission_dates];
 
-        const flatpickr_elements = date_elements.map((el) => {
-            const element = document.getElementById(el) as HTMLInputElement;
+        [...general_dates, ...admission_dates].forEach((el) => {
             let config;
             if (el == "ifp2") {
                 config = { ...flatpickrConfig, minDate: "01/01/1950" };
@@ -58,13 +56,8 @@ export const instrument7 = {
             } else if (el != "data") {
                 config = { ...flatpickrConfig, minDate: "01/01/1930" };
             }
-            return flatpickr(element, config);
+            flatpickr(util.htmlElement(el), config);
         });
-
-        const today = new Date();
-        flatpickr_elements[date_elements.indexOf('data')].setDate(today);
-        util.trigger("data", "change");
-
 
 
 
@@ -83,13 +76,19 @@ console.log(args);
                 }
 
             } else {
+                // two digit day & month
+                const today = new Date().getDate().toString().padStart(2, '0') + "/" +
+                            (new Date().getMonth() + 1).toString().padStart(2, '0') + "/" +
+                            new Date().getFullYear().toString()
+                util.setValue("data", today);
+
                 if (args.userData) {
                     // set default values for user
-                    util.htmlElement('q2').value = args.userData.first_name + " " + args.userData.patronymics + " " + args.userData.last_name;
-                    util.htmlElement('q3').value = args.userData.position;
-                    util.htmlElement('q4').value = args.userData.profession;
-                    util.htmlElement('q5').value = args.userData.phone;
-                    util.htmlElement('q6').value = args.userData.email;
+                    util.setValue('q2', args.userData.first_name + " " + args.userData.patronymics + " " + args.userData.last_name);
+                    util.setValue('q3', args.userData.position);
+                    util.setValue('q4', args.userData.profession);
+                    util.setValue('q5', args.userData.phone);
+                    util.setValue('q6', args.userData.email);
                 }
             }
             instrument.start(instrumentID, instrument.trimis, saveChestionar, validateChestionar);
