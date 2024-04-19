@@ -15,13 +15,17 @@ interface UtilHelpersInterface {
     getInputDecimalValue: (el: string) => number;
     inputHasValue: (el: string) => boolean;
     inputsHaveValue: (array: string[]) => boolean;
-    htmlElement: (element: string) => HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement;
+    radioIDs: (name: string) => string[];
+    htmlElement: (element: string) => HTMLInputElement;
+    setValue: (element: string, value: string) => void;
     trigger: (element: string, change: string) => void;
     triggerArray: (elements: Array<string>, changes: Array<string>) => void;
     listen: (element: string, event: string, callback: () => void) => void;
     listenArray: (elements:Array<string>, events:Array<string>, callback: () => void) => void;
     standardDate: (date: string) => Date;
     diffDates: (startDate: Date, endDate: Date, type?:string) => number;
+    focus: (element: string) => void;
+    blur: (element: string) => void;
     missing: (x: unknown) => boolean;
     exists: (x: unknown) => boolean;
     repString: (value: string, times: number) => Array<string>;
@@ -258,8 +262,14 @@ export const util: UtilHelpersInterface = {
         return response.every(item => item === true);
     },
 
+    radioIDs: (name) => {
+        return Array.from(document.querySelectorAll('input[name=' + name + ']')).map((el) => el.id);
+    },
     htmlElement: (element) => {
-        return document.getElementById(element) as HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement;
+        return document.getElementById(element) as HTMLInputElement;
+    },
+    setValue: (element, value) => {
+        util.htmlElement(element).value = value;
     },
     trigger: (element, change) => {
         util.htmlElement(element).dispatchEvent(new Event(change));
@@ -273,7 +283,7 @@ export const util: UtilHelpersInterface = {
         util.htmlElement(element).addEventListener(event, callback);
         // if (trigger && trigger.length > 0) {
         //     for (let i = 0; i < trigger.length; i++) {
-        //         const trel = document.getElementById(trigger[i]) as HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement;
+        //         const trel = document.getElementById(trigger[i]) as HTMLInputElement;
         //         trel.dispatchEvent(new Event(what[i]));
         //     }
         // }
@@ -289,13 +299,11 @@ export const util: UtilHelpersInterface = {
             util.htmlElement(elements[i]).addEventListener(event[i], callback);
         }
     },
-
     standardDate: (date) => {
         // const eldate = date.split('/');
         // const stdate = new Date(Number(eldate[2]), Number(eldate[1]) - 1, Number(eldate[0]));
         return new Date(date.replace(/(\d{2})\/(\d{2})\/(\d{4})/,'$3-$2-$1'));
     },
-
     diffDates: (startDate, endDate, type?) => {
         if (!type) {
             type = "years";
@@ -318,6 +326,12 @@ export const util: UtilHelpersInterface = {
             }
             return(monthDiff);
         }
+    },
+    focus: (element) => {
+        util.htmlElement(element).focus();
+    },
+    blur: (element) => {
+        util.htmlElement(element).blur();
     },
 
 
