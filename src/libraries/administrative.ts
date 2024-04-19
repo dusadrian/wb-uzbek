@@ -25,8 +25,8 @@ export interface Code_Names {
     [key: string]: {
         en: string,
         uz: string,
-        ru:
-        string
+        ru: string,
+        type?: string
     }
 }
 
@@ -1136,13172 +1136,15806 @@ export const settlements: Code_Names = {
     "1703202552": {
         "en": "Bo'ston",
         "uz": "Bo'ston",
-        "ru": "Бустон"
+        "ru": "Бустон",
+        "type": "24"
     },
     "1703202554": {
         "en": "Dalvarzin",
         "uz": "Dalvarzin",
-        "ru": "Далварзин"
+        "ru": "Далварзин",
+        "type": "24"
     },
     "1703202556": {
         "en": "Jalabek",
         "uz": "Jalabek",
-        "ru": "Жалабек"
+        "ru": "Жалабек",
+        "type": "24"
     },
     "1703202558": {
         "en": "Ijtimoiyat",
         "uz": "Ijtimoiyat",
-        "ru": "Ижтимоият"
+        "ru": "Ижтимоият",
+        "type": "24"
     },
     "1703202562": {
         "en": "Kumakay",
         "uz": "Kumakay",
-        "ru": "Кумакай"
+        "ru": "Кумакай",
+        "type": "24"
     },
     "1703202564": {
         "en": "Qo'shtepa",
         "uz": "Qo'shtepa",
-        "ru": "Куштепа"
+        "ru": "Куштепа",
+        "type": "24"
     },
     "1703202566": {
         "en": "Madaniy mehnat",
         "uz": "Madaniy mehnat",
-        "ru": "Маданий мехнат"
+        "ru": "Маданий мехнат",
+        "type": "24"
     },
     "1703202568": {
         "en": "Markaz",
         "uz": "Markaz",
-        "ru": "Марказ"
+        "ru": "Марказ",
+        "type": "24"
     },
     "1703202572": {
         "en": "Maslahat",
         "uz": "Maslahat",
-        "ru": "Маслахат"
+        "ru": "Маслахат",
+        "type": "24"
     },
     "1703202574": {
         "en": "Namuna",
         "uz": "Namuna",
-        "ru": "Намуна"
+        "ru": "Намуна",
+        "type": "24"
     },
     "1703202576": {
         "en": "Xondibog'i",
         "uz": "Xondibog'i",
-        "ru": "Хондибоги"
+        "ru": "Хондибоги",
+        "type": "24"
     },
     "1703202804": {
         "en": "Oltinko'l",
         "uz": "Oltinko'l",
-        "ru": "Алтынкуль"
+        "ru": "Алтынкуль",
+        "type": "31"
     },
     "1703202807": {
         "en": "Oxunboboyev nomli",
         "uz": "Oxunboboyev nomli",
-        "ru": "им. Ахунбабаева"
+        "ru": "им. Ахунбабаева",
+        "type": "31"
     },
     "1703202813": {
         "en": "Jalabek",
         "uz": "Jalabek",
-        "ru": "Джалабек"
+        "ru": "Джалабек",
+        "type": "31"
     },
     "1703202820": {
         "en": "Qo'shtepasaroy",
         "uz": "Qo'shtepasaroy",
-        "ru": "Коштепасарай"
+        "ru": "Коштепасарай",
+        "type": "31"
     },
     "1703202825": {
         "en": "Kumakay",
         "uz": "Kumakay",
-        "ru": "Кумакай"
+        "ru": "Кумакай",
+        "type": "31"
     },
     "1703202830": {
         "en": "Maslahat",
         "uz": "Maslahat",
-        "ru": "Маслахат"
+        "ru": "Маслахат",
+        "type": "31"
     },
     "1703202834": {
         "en": "Oraziy",
         "uz": "Oraziy",
-        "ru": "им. Орази"
+        "ru": "им. Орази",
+        "type": "31"
     },
     "1703202840": {
         "en": "Suvyulduz",
         "uz": "Suvyulduz",
-        "ru": "Сувюлдуз"
+        "ru": "Сувюлдуз",
+        "type": "31"
     },
     "1703203551": {
         "en": "Kuyganyor",
         "uz": "Kuyganyor",
-        "ru": "Куйган - яр"
+        "ru": "Куйган - яр",
+        "type": "24"
     },
     "1703203553": {
         "en": "Ayrilish",
         "uz": "Ayrilish",
-        "ru": "Айрилиш"
+        "ru": "Айрилиш",
+        "type": "24"
     },
     "1703203555": {
         "en": "Butaqora",
         "uz": "Butaqora",
-        "ru": "Бутакора"
+        "ru": "Бутакора",
+        "type": "24"
     },
     "1703203557": {
         "en": "Guliston",
         "uz": "Guliston",
-        "ru": "Гулистон"
+        "ru": "Гулистон",
+        "type": "24"
     },
     "1703203559": {
         "en": "Gumbaz",
         "uz": "Gumbaz",
-        "ru": "Гумбаз"
+        "ru": "Гумбаз",
+        "type": "24"
     },
     "1703203561": {
         "en": "Zavroq",
         "uz": "Zavroq",
-        "ru": "Заврок"
+        "ru": "Заврок",
+        "type": "24"
     },
     "1703203563": {
         "en": "Qoraqalpoq",
         "uz": "Qoraqalpoq",
-        "ru": "Каракалпак"
+        "ru": "Каракалпак",
+        "type": "24"
     },
     "1703203567": {
         "en": "Kunji",
         "uz": "Kunji",
-        "ru": "Кунжи"
+        "ru": "Кунжи",
+        "type": "24"
     },
     "1703203569": {
         "en": "Qo'shariq",
         "uz": "Qo'shariq",
-        "ru": "Кушарик"
+        "ru": "Кушарик",
+        "type": "24"
     },
     "1703203571": {
         "en": "Namuna",
         "uz": "Namuna",
-        "ru": "Намуна"
+        "ru": "Намуна",
+        "type": "24"
     },
     "1703203573": {
         "en": "Og'ullik",
         "uz": "Og'ullik",
-        "ru": "Огуллик"
+        "ru": "Огуллик",
+        "type": "24"
     },
     "1703203575": {
         "en": "Oq-yor",
         "uz": "Oq-yor",
-        "ru": "Ок-ер"
+        "ru": "Ок-ер",
+        "type": "24"
     },
     "1703203577": {
         "en": "Rovvot",
         "uz": "Rovvot",
-        "ru": "Роввот"
+        "ru": "Роввот",
+        "type": "24"
     },
     "1703203579": {
         "en": "Xartum",
         "uz": "Xartum",
-        "ru": "Хартум"
+        "ru": "Хартум",
+        "type": "24"
     },
     "1703203581": {
         "en": "Chilon",
         "uz": "Chilon",
-        "ru": "Чилон"
+        "ru": "Чилон",
+        "type": "24"
     },
     "1703203583": {
         "en": "Chumbog'ich",
         "uz": "Chumbog'ich",
-        "ru": "Чумбогич"
+        "ru": "Чумбогич",
+        "type": "24"
     },
     "1703203585": {
         "en": "Ekin tikin",
         "uz": "Ekin tikin",
-        "ru": "Экин-тикин"
+        "ru": "Экин-тикин",
+        "type": "24"
     },
     "1703203587": {
         "en": "Yangiobod",
         "uz": "Yangiobod",
-        "ru": "Янгиабад"
+        "ru": "Янгиабад",
+        "type": "24"
     },
     "1703203589": {
         "en": "Gulobod",
         "uz": "Gulobod",
-        "ru": "Гулобод"
+        "ru": "Гулобод",
+        "type": "24"
     },
     "1703203803": {
         "en": "Oq-Yor",
         "uz": "Oq-Yor",
-        "ru": "Ак-яр"
+        "ru": "Ак-яр",
+        "type": "31"
     },
     "1703203813": {
         "en": "Bo'taqora",
         "uz": "Bo'taqora",
-        "ru": "Бутакара"
+        "ru": "Бутакара",
+        "type": "31"
     },
     "1703203829": {
         "en": "Qo'nji",
         "uz": "Qo'nji",
-        "ru": "Кунджи"
+        "ru": "Кунджи",
+        "type": "31"
     },
     "1703203838": {
         "en": "Nayman",
         "uz": "Nayman",
-        "ru": "Найман"
+        "ru": "Найман",
+        "type": "31"
     },
     "1703203849": {
         "en": "Xakan",
         "uz": "Xakan",
-        "ru": "Хакан"
+        "ru": "Хакан",
+        "type": "31"
     },
     "1703203863": {
         "en": "Xrabek",
         "uz": "Xrabek",
-        "ru": "Хирабек"
+        "ru": "Хирабек",
+        "type": "31"
     },
     "1703203866": {
         "en": "Xartum",
         "uz": "Xartum",
-        "ru": "Хартум"
+        "ru": "Хартум",
+        "type": "31"
     },
     "1703203874": {
         "en": "Orol",
         "uz": "Orol",
-        "ru": "Аpал"
+        "ru": "Аpал",
+        "type": "31"
     },
     "1703203885": {
         "en": "Yorboshi",
         "uz": "Yorboshi",
-        "ru": "Ярбаши"
+        "ru": "Ярбаши",
+        "type": "31"
     },
     "1703206551": {
         "en": "Baliqchi",
         "uz": "Baliqchi",
-        "ru": "Баликчи"
+        "ru": "Баликчи",
+        "type": "24"
     },
     "1703206554": {
         "en": "Xo'jaobod",
         "uz": "Xo'jaobod",
-        "ru": "Хужаабад"
+        "ru": "Хужаабад",
+        "type": "24"
     },
     "1703206558": {
         "en": "Chinobod markaz",
         "uz": "Chinobod markaz",
-        "ru": "Чинобод марказ"
+        "ru": "Чинобод марказ",
+        "type": "24"
     },
     "1703206803": {
         "en": "Olimbek",
         "uz": "Olimbek",
-        "ru": "Алимбек"
+        "ru": "Алимбек",
+        "type": "31"
     },
     "1703206807": {
         "en": "Oxunboboyev nomli",
         "uz": "Oxunboboyev nomli",
-        "ru": "им. Ахунбабаева"
+        "ru": "им. Ахунбабаева",
+        "type": "31"
     },
     "1703206813": {
         "en": "Baliqchi",
         "uz": "Baliqchi",
-        "ru": "Балыкчи"
+        "ru": "Балыкчи",
+        "type": "31"
     },
     "1703206824": {
         "en": "Guliston",
         "uz": "Guliston",
-        "ru": "Гулистан"
+        "ru": "Гулистан",
+        "type": "31"
     },
     "1703206831": {
         "en": "Bo'ston",
         "uz": "Bo'ston",
-        "ru": "Бустан"
+        "ru": "Бустан",
+        "type": "31"
     },
     "1703206846": {
         "en": "Siza",
         "uz": "Siza",
-        "ru": "Сиза"
+        "ru": "Сиза",
+        "type": "31"
     },
     "1703206857": {
         "en": "O'rmonbek",
         "uz": "O'rmonbek",
-        "ru": "Урманбек"
+        "ru": "Урманбек",
+        "type": "31"
     },
     "1703206868": {
         "en": "Xo'jaobod",
         "uz": "Xo'jaobod",
-        "ru": "Ходжаабад"
+        "ru": "Ходжаабад",
+        "type": "31"
     },
     "1703206879": {
         "en": "Eskixaqqulobod",
         "uz": "Eskixaqqulobod",
-        "ru": "Эски Хаккулабад"
+        "ru": "Эски Хаккулабад",
+        "type": "31"
     },
     "1703209551": {
         "en": "Bo'z",
         "uz": "Bo'z",
-        "ru": "Боз"
+        "ru": "Боз",
+        "type": "24"
     },
     "1703209555": {
         "en": "M.Jalolov nomli",
         "uz": "M.Jalolov nomli",
-        "ru": "М.Жалолов"
+        "ru": "М.Жалолов",
+        "type": "24"
     },
     "1703209559": {
         "en": "Xoldevonbek",
         "uz": "Xoldevonbek",
-        "ru": "Холдевонбек"
+        "ru": "Холдевонбек",
+        "type": "24"
     },
     "1703209811": {
         "en": "Xoldevonbek",
         "uz": "Xoldevonbek",
-        "ru": "Халдеванбек"
+        "ru": "Халдеванбек",
+        "type": "31"
     },
     "1703209846": {
         "en": "M.Jalolov nomli",
         "uz": "M.Jalolov nomli",
-        "ru": "им. М. Джалалова"
+        "ru": "им. М. Джалалова",
+        "type": "31"
     },
     "1703209857": {
         "en": "Xovos",
         "uz": "Xovos",
-        "ru": "Хавас"
+        "ru": "Хавас",
+        "type": "31"
     },
     "1703210551": {
         "en": "Buloqboshi",
         "uz": "Buloqboshi",
-        "ru": "Булокбоши"
+        "ru": "Булокбоши",
+        "type": "24"
     },
     "1703210554": {
         "en": "Andijon",
         "uz": "Andijon",
-        "ru": "Андижан"
+        "ru": "Андижан",
+        "type": "24"
     },
     "1703210561": {
         "en": "Uchtepa",
         "uz": "Uchtepa",
-        "ru": "Учтепа"
+        "ru": "Учтепа",
+        "type": "24"
     },
     "1703210564": {
         "en": "Shirmonbuloq",
         "uz": "Shirmonbuloq",
-        "ru": "Ширмонбулок"
+        "ru": "Ширмонбулок",
+        "type": "24"
     },
     "1703210812": {
         "en": "Buloqboshi",
         "uz": "Buloqboshi",
-        "ru": "Булакбаши"
+        "ru": "Булакбаши",
+        "type": "31"
     },
     "1703210832": {
         "en": "Kulla",
         "uz": "Kulla",
-        "ru": "Кулла"
+        "ru": "Кулла",
+        "type": "31"
     },
     "1703210838": {
         "en": "Mayariq",
         "uz": "Mayariq",
-        "ru": "Майарык"
+        "ru": "Майарык",
+        "type": "31"
     },
     "1703210850": {
         "en": "Nayman",
         "uz": "Nayman",
-        "ru": "Найман"
+        "ru": "Найман",
+        "type": "31"
     },
     "1703210894": {
         "en": "Shirmonbuloq",
         "uz": "Shirmonbuloq",
-        "ru": "Ширманбулак"
+        "ru": "Ширманбулак",
+        "type": "31"
     },
     "1703211501": {
         "en": "Jalaquduq",
         "uz": "Jalaquduq",
-        "ru": "Жалакудук"
+        "ru": "Жалакудук",
+        "type": "23"
     },
     "1703211554": {
         "en": "Janubiy olamushuk",
         "uz": "Janubiy olamushuk",
-        "ru": "Южный Аламышик"
+        "ru": "Южный Аламышик",
+        "type": "24"
     },
     "1703211556": {
         "en": "Beshtol",
         "uz": "Beshtol",
-        "ru": "Бештол"
+        "ru": "Бештол",
+        "type": "24"
     },
     "1703211558": {
         "en": "Yorqishloq",
         "uz": "Yorqishloq",
-        "ru": "Еркишлок"
+        "ru": "Еркишлок",
+        "type": "24"
     },
     "1703211562": {
         "en": "Jalaquduq",
         "uz": "Jalaquduq",
-        "ru": "Жалакудук"
+        "ru": "Жалакудук",
+        "type": "24"
     },
     "1703211564": {
         "en": "Ko'kalam",
         "uz": "Ko'kalam",
-        "ru": "Кукалам"
+        "ru": "Кукалам",
+        "type": "24"
     },
     "1703211566": {
         "en": "Qo'shtepa",
         "uz": "Qo'shtepa",
-        "ru": "Куштепа"
+        "ru": "Куштепа",
+        "type": "24"
     },
     "1703211568": {
         "en": "Oyim",
         "uz": "Oyim",
-        "ru": "Ойим"
+        "ru": "Ойим",
+        "type": "24"
     },
     "1703211804": {
         "en": "Abdullabiy",
         "uz": "Abdullabiy",
-        "ru": "Абдуллабий"
+        "ru": "Абдуллабий",
+        "type": "31"
     },
     "1703211807": {
         "en": "Oyim",
         "uz": "Oyim",
-        "ru": "Аим"
+        "ru": "Аим",
+        "type": "31"
     },
     "1703211814": {
         "en": "Beshtal",
         "uz": "Beshtal",
-        "ru": "Бештал"
+        "ru": "Бештал",
+        "type": "31"
     },
     "1703211818": {
         "en": "Jalolquduq",
         "uz": "Jalolquduq",
-        "ru": "Джалалкудук"
+        "ru": "Джалалкудук",
+        "type": "31"
     },
     "1703211824": {
         "en": "Qatortol",
         "uz": "Qatortol",
-        "ru": "Катартал"
+        "ru": "Катартал",
+        "type": "31"
     },
     "1703211830": {
         "en": "Guliston",
         "uz": "Guliston",
-        "ru": "Гулистан"
+        "ru": "Гулистан",
+        "type": "31"
     },
     "1703211834": {
         "en": "Teshiktosh",
         "uz": "Teshiktosh",
-        "ru": "Тешикташ"
+        "ru": "Тешикташ",
+        "type": "31"
     },
     "1703211841": {
         "en": "Yorqishloq",
         "uz": "Yorqishloq",
-        "ru": "Яркишлак"
+        "ru": "Яркишлак",
+        "type": "31"
     },
     "1703214501": {
         "en": "Paytug",
         "uz": "Paytug",
-        "ru": "Пайтуг"
+        "ru": "Пайтуг",
+        "type": "23"
     },
     "1703214553": {
         "en": "Gurkirov",
         "uz": "Gurkirov",
-        "ru": "Гуркиров"
+        "ru": "Гуркиров",
+        "type": "24"
     },
     "1703214556": {
         "en": "Maygir",
         "uz": "Maygir",
-        "ru": "Майгир"
+        "ru": "Майгир",
+        "type": "24"
     },
     "1703214559": {
         "en": "To'rtko'l",
         "uz": "To'rtko'l",
-        "ru": "Турткул"
+        "ru": "Турткул",
+        "type": "24"
     },
     "1703214563": {
         "en": "Uzun ko'cha",
         "uz": "Uzun ko'cha",
-        "ru": "Узун куча"
+        "ru": "Узун куча",
+        "type": "24"
     },
     "1703214811": {
         "en": "Izboskan",
         "uz": "Izboskan",
-        "ru": "Избаскан"
+        "ru": "Избаскан",
+        "type": "31"
     },
     "1703214822": {
         "en": "Maygir",
         "uz": "Maygir",
-        "ru": "Майгир"
+        "ru": "Майгир",
+        "type": "31"
     },
     "1703214833": {
         "en": "Namuna",
         "uz": "Namuna",
-        "ru": "Намуна"
+        "ru": "Намуна",
+        "type": "31"
     },
     "1703214844": {
         "en": "O'rtoqlar",
         "uz": "O'rtoqlar",
-        "ru": "Уртаклар"
+        "ru": "Уртаклар",
+        "type": "31"
     },
     "1703214855": {
         "en": "Shermatobod",
         "uz": "Shermatobod",
-        "ru": "Шерматабад"
+        "ru": "Шерматабад",
+        "type": "31"
     },
     "1703214860": {
         "en": "Erkin",
         "uz": "Erkin",
-        "ru": "Эркин"
+        "ru": "Эркин",
+        "type": "31"
     },
     "1703214866": {
         "en": "Yangizamon",
         "uz": "Yangizamon",
-        "ru": "Янгизамон"
+        "ru": "Янгизамон",
+        "type": "31"
     },
     "1703214877": {
         "en": "Yangi qishloq",
         "uz": "Yangi qishloq",
-        "ru": "Янгикишлак"
+        "ru": "Янгикишлак",
+        "type": "31"
     },
     "1703214885": {
         "en": "Yakkatut",
         "uz": "Yakkatut",
-        "ru": "Яккатут"
+        "ru": "Яккатут",
+        "type": "31"
     },
     "1703217551": {
         "en": "Oq oltin",
         "uz": "Oq oltin",
-        "ru": "Ок-олтин"
+        "ru": "Ок-олтин",
+        "type": "24"
     },
     "1703217810": {
         "en": "Oq oltin",
         "uz": "Oq oltin",
-        "ru": "Акалтын"
+        "ru": "Акалтын",
+        "type": "31"
     },
     "1703217815": {
         "en": "Mingchinor",
         "uz": "Mingchinor",
-        "ru": "Мингчинаp"
+        "ru": "Мингчинаp",
+        "type": "31"
     },
     "1703217820": {
         "en": "Mingbuloq",
         "uz": "Mingbuloq",
-        "ru": "Мингбулак"
+        "ru": "Мингбулак",
+        "type": "31"
     },
     "1703217830": {
         "en": "Navoiy nomli",
         "uz": "Navoiy nomli",
-        "ru": "им. Навои"
+        "ru": "им. Навои",
+        "type": "31"
     },
     "1703220501": {
         "en": "Qo'rg'ontepa",
         "uz": "Qo'rg'ontepa",
-        "ru": "Кургантепа"
+        "ru": "Кургантепа",
+        "type": "23"
     },
     "1703220505": {
         "en": "Qorasuv",
         "uz": "Qorasuv",
-        "ru": "Карасу"
+        "ru": "Карасу",
+        "type": "23"
     },
     "1703220553": {
         "en": "Sultonobod",
         "uz": "Sultonobod",
-        "ru": "Султонабад"
+        "ru": "Султонабад",
+        "type": "24"
     },
     "1703220813": {
         "en": "Dardok",
         "uz": "Dardok",
-        "ru": "Дардак"
+        "ru": "Дардак",
+        "type": "31"
     },
     "1703220836": {
         "en": "Qo'rg'ontepa",
         "uz": "Qo'rg'ontepa",
-        "ru": "Кургантепа"
+        "ru": "Кургантепа",
+        "type": "31"
     },
     "1703220847": {
         "en": "Savay",
         "uz": "Savay",
-        "ru": "Савай"
+        "ru": "Савай",
+        "type": "31"
     },
     "1703220858": {
         "en": "Sultonobod",
         "uz": "Sultonobod",
-        "ru": "Султанабад"
+        "ru": "Султанабад",
+        "type": "31"
     },
     "1703220872": {
         "en": "Chimyon",
         "uz": "Chimyon",
-        "ru": "Чимион"
+        "ru": "Чимион",
+        "type": "31"
     },
     "1703224501": {
         "en": "Asaka",
         "uz": "Asaka",
-        "ru": "Асака"
+        "ru": "Асака",
+        "type": "23"
     },
     "1703224552": {
         "en": "Kujgan",
         "uz": "Kujgan",
-        "ru": "Кужган"
+        "ru": "Кужган",
+        "type": "24"
     },
     "1703224554": {
         "en": "Navkan",
         "uz": "Navkan",
-        "ru": "Навкан"
+        "ru": "Навкан",
+        "type": "24"
     },
     "1703224556": {
         "en": "Oqbo'yra",
         "uz": "Oqbo'yra",
-        "ru": "Окбуйра"
+        "ru": "Окбуйра",
+        "type": "24"
     },
     "1703224558": {
         "en": "T.Aliyev",
         "uz": "T.Aliyev",
-        "ru": "Т.Алиев"
+        "ru": "Т.Алиев",
+        "type": "24"
     },
     "1703224811": {
         "en": "Zarbdor",
         "uz": "Zarbdor",
-        "ru": "Зарбдар"
+        "ru": "Зарбдар",
+        "type": "31"
     },
     "1703224822": {
         "en": "Ilg'or",
         "uz": "Ilg'or",
-        "ru": "Илгар"
+        "ru": "Илгар",
+        "type": "31"
     },
     "1703224833": {
         "en": "Qoratepa",
         "uz": "Qoratepa",
-        "ru": "Каpатепа"
+        "ru": "Каpатепа",
+        "type": "31"
     },
     "1703224844": {
         "en": "Kujgan",
         "uz": "Kujgan",
-        "ru": "Кужган"
+        "ru": "Кужган",
+        "type": "31"
     },
     "1703224855": {
         "en": "Qadim",
         "uz": "Qadim",
-        "ru": "Кадим"
+        "ru": "Кадим",
+        "type": "31"
     },
     "1703224866": {
         "en": "Mustahkam",
         "uz": "Mustahkam",
-        "ru": "Мустахкам"
+        "ru": "Мустахкам",
+        "type": "31"
     },
     "1703224877": {
         "en": "O'zbekiston",
         "uz": "O'zbekiston",
-        "ru": "Узбекистан"
+        "ru": "Узбекистан",
+        "type": "31"
     },
     "1703224885": {
         "en": "Niyozbotir",
         "uz": "Niyozbotir",
-        "ru": "Ниязбатыр"
+        "ru": "Ниязбатыр",
+        "type": "31"
     },
     "1703227501": {
         "en": "Marxamat",
         "uz": "Marxamat",
-        "ru": "Мархамат"
+        "ru": "Мархамат",
+        "type": "23"
     },
     "1703227554": {
         "en": "Polvontosh",
         "uz": "Polvontosh",
-        "ru": "Палванташ"
+        "ru": "Палванташ",
+        "type": "24"
     },
     "1703227557": {
         "en": "Boboxuroson",
         "uz": "Boboxuroson",
-        "ru": "Бобохуросон"
+        "ru": "Бобохуросон",
+        "type": "24"
     },
     "1703227561": {
         "en": "Qorabog'ish",
         "uz": "Qorabog'ish",
-        "ru": "Корабогиш"
+        "ru": "Корабогиш",
+        "type": "24"
     },
     "1703227564": {
         "en": "Qoraqo'rg'on",
         "uz": "Qoraqo'rg'on",
-        "ru": "Коракургон"
+        "ru": "Коракургон",
+        "type": "24"
     },
     "1703227567": {
         "en": "Ko'tarma",
         "uz": "Ko'tarma",
-        "ru": "Кутарма"
+        "ru": "Кутарма",
+        "type": "24"
     },
     "1703227571": {
         "en": "Marxamat",
         "uz": "Marxamat",
-        "ru": "Мархамат"
+        "ru": "Мархамат",
+        "type": "24"
     },
     "1703227574": {
         "en": "Rovot",
         "uz": "Rovot",
-        "ru": "Ровот"
+        "ru": "Ровот",
+        "type": "24"
     },
     "1703227577": {
         "en": "O'qchi",
         "uz": "O'qchi",
-        "ru": "Укчи"
+        "ru": "Укчи",
+        "type": "24"
     },
     "1703227581": {
         "en": "Xakka",
         "uz": "Xakka",
-        "ru": "Хакка"
+        "ru": "Хакка",
+        "type": "24"
     },
     "1703227584": {
         "en": "Xo'jaariq",
         "uz": "Xo'jaariq",
-        "ru": "Хужаарик"
+        "ru": "Хужаарик",
+        "type": "24"
     },
     "1703227811": {
         "en": "Qoraqo'rg'on",
         "uz": "Qoraqo'rg'on",
-        "ru": "Каракурган"
+        "ru": "Каракурган",
+        "type": "31"
     },
     "1703227816": {
         "en": "Qorabog'ish",
         "uz": "Qorabog'ish",
-        "ru": "Карабагиш"
+        "ru": "Карабагиш",
+        "type": "31"
     },
     "1703227822": {
         "en": "Ko'tarma",
         "uz": "Ko'tarma",
-        "ru": "Кутарма"
+        "ru": "Кутарма",
+        "type": "31"
     },
     "1703227833": {
         "en": "Marxamat",
         "uz": "Marxamat",
-        "ru": "Мархамат"
+        "ru": "Мархамат",
+        "type": "31"
     },
     "1703227855": {
         "en": "Shukurmergan",
         "uz": "Shukurmergan",
-        "ru": "Шукурмерган"
+        "ru": "Шукурмерган",
+        "type": "31"
     },
     "1703230501": {
         "en": "Shaxrixon",
         "uz": "Shaxrixon",
-        "ru": "Шахрихан"
+        "ru": "Шахрихан",
+        "type": "23"
     },
     "1703230552": {
         "en": "Vaxim",
         "uz": "Vaxim",
-        "ru": "Вахим"
+        "ru": "Вахим",
+        "type": "24"
     },
     "1703230554": {
         "en": "Cho'ja",
         "uz": "Cho'ja",
-        "ru": "Чужа"
+        "ru": "Чужа",
+        "type": "24"
     },
     "1703230556": {
         "en": "Segaza kum",
         "uz": "Segaza kum",
-        "ru": "Сегаза кум"
+        "ru": "Сегаза кум",
+        "type": "24"
     },
     "1703230811": {
         "en": "Cho'ja",
         "uz": "Cho'ja",
-        "ru": "Чужа"
+        "ru": "Чужа",
+        "type": "31"
     },
     "1703230822": {
         "en": "Naynavo",
         "uz": "Naynavo",
-        "ru": "Найнава"
+        "ru": "Найнава",
+        "type": "31"
     },
     "1703230826": {
         "en": "Guliston",
         "uz": "Guliston",
-        "ru": "Гулистан"
+        "ru": "Гулистан",
+        "type": "31"
     },
     "1703230835": {
         "en": "Paxtaobod",
         "uz": "Paxtaobod",
-        "ru": "Пахтаабад"
+        "ru": "Пахтаабад",
+        "type": "31"
     },
     "1703230846": {
         "en": "Toshtepa",
         "uz": "Toshtepa",
-        "ru": "Таштепа"
+        "ru": "Таштепа",
+        "type": "31"
     },
     "1703230857": {
         "en": "O'zbekiston",
         "uz": "O'zbekiston",
-        "ru": "Узбекистан"
+        "ru": "Узбекистан",
+        "type": "31"
     },
     "1703230862": {
         "en": "O'rta Shaxrixon",
         "uz": "O'rta Shaxrixon",
-        "ru": "Урта Шахрихан"
+        "ru": "Урта Шахрихан",
+        "type": "31"
     },
     "1703230869": {
         "en": "Xaqiqat",
         "uz": "Xaqiqat",
-        "ru": "Хакикат"
+        "ru": "Хакикат",
+        "type": "31"
     },
     "1703230872": {
         "en": "Abdubiy",
         "uz": "Abdubiy",
-        "ru": "Абдубий"
+        "ru": "Абдубий",
+        "type": "31"
     },
     "1703230882": {
         "en": "Yangi yo'l",
         "uz": "Yangi yo'l",
-        "ru": "Янгиюль"
+        "ru": "Янгиюль",
+        "type": "31"
     },
     "1703230890": {
         "en": "Nazarmaxram",
         "uz": "Nazarmaxram",
-        "ru": "Назармахрам"
+        "ru": "Назармахрам",
+        "type": "31"
     },
     "1703230898": {
         "en": "Yuqori Shaxrixon",
         "uz": "Yuqori Shaxrixon",
-        "ru": "Юкори  Шахрихан"
+        "ru": "Юкори  Шахрихан",
+        "type": "31"
     },
     "1703232501": {
         "en": "Paxtaobod",
         "uz": "Paxtaobod",
-        "ru": "Пахтаабад"
+        "ru": "Пахтаабад",
+        "type": "23"
     },
     "1703232556": {
         "en": "Do'stlik",
         "uz": "Do'stlik",
-        "ru": "Дустлик"
+        "ru": "Дустлик",
+        "type": "24"
     },
     "1703232559": {
         "en": "Izboskan",
         "uz": "Izboskan",
-        "ru": "Избоскан"
+        "ru": "Избоскан",
+        "type": "24"
     },
     "1703232563": {
         "en": "Pushmon",
         "uz": "Pushmon",
-        "ru": "Пушмон"
+        "ru": "Пушмон",
+        "type": "24"
     },
     "1703232803": {
         "en": "Bo'ston",
         "uz": "Bo'ston",
-        "ru": "Бустан"
+        "ru": "Бустан",
+        "type": "31"
     },
     "1703232810": {
         "en": "Ittifoq",
         "uz": "Ittifoq",
-        "ru": "Иттифак"
+        "ru": "Иттифак",
+        "type": "31"
     },
     "1703232820": {
         "en": "Madaniyat",
         "uz": "Madaniyat",
-        "ru": "Маданият"
+        "ru": "Маданият",
+        "type": "31"
     },
     "1703232834": {
         "en": "Paxtakor",
         "uz": "Paxtakor",
-        "ru": "Пахтакор"
+        "ru": "Пахтакор",
+        "type": "31"
     },
     "1703232845": {
         "en": "Uyg'ur",
         "uz": "Uyg'ur",
-        "ru": "Уйгур"
+        "ru": "Уйгур",
+        "type": "31"
     },
     "1703236501": {
         "en": "Xo'jaobod",
         "uz": "Xo'jaobod",
-        "ru": "Ходжаабад"
+        "ru": "Ходжаабад",
+        "type": "23"
     },
     "1703236552": {
         "en": "Guliston",
         "uz": "Guliston",
-        "ru": "Гулистон"
+        "ru": "Гулистон",
+        "type": "24"
     },
     "1703236554": {
         "en": "Dilkushod",
         "uz": "Dilkushod",
-        "ru": "Дилкушод"
+        "ru": "Дилкушод",
+        "type": "24"
     },
     "1703236558": {
         "en": "Ko'tarma",
         "uz": "Ko'tarma",
-        "ru": "Кутарма"
+        "ru": "Кутарма",
+        "type": "24"
     },
     "1703236562": {
         "en": "Manak",
         "uz": "Manak",
-        "ru": "Манак"
+        "ru": "Манак",
+        "type": "24"
     },
     "1703236564": {
         "en": "Xidirsha",
         "uz": "Xidirsha",
-        "ru": "Хидирша"
+        "ru": "Хидирша",
+        "type": "24"
     },
     "1703236826": {
         "en": "Manak",
         "uz": "Manak",
-        "ru": "Манак"
+        "ru": "Манак",
+        "type": "31"
     },
     "1703236861": {
         "en": "Birlashgan",
         "uz": "Birlashgan",
-        "ru": "Биpлашган"
+        "ru": "Биpлашган",
+        "type": "31"
     },
     "1703236872": {
         "en": "Oltin vodiy",
         "uz": "Oltin vodiy",
-        "ru": "Олтин водий"
+        "ru": "Олтин водий",
+        "type": "31"
     },
     "1703236883": {
         "en": "Xo'jaobod",
         "uz": "Xo'jaobod",
-        "ru": "Ходжаабад"
+        "ru": "Ходжаабад",
+        "type": "31"
     },
     "1703408553": {
         "en": "Xonobod",
         "uz": "Xonobod",
-        "ru": "Ханабад"
+        "ru": "Ханабад",
+        "type": "24"
     },
     "1703408805": {
         "en": "Xonobod",
         "uz": "Xonobod",
-        "ru": "Ханабад"
+        "ru": "Ханабад",
+        "type": "31"
     },
     "1706204501": {
         "en": "Olot",
         "uz": "Olot",
-        "ru": "Алат"
+        "ru": "Алат",
+        "type": "23"
     },
     "1706204552": {
         "en": "Ganchi Chandir",
         "uz": "Ganchi Chandir",
-        "ru": "Ганчи Чандир"
+        "ru": "Ганчи Чандир",
+        "type": "24"
     },
     "1706204553": {
         "en": "Kesakli",
         "uz": "Kesakli",
-        "ru": "Кесакли"
+        "ru": "Кесакли",
+        "type": "24"
     },
     "1706204554": {
         "en": "Qirtay",
         "uz": "Qirtay",
-        "ru": "Киртай"
+        "ru": "Киртай",
+        "type": "24"
     },
     "1706204555": {
         "en": "Sola qorovul",
         "uz": "Sola qorovul",
-        "ru": "Сола коровул"
+        "ru": "Сола коровул",
+        "type": "24"
     },
     "1706204557": {
         "en": "Jayxunobod",
         "uz": "Jayxunobod",
-        "ru": "Жайхунобод"
+        "ru": "Жайхунобод",
+        "type": "24"
     },
     "1706204558": {
         "en": "O'zbekiston",
         "uz": "O'zbekiston",
-        "ru": "Узбекистан"
+        "ru": "Узбекистан",
+        "type": "24"
     },
     "1706204559": {
         "en": "Chovdur",
         "uz": "Chovdur",
-        "ru": "Човдур"
+        "ru": "Човдур",
+        "type": "24"
     },
     "1706204561": {
         "en": "Bo'ribek Chandir",
         "uz": "Bo'ribek Chandir",
-        "ru": "Бурибек Чандир"
+        "ru": "Бурибек Чандир",
+        "type": "24"
     },
     "1706204804": {
         "en": "Bahoriston",
         "uz": "Bahoriston",
-        "ru": "Бахористон"
+        "ru": "Бахористон",
+        "type": "31"
     },
     "1706204808": {
         "en": "Guliston",
         "uz": "Guliston",
-        "ru": "Гулистон"
+        "ru": "Гулистон",
+        "type": "31"
     },
     "1706204810": {
         "en": "Denov",
         "uz": "Denov",
-        "ru": "Денау"
+        "ru": "Денау",
+        "type": "31"
     },
     "1706204820": {
         "en": "Jumabozor",
         "uz": "Jumabozor",
-        "ru": "Джумабазар"
+        "ru": "Джумабазар",
+        "type": "31"
     },
     "1706204830": {
         "en": "Paxtakor",
         "uz": "Paxtakor",
-        "ru": "Пахтакор"
+        "ru": "Пахтакор",
+        "type": "31"
     },
     "1706204840": {
         "en": "Talqon-sayyot",
         "uz": "Talqon-sayyot",
-        "ru": "Талкансаят"
+        "ru": "Талкансаят",
+        "type": "31"
     },
     "1706204850": {
         "en": "Chandir",
         "uz": "Chandir",
-        "ru": "Чандиp"
+        "ru": "Чандиp",
+        "type": "31"
     },
     "1706204853": {
         "en": "Chorbog'",
         "uz": "Chorbog'",
-        "ru": "Чарбаг"
+        "ru": "Чарбаг",
+        "type": "31"
     },
     "1706204856": {
         "en": "Qirlishon",
         "uz": "Qirlishon",
-        "ru": "Киpлишон"
+        "ru": "Киpлишон",
+        "type": "31"
     },
     "1706204860": {
         "en": "Soyin-qorovul",
         "uz": "Soyin-qorovul",
-        "ru": "Соин - Коpавул"
+        "ru": "Соин - Коpавул",
+        "type": "31"
     },
     "1706207501": {
         "en": "Gala Osiyo",
         "uz": "Gala Osiyo",
-        "ru": "Галлаасия"
+        "ru": "Галлаасия",
+        "type": "23"
     },
     "1706207553": {
         "en": "Dexcha",
         "uz": "Dexcha",
-        "ru": "Дехча"
+        "ru": "Дехча",
+        "type": "24"
     },
     "1706207554": {
         "en": "Podshoyi",
         "uz": "Podshoyi",
-        "ru": "Подшойи"
+        "ru": "Подшойи",
+        "type": "24"
     },
     "1706207555": {
         "en": "Rabotak",
         "uz": "Rabotak",
-        "ru": "Работак"
+        "ru": "Работак",
+        "type": "24"
     },
     "1706207557": {
         "en": "O'rta Novmetan",
         "uz": "O'rta Novmetan",
-        "ru": "Урта Новметан"
+        "ru": "Урта Новметан",
+        "type": "24"
     },
     "1706207558": {
         "en": "Xumini bolo",
         "uz": "Xumini bolo",
-        "ru": "Хумини боло"
+        "ru": "Хумини боло",
+        "type": "24"
     },
     "1706207561": {
         "en": "Arabxona",
         "uz": "Arabxona",
-        "ru": "Арабхона"
+        "ru": "Арабхона",
+        "type": "24"
     },
     "1706207810": {
         "en": "Bog'ikalon",
         "uz": "Bog'ikalon",
-        "ru": "Багикалан"
+        "ru": "Багикалан",
+        "type": "31"
     },
     "1706207824": {
         "en": "Qavola Maxmud",
         "uz": "Qavola Maxmud",
-        "ru": "Каваля Махмуд"
+        "ru": "Каваля Махмуд",
+        "type": "31"
     },
     "1706207830": {
         "en": "Kunjiqal'a",
         "uz": "Kunjiqal'a",
-        "ru": "Кунжикала"
+        "ru": "Кунжикала",
+        "type": "31"
     },
     "1706207835": {
         "en": "Shexoncha",
         "uz": "Shexoncha",
-        "ru": "Шахонча"
+        "ru": "Шахонча",
+        "type": "31"
     },
     "1706207846": {
         "en": "Gulshanobod",
         "uz": "Gulshanobod",
-        "ru": "Гулшанобод"
+        "ru": "Гулшанобод",
+        "type": "31"
     },
     "1706207857": {
         "en": "Rabotiqalmoq",
         "uz": "Rabotiqalmoq",
-        "ru": "Рабаткалмок"
+        "ru": "Рабаткалмок",
+        "type": "31"
     },
     "1706207860": {
         "en": "Saxovat",
         "uz": "Saxovat",
-        "ru": "Саховат"
+        "ru": "Саховат",
+        "type": "31"
     },
     "1706207880": {
         "en": "Shergiron",
         "uz": "Shergiron",
-        "ru": "Шергирон"
+        "ru": "Шергирон",
+        "type": "31"
     },
     "1706207882": {
         "en": "Yangiobod",
         "uz": "Yangiobod",
-        "ru": "Янгиобод"
+        "ru": "Янгиобод",
+        "type": "31"
     },
     "1706207883": {
         "en": "Yangi Turmush",
         "uz": "Yangi Turmush",
-        "ru": "Янги Турмуш"
+        "ru": "Янги Турмуш",
+        "type": "31"
     },
     "1706207886": {
         "en": "Sohibkor",
         "uz": "Sohibkor",
-        "ru": "Сохибкоp"
+        "ru": "Сохибкоp",
+        "type": "31"
     },
     "1706207890": {
         "en": "So'fikorgar",
         "uz": "So'fikorgar",
-        "ru": "Суфикоpгаp"
+        "ru": "Суфикоpгаp",
+        "type": "31"
     },
     "1706207895": {
         "en": "Istiqbol",
         "uz": "Istiqbol",
-        "ru": "Истикбол"
+        "ru": "Истикбол",
+        "type": "31"
     },
     "1706207898": {
         "en": "Ko'chko'mar",
         "uz": "Ko'chko'mar",
-        "ru": "Кучкумаp"
+        "ru": "Кучкумаp",
+        "type": "31"
     },
     "1706212501": {
         "en": "Vobkent",
         "uz": "Vobkent",
-        "ru": "Вабкент"
+        "ru": "Вабкент",
+        "type": "23"
     },
     "1706212554": {
         "en": "Navbahor",
         "uz": "Navbahor",
-        "ru": "Навбахор"
+        "ru": "Навбахор",
+        "type": "24"
     },
     "1706212556": {
         "en": "Shirin",
         "uz": "Shirin",
-        "ru": "Ширин"
+        "ru": "Ширин",
+        "type": "24"
     },
     "1706212558": {
         "en": "Kosari",
         "uz": "Kosari",
-        "ru": "Косари"
+        "ru": "Косари",
+        "type": "24"
     },
     "1706212808": {
         "en": "Imomqazixon",
         "uz": "Imomqazixon",
-        "ru": "Имамказыхан"
+        "ru": "Имамказыхан",
+        "type": "31"
     },
     "1706212811": {
         "en": "Pirmast",
         "uz": "Pirmast",
-        "ru": "Пиpмаст"
+        "ru": "Пиpмаст",
+        "type": "31"
     },
     "1706212822": {
         "en": "Qo'ng'irot",
         "uz": "Qo'ng'irot",
-        "ru": "Кунград"
+        "ru": "Кунград",
+        "type": "31"
     },
     "1706212833": {
         "en": "Kumushkent",
         "uz": "Kumushkent",
-        "ru": "Кумушкент"
+        "ru": "Кумушкент",
+        "type": "31"
     },
     "1706212844": {
         "en": "Roxkent",
         "uz": "Roxkent",
-        "ru": "Рахкент"
+        "ru": "Рахкент",
+        "type": "31"
     },
     "1706212854": {
         "en": "Xayrobotcha",
         "uz": "Xayrobotcha",
-        "ru": "Хайрабатча"
+        "ru": "Хайрабатча",
+        "type": "31"
     },
     "1706212855": {
         "en": "Xalach",
         "uz": "Xalach",
-        "ru": "Халач"
+        "ru": "Халач",
+        "type": "31"
     },
     "1706212857": {
         "en": "Xayrxush",
         "uz": "Xayrxush",
-        "ru": "Хайрхуш"
+        "ru": "Хайрхуш",
+        "type": "31"
     },
     "1706212867": {
         "en": "Qipchoq",
         "uz": "Qipchoq",
-        "ru": "Кипчак"
+        "ru": "Кипчак",
+        "type": "31"
     },
     "1706212877": {
         "en": "Exson",
         "uz": "Exson",
-        "ru": "Эхсон"
+        "ru": "Эхсон",
+        "type": "31"
     },
     "1706212887": {
         "en": "Yangikent",
         "uz": "Yangikent",
-        "ru": "Янгикент"
+        "ru": "Янгикент",
+        "type": "31"
     },
     "1706215501": {
         "en": "G'ijduvon",
         "uz": "G'ijduvon",
-        "ru": "Гиждуван"
+        "ru": "Гиждуван",
+        "type": "23"
     },
     "1706215556": {
         "en": "Abadi",
         "uz": "Abadi",
-        "ru": "Абади"
+        "ru": "Абади",
+        "type": "24"
     },
     "1706215559": {
         "en": "Beshtuvo",
         "uz": "Beshtuvo",
-        "ru": "Бештуво"
+        "ru": "Бештуво",
+        "type": "24"
     },
     "1706215561": {
         "en": "Gajdumak",
         "uz": "Gajdumak",
-        "ru": "Гаждумак"
+        "ru": "Гаждумак",
+        "type": "24"
     },
     "1706215562": {
         "en": "Jovgari",
         "uz": "Jovgari",
-        "ru": "Джовгари"
+        "ru": "Джовгари",
+        "type": "24"
     },
     "1706215563": {
         "en": "Ko'lijabbor",
         "uz": "Ko'lijabbor",
-        "ru": "Кулижаббор"
+        "ru": "Кулижаббор",
+        "type": "24"
     },
     "1706215564": {
         "en": "Mazragan",
         "uz": "Mazragan",
-        "ru": "Мазраган"
+        "ru": "Мазраган",
+        "type": "24"
     },
     "1706215565": {
         "en": "Yuqori Rostgo'y",
         "uz": "Yuqori Rostgo'y",
-        "ru": "Юкори Ростгуй"
+        "ru": "Юкори Ростгуй",
+        "type": "24"
     },
     "1706215566": {
         "en": "O'zanon",
         "uz": "O'zanon",
-        "ru": "Узанон"
+        "ru": "Узанон",
+        "type": "24"
     },
     "1706215568": {
         "en": "Xatcha",
         "uz": "Xatcha",
-        "ru": "Хатча"
+        "ru": "Хатча",
+        "type": "24"
     },
     "1706215569": {
         "en": "Chag'dari",
         "uz": "Chag'dari",
-        "ru": "Чагдари"
+        "ru": "Чагдари",
+        "type": "24"
     },
     "1706215574": {
         "en": "Dodarak",
         "uz": "Dodarak",
-        "ru": "Додарак"
+        "ru": "Додарак",
+        "type": "24"
     },
     "1706215576": {
         "en": "Namatgaron",
         "uz": "Namatgaron",
-        "ru": "Наматгарон"
+        "ru": "Наматгарон",
+        "type": "24"
     },
     "1706215578": {
         "en": "Yuqori Qumoq",
         "uz": "Yuqori Qumoq",
-        "ru": "Юкори Кумок"
+        "ru": "Юкори Кумок",
+        "type": "24"
     },
     "1706215803": {
         "en": "Armechan",
         "uz": "Armechan",
-        "ru": "Армечан"
+        "ru": "Армечан",
+        "type": "31"
     },
     "1706215805": {
         "en": "Buktaroy",
         "uz": "Buktaroy",
-        "ru": "Буктарай"
+        "ru": "Буктарай",
+        "type": "31"
     },
     "1706215810": {
         "en": "G'ovshun",
         "uz": "G'ovshun",
-        "ru": "Гавшун"
+        "ru": "Гавшун",
+        "type": "31"
     },
     "1706215820": {
         "en": "Zarangari",
         "uz": "Zarangari",
-        "ru": "Зарангаpи"
+        "ru": "Зарангаpи",
+        "type": "31"
     },
     "1706215827": {
         "en": "Qaraxoni",
         "uz": "Qaraxoni",
-        "ru": "Карахани"
+        "ru": "Карахани",
+        "type": "31"
     },
     "1706215831": {
         "en": "Ko'kcha",
         "uz": "Ko'kcha",
-        "ru": "Кукча"
+        "ru": "Кукча",
+        "type": "31"
     },
     "1706215836": {
         "en": "Pozagari",
         "uz": "Pozagari",
-        "ru": "Позагари"
+        "ru": "Позагари",
+        "type": "31"
     },
     "1706215840": {
         "en": "Paxtaobod",
         "uz": "Paxtaobod",
-        "ru": "Пахтаобод"
+        "ru": "Пахтаобод",
+        "type": "31"
     },
     "1706215848": {
         "en": "Soktari",
         "uz": "Soktari",
-        "ru": "Соктари"
+        "ru": "Соктари",
+        "type": "31"
     },
     "1706215849": {
         "en": "Sarvari",
         "uz": "Sarvari",
-        "ru": "Сарвари"
+        "ru": "Сарвари",
+        "type": "31"
     },
     "1706215850": {
         "en": "Sarmijon",
         "uz": "Sarmijon",
-        "ru": "Сармиджан"
+        "ru": "Сармиджан",
+        "type": "31"
     },
     "1706215860": {
         "en": "Ulfatbibi",
         "uz": "Ulfatbibi",
-        "ru": "Ульфатбиби"
+        "ru": "Ульфатбиби",
+        "type": "31"
     },
     "1706215870": {
         "en": "G.Yunusov nomli",
         "uz": "G.Yunusov nomli",
-        "ru": "им.Ф. Юнусова"
+        "ru": "им.Ф. Юнусова",
+        "type": "31"
     },
     "1706215880": {
         "en": "Firishkent",
         "uz": "Firishkent",
-        "ru": "Фиришкент"
+        "ru": "Фиришкент",
+        "type": "31"
     },
     "1706219557": {
         "en": "Sarayonobod",
         "uz": "Sarayonobod",
-        "ru": "Сараенобод"
+        "ru": "Сараенобод",
+        "type": "24"
     },
     "1706219559": {
         "en": "Tutikunda",
         "uz": "Tutikunda",
-        "ru": "Тутикунда"
+        "ru": "Тутикунда",
+        "type": "24"
     },
     "1706219811": {
         "en": "Kogon",
         "uz": "Kogon",
-        "ru": "Каган"
+        "ru": "Каган",
+        "type": "31"
     },
     "1706219814": {
         "en": "Xo'ja Yakshaba",
         "uz": "Xo'ja Yakshaba",
-        "ru": "Хужа Якшаба"
+        "ru": "Хужа Якшаба",
+        "type": "31"
     },
     "1706219816": {
         "en": "Guliston",
         "uz": "Guliston",
-        "ru": "Гулистон"
+        "ru": "Гулистон",
+        "type": "31"
     },
     "1706219818": {
         "en": "Yangi xayot",
         "uz": "Yangi xayot",
-        "ru": "Янги хает"
+        "ru": "Янги хает",
+        "type": "31"
     },
     "1706219822": {
         "en": "Nurafshon",
         "uz": "Nurafshon",
-        "ru": "Нурафшон"
+        "ru": "Нурафшон",
+        "type": "31"
     },
     "1706219824": {
         "en": "Beklar",
         "uz": "Beklar",
-        "ru": "Беклаp"
+        "ru": "Беклаp",
+        "type": "31"
     },
     "1706219833": {
         "en": "Niyozhoji",
         "uz": "Niyozhoji",
-        "ru": "Ниёзхожи"
+        "ru": "Ниёзхожи",
+        "type": "31"
     },
     "1706219836": {
         "en": "Sarayon",
         "uz": "Sarayon",
-        "ru": "Саpаен"
+        "ru": "Саpаен",
+        "type": "31"
     },
     "1706219844": {
         "en": "B.Naqshband",
         "uz": "B.Naqshband",
-        "ru": "Накшбанди"
+        "ru": "Накшбанди",
+        "type": "31"
     },
     "1706230501": {
         "en": "Qorako'l",
         "uz": "Qorako'l",
-        "ru": "Каракуль"
+        "ru": "Каракуль",
+        "type": "23"
     },
     "1706230552": {
         "en": "Bandboshi",
         "uz": "Bandboshi",
-        "ru": "Бандбоши"
+        "ru": "Бандбоши",
+        "type": "24"
     },
     "1706230553": {
         "en": "Darg'abog'i",
         "uz": "Darg'abog'i",
-        "ru": "Даргабоги"
+        "ru": "Даргабоги",
+        "type": "24"
     },
     "1706230554": {
         "en": "Jig'achi",
         "uz": "Jig'achi",
-        "ru": "Джигачи"
+        "ru": "Джигачи",
+        "type": "24"
     },
     "1706230555": {
         "en": "Qorahoji",
         "uz": "Qorahoji",
-        "ru": "Корахожи"
+        "ru": "Корахожи",
+        "type": "24"
     },
     "1706230556": {
         "en": "Quvvacha",
         "uz": "Quvvacha",
-        "ru": "Куввача"
+        "ru": "Куввача",
+        "type": "24"
     },
     "1706230557": {
         "en": "Mirzaqal'a",
         "uz": "Mirzaqal'a",
-        "ru": "Мирзакалъа"
+        "ru": "Мирзакалъа",
+        "type": "24"
     },
     "1706230558": {
         "en": "Sayyod",
         "uz": "Sayyod",
-        "ru": "Сайед"
+        "ru": "Сайед",
+        "type": "24"
     },
     "1706230559": {
         "en": "Solur",
         "uz": "Solur",
-        "ru": "Солур"
+        "ru": "Солур",
+        "type": "24"
     },
     "1706230561": {
         "en": "Chandirobod",
         "uz": "Chandirobod",
-        "ru": "Чандирабад"
+        "ru": "Чандирабад",
+        "type": "24"
     },
     "1706230562": {
         "en": "Sho'rabot",
         "uz": "Sho'rabot",
-        "ru": "Шуррабад"
+        "ru": "Шуррабад",
+        "type": "24"
     },
     "1706230563": {
         "en": "Yakka A'lam",
         "uz": "Yakka A'lam",
-        "ru": "Якка Аълам"
+        "ru": "Якка Аълам",
+        "type": "24"
     },
     "1706230564": {
         "en": "Yangiqal'a",
         "uz": "Yangiqal'a",
-        "ru": "Янгикалъа"
+        "ru": "Янгикалъа",
+        "type": "24"
     },
     "1706230806": {
         "en": "Darg'ali",
         "uz": "Darg'ali",
-        "ru": "Даргали"
+        "ru": "Даргали",
+        "type": "31"
     },
     "1706230809": {
         "en": "Bandboshi",
         "uz": "Bandboshi",
-        "ru": "Бандбаши"
+        "ru": "Бандбаши",
+        "type": "31"
     },
     "1706230813": {
         "en": "Jig'achi",
         "uz": "Jig'achi",
-        "ru": "Джигачи"
+        "ru": "Джигачи",
+        "type": "31"
     },
     "1706230815": {
         "en": "Sho'rrabot",
         "uz": "Sho'rrabot",
-        "ru": "Шуppабот"
+        "ru": "Шуppабот",
+        "type": "31"
     },
     "1706230825": {
         "en": "Ziyorat",
         "uz": "Ziyorat",
-        "ru": "Зиярат"
+        "ru": "Зиярат",
+        "type": "31"
     },
     "1706230827": {
         "en": "Kulonchi",
         "uz": "Kulonchi",
-        "ru": "Кулончи"
+        "ru": "Кулончи",
+        "type": "31"
     },
     "1706230832": {
         "en": "Qozon",
         "uz": "Qozon",
-        "ru": "Казан"
+        "ru": "Казан",
+        "type": "31"
     },
     "1706230834": {
         "en": "Quvvacha",
         "uz": "Quvvacha",
-        "ru": "Куввача"
+        "ru": "Куввача",
+        "type": "31"
     },
     "1706230847": {
         "en": "Qoraun",
         "uz": "Qoraun",
-        "ru": "Караун"
+        "ru": "Караун",
+        "type": "31"
     },
     "1706230850": {
         "en": "Qorako'l",
         "uz": "Qorako'l",
-        "ru": "Каракуль"
+        "ru": "Каракуль",
+        "type": "31"
     },
     "1706230854": {
         "en": "Chandir",
         "uz": "Chandir",
-        "ru": "Чандиp"
+        "ru": "Чандиp",
+        "type": "31"
     },
     "1706230859": {
         "en": "Sayyot",
         "uz": "Sayyot",
-        "ru": "Саят"
+        "ru": "Саят",
+        "type": "31"
     },
     "1706230862": {
         "en": "Mallaishayx",
         "uz": "Mallaishayx",
-        "ru": "Маллаишайх"
+        "ru": "Маллаишайх",
+        "type": "31"
     },
     "1706230875": {
         "en": "Quyi Yangibozor",
         "uz": "Quyi Yangibozor",
-        "ru": "Куйи Янгибазар"
+        "ru": "Куйи Янгибазар",
+        "type": "31"
     },
     "1706230880": {
         "en": "Qorahoji",
         "uz": "Qorahoji",
-        "ru": "Каpаходжи"
+        "ru": "Каpаходжи",
+        "type": "31"
     },
     "1706230885": {
         "en": "Chovli",
         "uz": "Chovli",
-        "ru": "Човли"
+        "ru": "Човли",
+        "type": "31"
     },
     "1706232501": {
         "en": "Qorovulbozor",
         "uz": "Qorovulbozor",
-        "ru": "Караулбазар"
+        "ru": "Караулбазар",
+        "type": "23"
     },
     "1706232803": {
         "en": "Navbahor",
         "uz": "Navbahor",
-        "ru": "Навбахор"
+        "ru": "Навбахор",
+        "type": "31"
     },
     "1706232807": {
         "en": "Bo'ston",
         "uz": "Bo'ston",
-        "ru": "Бустон"
+        "ru": "Бустон",
+        "type": "31"
     },
     "1706232810": {
         "en": "Buzachi",
         "uz": "Buzachi",
-        "ru": "Бузачи"
+        "ru": "Бузачи",
+        "type": "31"
     },
     "1706232815": {
         "en": "Jarqoq",
         "uz": "Jarqoq",
-        "ru": "Жаркок"
+        "ru": "Жаркок",
+        "type": "31"
     },
     "1706240551": {
         "en": "Yangibozor",
         "uz": "Yangibozor",
-        "ru": "Янгибозор"
+        "ru": "Янгибозор",
+        "type": "24"
     },
     "1706240553": {
         "en": "Peshku",
         "uz": "Peshku",
-        "ru": "Пешку"
+        "ru": "Пешку",
+        "type": "24"
     },
     "1706240555": {
         "en": "Shavgon",
         "uz": "Shavgon",
-        "ru": "Шавгон"
+        "ru": "Шавгон",
+        "type": "24"
     },
     "1706240557": {
         "en": "Mahallai-Mirishkor",
         "uz": "Mahallai-Mirishkor",
-        "ru": "Махаллаи-Миришкор"
+        "ru": "Махаллаи-Миришкор",
+        "type": "24"
     },
     "1706240802": {
         "en": "Ibn Sino nomli",
         "uz": "Ibn Sino nomli",
-        "ru": "им. Абу-Али-Ибн-Сино"
+        "ru": "им. Абу-Али-Ибн-Сино",
+        "type": "31"
     },
     "1706240805": {
         "en": "Varaxsho",
         "uz": "Varaxsho",
-        "ru": "Варахша"
+        "ru": "Варахша",
+        "type": "31"
     },
     "1706240807": {
         "en": "Jonkeldi",
         "uz": "Jonkeldi",
-        "ru": "Джангельды"
+        "ru": "Джангельды",
+        "type": "31"
     },
     "1706240810": {
         "en": "Zandani",
         "uz": "Zandani",
-        "ru": "Зандани"
+        "ru": "Зандани",
+        "type": "31"
     },
     "1706240821": {
         "en": "Qal'ai Mirishkor",
         "uz": "Qal'ai Mirishkor",
-        "ru": "Калаймиришкар"
+        "ru": "Калаймиришкар",
+        "type": "31"
     },
     "1706240832": {
         "en": "Peshku",
         "uz": "Peshku",
-        "ru": "Пешку"
+        "ru": "Пешку",
+        "type": "31"
     },
     "1706240854": {
         "en": "Yangibozor",
         "uz": "Yangibozor",
-        "ru": "Янгибазар"
+        "ru": "Янгибазар",
+        "type": "31"
     },
     "1706240860": {
         "en": "Bog'imuso",
         "uz": "Bog'imuso",
-        "ru": "Богимуссо"
+        "ru": "Богимуссо",
+        "type": "31"
     },
     "1706240865": {
         "en": "Qoraqalpoq",
         "uz": "Qoraqalpoq",
-        "ru": "Каpакалпак"
+        "ru": "Каpакалпак",
+        "type": "31"
     },
     "1706240870": {
         "en": "Chibog'oni",
         "uz": "Chibog'oni",
-        "ru": "Чибогони"
+        "ru": "Чибогони",
+        "type": "31"
     },
     "1706242501": {
         "en": "Romitan",
         "uz": "Romitan",
-        "ru": "Ромитан"
+        "ru": "Ромитан",
+        "type": "23"
     },
     "1706242505": {
         "en": "Gazli",
         "uz": "Gazli",
-        "ru": "Газли"
+        "ru": "Газли",
+        "type": "23"
     },
     "1706242552": {
         "en": "Qoqishtuvon",
         "uz": "Qoqishtuvon",
-        "ru": "Кокиштувон"
+        "ru": "Кокиштувон",
+        "type": "24"
     },
     "1706242554": {
         "en": "Xosa",
         "uz": "Xosa",
-        "ru": "Хоса"
+        "ru": "Хоса",
+        "type": "24"
     },
     "1706242556": {
         "en": "Yuqori G'azberon",
         "uz": "Yuqori G'azberon",
-        "ru": "Юкори Газберон"
+        "ru": "Юкори Газберон",
+        "type": "24"
     },
     "1706242825": {
         "en": "Qizil Ravot",
         "uz": "Qizil Ravot",
-        "ru": "Кызылрават"
+        "ru": "Кызылрават",
+        "type": "31"
     },
     "1706242834": {
         "en": "Romitan",
         "uz": "Romitan",
-        "ru": "Ромитан"
+        "ru": "Ромитан",
+        "type": "31"
     },
     "1706242864": {
         "en": "Bog'iturkon",
         "uz": "Bog'iturkon",
-        "ru": "Богитуркон"
+        "ru": "Богитуркон",
+        "type": "31"
     },
     "1706242867": {
         "en": "Chelong'u",
         "uz": "Chelong'u",
-        "ru": "Чилангу"
+        "ru": "Чилангу",
+        "type": "31"
     },
     "1706242872": {
         "en": "Sho'rcha",
         "uz": "Sho'rcha",
-        "ru": "Шурча"
+        "ru": "Шурча",
+        "type": "31"
     },
     "1706242875": {
         "en": "Qo'rg'on",
         "uz": "Qo'rg'on",
-        "ru": "Курган"
+        "ru": "Курган",
+        "type": "31"
     },
     "1706246551": {
         "en": "Jondor",
         "uz": "Jondor",
-        "ru": "Жондор"
+        "ru": "Жондор",
+        "type": "24"
     },
     "1706246552": {
         "en": "Paxlavon",
         "uz": "Paxlavon",
-        "ru": "Пахлавон"
+        "ru": "Пахлавон",
+        "type": "24"
     },
     "1706246553": {
         "en": "Dalmun",
         "uz": "Dalmun",
-        "ru": "Далмун"
+        "ru": "Далмун",
+        "type": "24"
     },
     "1706246554": {
         "en": "Ko'liyon",
         "uz": "Ko'liyon",
-        "ru": "Кулиен"
+        "ru": "Кулиен",
+        "type": "24"
     },
     "1706246555": {
         "en": "Samonchuq",
         "uz": "Samonchuq",
-        "ru": "Самончук"
+        "ru": "Самончук",
+        "type": "24"
     },
     "1706246556": {
         "en": "Tobagar",
         "uz": "Tobagar",
-        "ru": "Тобагар"
+        "ru": "Тобагар",
+        "type": "24"
     },
     "1706246557": {
         "en": "Ushot",
         "uz": "Ushot",
-        "ru": "Ушот"
+        "ru": "Ушот",
+        "type": "24"
     },
     "1706246558": {
         "en": "Xazorman",
         "uz": "Xazorman",
-        "ru": "Хазорман"
+        "ru": "Хазорман",
+        "type": "24"
     },
     "1706246559": {
         "en": "Chorzona",
         "uz": "Chorzona",
-        "ru": "Чорзона"
+        "ru": "Чорзона",
+        "type": "24"
     },
     "1706246811": {
         "en": "Dalmun",
         "uz": "Dalmun",
-        "ru": "Дальмун"
+        "ru": "Дальмун",
+        "type": "31"
     },
     "1706246822": {
         "en": "Qaroli",
         "uz": "Qaroli",
-        "ru": "Каpоли"
+        "ru": "Каpоли",
+        "type": "31"
     },
     "1706246825": {
         "en": "Lolo",
         "uz": "Lolo",
-        "ru": "Лола"
+        "ru": "Лола",
+        "type": "31"
     },
     "1706246831": {
         "en": "Romish",
         "uz": "Romish",
-        "ru": "Ромиш"
+        "ru": "Ромиш",
+        "type": "31"
     },
     "1706246833": {
         "en": "Zarafshon",
         "uz": "Zarafshon",
-        "ru": "Зарафшон"
+        "ru": "Зарафшон",
+        "type": "31"
     },
     "1706246844": {
         "en": "Oxshix",
         "uz": "Oxshix",
-        "ru": "Охших"
+        "ru": "Охших",
+        "type": "31"
     },
     "1706246855": {
         "en": "Xumdonak",
         "uz": "Xumdonak",
-        "ru": "Хумданак"
+        "ru": "Хумданак",
+        "type": "31"
     },
     "1706246866": {
         "en": "Xumini bolo",
         "uz": "Xumini bolo",
-        "ru": "Хумин"
+        "ru": "Хумин",
+        "type": "31"
     },
     "1706246870": {
         "en": "Mustaqillik",
         "uz": "Mustaqillik",
-        "ru": "Мустакиллик"
+        "ru": "Мустакиллик",
+        "type": "31"
     },
     "1706246875": {
         "en": "Po'loti",
         "uz": "Po'loti",
-        "ru": "Пулоти"
+        "ru": "Пулоти",
+        "type": "31"
     },
     "1706246880": {
         "en": "Samonchuq",
         "uz": "Samonchuq",
-        "ru": "Самончук"
+        "ru": "Самончук",
+        "type": "31"
     },
     "1706246885": {
         "en": "Aleli",
         "uz": "Aleli",
-        "ru": "Алели"
+        "ru": "Алели",
+        "type": "31"
     },
     "1706246890": {
         "en": "Mirzayon",
         "uz": "Mirzayon",
-        "ru": "Миpзоен"
+        "ru": "Миpзоен",
+        "type": "31"
     },
     "1706258501": {
         "en": "Shofirkon",
         "uz": "Shofirkon",
-        "ru": "Шафиркан"
+        "ru": "Шафиркан",
+        "type": "23"
     },
     "1706258552": {
         "en": "Jo'yrabot",
         "uz": "Jo'yrabot",
-        "ru": "Жуйрабад"
+        "ru": "Жуйрабад",
+        "type": "24"
     },
     "1706258553": {
         "en": "Iskogare",
         "uz": "Iskogare",
-        "ru": "Искогаре"
+        "ru": "Искогаре",
+        "type": "24"
     },
     "1706258554": {
         "en": "Quyi Chuqurak",
         "uz": "Quyi Chuqurak",
-        "ru": "Куйи Чукурак"
+        "ru": "Куйи Чукурак",
+        "type": "24"
     },
     "1706258555": {
         "en": "Mirzoqul",
         "uz": "Mirzoqul",
-        "ru": "Мирзокул"
+        "ru": "Мирзокул",
+        "type": "24"
     },
     "1706258556": {
         "en": "Talisafed",
         "uz": "Talisafed",
-        "ru": "Талисафед"
+        "ru": "Талисафед",
+        "type": "24"
     },
     "1706258557": {
         "en": "Undare",
         "uz": "Undare",
-        "ru": "Ундаре"
+        "ru": "Ундаре",
+        "type": "24"
     },
     "1706258558": {
         "en": "Chandir",
         "uz": "Chandir",
-        "ru": "Чандир"
+        "ru": "Чандир",
+        "type": "24"
     },
     "1706258561": {
         "en": "G'ulomte",
         "uz": "G'ulomte",
-        "ru": "Гуломте"
+        "ru": "Гуломте",
+        "type": "24"
     },
     "1706258805": {
         "en": "Vargonze",
         "uz": "Vargonze",
-        "ru": "Варданзе"
+        "ru": "Варданзе",
+        "type": "31"
     },
     "1706258811": {
         "en": "Denov",
         "uz": "Denov",
-        "ru": "Денау"
+        "ru": "Денау",
+        "type": "31"
     },
     "1706258822": {
         "en": "Jo'ynav",
         "uz": "Jo'ynav",
-        "ru": "Жуйнау"
+        "ru": "Жуйнау",
+        "type": "31"
     },
     "1706258828": {
         "en": "Jo'yrabot",
         "uz": "Jo'yrabot",
-        "ru": "Жуйработ"
+        "ru": "Жуйработ",
+        "type": "31"
     },
     "1706258833": {
         "en": "Do'rmon",
         "uz": "Do'rmon",
-        "ru": "Дурмен"
+        "ru": "Дурмен",
+        "type": "31"
     },
     "1706258844": {
         "en": "Savrak",
         "uz": "Savrak",
-        "ru": "Саврак"
+        "ru": "Саврак",
+        "type": "31"
     },
     "1706258855": {
         "en": "Sulton Jo'ra",
         "uz": "Sulton Jo'ra",
-        "ru": "им. С. Джури"
+        "ru": "им. С. Джури",
+        "type": "31"
     },
     "1706258866": {
         "en": "Tezguzar",
         "uz": "Tezguzar",
-        "ru": "Тезгузар"
+        "ru": "Тезгузар",
+        "type": "31"
     },
     "1706258877": {
         "en": "Mazlaxon chandir",
         "uz": "Mazlaxon chandir",
-        "ru": "Мазлахон Чандир"
+        "ru": "Мазлахон Чандир",
+        "type": "31"
     },
     "1706258880": {
         "en": "Sh.Hamroyev nomli",
         "uz": "Sh.Hamroyev nomli",
-        "ru": "им. Ш. Хамраева"
+        "ru": "им. Ш. Хамраева",
+        "type": "31"
     },
     "1706258885": {
         "en": "Iskogare",
         "uz": "Iskogare",
-        "ru": "Искогаpе"
+        "ru": "Искогаpе",
+        "type": "31"
     },
     "1706258890": {
         "en": "Bog'iafzal",
         "uz": "Bog'iafzal",
-        "ru": "Богиафзал"
+        "ru": "Богиафзал",
+        "type": "31"
     },
     "1706401803": {
         "en": "Otbozor",
         "uz": "Otbozor",
-        "ru": "Атбазар"
+        "ru": "Атбазар",
+        "type": "31"
     },
     "1706401805": {
         "en": "Shirbuddin",
         "uz": "Shirbuddin",
-        "ru": "Шербуддин"
+        "ru": "Шербуддин",
+        "type": "31"
     },
     "1708201551": {
         "en": "G'oliblar",
         "uz": "G'oliblar",
-        "ru": "Голиблар"
+        "ru": "Голиблар",
+        "type": "24"
     },
     "1708201556": {
         "en": "Gulbahor",
         "uz": "Gulbahor",
-        "ru": "Гулбахор"
+        "ru": "Гулбахор",
+        "type": "24"
     },
     "1708201802": {
         "en": "Bo'ston",
         "uz": "Bo'ston",
-        "ru": "Бустон"
+        "ru": "Бустон",
+        "type": "31"
     },
     "1708201803": {
         "en": "Do'stlik",
         "uz": "Do'stlik",
-        "ru": "Дустлик"
+        "ru": "Дустлик",
+        "type": "31"
     },
     "1708201804": {
         "en": "Zarafshon",
         "uz": "Zarafshon",
-        "ru": "Зарафшан"
+        "ru": "Зарафшан",
+        "type": "31"
     },
     "1708201806": {
         "en": "Oltin vodiy",
         "uz": "Oltin vodiy",
-        "ru": "Олтин водий"
+        "ru": "Олтин водий",
+        "type": "31"
     },
     "1708201807": {
         "en": "Cho'lquvar",
         "uz": "Cho'lquvar",
-        "ru": "Чулкувар"
+        "ru": "Чулкувар",
+        "type": "31"
     },
     "1708201813": {
         "en": "Yangibo'ston",
         "uz": "Yangibo'ston",
-        "ru": "Янгибустан"
+        "ru": "Янгибустан",
+        "type": "31"
     },
     "1708204551": {
         "en": "O'smat",
         "uz": "O'smat",
-        "ru": "Усмат"
+        "ru": "Усмат",
+        "type": "24"
     },
     "1708204552": {
         "en": "Oqtosh",
         "uz": "Oqtosh",
-        "ru": "Акташ"
+        "ru": "Акташ",
+        "type": "24"
     },
     "1708204553": {
         "en": "Mo'g'ol",
         "uz": "Mo'g'ol",
-        "ru": "Мугол"
+        "ru": "Мугол",
+        "type": "24"
     },
     "1708204554": {
         "en": "Novqa",
         "uz": "Novqa",
-        "ru": "Новка"
+        "ru": "Новка",
+        "type": "24"
     },
     "1708204555": {
         "en": "Alamli",
         "uz": "Alamli",
-        "ru": "Аламли"
+        "ru": "Аламли",
+        "type": "24"
     },
     "1708204556": {
         "en": "Tongotar",
         "uz": "Tongotar",
-        "ru": "Тонготар"
+        "ru": "Тонготар",
+        "type": "24"
     },
     "1708204558": {
         "en": "Baxmal",
         "uz": "Baxmal",
-        "ru": "Бахмал"
+        "ru": "Бахмал",
+        "type": "24"
     },
     "1708204802": {
         "en": "Oyqor",
         "uz": "Oyqor",
-        "ru": "Айкар"
+        "ru": "Айкар",
+        "type": "31"
     },
     "1708204804": {
         "en": "Oqtosh",
         "uz": "Oqtosh",
-        "ru": "Акташ"
+        "ru": "Акташ",
+        "type": "31"
     },
     "1708204808": {
         "en": "Bog'ishamol",
         "uz": "Bog'ishamol",
-        "ru": "Багишамал"
+        "ru": "Багишамал",
+        "type": "31"
     },
     "1708204810": {
         "en": "Barlos",
         "uz": "Barlos",
-        "ru": "Барлас"
+        "ru": "Барлас",
+        "type": "31"
     },
     "1708204812": {
         "en": "Baxmal",
         "uz": "Baxmal",
-        "ru": "Бахмал"
+        "ru": "Бахмал",
+        "type": "31"
     },
     "1708204817": {
         "en": "Gulbuloq",
         "uz": "Gulbuloq",
-        "ru": "Гульбулак"
+        "ru": "Гульбулак",
+        "type": "31"
     },
     "1708204830": {
         "en": "Mo'g'ol",
         "uz": "Mo'g'ol",
-        "ru": "Мугал"
+        "ru": "Мугал",
+        "type": "31"
     },
     "1708204835": {
         "en": "Sangzor",
         "uz": "Sangzor",
-        "ru": "Сангзар"
+        "ru": "Сангзар",
+        "type": "31"
     },
     "1708204840": {
         "en": "Tongotar",
         "uz": "Tongotar",
-        "ru": "Тонготар"
+        "ru": "Тонготар",
+        "type": "31"
     },
     "1708204845": {
         "en": "Uzunbuloq",
         "uz": "Uzunbuloq",
-        "ru": "Узунбулак"
+        "ru": "Узунбулак",
+        "type": "31"
     },
     "1708209501": {
         "en": "G'allaorol",
         "uz": "G'allaorol",
-        "ru": "Галляарал"
+        "ru": "Галляарал",
+        "type": "23"
     },
     "1708209554": {
         "en": "Qo'ytosh",
         "uz": "Qo'ytosh",
-        "ru": "Кайташ"
+        "ru": "Кайташ",
+        "type": "24"
     },
     "1708209557": {
         "en": "Marjonbuloq",
         "uz": "Marjonbuloq",
-        "ru": "Марджанбулак"
+        "ru": "Марджанбулак",
+        "type": "24"
     },
     "1708209559": {
         "en": "Lalmikor",
         "uz": "Lalmikor",
-        "ru": "Лалмикор"
+        "ru": "Лалмикор",
+        "type": "24"
     },
     "1708209561": {
         "en": "Qangliobod",
         "uz": "Qangliobod",
-        "ru": "Канглиобод"
+        "ru": "Канглиобод",
+        "type": "24"
     },
     "1708209565": {
         "en": "Abdukarim",
         "uz": "Abdukarim",
-        "ru": "Абдукарим"
+        "ru": "Абдукарим",
+        "type": "24"
     },
     "1708209567": {
         "en": "Chuvilloq",
         "uz": "Chuvilloq",
-        "ru": "Чувиллок"
+        "ru": "Чувиллок",
+        "type": "24"
     },
     "1708209823": {
         "en": "G'ubdin",
         "uz": "G'ubdin",
-        "ru": "Губдин"
+        "ru": "Губдин",
+        "type": "31"
     },
     "1708209825": {
         "en": "Xonimqo'rg'on",
         "uz": "Xonimqo'rg'on",
-        "ru": "Хонимкуpган"
+        "ru": "Хонимкуpган",
+        "type": "31"
     },
     "1708209834": {
         "en": "Ittifoq",
         "uz": "Ittifoq",
-        "ru": "Иттифак"
+        "ru": "Иттифак",
+        "type": "31"
     },
     "1708209836": {
         "en": "Gulchambar",
         "uz": "Gulchambar",
-        "ru": "Гулчамбар"
+        "ru": "Гулчамбар",
+        "type": "31"
     },
     "1708209838": {
         "en": "Qipchoqsuv",
         "uz": "Qipchoqsuv",
-        "ru": "Кипчоксув"
+        "ru": "Кипчоксув",
+        "type": "31"
     },
     "1708209848": {
         "en": "Ko'kbuloq",
         "uz": "Ko'kbuloq",
-        "ru": "Кокбулак"
+        "ru": "Кокбулак",
+        "type": "31"
     },
     "1708209853": {
         "en": "Korizquduq",
         "uz": "Korizquduq",
-        "ru": "Коризкудук"
+        "ru": "Коризкудук",
+        "type": "31"
     },
     "1708209857": {
         "en": "Guliston",
         "uz": "Guliston",
-        "ru": "Гулистан"
+        "ru": "Гулистан",
+        "type": "31"
     },
     "1708209860": {
         "en": "Buloqboshi",
         "uz": "Buloqboshi",
-        "ru": "Булакбаши"
+        "ru": "Булакбаши",
+        "type": "31"
     },
     "1708209865": {
         "en": "Madaniyat",
         "uz": "Madaniyat",
-        "ru": "Маданият"
+        "ru": "Маданият",
+        "type": "31"
     },
     "1708209868": {
         "en": "Mirzabuloq",
         "uz": "Mirzabuloq",
-        "ru": "Мирзабулак"
+        "ru": "Мирзабулак",
+        "type": "31"
     },
     "1708209870": {
         "en": "Moltob",
         "uz": "Moltob",
-        "ru": "Молтаб"
+        "ru": "Молтаб",
+        "type": "31"
     },
     "1708209875": {
         "en": "Tozaurug'",
         "uz": "Tozaurug'",
-        "ru": "Тозауpуг"
+        "ru": "Тозауpуг",
+        "type": "31"
     },
     "1708209880": {
         "en": "Mulkush",
         "uz": "Mulkush",
-        "ru": "Мулкуш"
+        "ru": "Мулкуш",
+        "type": "31"
     },
     "1708212551": {
         "en": "Uch-tepa",
         "uz": "Uch-tepa",
-        "ru": "Уч-тепа"
+        "ru": "Уч-тепа",
+        "type": "24"
     },
     "1708212552": {
         "en": "Gandumtosh",
         "uz": "Gandumtosh",
-        "ru": "Гандумтош"
+        "ru": "Гандумтош",
+        "type": "24"
     },
     "1708212553": {
         "en": "Qorayantoq",
         "uz": "Qorayantoq",
-        "ru": "Караянтак"
+        "ru": "Караянтак",
+        "type": "24"
     },
     "1708212554": {
         "en": "Qang'li",
         "uz": "Qang'li",
-        "ru": "Кангли"
+        "ru": "Кангли",
+        "type": "24"
     },
     "1708212555": {
         "en": "Toqchiliq",
         "uz": "Toqchiliq",
-        "ru": "Токчилик"
+        "ru": "Токчилик",
+        "type": "24"
     },
     "1708212557": {
         "en": "Mulkanlik",
         "uz": "Mulkanlik",
-        "ru": "Мулканлик"
+        "ru": "Мулканлик",
+        "type": "24"
     },
     "1708212559": {
         "en": "Jizzaxlik",
         "uz": "Jizzaxlik",
-        "ru": "Жиззахлик"
+        "ru": "Жиззахлик",
+        "type": "24"
     },
     "1708212807": {
         "en": "Oq oltin",
         "uz": "Oq oltin",
-        "ru": "Акалтын"
+        "ru": "Акалтын",
+        "type": "31"
     },
     "1708212810": {
         "en": "Ziyokor",
         "uz": "Ziyokor",
-        "ru": "Зиекор"
+        "ru": "Зиекор",
+        "type": "31"
     },
     "1708212816": {
         "en": "Qang'li",
         "uz": "Qang'li",
-        "ru": "Кангли"
+        "ru": "Кангли",
+        "type": "31"
     },
     "1708212820": {
         "en": "Rovat",
         "uz": "Rovat",
-        "ru": "Рават"
+        "ru": "Рават",
+        "type": "31"
     },
     "1708212832": {
         "en": "Qo'shbarmoq",
         "uz": "Qo'shbarmoq",
-        "ru": "Кушбаpмок"
+        "ru": "Кушбаpмок",
+        "type": "31"
     },
     "1708212835": {
         "en": "Paxtaobod",
         "uz": "Paxtaobod",
-        "ru": "Пахтаабад"
+        "ru": "Пахтаабад",
+        "type": "31"
     },
     "1708212837": {
         "en": "Qulama",
         "uz": "Qulama",
-        "ru": "Кулама"
+        "ru": "Кулама",
+        "type": "31"
     },
     "1708212854": {
         "en": "Xayrobod",
         "uz": "Xayrobod",
-        "ru": "Хайрабад"
+        "ru": "Хайрабад",
+        "type": "31"
     },
     "1708212860": {
         "en": "Fayzobod",
         "uz": "Fayzobod",
-        "ru": "Файзобод"
+        "ru": "Файзобод",
+        "type": "31"
     },
     "1708212865": {
         "en": "Kuyovboshi",
         "uz": "Kuyovboshi",
-        "ru": "Куёвбоши"
+        "ru": "Куёвбоши",
+        "type": "31"
     },
     "1708212870": {
         "en": "Samarqand quduq",
         "uz": "Samarqand quduq",
-        "ru": "Самаpканд - кудук"
+        "ru": "Самаpканд - кудук",
+        "type": "31"
     },
     "1708212875": {
         "en": "Uchtepa",
         "uz": "Uchtepa",
-        "ru": "Учтепа"
+        "ru": "Учтепа",
+        "type": "31"
     },
     "1708215501": {
         "en": "Do'stlik",
         "uz": "Do'stlik",
-        "ru": "Дустлик"
+        "ru": "Дустлик",
+        "type": "23"
     },
     "1708215553": {
         "en": "Navro'z",
         "uz": "Navro'z",
-        "ru": "Навруз"
+        "ru": "Навруз",
+        "type": "24"
     },
     "1708215803": {
         "en": "Bog'zor",
         "uz": "Bog'zor",
-        "ru": "Багзар"
+        "ru": "Багзар",
+        "type": "31"
     },
     "1708215805": {
         "en": "Bunyodkor",
         "uz": "Bunyodkor",
-        "ru": "Бунедкор"
+        "ru": "Бунедкор",
+        "type": "31"
     },
     "1708215812": {
         "en": "Qahramon",
         "uz": "Qahramon",
-        "ru": "Кахрамон"
+        "ru": "Кахрамон",
+        "type": "31"
     },
     "1708215823": {
         "en": "Manas",
         "uz": "Manas",
-        "ru": "Манас"
+        "ru": "Манас",
+        "type": "31"
     },
     "1708215830": {
         "en": "Saritepa",
         "uz": "Saritepa",
-        "ru": "Саритепа"
+        "ru": "Саритепа",
+        "type": "31"
     },
     "1708215840": {
         "en": "Oltin vodiy",
         "uz": "Oltin vodiy",
-        "ru": "Олтин водий"
+        "ru": "Олтин водий",
+        "type": "31"
     },
     "1708215845": {
         "en": "Mevazor",
         "uz": "Mevazor",
-        "ru": "Мевазоp"
+        "ru": "Мевазоp",
+        "type": "31"
     },
     "1708218503": {
         "en": "Dashtobod",
         "uz": "Dashtobod",
-        "ru": "Даштобод"
+        "ru": "Даштобод",
+        "type": "23"
     },
     "1708218551": {
         "en": "Zomin",
         "uz": "Zomin",
-        "ru": "Заамин"
+        "ru": "Заамин",
+        "type": "24"
     },
     "1708218553": {
         "en": "Yom",
         "uz": "Yom",
-        "ru": "Ем"
+        "ru": "Ем",
+        "type": "24"
     },
     "1708218555": {
         "en": "Sirg'ali",
         "uz": "Sirg'ali",
-        "ru": "Сиргали"
+        "ru": "Сиргали",
+        "type": "24"
     },
     "1708218557": {
         "en": "Pshag'or",
         "uz": "Pshag'or",
-        "ru": "Пшагор"
+        "ru": "Пшагор",
+        "type": "24"
     },
     "1708218811": {
         "en": "G'allakor",
         "uz": "G'allakor",
-        "ru": "Галлякор"
+        "ru": "Галлякор",
+        "type": "31"
     },
     "1708218813": {
         "en": "Gulshan",
         "uz": "Gulshan",
-        "ru": "Гульшан"
+        "ru": "Гульшан",
+        "type": "31"
     },
     "1708218817": {
         "en": "Duoba",
         "uz": "Duoba",
-        "ru": "Дуоба"
+        "ru": "Дуоба",
+        "type": "31"
     },
     "1708218834": {
         "en": "A.Navoiy",
         "uz": "A.Navoiy",
-        "ru": "им. Навои"
+        "ru": "им. Навои",
+        "type": "31"
     },
     "1708218838": {
         "en": "Obi hayot",
         "uz": "Obi hayot",
-        "ru": "Обихаят"
+        "ru": "Обихаят",
+        "type": "31"
     },
     "1708218857": {
         "en": "Chorvador",
         "uz": "Chorvador",
-        "ru": "Чарвадар"
+        "ru": "Чарвадар",
+        "type": "31"
     },
     "1708218858": {
         "en": "Istiqlol",
         "uz": "Istiqlol",
-        "ru": "Истиклол"
+        "ru": "Истиклол",
+        "type": "31"
     },
     "1708218860": {
         "en": "Beshkubi",
         "uz": "Beshkubi",
-        "ru": "Бешкуби"
+        "ru": "Бешкуби",
+        "type": "31"
     },
     "1708218870": {
         "en": "Shirin",
         "uz": "Shirin",
-        "ru": "Шиpин"
+        "ru": "Шиpин",
+        "type": "31"
     },
     "1708220551": {
         "en": "Zarbdor",
         "uz": "Zarbdor",
-        "ru": "Зарбдар"
+        "ru": "Зарбдар",
+        "type": "24"
     },
     "1708220553": {
         "en": "Bo'ston",
         "uz": "Bo'ston",
-        "ru": "Бустан"
+        "ru": "Бустан",
+        "type": "24"
     },
     "1708220555": {
         "en": "Fayzobod",
         "uz": "Fayzobod",
-        "ru": "Файзобод"
+        "ru": "Файзобод",
+        "type": "24"
     },
     "1708220557": {
         "en": "Sharq yulduzi",
         "uz": "Sharq yulduzi",
-        "ru": "Шарк Юлдузи"
+        "ru": "Шарк Юлдузи",
+        "type": "24"
     },
     "1708220827": {
         "en": "Sharq yulduzi",
         "uz": "Sharq yulduzi",
-        "ru": "Шаpк Юлдузи"
+        "ru": "Шаpк Юлдузи",
+        "type": "31"
     },
     "1708220831": {
         "en": "Toshkesgan",
         "uz": "Toshkesgan",
-        "ru": "Ташкесган"
+        "ru": "Ташкесган",
+        "type": "31"
     },
     "1708220835": {
         "en": "Tinchlik",
         "uz": "Tinchlik",
-        "ru": "Тинчлик"
+        "ru": "Тинчлик",
+        "type": "31"
     },
     "1708220843": {
         "en": "Oqar",
         "uz": "Oqar",
-        "ru": "Окар"
+        "ru": "Окар",
+        "type": "31"
     },
     "1708220850": {
         "en": "Lalmikor",
         "uz": "Lalmikor",
-        "ru": "Лалмикоp"
+        "ru": "Лалмикоp",
+        "type": "31"
     },
     "1708220863": {
         "en": "Yangikent",
         "uz": "Yangikent",
-        "ru": "Янгикент"
+        "ru": "Янгикент",
+        "type": "31"
     },
     "1708220865": {
         "en": "Andijon",
         "uz": "Andijon",
-        "ru": "Андижан"
+        "ru": "Андижан",
+        "type": "31"
     },
     "1708220870": {
         "en": "Adirobod",
         "uz": "Adirobod",
-        "ru": "Адиpабад"
+        "ru": "Адиpабад",
+        "type": "31"
     },
     "1708223501": {
         "en": "Gagarin",
         "uz": "Gagarin",
-        "ru": "Гагарин"
+        "ru": "Гагарин",
+        "type": "23"
     },
     "1708223553": {
         "en": "Paxtazor",
         "uz": "Paxtazor",
-        "ru": "Пахтазор"
+        "ru": "Пахтазор",
+        "type": "24"
     },
     "1708223555": {
         "en": "Mirzadala",
         "uz": "Mirzadala",
-        "ru": "Мирзадала"
+        "ru": "Мирзадала",
+        "type": "24"
     },
     "1708223803": {
         "en": "Bog'bon",
         "uz": "Bog'bon",
-        "ru": "Багбан"
+        "ru": "Багбан",
+        "type": "31"
     },
     "1708223815": {
         "en": "Jibek-jo'li",
         "uz": "Jibek-jo'li",
-        "ru": "Жибек- жолы"
+        "ru": "Жибек- жолы",
+        "type": "31"
     },
     "1708223830": {
         "en": "Toshkent",
         "uz": "Toshkent",
-        "ru": "Ташкент"
+        "ru": "Ташкент",
+        "type": "31"
     },
     "1708223833": {
         "en": "O'zbekiston",
         "uz": "O'zbekiston",
-        "ru": "Узбекистан"
+        "ru": "Узбекистан",
+        "type": "31"
     },
     "1708223840": {
         "en": "Yangidala",
         "uz": "Yangidala",
-        "ru": "Янгидала"
+        "ru": "Янгидала",
+        "type": "31"
     },
     "1708223850": {
         "en": "Gulzor",
         "uz": "Gulzor",
-        "ru": "Гульзар"
+        "ru": "Гульзар",
+        "type": "31"
     },
     "1708225551": {
         "en": "Zafarobod",
         "uz": "Zafarobod",
-        "ru": "Зафарабад"
+        "ru": "Зафарабад",
+        "type": "24"
     },
     "1708225553": {
         "en": "Yorqin",
         "uz": "Yorqin",
-        "ru": "Яркин"
+        "ru": "Яркин",
+        "type": "24"
     },
     "1708225555": {
         "en": "Pistalikent",
         "uz": "Pistalikent",
-        "ru": "Писталикент"
+        "ru": "Писталикент",
+        "type": "24"
     },
     "1708225557": {
         "en": "Nurafshon",
         "uz": "Nurafshon",
-        "ru": "Нурафшон"
+        "ru": "Нурафшон",
+        "type": "24"
     },
     "1708225802": {
         "en": "Birlik",
         "uz": "Birlik",
-        "ru": "Бирлик"
+        "ru": "Бирлик",
+        "type": "31"
     },
     "1708225807": {
         "en": "Yorqin",
         "uz": "Yorqin",
-        "ru": "Еркин"
+        "ru": "Еркин",
+        "type": "31"
     },
     "1708225812": {
         "en": "Lolazor",
         "uz": "Lolazor",
-        "ru": "Лолазор"
+        "ru": "Лолазор",
+        "type": "31"
     },
     "1708225828": {
         "en": "Uzun",
         "uz": "Uzun",
-        "ru": "Узун"
+        "ru": "Узун",
+        "type": "31"
     },
     "1708225832": {
         "en": "Xulkar",
         "uz": "Xulkar",
-        "ru": "Хулкар"
+        "ru": "Хулкар",
+        "type": "31"
     },
     "1708225848": {
         "en": "Chimqo'rg'on",
         "uz": "Chimqo'rg'on",
-        "ru": "Чимкурган"
+        "ru": "Чимкурган",
+        "type": "31"
     },
     "1708228501": {
         "en": "Paxtakor",
         "uz": "Paxtakor",
-        "ru": "Пахтакор"
+        "ru": "Пахтакор",
+        "type": "23"
     },
     "1708228553": {
         "en": "Gulzor",
         "uz": "Gulzor",
-        "ru": "Гулзор"
+        "ru": "Гулзор",
+        "type": "24"
     },
     "1708228805": {
         "en": "Buyuk Ipak yo'li",
         "uz": "Buyuk Ipak yo'li",
-        "ru": "Буюк Ипак йули"
+        "ru": "Буюк Ипак йули",
+        "type": "31"
     },
     "1708228807": {
         "en": "Olmazor",
         "uz": "Olmazor",
-        "ru": "Алмазар"
+        "ru": "Алмазар",
+        "type": "31"
     },
     "1708228819": {
         "en": "Mingchinor",
         "uz": "Mingchinor",
-        "ru": "Мингчинар"
+        "ru": "Мингчинар",
+        "type": "31"
     },
     "1708228822": {
         "en": "Paxtakor",
         "uz": "Paxtakor",
-        "ru": "Пахтакор"
+        "ru": "Пахтакор",
+        "type": "31"
     },
     "1708228828": {
         "en": "Bog'ishamol",
         "uz": "Bog'ishamol",
-        "ru": "Богишамол"
+        "ru": "Богишамол",
+        "type": "31"
     },
     "1708228835": {
         "en": "Chamanzor",
         "uz": "Chamanzor",
-        "ru": "Чаманзар"
+        "ru": "Чаманзар",
+        "type": "31"
     },
     "1708228840": {
         "en": "Oq buloq",
         "uz": "Oq buloq",
-        "ru": "Акбулак"
+        "ru": "Акбулак",
+        "type": "31"
     },
     "1708235551": {
         "en": "Bog'don",
         "uz": "Bog'don",
-        "ru": "Богдон"
+        "ru": "Богдон",
+        "type": "24"
     },
     "1708235560": {
         "en": "Uchquloch",
         "uz": "Uchquloch",
-        "ru": "Учкулач"
+        "ru": "Учкулач",
+        "type": "24"
     },
     "1708235805": {
         "en": "Omonkeldi",
         "uz": "Omonkeldi",
-        "ru": "Амангельды"
+        "ru": "Амангельды",
+        "type": "31"
     },
     "1708235813": {
         "en": "Darvoza",
         "uz": "Darvoza",
-        "ru": "Дарваза"
+        "ru": "Дарваза",
+        "type": "31"
     },
     "1708235824": {
         "en": "Arnasoy",
         "uz": "Arnasoy",
-        "ru": "Аpнасай"
+        "ru": "Аpнасай",
+        "type": "31"
     },
     "1708235828": {
         "en": "Qoraabdol",
         "uz": "Qoraabdol",
-        "ru": "Караабдал"
+        "ru": "Караабдал",
+        "type": "31"
     },
     "1708235835": {
         "en": "Egizbuloq",
         "uz": "Egizbuloq",
-        "ru": "Эгизбулак"
+        "ru": "Эгизбулак",
+        "type": "31"
     },
     "1708235846": {
         "en": "Qizilqum",
         "uz": "Qizilqum",
-        "ru": "Кызылкум"
+        "ru": "Кызылкум",
+        "type": "31"
     },
     "1708235868": {
         "en": "Forish",
         "uz": "Forish",
-        "ru": "Фариш"
+        "ru": "Фариш",
+        "type": "31"
     },
     "1708235885": {
         "en": "Uxum",
         "uz": "Uxum",
-        "ru": "Ухум"
+        "ru": "Ухум",
+        "type": "31"
     },
     "1708235890": {
         "en": "Garasha",
         "uz": "Garasha",
-        "ru": "Гараша"
+        "ru": "Гараша",
+        "type": "31"
     },
     "1708235895": {
         "en": "Osmonsoy",
         "uz": "Osmonsoy",
-        "ru": "Османсай"
+        "ru": "Османсай",
+        "type": "31"
     },
     "1708237552": {
         "en": "Yangiobod",
         "uz": "Yangiobod",
-        "ru": "Янгиабад"
+        "ru": "Янгиабад",
+        "type": "24"
     },
     "1708237554": {
         "en": "Savot",
         "uz": "Savot",
-        "ru": "Савот"
+        "ru": "Савот",
+        "type": "24"
     },
     "1708237804": {
         "en": "Sarmich",
         "uz": "Sarmich",
-        "ru": "Сармич"
+        "ru": "Сармич",
+        "type": "31"
     },
     "1708237813": {
         "en": "Xo'jamushkent",
         "uz": "Xo'jamushkent",
-        "ru": "Ходжамушкент"
+        "ru": "Ходжамушкент",
+        "type": "31"
     },
     "1708237822": {
         "en": "Savot",
         "uz": "Savot",
-        "ru": "Сават"
+        "ru": "Сават",
+        "type": "31"
     },
     "1708237831": {
         "en": "Havotog'",
         "uz": "Havotog'",
-        "ru": "Ховотог"
+        "ru": "Ховотог",
+        "type": "31"
     },
     "1708237840": {
         "en": "Xovos",
         "uz": "Xovos",
-        "ru": "Хавас"
+        "ru": "Хавас",
+        "type": "31"
     },
     "1710207501": {
         "en": "G'uzor",
         "uz": "G'uzor",
-        "ru": "Гузар"
+        "ru": "Гузар",
+        "type": "23"
     },
     "1710207552": {
         "en": "Jarariq",
         "uz": "Jarariq",
-        "ru": "Жарарик"
+        "ru": "Жарарик",
+        "type": "24"
     },
     "1710207554": {
         "en": "Obihayot",
         "uz": "Obihayot",
-        "ru": "Обихает"
+        "ru": "Обихает",
+        "type": "24"
     },
     "1710207556": {
         "en": "Yangikent",
         "uz": "Yangikent",
-        "ru": "Янгикент"
+        "ru": "Янгикент",
+        "type": "24"
     },
     "1710207558": {
         "en": "Sherali",
         "uz": "Sherali",
-        "ru": "Шерали"
+        "ru": "Шерали",
+        "type": "24"
     },
     "1710207562": {
         "en": "Mash'al",
         "uz": "Mash'al",
-        "ru": "Машъал"
+        "ru": "Машъал",
+        "type": "24"
     },
     "1710207810": {
         "en": "Bo'ston",
         "uz": "Bo'ston",
-        "ru": "Бустан"
+        "ru": "Бустан",
+        "type": "31"
     },
     "1710207823": {
         "en": "Guliston",
         "uz": "Guliston",
-        "ru": "Гулистан"
+        "ru": "Гулистан",
+        "type": "31"
     },
     "1710207834": {
         "en": "Gulshan",
         "uz": "Gulshan",
-        "ru": "Гульшан"
+        "ru": "Гульшан",
+        "type": "31"
     },
     "1710207842": {
         "en": "Zarbdor",
         "uz": "Zarbdor",
-        "ru": "Зарбдар"
+        "ru": "Зарбдар",
+        "type": "31"
     },
     "1710207844": {
         "en": "Qorako'l",
         "uz": "Qorako'l",
-        "ru": "Каракуль"
+        "ru": "Каракуль",
+        "type": "31"
     },
     "1710207846": {
         "en": "Shakarbuloq",
         "uz": "Shakarbuloq",
-        "ru": "Шакарбулак"
+        "ru": "Шакарбулак",
+        "type": "31"
     },
     "1710207857": {
         "en": "Mehnatobod",
         "uz": "Mehnatobod",
-        "ru": "Мехнатабад"
+        "ru": "Мехнатабад",
+        "type": "31"
     },
     "1710207860": {
         "en": "Qo'shtepa",
         "uz": "Qo'shtepa",
-        "ru": "Куштепа"
+        "ru": "Куштепа",
+        "type": "31"
     },
     "1710207870": {
         "en": "Pachkamar",
         "uz": "Pachkamar",
-        "ru": "Пачкамар"
+        "ru": "Пачкамар",
+        "type": "31"
     },
     "1710207875": {
         "en": "Xalqabod",
         "uz": "Xalqabod",
-        "ru": "Халкабад"
+        "ru": "Халкабад",
+        "type": "31"
     },
     "1710207880": {
         "en": "Batosh",
         "uz": "Batosh",
-        "ru": "Батош"
+        "ru": "Батош",
+        "type": "31"
     },
     "1710207885": {
         "en": "Sherali",
         "uz": "Sherali",
-        "ru": "Шеpали"
+        "ru": "Шеpали",
+        "type": "31"
     },
     "1710212551": {
         "en": "Karashina",
         "uz": "Karashina",
-        "ru": "Корашина"
+        "ru": "Корашина",
+        "type": "24"
     },
     "1710212553": {
         "en": "Dehqonobod",
         "uz": "Dehqonobod",
-        "ru": "Дехканабад"
+        "ru": "Дехканабад",
+        "type": "24"
     },
     "1710212558": {
         "en": "Beshbuloq",
         "uz": "Beshbuloq",
-        "ru": "Бешбулок"
+        "ru": "Бешбулок",
+        "type": "24"
     },
     "1710212804": {
         "en": "Obiravon",
         "uz": "Obiravon",
-        "ru": "Обиравон"
+        "ru": "Обиравон",
+        "type": "31"
     },
     "1710212809": {
         "en": "Oqqishloq",
         "uz": "Oqqishloq",
-        "ru": "Аккишлак"
+        "ru": "Аккишлак",
+        "type": "31"
     },
     "1710212810": {
         "en": "O'zbekiston",
         "uz": "O'zbekiston",
-        "ru": "Узбекистан"
+        "ru": "Узбекистан",
+        "type": "31"
     },
     "1710212811": {
         "en": "Oqtosh",
         "uz": "Oqtosh",
-        "ru": "Акташ"
+        "ru": "Акташ",
+        "type": "31"
     },
     "1710212814": {
         "en": "Boshchorbog'",
         "uz": "Boshchorbog'",
-        "ru": "Бошчорбог"
+        "ru": "Бошчорбог",
+        "type": "31"
     },
     "1710212816": {
         "en": "Beshqo'ton",
         "uz": "Beshqo'ton",
-        "ru": "Бешкутан"
+        "ru": "Бешкутан",
+        "type": "31"
     },
     "1710212822": {
         "en": "Bibiqorasoch",
         "uz": "Bibiqorasoch",
-        "ru": "Бибикарасоч"
+        "ru": "Бибикарасоч",
+        "type": "31"
     },
     "1710212827": {
         "en": "Duob",
         "uz": "Duob",
-        "ru": "Дуаб"
+        "ru": "Дуаб",
+        "type": "31"
     },
     "1710212832": {
         "en": "Qo'rg'ontosh",
         "uz": "Qo'rg'ontosh",
-        "ru": "Курганташ"
+        "ru": "Курганташ",
+        "type": "31"
     },
     "1710212833": {
         "en": "Qizilcha",
         "uz": "Qizilcha",
-        "ru": "Кизилча"
+        "ru": "Кизилча",
+        "type": "31"
     },
     "1710212836": {
         "en": "Oqirtma",
         "uz": "Oqirtma",
-        "ru": "Окиpтма"
+        "ru": "Окиpтма",
+        "type": "31"
     },
     "1710212839": {
         "en": "Bozortepa",
         "uz": "Bozortepa",
-        "ru": "Базаpтепа"
+        "ru": "Базаpтепа",
+        "type": "31"
     },
     "1710212845": {
         "en": "Qirqquloch",
         "uz": "Qirqquloch",
-        "ru": "Киpккулач"
+        "ru": "Киpккулач",
+        "type": "31"
     },
     "1710212850": {
         "en": "Oqrabod",
         "uz": "Oqrabod",
-        "ru": "Окpабод"
+        "ru": "Окpабод",
+        "type": "31"
     },
     "1710220501": {
         "en": "Qamashi",
         "uz": "Qamashi",
-        "ru": "Камаши"
+        "ru": "Камаши",
+        "type": "23"
     },
     "1710220552": {
         "en": "Balandchayla",
         "uz": "Balandchayla",
-        "ru": "Баландчайла"
+        "ru": "Баландчайла",
+        "type": "24"
     },
     "1710220554": {
         "en": "Qoratepa",
         "uz": "Qoratepa",
-        "ru": "Коратепа"
+        "ru": "Коратепа",
+        "type": "24"
     },
     "1710220556": {
         "en": "Qiziltepa",
         "uz": "Qiziltepa",
-        "ru": "Кызилтепа"
+        "ru": "Кызилтепа",
+        "type": "24"
     },
     "1710220558": {
         "en": "Sarbozor",
         "uz": "Sarbozor",
-        "ru": "Сарбозор"
+        "ru": "Сарбозор",
+        "type": "24"
     },
     "1710220562": {
         "en": "Badahshon",
         "uz": "Badahshon",
-        "ru": "Бадахшон"
+        "ru": "Бадахшон",
+        "type": "24"
     },
     "1710220833": {
         "en": "Qorabog'",
         "uz": "Qorabog'",
-        "ru": "Карабаг"
+        "ru": "Карабаг",
+        "type": "31"
     },
     "1710220835": {
         "en": "Qoratepa",
         "uz": "Qoratepa",
-        "ru": "Каратепа"
+        "ru": "Каратепа",
+        "type": "31"
     },
     "1710220844": {
         "en": "Ko'kbuloq",
         "uz": "Ko'kbuloq",
-        "ru": "Кокбулак"
+        "ru": "Кокбулак",
+        "type": "31"
     },
     "1710220845": {
         "en": "Qiziltepa",
         "uz": "Qiziltepa",
-        "ru": "Кизилтепа"
+        "ru": "Кизилтепа",
+        "type": "31"
     },
     "1710220847": {
         "en": "Rabod",
         "uz": "Rabod",
-        "ru": "Равот"
+        "ru": "Равот",
+        "type": "31"
     },
     "1710220855": {
         "en": "To'qboy",
         "uz": "To'qboy",
-        "ru": "Тукбай"
+        "ru": "Тукбай",
+        "type": "31"
     },
     "1710220866": {
         "en": "Chim",
         "uz": "Chim",
-        "ru": "Чим"
+        "ru": "Чим",
+        "type": "31"
     },
     "1710220870": {
         "en": "Qamay",
         "uz": "Qamay",
-        "ru": "Камай"
+        "ru": "Камай",
+        "type": "31"
     },
     "1710220875": {
         "en": "Jonbo'zsoy",
         "uz": "Jonbo'zsoy",
-        "ru": "Жонбузсой"
+        "ru": "Жонбузсой",
+        "type": "31"
     },
     "1710220880": {
         "en": "Loyqasoy",
         "uz": "Loyqasoy",
-        "ru": "Лойкасой"
+        "ru": "Лойкасой",
+        "type": "31"
     },
     "1710220885": {
         "en": "Yortepa",
         "uz": "Yortepa",
-        "ru": "Еpтепа"
+        "ru": "Еpтепа",
+        "type": "31"
     },
     "1710224501": {
         "en": "Beshkent",
         "uz": "Beshkent",
-        "ru": "Бешкент"
+        "ru": "Бешкент",
+        "type": "23"
     },
     "1710224553": {
         "en": "Fayzobod",
         "uz": "Fayzobod",
-        "ru": "Файзиабад"
+        "ru": "Файзиабад",
+        "type": "24"
     },
     "1710224556": {
         "en": "Saroy",
         "uz": "Saroy",
-        "ru": "Сарай"
+        "ru": "Сарай",
+        "type": "24"
     },
     "1710224559": {
         "en": "G'ubdin",
         "uz": "G'ubdin",
-        "ru": "Губдин"
+        "ru": "Губдин",
+        "type": "24"
     },
     "1710224563": {
         "en": "Lag'mon",
         "uz": "Lag'mon",
-        "ru": "Лагмон"
+        "ru": "Лагмон",
+        "type": "24"
     },
     "1710224566": {
         "en": "Kuchkak",
         "uz": "Kuchkak",
-        "ru": "Кучкак"
+        "ru": "Кучкак",
+        "type": "24"
     },
     "1710224569": {
         "en": "Xonobod",
         "uz": "Xonobod",
-        "ru": "Хонабад"
+        "ru": "Хонабад",
+        "type": "24"
     },
     "1710224573": {
         "en": "Shilvi",
         "uz": "Shilvi",
-        "ru": "Шилви"
+        "ru": "Шилви",
+        "type": "24"
     },
     "1710224576": {
         "en": "Qovchin",
         "uz": "Qovchin",
-        "ru": "Ковчин"
+        "ru": "Ковчин",
+        "type": "24"
     },
     "1710224579": {
         "en": "Nuqrabod",
         "uz": "Nuqrabod",
-        "ru": "Нукрабад"
+        "ru": "Нукрабад",
+        "type": "24"
     },
     "1710224583": {
         "en": "Yertepa",
         "uz": "Yertepa",
-        "ru": "Ертепа"
+        "ru": "Ертепа",
+        "type": "24"
     },
     "1710224586": {
         "en": "Navro'z",
         "uz": "Navro'z",
-        "ru": "Навруз"
+        "ru": "Навруз",
+        "type": "24"
     },
     "1710224589": {
         "en": "Jumabozor",
         "uz": "Jumabozor",
-        "ru": "Жумабозор"
+        "ru": "Жумабозор",
+        "type": "24"
     },
     "1710224593": {
         "en": "Mustaqillik",
         "uz": "Mustaqillik",
-        "ru": "Мустакиллик"
+        "ru": "Мустакиллик",
+        "type": "24"
     },
     "1710224596": {
         "en": "Mirmiron",
         "uz": "Mirmiron",
-        "ru": "Мирмирон"
+        "ru": "Мирмирон",
+        "type": "24"
     },
     "1710224599": {
         "en": "Yangi xayot",
         "uz": "Yangi xayot",
-        "ru": "Янгихает"
+        "ru": "Янгихает",
+        "type": "24"
     },
     "1710224808": {
         "en": "Bog'obod",
         "uz": "Bog'obod",
-        "ru": "Багабад"
+        "ru": "Багабад",
+        "type": "31"
     },
     "1710224812": {
         "en": "Charag'il",
         "uz": "Charag'il",
-        "ru": "Чарогил"
+        "ru": "Чарогил",
+        "type": "31"
     },
     "1710224822": {
         "en": "Dasht",
         "uz": "Dasht",
-        "ru": "Дашт"
+        "ru": "Дашт",
+        "type": "31"
     },
     "1710224833": {
         "en": "Yertepa",
         "uz": "Yertepa",
-        "ru": "Ертепа"
+        "ru": "Ертепа",
+        "type": "31"
     },
     "1710224840": {
         "en": "Navbahor",
         "uz": "Navbahor",
-        "ru": "Навбахор"
+        "ru": "Навбахор",
+        "type": "31"
     },
     "1710224842": {
         "en": "Qoratepa",
         "uz": "Qoratepa",
-        "ru": "Каратепа"
+        "ru": "Каратепа",
+        "type": "31"
     },
     "1710224843": {
         "en": "Cho'libo'ston",
         "uz": "Cho'libo'ston",
-        "ru": "Чулибустан"
+        "ru": "Чулибустан",
+        "type": "31"
     },
     "1710224844": {
         "en": "Kat",
         "uz": "Kat",
-        "ru": "Кат"
+        "ru": "Кат",
+        "type": "31"
     },
     "1710224847": {
         "en": "Qovchin",
         "uz": "Qovchin",
-        "ru": "Ковчин"
+        "ru": "Ковчин",
+        "type": "31"
     },
     "1710224855": {
         "en": "Chaman",
         "uz": "Chaman",
-        "ru": "Чаман"
+        "ru": "Чаман",
+        "type": "31"
     },
     "1710224877": {
         "en": "O'zbekiston mustaqilligi",
         "uz": "O'zbekiston mustaqilligi",
-        "ru": "Узбекистон мустакиллиги"
+        "ru": "Узбекистон мустакиллиги",
+        "type": "31"
     },
     "1710224880": {
         "en": "Paxtakor",
         "uz": "Paxtakor",
-        "ru": "Пахтакор"
+        "ru": "Пахтакор",
+        "type": "31"
     },
     "1710224884": {
         "en": "Poshton",
         "uz": "Poshton",
-        "ru": "Поштон"
+        "ru": "Поштон",
+        "type": "31"
     },
     "1710224888": {
         "en": "Tallikuron",
         "uz": "Tallikuron",
-        "ru": "Талликурган"
+        "ru": "Талликурган",
+        "type": "31"
     },
     "1710224895": {
         "en": "Hilol",
         "uz": "Hilol",
-        "ru": "Хилал"
+        "ru": "Хилал",
+        "type": "31"
     },
     "1710229501": {
         "en": "Koson",
         "uz": "Koson",
-        "ru": "Касан"
+        "ru": "Касан",
+        "type": "23"
     },
     "1710229552": {
         "en": "Boyg'undi",
         "uz": "Boyg'undi",
-        "ru": "Бойгунди"
+        "ru": "Бойгунди",
+        "type": "24"
     },
     "1710229554": {
         "en": "Boyterak",
         "uz": "Boyterak",
-        "ru": "Бойтерак"
+        "ru": "Бойтерак",
+        "type": "24"
     },
     "1710229556": {
         "en": "Guvalak",
         "uz": "Guvalak",
-        "ru": "Гувалак"
+        "ru": "Гувалак",
+        "type": "24"
     },
     "1710229558": {
         "en": "Istiqlol",
         "uz": "Istiqlol",
-        "ru": "Истиклол"
+        "ru": "Истиклол",
+        "type": "24"
     },
     "1710229560": {
         "en": "Qo'yi Obron",
         "uz": "Qo'yi Obron",
-        "ru": "Куйи Оброн"
+        "ru": "Куйи Оброн",
+        "type": "24"
     },
     "1710229562": {
         "en": "Mudin",
         "uz": "Mudin",
-        "ru": "Мудин"
+        "ru": "Мудин",
+        "type": "24"
     },
     "1710229564": {
         "en": "Oqtepa",
         "uz": "Oqtepa",
-        "ru": "Октепа"
+        "ru": "Октепа",
+        "type": "24"
     },
     "1710229566": {
         "en": "Obod",
         "uz": "Obod",
-        "ru": "Абад"
+        "ru": "Абад",
+        "type": "24"
     },
     "1710229568": {
         "en": "Pudina",
         "uz": "Pudina",
-        "ru": "Пудина"
+        "ru": "Пудина",
+        "type": "24"
     },
     "1710229570": {
         "en": "Po'lati",
         "uz": "Po'lati",
-        "ru": "Пулоти"
+        "ru": "Пулоти",
+        "type": "24"
     },
     "1710229572": {
         "en": "Rahimso'fi",
         "uz": "Rahimso'fi",
-        "ru": "Рахимсуфи"
+        "ru": "Рахимсуфи",
+        "type": "24"
     },
     "1710229574": {
         "en": "Surhon",
         "uz": "Surhon",
-        "ru": "Сурхон"
+        "ru": "Сурхон",
+        "type": "24"
     },
     "1710229576": {
         "en": "To'lg'a",
         "uz": "To'lg'a",
-        "ru": "Тулга"
+        "ru": "Тулга",
+        "type": "24"
     },
     "1710229578": {
         "en": "Esaboy",
         "uz": "Esaboy",
-        "ru": "Эсабой"
+        "ru": "Эсабой",
+        "type": "24"
     },
     "1710229807": {
         "en": "Alachabob",
         "uz": "Alachabob",
-        "ru": "Алачабаб"
+        "ru": "Алачабаб",
+        "type": "31"
     },
     "1710229812": {
         "en": "Rudaksoy",
         "uz": "Rudaksoy",
-        "ru": "Рудаксой"
+        "ru": "Рудаксой",
+        "type": "31"
     },
     "1710229815": {
         "en": "Gulbog'",
         "uz": "Gulbog'",
-        "ru": "Гульбаг"
+        "ru": "Гульбаг",
+        "type": "31"
     },
     "1710229823": {
         "en": "Koson",
         "uz": "Koson",
-        "ru": "Касан"
+        "ru": "Касан",
+        "type": "31"
     },
     "1710229835": {
         "en": "Do'stlik",
         "uz": "Do'stlik",
-        "ru": "Дустлик"
+        "ru": "Дустлик",
+        "type": "31"
     },
     "1710229846": {
         "en": "Qo'ng'irtog'",
         "uz": "Qo'ng'irtog'",
-        "ru": "Кунгиртог"
+        "ru": "Кунгиртог",
+        "type": "31"
     },
     "1710229860": {
         "en": "Gulobod",
         "uz": "Gulobod",
-        "ru": "Гулобод"
+        "ru": "Гулобод",
+        "type": "31"
     },
     "1710229868": {
         "en": "Istiqlol",
         "uz": "Istiqlol",
-        "ru": "Истиклол"
+        "ru": "Истиклол",
+        "type": "31"
     },
     "1710229871": {
         "en": "Tinchlik",
         "uz": "Tinchlik",
-        "ru": "Тинчлик"
+        "ru": "Тинчлик",
+        "type": "31"
     },
     "1710232501": {
         "en": "Kitob",
         "uz": "Kitob",
-        "ru": "Китаб"
+        "ru": "Китаб",
+        "type": "23"
     },
     "1710232553": {
         "en": "Alaqo'yliq",
         "uz": "Alaqo'yliq",
-        "ru": "Алакуйлик"
+        "ru": "Алакуйлик",
+        "type": "24"
     },
     "1710232556": {
         "en": "Bektemir",
         "uz": "Bektemir",
-        "ru": "Бектемир"
+        "ru": "Бектемир",
+        "type": "24"
     },
     "1710232559": {
         "en": "Rus qishloq",
         "uz": "Rus qishloq",
-        "ru": "Рус"
+        "ru": "Рус",
+        "type": "24"
     },
     "1710232563": {
         "en": "Baxtdarvozasi",
         "uz": "Baxtdarvozasi",
-        "ru": "Бахтдарвозаси"
+        "ru": "Бахтдарвозаси",
+        "type": "24"
     },
     "1710232566": {
         "en": "Beshterak",
         "uz": "Beshterak",
-        "ru": "Бештерак"
+        "ru": "Бештерак",
+        "type": "24"
     },
     "1710232569": {
         "en": "Varganza",
         "uz": "Varganza",
-        "ru": "Варганза"
+        "ru": "Варганза",
+        "type": "24"
     },
     "1710232573": {
         "en": "Obikanda",
         "uz": "Obikanda",
-        "ru": "Обиканда"
+        "ru": "Обиканда",
+        "type": "24"
     },
     "1710232576": {
         "en": "Panji",
         "uz": "Panji",
-        "ru": "Панжи"
+        "ru": "Панжи",
+        "type": "24"
     },
     "1710232579": {
         "en": "Sariosiyo",
         "uz": "Sariosiyo",
-        "ru": "Сариосие"
+        "ru": "Сариосие",
+        "type": "24"
     },
     "1710232583": {
         "en": "Sevaz",
         "uz": "Sevaz",
-        "ru": "Севаз"
+        "ru": "Севаз",
+        "type": "24"
     },
     "1710232586": {
         "en": "Xoji",
         "uz": "Xoji",
-        "ru": "Хожи"
+        "ru": "Хожи",
+        "type": "24"
     },
     "1710232589": {
         "en": "Yakkatut",
         "uz": "Yakkatut",
-        "ru": "Яккатут"
+        "ru": "Яккатут",
+        "type": "24"
     },
     "1710232593": {
         "en": "Yangiobod",
         "uz": "Yangiobod",
-        "ru": "Янгиабад"
+        "ru": "Янгиабад",
+        "type": "24"
     },
     "1710232803": {
         "en": "Bektemir",
         "uz": "Bektemir",
-        "ru": "Бектемир"
+        "ru": "Бектемир",
+        "type": "31"
     },
     "1710232808": {
         "en": "Qatorbog'",
         "uz": "Qatorbog'",
-        "ru": "Катарбаг"
+        "ru": "Катарбаг",
+        "type": "31"
     },
     "1710232809": {
         "en": "Qaynarbuloq",
         "uz": "Qaynarbuloq",
-        "ru": "Кайнарбулак"
+        "ru": "Кайнарбулак",
+        "type": "31"
     },
     "1710232811": {
         "en": "Qo'yioqboy",
         "uz": "Qo'yioqboy",
-        "ru": "Куйнакбай"
+        "ru": "Куйнакбай",
+        "type": "31"
     },
     "1710232833": {
         "en": "Makrid",
         "uz": "Makrid",
-        "ru": "Макрид"
+        "ru": "Макрид",
+        "type": "31"
     },
     "1710232855": {
         "en": "Tagob",
         "uz": "Tagob",
-        "ru": "Тагоб"
+        "ru": "Тагоб",
+        "type": "31"
     },
     "1710232866": {
         "en": "Paxtaobod",
         "uz": "Paxtaobod",
-        "ru": "Пахтаабад"
+        "ru": "Пахтаабад",
+        "type": "31"
     },
     "1710232877": {
         "en": "Sevaz",
         "uz": "Sevaz",
-        "ru": "Сиваз"
+        "ru": "Сиваз",
+        "type": "31"
     },
     "1710232880": {
         "en": "Tupchoq",
         "uz": "Tupchoq",
-        "ru": "Тупчак"
+        "ru": "Тупчак",
+        "type": "31"
     },
     "1710232885": {
         "en": "Bog'bon",
         "uz": "Bog'bon",
-        "ru": "Багбан"
+        "ru": "Багбан",
+        "type": "31"
     },
     "1710232890": {
         "en": "Beshterak",
         "uz": "Beshterak",
-        "ru": "Бештеpак"
+        "ru": "Бештеpак",
+        "type": "31"
     },
     "1710232895": {
         "en": "Jilisuv",
         "uz": "Jilisuv",
-        "ru": "Жилисув"
+        "ru": "Жилисув",
+        "type": "31"
     },
     "1710233551": {
         "en": "Yangi Mirishkor",
         "uz": "Yangi Mirishkor",
-        "ru": "Янги Миришкор"
+        "ru": "Янги Миришкор",
+        "type": "24"
     },
     "1710233555": {
         "en": "Jeynov",
         "uz": "Jeynov",
-        "ru": "Жейнов"
+        "ru": "Жейнов",
+        "type": "24"
     },
     "1710233558": {
         "en": "Pomuq",
         "uz": "Pomuq",
-        "ru": "Помук"
+        "ru": "Помук",
+        "type": "24"
     },
     "1710233808": {
         "en": "Obod",
         "uz": "Obod",
-        "ru": "Абад"
+        "ru": "Абад",
+        "type": "31"
     },
     "1710233812": {
         "en": "Bo'ston",
         "uz": "Bo'ston",
-        "ru": "Бустон"
+        "ru": "Бустон",
+        "type": "31"
     },
     "1710233823": {
         "en": "Vori",
         "uz": "Vori",
-        "ru": "Вори"
+        "ru": "Вори",
+        "type": "31"
     },
     "1710233828": {
         "en": "Guliston",
         "uz": "Guliston",
-        "ru": "Гулистан"
+        "ru": "Гулистан",
+        "type": "31"
     },
     "1710233832": {
         "en": "Gulshanbog'",
         "uz": "Gulshanbog'",
-        "ru": "Гулшан баг"
+        "ru": "Гулшан баг",
+        "type": "31"
     },
     "1710233836": {
         "en": "Jeynov",
         "uz": "Jeynov",
-        "ru": "Джейнау"
+        "ru": "Джейнау",
+        "type": "31"
     },
     "1710233842": {
         "en": "Mirishkor",
         "uz": "Mirishkor",
-        "ru": "Миришкор"
+        "ru": "Миришкор",
+        "type": "31"
     },
     "1710233848": {
         "en": "Navbahor",
         "uz": "Navbahor",
-        "ru": "Навбахор"
+        "ru": "Навбахор",
+        "type": "31"
     },
     "1710233855": {
         "en": "Pomuq",
         "uz": "Pomuq",
-        "ru": "Помук"
+        "ru": "Помук",
+        "type": "31"
     },
     "1710233862": {
         "en": "Chamanzor",
         "uz": "Chamanzor",
-        "ru": "Чаманзар"
+        "ru": "Чаманзар",
+        "type": "31"
     },
     "1710233865": {
         "en": "Chandir",
         "uz": "Chandir",
-        "ru": "Чандиp"
+        "ru": "Чандиp",
+        "type": "31"
     },
     "1710233869": {
         "en": "Yangiobod",
         "uz": "Yangiobod",
-        "ru": "Янгиабад"
+        "ru": "Янгиабад",
+        "type": "31"
     },
     "1710234501": {
         "en": "Muborak",
         "uz": "Muborak",
-        "ru": "Мубаpек"
+        "ru": "Мубаpек",
+        "type": "23"
     },
     "1710234552": {
         "en": "Qarliq",
         "uz": "Qarliq",
-        "ru": "Карлик"
+        "ru": "Карлик",
+        "type": "24"
     },
     "1710234554": {
         "en": "Baxt",
         "uz": "Baxt",
-        "ru": "Бахт"
+        "ru": "Бахт",
+        "type": "24"
     },
     "1710234556": {
         "en": "Qoraqum",
         "uz": "Qoraqum",
-        "ru": "Каракум"
+        "ru": "Каракум",
+        "type": "24"
     },
     "1710234558": {
         "en": "Diyonat",
         "uz": "Diyonat",
-        "ru": "Диёнат"
+        "ru": "Диёнат",
+        "type": "24"
     },
     "1710234562": {
         "en": "Shayx",
         "uz": "Shayx",
-        "ru": "Шайх"
+        "ru": "Шайх",
+        "type": "24"
     },
     "1710234835": {
         "en": "Qoraqum",
         "uz": "Qoraqum",
-        "ru": "Каракум"
+        "ru": "Каракум",
+        "type": "31"
     },
     "1710234845": {
         "en": "Muborak",
         "uz": "Muborak",
-        "ru": "Муборак"
+        "ru": "Муборак",
+        "type": "31"
     },
     "1710234878": {
         "en": "Qarliq",
         "uz": "Qarliq",
-        "ru": "Карлик"
+        "ru": "Карлик",
+        "type": "31"
     },
     "1710234882": {
         "en": "Sariq",
         "uz": "Sariq",
-        "ru": "Саpик"
+        "ru": "Саpик",
+        "type": "31"
     },
     "1710235501": {
         "en": "Yangi Nishon",
         "uz": "Yangi Nishon",
-        "ru": "Янги-Нишан"
+        "ru": "Янги-Нишан",
+        "type": "23"
     },
     "1710235505": {
         "en": "Talimarjon",
         "uz": "Talimarjon",
-        "ru": "Талимарджан"
+        "ru": "Талимарджан",
+        "type": "23"
     },
     "1710235553": {
         "en": "Nuriston",
         "uz": "Nuriston",
-        "ru": "Нуристон"
+        "ru": "Нуристон",
+        "type": "24"
     },
     "1710235555": {
         "en": "Nishon",
         "uz": "Nishon",
-        "ru": "Нишон"
+        "ru": "Нишон",
+        "type": "24"
     },
     "1710235557": {
         "en": "Guliston",
         "uz": "Guliston",
-        "ru": "Гулистан"
+        "ru": "Гулистан",
+        "type": "24"
     },
     "1710235559": {
         "en": "Oq oltin",
         "uz": "Oq oltin",
-        "ru": "Ак алтин"
+        "ru": "Ак алтин",
+        "type": "24"
     },
     "1710235561": {
         "en": "Sardoba",
         "uz": "Sardoba",
-        "ru": "Сардоба"
+        "ru": "Сардоба",
+        "type": "24"
     },
     "1710235565": {
         "en": "Paxtachi",
         "uz": "Paxtachi",
-        "ru": "Пахтачи"
+        "ru": "Пахтачи",
+        "type": "24"
     },
     "1710235567": {
         "en": "Oydin",
         "uz": "Oydin",
-        "ru": "Ойдин"
+        "ru": "Ойдин",
+        "type": "24"
     },
     "1710235569": {
         "en": "Samarqand",
         "uz": "Samarqand",
-        "ru": "Самарканд"
+        "ru": "Самарканд",
+        "type": "24"
     },
     "1710235571": {
         "en": "Paxtaobod",
         "uz": "Paxtaobod",
-        "ru": "Пахтаабад"
+        "ru": "Пахтаабад",
+        "type": "24"
     },
     "1710235804": {
         "en": "Oydinlik",
         "uz": "Oydinlik",
-        "ru": "Ойдинлик"
+        "ru": "Ойдинлик",
+        "type": "31"
     },
     "1710235807": {
         "en": "Oq oltin",
         "uz": "Oq oltin",
-        "ru": "Акалтын"
+        "ru": "Акалтын",
+        "type": "31"
     },
     "1710235826": {
         "en": "Qirqquloch",
         "uz": "Qirqquloch",
-        "ru": "Кирккулоч"
+        "ru": "Кирккулоч",
+        "type": "31"
     },
     "1710235848": {
         "en": "Navro'z",
         "uz": "Navro'z",
-        "ru": "Навруз"
+        "ru": "Навруз",
+        "type": "31"
     },
     "1710235850": {
         "en": "Nishon",
         "uz": "Nishon",
-        "ru": "Нишан"
+        "ru": "Нишан",
+        "type": "31"
     },
     "1710235860": {
         "en": "Paxtazor",
         "uz": "Paxtazor",
-        "ru": "Пахтазар"
+        "ru": "Пахтазар",
+        "type": "31"
     },
     "1710235874": {
         "en": "Shirinobod",
         "uz": "Shirinobod",
-        "ru": "Ширинабад"
+        "ru": "Ширинабад",
+        "type": "31"
     },
     "1710235880": {
         "en": "Balxiyak",
         "uz": "Balxiyak",
-        "ru": "Балхияк"
+        "ru": "Балхияк",
+        "type": "31"
     },
     "1710237551": {
         "en": "Mug'lon",
         "uz": "Mug'lon",
-        "ru": "Муглон"
+        "ru": "Муглон",
+        "type": "24"
     },
     "1710237554": {
         "en": "Denov",
         "uz": "Denov",
-        "ru": "Денов"
+        "ru": "Денов",
+        "type": "24"
     },
     "1710237556": {
         "en": "Kasbi",
         "uz": "Kasbi",
-        "ru": "Касби"
+        "ru": "Касби",
+        "type": "24"
     },
     "1710237558": {
         "en": "Do'stlik",
         "uz": "Do'stlik",
-        "ru": "Дустлик"
+        "ru": "Дустлик",
+        "type": "24"
     },
     "1710237562": {
         "en": "Yangi qishloq",
         "uz": "Yangi qishloq",
-        "ru": "Янги кишлок"
+        "ru": "Янги кишлок",
+        "type": "24"
     },
     "1710237564": {
         "en": "Xo'jakasbi",
         "uz": "Xo'jakasbi",
-        "ru": "Хужа Касби"
+        "ru": "Хужа Касби",
+        "type": "24"
     },
     "1710237566": {
         "en": "Fazli",
         "uz": "Fazli",
-        "ru": "Фазли"
+        "ru": "Фазли",
+        "type": "24"
     },
     "1710237568": {
         "en": "Maymanoq",
         "uz": "Maymanoq",
-        "ru": "Майманок"
+        "ru": "Майманок",
+        "type": "24"
     },
     "1710237572": {
         "en": "Qatag'an",
         "uz": "Qatag'an",
-        "ru": "Катаган"
+        "ru": "Катаган",
+        "type": "24"
     },
     "1710237822": {
         "en": "Qamashi",
         "uz": "Qamashi",
-        "ru": "Камаши"
+        "ru": "Камаши",
+        "type": "31"
     },
     "1710237825": {
         "en": "Komilon",
         "uz": "Komilon",
-        "ru": "Камилан"
+        "ru": "Камилан",
+        "type": "31"
     },
     "1710237833": {
         "en": "Qatag'on",
         "uz": "Qatag'on",
-        "ru": "Катаган"
+        "ru": "Катаган",
+        "type": "31"
     },
     "1710237840": {
         "en": "Cho'lquvar",
         "uz": "Cho'lquvar",
-        "ru": "Чулкувар"
+        "ru": "Чулкувар",
+        "type": "31"
     },
     "1710237855": {
         "en": "Mug'lon",
         "uz": "Mug'lon",
-        "ru": "Муглон"
+        "ru": "Муглон",
+        "type": "31"
     },
     "1710237866": {
         "en": "Denov",
         "uz": "Denov",
-        "ru": "Денау"
+        "ru": "Денау",
+        "type": "31"
     },
     "1710237877": {
         "en": "Qoraqo'ng'irot",
         "uz": "Qoraqo'ng'irot",
-        "ru": "Коракунгирот"
+        "ru": "Коракунгирот",
+        "type": "31"
     },
     "1710237882": {
         "en": "Yuksalish",
         "uz": "Yuksalish",
-        "ru": "Юксалиш"
+        "ru": "Юксалиш",
+        "type": "31"
     },
     "1710237886": {
         "en": "Paxtakor",
         "uz": "Paxtakor",
-        "ru": "Пахтакор"
+        "ru": "Пахтакор",
+        "type": "31"
     },
     "1710237890": {
         "en": "G'alaba",
         "uz": "G'alaba",
-        "ru": "Галаба"
+        "ru": "Галаба",
+        "type": "31"
     },
     "1710242501": {
         "en": "Chiroqchi",
         "uz": "Chiroqchi",
-        "ru": "Чиракчи"
+        "ru": "Чиракчи",
+        "type": "23"
     },
     "1710242553": {
         "en": "Jar",
         "uz": "Jar",
-        "ru": "Джар"
+        "ru": "Джар",
+        "type": "24"
     },
     "1710242556": {
         "en": "O'ymovut",
         "uz": "O'ymovut",
-        "ru": "Уймовут"
+        "ru": "Уймовут",
+        "type": "24"
     },
     "1710242559": {
         "en": "Dam",
         "uz": "Dam",
-        "ru": "Дам"
+        "ru": "Дам",
+        "type": "24"
     },
     "1710242563": {
         "en": "Pakandi",
         "uz": "Pakandi",
-        "ru": "Паканди"
+        "ru": "Паканди",
+        "type": "24"
     },
     "1710242566": {
         "en": "Paxtaobod",
         "uz": "Paxtaobod",
-        "ru": "Пахтаобод"
+        "ru": "Пахтаобод",
+        "type": "24"
     },
     "1710242569": {
         "en": "Chiyal",
         "uz": "Chiyal",
-        "ru": "Чиял"
+        "ru": "Чиял",
+        "type": "24"
     },
     "1710242573": {
         "en": "Ko'kdala",
         "uz": "Ko'kdala",
-        "ru": "Кукдала"
+        "ru": "Кукдала",
+        "type": "24"
     },
     "1710242576": {
         "en": "Ayritom",
         "uz": "Ayritom",
-        "ru": "Айритом"
+        "ru": "Айритом",
+        "type": "24"
     },
     "1710242811": {
         "en": "Olmazor",
         "uz": "Olmazor",
-        "ru": "Олмазор"
+        "ru": "Олмазор",
+        "type": "31"
     },
     "1710242822": {
         "en": "Qalqama",
         "uz": "Qalqama",
-        "ru": "Калкама"
+        "ru": "Калкама",
+        "type": "31"
     },
     "1710242824": {
         "en": "Ko'kdala",
         "uz": "Ko'kdala",
-        "ru": "Кокдала"
+        "ru": "Кокдала",
+        "type": "31"
     },
     "1710242826": {
         "en": "Xumo",
         "uz": "Xumo",
-        "ru": "Хумо"
+        "ru": "Хумо",
+        "type": "31"
     },
     "1710242840": {
         "en": "Langar",
         "uz": "Langar",
-        "ru": "Лангар"
+        "ru": "Лангар",
+        "type": "31"
     },
     "1710242844": {
         "en": "Jar",
         "uz": "Jar",
-        "ru": "Джар"
+        "ru": "Джар",
+        "type": "31"
     },
     "1710242856": {
         "en": "Taraqqiyot",
         "uz": "Taraqqiyot",
-        "ru": "Тараккиёт"
+        "ru": "Тараккиёт",
+        "type": "31"
     },
     "1710242872": {
         "en": "Uyshun",
         "uz": "Uyshun",
-        "ru": "Уйшун"
+        "ru": "Уйшун",
+        "type": "31"
     },
     "1710242874": {
         "en": "Nurafshon",
         "uz": "Nurafshon",
-        "ru": "Нурафшон"
+        "ru": "Нурафшон",
+        "type": "31"
     },
     "1710242876": {
         "en": "Chiyal",
         "uz": "Chiyal",
-        "ru": "Чиел"
+        "ru": "Чиел",
+        "type": "31"
     },
     "1710242877": {
         "en": "Qumdaryo",
         "uz": "Qumdaryo",
-        "ru": "Кумдаре"
+        "ru": "Кумдаре",
+        "type": "31"
     },
     "1710242878": {
         "en": "Sho'rquduq",
         "uz": "Sho'rquduq",
-        "ru": "Шуркудук"
+        "ru": "Шуркудук",
+        "type": "31"
     },
     "1710242880": {
         "en": "Eski Anxor",
         "uz": "Eski Anxor",
-        "ru": "Эски Ангор"
+        "ru": "Эски Ангор",
+        "type": "31"
     },
     "1710242884": {
         "en": "Yangihayot",
         "uz": "Yangihayot",
-        "ru": "Янгихает"
+        "ru": "Янгихает",
+        "type": "31"
     },
     "1710242886": {
         "en": "Paxtaobod",
         "uz": "Paxtaobod",
-        "ru": "Пахтаабад"
+        "ru": "Пахтаабад",
+        "type": "31"
     },
     "1710242888": {
         "en": "Dodiq",
         "uz": "Dodiq",
-        "ru": "Додик"
+        "ru": "Додик",
+        "type": "31"
     },
     "1710242890": {
         "en": "Qahramon",
         "uz": "Qahramon",
-        "ru": "Кахpамон"
+        "ru": "Кахpамон",
+        "type": "31"
     },
     "1710242892": {
         "en": "Uymovut",
         "uz": "Uymovut",
-        "ru": "Уймавут"
+        "ru": "Уймавут",
+        "type": "31"
     },
     "1710242894": {
         "en": "Mirzato'p",
         "uz": "Mirzato'p",
-        "ru": "Миpзатуп"
+        "ru": "Миpзатуп",
+        "type": "31"
     },
     "1710242896": {
         "en": "Torjilg'a",
         "uz": "Torjilg'a",
-        "ru": "Тоpжилга"
+        "ru": "Тоpжилга",
+        "type": "31"
     },
     "1710245553": {
         "en": "Miraki",
         "uz": "Miraki",
-        "ru": "Мираки"
+        "ru": "Мираки",
+        "type": "24"
     },
     "1710245555": {
         "en": "Qumqishloq",
         "uz": "Qumqishloq",
-        "ru": "Кумкишлок"
+        "ru": "Кумкишлок",
+        "type": "24"
     },
     "1710245557": {
         "en": "O'rtaqo'rg'on",
         "uz": "O'rtaqo'rg'on",
-        "ru": "Уртакургон"
+        "ru": "Уртакургон",
+        "type": "24"
     },
     "1710245561": {
         "en": "Chorshanbe",
         "uz": "Chorshanbe",
-        "ru": "Чоршанбе"
+        "ru": "Чоршанбе",
+        "type": "24"
     },
     "1710245563": {
         "en": "Temirchi",
         "uz": "Temirchi",
-        "ru": "Темирчи"
+        "ru": "Темирчи",
+        "type": "24"
     },
     "1710245565": {
         "en": "Yangiqishloq",
         "uz": "Yangiqishloq",
-        "ru": "Янгикишлок"
+        "ru": "Янгикишлок",
+        "type": "24"
     },
     "1710245567": {
         "en": "Qutchi",
         "uz": "Qutchi",
-        "ru": "Кутчи"
+        "ru": "Кутчи",
+        "type": "24"
     },
     "1710245569": {
         "en": "Shamaton",
         "uz": "Shamaton",
-        "ru": "Шаматон"
+        "ru": "Шаматон",
+        "type": "24"
     },
     "1710245571": {
         "en": "Ammog'on-1",
         "uz": "Ammog'on-1",
-        "ru": "Аммогон-1"
+        "ru": "Аммогон-1",
+        "type": "24"
     },
     "1710245573": {
         "en": "Qo'shqanot",
         "uz": "Qo'shqanot",
-        "ru": "Кушканот"
+        "ru": "Кушканот",
+        "type": "24"
     },
     "1710245575": {
         "en": "Anday",
         "uz": "Anday",
-        "ru": "Андай"
+        "ru": "Андай",
+        "type": "24"
     },
     "1710245583": {
         "en": "Xo'jaxuroson",
         "uz": "Xo'jaxuroson",
-        "ru": "Хужахуросон"
+        "ru": "Хужахуросон",
+        "type": "24"
     },
     "1710245585": {
         "en": "Keldihayot",
         "uz": "Keldihayot",
-        "ru": "Келдихает"
+        "ru": "Келдихает",
+        "type": "24"
     },
     "1710245802": {
         "en": "Oq suv",
         "uz": "Oq suv",
-        "ru": "Аксу"
+        "ru": "Аксу",
+        "type": "31"
     },
     "1710245811": {
         "en": "Do'xchi",
         "uz": "Do'xchi",
-        "ru": "Дукчи"
+        "ru": "Дукчи",
+        "type": "31"
     },
     "1710245818": {
         "en": "Kunchiqar",
         "uz": "Kunchiqar",
-        "ru": "Кунчикар"
+        "ru": "Кунчикар",
+        "type": "31"
     },
     "1710245823": {
         "en": "Qutchi",
         "uz": "Qutchi",
-        "ru": "Кутчи"
+        "ru": "Кутчи",
+        "type": "31"
     },
     "1710245835": {
         "en": "Mo'minobod",
         "uz": "Mo'minobod",
-        "ru": "Муминабад"
+        "ru": "Муминабад",
+        "type": "31"
     },
     "1710245840": {
         "en": "Namaton",
         "uz": "Namaton",
-        "ru": "Наматан"
+        "ru": "Наматан",
+        "type": "31"
     },
     "1710245851": {
         "en": "To'damaydon",
         "uz": "To'damaydon",
-        "ru": "Тудамайдон"
+        "ru": "Тудамайдон",
+        "type": "31"
     },
     "1710245860": {
         "en": "O'zbekiston",
         "uz": "O'zbekiston",
-        "ru": "Узбекистан"
+        "ru": "Узбекистан",
+        "type": "31"
     },
     "1710245869": {
         "en": "Hisorak",
         "uz": "Hisorak",
-        "ru": "Хисарак"
+        "ru": "Хисарак",
+        "type": "31"
     },
     "1710245872": {
         "en": "Xitoy",
         "uz": "Xitoy",
-        "ru": "Хитай"
+        "ru": "Хитай",
+        "type": "31"
     },
     "1710245881": {
         "en": "Shakarteri",
         "uz": "Shakarteri",
-        "ru": "Шакартери"
+        "ru": "Шакартери",
+        "type": "31"
     },
     "1710245892": {
         "en": "Shamaton",
         "uz": "Shamaton",
-        "ru": "Шаматан"
+        "ru": "Шаматан",
+        "type": "31"
     },
     "1710250501": {
         "en": "Yakkabog'",
         "uz": "Yakkabog'",
-        "ru": "Яккабаг"
+        "ru": "Яккабаг",
+        "type": "23"
     },
     "1710250555": {
         "en": "Eski Yakkabog'",
         "uz": "Eski Yakkabog'",
-        "ru": "Эски Яккабаг"
+        "ru": "Эски Яккабаг",
+        "type": "24"
     },
     "1710250557": {
         "en": "Alaqarg'a",
         "uz": "Alaqarg'a",
-        "ru": "Алакарга"
+        "ru": "Алакарга",
+        "type": "24"
     },
     "1710250558": {
         "en": "Alako'ylak",
         "uz": "Alako'ylak",
-        "ru": "Алакуйлак"
+        "ru": "Алакуйлак",
+        "type": "24"
     },
     "1710250559": {
         "en": "Jarqirg'iz",
         "uz": "Jarqirg'iz",
-        "ru": "Жаркиргиз"
+        "ru": "Жаркиргиз",
+        "type": "24"
     },
     "1710250561": {
         "en": "Qayrag'och",
         "uz": "Qayrag'och",
-        "ru": "Кайрагач"
+        "ru": "Кайрагач",
+        "type": "24"
     },
     "1710250563": {
         "en": "Qatag'on",
         "uz": "Qatag'on",
-        "ru": "Катагон"
+        "ru": "Катагон",
+        "type": "24"
     },
     "1710250565": {
         "en": "Kattabog'",
         "uz": "Kattabog'",
-        "ru": "Каттабог"
+        "ru": "Каттабог",
+        "type": "24"
     },
     "1710250567": {
         "en": "Madaniyat",
         "uz": "Madaniyat",
-        "ru": "Маданият"
+        "ru": "Маданият",
+        "type": "24"
     },
     "1710250569": {
         "en": "Mevazor",
         "uz": "Mevazor",
-        "ru": "Мевазор"
+        "ru": "Мевазор",
+        "type": "24"
     },
     "1710250571": {
         "en": "Samoq",
         "uz": "Samoq",
-        "ru": "Самок"
+        "ru": "Самок",
+        "type": "24"
     },
     "1710250573": {
         "en": "Turon",
         "uz": "Turon",
-        "ru": "Турон"
+        "ru": "Турон",
+        "type": "24"
     },
     "1710250575": {
         "en": "O'z",
         "uz": "O'z",
-        "ru": "Уз"
+        "ru": "Уз",
+        "type": "24"
     },
     "1710250577": {
         "en": "Chubron",
         "uz": "Chubron",
-        "ru": "Чуброн"
+        "ru": "Чуброн",
+        "type": "24"
     },
     "1710250579": {
         "en": "Edilbek",
         "uz": "Edilbek",
-        "ru": "Эдилбек"
+        "ru": "Эдилбек",
+        "type": "24"
     },
     "1710250811": {
         "en": "Qayrag'och",
         "uz": "Qayrag'och",
-        "ru": "Кайрагач"
+        "ru": "Кайрагач",
+        "type": "31"
     },
     "1710250822": {
         "en": "Esat",
         "uz": "Esat",
-        "ru": "Эсат"
+        "ru": "Эсат",
+        "type": "31"
     },
     "1710250825": {
         "en": "Qo'shchinor",
         "uz": "Qo'shchinor",
-        "ru": "Кошчинар"
+        "ru": "Кошчинар",
+        "type": "31"
     },
     "1710250833": {
         "en": "Qishliq",
         "uz": "Qishliq",
-        "ru": "Кишлик"
+        "ru": "Кишлик",
+        "type": "31"
     },
     "1710250844": {
         "en": "Samoq",
         "uz": "Samoq",
-        "ru": "Самак"
+        "ru": "Самак",
+        "type": "31"
     },
     "1710250855": {
         "en": "Sandal",
         "uz": "Sandal",
-        "ru": "Сандал"
+        "ru": "Сандал",
+        "type": "31"
     },
     "1710250858": {
         "en": "O'rta",
         "uz": "O'rta",
-        "ru": "Урта"
+        "ru": "Урта",
+        "type": "31"
     },
     "1710250861": {
         "en": "Chaydori",
         "uz": "Chaydori",
-        "ru": "Чайдари"
+        "ru": "Чайдари",
+        "type": "31"
     },
     "1710250866": {
         "en": "Hiyobon",
         "uz": "Hiyobon",
-        "ru": "Хиябан"
+        "ru": "Хиябан",
+        "type": "31"
     },
     "1710401555": {
         "en": "Qashqadaryo",
         "uz": "Qashqadaryo",
-        "ru": "Кашкадарья"
+        "ru": "Кашкадарья",
+        "type": "24"
     },
     "1712211551": {
         "en": "Konimex",
         "uz": "Konimex",
-        "ru": "Канимех"
+        "ru": "Канимех",
+        "type": "24"
     },
     "1712211552": {
         "en": "Balaqaraq",
         "uz": "Balaqaraq",
-        "ru": "Балакарак"
+        "ru": "Балакарак",
+        "type": "24"
     },
     "1712211554": {
         "en": "Mamiqchi",
         "uz": "Mamiqchi",
-        "ru": "Мамикчи"
+        "ru": "Мамикчи",
+        "type": "24"
     },
     "1712211556": {
         "en": "Sho'rtepa",
         "uz": "Sho'rtepa",
-        "ru": "Шуртепа"
+        "ru": "Шуртепа",
+        "type": "24"
     },
     "1712211558": {
         "en": "Zafarobod",
         "uz": "Zafarobod",
-        "ru": "Зафарабад"
+        "ru": "Зафарабад",
+        "type": "24"
     },
     "1712211811": {
         "en": "Yangig'ozg'on",
         "uz": "Yangig'ozg'on",
-        "ru": "Янгиказган"
+        "ru": "Янгиказган",
+        "type": "31"
     },
     "1712211818": {
         "en": "Sarajal",
         "uz": "Sarajal",
-        "ru": "Саржал"
+        "ru": "Саржал",
+        "type": "31"
     },
     "1712211822": {
         "en": "Chordara",
         "uz": "Chordara",
-        "ru": "Чардара"
+        "ru": "Чардара",
+        "type": "31"
     },
     "1712211826": {
         "en": "Karakata",
         "uz": "Karakata",
-        "ru": "Караката"
+        "ru": "Караката",
+        "type": "31"
     },
     "1712211835": {
         "en": "Uchtobe",
         "uz": "Uchtobe",
-        "ru": "Учтобе"
+        "ru": "Учтобе",
+        "type": "31"
     },
     "1712211840": {
         "en": "Boymurot",
         "uz": "Boymurot",
-        "ru": "Баймуpат"
+        "ru": "Баймуpат",
+        "type": "31"
     },
     "1712211845": {
         "en": "Yangiobod",
         "uz": "Yangiobod",
-        "ru": "Янгиабад"
+        "ru": "Янгиабад",
+        "type": "31"
     },
     "1712216501": {
         "en": "Qiziltepa",
         "uz": "Qiziltepa",
-        "ru": "Кызылтепа"
+        "ru": "Кызылтепа",
+        "type": "23"
     },
     "1712216552": {
         "en": "Husbuddin",
         "uz": "Husbuddin",
-        "ru": "Хусбуддин"
+        "ru": "Хусбуддин",
+        "type": "24"
     },
     "1712216554": {
         "en": "Qalayn-Azizon",
         "uz": "Qalayn-Azizon",
-        "ru": "Калъайи Азизон"
+        "ru": "Калъайи Азизон",
+        "type": "24"
     },
     "1712216556": {
         "en": "Baland G'ardiyon",
         "uz": "Baland G'ardiyon",
-        "ru": "Баланд гардиен"
+        "ru": "Баланд гардиен",
+        "type": "24"
     },
     "1712216558": {
         "en": "G'oyibon",
         "uz": "G'oyibon",
-        "ru": "Гойибон"
+        "ru": "Гойибон",
+        "type": "24"
     },
     "1712216560": {
         "en": "Oq soch",
         "uz": "Oq soch",
-        "ru": "Оксоч"
+        "ru": "Оксоч",
+        "type": "24"
     },
     "1712216562": {
         "en": "Vang'ozi",
         "uz": "Vang'ozi",
-        "ru": "Вангози"
+        "ru": "Вангози",
+        "type": "24"
     },
     "1712216564": {
         "en": "Oqmachit",
         "uz": "Oqmachit",
-        "ru": "Окмачит"
+        "ru": "Окмачит",
+        "type": "24"
     },
     "1712216566": {
         "en": "Zarmetan",
         "uz": "Zarmetan",
-        "ru": "Зарметан"
+        "ru": "Зарметан",
+        "type": "24"
     },
     "1712216568": {
         "en": "G'amxo'r",
         "uz": "G'amxo'r",
-        "ru": "Гамхур"
+        "ru": "Гамхур",
+        "type": "24"
     },
     "1712216572": {
         "en": "Uzilishkent",
         "uz": "Uzilishkent",
-        "ru": "Узилишкент"
+        "ru": "Узилишкент",
+        "type": "24"
     },
     "1712216574": {
         "en": "O'rtaqo'rg'on",
         "uz": "O'rtaqo'rg'on",
-        "ru": "Уртакургон"
+        "ru": "Уртакургон",
+        "type": "24"
     },
     "1712216576": {
         "en": "Xo'jaqo'rg'on",
         "uz": "Xo'jaqo'rg'on",
-        "ru": "Хужакургон"
+        "ru": "Хужакургон",
+        "type": "24"
     },
     "1712216803": {
         "en": "Oq oltin",
         "uz": "Oq oltin",
-        "ru": "Акалтын"
+        "ru": "Акалтын",
+        "type": "31"
     },
     "1712216805": {
         "en": "Arabon",
         "uz": "Arabon",
-        "ru": "Арабон"
+        "ru": "Арабон",
+        "type": "31"
     },
     "1712216808": {
         "en": "Bo'ston",
         "uz": "Bo'ston",
-        "ru": "Бустан"
+        "ru": "Бустан",
+        "type": "31"
     },
     "1712216812": {
         "en": "Vang'ozi",
         "uz": "Vang'ozi",
-        "ru": "Вангази"
+        "ru": "Вангази",
+        "type": "31"
     },
     "1712216819": {
         "en": "G'ardiyon",
         "uz": "G'ardiyon",
-        "ru": "Гардиян"
+        "ru": "Гардиян",
+        "type": "31"
     },
     "1712216825": {
         "en": "Zarmitan",
         "uz": "Zarmitan",
-        "ru": "Зармитан"
+        "ru": "Зармитан",
+        "type": "31"
     },
     "1712216840": {
         "en": "Xo'ja-Hasan",
         "uz": "Xo'ja-Hasan",
-        "ru": "Ходжахасан"
+        "ru": "Ходжахасан",
+        "type": "31"
     },
     "1712216850": {
         "en": "Yangi hayot",
         "uz": "Yangi hayot",
-        "ru": "Янгихаят"
+        "ru": "Янгихаят",
+        "type": "31"
     },
     "1712230552": {
         "en": "Kalkonota",
         "uz": "Kalkonota",
-        "ru": "Калконота"
+        "ru": "Калконота",
+        "type": "24"
     },
     "1712230553": {
         "en": "Saroy",
         "uz": "Saroy",
-        "ru": "Сарой"
+        "ru": "Сарой",
+        "type": "24"
     },
     "1712230555": {
         "en": "Quyi Beshrabot",
         "uz": "Quyi Beshrabot",
-        "ru": "Куйи Бешработ"
+        "ru": "Куйи Бешработ",
+        "type": "24"
     },
     "1712230557": {
         "en": "Keskanterak",
         "uz": "Keskanterak",
-        "ru": "Кескантерак"
+        "ru": "Кескантерак",
+        "type": "24"
     },
     "1712230559": {
         "en": "Ijant",
         "uz": "Ijant",
-        "ru": "Ижант"
+        "ru": "Ижант",
+        "type": "24"
     },
     "1712230805": {
         "en": "Olchin",
         "uz": "Olchin",
-        "ru": "Алчин"
+        "ru": "Алчин",
+        "type": "31"
     },
     "1712230808": {
         "en": "Arabsaroy",
         "uz": "Arabsaroy",
-        "ru": "Арабсарай"
+        "ru": "Арабсарай",
+        "type": "31"
     },
     "1712230815": {
         "en": "Keskanterak",
         "uz": "Keskanterak",
-        "ru": "Кескантерак"
+        "ru": "Кескантерак",
+        "type": "31"
     },
     "1712230838": {
         "en": "Yangi-yo'l",
         "uz": "Yangi-yo'l",
-        "ru": "Янгиюль"
+        "ru": "Янгиюль",
+        "type": "31"
     },
     "1712230855": {
         "en": "Turkiston",
         "uz": "Turkiston",
-        "ru": "Туркестан"
+        "ru": "Туркестан",
+        "type": "31"
     },
     "1712230880": {
         "en": "Yangiqo'rg'on",
         "uz": "Yangiqo'rg'on",
-        "ru": "Янгикурган"
+        "ru": "Янгикурган",
+        "type": "31"
     },
     "1712230882": {
         "en": "Beshrabot",
         "uz": "Beshrabot",
-        "ru": "Бешpабот"
+        "ru": "Бешpабот",
+        "type": "31"
     },
     "1712234551": {
         "en": "Karmana",
         "uz": "Karmana",
-        "ru": "Кармана"
+        "ru": "Кармана",
+        "type": "24"
     },
     "1712234557": {
         "en": "Malikrabot",
         "uz": "Malikrabot",
-        "ru": "Маликработ"
+        "ru": "Маликработ",
+        "type": "24"
     },
     "1712234559": {
         "en": "Paxtaobod",
         "uz": "Paxtaobod",
-        "ru": "Пахтаабад"
+        "ru": "Пахтаабад",
+        "type": "24"
     },
     "1712234561": {
         "en": "Podkoron",
         "uz": "Podkoron",
-        "ru": "Подкорон"
+        "ru": "Подкорон",
+        "type": "24"
     },
     "1712234563": {
         "en": "Kamolot",
         "uz": "Kamolot",
-        "ru": "Камолот"
+        "ru": "Камолот",
+        "type": "24"
     },
     "1712234565": {
         "en": "Yoshlik",
         "uz": "Yoshlik",
-        "ru": "Ешлик"
+        "ru": "Ешлик",
+        "type": "24"
     },
     "1712234802": {
         "en": "Uyrot",
         "uz": "Uyrot",
-        "ru": "Уйрат"
+        "ru": "Уйрат",
+        "type": "31"
     },
     "1712234823": {
         "en": "Do'rmon",
         "uz": "Do'rmon",
-        "ru": "Дорман"
+        "ru": "Дорман",
+        "type": "31"
     },
     "1712234845": {
         "en": "Narpay",
         "uz": "Narpay",
-        "ru": "Нарпай"
+        "ru": "Нарпай",
+        "type": "31"
     },
     "1712234867": {
         "en": "Xazora",
         "uz": "Xazora",
-        "ru": "Хазара"
+        "ru": "Хазара",
+        "type": "31"
     },
     "1712234878": {
         "en": "Yangiariq",
         "uz": "Yangiariq",
-        "ru": "Янгиарык"
+        "ru": "Янгиарык",
+        "type": "31"
     },
     "1712234882": {
         "en": "Jaloyir",
         "uz": "Jaloyir",
-        "ru": "Джалаиp"
+        "ru": "Джалаиp",
+        "type": "31"
     },
     "1712238501": {
         "en": "Nurota",
         "uz": "Nurota",
-        "ru": "Нурата"
+        "ru": "Нурата",
+        "type": "23"
     },
     "1712238555": {
         "en": "Qizilcha",
         "uz": "Qizilcha",
-        "ru": "Кизилча"
+        "ru": "Кизилча",
+        "type": "24"
     },
     "1712238557": {
         "en": "Temurqovuq",
         "uz": "Temurqovuq",
-        "ru": "Темирковук"
+        "ru": "Темирковук",
+        "type": "24"
     },
     "1712238558": {
         "en": "Chuya",
         "uz": "Chuya",
-        "ru": "Чуя"
+        "ru": "Чуя",
+        "type": "24"
     },
     "1712238559": {
         "en": "Yangibino",
         "uz": "Yangibino",
-        "ru": "Янгибино"
+        "ru": "Янгибино",
+        "type": "24"
     },
     "1712238820": {
         "en": "Dehibaland",
         "uz": "Dehibaland",
-        "ru": "Дебаланд"
+        "ru": "Дебаланд",
+        "type": "31"
     },
     "1712238825": {
         "en": "Gum",
         "uz": "Gum",
-        "ru": "Гум"
+        "ru": "Гум",
+        "type": "31"
     },
     "1712238835": {
         "en": "G'ozg'on",
         "uz": "G'ozg'on",
-        "ru": "Гозгон"
+        "ru": "Гозгон",
+        "type": "31"
     },
     "1712238840": {
         "en": "Qizilcha",
         "uz": "Qizilcha",
-        "ru": "Кызылча"
+        "ru": "Кызылча",
+        "type": "31"
     },
     "1712238860": {
         "en": "Nurota",
         "uz": "Nurota",
-        "ru": "Нурата"
+        "ru": "Нурата",
+        "type": "31"
     },
     "1712238877": {
         "en": "Sentob",
         "uz": "Sentob",
-        "ru": "Сентяб"
+        "ru": "Сентяб",
+        "type": "31"
     },
     "1712238890": {
         "en": "Chuya",
         "uz": "Chuya",
-        "ru": "Чуя"
+        "ru": "Чуя",
+        "type": "31"
     },
     "1712244551": {
         "en": "Tomdibuloq",
         "uz": "Tomdibuloq",
-        "ru": "Томдибулок"
+        "ru": "Томдибулок",
+        "type": "24"
     },
     "1712244808": {
         "en": "Oktau",
         "uz": "Oktau",
-        "ru": "Актау"
+        "ru": "Актау",
+        "type": "31"
     },
     "1712244812": {
         "en": "Ayaqquduq",
         "uz": "Ayaqquduq",
-        "ru": "Аякудук"
+        "ru": "Аякудук",
+        "type": "31"
     },
     "1712244830": {
         "en": "Suketti",
         "uz": "Suketti",
-        "ru": "Сукитти"
+        "ru": "Сукитти",
+        "type": "31"
     },
     "1712244835": {
         "en": "Keregetau",
         "uz": "Keregetau",
-        "ru": "Керегетау"
+        "ru": "Керегетау",
+        "type": "31"
     },
     "1712244837": {
         "en": "Keriz",
         "uz": "Keriz",
-        "ru": "Кериз"
+        "ru": "Кериз",
+        "type": "31"
     },
     "1712244840": {
         "en": "Tomdibuloq",
         "uz": "Tomdibuloq",
-        "ru": "Тамдыбулак"
+        "ru": "Тамдыбулак",
+        "type": "31"
     },
     "1712244850": {
         "en": "Shiyeli",
         "uz": "Shiyeli",
-        "ru": "Шиели"
+        "ru": "Шиели",
+        "type": "31"
     },
     "1712248501": {
         "en": "Uchquduq",
         "uz": "Uchquduq",
-        "ru": "Учкудук"
+        "ru": "Учкудук",
+        "type": "23"
     },
     "1712248555": {
         "en": "Shalxar",
         "uz": "Shalxar",
-        "ru": "Шалкар"
+        "ru": "Шалкар",
+        "type": "24"
     },
     "1712248805": {
         "en": "Ko'kayaz",
         "uz": "Ko'kayaz",
-        "ru": "Кукаяз"
+        "ru": "Кукаяз",
+        "type": "31"
     },
     "1712248808": {
         "en": "Altintov",
         "uz": "Altintov",
-        "ru": "Алтинтов"
+        "ru": "Алтинтов",
+        "type": "31"
     },
     "1712248813": {
         "en": "Bozdun",
         "uz": "Bozdun",
-        "ru": "Буздун"
+        "ru": "Буздун",
+        "type": "31"
     },
     "1712248826": {
         "en": "Mingbuloq",
         "uz": "Mingbuloq",
-        "ru": "Мингбулак"
+        "ru": "Мингбулак",
+        "type": "31"
     },
     "1712248844": {
         "en": "Uzunquduq",
         "uz": "Uzunquduq",
-        "ru": "Узункудук"
+        "ru": "Узункудук",
+        "type": "31"
     },
     "1712251501": {
         "en": "Yangirabod",
         "uz": "Yangirabod",
-        "ru": "Янгиpабод"
+        "ru": "Янгиpабод",
+        "type": "23"
     },
     "1712251558": {
         "en": "Langar",
         "uz": "Langar",
-        "ru": "Лянгар"
+        "ru": "Лянгар",
+        "type": "24"
     },
     "1712251562": {
         "en": "Jaloyir",
         "uz": "Jaloyir",
-        "ru": "Джалойир"
+        "ru": "Джалойир",
+        "type": "24"
     },
     "1712251564": {
         "en": "Qo'shchinor",
         "uz": "Qo'shchinor",
-        "ru": "Кушчинор"
+        "ru": "Кушчинор",
+        "type": "24"
     },
     "1712251566": {
         "en": "Polvontepa",
         "uz": "Polvontepa",
-        "ru": "Полвонтепа"
+        "ru": "Полвонтепа",
+        "type": "24"
     },
     "1712251568": {
         "en": "Qo'rg'on",
         "uz": "Qo'rg'on",
-        "ru": "Кургон"
+        "ru": "Кургон",
+        "type": "24"
     },
     "1712251570": {
         "en": "Tasmachi",
         "uz": "Tasmachi",
-        "ru": "Тасмачи"
+        "ru": "Тасмачи",
+        "type": "24"
     },
     "1712251573": {
         "en": "Bog'ishamol",
         "uz": "Bog'ishamol",
-        "ru": "Богишамол"
+        "ru": "Богишамол",
+        "type": "24"
     },
     "1712251575": {
         "en": "G'alabek",
         "uz": "G'alabek",
-        "ru": "Галабек"
+        "ru": "Галабек",
+        "type": "24"
     },
     "1712251577": {
         "en": "Paxtakor",
         "uz": "Paxtakor",
-        "ru": "Пахтакор"
+        "ru": "Пахтакор",
+        "type": "24"
     },
     "1712251579": {
         "en": "Turkman",
         "uz": "Turkman",
-        "ru": "Туркман"
+        "ru": "Туркман",
+        "type": "24"
     },
     "1712251581": {
         "en": "Yangi qurilish",
         "uz": "Yangi qurilish",
-        "ru": "Янги курилиш"
+        "ru": "Янги курилиш",
+        "type": "24"
     },
     "1712251807": {
         "en": "Sahovat",
         "uz": "Sahovat",
-        "ru": "Саховат"
+        "ru": "Саховат",
+        "type": "31"
     },
     "1712251812": {
         "en": "Olchinobod",
         "uz": "Olchinobod",
-        "ru": "Алчинабад"
+        "ru": "Алчинабад",
+        "type": "31"
     },
     "1712251819": {
         "en": "O'zbekiston",
         "uz": "O'zbekiston",
-        "ru": "Узбекистон"
+        "ru": "Узбекистон",
+        "type": "31"
     },
     "1712251824": {
         "en": "Bog'chakalon",
         "uz": "Bog'chakalon",
-        "ru": "Бахчакалан"
+        "ru": "Бахчакалан",
+        "type": "31"
     },
     "1712251835": {
         "en": "Xonaqa",
         "uz": "Xonaqa",
-        "ru": "Ханака"
+        "ru": "Ханака",
+        "type": "31"
     },
     "1712251840": {
         "en": "Qoracha",
         "uz": "Qoracha",
-        "ru": "Каpача"
+        "ru": "Каpача",
+        "type": "31"
     },
     "1712251851": {
         "en": "Pulkan shoir",
         "uz": "Pulkan shoir",
-        "ru": "им. Пулкан шаира"
+        "ru": "им. Пулкан шаира",
+        "type": "31"
     },
     "1712251865": {
         "en": "Yangirabod",
         "uz": "Yangirabod",
-        "ru": "Янгирабод"
+        "ru": "Янгирабод",
+        "type": "31"
     },
     "1712251878": {
         "en": "Ko'ksaroy",
         "uz": "Ko'ksaroy",
-        "ru": "Куксарой"
+        "ru": "Куксарой",
+        "type": "31"
     },
     "1712401564": {
         "en": "Tinchlik",
         "uz": "Tinchlik",
-        "ru": "Тинчлик"
+        "ru": "Тинчлик",
+        "type": "24"
     },
     "1712408556": {
         "en": "Muruntau",
         "uz": "Muruntau",
-        "ru": "Мурунтау"
+        "ru": "Мурунтау",
+        "type": "24"
     },
     "1714204551": {
         "en": "Jo'masho'y",
         "uz": "Jo'masho'y",
-        "ru": "Джумашуй"
+        "ru": "Джумашуй",
+        "type": "24"
     },
     "1714204552": {
         "en": "Go'rtepa",
         "uz": "Go'rtepa",
-        "ru": "Гуртепа"
+        "ru": "Гуртепа",
+        "type": "24"
     },
     "1714204553": {
         "en": "Dovduq",
         "uz": "Dovduq",
-        "ru": "Довдук"
+        "ru": "Довдук",
+        "type": "24"
     },
     "1714204555": {
         "en": "O'zgarish",
         "uz": "O'zgarish",
-        "ru": "Узгариш"
+        "ru": "Узгариш",
+        "type": "24"
     },
     "1714204556": {
         "en": "Mehnatobod",
         "uz": "Mehnatobod",
-        "ru": "Мехнатабад"
+        "ru": "Мехнатабад",
+        "type": "24"
     },
     "1714204557": {
         "en": "Madyarovul",
         "uz": "Madyarovul",
-        "ru": "Мадяровул"
+        "ru": "Мадяровул",
+        "type": "24"
     },
     "1714204559": {
         "en": "Kugolikul",
         "uz": "Kugolikul",
-        "ru": "Куголикул"
+        "ru": "Куголикул",
+        "type": "24"
     },
     "1714204805": {
         "en": "Bo'ston",
         "uz": "Bo'ston",
-        "ru": "Бустан"
+        "ru": "Бустан",
+        "type": "31"
     },
     "1714204810": {
         "en": "Gulbog'",
         "uz": "Gulbog'",
-        "ru": "Гульбаг"
+        "ru": "Гульбаг",
+        "type": "31"
     },
     "1714204820": {
         "en": "Go'rtepa",
         "uz": "Go'rtepa",
-        "ru": "Гуртепа"
+        "ru": "Гуртепа",
+        "type": "31"
     },
     "1714204822": {
         "en": "Dovduq",
         "uz": "Dovduq",
-        "ru": "Довдук"
+        "ru": "Довдук",
+        "type": "31"
     },
     "1714204828": {
         "en": "Oltinko'l",
         "uz": "Oltinko'l",
-        "ru": "Алтынкуль"
+        "ru": "Алтынкуль",
+        "type": "31"
     },
     "1714204830": {
         "en": "Mehnatobod",
         "uz": "Mehnatobod",
-        "ru": "Мехнатабад"
+        "ru": "Мехнатабад",
+        "type": "31"
     },
     "1714204840": {
         "en": "Momoxon",
         "uz": "Momoxon",
-        "ru": "Момохан"
+        "ru": "Момохан",
+        "type": "31"
     },
     "1714207501": {
         "en": "Kosonsoy",
         "uz": "Kosonsoy",
-        "ru": "Касансай"
+        "ru": "Касансай",
+        "type": "23"
     },
     "1714207552": {
         "en": "Bog'ishamol",
         "uz": "Bog'ishamol",
-        "ru": "Богишамол"
+        "ru": "Богишамол",
+        "type": "24"
     },
     "1714207554": {
         "en": "Istiqlol",
         "uz": "Istiqlol",
-        "ru": "Истиклол"
+        "ru": "Истиклол",
+        "type": "24"
     },
     "1714207556": {
         "en": "Koson",
         "uz": "Koson",
-        "ru": "Косон"
+        "ru": "Косон",
+        "type": "24"
     },
     "1714207558": {
         "en": "Ququmboy",
         "uz": "Ququmboy",
-        "ru": "Кукумбой"
+        "ru": "Кукумбой",
+        "type": "24"
     },
     "1714207561": {
         "en": "Ozod",
         "uz": "Ozod",
-        "ru": "Озод"
+        "ru": "Озод",
+        "type": "24"
     },
     "1714207562": {
         "en": "Tergachi",
         "uz": "Tergachi",
-        "ru": "Тергачи"
+        "ru": "Тергачи",
+        "type": "24"
     },
     "1714207564": {
         "en": "Chindavul",
         "uz": "Chindavul",
-        "ru": "Чиндовул"
+        "ru": "Чиндовул",
+        "type": "24"
     },
     "1714207566": {
         "en": "Chust ko'cha",
         "uz": "Chust ko'cha",
-        "ru": "Чуст куча"
+        "ru": "Чуст куча",
+        "type": "24"
     },
     "1714207568": {
         "en": "Yangiyo'l",
         "uz": "Yangiyo'l",
-        "ru": "Янгийул"
+        "ru": "Янгийул",
+        "type": "24"
     },
     "1714207569": {
         "en": "Yangi shahar",
         "uz": "Yangi shahar",
-        "ru": "Янгишахар"
+        "ru": "Янгишахар",
+        "type": "24"
     },
     "1714207806": {
         "en": "Qorasuv",
         "uz": "Qorasuv",
-        "ru": "Карасув"
+        "ru": "Карасув",
+        "type": "31"
     },
     "1714207808": {
         "en": "Shirin",
         "uz": "Shirin",
-        "ru": "Шиpин"
+        "ru": "Шиpин",
+        "type": "31"
     },
     "1714207810": {
         "en": "Ququmboy",
         "uz": "Ququmboy",
-        "ru": "Кукумбай"
+        "ru": "Кукумбай",
+        "type": "31"
     },
     "1714207820": {
         "en": "Koson",
         "uz": "Koson",
-        "ru": "Касан"
+        "ru": "Касан",
+        "type": "31"
     },
     "1714207827": {
         "en": "Yoshlik",
         "uz": "Yoshlik",
-        "ru": "Ешлик"
+        "ru": "Ешлик",
+        "type": "31"
     },
     "1714207830": {
         "en": "Tergachi",
         "uz": "Tergachi",
-        "ru": "Тергачи"
+        "ru": "Тергачи",
+        "type": "31"
     },
     "1714207837": {
         "en": "Chindovul",
         "uz": "Chindovul",
-        "ru": "Чиндавал"
+        "ru": "Чиндавал",
+        "type": "31"
     },
     "1714212551": {
         "en": "Toshbuloq",
         "uz": "Toshbuloq",
-        "ru": "Ташбулак"
+        "ru": "Ташбулак",
+        "type": "24"
     },
     "1714212553": {
         "en": "Navbahor",
         "uz": "Navbahor",
-        "ru": "Навбахор"
+        "ru": "Навбахор",
+        "type": "24"
     },
     "1714212561": {
         "en": "Qumqo'rg'on",
         "uz": "Qumqo'rg'on",
-        "ru": "Кумкургон"
+        "ru": "Кумкургон",
+        "type": "24"
     },
     "1714212563": {
         "en": "Sho'rqo'rg'on",
         "uz": "Sho'rqo'rg'on",
-        "ru": "Шуркургон"
+        "ru": "Шуркургон",
+        "type": "24"
     },
     "1714212565": {
         "en": "Mirishkor",
         "uz": "Mirishkor",
-        "ru": "Миришкор"
+        "ru": "Миришкор",
+        "type": "24"
     },
     "1714212811": {
         "en": "Nurafshon",
         "uz": "Nurafshon",
-        "ru": "Нурафшон"
+        "ru": "Нурафшон",
+        "type": "31"
     },
     "1714212822": {
         "en": "Istiqlol",
         "uz": "Istiqlol",
-        "ru": "Истиклол"
+        "ru": "Истиклол",
+        "type": "31"
     },
     "1714212833": {
         "en": "Navbahor",
         "uz": "Navbahor",
-        "ru": "Навбахор"
+        "ru": "Навбахор",
+        "type": "31"
     },
     "1714212855": {
         "en": "Qumqo'rg'on",
         "uz": "Qumqo'rg'on",
-        "ru": "Кумкурган"
+        "ru": "Кумкурган",
+        "type": "31"
     },
     "1714212859": {
         "en": "Mirishkor",
         "uz": "Mirishkor",
-        "ru": "Миришкор"
+        "ru": "Миришкор",
+        "type": "31"
     },
     "1714212866": {
         "en": "Tepaqo'rg'on",
         "uz": "Tepaqo'rg'on",
-        "ru": "Тепакурган"
+        "ru": "Тепакурган",
+        "type": "31"
     },
     "1714212877": {
         "en": "O'zbekiston",
         "uz": "O'zbekiston",
-        "ru": "Узбекистан"
+        "ru": "Узбекистан",
+        "type": "31"
     },
     "1714212880": {
         "en": "Xonabod",
         "uz": "Xonabod",
-        "ru": "Ханабад"
+        "ru": "Ханабад",
+        "type": "31"
     },
     "1714212885": {
         "en": "Bog'ishamol",
         "uz": "Bog'ishamol",
-        "ru": "Багишамал"
+        "ru": "Багишамал",
+        "type": "31"
     },
     "1714212890": {
         "en": "Sho'rqishloq",
         "uz": "Sho'rqishloq",
-        "ru": "Шуркишлак"
+        "ru": "Шуркишлак",
+        "type": "31"
     },
     "1714216501": {
         "en": "Xaqqulobod",
         "uz": "Xaqqulobod",
-        "ru": "Хаккулабад"
+        "ru": "Хаккулабад",
+        "type": "23"
     },
     "1714216552": {
         "en": "Qorateri",
         "uz": "Qorateri",
-        "ru": "Коратери"
+        "ru": "Коратери",
+        "type": "24"
     },
     "1714216554": {
         "en": "Marg'uzar",
         "uz": "Marg'uzar",
-        "ru": "Маргузар"
+        "ru": "Маргузар",
+        "type": "24"
     },
     "1714216556": {
         "en": "Norinkapa",
         "uz": "Norinkapa",
-        "ru": "Норинкапа"
+        "ru": "Норинкапа",
+        "type": "24"
     },
     "1714216558": {
         "en": "Pastki cho'ja",
         "uz": "Pastki cho'ja",
-        "ru": "Пастки Чужа"
+        "ru": "Пастки Чужа",
+        "type": "24"
     },
     "1714216561": {
         "en": "Uchtepa",
         "uz": "Uchtepa",
-        "ru": "Учтепа"
+        "ru": "Учтепа",
+        "type": "24"
     },
     "1714216562": {
         "en": "Xo'jaobod",
         "uz": "Xo'jaobod",
-        "ru": "Хужаабад"
+        "ru": "Хужаабад",
+        "type": "24"
     },
     "1714216564": {
         "en": "Chambil",
         "uz": "Chambil",
-        "ru": "Чамбил"
+        "ru": "Чамбил",
+        "type": "24"
     },
     "1714216566": {
         "en": "Sho'ra",
         "uz": "Sho'ra",
-        "ru": "Шуро"
+        "ru": "Шуро",
+        "type": "24"
     },
     "1714216815": {
         "en": "Xo'jaobod",
         "uz": "Xo'jaobod",
-        "ru": "Хужаабад"
+        "ru": "Хужаабад",
+        "type": "31"
     },
     "1714216820": {
         "en": "Marg'izor",
         "uz": "Marg'izor",
-        "ru": "Маргузаp"
+        "ru": "Маргузаp",
+        "type": "31"
     },
     "1714216826": {
         "en": "Norinkapa",
         "uz": "Norinkapa",
-        "ru": "Нарынкапа"
+        "ru": "Нарынкапа",
+        "type": "31"
     },
     "1714216837": {
         "en": "Paxtaqishloq",
         "uz": "Paxtaqishloq",
-        "ru": "Пахтакишлак"
+        "ru": "Пахтакишлак",
+        "type": "31"
     },
     "1714216848": {
         "en": "To'da",
         "uz": "To'da",
-        "ru": "Туда"
+        "ru": "Туда",
+        "type": "31"
     },
     "1714216856": {
         "en": "Qo'rg'ontepa",
         "uz": "Qo'rg'ontepa",
-        "ru": "Кургонтепа"
+        "ru": "Кургонтепа",
+        "type": "31"
     },
     "1714216859": {
         "en": "Uchtepa",
         "uz": "Uchtepa",
-        "ru": "Учтепа"
+        "ru": "Учтепа",
+        "type": "31"
     },
     "1714216862": {
         "en": "Toshloq",
         "uz": "Toshloq",
-        "ru": "Ташлак"
+        "ru": "Ташлак",
+        "type": "31"
     },
     "1714219501": {
         "en": "Pop",
         "uz": "Pop",
-        "ru": "Пап"
+        "ru": "Пап",
+        "type": "23"
     },
     "1714219554": {
         "en": "Oltinkon",
         "uz": "Oltinkon",
-        "ru": "Алтынкан"
+        "ru": "Алтынкан",
+        "type": "24"
     },
     "1714219555": {
         "en": "Navbahor",
         "uz": "Navbahor",
-        "ru": "Навбахор"
+        "ru": "Навбахор",
+        "type": "24"
     },
     "1714219557": {
         "en": "Uyg'ursoy",
         "uz": "Uyg'ursoy",
-        "ru": "Уйгурсай"
+        "ru": "Уйгурсай",
+        "type": "24"
     },
     "1714219560": {
         "en": "Xalqobod",
         "uz": "Xalqobod",
-        "ru": "Халкабад"
+        "ru": "Халкабад",
+        "type": "24"
     },
     "1714219565": {
         "en": "Chorkesar",
         "uz": "Chorkesar",
-        "ru": "Чаркесар"
+        "ru": "Чаркесар",
+        "type": "24"
     },
     "1714219567": {
         "en": "Uyg'ur",
         "uz": "Uyg'ur",
-        "ru": "Уйгур"
+        "ru": "Уйгур",
+        "type": "24"
     },
     "1714219569": {
         "en": "Yangi Xo'jaobod",
         "uz": "Yangi Xo'jaobod",
-        "ru": "Янги Хужаабад"
+        "ru": "Янги Хужаабад",
+        "type": "24"
     },
     "1714219571": {
         "en": "Sang",
         "uz": "Sang",
-        "ru": "Санг"
+        "ru": "Санг",
+        "type": "24"
     },
     "1714219573": {
         "en": "G'urumsaroy",
         "uz": "G'urumsaroy",
-        "ru": "Гурумсарай"
+        "ru": "Гурумсарай",
+        "type": "24"
     },
     "1714219575": {
         "en": "Qandig'on",
         "uz": "Qandig'on",
-        "ru": "Кандигон"
+        "ru": "Кандигон",
+        "type": "24"
     },
     "1714219576": {
         "en": "Pungon",
         "uz": "Pungon",
-        "ru": "Пунгон"
+        "ru": "Пунгон",
+        "type": "24"
     },
     "1714219578": {
         "en": "Chodak",
         "uz": "Chodak",
-        "ru": "Чодак"
+        "ru": "Чодак",
+        "type": "24"
     },
     "1714219581": {
         "en": "Madaniyat",
         "uz": "Madaniyat",
-        "ru": "Маданият"
+        "ru": "Маданият",
+        "type": "24"
     },
     "1714219583": {
         "en": "Qurg'onobod",
         "uz": "Qurg'onobod",
-        "ru": "Кургонобод"
+        "ru": "Кургонобод",
+        "type": "24"
     },
     "1714219585": {
         "en": "Chorkesar-2",
         "uz": "Chorkesar-2",
-        "ru": "Чаркесар-2"
+        "ru": "Чаркесар-2",
+        "type": "24"
     },
     "1714219809": {
         "en": "Madaniyat",
         "uz": "Madaniyat",
-        "ru": "Маданият"
+        "ru": "Маданият",
+        "type": "31"
     },
     "1714219811": {
         "en": "Sirdaryo",
         "uz": "Sirdaryo",
-        "ru": "Сирдарё"
+        "ru": "Сирдарё",
+        "type": "31"
     },
     "1714219822": {
         "en": "Nayman",
         "uz": "Nayman",
-        "ru": "Найман"
+        "ru": "Найман",
+        "type": "31"
     },
     "1714219833": {
         "en": "Pop",
         "uz": "Pop",
-        "ru": "Пап"
+        "ru": "Пап",
+        "type": "31"
     },
     "1714219834": {
         "en": "Paxtaobod",
         "uz": "Paxtaobod",
-        "ru": "Пахтаабад"
+        "ru": "Пахтаабад",
+        "type": "31"
     },
     "1714219844": {
         "en": "Uyg'ur",
         "uz": "Uyg'ur",
-        "ru": "Уйгур"
+        "ru": "Уйгур",
+        "type": "31"
     },
     "1714219855": {
         "en": "G'urumsaroy",
         "uz": "G'urumsaroy",
-        "ru": "Гурумсарой"
+        "ru": "Гурумсарой",
+        "type": "31"
     },
     "1714219866": {
         "en": "Chodak",
         "uz": "Chodak",
-        "ru": "Чадак"
+        "ru": "Чадак",
+        "type": "31"
     },
     "1714219877": {
         "en": "Yangi hayot",
         "uz": "Yangi hayot",
-        "ru": "Янгихаят"
+        "ru": "Янгихаят",
+        "type": "31"
     },
     "1714219885": {
         "en": "Pungon",
         "uz": "Pungon",
-        "ru": "Пунган"
+        "ru": "Пунган",
+        "type": "31"
     },
     "1714224501": {
         "en": "To'raqo'rg'on",
         "uz": "To'raqo'rg'on",
-        "ru": "Туракурган"
+        "ru": "Туракурган",
+        "type": "23"
     },
     "1714224554": {
         "en": "Oqtosh",
         "uz": "Oqtosh",
-        "ru": "Акташ"
+        "ru": "Акташ",
+        "type": "24"
     },
     "1714224556": {
         "en": "Yettikon",
         "uz": "Yettikon",
-        "ru": "Еттикан"
+        "ru": "Еттикан",
+        "type": "24"
     },
     "1714224558": {
         "en": "Yandama",
         "uz": "Yandama",
-        "ru": "Яндама"
+        "ru": "Яндама",
+        "type": "24"
     },
     "1714224561": {
         "en": "Axsi",
         "uz": "Axsi",
-        "ru": "Ахси"
+        "ru": "Ахси",
+        "type": "24"
     },
     "1714224563": {
         "en": "Kalvak",
         "uz": "Kalvak",
-        "ru": "Колвак"
+        "ru": "Колвак",
+        "type": "24"
     },
     "1714224565": {
         "en": "Mozorko'xna",
         "uz": "Mozorko'xna",
-        "ru": "Мизаркухна"
+        "ru": "Мизаркухна",
+        "type": "24"
     },
     "1714224567": {
         "en": "Buramatut",
         "uz": "Buramatut",
-        "ru": "Бураматут"
+        "ru": "Бураматут",
+        "type": "24"
     },
     "1714224569": {
         "en": "Shaxand",
         "uz": "Shaxand",
-        "ru": "Шахант"
+        "ru": "Шахант",
+        "type": "24"
     },
     "1714224571": {
         "en": "Olchin",
         "uz": "Olchin",
-        "ru": "Олчин"
+        "ru": "Олчин",
+        "type": "24"
     },
     "1714224575": {
         "en": "Saroy",
         "uz": "Saroy",
-        "ru": "Сарой"
+        "ru": "Сарой",
+        "type": "24"
     },
     "1714224577": {
         "en": "Katagon",
         "uz": "Katagon",
-        "ru": "Катагон"
+        "ru": "Катагон",
+        "type": "24"
     },
     "1714224579": {
         "en": "Kichikqurama",
         "uz": "Kichikqurama",
-        "ru": "Кичиккурама"
+        "ru": "Кичиккурама",
+        "type": "24"
     },
     "1714224581": {
         "en": "Namdon",
         "uz": "Namdon",
-        "ru": "Намдон"
+        "ru": "Намдон",
+        "type": "24"
     },
     "1714224809": {
         "en": "Axsi",
         "uz": "Axsi",
-        "ru": "Ахси"
+        "ru": "Ахси",
+        "type": "31"
     },
     "1714224812": {
         "en": "Buramatut",
         "uz": "Buramatut",
-        "ru": "Бураматут"
+        "ru": "Бураматут",
+        "type": "31"
     },
     "1714224824": {
         "en": "Katagansaroy",
         "uz": "Katagansaroy",
-        "ru": "Катагансаpай"
+        "ru": "Катагансаpай",
+        "type": "31"
     },
     "1714224835": {
         "en": "Sayram",
         "uz": "Sayram",
-        "ru": "Сайрам"
+        "ru": "Сайрам",
+        "type": "31"
     },
     "1714224846": {
         "en": "Yandama",
         "uz": "Yandama",
-        "ru": "Яндама"
+        "ru": "Яндама",
+        "type": "31"
     },
     "1714224850": {
         "en": "Xo'jand",
         "uz": "Xo'jand",
-        "ru": "Ходжанд"
+        "ru": "Ходжанд",
+        "type": "31"
     },
     "1714224857": {
         "en": "Shaxand",
         "uz": "Shaxand",
-        "ru": "Шаханд"
+        "ru": "Шаханд",
+        "type": "31"
     },
     "1714224864": {
         "en": "Yortepa",
         "uz": "Yortepa",
-        "ru": "Яртепа"
+        "ru": "Яртепа",
+        "type": "31"
     },
     "1714229551": {
         "en": "Uychi",
         "uz": "Uychi",
-        "ru": "Уйчи"
+        "ru": "Уйчи",
+        "type": "24"
     },
     "1714229555": {
         "en": "O'nxayat",
         "uz": "O'nxayat",
-        "ru": "Унхаят"
+        "ru": "Унхаят",
+        "type": "24"
     },
     "1714229557": {
         "en": "Birlashgan",
         "uz": "Birlashgan",
-        "ru": "Бирлашган"
+        "ru": "Бирлашган",
+        "type": "24"
     },
     "1714229559": {
         "en": "Fayziobod",
         "uz": "Fayziobod",
-        "ru": "Файзиобод"
+        "ru": "Файзиобод",
+        "type": "24"
     },
     "1714229561": {
         "en": "Churtuk",
         "uz": "Churtuk",
-        "ru": "Чуртук"
+        "ru": "Чуртук",
+        "type": "24"
     },
     "1714229563": {
         "en": "Axsi",
         "uz": "Axsi",
-        "ru": "Ахси"
+        "ru": "Ахси",
+        "type": "24"
     },
     "1714229565": {
         "en": "Jiydakapa",
         "uz": "Jiydakapa",
-        "ru": "Джийдакапа"
+        "ru": "Джийдакапа",
+        "type": "24"
     },
     "1714229567": {
         "en": "Kichik toshloq",
         "uz": "Kichik toshloq",
-        "ru": "Кичик тошлок"
+        "ru": "Кичик тошлок",
+        "type": "24"
     },
     "1714229569": {
         "en": "Mashad",
         "uz": "Mashad",
-        "ru": "Машад"
+        "ru": "Машад",
+        "type": "24"
     },
     "1714229573": {
         "en": "Soku",
         "uz": "Soku",
-        "ru": "Соку"
+        "ru": "Соку",
+        "type": "24"
     },
     "1714229575": {
         "en": "Boyog'on",
         "uz": "Boyog'on",
-        "ru": "Буеган"
+        "ru": "Буеган",
+        "type": "24"
     },
     "1714229577": {
         "en": "G'ayrat",
         "uz": "G'ayrat",
-        "ru": "Гайрат"
+        "ru": "Гайрат",
+        "type": "24"
     },
     "1714229579": {
         "en": "Ziyokor",
         "uz": "Ziyokor",
-        "ru": "Зиекор"
+        "ru": "Зиекор",
+        "type": "24"
     },
     "1714229808": {
         "en": "G'ayrat",
         "uz": "G'ayrat",
-        "ru": "Гайрат"
+        "ru": "Гайрат",
+        "type": "31"
     },
     "1714229811": {
         "en": "Jiydakapa",
         "uz": "Jiydakapa",
-        "ru": "Джидакапа"
+        "ru": "Джидакапа",
+        "type": "31"
     },
     "1714229815": {
         "en": "Birlashgan",
         "uz": "Birlashgan",
-        "ru": "Бирлашган"
+        "ru": "Бирлашган",
+        "type": "31"
     },
     "1714229822": {
         "en": "Teshiktosh",
         "uz": "Teshiktosh",
-        "ru": "Тешиктош"
+        "ru": "Тешиктош",
+        "type": "31"
     },
     "1714229833": {
         "en": "Uychi",
         "uz": "Uychi",
-        "ru": "Уйчи"
+        "ru": "Уйчи",
+        "type": "31"
     },
     "1714229844": {
         "en": "Mashad",
         "uz": "Mashad",
-        "ru": "Машад"
+        "ru": "Машад",
+        "type": "31"
     },
     "1714229855": {
         "en": "Yorkatay",
         "uz": "Yorkatay",
-        "ru": "Яркатай"
+        "ru": "Яркатай",
+        "type": "31"
     },
     "1714229866": {
         "en": "Yorqo'rg'on",
         "uz": "Yorqo'rg'on",
-        "ru": "Яркурган"
+        "ru": "Яркурган",
+        "type": "31"
     },
     "1714234501": {
         "en": "Uchqo'rg'on",
         "uz": "Uchqo'rg'on",
-        "ru": "Учкуpган"
+        "ru": "Учкуpган",
+        "type": "23"
     },
     "1714234552": {
         "en": "Qayqi",
         "uz": "Qayqi",
-        "ru": "Кайки"
+        "ru": "Кайки",
+        "type": "24"
     },
     "1714234554": {
         "en": "Qo'g'ay",
         "uz": "Qo'g'ay",
-        "ru": "Кугай"
+        "ru": "Кугай",
+        "type": "24"
     },
     "1714234556": {
         "en": "Uchyog'och",
         "uz": "Uchyog'och",
-        "ru": "Учагач"
+        "ru": "Учагач",
+        "type": "24"
     },
     "1714234558": {
         "en": "Yangiobod",
         "uz": "Yangiobod",
-        "ru": "Янгиабад"
+        "ru": "Янгиабад",
+        "type": "24"
     },
     "1714234811": {
         "en": "Qayqi",
         "uz": "Qayqi",
-        "ru": "Кайки"
+        "ru": "Кайки",
+        "type": "31"
     },
     "1714234822": {
         "en": "Baxt",
         "uz": "Baxt",
-        "ru": "Бахт"
+        "ru": "Бахт",
+        "type": "31"
     },
     "1714234833": {
         "en": "Qo'g'ay-o'lmas",
         "uz": "Qo'g'ay-o'lmas",
-        "ru": "Кугайульмас"
+        "ru": "Кугайульмас",
+        "type": "31"
     },
     "1714234844": {
         "en": "Qo'g'ay",
         "uz": "Qo'g'ay",
-        "ru": "Кугай"
+        "ru": "Кугай",
+        "type": "31"
     },
     "1714234851": {
         "en": "O'zbekiston",
         "uz": "O'zbekiston",
-        "ru": "Узбекистан"
+        "ru": "Узбекистан",
+        "type": "31"
     },
     "1714234861": {
         "en": "Yangiobod",
         "uz": "Yangiobod",
-        "ru": "Янгиабад"
+        "ru": "Янгиабад",
+        "type": "31"
     },
     "1714234863": {
         "en": "Yangi yor",
         "uz": "Yangi yor",
-        "ru": "Янгиер"
+        "ru": "Янгиер",
+        "type": "31"
     },
     "1714234870": {
         "en": "Yashiq",
         "uz": "Yashiq",
-        "ru": "Яшик"
+        "ru": "Яшик",
+        "type": "31"
     },
     "1714236501": {
         "en": "Chortoq",
         "uz": "Chortoq",
-        "ru": "Чаpтак"
+        "ru": "Чаpтак",
+        "type": "23"
     },
     "1714236552": {
         "en": "Muchum",
         "uz": "Muchum",
-        "ru": "Мучум"
+        "ru": "Мучум",
+        "type": "24"
     },
     "1714236554": {
         "en": "Koroskon",
         "uz": "Koroskon",
-        "ru": "Караскан"
+        "ru": "Караскан",
+        "type": "24"
     },
     "1714236556": {
         "en": "Ko'shan",
         "uz": "Ko'shan",
-        "ru": "Кушан"
+        "ru": "Кушан",
+        "type": "24"
     },
     "1714236558": {
         "en": "Ayqiron",
         "uz": "Ayqiron",
-        "ru": "Айкирон"
+        "ru": "Айкирон",
+        "type": "24"
     },
     "1714236560": {
         "en": "Alixon",
         "uz": "Alixon",
-        "ru": "Алихон"
+        "ru": "Алихон",
+        "type": "24"
     },
     "1714236562": {
         "en": "Pastki Peshqo'rg'on",
         "uz": "Pastki Peshqo'rg'on",
-        "ru": "Пастки Пешкургон"
+        "ru": "Пастки Пешкургон",
+        "type": "24"
     },
     "1714236564": {
         "en": "Yuqori Peshqo'rg'on",
         "uz": "Yuqori Peshqo'rg'on",
-        "ru": "Юкори Пешкургон"
+        "ru": "Юкори Пешкургон",
+        "type": "24"
     },
     "1714236566": {
         "en": "Ora ariq",
         "uz": "Ora ariq",
-        "ru": "Ораарык"
+        "ru": "Ораарык",
+        "type": "24"
     },
     "1714236568": {
         "en": "Baliqli ko'l",
         "uz": "Baliqli ko'l",
-        "ru": "Баликкул"
+        "ru": "Баликкул",
+        "type": "24"
     },
     "1714236572": {
         "en": "Xazratishox",
         "uz": "Xazratishox",
-        "ru": "Хазратишох"
+        "ru": "Хазратишох",
+        "type": "24"
     },
     "1714236803": {
         "en": "Ayqiron",
         "uz": "Ayqiron",
-        "ru": "Айкиран"
+        "ru": "Айкиран",
+        "type": "31"
     },
     "1714236805": {
         "en": "Alixon",
         "uz": "Alixon",
-        "ru": "Алихан"
+        "ru": "Алихан",
+        "type": "31"
     },
     "1714236807": {
         "en": "Bog'iston",
         "uz": "Bog'iston",
-        "ru": "Багистан"
+        "ru": "Багистан",
+        "type": "31"
     },
     "1714236809": {
         "en": "Tinchlik",
         "uz": "Tinchlik",
-        "ru": "Тинчлик"
+        "ru": "Тинчлик",
+        "type": "31"
     },
     "1714236815": {
         "en": "Karaskan",
         "uz": "Karaskan",
-        "ru": "Караскан"
+        "ru": "Караскан",
+        "type": "31"
     },
     "1714236820": {
         "en": "Muchum",
         "uz": "Muchum",
-        "ru": "Мучум"
+        "ru": "Мучум",
+        "type": "31"
     },
     "1714236826": {
         "en": "Peshqo'rg'on",
         "uz": "Peshqo'rg'on",
-        "ru": "Пешкурган"
+        "ru": "Пешкурган",
+        "type": "31"
     },
     "1714236853": {
         "en": "Xazratishox",
         "uz": "Xazratishox",
-        "ru": "Хазратишо"
+        "ru": "Хазратишо",
+        "type": "31"
     },
     "1714236856": {
         "en": "Saroy",
         "uz": "Saroy",
-        "ru": "Сарай"
+        "ru": "Сарай",
+        "type": "31"
     },
     "1714237501": {
         "en": "Chust",
         "uz": "Chust",
-        "ru": "Чуст"
+        "ru": "Чуст",
+        "type": "23"
     },
     "1714237552": {
         "en": "Olmos",
         "uz": "Olmos",
-        "ru": "Олмос"
+        "ru": "Олмос",
+        "type": "24"
     },
     "1714237554": {
         "en": "Axcha",
         "uz": "Axcha",
-        "ru": "Ахча"
+        "ru": "Ахча",
+        "type": "24"
     },
     "1714237556": {
         "en": "Sarimsoqtepa",
         "uz": "Sarimsoqtepa",
-        "ru": "Саримсоктепа"
+        "ru": "Саримсоктепа",
+        "type": "24"
     },
     "1714237558": {
         "en": "Varzik",
         "uz": "Varzik",
-        "ru": "Варзик"
+        "ru": "Варзик",
+        "type": "24"
     },
     "1714237560": {
         "en": "Qoraqo'rg'on",
         "uz": "Qoraqo'rg'on",
-        "ru": "Коракургон"
+        "ru": "Коракургон",
+        "type": "24"
     },
     "1714237562": {
         "en": "G'ova",
         "uz": "G'ova",
-        "ru": "Гова"
+        "ru": "Гова",
+        "type": "24"
     },
     "1714237564": {
         "en": "Karkidon",
         "uz": "Karkidon",
-        "ru": "Каркидон"
+        "ru": "Каркидон",
+        "type": "24"
     },
     "1714237566": {
         "en": "Karnon",
         "uz": "Karnon",
-        "ru": "Карнон"
+        "ru": "Карнон",
+        "type": "24"
     },
     "1714237568": {
         "en": "Yorqishloq",
         "uz": "Yorqishloq",
-        "ru": "Еркишлок"
+        "ru": "Еркишлок",
+        "type": "24"
     },
     "1714237570": {
         "en": "Shoyon",
         "uz": "Shoyon",
-        "ru": "Шаен"
+        "ru": "Шаен",
+        "type": "24"
     },
     "1714237572": {
         "en": "Xisorak",
         "uz": "Xisorak",
-        "ru": "Хисорак"
+        "ru": "Хисорак",
+        "type": "24"
     },
     "1714237803": {
         "en": "Og'asaray",
         "uz": "Og'asaray",
-        "ru": "Огасарай"
+        "ru": "Огасарай",
+        "type": "31"
     },
     "1714237805": {
         "en": "Olmos",
         "uz": "Olmos",
-        "ru": "Алмас"
+        "ru": "Алмас",
+        "type": "31"
     },
     "1714237807": {
         "en": "Axcha",
         "uz": "Axcha",
-        "ru": "Ахча"
+        "ru": "Ахча",
+        "type": "31"
     },
     "1714237812": {
         "en": "Varzik",
         "uz": "Varzik",
-        "ru": "Варзик"
+        "ru": "Варзик",
+        "type": "31"
     },
     "1714237823": {
         "en": "G'ova",
         "uz": "G'ova",
-        "ru": "Гова"
+        "ru": "Гова",
+        "type": "31"
     },
     "1714237834": {
         "en": "Karkidon",
         "uz": "Karkidon",
-        "ru": "Каркидон"
+        "ru": "Каркидон",
+        "type": "31"
     },
     "1714237848": {
         "en": "Xisorak",
         "uz": "Xisorak",
-        "ru": "Хисарак"
+        "ru": "Хисарак",
+        "type": "31"
     },
     "1714237859": {
         "en": "Baymoq",
         "uz": "Baymoq",
-        "ru": "Баймак"
+        "ru": "Баймак",
+        "type": "31"
     },
     "1714237870": {
         "en": "Sho'rkent",
         "uz": "Sho'rkent",
-        "ru": "Шуркент"
+        "ru": "Шуркент",
+        "type": "31"
     },
     "1714237875": {
         "en": "Karnon",
         "uz": "Karnon",
-        "ru": "Карнан"
+        "ru": "Карнан",
+        "type": "31"
     },
     "1714237880": {
         "en": "Shoyon",
         "uz": "Shoyon",
-        "ru": "Шаян"
+        "ru": "Шаян",
+        "type": "31"
     },
     "1714242551": {
         "en": "Yangiqo'rg'on",
         "uz": "Yangiqo'rg'on",
-        "ru": "Янгикурган"
+        "ru": "Янгикурган",
+        "type": "24"
     },
     "1714242553": {
         "en": "Bekobod",
         "uz": "Bekobod",
-        "ru": "Бекобод"
+        "ru": "Бекобод",
+        "type": "24"
     },
     "1714242555": {
         "en": "G'ovazon",
         "uz": "G'ovazon",
-        "ru": "Говазон"
+        "ru": "Говазон",
+        "type": "24"
     },
     "1714242557": {
         "en": "Zarkent",
         "uz": "Zarkent",
-        "ru": "Заркент"
+        "ru": "Заркент",
+        "type": "24"
     },
     "1714242559": {
         "en": "Iskavot",
         "uz": "Iskavot",
-        "ru": "Искавот"
+        "ru": "Искавот",
+        "type": "24"
     },
     "1714242561": {
         "en": "Kalisho",
         "uz": "Kalisho",
-        "ru": "Калишох"
+        "ru": "Калишох",
+        "type": "24"
     },
     "1714242563": {
         "en": "Qizil qiyoq",
         "uz": "Qizil qiyoq",
-        "ru": "Кизилкиек"
+        "ru": "Кизилкиек",
+        "type": "24"
     },
     "1714242565": {
         "en": "Qorayong'oq",
         "uz": "Qorayong'oq",
-        "ru": "Кораенгок"
+        "ru": "Кораенгок",
+        "type": "24"
     },
     "1714242567": {
         "en": "Qorapolvon",
         "uz": "Qorapolvon",
-        "ru": "Кораполвон"
+        "ru": "Кораполвон",
+        "type": "24"
     },
     "1714242569": {
         "en": "Qorachasho'rkent",
         "uz": "Qorachasho'rkent",
-        "ru": "Корачашуркент"
+        "ru": "Корачашуркент",
+        "type": "24"
     },
     "1714242571": {
         "en": "Ko'kyor",
         "uz": "Ko'kyor",
-        "ru": "Кукер"
+        "ru": "Кукер",
+        "type": "24"
     },
     "1714242573": {
         "en": "Navkent",
         "uz": "Navkent",
-        "ru": "Навкент"
+        "ru": "Навкент",
+        "type": "24"
     },
     "1714242575": {
         "en": "Nanay",
         "uz": "Nanay",
-        "ru": "Нанай"
+        "ru": "Нанай",
+        "type": "24"
     },
     "1714242577": {
         "en": "Poromon",
         "uz": "Poromon",
-        "ru": "Парамон"
+        "ru": "Парамон",
+        "type": "24"
     },
     "1714242579": {
         "en": "Rovot",
         "uz": "Rovot",
-        "ru": "Ровут"
+        "ru": "Ровут",
+        "type": "24"
     },
     "1714242581": {
         "en": "Sangiston",
         "uz": "Sangiston",
-        "ru": "Сангистон"
+        "ru": "Сангистон",
+        "type": "24"
     },
     "1714242583": {
         "en": "Salmon",
         "uz": "Salmon",
-        "ru": "Солман"
+        "ru": "Солман",
+        "type": "24"
     },
     "1714242585": {
         "en": "Xo'jasho'rkent",
         "uz": "Xo'jasho'rkent",
-        "ru": "Хужашуркент"
+        "ru": "Хужашуркент",
+        "type": "24"
     },
     "1714242587": {
         "en": "Yumaloqtepa",
         "uz": "Yumaloqtepa",
-        "ru": "Юмалок тепа"
+        "ru": "Юмалок тепа",
+        "type": "24"
     },
     "1714242810": {
         "en": "Bekobod",
         "uz": "Bekobod",
-        "ru": "Бекабад"
+        "ru": "Бекабад",
+        "type": "31"
     },
     "1714242813": {
         "en": "Birlashkan",
         "uz": "Birlashkan",
-        "ru": "Бирлашкан"
+        "ru": "Бирлашкан",
+        "type": "31"
     },
     "1714242824": {
         "en": "Zarbdor",
         "uz": "Zarbdor",
-        "ru": "Зарбдор"
+        "ru": "Зарбдор",
+        "type": "31"
     },
     "1714242830": {
         "en": "Zarkent",
         "uz": "Zarkent",
-        "ru": "Заркент"
+        "ru": "Заркент",
+        "type": "31"
     },
     "1714242840": {
         "en": "Qorapolvon",
         "uz": "Qorapolvon",
-        "ru": "Карапалван"
+        "ru": "Карапалван",
+        "type": "31"
     },
     "1714242846": {
         "en": "Sharq yulduzi",
         "uz": "Sharq yulduzi",
-        "ru": "Шарк юлдузи"
+        "ru": "Шарк юлдузи",
+        "type": "31"
     },
     "1714242859": {
         "en": "Nanay",
         "uz": "Nanay",
-        "ru": "Нанай"
+        "ru": "Нанай",
+        "type": "31"
     },
     "1714242862": {
         "en": "Navkent",
         "uz": "Navkent",
-        "ru": "Новкент"
+        "ru": "Новкент",
+        "type": "31"
     },
     "1714242865": {
         "en": "Poromon",
         "uz": "Poromon",
-        "ru": "Парамон"
+        "ru": "Парамон",
+        "type": "31"
     },
     "1714242871": {
         "en": "Istiqlol",
         "uz": "Istiqlol",
-        "ru": "Истиклол"
+        "ru": "Истиклол",
+        "type": "31"
     },
     "1714242875": {
         "en": "Navro'zobod",
         "uz": "Navro'zobod",
-        "ru": "Наврузабад"
+        "ru": "Наврузабад",
+        "type": "31"
     },
     "1714401365": {
         "en": "Davlatobod tumani",
         "uz": "Davlatobod tumani",
-        "ru": "Давлатободский район"
+        "ru": "Давлатободский район",
+        "type": "22"
     },
     "1714401367": {
         "en": "Yangi Namangan tumani",
         "uz": "Yangi Namangan tumani",
-        "ru": "Янги Наманганский район"
+        "ru": "Янги Наманганский район",
+        "type": "22"
     },
     "1718203551": {
         "en": "Loyish",
         "uz": "Loyish",
-        "ru": "Лаиш"
+        "ru": "Лаиш",
+        "type": "24"
     },
     "1718203555": {
         "en": "Dahbed",
         "uz": "Dahbed",
-        "ru": "Дахбед"
+        "ru": "Дахбед",
+        "type": "24"
     },
     "1718203557": {
         "en": "Avazali",
         "uz": "Avazali",
-        "ru": "Авазали"
+        "ru": "Авазали",
+        "type": "24"
     },
     "1718203559": {
         "en": "Bolta",
         "uz": "Bolta",
-        "ru": "Болта"
+        "ru": "Болта",
+        "type": "24"
     },
     "1718203561": {
         "en": "Qirqdarxon",
         "uz": "Qirqdarxon",
-        "ru": "Киркдархон"
+        "ru": "Киркдархон",
+        "type": "24"
     },
     "1718203563": {
         "en": "Kumushkent",
         "uz": "Kumushkent",
-        "ru": "Кумушкент"
+        "ru": "Кумушкент",
+        "type": "24"
     },
     "1718203565": {
         "en": "Oytamg'ali",
         "uz": "Oytamg'ali",
-        "ru": "Ойтамгали"
+        "ru": "Ойтамгали",
+        "type": "24"
     },
     "1718203567": {
         "en": "Oqdaryo",
         "uz": "Oqdaryo",
-        "ru": "Окдаре"
+        "ru": "Окдаре",
+        "type": "24"
     },
     "1718203569": {
         "en": "Yangiqo'rg'on",
         "uz": "Yangiqo'rg'on",
-        "ru": "Янгикургон"
+        "ru": "Янгикургон",
+        "type": "24"
     },
     "1718203571": {
         "en": "Yangiobod",
         "uz": "Yangiobod",
-        "ru": "Янгиабад"
+        "ru": "Янгиабад",
+        "type": "24"
     },
     "1718203816": {
         "en": "Zarafshon",
         "uz": "Zarafshon",
-        "ru": "Зарафшан"
+        "ru": "Зарафшан",
+        "type": "31"
     },
     "1718203820": {
         "en": "Qorateri",
         "uz": "Qorateri",
-        "ru": "Каратери"
+        "ru": "Каратери",
+        "type": "31"
     },
     "1718203822": {
         "en": "A.Navoiy",
         "uz": "A.Navoiy",
-        "ru": "Навои"
+        "ru": "Навои",
+        "type": "31"
     },
     "1718203833": {
         "en": "Primkent",
         "uz": "Primkent",
-        "ru": "Примкент"
+        "ru": "Примкент",
+        "type": "31"
     },
     "1718203844": {
         "en": "Yangikent",
         "uz": "Yangikent",
-        "ru": "Янгикент"
+        "ru": "Янгикент",
+        "type": "31"
     },
     "1718203855": {
         "en": "Yangiqo'rg'on",
         "uz": "Yangiqo'rg'on",
-        "ru": "Янгикурган"
+        "ru": "Янгикурган",
+        "type": "31"
     },
     "1718206501": {
         "en": "Bulung'ur",
         "uz": "Bulung'ur",
-        "ru": "Булунгур"
+        "ru": "Булунгур",
+        "type": "23"
     },
     "1718206553": {
         "en": "Kildon",
         "uz": "Kildon",
-        "ru": "Килдон"
+        "ru": "Килдон",
+        "type": "24"
     },
     "1718206556": {
         "en": "Soxibkor",
         "uz": "Soxibkor",
-        "ru": "Сохибкор"
+        "ru": "Сохибкор",
+        "type": "24"
     },
     "1718206559": {
         "en": "Bog'bon",
         "uz": "Bog'bon",
-        "ru": "Богбон"
+        "ru": "Богбон",
+        "type": "24"
     },
     "1718206811": {
         "en": "Beshqo'ton",
         "uz": "Beshqo'ton",
-        "ru": "Бешкутан"
+        "ru": "Бешкутан",
+        "type": "31"
     },
     "1718206840": {
         "en": "Kildon",
         "uz": "Kildon",
-        "ru": "Кильдан"
+        "ru": "Кильдан",
+        "type": "31"
     },
     "1718206845": {
         "en": "Kulchabiy",
         "uz": "Kulchabiy",
-        "ru": "Кулчабий"
+        "ru": "Кулчабий",
+        "type": "31"
     },
     "1718206850": {
         "en": "O'rtabuloq",
         "uz": "O'rtabuloq",
-        "ru": "Уpтабулак"
+        "ru": "Уpтабулак",
+        "type": "31"
     },
     "1718206856": {
         "en": "Navoiy nomli",
         "uz": "Navoiy nomli",
-        "ru": "им. Навои"
+        "ru": "им. Навои",
+        "type": "31"
     },
     "1718206867": {
         "en": "Soxibkor",
         "uz": "Soxibkor",
-        "ru": "Сахибкор"
+        "ru": "Сахибкор",
+        "type": "31"
     },
     "1718206878": {
         "en": "F.Yo'ldoshev nomli",
         "uz": "F.Yo'ldoshev nomli",
-        "ru": "им. Ф. Юлдашева"
+        "ru": "им. Ф. Юлдашева",
+        "type": "31"
     },
     "1718209501": {
         "en": "Jomboy",
         "uz": "Jomboy",
-        "ru": "Джамбай"
+        "ru": "Джамбай",
+        "type": "23"
     },
     "1718209554": {
         "en": "Dehqonobod",
         "uz": "Dehqonobod",
-        "ru": "Дехконабад"
+        "ru": "Дехконабад",
+        "type": "24"
     },
     "1718209558": {
         "en": "Eski Jomboy",
         "uz": "Eski Jomboy",
-        "ru": "Эски Джомбой"
+        "ru": "Эски Джомбой",
+        "type": "24"
     },
     "1718209564": {
         "en": "Xo'ja",
         "uz": "Xo'ja",
-        "ru": "Хужа"
+        "ru": "Хужа",
+        "type": "24"
     },
     "1718209568": {
         "en": "G'azira",
         "uz": "G'azira",
-        "ru": "Газира"
+        "ru": "Газира",
+        "type": "24"
     },
     "1718209574": {
         "en": "Kattaqishloq",
         "uz": "Kattaqishloq",
-        "ru": "Катта кишлак"
+        "ru": "Катта кишлак",
+        "type": "24"
     },
     "1718209820": {
         "en": "Dehqonobod",
         "uz": "Dehqonobod",
-        "ru": "Дехканабад"
+        "ru": "Дехканабад",
+        "type": "31"
     },
     "1718209822": {
         "en": "Jomboy",
         "uz": "Jomboy",
-        "ru": "Джамбай"
+        "ru": "Джамбай",
+        "type": "31"
     },
     "1718209833": {
         "en": "Juriyat",
         "uz": "Juriyat",
-        "ru": "Джурият"
+        "ru": "Джурият",
+        "type": "31"
     },
     "1718209844": {
         "en": "Qangli",
         "uz": "Qangli",
-        "ru": "Кангли"
+        "ru": "Кангли",
+        "type": "31"
     },
     "1718209848": {
         "en": "Qoramuyin",
         "uz": "Qoramuyin",
-        "ru": "Карамуюн"
+        "ru": "Карамуюн",
+        "type": "31"
     },
     "1718209855": {
         "en": "Qo'ng'irot",
         "uz": "Qo'ng'irot",
-        "ru": "Кунград"
+        "ru": "Кунград",
+        "type": "31"
     },
     "1718209866": {
         "en": "Xolvoyi",
         "uz": "Xolvoyi",
-        "ru": "Холвай"
+        "ru": "Холвай",
+        "type": "31"
     },
     "1718209870": {
         "en": "Sherqo'rg'on",
         "uz": "Sherqo'rg'on",
-        "ru": "Шеркурган"
+        "ru": "Шеркурган",
+        "type": "31"
     },
     "1718212501": {
         "en": "Ishtixon",
         "uz": "Ishtixon",
-        "ru": "Иштыхан"
+        "ru": "Иштыхан",
+        "type": "23"
     },
     "1718212555": {
         "en": "Mitan",
         "uz": "Mitan",
-        "ru": "Митан"
+        "ru": "Митан",
+        "type": "24"
     },
     "1718212557": {
         "en": "Azamat",
         "uz": "Azamat",
-        "ru": "Азамат"
+        "ru": "Азамат",
+        "type": "24"
     },
     "1718212559": {
         "en": "Damariq",
         "uz": "Damariq",
-        "ru": "Дамарик"
+        "ru": "Дамарик",
+        "type": "24"
     },
     "1718212561": {
         "en": "Bahrin",
         "uz": "Bahrin",
-        "ru": "Бахрин"
+        "ru": "Бахрин",
+        "type": "24"
     },
     "1718212563": {
         "en": "Qirqyigit",
         "uz": "Qirqyigit",
-        "ru": "Киркйигит"
+        "ru": "Киркйигит",
+        "type": "24"
     },
     "1718212565": {
         "en": "Odil",
         "uz": "Odil",
-        "ru": "Одил"
+        "ru": "Одил",
+        "type": "24"
     },
     "1718212567": {
         "en": "Sug'ot",
         "uz": "Sug'ot",
-        "ru": "Сугот"
+        "ru": "Сугот",
+        "type": "24"
     },
     "1718212569": {
         "en": "Xalqobod",
         "uz": "Xalqobod",
-        "ru": "Халкабад"
+        "ru": "Халкабад",
+        "type": "24"
     },
     "1718212571": {
         "en": "Shayxislom",
         "uz": "Shayxislom",
-        "ru": "Шайхислом"
+        "ru": "Шайхислом",
+        "type": "24"
     },
     "1718212573": {
         "en": "Sheyxlar",
         "uz": "Sheyxlar",
-        "ru": "Шейхлар"
+        "ru": "Шейхлар",
+        "type": "24"
     },
     "1718212575": {
         "en": "Yangikent",
         "uz": "Yangikent",
-        "ru": "Янгикент"
+        "ru": "Янгикент",
+        "type": "24"
     },
     "1718212577": {
         "en": "Yangirabot",
         "uz": "Yangirabot",
-        "ru": "Янгиработ"
+        "ru": "Янгиработ",
+        "type": "24"
     },
     "1718212803": {
         "en": "Azamat",
         "uz": "Azamat",
-        "ru": "Азамат"
+        "ru": "Азамат",
+        "type": "31"
     },
     "1718212818": {
         "en": "Zarband",
         "uz": "Zarband",
-        "ru": "Зарбанд"
+        "ru": "Зарбанд",
+        "type": "31"
     },
     "1718212824": {
         "en": "Qurli",
         "uz": "Qurli",
-        "ru": "Курли"
+        "ru": "Курли",
+        "type": "31"
     },
     "1718212844": {
         "en": "Chordara",
         "uz": "Chordara",
-        "ru": "Чардара"
+        "ru": "Чардара",
+        "type": "31"
     },
     "1718212855": {
         "en": "Ravot",
         "uz": "Ravot",
-        "ru": "Рават"
+        "ru": "Рават",
+        "type": "31"
     },
     "1718212866": {
         "en": "O'rtaqishloq",
         "uz": "O'rtaqishloq",
-        "ru": "Уртакишлак"
+        "ru": "Уртакишлак",
+        "type": "31"
     },
     "1718212877": {
         "en": "Haqiqat",
         "uz": "Haqiqat",
-        "ru": "Хакикат"
+        "ru": "Хакикат",
+        "type": "31"
     },
     "1718212879": {
         "en": "Halqabod",
         "uz": "Halqabod",
-        "ru": "Халкабад"
+        "ru": "Халкабад",
+        "type": "31"
     },
     "1718212888": {
         "en": "Fayziobod",
         "uz": "Fayziobod",
-        "ru": "Файзиабад"
+        "ru": "Файзиабад",
+        "type": "31"
     },
     "1718215551": {
         "en": "Payshanba",
         "uz": "Payshanba",
-        "ru": "Пайшанба"
+        "ru": "Пайшанба",
+        "type": "24"
     },
     "1718215554": {
         "en": "Suv xovuzi",
         "uz": "Suv xovuzi",
-        "ru": "Сув ховузи"
+        "ru": "Сув ховузи",
+        "type": "24"
     },
     "1718215558": {
         "en": "Mundiyon",
         "uz": "Mundiyon",
-        "ru": "Мундиен"
+        "ru": "Мундиен",
+        "type": "24"
     },
     "1718215564": {
         "en": "Polvontepa",
         "uz": "Polvontepa",
-        "ru": "Полвонтепа"
+        "ru": "Полвонтепа",
+        "type": "24"
     },
     "1718215568": {
         "en": "Qoradaryo",
         "uz": "Qoradaryo",
-        "ru": "Карадарья"
+        "ru": "Карадарья",
+        "type": "24"
     },
     "1718215574": {
         "en": "Vayrat",
         "uz": "Vayrat",
-        "ru": "Войрот"
+        "ru": "Войрот",
+        "type": "24"
     },
     "1718215578": {
         "en": "Yangiqo'rg'oncha",
         "uz": "Yangiqo'rg'oncha",
-        "ru": "Янгикургонча"
+        "ru": "Янгикургонча",
+        "type": "24"
     },
     "1718215584": {
         "en": "Kattaming",
         "uz": "Kattaming",
-        "ru": "Каттаминг"
+        "ru": "Каттаминг",
+        "type": "24"
     },
     "1718215811": {
         "en": "Girdiqo'rg'on",
         "uz": "Girdiqo'rg'on",
-        "ru": "Гирдыкурган"
+        "ru": "Гирдыкурган",
+        "type": "31"
     },
     "1718215815": {
         "en": "Yangiqo'rg'oncha",
         "uz": "Yangiqo'rg'oncha",
-        "ru": "Янгикуpганча"
+        "ru": "Янгикуpганча",
+        "type": "31"
     },
     "1718215818": {
         "en": "Omonboy",
         "uz": "Omonboy",
-        "ru": "Аманбай"
+        "ru": "Аманбай",
+        "type": "31"
     },
     "1718215822": {
         "en": "Durbesh",
         "uz": "Durbesh",
-        "ru": "Дурбеш"
+        "ru": "Дурбеш",
+        "type": "31"
     },
     "1718215833": {
         "en": "Kattako'rpa",
         "uz": "Kattako'rpa",
-        "ru": "Каттакурпа"
+        "ru": "Каттакурпа",
+        "type": "31"
     },
     "1718215837": {
         "en": "Kattaming",
         "uz": "Kattaming",
-        "ru": "Каттаминг"
+        "ru": "Каттаминг",
+        "type": "31"
     },
     "1718215845": {
         "en": "Kichikmundiyon",
         "uz": "Kichikmundiyon",
-        "ru": "Кичикмундиян"
+        "ru": "Кичикмундиян",
+        "type": "31"
     },
     "1718215850": {
         "en": "Moybuloq",
         "uz": "Moybuloq",
-        "ru": "Майбулак"
+        "ru": "Майбулак",
+        "type": "31"
     },
     "1718215867": {
         "en": "Saroyqo'rg'on",
         "uz": "Saroyqo'rg'on",
-        "ru": "Сарайкурган"
+        "ru": "Сарайкурган",
+        "type": "31"
     },
     "1718215889": {
         "en": "Jumaboy",
         "uz": "Jumaboy",
-        "ru": "Джумабай"
+        "ru": "Джумабай",
+        "type": "31"
     },
     "1718215895": {
         "en": "Qo'shtepa",
         "uz": "Qo'shtepa",
-        "ru": "Куштепа"
+        "ru": "Куштепа",
+        "type": "31"
     },
     "1718216551": {
         "en": "Qo'shrabot",
         "uz": "Qo'shrabot",
-        "ru": "Кушрабад"
+        "ru": "Кушрабад",
+        "type": "24"
     },
     "1718216555": {
         "en": "Zarkent",
         "uz": "Zarkent",
-        "ru": "Заркент"
+        "ru": "Заркент",
+        "type": "24"
     },
     "1718216802": {
         "en": "Oqtepa",
         "uz": "Oqtepa",
-        "ru": "Актепа"
+        "ru": "Актепа",
+        "type": "31"
     },
     "1718216805": {
         "en": "Oxunboboyev nomli",
         "uz": "Oxunboboyev nomli",
-        "ru": "им. Ахунбабаева"
+        "ru": "им. Ахунбабаева",
+        "type": "31"
     },
     "1718216810": {
         "en": "Jush",
         "uz": "Jush",
-        "ru": "Джуш"
+        "ru": "Джуш",
+        "type": "31"
     },
     "1718216814": {
         "en": "Zarmitan",
         "uz": "Zarmitan",
-        "ru": "Зармитан"
+        "ru": "Зармитан",
+        "type": "31"
     },
     "1718216820": {
         "en": "Qo'shrabot",
         "uz": "Qo'shrabot",
-        "ru": "Кошрабад"
+        "ru": "Кошрабад",
+        "type": "31"
     },
     "1718216825": {
         "en": "Pichat",
         "uz": "Pichat",
-        "ru": "Пичат"
+        "ru": "Пичат",
+        "type": "31"
     },
     "1718216830": {
         "en": "Urgandji",
         "uz": "Urgandji",
-        "ru": "Уpганджи"
+        "ru": "Уpганджи",
+        "type": "31"
     },
     "1718218501": {
         "en": "Oqtosh",
         "uz": "Oqtosh",
-        "ru": "Акташ"
+        "ru": "Акташ",
+        "type": "23"
     },
     "1718218554": {
         "en": "Mirbozor",
         "uz": "Mirbozor",
-        "ru": "Мирбазар"
+        "ru": "Мирбазар",
+        "type": "24"
     },
     "1718218558": {
         "en": "Guliston",
         "uz": "Guliston",
-        "ru": "Гулистон"
+        "ru": "Гулистон",
+        "type": "24"
     },
     "1718218564": {
         "en": "Qo'yi Charxin",
         "uz": "Qo'yi Charxin",
-        "ru": "Куйи Чархин"
+        "ru": "Куйи Чархин",
+        "type": "24"
     },
     "1718218811": {
         "en": "Oltio'g'il",
         "uz": "Oltio'g'il",
-        "ru": "Алтыугил"
+        "ru": "Алтыугил",
+        "type": "31"
     },
     "1718218819": {
         "en": "Islom Shoir",
         "uz": "Islom Shoir",
-        "ru": "им. Ислома Шоира"
+        "ru": "им. Ислома Шоира",
+        "type": "31"
     },
     "1718218822": {
         "en": "Qorako'l",
         "uz": "Qorako'l",
-        "ru": "Каракуль"
+        "ru": "Каракуль",
+        "type": "31"
     },
     "1718218826": {
         "en": "Kosogoron",
         "uz": "Kosogoron",
-        "ru": "Косагаpан"
+        "ru": "Косагаpан",
+        "type": "31"
     },
     "1718218835": {
         "en": "Qadim",
         "uz": "Qadim",
-        "ru": "Кадим"
+        "ru": "Кадим",
+        "type": "31"
     },
     "1718218846": {
         "en": "Chaqar",
         "uz": "Chaqar",
-        "ru": "Чакаp"
+        "ru": "Чакаp",
+        "type": "31"
     },
     "1718218870": {
         "en": "Balandqo'rg'on",
         "uz": "Balandqo'rg'on",
-        "ru": "Баландкурган"
+        "ru": "Баландкурган",
+        "type": "31"
     },
     "1718218872": {
         "en": "Yangirabod",
         "uz": "Yangirabod",
-        "ru": "Янгирабад"
+        "ru": "Янгирабад",
+        "type": "31"
     },
     "1718218875": {
         "en": "Qorasiyrak",
         "uz": "Qorasiyrak",
-        "ru": "Каpасиpак"
+        "ru": "Каpасиpак",
+        "type": "31"
     },
     "1718224501": {
         "en": "Payariq",
         "uz": "Payariq",
-        "ru": "Пайаpык"
+        "ru": "Пайаpык",
+        "type": "23"
     },
     "1718224502": {
         "en": "Chelak",
         "uz": "Chelak",
-        "ru": "Челек"
+        "ru": "Челек",
+        "type": "23"
     },
     "1718224552": {
         "en": "Tomoyrat",
         "uz": "Tomoyrat",
-        "ru": "Томойрот"
+        "ru": "Томойрот",
+        "type": "24"
     },
     "1718224554": {
         "en": "Qorasuv",
         "uz": "Qorasuv",
-        "ru": "Карасув"
+        "ru": "Карасув",
+        "type": "24"
     },
     "1718224556": {
         "en": "Ko'ksaroy",
         "uz": "Ko'ksaroy",
-        "ru": "Куксарой"
+        "ru": "Куксарой",
+        "type": "24"
     },
     "1718224558": {
         "en": "G'ujumsoy",
         "uz": "G'ujumsoy",
-        "ru": "Гужумсой"
+        "ru": "Гужумсой",
+        "type": "24"
     },
     "1718224562": {
         "en": "Xo'ja Ismoil",
         "uz": "Xo'ja Ismoil",
-        "ru": "Хужа Исмоил"
+        "ru": "Хужа Исмоил",
+        "type": "24"
     },
     "1718224564": {
         "en": "Tupolos",
         "uz": "Tupolos",
-        "ru": "Туполос"
+        "ru": "Туполос",
+        "type": "24"
     },
     "1718224566": {
         "en": "Oqqo'rg'on",
         "uz": "Oqqo'rg'on",
-        "ru": "Оккургон"
+        "ru": "Оккургон",
+        "type": "24"
     },
     "1718224568": {
         "en": "Do'stlarobod",
         "uz": "Do'stlarobod",
-        "ru": "Дустларабад"
+        "ru": "Дустларабад",
+        "type": "24"
     },
     "1718224572": {
         "en": "Do'stlik",
         "uz": "Do'stlik",
-        "ru": "Дустлик"
+        "ru": "Дустлик",
+        "type": "24"
     },
     "1718224805": {
         "en": "Oqqo'rg'on",
         "uz": "Oqqo'rg'on",
-        "ru": "Аккурган"
+        "ru": "Аккурган",
+        "type": "31"
     },
     "1718224810": {
         "en": "Oytamg'ali",
         "uz": "Oytamg'ali",
-        "ru": "Айтамгали"
+        "ru": "Айтамгали",
+        "type": "31"
     },
     "1718224815": {
         "en": "Birlashgan",
         "uz": "Birlashgan",
-        "ru": "Бирлашган"
+        "ru": "Бирлашган",
+        "type": "31"
     },
     "1718224825": {
         "en": "O'rta saydov",
         "uz": "O'rta saydov",
-        "ru": "Уртасайдов"
+        "ru": "Уртасайдов",
+        "type": "31"
     },
     "1718224838": {
         "en": "Choparoshli",
         "uz": "Choparoshli",
-        "ru": "Чапарашли"
+        "ru": "Чапарашли",
+        "type": "31"
     },
     "1718224845": {
         "en": "Ko'kdala",
         "uz": "Ko'kdala",
-        "ru": "Кокдала"
+        "ru": "Кокдала",
+        "type": "31"
     },
     "1718224848": {
         "en": "Ko'lto'sin",
         "uz": "Ko'lto'sin",
-        "ru": "Культусин"
+        "ru": "Культусин",
+        "type": "31"
     },
     "1718224855": {
         "en": "Guliston",
         "uz": "Guliston",
-        "ru": "Гулистан"
+        "ru": "Гулистан",
+        "type": "31"
     },
     "1718224866": {
         "en": "Qorasuv",
         "uz": "Qorasuv",
-        "ru": "Карасув"
+        "ru": "Карасув",
+        "type": "31"
     },
     "1718224877": {
         "en": "Sanoat",
         "uz": "Sanoat",
-        "ru": "Саноат"
+        "ru": "Саноат",
+        "type": "31"
     },
     "1718224888": {
         "en": "Choshtepa",
         "uz": "Choshtepa",
-        "ru": "Чаштепа"
+        "ru": "Чаштепа",
+        "type": "31"
     },
     "1718227501": {
         "en": "Juma",
         "uz": "Juma",
-        "ru": "Джума"
+        "ru": "Джума",
+        "type": "23"
     },
     "1718227558": {
         "en": "Charxin",
         "uz": "Charxin",
-        "ru": "Чархин"
+        "ru": "Чархин",
+        "type": "24"
     },
     "1718227562": {
         "en": "Chortut",
         "uz": "Chortut",
-        "ru": "Чортут"
+        "ru": "Чортут",
+        "type": "24"
     },
     "1718227564": {
         "en": "O'rta Charxin",
         "uz": "O'rta Charxin",
-        "ru": "Урта Чархин"
+        "ru": "Урта Чархин",
+        "type": "24"
     },
     "1718227566": {
         "en": "Balhiyon",
         "uz": "Balhiyon",
-        "ru": "Балхиен"
+        "ru": "Балхиен",
+        "type": "24"
     },
     "1718227568": {
         "en": "Go'zalkent",
         "uz": "Go'zalkent",
-        "ru": "Гузалкент"
+        "ru": "Гузалкент",
+        "type": "24"
     },
     "1718227572": {
         "en": "Nayman",
         "uz": "Nayman",
-        "ru": "Найман"
+        "ru": "Найман",
+        "type": "24"
     },
     "1718227574": {
         "en": "Jag'alboyli",
         "uz": "Jag'alboyli",
-        "ru": "Джагалбойли"
+        "ru": "Джагалбойли",
+        "type": "24"
     },
     "1718227576": {
         "en": "Mehnat",
         "uz": "Mehnat",
-        "ru": "Мехнат"
+        "ru": "Мехнат",
+        "type": "24"
     },
     "1718227578": {
         "en": "Hindiboyi",
         "uz": "Hindiboyi",
-        "ru": "Хиндибойи"
+        "ru": "Хиндибойи",
+        "type": "24"
     },
     "1718227582": {
         "en": "Agron",
         "uz": "Agron",
-        "ru": "Агрон"
+        "ru": "Агрон",
+        "type": "24"
     },
     "1718227584": {
         "en": "Iskandari",
         "uz": "Iskandari",
-        "ru": "Искандари"
+        "ru": "Искандари",
+        "type": "24"
     },
     "1718227586": {
         "en": "Saribosh",
         "uz": "Saribosh",
-        "ru": "Сарибош"
+        "ru": "Сарибош",
+        "type": "24"
     },
     "1718227807": {
         "en": "Arabxona",
         "uz": "Arabxona",
-        "ru": "Арабхана"
+        "ru": "Арабхана",
+        "type": "31"
     },
     "1718227812": {
         "en": "Bolatosh",
         "uz": "Bolatosh",
-        "ru": "Балаташ"
+        "ru": "Балаташ",
+        "type": "31"
     },
     "1718227817": {
         "en": "Go'zalkent",
         "uz": "Go'zalkent",
-        "ru": "Гузалкент"
+        "ru": "Гузалкент",
+        "type": "31"
     },
     "1718227840": {
         "en": "Anxor",
         "uz": "Anxor",
-        "ru": "Анхоp"
+        "ru": "Анхоp",
+        "type": "31"
     },
     "1718227842": {
         "en": "Besh qahramon",
         "uz": "Besh qahramon",
-        "ru": "Бешкахрамон"
+        "ru": "Бешкахрамон",
+        "type": "31"
     },
     "1718227845": {
         "en": "Saribosh",
         "uz": "Saribosh",
-        "ru": "Саpибаш"
+        "ru": "Саpибаш",
+        "type": "31"
     },
     "1718227848": {
         "en": "Po'latchi",
         "uz": "Po'latchi",
-        "ru": "Пулатчи"
+        "ru": "Пулатчи",
+        "type": "31"
     },
     "1718227850": {
         "en": "Namuna",
         "uz": "Namuna",
-        "ru": "Намуна"
+        "ru": "Намуна",
+        "type": "31"
     },
     "1718227860": {
         "en": "Sanchikul",
         "uz": "Sanchikul",
-        "ru": "Санчикуль"
+        "ru": "Санчикуль",
+        "type": "31"
     },
     "1718227867": {
         "en": "Torariq",
         "uz": "Torariq",
-        "ru": "Тоpаpык"
+        "ru": "Тоpаpык",
+        "type": "31"
     },
     "1718227875": {
         "en": "Do'rmontepa",
         "uz": "Do'rmontepa",
-        "ru": "Дурмонтепа"
+        "ru": "Дурмонтепа",
+        "type": "31"
     },
     "1718227880": {
         "en": "Dimishkibolo",
         "uz": "Dimishkibolo",
-        "ru": "Димишкиболо"
+        "ru": "Димишкиболо",
+        "type": "31"
     },
     "1718227890": {
         "en": "Chimboy",
         "uz": "Chimboy",
-        "ru": "Чимбай"
+        "ru": "Чимбай",
+        "type": "31"
     },
     "1718230551": {
         "en": "Ziyovuddin",
         "uz": "Ziyovuddin",
-        "ru": "Зиатдин"
+        "ru": "Зиатдин",
+        "type": "24"
     },
     "1718230553": {
         "en": "Qodirist",
         "uz": "Qodirist",
-        "ru": "Кадирист"
+        "ru": "Кадирист",
+        "type": "24"
     },
     "1718230555": {
         "en": "Past Burkut",
         "uz": "Past Burkut",
-        "ru": "Паст Буркут"
+        "ru": "Паст Буркут",
+        "type": "24"
     },
     "1718230557": {
         "en": "Sanchiqul",
         "uz": "Sanchiqul",
-        "ru": "Санчикул"
+        "ru": "Санчикул",
+        "type": "24"
     },
     "1718230559": {
         "en": "Suluvqo'rg'on",
         "uz": "Suluvqo'rg'on",
-        "ru": "Сулувкургон"
+        "ru": "Сулувкургон",
+        "type": "24"
     },
     "1718230561": {
         "en": "Urgich",
         "uz": "Urgich",
-        "ru": "Ургич"
+        "ru": "Ургич",
+        "type": "24"
     },
     "1718230563": {
         "en": "Xumor",
         "uz": "Xumor",
-        "ru": "Хумор"
+        "ru": "Хумор",
+        "type": "24"
     },
     "1718230804": {
         "en": "Do'stobod",
         "uz": "Do'stobod",
-        "ru": "Дустобод"
+        "ru": "Дустобод",
+        "type": "31"
     },
     "1718230813": {
         "en": "Xayrobod",
         "uz": "Xayrobod",
-        "ru": "Хайpабад"
+        "ru": "Хайpабад",
+        "type": "31"
     },
     "1718230827": {
         "en": "Misit",
         "uz": "Misit",
-        "ru": "Мисит"
+        "ru": "Мисит",
+        "type": "31"
     },
     "1718230839": {
         "en": "Sultonobod",
         "uz": "Sultonobod",
-        "ru": "Султанабад"
+        "ru": "Султанабад",
+        "type": "31"
     },
     "1718230850": {
         "en": "Yuqori Po'latchi",
         "uz": "Yuqori Po'latchi",
-        "ru": "Юкори Пулатчи"
+        "ru": "Юкори Пулатчи",
+        "type": "31"
     },
     "1718230861": {
         "en": "Quyiboq",
         "uz": "Quyiboq",
-        "ru": "Куйбок"
+        "ru": "Куйбок",
+        "type": "31"
     },
     "1718230870": {
         "en": "Xumor",
         "uz": "Xumor",
-        "ru": "Хумар"
+        "ru": "Хумар",
+        "type": "31"
     },
     "1718230875": {
         "en": "Karnab",
         "uz": "Karnab",
-        "ru": "Карнаб"
+        "ru": "Карнаб",
+        "type": "31"
     },
     "1718233551": {
         "en": "Gulobod",
         "uz": "Gulobod",
-        "ru": "Гулабад"
+        "ru": "Гулабад",
+        "type": "24"
     },
     "1718233555": {
         "en": "Xo'ja Ahrori Vali",
         "uz": "Xo'ja Ahrori Vali",
-        "ru": "Хужа Ахрори Вали"
+        "ru": "Хужа Ахрори Вали",
+        "type": "24"
     },
     "1718233806": {
         "en": "Ohalik",
         "uz": "Ohalik",
-        "ru": "Агалик"
+        "ru": "Агалик",
+        "type": "31"
     },
     "1718233812": {
         "en": "Qo'shtamg'ali",
         "uz": "Qo'shtamg'ali",
-        "ru": "Куштамгали"
+        "ru": "Куштамгали",
+        "type": "31"
     },
     "1718233819": {
         "en": "Bog'ibaland",
         "uz": "Bog'ibaland",
-        "ru": "Багибаланд"
+        "ru": "Багибаланд",
+        "type": "31"
     },
     "1718233830": {
         "en": "Dashtakibolo",
         "uz": "Dashtakibolo",
-        "ru": "Даштакиболо"
+        "ru": "Даштакиболо",
+        "type": "31"
     },
     "1718233850": {
         "en": "Kattaqo'rg'onariq",
         "uz": "Kattaqo'rg'onariq",
-        "ru": "Каттакурганарык"
+        "ru": "Каттакурганарык",
+        "type": "31"
     },
     "1718233856": {
         "en": "Kulbaipoyon",
         "uz": "Kulbaipoyon",
-        "ru": "Кульбапоян"
+        "ru": "Кульбапоян",
+        "type": "31"
     },
     "1718233880": {
         "en": "Ulug'bek",
         "uz": "Ulug'bek",
-        "ru": "Улугбек"
+        "ru": "Улугбек",
+        "type": "31"
     },
     "1718233893": {
         "en": "Qaynama",
         "uz": "Qaynama",
-        "ru": "Кайнама"
+        "ru": "Кайнама",
+        "type": "31"
     },
     "1718235501": {
         "en": "Nurobod",
         "uz": "Nurobod",
-        "ru": "Нурабад"
+        "ru": "Нурабад",
+        "type": "23"
     },
     "1718235556": {
         "en": "Nurbuloq",
         "uz": "Nurbuloq",
-        "ru": "Нурбулок"
+        "ru": "Нурбулок",
+        "type": "24"
     },
     "1718235817": {
         "en": "Jom",
         "uz": "Jom",
-        "ru": "Джам"
+        "ru": "Джам",
+        "type": "31"
     },
     "1718235820": {
         "en": "Jarquduq",
         "uz": "Jarquduq",
-        "ru": "Джаркудук"
+        "ru": "Джаркудук",
+        "type": "31"
     },
     "1718235833": {
         "en": "Nurbuloq",
         "uz": "Nurbuloq",
-        "ru": "Нуpбулак"
+        "ru": "Нуpбулак",
+        "type": "31"
     },
     "1718235840": {
         "en": "Tim",
         "uz": "Tim",
-        "ru": "Тим"
+        "ru": "Тим",
+        "type": "31"
     },
     "1718235843": {
         "en": "Sazog'on",
         "uz": "Sazog'on",
-        "ru": "Сазогон"
+        "ru": "Сазогон",
+        "type": "31"
     },
     "1718235846": {
         "en": "Ulus",
         "uz": "Ulus",
-        "ru": "Улус"
+        "ru": "Улус",
+        "type": "31"
     },
     "1718235850": {
         "en": "Tutli",
         "uz": "Tutli",
-        "ru": "Тутли"
+        "ru": "Тутли",
+        "type": "31"
     },
     "1718236501": {
         "en": "Urgut",
         "uz": "Urgut",
-        "ru": "Ургут"
+        "ru": "Ургут",
+        "type": "23"
     },
     "1718236553": {
         "en": "Jartepa",
         "uz": "Jartepa",
-        "ru": "Джартепа"
+        "ru": "Джартепа",
+        "type": "24"
     },
     "1718236556": {
         "en": "Kamangaron",
         "uz": "Kamangaron",
-        "ru": "Камангарон"
+        "ru": "Камангарон",
+        "type": "24"
     },
     "1718236559": {
         "en": "G'o's",
         "uz": "G'o's",
-        "ru": "Гус"
+        "ru": "Гус",
+        "type": "24"
     },
     "1718236563": {
         "en": "Pochvon",
         "uz": "Pochvon",
-        "ru": "Почвон"
+        "ru": "Почвон",
+        "type": "24"
     },
     "1718236566": {
         "en": "Ispanza",
         "uz": "Ispanza",
-        "ru": "Испанза"
+        "ru": "Испанза",
+        "type": "24"
     },
     "1718236569": {
         "en": "Uramas",
         "uz": "Uramas",
-        "ru": "Урамас"
+        "ru": "Урамас",
+        "type": "24"
     },
     "1718236573": {
         "en": "Kenagas",
         "uz": "Kenagas",
-        "ru": "Кенагас"
+        "ru": "Кенагас",
+        "type": "24"
     },
     "1718236806": {
         "en": "Beshbuloq",
         "uz": "Beshbuloq",
-        "ru": "Бешбулак"
+        "ru": "Бешбулак",
+        "type": "31"
     },
     "1718236811": {
         "en": "Ispanza",
         "uz": "Ispanza",
-        "ru": "Испанза"
+        "ru": "Испанза",
+        "type": "31"
     },
     "1718236814": {
         "en": "G'o's",
         "uz": "G'o's",
-        "ru": "Гус"
+        "ru": "Гус",
+        "type": "31"
     },
     "1718236823": {
         "en": "Ilonli",
         "uz": "Ilonli",
-        "ru": "Иланли"
+        "ru": "Иланли",
+        "type": "31"
     },
     "1718236834": {
         "en": "Qoratepa",
         "uz": "Qoratepa",
-        "ru": "Каратепа"
+        "ru": "Каратепа",
+        "type": "31"
     },
     "1718236839": {
         "en": "Baxrin",
         "uz": "Baxrin",
-        "ru": "Бахpин"
+        "ru": "Бахpин",
+        "type": "31"
     },
     "1718236846": {
         "en": "Jartepa",
         "uz": "Jartepa",
-        "ru": "Джаpтепа"
+        "ru": "Джаpтепа",
+        "type": "31"
     },
     "1718236852": {
         "en": "Uramas",
         "uz": "Uramas",
-        "ru": "Уpамас"
+        "ru": "Уpамас",
+        "type": "31"
     },
     "1718236858": {
         "en": "Mirzaqishloq",
         "uz": "Mirzaqishloq",
-        "ru": "Мирзакишлак"
+        "ru": "Мирзакишлак",
+        "type": "31"
     },
     "1718236869": {
         "en": "Pochvon",
         "uz": "Pochvon",
-        "ru": "Почван"
+        "ru": "Почван",
+        "type": "31"
     },
     "1718236880": {
         "en": "Buloqboshi",
         "uz": "Buloqboshi",
-        "ru": "Булокбоши"
+        "ru": "Булокбоши",
+        "type": "31"
     },
     "1718236891": {
         "en": "Yangiariq",
         "uz": "Yangiariq",
-        "ru": "Янгиарык"
+        "ru": "Янгиарык",
+        "type": "31"
     },
     "1718238551": {
         "en": "Toyloq",
         "uz": "Toyloq",
-        "ru": "Тайлок"
+        "ru": "Тайлок",
+        "type": "24"
     },
     "1718238554": {
         "en": "Adas",
         "uz": "Adas",
-        "ru": "Адас"
+        "ru": "Адас",
+        "type": "24"
     },
     "1718238558": {
         "en": "Bog'izag'on",
         "uz": "Bog'izag'on",
-        "ru": "Богизагон"
+        "ru": "Богизагон",
+        "type": "24"
     },
     "1718238805": {
         "en": "Adas",
         "uz": "Adas",
-        "ru": "Адас"
+        "ru": "Адас",
+        "type": "31"
     },
     "1718238815": {
         "en": "Bog'izag'on",
         "uz": "Bog'izag'on",
-        "ru": "Багизаган"
+        "ru": "Багизаган",
+        "type": "31"
     },
     "1718238820": {
         "en": "Jumabozor",
         "uz": "Jumabozor",
-        "ru": "Джумабазар"
+        "ru": "Джумабазар",
+        "type": "31"
     },
     "1718238830": {
         "en": "G'o'lba",
         "uz": "G'o'lba",
-        "ru": "Гулба"
+        "ru": "Гулба",
+        "type": "31"
     },
     "1718238840": {
         "en": "Madaniyat",
         "uz": "Madaniyat",
-        "ru": "Маданият"
+        "ru": "Маданият",
+        "type": "31"
     },
     "1718238845": {
         "en": "Sochakibolo",
         "uz": "Sochakibolo",
-        "ru": "Сочакиболо"
+        "ru": "Сочакиболо",
+        "type": "31"
     },
     "1718238850": {
         "en": "Tepaqishloq",
         "uz": "Tepaqishloq",
-        "ru": "Тепакишлак"
+        "ru": "Тепакишлак",
+        "type": "31"
     },
     "1718238855": {
         "en": "Toyloq",
         "uz": "Toyloq",
-        "ru": "Тайляк"
+        "ru": "Тайляк",
+        "type": "31"
     },
     "1718238860": {
         "en": "Qo'rg'oncha",
         "uz": "Qo'rg'oncha",
-        "ru": "Курганча"
+        "ru": "Курганча",
+        "type": "31"
     },
     "1718401554": {
         "en": "Kimyogarlar",
         "uz": "Kimyogarlar",
-        "ru": "Кимегаpлаp"
+        "ru": "Кимегаpлаp",
+        "type": "24"
     },
     "1718401556": {
         "en": "Farxod",
         "uz": "Farxod",
-        "ru": "Фархад"
+        "ru": "Фархад",
+        "type": "24"
     },
     "1718401558": {
         "en": "Xishrav",
         "uz": "Xishrav",
-        "ru": "Хишрау"
+        "ru": "Хишрау",
+        "type": "24"
     },
     "1718406554": {
         "en": "Ingichka",
         "uz": "Ingichka",
-        "ru": "Ингичка"
+        "ru": "Ингичка",
+        "type": "24"
     },
     "1722201551": {
         "en": "Qorliq",
         "uz": "Qorliq",
-        "ru": "Корлик"
+        "ru": "Корлик",
+        "type": "24"
     },
     "1722201553": {
         "en": "Botosh",
         "uz": "Botosh",
-        "ru": "Ботош"
+        "ru": "Ботош",
+        "type": "24"
     },
     "1722201555": {
         "en": "Jobu",
         "uz": "Jobu",
-        "ru": "Джобу"
+        "ru": "Джобу",
+        "type": "24"
     },
     "1722201557": {
         "en": "Ipoq",
         "uz": "Ipoq",
-        "ru": "Ипок"
+        "ru": "Ипок",
+        "type": "24"
     },
     "1722201559": {
         "en": "Qurama",
         "uz": "Qurama",
-        "ru": "Курама"
+        "ru": "Курама",
+        "type": "24"
     },
     "1722201561": {
         "en": "Bo'ston",
         "uz": "Bo'ston",
-        "ru": "Бустон"
+        "ru": "Бустон",
+        "type": "24"
     },
     "1722201563": {
         "en": "Mormin",
         "uz": "Mormin",
-        "ru": "Мармин"
+        "ru": "Мармин",
+        "type": "24"
     },
     "1722201565": {
         "en": "Xayrandara",
         "uz": "Xayrandara",
-        "ru": "Хайрандора"
+        "ru": "Хайрандора",
+        "type": "24"
     },
     "1722201567": {
         "en": "Xo'jasoat",
         "uz": "Xo'jasoat",
-        "ru": "Хужасоат"
+        "ru": "Хужасоат",
+        "type": "24"
     },
     "1722201569": {
         "en": "Chep",
         "uz": "Chep",
-        "ru": "Чен"
+        "ru": "Чен",
+        "type": "24"
     },
     "1722201571": {
         "en": "Shakarqamish",
         "uz": "Shakarqamish",
-        "ru": "Шакаркамиш"
+        "ru": "Шакаркамиш",
+        "type": "24"
     },
     "1722201573": {
         "en": "Ekraz",
         "uz": "Ekraz",
-        "ru": "Экраз"
+        "ru": "Экраз",
+        "type": "24"
     },
     "1722201575": {
         "en": "Yangiqurilish",
         "uz": "Yangiqurilish",
-        "ru": "Янгикурилиш"
+        "ru": "Янгикурилиш",
+        "type": "24"
     },
     "1722201577": {
         "en": "Gulobod",
         "uz": "Gulobod",
-        "ru": "Гулобод"
+        "ru": "Гулобод",
+        "type": "24"
     },
     "1722201801": {
         "en": "Oq oltin",
         "uz": "Oq oltin",
-        "ru": "Акалтын"
+        "ru": "Акалтын",
+        "type": "31"
     },
     "1722201802": {
         "en": "Oqarbuloq",
         "uz": "Oqarbuloq",
-        "ru": "Акарбулак"
+        "ru": "Акарбулак",
+        "type": "31"
     },
     "1722201803": {
         "en": "Oltinsoy",
         "uz": "Oltinsoy",
-        "ru": "Алтынсай"
+        "ru": "Алтынсай",
+        "type": "31"
     },
     "1722201804": {
         "en": "Vaxshivor",
         "uz": "Vaxshivor",
-        "ru": "Вахшивар"
+        "ru": "Вахшивар",
+        "type": "31"
     },
     "1722201807": {
         "en": "Dug'oba",
         "uz": "Dug'oba",
-        "ru": "Дугаба"
+        "ru": "Дугаба",
+        "type": "31"
     },
     "1722201813": {
         "en": "Qorliq",
         "uz": "Qorliq",
-        "ru": "Карлук"
+        "ru": "Карлук",
+        "type": "31"
     },
     "1722201816": {
         "en": "Mirshodi",
         "uz": "Mirshodi",
-        "ru": "Миршаде"
+        "ru": "Миршаде",
+        "type": "31"
     },
     "1722201820": {
         "en": "Uzumzor",
         "uz": "Uzumzor",
-        "ru": "Узумзор"
+        "ru": "Узумзор",
+        "type": "31"
     },
     "1722201823": {
         "en": "Lutfiy",
         "uz": "Lutfiy",
-        "ru": "Лутфий"
+        "ru": "Лутфий",
+        "type": "31"
     },
     "1722202551": {
         "en": "Angor ( mavjud)",
         "uz": "Angor ( mavjud)",
-        "ru": "Ангор"
+        "ru": "Ангор",
+        "type": "24"
     },
     "1722202553": {
         "en": "Tallimaron",
         "uz": "Tallimaron",
-        "ru": "Таллимарон"
+        "ru": "Таллимарон",
+        "type": "24"
     },
     "1722202556": {
         "en": "Xomkon",
         "uz": "Xomkon",
-        "ru": "Хамкан"
+        "ru": "Хамкан",
+        "type": "24"
     },
     "1722202559": {
         "en": "Qorasuv",
         "uz": "Qorasuv",
-        "ru": "Карасу"
+        "ru": "Карасу",
+        "type": "24"
     },
     "1722202561": {
         "en": "Yangiobod",
         "uz": "Yangiobod",
-        "ru": "Янгиабад"
+        "ru": "Янгиабад",
+        "type": "24"
     },
     "1722202563": {
         "en": "Talloshqon",
         "uz": "Talloshqon",
-        "ru": "Таллошкан"
+        "ru": "Таллошкан",
+        "type": "24"
     },
     "1722202566": {
         "en": "Gilambob",
         "uz": "Gilambob",
-        "ru": "Гиламбоб"
+        "ru": "Гиламбоб",
+        "type": "24"
     },
     "1722202569": {
         "en": "Zartepa",
         "uz": "Zartepa",
-        "ru": "Зартепа"
+        "ru": "Зартепа",
+        "type": "24"
     },
     "1722202571": {
         "en": "Yangi turmush",
         "uz": "Yangi turmush",
-        "ru": "Янги турмуш"
+        "ru": "Янги турмуш",
+        "type": "24"
     },
     "1722202573": {
         "en": "Angor ( yangi)",
         "uz": "Angor ( yangi)",
-        "ru": "Ангор"
+        "ru": "Ангор",
+        "type": "24"
     },
     "1722202576": {
         "en": "Kayran",
         "uz": "Kayran",
-        "ru": "Кайран"
+        "ru": "Кайран",
+        "type": "24"
     },
     "1722202579": {
         "en": "Novshahar",
         "uz": "Novshahar",
-        "ru": "Новшахар"
+        "ru": "Новшахар",
+        "type": "24"
     },
     "1722202815": {
         "en": "Navoiy",
         "uz": "Navoiy",
-        "ru": "им. Навои"
+        "ru": "им. Навои",
+        "type": "31"
     },
     "1722202825": {
         "en": "Do'stlik",
         "uz": "Do'stlik",
-        "ru": "Дустлик"
+        "ru": "Дустлик",
+        "type": "31"
     },
     "1722202829": {
         "en": "Tallimaron",
         "uz": "Tallimaron",
-        "ru": "Талимаран"
+        "ru": "Талимаран",
+        "type": "31"
     },
     "1722202838": {
         "en": "Qorasuv",
         "uz": "Qorasuv",
-        "ru": "Корасув"
+        "ru": "Корасув",
+        "type": "31"
     },
     "1722202840": {
         "en": "Istiqlol",
         "uz": "Istiqlol",
-        "ru": "Истиклол"
+        "ru": "Истиклол",
+        "type": "31"
     },
     "1722202843": {
         "en": "Zang",
         "uz": "Zang",
-        "ru": "Занг"
+        "ru": "Занг",
+        "type": "31"
     },
     "1722202846": {
         "en": "Kayran",
         "uz": "Kayran",
-        "ru": "Кайран"
+        "ru": "Кайран",
+        "type": "31"
     },
     "1722203551": {
         "en": "Bandixon",
         "uz": "Bandixon",
-        "ru": "Бандихон"
+        "ru": "Бандихон",
+        "type": "24"
     },
     "1722204501": {
         "en": "Boysun",
         "uz": "Boysun",
-        "ru": "Байсун"
+        "ru": "Байсун",
+        "type": "23"
     },
     "1722204552": {
         "en": "Kofrun",
         "uz": "Kofrun",
-        "ru": "Кофрун"
+        "ru": "Кофрун",
+        "type": "24"
     },
     "1722204554": {
         "en": "Tangimush",
         "uz": "Tangimush",
-        "ru": "Тангимуш"
+        "ru": "Тангимуш",
+        "type": "24"
     },
     "1722204556": {
         "en": "Pasurxi",
         "uz": "Pasurxi",
-        "ru": "Пасурхи"
+        "ru": "Пасурхи",
+        "type": "24"
     },
     "1722204558": {
         "en": "Qorabo'yin",
         "uz": "Qorabo'yin",
-        "ru": "Корабуйин"
+        "ru": "Корабуйин",
+        "type": "24"
     },
     "1722204562": {
         "en": "Rabot",
         "uz": "Rabot",
-        "ru": "Рабат"
+        "ru": "Рабат",
+        "type": "24"
     },
     "1722204811": {
         "en": "Qo'ng'irot",
         "uz": "Qo'ng'irot",
-        "ru": "Кунгирот"
+        "ru": "Кунгирот",
+        "type": "31"
     },
     "1722204825": {
         "en": "Temir darvoza",
         "uz": "Temir darvoza",
-        "ru": "Темир дарвоза"
+        "ru": "Темир дарвоза",
+        "type": "31"
     },
     "1722204828": {
         "en": "Qo'rg'oncha",
         "uz": "Qo'rg'oncha",
-        "ru": "Курганча"
+        "ru": "Курганча",
+        "type": "31"
     },
     "1722204830": {
         "en": "Machay",
         "uz": "Machay",
-        "ru": "Мачай"
+        "ru": "Мачай",
+        "type": "31"
     },
     "1722204832": {
         "en": "Poyonqo'rg'on",
         "uz": "Poyonqo'rg'on",
-        "ru": "Поенкургон"
+        "ru": "Поенкургон",
+        "type": "31"
     },
     "1722204843": {
         "en": "Chinorli",
         "uz": "Chinorli",
-        "ru": "Чинорли"
+        "ru": "Чинорли",
+        "type": "31"
     },
     "1722204846": {
         "en": "Ketmonchi",
         "uz": "Ketmonchi",
-        "ru": "Кетмончи"
+        "ru": "Кетмончи",
+        "type": "31"
     },
     "1722207551": {
         "en": "Xalqobod",
         "uz": "Xalqobod",
-        "ru": "Халкабад"
+        "ru": "Халкабад",
+        "type": "24"
     },
     "1722207553": {
         "en": "Baxt",
         "uz": "Baxt",
-        "ru": "Бахт"
+        "ru": "Бахт",
+        "type": "24"
     },
     "1722207555": {
         "en": "Baynalmilal",
         "uz": "Baynalmilal",
-        "ru": "Байналмилал"
+        "ru": "Байналмилал",
+        "type": "24"
     },
     "1722207557": {
         "en": "Guliston",
         "uz": "Guliston",
-        "ru": "Гулистан"
+        "ru": "Гулистан",
+        "type": "24"
     },
     "1722207559": {
         "en": "Iftixor",
         "uz": "Iftixor",
-        "ru": "Ифтихор"
+        "ru": "Ифтихор",
+        "type": "24"
     },
     "1722207561": {
         "en": "Qozoyoqli",
         "uz": "Qozoyoqli",
-        "ru": "Казоекли"
+        "ru": "Казоекли",
+        "type": "24"
     },
     "1722207563": {
         "en": "Oq oltin",
         "uz": "Oq oltin",
-        "ru": "Ак алтин"
+        "ru": "Ак алтин",
+        "type": "24"
     },
     "1722207565": {
         "en": "Taskent",
         "uz": "Taskent",
-        "ru": "Таскент"
+        "ru": "Таскент",
+        "type": "24"
     },
     "1722207567": {
         "en": "Ozod Vatan",
         "uz": "Ozod Vatan",
-        "ru": "Озод Ватан"
+        "ru": "Озод Ватан",
+        "type": "24"
     },
     "1722207569": {
         "en": "Chegarachi",
         "uz": "Chegarachi",
-        "ru": "Чегарачи"
+        "ru": "Чегарачи",
+        "type": "24"
     },
     "1722207811": {
         "en": "Beshqo'ton",
         "uz": "Beshqo'ton",
-        "ru": "Бешкутан"
+        "ru": "Бешкутан",
+        "type": "31"
     },
     "1722207815": {
         "en": "Boldir",
         "uz": "Boldir",
-        "ru": "Больдыр"
+        "ru": "Больдыр",
+        "type": "31"
     },
     "1722207822": {
         "en": "Sarhad",
         "uz": "Sarhad",
-        "ru": "Сархад"
+        "ru": "Сархад",
+        "type": "31"
     },
     "1722207830": {
         "en": "Qorakamar",
         "uz": "Qorakamar",
-        "ru": "Каракамар"
+        "ru": "Каракамар",
+        "type": "31"
     },
     "1722207833": {
         "en": "Sharq yulduzi",
         "uz": "Sharq yulduzi",
-        "ru": "Шарк юлдузи"
+        "ru": "Шарк юлдузи",
+        "type": "31"
     },
     "1722207844": {
         "en": "Muzrabot",
         "uz": "Muzrabot",
-        "ru": "Музрабад"
+        "ru": "Музрабад",
+        "type": "31"
     },
     "1722207847": {
         "en": "Navbahor",
         "uz": "Navbahor",
-        "ru": "Навбахор"
+        "ru": "Навбахор",
+        "type": "31"
     },
     "1722207849": {
         "en": "Obodon",
         "uz": "Obodon",
-        "ru": "Абадан"
+        "ru": "Абадан",
+        "type": "31"
     },
     "1722207863": {
         "en": "Sho'rob",
         "uz": "Sho'rob",
-        "ru": "Шураб"
+        "ru": "Шураб",
+        "type": "31"
     },
     "1722210501": {
         "en": "Denov",
         "uz": "Denov",
-        "ru": "Денау"
+        "ru": "Денау",
+        "type": "23"
     },
     "1722210554": {
         "en": "Do'stlik",
         "uz": "Do'stlik",
-        "ru": "Дустлик"
+        "ru": "Дустлик",
+        "type": "24"
     },
     "1722210556": {
         "en": "Yurchi",
         "uz": "Yurchi",
-        "ru": "Юрчи"
+        "ru": "Юрчи",
+        "type": "24"
     },
     "1722210558": {
         "en": "Qiziljar",
         "uz": "Qiziljar",
-        "ru": "Кизилжар"
+        "ru": "Кизилжар",
+        "type": "24"
     },
     "1722210562": {
         "en": "Xolchayon",
         "uz": "Xolchayon",
-        "ru": "Холчаен"
+        "ru": "Холчаен",
+        "type": "24"
     },
     "1722210564": {
         "en": "Xitoyan",
         "uz": "Xitoyan",
-        "ru": "Китоян"
+        "ru": "Китоян",
+        "type": "24"
     },
     "1722210566": {
         "en": "Paxtakurash",
         "uz": "Paxtakurash",
-        "ru": "Пахтакураш"
+        "ru": "Пахтакураш",
+        "type": "24"
     },
     "1722210568": {
         "en": "Namozgoh",
         "uz": "Namozgoh",
-        "ru": "Намазгах"
+        "ru": "Намазгах",
+        "type": "24"
     },
     "1722210572": {
         "en": "Jamatak",
         "uz": "Jamatak",
-        "ru": "Джаматак"
+        "ru": "Джаматак",
+        "type": "24"
     },
     "1722210574": {
         "en": "Yangi Hazorbog'",
         "uz": "Yangi Hazorbog'",
-        "ru": "Янги Хазарбаг"
+        "ru": "Янги Хазарбаг",
+        "type": "24"
     },
     "1722210576": {
         "en": "Yangibog'",
         "uz": "Yangibog'",
-        "ru": "Янгибаг"
+        "ru": "Янгибаг",
+        "type": "24"
     },
     "1722210578": {
         "en": "Dahana",
         "uz": "Dahana",
-        "ru": "Дахана"
+        "ru": "Дахана",
+        "type": "24"
     },
     "1722210582": {
         "en": "Yangiobod",
         "uz": "Yangiobod",
-        "ru": "Янгиабад"
+        "ru": "Янгиабад",
+        "type": "24"
     },
     "1722210806": {
         "en": "Anbarsoy",
         "uz": "Anbarsoy",
-        "ru": "Анбарсай"
+        "ru": "Анбарсай",
+        "type": "31"
     },
     "1722210823": {
         "en": "Denov",
         "uz": "Denov",
-        "ru": "Денау"
+        "ru": "Денау",
+        "type": "31"
     },
     "1722210830": {
         "en": "Kenagas",
         "uz": "Kenagas",
-        "ru": "Кенагас"
+        "ru": "Кенагас",
+        "type": "31"
     },
     "1722210834": {
         "en": "Qiziljar",
         "uz": "Qiziljar",
-        "ru": "Кызылжаp"
+        "ru": "Кызылжаp",
+        "type": "31"
     },
     "1722210838": {
         "en": "Farg'ona",
         "uz": "Farg'ona",
-        "ru": "Фергана"
+        "ru": "Фергана",
+        "type": "31"
     },
     "1722210840": {
         "en": "Tortuvli",
         "uz": "Tortuvli",
-        "ru": "Тоpтувли"
+        "ru": "Тоpтувли",
+        "type": "31"
     },
     "1722210845": {
         "en": "Pistamozor",
         "uz": "Pistamozor",
-        "ru": "Пистамазар"
+        "ru": "Пистамазар",
+        "type": "31"
     },
     "1722210850": {
         "en": "Sina",
         "uz": "Sina",
-        "ru": "Сина"
+        "ru": "Сина",
+        "type": "31"
     },
     "1722210864": {
         "en": "Xayrabot",
         "uz": "Xayrabot",
-        "ru": "Хайрабад"
+        "ru": "Хайрабад",
+        "type": "31"
     },
     "1722210868": {
         "en": "Hazarbog'",
         "uz": "Hazarbog'",
-        "ru": "Хазарбаг"
+        "ru": "Хазарбаг",
+        "type": "31"
     },
     "1722210870": {
         "en": "Xolchayon",
         "uz": "Xolchayon",
-        "ru": "Халчиян"
+        "ru": "Халчиян",
+        "type": "31"
     },
     "1722210873": {
         "en": "Yangibog'",
         "uz": "Yangibog'",
-        "ru": "Янгибаг"
+        "ru": "Янгибаг",
+        "type": "31"
     },
     "1722210875": {
         "en": "Yangizamon",
         "uz": "Yangizamon",
-        "ru": "Янгизамон"
+        "ru": "Янгизамон",
+        "type": "31"
     },
     "1722210879": {
         "en": "Yurchi",
         "uz": "Yurchi",
-        "ru": "Юрчи"
+        "ru": "Юрчи",
+        "type": "31"
     },
     "1722210881": {
         "en": "Yangiobod",
         "uz": "Yangiobod",
-        "ru": "Янгиабад"
+        "ru": "Янгиабад",
+        "type": "31"
     },
     "1722210883": {
         "en": "Binokor",
         "uz": "Binokor",
-        "ru": "Бинокоp"
+        "ru": "Бинокоp",
+        "type": "31"
     },
     "1722210885": {
         "en": "Dahana",
         "uz": "Dahana",
-        "ru": "Дахана"
+        "ru": "Дахана",
+        "type": "31"
     },
     "1722212501": {
         "en": "Jarqo'rg'on",
         "uz": "Jarqo'rg'on",
-        "ru": "Джаркурган"
+        "ru": "Джаркурган",
+        "type": "23"
     },
     "1722212554": {
         "en": "Kakaydi",
         "uz": "Kakaydi",
-        "ru": "Какайды"
+        "ru": "Какайды",
+        "type": "24"
     },
     "1722212558": {
         "en": "Minor",
         "uz": "Minor",
-        "ru": "Минор"
+        "ru": "Минор",
+        "type": "24"
     },
     "1722212564": {
         "en": "Qoraqursoq",
         "uz": "Qoraqursoq",
-        "ru": "Каракурсак"
+        "ru": "Каракурсак",
+        "type": "24"
     },
     "1722212568": {
         "en": "Markaziy Surxon",
         "uz": "Markaziy Surxon",
-        "ru": "Марказий Сурхан"
+        "ru": "Марказий Сурхан",
+        "type": "24"
     },
     "1722212574": {
         "en": "Kafrun",
         "uz": "Kafrun",
-        "ru": "Кофрун"
+        "ru": "Кофрун",
+        "type": "24"
     },
     "1722212811": {
         "en": "Oqqo'rg'on",
         "uz": "Oqqo'rg'on",
-        "ru": "Аккурган"
+        "ru": "Аккурган",
+        "type": "31"
     },
     "1722212833": {
         "en": "Jarqo'rg'on",
         "uz": "Jarqo'rg'on",
-        "ru": "Джаркурган"
+        "ru": "Джаркурган",
+        "type": "31"
     },
     "1722212855": {
         "en": "Dehqonobod",
         "uz": "Dehqonobod",
-        "ru": "Дехканабад"
+        "ru": "Дехканабад",
+        "type": "31"
     },
     "1722212866": {
         "en": "Minor",
         "uz": "Minor",
-        "ru": "Минор"
+        "ru": "Минор",
+        "type": "31"
     },
     "1722212877": {
         "en": "Surxon",
         "uz": "Surxon",
-        "ru": "Сурхан"
+        "ru": "Сурхан",
+        "type": "31"
     },
     "1722212880": {
         "en": "Chorjo'y",
         "uz": "Chorjo'y",
-        "ru": "Чаpджуй"
+        "ru": "Чаpджуй",
+        "type": "31"
     },
     "1722212889": {
         "en": "Sharq Yulduzi",
         "uz": "Sharq Yulduzi",
-        "ru": "Шарк-Юлдузи"
+        "ru": "Шарк-Юлдузи",
+        "type": "31"
     },
     "1722214501": {
         "en": "Qumqo'rg'on",
         "uz": "Qumqo'rg'on",
-        "ru": "Кумкурган"
+        "ru": "Кумкурган",
+        "type": "23"
     },
     "1722214570": {
         "en": "Hurriyat",
         "uz": "Hurriyat",
-        "ru": "Хуppият"
+        "ru": "Хуppият",
+        "type": "24"
     },
     "1722214572": {
         "en": "Elbayon",
         "uz": "Elbayon",
-        "ru": "Элбаен"
+        "ru": "Элбаен",
+        "type": "24"
     },
     "1722214574": {
         "en": "Elobod",
         "uz": "Elobod",
-        "ru": "Элобод"
+        "ru": "Элобод",
+        "type": "24"
     },
     "1722214576": {
         "en": "Azlarsoy",
         "uz": "Azlarsoy",
-        "ru": "Азларсай"
+        "ru": "Азларсай",
+        "type": "24"
     },
     "1722214578": {
         "en": "Bog'ora",
         "uz": "Bog'ora",
-        "ru": "Богара"
+        "ru": "Богара",
+        "type": "24"
     },
     "1722214582": {
         "en": "Oqsoy",
         "uz": "Oqsoy",
-        "ru": "Аксай"
+        "ru": "Аксай",
+        "type": "24"
     },
     "1722214584": {
         "en": "Jiydali",
         "uz": "Jiydali",
-        "ru": "Джийдали"
+        "ru": "Джийдали",
+        "type": "24"
     },
     "1722214586": {
         "en": "Navbahor",
         "uz": "Navbahor",
-        "ru": "Навбахор"
+        "ru": "Навбахор",
+        "type": "24"
     },
     "1722214588": {
         "en": "Qarsoqli",
         "uz": "Qarsoqli",
-        "ru": "Карсакли"
+        "ru": "Карсакли",
+        "type": "24"
     },
     "1722214592": {
         "en": "Yangiyer",
         "uz": "Yangiyer",
-        "ru": "Янгиер"
+        "ru": "Янгиер",
+        "type": "24"
     },
     "1722214594": {
         "en": "Jaloir",
         "uz": "Jaloir",
-        "ru": "Джалойир"
+        "ru": "Джалойир",
+        "type": "24"
     },
     "1722214803": {
         "en": "Oqqapchig'ay",
         "uz": "Oqqapchig'ay",
-        "ru": "Аккапчигай"
+        "ru": "Аккапчигай",
+        "type": "31"
     },
     "1722214810": {
         "en": "Jaloir Qo'rg'oni",
         "uz": "Jaloir Qo'rg'oni",
-        "ru": "Жалоир Кургони"
+        "ru": "Жалоир Кургони",
+        "type": "31"
     },
     "1722214815": {
         "en": "Sheroziy",
         "uz": "Sheroziy",
-        "ru": "Шерозий"
+        "ru": "Шерозий",
+        "type": "31"
     },
     "1722214818": {
         "en": "Oqjar",
         "uz": "Oqjar",
-        "ru": "Акжаp"
+        "ru": "Акжаp",
+        "type": "31"
     },
     "1722214820": {
         "en": "Qumqo'rg'on",
         "uz": "Qumqo'rg'on",
-        "ru": "Кумкурган"
+        "ru": "Кумкурган",
+        "type": "31"
     },
     "1722214830": {
         "en": "Yuqori Kakaydi",
         "uz": "Yuqori Kakaydi",
-        "ru": "Юкары-Какайды"
+        "ru": "Юкары-Какайды",
+        "type": "31"
     },
     "1722214833": {
         "en": "Ketmon",
         "uz": "Ketmon",
-        "ru": "Кетман"
+        "ru": "Кетман",
+        "type": "31"
     },
     "1722214836": {
         "en": "Arslonboyli",
         "uz": "Arslonboyli",
-        "ru": "Аpсланбайли"
+        "ru": "Аpсланбайли",
+        "type": "31"
     },
     "1722215551": {
         "en": "Sariq",
         "uz": "Sariq",
-        "ru": "Сарик"
+        "ru": "Сарик",
+        "type": "24"
     },
     "1722215553": {
         "en": "Kunchiqish",
         "uz": "Kunchiqish",
-        "ru": "Кунчикиш"
+        "ru": "Кунчикиш",
+        "type": "24"
     },
     "1722215556": {
         "en": "Yangi hayot",
         "uz": "Yangi hayot",
-        "ru": "Янги хает"
+        "ru": "Янги хает",
+        "type": "24"
     },
     "1722215559": {
         "en": "Karmaki",
         "uz": "Karmaki",
-        "ru": "Кармаки"
+        "ru": "Кармаки",
+        "type": "24"
     },
     "1722215563": {
         "en": "Istara",
         "uz": "Istara",
-        "ru": "Истара"
+        "ru": "Истара",
+        "type": "24"
     },
     "1722215805": {
         "en": "Zarkamar",
         "uz": "Zarkamar",
-        "ru": "Заркамар"
+        "ru": "Заркамар",
+        "type": "31"
     },
     "1722215841": {
         "en": "Olmazor",
         "uz": "Olmazor",
-        "ru": "Олмазор"
+        "ru": "Олмазор",
+        "type": "31"
     },
     "1722215843": {
         "en": "Bandixon",
         "uz": "Bandixon",
-        "ru": "Бандихон"
+        "ru": "Бандихон",
+        "type": "31"
     },
     "1722215845": {
         "en": "Qiziriq",
         "uz": "Qiziriq",
-        "ru": "Кизирик"
+        "ru": "Кизирик",
+        "type": "31"
     },
     "1722215847": {
         "en": "Kirshak",
         "uz": "Kirshak",
-        "ru": "Киршак"
+        "ru": "Киршак",
+        "type": "31"
     },
     "1722215849": {
         "en": "Chorvador",
         "uz": "Chorvador",
-        "ru": "Чорвадор"
+        "ru": "Чорвадор",
+        "type": "31"
     },
     "1722215860": {
         "en": "Paxtakor",
         "uz": "Paxtakor",
-        "ru": "Пахтакор"
+        "ru": "Пахтакор",
+        "type": "31"
     },
     "1722215865": {
         "en": "Sharq Istara",
         "uz": "Sharq Istara",
-        "ru": "Шарк Истара"
+        "ru": "Шарк Истара",
+        "type": "31"
     },
     "1722215867": {
         "en": "Yangi yo'l",
         "uz": "Yangi yo'l",
-        "ru": "Янгиюль"
+        "ru": "Янгиюль",
+        "type": "31"
     },
     "1722215870": {
         "en": "Mehnatobod",
         "uz": "Mehnatobod",
-        "ru": "Мехнатабад"
+        "ru": "Мехнатабад",
+        "type": "31"
     },
     "1722217505": {
         "en": "Sharg'un",
         "uz": "Sharg'un",
-        "ru": "Шаргунь"
+        "ru": "Шаргунь",
+        "type": "23"
     },
     "1722217551": {
         "en": "Sariosiyo",
         "uz": "Sariosiyo",
-        "ru": "Сариасия"
+        "ru": "Сариасия",
+        "type": "24"
     },
     "1722217554": {
         "en": "Yangihayot",
         "uz": "Yangihayot",
-        "ru": "Янгихает"
+        "ru": "Янгихает",
+        "type": "24"
     },
     "1722217558": {
         "en": "Tortuli",
         "uz": "Tortuli",
-        "ru": "Тартули"
+        "ru": "Тартули",
+        "type": "24"
     },
     "1722217564": {
         "en": "Bo'yropo'sht",
         "uz": "Bo'yropo'sht",
-        "ru": "Буйрапушт"
+        "ru": "Буйрапушт",
+        "type": "24"
     },
     "1722217812": {
         "en": "Dashnobod",
         "uz": "Dashnobod",
-        "ru": "Дашнабад"
+        "ru": "Дашнабад",
+        "type": "31"
     },
     "1722217826": {
         "en": "Navro'z",
         "uz": "Navro'z",
-        "ru": "Навруз"
+        "ru": "Навруз",
+        "type": "31"
     },
     "1722217828": {
         "en": "Buyuk kelajak",
         "uz": "Buyuk kelajak",
-        "ru": "Буюк келажак"
+        "ru": "Буюк келажак",
+        "type": "31"
     },
     "1722217832": {
         "en": "Sangardak",
         "uz": "Sangardak",
-        "ru": "Сангардак"
+        "ru": "Сангардак",
+        "type": "31"
     },
     "1722217835": {
         "en": "Bog'i iram",
         "uz": "Bog'i iram",
-        "ru": "Боги ирам"
+        "ru": "Боги ирам",
+        "type": "31"
     },
     "1722217846": {
         "en": "So'fiyon",
         "uz": "So'fiyon",
-        "ru": "Суфиян"
+        "ru": "Суфиян",
+        "type": "31"
     },
     "1722217851": {
         "en": "Toqchiyon",
         "uz": "Toqchiyon",
-        "ru": "Такчиян"
+        "ru": "Такчиян",
+        "type": "31"
     },
     "1722217862": {
         "en": "O'zbekiston",
         "uz": "O'zbekiston",
-        "ru": "Узбекистан"
+        "ru": "Узбекистан",
+        "type": "31"
     },
     "1722217880": {
         "en": "Xufar",
         "uz": "Xufar",
-        "ru": "Хуфар"
+        "ru": "Хуфар",
+        "type": "31"
     },
     "1722220551": {
         "en": "Uchqizil",
         "uz": "Uchqizil",
-        "ru": "Учкизил"
+        "ru": "Учкизил",
+        "type": "24"
     },
     "1722220553": {
         "en": "Limonchi",
         "uz": "Limonchi",
-        "ru": "Лимончи"
+        "ru": "Лимончи",
+        "type": "24"
     },
     "1722220555": {
         "en": "Tajribakor",
         "uz": "Tajribakor",
-        "ru": "Тажрибакор"
+        "ru": "Тажрибакор",
+        "type": "24"
     },
     "1722220557": {
         "en": "Namuna",
         "uz": "Namuna",
-        "ru": "Намуна"
+        "ru": "Намуна",
+        "type": "24"
     },
     "1722220559": {
         "en": "At-Termiziy",
         "uz": "At-Termiziy",
-        "ru": "Ат-Термизий"
+        "ru": "Ат-Термизий",
+        "type": "24"
     },
     "1722220561": {
         "en": "Mustaqillik",
         "uz": "Mustaqillik",
-        "ru": "Мустакиллик"
+        "ru": "Мустакиллик",
+        "type": "24"
     },
     "1722220563": {
         "en": "Pattakesar",
         "uz": "Pattakesar",
-        "ru": "Паттакесар"
+        "ru": "Паттакесар",
+        "type": "24"
     },
     "1722220565": {
         "en": "Chegarachi",
         "uz": "Chegarachi",
-        "ru": "Чегарачи"
+        "ru": "Чегарачи",
+        "type": "24"
     },
     "1722220567": {
         "en": "Qizilboy",
         "uz": "Qizilboy",
-        "ru": "Кизилбай"
+        "ru": "Кизилбай",
+        "type": "24"
     },
     "1722220844": {
         "en": "Mehnatobod",
         "uz": "Mehnatobod",
-        "ru": "Мехнатобод"
+        "ru": "Мехнатобод",
+        "type": "31"
     },
     "1722220855": {
         "en": "Paxtaobod",
         "uz": "Paxtaobod",
-        "ru": "Пахтаабад"
+        "ru": "Пахтаабад",
+        "type": "31"
     },
     "1722220870": {
         "en": "Uchqizil",
         "uz": "Uchqizil",
-        "ru": "Учкизил"
+        "ru": "Учкизил",
+        "type": "31"
     },
     "1722220888": {
         "en": "Yangiariq",
         "uz": "Yangiariq",
-        "ru": "Янгиарык"
+        "ru": "Янгиарык",
+        "type": "31"
     },
     "1722220895": {
         "en": "Kokildorota",
         "uz": "Kokildorota",
-        "ru": "Кокилдорота"
+        "ru": "Кокилдорота",
+        "type": "31"
     },
     "1722221551": {
         "en": "Uzun",
         "uz": "Uzun",
-        "ru": "Узун"
+        "ru": "Узун",
+        "type": "24"
     },
     "1722221553": {
         "en": "Chinor",
         "uz": "Chinor",
-        "ru": "Чинар"
+        "ru": "Чинар",
+        "type": "24"
     },
     "1722221556": {
         "en": "Ulanqul",
         "uz": "Ulanqul",
-        "ru": "Уланкул"
+        "ru": "Уланкул",
+        "type": "24"
     },
     "1722221559": {
         "en": "Qarashiq",
         "uz": "Qarashiq",
-        "ru": "Карашик"
+        "ru": "Карашик",
+        "type": "24"
     },
     "1722221563": {
         "en": "Yangi kuch",
         "uz": "Yangi kuch",
-        "ru": "Янги куч"
+        "ru": "Янги куч",
+        "type": "24"
     },
     "1722221566": {
         "en": "Jonchekka",
         "uz": "Jonchekka",
-        "ru": "Джанчекка"
+        "ru": "Джанчекка",
+        "type": "24"
     },
     "1722221569": {
         "en": "Malandiyon",
         "uz": "Malandiyon",
-        "ru": "Маландиян"
+        "ru": "Маландиян",
+        "type": "24"
     },
     "1722221573": {
         "en": "Mehnat",
         "uz": "Mehnat",
-        "ru": "Мехнат"
+        "ru": "Мехнат",
+        "type": "24"
     },
     "1722221576": {
         "en": "Yangi ro'zg'or",
         "uz": "Yangi ro'zg'or",
-        "ru": "Янги рузгор"
+        "ru": "Янги рузгор",
+        "type": "24"
     },
     "1722221806": {
         "en": "Bobotog'",
         "uz": "Bobotog'",
-        "ru": "Бабатаг"
+        "ru": "Бабатаг",
+        "type": "31"
     },
     "1722221816": {
         "en": "Jonchekka",
         "uz": "Jonchekka",
-        "ru": "Джанчека"
+        "ru": "Джанчека",
+        "type": "31"
     },
     "1722221824": {
         "en": "Fayzova",
         "uz": "Fayzova",
-        "ru": "им. Файзова"
+        "ru": "им. Файзова",
+        "type": "31"
     },
     "1722221856": {
         "en": "Telpakchinor",
         "uz": "Telpakchinor",
-        "ru": "Тельпакчинар"
+        "ru": "Тельпакчинар",
+        "type": "31"
     },
     "1722221868": {
         "en": "Uzun",
         "uz": "Uzun",
-        "ru": "Узун"
+        "ru": "Узун",
+        "type": "31"
     },
     "1722221875": {
         "en": "Oq Ostona",
         "uz": "Oq Ostona",
-        "ru": "Акастана"
+        "ru": "Акастана",
+        "type": "31"
     },
     "1722221880": {
         "en": "Xonjiza",
         "uz": "Xonjiza",
-        "ru": "Хондиза"
+        "ru": "Хондиза",
+        "type": "31"
     },
     "1722223501": {
         "en": "Sherobod",
         "uz": "Sherobod",
-        "ru": "Шерабад"
+        "ru": "Шерабад",
+        "type": "23"
     },
     "1722223552": {
         "en": "Zarabog'",
         "uz": "Zarabog'",
-        "ru": "Зарабаг"
+        "ru": "Зарабаг",
+        "type": "24"
     },
     "1722223554": {
         "en": "Kilkon",
         "uz": "Kilkon",
-        "ru": "Килкон"
+        "ru": "Килкон",
+        "type": "24"
     },
     "1722223556": {
         "en": "Navbog'",
         "uz": "Navbog'",
-        "ru": "Навбаг"
+        "ru": "Навбаг",
+        "type": "24"
     },
     "1722223558": {
         "en": "Paxtaobod",
         "uz": "Paxtaobod",
-        "ru": "Пахтаабад"
+        "ru": "Пахтаабад",
+        "type": "24"
     },
     "1722223562": {
         "en": "Sariqamish",
         "uz": "Sariqamish",
-        "ru": "Сарикамиш"
+        "ru": "Сарикамиш",
+        "type": "24"
     },
     "1722223564": {
         "en": "Cho'yinchi",
         "uz": "Cho'yinchi",
-        "ru": "Чуйинчи"
+        "ru": "Чуйинчи",
+        "type": "24"
     },
     "1722223566": {
         "en": "Yangiariq",
         "uz": "Yangiariq",
-        "ru": "Янги арик"
+        "ru": "Янги арик",
+        "type": "24"
     },
     "1722223810": {
         "en": "Oqqo'rg'on",
         "uz": "Oqqo'rg'on",
-        "ru": "Аккурган"
+        "ru": "Аккурган",
+        "type": "31"
     },
     "1722223822": {
         "en": "Ko'hitang",
         "uz": "Ko'hitang",
-        "ru": "Кухитанг"
+        "ru": "Кухитанг",
+        "type": "31"
     },
     "1722223833": {
         "en": "Sariqamish",
         "uz": "Sariqamish",
-        "ru": "Саpикамиш"
+        "ru": "Саpикамиш",
+        "type": "31"
     },
     "1722223854": {
         "en": "Seplon",
         "uz": "Seplon",
-        "ru": "Сеплан"
+        "ru": "Сеплан",
+        "type": "31"
     },
     "1722223856": {
         "en": "Talloshqon",
         "uz": "Talloshqon",
-        "ru": "Талашкан"
+        "ru": "Талашкан",
+        "type": "31"
     },
     "1722223858": {
         "en": "Rabatak",
         "uz": "Rabatak",
-        "ru": "Рабатаг"
+        "ru": "Рабатаг",
+        "type": "31"
     },
     "1722223865": {
         "en": "Yangiturmush",
         "uz": "Yangiturmush",
-        "ru": "Янгитурмуш"
+        "ru": "Янгитурмуш",
+        "type": "31"
     },
     "1722223867": {
         "en": "Bo'ston",
         "uz": "Bo'ston",
-        "ru": "Бустансай"
+        "ru": "Бустансай",
+        "type": "31"
     },
     "1722223870": {
         "en": "Chinobod",
         "uz": "Chinobod",
-        "ru": "Чинабад"
+        "ru": "Чинабад",
+        "type": "31"
     },
     "1722226501": {
         "en": "Sho'rchi",
         "uz": "Sho'rchi",
-        "ru": "Шурчи"
+        "ru": "Шурчи",
+        "type": "23"
     },
     "1722226554": {
         "en": "Elbayon",
         "uz": "Elbayon",
-        "ru": "Элбаен"
+        "ru": "Элбаен",
+        "type": "24"
     },
     "1722226558": {
         "en": "To'la",
         "uz": "To'la",
-        "ru": "Тула"
+        "ru": "Тула",
+        "type": "24"
     },
     "1722226562": {
         "en": "Yalti",
         "uz": "Yalti",
-        "ru": "Ялти"
+        "ru": "Ялти",
+        "type": "24"
     },
     "1722226564": {
         "en": "Xushchekka",
         "uz": "Xushchekka",
-        "ru": "Хушчека"
+        "ru": "Хушчека",
+        "type": "24"
     },
     "1722226566": {
         "en": "Qo'shtegirmon",
         "uz": "Qo'shtegirmon",
-        "ru": "Куштегирмон"
+        "ru": "Куштегирмон",
+        "type": "24"
     },
     "1722226568": {
         "en": "Kattasovur",
         "uz": "Kattasovur",
-        "ru": "Катта совур"
+        "ru": "Катта совур",
+        "type": "24"
     },
     "1722226572": {
         "en": "Karvon",
         "uz": "Karvon",
-        "ru": "Карвон"
+        "ru": "Карвон",
+        "type": "24"
     },
     "1722226574": {
         "en": "G'armaqo'rg'on",
         "uz": "G'armaqo'rg'on",
-        "ru": "Гармакурган"
+        "ru": "Гармакурган",
+        "type": "24"
     },
     "1722226576": {
         "en": "Jarqishloq",
         "uz": "Jarqishloq",
-        "ru": "Джаркишлок"
+        "ru": "Джаркишлок",
+        "type": "24"
     },
     "1722226578": {
         "en": "Joyilma",
         "uz": "Joyilma",
-        "ru": "Джайилма"
+        "ru": "Джайилма",
+        "type": "24"
     },
     "1722226816": {
         "en": "Qo'ldosh",
         "uz": "Qo'ldosh",
-        "ru": "Кулдош"
+        "ru": "Кулдош",
+        "type": "31"
     },
     "1722226820": {
         "en": "Alpomish",
         "uz": "Alpomish",
-        "ru": "Алпомиш"
+        "ru": "Алпомиш",
+        "type": "31"
     },
     "1722226824": {
         "en": "Baxtlitepa",
         "uz": "Baxtlitepa",
-        "ru": "Бахтлитепа"
+        "ru": "Бахтлитепа",
+        "type": "31"
     },
     "1722226844": {
         "en": "Savur",
         "uz": "Savur",
-        "ru": "Совур"
+        "ru": "Совур",
+        "type": "31"
     },
     "1722226852": {
         "en": "Elobod",
         "uz": "Elobod",
-        "ru": "Элабад"
+        "ru": "Элабад",
+        "type": "31"
     },
     "1722226863": {
         "en": "Sohibkor",
         "uz": "Sohibkor",
-        "ru": "Сахибкор"
+        "ru": "Сахибкор",
+        "type": "31"
     },
     "1722226866": {
         "en": "Dalvarzin",
         "uz": "Dalvarzin",
-        "ru": "Дальверзин"
+        "ru": "Дальверзин",
+        "type": "31"
     },
     "1722226869": {
         "en": "Jaloir",
         "uz": "Jaloir",
-        "ru": "Джалаир"
+        "ru": "Джалаир",
+        "type": "31"
     },
     "1722226872": {
         "en": "Sho'rchi",
         "uz": "Sho'rchi",
-        "ru": "Шурчи"
+        "ru": "Шурчи",
+        "type": "31"
     },
     "1722226882": {
         "en": "Yangibozor",
         "uz": "Yangibozor",
-        "ru": "Янгибазар"
+        "ru": "Янгибазар",
+        "type": "31"
     },
     "1724206551": {
         "en": "Sardoba",
         "uz": "Sardoba",
-        "ru": "Сардоба"
+        "ru": "Сардоба",
+        "type": "24"
     },
     "1724206552": {
         "en": "Farg'ona",
         "uz": "Farg'ona",
-        "ru": "Фергана"
+        "ru": "Фергана",
+        "type": "24"
     },
     "1724206554": {
         "en": "Andijon",
         "uz": "Andijon",
-        "ru": "Андижон"
+        "ru": "Андижон",
+        "type": "24"
     },
     "1724206814": {
         "en": "Bo'ston",
         "uz": "Bo'ston",
-        "ru": "Бустан"
+        "ru": "Бустан",
+        "type": "31"
     },
     "1724206824": {
         "en": "Ahillik",
         "uz": "Ahillik",
-        "ru": "Ахиллик"
+        "ru": "Ахиллик",
+        "type": "31"
     },
     "1724206850": {
         "en": "Shodlik",
         "uz": "Shodlik",
-        "ru": "Шадлик"
+        "ru": "Шадлик",
+        "type": "31"
     },
     "1724212551": {
         "en": "Boyovut",
         "uz": "Boyovut",
-        "ru": "Баяут"
+        "ru": "Баяут",
+        "type": "24"
     },
     "1724212552": {
         "en": "Markaz",
         "uz": "Markaz",
-        "ru": "Марказ"
+        "ru": "Марказ",
+        "type": "24"
     },
     "1724212553": {
         "en": "Bekat",
         "uz": "Bekat",
-        "ru": "Бекат"
+        "ru": "Бекат",
+        "type": "24"
     },
     "1724212554": {
         "en": "Do'stlik",
         "uz": "Do'stlik",
-        "ru": "Дустлик"
+        "ru": "Дустлик",
+        "type": "24"
     },
     "1724212811": {
         "en": "Boyovut",
         "uz": "Boyovut",
-        "ru": "Баяут"
+        "ru": "Баяут",
+        "type": "31"
     },
     "1724212818": {
         "en": "G'allakor",
         "uz": "G'allakor",
-        "ru": "Галлакор"
+        "ru": "Галлакор",
+        "type": "31"
     },
     "1724212830": {
         "en": "Darvazakir",
         "uz": "Darvazakir",
-        "ru": "Дарбазакыр"
+        "ru": "Дарбазакыр",
+        "type": "31"
     },
     "1724212834": {
         "en": "Dehqonobod",
         "uz": "Dehqonobod",
-        "ru": "Дехканабад"
+        "ru": "Дехканабад",
+        "type": "31"
     },
     "1724212847": {
         "en": "Olmazor",
         "uz": "Olmazor",
-        "ru": "Алмазар"
+        "ru": "Алмазар",
+        "type": "31"
     },
     "1724212850": {
         "en": "Mingchinor",
         "uz": "Mingchinor",
-        "ru": "Мингчинар"
+        "ru": "Мингчинар",
+        "type": "31"
     },
     "1724212855": {
         "en": "Buyuk yurt",
         "uz": "Buyuk yurt",
-        "ru": "Буюк юрт"
+        "ru": "Буюк юрт",
+        "type": "31"
     },
     "1724212861": {
         "en": "Tabarruk",
         "uz": "Tabarruk",
-        "ru": "Табаррук"
+        "ru": "Табаррук",
+        "type": "31"
     },
     "1724212865": {
         "en": "Madaniyat",
         "uz": "Madaniyat",
-        "ru": "Маданият"
+        "ru": "Маданият",
+        "type": "31"
     },
     "1724212868": {
         "en": "Do'stlik",
         "uz": "Do'stlik",
-        "ru": "Дустлик"
+        "ru": "Дустлик",
+        "type": "31"
     },
     "1724212875": {
         "en": "Laylakko'l",
         "uz": "Laylakko'l",
-        "ru": "Лайлакуль"
+        "ru": "Лайлакуль",
+        "type": "31"
     },
     "1724212880": {
         "en": "Tinchlik",
         "uz": "Tinchlik",
-        "ru": "Тинчлик"
+        "ru": "Тинчлик",
+        "type": "31"
     },
     "1724216551": {
         "en": "Sayxun",
         "uz": "Sayxun",
-        "ru": "Сайхун"
+        "ru": "Сайхун",
+        "type": "24"
     },
     "1724216553": {
         "en": "Sohil",
         "uz": "Sohil",
-        "ru": "Сохил"
+        "ru": "Сохил",
+        "type": "24"
     },
     "1724216555": {
         "en": "Sho'ro'zak",
         "uz": "Sho'ro'zak",
-        "ru": "Шурузак"
+        "ru": "Шурузак",
+        "type": "24"
     },
     "1724216557": {
         "en": "Paxtakon",
         "uz": "Paxtakon",
-        "ru": "Пахтакон"
+        "ru": "Пахтакон",
+        "type": "24"
     },
     "1724216811": {
         "en": "Ittifak",
         "uz": "Ittifak",
-        "ru": "Иттифак"
+        "ru": "Иттифак",
+        "type": "31"
     },
     "1724216822": {
         "en": "Guliston",
         "uz": "Guliston",
-        "ru": "Гулистан"
+        "ru": "Гулистан",
+        "type": "31"
     },
     "1724216827": {
         "en": "Nurota",
         "uz": "Nurota",
-        "ru": "Нурата"
+        "ru": "Нурата",
+        "type": "31"
     },
     "1724216830": {
         "en": "O'zbekiston",
         "uz": "O'zbekiston",
-        "ru": "Узбекистон"
+        "ru": "Узбекистон",
+        "type": "31"
     },
     "1724216833": {
         "en": "Istiqlol",
         "uz": "Istiqlol",
-        "ru": "Истиклол"
+        "ru": "Истиклол",
+        "type": "31"
     },
     "1724216844": {
         "en": "Sho'ro'zak",
         "uz": "Sho'ro'zak",
-        "ru": "Шурузяк"
+        "ru": "Шурузяк",
+        "type": "31"
     },
     "1724216855": {
         "en": "Yangi hayot",
         "uz": "Yangi hayot",
-        "ru": "Янгихаят"
+        "ru": "Янгихаят",
+        "type": "31"
     },
     "1724220551": {
         "en": "Dehqonobod",
         "uz": "Dehqonobod",
-        "ru": "Дехканабад"
+        "ru": "Дехканабад",
+        "type": "24"
     },
     "1724220552": {
         "en": "Hulkar",
         "uz": "Hulkar",
-        "ru": "Хулкар"
+        "ru": "Хулкар",
+        "type": "24"
     },
     "1724220553": {
         "en": "Beshbuloq",
         "uz": "Beshbuloq",
-        "ru": "Бешбулак"
+        "ru": "Бешбулак",
+        "type": "24"
     },
     "1724220554": {
         "en": "Ulug'bek",
         "uz": "Ulug'bek",
-        "ru": "Улугбек"
+        "ru": "Улугбек",
+        "type": "24"
     },
     "1724220556": {
         "en": "Xalqako'l",
         "uz": "Xalqako'l",
-        "ru": "Халкакул"
+        "ru": "Халкакул",
+        "type": "24"
     },
     "1724220805": {
         "en": "Oltintepa",
         "uz": "Oltintepa",
-        "ru": "Алтынтепа"
+        "ru": "Алтынтепа",
+        "type": "31"
     },
     "1724220816": {
         "en": "Soyibobod",
         "uz": "Soyibobod",
-        "ru": "Саибобод"
+        "ru": "Саибобод",
+        "type": "31"
     },
     "1724220820": {
         "en": "Xumo",
         "uz": "Xumo",
-        "ru": "Хумо"
+        "ru": "Хумо",
+        "type": "31"
     },
     "1724220823": {
         "en": "Kunchi",
         "uz": "Kunchi",
-        "ru": "Кунчи"
+        "ru": "Кунчи",
+        "type": "31"
     },
     "1724220827": {
         "en": "Beshbuloq",
         "uz": "Beshbuloq",
-        "ru": "Бешбулак"
+        "ru": "Бешбулак",
+        "type": "31"
     },
     "1724220835": {
         "en": "Chortoq",
         "uz": "Chortoq",
-        "ru": "Чоpток"
+        "ru": "Чоpток",
+        "type": "31"
     },
     "1724220846": {
         "en": "Oltin O'rda",
         "uz": "Oltin O'rda",
-        "ru": "Олтин Уpда"
+        "ru": "Олтин Уpда",
+        "type": "31"
     },
     "1724220879": {
         "en": "Zarbdor",
         "uz": "Zarbdor",
-        "ru": "Зарбдар"
+        "ru": "Зарбдар",
+        "type": "31"
     },
     "1724220882": {
         "en": "Soxilobod",
         "uz": "Soxilobod",
-        "ru": "Сахилабад"
+        "ru": "Сахилабад",
+        "type": "31"
     },
     "1724226551": {
         "en": "Paxtaobod",
         "uz": "Paxtaobod",
-        "ru": "Пахтаабад"
+        "ru": "Пахтаабад",
+        "type": "24"
     },
     "1724226811": {
         "en": "Cho'lquvar",
         "uz": "Cho'lquvar",
-        "ru": "Чулкуваp"
+        "ru": "Чулкуваp",
+        "type": "31"
     },
     "1724226822": {
         "en": "Guliston",
         "uz": "Guliston",
-        "ru": "Гулистон"
+        "ru": "Гулистон",
+        "type": "31"
     },
     "1724226833": {
         "en": "Yangiqishloq",
         "uz": "Yangiqishloq",
-        "ru": "Янгикишлак"
+        "ru": "Янгикишлак",
+        "type": "31"
     },
     "1724226844": {
         "en": "Gulzor",
         "uz": "Gulzor",
-        "ru": "Гульзар"
+        "ru": "Гульзар",
+        "type": "31"
     },
     "1724226855": {
         "en": "Yangiobod",
         "uz": "Yangiobod",
-        "ru": "Янгиабад"
+        "ru": "Янгиабад",
+        "type": "31"
     },
     "1724226865": {
         "en": "Qo'rg'ontepa",
         "uz": "Qo'rg'ontepa",
-        "ru": "Куpгантепа"
+        "ru": "Куpгантепа",
+        "type": "31"
     },
     "1724228551": {
         "en": "Navro'z",
         "uz": "Navro'z",
-        "ru": "Навруз"
+        "ru": "Навруз",
+        "type": "24"
     },
     "1724228552": {
         "en": "Oqoltin",
         "uz": "Oqoltin",
-        "ru": "Акалтин"
+        "ru": "Акалтин",
+        "type": "24"
     },
     "1724228805": {
         "en": "Bahoriston",
         "uz": "Bahoriston",
-        "ru": "Бахористан"
+        "ru": "Бахористан",
+        "type": "31"
     },
     "1724228818": {
         "en": "Oqoltin",
         "uz": "Oqoltin",
-        "ru": "Акалтын"
+        "ru": "Акалтын",
+        "type": "31"
     },
     "1724228830": {
         "en": "Mehnatobod",
         "uz": "Mehnatobod",
-        "ru": "Мехнатабад"
+        "ru": "Мехнатабад",
+        "type": "31"
     },
     "1724228832": {
         "en": "Mirzacho'l",
         "uz": "Mirzacho'l",
-        "ru": "Мирзачуль"
+        "ru": "Мирзачуль",
+        "type": "31"
     },
     "1724228835": {
         "en": "Navbahor",
         "uz": "Navbahor",
-        "ru": "Навбахор"
+        "ru": "Навбахор",
+        "type": "31"
     },
     "1724228838": {
         "en": "Toshkent",
         "uz": "Toshkent",
-        "ru": "Ташкент"
+        "ru": "Ташкент",
+        "type": "31"
     },
     "1724228845": {
         "en": "Birlashgan",
         "uz": "Birlashgan",
-        "ru": "Биpлашган"
+        "ru": "Биpлашган",
+        "type": "31"
     },
     "1724228860": {
         "en": "Nurafshon",
         "uz": "Nurafshon",
-        "ru": "Нуpафшан"
+        "ru": "Нуpафшан",
+        "type": "31"
     },
     "1724228869": {
         "en": "Yo'ldoshobod",
         "uz": "Yo'ldoshobod",
-        "ru": "Юлдашабад"
+        "ru": "Юлдашабад",
+        "type": "31"
     },
     "1724231501": {
         "en": "Sirdaryo",
         "uz": "Sirdaryo",
-        "ru": "Сыpдаpья"
+        "ru": "Сыpдаpья",
+        "type": "23"
     },
     "1724231503": {
         "en": "Baxt",
         "uz": "Baxt",
-        "ru": "Бахт"
+        "ru": "Бахт",
+        "type": "23"
     },
     "1724231552": {
         "en": "Quyosh",
         "uz": "Quyosh",
-        "ru": "Куеш"
+        "ru": "Куеш",
+        "type": "24"
     },
     "1724231553": {
         "en": "Malik",
         "uz": "Malik",
-        "ru": "Малек"
+        "ru": "Малек",
+        "type": "24"
     },
     "1724231554": {
         "en": "Ziyokor",
         "uz": "Ziyokor",
-        "ru": "Зиекор"
+        "ru": "Зиекор",
+        "type": "24"
     },
     "1724231555": {
         "en": "J.Mamanov",
         "uz": "J.Mamanov",
-        "ru": "Дж.Маманов"
+        "ru": "Дж.Маманов",
+        "type": "24"
     },
     "1724231811": {
         "en": "Xaqiqat",
         "uz": "Xaqiqat",
-        "ru": "Хакикат"
+        "ru": "Хакикат",
+        "type": "31"
     },
     "1724231822": {
         "en": "Turon",
         "uz": "Turon",
-        "ru": "Туpон"
+        "ru": "Туpон",
+        "type": "31"
     },
     "1724231827": {
         "en": "Xalqobod",
         "uz": "Xalqobod",
-        "ru": "Халкабад"
+        "ru": "Халкабад",
+        "type": "31"
     },
     "1724231833": {
         "en": "Malik",
         "uz": "Malik",
-        "ru": "Малик"
+        "ru": "Малик",
+        "type": "31"
     },
     "1724231844": {
         "en": "Oydin",
         "uz": "Oydin",
-        "ru": "Ойдин"
+        "ru": "Ойдин",
+        "type": "31"
     },
     "1724231848": {
         "en": "Paxtazor",
         "uz": "Paxtazor",
-        "ru": "Пахтазор"
+        "ru": "Пахтазор",
+        "type": "31"
     },
     "1724231855": {
         "en": "Sirdaryo",
         "uz": "Sirdaryo",
-        "ru": "Сырдарья"
+        "ru": "Сырдарья",
+        "type": "31"
     },
     "1724231866": {
         "en": "Cho'lto'qay",
         "uz": "Cho'lto'qay",
-        "ru": "Чултукай"
+        "ru": "Чултукай",
+        "type": "31"
     },
     "1724231870": {
         "en": "Sholikor",
         "uz": "Sholikor",
-        "ru": "Шаликор"
+        "ru": "Шаликор",
+        "type": "31"
     },
     "1724235551": {
         "en": "Xovos",
         "uz": "Xovos",
-        "ru": "Хавас"
+        "ru": "Хавас",
+        "type": "24"
     },
     "1724235553": {
         "en": "Gulbahor",
         "uz": "Gulbahor",
-        "ru": "Гулбахор"
+        "ru": "Гулбахор",
+        "type": "24"
     },
     "1724235805": {
         "en": "Binokor",
         "uz": "Binokor",
-        "ru": "Бинокор"
+        "ru": "Бинокор",
+        "type": "31"
     },
     "1724235808": {
         "en": "Gulbahor",
         "uz": "Gulbahor",
-        "ru": "Гульбахор"
+        "ru": "Гульбахор",
+        "type": "31"
     },
     "1724235813": {
         "en": "Zafarobod",
         "uz": "Zafarobod",
-        "ru": "Зафарабад"
+        "ru": "Зафарабад",
+        "type": "31"
     },
     "1724235817": {
         "en": "Paxtakor",
         "uz": "Paxtakor",
-        "ru": "Пахтакор"
+        "ru": "Пахтакор",
+        "type": "31"
     },
     "1724235820": {
         "en": "Soxibkor",
         "uz": "Soxibkor",
-        "ru": "Сахибкор"
+        "ru": "Сахибкор",
+        "type": "31"
     },
     "1724235821": {
         "en": "Turkiston",
         "uz": "Turkiston",
-        "ru": "Туpкистан"
+        "ru": "Туpкистан",
+        "type": "31"
     },
     "1724235822": {
         "en": "Farxod",
         "uz": "Farxod",
-        "ru": "Фархад"
+        "ru": "Фархад",
+        "type": "31"
     },
     "1724235835": {
         "en": "Xovotog'",
         "uz": "Xovotog'",
-        "ru": "Хаватаг"
+        "ru": "Хаватаг",
+        "type": "31"
     },
     "1724235837": {
         "en": "Xusnobod",
         "uz": "Xusnobod",
-        "ru": "Хуснабад"
+        "ru": "Хуснабад",
+        "type": "31"
     },
     "1724235839": {
         "en": "Chamanzor",
         "uz": "Chamanzor",
-        "ru": "Чаманзар"
+        "ru": "Чаманзар",
+        "type": "31"
     },
     "1724235843": {
         "en": "Qahramon",
         "uz": "Qahramon",
-        "ru": "Кахрамон"
+        "ru": "Кахрамон",
+        "type": "31"
     },
     "1724401807": {
         "en": "Ulug'obod",
         "uz": "Ulug'obod",
-        "ru": "Улугабад"
+        "ru": "Улугабад",
+        "type": "31"
     },
     "1724401810": {
         "en": "Do'stlik",
         "uz": "Do'stlik",
-        "ru": "Дустлик"
+        "ru": "Дустлик",
+        "type": "31"
     },
     "1724401815": {
         "en": "Bahor",
         "uz": "Bahor",
-        "ru": "Бахор"
+        "ru": "Бахор",
+        "type": "31"
     },
     "1726269558": {
         "en": "Ulug'bek",
         "uz": "Ulug'bek",
-        "ru": "Улугбек"
+        "ru": "Улугбек",
+        "type": "24"
     },
     "1727206501": {
         "en": "Oqqo'rg'on",
         "uz": "Oqqo'rg'on",
-        "ru": "Аккурган"
+        "ru": "Аккурган",
+        "type": "23"
     },
     "1727206554": {
         "en": "Olimkent",
         "uz": "Olimkent",
-        "ru": "Алимкент"
+        "ru": "Алимкент",
+        "type": "24"
     },
     "1727206558": {
         "en": "Hamzaobod",
         "uz": "Hamzaobod",
-        "ru": "Хамзаабад"
+        "ru": "Хамзаабад",
+        "type": "24"
     },
     "1727206804": {
         "en": "Oytamg'ali",
         "uz": "Oytamg'ali",
-        "ru": "Айтамгали"
+        "ru": "Айтамгали",
+        "type": "31"
     },
     "1727206806": {
         "en": "Oqqo'rg'on",
         "uz": "Oqqo'rg'on",
-        "ru": "Аккурган"
+        "ru": "Аккурган",
+        "type": "31"
     },
     "1727206808": {
         "en": "Achchi",
         "uz": "Achchi",
-        "ru": "Аччи"
+        "ru": "Аччи",
+        "type": "31"
     },
     "1727206820": {
         "en": "Do'stlik",
         "uz": "Do'stlik",
-        "ru": "Дустлик"
+        "ru": "Дустлик",
+        "type": "31"
     },
     "1727206822": {
         "en": "Zarbdor",
         "uz": "Zarbdor",
-        "ru": "Зарбдар"
+        "ru": "Зарбдар",
+        "type": "31"
     },
     "1727206824": {
         "en": "Shoxruxiya",
         "uz": "Shoxruxiya",
-        "ru": "Шохрухия"
+        "ru": "Шохрухия",
+        "type": "31"
     },
     "1727206838": {
         "en": "Erkinlik",
         "uz": "Erkinlik",
-        "ru": "Эpкинлик"
+        "ru": "Эpкинлик",
+        "type": "31"
     },
     "1727206846": {
         "en": "Zafar",
         "uz": "Zafar",
-        "ru": "Зафар"
+        "ru": "Зафар",
+        "type": "31"
     },
     "1727206854": {
         "en": "Toshto'g'on",
         "uz": "Toshto'g'on",
-        "ru": "Таштуган"
+        "ru": "Таштуган",
+        "type": "31"
     },
     "1727206865": {
         "en": "Eltamg'ali",
         "uz": "Eltamg'ali",
-        "ru": "Элтамгалы"
+        "ru": "Элтамгалы",
+        "type": "31"
     },
     "1727212552": {
         "en": "Yon-ariq",
         "uz": "Yon-ariq",
-        "ru": "Ен-арик"
+        "ru": "Ен-арик",
+        "type": "24"
     },
     "1727212554": {
         "en": "Qora Xitoy",
         "uz": "Qora Xitoy",
-        "ru": "Каракитай"
+        "ru": "Каракитай",
+        "type": "24"
     },
     "1727212556": {
         "en": "Telov",
         "uz": "Telov",
-        "ru": "Телов"
+        "ru": "Телов",
+        "type": "24"
     },
     "1727212558": {
         "en": "Eyvalek",
         "uz": "Eyvalek",
-        "ru": "Эйвалек"
+        "ru": "Эйвалек",
+        "type": "24"
     },
     "1727212811": {
         "en": "Uvaq",
         "uz": "Uvaq",
-        "ru": "Увак"
+        "ru": "Увак",
+        "type": "31"
     },
     "1727212814": {
         "en": "Birlik",
         "uz": "Birlik",
-        "ru": "Бирлик"
+        "ru": "Бирлик",
+        "type": "31"
     },
     "1727212820": {
         "en": "Do'stlik",
         "uz": "Do'stlik",
-        "ru": "Дустлик"
+        "ru": "Дустлик",
+        "type": "31"
     },
     "1727212822": {
         "en": "Qurama",
         "uz": "Qurama",
-        "ru": "Курама"
+        "ru": "Курама",
+        "type": "31"
     },
     "1727212833": {
         "en": "Qora xitoy",
         "uz": "Qora xitoy",
-        "ru": "Карахтай"
+        "ru": "Карахтай",
+        "type": "31"
     },
     "1727212846": {
         "en": "Ozodlik",
         "uz": "Ozodlik",
-        "ru": "Озодлик"
+        "ru": "Озодлик",
+        "type": "31"
     },
     "1727212854": {
         "en": "Susam",
         "uz": "Susam",
-        "ru": "Сусам"
+        "ru": "Сусам",
+        "type": "31"
     },
     "1727212865": {
         "en": "Telov",
         "uz": "Telov",
-        "ru": "Телав"
+        "ru": "Телав",
+        "type": "31"
     },
     "1727220551": {
         "en": "Zafar",
         "uz": "Zafar",
-        "ru": "Зафар"
+        "ru": "Зафар",
+        "type": "24"
     },
     "1727220553": {
         "en": "Bobur",
         "uz": "Bobur",
-        "ru": "Бобур"
+        "ru": "Бобур",
+        "type": "24"
     },
     "1727220557": {
         "en": "Ko'rkam",
         "uz": "Ko'rkam",
-        "ru": "Куркам"
+        "ru": "Куркам",
+        "type": "24"
     },
     "1727220559": {
         "en": "Xos",
         "uz": "Xos",
-        "ru": "Хос"
+        "ru": "Хос",
+        "type": "24"
     },
     "1727220561": {
         "en": "Gulzor",
         "uz": "Gulzor",
-        "ru": "Гулзор"
+        "ru": "Гулзор",
+        "type": "24"
     },
     "1727220804": {
         "en": "Mo'yinqum",
         "uz": "Mo'yinqum",
-        "ru": "Муйинкум"
+        "ru": "Муйинкум",
+        "type": "31"
     },
     "1727220808": {
         "en": "Bahoriston",
         "uz": "Bahoriston",
-        "ru": "Бахористан"
+        "ru": "Бахористан",
+        "type": "31"
     },
     "1727220811": {
         "en": "Bekobod",
         "uz": "Bekobod",
-        "ru": "Бекабад"
+        "ru": "Бекабад",
+        "type": "31"
     },
     "1727220822": {
         "en": "Dalvarzin",
         "uz": "Dalvarzin",
-        "ru": "Дальверзин"
+        "ru": "Дальверзин",
+        "type": "31"
     },
     "1727220825": {
         "en": "Guliston",
         "uz": "Guliston",
-        "ru": "Гулистан"
+        "ru": "Гулистан",
+        "type": "31"
     },
     "1727220827": {
         "en": "Madaniyat",
         "uz": "Madaniyat",
-        "ru": "Маданият"
+        "ru": "Маданият",
+        "type": "31"
     },
     "1727220835": {
         "en": "Jumabozor",
         "uz": "Jumabozor",
-        "ru": "Джумабазар"
+        "ru": "Джумабазар",
+        "type": "31"
     },
     "1727220846": {
         "en": "Qiyot",
         "uz": "Qiyot",
-        "ru": "Кият"
+        "ru": "Кият",
+        "type": "31"
     },
     "1727220857": {
         "en": "Mehnatobod",
         "uz": "Mehnatobod",
-        "ru": "Мехнатабад"
+        "ru": "Мехнатабад",
+        "type": "31"
     },
     "1727220868": {
         "en": "Yangiqo'rg'on",
         "uz": "Yangiqo'rg'on",
-        "ru": "Янгикургон"
+        "ru": "Янгикургон",
+        "type": "31"
     },
     "1727220879": {
         "en": "Chanoq",
         "uz": "Chanoq",
-        "ru": "Чанак"
+        "ru": "Чанак",
+        "type": "31"
     },
     "1727220890": {
         "en": "Yangi hayot",
         "uz": "Yangi hayot",
-        "ru": "Янгихаят"
+        "ru": "Янгихаят",
+        "type": "31"
     },
     "1727224501": {
         "en": "G'azalkent",
         "uz": "G'azalkent",
-        "ru": "Газалкент"
+        "ru": "Газалкент",
+        "type": "23"
     },
     "1727224554": {
         "en": "Iskandar",
         "uz": "Iskandar",
-        "ru": "Искандар"
+        "ru": "Искандар",
+        "type": "24"
     },
     "1727224558": {
         "en": "Chorvoq",
         "uz": "Chorvoq",
-        "ru": "Чарвак"
+        "ru": "Чарвак",
+        "type": "24"
     },
     "1727224560": {
         "en": "Burchmullo",
         "uz": "Burchmullo",
-        "ru": "Бурчмулло"
+        "ru": "Бурчмулло",
+        "type": "24"
     },
     "1727224562": {
         "en": "Pargos",
         "uz": "Pargos",
-        "ru": "Паргос"
+        "ru": "Паргос",
+        "type": "24"
     },
     "1727224564": {
         "en": "Sari qanli",
         "uz": "Sari qanli",
-        "ru": "Сари Канли"
+        "ru": "Сари Канли",
+        "type": "24"
     },
     "1727224566": {
         "en": "Sobir Raximov",
         "uz": "Sobir Raximov",
-        "ru": "Собир Рахимов"
+        "ru": "Собир Рахимов",
+        "type": "24"
     },
     "1727224568": {
         "en": "Soyliq",
         "uz": "Soyliq",
-        "ru": "Сойлик"
+        "ru": "Сойлик",
+        "type": "24"
     },
     "1727224572": {
         "en": "Talpin",
         "uz": "Talpin",
-        "ru": "Талпин"
+        "ru": "Талпин",
+        "type": "24"
     },
     "1727224574": {
         "en": "Tulabe",
         "uz": "Tulabe",
-        "ru": "Тулабе"
+        "ru": "Тулабе",
+        "type": "24"
     },
     "1727224576": {
         "en": "Uyenqulsoy",
         "uz": "Uyenqulsoy",
-        "ru": "Уенкулсай"
+        "ru": "Уенкулсай",
+        "type": "24"
     },
     "1727224578": {
         "en": "Xumsan",
         "uz": "Xumsan",
-        "ru": "Хумсон"
+        "ru": "Хумсон",
+        "type": "24"
     },
     "1727224582": {
         "en": "Ho'ja",
         "uz": "Ho'ja",
-        "ru": "Хужа"
+        "ru": "Хужа",
+        "type": "24"
     },
     "1727224584": {
         "en": "Xo'jakent",
         "uz": "Xo'jakent",
-        "ru": "Хужакент"
+        "ru": "Хужакент",
+        "type": "24"
     },
     "1727224586": {
         "en": "Chinor",
         "uz": "Chinor",
-        "ru": "Чинор"
+        "ru": "Чинор",
+        "type": "24"
     },
     "1727224588": {
         "en": "Qoronqul",
         "uz": "Qoronqul",
-        "ru": "Коронкул"
+        "ru": "Коронкул",
+        "type": "24"
     },
     "1727224592": {
         "en": "Qurbonov nomli",
         "uz": "Qurbonov nomli",
-        "ru": "Курбонов"
+        "ru": "Курбонов",
+        "type": "24"
     },
     "1727224594": {
         "en": "Qo'shqo'rg'on",
         "uz": "Qo'shqo'rg'on",
-        "ru": "Кушкурган"
+        "ru": "Кушкурган",
+        "type": "24"
     },
     "1727224810": {
         "en": "Bo'stonliq",
         "uz": "Bo'stonliq",
-        "ru": "Бостанлык"
+        "ru": "Бостанлык",
+        "type": "31"
     },
     "1727224815": {
         "en": "Chimgan",
         "uz": "Chimgan",
-        "ru": "Чимган"
+        "ru": "Чимган",
+        "type": "31"
     },
     "1727224822": {
         "en": "G'azalkent",
         "uz": "G'azalkent",
-        "ru": "Газалкент"
+        "ru": "Газалкент",
+        "type": "31"
     },
     "1727224827": {
         "en": "Xumsan",
         "uz": "Xumsan",
-        "ru": "Хумсан"
+        "ru": "Хумсан",
+        "type": "31"
     },
     "1727224833": {
         "en": "Dumaloq",
         "uz": "Dumaloq",
-        "ru": "Думалак"
+        "ru": "Думалак",
+        "type": "31"
     },
     "1727224835": {
         "en": "Nanay",
         "uz": "Nanay",
-        "ru": "Нанай"
+        "ru": "Нанай",
+        "type": "31"
     },
     "1727224838": {
         "en": "Qoramanas",
         "uz": "Qoramanas",
-        "ru": "Караманас"
+        "ru": "Караманас",
+        "type": "31"
     },
     "1727224845": {
         "en": "Qo'shqo'rg'on",
         "uz": "Qo'shqo'rg'on",
-        "ru": "Кошкурган"
+        "ru": "Кошкурган",
+        "type": "31"
     },
     "1727224850": {
         "en": "Chimboyliq",
         "uz": "Chimboyliq",
-        "ru": "Чимбайлык"
+        "ru": "Чимбайлык",
+        "type": "31"
     },
     "1727224856": {
         "en": "Soyliq",
         "uz": "Soyliq",
-        "ru": "Сайлык"
+        "ru": "Сайлык",
+        "type": "31"
     },
     "1727224860": {
         "en": "Sijjak",
         "uz": "Sijjak",
-        "ru": "Сиджак"
+        "ru": "Сиджак",
+        "type": "31"
     },
     "1727224865": {
         "en": "Pargos",
         "uz": "Pargos",
-        "ru": "Паpгос"
+        "ru": "Паpгос",
+        "type": "31"
     },
     "1727224867": {
         "en": "Pskom",
         "uz": "Pskom",
-        "ru": "Пском"
+        "ru": "Пском",
+        "type": "31"
     },
     "1727224878": {
         "en": "Xo'jakent",
         "uz": "Xo'jakent",
-        "ru": "Хужакент"
+        "ru": "Хужакент",
+        "type": "31"
     },
     "1727224889": {
         "en": "Xondoyliq",
         "uz": "Xondoyliq",
-        "ru": "Хандайлык"
+        "ru": "Хандайлык",
+        "type": "31"
     },
     "1727224893": {
         "en": "Yangi ovul",
         "uz": "Yangi ovul",
-        "ru": "Янгиаул"
+        "ru": "Янгиаул",
+        "type": "31"
     },
     "1727224895": {
         "en": "Azadbash",
         "uz": "Azadbash",
-        "ru": "Азадбаш"
+        "ru": "Азадбаш",
+        "type": "31"
     },
     "1727224897": {
         "en": "Bog'iston",
         "uz": "Bog'iston",
-        "ru": "Богустан"
+        "ru": "Богустан",
+        "type": "31"
     },
     "1727228501": {
         "en": "Bo'ka",
         "uz": "Bo'ka",
-        "ru": "Бука"
+        "ru": "Бука",
+        "type": "23"
     },
     "1727228803": {
         "en": "Iftixor",
         "uz": "Iftixor",
-        "ru": "Ифтихор"
+        "ru": "Ифтихор",
+        "type": "31"
     },
     "1727228811": {
         "en": "Qoraqo'yli",
         "uz": "Qoraqo'yli",
-        "ru": "Каракуйли"
+        "ru": "Каракуйли",
+        "type": "31"
     },
     "1727228822": {
         "en": "Turon",
         "uz": "Turon",
-        "ru": "Туpон"
+        "ru": "Туpон",
+        "type": "31"
     },
     "1727228833": {
         "en": "Ko'korol",
         "uz": "Ko'korol",
-        "ru": "Кокарал"
+        "ru": "Кокарал",
+        "type": "31"
     },
     "1727228835": {
         "en": "Qo'shtepa",
         "uz": "Qo'shtepa",
-        "ru": "Коштепа"
+        "ru": "Коштепа",
+        "type": "31"
     },
     "1727228844": {
         "en": "Namuna",
         "uz": "Namuna",
-        "ru": "Намуна"
+        "ru": "Намуна",
+        "type": "31"
     },
     "1727228855": {
         "en": "Rovot",
         "uz": "Rovot",
-        "ru": "Рават"
+        "ru": "Рават",
+        "type": "31"
     },
     "1727228866": {
         "en": "Chig'atoy",
         "uz": "Chig'atoy",
-        "ru": "Чигатай"
+        "ru": "Чигатай",
+        "type": "31"
     },
     "1727233501": {
         "en": "Do'stobod",
         "uz": "Do'stobod",
-        "ru": "Дустобод"
+        "ru": "Дустобод",
+        "type": "23"
     },
     "1727233552": {
         "en": "Qo'rg'oncha",
         "uz": "Qo'rg'oncha",
-        "ru": "Курганча"
+        "ru": "Курганча",
+        "type": "24"
     },
     "1727233554": {
         "en": "Paxtazor",
         "uz": "Paxtazor",
-        "ru": "Пахтазор"
+        "ru": "Пахтазор",
+        "type": "24"
     },
     "1727233804": {
         "en": "Gul",
         "uz": "Gul",
-        "ru": "Гуль"
+        "ru": "Гуль",
+        "type": "31"
     },
     "1727233810": {
         "en": "Ketmontepa",
         "uz": "Ketmontepa",
-        "ru": "Кетментепа"
+        "ru": "Кетментепа",
+        "type": "31"
     },
     "1727233815": {
         "en": "Maydontol",
         "uz": "Maydontol",
-        "ru": "Майдантал"
+        "ru": "Майдантал",
+        "type": "31"
     },
     "1727233830": {
         "en": "Qo'rg'oncha",
         "uz": "Qo'rg'oncha",
-        "ru": "Курганча"
+        "ru": "Курганча",
+        "type": "31"
     },
     "1727233840": {
         "en": "Ma'naviyat",
         "uz": "Ma'naviyat",
-        "ru": "Маънавият"
+        "ru": "Маънавият",
+        "type": "31"
     },
     "1727233850": {
         "en": "Ma'rifat",
         "uz": "Ma'rifat",
-        "ru": "Маърифат"
+        "ru": "Маърифат",
+        "type": "31"
     },
     "1727233860": {
         "en": "O'zbekiston",
         "uz": "O'zbekiston",
-        "ru": "Узбекистан"
+        "ru": "Узбекистан",
+        "type": "31"
     },
     "1727233870": {
         "en": "Toshovul",
         "uz": "Toshovul",
-        "ru": "Ташаул"
+        "ru": "Ташаул",
+        "type": "31"
     },
     "1727233872": {
         "en": "Toshloq",
         "uz": "Toshloq",
-        "ru": "Ташлак"
+        "ru": "Ташлак",
+        "type": "31"
     },
     "1727237552": {
         "en": "Eshonguzar",
         "uz": "Eshonguzar",
-        "ru": "Эшангузар"
+        "ru": "Эшангузар",
+        "type": "24"
     },
     "1727237558": {
         "en": "O'rtaovul",
         "uz": "O'rtaovul",
-        "ru": "Уртааул"
+        "ru": "Уртааул",
+        "type": "24"
     },
     "1727237562": {
         "en": "Xonabod",
         "uz": "Xonabod",
-        "ru": "Ханабад"
+        "ru": "Ханабад",
+        "type": "24"
     },
     "1727237564": {
         "en": "Erkin",
         "uz": "Erkin",
-        "ru": "Эркин"
+        "ru": "Эркин",
+        "type": "24"
     },
     "1727237566": {
         "en": "Quyoshli",
         "uz": "Quyoshli",
-        "ru": "Куешли"
+        "ru": "Куешли",
+        "type": "24"
     },
     "1727237568": {
         "en": "Daliguzar",
         "uz": "Daliguzar",
-        "ru": "Далигузар"
+        "ru": "Далигузар",
+        "type": "24"
     },
     "1727237571": {
         "en": "Pastdarxon",
         "uz": "Pastdarxon",
-        "ru": "Пасдархон"
+        "ru": "Пасдархон",
+        "type": "24"
     },
     "1727237572": {
         "en": "Tarnov",
         "uz": "Tarnov",
-        "ru": "Тарнов"
+        "ru": "Тарнов",
+        "type": "24"
     },
     "1727237574": {
         "en": "Zangiota",
         "uz": "Zangiota",
-        "ru": "Зангиата"
+        "ru": "Зангиата",
+        "type": "24"
     },
     "1727237576": {
         "en": "Nazarbek",
         "uz": "Nazarbek",
-        "ru": "Назарбек"
+        "ru": "Назарбек",
+        "type": "24"
     },
     "1727237578": {
         "en": "Axmad Yassaviy",
         "uz": "Axmad Yassaviy",
-        "ru": "Ахмад Яссавий"
+        "ru": "Ахмад Яссавий",
+        "type": "24"
     },
     "1727237582": {
         "en": "Ulug'bek",
         "uz": "Ulug'bek",
-        "ru": "Улугбек"
+        "ru": "Улугбек",
+        "type": "24"
     },
     "1727237809": {
         "en": "Turkiston",
         "uz": "Turkiston",
-        "ru": "Туркистон"
+        "ru": "Туркистон",
+        "type": "31"
     },
     "1727237818": {
         "en": "Qatortol",
         "uz": "Qatortol",
-        "ru": "Катартал"
+        "ru": "Катартал",
+        "type": "31"
     },
     "1727237832": {
         "en": "Chig'atoy-Oqtepa",
         "uz": "Chig'atoy-Oqtepa",
-        "ru": "Чигатай-Актепа"
+        "ru": "Чигатай-Актепа",
+        "type": "31"
     },
     "1727237836": {
         "en": "Nazarbek",
         "uz": "Nazarbek",
-        "ru": "Назарбек"
+        "ru": "Назарбек",
+        "type": "31"
     },
     "1727237840": {
         "en": "Zangiota",
         "uz": "Zangiota",
-        "ru": "Зангиата"
+        "ru": "Зангиата",
+        "type": "31"
     },
     "1727237852": {
         "en": "O'zgarish",
         "uz": "O'zgarish",
-        "ru": "Узгариш"
+        "ru": "Узгариш",
+        "type": "31"
     },
     "1727237859": {
         "en": "Boz-su",
         "uz": "Boz-su",
-        "ru": "Боз-су"
+        "ru": "Боз-су",
+        "type": "31"
     },
     "1727237870": {
         "en": "Honobod",
         "uz": "Honobod",
-        "ru": "Ханабад"
+        "ru": "Ханабад",
+        "type": "31"
     },
     "1727237875": {
         "en": "Erkin",
         "uz": "Erkin",
-        "ru": "Эркин"
+        "ru": "Эркин",
+        "type": "31"
     },
     "1727239551": {
         "en": "Yangibozor",
         "uz": "Yangibozor",
-        "ru": "Янгибазар"
+        "ru": "Янгибазар",
+        "type": "24"
     },
     "1727239553": {
         "en": "Mirobod",
         "uz": "Mirobod",
-        "ru": "Мирабад"
+        "ru": "Мирабад",
+        "type": "24"
     },
     "1727239555": {
         "en": "Xitoy Tepa",
         "uz": "Xitoy Tepa",
-        "ru": "Китай тепа"
+        "ru": "Китай тепа",
+        "type": "24"
     },
     "1727239806": {
         "en": "Oqovul",
         "uz": "Oqovul",
-        "ru": "Акаоул"
+        "ru": "Акаоул",
+        "type": "31"
     },
     "1727239812": {
         "en": "Arganchi",
         "uz": "Arganchi",
-        "ru": "Арганчи"
+        "ru": "Арганчи",
+        "type": "31"
     },
     "1727239823": {
         "en": "Bordonko'l",
         "uz": "Bordonko'l",
-        "ru": "Барданкуль"
+        "ru": "Барданкуль",
+        "type": "31"
     },
     "1727239830": {
         "en": "Jambul",
         "uz": "Jambul",
-        "ru": "Джамбул"
+        "ru": "Джамбул",
+        "type": "31"
     },
     "1727239835": {
         "en": "Sakson ota",
         "uz": "Sakson ota",
-        "ru": "Саксан-ата"
+        "ru": "Саксан-ата",
+        "type": "31"
     },
     "1727239840": {
         "en": "Navro'z",
         "uz": "Navro'z",
-        "ru": "Навруз"
+        "ru": "Навруз",
+        "type": "31"
     },
     "1727239867": {
         "en": "Istiqlol",
         "uz": "Istiqlol",
-        "ru": "Истиклол"
+        "ru": "Истиклол",
+        "type": "31"
     },
     "1727239882": {
         "en": "Surnkent",
         "uz": "Surnkent",
-        "ru": "Суранкент"
+        "ru": "Суранкент",
+        "type": "31"
     },
     "1727239885": {
         "en": "Tinchlik",
         "uz": "Tinchlik",
-        "ru": "Тинчлик"
+        "ru": "Тинчлик",
+        "type": "31"
     },
     "1727248551": {
         "en": "Qibray",
         "uz": "Qibray",
-        "ru": "Кибрай"
+        "ru": "Кибрай",
+        "type": "24"
     },
     "1727248556": {
         "en": "Salar",
         "uz": "Salar",
-        "ru": "Салар"
+        "ru": "Салар",
+        "type": "24"
     },
     "1727248558": {
         "en": "Argin",
         "uz": "Argin",
-        "ru": "Аргин"
+        "ru": "Аргин",
+        "type": "24"
     },
     "1727248559": {
         "en": "Taraqqiyot",
         "uz": "Taraqqiyot",
-        "ru": "Тараккиет"
+        "ru": "Тараккиет",
+        "type": "24"
     },
     "1727248561": {
         "en": "Alisherobod",
         "uz": "Alisherobod",
-        "ru": "Алишерабад"
+        "ru": "Алишерабад",
+        "type": "24"
     },
     "1727248563": {
         "en": "Geofizika",
         "uz": "Geofizika",
-        "ru": "Геофизика"
+        "ru": "Геофизика",
+        "type": "24"
     },
     "1727248565": {
         "en": "Do'rmon",
         "uz": "Do'rmon",
-        "ru": "Дурмон"
+        "ru": "Дурмон",
+        "type": "24"
     },
     "1727248567": {
         "en": "Yoshlik",
         "uz": "Yoshlik",
-        "ru": "Ешлик"
+        "ru": "Ешлик",
+        "type": "24"
     },
     "1727248569": {
         "en": "Ko'prik boshi",
         "uz": "Ko'prik boshi",
-        "ru": "Куприк боши"
+        "ru": "Куприк боши",
+        "type": "24"
     },
     "1727248571": {
         "en": "Madaniyat",
         "uz": "Madaniyat",
-        "ru": "Маданият"
+        "ru": "Маданият",
+        "type": "24"
     },
     "1727248573": {
         "en": "Mustaqillik",
         "uz": "Mustaqillik",
-        "ru": "Мустакиллик"
+        "ru": "Мустакиллик",
+        "type": "24"
     },
     "1727248575": {
         "en": "Nurafshon",
         "uz": "Nurafshon",
-        "ru": "Нурафшон"
+        "ru": "Нурафшон",
+        "type": "24"
     },
     "1727248577": {
         "en": "Uymaut",
         "uz": "Uymaut",
-        "ru": "Уймамут"
+        "ru": "Уймамут",
+        "type": "24"
     },
     "1727248579": {
         "en": "Unqo'rg'on-1",
         "uz": "Unqo'rg'on-1",
-        "ru": "Ункургон-1"
+        "ru": "Ункургон-1",
+        "type": "24"
     },
     "1727248581": {
         "en": "O'tkir",
         "uz": "O'tkir",
-        "ru": "Уткир"
+        "ru": "Уткир",
+        "type": "24"
     },
     "1727248583": {
         "en": "X.Amirov",
         "uz": "X.Amirov",
-        "ru": "Х.Амиров"
+        "ru": "Х.Амиров",
+        "type": "24"
     },
     "1727248811": {
         "en": "Baytqo'rg'on",
         "uz": "Baytqo'rg'on",
-        "ru": "Байткурган"
+        "ru": "Байткурган",
+        "type": "31"
     },
     "1727248820": {
         "en": "Yangiobod",
         "uz": "Yangiobod",
-        "ru": "Янгиабад"
+        "ru": "Янгиабад",
+        "type": "31"
     },
     "1727248844": {
         "en": "Unqo'rg'on",
         "uz": "Unqo'rg'on",
-        "ru": "Ункурган"
+        "ru": "Ункурган",
+        "type": "31"
     },
     "1727248848": {
         "en": "Qipchoq",
         "uz": "Qipchoq",
-        "ru": "Кипчак"
+        "ru": "Кипчак",
+        "type": "31"
     },
     "1727248855": {
         "en": "Zafarobod",
         "uz": "Zafarobod",
-        "ru": "Зафаробод"
+        "ru": "Зафаробод",
+        "type": "31"
     },
     "1727248860": {
         "en": "Oq-qovoq",
         "uz": "Oq-qovoq",
-        "ru": "Окковок"
+        "ru": "Окковок",
+        "type": "31"
     },
     "1727248866": {
         "en": "Do'rmon",
         "uz": "Do'rmon",
-        "ru": "Дурмон"
+        "ru": "Дурмон",
+        "type": "31"
     },
     "1727248877": {
         "en": "Tuzel",
         "uz": "Tuzel",
-        "ru": "Тузель"
+        "ru": "Тузель",
+        "type": "31"
     },
     "1727248888": {
         "en": "Chinobod",
         "uz": "Chinobod",
-        "ru": "Чинабад"
+        "ru": "Чинабад",
+        "type": "31"
     },
     "1727248895": {
         "en": "Yon-ariq",
         "uz": "Yon-ariq",
-        "ru": "Енарык"
+        "ru": "Енарык",
+        "type": "31"
     },
     "1727249501": {
         "en": "Parkent",
         "uz": "Parkent",
-        "ru": "Паркент"
+        "ru": "Паркент",
+        "type": "23"
     },
     "1727249553": {
         "en": "Quyosh",
         "uz": "Quyosh",
-        "ru": "Куеш"
+        "ru": "Куеш",
+        "type": "24"
     },
     "1727249555": {
         "en": "Qo'rg'ontepa",
         "uz": "Qo'rg'ontepa",
-        "ru": "Кургантепа"
+        "ru": "Кургантепа",
+        "type": "24"
     },
     "1727249557": {
         "en": "Chinorli",
         "uz": "Chinorli",
-        "ru": "Чинорли"
+        "ru": "Чинорли",
+        "type": "24"
     },
     "1727249811": {
         "en": "Zarkent",
         "uz": "Zarkent",
-        "ru": "Заркент"
+        "ru": "Заркент",
+        "type": "31"
     },
     "1727249815": {
         "en": "Qoraqalpoq",
         "uz": "Qoraqalpoq",
-        "ru": "Каракалпак"
+        "ru": "Каракалпак",
+        "type": "31"
     },
     "1727249817": {
         "en": "Bo'ston",
         "uz": "Bo'ston",
-        "ru": "Бустан"
+        "ru": "Бустан",
+        "type": "31"
     },
     "1727249825": {
         "en": "Nomdanak",
         "uz": "Nomdanak",
-        "ru": "Намданак"
+        "ru": "Намданак",
+        "type": "31"
     },
     "1727249830": {
         "en": "Parkent",
         "uz": "Parkent",
-        "ru": "Паркент"
+        "ru": "Паркент",
+        "type": "31"
     },
     "1727249836": {
         "en": "So'qoq",
         "uz": "So'qoq",
-        "ru": "Сукок"
+        "ru": "Сукок",
+        "type": "31"
     },
     "1727249850": {
         "en": "Xisarak",
         "uz": "Xisarak",
-        "ru": "Хисарак"
+        "ru": "Хисарак",
+        "type": "31"
     },
     "1727249855": {
         "en": "Boshqizilsoy",
         "uz": "Boshqizilsoy",
-        "ru": "Бошкизилсой"
+        "ru": "Бошкизилсой",
+        "type": "31"
     },
     "1727249860": {
         "en": "Changi",
         "uz": "Changi",
-        "ru": "Чанги"
+        "ru": "Чанги",
+        "type": "31"
     },
     "1727250501": {
         "en": "Pskent",
         "uz": "Pskent",
-        "ru": "Пскент"
+        "ru": "Пскент",
+        "type": "23"
     },
     "1727250554": {
         "en": "Muratali",
         "uz": "Muratali",
-        "ru": "Муротали"
+        "ru": "Муротали",
+        "type": "24"
     },
     "1727250558": {
         "en": "Said",
         "uz": "Said",
-        "ru": "Саид"
+        "ru": "Саид",
+        "type": "24"
     },
     "1727250811": {
         "en": "Oq tepa",
         "uz": "Oq tepa",
-        "ru": "Актепа"
+        "ru": "Актепа",
+        "type": "31"
     },
     "1727250822": {
         "en": "Dungqo'rg'on",
         "uz": "Dungqo'rg'on",
-        "ru": "Дунгкурган"
+        "ru": "Дунгкурган",
+        "type": "31"
     },
     "1727250833": {
         "en": "Kelovchi",
         "uz": "Kelovchi",
-        "ru": "Керавчи"
+        "ru": "Керавчи",
+        "type": "31"
     },
     "1727250844": {
         "en": "Murotali",
         "uz": "Murotali",
-        "ru": "Муратали"
+        "ru": "Муратали",
+        "type": "31"
     },
     "1727250855": {
         "en": "Koriz",
         "uz": "Koriz",
-        "ru": "Кариз"
+        "ru": "Кариз",
+        "type": "31"
     },
     "1727250860": {
         "en": "Said",
         "uz": "Said",
-        "ru": "Саид"
+        "ru": "Саид",
+        "type": "31"
     },
     "1727253555": {
         "en": "Tuyabo'g'iz",
         "uz": "Tuyabo'g'iz",
-        "ru": "Туябугуз"
+        "ru": "Туябугуз",
+        "type": "24"
     },
     "1727253561": {
         "en": "Kuchluk",
         "uz": "Kuchluk",
-        "ru": "Кучлик"
+        "ru": "Кучлик",
+        "type": "24"
     },
     "1727253565": {
         "en": "Qorasuv",
         "uz": "Qorasuv",
-        "ru": "Корасув"
+        "ru": "Корасув",
+        "type": "24"
     },
     "1727253569": {
         "en": "Sholikor",
         "uz": "Sholikor",
-        "ru": "Шоликор"
+        "ru": "Шоликор",
+        "type": "24"
     },
     "1727253808": {
         "en": "Angor",
         "uz": "Angor",
-        "ru": "Ангар"
+        "ru": "Ангар",
+        "type": "31"
     },
     "1727253813": {
         "en": "Qumovul",
         "uz": "Qumovul",
-        "ru": "Кумовул"
+        "ru": "Кумовул",
+        "type": "31"
     },
     "1727253820": {
         "en": "Qorasuv",
         "uz": "Qorasuv",
-        "ru": "Карасу"
+        "ru": "Карасу",
+        "type": "31"
     },
     "1727253832": {
         "en": "Oq ota",
         "uz": "Oq ota",
-        "ru": "Ок- ота"
+        "ru": "Ок- ота",
+        "type": "31"
     },
     "1727253834": {
         "en": "Haqiqat",
         "uz": "Haqiqat",
-        "ru": "Хакикат"
+        "ru": "Хакикат",
+        "type": "31"
     },
     "1727253841": {
         "en": "Navoiy nomli",
         "uz": "Navoiy nomli",
-        "ru": "им. Навои"
+        "ru": "им. Навои",
+        "type": "31"
     },
     "1727253849": {
         "en": "Yo'ng'ichqala",
         "uz": "Yo'ng'ichqala",
-        "ru": "Юнучкала"
+        "ru": "Юнучкала",
+        "type": "31"
     },
     "1727253860": {
         "en": "Paxtaobod",
         "uz": "Paxtaobod",
-        "ru": "Пахтаабад"
+        "ru": "Пахтаабад",
+        "type": "31"
     },
     "1727253863": {
         "en": "Paxtakor",
         "uz": "Paxtakor",
-        "ru": "Пахтакор"
+        "ru": "Пахтакор",
+        "type": "31"
     },
     "1727253865": {
         "en": "O'rtasaroy",
         "uz": "O'rtasaroy",
-        "ru": "Урта-Сарай"
+        "ru": "Урта-Сарай",
+        "type": "31"
     },
     "1727253871": {
         "en": "Istiqbol",
         "uz": "Istiqbol",
-        "ru": "Истикбол"
+        "ru": "Истикбол",
+        "type": "31"
     },
     "1727253875": {
         "en": "Yangi turmush",
         "uz": "Yangi turmush",
-        "ru": "Янгитурмуш"
+        "ru": "Янгитурмуш",
+        "type": "31"
     },
     "1727253880": {
         "en": "Uyshun",
         "uz": "Uyshun",
-        "ru": "Уйшун"
+        "ru": "Уйшун",
+        "type": "31"
     },
     "1727256501": {
         "en": "Chinoz",
         "uz": "Chinoz",
-        "ru": "Чиназ"
+        "ru": "Чиназ",
+        "type": "23"
     },
     "1727256553": {
         "en": "Olmazor",
         "uz": "Olmazor",
-        "ru": "Алмазар"
+        "ru": "Алмазар",
+        "type": "24"
     },
     "1727256555": {
         "en": "Yangi Chinoz",
         "uz": "Yangi Chinoz",
-        "ru": "Янги Чиназ"
+        "ru": "Янги Чиназ",
+        "type": "24"
     },
     "1727256557": {
         "en": "Gulzorobod",
         "uz": "Gulzorobod",
-        "ru": "Гулзорабад"
+        "ru": "Гулзорабад",
+        "type": "24"
     },
     "1727256559": {
         "en": "Do'stlik",
         "uz": "Do'stlik",
-        "ru": "Дустлик"
+        "ru": "Дустлик",
+        "type": "24"
     },
     "1727256561": {
         "en": "Paxta",
         "uz": "Paxta",
-        "ru": "Пахта"
+        "ru": "Пахта",
+        "type": "24"
     },
     "1727256563": {
         "en": "A.Temur",
         "uz": "A.Temur",
-        "ru": "А.Темур"
+        "ru": "А.Темур",
+        "type": "24"
     },
     "1727256565": {
         "en": "Birlik",
         "uz": "Birlik",
-        "ru": "Бирлик"
+        "ru": "Бирлик",
+        "type": "24"
     },
     "1727256567": {
         "en": "Chorvador",
         "uz": "Chorvador",
-        "ru": "Чорвадор"
+        "ru": "Чорвадор",
+        "type": "24"
     },
     "1727256569": {
         "en": "Kir",
         "uz": "Kir",
-        "ru": "Кир"
+        "ru": "Кир",
+        "type": "24"
     },
     "1727256813": {
         "en": "Isloxat",
         "uz": "Isloxat",
-        "ru": "Ислохат"
+        "ru": "Ислохат",
+        "type": "31"
     },
     "1727256815": {
         "en": "Eshonobod",
         "uz": "Eshonobod",
-        "ru": "Эшонобод"
+        "ru": "Эшонобод",
+        "type": "31"
     },
     "1727256826": {
         "en": "Turkiston",
         "uz": "Turkiston",
-        "ru": "Туpкистан"
+        "ru": "Туpкистан",
+        "type": "31"
     },
     "1727256836": {
         "en": "O'zbekiston",
         "uz": "O'zbekiston",
-        "ru": "Узбекистан"
+        "ru": "Узбекистан",
+        "type": "31"
     },
     "1727256840": {
         "en": "Chinoz",
         "uz": "Chinoz",
-        "ru": "Чиназ"
+        "ru": "Чиназ",
+        "type": "31"
     },
     "1727256853": {
         "en": "Eski Toshkent",
         "uz": "Eski Toshkent",
-        "ru": "Эски-Ташкент"
+        "ru": "Эски-Ташкент",
+        "type": "31"
     },
     "1727256860": {
         "en": "Ko'tarma",
         "uz": "Ko'tarma",
-        "ru": "Кутарма"
+        "ru": "Кутарма",
+        "type": "31"
     },
     "1727256864": {
         "en": "Yollama",
         "uz": "Yollama",
-        "ru": "Яллама"
+        "ru": "Яллама",
+        "type": "31"
     },
     "1727259553": {
         "en": "Gulbahor",
         "uz": "Gulbahor",
-        "ru": "Гульбахор"
+        "ru": "Гульбахор",
+        "type": "24"
     },
     "1727259555": {
         "en": "Bozsu",
         "uz": "Bozsu",
-        "ru": "Бозсу"
+        "ru": "Бозсу",
+        "type": "24"
     },
     "1727259557": {
         "en": "Nov",
         "uz": "Nov",
-        "ru": "Нов"
+        "ru": "Нов",
+        "type": "24"
     },
     "1727259559": {
         "en": "Kirsadoq",
         "uz": "Kirsadoq",
-        "ru": "Кирсадок"
+        "ru": "Кирсадок",
+        "type": "24"
     },
     "1727259563": {
         "en": "Qovunchi",
         "uz": "Qovunchi",
-        "ru": "Ковунчи"
+        "ru": "Ковунчи",
+        "type": "24"
     },
     "1727259804": {
         "en": "Yo'g'ontepa",
         "uz": "Yo'g'ontepa",
-        "ru": "Йугонтепа"
+        "ru": "Йугонтепа",
+        "type": "31"
     },
     "1727259814": {
         "en": "Halqobod",
         "uz": "Halqobod",
-        "ru": "Халкабад"
+        "ru": "Халкабад",
+        "type": "31"
     },
     "1727259825": {
         "en": "Xonqo'rg'on",
         "uz": "Xonqo'rg'on",
-        "ru": "Хонкургон"
+        "ru": "Хонкургон",
+        "type": "31"
     },
     "1727259834": {
         "en": "Navbahor",
         "uz": "Navbahor",
-        "ru": "Навбахор"
+        "ru": "Навбахор",
+        "type": "31"
     },
     "1727259837": {
         "en": "Niyozbosh",
         "uz": "Niyozbosh",
-        "ru": "Ниязбаш"
+        "ru": "Ниязбаш",
+        "type": "31"
     },
     "1727259848": {
         "en": "Qo'sh yog'och",
         "uz": "Qo'sh yog'och",
-        "ru": "Кушегоч"
+        "ru": "Кушегоч",
+        "type": "31"
     },
     "1727259871": {
         "en": "Sho'ralisoy",
         "uz": "Sho'ralisoy",
-        "ru": "Шуралисай"
+        "ru": "Шуралисай",
+        "type": "31"
     },
     "1727259882": {
         "en": "Eski Qovunchi",
         "uz": "Eski Qovunchi",
-        "ru": "Эски-Каунчи"
+        "ru": "Эски-Каунчи",
+        "type": "31"
     },
     "1727265501": {
         "en": "Keles",
         "uz": "Keles",
-        "ru": "Келес"
+        "ru": "Келес",
+        "type": "23"
     },
     "1727265553": {
         "en": "Z.Jalilov",
         "uz": "Z.Jalilov",
-        "ru": "З.Жалилов"
+        "ru": "З.Жалилов",
+        "type": "24"
     },
     "1727265555": {
         "en": "Ko'k saroy",
         "uz": "Ko'k saroy",
-        "ru": "Куксарай"
+        "ru": "Куксарай",
+        "type": "24"
     },
     "1727265557": {
         "en": "Kensoy",
         "uz": "Kensoy",
-        "ru": "Кенсай"
+        "ru": "Кенсай",
+        "type": "24"
     },
     "1727265559": {
         "en": "Sabzavot",
         "uz": "Sabzavot",
-        "ru": "Сабзавот"
+        "ru": "Сабзавот",
+        "type": "24"
     },
     "1727265563": {
         "en": "M.Fozilov",
         "uz": "M.Fozilov",
-        "ru": "М.Фозилов"
+        "ru": "М.Фозилов",
+        "type": "24"
     },
     "1727265565": {
         "en": "Shamsiobod",
         "uz": "Shamsiobod",
-        "ru": "Шамсиабад"
+        "ru": "Шамсиабад",
+        "type": "24"
     },
     "1727265567": {
         "en": "Chig'atoy",
         "uz": "Chig'atoy",
-        "ru": "Чигатай"
+        "ru": "Чигатай",
+        "type": "24"
     },
     "1727265569": {
         "en": "Hasanboy",
         "uz": "Hasanboy",
-        "ru": "Хасанбой"
+        "ru": "Хасанбой",
+        "type": "24"
     },
     "1727265573": {
         "en": "Qashqarlik",
         "uz": "Qashqarlik",
-        "ru": "Кашкарлик"
+        "ru": "Кашкарлик",
+        "type": "24"
     },
     "1727265811": {
         "en": "Ko'k-terak",
         "uz": "Ko'k-terak",
-        "ru": "Кук-Терак"
+        "ru": "Кук-Терак",
+        "type": "31"
     },
     "1727265813": {
         "en": "Chuvalachi",
         "uz": "Chuvalachi",
-        "ru": "Чувалачи"
+        "ru": "Чувалачи",
+        "type": "31"
     },
     "1727265816": {
         "en": "Masalboy",
         "uz": "Masalboy",
-        "ru": "Масалбай"
+        "ru": "Масалбай",
+        "type": "31"
     },
     "1727265819": {
         "en": "Qizg'aldoq",
         "uz": "Qizg'aldoq",
-        "ru": "Кизгалдак"
+        "ru": "Кизгалдак",
+        "type": "31"
     },
     "1727265825": {
         "en": "Ko'k Saroy",
         "uz": "Ko'k Saroy",
-        "ru": "Куксарай"
+        "ru": "Куксарай",
+        "type": "31"
     },
     "1727265828": {
         "en": "Hasanboy",
         "uz": "Hasanboy",
-        "ru": "Хасанбай"
+        "ru": "Хасанбай",
+        "type": "31"
     },
     "1727265833": {
         "en": "Guliston",
         "uz": "Guliston",
-        "ru": "Гулистан"
+        "ru": "Гулистан",
+        "type": "31"
     },
     "1727265836": {
         "en": "Yunusobod",
         "uz": "Yunusobod",
-        "ru": "Юнусабад"
+        "ru": "Юнусабад",
+        "type": "31"
     },
     "1727265839": {
         "en": "Choshtepa",
         "uz": "Choshtepa",
-        "ru": "Чаштепа"
+        "ru": "Чаштепа",
+        "type": "31"
     },
     "1727407505": {
         "en": "Yangiobod",
         "uz": "Yangiobod",
-        "ru": "Янгиабад"
+        "ru": "Янгиабад",
+        "type": "23"
     },
     "1727407554": {
         "en": "Krasnogorsk",
         "uz": "Krasnogorsk",
-        "ru": "Красногорск"
+        "ru": "Красногорск",
+        "type": "24"
     },
     "1727407558": {
         "en": "Nurobod",
         "uz": "Nurobod",
-        "ru": "Нурабад"
+        "ru": "Нурабад",
+        "type": "24"
     },
     "1730203508": {
         "en": "Tinchlik",
         "uz": "Tinchlik",
-        "ru": "Тинчлик"
+        "ru": "Тинчлик",
+        "type": "23"
     },
     "1730203551": {
         "en": "Oltiariq",
         "uz": "Oltiariq",
-        "ru": "Алтыарык"
+        "ru": "Алтыарык",
+        "type": "24"
     },
     "1730203552": {
         "en": "Chinor",
         "uz": "Chinor",
-        "ru": "Чинор"
+        "ru": "Чинор",
+        "type": "24"
     },
     "1730203554": {
         "en": "Azimobod",
         "uz": "Azimobod",
-        "ru": "Азимабад"
+        "ru": "Азимабад",
+        "type": "24"
     },
     "1730203556": {
         "en": "Bo'rbaliq",
         "uz": "Bo'rbaliq",
-        "ru": "Бурбалик"
+        "ru": "Бурбалик",
+        "type": "24"
     },
     "1730203558": {
         "en": "Djurek",
         "uz": "Djurek",
-        "ru": "Джурек"
+        "ru": "Джурек",
+        "type": "24"
     },
     "1730203562": {
         "en": "Zilxa",
         "uz": "Zilxa",
-        "ru": "Зилха"
+        "ru": "Зилха",
+        "type": "24"
     },
     "1730203564": {
         "en": "Katput",
         "uz": "Katput",
-        "ru": "Катпут"
+        "ru": "Катпут",
+        "type": "24"
     },
     "1730203566": {
         "en": "Oqbo'yra",
         "uz": "Oqbo'yra",
-        "ru": "Окбуйра"
+        "ru": "Окбуйра",
+        "type": "24"
     },
     "1730203568": {
         "en": "Povulg'on",
         "uz": "Povulg'on",
-        "ru": "Повулган"
+        "ru": "Повулган",
+        "type": "24"
     },
     "1730203570": {
         "en": "Poloson",
         "uz": "Poloson",
-        "ru": "Паласан"
+        "ru": "Паласан",
+        "type": "24"
     },
     "1730203572": {
         "en": "Chordara",
         "uz": "Chordara",
-        "ru": "Чордара"
+        "ru": "Чордара",
+        "type": "24"
     },
     "1730203574": {
         "en": "Eskiarab",
         "uz": "Eskiarab",
-        "ru": "Эскиараб"
+        "ru": "Эскиараб",
+        "type": "24"
     },
     "1730203576": {
         "en": "Yangiarab",
         "uz": "Yangiarab",
-        "ru": "Янгиараб"
+        "ru": "Янгиараб",
+        "type": "24"
     },
     "1730203578": {
         "en": "Yangiqo'rg'on",
         "uz": "Yangiqo'rg'on",
-        "ru": "Янгикурган"
+        "ru": "Янгикурган",
+        "type": "24"
     },
     "1730203804": {
         "en": "Oqbo'yra",
         "uz": "Oqbo'yra",
-        "ru": "Акбуйра"
+        "ru": "Акбуйра",
+        "type": "31"
     },
     "1730203806": {
         "en": "Oltiariq",
         "uz": "Oltiariq",
-        "ru": "Алтыарык"
+        "ru": "Алтыарык",
+        "type": "31"
     },
     "1730203810": {
         "en": "Yangiarab",
         "uz": "Yangiarab",
-        "ru": "Янгиараб"
+        "ru": "Янгиараб",
+        "type": "31"
     },
     "1730203812": {
         "en": "Bo'rbaliq",
         "uz": "Bo'rbaliq",
-        "ru": "Бурбалык"
+        "ru": "Бурбалык",
+        "type": "31"
     },
     "1730203820": {
         "en": "G'ayrat",
         "uz": "G'ayrat",
-        "ru": "Гайрат"
+        "ru": "Гайрат",
+        "type": "31"
     },
     "1730203824": {
         "en": "Djurek",
         "uz": "Djurek",
-        "ru": "Джурек"
+        "ru": "Джурек",
+        "type": "31"
     },
     "1730203840": {
         "en": "Qiziltepa",
         "uz": "Qiziltepa",
-        "ru": "Кызылтепа"
+        "ru": "Кызылтепа",
+        "type": "31"
     },
     "1730203842": {
         "en": "Poloson",
         "uz": "Poloson",
-        "ru": "Паласан"
+        "ru": "Паласан",
+        "type": "31"
     },
     "1730203848": {
         "en": "Fayziobod",
         "uz": "Fayziobod",
-        "ru": "Файзиабад"
+        "ru": "Файзиабад",
+        "type": "31"
     },
     "1730203870": {
         "en": "Toshqo'rg'on",
         "uz": "Toshqo'rg'on",
-        "ru": "Тошкургон"
+        "ru": "Тошкургон",
+        "type": "31"
     },
     "1730203875": {
         "en": "Kapchugay",
         "uz": "Kapchugay",
-        "ru": "Капчугай"
+        "ru": "Капчугай",
+        "type": "31"
     },
     "1730203881": {
         "en": "Povulg'on",
         "uz": "Povulg'on",
-        "ru": "Павулган"
+        "ru": "Павулган",
+        "type": "31"
     },
     "1730203885": {
         "en": "Katput",
         "uz": "Katput",
-        "ru": "Катпут"
+        "ru": "Катпут",
+        "type": "31"
     },
     "1730203890": {
         "en": "Zilxa",
         "uz": "Zilxa",
-        "ru": "Зилха"
+        "ru": "Зилха",
+        "type": "31"
     },
     "1730203895": {
         "en": "Azimobod",
         "uz": "Azimobod",
-        "ru": "Азимабад"
+        "ru": "Азимабад",
+        "type": "31"
     },
     "1730206553": {
         "en": "Boltako'l",
         "uz": "Boltako'l",
-        "ru": "Болтакул"
+        "ru": "Болтакул",
+        "type": "24"
     },
     "1730206555": {
         "en": "Gishtmon",
         "uz": "Gishtmon",
-        "ru": "Гиштмон"
+        "ru": "Гиштмон",
+        "type": "24"
     },
     "1730206557": {
         "en": "Do'rmon",
         "uz": "Do'rmon",
-        "ru": "Дурмон"
+        "ru": "Дурмон",
+        "type": "24"
     },
     "1730206559": {
         "en": "Katta Beshkapa",
         "uz": "Katta Beshkapa",
-        "ru": "Катта бешкапа"
+        "ru": "Катта бешкапа",
+        "type": "24"
     },
     "1730206561": {
         "en": "Qizil ariq",
         "uz": "Qizil ariq",
-        "ru": "Кизиларик"
+        "ru": "Кизиларик",
+        "type": "24"
     },
     "1730206563": {
         "en": "Qorajiyda",
         "uz": "Qorajiyda",
-        "ru": "Каражийда"
+        "ru": "Каражийда",
+        "type": "24"
     },
     "1730206565": {
         "en": "Qorakaltak",
         "uz": "Qorakaltak",
-        "ru": "Каракалтак"
+        "ru": "Каракалтак",
+        "type": "24"
     },
     "1730206567": {
         "en": "Qumtepa",
         "uz": "Qumtepa",
-        "ru": "Кумтепа"
+        "ru": "Кумтепа",
+        "type": "24"
     },
     "1730206569": {
         "en": "Quyi Oqtepa",
         "uz": "Quyi Oqtepa",
-        "ru": "Куйи Октепа"
+        "ru": "Куйи Октепа",
+        "type": "24"
     },
     "1730206571": {
         "en": "Sarmozor",
         "uz": "Sarmozor",
-        "ru": "Сармозор"
+        "ru": "Сармозор",
+        "type": "24"
     },
     "1730206573": {
         "en": "Xotinariq",
         "uz": "Xotinariq",
-        "ru": "Хотинарык"
+        "ru": "Хотинарык",
+        "type": "24"
     },
     "1730206575": {
         "en": "Shahartepa",
         "uz": "Shahartepa",
-        "ru": "Шахартепа"
+        "ru": "Шахартепа",
+        "type": "24"
     },
     "1730206577": {
         "en": "Eshonguzar",
         "uz": "Eshonguzar",
-        "ru": "Эшонгузар"
+        "ru": "Эшонгузар",
+        "type": "24"
     },
     "1730206579": {
         "en": "Yangiariq",
         "uz": "Yangiariq",
-        "ru": "Янгиарык"
+        "ru": "Янгиарык",
+        "type": "24"
     },
     "1730206806": {
         "en": "Fayz",
         "uz": "Fayz",
-        "ru": "Файз"
+        "ru": "Файз",
+        "type": "31"
     },
     "1730206815": {
         "en": "Do'rmon",
         "uz": "Do'rmon",
-        "ru": "Дуpман"
+        "ru": "Дуpман",
+        "type": "31"
     },
     "1730206822": {
         "en": "Qoraqo'shchi",
         "uz": "Qoraqo'shchi",
-        "ru": "Каракушчи"
+        "ru": "Каракушчи",
+        "type": "31"
     },
     "1730206825": {
         "en": "Qumtepa",
         "uz": "Qumtepa",
-        "ru": "Кумтепа"
+        "ru": "Кумтепа",
+        "type": "31"
     },
     "1730206827": {
         "en": "Sarmozor",
         "uz": "Sarmozor",
-        "ru": "Саримазар"
+        "ru": "Саримазар",
+        "type": "31"
     },
     "1730206830": {
         "en": "Solijonobod",
         "uz": "Solijonobod",
-        "ru": "Салиджанабад"
+        "ru": "Салиджанабад",
+        "type": "31"
     },
     "1730206834": {
         "en": "Langar",
         "uz": "Langar",
-        "ru": "Лянгар"
+        "ru": "Лянгар",
+        "type": "31"
     },
     "1730206841": {
         "en": "Paxtakor",
         "uz": "Paxtakor",
-        "ru": "Пахтакор"
+        "ru": "Пахтакор",
+        "type": "31"
     },
     "1730206854": {
         "en": "O'qchi",
         "uz": "O'qchi",
-        "ru": "Укчи"
+        "ru": "Укчи",
+        "type": "31"
     },
     "1730206862": {
         "en": "Xalqabod",
         "uz": "Xalqabod",
-        "ru": "Халкабад"
+        "ru": "Халкабад",
+        "type": "31"
     },
     "1730206876": {
         "en": "Shahartepa",
         "uz": "Shahartepa",
-        "ru": "Шахартепа"
+        "ru": "Шахартепа",
+        "type": "31"
     },
     "1730206885": {
         "en": "Yo'ldoshobod",
         "uz": "Yo'ldoshobod",
-        "ru": "Юлдашабад"
+        "ru": "Юлдашабад",
+        "type": "31"
     },
     "1730206890": {
         "en": "Loyson",
         "uz": "Loyson",
-        "ru": "Лайсан"
+        "ru": "Лайсан",
+        "type": "31"
     },
     "1730206895": {
         "en": "Boltako'l",
         "uz": "Boltako'l",
-        "ru": "Балтакуль"
+        "ru": "Балтакуль",
+        "type": "31"
     },
     "1730206898": {
         "en": "G'ishtmon",
         "uz": "G'ishtmon",
-        "ru": "Гиштман"
+        "ru": "Гиштман",
+        "type": "31"
     },
     "1730209551": {
         "en": "Bog'dod",
         "uz": "Bog'dod",
-        "ru": "Багдад"
+        "ru": "Багдад",
+        "type": "24"
     },
     "1730209553": {
         "en": "Amirobod",
         "uz": "Amirobod",
-        "ru": "Амиробод"
+        "ru": "Амиробод",
+        "type": "24"
     },
     "1730209555": {
         "en": "Maylavoy",
         "uz": "Maylavoy",
-        "ru": "Майлавой"
+        "ru": "Майлавой",
+        "type": "24"
     },
     "1730209557": {
         "en": "Oltin vodiy",
         "uz": "Oltin vodiy",
-        "ru": "Олтин водий"
+        "ru": "Олтин водий",
+        "type": "24"
     },
     "1730209559": {
         "en": "Bog'ishamol",
         "uz": "Bog'ishamol",
-        "ru": "Богишамол"
+        "ru": "Богишамол",
+        "type": "24"
     },
     "1730209561": {
         "en": "Bordon",
         "uz": "Bordon",
-        "ru": "Бордон"
+        "ru": "Бордон",
+        "type": "24"
     },
     "1730209563": {
         "en": "Do'rmoncha",
         "uz": "Do'rmoncha",
-        "ru": "Дурманча"
+        "ru": "Дурманча",
+        "type": "24"
     },
     "1730209565": {
         "en": "Irgali",
         "uz": "Irgali",
-        "ru": "Иргали"
+        "ru": "Иргали",
+        "type": "24"
     },
     "1730209567": {
         "en": "Qaroqchitol",
         "uz": "Qaroqchitol",
-        "ru": "Каракчитол"
+        "ru": "Каракчитол",
+        "type": "24"
     },
     "1730209569": {
         "en": "Kaxat",
         "uz": "Kaxat",
-        "ru": "Кахат"
+        "ru": "Кахат",
+        "type": "24"
     },
     "1730209571": {
         "en": "Qirqboldi",
         "uz": "Qirqboldi",
-        "ru": "Киркболды"
+        "ru": "Киркболды",
+        "type": "24"
     },
     "1730209573": {
         "en": "Konizar",
         "uz": "Konizar",
-        "ru": "Конизар"
+        "ru": "Конизар",
+        "type": "24"
     },
     "1730209575": {
         "en": "Qo'shtegirmon",
         "uz": "Qo'shtegirmon",
-        "ru": "Куштегирмон"
+        "ru": "Куштегирмон",
+        "type": "24"
     },
     "1730209577": {
         "en": "Matqulobod",
         "uz": "Matqulobod",
-        "ru": "Маткулабад"
+        "ru": "Маткулабад",
+        "type": "24"
     },
     "1730209579": {
         "en": "Mirzaobod",
         "uz": "Mirzaobod",
-        "ru": "Мирзаабад"
+        "ru": "Мирзаабад",
+        "type": "24"
     },
     "1730209581": {
         "en": "Samandarak",
         "uz": "Samandarak",
-        "ru": "Самандарак"
+        "ru": "Самандарак",
+        "type": "24"
     },
     "1730209583": {
         "en": "Samarqand",
         "uz": "Samarqand",
-        "ru": "Самарканд"
+        "ru": "Самарканд",
+        "type": "24"
     },
     "1730209585": {
         "en": "O'ltarma",
         "uz": "O'ltarma",
-        "ru": "Ултарма"
+        "ru": "Ултарма",
+        "type": "24"
     },
     "1730209587": {
         "en": "Xusnobod",
         "uz": "Xusnobod",
-        "ru": "Хуснабад"
+        "ru": "Хуснабад",
+        "type": "24"
     },
     "1730209589": {
         "en": "Chekmirzaobod",
         "uz": "Chekmirzaobod",
-        "ru": "Чекмирзаабад"
+        "ru": "Чекмирзаабад",
+        "type": "24"
     },
     "1730209591": {
         "en": "Churindi",
         "uz": "Churindi",
-        "ru": "Чуринди"
+        "ru": "Чуринди",
+        "type": "24"
     },
     "1730209810": {
         "en": "Zafarobod",
         "uz": "Zafarobod",
-        "ru": "Зафарабад"
+        "ru": "Зафарабад",
+        "type": "31"
     },
     "1730209820": {
         "en": "Amirobod",
         "uz": "Amirobod",
-        "ru": "Амирабад"
+        "ru": "Амирабад",
+        "type": "31"
     },
     "1730209823": {
         "en": "Qaroqchitol",
         "uz": "Qaroqchitol",
-        "ru": "Каракчитал"
+        "ru": "Каракчитал",
+        "type": "31"
     },
     "1730209824": {
         "en": "Matqulobod",
         "uz": "Matqulobod",
-        "ru": "Маткулабад"
+        "ru": "Маткулабад",
+        "type": "31"
     },
     "1730209826": {
         "en": "Tinchlik",
         "uz": "Tinchlik",
-        "ru": "Тинчлик"
+        "ru": "Тинчлик",
+        "type": "31"
     },
     "1730209834": {
         "en": "Paxtaobod",
         "uz": "Paxtaobod",
-        "ru": "Пахтаабад"
+        "ru": "Пахтаабад",
+        "type": "31"
     },
     "1730209845": {
         "en": "O'ltarma",
         "uz": "O'ltarma",
-        "ru": "Ультарма"
+        "ru": "Ультарма",
+        "type": "31"
     },
     "1730209856": {
         "en": "Chuvalanchi",
         "uz": "Chuvalanchi",
-        "ru": "Чуваланчи"
+        "ru": "Чуваланчи",
+        "type": "31"
     },
     "1730209860": {
         "en": "Do'rmancha",
         "uz": "Do'rmancha",
-        "ru": "Дорманча"
+        "ru": "Дорманча",
+        "type": "31"
     },
     "1730209865": {
         "en": "Samarqand",
         "uz": "Samarqand",
-        "ru": "Самарканд"
+        "ru": "Самарканд",
+        "type": "31"
     },
     "1730212551": {
         "en": "Ibrat",
         "uz": "Ibrat",
-        "ru": "Ибрат"
+        "ru": "Ибрат",
+        "type": "24"
     },
     "1730212553": {
         "en": "Yuqori Bachqir",
         "uz": "Yuqori Bachqir",
-        "ru": "Юкори Бачкир"
+        "ru": "Юкори Бачкир",
+        "type": "24"
     },
     "1730212555": {
         "en": "Quyi Bachqir",
         "uz": "Quyi Bachqir",
-        "ru": "Куйи Бачкир"
+        "ru": "Куйи Бачкир",
+        "type": "24"
     },
     "1730212557": {
         "en": "Chinobod",
         "uz": "Chinobod",
-        "ru": "Чинабад"
+        "ru": "Чинабад",
+        "type": "24"
     },
     "1730212559": {
         "en": "Buvayda",
         "uz": "Buvayda",
-        "ru": "Бувайда"
+        "ru": "Бувайда",
+        "type": "24"
     },
     "1730212561": {
         "en": "Zarbuloq",
         "uz": "Zarbuloq",
-        "ru": "Зарбулок"
+        "ru": "Зарбулок",
+        "type": "24"
     },
     "1730212563": {
         "en": "Qum",
         "uz": "Qum",
-        "ru": "Кум"
+        "ru": "Кум",
+        "type": "24"
     },
     "1730212565": {
         "en": "Yuqori Nayman",
         "uz": "Yuqori Nayman",
-        "ru": "Юкори Найман"
+        "ru": "Юкори Найман",
+        "type": "24"
     },
     "1730212567": {
         "en": "Oqqo'rg'on",
         "uz": "Oqqo'rg'on",
-        "ru": "Аккурган"
+        "ru": "Аккурган",
+        "type": "24"
     },
     "1730212569": {
         "en": "Quyi Urganji",
         "uz": "Quyi Urganji",
-        "ru": "Куйи Урганжи"
+        "ru": "Куйи Урганжи",
+        "type": "24"
     },
     "1730212806": {
         "en": "Oqqo'rg'on",
         "uz": "Oqqo'rg'on",
-        "ru": "Аккурган"
+        "ru": "Аккурган",
+        "type": "31"
     },
     "1730212810": {
         "en": "Alqor",
         "uz": "Alqor",
-        "ru": "Алкар"
+        "ru": "Алкар",
+        "type": "31"
     },
     "1730212820": {
         "en": "Begobod",
         "uz": "Begobod",
-        "ru": "Бекабад"
+        "ru": "Бекабад",
+        "type": "31"
     },
     "1730212830": {
         "en": "Beshterak",
         "uz": "Beshterak",
-        "ru": "Бештерак"
+        "ru": "Бештерак",
+        "type": "31"
     },
     "1730212840": {
         "en": "Buvayda",
         "uz": "Buvayda",
-        "ru": "Бувайда"
+        "ru": "Бувайда",
+        "type": "31"
     },
     "1730212850": {
         "en": "Jalayer",
         "uz": "Jalayer",
-        "ru": "Джалаер"
+        "ru": "Джалаер",
+        "type": "31"
     },
     "1730212860": {
         "en": "Qo'ng'irot",
         "uz": "Qo'ng'irot",
-        "ru": "Кунград"
+        "ru": "Кунград",
+        "type": "31"
     },
     "1730212862": {
         "en": "Qo'rg'onobod",
         "uz": "Qo'rg'onobod",
-        "ru": "Курганабад"
+        "ru": "Курганабад",
+        "type": "31"
     },
     "1730212866": {
         "en": "Uzumzor",
         "uz": "Uzumzor",
-        "ru": "Узумзар"
+        "ru": "Узумзар",
+        "type": "31"
     },
     "1730212869": {
         "en": "Yangiqadam",
         "uz": "Yangiqadam",
-        "ru": "Янгикадам"
+        "ru": "Янгикадам",
+        "type": "31"
     },
     "1730212870": {
         "en": "Yangiqo'rg'on",
         "uz": "Yangiqo'rg'on",
-        "ru": "Янгикурган"
+        "ru": "Янгикурган",
+        "type": "31"
     },
     "1730215501": {
         "en": "Beshariq",
         "uz": "Beshariq",
-        "ru": "Бешарык"
+        "ru": "Бешарык",
+        "type": "23"
     },
     "1730215553": {
         "en": "Nafosat",
         "uz": "Nafosat",
-        "ru": "Нафосат"
+        "ru": "Нафосат",
+        "type": "24"
     },
     "1730215556": {
         "en": "Zarqaynar",
         "uz": "Zarqaynar",
-        "ru": "Заркайнар"
+        "ru": "Заркайнар",
+        "type": "24"
     },
     "1730215559": {
         "en": "Kapayangi",
         "uz": "Kapayangi",
-        "ru": "Капаянги"
+        "ru": "Капаянги",
+        "type": "24"
     },
     "1730215563": {
         "en": "Qumqishloq",
         "uz": "Qumqishloq",
-        "ru": "Кумкишлак"
+        "ru": "Кумкишлак",
+        "type": "24"
     },
     "1730215566": {
         "en": "Oqtovuq",
         "uz": "Oqtovuq",
-        "ru": "Актовук"
+        "ru": "Актовук",
+        "type": "24"
     },
     "1730215569": {
         "en": "Rapqon",
         "uz": "Rapqon",
-        "ru": "Рапкан"
+        "ru": "Рапкан",
+        "type": "24"
     },
     "1730215573": {
         "en": "Tovul",
         "uz": "Tovul",
-        "ru": "Товул"
+        "ru": "Товул",
+        "type": "24"
     },
     "1730215576": {
         "en": "Uzun",
         "uz": "Uzun",
-        "ru": "Узун"
+        "ru": "Узун",
+        "type": "24"
     },
     "1730215579": {
         "en": "Chimboy",
         "uz": "Chimboy",
-        "ru": "Чимбай"
+        "ru": "Чимбай",
+        "type": "24"
     },
     "1730215583": {
         "en": "Manguobod",
         "uz": "Manguobod",
-        "ru": "Мангуобод"
+        "ru": "Мангуобод",
+        "type": "24"
     },
     "1730215804": {
         "en": "Andarxon",
         "uz": "Andarxon",
-        "ru": "Андархан"
+        "ru": "Андархан",
+        "type": "31"
     },
     "1730215811": {
         "en": "Beshariq",
         "uz": "Beshariq",
-        "ru": "Бешарык"
+        "ru": "Бешарык",
+        "type": "31"
     },
     "1730215815": {
         "en": "Vatan",
         "uz": "Vatan",
-        "ru": "Ватан"
+        "ru": "Ватан",
+        "type": "31"
     },
     "1730215826": {
         "en": "Qorajiyda",
         "uz": "Qorajiyda",
-        "ru": "Каражийда"
+        "ru": "Каражийда",
+        "type": "31"
     },
     "1730215828": {
         "en": "Qashqar",
         "uz": "Qashqar",
-        "ru": "Кашкар"
+        "ru": "Кашкар",
+        "type": "31"
     },
     "1730215839": {
         "en": "Beshsari",
         "uz": "Beshsari",
-        "ru": "Бешсари"
+        "ru": "Бешсари",
+        "type": "31"
     },
     "1730215844": {
         "en": "Rapqon",
         "uz": "Rapqon",
-        "ru": "Рапкан"
+        "ru": "Рапкан",
+        "type": "31"
     },
     "1730215848": {
         "en": "Tovul",
         "uz": "Tovul",
-        "ru": "Тавул"
+        "ru": "Тавул",
+        "type": "31"
     },
     "1730215855": {
         "en": "Yakkatut",
         "uz": "Yakkatut",
-        "ru": "Яккатут"
+        "ru": "Яккатут",
+        "type": "31"
     },
     "1730218501": {
         "en": "Quva",
         "uz": "Quva",
-        "ru": "Кува"
+        "ru": "Кува",
+        "type": "23"
     },
     "1730218552": {
         "en": "Sanoatchilar",
         "uz": "Sanoatchilar",
-        "ru": "Саноатчилар"
+        "ru": "Саноатчилар",
+        "type": "24"
     },
     "1730218553": {
         "en": "Guliston",
         "uz": "Guliston",
-        "ru": "Гулистон"
+        "ru": "Гулистон",
+        "type": "24"
     },
     "1730218554": {
         "en": "Damariq",
         "uz": "Damariq",
-        "ru": "Дамарик"
+        "ru": "Дамарик",
+        "type": "24"
     },
     "1730218555": {
         "en": "Jalayer",
         "uz": "Jalayer",
-        "ru": "Джалаер"
+        "ru": "Джалаер",
+        "type": "24"
     },
     "1730218556": {
         "en": "Qayirma",
         "uz": "Qayirma",
-        "ru": "Кайирма"
+        "ru": "Кайирма",
+        "type": "24"
     },
     "1730218557": {
         "en": "Qaqir",
         "uz": "Qaqir",
-        "ru": "Какир"
+        "ru": "Какир",
+        "type": "24"
     },
     "1730218558": {
         "en": "Qandabuloq",
         "uz": "Qandabuloq",
-        "ru": "Кандабулок"
+        "ru": "Кандабулок",
+        "type": "24"
     },
     "1730218559": {
         "en": "Qorashox",
         "uz": "Qorashox",
-        "ru": "Карашох"
+        "ru": "Карашох",
+        "type": "24"
     },
     "1730218561": {
         "en": "Mustaqillik",
         "uz": "Mustaqillik",
-        "ru": "Мустакиллик"
+        "ru": "Мустакиллик",
+        "type": "24"
     },
     "1730218562": {
         "en": "Oltinariq",
         "uz": "Oltinariq",
-        "ru": "Олтинарик"
+        "ru": "Олтинарик",
+        "type": "24"
     },
     "1730218563": {
         "en": "Pastki Xo'ja Xasan",
         "uz": "Pastki Xo'ja Xasan",
-        "ru": "Пастки Хужа Хасан"
+        "ru": "Пастки Хужа Хасан",
+        "type": "24"
     },
     "1730218564": {
         "en": "Tolmozor",
         "uz": "Tolmozor",
-        "ru": "Толмазор"
+        "ru": "Толмазор",
+        "type": "24"
     },
     "1730218565": {
         "en": "Turk",
         "uz": "Turk",
-        "ru": "Турк"
+        "ru": "Турк",
+        "type": "24"
     },
     "1730218567": {
         "en": "O'zbek",
         "uz": "O'zbek",
-        "ru": "Узбек"
+        "ru": "Узбек",
+        "type": "24"
     },
     "1730218569": {
         "en": "Yuziya",
         "uz": "Yuziya",
-        "ru": "Юзия"
+        "ru": "Юзия",
+        "type": "24"
     },
     "1730218804": {
         "en": "Akbarabad",
         "uz": "Akbarabad",
-        "ru": "Акбарабад"
+        "ru": "Акбарабад",
+        "type": "31"
     },
     "1730218813": {
         "en": "Baynalminal",
         "uz": "Baynalminal",
-        "ru": "Байналминал"
+        "ru": "Байналминал",
+        "type": "31"
     },
     "1730218826": {
         "en": "Dehqonobod",
         "uz": "Dehqonobod",
-        "ru": "Дехканабад"
+        "ru": "Дехканабад",
+        "type": "31"
     },
     "1730218829": {
         "en": "Ittifoq",
         "uz": "Ittifoq",
-        "ru": "Иттифок"
+        "ru": "Иттифок",
+        "type": "31"
     },
     "1730218837": {
         "en": "Madaniyat",
         "uz": "Madaniyat",
-        "ru": "Маданият"
+        "ru": "Маданият",
+        "type": "31"
     },
     "1730218842": {
         "en": "Iftixor",
         "uz": "Iftixor",
-        "ru": "Ифтихор"
+        "ru": "Ифтихор",
+        "type": "31"
     },
     "1730218851": {
         "en": "Namuna",
         "uz": "Namuna",
-        "ru": "Намуна"
+        "ru": "Намуна",
+        "type": "31"
     },
     "1730218862": {
         "en": "Bahor",
         "uz": "Bahor",
-        "ru": "Бахор"
+        "ru": "Бахор",
+        "type": "31"
     },
     "1730218871": {
         "en": "Turkrovot",
         "uz": "Turkrovot",
-        "ru": "Туркрават"
+        "ru": "Туркрават",
+        "type": "31"
     },
     "1730218884": {
         "en": "Soyguzar",
         "uz": "Soyguzar",
-        "ru": "Сойгузар"
+        "ru": "Сойгузар",
+        "type": "31"
     },
     "1730218886": {
         "en": "Yangihayot",
         "uz": "Yangihayot",
-        "ru": "Янгихаят"
+        "ru": "Янгихаят",
+        "type": "31"
     },
     "1730221551": {
         "en": "Uchko'prik",
         "uz": "Uchko'prik",
-        "ru": "Учкуприк"
+        "ru": "Учкуприк",
+        "type": "24"
     },
     "1730221553": {
         "en": "Begobod",
         "uz": "Begobod",
-        "ru": "Бегабад"
+        "ru": "Бегабад",
+        "type": "24"
     },
     "1730221555": {
         "en": "G'ijdan",
         "uz": "G'ijdan",
-        "ru": "Гиждан"
+        "ru": "Гиждан",
+        "type": "24"
     },
     "1730221557": {
         "en": "Katta Qashqar",
         "uz": "Katta Qashqar",
-        "ru": "Катта кашкар"
+        "ru": "Катта кашкар",
+        "type": "24"
     },
     "1730221559": {
         "en": "Qumariqobod",
         "uz": "Qumariqobod",
-        "ru": "Кумарикобод"
+        "ru": "Кумарикобод",
+        "type": "24"
     },
     "1730221561": {
         "en": "Bog'ibo'ston",
         "uz": "Bog'ibo'ston",
-        "ru": "Богибустон"
+        "ru": "Богибустон",
+        "type": "24"
     },
     "1730221563": {
         "en": "Mirzaxo'ja",
         "uz": "Mirzaxo'ja",
-        "ru": "Мирзахужа"
+        "ru": "Мирзахужа",
+        "type": "24"
     },
     "1730221565": {
         "en": "Palaxon",
         "uz": "Palaxon",
-        "ru": "Палахон"
+        "ru": "Палахон",
+        "type": "24"
     },
     "1730221567": {
         "en": "Sobirjon",
         "uz": "Sobirjon",
-        "ru": "Собиржан"
+        "ru": "Собиржан",
+        "type": "24"
     },
     "1730221569": {
         "en": "Turg'oq",
         "uz": "Turg'oq",
-        "ru": "Тургок"
+        "ru": "Тургок",
+        "type": "24"
     },
     "1730221571": {
         "en": "Yangiqishloq",
         "uz": "Yangiqishloq",
-        "ru": "Янгикишлок"
+        "ru": "Янгикишлок",
+        "type": "24"
     },
     "1730221816": {
         "en": "G'ijdon",
         "uz": "G'ijdon",
-        "ru": "Гиждан"
+        "ru": "Гиждан",
+        "type": "31"
     },
     "1730221828": {
         "en": "Kenagas",
         "uz": "Kenagas",
-        "ru": "Кенагас"
+        "ru": "Кенагас",
+        "type": "31"
     },
     "1730221839": {
         "en": "Navro'z",
         "uz": "Navro'z",
-        "ru": "Навруз"
+        "ru": "Навруз",
+        "type": "31"
     },
     "1730221851": {
         "en": "Chorbog'",
         "uz": "Chorbog'",
-        "ru": "Чарбог"
+        "ru": "Чарбог",
+        "type": "31"
     },
     "1730221856": {
         "en": "Palaxon",
         "uz": "Palaxon",
-        "ru": "Палахан"
+        "ru": "Палахан",
+        "type": "31"
     },
     "1730221859": {
         "en": "Sariqo'rg'on",
         "uz": "Sariqo'rg'on",
-        "ru": "Сарыкурган"
+        "ru": "Сарыкурган",
+        "type": "31"
     },
     "1730221862": {
         "en": "Uchko'prik",
         "uz": "Uchko'prik",
-        "ru": "Учкуприк"
+        "ru": "Учкуприк",
+        "type": "31"
     },
     "1730221873": {
         "en": "Yangiqishloq",
         "uz": "Yangiqishloq",
-        "ru": "Янгикишлак"
+        "ru": "Янгикишлак",
+        "type": "31"
     },
     "1730221876": {
         "en": "Obod diyor",
         "uz": "Obod diyor",
-        "ru": "Обод диер"
+        "ru": "Обод диер",
+        "type": "31"
     },
     "1730224501": {
         "en": "Rishton",
         "uz": "Rishton",
-        "ru": "Риштан"
+        "ru": "Риштан",
+        "type": "23"
     },
     "1730224552": {
         "en": "Avazboy",
         "uz": "Avazboy",
-        "ru": "Авазбай"
+        "ru": "Авазбай",
+        "type": "24"
     },
     "1730224554": {
         "en": "Beshkapa",
         "uz": "Beshkapa",
-        "ru": "Бешкапа"
+        "ru": "Бешкапа",
+        "type": "24"
     },
     "1730224556": {
         "en": "Bujay",
         "uz": "Bujay",
-        "ru": "Бужай"
+        "ru": "Бужай",
+        "type": "24"
     },
     "1730224558": {
         "en": "Bo'ston",
         "uz": "Bo'ston",
-        "ru": "Бустан"
+        "ru": "Бустан",
+        "type": "24"
     },
     "1730224562": {
         "en": "Do'tir",
         "uz": "Do'tir",
-        "ru": "Дутир"
+        "ru": "Дутир",
+        "type": "24"
     },
     "1730224564": {
         "en": "Saxovat",
         "uz": "Saxovat",
-        "ru": "Саховат"
+        "ru": "Саховат",
+        "type": "24"
     },
     "1730224566": {
         "en": "Zoxidon",
         "uz": "Zoxidon",
-        "ru": "Зохидан"
+        "ru": "Зохидан",
+        "type": "24"
     },
     "1730224568": {
         "en": "Qayrag'och",
         "uz": "Qayrag'och",
-        "ru": "Кайрагач"
+        "ru": "Кайрагач",
+        "type": "24"
     },
     "1730224572": {
         "en": "Oq-yer",
         "uz": "Oq-yer",
-        "ru": "Ак-ер"
+        "ru": "Ак-ер",
+        "type": "24"
     },
     "1730224574": {
         "en": "Pandigon",
         "uz": "Pandigon",
-        "ru": "Пандиган"
+        "ru": "Пандиган",
+        "type": "24"
     },
     "1730224576": {
         "en": "To'da",
         "uz": "To'da",
-        "ru": "Туда"
+        "ru": "Туда",
+        "type": "24"
     },
     "1730224578": {
         "en": "O'yrat",
         "uz": "O'yrat",
-        "ru": "Уйрат"
+        "ru": "Уйрат",
+        "type": "24"
     },
     "1730224582": {
         "en": "Xurramobod",
         "uz": "Xurramobod",
-        "ru": "Хуррамабад"
+        "ru": "Хуррамабад",
+        "type": "24"
     },
     "1730224804": {
         "en": "Oq-oltin",
         "uz": "Oq-oltin",
-        "ru": "Акалтын"
+        "ru": "Акалтын",
+        "type": "31"
     },
     "1730224806": {
         "en": "Oq-yer",
         "uz": "Oq-yer",
-        "ru": "Акъер"
+        "ru": "Акъер",
+        "type": "31"
     },
     "1730224823": {
         "en": "Beshkapa",
         "uz": "Beshkapa",
-        "ru": "Бешкапа"
+        "ru": "Бешкапа",
+        "type": "31"
     },
     "1730224829": {
         "en": "Bo'ston",
         "uz": "Bo'ston",
-        "ru": "Бустан"
+        "ru": "Бустан",
+        "type": "31"
     },
     "1730224835": {
         "en": "Mehnatobod",
         "uz": "Mehnatobod",
-        "ru": "Мехнатабад"
+        "ru": "Мехнатабад",
+        "type": "31"
     },
     "1730224846": {
         "en": "Rishton",
         "uz": "Rishton",
-        "ru": "Риштан"
+        "ru": "Риштан",
+        "type": "31"
     },
     "1730224868": {
         "en": "Zoxidon",
         "uz": "Zoxidon",
-        "ru": "Зохидон"
+        "ru": "Зохидон",
+        "type": "31"
     },
     "1730224879": {
         "en": "To'da",
         "uz": "To'da",
-        "ru": "Туда"
+        "ru": "Туда",
+        "type": "31"
     },
     "1730224890": {
         "en": "O'smonxo'jayev",
         "uz": "O'smonxo'jayev",
-        "ru": "им. Б. Усманходжаева"
+        "ru": "им. Б. Усманходжаева",
+        "type": "31"
     },
     "1730224895": {
         "en": "Yoyilma",
         "uz": "Yoyilma",
-        "ru": "Яйилма"
+        "ru": "Яйилма",
+        "type": "31"
     },
     "1730224897": {
         "en": "Qayrag'och",
         "uz": "Qayrag'och",
-        "ru": "Кайрагач"
+        "ru": "Кайрагач",
+        "type": "31"
     },
     "1730226551": {
         "en": "Ravon",
         "uz": "Ravon",
-        "ru": "Равон"
+        "ru": "Равон",
+        "type": "24"
     },
     "1730226554": {
         "en": "Qal'a",
         "uz": "Qal'a",
-        "ru": "Калъа"
+        "ru": "Калъа",
+        "type": "24"
     },
     "1730226557": {
         "en": "Sarikanda",
         "uz": "Sarikanda",
-        "ru": "Сариканда"
+        "ru": "Сариканда",
+        "type": "24"
     },
     "1730226561": {
         "en": "So'x",
         "uz": "So'x",
-        "ru": "Сох"
+        "ru": "Сох",
+        "type": "24"
     },
     "1730226564": {
         "en": "Tul",
         "uz": "Tul",
-        "ru": "Тул"
+        "ru": "Тул",
+        "type": "24"
     },
     "1730226567": {
         "en": "Hushyor",
         "uz": "Hushyor",
-        "ru": "Хушер"
+        "ru": "Хушер",
+        "type": "24"
     },
     "1730226571": {
         "en": "Tarovatli",
         "uz": "Tarovatli",
-        "ru": "Тароватли"
+        "ru": "Тароватли",
+        "type": "24"
     },
     "1730226812": {
         "en": "Sohibkor",
         "uz": "Sohibkor",
-        "ru": "Сохибкор"
+        "ru": "Сохибкор",
+        "type": "31"
     },
     "1730226840": {
         "en": "Ravon",
         "uz": "Ravon",
-        "ru": "Раван"
+        "ru": "Раван",
+        "type": "31"
     },
     "1730226857": {
         "en": "So'x",
         "uz": "So'x",
-        "ru": "Сох"
+        "ru": "Сох",
+        "type": "31"
     },
     "1730226893": {
         "en": "Hushyor",
         "uz": "Hushyor",
-        "ru": "Хушъяр"
+        "ru": "Хушъяр",
+        "type": "31"
     },
     "1730227551": {
         "en": "Toshloq",
         "uz": "Toshloq",
-        "ru": "Ташлак"
+        "ru": "Ташлак",
+        "type": "24"
     },
     "1730227553": {
         "en": "Arabmozor",
         "uz": "Arabmozor",
-        "ru": "Арабмозор"
+        "ru": "Арабмозор",
+        "type": "24"
     },
     "1730227555": {
         "en": "Axshak",
         "uz": "Axshak",
-        "ru": "Ахшак"
+        "ru": "Ахшак",
+        "type": "24"
     },
     "1730227557": {
         "en": "Varzak",
         "uz": "Varzak",
-        "ru": "Варзак"
+        "ru": "Варзак",
+        "type": "24"
     },
     "1730227559": {
         "en": "Zarkent",
         "uz": "Zarkent",
-        "ru": "Заркент"
+        "ru": "Заркент",
+        "type": "24"
     },
     "1730227561": {
         "en": "Qumariq",
         "uz": "Qumariq",
-        "ru": "Кумарик"
+        "ru": "Кумарик",
+        "type": "24"
     },
     "1730227563": {
         "en": "Quyi Nayman",
         "uz": "Quyi Nayman",
-        "ru": "Куйи Найман"
+        "ru": "Куйи Найман",
+        "type": "24"
     },
     "1730227565": {
         "en": "Sadda",
         "uz": "Sadda",
-        "ru": "Садда"
+        "ru": "Садда",
+        "type": "24"
     },
     "1730227567": {
         "en": "Turvat",
         "uz": "Turvat",
-        "ru": "Турват"
+        "ru": "Турват",
+        "type": "24"
     },
     "1730227569": {
         "en": "Yakkatut",
         "uz": "Yakkatut",
-        "ru": "Яккатут"
+        "ru": "Яккатут",
+        "type": "24"
     },
     "1730227810": {
         "en": "Axshak",
         "uz": "Axshak",
-        "ru": "Ахшак"
+        "ru": "Ахшак",
+        "type": "31"
     },
     "1730227815": {
         "en": "Quyi Yakkatut",
         "uz": "Quyi Yakkatut",
-        "ru": "Куйи Яккатут"
+        "ru": "Куйи Яккатут",
+        "type": "31"
     },
     "1730227823": {
         "en": "Varzak",
         "uz": "Varzak",
-        "ru": "Варзак"
+        "ru": "Варзак",
+        "type": "31"
     },
     "1730227836": {
         "en": "Arabmozor",
         "uz": "Arabmozor",
-        "ru": "Арабмазар"
+        "ru": "Арабмазар",
+        "type": "31"
     },
     "1730227849": {
         "en": "Qumariq",
         "uz": "Qumariq",
-        "ru": "Кумарык"
+        "ru": "Кумарык",
+        "type": "31"
     },
     "1730227853": {
         "en": "Nayman",
         "uz": "Nayman",
-        "ru": "Найман"
+        "ru": "Найман",
+        "type": "31"
     },
     "1730227855": {
         "en": "Naymanbo'ston",
         "uz": "Naymanbo'ston",
-        "ru": "Найманбустан"
+        "ru": "Найманбустан",
+        "type": "31"
     },
     "1730227872": {
         "en": "Sadda",
         "uz": "Sadda",
-        "ru": "Садда"
+        "ru": "Садда",
+        "type": "31"
     },
     "1730227882": {
         "en": "Zarkent",
         "uz": "Zarkent",
-        "ru": "Заркент"
+        "ru": "Заркент",
+        "type": "31"
     },
     "1730227885": {
         "en": "Qo'rg'oncha",
         "uz": "Qo'rg'oncha",
-        "ru": "Курганча"
+        "ru": "Курганча",
+        "type": "31"
     },
     "1730230501": {
         "en": "Yaypan",
         "uz": "Yaypan",
-        "ru": "Яйпан"
+        "ru": "Яйпан",
+        "type": "23"
     },
     "1730230556": {
         "en": "Sho'rsuv",
         "uz": "Sho'rsuv",
-        "ru": "Шорсу"
+        "ru": "Шорсу",
+        "type": "24"
     },
     "1730230558": {
         "en": "Avg'on",
         "uz": "Avg'on",
-        "ru": "Авгон"
+        "ru": "Авгон",
+        "type": "24"
     },
     "1730230562": {
         "en": "Dahana Qaqir",
         "uz": "Dahana Qaqir",
-        "ru": "Дахана какир"
+        "ru": "Дахана какир",
+        "type": "24"
     },
     "1730230564": {
         "en": "Islom",
         "uz": "Islom",
-        "ru": "Ислам"
+        "ru": "Ислам",
+        "type": "24"
     },
     "1730230566": {
         "en": "Katta Tagob",
         "uz": "Katta Tagob",
-        "ru": "Катта Тагаб"
+        "ru": "Катта Тагаб",
+        "type": "24"
     },
     "1730230568": {
         "en": "Qizil Qaqir",
         "uz": "Qizil Qaqir",
-        "ru": "Кизил какир"
+        "ru": "Кизил какир",
+        "type": "24"
     },
     "1730230570": {
         "en": "Kichik Tagob",
         "uz": "Kichik Tagob",
-        "ru": "Кичик Тагаб"
+        "ru": "Кичик Тагаб",
+        "type": "24"
     },
     "1730230572": {
         "en": "Sardoba",
         "uz": "Sardoba",
-        "ru": "Сардоба"
+        "ru": "Сардоба",
+        "type": "24"
     },
     "1730230574": {
         "en": "Kudash",
         "uz": "Kudash",
-        "ru": "Кудаш"
+        "ru": "Кудаш",
+        "type": "24"
     },
     "1730230576": {
         "en": "Kul elash",
         "uz": "Kul elash",
-        "ru": "Кул элаш"
+        "ru": "Кул элаш",
+        "type": "24"
     },
     "1730230577": {
         "en": "Qulibek",
         "uz": "Qulibek",
-        "ru": "Кулибек"
+        "ru": "Кулибек",
+        "type": "24"
     },
     "1730230578": {
         "en": "Qumbosti",
         "uz": "Qumbosti",
-        "ru": "Кумбосди"
+        "ru": "Кумбосди",
+        "type": "24"
     },
     "1730230580": {
         "en": "Qo'shqo'noq",
         "uz": "Qo'shqo'noq",
-        "ru": "Кушкунак"
+        "ru": "Кушкунак",
+        "type": "24"
     },
     "1730230582": {
         "en": "Qo'rg'oncha",
         "uz": "Qo'rg'oncha",
-        "ru": "Курганча"
+        "ru": "Курганча",
+        "type": "24"
     },
     "1730230584": {
         "en": "Nursux",
         "uz": "Nursux",
-        "ru": "Нурсух"
+        "ru": "Нурсух",
+        "type": "24"
     },
     "1730230586": {
         "en": "Ovchi",
         "uz": "Ovchi",
-        "ru": "Овчи"
+        "ru": "Овчи",
+        "type": "24"
     },
     "1730230588": {
         "en": "Oyimcha Qaqir",
         "uz": "Oyimcha Qaqir",
-        "ru": "Айимча какир"
+        "ru": "Айимча какир",
+        "type": "24"
     },
     "1730230590": {
         "en": "Oqmachit",
         "uz": "Oqmachit",
-        "ru": "Акмачит"
+        "ru": "Акмачит",
+        "type": "24"
     },
     "1730230592": {
         "en": "Oxta Tagob",
         "uz": "Oxta Tagob",
-        "ru": "Ахта Тагаб"
+        "ru": "Ахта Тагаб",
+        "type": "24"
     },
     "1730230594": {
         "en": "O'qchi Dasht",
         "uz": "O'qchi Dasht",
-        "ru": "Укчи Дашт"
+        "ru": "Укчи Дашт",
+        "type": "24"
     },
     "1730230596": {
         "en": "O'qchi Rajabgardi",
         "uz": "O'qchi Rajabgardi",
-        "ru": "Укчи Ражабгарди"
+        "ru": "Укчи Ражабгарди",
+        "type": "24"
     },
     "1730230598": {
         "en": "Iftixor",
         "uz": "Iftixor",
-        "ru": "Ифтихор"
+        "ru": "Ифтихор",
+        "type": "24"
     },
     "1730230807": {
         "en": "Ovchi",
         "uz": "Ovchi",
-        "ru": "Авчи"
+        "ru": "Авчи",
+        "type": "31"
     },
     "1730230811": {
         "en": "Qorayozbobo",
         "uz": "Qorayozbobo",
-        "ru": "Кораезбобо"
+        "ru": "Кораезбобо",
+        "type": "31"
     },
     "1730230822": {
         "en": "G'aniobod",
         "uz": "G'aniobod",
-        "ru": "Ганиабад"
+        "ru": "Ганиабад",
+        "type": "31"
     },
     "1730230838": {
         "en": "Konizar",
         "uz": "Konizar",
-        "ru": "Конизор"
+        "ru": "Конизор",
+        "type": "31"
     },
     "1730230844": {
         "en": "Qaynar",
         "uz": "Qaynar",
-        "ru": "Кайнар"
+        "ru": "Кайнар",
+        "type": "31"
     },
     "1730230855": {
         "en": "Mingtut",
         "uz": "Mingtut",
-        "ru": "Мингтут"
+        "ru": "Мингтут",
+        "type": "31"
     },
     "1730230866": {
         "en": "Nursux",
         "uz": "Nursux",
-        "ru": "Нурсук"
+        "ru": "Нурсук",
+        "type": "31"
     },
     "1730230869": {
         "en": "Rajabgardi",
         "uz": "Rajabgardi",
-        "ru": "Раджабгарди"
+        "ru": "Раджабгарди",
+        "type": "31"
     },
     "1730230873": {
         "en": "Qizil Qaqir",
         "uz": "Qizil Qaqir",
-        "ru": "Кызыл какир"
+        "ru": "Кызыл какир",
+        "type": "31"
     },
     "1730230875": {
         "en": "Tagob",
         "uz": "Tagob",
-        "ru": "Тагаб"
+        "ru": "Тагаб",
+        "type": "31"
     },
     "1730233555": {
         "en": "Chimyon ( mavjud)",
         "uz": "Chimyon ( mavjud)",
-        "ru": "Чимион"
+        "ru": "Чимион",
+        "type": "24"
     },
     "1730233557": {
         "en": "Avval",
         "uz": "Avval",
-        "ru": "Аввал"
+        "ru": "Аввал",
+        "type": "24"
     },
     "1730233559": {
         "en": "Archa",
         "uz": "Archa",
-        "ru": "Арча"
+        "ru": "Арча",
+        "type": "24"
     },
     "1730233561": {
         "en": "Vodil",
         "uz": "Vodil",
-        "ru": "Водил"
+        "ru": "Водил",
+        "type": "24"
     },
     "1730233563": {
         "en": "Yuqori Vodil",
         "uz": "Yuqori Vodil",
-        "ru": "Юкори Водил"
+        "ru": "Юкори Водил",
+        "type": "24"
     },
     "1730233565": {
         "en": "Damko'l",
         "uz": "Damko'l",
-        "ru": "Дамкул"
+        "ru": "Дамкул",
+        "type": "24"
     },
     "1730233567": {
         "en": "Yoshlarobod",
         "uz": "Yoshlarobod",
-        "ru": "Ешларабад"
+        "ru": "Ешларабад",
+        "type": "24"
     },
     "1730233569": {
         "en": "Qo'rg'ontepa",
         "uz": "Qo'rg'ontepa",
-        "ru": "Кургонтепа"
+        "ru": "Кургонтепа",
+        "type": "24"
     },
     "1730233571": {
         "en": "Langar",
         "uz": "Langar",
-        "ru": "Лангар"
+        "ru": "Лангар",
+        "type": "24"
     },
     "1730233573": {
         "en": "Log'on",
         "uz": "Log'on",
-        "ru": "Лаган"
+        "ru": "Лаган",
+        "type": "24"
     },
     "1730233575": {
         "en": "Mindon",
         "uz": "Mindon",
-        "ru": "Миндон"
+        "ru": "Миндон",
+        "type": "24"
     },
     "1730233577": {
         "en": "Novkent",
         "uz": "Novkent",
-        "ru": "Новкент"
+        "ru": "Новкент",
+        "type": "24"
     },
     "1730233579": {
         "en": "Yuqori Oqtepa",
         "uz": "Yuqori Oqtepa",
-        "ru": "Юкори Октепа"
+        "ru": "Юкори Октепа",
+        "type": "24"
     },
     "1730233581": {
         "en": "Parvoz",
         "uz": "Parvoz",
-        "ru": "Парвоз"
+        "ru": "Парвоз",
+        "type": "24"
     },
     "1730233583": {
         "en": "Yuqori Soybo'yi",
         "uz": "Yuqori Soybo'yi",
-        "ru": "Юкори Сойбуйи"
+        "ru": "Юкори Сойбуйи",
+        "type": "24"
     },
     "1730233585": {
         "en": "Bahor",
         "uz": "Bahor",
-        "ru": "Бахор"
+        "ru": "Бахор",
+        "type": "24"
     },
     "1730233587": {
         "en": "Xonqiz",
         "uz": "Xonqiz",
-        "ru": "Хонкиз"
+        "ru": "Хонкиз",
+        "type": "24"
     },
     "1730233589": {
         "en": "Xo'roba",
         "uz": "Xo'roba",
-        "ru": "Хуроба"
+        "ru": "Хуроба",
+        "type": "24"
     },
     "1730233591": {
         "en": "Neftchilar",
         "uz": "Neftchilar",
-        "ru": "Нефтчилар"
+        "ru": "Нефтчилар",
+        "type": "24"
     },
     "1730233593": {
         "en": "Shoximardonobod",
         "uz": "Shoximardonobod",
-        "ru": "Шохимардонабад"
+        "ru": "Шохимардонабад",
+        "type": "24"
     },
     "1730233595": {
         "en": "Yuqori Mindon",
         "uz": "Yuqori Mindon",
-        "ru": "Юкори миндан"
+        "ru": "Юкори миндан",
+        "type": "24"
     },
     "1730233804": {
         "en": "Avval",
         "uz": "Avval",
-        "ru": "Ауваль"
+        "ru": "Ауваль",
+        "type": "31"
     },
     "1730233816": {
         "en": "Gulshan",
         "uz": "Gulshan",
-        "ru": "Гульшан"
+        "ru": "Гульшан",
+        "type": "31"
     },
     "1730233821": {
         "en": "Qo'rg'ontepa",
         "uz": "Qo'rg'ontepa",
-        "ru": "Кургантепа"
+        "ru": "Кургантепа",
+        "type": "31"
     },
     "1730233826": {
         "en": "Soy bo'yi",
         "uz": "Soy bo'yi",
-        "ru": "Сайбуйи"
+        "ru": "Сайбуйи",
+        "type": "31"
     },
     "1730233830": {
         "en": "Log'on",
         "uz": "Log'on",
-        "ru": "Лаган"
+        "ru": "Лаган",
+        "type": "31"
     },
     "1730233836": {
         "en": "Mindon",
         "uz": "Mindon",
-        "ru": "Миндан"
+        "ru": "Миндан",
+        "type": "31"
     },
     "1730233839": {
         "en": "Navkat",
         "uz": "Navkat",
-        "ru": "Навкат"
+        "ru": "Навкат",
+        "type": "31"
     },
     "1730233847": {
         "en": "Qaptarxona",
         "uz": "Qaptarxona",
-        "ru": "Каптаpхона"
+        "ru": "Каптаpхона",
+        "type": "31"
     },
     "1730233864": {
         "en": "Shoximardon",
         "uz": "Shoximardon",
-        "ru": "Шахимаpдан"
+        "ru": "Шахимаpдан",
+        "type": "31"
     },
     "1730233870": {
         "en": "Parvoz",
         "uz": "Parvoz",
-        "ru": "Парвоз"
+        "ru": "Парвоз",
+        "type": "31"
     },
     "1730233876": {
         "en": "Chimyon",
         "uz": "Chimyon",
-        "ru": "Чимион"
+        "ru": "Чимион",
+        "type": "31"
     },
     "1730233880": {
         "en": "Damko'l",
         "uz": "Damko'l",
-        "ru": "Дамкуль"
+        "ru": "Дамкуль",
+        "type": "31"
     },
     "1730233885": {
         "en": "Xonqiz",
         "uz": "Xonqiz",
-        "ru": "Ханкыз"
+        "ru": "Ханкыз",
+        "type": "31"
     },
     "1730233890": {
         "en": "Oqbilol",
         "uz": "Oqbilol",
-        "ru": "Акбилал"
+        "ru": "Акбилал",
+        "type": "31"
     },
     "1730233895": {
         "en": "Yuqori Vodil",
         "uz": "Yuqori Vodil",
-        "ru": "Юкоpи Вуадыл"
+        "ru": "Юкоpи Вуадыл",
+        "type": "31"
     },
     "1730233898": {
         "en": "Vodil",
         "uz": "Vodil",
-        "ru": "Вуадыл"
+        "ru": "Вуадыл",
+        "type": "31"
     },
     "1730236551": {
         "en": "Dang'ara",
         "uz": "Dang'ara",
-        "ru": "Дангара"
+        "ru": "Дангара",
+        "type": "24"
     },
     "1730236554": {
         "en": "Doimobod",
         "uz": "Doimobod",
-        "ru": "Доимабад"
+        "ru": "Доимабад",
+        "type": "24"
     },
     "1730236557": {
         "en": "Katta Ganjiravon",
         "uz": "Katta Ganjiravon",
-        "ru": "Катта ганжиравон"
+        "ru": "Катта ганжиравон",
+        "type": "24"
     },
     "1730236561": {
         "en": "Katta Turk",
         "uz": "Katta Turk",
-        "ru": "Катта турк"
+        "ru": "Катта турк",
+        "type": "24"
     },
     "1730236564": {
         "en": "Qum Qiyali",
         "uz": "Qum Qiyali",
-        "ru": "Кум кияли"
+        "ru": "Кум кияли",
+        "type": "24"
     },
     "1730236567": {
         "en": "Toptiqsaroy",
         "uz": "Toptiqsaroy",
-        "ru": "Топтиксарай"
+        "ru": "Топтиксарай",
+        "type": "24"
     },
     "1730236571": {
         "en": "Tumor",
         "uz": "Tumor",
-        "ru": "Тумор"
+        "ru": "Тумор",
+        "type": "24"
     },
     "1730236574": {
         "en": "Yuqori Urganji",
         "uz": "Yuqori Urganji",
-        "ru": "Юкори Урганжи"
+        "ru": "Юкори Урганжи",
+        "type": "24"
     },
     "1730236577": {
         "en": "Yangi zamon",
         "uz": "Yangi zamon",
-        "ru": "Янги замон"
+        "ru": "Янги замон",
+        "type": "24"
     },
     "1730236803": {
         "en": "Oqdjar",
         "uz": "Oqdjar",
-        "ru": "Акджар"
+        "ru": "Акджар",
+        "type": "31"
     },
     "1730236808": {
         "en": "Sohil",
         "uz": "Sohil",
-        "ru": "Сохил"
+        "ru": "Сохил",
+        "type": "31"
     },
     "1730236822": {
         "en": "Naymancha",
         "uz": "Naymancha",
-        "ru": "Найманча"
+        "ru": "Найманча",
+        "type": "31"
     },
     "1730236830": {
         "en": "Qiyali",
         "uz": "Qiyali",
-        "ru": "Кияли"
+        "ru": "Кияли",
+        "type": "31"
     },
     "1730236833": {
         "en": "Mulkobod",
         "uz": "Mulkobod",
-        "ru": "Мулкабад"
+        "ru": "Мулкабад",
+        "type": "31"
     },
     "1730236841": {
         "en": "Sanam",
         "uz": "Sanam",
-        "ru": "Санам"
+        "ru": "Санам",
+        "type": "31"
     },
     "1730236844": {
         "en": "Chinobod",
         "uz": "Chinobod",
-        "ru": "Чинабад"
+        "ru": "Чинабад",
+        "type": "31"
     },
     "1730236855": {
         "en": "Taypoq",
         "uz": "Taypoq",
-        "ru": "Тайпак"
+        "ru": "Тайпак",
+        "type": "31"
     },
     "1730238551": {
         "en": "Navbahor",
         "uz": "Navbahor",
-        "ru": "Навбахор"
+        "ru": "Навбахор",
+        "type": "24"
     },
     "1730238553": {
         "en": "Kaldo'shan",
         "uz": "Kaldo'shan",
-        "ru": "Калдушан"
+        "ru": "Калдушан",
+        "type": "24"
     },
     "1730238555": {
         "en": "Qo'qonboy",
         "uz": "Qo'qonboy",
-        "ru": "Куконбай"
+        "ru": "Куконбай",
+        "type": "24"
     },
     "1730238557": {
         "en": "Tomosha",
         "uz": "Tomosha",
-        "ru": "Томоша"
+        "ru": "Томоша",
+        "type": "24"
     },
     "1730238559": {
         "en": "Chek chuvaldak",
         "uz": "Chek chuvaldak",
-        "ru": "Чек чувалдак"
+        "ru": "Чек чувалдак",
+        "type": "24"
     },
     "1730238561": {
         "en": "Shoyinbek",
         "uz": "Shoyinbek",
-        "ru": "Шойинбек"
+        "ru": "Шойинбек",
+        "type": "24"
     },
     "1730238563": {
         "en": "Eski",
         "uz": "Eski",
-        "ru": "Эски"
+        "ru": "Эски",
+        "type": "24"
     },
     "1730238565": {
         "en": "Eshon",
         "uz": "Eshon",
-        "ru": "Эшон"
+        "ru": "Эшон",
+        "type": "24"
     },
     "1730238810": {
         "en": "G'allakor",
         "uz": "G'allakor",
-        "ru": "Галлакор"
+        "ru": "Галлакор",
+        "type": "31"
     },
     "1730238830": {
         "en": "Qo'qon",
         "uz": "Qo'qon",
-        "ru": "Коканд"
+        "ru": "Коканд",
+        "type": "31"
     },
     "1730238835": {
         "en": "Navbahor",
         "uz": "Navbahor",
-        "ru": "Навбахор"
+        "ru": "Навбахор",
+        "type": "31"
     },
     "1730238840": {
         "en": "Tomosha",
         "uz": "Tomosha",
-        "ru": "Тамаша"
+        "ru": "Тамаша",
+        "type": "31"
     },
     "1730238850": {
         "en": "Shunkor",
         "uz": "Shunkor",
-        "ru": "Шункар"
+        "ru": "Шункар",
+        "type": "31"
     },
     "1730238855": {
         "en": "G'uncha",
         "uz": "G'uncha",
-        "ru": "Гунча"
+        "ru": "Гунча",
+        "type": "31"
     },
     "1730242551": {
         "en": "Yozyovon",
         "uz": "Yozyovon",
-        "ru": "Язъяван"
+        "ru": "Язъяван",
+        "type": "24"
     },
     "1730242554": {
         "en": "Yozyovon chek",
         "uz": "Yozyovon chek",
-        "ru": "Езевон чек"
+        "ru": "Езевон чек",
+        "type": "24"
     },
     "1730242557": {
         "en": "Yo'ldoshobod",
         "uz": "Yo'ldoshobod",
-        "ru": "Йулдошабад"
+        "ru": "Йулдошабад",
+        "type": "24"
     },
     "1730242561": {
         "en": "Qorasoqol",
         "uz": "Qorasoqol",
-        "ru": "Карасакал"
+        "ru": "Карасакал",
+        "type": "24"
     },
     "1730242564": {
         "en": "Qoratepa",
         "uz": "Qoratepa",
-        "ru": "Коратепа"
+        "ru": "Коратепа",
+        "type": "24"
     },
     "1730242567": {
         "en": "Kelajak",
         "uz": "Kelajak",
-        "ru": "Келажак"
+        "ru": "Келажак",
+        "type": "24"
     },
     "1730242571": {
         "en": "Quyi Soybo'yi",
         "uz": "Quyi Soybo'yi",
-        "ru": "Куйи Сойбуйи"
+        "ru": "Куйи Сойбуйи",
+        "type": "24"
     },
     "1730242574": {
         "en": "Toshxovuz",
         "uz": "Toshxovuz",
-        "ru": "Тошховуз"
+        "ru": "Тошховуз",
+        "type": "24"
     },
     "1730242577": {
         "en": "Xonobod",
         "uz": "Xonobod",
-        "ru": "Хонабад"
+        "ru": "Хонабад",
+        "type": "24"
     },
     "1730242806": {
         "en": "Guliston",
         "uz": "Guliston",
-        "ru": "Гулистан"
+        "ru": "Гулистан",
+        "type": "31"
     },
     "1730242810": {
         "en": "Qatortol",
         "uz": "Qatortol",
-        "ru": "Катартал"
+        "ru": "Катартал",
+        "type": "31"
     },
     "1730242817": {
         "en": "Karatepa",
         "uz": "Karatepa",
-        "ru": "Каpатепа"
+        "ru": "Каpатепа",
+        "type": "31"
     },
     "1730242830": {
         "en": "Xonobod",
         "uz": "Xonobod",
-        "ru": "Ханабад"
+        "ru": "Ханабад",
+        "type": "31"
     },
     "1730242832": {
         "en": "Istiqlol",
         "uz": "Istiqlol",
-        "ru": "Истиклол"
+        "ru": "Истиклол",
+        "type": "31"
     },
     "1730242848": {
         "en": "Yozyovon",
         "uz": "Yozyovon",
-        "ru": "Язъяван"
+        "ru": "Язъяван",
+        "type": "31"
     },
     "1730242852": {
         "en": "Yangiobod",
         "uz": "Yangiobod",
-        "ru": "Янгиабад"
+        "ru": "Янгиабад",
+        "type": "31"
     },
     "1730242855": {
         "en": "Ishtirxon",
         "uz": "Ishtirxon",
-        "ru": "Иштиpхон"
+        "ru": "Иштиpхон",
+        "type": "31"
     },
     "1730242860": {
         "en": "Qorasoqol",
         "uz": "Qorasoqol",
-        "ru": "Карасакал"
+        "ru": "Карасакал",
+        "type": "31"
     },
     "1730242865": {
         "en": "Yangibo'ston",
         "uz": "Yangibo'ston",
-        "ru": "Янгибустан"
+        "ru": "Янгибустан",
+        "type": "31"
     },
     "1730405555": {
         "en": "Muqimiy",
         "uz": "Muqimiy",
-        "ru": "Мукими"
+        "ru": "Мукими",
+        "type": "24"
     },
     "1730408555": {
         "en": "Do'stlik",
         "uz": "Do'stlik",
-        "ru": "Дустлик"
+        "ru": "Дустлик",
+        "type": "24"
     },
     "1730408811": {
         "en": "Arsif",
         "uz": "Arsif",
-        "ru": "Арсив"
+        "ru": "Арсив",
+        "type": "31"
     },
     "1730408822": {
         "en": "Valik",
         "uz": "Valik",
-        "ru": "Валик"
+        "ru": "Валик",
+        "type": "31"
     },
     "1730408829": {
         "en": "Qo'chqorchi",
         "uz": "Qo'chqorchi",
-        "ru": "Кучкаpчи"
+        "ru": "Кучкаpчи",
+        "type": "31"
     },
     "1730408833": {
         "en": "Muyon",
         "uz": "Muyon",
-        "ru": "Муян"
+        "ru": "Муян",
+        "type": "31"
     },
     "1730408841": {
         "en": "Isfayramsoy",
         "uz": "Isfayramsoy",
-        "ru": "Исфайрамсой"
+        "ru": "Исфайрамсой",
+        "type": "31"
     },
     "1730408845": {
         "en": "So'fon",
         "uz": "So'fon",
-        "ru": "Суфан"
+        "ru": "Суфан",
+        "type": "31"
     },
     "1730412557": {
         "en": "Yangi Marg'ilon",
         "uz": "Yangi Marg'ilon",
-        "ru": "Янги Маpгилан"
+        "ru": "Янги Маpгилан",
+        "type": "24"
     },
     "1733204551": {
         "en": "Bog'ot",
         "uz": "Bog'ot",
-        "ru": "Багат"
+        "ru": "Багат",
+        "type": "24"
     },
     "1733204553": {
         "en": "Nurafshon",
         "uz": "Nurafshon",
-        "ru": "Нурафшон"
+        "ru": "Нурафшон",
+        "type": "24"
     },
     "1733204555": {
         "en": "Oltinqum",
         "uz": "Oltinqum",
-        "ru": "Олтинкум"
+        "ru": "Олтинкум",
+        "type": "24"
     },
     "1733204557": {
         "en": "Uzumzor",
         "uz": "Uzumzor",
-        "ru": "Узумзор"
+        "ru": "Узумзор",
+        "type": "24"
     },
     "1733204559": {
         "en": "Yangiqadam",
         "uz": "Yangiqadam",
-        "ru": "Янгикадам"
+        "ru": "Янгикадам",
+        "type": "24"
     },
     "1733204805": {
         "en": "Qorayong'oq",
         "uz": "Qorayong'oq",
-        "ru": "Караянтак"
+        "ru": "Караянтак",
+        "type": "31"
     },
     "1733204813": {
         "en": "Beshariq",
         "uz": "Beshariq",
-        "ru": "Бешарык"
+        "ru": "Бешарык",
+        "type": "31"
     },
     "1733204822": {
         "en": "Dehqonbozor",
         "uz": "Dehqonbozor",
-        "ru": "Дехканбазар"
+        "ru": "Дехканбазар",
+        "type": "31"
     },
     "1733204833": {
         "en": "Qulonqorabog'",
         "uz": "Qulonqorabog'",
-        "ru": "Куланкарабаг"
+        "ru": "Куланкарабаг",
+        "type": "31"
     },
     "1733204844": {
         "en": "O'g'uzrabot",
         "uz": "O'g'uzrabot",
-        "ru": "Угузработ"
+        "ru": "Угузработ",
+        "type": "31"
     },
     "1733204849": {
         "en": "Madaniyat",
         "uz": "Madaniyat",
-        "ru": "Маданият"
+        "ru": "Маданият",
+        "type": "31"
     },
     "1733204855": {
         "en": "Nayman",
         "uz": "Nayman",
-        "ru": "Найман"
+        "ru": "Найман",
+        "type": "31"
     },
     "1733204866": {
         "en": "Mirishkor",
         "uz": "Mirishkor",
-        "ru": "Миришкор"
+        "ru": "Миришкор",
+        "type": "31"
     },
     "1733204870": {
         "en": "Xo'jalik",
         "uz": "Xo'jalik",
-        "ru": "Хужалик"
+        "ru": "Хужалик",
+        "type": "31"
     },
     "1733204875": {
         "en": "Qipchoq",
         "uz": "Qipchoq",
-        "ru": "Кипчак"
+        "ru": "Кипчак",
+        "type": "31"
     },
     "1733208551": {
         "en": "Gurlan",
         "uz": "Gurlan",
-        "ru": "Гурлен"
+        "ru": "Гурлен",
+        "type": "24"
     },
     "1733208554": {
         "en": "Chakkalar",
         "uz": "Chakkalar",
-        "ru": "Чаккалар"
+        "ru": "Чаккалар",
+        "type": "24"
     },
     "1733208557": {
         "en": "Bo'zqal'a",
         "uz": "Bo'zqal'a",
-        "ru": "Бузкалъа"
+        "ru": "Бузкалъа",
+        "type": "24"
     },
     "1733208561": {
         "en": "Nurzamin",
         "uz": "Nurzamin",
-        "ru": "Нурзамин"
+        "ru": "Нурзамин",
+        "type": "24"
     },
     "1733208564": {
         "en": "Nukus yop",
         "uz": "Nukus yop",
-        "ru": "Нукус еп"
+        "ru": "Нукус еп",
+        "type": "24"
     },
     "1733208567": {
         "en": "Markaziy Guliston",
         "uz": "Markaziy Guliston",
-        "ru": "Марказий Гулистан"
+        "ru": "Марказий Гулистан",
+        "type": "24"
     },
     "1733208571": {
         "en": "Do'simbiy",
         "uz": "Do'simbiy",
-        "ru": "Дусимбий"
+        "ru": "Дусимбий",
+        "type": "24"
     },
     "1733208574": {
         "en": "Taxtako'pir",
         "uz": "Taxtako'pir",
-        "ru": "Тахтакупир"
+        "ru": "Тахтакупир",
+        "type": "24"
     },
     "1733208577": {
         "en": "Yormish",
         "uz": "Yormish",
-        "ru": "Ермиш"
+        "ru": "Ермиш",
+        "type": "24"
     },
     "1733208803": {
         "en": "Olg'a",
         "uz": "Olg'a",
-        "ru": "Алга"
+        "ru": "Алга",
+        "type": "31"
     },
     "1733208820": {
         "en": "Vazir",
         "uz": "Vazir",
-        "ru": "Вазир"
+        "ru": "Вазир",
+        "type": "31"
     },
     "1733208825": {
         "en": "Guliston",
         "uz": "Guliston",
-        "ru": "Гулистан"
+        "ru": "Гулистан",
+        "type": "31"
     },
     "1733208826": {
         "en": "Xizireli",
         "uz": "Xizireli",
-        "ru": "Хизирэли"
+        "ru": "Хизирэли",
+        "type": "31"
     },
     "1733208835": {
         "en": "Birlashgan",
         "uz": "Birlashgan",
-        "ru": "Бирлашган"
+        "ru": "Бирлашган",
+        "type": "31"
     },
     "1733208855": {
         "en": "Saxtiyon",
         "uz": "Saxtiyon",
-        "ru": "Сахтиян"
+        "ru": "Сахтиян",
+        "type": "31"
     },
     "1733208857": {
         "en": "Do'simbiy",
         "uz": "Do'simbiy",
-        "ru": "Досимбий"
+        "ru": "Досимбий",
+        "type": "31"
     },
     "1733208874": {
         "en": "Sholikor",
         "uz": "Sholikor",
-        "ru": "Шаликор"
+        "ru": "Шаликор",
+        "type": "31"
     },
     "1733208881": {
         "en": "Eshimjiron",
         "uz": "Eshimjiron",
-        "ru": "Эшимжиран"
+        "ru": "Эшимжиран",
+        "type": "31"
     },
     "1733212551": {
         "en": "Qo'shko'pir",
         "uz": "Qo'shko'pir",
-        "ru": "Кошкупыр"
+        "ru": "Кошкупыр",
+        "type": "24"
     },
     "1733212553": {
         "en": "Qoromon",
         "uz": "Qoromon",
-        "ru": "Караман"
+        "ru": "Караман",
+        "type": "24"
     },
     "1733212555": {
         "en": "O'rta qishloq",
         "uz": "O'rta qishloq",
-        "ru": "Урта кишлак"
+        "ru": "Урта кишлак",
+        "type": "24"
     },
     "1733212557": {
         "en": "Xonbod",
         "uz": "Xonbod",
-        "ru": "Хонабад"
+        "ru": "Хонабад",
+        "type": "24"
     },
     "1733212559": {
         "en": "Shixmashhad",
         "uz": "Shixmashhad",
-        "ru": "Шихмашхад"
+        "ru": "Шихмашхад",
+        "type": "24"
     },
     "1733212561": {
         "en": "Sherobod",
         "uz": "Sherobod",
-        "ru": "Шерабад"
+        "ru": "Шерабад",
+        "type": "24"
     },
     "1733212811": {
         "en": "Shix",
         "uz": "Shix",
-        "ru": "Ших"
+        "ru": "Ших",
+        "type": "31"
     },
     "1733212822": {
         "en": "G'ozovot",
         "uz": "G'ozovot",
-        "ru": "Газават"
+        "ru": "Газават",
+        "type": "31"
     },
     "1733212827": {
         "en": "Oqdarband",
         "uz": "Oqdarband",
-        "ru": "Акдарбанд"
+        "ru": "Акдарбанд",
+        "type": "31"
     },
     "1733212833": {
         "en": "Qotog'on",
         "uz": "Qotog'on",
-        "ru": "Котогон"
+        "ru": "Котогон",
+        "type": "31"
     },
     "1733212840": {
         "en": "Kenagas",
         "uz": "Kenagas",
-        "ru": "Кенегес"
+        "ru": "Кенегес",
+        "type": "31"
     },
     "1733212856": {
         "en": "O'zbekyap",
         "uz": "O'zbekyap",
-        "ru": "Узбекяб"
+        "ru": "Узбекяб",
+        "type": "31"
     },
     "1733212867": {
         "en": "O'rtayap",
         "uz": "O'rtayap",
-        "ru": "Уртаяп"
+        "ru": "Уртаяп",
+        "type": "31"
     },
     "1733212878": {
         "en": "Xadra",
         "uz": "Xadra",
-        "ru": "Хадра"
+        "ru": "Хадра",
+        "type": "31"
     },
     "1733212889": {
         "en": "Xonobod",
         "uz": "Xonobod",
-        "ru": "Ханабад"
+        "ru": "Ханабад",
+        "type": "31"
     },
     "1733212891": {
         "en": "Xosiyon",
         "uz": "Xosiyon",
-        "ru": "Хасиян"
+        "ru": "Хасиян",
+        "type": "31"
     },
     "1733212893": {
         "en": "Xayrobod",
         "uz": "Xayrobod",
-        "ru": "Хайрабад"
+        "ru": "Хайрабад",
+        "type": "31"
     },
     "1733212895": {
         "en": "Yangilik",
         "uz": "Yangilik",
-        "ru": "Янгилик"
+        "ru": "Янгилик",
+        "type": "31"
     },
     "1733217554": {
         "en": "Cholish",
         "uz": "Cholish",
-        "ru": "Чалыш"
+        "ru": "Чалыш",
+        "type": "24"
     },
     "1733217558": {
         "en": "Oq oltin",
         "uz": "Oq oltin",
-        "ru": "Ак алтин"
+        "ru": "Ак алтин",
+        "type": "24"
     },
     "1733217562": {
         "en": "Chandir",
         "uz": "Chandir",
-        "ru": "Чондир"
+        "ru": "Чондир",
+        "type": "24"
     },
     "1733217566": {
         "en": "Ko'palik",
         "uz": "Ko'palik",
-        "ru": "Купалик"
+        "ru": "Купалик",
+        "type": "24"
     },
     "1733217572": {
         "en": "Gardonlar",
         "uz": "Gardonlar",
-        "ru": "Гардонлар"
+        "ru": "Гардонлар",
+        "type": "24"
     },
     "1733217822": {
         "en": "Bekobod",
         "uz": "Bekobod",
-        "ru": "Бекабад"
+        "ru": "Бекабад",
+        "type": "31"
     },
     "1733217833": {
         "en": "G'aybu",
         "uz": "G'aybu",
-        "ru": "Гайбу"
+        "ru": "Гайбу",
+        "type": "31"
     },
     "1733217844": {
         "en": "Qoromon",
         "uz": "Qoromon",
-        "ru": "Караман"
+        "ru": "Караман",
+        "type": "31"
     },
     "1733217855": {
         "en": "Qoroul",
         "uz": "Qoroul",
-        "ru": "Караул"
+        "ru": "Караул",
+        "type": "31"
     },
     "1733217863": {
         "en": "Chatko'pir",
         "uz": "Chatko'pir",
-        "ru": "Чаткупыр"
+        "ru": "Чаткупыр",
+        "type": "31"
     },
     "1733217869": {
         "en": "Chakkasholikor",
         "uz": "Chakkasholikor",
-        "ru": "Чаккашаликар"
+        "ru": "Чаккашаликар",
+        "type": "31"
     },
     "1733217872": {
         "en": "Chandirkiyat",
         "uz": "Chandirkiyat",
-        "ru": "Чандиркият"
+        "ru": "Чандиркият",
+        "type": "31"
     },
     "1733217882": {
         "en": "Yuqori bog'",
         "uz": "Yuqori bog'",
-        "ru": "Юкарибаг"
+        "ru": "Юкарибаг",
+        "type": "31"
     },
     "1733217890": {
         "en": "Yuqori do'rman",
         "uz": "Yuqori do'rman",
-        "ru": "Юкары-Дорман"
+        "ru": "Юкары-Дорман",
+        "type": "31"
     },
     "1733217895": {
         "en": "G'alaba",
         "uz": "G'alaba",
-        "ru": "Галаба"
+        "ru": "Галаба",
+        "type": "31"
     },
     "1733220551": {
         "en": "Xazorasp",
         "uz": "Xazorasp",
-        "ru": "Хазарасп"
+        "ru": "Хазарасп",
+        "type": "24"
     },
     "1733220553": {
         "en": "Oq yop",
         "uz": "Oq yop",
-        "ru": "Ак еп"
+        "ru": "Ак еп",
+        "type": "24"
     },
     "1733220555": {
         "en": "Oyok ovvo",
         "uz": "Oyok ovvo",
-        "ru": "Аек-авва"
+        "ru": "Аек-авва",
+        "type": "24"
     },
     "1733220557": {
         "en": "Nurxayot",
         "uz": "Nurxayot",
-        "ru": "Нурхаёт"
+        "ru": "Нурхаёт",
+        "type": "24"
     },
     "1733220803": {
         "en": "Ovshar",
         "uz": "Ovshar",
-        "ru": "Авшар"
+        "ru": "Авшар",
+        "type": "31"
     },
     "1733220806": {
         "en": "Karvak",
         "uz": "Karvak",
-        "ru": "Карвак"
+        "ru": "Карвак",
+        "type": "31"
     },
     "1733220812": {
         "en": "Beshta",
         "uz": "Beshta",
-        "ru": "Бешта"
+        "ru": "Бешта",
+        "type": "31"
     },
     "1733220814": {
         "en": "Bo'ston",
         "uz": "Bo'ston",
-        "ru": "Бустан"
+        "ru": "Бустан",
+        "type": "31"
     },
     "1733220822": {
         "en": "Pitnak",
         "uz": "Pitnak",
-        "ru": "Питнак"
+        "ru": "Питнак",
+        "type": "31"
     },
     "1733220830": {
         "en": "Pichoqchi",
         "uz": "Pichoqchi",
-        "ru": "Пичакчи"
+        "ru": "Пичакчи",
+        "type": "31"
     },
     "1733220845": {
         "en": "Sanoat",
         "uz": "Sanoat",
-        "ru": "Саноат"
+        "ru": "Саноат",
+        "type": "31"
     },
     "1733220852": {
         "en": "Sarimoy",
         "uz": "Sarimoy",
-        "ru": "Саримай"
+        "ru": "Саримай",
+        "type": "31"
     },
     "1733220862": {
         "en": "Tuproqqal'a",
         "uz": "Tuproqqal'a",
-        "ru": "Тупраккала"
+        "ru": "Тупраккала",
+        "type": "31"
     },
     "1733220868": {
         "en": "Muxomon",
         "uz": "Muxomon",
-        "ru": "Мухаман"
+        "ru": "Мухаман",
+        "type": "31"
     },
     "1733220879": {
         "en": "Yangibozor",
         "uz": "Yangibozor",
-        "ru": "Янгибазар"
+        "ru": "Янгибазар",
+        "type": "31"
     },
     "1733221501": {
         "en": "Pitnak",
         "uz": "Pitnak",
-        "ru": "Питнак"
+        "ru": "Питнак",
+        "type": "23"
     },
     "1733223551": {
         "en": "Xonqa",
         "uz": "Xonqa",
-        "ru": "Ханка"
+        "ru": "Ханка",
+        "type": "24"
     },
     "1733223553": {
         "en": "Istiqlol",
         "uz": "Istiqlol",
-        "ru": "Истиклол"
+        "ru": "Истиклол",
+        "type": "24"
     },
     "1733223555": {
         "en": "Madaniy yer",
         "uz": "Madaniy yer",
-        "ru": "Маданий ер"
+        "ru": "Маданий ер",
+        "type": "24"
     },
     "1733223557": {
         "en": "Birlashgan",
         "uz": "Birlashgan",
-        "ru": "Бирлашган"
+        "ru": "Бирлашган",
+        "type": "24"
     },
     "1733223559": {
         "en": "Yosh kuch",
         "uz": "Yosh kuch",
-        "ru": "Еш куч"
+        "ru": "Еш куч",
+        "type": "24"
     },
     "1733223803": {
         "en": "Amudaryo",
         "uz": "Amudaryo",
-        "ru": "Амударья"
+        "ru": "Амударья",
+        "type": "31"
     },
     "1733223810": {
         "en": "Qoraqosh",
         "uz": "Qoraqosh",
-        "ru": "Каракош"
+        "ru": "Каракош",
+        "type": "31"
     },
     "1733223812": {
         "en": "Katta Jirmiz",
         "uz": "Katta Jirmiz",
-        "ru": "Катта Жирмиз"
+        "ru": "Катта Жирмиз",
+        "type": "31"
     },
     "1733223820": {
         "en": "Madir",
         "uz": "Madir",
-        "ru": "Мадир"
+        "ru": "Мадир",
+        "type": "31"
     },
     "1733223830": {
         "en": "Qirq-yop",
         "uz": "Qirq-yop",
-        "ru": "Кыркяп"
+        "ru": "Кыркяп",
+        "type": "31"
     },
     "1733223835": {
         "en": "Navxos",
         "uz": "Navxos",
-        "ru": "Навхас"
+        "ru": "Навхас",
+        "type": "31"
     },
     "1733223840": {
         "en": "Namuna",
         "uz": "Namuna",
-        "ru": "Намуна"
+        "ru": "Намуна",
+        "type": "31"
     },
     "1733223860": {
         "en": "Sarapoyon",
         "uz": "Sarapoyon",
-        "ru": "Сарыпаян"
+        "ru": "Сарыпаян",
+        "type": "31"
     },
     "1733223870": {
         "en": "Tomadurgadik",
         "uz": "Tomadurgadik",
-        "ru": "Тамадургадык"
+        "ru": "Тамадургадык",
+        "type": "31"
     },
     "1733223890": {
         "en": "Olaja",
         "uz": "Olaja",
-        "ru": "Аладжа"
+        "ru": "Аладжа",
+        "type": "31"
     },
     "1733226552": {
         "en": "Gullanbog'",
         "uz": "Gullanbog'",
-        "ru": "Гулланбаг"
+        "ru": "Гулланбаг",
+        "type": "24"
     },
     "1733226554": {
         "en": "Parchanxos",
         "uz": "Parchanxos",
-        "ru": "Парчанхас"
+        "ru": "Парчанхас",
+        "type": "24"
     },
     "1733226562": {
         "en": "Iftixor",
         "uz": "Iftixor",
-        "ru": "Ифтихор"
+        "ru": "Ифтихор",
+        "type": "24"
     },
     "1733226564": {
         "en": "Sho'r-Qal'a",
         "uz": "Sho'r-Qal'a",
-        "ru": "Шуркалъа"
+        "ru": "Шуркалъа",
+        "type": "24"
     },
     "1733226566": {
         "en": "Yuqori qo'm",
         "uz": "Yuqori qo'm",
-        "ru": "Юкориком"
+        "ru": "Юкориком",
+        "type": "24"
     },
     "1733226568": {
         "en": "Hamkor",
         "uz": "Hamkor",
-        "ru": "Хамкор"
+        "ru": "Хамкор",
+        "type": "24"
     },
     "1733226805": {
         "en": "Oq-yop",
         "uz": "Oq-yop",
-        "ru": "Акяп"
+        "ru": "Акяп",
+        "type": "31"
     },
     "1733226810": {
         "en": "Gandimyon",
         "uz": "Gandimyon",
-        "ru": "Гандимян"
+        "ru": "Гандимян",
+        "type": "31"
     },
     "1733226820": {
         "en": "Dashyoq",
         "uz": "Dashyoq",
-        "ru": "Дашьяк"
+        "ru": "Дашьяк",
+        "type": "31"
     },
     "1733226826": {
         "en": "Juryon",
         "uz": "Juryon",
-        "ru": "Журян"
+        "ru": "Журян",
+        "type": "31"
     },
     "1733226834": {
         "en": "Irdinzon",
         "uz": "Irdinzon",
-        "ru": "Ирдимзан"
+        "ru": "Ирдимзан",
+        "type": "31"
     },
     "1733226845": {
         "en": "Eski-Qiyot",
         "uz": "Eski-Qiyot",
-        "ru": "Эски кият"
+        "ru": "Эски кият",
+        "type": "31"
     },
     "1733226856": {
         "en": "Sayot",
         "uz": "Sayot",
-        "ru": "Саят"
+        "ru": "Саят",
+        "type": "31"
     },
     "1733226867": {
         "en": "Shomoxulum",
         "uz": "Shomoxulum",
-        "ru": "Шамахулум"
+        "ru": "Шамахулум",
+        "type": "31"
     },
     "1733226878": {
         "en": "Chinobod",
         "uz": "Chinobod",
-        "ru": "Чинабад"
+        "ru": "Чинабад",
+        "type": "31"
     },
     "1733230551": {
         "en": "Shovot",
         "uz": "Shovot",
-        "ru": "Шават"
+        "ru": "Шават",
+        "type": "24"
     },
     "1733230554": {
         "en": "Bo'yrochi",
         "uz": "Bo'yrochi",
-        "ru": "Буйрачи"
+        "ru": "Буйрачи",
+        "type": "24"
     },
     "1733230557": {
         "en": "Ipakchi",
         "uz": "Ipakchi",
-        "ru": "Ипакчи"
+        "ru": "Ипакчи",
+        "type": "24"
     },
     "1733230561": {
         "en": "Kangli",
         "uz": "Kangli",
-        "ru": "Кангли"
+        "ru": "Кангли",
+        "type": "24"
     },
     "1733230564": {
         "en": "Qat-qal'a",
         "uz": "Qat-qal'a",
-        "ru": "Кат-калъа"
+        "ru": "Кат-калъа",
+        "type": "24"
     },
     "1733230567": {
         "en": "Monoq",
         "uz": "Monoq",
-        "ru": "Монак"
+        "ru": "Монак",
+        "type": "24"
     },
     "1733230571": {
         "en": "Chig'atoy",
         "uz": "Chig'atoy",
-        "ru": "Чигатай"
+        "ru": "Чигатай",
+        "type": "24"
     },
     "1733230811": {
         "en": "Qat-qal'a",
         "uz": "Qat-qal'a",
-        "ru": "Каткала"
+        "ru": "Каткала",
+        "type": "31"
     },
     "1733230822": {
         "en": "Hurriyat",
         "uz": "Hurriyat",
-        "ru": "Хуррият"
+        "ru": "Хуррият",
+        "type": "31"
     },
     "1733230825": {
         "en": "Bo'yroqchi",
         "uz": "Bo'yroqchi",
-        "ru": "Буйрачи"
+        "ru": "Буйрачи",
+        "type": "31"
     },
     "1733230830": {
         "en": "Beshmergan",
         "uz": "Beshmergan",
-        "ru": "Бешмерган"
+        "ru": "Бешмерган",
+        "type": "31"
     },
     "1733230833": {
         "en": "Ijtimoyat",
         "uz": "Ijtimoyat",
-        "ru": "Ижтимаят"
+        "ru": "Ижтимаят",
+        "type": "31"
     },
     "1733230839": {
         "en": "Kangli",
         "uz": "Kangli",
-        "ru": "Кангли"
+        "ru": "Кангли",
+        "type": "31"
     },
     "1733230844": {
         "en": "Qiyot",
         "uz": "Qiyot",
-        "ru": "Кият"
+        "ru": "Кият",
+        "type": "31"
     },
     "1733230855": {
         "en": "Chig'atoyqal'a",
         "uz": "Chig'atoyqal'a",
-        "ru": "Чигатай кала"
+        "ru": "Чигатай кала",
+        "type": "31"
     },
     "1733230866": {
         "en": "O'zbekiston",
         "uz": "O'zbekiston",
-        "ru": "Узбекистан"
+        "ru": "Узбекистан",
+        "type": "31"
     },
     "1733230877": {
         "en": "Cho'qli",
         "uz": "Cho'qli",
-        "ru": "Чоклы"
+        "ru": "Чоклы",
+        "type": "31"
     },
     "1733230888": {
         "en": "Shovotqal'a",
         "uz": "Shovotqal'a",
-        "ru": "Шават кала"
+        "ru": "Шават кала",
+        "type": "31"
     },
     "1733233551": {
         "en": "Yangiariq",
         "uz": "Yangiariq",
-        "ru": "Янгиарык"
+        "ru": "Янгиарык",
+        "type": "24"
     },
     "1733233553": {
         "en": "Gulbog'",
         "uz": "Gulbog'",
-        "ru": "Гулбог"
+        "ru": "Гулбог",
+        "type": "24"
     },
     "1733233555": {
         "en": "Soburzon",
         "uz": "Soburzon",
-        "ru": "Собурзан"
+        "ru": "Собурзан",
+        "type": "24"
     },
     "1733233557": {
         "en": "Suvgan",
         "uz": "Suvgan",
-        "ru": "Сувган"
+        "ru": "Сувган",
+        "type": "24"
     },
     "1733233561": {
         "en": "Tagan",
         "uz": "Tagan",
-        "ru": "Таган"
+        "ru": "Таган",
+        "type": "24"
     },
     "1733233563": {
         "en": "Qo'shloq",
         "uz": "Qo'shloq",
-        "ru": "Кушлок"
+        "ru": "Кушлок",
+        "type": "24"
     },
     "1733233811": {
         "en": "Qarmish",
         "uz": "Qarmish",
-        "ru": "Кармиш"
+        "ru": "Кармиш",
+        "type": "31"
     },
     "1733233822": {
         "en": "Ostona",
         "uz": "Ostona",
-        "ru": "Астана"
+        "ru": "Астана",
+        "type": "31"
     },
     "1733233833": {
         "en": "Kattabog'",
         "uz": "Kattabog'",
-        "ru": "Каттабаг"
+        "ru": "Каттабаг",
+        "type": "31"
     },
     "1733233844": {
         "en": "Gulobod",
         "uz": "Gulobod",
-        "ru": "Гулобод"
+        "ru": "Гулобод",
+        "type": "31"
     },
     "1733233855": {
         "en": "Gullanbog'",
         "uz": "Gullanbog'",
-        "ru": "Гулланбаг"
+        "ru": "Гулланбаг",
+        "type": "31"
     },
     "1733233872": {
         "en": "Tagan",
         "uz": "Tagan",
-        "ru": "Таган"
+        "ru": "Таган",
+        "type": "31"
     },
     "1733233884": {
         "en": "Qo'riqtom",
         "uz": "Qo'riqtom",
-        "ru": "Куриктам"
+        "ru": "Куриктам",
+        "type": "31"
     },
     "1733233897": {
         "en": "Chiriqchi",
         "uz": "Chiriqchi",
-        "ru": "Чикирчи"
+        "ru": "Чикирчи",
+        "type": "31"
     },
     "1733236551": {
         "en": "Yangibozor",
         "uz": "Yangibozor",
-        "ru": "Янгибазар"
+        "ru": "Янгибазар",
+        "type": "24"
     },
     "1733236554": {
         "en": "Yangi yop",
         "uz": "Yangi yop",
-        "ru": "Янги-еп"
+        "ru": "Янги-еп",
+        "type": "24"
     },
     "1733236558": {
         "en": "Mangitlar",
         "uz": "Mangitlar",
-        "ru": "Мангитлар"
+        "ru": "Мангитлар",
+        "type": "24"
     },
     "1733236803": {
         "en": "Oyoqdo'rman",
         "uz": "Oyoqdo'rman",
-        "ru": "Аякдорман"
+        "ru": "Аякдорман",
+        "type": "31"
     },
     "1733236805": {
         "en": "Bog'olon",
         "uz": "Bog'olon",
-        "ru": "Багалан"
+        "ru": "Багалан",
+        "type": "31"
     },
     "1733236806": {
         "en": "Boshkirshix",
         "uz": "Boshkirshix",
-        "ru": "Башкирших"
+        "ru": "Башкирших",
+        "type": "31"
     },
     "1733236808": {
         "en": "Bo'zqal'a",
         "uz": "Bo'zqal'a",
-        "ru": "Бозкала"
+        "ru": "Бозкала",
+        "type": "31"
     },
     "1733236812": {
         "en": "Qalandardo'rman",
         "uz": "Qalandardo'rman",
-        "ru": "Каландардорман"
+        "ru": "Каландардорман",
+        "type": "31"
     },
     "1733236830": {
         "en": "Uyg'ur",
         "uz": "Uyg'ur",
-        "ru": "Уйгур"
+        "ru": "Уйгур",
+        "type": "31"
     },
     "1733236834": {
         "en": "Cho'bolonchi",
         "uz": "Cho'bolonchi",
-        "ru": "Чубаланчи"
+        "ru": "Чубаланчи",
+        "type": "31"
     },
     "1733236836": {
         "en": "Shirinqo'ng'irot",
         "uz": "Shirinqo'ng'irot",
-        "ru": "Ширинкунград"
+        "ru": "Ширинкунград",
+        "type": "31"
     },
     "1735204501": {
         "en": "Mang'it",
         "uz": "Mang'it",
-        "ru": "Мангит"
+        "ru": "Мангит",
+        "type": "23"
     },
     "1735204554": {
         "en": "Jumurtov",
         "uz": "Jumurtov",
-        "ru": "Джумуртау"
+        "ru": "Джумуртау",
+        "type": "24"
     },
     "1735204555": {
         "en": "Kipshak",
         "uz": "Kipshak",
-        "ru": "Кипчок"
+        "ru": "Кипчок",
+        "type": "24"
     },
     "1735204556": {
         "en": "Kilichboy",
         "uz": "Kilichboy",
-        "ru": "Киличбай"
+        "ru": "Киличбай",
+        "type": "24"
     },
     "1735204557": {
         "en": "Xitoy",
         "uz": "Xitoy",
-        "ru": "Китай"
+        "ru": "Китай",
+        "type": "24"
     },
     "1735204805": {
         "en": "Nazarxon",
         "uz": "Nazarxon",
-        "ru": "Назаpхан"
+        "ru": "Назаpхан",
+        "type": "31"
     },
     "1735204811": {
         "en": "O'rta-qala",
         "uz": "O'rta-qala",
-        "ru": "Оpта - кала"
+        "ru": "Оpта - кала",
+        "type": "31"
     },
     "1735204822": {
         "en": "Qipchaq",
         "uz": "Qipchaq",
-        "ru": "Кипчак"
+        "ru": "Кипчак",
+        "type": "31"
     },
     "1735204833": {
         "en": "Quyuq-kupir",
         "uz": "Quyuq-kupir",
-        "ru": "Куюк- Купиp"
+        "ru": "Куюк- Купиp",
+        "type": "31"
     },
     "1735204844": {
         "en": "Xitay",
         "uz": "Xitay",
-        "ru": "Ктай"
+        "ru": "Ктай",
+        "type": "31"
     },
     "1735204848": {
         "en": "Oq oltin",
         "uz": "Oq oltin",
-        "ru": "Ок олтин"
+        "ru": "Ок олтин",
+        "type": "31"
     },
     "1735204855": {
         "en": "Chaykul",
         "uz": "Chaykul",
-        "ru": "Чайкол"
+        "ru": "Чайкол",
+        "type": "31"
     },
     "1735204866": {
         "en": "Qlichboy",
         "uz": "Qlichboy",
-        "ru": "Кличбай"
+        "ru": "Кличбай",
+        "type": "31"
     },
     "1735204870": {
         "en": "Kangli",
         "uz": "Kangli",
-        "ru": "Канлы"
+        "ru": "Канлы",
+        "type": "31"
     },
     "1735204874": {
         "en": "Amir Temur",
         "uz": "Amir Temur",
-        "ru": "Амир Темур"
+        "ru": "Амир Темур",
+        "type": "31"
     },
     "1735204875": {
         "en": "Durman",
         "uz": "Durman",
-        "ru": "Дурман"
+        "ru": "Дурман",
+        "type": "31"
     },
     "1735204880": {
         "en": "Bobur nomli",
         "uz": "Bobur nomli",
-        "ru": "им. Бабура"
+        "ru": "им. Бабура",
+        "type": "31"
     },
     "1735204883": {
         "en": "Buzyop",
         "uz": "Buzyop",
-        "ru": "Бузяп"
+        "ru": "Бузяп",
+        "type": "31"
     },
     "1735204887": {
         "en": "To'lqin",
         "uz": "To'lqin",
-        "ru": "Тулкин"
+        "ru": "Тулкин",
+        "type": "31"
     },
     "1735204889": {
         "en": "Tashyop",
         "uz": "Tashyop",
-        "ru": "Ташеп"
+        "ru": "Ташеп",
+        "type": "31"
     },
     "1735204892": {
         "en": "Xolimbeg",
         "uz": "Xolimbeg",
-        "ru": "Холимбег"
+        "ru": "Холимбег",
+        "type": "31"
     },
     "1735207501": {
         "en": "Beruniy",
         "uz": "Beruniy",
-        "ru": "Беруни"
+        "ru": "Беруни",
+        "type": "23"
     },
     "1735207552": {
         "en": "Bulish",
         "uz": "Bulish",
-        "ru": "Булиш"
+        "ru": "Булиш",
+        "type": "24"
     },
     "1735207807": {
         "en": "Abay",
         "uz": "Abay",
-        "ru": "Абай"
+        "ru": "Абай",
+        "type": "31"
     },
     "1735207811": {
         "en": "Ozod",
         "uz": "Ozod",
-        "ru": "Азад"
+        "ru": "Азад",
+        "type": "31"
     },
     "1735207814": {
         "en": "Sarkop",
         "uz": "Sarkop",
-        "ru": "Саpкоп"
+        "ru": "Саpкоп",
+        "type": "31"
     },
     "1735207816": {
         "en": "Navoiy",
         "uz": "Navoiy",
-        "ru": "Навои"
+        "ru": "Навои",
+        "type": "31"
     },
     "1735207818": {
         "en": "Beruniy",
         "uz": "Beruniy",
-        "ru": "Беpуни"
+        "ru": "Беpуни",
+        "type": "31"
     },
     "1735207822": {
         "en": "Maxtumquli",
         "uz": "Maxtumquli",
-        "ru": "Махтумкули"
+        "ru": "Махтумкули",
+        "type": "31"
     },
     "1735207827": {
         "en": "Biybazar",
         "uz": "Biybazar",
-        "ru": "Бийбазар"
+        "ru": "Бийбазар",
+        "type": "31"
     },
     "1735207829": {
         "en": "Do'stlik",
         "uz": "Do'stlik",
-        "ru": "Дустлик"
+        "ru": "Дустлик",
+        "type": "31"
     },
     "1735207832": {
         "en": "Altinsay",
         "uz": "Altinsay",
-        "ru": "Алтынсай"
+        "ru": "Алтынсай",
+        "type": "31"
     },
     "1735207843": {
         "en": "Qizilqal'a",
         "uz": "Qizilqal'a",
-        "ru": "Кызылкала"
+        "ru": "Кызылкала",
+        "type": "31"
     },
     "1735207865": {
         "en": "Shabaz",
         "uz": "Shabaz",
-        "ru": "Шабаз"
+        "ru": "Шабаз",
+        "type": "31"
     },
     "1735207876": {
         "en": "Shimam",
         "uz": "Shimam",
-        "ru": "Шимам"
+        "ru": "Шимам",
+        "type": "31"
     },
     "1735207880": {
         "en": "Tinchlik",
         "uz": "Tinchlik",
-        "ru": "Тинчлик"
+        "ru": "Тинчлик",
+        "type": "31"
     },
     "1735209551": {
         "en": "Bo'zatov",
         "uz": "Bo'zatov",
-        "ru": "Бозатау"
+        "ru": "Бозатау",
+        "type": "24"
     },
     "1735209804": {
         "en": "Aspantay",
         "uz": "Aspantay",
-        "ru": "Аспантай"
+        "ru": "Аспантай",
+        "type": "31"
     },
     "1735209808": {
         "en": "Yerkindarya",
         "uz": "Yerkindarya",
-        "ru": "Еркиндарья"
+        "ru": "Еркиндарья",
+        "type": "31"
     },
     "1735209812": {
         "en": "Ko'k-suv",
         "uz": "Ko'k-suv",
-        "ru": "Кук-су"
+        "ru": "Кук-су",
+        "type": "31"
     },
     "1735209818": {
         "en": "Qusqanatov",
         "uz": "Qusqanatov",
-        "ru": "Кусканатау"
+        "ru": "Кусканатау",
+        "type": "31"
     },
     "1735211551": {
         "en": "Qorao'zak",
         "uz": "Qorao'zak",
-        "ru": "Караузяк"
+        "ru": "Караузяк",
+        "type": "24"
     },
     "1735211803": {
         "en": "Olgabas",
         "uz": "Olgabas",
-        "ru": "Алгабас"
+        "ru": "Алгабас",
+        "type": "31"
     },
     "1735211815": {
         "en": "Yesimuzak",
         "uz": "Yesimuzak",
-        "ru": "Есимозек"
+        "ru": "Есимозек",
+        "type": "31"
     },
     "1735211823": {
         "en": "Qarakul",
         "uz": "Qarakul",
-        "ru": "Каpакуль"
+        "ru": "Каpакуль",
+        "type": "31"
     },
     "1735211826": {
         "en": "Qarabug'a",
         "uz": "Qarabug'a",
-        "ru": "Карабуга"
+        "ru": "Карабуга",
+        "type": "31"
     },
     "1735211828": {
         "en": "Qorauzek",
         "uz": "Qorauzek",
-        "ru": "Караузяк"
+        "ru": "Караузяк",
+        "type": "31"
     },
     "1735211830": {
         "en": "Qoyboq",
         "uz": "Qoyboq",
-        "ru": "Койбак"
+        "ru": "Койбак",
+        "type": "31"
     },
     "1735211835": {
         "en": "Madeniyat",
         "uz": "Madeniyat",
-        "ru": "Маденият"
+        "ru": "Маденият",
+        "type": "31"
     },
     "1735211837": {
         "en": "Berdax",
         "uz": "Berdax",
-        "ru": "им. Бердах"
+        "ru": "им. Бердах",
+        "type": "31"
     },
     "1735212505": {
         "en": "Xalqobod",
         "uz": "Xalqobod",
-        "ru": "Халкабад"
+        "ru": "Халкабад",
+        "type": "23"
     },
     "1735212551": {
         "en": "Kegeyli",
         "uz": "Kegeyli",
-        "ru": "Кегейли"
+        "ru": "Кегейли",
+        "type": "24"
     },
     "1735212806": {
         "en": "Aktuba",
         "uz": "Aktuba",
-        "ru": "Актуба"
+        "ru": "Актуба",
+        "type": "31"
     },
     "1735212815": {
         "en": "Janabazar",
         "uz": "Janabazar",
-        "ru": "Жанабазар"
+        "ru": "Жанабазар",
+        "type": "31"
     },
     "1735212833": {
         "en": "Jalpak jap",
         "uz": "Jalpak jap",
-        "ru": "Жалпакжап"
+        "ru": "Жалпакжап",
+        "type": "31"
     },
     "1735212834": {
         "en": "Кок Озек",
         "uz": "Кок Озек",
-        "ru": "Кок Озек"
+        "ru": "Кок Озек",
+        "type": "31"
     },
     "1735212835": {
         "en": "Kumshunkul",
         "uz": "Kumshunkul",
-        "ru": "Кумшункуль"
+        "ru": "Кумшункуль",
+        "type": "31"
     },
     "1735212839": {
         "en": "Juzim bag'",
         "uz": "Juzim bag'",
-        "ru": "Жузим баг"
+        "ru": "Жузим баг",
+        "type": "31"
     },
     "1735212841": {
         "en": "Ийшан кала",
         "uz": "Ийшан кала",
-        "ru": "Ийшан кала"
+        "ru": "Ийшан кала",
+        "type": "31"
     },
     "1735212855": {
         "en": "Obad",
         "uz": "Obad",
-        "ru": "Абад"
+        "ru": "Абад",
+        "type": "31"
     },
     "1735215501": {
         "en": "Qo'ng'irot",
         "uz": "Qo'ng'irot",
-        "ru": "Кунград"
+        "ru": "Кунград",
+        "type": "23"
     },
     "1735215552": {
         "en": "Jasliq",
         "uz": "Jasliq",
-        "ru": "Жаслык"
+        "ru": "Жаслык",
+        "type": "24"
     },
     "1735215554": {
         "en": "Qaraqalpaqstan",
         "uz": "Qaraqalpaqstan",
-        "ru": "Каракалпакстан"
+        "ru": "Каракалпакстан",
+        "type": "24"
     },
     "1735215560": {
         "en": "Qiriqqiz",
         "uz": "Qiriqqiz",
-        "ru": "Кырыккыз"
+        "ru": "Кырыккыз",
+        "type": "24"
     },
     "1735215562": {
         "en": "Oltinko'l",
         "uz": "Oltinko'l",
-        "ru": "Алтынкуль"
+        "ru": "Алтынкуль",
+        "type": "24"
     },
     "1735215567": {
         "en": "Yelabad",
         "uz": "Yelabad",
-        "ru": "Елабад"
+        "ru": "Елабад",
+        "type": "24"
     },
     "1735215806": {
         "en": "Adebiyat",
         "uz": "Adebiyat",
-        "ru": "Адебият"
+        "ru": "Адебият",
+        "type": "31"
     },
     "1735215809": {
         "en": "Ajaniyaz-ata nomli",
         "uz": "Ajaniyaz-ata nomli",
-        "ru": "им.Ажинияза"
+        "ru": "им.Ажинияза",
+        "type": "31"
     },
     "1735215811": {
         "en": "Qo'ng'irot",
         "uz": "Qo'ng'irot",
-        "ru": "Кунгpад"
+        "ru": "Кунгpад",
+        "type": "31"
     },
     "1735215814": {
         "en": "Kanli",
         "uz": "Kanli",
-        "ru": "Канлы"
+        "ru": "Канлы",
+        "type": "31"
     },
     "1735215818": {
         "en": "Urnek",
         "uz": "Urnek",
-        "ru": "Орнек"
+        "ru": "Орнек",
+        "type": "31"
     },
     "1735215822": {
         "en": "Raushan",
         "uz": "Raushan",
-        "ru": "Раушан"
+        "ru": "Раушан",
+        "type": "31"
     },
     "1735215826": {
         "en": "Suuyenli",
         "uz": "Suuyenli",
-        "ru": "Сууенли"
+        "ru": "Сууенли",
+        "type": "31"
     },
     "1735215830": {
         "en": "Ustyurt",
         "uz": "Ustyurt",
-        "ru": "Устирт"
+        "ru": "Устирт",
+        "type": "31"
     },
     "1735215834": {
         "en": "Xorezm",
         "uz": "Xorezm",
-        "ru": "Хорезм"
+        "ru": "Хорезм",
+        "type": "31"
     },
     "1735215841": {
         "en": "Kokdarya",
         "uz": "Kokdarya",
-        "ru": "Кокдарья"
+        "ru": "Кокдарья",
+        "type": "31"
     },
     "1735215845": {
         "en": "Miynetabad",
         "uz": "Miynetabad",
-        "ru": "Мийнетабад"
+        "ru": "Мийнетабад",
+        "type": "31"
     },
     "1735215847": {
         "en": "Qipshaq",
         "uz": "Qipshaq",
-        "ru": "Кыпшак"
+        "ru": "Кыпшак",
+        "type": "31"
     },
     "1735218551": {
         "en": "Qanliko'l",
         "uz": "Qanliko'l",
-        "ru": "Канлыкуль"
+        "ru": "Канлыкуль",
+        "type": "24"
     },
     "1735218805": {
         "en": "Arzimbet qum",
         "uz": "Arzimbet qum",
-        "ru": "Арзымбет кум"
+        "ru": "Арзымбет кум",
+        "type": "31"
     },
     "1735218808": {
         "en": "Bustan",
         "uz": "Bustan",
-        "ru": "Бостон"
+        "ru": "Бостон",
+        "type": "31"
     },
     "1735218816": {
         "en": "Qanliko'l",
         "uz": "Qanliko'l",
-        "ru": "Канлыкуль"
+        "ru": "Канлыкуль",
+        "type": "31"
     },
     "1735218817": {
         "en": "Kosjap",
         "uz": "Kosjap",
-        "ru": "Косжап"
+        "ru": "Косжап",
+        "type": "31"
     },
     "1735218819": {
         "en": "Beskupir",
         "uz": "Beskupir",
-        "ru": "Бескопыр"
+        "ru": "Бескопыр",
+        "type": "31"
     },
     "1735218821": {
         "en": "Navriz",
         "uz": "Navriz",
-        "ru": "Наурыз"
+        "ru": "Наурыз",
+        "type": "31"
     },
     "1735218823": {
         "en": "Jana qal'a",
         "uz": "Jana qal'a",
-        "ru": "Жана кала"
+        "ru": "Жана кала",
+        "type": "31"
     },
     "1735222501": {
         "en": "Mo'ynoq",
         "uz": "Mo'ynoq",
-        "ru": "Муйнак"
+        "ru": "Муйнак",
+        "type": "23"
     },
     "1735222811": {
         "en": "Bozatau",
         "uz": "Bozatau",
-        "ru": "Бозатау"
+        "ru": "Бозатау",
+        "type": "31"
     },
     "1735222822": {
         "en": "Kazax-darya",
         "uz": "Kazax-darya",
-        "ru": "Казахдарья"
+        "ru": "Казахдарья",
+        "type": "31"
     },
     "1735222833": {
         "en": "Madeli",
         "uz": "Madeli",
-        "ru": "Мадели"
+        "ru": "Мадели",
+        "type": "31"
     },
     "1735222844": {
         "en": "Tik-uzyak",
         "uz": "Tik-uzyak",
-        "ru": "Тикузяк"
+        "ru": "Тикузяк",
+        "type": "31"
     },
     "1735222855": {
         "en": "Uchsay",
         "uz": "Uchsay",
-        "ru": "Учсай"
+        "ru": "Учсай",
+        "type": "31"
     },
     "1735222866": {
         "en": "Xakim-ata",
         "uz": "Xakim-ata",
-        "ru": "Хаким-ата"
+        "ru": "Хаким-ата",
+        "type": "31"
     },
     "1735222877": {
         "en": "Qizil jar",
         "uz": "Qizil jar",
-        "ru": "Кизил жар"
+        "ru": "Кизил жар",
+        "type": "31"
     },
     "1735225551": {
         "en": "Oqmang'it",
         "uz": "Oqmang'it",
-        "ru": "Акмангит"
+        "ru": "Акмангит",
+        "type": "24"
     },
     "1735225822": {
         "en": "Bakanshakli",
         "uz": "Bakanshakli",
-        "ru": "Баканшаклы"
+        "ru": "Баканшаклы",
+        "type": "31"
     },
     "1735225835": {
         "en": "Krantau",
         "uz": "Krantau",
-        "ru": "Крантау"
+        "ru": "Крантау",
+        "type": "31"
     },
     "1735225843": {
         "en": "Takirkul",
         "uz": "Takirkul",
-        "ru": "Такыркол"
+        "ru": "Такыркол",
+        "type": "31"
     },
     "1735225846": {
         "en": "Samanbay",
         "uz": "Samanbay",
-        "ru": "Саманбай"
+        "ru": "Саманбай",
+        "type": "31"
     },
     "1735225854": {
         "en": "Arbashi",
         "uz": "Arbashi",
-        "ru": "Арбаши"
+        "ru": "Арбаши",
+        "type": "31"
     },
     "1735225858": {
         "en": "Kerder",
         "uz": "Kerder",
-        "ru": "Кеpдеp"
+        "ru": "Кеpдеp",
+        "type": "31"
     },
     "1735228501": {
         "en": "Taxiatosh",
         "uz": "Taxiatosh",
-        "ru": "Тахиаташ"
+        "ru": "Тахиаташ",
+        "type": "23"
     },
     "1735228553": {
         "en": "Naymanko'l",
         "uz": "Naymanko'l",
-        "ru": "Найманкул"
+        "ru": "Найманкул",
+        "type": "24"
     },
     "1735228806": {
         "en": "Kenеgеs",
         "uz": "Kenеgеs",
-        "ru": "Кенегес"
+        "ru": "Кенегес",
+        "type": "31"
     },
     "1735228809": {
         "en": "Naymanko'l",
         "uz": "Naymanko'l",
-        "ru": "Найманкул"
+        "ru": "Найманкул",
+        "type": "31"
     },
     "1735228812": {
         "en": "Sarаyko'l",
         "uz": "Sarаyko'l",
-        "ru": "Сарайкул"
+        "ru": "Сарайкул",
+        "type": "31"
     },
     "1735230551": {
         "en": "Taxtako'pir",
         "uz": "Taxtako'pir",
-        "ru": "Тахтакупыр"
+        "ru": "Тахтакупыр",
+        "type": "24"
     },
     "1735230803": {
         "en": "Atakul",
         "uz": "Atakul",
-        "ru": "Атакуль"
+        "ru": "Атакуль",
+        "type": "31"
     },
     "1735230820": {
         "en": "Qara-oy",
         "uz": "Qara-oy",
-        "ru": "Караой"
+        "ru": "Караой",
+        "type": "31"
     },
     "1735230833": {
         "en": "Mulik",
         "uz": "Mulik",
-        "ru": "Мулик"
+        "ru": "Мулик",
+        "type": "31"
     },
     "1735230835": {
         "en": "Qungrat kul",
         "uz": "Qungrat kul",
-        "ru": "Коныраткол"
+        "ru": "Коныраткол",
+        "type": "31"
     },
     "1735230837": {
         "en": "Janadarya",
         "uz": "Janadarya",
-        "ru": "Жанадаpья"
+        "ru": "Жанадаpья",
+        "type": "31"
     },
     "1735230840": {
         "en": "Beltau",
         "uz": "Beltau",
-        "ru": "Белтау"
+        "ru": "Белтау",
+        "type": "31"
     },
     "1735230844": {
         "en": "Qarateren",
         "uz": "Qarateren",
-        "ru": "Каратерен"
+        "ru": "Каратерен",
+        "type": "31"
     },
     "1735230877": {
         "en": "Taxtako'pir",
         "uz": "Taxtako'pir",
-        "ru": "Тахтакупыр"
+        "ru": "Тахтакупыр",
+        "type": "31"
     },
     "1735233501": {
         "en": "To'rtko'l",
         "uz": "To'rtko'l",
-        "ru": "Турткуль"
+        "ru": "Турткуль",
+        "type": "23"
     },
     "1735233552": {
         "en": "Miskin",
         "uz": "Miskin",
-        "ru": "Мискин"
+        "ru": "Мискин",
+        "type": "24"
     },
     "1735233554": {
         "en": "Turkmankuli",
         "uz": "Turkmankuli",
-        "ru": "Туркманкули"
+        "ru": "Туркманкули",
+        "type": "24"
     },
     "1735233556": {
         "en": "Tozabog'",
         "uz": "Tozabog'",
-        "ru": "Тозабог"
+        "ru": "Тозабог",
+        "type": "24"
     },
     "1735233558": {
         "en": "Nurli yo'l",
         "uz": "Nurli yo'l",
-        "ru": "Нурли-йул"
+        "ru": "Нурли-йул",
+        "type": "24"
     },
     "1735233560": {
         "en": "Amirobod",
         "uz": "Amirobod",
-        "ru": "Амирабад"
+        "ru": "Амирабад",
+        "type": "24"
     },
     "1735233804": {
         "en": "Aqboshli",
         "uz": "Aqboshli",
-        "ru": "Акбашлы"
+        "ru": "Акбашлы",
+        "type": "31"
     },
     "1735233806": {
         "en": "Aqqamish",
         "uz": "Aqqamish",
-        "ru": "Аккамыш"
+        "ru": "Аккамыш",
+        "type": "31"
     },
     "1735233808": {
         "en": "Paxtaabad",
         "uz": "Paxtaabad",
-        "ru": "Пахтаабад"
+        "ru": "Пахтаабад",
+        "type": "31"
     },
     "1735233812": {
         "en": "Ata uba",
         "uz": "Ata uba",
-        "ru": "Атауба"
+        "ru": "Атауба",
+        "type": "31"
     },
     "1735233816": {
         "en": "Kana Turtkul",
         "uz": "Kana Turtkul",
-        "ru": "Кана Турткул"
+        "ru": "Кана Турткул",
+        "type": "31"
     },
     "1735233828": {
         "en": "Yonboshqal'a",
         "uz": "Yonboshqal'a",
-        "ru": "Джамбаскала"
+        "ru": "Джамбаскала",
+        "type": "31"
     },
     "1735233830": {
         "en": "A.Durdiyeva",
         "uz": "A.Durdiyeva",
-        "ru": "им. Дурдыева"
+        "ru": "им. Дурдыева",
+        "type": "31"
     },
     "1735233840": {
         "en": "Kelteminar",
         "uz": "Kelteminar",
-        "ru": "Кельтеминар"
+        "ru": "Кельтеминар",
+        "type": "31"
     },
     "1735233842": {
         "en": "Kukcha",
         "uz": "Kukcha",
-        "ru": "Кокча"
+        "ru": "Кокча",
+        "type": "31"
     },
     "1735233844": {
         "en": "Qumbaskan",
         "uz": "Qumbaskan",
-        "ru": "Кумбаскан"
+        "ru": "Кумбаскан",
+        "type": "31"
     },
     "1735233878": {
         "en": "O'zbekiston",
         "uz": "O'zbekiston",
-        "ru": "Узбекистон"
+        "ru": "Узбекистон",
+        "type": "31"
     },
     "1735233880": {
         "en": "Paxtachi",
         "uz": "Paxtachi",
-        "ru": "Пахтачи"
+        "ru": "Пахтачи",
+        "type": "31"
     },
     "1735233881": {
         "en": "Tazabogyap",
         "uz": "Tazabogyap",
-        "ru": "Тазабагяб"
+        "ru": "Тазабагяб",
+        "type": "31"
     },
     "1735233892": {
         "en": "Ullubog'",
         "uz": "Ullubog'",
-        "ru": "Уллубаг"
+        "ru": "Уллубаг",
+        "type": "31"
     },
     "1735233896": {
         "en": "Shuraxan",
         "uz": "Shuraxan",
-        "ru": "Шурахан"
+        "ru": "Шурахан",
+        "type": "31"
     },
     "1735236501": {
         "en": "Xo'jayli",
         "uz": "Xo'jayli",
-        "ru": "Ходжейли"
+        "ru": "Ходжейли",
+        "type": "23"
     },
     "1735236553": {
         "en": "Vodnik",
         "uz": "Vodnik",
-        "ru": "Водник"
+        "ru": "Водник",
+        "type": "24"
     },
     "1735236811": {
         "en": "Amudarya",
         "uz": "Amudarya",
-        "ru": "Амударья"
+        "ru": "Амударья",
+        "type": "31"
     },
     "1735236819": {
         "en": "Janajap",
         "uz": "Janajap",
-        "ru": "Жанажап"
+        "ru": "Жанажап",
+        "type": "31"
     },
     "1735236833": {
         "en": "Kulyab",
         "uz": "Kulyab",
-        "ru": "Куляб"
+        "ru": "Куляб",
+        "type": "31"
     },
     "1735236839": {
         "en": "Mustaqillik",
         "uz": "Mustaqillik",
-        "ru": "Мустакиллик"
+        "ru": "Мустакиллик",
+        "type": "31"
     },
     "1735236855": {
         "en": "Samankol",
         "uz": "Samankol",
-        "ru": "Саманкуль"
+        "ru": "Саманкуль",
+        "type": "31"
     },
     "1735236877": {
         "en": "Sarishunkul",
         "uz": "Sarishunkul",
-        "ru": "Сарычункуль"
+        "ru": "Сарычункуль",
+        "type": "31"
     },
     "1735236888": {
         "en": "Qumjiqqin",
         "uz": "Qumjiqqin",
-        "ru": "Кумжиккин"
+        "ru": "Кумжиккин",
+        "type": "31"
     },
     "1735240501": {
         "en": "Chimboy",
         "uz": "Chimboy",
-        "ru": "Чимбай"
+        "ru": "Чимбай",
+        "type": "23"
     },
     "1735240553": {
         "en": "Ayteke",
         "uz": "Ayteke",
-        "ru": "Айтеке"
+        "ru": "Айтеке",
+        "type": "24"
     },
     "1735240802": {
         "en": "Kizil uzek",
         "uz": "Kizil uzek",
-        "ru": "Кызыл Озек"
+        "ru": "Кызыл Озек",
+        "type": "31"
     },
     "1735240812": {
         "en": "Kamisarik",
         "uz": "Kamisarik",
-        "ru": "Камыс арык"
+        "ru": "Камыс арык",
+        "type": "31"
     },
     "1735240822": {
         "en": "Baxitli",
         "uz": "Baxitli",
-        "ru": "Бахытлы"
+        "ru": "Бахытлы",
+        "type": "31"
     },
     "1735240833": {
         "en": "Kenes",
         "uz": "Kenes",
-        "ru": "Кенес"
+        "ru": "Кенес",
+        "type": "31"
     },
     "1735240844": {
         "en": "Mayjap",
         "uz": "Mayjap",
-        "ru": "Майжап"
+        "ru": "Майжап",
+        "type": "31"
     },
     "1735240848": {
         "en": "Pashen tov",
         "uz": "Pashen tov",
-        "ru": "Пашент тау"
+        "ru": "Пашент тау",
+        "type": "31"
     },
     "1735240855": {
         "en": "Tazgara",
         "uz": "Tazgara",
-        "ru": "Тазгаpа"
+        "ru": "Тазгаpа",
+        "type": "31"
     },
     "1735240862": {
         "en": "Tagjap",
         "uz": "Tagjap",
-        "ru": "Тагжап"
+        "ru": "Тагжап",
+        "type": "31"
     },
     "1735240866": {
         "en": "Tazajol",
         "uz": "Tazajol",
-        "ru": "Тазажол"
+        "ru": "Тазажол",
+        "type": "31"
     },
     "1735240870": {
         "en": "Kosterek",
         "uz": "Kosterek",
-        "ru": "Костеpек"
+        "ru": "Костеpек",
+        "type": "31"
     },
     "1735243501": {
         "en": "Shumanay",
         "uz": "Shumanay",
-        "ru": "Шуманай"
+        "ru": "Шуманай",
+        "type": "23"
     },
     "1735243805": {
         "en": "Birleshik",
         "uz": "Birleshik",
-        "ru": "Бирлешик"
+        "ru": "Бирлешик",
+        "type": "31"
     },
     "1735243809": {
         "en": "Begjap",
         "uz": "Begjap",
-        "ru": "Бегжап"
+        "ru": "Бегжап",
+        "type": "31"
     },
     "1735243812": {
         "en": "Diyxanabad",
         "uz": "Diyxanabad",
-        "ru": "Дийханабад"
+        "ru": "Дийханабад",
+        "type": "31"
     },
     "1735243818": {
         "en": "Mamiy",
         "uz": "Mamiy",
-        "ru": "Мамый"
+        "ru": "Мамый",
+        "type": "31"
     },
     "1735243821": {
         "en": "Sarmanbaykol",
         "uz": "Sarmanbaykol",
-        "ru": "Сарманбайкол"
+        "ru": "Сарманбайкол",
+        "type": "31"
     },
     "1735243825": {
         "en": "Ak jap",
         "uz": "Ak jap",
-        "ru": "Акжап"
+        "ru": "Акжап",
+        "type": "31"
     },
     "1735243830": {
         "en": "Ketenler",
         "uz": "Ketenler",
-        "ru": "Кетенлер"
+        "ru": "Кетенлер",
+        "type": "31"
     },
     "1735250501": {
         "en": "Bo'ston",
         "uz": "Bo'ston",
-        "ru": "Бустан"
+        "ru": "Бустан",
+        "type": "23"
     },
     "1735250555": {
         "en": "Saxtiyon",
         "uz": "Saxtiyon",
-        "ru": "Сахтиен"
+        "ru": "Сахтиен",
+        "type": "24"
     },
     "1735250803": {
         "en": "Aqchakul",
         "uz": "Aqchakul",
-        "ru": "Акчакуль"
+        "ru": "Акчакуль",
+        "type": "31"
     },
     "1735250807": {
         "en": "Gulistan",
         "uz": "Gulistan",
-        "ru": "Гулистан"
+        "ru": "Гулистан",
+        "type": "31"
     },
     "1735250808": {
         "en": "Guldursun",
         "uz": "Guldursun",
-        "ru": "Гульдирсин"
+        "ru": "Гульдирсин",
+        "type": "31"
     },
     "1735250812": {
         "en": "Taza bog'",
         "uz": "Taza bog'",
-        "ru": "Тазабог"
+        "ru": "Тазабог",
+        "type": "31"
     },
     "1735250815": {
         "en": "Sarabiy",
         "uz": "Sarabiy",
-        "ru": "Саpабий"
+        "ru": "Саpабий",
+        "type": "31"
     },
     "1735250820": {
         "en": "Qizil qum",
         "uz": "Qizil qum",
-        "ru": "Кызылкум"
+        "ru": "Кызылкум",
+        "type": "31"
     },
     "1735250823": {
         "en": "Qirqqiz",
         "uz": "Qirqqiz",
-        "ru": "Кырккыз"
+        "ru": "Кырккыз",
+        "type": "31"
     },
     "1735250827": {
         "en": "Navoiy nomli",
         "uz": "Navoiy nomli",
-        "ru": "им. Навои"
+        "ru": "им. Навои",
+        "type": "31"
     },
     "1735250830": {
         "en": "Qilchinok",
         "uz": "Qilchinok",
-        "ru": "Килчинак"
+        "ru": "Килчинак",
+        "type": "31"
     },
     "1735250835": {
         "en": "Amirabad",
         "uz": "Amirabad",
-        "ru": "Амирабад"
+        "ru": "Амирабад",
+        "type": "31"
     },
     "1735250850": {
         "en": "Sharq Yulduzi",
         "uz": "Sharq Yulduzi",
-        "ru": "Шарк-Юлдузи"
+        "ru": "Шарк-Юлдузи",
+        "type": "31"
     },
     "1735250855": {
         "en": "Ellikkala",
         "uz": "Ellikkala",
-        "ru": "Элликкала"
+        "ru": "Элликкала",
+        "type": "31"
     },
     "1735250860": {
         "en": "Do'stlik",
         "uz": "Do'stlik",
-        "ru": "Дустлик"
+        "ru": "Дустлик",
+        "type": "31"
     },
     "1735401554": {
         "en": "Karatau",
         "uz": "Karatau",
-        "ru": "Каратау"
+        "ru": "Каратау",
+        "type": "24"
     }
 }
 
