@@ -10,7 +10,7 @@ import { FlatpickrFn } from 'flatpickr/dist/types/instance';
 const flatpickr: FlatpickrFn = _flatpickr as any;
 import { Russian } from "flatpickr/dist/l10n/ru";
 import { UzbekLatin } from "flatpickr/dist/l10n/uz_latn";
-import { administrative, regions, districts, settlements, settlement_types } from "../../libraries/administrative";
+import { administrative, settlements, settlement_types } from "../../libraries/administrative";
 
 import * as en from "../../locales/en.json";
 import * as uz from "../../locales/uz.json";
@@ -36,6 +36,11 @@ const sh3_end_dates = [
 ];
 
 let institutionDetails;
+
+const regElements = ["lk14b", "cm3b", "cm10c", "cm11c", "ct3b", "ct10c", "ct11c", "cg10c", "cg11c", "sa3a"];
+const disElements = ["lk14c", "cm3c", "cm10d", "cm11d", "ct3c", "ct10d", "ct11d", "cg10d", "cg11d", "sa3b"];
+const setElements = ["lk14d", "cm3d", "cm10e", "cm11e", "ct3d", "ct10e", "ct11e", "cg10e", "cg11e", "sa3c"];
+const typeElements = ["lk14e", "cm3e", "cm10f", "cm11f", "ct3e", "ct10f", "ct11f", "cg10f", "cg11f", "sa3d"];
 
 export const instrument1 = {
     init: async () => {
@@ -84,6 +89,8 @@ export const instrument1 = {
             } else if (el == "cmgt1a") {
                 config = { ...flatpickrConfig, minDate: "01/01/2000" };
                 config.dateFormat = "m/Y";
+            } else if (el == "lk3" || el == "cg1c") {
+                config = { ...flatpickrConfig, minDate: "01/01/1990" };
             } else {
                 config = { ...flatpickrConfig, minDate: "01/01/2000" };
             }
@@ -92,18 +99,15 @@ export const instrument1 = {
 
         const today = new Date();
         flatpickr_elements[date_elements.indexOf('data')].setDate(today);
-        document.getElementById("data").dispatchEvent(new Event('change'));
+        util.trigger("data", "change");
 
         // TODO: de modificat activatorii pentru district si localitate, implicit -7
         // iar la localitate, daca districtul nu are localitati, sa ramana dezactivat
 
-        const regElements = ["lk14b", "cm3b", "cm10c", "cm11c", "ct3b", "ct10c", "ct11c", "cg10c", "cg11c", "sa3a"];
-        const disElements = ["lk14c", "cm3c", "cm10d", "cm11d", "ct3c", "ct10d", "ct11d", "cg10d", "cg11d", "sa3b"];
-        const atuElements = ["lk14d", "cm3d", "cm10e", "cm11e", "ct3d", "ct10e", "ct11e", "cg10e", "cg11e", "sa3c"];
 
         const regions = Object.keys(administrative);
         for (let x = 0; x < regElements.length; x++) {
-            const regel = document.getElementById(regElements[x]);
+            const regel = util.htmlElement(regElements[x]);
 
             regel.innerHTML = "";
             const option = document.createElement("option");
@@ -119,16 +123,16 @@ export const instrument1 = {
                 regel.appendChild(option);
             }
 
-            const district = document.getElementById(disElements[x]);
-            const atu = document.getElementById(atuElements[x]);
+            const district = util.htmlElement(disElements[x]);
+            const set = util.htmlElement(setElements[x]);
 
-            regel.addEventListener("change", function () {
-                const selectedRegion = (<HTMLSelectElement>regel).value;
+            util.listen(regElements[x], "change", function () {
+                const selectedRegion = regel.value;
                 if (selectedRegion != "-9") {
                     const regdist = administrative[selectedRegion].districts;
                     const districts = Object.keys(regdist);
                     district.innerHTML = "";
-                    atu.innerHTML = "";
+                    set.innerHTML = "";
                     const option = document.createElement("option");
                     option.value = "-9";
                     option.text = locales[lang]['t_choose'];
@@ -137,7 +141,7 @@ export const instrument1 = {
                     const option2 = document.createElement("option");
                     option2.value = "-9";
                     option2.text = locales[lang]['t_choose'];
-                    atu.appendChild(option2);
+                    set.appendChild(option2);
 
                     for (let i = 0; i < districts.length; i++) {
                         const option = document.createElement("option");
@@ -149,24 +153,24 @@ export const instrument1 = {
                 }
             })
 
-            district.addEventListener("change", function () {
-                const selectedRegion = (<HTMLSelectElement>regel).value;
-                const selectedDistrict = (<HTMLSelectElement>district).value;
+            util.listen(disElements[x], "change", function () {
+                const selectedRegion = regel.value;
+                const selectedDistrict = district.value;
                 if (selectedRegion != "-9" && selectedDistrict != "-9") {
-                    const regdisatu = administrative[selectedRegion].districts[selectedDistrict].settlements;
-                    if (regdisatu) {
-                        const settlements = Object.keys(regdisatu);
-                        atu.innerHTML = "";
+                    const regdisset = administrative[selectedRegion].districts[selectedDistrict].settlements;
+                    if (regdisset) {
+                        const settlements = Object.keys(regdisset);
+                        set.innerHTML = "";
                         const option = document.createElement("option");
                         option.value = "-9";
                         option.text = locales[lang]['t_choose'];
-                        atu.appendChild(option);
+                        set.appendChild(option);
 
                         for (let i = 0; i < settlements.length; i++) {
                             const option = document.createElement("option");
                             option.value = settlements[i];
-                            option.text = (regdisatu[settlements[i]] as { [key: string]: string })[lang];
-                            atu.appendChild(option);
+                            option.text = (regdisset[settlements[i]] as { [key: string]: string })[lang];
+                            set.appendChild(option);
                         }
                     }
                     else {
@@ -242,15 +246,23 @@ const saveChestionar = (obj: SaveInstrumentType): void => {
 }
 
 
-function check_lk22_2(): boolean {
-    const lk22_2_1 = document.getElementById("lk22_2_1") as HTMLInputElement;
-    const lk22_2_7_1 = document.getElementById("lk22_2_7-1") as HTMLInputElement;
-    const lk22_2_7_0 = document.getElementById("lk22_2_7-0") as HTMLInputElement;
+for (let i = 0; i < setElements.length; i++) {
+    util.listen(setElements[i], "change", () => {
+        const index = setElements.indexOf(setElements[i]);
+        const value = util.htmlElement(setElements[i]).value;
+        const setype = settlement_types[settlements[value].type];
+        util.setValue(typeElements[index], setype[lang as keyof typeof setype]);
+        util.trigger(typeElements[index], "change");
+    })
+}
 
-    let suma = 0;
-    lk22_2.forEach((item) => {
-        suma += Number(instrument.questions[item].value);
-    });
+
+function check_lk22_2(): boolean {
+    const lk22_2_1 = util.htmlElement("lk22_2_1");
+    const lk22_2_7_1 = util.htmlElement("lk22_2_7-1");
+    const lk22_2_7_0 = util.htmlElement("lk22_2_7-0");
+
+    const suma = util.makeSumFromElements(lk22_2);
 
     const error = locales[lang]['At_least_one_disability'];
     errorHandler.removeArrayError(lk22_2, error);
@@ -274,25 +286,22 @@ function check_lk22_2(): boolean {
     return(suma > 0);
 }
 
-lk22_2.forEach((el) => {
-    const elem = document.getElementById(el) as HTMLInputElement;
-    elem.addEventListener("myChange", check_lk22_2);
-});
+util.listenArray(lk22_2, ["myChange"], check_lk22_2);
 
 
-document.querySelectorAll('input[name="cm1a"]').forEach((elem) => {
-    elem.addEventListener("myChange", function() {
-        const val = this.value;
+util.radioIDs("cm1a").forEach((elem) => {
+    util.listen(elem, "myChange", () => {
+        const val = util.htmlElement(elem).value;
 
         if (val == "1") {
-            const cm1c1 = document.getElementById("cm1c-1-disabled") as HTMLInputElement;
+            const cm1c1 = util.htmlElement("cm1c-1-disabled");
             if (cm1c1) {
                 cm1c1.removeAttribute("disabled");
                 cm1c1.id = "cm1c-1";
             }
         }
         else if (val == "2") {
-            const cm1c1 = document.getElementById("cm1c-1") as HTMLInputElement;
+            const cm1c1 = util.htmlElement("cm1c-1");
             cm1c1.setAttribute("disabled", "true");
             if (cm1c1.checked) {
                 cm1c1.checked = false;
@@ -302,9 +311,9 @@ document.querySelectorAll('input[name="cm1a"]').forEach((elem) => {
             cm1c1.id = "cm1c-1-disabled";
         }
         else {
-            const cm1c1 = document.getElementById("cm1c-1") as HTMLInputElement;
-            const cm1c2 = document.getElementById("cm1c-2") as HTMLInputElement;
-            const cm1c3 = document.getElementById("cm1c-3") as HTMLInputElement;
+            const cm1c1 = util.htmlElement("cm1c-1");
+            const cm1c2 = util.htmlElement("cm1c-2");
+            const cm1c3 = util.htmlElement("cm1c-3");
             cm1c1.checked = false;
             cm1c2.checked = false;
             cm1c3.checked = true;
@@ -314,19 +323,19 @@ document.querySelectorAll('input[name="cm1a"]').forEach((elem) => {
 });
 
 
-document.querySelectorAll('input[name="ct1a"]').forEach((elem) => {
-    elem.addEventListener("myChange", function() {
-        const val = this.value;
+util.radioIDs("ct1a").forEach((elem) => {
+    util.listen(elem, "myChange", () => {
+        const val = util.htmlElement(elem).value;
 
         if (val == "1") {
-            const ct1c1 = document.getElementById("ct1c-1-disabled") as HTMLInputElement;
+            const ct1c1 = util.htmlElement("ct1c-1-disabled");
             if (ct1c1) {
                 ct1c1.removeAttribute("disabled");
                 ct1c1.id = "ct1c-1";
             }
         }
         else if (val == "2" || val == "4") {
-            const ct1c1 = document.getElementById("ct1c-1") as HTMLInputElement;
+            const ct1c1 = util.htmlElement("ct1c-1");
             ct1c1.setAttribute("disabled", "true");
             if (ct1c1.checked) {
                 ct1c1.checked = false;
@@ -336,9 +345,9 @@ document.querySelectorAll('input[name="ct1a"]').forEach((elem) => {
             ct1c1.id = "ct1c-1-disabled";
         }
         else {
-            const ct1c1 = document.getElementById("ct1c-1") as HTMLInputElement;
-            const ct1c2 = document.getElementById("ct1c-2") as HTMLInputElement;
-            const ct1c3 = document.getElementById("ct1c-3") as HTMLInputElement;
+            const ct1c1 = util.htmlElement("ct1c-1");
+            const ct1c2 = util.htmlElement("ct1c-2");
+            const ct1c3 = util.htmlElement("ct1c-3");
             ct1c1.checked = false;
             ct1c2.checked = false;
             ct1c3.checked = true;
@@ -347,27 +356,23 @@ document.querySelectorAll('input[name="ct1a"]').forEach((elem) => {
     });
 });
 
-const lk3 = document.getElementById('lk3') as HTMLInputElement;
-const lk13a = document.getElementById('lk13a') as HTMLInputElement;
-const sa1 = document.getElementById('sa1') as HTMLInputElement;
 
-lk3.addEventListener("myChange", function () {
+util.listen("lk3", "myChange", () => {
     if (instrument.questions.lk3.value != "-9") {
         const age = util.diffDates(
             util.standardDate(instrument.questions.lk3.value),
             new Date(2024, 5, 1)
         )
 
-        lk13a.value = age.toString();
-        instrument.questions["lk13a"].value = age.toString();
+        util.setValue("lk13a", age.toString());
+        util.trigger("lk13a", "change");
 
-        lk13a.dispatchEvent(new Event('change'));
-        sa1.dispatchEvent(new Event('myChange'));
+        util.trigger("sa1", "myChange");
     }
 });
 
 
-sa1.addEventListener("myChange", function() {
+util.listen("sa1", "myChange", () => {
     if (instrument.questions.lk3.value != "-9" && instrument.questions.sa1.value != "-9") {
         const age = util.diffDates(
             util.standardDate(instrument.questions.lk3.value),
@@ -375,19 +380,16 @@ sa1.addEventListener("myChange", function() {
         )
 
         if (!Number.isNaN(age)) {
-            const sa1a = document.getElementById('sa1a') as HTMLInputElement;
-            sa1a.value = age.toString();
-            instrument.questions["sa1a"].value = age.toString();
-            sa1a.dispatchEvent(new Event('myChange'));
+            util.setValue("sa1a", age.toString());
+            util.trigger("sa1a", "change");
         }
     }
 });
 
-const sa1a = document.getElementById('sa1a') as HTMLInputElement;
-sa1a.addEventListener("myChange", function() {
-    const qeduc21 = document.getElementById('qeduc2-1') as HTMLInputElement;
-    const qeduc22 = document.getElementById('qeduc2-2') as HTMLInputElement;
-    const qeduc27disabled = document.getElementById("qeduc2-7-disabled") as HTMLInputElement;
+util.listen("sa1a", "myChange", () => {
+    const qeduc21 = util.htmlElement('qeduc2-1');
+    const qeduc22 = util.htmlElement('qeduc2-2');
+    const qeduc27disabled = util.htmlElement("qeduc2-7-disabled");
     const age = Number(instrument.questions["sa1a"].value);
 
     if (age < 7) {
@@ -405,38 +407,34 @@ sa1a.addEventListener("myChange", function() {
 })
 
 
-const qhouse = ['qhouse4a', 'qhouse4b'];
-qhouse.forEach((el) => {
-    const elem = document.getElementById(el) as HTMLInputElement;
-    elem.addEventListener("myChange", function() {
-        if (instrument.questions.qhouse4a.value != "-9" && instrument.questions.qhouse4b.value != "-9") {
-            const qhouse4 = document.getElementById('qhouse4') as HTMLInputElement;
-            qhouse4.value = (Number(instrument.questions.qhouse4a.value) + Number(instrument.questions.qhouse4b.value)).toString();
-            instrument.questions["qhouse4"].value = qhouse4.value;
-        }
-    });
+util.listenArray(['qhouse4a', 'qhouse4b'], ["myChange"], () => {
+    if (instrument.questions.qhouse4a.value != "-9" && instrument.questions.qhouse4b.value != "-9") {
+        const value = (
+            Number(instrument.questions.qhouse4a.value) +
+            Number(instrument.questions.qhouse4b.value)
+        ).toString();
+
+        util.setValue("qhouse4", value);
+        util.trigger("qhouse4", "change");
+    }
 });
 
 
 //qhouse4 = qhouse4a + qhouse4b
 const qhouse4Array = ['qhouse4a', 'qhouse4b'];
 const qhouse4ArrayFull = [...qhouse4Array, 'qhouse4'];
-qhouse4ArrayFull.forEach(item => {
-    (document.getElementById(item) as HTMLInputElement).addEventListener('change', () => {
-        if (util.inputsHaveValue(qhouse4ArrayFull)) {
-            const qhouse4 = util.getInputNumericValue('qhouse4');
+util.listenArray(qhouse4ArrayFull, ["change"], () => {
+    if (util.inputsHaveValue(qhouse4ArrayFull)) {
+        const qhouse4 = util.getInputNumericValue('qhouse4');
 
-            errorHandler.removeArrayError(qhouse4Array, '4 = 4a + 4b')
-            if (qhouse4 != util.makeSumFromElements(qhouse4Array)) {
-                errorHandler.addArrayError(qhouse4Array, '4 = 4a + 4b')
-            }
+        errorHandler.removeArrayError(qhouse4Array, '4 = 4a + 4b')
+        if (qhouse4 != util.makeSumFromElements(qhouse4Array)) {
+            errorHandler.addArrayError(qhouse4Array, '4 = 4a + 4b')
         }
-    })
+    }
 });
 
-const sh1 = document.getElementById('sh1') as HTMLInputElement;
-
-sh1.addEventListener("myChange", function() {
+util.listen("sh1", "myChange", () => {
     const sh1value = util.getInputDecimalValue('sh1');
 
     const error = locales[lang]['Value_up_to_ten'];
@@ -452,10 +450,9 @@ sh1.addEventListener("myChange", function() {
 
     // dupa ce dispare eroarea, mai trebuie facut un dispatch change pe orice element
     // ca sa treaca prin activatorii de la tabelul sh3
-    const sh2 = document.getElementById('sh2-1');
-    sh2.dispatchEvent(new Event('change'));
-    sh2.focus();
-    sh2.blur();
+    util.trigger('sh2-1', 'change');
+    util.focus('sh2-1');
+    util.blur('sh2-1');
     document.getElementsByName('sh2')[0].scrollIntoView({ behavior: "instant", block: "center", inline: "center" });
 });
 
