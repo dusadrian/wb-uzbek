@@ -778,6 +778,10 @@ ipcMain.on('saveInstrument', (event, args) => {
                 goToPFQList();
                 return;
             }
+            if (args.table === 'yplcs') {
+                goToYPLCSList();
+                return;
+            }
         });
     });
 });

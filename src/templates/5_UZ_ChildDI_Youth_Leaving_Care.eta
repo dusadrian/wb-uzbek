@@ -139,7 +139,7 @@
             <div class="col-span-1"><%= it.t41 %>. <%= it.t42 %></div>
             <div class="col-span-1 flex gap-4">
                 <div class="flex items-center">
-                    <input id="lk2-1" type="radio" value="1" name="pi2" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <input id="pi2-1" type="radio" value="1" name="pi2" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                     <label for="pi2-1" class="ms-2 text-sm text-gray-900"><%= it.t43 %></label>
                 </div>
                 <div class="flex items-center">
@@ -174,7 +174,7 @@
         <div class="grid grid-cols-2 items-center gap-4 mt-6">
             <div><%= it.t53 %>. <%= it.t54 %></div>
             <div>
-                <select id="" name="pi4b" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+                <select id="pi4b" name="pi4b" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
                     <option value="-9" class="t_choose">--- choose ---</option>
                 </select>
             </div>
@@ -206,20 +206,48 @@
 
 
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
-            <div><%= it.t59 %>. <%= it.t60 %></div>
-            <div>
-                <select id="pi5" name="pi5" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                    <option value="1"><%= it.t61 %></option>
-                    <option value="2"><%= it.t62 %></option>
-                    <option value="3"><%= it.t63 %></option>
-                    <option value="4"><%= it.t64 %></option>
-                    <option value="5"><%= it.t65 %></option>
-                    <option value="6"><%= it.t66 %></option>
-                    <option value="7"><%= it.t67 %></option>
-                    <option value="8"><%= it.t68 %></option>
-                    <option value="9"><%= it.t69 %></option>
-                    <option value="0"><%= it.t70 %></option>
-                </select>
+            <div class="col-span-1"><%= it.t59 %>. <%= it.t60 %></div>
+            <div class="col-span-1 flex flex-col gap-2">
+                <div class="flex items-center">
+                    <input id="pi5-1" type="radio" value="1" name="pi2" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="pi5-1" class="ms-2 text-sm text-gray-900"><%= it.t61 %></label>
+                </div>
+                <div class="flex items-center">
+                    <input id="pi5-2" type="radio" value="2" name="pi5" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="pi5-2" class="ms-2 text-sm text-gray-900"><%= it.t62 %></label>
+                </div>
+                <div class="flex items-center">
+                    <input id="pi5-3" type="radio" value="3" name="pi5" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="pi5-3" class="ms-2 text-sm text-gray-900"><%= it.t63 %></label>
+                </div>
+                <div class="flex items-center">
+                    <input id="pi5-4" type="radio" value="4" name="pi5" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="pi5-4" class="ms-2 text-sm text-gray-900"><%= it.t64 %></label>
+                </div>
+                <div class="flex items-center">
+                    <input id="pi5-5" type="radio" value="5" name="pi5" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="pi5-5" class="ms-2 text-sm text-gray-900"><%= it.t65 %></label>
+                </div>
+                <div class="flex items-center">
+                    <input id="pi5-6" type="radio" value="6" name="pi5" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="pi5-6" class="ms-2 text-sm text-gray-900"><%= it.t66 %></label>
+                </div>
+                <div class="flex items-center">
+                    <input id="pi5-7" type="radio" value="7" name="pi5" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="pi5-7" class="ms-2 text-sm text-gray-900"><%= it.t67 %></label>
+                </div>
+                <div class="flex items-center">
+                    <input id="pi5-8" type="radio" value="8" name="pi5" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="pi5-8" class="ms-2 text-sm text-gray-900"><%= it.t68 %></label>
+                </div>
+                <div class="flex items-center">
+                    <input id="pi5-9" type="radio" value="9" name="pi5" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="pi5-9" class="ms-2 text-sm text-gray-900"><%= it.t69 %></label>
+                </div>
+                <div class="flex items-center">
+                    <input id="pi5-10" type="radio" value="0" name="pi5" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="pi5-20" class="ms-2 text-sm text-gray-900"><%= it.t70 %></label>
+                </div>
             </div>
         </div>
 
@@ -310,7 +338,7 @@
         <div class="grid grid-cols-2 items-center gap-4 mt-6">
             <div class="ml-4"><%= it.t108 %></div>
             <div>
-                <select id="" name="pi9c" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+                <select id="pi9c" name="pi9c" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
                     <option value="-9" class="t_choose">--- choose ---</option>
                 </select>
             </div>
@@ -327,7 +355,7 @@
         <div class="grid grid-cols-2 items-center gap-4 mt-6">
             <div class="ml-4">h. <%= it.settlement %></div>
             <div>
-                <select id="pi4h" name="pi9h" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+                <select id="pi9h" name="pi9h" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
                     <option value="-9" class="t_choose">--- choose ---</option>
                 </select>
 
@@ -343,14 +371,14 @@
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
             <div class="ml-4"><%= it.t112 %></div>
             <div>
-                <input type="text" id="pi19e" name="pi19e" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                <input type="text" id="pi9e" name="pi9e" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
             </div>
         </div>
 
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
             <div class="ml-4"><%= it.t113 %></div>
             <div>
-                <input type="text" id="pi19f" name="pi19f" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                <input type="text" id="pi9f" name="pi9f" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
             </div>
         </div>
 
@@ -358,7 +386,7 @@
         <div class="grid grid-cols-2 gap-4 items-center mt-2">
             <div><%= it.t115 %></div>
             <div>
-                <input type="text" id="pi19g" name="pi19g" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                <input type="text" id="pi9g" name="pi9g" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
             </div>
         </div>
 
@@ -391,92 +419,92 @@
         <h2 class="mt-10 mb-4 text-2xl font-bold text-gray-700"><%= it.t125 %></h2>
 
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
-            <div class="col-span-1">PR1. Has the young person had any legal entitlement to their parents’ or other persons’ properties?</div>
+            <div class="col-span-1"><%= it.t126 %>. <%= it.t127 %></div>
             <div class="col-span-1 flex gap-4">
                 <div class="flex items-center">
                     <input id="pr1-1" type="radio" value="1" name="pr1" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="pr1-1" class="ms-2 text-sm text-gray-900">1. Yes</label>
+                    <label for="pr1-1" class="ms-2 text-sm text-gray-900"><%= it.t128 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="pr1-2" type="radio" value="0" name="pr1" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="pr1-2" class="ms-2 text-sm text-gray-900">0. No</label>
+                    <label for="pr1-2" class="ms-2 text-sm text-gray-900"><%= it.t129 %></label>
                 </div>
             </div>
         </div>
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
-            <div class="col-span-1">PR2. Has the young person obtained their property rights officially?</div>
+            <div class="col-span-1"><%= it.t131 %>. <%= it.t132 %></div>
             <div class="col-span-1 flex flex-col gap-2">
                 <div class="flex items-center">
                     <input id="pr2-1" type="radio" value="1" name="pr2" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="pr2-1" class="ms-2 text-sm text-gray-900">1. has fully obtained their property rights </label>
+                    <label for="pr2-1" class="ms-2 text-sm text-gray-900"><%= it.t133 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="pr2-2" type="radio" value="2" name="pr2" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="pr2-2" class="ms-2 text-sm text-gray-900">2. has obtained some, but not all, of their property rights </label>
+                    <label for="pr2-2" class="ms-2 text-sm text-gray-900"><%= it.t134 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="pr2-3" type="radio" value="3" name="pr2" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="pr2-3" class="ms-2 text-sm text-gray-900">3. has not obtained any of their property rights</label>
+                    <label for="pr2-3" class="ms-2 text-sm text-gray-900"><%= it.t135 %></label>
                 </div>
             </div>
         </div>
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
-            <div class="col-span-1">PR3. Has the young person taken any steps to obtain the remainder of their property rights?</div>
+            <div class="col-span-1"><%= it.t137 %>. <%= it.t138 %></div>
             <div class="col-span-1 flex gap-4">
                 <div class="flex items-center">
                     <input id="pr3-1" type="radio" value="1" name="pr3" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="pr3-1" class="ms-2 text-sm text-gray-900">1. Yes</label>
+                    <label for="pr3-1" class="ms-2 text-sm text-gray-900"><%= it.t139 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="pr3-2" type="radio" value="0" name="pr3" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="pr3-2" class="ms-2 text-sm text-gray-900">0. No</label>
+                    <label for="pr3-2" class="ms-2 text-sm text-gray-900"><%= it.t140 %></label>
                 </div>
             </div>
         </div>
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
-            <div class="col-span-1">PR4. Has the young person received any legal or/and financial support to help him/her obtain the remainder of his/her property rights?</div>
+            <div class="col-span-1"><%= it.t141 %>. <%= it.t142 %></div>
             <div class="col-span-1 flex gap-4">
                 <div class="flex items-center">
                     <input id="pr4-1" type="radio" value="1" name="pr4" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="pr4-1" class="ms-2 text-sm text-gray-900">1. Yes</label>
+                    <label for="pr4-1" class="ms-2 text-sm text-gray-900"><%= it.t143 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="pr4-2" type="radio" value="0" name="pr4" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="pr4-2" class="ms-2 text-sm text-gray-900">0. No</label>
+                    <label for="pr4-2" class="ms-2 text-sm text-gray-900"><%= it.t144 %></label>
                 </div>
             </div>
         </div>
-        <p>QUESTIONS LV1-LV6 APPLY ONLY IF THE YOUNG PERSON LIVES IN THE COMMUNITY (CODE 1 OR 2 IN PI9). IF IN ADULT CARE INSTITUTIONS PLESE SKIP TO LV7</p>
+        <p class="mt-6"><%= it.t145 %></p>
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
-            <div class="col-span-1">LV1. Where does the person currently live?</div>
+            <div class="col-span-1"><%= it.t146 %>. <%= it.t147 %></div>
             <div class="col-span-1 flex flex-col gap-2">
                 <div class="flex items-center">
                     <input id="lv1-1" type="radio" value="1" name="lv1" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="lv1-1" class="ms-2 text-sm text-gray-900">1. A house/apartment owned by themselves </label>
+                    <label for="lv1-1" class="ms-2 text-sm text-gray-900"><%= it.t148 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="lv1-2" type="radio" value="2" name="lv1" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="lv1-2" class="ms-2 text-sm text-gray-900">2. A house/apartment owned by their family, relatives, or partner, offered rent-free</label>
+                    <label for="lv1-2" class="ms-2 text-sm text-gray-900"><%= it.t149 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="lv1-3" type="radio" value="3" name="lv1" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="lv1-3" class="ms-2 text-sm text-gray-900">3. A house/apartment owned by an unrelated person, offered rent-free </label>
+                    <label for="lv1-3" class="ms-2 text-sm text-gray-900"><%= it.t150 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="lv1-4" type="radio" value="4" name="lv1" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="lv1-4" class="ms-2 text-sm text-gray-900">4. A house/apartment rented from a private entity </label>
+                    <label for="lv1-4" class="ms-2 text-sm text-gray-900"><%= it.t151 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="lv1-5" type="radio" value="5" name="lv1" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="lv1-5" class="ms-2 text-sm text-gray-900">5. Apartment/house provided by the state for children without parental care </label>
+                    <label for="lv1-5" class="ms-2 text-sm text-gray-900"><%= it.t152 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="lv1-6" type="radio" value="6" name="lv1" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="lv1-6" class="ms-2 text-sm text-gray-900">6. Social housing </label>
+                    <label for="lv1-6" class="ms-2 text-sm text-gray-900"><%= it.t153 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="lv1-7" type="radio" value="7" name="lv1" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="lv1-7" class="ms-2 text-sm text-gray-900">7. Other, please specify</label>
+                    <label for="lv1-7" class="ms-2 text-sm text-gray-900"><%= it.t154 %></label>
                 </div>
                 <input type="text" id="lv1_other" name="lv1_other" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
             </div>
@@ -484,244 +512,238 @@
 
         <div class="grid grid-cols-2 gap-4 items-center mt-10">
             <div>
-                LV2. Who does the person live with?
+                <%= it.t155 %>. <%= it.t156 %>
             </div>
             <div class="col-span-1 flex flex-col gap-2">
                 <div class="flex items-center">
                     <input id="lv2_1" type="checkbox" value="1" name="lv2_1" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="lv2_1" class="ms-2 text-sm text-gray-900">1. Single .</label>
+                    <label for="lv2_1" class="ms-2 text-sm text-gray-900"><%= it.t158 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="lv2_2" type="checkbox" value="2" name="lv2_2" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="lv2_2" class="ms-2 text-sm text-gray-900">2. With their spouse/partner .</label>
+                    <label for="lv2_2" class="ms-2 text-sm text-gray-900"><%= it.t159 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="lv2_3" type="checkbox" value="3" name="lv2_3" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="lv2_3" class="ms-2 text-sm text-gray-900">3. With their child/children .</label>
+                    <label for="lv2_3" class="ms-2 text-sm text-gray-900"><%= it.t160 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="lv2_4" type="checkbox" value="4" name="lv2_4" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="lv2_4" class="ms-2 text-sm text-gray-900">4. With members of their biological family (parents, siblings) .</label>
+                    <label for="lv2_4" class="ms-2 text-sm text-gray-900"><%= it.t161 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="lv2_5" type="checkbox" value="5" name="lv2_5" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="lv2_5" class="ms-2 text-sm text-gray-900">5. With members of their spouse/partner’s family ).</label>
+                    <label for="lv2_5" class="ms-2 text-sm text-gray-900"><%= it.t162 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="lv2_6" type="checkbox" value="6" name="lv2_6" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="lv2_6" class="ms-2 text-sm text-gray-900">6. With their other relatives (grandparents, uncles/aunts, cousins etc.) interests, including
-                        when parents refuse to take their child from state education, medical and social institutions.</label>
+                    <label for="lv2_6" class="ms-2 text-sm text-gray-900"><%= it.t163 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="lv2_7" type="checkbox" value="7" name="lv2_7" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="lv2_7" class="ms-2 text-sm text-gray-900">7. With other young people whom they live with in the institution / family-type home ).</label>
+                    <label for="lv2_7" class="ms-2 text-sm text-gray-900"><%= it.t164 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="lv2_8" type="checkbox" value="8" name="lv2_8" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="lv2_8" class="ms-2 text-sm text-gray-900">8. With friends, colleagues .</label>
+                    <label for="lv2_8" class="ms-2 text-sm text-gray-900"><%= it.t165 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="lv2_9" type="checkbox" value="9" name="lv2_9" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="lv2_9" class="ms-2 text-sm text-gray-900">9. Other people</label>
+                    <label for="lv2_9" class="ms-2 text-sm text-gray-900"><%= it.t166 %></label>
                 </div>
             </div>
         </div>
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
-            <div>LV3. How many people does the person live with?</div>
+            <div><%= it.t167 %>. <%= it.t168 %></div>
             <div class="flex gap-4">
                 <input type="text" id="lv3" name="lv3" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
             </div>
         </div>
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
-            <div class="col-span-1">LV4. Please rate the housing conditions in which the person currently lives. Use the following five-point scale.</div>
+            <div class="col-span-1"><%= it.t169 %>. <%= it.t170 %></div>
             <div class="col-span-1 flex flex-col gap-2">
                 <div class="flex items-center">
                     <input id="lv4-1" type="radio" value="1" name="lv4" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="lv1-1" class="ms-2 text-sm text-gray-900">1. Extremely Poor: Lacks basic amenities like heating, running water, or electricity. Overcrowded and
-                        in disrepair. </label>
+                    <label for="lv1-1" class="ms-2 text-sm text-gray-900"><%= it.t171 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="lv4-2" type="radio" value="2" name="lv4" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="lv1-2" class="ms-2 text-sm text-gray-900">2. Poor: Has basic amenities, but they are inconsistent or low quality. Living space is cramped and
-                        house may need repairs. </label>
+                    <label for="lv1-2" class="ms-2 text-sm text-gray-900"><%= it.t172 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="lv4-3" type="radio" value="3" name="lv4" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="lv1-3" class="ms-2 text-sm text-gray-900">3. Average: Has all basic amenities which are usually reliable. Adequate living space and house is in
-                        decent condition. </label>
+                    <label for="lv1-3" class="ms-2 text-sm text-gray-900"><%= it.t173 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="lv4-4" type="radio" value="4" name="lv4" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="lv1-4" class="ms-2 text-sm text-gray-900">4. Good: House is in good repair with reliable, high-quality amenities. Comfortable living space and
-                        may have additional features. </label>
+                    <label for="lv1-4" class="ms-2 text-sm text-gray-900"><%= it.t174 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="lv4-5" type="radio" value="5" name="lv4" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="lv1-5" class="ms-2 text-sm text-gray-900">5. Very Good: House is in excellent condition with reliable, high-quality amenities. Spacious, with
-                        modern features and located in a good neighborhood.</label>
+                    <label for="lv1-5" class="ms-2 text-sm text-gray-900"><%= it.t175 %></label>
                 </div>
             </div>
         </div>
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
-            <div class="col-span-1">LV5. Does the person receive any kind of support or socialbenefits related to housing?</div>
+            <div class="col-span-1"><%= it.t176 %>. <%= it.t177 %></div>
             <div class="col-span-1 flex gap-4">
                 <div class="flex items-center">
                     <input id="lv5-1" type="radio" value="1" name="lv5" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="lv5-1" class="ms-2 text-sm text-gray-900">1. Yes</label>
+                    <label for="lv5-1" class="ms-2 text-sm text-gray-900"><%= it.t178 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="lv5-2" type="radio" value="0" name="lv5" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="lv5-2" class="ms-2 text-sm text-gray-900">0. No</label>
+                    <label for="lv5-2" class="ms-2 text-sm text-gray-900"><%= it.t179 %></label>
                 </div>
             </div>
         </div>
         <div class="grid grid-cols-2 gap-4 items-center mt-10">
             <div>
-                LV6. What kind of support/benefits do they receive?
+                <%= it.t180 %>. <%= it.t181 %>
             </div>
             <div class="col-span-1 flex flex-col gap-2">
                 <div class="flex items-center">
                     <input id="lv6_1" type="checkbox" value="1" name="lv6_1" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="lv6_1" class="ms-2 text-sm text-gray-900">Registration in the Mehr daftari </label>
+                    <label for="lv6_1" class="ms-2 text-sm text-gray-900"><%= it.t183 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="lv6_2" type="checkbox" value="1" name="lv6_2" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="lv6_2" class="ms-2 text-sm text-gray-900">State-provided housing through the program for children without parental care </label>
+                    <label for="lv6_2" class="ms-2 text-sm text-gray-900"><%= it.t184 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="lv6_3" type="checkbox" value="1" name="lv6_3" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="lv6_3" class="ms-2 text-sm text-gray-900">Financial aid for housing utilities </label>
+                    <label for="lv6_3" class="ms-2 text-sm text-gray-900"><%= it.t185 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="lv6_4" type="checkbox" value="1" name="lv6_4" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="lv6_4" class="ms-2 text-sm text-gray-900">Financial aid for house repairs and equipment</label>
+                    <label for="lv6_4" class="ms-2 text-sm text-gray-900"><%= it.t186 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="lv6_5" type="checkbox" value="1" name="lv6_5" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="lv6_5" class="ms-2 text-sm text-gray-900">Tax reductions on property and other local taxes .</label>
+                    <label for="lv6_5" class="ms-2 text-sm text-gray-900"><%= it.t187 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="lv6_6" type="checkbox" value="1" name="lv6_6" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="lv6_6" class="ms-2 text-sm text-gray-900">Other, please specify……</label>
+                    <label for="lv6_6" class="ms-2 text-sm text-gray-900"><%= it.t188 %></label>
                 </div>
                 <textarea id="lv6_6_other" name="lv6_6_other" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100"></textarea>
             </div>
         </div>
 
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
-            <div class="col-span-1">LV6B. Is there a plan to provide the young person with housing through the program for children without parental care?</div>
+            <div class="col-span-1"><%= it.t190 %>. <%= it.t191 %></div>
             <div class="col-span-1 flex gap-4">
                 <div class="flex items-center">
                     <input id="lv6b-1" type="radio" value="1" name="lv6b" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="lv6b-1" class="ms-2 text-sm text-gray-900">1. Yes</label>
+                    <label for="lv6b-1" class="ms-2 text-sm text-gray-900"><%= it.t192 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="lv6b-2" type="radio" value="0" name="lv6b" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="lv6b-2" class="ms-2 text-sm text-gray-900">0. No</label>
+                    <label for="lv6b-2" class="ms-2 text-sm text-gray-900"><%= it.t193 %></label>
                 </div>
             </div>
         </div>
 
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
-            <div class="col-span-1">LV7. Is there any plan to move the person to live independently in the community?</div>
+            <div class="col-span-1"><%= it.t195 %>. <%= it.t196 %></div>
             <div class="col-span-1 flex gap-4">
                 <div class="flex items-center">
                     <input id="lv7-1" type="radio" value="1" name="lv7" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="lv7-1" class="ms-2 text-sm text-gray-900">1. Yes</label>
+                    <label for="lv7-1" class="ms-2 text-sm text-gray-900"><%= it.t197 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="lv7-2" type="radio" value="0" name="lv7" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="lv7-2" class="ms-2 text-sm text-gray-900">0. No</label>
+                    <label for="lv7-2" class="ms-2 text-sm text-gray-900"><%= it.t198 %></label>
                 </div>
             </div>
         </div>
 
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
-            <div class="col-span-1">LV8. Are there community alternatives available for the person?</div>
+            <div class="col-span-1"><%= it.t199 %>. <%= it.t200 %></div>
             <div class="col-span-1 flex gap-4">
                 <div class="flex items-center">
                     <input id="lv8-1" type="radio" value="1" name="lv8" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="lv8-1" class="ms-2 text-sm text-gray-900">1. Yes</label>
+                    <label for="lv8-1" class="ms-2 text-sm text-gray-900"><%= it.t201 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="lv8-2" type="radio" value="0" name="lv8" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="lv8-2" class="ms-2 text-sm text-gray-900">0. No</label>
+                    <label for="lv8-2" class="ms-2 text-sm text-gray-900"><%= it.t202 %></label>
                 </div>
             </div>
         </div>
 
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
-            <div>LV9. Please write down any relevant notes on the housing conditions of the person and the support he/she might need</div>
+            <div><%= it.t203 %>. <%= it.t204 %></div>
             <div class="flex gap-4">
                 <textarea id="lv9" name="lv9" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100"></textarea>
             </div>
         </div>
 
-        <h2 class="mt-10 mb-4 text-2xl font-bold text-gray-700">3. HOUSING</h2>
+        <h2 class="mt-10 mb-4 text-2xl font-bold text-gray-700"><%= it.t205 %></h2>
 
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
-            <div class="col-span-1">EE1. What is the person’s current level of education?</div>
+            <div class="col-span-1"><%= it.t206 %>. <%= it.t207 %></div>
             <div class="col-span-1 flex flex-col gap-2">
                 <div class="flex items-center">
                     <input id="ee1-1" type="radio" value="0" name="ee1" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="ee1-1" class="ms-2 text-sm text-gray-900">0. No education </label>
+                    <label for="ee1-1" class="ms-2 text-sm text-gray-900"><%= it.t208 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="ee1-2" type="radio" value="1" name="ee1" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="ee1-2" class="ms-2 text-sm text-gray-900">1. Unfinished secondary education </label>
+                    <label for="ee1-2" class="ms-2 text-sm text-gray-900"><%= it.t209 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="ee1-3" type="radio" value="2" name="ee1" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="ee1-3" class="ms-2 text-sm text-gray-900">2. General secondary education (9 grades) </label>
+                    <label for="ee1-3" class="ms-2 text-sm text-gray-900"><%= it.t210 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="ee1-4" type="radio" value="3" name="ee1" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="ee1-4" class="ms-2 text-sm text-gray-900">3. Secondary/vocational education (11 grades) </label>
+                    <label for="ee1-4" class="ms-2 text-sm text-gray-900"><%= it.t211 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="ee1-5" type="radio" value="4" name="ee1" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="ee1-5" class="ms-2 text-sm text-gray-900">4. Tertiary education </label>
+                    <label for="ee1-5" class="ms-2 text-sm text-gray-900"><%= it.t212 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="ee1-6" type="radio" value="5" name="ee1" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="ee1-6" class="ms-2 text-sm text-gray-900">5. Still studying</label>
+                    <label for="ee1-6" class="ms-2 text-sm text-gray-900"><%= it.t213 %></label>
                 </div>
             </div>
         </div>
 
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
-            <div class="col-span-1">EE2. What kind of school does he/she currently attend?</div>
+            <div class="col-span-1"><%= it.t215 %>. <%= it.t216 %></div>
             <div class="col-span-1 flex flex-col gap-2">
                 <div class="flex items-center">
                     <input id="ee2-1" type="radio" value="1" name="ee2" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="ee2-1" class="ms-2 text-sm text-gray-900">1. Vocational College </label>
+                    <label for="ee2-1" class="ms-2 text-sm text-gray-900"><%= it.t217 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="ee2-2" type="radio" value="2" name="ee2" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="ee2-2" class="ms-2 text-sm text-gray-900">2. Academic Lyceum </label>
+                    <label for="ee2-2" class="ms-2 text-sm text-gray-900"><%= it.t218 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="ee2-3" type="radio" value="3" name="ee2" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="ee2-3" class="ms-2 text-sm text-gray-900">3. Institution of higher education </label>
+                    <label for="ee2-3" class="ms-2 text-sm text-gray-900"><%= it.t219 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="ee2-4" type="radio" value="4" name="ee2" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="ee2-4" class="ms-2 text-sm text-gray-900">4. Other, please specify</label>
+                    <label for="ee2-4" class="ms-2 text-sm text-gray-900"><%= it.t220 %></label>
                 </div>
                 <input type="text" id="ee2_other" name="ee2_other" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
             </div>
         </div>
 
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
-            <div class="col-span-1">EE3. In the past 12 months, has the person received any support for continuing or completing studies?</div>
+            <div class="col-span-1"><%= it.t221 %>. <%= it.t222 %></div>
             <div class="col-span-1 flex gap-4">
                 <div class="flex items-center">
                     <input id="ee3-1" type="radio" value="1" name="ee3" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="ee3-1" class="ms-2 text-sm text-gray-900">1. Yes</label>
+                    <label for="ee3-1" class="ms-2 text-sm text-gray-900"><%= it.t223 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="ee3-2" type="radio" value="0" name="ee3" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="ee3-2" class="ms-2 text-sm text-gray-900">0. No</label>
+                    <label for="ee3-2" class="ms-2 text-sm text-gray-900"><%= it.t224 %></label>
                 </div>
             </div>
         </div>
@@ -729,148 +751,150 @@
 
         <div class="grid grid-cols-2 gap-4 items-center mt-10">
             <div>
-                EE4. What kind of support have they received?
+                <%= it.t225 %>. <%= it.t226 %>
+                <small class="block italic mt-1"><%= it.t227 %></small>
             </div>
             <div class="col-span-1 flex flex-col gap-2">
                 <div class="flex items-center">
                     <input id="ee4_1" type="checkbox" value="1" name="ee4_1" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="ee4_1" class="ms-2 text-sm text-gray-900">Registration in the Mehr daftari</label>
+                    <label for="ee4_1" class="ms-2 text-sm text-gray-900"><%= it.t228 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="ee4_2" type="checkbox" value="1" name="ee4_2" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="ee4_2" class="ms-2 text-sm text-gray-900">Full coverage of tuition fees</label>
+                    <label for="ee4_2" class="ms-2 text-sm text-gray-900"><%= it.t229 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="ee4_3" type="checkbox" value="1" name="ee4_3" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="ee4_3" class="ms-2 text-sm text-gray-900">Receipt of a scholarship</label>
+                    <label for="ee4_3" class="ms-2 text-sm text-gray-900"><%= it.t230 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="ee4_4" type="checkbox" value="1" name="ee4_4" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="ee4_4" class="ms-2 text-sm text-gray-900">Participation in vocational training</label>
+                    <label for="ee4_4" class="ms-2 text-sm text-gray-900"><%= it.t231 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="ee4_5" type="checkbox" value="1" name="ee4_5" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="ee4_5" class="ms-2 text-sm text-gray-900">Financial aid to buy books and school equipment.</label>
+                    <label for="ee4_5" class="ms-2 text-sm text-gray-900"><%= it.t232 %>.</label>
                 </div>
                 <div class="flex items-center">
                     <input id="ee4_6" type="checkbox" value="1" name="ee4_6" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="ee4_6" class="ms-2 text-sm text-gray-900">Other, please specify</label>
+                    <label for="ee4_6" class="ms-2 text-sm text-gray-900"><%= it.t233 %></label>
                 </div>
                 <textarea id="ee4_6_other" name="ee4_6_other" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100"></textarea>
             </div>
         </div>
 
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
-            <div class="col-span-1">EE5. What is the person’s current employment status?</div>
+            <div class="col-span-1"><%= it.t234 %>. <%= it.t235 %></div>
             <div class="col-span-1 flex flex-col gap-2">
                 <div class="flex items-center">
                     <input id="ee5-1" type="radio" value="1" name="ee5" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="ee5-1" class="ms-2 text-sm text-gray-900">1. Employed, permanent </label>
+                    <label for="ee5-1" class="ms-2 text-sm text-gray-900"><%= it.t236 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="ee5-2" type="radio" value="2" name="ee5" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="ee5-2" class="ms-2 text-sm text-gray-900">2. Employed, temporary </label>
+                    <label for="ee5-2" class="ms-2 text-sm text-gray-900"><%= it.t237 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="ee5-3" type="radio" value="3" name="ee5" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="ee5-3" class="ms-2 text-sm text-gray-900">3. Self-employed </label>
+                    <label for="ee5-3" class="ms-2 text-sm text-gray-900"><%= it.t238 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="ee5-4" type="radio" value="4" name="ee5" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="ee5-4" class="ms-2 text-sm text-gray-900">4. Unpaid family worker </label>
+                    <label for="ee5-4" class="ms-2 text-sm text-gray-900"><%= it.t239 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="ee5-5" type="radio" value="5" name="ee5" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="ee5-5" class="ms-2 text-sm text-gray-900">5. Unemployed (looking for a job)</label>
+                    <label for="ee5-5" class="ms-2 text-sm text-gray-900"><%= it.t240 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="ee5-6" type="radio" value="6" name="ee5" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="ee5-6" class="ms-2 text-sm text-gray-900">6. Full-time student </label>
+                    <label for="ee5-6" class="ms-2 text-sm text-gray-900"><%= it.t241 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="ee5-7" type="radio" value="7" name="ee5" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="ee5-7" class="ms-2 text-sm text-gray-900">7. Homemaker / Looking after the household </label>
+                    <label for="ee5-7" class="ms-2 text-sm text-gray-900"><%= it.t242 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="ee5-8" type="radio" value="8" name="ee5" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="ee5-8" class="ms-2 text-sm text-gray-900">8. Unable to work due to disability </label>
+                    <label for="ee5-8" class="ms-2 text-sm text-gray-900"><%= it.t243 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="ee5-9" type="radio" value="9" name="ee5" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="ee5-9" class="ms-2 text-sm text-gray-900">9. Other, please specify</label>
+                    <label for="ee5-9" class="ms-2 text-sm text-gray-900"><%= it.t244 %></label>
                 </div>
                 <input type="text" id="ee5_other" name="ee5_other" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
             </div>
         </div>
 
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
-            <div class="col-span-1">EE6. Has the person ever been employed?</div>
+            <div class="col-span-1"><%= it.t246 %>. <%= it.t247 %></div>
             <div class="col-span-1 flex gap-4">
                 <div class="flex items-center">
                     <input id="ee6-1" type="radio" value="1" name="ee6" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="ee6-1" class="ms-2 text-sm text-gray-900">1. Yes</label>
+                    <label for="ee6-1" class="ms-2 text-sm text-gray-900"><%= it.t248 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="ee6-2" type="radio" value="0" name="ee6" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="ee6-2" class="ms-2 text-sm text-gray-900">0. No</label>
+                    <label for="ee6-2" class="ms-2 text-sm text-gray-900"><%= it.t249 %></label>
                 </div>
             </div>
         </div>
 
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
-            <div>EE7. How long has the person been out of work and looking for a job?</div>
+            <div><%= it.t250 %>. <%= it.t251 %></div>
             <div class="flex items-center gap-4">
                 <input type="text" id="ee7" name="ee7" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
-                months
+                <%= it.t252 %>
             </div>
         </div>
 
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
-            <div>EE8. How many jobs have the person had since he/she leftthe childcare system?</div>
+            <div><%= it.t253 %>. <%= it.t254 %></div>
             <div class="flex items-center gap-4">
                 <input type="text" id="ee8" name="ee8" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
-                jobs
+                <%= it.t255 %>
             </div>
         </div>
 
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
-            <div class="col-span-1">EE9. In the past 12 months, has the person received any support for finding or maintaining a job?</div>
+            <div class="col-span-1"><%= it.t249 %>. <%= it.t257 %></div>
             <div class="col-span-1 flex gap-4">
                 <div class="flex items-center">
                     <input id="ee9-1" type="radio" value="1" name="ee9" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="ee9-1" class="ms-2 text-sm text-gray-900">1. Yes</label>
+                    <label for="ee9-1" class="ms-2 text-sm text-gray-900"><%= it.t258 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="ee9-2" type="radio" value="0" name="ee9" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="ee9-2" class="ms-2 text-sm text-gray-900">0. No</label>
+                    <label for="ee9-2" class="ms-2 text-sm text-gray-900"><%= it.t259 %></label>
                 </div>
             </div>
         </div>
 
         <div class="grid grid-cols-2 gap-4 items-center mt-10">
             <div>
-                EE10. What kind of support have they received?
+                <%= it.t260 %>. <%= it.t261 %>
+                <small class="block italic mt-1"><%= it.t262 %></small>
             </div>
             <div class="col-span-1 flex flex-col gap-2">
                 <div class="flex items-center">
                     <input id="ee10_1" type="checkbox" value="1" name="ee10_1" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="ee10_1" class="ms-2 text-sm text-gray-900">Registration in the Mehr daftari</label>
+                    <label for="ee10_1" class="ms-2 text-sm text-gray-900"><%= it.t263 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="ee10_2" type="checkbox" value="1" name="ee10_2" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="ee10_2" class="ms-2 text-sm text-gray-900">Vocational counseling and support</label>
+                    <label for="ee10_2" class="ms-2 text-sm text-gray-900"><%= it.t264 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="ee10_3" type="checkbox" value="1" name="ee10_3" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="ee10_3" class="ms-2 text-sm text-gray-900">Vocational training courses</label>
+                    <label for="ee10_3" class="ms-2 text-sm text-gray-900"><%= it.t265 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="ee10_4" type="checkbox" value="1" name="ee10_4" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="ee10_4" class="ms-2 text-sm text-gray-900">Support for finding a job</label>
+                    <label for="ee10_4" class="ms-2 text-sm text-gray-900"><%= it.t266 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="ee10_5" type="checkbox" value="1" name="ee10_5" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="ee10_5" class="ms-2 text-sm text-gray-900">Other, please specify…...</label>
+                    <label for="ee10_5" class="ms-2 text-sm text-gray-900"><%= it.t267 %></label>
                 </div>
                 <textarea id="ee10_5_other" name="ee10_5_other" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100"></textarea>
             </div>
@@ -878,56 +902,57 @@
 
         <div class="grid grid-cols-2 gap-4 items-center mt-10">
             <div>
-                EE11. What were the sources of income for the young person in the past month (REFERENCE MONTH TO BE DECIDED)?
+                <%= it.t268 %>. <%= it.t269 %>
+                <small class="block italic mt-1"><%= it.t270 %></small>
             </div>
             <div class="col-span-1 flex flex-col gap-2">
                 <div class="flex items-center">
                     <input id="ee11_1" type="checkbox" value="1" name="ee11_1" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="ee11_1" class="ms-2 text-sm text-gray-900">Regular salary</label>
+                    <label for="ee11_1" class="ms-2 text-sm text-gray-900"><%= it.t271 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="ee11_2" type="checkbox" value="1" name="ee11_2" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="ee11_2" class="ms-2 text-sm text-gray-900">Income from informal work</label>
+                    <label for="ee11_2" class="ms-2 text-sm text-gray-900"><%= it.t272 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="ee11_3" type="checkbox" value="1" name="ee11_3" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="ee11_3" class="ms-2 text-sm text-gray-900">Disability pension</label>
+                    <label for="ee11_3" class="ms-2 text-sm text-gray-900"><%= it.t273 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="ee11_4" type="checkbox" value="1" name="ee11_4" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="ee11_4" class="ms-2 text-sm text-gray-900">Survivor’s pension</label>
+                    <label for="ee11_4" class="ms-2 text-sm text-gray-900"><%= it.t274 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="ee11_5" type="checkbox" value="1" name="ee11_5" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="ee11_5" class="ms-2 text-sm text-gray-900">Unemployment benefit</label>
+                    <label for="ee11_5" class="ms-2 text-sm text-gray-900"><%= it.t275 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="ee11_6" type="checkbox" value="1" name="ee11_6" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="ee11_6" class="ms-2 text-sm text-gray-900">Scholarship</label>
+                    <label for="ee11_6" class="ms-2 text-sm text-gray-900"><%= it.t276 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="ee11_7" type="checkbox" value="1" name="ee11_7" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="ee11_7" class="ms-2 text-sm text-gray-900">Allowances (ex. for single mother, low-income families etc.)</label>
+                    <label for="ee11_7" class="ms-2 text-sm text-gray-900"><%= it.t277 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="ee11_8" type="checkbox" value="1" name="ee11_8" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="ee11_8" class="ms-2 text-sm text-gray-900">Financial aid from a charity</label>
+                    <label for="ee11_8" class="ms-2 text-sm text-gray-900"><%= it.t278 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="ee11_9" type="checkbox" value="1" name="ee11_9" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="ee11_9" class="ms-2 text-sm text-gray-900">Financial support from family, relatives</label>
+                    <label for="ee11_9" class="ms-2 text-sm text-gray-900"><%= it.t279 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="ee11_10" type="checkbox" value="1" name="ee11_10" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="ee11_10" class="ms-2 text-sm text-gray-900">Income from self-employment, own business</label>
+                    <label for="ee11_10" class="ms-2 text-sm text-gray-900"><%= it.t280 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="ee11_11" type="checkbox" value="1" name="ee11_11" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="ee11_11" class="ms-2 text-sm text-gray-900">Income from property</label>
+                    <label for="ee11_11" class="ms-2 text-sm text-gray-900"><%= it.t281 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="ee11_12" type="checkbox" value="1" name="ee11_12" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="ee11_12" class="ms-2 text-sm text-gray-900">Other, please specify</label>
+                    <label for="ee11_12" class="ms-2 text-sm text-gray-900"><%= it.t282 %></label>
                 </div>
                 <textarea id="ee11_12_other" name="ee11_12_other" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100"></textarea>
             </div>
@@ -935,107 +960,107 @@
 
         <div class="grid grid-cols-2 gap-4 items-center mt-10">
             <div>
-                EE12. What was the total income of the young person in the last month?
+                <%= it.t283 %>. <%= it.t284 %>
             </div>
             <div class="col-span-1 flex items-center gap-4">
                 <div class="flex items-center">
                     <input id="ee12_dk" type="checkbox" name="ee12_dk" value="9" class="w-4 h-4 text-blue-600 border-gray-400 rounded focus:ring-blue-500 disabled:bg-gray-100">
-                    <label for="ee12_dk" class="ms-2 text-sm text-gray-900">9. Not known</label>
+                    <label for="ee12_dk" class="ms-2 text-sm text-gray-900"><%= it.t286 %></label>
                 </div>
                 <div class="flex items-center gap-4">
                     <input type="text" id="ee12" name="ee12" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
-                    Sum
+                    <%= it.t285 %>
                 </div>
             </div>
         </div>
 
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
-            <div>EE13. Please write down any relevant notes on the educational and employment status of the person and the support he/she might need.</div>
+            <div><%= it.t287 %>. <%= it.t288 %></div>
             <div class="flex gap-4">
                 <textarea id="ee13" name="ee13" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100"></textarea>
             </div>
         </div>
 
-        <h2 class="mt-10 mb-4 text-2xl font-bold text-gray-700">5. HEALTH</h2>
+        <h2 class="mt-10 mb-4 text-2xl font-bold text-gray-700"><%= it.t289 %></h2>
 
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
-            <div class="col-span-1">HE1. Is the person enrolled with a general practitioner/visiting nurse/family doctor?</div>
+            <div class="col-span-1"><%= it.t290 %>. <%= it.t291 %></div>
             <div class="col-span-1 flex gap-4">
                 <div class="flex items-center">
                     <input id="he1-1" type="radio" value="1" name="he1" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="he1-1" class="ms-2 text-sm text-gray-900">1. Yes</label>
+                    <label for="he1-1" class="ms-2 text-sm text-gray-900"><%= it.t292 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="he1-2" type="radio" value="0" name="he1" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="he1-2" class="ms-2 text-sm text-gray-900">0. No</label>
+                    <label for="he1-2" class="ms-2 text-sm text-gray-900"><%= it.t293 %></label>
                 </div>
             </div>
         </div>
 
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
             <div class="col-span-1">
-                HE2. In his/her daily activities, is the person...?
-                <small class="block italic mt-1">Attention! Autonomous means that he/she eats, gets dressed or walks by him/herself.</small>
+                <%= it.t294 %>. <%= it.t295 %>
+                <small class="block italic mt-1"><%= it.t296 %></small>
             </div>
             <div class="col-span-1 flex flex-col gap-2">
                 <div class="flex items-center">
                     <input id="he2-1" type="radio" value="1" name="he2" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="he3-1" class="ms-2 text-sm text-gray-900">1. Autonomous </label>
+                    <label for="he3-1" class="ms-2 text-sm text-gray-900"><%= it.t297 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="he2-2" type="radio" value="2" name="he2" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="he3-2" class="ms-2 text-sm text-gray-900">2. In need of support </label>
+                    <label for="he3-2" class="ms-2 text-sm text-gray-900"><%= it.t298 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="he2-3" type="radio" value="3" name="he2" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="he3-3" class="ms-2 text-sm text-gray-900">3. Totally dependent on others</label>
+                    <label for="he3-3" class="ms-2 text-sm text-gray-900"><%= it.t299 %></label>
                 </div>
             </div>
         </div>
 
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
-            <div class="col-span-1">HE3. Does the person have an official disability status (adisability certificate)?</div>
+            <div class="col-span-1"><%= it.t300 %>. <%= it.t301 %></div>
             <div class="col-span-1 flex gap-4">
                 <div class="flex items-center">
                     <input id="he3-1" type="radio" value="1" name="he3" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="he3-1" class="ms-2 text-sm text-gray-900">1. Yes</label>
+                    <label for="he3-1" class="ms-2 text-sm text-gray-900"><%= it.t302 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="he3-2" type="radio" value="0" name="he3" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="he3-2" class="ms-2 text-sm text-gray-900">0. No</label>
+                    <label for="he3-2" class="ms-2 text-sm text-gray-900"><%= it.t303 %></label>
                 </div>
             </div>
         </div>
 
         <div class="grid grid-cols-2 gap-4 items-center mt-10">
             <div>
-                HE4. What kind of disability does the person have, according to the certificate?
-                <small class="italic block mt-1">CHECK ALL THAT APPLY</small>
+                <%= it.t304 %>. <%= it.t305 %>
+                <small class="italic block mt-1"><%= it.t306 %></small>
             </div>
             <div class="col-span-1 flex flex-col gap-2">
                 <div class="flex items-center">
                     <input id="he4_1" type="checkbox" value="1" name="he4_1" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="he4_1" class="ms-2 text-sm text-gray-900">Motor disability </label>
+                    <label for="he4_1" class="ms-2 text-sm text-gray-900"><%= it.t307 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="he4_2" type="checkbox" value="1" name="he4_2" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="he4_2" class="ms-2 text-sm text-gray-900">Hearing disability </label>
+                    <label for="he4_2" class="ms-2 text-sm text-gray-900"><%= it.t308 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="he4_3" type="checkbox" value="1" name="he4_3" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="he4_3" class="ms-2 text-sm text-gray-900">Visual disability </label>
+                    <label for="he4_3" class="ms-2 text-sm text-gray-900"><%= it.t309 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="he4_4" type="checkbox" value="1" name="he4_4" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="he4_4" class="ms-2 text-sm text-gray-900">Mental disability </label>
+                    <label for="he4_4" class="ms-2 text-sm text-gray-900"><%= it.t310 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="he4_5" type="checkbox" value="1" name="he4_5" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="he4_5" class="ms-2 text-sm text-gray-900">Neuropsychic disability </label>
+                    <label for="he4_5" class="ms-2 text-sm text-gray-900"><%= it.t311 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="he4_6" type="checkbox" value="1" name="he4_6" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="he4_6" class="ms-2 text-sm text-gray-900">Other types of disability, please specify….</label>
+                    <label for="he4_6" class="ms-2 text-sm text-gray-900"><%= it.t312 %>.</label>
                 </div>
                 <textarea id="he4_6_other" name="he4_6_other" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100"></textarea>
             </div>
@@ -1043,129 +1068,129 @@
 
         <div class="grid grid-cols-2 gap-4 items-center mt-10">
             <div>
-                HE5. Regardless of the official disability status, does the person have any of the following impairments?
-                <small class="italic block mt-1">CHECK ALL THAT APPLY</small>
+                <%= it.t313 %>. <%= it.t314 %>
+                <small class="italic block mt-1"><%= it.t315 %></small>
             </div>
             <div class="col-span-1 flex flex-col gap-2">
                 <div class="flex items-center">
                     <input id="he5_1" type="checkbox" value="1" name="he5_1" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="he5_1" class="ms-2 text-sm text-gray-900">Mobility impairments of the musculoskeletal system </label>
+                    <label for="he5_1" class="ms-2 text-sm text-gray-900"><%= it.t316 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="he5_2" type="checkbox" value="1" name="he5_2" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="he5_2" class="ms-2 text-sm text-gray-900">Visual impairments </label>
+                    <label for="he5_2" class="ms-2 text-sm text-gray-900"><%= it.t317 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="he5_3" type="checkbox" value="1" name="he5_3" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="he5_3" class="ms-2 text-sm text-gray-900">Hearing impairments </label>
+                    <label for="he5_3" class="ms-2 text-sm text-gray-900"><%= it.t318 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="he5_4" type="checkbox" value="1" name="he5_4" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="he5_4" class="ms-2 text-sm text-gray-900">Behavioral impairments (conduct disorders, attention deficit hyperactivity disorder ADHD) </label>
+                    <label for="he5_4" class="ms-2 text-sm text-gray-900"><%= it.t319 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="he5_5" type="checkbox" value="1" name="he5_5" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="he5_5" class="ms-2 text-sm text-gray-900">affective/emotional disorders (anxiety, depression, panic attacks, eating disorders) </label>
+                    <label for="he5_5" class="ms-2 text-sm text-gray-900"><%= it.t320 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="he5_6" type="checkbox" value="1" name="he5_6" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="he5_6" class="ms-2 text-sm text-gray-900">cognitive and learning difficulties (learning difficulties, dyslexia, dyscalculia, dyspraxia) </label>
+                    <label for="he5_6" class="ms-2 text-sm text-gray-900"><%= it.t321 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="he5_7" type="checkbox" value="1" name="he5_7" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="he5_7" class="ms-2 text-sm text-gray-900">communication and interaction deficiencies (autism spectrum disorders, Asperger syndrome, language development delays) </label>
+                    <label for="he5_7" class="ms-2 text-sm text-gray-900"><%= it.t322 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="he5_8" type="checkbox" value="1" name="he5_8" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="he5_8" class="ms-2 text-sm text-gray-900">Other deficiencies, please specify….</label>
+                    <label for="he5_8" class="ms-2 text-sm text-gray-900"><%= it.t323 %></label>
                 </div>
                 <textarea id="he5_8_other" name="he5_8_other" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100"></textarea>
             </div>
         </div>
 
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
-            <div class="col-span-1">HE6. Does the person have HIV/AIDS?</div>
+            <div class="col-span-1"><%= it.t324 %>. <%= it.t325 %></div>
             <div class="col-span-1 flex gap-4">
                 <div class="flex items-center">
                     <input id="he6-1" type="radio" value="1" name="he6" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="he6-1" class="ms-2 text-sm text-gray-900">1. Yes</label>
+                    <label for="he6-1" class="ms-2 text-sm text-gray-900"><%= it.t326 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="he6-2" type="radio" value="0" name="he6" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="he6-2" class="ms-2 text-sm text-gray-900">0. No</label>
+                    <label for="he6-2" class="ms-2 text-sm text-gray-900"><%= it.t327 %></label>
                 </div>
             </div>
         </div>
 
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
-            <div class="col-span-1">HE7. Does the person have any other chronic disease / condition (ex. diabetes, hepatitis, tuberculosis, etc.)?</div>
+            <div class="col-span-1"><%= it.t328 %>. <%= it.t329 %></div>
             <div class="col-span-1 flex gap-4">
                 <div class="flex items-center">
                     <input id="he7-1" type="radio" value="1" name="he7" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="he7-1" class="ms-2 text-sm text-gray-900">1. Yes</label>
+                    <label for="he7-1" class="ms-2 text-sm text-gray-900"><%= it.t330 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="he7-2" type="radio" value="0" name="he7" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="he7-2" class="ms-2 text-sm text-gray-900">0. No</label>
+                    <label for="he7-2" class="ms-2 text-sm text-gray-900"><%= it.t331 %></label>
                 </div>
             </div>
         </div>
 
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
-            <div class="col-span-1">HE8. Has the person had a time in the previous 12 months when he/she did not have access to his/her prescribed medication?</div>
+            <div class="col-span-1"><%= it.t333 %> <%= it.t34 %></div>
             <div class="col-span-1 flex gap-4">
                 <div class="flex items-center">
                     <input id="he8-1" type="radio" value="1" name="he8" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="he8-1" class="ms-2 text-sm text-gray-900">1. Yes</label>
+                    <label for="he8-1" class="ms-2 text-sm text-gray-900"><%= it.t335 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="he8-2" type="radio" value="0" name="he8" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="he8-2" class="ms-2 text-sm text-gray-900">0. No</label>
+                    <label for="he8-2" class="ms-2 text-sm text-gray-900"><%= it.t336 %></label>
                 </div>
             </div>
         </div>
 
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
-            <div class="col-span-1">HE9. Has the person had a time in the previous 12 months when he/she needed medical care but did not receive it?</div>
+            <div class="col-span-1"><%= it.t337 %>. <%= it.t338 %></div>
             <div class="col-span-1 flex gap-4">
                 <div class="flex items-center">
                     <input id="he9-1" type="radio" value="1" name="he9" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="he9-1" class="ms-2 text-sm text-gray-900">1. Yes</label>
+                    <label for="he9-1" class="ms-2 text-sm text-gray-900"><%= it.t339 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="he9-2" type="radio" value="0" name="he9" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="he9-2" class="ms-2 text-sm text-gray-900">0. No</label>
+                    <label for="he9-2" class="ms-2 text-sm text-gray-900"><%= it.t340 %></label>
                 </div>
             </div>
         </div>
 
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
-            <div class="col-span-1">HE10. Has the person had a time in the previous 12 months when he/she needed dental care but did not receive it?</div>
+            <div class="col-span-1"><%= it.t341 %>. <%= it.t342 %></div>
             <div class="col-span-1 flex gap-4">
                 <div class="flex items-center">
                     <input id="he10-1" type="radio" value="1" name="he10" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="he10-1" class="ms-2 text-sm text-gray-900">1. Yes</label>
+                    <label for="he10-1" class="ms-2 text-sm text-gray-900"><%= it.t343 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="he10-2" type="radio" value="0" name="he10" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="he10-2" class="ms-2 text-sm text-gray-900">0. No</label>
+                    <label for="he10-2" class="ms-2 text-sm text-gray-900"><%= it.t344 %></label>
                 </div>
             </div>
         </div>
 
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
             <div class="col-span-1">
-                HEAT22. Does the young person need to use any assistive device or technology to facilitate their daily activities?
-                <small>Please consider any type of assistive device or technology such as hearing aids, or assistive programs for computer use.</small>
+                <%= it.t345 %>. <%= it.t346 %>
+                <small class="italic block mt-1"><%= it.t347 %></small>
             </div>
             <div class="col-span-1 flex gap-4">
                 <div class="flex items-center">
                     <input id="heat22-1" type="radio" value="1" name="heat22" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="heat22-1" class="ms-2 text-sm text-gray-900">1. Yes</label>
+                    <label for="heat22-1" class="ms-2 text-sm text-gray-900"><%= it.t348 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="heat22-2" type="radio" value="0" name="heat22" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="heat22-2" class="ms-2 text-sm text-gray-900">0. No</label>
+                    <label for="heat22-2" class="ms-2 text-sm text-gray-900"><%= it.t349 %></label>
                 </div>
             </div>
         </div>
@@ -1173,73 +1198,73 @@
 
         <div class="grid grid-cols-2 gap-4 items-center mt-10">
             <div>
-                HEAT23. What assistive device or technology do theyneed to use?
-                <small class="italic block mt-1">CHECK ALL THAT APPLY</small>
+                <%= it.t351 %>. <%= it.t352 %>
+                <small class="italic block mt-1"><%= it.t353 %></small>
             </div>
             <div class="col-span-1 flex flex-col gap-2">
                 <div class="flex items-center">
                     <input id="heat23_1" type="checkbox" value="1" name="heat23_1" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="heat23_1" class="ms-2 text-sm text-gray-900">Glasses or corrective lenses </label>
+                    <label for="heat23_1" class="ms-2 text-sm text-gray-900"><%= it.t354 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="heat23_2" type="checkbox" value="1" name="heat23_2" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="heat23_2" class="ms-2 text-sm text-gray-900">Orthotics </label>
+                    <label for="heat23_2" class="ms-2 text-sm text-gray-900"><%= it.t355 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="heat23_3" type="checkbox" value="1" name="heat23_3" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="heat23_3" class="ms-2 text-sm text-gray-900">Prosthetics </label>
+                    <label for="heat23_3" class="ms-2 text-sm text-gray-900"><%= it.t356 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="heat23_4" type="checkbox" value="1" name="heat23_4" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="heat23_4" class="ms-2 text-sm text-gray-900">Other devices for organ or function replacement </label>
+                    <label for="heat23_4" class="ms-2 text-sm text-gray-900"><%= it.t357 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="heat23_5" type="checkbox" value="1" name="heat23_5" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="heat23_5" class="ms-2 text-sm text-gray-900">Manual wheelchair </label>
+                    <label for="heat23_5" class="ms-2 text-sm text-gray-900"><%= it.t358 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="heat23_6" type="checkbox" value="1" name="heat23_6" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="heat23_6" class="ms-2 text-sm text-gray-900">Motorized/electric wheelchair </label>
+                    <label for="heat23_6" class="ms-2 text-sm text-gray-900"><%= it.t359 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="heat23_7" type="checkbox" value="1" name="heat23_7" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="heat23_7" class="ms-2 text-sm text-gray-900">Other wheeled mobility aids </label>
+                    <label for="heat23_7" class="ms-2 text-sm text-gray-900"><%= it.t360 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="heat23_8" type="checkbox" value="1" name="heat23_8" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="heat23_8" class="ms-2 text-sm text-gray-900">Crutches, walkers </label>
+                    <label for="heat23_8" class="ms-2 text-sm text-gray-900"><%= it.t361 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="heat23_9" type="checkbox" value="1" name="heat23_9" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="heat23_9" class="ms-2 text-sm text-gray-900">Other mobility aids (lifts, transfer devices) </label>
+                    <label for="heat23_9" class="ms-2 text-sm text-gray-900"><%= it.t362 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="heat23_10" type="checkbox" value="1" name="heat23_10" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="heat23_10" class="ms-2 text-sm text-gray-900">Cane </label>
+                    <label for="heat23_10" class="ms-2 text-sm text-gray-900"><%= it.t363 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="heat23_11" type="checkbox" value="1" name="heat23_11" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="heat23_11" class="ms-2 text-sm text-gray-900">Hearing aids </label>
+                    <label for="heat23_11" class="ms-2 text-sm text-gray-900"><%= it.t364 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="heat23_12" type="checkbox" value="1" name="heat23_12" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="heat23_12" class="ms-2 text-sm text-gray-900">Navigation or environment recognition devices </label>
+                    <label for="heat23_12" class="ms-2 text-sm text-gray-900"><%= it.t365 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="heat23_13" type="checkbox" value="1" name="heat23_13" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="heat23_13" class="ms-2 text-sm text-gray-900">Assistive drawing and writing tools </label>
+                    <label for="heat23_13" class="ms-2 text-sm text-gray-900"><%= it.t366 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="heat23_14" type="checkbox" value="1" name="heat23_14" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="heat23_14" class="ms-2 text-sm text-gray-900">Assistive reading tools </label>
+                    <label for="heat23_14" class="ms-2 text-sm text-gray-900"><%= it.t367 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="heat23_15" type="checkbox" value="1" name="heat23_15" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="heat23_15" class="ms-2 text-sm text-gray-900">Assistive computer tools </label>
+                    <label for="heat23_15" class="ms-2 text-sm text-gray-900"><%= it.t368 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="heat23_16" type="checkbox" value="1" name="heat23_16" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="heat23_16" class="ms-2 text-sm text-gray-900">Other devices (please specify)</label>
+                    <label for="heat23_16" class="ms-2 text-sm text-gray-900"><%= it.t369 %></label>
                 </div>
                 <textarea id="heat23_16_other" name="heat23_16_other" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100"></textarea>
             </div>
@@ -1247,102 +1272,101 @@
 
         <div class="grid grid-cols-2 gap-4 items-center mt-10">
             <div>
-                HEAT24. For each assistive device or technology they need, please check the ones the young person actually use?
-                <small class="italic block mt-1">CHECK ALL THAT APPLY</small>
+                <%= it.t370 %>. <%= it.t371 %>
             </div>
             <div class="col-span-1 flex flex-col gap-2">
                 <div class="flex items-center">
                     <input id="heat24_1" type="checkbox" value="1" name="heat24_1" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="heat24_1" class="ms-2 text-sm text-gray-900">Glasses or corrective lenses </label>
+                    <label for="heat24_1" class="ms-2 text-sm text-gray-900"><%= it.t372 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="heat24_2" type="checkbox" value="1" name="heat24_2" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="heat24_2" class="ms-2 text-sm text-gray-900">Orthotics </label>
+                    <label for="heat24_2" class="ms-2 text-sm text-gray-900"><%= it.t373 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="heat24_3" type="checkbox" value="1" name="heat24_3" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="heat24_3" class="ms-2 text-sm text-gray-900">Prosthetics </label>
+                    <label for="heat24_3" class="ms-2 text-sm text-gray-900"><%= it.t374 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="heat24_4" type="checkbox" value="1" name="heat24_4" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="heat24_4" class="ms-2 text-sm text-gray-900">Other devices for organ or function replacement </label>
+                    <label for="heat24_4" class="ms-2 text-sm text-gray-900"><%= it.t375 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="heat24_5" type="checkbox" value="1" name="heat24_5" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="heat24_5" class="ms-2 text-sm text-gray-900">Manual wheelchair </label>
+                    <label for="heat24_5" class="ms-2 text-sm text-gray-900"><%= it.t376 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="heat24_6" type="checkbox" value="1" name="heat24_6" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="heat24_6" class="ms-2 text-sm text-gray-900">Motorized/electric wheelchair </label>
+                    <label for="heat24_6" class="ms-2 text-sm text-gray-900"><%= it.t377 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="heat24_7" type="checkbox" value="1" name="heat24_7" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="heat24_7" class="ms-2 text-sm text-gray-900">Other wheeled mobility aids </label>
+                    <label for="heat24_7" class="ms-2 text-sm text-gray-900"><%= it.t378 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="heat24_8" type="checkbox" value="1" name="heat24_8" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="heat24_8" class="ms-2 text-sm text-gray-900">Crutches, walkers </label>
+                    <label for="heat24_8" class="ms-2 text-sm text-gray-900"><%= it.t379 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="heat24_9" type="checkbox" value="1" name="heat24_9" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="heat24_9" class="ms-2 text-sm text-gray-900">Other mobility aids (lifts, transfer devices) </label>
+                    <label for="heat24_9" class="ms-2 text-sm text-gray-900"><%= it.t380 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="heat24_10" type="checkbox" value="1" name="heat24_10" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="heat24_10" class="ms-2 text-sm text-gray-900">Cane</label>
+                    <label for="heat24_10" class="ms-2 text-sm text-gray-900"><%= it.t381 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="heat24_11" type="checkbox" value="1" name="heat24_11" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="heat24_11" class="ms-2 text-sm text-gray-900">Hearing aids </label>
+                    <label for="heat24_11" class="ms-2 text-sm text-gray-900"><%= it.t382 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="heat24_12" type="checkbox" value="1" name="heat24_12" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="heat24_12" class="ms-2 text-sm text-gray-900">Navigation or environment recognition devices </label>
+                    <label for="heat24_12" class="ms-2 text-sm text-gray-900"><%= it.t383 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="heat24_13" type="checkbox" value="1" name="heat24_13" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="heat24_13" class="ms-2 text-sm text-gray-900">Assistive drawing and writing tools </label>
+                    <label for="heat24_13" class="ms-2 text-sm text-gray-900"><%= it.t384 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="heat24_14" type="checkbox" value="1" name="heat24_14" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="heat24_14" class="ms-2 text-sm text-gray-900">Assistive reading tools </label>
+                    <label for="heat24_14" class="ms-2 text-sm text-gray-900"><%= it.t385 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="heat24_15" type="checkbox" value="1" name="heat24_15" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="heat24_15" class="ms-2 text-sm text-gray-900">Assistive computer tools </label>
+                    <label for="heat24_15" class="ms-2 text-sm text-gray-900"><%= it.t386 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="heat24_16" type="checkbox" value="1" name="heat24_16" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="heat24_16" class="ms-2 text-sm text-gray-900">Other devices (please specify)</label>
+                    <label for="heat24_16" class="ms-2 text-sm text-gray-900"><%= it.t387 %></label>
                 </div>
                 <textarea id="heat24_16_other" name="heat24_16_other" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100"></textarea>
             </div>
         </div>
 
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
-            <div class="col-span-1">HEAT25. In the past 12 months, has the individual received any support to acquire or replace the assistive devices and technology they require?</div>
+            <div class="col-span-1"><%= it.t388 %>. <%= it.t389 %></div>
             <div class="col-span-1 flex gap-4">
                 <div class="flex items-center">
                     <input id="heat25-1" type="radio" value="1" name="heat25" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="heat25-1" class="ms-2 text-sm text-gray-900">1. Yes</label>
+                    <label for="heat25-1" class="ms-2 text-sm text-gray-900"><%= it.t390 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="heat25-2" type="radio" value="0" name="heat25" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="heat25-2" class="ms-2 text-sm text-gray-900">0. No</label>
+                    <label for="heat25-2" class="ms-2 text-sm text-gray-900"><%= it.t391 %></label>
                 </div>
             </div>
         </div>
 
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
-            <div class="col-span-1">HE11. Does the person need any recovery an rehabilitation services?</div>
+            <div class="col-span-1"><%= it.t392 %>. <%= it.t393 %></div>
             <div class="col-span-1 flex gap-4">
                 <div class="flex items-center">
                     <input id="he11-1" type="radio" value="1" name="he11" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="he11-1" class="ms-2 text-sm text-gray-900">1. Yes</label>
+                    <label for="he11-1" class="ms-2 text-sm text-gray-900"><%= it.t394 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="he11-2" type="radio" value="0" name="he11" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="he11-2" class="ms-2 text-sm text-gray-900">0. No</label>
+                    <label for="he11-2" class="ms-2 text-sm text-gray-900"><%= it.t395 %></label>
                 </div>
             </div>
         </div>
@@ -1350,344 +1374,343 @@
 
         <div class="grid grid-cols-2 gap-4 items-center mt-10">
             <div>
-                HEAT24. For each assistive device or technology they need, please check the ones the young person actually use?
-                <small class="italic block mt-1">CHECK ALL THAT APPLY</small>
+                <%= it.t397 %>. <%= it.t398 %>
             </div>
             <div class="col-span-1 flex flex-col gap-2">
                 <div class="flex items-center">
                     <input id="he12_1" type="checkbox" value="1" name="he12_1" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="he12_1" class="ms-2 text-sm text-gray-900">Speech therapy </label>
+                    <label for="he12_1" class="ms-2 text-sm text-gray-900"><%= it.t399 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="he12_2" type="checkbox" value="1" name="he12_2" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="he12_2" class="ms-2 text-sm text-gray-900">Occupational therapy / Ergo-therapy </label>
+                    <label for="he12_2" class="ms-2 text-sm text-gray-900"><%= it.t400 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="he12_3" type="checkbox" value="1" name="he12_3" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="he12_3" class="ms-2 text-sm text-gray-900">Physical therapy (ex. kinesiotherapy) </label>
+                    <label for="he12_3" class="ms-2 text-sm text-gray-900"><%= it.t401 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="he12_4" type="checkbox" value="1" name="he12_4" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="he12_4" class="ms-2 text-sm text-gray-900">Sensory stimulation </label>
+                    <label for="he12_4" class="ms-2 text-sm text-gray-900"><%= it.t402 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="he12_5" type="checkbox" value="1" name="he12_5" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="he12_5" class="ms-2 text-sm text-gray-900">Psychotherapy </label>
+                    <label for="he12_5" class="ms-2 text-sm text-gray-900"><%= it.t403 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="he12_6" type="checkbox" value="1" name="he12_6" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="he12_6" class="ms-2 text-sm text-gray-900">Behavioral therapy </label>
+                    <label for="he12_6" class="ms-2 text-sm text-gray-900"><%= it.t404 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="he12_7" type="checkbox" value="1" name="he12_7" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="he12_7" class="ms-2 text-sm text-gray-900">Other therapies, please specify</label>
+                    <label for="he12_7" class="ms-2 text-sm text-gray-900"><%= it.t405 %></label>
                 </div>
                 <textarea id="he12_7_other" name="he12_7_other" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100"></textarea>
             </div>
         </div>
 
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
-            <div class="col-span-1">HE13. In the last 12 months, has the person received the recovery and rehabilitation services that he/she needs?</div>
+            <div class="col-span-1"><%= it.t406 %>. <%= it.t407 %></div>
             <div class="col-span-1 flex gap-4">
                 <div class="flex items-center">
                     <input id="he13-1" type="radio" value="1" name="he13" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="he13-1" class="ms-2 text-sm text-gray-900">1. Yes</label>
+                    <label for="he13-1" class="ms-2 text-sm text-gray-900"><%= it.t408 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="he13-2" type="radio" value="0" name="he13" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="he13-2" class="ms-2 text-sm text-gray-900">0. No</label>
+                    <label for="he13-2" class="ms-2 text-sm text-gray-900"><%= it.t409 %></label>
                 </div>
             </div>
         </div>
 
         <div class="grid grid-cols-2 gap-4 items-center mt-10">
             <div>
-                HE14. Which of the following rehabilitation services has the person received in the last 12 months?
-                <small class="italic block mt-1">CHECK ALL THAT APPLY</small>
+                <%= it.t410 %>. <%= it.t411 %>
             </div>
             <div class="col-span-1 flex flex-col gap-2">
                 <div class="flex items-center">
                     <input id="he14_1" type="checkbox" value="1" name="he14_1" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="he14_1" class="ms-2 text-sm text-gray-900">Speech therapy </label>
+                    <label for="he14_1" class="ms-2 text-sm text-gray-900"><%= it.t412 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="he14_2" type="checkbox" value="1" name="he14_2" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="he14_2" class="ms-2 text-sm text-gray-900">Occupational therapy / Ergo-therapy </label>
+                    <label for="he14_2" class="ms-2 text-sm text-gray-900"><%= it.t413 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="he14_3" type="checkbox" value="1" name="he14_3" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="he14_3" class="ms-2 text-sm text-gray-900">Physical therapy (ex. kinesiotherapy) </label>
+                    <label for="he14_3" class="ms-2 text-sm text-gray-900"><%= it.t414 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="he14_4" type="checkbox" value="1" name="he14_4" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="he14_4" class="ms-2 text-sm text-gray-900">Sensory stimulation </label>
+                    <label for="he14_4" class="ms-2 text-sm text-gray-900"><%= it.t415 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="he14_5" type="checkbox" value="1" name="he14_5" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="he14_5" class="ms-2 text-sm text-gray-900">Psychotherapy </label>
+                    <label for="he14_5" class="ms-2 text-sm text-gray-900"><%= it.t416 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="he14_6" type="checkbox" value="1" name="he14_6" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="he14_6" class="ms-2 text-sm text-gray-900">Behavioral therapy </label>
+                    <label for="he14_6" class="ms-2 text-sm text-gray-900"><%= it.t417 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="he14_7" type="checkbox" value="1" name="he14_7" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="he14_7" class="ms-2 text-sm text-gray-900">Other therapies, please specify</label>
+                    <label for="he14_7" class="ms-2 text-sm text-gray-900"><%= it.t418 %></label>
                 </div>
                 <textarea id="he14_7_other" name="he14_7_other" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100"></textarea>
             </div>
         </div>
 
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
-            <div class="col-span-1">HE15. In the past 12 months, has the person been engaged in alcohol abuse?</div>
+            <div class="col-span-1"><%= it.t419 %>. <%= it.t420 %></div>
             <div class="col-span-1 flex gap-4">
                 <div class="flex items-center">
                     <input id="he15-1" type="radio" value="1" name="he15" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="he15-1" class="ms-2 text-sm text-gray-900">1. Yes</label>
+                    <label for="he15-1" class="ms-2 text-sm text-gray-900"><%= it.t421 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="he15-2" type="radio" value="0" name="he15" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="he15-2" class="ms-2 text-sm text-gray-900">0. No</label>
+                    <label for="he15-2" class="ms-2 text-sm text-gray-900"><%= it.t422 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="he15-3" type="radio" value="9" name="he15" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="he15-3" class="ms-2 text-sm text-gray-900">9. Unknown</label>
+                    <label for="he15-3" class="ms-2 text-sm text-gray-900"><%= it.t423 %></label>
                 </div>
             </div>
         </div>
 
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
-            <div class="col-span-1">HE16. In the past 12 months, has the person been engaged in drug abuse?</div>
+            <div class="col-span-1"><%= it.t424 %>. <%= it.t425 %></div>
             <div class="col-span-1 flex gap-4">
                 <div class="flex items-center">
                     <input id="he16-1" type="radio" value="1" name="he16" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="he16-1" class="ms-2 text-sm text-gray-900">1. Yes</label>
+                    <label for="he16-1" class="ms-2 text-sm text-gray-900"><%= it.t426 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="he16-2" type="radio" value="0" name="he16" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="he16-2" class="ms-2 text-sm text-gray-900">0. No</label>
+                    <label for="he16-2" class="ms-2 text-sm text-gray-900"><%= it.t427 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="he16-3" type="radio" value="9" name="he16" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="he16-3" class="ms-2 text-sm text-gray-900">9. Unknown</label>
+                    <label for="he16-3" class="ms-2 text-sm text-gray-900"><%= it.t428 %></label>
                 </div>
             </div>
         </div>
 
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
-            <div class="col-span-1">HE17. In the past 12 months, has the person engaged in self-harming behavior?</div>
+            <div class="col-span-1"><%= it.t429 %>. <%= it.t430 %></div>
             <div class="col-span-1 flex gap-4">
                 <div class="flex items-center">
                     <input id="he17-1" type="radio" value="1" name="he17" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="he17-1" class="ms-2 text-sm text-gray-900">1. Yes</label>
+                    <label for="he17-1" class="ms-2 text-sm text-gray-900"><%= it.t431 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="he17-2" type="radio" value="0" name="he17" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="he17-2" class="ms-2 text-sm text-gray-900">0. No</label>
+                    <label for="he17-2" class="ms-2 text-sm text-gray-900"><%= it.t432 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="he17-3" type="radio" value="9" name="he17" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="he17-3" class="ms-2 text-sm text-gray-900">9. Unknown</label>
+                    <label for="he17-3" class="ms-2 text-sm text-gray-900"><%= it.t433 %></label>
                 </div>
             </div>
         </div>
 
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
-            <div class="col-span-1">HE18. In the past 12 months, was the person diagnosed with a sexually transmitted disease?</div>
+            <div class="col-span-1"><%= it.t434 %>. <%= it.t435 %></div>
             <div class="col-span-1 flex gap-4">
                 <div class="flex items-center">
                     <input id="he18-1" type="radio" value="1" name="he18" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="he18-1" class="ms-2 text-sm text-gray-900">1. Yes</label>
+                    <label for="he18-1" class="ms-2 text-sm text-gray-900"><%= it.t436 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="he18-2" type="radio" value="0" name="he18" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="he18-2" class="ms-2 text-sm text-gray-900">0. No</label>
+                    <label for="he18-2" class="ms-2 text-sm text-gray-900"><%= it.t437 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="he18-3" type="radio" value="9" name="he18" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="he18-3" class="ms-2 text-sm text-gray-900">9. Unknown</label>
+                    <label for="he18-3" class="ms-2 text-sm text-gray-900"><%= it.t438 %></label>
                 </div>
             </div>
         </div>
 
-        <small class="italic uppercase mt-6">FOR YOUNG WOMEN ONLY</small>
+        <small class="italic uppercase mt-6"><%= it.t439 %></small>
         <div class="grid grid-cols-2 gap-4 items-center mt-2">
-            <div class="col-span-1">HE19. In the past 12 months did the person get pregnantor give birth?</div>
+            <div class="col-span-1"><%= it.t440 %>. <%= it.t441 %></div>
             <div class="col-span-1 flex gap-4">
                 <div class="flex items-center">
                     <input id="he19-1" type="radio" value="1" name="he19" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="he19-1" class="ms-2 text-sm text-gray-900">1. Yes</label>
+                    <label for="he19-1" class="ms-2 text-sm text-gray-900"><%= it.t442 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="he19-2" type="radio" value="0" name="he19" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="he19-2" class="ms-2 text-sm text-gray-900">0. No</label>
+                    <label for="he19-2" class="ms-2 text-sm text-gray-900"><%= it.t443 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="he19-3" type="radio" value="9" name="he19" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="he19-3" class="ms-2 text-sm text-gray-900">9. Unknown</label>
+                    <label for="he19-3" class="ms-2 text-sm text-gray-900"><%= it.t444 %></label>
                 </div>
             </div>
         </div>
 
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
-            <div class="col-span-1">HE20. In the past 12 months did the person get an abortion?</div>
+            <div class="col-span-1"><%= it.t445 %>. <%= it.t446 %></div>
             <div class="col-span-1 flex gap-4">
                 <div class="flex items-center">
                     <input id="he20-1" type="radio" value="1" name="he20" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="he20-1" class="ms-2 text-sm text-gray-900">1. Yes</label>
+                    <label for="he20-1" class="ms-2 text-sm text-gray-900"><%= it.t447 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="he20-2" type="radio" value="0" name="he20" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="he20-2" class="ms-2 text-sm text-gray-900">0. No</label>
+                    <label for="he20-2" class="ms-2 text-sm text-gray-900"><%= it.t448 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="he20-3" type="radio" value="9" name="he20" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="he20-3" class="ms-2 text-sm text-gray-900">9. Unknown</label>
+                    <label for="he20-3" class="ms-2 text-sm text-gray-900"><%= it.t449 %></label>
                 </div>
             </div>
         </div>
 
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
-            <div>HE21. Please write down any relevant notes on the health status of the person and the support he/she might need.</div>
+            <div><%= it.t450 %>. <%= it.t451 %></div>
             <div class="flex gap-4">
                 <textarea id="he21" name="he21" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100"></textarea>
             </div>
         </div>
 
-        <h2 class="mt-10 mb-4 text-2xl font-bold text-gray-700">6. LIFE SKILLS</h2>
+
+        <h2 class="mt-10 mb-4 text-2xl font-bold text-gray-700"><%= it.t452 %></h2>
 
 
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
-            <div class="col-span-1">LS1. Please rate the development level of the young person’ independent living skills. Use the following five-point scale.</div>
+            <div class="col-span-1"><%= it.t453 %>. <%= it.t454 %></div>
             <div class="col-span-1 flex flex-col gap-2">
                 <div class="flex items-center">
                     <input id="ls1-1" type="radio" value="1" name="ls1" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="ls1-1" class="ms-2 text-sm text-gray-900">1. Extremely poor </label>
+                    <label for="ls1-1" class="ms-2 text-sm text-gray-900"><%= it.t455 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="ls1-2" type="radio" value="2" name="ls1" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="ls1-2" class="ms-2 text-sm text-gray-900">2. Poor </label>
+                    <label for="ls1-2" class="ms-2 text-sm text-gray-900"><%= it.t456 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="ls1-3" type="radio" value="3" name="ls1" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="ls1-3" class="ms-2 text-sm text-gray-900">3. Average </label>
+                    <label for="ls1-3" class="ms-2 text-sm text-gray-900"><%= it.t457 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="ls1-4" type="radio" value="4" name="ls1" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="ls1-4" class="ms-2 text-sm text-gray-900">4. Good </label>
+                    <label for="ls1-4" class="ms-2 text-sm text-gray-900"><%= it.t458 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="ls1-5" type="radio" value="5" name="ls1" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="ls1-5" class="ms-2 text-sm text-gray-900">5. Very good</label>
+                    <label for="ls1-5" class="ms-2 text-sm text-gray-900"><%= it.t459 %></label>
                 </div>
             </div>
         </div>
 
         <div class="grid grid-cols-2 gap-4 items-center mt-10">
             <div>
-                LS2. In which of the following areas of everyday life doesthe person need support to further develop his/her skills?
-                <small class="italic block mt-1">CHECK ALL THAT APPLY</small>
+                <%= it.t460 %>. <%= it.t461 %>
+                <small class="italic block mt-1"><%= it.t462 %></small>
             </div>
             <div class="col-span-1 flex flex-col gap-2">
                 <div class="flex items-center">
                     <input id="ls2_1" type="checkbox" value="1" name="ls2_1" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="ls2_1" class="ms-2 text-sm text-gray-900">Cooking and nutrition </label>
+                    <label for="ls2_1" class="ms-2 text-sm text-gray-900"><%= it.t463 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="ls2_2" type="checkbox" value="1" name="ls2_2" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="ls2_2" class="ms-2 text-sm text-gray-900">Cleaning and home maintenance </label>
+                    <label for="ls2_2" class="ms-2 text-sm text-gray-900"><%= it.t464 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="ls2_3" type="checkbox" value="1" name="ls2_3" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="ls2_3" class="ms-2 text-sm text-gray-900">Health and personal care </label>
+                    <label for="ls2_3" class="ms-2 text-sm text-gray-900"><%= it.t465 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="ls2_4" type="checkbox" value="1" name="ls2_4" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="ls2_4" class="ms-2 text-sm text-gray-900">Time management </label>
+                    <label for="ls2_4" class="ms-2 text-sm text-gray-900"><%= it.t466 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="ls2_5" type="checkbox" value="1" name="ls2_5" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="ls2_5" class="ms-2 text-sm text-gray-900">Financial management </label>
+                    <label for="ls2_5" class="ms-2 text-sm text-gray-900"><%= it.t467 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="ls2_6" type="checkbox" value="1" name="ls2_6" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="ls2_6" class="ms-2 text-sm text-gray-900">Communication and social Skills </label>
+                    <label for="ls2_6" class="ms-2 text-sm text-gray-900"><%= it.t468 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="ls2_7" type="checkbox" value="1" name="ls2_7" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="ls2_7" class="ms-2 text-sm text-gray-900">Job seeking skills </label>
+                    <label for="ls2_7" class="ms-2 text-sm text-gray-900"><%= it.t469 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="ls2_8" type="checkbox" value="1" name="ls2_8" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="ls2_8" class="ms-2 text-sm text-gray-900">Orientation and use of transportation </label>
+                    <label for="ls2_8" class="ms-2 text-sm text-gray-900"><%= it.t470 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="ls2_9" type="checkbox" value="1" name="ls2_9" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="ls2_9" class="ms-2 text-sm text-gray-900">Problem solving and making decisions </label>
+                    <label for="ls2_9" class="ms-2 text-sm text-gray-900"><%= it.t471 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="ls2_10" type="checkbox" value="1" name="ls2_10" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="ls2_10" class="ms-2 text-sm text-gray-900">Other areas, please specify…. </label>
+                    <label for="ls2_10" class="ms-2 text-sm text-gray-900"><%= it.t472 %></label>
                 </div>
                 <textarea id="ls2_10_other" name="ls2_10_other" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100"></textarea>
                 <div class="flex items-center">
                     <input id="ls2_11" type="checkbox" value="1" name="ls2_11" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="ls2_11" class="ms-2 text-sm text-gray-900">None of the above</label>
+                    <label for="ls2_11" class="ms-2 text-sm text-gray-900"><%= it.t473 %></label>
                 </div>
             </div>
         </div>
 
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
-            <div class="col-span-1">LS3. In the past 12 months, has the person received any support to develop his/her independent life skills?</div>
+            <div class="col-span-1"><%= it.t474 %>. <%= it.t475 %></div>
             <div class="col-span-1 flex gap-4">
                 <div class="flex items-center">
                     <input id="ls3-1" type="radio" value="1" name="ls3" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="ls3-1" class="ms-2 text-sm text-gray-900">1. Yes</label>
+                    <label for="ls3-1" class="ms-2 text-sm text-gray-900"><%= it.t476 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="ls3-2" type="radio" value="0" name="ls3" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="ls3-2" class="ms-2 text-sm text-gray-900">0. No</label>
+                    <label for="ls3-2" class="ms-2 text-sm text-gray-900"><%= it.t477 %></label>
                 </div>
             </div>
         </div>
 
         <div class="grid grid-cols-2 gap-4 items-center mt-10">
             <div>
-                LS4. What kind of support has the person received in the last 12 months?
-                <small class="italic block mt-1">CHECK ALL THAT APPLY</small>
+                <%= it.t479 %>. <%= it.t480 %>
+                <small class="italic block mt-1"><%= it.t481 %></small>
             </div>
             <div class="col-span-1 flex flex-col gap-2">
                 <div class="flex items-center">
                     <input id="ls4_1" type="checkbox" value="1" name="ls4_1" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="ls4_1" class="ms-2 text-sm text-gray-900">Individual Counseling or Coaching </label>
+                    <label for="ls4_1" class="ms-2 text-sm text-gray-900"><%= it.t482 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="ls4_2" type="checkbox" value="1" name="ls4_2" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="ls4_2" class="ms-2 text-sm text-gray-900">Group Workshops or Classes </label>
+                    <label for="ls4_2" class="ms-2 text-sm text-gray-900"><%= it.t483 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="ls4_3" type="checkbox" value="1" name="ls4_3" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="ls4_3" class="ms-2 text-sm text-gray-900">Mentorship Programs </label>
+                    <label for="ls4_3" class="ms-2 text-sm text-gray-900"><%= it.t484 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="ls4_4" type="checkbox" value="1" name="ls4_4" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="ls4_4" class="ms-2 text-sm text-gray-900">Job Training Programs </label>
+                    <label for="ls4_4" class="ms-2 text-sm text-gray-900"><%= it.t485 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="ls4_5" type="checkbox" value="1" name="ls4_5" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="ls4_5" class="ms-2 text-sm text-gray-900">Financial Literacy Programs </label>
+                    <label for="ls4_5" class="ms-2 text-sm text-gray-900"><%= it.t486 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="ls4_6" type="checkbox" value="1" name="ls4_6" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="ls4_6" class="ms-2 text-sm text-gray-900">Health and Wellness Programs </label>
+                    <label for="ls4_6" class="ms-2 text-sm text-gray-900"><%= it.t487 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="ls4_7" type="checkbox" value="1" name="ls4_7" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="ls4_7" class="ms-2 text-sm text-gray-900">Social Skills Development Programs </label>
+                    <label for="ls4_7" class="ms-2 text-sm text-gray-900"><%= it.t488 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="ls4_8" type="checkbox" value="1" name="ls4_8" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="ls4_8" class="ms-2 text-sm text-gray-900">Other, please specify</label>
+                    <label for="ls4_8" class="ms-2 text-sm text-gray-900"><%= it.t489 %></label>
                 </div>
                 <textarea id="ls4_8_other" name="ls4_8_other" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100"></textarea>
             </div>
@@ -1695,90 +1718,90 @@
 
         <div class="grid grid-cols-2 gap-4 items-center mt-10">
             <div>
-                LS5. Who provided the young person with support fordeveloping independent life skills in the last 12 months?
-                <small class="italic block mt-1">CHECK ALL THAT APPLY</small>
+                <%= it.t490 %>. <%= it.t491 %>
+                <small class="italic block mt-1"><%= it.t492 %></small>
             </div>
             <div class="col-span-1 flex flex-col gap-2">
                 <div class="flex items-center">
                     <input id="ls5_1" type="checkbox" value="1" name="ls5_1" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="ls5_1" class="ms-2 text-sm text-gray-900">Social workers and other professional working in a social service agency </label>
+                    <label for="ls5_1" class="ms-2 text-sm text-gray-900"><%= it.t493 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="ls5_2" type="checkbox" value="1" name="ls5_2" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="ls5_2" class="ms-2 text-sm text-gray-900">Healthcare providers </label>
+                    <label for="ls5_2" class="ms-2 text-sm text-gray-900"><%= it.t494 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="ls5_3" type="checkbox" value="1" name="ls5_3" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="ls5_3" class="ms-2 text-sm text-gray-900">Community or non-profit organizations </label>
+                    <label for="ls5_3" class="ms-2 text-sm text-gray-900"><%= it.t495 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="ls5_4" type="checkbox" value="1" name="ls5_4" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="ls5_4" class="ms-2 text-sm text-gray-900">Family members </label>
+                    <label for="ls5_4" class="ms-2 text-sm text-gray-900"><%= it.t496 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="ls5_5" type="checkbox" value="1" name="ls5_5" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="ls5_5" class="ms-2 text-sm text-gray-900">Friends or peers</label>
+                    <label for="ls5_5" class="ms-2 text-sm text-gray-900"><%= it.t497 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="ls5_6" type="checkbox" value="1" name="ls5_6" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="ls5_6" class="ms-2 text-sm text-gray-900">Other, please specify</label>
+                    <label for="ls5_6" class="ms-2 text-sm text-gray-900"><%= it.t498 %></label>
                 </div>
                 <textarea id="ls5_6_other" name="ls5_6_other" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100"></textarea>
             </div>
         </div>
 
-
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
-            <div>LS6. Please write down any relevant notes on the development of the person’s life skills and the support he/she might need.</div>
+            <div><%= it.t499 %>. <%= it.t500 %></div>
             <div class="flex gap-4">
                 <textarea id="ls6" name="ls6" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100"></textarea>
             </div>
         </div>
 
-        <h2 class="mt-10 mb-4 text-2xl font-bold text-gray-700">7. SOCIAL CONNECTIONS AND PARTICIPATION</h2>
+
+        <h2 class="mt-10 mb-4 text-2xl font-bold text-gray-700"><%= it.t501 %></h2>
 
 
         <div class="grid grid-cols-2 gap-4 items-center mt-10">
             <div>
-                SC1. Who are the main people in the young person’s support network?
-                <small class="italic block mt-1">CHECK ALL THAT APPLY</small>
+                <%= it.t502 %>. <%= it.t503 %>
+                <small class="italic block mt-1"><%= it.t504 %></small>
             </div>
             <div class="col-span-1 flex flex-col gap-2">
                 <div class="flex items-center">
                     <input id="sc1_1" type="checkbox" value="1" name="sc1_1" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="sc1_1" class="ms-2 text-sm text-gray-900">Parents </label>
+                    <label for="sc1_1" class="ms-2 text-sm text-gray-900"><%= it.t505 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="sc1_2" type="checkbox" value="1" name="sc1_2" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="sc1_2" class="ms-2 text-sm text-gray-900">Siblings </label>
+                    <label for="sc1_2" class="ms-2 text-sm text-gray-900"><%= it.t506 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="sc1_3" type="checkbox" value="1" name="sc1_3" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="sc1_3" class="ms-2 text-sm text-gray-900">Other relatives </label>
+                    <label for="sc1_3" class="ms-2 text-sm text-gray-900"><%= it.t507 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="sc1_4" type="checkbox" value="1" name="sc1_4" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="sc1_4" class="ms-2 text-sm text-gray-900">Another unrelated caregiver </label>
+                    <label for="sc1_4" class="ms-2 text-sm text-gray-900"><%= it.t508 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="sc1_5" type="checkbox" value="1" name="sc1_5" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="sc1_5" class="ms-2 text-sm text-gray-900">Staff of the adult care institution </label>
+                    <label for="sc1_5" class="ms-2 text-sm text-gray-900"><%= it.t509 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="sc1_6" type="checkbox" value="1" name="sc1_6" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="sc1_6" class="ms-2 text-sm text-gray-900">Staff of a community social service </label>
+                    <label for="sc1_6" class="ms-2 text-sm text-gray-900"><%= it.t510 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="sc1_7" type="checkbox" value="1" name="sc1_7" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="sc1_7" class="ms-2 text-sm text-gray-900">Friends </label>
+                    <label for="sc1_7" class="ms-2 text-sm text-gray-900"><%= it.t511 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="sc1_8" type="checkbox" value="1" name="sc1_8" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="sc1_8" class="ms-2 text-sm text-gray-900">Neighbors </label>
+                    <label for="sc1_8" class="ms-2 text-sm text-gray-900"><%= it.t512 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="sc1_9" type="checkbox" value="1" name="sc1_9" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="sc1_9" class="ms-2 text-sm text-gray-900">Other, specify</label>
+                    <label for="sc1_9" class="ms-2 text-sm text-gray-900"><%= it.t513 %></label>
                 </div>
                 <textarea id="sc1_9_other" name="sc1_9_other" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100"></textarea>
             </div>
@@ -1786,250 +1809,253 @@
 
 
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
-            <div class="col-span-1">SC2. Does the young person meet and communicate with their family on a regular basis?</div>
+            <div class="col-span-1"><%= it.t514 %>. <%= it.t515 %></div>
             <div class="col-span-1 flex flex-col gap-2">
                 <div class="flex items-center">
                     <input id="sc2-1" type="radio" value="1" name="sc2" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="sc2-1" class="ms-2 text-sm text-gray-900">1. Yes </label>
+                    <label for="sc2-1" class="ms-2 text-sm text-gray-900"><%= it.t516 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="sc2-2" type="radio" value="2" name="sc2" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="sc2-2" class="ms-2 text-sm text-gray-900">2. No </label>
+                    <label for="sc2-2" class="ms-2 text-sm text-gray-900"><%= it.t517 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="sc2-3" type="radio" value="3" name="sc2" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="sc2-3" class="ms-2 text-sm text-gray-900">3. The person lives with their family </label>
+                    <label for="sc2-3" class="ms-2 text-sm text-gray-900"><%= it.t518 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="sc2-4" type="radio" value="4" name="sc2" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="sc2-4" class="ms-2 text-sm text-gray-900">4. The person doesn’t have a family</label>
+                    <label for="sc2-4" class="ms-2 text-sm text-gray-900"><%= it.t519 %></label>
                 </div>
             </div>
         </div>
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
-            <div class="col-span-1">SC3. Does the young person meet and communicatewith their friends on a regular basis?</div>
+            <div class="col-span-1"><%= it.t520 %>. <%= it.t521 %></div>
             <div class="col-span-1 flex flex-col gap-2">
                 <div class="flex items-center">
                     <input id="sc3-1" type="radio" value="1" name="sc3" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="sc3-1" class="ms-2 text-sm text-gray-900">1. Yes</label>
+                    <label for="sc3-1" class="ms-2 text-sm text-gray-900"><%= it.t522 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="sc3-2" type="radio" value="2" name="sc3" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="sc3-2" class="ms-2 text-sm text-gray-900">2. No</label>
+                    <label for="sc3-2" class="ms-2 text-sm text-gray-900"><%= it.t523 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="sc3-3" type="radio" value="3" name="sc3" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="sc3-3" class="ms-2 text-sm text-gray-900">3. The person doesn’t have friends</label>
+                    <label for="sc3-3" class="ms-2 text-sm text-gray-900"><%= it.t524 %></label>
                 </div>
             </div>
         </div>
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
-            <div class="col-span-1">SC4. Is the person currently married or in a romanticrelationship?</div>
+            <div class="col-span-1"><%= it.t525 %>. <%= it.t526 %></div>
             <div class="col-span-1 flex flex-col gap-2">
                 <div class="flex items-center">
                     <input id="sc4-1" type="radio" value="1" name="sc4" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="sc4-1" class="ms-2 text-sm text-gray-900">1. Yes, married </label>
+                    <label for="sc4-1" class="ms-2 text-sm text-gray-900"><%= it.t527 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="sc4-2" type="radio" value="2" name="sc4" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="sc4-2" class="ms-2 text-sm text-gray-900">2. Yes, in a relationship </label>
+                    <label for="sc4-2" class="ms-2 text-sm text-gray-900"><%= it.t528 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="sc4-3" type="radio" value="3" name="sc4" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="sc4-3" class="ms-2 text-sm text-gray-900">3. No</label>
+                    <label for="sc4-3" class="ms-2 text-sm text-gray-900"><%= it.t529 %></label>
                 </div>
             </div>
         </div>
 
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
-            <div class="col-span-1">SC5. Please rate the young person’s abilities to five-point scale.</div>
+            <div class="col-span-1"><%= it.t530 %>. <%= it.t531 %></div>
             <div class="col-span-1 flex flex-col gap-2">
                 <div class="flex items-center">
                     <input id="sc5-1" type="radio" value="1" name="sc5" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="sc5-1" class="ms-2 text-sm text-gray-900">1. Extremely poor </label>
+                    <label for="sc5-1" class="ms-2 text-sm text-gray-900"><%= it.t532 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="sc5-2" type="radio" value="2" name="sc5" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="sc5-2" class="ms-2 text-sm text-gray-900">2. Poor </label>
+                    <label for="sc5-2" class="ms-2 text-sm text-gray-900"><%= it.t533 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="sc5-3" type="radio" value="3" name="sc5" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="sc5-3" class="ms-2 text-sm text-gray-900">3. Average </label>
+                    <label for="sc5-3" class="ms-2 text-sm text-gray-900"><%= it.t534 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="sc5-4" type="radio" value="4" name="sc5" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="sc5-4" class="ms-2 text-sm text-gray-900">4. Good </label>
+                    <label for="sc5-4" class="ms-2 text-sm text-gray-900"><%= it.t535 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="sc5-5" type="radio" value="5" name="sc5" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="sc5-5" class="ms-2 text-sm text-gray-900">5. Very good</label>
+                    <label for="sc5-5" class="ms-2 text-sm text-gray-900"><%= it.t536 %></label>
                 </div>
             </div>
         </div>
 
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
-            <div class="col-span-1">SC6. Are there any potential risks or concerns in the youngperson’s social interactions or relationships?</div>
+            <div class="col-span-1"><%= it.t537 %>. <%= it.t538 %></div>
             <div class="col-span-1 flex gap-4">
                 <div class="flex items-center">
                     <input id="sc6-1" type="radio" value="1" name="sc6" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="sc6-1" class="ms-2 text-sm text-gray-900">1. Yes</label>
+                    <label for="sc6-1" class="ms-2 text-sm text-gray-900"><%= it.t539 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="sc6-2" type="radio" value="0" name="sc6" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="sc6-2" class="ms-2 text-sm text-gray-900">0. No</label>
+                    <label for="sc6-2" class="ms-2 text-sm text-gray-900"><%= it.t540 %></label>
                 </div>
             </div>
         </div>
 
 
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
-            <div>SC7. What are these risks or concerns?</div>
+            <div><%= it.t542 %>. <%= it.t543 %></div>
             <div class="flex gap-4">
                 <textarea id="sc7" name="sc7" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100"></textarea>
             </div>
         </div>
 
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
-            <div>SC8. How does the young person typically spend their free</div>
+            <div><%= it.t544 %>. <%= it.t545 %></div>
             <div class="flex gap-4">
                 <textarea id="sc8" name="sc8" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100"></textarea>
             </div>
         </div>
 
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
-            <div class="col-span-1">SC9. In the past 12 months, has the young person participated in social, cultural, or community events?</div>
+            <div class="col-span-1"><%= it.t546 %>. <%= it.t547 %></div>
             <div class="col-span-1 flex flex-col gap-2">
                 <div class="flex items-center">
                     <input id="sc9-1" type="radio" value="1" name="sc9" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="sc9-1" class="ms-2 text-sm text-gray-900">1. Often</label>
+                    <label for="sc9-1" class="ms-2 text-sm text-gray-900"><%= it.t548 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="sc9-2" type="radio" value="2" name="sc9" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="sc9-2" class="ms-2 text-sm text-gray-900">2. Rarely </label>
+                    <label for="sc9-2" class="ms-2 text-sm text-gray-900"><%= it.t549 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="sc9-3" type="radio" value="3" name="sc9" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="sc9-3" class="ms-2 text-sm text-gray-900">3. Never</label>
+                    <label for="sc9-3" class="ms-2 text-sm text-gray-900"><%= it.t550 %></label>
                 </div>
             </div>
         </div>
 
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
-            <div class="col-span-1">SC10. Is the young person a member of any community organization, or do they participate in any volunteer activities?</div>
+            <div class="col-span-1"><%= it.t551 %>. <%= it.t552 %></div>
             <div class="col-span-1 flex gap-4">
                 <div class="flex items-center">
                     <input id="sc10-1" type="radio" value="1" name="sc10" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="sc10-1" class="ms-2 text-sm text-gray-900">1. Yes</label>
+                    <label for="sc10-1" class="ms-2 text-sm text-gray-900"><%= it.t553 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="sc10-2" type="radio" value="0" name="sc10" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="sc10-2" class="ms-2 text-sm text-gray-900">0. No</label>
+                    <label for="sc10-2" class="ms-2 text-sm text-gray-900"><%= it.t554 %></label>
                 </div>
             </div>
         </div>
 
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
-            <div>SC11. Please write down any relevant notes on the person’s social connection and participation to social life.</div>
+            <div><%= it.t555 %>. <%= it.t556 %></div>
             <div class="flex gap-4">
                 <textarea id="sc11" name="sc11" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100"></textarea>
             </div>
         </div>
 
-        <h2 class="mt-10 mb-4 text-2xl font-bold text-gray-700">8. CONCLUSIONS AND RECOMMENDATIONS</h2>
+        <h2 class="mt-10 mb-4 text-2xl font-bold text-gray-700"><%= it.t557 %></h2>
 
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
-            <div class="col-span-1">CR1. Has the young person successfully settled into their new community?</div>
+            <div class="col-span-1"><%= it.t558 %>. <%= it.t559 %></div>
             <div class="col-span-1 flex gap-4">
                 <div class="flex items-center">
                     <input id="cr1-1" type="radio" value="1" name="cr1" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="cr1-1" class="ms-2 text-sm text-gray-900">1. Yes</label>
+                    <label for="cr1-1" class="ms-2 text-sm text-gray-900"><%= it.t560 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="cr1-2" type="radio" value="0" name="cr1" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="cr1-2" class="ms-2 text-sm text-gray-900">0. No</label>
+                    <label for="cr1-2" class="ms-2 text-sm text-gray-900"><%= it.t561 %></label>
                 </div>
             </div>
         </div>
 
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
-            <div>CR2. What challenges are they facing in settling into their new community?</div>
+            <div><%= it.t562 %>. <%= it.t563 %></div>
             <div class="flex gap-4">
                 <textarea id="cr2" name="cr2" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100"></textarea>
             </div>
         </div>
 
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
-            <div class="col-span-1">CR3. Do you believe the young person is leading a fulfilling life?</div>
+            <div class="col-span-1"><%= it.t564 %>. <%= it.t565 %></div>
             <div class="col-span-1 flex gap-4">
                 <div class="flex items-center">
                     <input id="cr3-1" type="radio" value="1" name="cr3" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="cr3-1" class="ms-2 text-sm text-gray-900">1. Yes</label>
+                    <label for="cr3-1" class="ms-2 text-sm text-gray-900"><%= it.t566 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="cr3-2" type="radio" value="0" name="cr3" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="cr3-2" class="ms-2 text-sm text-gray-900">0. No</label>
+                    <label for="cr3-2" class="ms-2 text-sm text-gray-900"><%= it.t567 %></label>
                 </div>
             </div>
         </div>
 
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
-            <div>CR4.What aspects of their life do you believe are most</div>
+            <div><%= it.t569 %>. <%= it.t570 %></div>
             <div class="flex gap-4">
                 <textarea id="cr4" name="cr4" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100"></textarea>
             </div>
         </div>
 
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
-            <div>CR5. If no, what areas do you believe need improvement</div>
+            <div><%= it.t572 %>. <%= it.t573 %></div>
             <div class="flex gap-4">
                 <textarea id="cr5" name="cr5" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100"></textarea>
             </div>
         </div>
 
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
-            <div class="col-span-1">CR6. Has the young person made progress in their life since leaving the childcare system?</div>
+            <div class="col-span-1"><%= it.t574 %>. <%= it.t575 %></div>
             <div class="col-span-1 flex gap-4">
                 <div class="flex items-center">
                     <input id="cr6-1" type="radio" value="1" name="cr6" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="cr6-1" class="ms-2 text-sm text-gray-900">1. Yes</label>
+                    <label for="cr6-1" class="ms-2 text-sm text-gray-900"><%= it.t576 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="cr6-2" type="radio" value="0" name="cr6" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="cr6-2" class="ms-2 text-sm text-gray-900">0. No</label>
+                    <label for="cr6-2" class="ms-2 text-sm text-gray-900"><%= it.t577 %></label>
                 </div>
             </div>
         </div>
 
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
-            <div>CR7. If yes, in what areas have they made the most progress?</div>
+            <div><%= it.t579 %>. <%= it.t580 %></div>
             <div class="flex gap-4">
                 <textarea id="cr7" name="cr7" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100"></textarea>
             </div>
         </div>
 
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
-            <div>CR8. If no, what barriers are preventing them from making progress?</div>
+            <div><%= it.t582 %>. <%= it.t583 %></div>
             <div class="flex gap-4">
                 <textarea id="cr8" name="cr8" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100"></textarea>
             </div>
         </div>
 
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
-            <div class="col-span-1">CR9. Are there any critical areas where the young person needs increased support?</div>
-            <div class="col-span-1 flex gap-4">
-                <div class="flex items-center">
-                    <input id="cr9-1" type="radio" value="1" name="cr9" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="cr9-1" class="ms-2 text-sm text-gray-900">1. Yes</label>
+            <div class="col-span-1"><%= it.t584 %>. <%= it.t585 %></div>
+            <div class="col-span-1 flex flex-col gap-4">
+                <div class="flex gap-4">
+                    <div class="flex items-center">
+                        <input id="cr9-1" type="radio" value="1" name="cr9" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <label for="cr9-1" class="ms-2 text-sm text-gray-900"><%= it.t586 %></label>
+                    </div>
+                    <textarea id="cr9_other" name="cr9_other" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100"></textarea>
                 </div>
                 <div class="flex items-center">
                     <input id="cr9-2" type="radio" value="0" name="cr9" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="cr9-2" class="ms-2 text-sm text-gray-900">0. No</label>
+                    <label for="cr9-2" class="ms-2 text-sm text-gray-900"><%= it.t587 %></label>
                 </div>
             </div>
         </div>
 
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
-            <div>CR10. What specific recommendations do you have for providing increased support to the young person?</div>
+            <div><%= it.t588 %>. <%= it.t589 %></div>
             <div class="flex gap-4">
                 <textarea id="cr10" name="cr10" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100"></textarea>
             </div>

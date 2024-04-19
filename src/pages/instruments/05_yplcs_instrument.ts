@@ -35,7 +35,7 @@ export const instrument5 = {
             flatpickrConfig.locale = Russian;
         }
 
-        // flatpickr((<HTMLInputElement>document.getElementById('e2')), flatpickrConfig);
+        flatpickr((<HTMLInputElement>document.getElementById('pi3')), flatpickrConfig);
         // flatpickr((<HTMLInputElement>document.getElementById('e7')), flatpickrConfig);
 
         ipcRenderer.on("instrumentDataReady", (_event, args) => {
@@ -86,9 +86,9 @@ export const instrument5 = {
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 const validateChestionar = (_questions: QuestionObjectType) => {
 
-    if (_questions.e1.value == '-9' || _questions.euid.value == '-9') {
-        ipcRenderer.send("showDialogMessage", { type: "error", message: "The following fields are mandatory: E1, EUID!" });
-        const elPin = document.getElementById("e1");
+    if (_questions.pi1.value == '-9' || _questions.pi1a.value == '-9' || _questions.pi1b.value == '-9' || _questions.pi1c.value == '-9') {
+        ipcRenderer.send("showDialogMessage", { type: "error", message: "The following fields are mandatory: PI1, PI1A, PI1B, PI1C!" });
+        const elPin = document.getElementById("pi1");
         elPin.scrollIntoView({ behavior: "smooth", block: "center", inline: "nearest" });
         setTimeout(function () {
             elPin.focus();
@@ -100,6 +100,6 @@ const validateChestionar = (_questions: QuestionObjectType) => {
 };
 
 const saveChestionar = (obj: SaveInstrumentType): void => {
-    obj.table = "csr";
+    obj.table = "yplcs";
     ipcRenderer.send("saveInstrument", obj);
 }
