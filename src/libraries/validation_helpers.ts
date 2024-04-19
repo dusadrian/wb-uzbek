@@ -19,9 +19,9 @@ interface UtilHelpersInterface {
     htmlElement: (element: string) => HTMLInputElement;
     setValue: (element: string, value: string) => void;
     trigger: (element: string, change: string) => void;
-    triggerArray: (elements: Array<string>, changes: Array<string>) => void;
+    triggerArray: (elements: Array<string>, changes: string | Array<string>) => void;
     listen: (element: string, event: string, callback: () => void) => void;
-    listenArray: (elements:Array<string>, events:Array<string>, callback: () => void) => void;
+    listenArray: (elements: Array<string>, events: string | Array<string>, callback: () => void) => void;
     standardDate: (date: string) => Date;
     diffDates: (startDate: Date, endDate: Date, type?:string) => number;
     focus: (element: string) => void;
@@ -270,31 +270,42 @@ export const util: UtilHelpersInterface = {
     },
     setValue: (element, value) => {
         util.htmlElement(element).value = value;
+        util.trigger(element, "change");
     },
     trigger: (element, change) => {
         util.htmlElement(element).dispatchEvent(new Event(change));
     },
     triggerArray: (elements, changes) => {
+        let change;
+        if (Array.isArray(changes)) {
+            if (elements.length !== changes.length) {
+                change = util.repString(changes[0], elements.length);
+            } else {
+                change = [...changes];
+            }
+        } else {
+            change = util.repString(changes, elements.length);
+        }
+
         for (let i = 0; i < elements.length; i++) {
-            util.htmlElement(elements[i]).dispatchEvent(new Event(changes[i]));
+            util.trigger(elements[i], change[i]);
         }
     },
     listen: (element, event, callback) => {
         util.htmlElement(element).addEventListener(event, callback);
-        // if (trigger && trigger.length > 0) {
-        //     for (let i = 0; i < trigger.length; i++) {
-        //         const trel = document.getElementById(trigger[i]) as HTMLInputElement;
-        //         trel.dispatchEvent(new Event(what[i]));
-        //     }
-        // }
     },
     listenArray: (elements, events, callback) => {
         let event;
-        if (events.length !== elements.length) {
-            event = util.repString(events[0], elements.length);
+        if (Array.isArray(events)) {
+            if (elements.length !== events.length) {
+                event = util.repString(events[0], elements.length);
+            } else {
+                event = [...events];
+            }
         } else {
-            event = events;
+            event = util.repString(events, elements.length);
         }
+
         for (let i = 0; i < elements.length; i++) {
             util.htmlElement(elements[i]).addEventListener(event[i], callback);
         }
