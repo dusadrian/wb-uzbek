@@ -147,6 +147,14 @@ window.addEventListener("DOMContentLoaded", () => {
         case 'instruments/09_eef_ru.html':
             instrumentEEF();
             break;
+        case 'instruments/02_cibs.html':
+            CIBS();
+            break;
+        case 'instruments/02_cibs_en.html':
+        case 'instruments/02_cibs_uz.html':
+        case 'instruments/02_cibs_ru.html':
+            instrumentCIBS();
+            break;
     }
 
 });
@@ -531,6 +539,32 @@ const instrumentYPLCS = () => {
         return await import("./pages/instruments/05_yplcs_instrument");
     };
     importFile().then(result => result.instrument5.init().catch(error => {
+        console.log(error);
+    }));
+};
+
+// Instrument 2 Questionnaire about the child placed in specialized boarding schools
+const CIBS = () => {
+
+    topMenu('localCoordinator/01_dashboard');
+
+    translatePage();
+    const importFile = async () => {
+        return await import("./pages/instruments/02_cibs");
+    };
+    importFile().then(result => result.cibs.init().catch(error => {
+        console.log(error);
+    }));
+};
+const instrumentCIBS = () => {
+
+    topMenu('instruments/02_cibs');
+
+    translatePage();
+    const importFile = async () => {
+        return await import("./pages/instruments/02_cibs_instrument");
+    };
+    importFile().then(result => result.instrument2.init().catch(error => {
         console.log(error);
     }));
 };

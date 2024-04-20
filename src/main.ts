@@ -161,6 +161,9 @@ ipcMain.on("changeWindow", (event, args) => {
         case "cpis":
             goToCPISList();
             break;
+        case "cibs":
+            goToCIBSList();
+            break;
         case "csr":
             goToCSRList();
             break;
@@ -242,6 +245,8 @@ const goToDashboard = () => {
     });
 
 }
+
+// Instrument 1
 const goToCPISList = () => {
     const newPage = path.join(__dirname, "../src/pages/instruments/01_cpis.html");
     mainWindow.loadURL("file://" + newPage);
@@ -271,6 +276,37 @@ ipcMain.on('deleteCPIS', (event, args) => {
                     message: i18n.__('Item deleted.'),
                 }).then(() => {
                     goToCPISList();
+                });
+            });
+        }
+    });
+});
+
+// Instrument 2
+const goToCIBSList = () => {
+    const newPage = path.join(__dirname, "../src/pages/instruments/02_cibs.html");
+    mainWindow.loadURL("file://" + newPage);
+};
+ipcMain.on('getChildrenCIBS', () => {
+    database.cibsList(db).then((result) => {
+        mainWindow.webContents.send("childrenCIBS", result);
+    });
+});
+ipcMain.on('deleteCIBS', (event, args) => {
+    // save to DB
+    dialog.showMessageBox(mainWindow, {
+        type: 'warning',
+        message: i18n.__('Are you sure you want to delete this item?'),
+        buttons: ['Yes', 'No']
+    }).then((result) => {
+        if (result.response === 0) {
+            database.deleteCIBS(args.id, db).then(() => {
+                // send message
+                dialog.showMessageBox(mainWindow, {
+                    type: 'info',
+                    message: i18n.__('Item deleted.'),
+                }).then(() => {
+                    goToCIBSList();
                 });
             });
         }
@@ -458,6 +494,9 @@ const goToInstrument = (instrument: string, id: string) => {
             break;
         case "YPLCS":
             goToYPLCS(id);
+            break;
+        case "CIBS":
+            goToCIBS(id);
             break;
         default:
             dialog.showMessageBox(mainWindow, {
@@ -749,6 +788,28 @@ const goToYPLCS = (id: string) => {
         }
     });
 }
+const goToCIBS = (id: string) => {
+    const newPage = path.join(__dirname, "../src/pages/instruments/02_cibs_" + appSession.language + ".html");
+    mainWindow.loadURL("file://" + newPage);
+    database.getUserData(appSession.userId).then((userDataArray) => {
+        if (id) {
+            mainWindow.webContents.once("did-finish-load", () => {
+                database.instrumentGet(id, 'cibs', db).then((questions) => {
+                    mainWindow.webContents.send("instrumentDataReady", {
+                        questions: questions,
+                        userData: userDataArray[0],
+                    });
+                });
+            });
+        } else {
+            mainWindow.webContents.once("did-finish-load", () => {
+                mainWindow.webContents.send("instrumentDataReady", {
+                    userData: userDataArray[0],
+                });
+            });
+        }
+    });
+}
 
 // save instrument
 ipcMain.on('saveInstrument', (event, args) => {
@@ -780,6 +841,10 @@ ipcMain.on('saveInstrument', (event, args) => {
             }
             if (args.table === 'yplcs') {
                 goToYPLCSList();
+                return;
+            }
+            if (args.table === 'cibs') {
+                goToCIBSList();
                 return;
             }
         });

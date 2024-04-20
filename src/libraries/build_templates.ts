@@ -9,6 +9,11 @@ import * as path from "path";
 // import * as one_ru from "../templates/1_UZ_ChildDI_Children_in_the_child_care_system_ru.json";
 // import * as one_uz from "../templates/1_UZ_ChildDI_Children_in_the_child_care_system_uz.json";
 
+// Instrument 2
+// import * as one_en from "../templates/2_UZ_ChildDI_Children_in_boarding_schools_en.json";
+// import * as one_ru from "../templates/2_UZ_ChildDI_Children_in_boarding_schools_ru.json";
+// import * as one_uz from "../templates/2_UZ_ChildDI_Children_in_boarding_schools_uz.json";
+
 // Instrument 3
 // import * as one_en from "../templates/3_UZ_ChildDI_Staff_Registry_en.json";
 // import * as one_ru from "../templates/3_UZ_ChildDI_Staff_Registry_ru.json";
@@ -20,9 +25,9 @@ import * as path from "path";
 // import * as one_uz from "../templates/4_UZ_ChildDI_Material_Resources_uz.json";
 
 // Instrument 5
-import * as one_en from "../templates/5_UZ_ChildDI_Youth_Leaving_Care_en.json";
-import * as one_ru from "../templates/5_UZ_ChildDI_Youth_Leaving_Care_ru.json";
-import * as one_uz from "../templates/5_UZ_ChildDI_Youth_Leaving_Care_uz.json";
+// import * as one_en from "../templates/5_UZ_ChildDI_Youth_Leaving_Care_en.json";
+// import * as one_ru from "../templates/5_UZ_ChildDI_Youth_Leaving_Care_ru.json";
+// import * as one_uz from "../templates/5_UZ_ChildDI_Youth_Leaving_Care_uz.json";
 
 // Instrument 6
 // import * as one_en from "../templates/6_UZ_ChildDI_Entries_Exists_Sheet_en.json";
@@ -54,6 +59,11 @@ export default function build_templates() {
     // writeFileSync(path.join(__dirname, "../../src/templates/1_UZ_ChildDI_Children_in_the_child_care_system_ru.html"), etaObj.render("1_UZ_ChildDI_Children_in_the_child_care_system.eta", one_ru))
     // writeFileSync(path.join(__dirname, "../../src/templates/1_UZ_ChildDI_Children_in_the_child_care_system_uz.html"), etaObj.render("1_UZ_ChildDI_Children_in_the_child_care_system.eta", one_uz))
     
+    // Instrument 2
+    // writeFileSync(path.join(__dirname, "../../src/templates/2_UZ_ChildDI_Children_in_boarding_schools_en.html"), etaObj.render("2_UZ_ChildDI_Children_in_boarding_schools.eta", one_en))
+    // writeFileSync(path.join(__dirname, "../../src/templates/2_UZ_ChildDI_Children_in_boarding_schools_ru.html"), etaObj.render("2_UZ_ChildDI_Children_in_boarding_schools.eta", one_ru))
+    // writeFileSync(path.join(__dirname, "../../src/templates/2_UZ_ChildDI_Children_in_boarding_schools_uz.html"), etaObj.render("2_UZ_ChildDI_Children_in_boarding_schools.eta", one_uz))
+    
     // Instrument 3
     // writeFileSync(path.join(__dirname, "../../src/templates/3_UZ_ChildDI_Staff_Registry_en.html"), etaObj.render("3_UZ_ChildDI_Staff_Registry.eta", one_en))
     // writeFileSync(path.join(__dirname, "../../src/templates/3_UZ_ChildDI_Staff_Registry_ru.html"), etaObj.render("3_UZ_ChildDI_Staff_Registry.eta", one_ru))
@@ -65,9 +75,9 @@ export default function build_templates() {
     // writeFileSync(path.join(__dirname, "../../src/templates/4_UZ_ChildDI_Material_Resources_uz.html"), etaObj.render("4_UZ_ChildDI_Material_Resources.eta", one_uz))
 
     // Instrument 5
-    writeFileSync(path.join(__dirname, "../../src/templates/5_UZ_ChildDI_Youth_Leaving_Care_en.html"), etaObj.render("5_UZ_ChildDI_Youth_Leaving_Care.eta", one_en))
-    writeFileSync(path.join(__dirname, "../../src/templates/5_UZ_ChildDI_Youth_Leaving_Care_ru.html"), etaObj.render("5_UZ_ChildDI_Youth_Leaving_Care.eta", one_ru))
-    writeFileSync(path.join(__dirname, "../../src/templates/5_UZ_ChildDI_Youth_Leaving_Care_uz.html"), etaObj.render("5_UZ_ChildDI_Youth_Leaving_Care.eta", one_uz))
+    // writeFileSync(path.join(__dirname, "../../src/templates/5_UZ_ChildDI_Youth_Leaving_Care_en.html"), etaObj.render("5_UZ_ChildDI_Youth_Leaving_Care.eta", one_en))
+    // writeFileSync(path.join(__dirname, "../../src/templates/5_UZ_ChildDI_Youth_Leaving_Care_ru.html"), etaObj.render("5_UZ_ChildDI_Youth_Leaving_Care.eta", one_ru))
+    // writeFileSync(path.join(__dirname, "../../src/templates/5_UZ_ChildDI_Youth_Leaving_Care_uz.html"), etaObj.render("5_UZ_ChildDI_Youth_Leaving_Care.eta", one_uz))
 
     // Instrument 6
     // writeFileSync(path.join(__dirname, "../../src/templates/6_UZ_ChildDI_Entries_Exists_Sheet_en.html"), etaObj.render("6_UZ_ChildDI_Entries_Exists_Sheet.eta", one_en))

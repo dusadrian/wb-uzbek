@@ -136,7 +136,7 @@ export const getExisting = async (db: DuckDB.Database) => {
     return await connection;
 }
 
-// instrument 1
+// Instrument 1
 export const cpisList = async (db: DuckDB.Database) => {
     const connection = new Promise<Array<Instrument>>((resolve) => {
 
@@ -168,6 +168,48 @@ export const deleteCPIS = async (id: string, db: DuckDB.Database) => {
                 console.log(error);
             }
             db.run(`DELETE FROM values_cpis WHERE instrument_id = '${id}'`, (error) => {
+                if (error) {
+                    console.log(error);
+                }
+                resolve(true);
+            });
+        });
+    });
+    return await connection;
+}
+
+// Instrument 2
+export const cibsList = async (db: DuckDB.Database) => {
+    const connection = new Promise<Array<Instrument>>((resolve) => {
+
+        const sql = `
+        SELECT c.id,
+            c.uuid,
+            MAX(CASE WHEN variable = 'pin' THEN value ELSE NULL END) pin,
+            MAX(CASE WHEN variable = 'lk1a' THEN value ELSE NULL END) first_name,
+            MAX(CASE WHEN variable = 'lk1b' THEN value ELSE NULL END) patronymics,
+            MAX(CASE WHEN variable = 'lk1c' THEN value ELSE NULL END) last_name,
+        FROM instrument_cibs AS c
+        LEFT JOIN values_cibs AS v ON v.instrument_id = c.id
+        GROUP BY c.id, c.uuid;`;
+
+        db.all(sql, (error, result) => {
+            if (error) {
+                console.log("===== Error get instrument 2 =====");
+                console.log(error);
+            }
+            resolve(result as Array<Instrument>);
+        });
+    });
+    return await connection;
+}
+export const deleteCIBS = async (id: string, db: DuckDB.Database) => {
+    const connection = new Promise<boolean>((resolve) => {
+        db.run(`DELETE FROM instrument_cibs WHERE id = '${id}'`, (error) => {
+            if (error) {
+                console.log(error);
+            }
+            db.run(`DELETE FROM values_cibs WHERE instrument_id = '${id}'`, (error) => {
                 if (error) {
                     console.log(error);
                 }

@@ -128,5 +128,6 @@
 	"t_add_evaluation": "Add evaluation",
 	"t_institution": "учреждение",
 	"t_add_young_people": "Add young people",
-	"t_yplcs_list": "Questionnaire about the young person leaving the child care system"
+	"t_yplcs_list": "Questionnaire about the young person leaving the child care system",
+	"t_child_placed_in_specialized_boarding_schools": "t_child_placed_in_specialized_boarding_schools"
 }

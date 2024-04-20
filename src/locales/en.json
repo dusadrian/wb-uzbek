@@ -137,5 +137,7 @@
 	"t_institution": "Institution",
 	"t_add_young_people": "Add young people",
 	"t_yplcs_list": "Questionnaire about the young person leaving the child care system",
-	"The following fields are mandatory: PI1, PI1A, PI1B, PI1C!": "The following fields are mandatory: PI1, PI1A, PI1B, PI1C!"
+	"The following fields are mandatory: PI1, PI1A, PI1B, PI1C!": "The following fields are mandatory: PI1, PI1A, PI1B, PI1C!",
+	"t_child_placed_in_specialized_boarding_schools": "Children placed in specialized boarding schools",
+	"t_cibs_list": "Questionnaire about the child placed in specialized boarding schools"
 }
