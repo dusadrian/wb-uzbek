@@ -458,16 +458,16 @@ util.listen("sh1", "myChange", () => {
 sh3_start_dates.forEach((startel) => {
     const index = sh3_start_dates.indexOf(startel);
     const endel = sh3_end_dates[index]
-    const start = document.getElementById(startel) as HTMLInputElement;
-    const end = document.getElementById(endel) as HTMLInputElement;
+    const start = util.htmlElement(startel);
+    const end = util.htmlElement(endel);
 
     const check = function() {
         if (util.inputsHaveValue([startel, endel])) {
 
             const startdate = util.standardDate(start.value);
             const enddate = util.standardDate(end.value);
-            const timespent = document.getElementById(startel.replace("a", "f")) as HTMLInputElement;
-            const sh4 = document.getElementById("sh4") as HTMLInputElement;
+            const timespent = util.htmlElement(startel.replace("a", "f"));
+            const sh4 = util.htmlElement("sh4");
 
             const message = locales[lang]['Start_before_end'];
             errorHandler.removeError([startel, endel], message);
@@ -503,8 +503,8 @@ sh3_start_dates.forEach((startel) => {
         }
     }
 
-    start.addEventListener("myChange", check);
-    end.addEventListener("myChange", check);
+    util.listen("startel", "myChange", check);
+    util.listen("endel", "myChange", check);
 });
 
 
@@ -520,8 +520,8 @@ ewm.forEach((el) => {
                 }
             });
 
-            const ewm5_0 = document.getElementById("ewm5-0") as HTMLInputElement;
-            const ewm5_1 = document.getElementById("ewm5-1") as HTMLInputElement;
+            const ewm5_0 = util.htmlElement("ewm5-0");
+            const ewm5_1 = util.htmlElement("ewm5-1");
 
             if (suma > 0) {
                 ewm5_1.checked = true;
@@ -537,12 +537,12 @@ ewm.forEach((el) => {
     });
 });
 
-const cmgt1a = document.getElementById('cmgt1a') as HTMLInputElement;
+const cmgt1a = util.htmlElement('cmgt1a');
 cmgt1a.addEventListener("myChange", function() {
 
-    const start = document.getElementById("data") as HTMLInputElement;
-    const end = document.getElementById("cmgt1a") as HTMLInputElement;
-    const cmgt1b = document.getElementById("cmgt1b") as HTMLInputElement;
+    const start = util.htmlElement("data");
+    const end = util.htmlElement("cmgt1a");
+    const cmgt1b = util.htmlElement("cmgt1b");
 
     const startdate = new Date(start.value.replace(/(\d{2})\/(\d{2})\/(\d{4})/,'$3-$2-$1'));
     const enddate = new Date(end.value.replace(/(\d{2})\/(\d{2})\/(\d{4})/,'$3-$2-$1'));
@@ -560,23 +560,21 @@ cmgt1a.addEventListener("myChange", function() {
 });
 
 const sk3 = ["sk3_1", "sk3_2"]
-sk3.forEach(item => {
-    (document.getElementById(item) as HTMLInputElement).addEventListener('change', () => {
-        if (util.inputsHaveValue(sk3)) {
-            const suma = Number(util.makeInputSumDecimal(sk3));
-            const message = locales[lang]['At_least_one_brother_or_sister'];
-            const sk3_1 = document.getElementById("sk3_1") as HTMLInputElement;
-            const sk3_2 = document.getElementById("sk3_2") as HTMLInputElement;
-            errorHandler.removeError(sk3, message);
+util.listen(sk3, "change", () => {
+    if (util.inputsHaveValue(sk3)) {
+        const suma = Number(util.makeInputSumDecimal(sk3));
+        const message = locales[lang]['At_least_one_brother_or_sister'];
+        const sk3_1 = util.htmlElement("sk3_1");
+        const sk3_2 = util.htmlElement("sk3_2");
+        errorHandler.removeError(sk3, message);
 
-            if (suma == 0) {
-                errorHandler.addError(sk3, message);
-                instrument.questions["sk3_1"].value = "-9";
-                instrument.questions["sk3_2"].value = "-9";
-            } else {
-                instrument.questions["sk3_1"].value = sk3_1.value;
-                instrument.questions["sk3_2"].value = sk3_2.value;
-            }
+        if (suma == 0) {
+            errorHandler.addError(sk3, message);
+            instrument.questions["sk3_1"].value = "-9";
+            instrument.questions["sk3_2"].value = "-9";
+        } else {
+            instrument.questions["sk3_1"].value = sk3_1.value;
+            instrument.questions["sk3_2"].value = sk3_2.value;
         }
-    })
+    }
 });
