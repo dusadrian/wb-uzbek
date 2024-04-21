@@ -254,7 +254,7 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 22,
-        active: function () { return (Number(instrument.questions.lk14a_dk.value) == 0) },
+        active: function () { return (Number(instrument.questions.lk14a_dk.value) == 0 && Number(instrument.questions.lk14b.value) > 0) },
         error: ''
     },
     'lk14d': {
@@ -265,7 +265,7 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 23,
-        active: function () { return (Number(instrument.questions.lk14a_dk.value) == 0) },
+        active: function () { return (Number(instrument.questions.lk14a_dk.value) == 0 && Number(instrument.questions.lk14c.value) > 0) },
         error: ''
     },
     'lk14e': {
@@ -364,7 +364,7 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 32,
-        active: function () { return (Number(instrument.questions.qfam1.value) == 1 || Number(instrument.questions.qfam1.value) == 2 || Number(instrument.questions.qfam1.value) == 3) },
+        active: function () { return (Number(instrument.questions.qfam1.value) > 0 && Number(instrument.questions.qfam1.value) < 4) },
         error: '',
         checked: 0
     },
@@ -376,7 +376,7 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 33,
-        active: function () { return (Number(instrument.questions.qfam1.value) == 1 || Number(instrument.questions.qfam1.value) == 2 || Number(instrument.questions.qfam1.value) == 3) },
+        active: function () { return (Number(instrument.questions.qfam1.value) > 0 && Number(instrument.questions.qfam1.value) < 4) },
         error: '',
         checked: 0
     },
@@ -388,7 +388,7 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 34,
-        active: function () { return (Number(instrument.questions.qfam1.value) == 1 || Number(instrument.questions.qfam1.value) == 2 || Number(instrument.questions.qfam1.value) == 3) },
+        active: function () { return (Number(instrument.questions.qfam1.value) > 0 && Number(instrument.questions.qfam1.value) < 4) },
         error: '',
         checked: 0
     },
@@ -400,7 +400,7 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 35,
-        active: function () { return (Number(instrument.questions.qfam1.value) == 1 || Number(instrument.questions.qfam1.value) == 2 || Number(instrument.questions.qfam1.value) == 3) },
+        active: function () { return (Number(instrument.questions.qfam1.value) > 0 && Number(instrument.questions.qfam1.value) < 4) },
         error: '',
         checked: 0
     },
@@ -412,7 +412,7 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 36,
-        active: function () { return (Number(instrument.questions.qfam1.value) == 1 || Number(instrument.questions.qfam1.value) == 2 || Number(instrument.questions.qfam1.value) == 3) },
+        active: function () { return (Number(instrument.questions.qfam1.value) > 0 && Number(instrument.questions.qfam1.value) < 4) },
         error: '',
         checked: 0
     },
@@ -424,7 +424,7 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 37,
-        active: function () { return (Number(instrument.questions.qfam1.value) == 1 || Number(instrument.questions.qfam1.value) == 2 || Number(instrument.questions.qfam1.value) == 3) },
+        active: function () { return (Number(instrument.questions.qfam1.value) > 0 && Number(instrument.questions.qfam1.value) < 4) },
         error: '',
         checked: 0
     },
@@ -436,7 +436,7 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 38,
-        active: function () { return (Number(instrument.questions.qfam1.value) == 1 || Number(instrument.questions.qfam1.value) == 2 || Number(instrument.questions.qfam1.value) == 3) },
+        active: function () { return (Number(instrument.questions.qfam1.value) > 0 && Number(instrument.questions.qfam1.value) < 4) },
         error: '',
         checked: 0
     },
@@ -448,7 +448,7 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 39,
-        active: function () { return (Number(instrument.questions.qfam1.value) == 1 || Number(instrument.questions.qfam1.value) == 2 || Number(instrument.questions.qfam1.value) == 3) },
+        active: function () { return (Number(instrument.questions.qfam1.value) > 0 && Number(instrument.questions.qfam1.value) < 4) },
         error: '',
         checked: 0
     },
@@ -460,7 +460,7 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 40,
-        active: function () { return (Number(instrument.questions.qfam1.value) == 1 || Number(instrument.questions.qfam1.value) == 2 || Number(instrument.questions.qfam1.value) == 3) },
+        active: function () { return (Number(instrument.questions.qfam1.value) > 0 && Number(instrument.questions.qfam1.value) < 4) },
         error: '',
         checked: 0
     },
@@ -472,7 +472,7 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 41,
-        active: function () { return (Number(instrument.questions.qfam1.value) == 1 || Number(instrument.questions.qfam1.value) == 2 || Number(instrument.questions.qfam1.value) == 3) },
+        active: function () { return (Number(instrument.questions.qfam1.value) > 0 && Number(instrument.questions.qfam1.value) < 4) },
         error: '',
         checked: 0
     },
@@ -484,7 +484,7 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 42,
-        active: function () { return (Number(instrument.questions.qfam1.value) == 1 || Number(instrument.questions.qfam1.value) == 2 || Number(instrument.questions.qfam1.value) == 3) },
+        active: function () { return (Number(instrument.questions.qfam1.value) > 0 && Number(instrument.questions.qfam1.value) < 4) },
         error: ''
     },
     'sa3a': {
@@ -495,7 +495,7 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 43,
-        active: function () { return (Number(instrument.questions.qfam1.value) == 1 || Number(instrument.questions.qfam1.value) == 2 || Number(instrument.questions.qfam1.value) == 3) },
+        active: function () { return (Number(instrument.questions.qfam1.value) > 0 && Number(instrument.questions.qfam1.value) < 4) },
         error: ''
     },
     'sa3b': {
@@ -506,7 +506,7 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 44,
-        active: function () { return (Number(instrument.questions.qfam1.value) == 1 || Number(instrument.questions.qfam1.value) == 2 || Number(instrument.questions.qfam1.value) == 3) },
+        active: function () { return (Number(instrument.questions.qfam1.value) > 0 && Number(instrument.questions.qfam1.value) < 4 && Number(instrument.questions.sa3a.value) > 0) },
         error: ''
     },
     'sa3c': {
@@ -517,7 +517,7 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 45,
-        active: function () { return (Number(instrument.questions.qfam1.value) == 1 || Number(instrument.questions.qfam1.value) == 2 || Number(instrument.questions.qfam1.value) == 3) },
+        active: function () { return (Number(instrument.questions.qfam1.value) > 0 && Number(instrument.questions.qfam1.value) < 4 && Number(instrument.questions.sa3b.value) > 0) },
         error: ''
     },
     'sa3d': {
@@ -691,7 +691,7 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 60,
-        active: function () { return (Number(instrument.questions.qfam1.value) == 1 || Number(instrument.questions.qfam1.value) == 2 || Number(instrument.questions.qfam1.value) == 3) },
+        active: function () { return (Number(instrument.questions.qfam1.value) > 0 && Number(instrument.questions.qfam1.value) < 4) },
         error: ''
     },
     'qfam5b': {
@@ -702,7 +702,7 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 61,
-        active: function () { return (Number(instrument.questions.qfam1.value) == 1 || Number(instrument.questions.qfam1.value) == 2 || Number(instrument.questions.qfam1.value) == 3) },
+        active: function () { return (Number(instrument.questions.qfam1.value) > 0 && Number(instrument.questions.qfam1.value) < 4) },
         error: ''
     },
     'qfam5c': {
@@ -713,7 +713,7 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 62,
-        active: function () { return (Number(instrument.questions.qfam1.value) == 1 || Number(instrument.questions.qfam1.value) == 2 || Number(instrument.questions.qfam1.value) == 3) },
+        active: function () { return (Number(instrument.questions.qfam1.value) > 0 && Number(instrument.questions.qfam1.value) < 4) },
         error: ''
     },
     'qfam5d': {
@@ -724,7 +724,7 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 63,
-        active: function () { return (Number(instrument.questions.qfam1.value) == 1 || Number(instrument.questions.qfam1.value) == 2 || Number(instrument.questions.qfam1.value) == 3) },
+        active: function () { return (Number(instrument.questions.qfam1.value) > 0 && Number(instrument.questions.qfam1.value) < 4) },
         error: ''
     },
     'qfam5e': {
@@ -735,7 +735,7 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 64,
-        active: function () { return (Number(instrument.questions.qfam1.value) == 1 || Number(instrument.questions.qfam1.value) == 2 || Number(instrument.questions.qfam1.value) == 3) },
+        active: function () { return (Number(instrument.questions.qfam1.value) > 0 && Number(instrument.questions.qfam1.value) < 4) },
         error: ''
     },
     'cm1c': {
@@ -857,7 +857,7 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 75,
-        active: function () { return (Number(instrument.questions.cm1c.value) == 2 && Number(instrument.questions.cm3a_dk.value) == 0) },
+        active: function () { return (Number(instrument.questions.cm1c.value) == 2 && Number(instrument.questions.cm3a_dk.value) == 0 && Number(instrument.questions.cm3b.value) > 0) },
         error: ''
     },
     'cm3d': {
@@ -868,7 +868,7 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 76,
-        active: function () { return (Number(instrument.questions.cm1c.value) == 2 && Number(instrument.questions.cm3a_dk.value) == 0) },
+        active: function () { return (Number(instrument.questions.cm1c.value) == 2 && Number(instrument.questions.cm3a_dk.value) == 0 && Number(instrument.questions.cm3c.value) > 0) },
         error: ''
     },
     'cm3e': {
@@ -1033,7 +1033,7 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 91,
-        active: function () { return (Number(instrument.questions.cm1c.value) == 2 && Number(instrument.questions.cm11a.value) == 1) },
+        active: function () { return (Number(instrument.questions.cm1c.value) == 2 && Number(instrument.questions.cm11a.value) == 1 && Number(instrument.questions.cm11c.value) > 0) },
         error: ''
     },
     'cm11e': {
@@ -1044,7 +1044,7 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 92,
-        active: function () { return (Number(instrument.questions.cm1c.value) == 2 && Number(instrument.questions.cm11a.value) == 1) },
+        active: function () { return (Number(instrument.questions.cm1c.value) == 2 && Number(instrument.questions.cm11a.value) == 1 && Number(instrument.questions.cm11d.value) > 0) },
         error: ''
     },
     'cm11f': {
@@ -1319,7 +1319,7 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 117,
-        active: function () { return ((Number(instrument.questions.ct1c.value) == 2 || Number(instrument.questions.ct1c.value) == 4) && Number(instrument.questions.ct11a.value) == 1) },
+        active: function () { return ((Number(instrument.questions.ct1c.value) == 2 || Number(instrument.questions.ct1c.value) == 4) && Number(instrument.questions.ct11a.value) == 1 && Number(instrument.questions.ct11c.value) > 0) },
         error: ''
     },
     'ct11e': {
@@ -1330,7 +1330,7 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 118,
-        active: function () { return ((Number(instrument.questions.ct1c.value) == 2 || Number(instrument.questions.ct1c.value) == 4) && Number(instrument.questions.ct11a.value) == 1) },
+        active: function () { return ((Number(instrument.questions.ct1c.value) == 2 || Number(instrument.questions.ct1c.value) == 4) && Number(instrument.questions.ct11a.value) == 1 && Number(instrument.questions.ct11d.value) > 0) },
         error: ''
     },
     'ct11f': {
@@ -1628,7 +1628,7 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 145,
-        active: function () { return (Number(instrument.questions.cg5b.value) != 90 && Number(instrument.questions.cg11a.value) == 1) },
+        active: function () { return (Number(instrument.questions.cg5b.value) != 90 && Number(instrument.questions.cg11a.value) == 1 && Number(instrument.questions.cg11c.value) > 0) },
         error: ''
     },
     'cg11e': {
@@ -1639,7 +1639,7 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 146,
-        active: function () { return (Number(instrument.questions.cg5b.value) != 90 && Number(instrument.questions.cg11a.value) == 1) },
+        active: function () { return (Number(instrument.questions.cg5b.value) != 90 && Number(instrument.questions.cg11a.value) == 1 && Number(instrument.questions.cg11d.value) > 0) },
         error: ''
     },
     'cg11f': {

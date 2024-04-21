@@ -2,7 +2,7 @@ import { ipcRenderer } from "electron";
 import { questions, questionOrder } from "./02_cibs_variables";
 import instrument from "../../libraries/instrument";
 import { QuestionObjectType, SaveInstrumentType } from "../../libraries/interfaces";
-import { util, errorHandler } from "../../libraries/validation_helpers";
+import { util, errorHandler, KeyString } from "../../libraries/validation_helpers";
 
 import * as _flatpickr from 'flatpickr';
 import { FlatpickrFn } from 'flatpickr/dist/types/instance';
@@ -24,34 +24,17 @@ const locales: { [key: string]: typeof en | typeof uz | typeof ru} = {
 const lang = localStorage.getItem("language");
 
 const general_dates = [
-    'data', 'lk3', 'cm3', 'ct3', 'cg1c', 'cg3b', 'sa1', 'cmgt1a'
+    'data', 'lk3', 'cm3', 'ct3', 'cg1c', 'cg3b', 'sa1'
 ];
 
-const sh3_start_dates = [
-    'sh3_s1a', 'sh3_s2a', 'sh3_s3a', 'sh3_s4a', 'sh3_s5a', 'sh3_s6a', 'sh3_s7a', 'sh3_s8a', 'sh3_s9a', 'sh3_s10a', 'sh3_csa'
-];
 
-const sh3_end_dates = [
-    'sh3_s1d', 'sh3_s2d', 'sh3_s3d', 'sh3_s4d', 'sh3_s5d', 'sh3_s6d', 'sh3_s7d', 'sh3_s8d', 'sh3_s9d', 'sh3_s10d', 'sh3_csd'
-];
-
-let institutionDetails;
-
-const regElements = ["lk14b", "cm3b", "cm10c", "cm11c", "ct3b", "ct10c", "ct11c", "cg10c", "cg11c", "sa3a"];
-const disElements = ["lk14c", "cm3c", "cm10d", "cm11d", "ct3c", "ct10d", "ct11d", "cg10d", "cg11d", "sa3b"];
-const setElements = ["lk14d", "cm3d", "cm10e", "cm11e", "ct3d", "ct10e", "ct11e", "cg10e", "cg11e", "sa3c"];
-const typeElements = ["lk14e", "cm3e", "cm10f", "cm11f", "ct3e", "ct10f", "ct11f", "cg10f", "cg11f", "sa3d"];
+const regElements  = ["lk14b", "sa3a", "cm3b", "cm11c", "ct11c", "cg11c"];
+const disElements  = ["lk14c", "sa3b", "cm3c", "cm11d", "ct11d", "cg11d"];
+const setElements  = ["lk14d", "sa3c", "cm3d", "cm11e", "ct11e", "cg11e"];
+const typeElements = ["lk14e", "sa3d", "cm3e", "cm11f", "ct11f", "cg11f"];
 
 export const instrument2 = {
     init: async () => {
-
-        const appSessionStorage = sessionStorage.getItem('appSession');
-        if (appSessionStorage !== null) {
-            const parsed = JSON.parse(appSessionStorage);
-            institutionDetails = parsed.institutionDetails;
-            console.log(institutionDetails);
-            // prepopulate the institution details
-        }
 
         const flatpickrConfig: {
             enableTime: boolean;
@@ -72,9 +55,7 @@ export const instrument2 = {
             flatpickrConfig.locale = Russian;
         }
 
-        const date_elements = [...general_dates, ...sh3_start_dates, ...sh3_end_dates];
-
-        const flatpickr_elements = date_elements.map((el) => {
+        general_dates.forEach((el) => {
             const element = document.getElementById(el) as HTMLInputElement;
             let config;
             if (el == "data") {
@@ -94,16 +75,9 @@ export const instrument2 = {
             } else {
                 config = { ...flatpickrConfig, minDate: "01/01/2000" };
             }
-            return flatpickr(element, config);
+
+            flatpickr(element, config);
         });
-
-        const today = new Date();
-        flatpickr_elements[date_elements.indexOf('data')].setDate(today);
-        util.trigger("data", "change");
-
-        // TODO: de modificat activatorii pentru district si localitate, implicit -7
-        // iar la localitate, daca districtul nu are localitati, sa ramana dezactivat
-
 
         const reg_codes = Object.keys(administrative);
         for (let x = 0; x < regElements.length; x++) {
@@ -127,8 +101,9 @@ export const instrument2 = {
             const set_el = util.htmlElement(setElements[x]);
 
             util.listen(regElements[x], "change", function () {
+                util.htmlElement(typeElements[x]).value = "";
                 const selectedRegion = reg_el.value;
-                if (selectedRegion != "-9") {
+                if (Number(selectedRegion) > 0) {
                     const regdist = administrative[selectedRegion].districts;
                     const dis_codes = Object.keys(regdist);
 
@@ -147,21 +122,23 @@ export const instrument2 = {
                     for (let i = 0; i < dis_codes.length; i++) {
                         const option = document.createElement("option");
                         option.value = dis_codes[i];
-                        const dis = districts[dis_codes[i]];
-                        option.text = dis[lang as keyof typeof dis];
+                        option.text = (districts[dis_codes[i]] as KeyString)[lang];
                         dis_el.appendChild(option);
                     }
                 }
             })
 
             util.listen(disElements[x], "change", function () {
+                util.htmlElement(typeElements[x]).value = "";
                 const selectedRegion = reg_el.value;
                 const selectedDistrict = dis_el.value;
-                if (selectedRegion != "-9" && selectedDistrict != "-9") {
+                instrument.questions[setElements[x]].skip = false;
+                util.htmlElement(setElements[x]).disabled = false;
+                set_el.innerHTML = "";
+                if (Number(selectedRegion) > 0 && Number(selectedDistrict) > 0) {
                     const regdisset = administrative[selectedRegion].districts[selectedDistrict].settlements;
                     if (regdisset) {
                         const settlements = Object.keys(regdisset);
-                        set_el.innerHTML = "";
                         const option = document.createElement("option");
                         option.value = "-9";
                         option.text = locales[lang]['t_choose'];
@@ -170,12 +147,16 @@ export const instrument2 = {
                         for (let i = 0; i < settlements.length; i++) {
                             const option = document.createElement("option");
                             option.value = settlements[i];
-                            option.text = (regdisset[settlements[i]] as { [key: string]: string })[lang];
+                            option.text = (regdisset[settlements[i]] as KeyString)[lang];
                             set_el.appendChild(option);
                         }
                     }
                     else {
-                        // dezactiveaza select-ul pentru settlement
+                        const set_type = settlement_types[settlements[selectedDistrict].type]
+                        util.setValue(typeElements[x], (set_type as KeyString)[lang]);
+                        instrument.questions[setElements[x]].skip = true;
+                        instrument.questions[setElements[x]].value = '-7';
+                        util.htmlElement(setElements[x]).disabled = true;
                     }
                 }
             })
@@ -184,7 +165,7 @@ export const instrument2 = {
         ipcRenderer.on("instrumentDataReady", (_event, args) => {
 
             console.log(args);
-            
+
 
             // set instrument question !!!!!!
             instrument.setQuestions(questions, questionOrder);
@@ -194,31 +175,48 @@ export const instrument2 = {
                 instrumentID = parseInt(args.id);
 
                 for (const item of args.questions) {
-                    instrument.seteazaValoareElement(item.variable, item.value);
-                    const ireg = regElements.indexOf(item.variable);
-                    if (ireg > -1) {
-                        const reg_el = document.getElementById(regElements[ireg]);
-                        reg_el.dispatchEvent(new Event("change"));
-                    }
-                    const idis = disElements.indexOf(item.variable);
-                    if (idis > -1) {
-                        const disel = document.getElementById(disElements[idis]);
-                        disel.dispatchEvent(new Event("change"));
-                    }
 
-                    // seteaza valorile pentru elementele de tip data
-                    for (let i = 0; i < date_elements.length; i++) {
-                        if (item.variable == date_elements[i]) {
-                            if (item.value != "-9" && item.value != "-7") {
-                                flatpickr_elements[i].setDate(item.value);
-                            }
-                        }
-                    }
+                    const index = [...regElements, ...disElements].indexOf(item.variable)
+                    // regiunea este intotdeauna inaintea districtului
+                    // un event de change pe regiune populeaza districtul, iar un event
+                    // de change pe district populeaza settlement-ul
+                                                                                // trigger change event
+                    instrument.seteazaValoareElement(item.variable, item.value, index >= 0);
                 }
             }
+
+            // set default values for user, IRRESPECTIVE of the instrument
+
+            if (args.institutionData) {
+
+                if (Object.keys(regions).indexOf(args.institutionData.region) >= 0) {
+                    util.setValue('reg', (regions[args.institutionData.region] as KeyString)[lang]);
+                }
+
+                if (Object.keys(districts).indexOf(args.institutionData.district) >= 0) {
+                    util.setValue('dis', (districts[args.institutionData.district] as KeyString)[lang]);
+                }
+            }
+
+            util.setValue("data", util.customDate());
+
+            if (args.userData) {
+                util.setValue('omr1', args.userData.first_name);
+                util.setValue('omr2', args.userData.patronymics);
+                util.setValue('omr3', args.userData.last_name);
+                util.setValue('omr4', args.userData.position);
+                util.setValue('omr5', args.userData.profession);
+                util.setValue('omr6', args.userData.phone);
+                util.setValue('omr7', args.userData.email);
+                // TODO: de adaugat astea trei in userData
+                // util.setValue('omr8', args.userData.work);
+                // util.setValue('omr9', args.userData.institution);
+                // util.setValue('omr10', args.userData.type);
+            }
+
             instrument.start(instrumentID, instrument.trimis, saveChestionar, validateChestionar);
-            document.getElementById("omr1").focus();
-            document.getElementById("omr1").blur();
+            util.focus("omr1");
+            util.blur("omr1");
         });
     }
 }
@@ -250,15 +248,78 @@ const saveChestionar = (obj: SaveInstrumentType): void => {
 }
 
 
-// for (let i = 0; i < setElements.length; i++) {
-//     util.listen(setElements[i], "change", () => {
-//         const index = setElements.indexOf(setElements[i]);
-//         const value = util.htmlElement(setElements[i]).value;
-//         const setype = settlement_types[settlements[value].type];
-//         util.setValue(typeElements[index], setype[lang as keyof typeof setype]);
-//         util.trigger(typeElements[index], "change");
-//     })
-// }
+// settlement type
+for (let i = 0; i < setElements.length; i++) {
+    util.listen(setElements[i], "change", () => {
+        const value = util.htmlElement(setElements[i]).value;
+        const set_type = settlement_types[settlements[value].type];
+        util.setValue(typeElements[i], (set_type as KeyString)[lang]);
+    })
+}
+
+
+util.listen("lk3", "myChange", () => {
+    if (instrument.questions.lk3.value != "-9") {
+        const age = util.diffDates(
+            util.standardDate(instrument.questions.lk3.value),
+            new Date(2024, 5, 1)
+        )
+
+        util.setValue("lk13a", age.toString());
+        util.trigger("sa1", "change");
+    }
+});
+
+
+
+util.listen("sa1", "myChange", () => {
+    if (Number(instrument.questions.lk3.value) > 0 && Number(instrument.questions.sa1.value) > 0) {
+        const age = util.diffDates(
+            util.standardDate(instrument.questions.lk3.value),
+            util.standardDate(instrument.questions.sa1.value)
+        )
+
+        if (!Number.isNaN(age)) {
+            util.setValue("sa1a", age.toString());
+        }
+
+    }
+
+    const years = util.diffDates(
+        util.standardDate(instrument.questions.sa1.value),
+        new Date(2024, 5, 1),
+        "years"
+    )
+
+    const months = util.diffDates(
+        util.standardDate(instrument.questions.sa1.value),
+        new Date(2024, 5, 1),
+        "months"
+    )
+
+    util.setValue('sa1y', years.toString());
+    util.setValue('sa1m', months.toString());
+});
+
+util.listen("sa1a", "myChange", () => {
+    const qeduc21 = util.htmlElement('qeduc2-1');
+    const qeduc22 = util.htmlElement('qeduc2-2');
+    const qeduc27disabled = util.htmlElement("qeduc2-7-disabled");
+    const age = Number(instrument.questions["sa1a"].value);
+
+    if (age < 7) {
+        qeduc21.checked = false;
+        qeduc22.checked = false;
+        qeduc27disabled.checked = true;
+        instrument.questions["qeduc2"].value = "7";
+    }
+    else {
+        if (qeduc27disabled.checked) {
+            instrument.questions["qeduc2"].value = "-9";
+            qeduc27disabled.checked = false;
+        }
+    }
+})
 
 
 // function check_lk22_2(): boolean {
@@ -361,56 +422,6 @@ const saveChestionar = (obj: SaveInstrumentType): void => {
 // });
 
 
-// util.listen("lk3", "myChange", () => {
-//     if (instrument.questions.lk3.value != "-9") {
-//         const age = util.diffDates(
-//             util.standardDate(instrument.questions.lk3.value),
-//             new Date(2024, 5, 1)
-//         )
-
-//         util.setValue("lk13a", age.toString());
-//         util.trigger("lk13a", "change");
-
-//         util.trigger("sa1", "myChange");
-//     }
-// });
-
-
-// util.listen("sa1", "myChange", () => {
-//     if (instrument.questions.lk3.value != "-9" && instrument.questions.sa1.value != "-9") {
-//         const age = util.diffDates(
-//             util.standardDate(instrument.questions.lk3.value),
-//             util.standardDate(instrument.questions.sa1.value)
-//         )
-
-//         if (!Number.isNaN(age)) {
-//             util.setValue("sa1a", age.toString());
-//             util.trigger("sa1a", "change");
-//         }
-//     }
-// });
-
-// util.listen("sa1a", "myChange", () => {
-//     const qeduc21 = util.htmlElement('qeduc2-1');
-//     const qeduc22 = util.htmlElement('qeduc2-2');
-//     const qeduc27disabled = util.htmlElement("qeduc2-7-disabled");
-//     const age = Number(instrument.questions["sa1a"].value);
-
-//     if (age < 7) {
-//         qeduc21.checked = false;
-//         qeduc22.checked = false;
-//         qeduc27disabled.checked = true;
-//         instrument.questions["qeduc2"].value = "7";
-//     }
-//     else {
-//         if (qeduc27disabled.checked) {
-//             instrument.questions["qeduc2"].value = "-9";
-//             qeduc27disabled.checked = false;
-//         }
-//     }
-// })
-
-
 // util.listenArray(['qhouse4a', 'qhouse4b'], "myChange", () => {
 //     if (instrument.questions.qhouse4a.value != "-9" && instrument.questions.qhouse4b.value != "-9") {
 //         const value = (
@@ -461,57 +472,6 @@ const saveChestionar = (obj: SaveInstrumentType): void => {
 // });
 
 
-// sh3_start_dates.forEach((startel) => {
-//     const index = sh3_start_dates.indexOf(startel);
-//     const endel = sh3_end_dates[index]
-//     const start = document.getElementById(startel) as HTMLInputElement;
-//     const end = document.getElementById(endel) as HTMLInputElement;
-
-//     const check = function() {
-//         if (util.inputsHaveValue([startel, endel])) {
-
-//             const startdate = util.standardDate(start.value);
-//             const enddate = util.standardDate(end.value);
-//             const timespent = document.getElementById(startel.replace("a", "f")) as HTMLInputElement;
-//             const sh4 = document.getElementById("sh4") as HTMLInputElement;
-
-//             const error = locales[lang]['Start_before_end'];
-//             errorHandler.removeArrayError([startel, endel], error);
-
-//             if (startdate > enddate) {
-//                 errorHandler.addArrayError([startel, endel], error);
-//                 instrument.questions[startel].value = '-9';
-//                 instrument.questions[endel].value = '-9';
-//                 timespent.value = "";
-//                 instrument.questions[startel.replace("a", "f")].value = "-7";
-//             }
-//             else {
-//                 instrument.questions[startel].value = start.value;
-//                 instrument.questions[endel].value = end.value;
-
-//                 timespent.value = util.diffDates(startdate, enddate, "months").toString();
-
-//                 instrument.questions[startel].value = start.value;
-//                 instrument.questions[endel].value = end.value;
-//                 instrument.questions[startel.replace("a", "f")].value = timespent.value;
-
-//                 let totalmonths = 0;
-//                 sh3_start_dates.forEach((item) => {
-//                     const nofmonths = Number(instrument.questions[item.replace("a", "f")].value);
-//                     if (nofmonths > 0) {
-//                         totalmonths += nofmonths;
-//                     }
-//                 });
-
-//                 sh4.value = totalmonths.toString();
-//                 instrument.questions["sh4"].value = sh4.value;
-//             }
-//         }
-//     }
-
-//     start.addEventListener("myChange", check);
-//     end.addEventListener("myChange", check);
-// });
 
 
 // const ewm = ['ewm1', 'ewm2', 'ewm3', 'ewm4'];
