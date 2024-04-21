@@ -125,7 +125,7 @@ const instrument: InstrumentObjectType = {
 			question.value = valoare;
 		}
 	},
-	seteazaValoareElement: function (name: string, valoare: string): void {
+	seteazaValoareElement: function (name: string, valoare: string, trigger?: boolean): void {
 		const question = instrument.questions[name];
 
 		if (question !== void 0) {
@@ -152,6 +152,11 @@ const instrument: InstrumentObjectType = {
 						instrumentHelper.setSelectMultipluType(name, valoare);
 						break;
 				}
+
+				if (trigger && valoare != "-9" && valoare != "-7") {
+					document.getElementById(name).dispatchEvent(new Event("change"));
+				}
+
 
 			} catch (error) {
 				console.log(question);
@@ -250,10 +255,11 @@ const instrument: InstrumentObjectType = {
 					}
 
 					nextElDOM = document.getElementById(jumpName);
-					// no more elements?
-					if (nextElDOM == null) {
-						return false;
-					}
+				}
+
+				// no more elements?
+				if (nextElDOM == null) {
+					return false;
 				}
 
 				// https://stackoverflow.com/questions/46795955/how-to-know-scroll-to-element-is-done-in-javascript
@@ -267,21 +273,19 @@ const instrument: InstrumentObjectType = {
 
 				window.addEventListener("scroll", ff);
 
-				if (nextElDOM !== null) {
-					const basename = jumpName.split("_")[0];
-					if (basename == "" || (instrument.questions[basename] && instrument.questions[basename].type != "radio")) {
-						nextElDOM.focus();
-						if (nextEl.type == "checkbox") {
-							nextElDOM.blur();
-						}
+				const basename = jumpName.split("_")[0];
+				if (basename == "" || (instrument.questions[basename] && instrument.questions[basename].type != "radio")) {
+					nextElDOM.focus();
+					if (nextEl.type == "checkbox") {
+						nextElDOM.blur();
 					}
-
-					nextElDOM.scrollIntoView({
-						behavior: "auto",
-						block: "center",
-						inline: "center",
-					});
 				}
+
+				nextElDOM.scrollIntoView({
+					behavior: "auto",
+					block: "center",
+					inline: "center",
+				});
 			}
 		}
 	},
@@ -388,13 +392,18 @@ const instrument: InstrumentObjectType = {
 			}
 		}
 	},
-	removeErrorStyle: function (name: string): void {
-		if (instrument.questions[name].type == "radio") {
-			const el = <HTMLElement>document.getElementsByName(name)[0].parentNode.parentNode;
-			el.classList.remove("overrideBorder");
-		} else {
-			document.getElementById(name).classList.remove('inputErrorStyle');
+	removeErrorStyle: function (name: string | Array<string>): void {
+		if (!Array.isArray(name)) {
+			name = [name];
 		}
+		name.forEach((item) => {
+			if (instrument.questions[item].type == "radio") {
+				const el = <HTMLElement>document.getElementsByName(item)[0].parentNode.parentNode;
+				el.classList.remove("overrideBorder");
+			} else {
+				document.getElementById(item).classList.remove('inputErrorStyle');
+			}
+		});
 	},
 	debuging: function (): void {
 		// Debugging
