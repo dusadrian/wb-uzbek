@@ -13,5 +13,15 @@ TODO: de adaugat poate in seteazaValoareElement, pentru input de tip date...?
 si poate chiar type = "date" eventual, in variabile
 
 TODO: daca modificarea la un camp face o modificare in alt camp, de facut o functie
-care sa faca modificarea in HTML, modificarea in instrument.questions SI sa faca si trigger
-pe change (eventual asta sa fie un parametru boolean)
+care sa faca:
+- modificarea in elementul de HTML
+- modificarea in instrument.questions
+- trigger pe change (eventual asta sa fie un parametru boolean)
+
+
+Poate ca ar trebui sa renuntam complet la butoanele radio, pentru ca uneori
+doar un singur buton trebuie dezactivat functie de alte campuri.
+Ar trebui in spate un grup de checkbox-uri care (impreuna) sa se comporte
+ca niste butoane radio, si stilizate sa arate ca niste butoane radio.
+Intrebarea este ce efect are asupra Excel-ului cu activatori, pentru ca acolo
+apare o singura variabila.
