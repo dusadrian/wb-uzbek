@@ -19,16 +19,16 @@ interface UtilHelpersInterface {
     htmlElement: (element: string) => HTMLInputElement;
     setValue: (element: string, value: string) => void;
     trigger: (element: string, change: string) => void;
-    triggerArray: (elements: Array<string>, changes: string | Array<string>) => void;
-    listen: (element: string, event: string, callback: () => void) => void;
-    listenArray: (elements: Array<string>, events: string | Array<string>, callback: () => void) => void;
+    triggerArray: (elements: string[], changes: string | string[]) => void;
+    listen: (element: string | string[], event: string | string[], callback: () => void) => void;
+    customDate: (el?: string) => string;
     standardDate: (date: string) => Date;
     diffDates: (startDate: Date, endDate: Date, type?:string) => number;
     focus: (element: string) => void;
     blur: (element: string) => void;
     missing: (x: unknown) => boolean;
     exists: (x: unknown) => boolean;
-    repString: (value: string, times: number) => Array<string>;
+    repString: (value: string, times: number) => string[];
     repNumber: (value: number, times: number) => Array<number>;
     seq: (from: number, to: number) => number[];
 }
@@ -36,7 +36,7 @@ interface UtilHelpersInterface {
 interface ValidationMessageType {
     [element: string]: {
         name: string;
-        errors: Array<string>;
+        errors: string[];
     }
 }
 interface ErrorTippyType {
@@ -56,98 +56,111 @@ const errorHelperFunctions = {
     // Error add / remove ===============================================
     // ==================================================================
 
-    removeError: function (element: string, error: string): void {
-        // console.log('Remove ==========');
-        // console.log(element);
-        // console.log(error);
-        // console.log('Remove ==========');
-        // run remove only if the message exists
-        const errIndex = validation_messages[element] !== void 0 ? validation_messages[element].errors.indexOf(error) : -1;
+    removeError: function (element: string | string[], error: string): void {
+        if (!Array.isArray(element)) {
+            element = [element];
+        }
 
-        if (errIndex !== -1) {
-            let selectEl = document.getElementById(element);
-            let isRadio = false;
-            if (selectEl === null) {
-                selectEl = <HTMLElement>document.getElementsByName(element)[0].parentNode.parentNode;
-                isRadio = true;
-            }
-            if (document.querySelector(".eroare" + element)) {
-                // console.trace(element);
-                // console.log(validation_messages);
+        element.forEach((item) => {
+            // console.log('Remove ==========');
+            // console.log(item);
+            // console.log(error);
+            // console.log('Remove ==========');
+            // run remove only if the message exists
+            const errIndex = validation_messages[item] !== void 0 ? validation_messages[item].errors.indexOf(error) : -1;
 
-                validation_messages[element].errors.splice(errIndex, 1);
+            if (errIndex !== -1) {
+                let selectEl = document.getElementById(item);
+                let isRadio = false;
+                if (selectEl === null) {
+                    selectEl = <HTMLElement>document.getElementsByName(item)[0].parentNode.parentNode;
+                    isRadio = true;
+                }
+                if (document.querySelector(".eroare" + item)) {
+                    // console.trace(item);
+                    // console.log(validation_messages);
 
-                if (validation_messages[element].errors.length == 0) {
-                    // remove error
-                    error_tippy[element][0].destroy();
-                    // remove from validation messages
-                    delete validation_messages[element];
-                    errorHelperFunctions.removeErrorStyle(element, isRadio);
-                    document.querySelectorAll(".eroare" + element).forEach((el) => el.classList.remove("eroare" + element));
-                } else {
-                    error_tippy[element][0].setContent(validation_messages[element].errors[0]);
+                    validation_messages[item].errors.splice(errIndex, 1);
+
+                    if (validation_messages[item].errors.length == 0) {
+                        // remove error
+                        error_tippy[item][0].destroy();
+                        // remove from validation messages
+                        delete validation_messages[item];
+                        errorHelperFunctions.removeErrorStyle(item, isRadio);
+                        document.querySelectorAll(".eroare" + item).forEach((el) => el.classList.remove("eroare" + item));
+                    } else {
+                        error_tippy[item][0].setContent(validation_messages[item].errors[0]);
+                    }
                 }
             }
-        }
+        })
     },
     removeArrayError( array: string[], message: string) {
         array.forEach( item => {
             errorHandler.removeError(item, message);
         })
     },
-    addError: function (element: string, error: string): void {
-        // Debugging -- keep here
-        // console.log('Add ==========');
-        // console.log(element);
-        // console.log(error);
-        // console.log('Add ==========');
-
-        let selectEl = document.getElementById(element);
-        let isRadio = false;
-        if (selectEl === null) {
-            selectEl = <HTMLElement>document.getElementsByName(element)[0].parentNode.parentNode;
-            isRadio = true;
+    addError: function (element: string | string[], error: string): void {
+        if (!Array.isArray(element)) {
+            element = [element];
         }
 
-        if (!document.querySelector(".eroare" + element)) {
-            selectEl.classList.add("eroare" + element);
+        element.forEach((item) => {
+            // Debugging -- keep here
+            // console.log('Add ==========');
+            // console.log(item);
+            // console.log(error);
+            // console.log('Add ==========');
 
-            // !!this may not work if you have multiple error on the element.
-            // error_tippy[element] = tippy("#" + element, {
-            error_tippy[element] = [
-                tippy(selectEl, {
-                    theme: "light-red",
-                    placement: "top-start",
-                    content: Array.isArray(error) ? errorHelperFunctions.mergeMessages(error) : error,
-                    arrow: false,
-                    allowHTML: true,
-                }),
-            ];
-        }
-
-        if (!isRadio) {
-            selectEl.classList.add("error-in-field");
-        } else {
-            selectEl.classList.add("error-in-radio");
-        }
-        if (validation_messages[element] !== void 0) {
-            if (
-                _.findIndex(validation_messages[element].errors, function (e) {
-                    return e == error;
-                }) == -1
-            ) {
-                if (Array.isArray(error)) {
-                    validation_messages[element].errors = Array.from(error);
-                } else {
-                    validation_messages[element].errors.push(error);
-                }
+            let selectEl = document.getElementById(item);
+            let isRadio = false;
+            if (selectEl === null) {
+                selectEl = <HTMLElement>document.getElementsByName(item)[0].parentNode.parentNode;
+                isRadio = true;
             }
-        } else {
-            validation_messages[element] = {
-                name: element,
-                errors: Array.isArray(error) ? error : [error],
-            };
-        }
+
+            if (!document.querySelector(".eroare" + item)) {
+                selectEl.classList.add("eroare" + item);
+
+                // !!this may not work if you have multiple error on the item.
+                // error_tippy[item] = tippy("#" + item, {
+                error_tippy[item] = [
+                    tippy(selectEl, {
+                        theme: "light-red",
+                        placement: "top-start",
+                        content: Array.isArray(error) ? errorHelperFunctions.mergeMessages(error) : error,
+                        arrow: false,
+                        allowHTML: true,
+                    }),
+                ];
+            }
+
+            if (!isRadio) {
+                selectEl.classList.add("error-in-field");
+            } else {
+                selectEl.classList.add("error-in-radio");
+            }
+            if (validation_messages[item] !== void 0) {
+                if (
+                    _.findIndex(validation_messages[item].errors, function (e) {
+                        return e == error;
+                    }) == -1
+                ) {
+                    if (Array.isArray(error)) {
+                        validation_messages[item].errors = Array.from(error);
+                    } else {
+                        validation_messages[item].errors.push(error);
+                    }
+                }
+            } else {
+                validation_messages[item] = {
+                    name: item,
+                    errors: Array.isArray(error) ? error : [error],
+                };
+            }
+
+        })
     },
     addArrayError( array: string[], message: string) {
         array.forEach( item => {
@@ -292,22 +305,30 @@ export const util: UtilHelpersInterface = {
         }
     },
     listen: (element, event, callback) => {
-        util.htmlElement(element).addEventListener(event, callback);
-    },
-    listenArray: (elements, events, callback) => {
-        let event;
-        if (Array.isArray(events)) {
-            if (elements.length !== events.length) {
-                event = util.repString(events[0], elements.length);
-            } else {
-                event = [...events];
-            }
-        } else {
-            event = util.repString(events, elements.length);
+        if (!Array.isArray(element)) {
+            element = [element];
         }
 
-        for (let i = 0; i < elements.length; i++) {
-            util.htmlElement(elements[i]).addEventListener(event[i], callback);
+        if (!Array.isArray(event)) {
+            event = [event];
+        }
+
+        if (element.length !== event.length) {
+            event = util.repString(event[0], element.length);
+        }
+
+        for (let i = 0; i < element.length; i++) {
+            util.htmlElement(element[i]).addEventListener(event[i], callback);
+        }
+    },
+
+    customDate: (el?: string) => {
+        if (el) {
+            return el.replace(/(\d{2})\/(\d{2})\/(\d{4})/,'$3-$2-$1')
+        } else {
+            return new Date().getDate().toString().padStart(2, '0') + "/" +
+            (new Date().getMonth() + 1).toString().padStart(2, '0') + "/" +
+            new Date().getFullYear().toString()
         }
     },
     standardDate: (date) => {
@@ -371,3 +392,6 @@ export const util: UtilHelpersInterface = {
         return result;
     },
 }
+
+
+export type KeyString = { [key: string]: string };

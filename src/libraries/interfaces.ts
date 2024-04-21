@@ -39,14 +39,14 @@ export interface InstrumentObjectType {
 	setQuestions: (questions: QuestionObjectType, order: Array<string>) => void;
 	checkEverything: () => void;
 	setQuestionValue: (name: string, valoare: string) => void;
-	seteazaValoareElement: (name: string, valoare: string) => void;
+	seteazaValoareElement: (name: string, valoare: string, trigger?: boolean) => void;
 	checkValue: (event: Event) => void;
 	jumpToNextElement: (order: number) => boolean;
 	getNextJumpName: (current: QuestionType) => string;
 	enableRadioElement: (group: string, val: boolean) => string;
 	enableElement: (name: string, val: boolean) => string;
 	disableByCondition: () => void;
-	removeErrorStyle: (name: string) => void;
+	removeErrorStyle: (name: string | Array<string>) => void;
 	debuging: () => void;
 	insertAfter: (referenceNode: Node, newNode: Node) => void;
 	getSelectValues: (select: HTMLSelectElement) => string;
