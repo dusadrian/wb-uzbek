@@ -231,7 +231,7 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 20,
-        active: function () { return (Number(instrument.questions.pi4a_dk.value) == 0) },
+        active: function () { return (Number(instrument.questions.pi4a_dk.value) == 0 && Number(instrument.questions.pi4b.value) > 0) },
         error: ''
     },
     'pi4d': {
@@ -242,7 +242,7 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 21,
-        active: function () { return (Number(instrument.questions.pi4a_dk.value) == 0) },
+        active: function () { return (Number(instrument.questions.pi4a_dk.value) == 0 && Number(instrument.questions.pi4c.value) > 0) },
         error: ''
     },
     'pi4e': {

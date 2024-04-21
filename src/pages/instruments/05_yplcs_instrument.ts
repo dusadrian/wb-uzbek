@@ -254,17 +254,39 @@ util.listen("lv2_1", "change", () => {
     if (util.htmlElement("lv2_1").checked) {
         lv.forEach((el) => {
             util.htmlElement(el).checked = false;
+            instrument.questions[el].value = "0";
         })
-        util.trigger(lv, "change");
     }
 })
 
-const ls = ["ls2_1", "ls2_2", "ls2_3", "ls2_4", "ls2_5", "ls2_6", "ls2_7", "ls2_8", "ls2_9", "ls2_10 "];
+util.listen(lv, "change", () => {
+    if (util.makeSumFromElements(lv) > 0) {
+        util.htmlElement("lv2_1").checked = false;
+        instrument.questions["lv2_1"].value = "0";
+    }
+});
+
+const ls = ["ls2_1", "ls2_2", "ls2_3", "ls2_4", "ls2_5", "ls2_6", "ls2_7", "ls2_8", "ls2_9", "ls2_10"];
 util.listen("ls2_11", "change", () => {
     if (util.htmlElement("ls2_11").checked) {
         ls.forEach((el) => {
             util.htmlElement(el).checked = false;
+            instrument.questions[el].value = "0";
         })
-        util.trigger(ls, "change");
+    }
+})
+
+util.listen(ls, "change", () => {
+    if (util.makeSumFromElements(ls) > 0) {
+        util.htmlElement("ls2_11").checked = false;
+        instrument.questions["ls2_11"].value = "0";
+    }
+});
+
+util.listen("pi8", "myChange", () => {
+    const message = "PI8 <= 230";
+    errorHandler.removeError("pi8", message);
+    if (Number(instrument.questions.pi8.value) > 230) {
+        errorHandler.addError("pi8", message);
     }
 })
