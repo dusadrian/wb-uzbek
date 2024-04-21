@@ -248,3 +248,23 @@ util.listen(pi10, "change", () => {
         errorHandler.addError(pi10, message);
     }
 })
+
+const lv = ['lv2_2', 'lv2_3', 'lv2_4', 'lv2_5', 'lv2_6', 'lv2_7', 'lv2_8', 'lv2_9']
+util.listen("lv2_1", "change", () => {
+    if (util.htmlElement("lv2_1").checked) {
+        lv.forEach((el) => {
+            util.htmlElement(el).checked = false;
+        })
+        util.trigger(lv, "change");
+    }
+})
+
+const ls = ["ls2_1", "ls2_2", "ls2_3", "ls2_4", "ls2_5", "ls2_6", "ls2_7", "ls2_8", "ls2_9", "ls2_10 "];
+util.listen("ls2_11", "change", () => {
+    if (util.htmlElement("ls2_11").checked) {
+        ls.forEach((el) => {
+            util.htmlElement(el).checked = false;
+        })
+        util.trigger(ls, "change");
+    }
+})

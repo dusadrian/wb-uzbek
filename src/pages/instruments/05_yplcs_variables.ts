@@ -636,7 +636,7 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 56,
-        active: function () { return (Number(instrument.questions.pi9a.value) == 1 || Number(instrument.questions.pi9a.value) == 2) },
+        active: function () { return (((Number(instrument.questions.pi9a.value) == 1 || Number(instrument.questions.pi9a.value) == 2)) && Number(instrument.questions.lv2_1.value) == 0) },
         error: ''
     },
     'lv4': {
