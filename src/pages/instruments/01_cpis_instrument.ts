@@ -64,7 +64,7 @@ export const instrument1 = {
 
         const date_elements = [...general_dates, ...sh3_start_dates, ...sh3_end_dates];
 
-        const flatpickr_elements = date_elements.map((el) => {
+        date_elements.forEach((el) => {
             const element = util.htmlElement(el);
             let config;
             if (el == "data") {
@@ -84,7 +84,8 @@ export const instrument1 = {
             } else {
                 config = { ...flatpickrConfig, minDate: "01/01/2000" };
             }
-            return flatpickr(element, config);
+
+            flatpickr(element, config);
         });
 
         const reg_codes = Object.keys(administrative);
@@ -109,8 +110,9 @@ export const instrument1 = {
             const set_el = util.htmlElement(setElements[x]);
 
             util.listen(regElements[x], "change", function () {
+                util.htmlElement(typeElements[x]).value = "";
                 const selectedRegion = reg_el.value;
-                if (selectedRegion != "-9") {
+                if (Number(selectedRegion) > 0) {
                     const regdist = administrative[selectedRegion].districts;
                     const dis_codes = Object.keys(regdist);
 
@@ -136,13 +138,16 @@ export const instrument1 = {
             })
 
             util.listen(disElements[x], "change", function () {
+                util.htmlElement(typeElements[x]).value = "";
                 const selectedRegion = reg_el.value;
                 const selectedDistrict = dis_el.value;
-                if (selectedRegion != "-9" && selectedDistrict != "-9") {
+                instrument.questions[setElements[x]].skip = false;
+                util.htmlElement(setElements[x]).disabled = false;
+                set_el.innerHTML = "";
+                if (Number(selectedRegion) > 0 && Number(selectedDistrict) > 0) {
                     const regdisset = administrative[selectedRegion].districts[selectedDistrict].settlements;
                     if (regdisset) {
                         const settlements = Object.keys(regdisset);
-                        set_el.innerHTML = "";
                         const option = document.createElement("option");
                         option.value = "-9";
                         option.text = locales[lang]['t_choose'];
@@ -156,8 +161,11 @@ export const instrument1 = {
                         }
                     }
                     else {
-                        util.setValue(typeElements[x], (settlement_types["20"] as KeyString)[lang]);
-                        // TODO dezactiveaza select-ul pentru settlement
+                        const set_type = settlement_types[settlements[selectedDistrict].type]
+                        util.setValue(typeElements[x], (set_type as KeyString)[lang]);
+                        instrument.questions[setElements[x]].skip = true;
+                        instrument.questions[setElements[x]].value = '-7';
+                        util.htmlElement(setElements[x]).disabled = true;
                     }
                 }
             })
@@ -199,7 +207,6 @@ console.log(args);
             util.setValue("data", util.customDate());
 
             if (args.userData) {
-                // instrument.seteazaValoareElement() ce ar avea ???
                 util.setValue('omr1', args.userData.first_name);
                 util.setValue('omr2', args.userData.patronymics);
                 util.setValue('omr3', args.userData.last_name);
