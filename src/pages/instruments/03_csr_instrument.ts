@@ -2,7 +2,7 @@ import { ipcRenderer } from "electron";
 import { questions, questionOrder } from "./03_csr_variables";
 import instrument from "../../libraries/instrument";
 import { QuestionObjectType, SaveInstrumentType } from "../../libraries/interfaces";
-import { util } from "../../libraries/validation_helpers";
+import { util, KeyString } from "../../libraries/validation_helpers";
 
 import * as _flatpickr from 'flatpickr';
 import { FlatpickrFn } from 'flatpickr/dist/types/instance';
@@ -55,49 +55,48 @@ export const instrument3 = {
                     instrument.seteazaValoareElement(item.variable, item.value);
                 }
 
-            } else {
-                // two digit day & month
-                const today = new Date().getDate().toString().padStart(2, '0') + "/" +
-                            (new Date().getMonth() + 1).toString().padStart(2, '0') + "/" +
-                            new Date().getFullYear().toString()
-                util.setValue("q1", today);
+            }
 
-                if (args.userData) {
-                    // set default values for user
-                    util.setValue('q2', args.userData.first_name + " " + args.userData.patronymics + " " + args.userData.last_name);
-                    util.setValue('q3', args.userData.position);
-                    util.setValue('q4', args.userData.profession);
-                    util.setValue('q5', args.userData.phone);
-                    util.setValue('q6', args.userData.email);
+            // set default values, IRRESPECTIVE of the instrument
+
+            // two digit day & month
+            util.setValue("q1", util.customDate());
+
+            if (args.userData) {
+                // set default values for user
+                util.setValue('q2', args.userData.first_name + " " + args.userData.patronymics + " " + args.userData.last_name);
+                util.setValue('q3', args.userData.position);
+                util.setValue('q4', args.userData.profession);
+                util.setValue('q5', args.userData.phone);
+                util.setValue('q6', args.userData.email);
+            }
+
+
+            if (args.institutionData) {
+
+                // set default values for institution
+                util.setValue('i1', args.institutionData.name);
+                util.setValue('i2', args.institutionData.code);
+                util.setValue('i3', args.institutionData.address);
+
+                if (Object.keys(regions).indexOf(args.institutionData.region) >= 0) {
+                    util.setValue('i4a', (regions[args.institutionData.region] as KeyString)[lang]);
                 }
 
-
-                if (args.institutionData) {
-                    type keystring = { [key: string]: string };
-
-                    // set default values for institution
-                    util.setValue('i1', args.institutionData.name);
-                    util.setValue('i2', args.institutionData.code);
-                    util.setValue('i3', args.institutionData.address);
-
-                    if (Object.keys(regions).indexOf(args.institutionData.region) >= 0) {
-                        util.setValue('i4a', (regions[args.institutionData.region] as keystring)[lang]);
-                    }
-
-                    if (Object.keys(districts).indexOf(args.institutionData.district) >= 0) {
-                        util.setValue('i4', args.institutionData.district);
-                        util.setValue('i4b', (districts[args.institutionData.district] as keystring)[lang]);
-                    }
-
-                    if (Object.keys(settlements).indexOf(args.institutionData.settlement) >= 0) {
-                        util.setValue('i4', args.institutionData.settlement);
-                        util.setValue('i4c', (settlements[args.institutionData.settlement] as keystring)[lang]);
-                        util.setValue('i4d', (settlement_types[settlements[args.institutionData.settlement].type] as keystring)[lang]);
-                    }
-
-                    // Type of institution
-                    util.setValue('i5', args.institutionData.type);
+                if (Object.keys(districts).indexOf(args.institutionData.district) >= 0) {
+                    util.setValue('i4', args.institutionData.district);
+                    util.setValue('i4b', (districts[args.institutionData.district] as KeyString)[lang]);
                 }
+
+                if (Object.keys(settlements).indexOf(args.institutionData.settlement) >= 0) {
+                    util.setValue('i4', args.institutionData.settlement);
+                    const settlement = settlements[args.institutionData.settlement];
+                    util.setValue('i4c', (settlement as KeyString)[lang]);
+                    util.setValue('i4d', (settlement_types[settlement.type] as KeyString)[lang]);
+                }
+
+                // Type of institution
+                util.setValue('i5', args.institutionData.type);
             }
 
             instrument.start(instrumentID, instrument.trimis, saveChestionar, validateChestionar);

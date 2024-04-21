@@ -2,7 +2,7 @@ import { ipcRenderer } from "electron";
 import { questions, questionOrder } from "./01_cpis_variables";
 import instrument from "../../libraries/instrument";
 import { QuestionObjectType, SaveInstrumentType } from "../../libraries/interfaces";
-import { util, errorHandler } from "../../libraries/validation_helpers";
+import { util, errorHandler, KeyString } from "../../libraries/validation_helpers";
 
 import * as _flatpickr from 'flatpickr';
 import { FlatpickrFn } from 'flatpickr/dist/types/instance';
@@ -35,8 +35,6 @@ const sh3_end_dates = [
     'sh3_s1d', 'sh3_s2d', 'sh3_s3d', 'sh3_s4d', 'sh3_s5d', 'sh3_s6d', 'sh3_s7d', 'sh3_s8d', 'sh3_s9d', 'sh3_s10d', 'sh3_csd'
 ];
 
-let institutionDetails;
-
 const regElements = ["lk14b", "cm3b", "cm10c", "cm11c", "ct3b", "ct10c", "ct11c", "cg10c", "cg11c", "sa3a"];
 const disElements = ["lk14c", "cm3c", "cm10d", "cm11d", "ct3c", "ct10d", "ct11d", "cg10d", "cg11d", "sa3b"];
 const setElements = ["lk14d", "cm3d", "cm10e", "cm11e", "ct3d", "ct10e", "ct11e", "cg10e", "cg11e", "sa3c"];
@@ -44,14 +42,6 @@ const typeElements = ["lk14e", "cm3e", "cm10f", "cm11f", "ct3e", "ct10f", "ct11f
 
 export const instrument1 = {
     init: async () => {
-
-        const appSessionStorage = sessionStorage.getItem('appSession');
-        if (appSessionStorage !== null) {
-            const parsed = JSON.parse(appSessionStorage);
-            institutionDetails = parsed.institutionDetails;
-            console.log(institutionDetails);
-            // prepopulate the institution details
-        }
 
         const flatpickrConfig: {
             enableTime: boolean;
@@ -75,7 +65,7 @@ export const instrument1 = {
         const date_elements = [...general_dates, ...sh3_start_dates, ...sh3_end_dates];
 
         const flatpickr_elements = date_elements.map((el) => {
-            const element = document.getElementById(el) as HTMLInputElement;
+            const element = util.htmlElement(el);
             let config;
             if (el == "data") {
                 config = { ...flatpickrConfig, minDate: "01/04/2024" };
@@ -96,14 +86,6 @@ export const instrument1 = {
             }
             return flatpickr(element, config);
         });
-
-        const today = new Date();
-        flatpickr_elements[date_elements.indexOf('data')].setDate(today);
-        util.trigger("data", "change");
-
-        // TODO: de modificat activatorii pentru district si localitate, implicit -7
-        // iar la localitate, daca districtul nu are localitati, sa ramana dezactivat
-
 
         const reg_codes = Object.keys(administrative);
         for (let x = 0; x < regElements.length; x++) {
@@ -147,8 +129,7 @@ export const instrument1 = {
                     for (let i = 0; i < dis_codes.length; i++) {
                         const option = document.createElement("option");
                         option.value = dis_codes[i];
-                        const dis = districts[dis_codes[i]];
-                        option.text = dis[lang as keyof typeof dis];
+                        option.text = (districts[dis_codes[i]] as KeyString)[lang];
                         dis_el.appendChild(option);
                     }
                 }
@@ -170,19 +151,20 @@ export const instrument1 = {
                         for (let i = 0; i < settlements.length; i++) {
                             const option = document.createElement("option");
                             option.value = settlements[i];
-                            option.text = (regdisset[settlements[i]] as { [key: string]: string })[lang];
+                            option.text = (regdisset[settlements[i]] as KeyString)[lang];
                             set_el.appendChild(option);
                         }
                     }
                     else {
-                        // dezactiveaza select-ul pentru settlement
+                        util.setValue(typeElements[x], (settlement_types["20"] as KeyString)[lang]);
+                        // TODO dezactiveaza select-ul pentru settlement
                     }
                 }
             })
         }
 
         ipcRenderer.on("instrumentDataReady", (_event, args) => {
-
+console.log(args);
             // set instrument question !!!!!!
             instrument.setQuestions(questions, questionOrder);
             let instrumentID = null;
@@ -191,31 +173,45 @@ export const instrument1 = {
                 instrumentID = parseInt(args.id);
 
                 for (const item of args.questions) {
-                    instrument.seteazaValoareElement(item.variable, item.value);
-                    const ireg = regElements.indexOf(item.variable);
-                    if (ireg > -1) {
-                        const reg_el = document.getElementById(regElements[ireg]);
-                        reg_el.dispatchEvent(new Event("change"));
-                    }
-                    const idis = disElements.indexOf(item.variable);
-                    if (idis > -1) {
-                        const disel = document.getElementById(disElements[idis]);
-                        disel.dispatchEvent(new Event("change"));
-                    }
 
-                    // seteaza valorile pentru elementele de tip data
-                    for (let i = 0; i < date_elements.length; i++) {
-                        if (item.variable == date_elements[i]) {
-                            if (item.value != "-9" && item.value != "-7") {
-                                flatpickr_elements[i].setDate(item.value);
-                            }
-                        }
-                    }
+                    const index = [...regElements, ...disElements].indexOf(item.variable)
+                    // regiunea este intotdeauna inaintea districtului
+                    // un event de change pe regiune populeaza districtul, iar un event
+                    // de change pe district populeaza settlement-ul
+                                                                                // trigger change event
+                    instrument.seteazaValoareElement(item.variable, item.value, index >= 0);
                 }
             }
+
+            // set default values for user, IRRESPECTIVE of the instrument
+
+            if (args.institutionData) {
+
+                if (Object.keys(regions).indexOf(args.institutionData.region) >= 0) {
+                    util.setValue('reg', (regions[args.institutionData.region] as KeyString)[lang]);
+                }
+
+                if (Object.keys(districts).indexOf(args.institutionData.district) >= 0) {
+                    util.setValue('dis', (districts[args.institutionData.district] as KeyString)[lang]);
+                }
+            }
+
+            util.setValue("data", util.customDate());
+
+            if (args.userData) {
+                // instrument.seteazaValoareElement() ce ar avea ???
+                util.setValue('omr1', args.userData.first_name);
+                util.setValue('omr2', args.userData.patronymics);
+                util.setValue('omr3', args.userData.last_name);
+                util.setValue('omr4', args.userData.position);
+                util.setValue('omr5', args.userData.profession);
+                util.setValue('omr6', args.userData.phone);
+                util.setValue('omr7', args.userData.email);
+            }
+
             instrument.start(instrumentID, instrument.trimis, saveChestionar, validateChestionar);
-            document.getElementById("omr1").focus();
-            document.getElementById("omr1").blur();
+            util.focus("omr1");
+            util.blur("omr1");
         });
     }
 }
@@ -246,14 +242,12 @@ const saveChestionar = (obj: SaveInstrumentType): void => {
     ipcRenderer.send("saveInstrument", obj);
 }
 
-
+// settlement type
 for (let i = 0; i < setElements.length; i++) {
     util.listen(setElements[i], "change", () => {
-        const index = setElements.indexOf(setElements[i]);
         const value = util.htmlElement(setElements[i]).value;
-        const setype = settlement_types[settlements[value].type];
-        util.setValue(typeElements[index], setype[lang as keyof typeof setype]);
-        util.trigger(typeElements[index], "change");
+        const set_type = settlement_types[settlements[value].type];
+        util.setValue(typeElements[i], (set_type as KeyString)[lang]);
     })
 }
 
@@ -265,11 +259,11 @@ function check_lk22_2(): boolean {
 
     const suma = util.makeSumFromElements(lk22_2);
 
-    const error = locales[lang]['At_least_one_disability'];
-    errorHandler.removeArrayError(lk22_2, error);
+    const message = locales[lang]['At_least_one_disability'];
+    errorHandler.removeError(lk22_2, message);
 
     if (suma == 0) {
-        errorHandler.addArrayError(lk22_2, error);
+        errorHandler.addError(lk22_2, message);
         lk22_2_1.scrollIntoView({ behavior: "smooth", block: "center", inline: "nearest" });
     }
     else {
@@ -287,7 +281,7 @@ function check_lk22_2(): boolean {
     return(suma > 0);
 }
 
-util.listenArray(lk22_2, "myChange", check_lk22_2);
+util.listen(lk22_2, "myChange", check_lk22_2);
 
 
 util.radioIDs("cm1a").forEach((elem) => {
@@ -366,9 +360,7 @@ util.listen("lk3", "myChange", () => {
         )
 
         util.setValue("lk13a", age.toString());
-        util.trigger("lk13a", "change");
-
-        util.trigger("sa1", "myChange");
+        util.trigger("sa1", "change");
     }
 });
 
@@ -382,7 +374,6 @@ util.listen("sa1", "myChange", () => {
 
         if (!Number.isNaN(age)) {
             util.setValue("sa1a", age.toString());
-            util.trigger("sa1a", "change");
         }
     }
 });
@@ -408,29 +399,28 @@ util.listen("sa1a", "myChange", () => {
 })
 
 
-util.listenArray(['qhouse4a', 'qhouse4b'], "myChange", () => {
-    if (instrument.questions.qhouse4a.value != "-9" && instrument.questions.qhouse4b.value != "-9") {
-        const value = (
-            Number(instrument.questions.qhouse4a.value) +
-            Number(instrument.questions.qhouse4b.value)
-        ).toString();
+// util.listen(['qhouse4a', 'qhouse4b'], "myChange", () => {
+//     if (instrument.questions.qhouse4a.value != "-9" && instrument.questions.qhouse4b.value != "-9") {
+//         const value = (
+//             Number(instrument.questions.qhouse4a.value) +
+//             Number(instrument.questions.qhouse4b.value)
+//         ).toString();
 
-        util.setValue("qhouse4", value);
-        util.trigger("qhouse4", "change");
-    }
-});
+//         util.setValue("qhouse4", value);
+//     }
+// });
 
 
 //qhouse4 = qhouse4a + qhouse4b
 const qhouse4Array = ['qhouse4a', 'qhouse4b'];
 const qhouse4ArrayFull = [...qhouse4Array, 'qhouse4'];
-util.listenArray(qhouse4ArrayFull, "change", () => {
+util.listen(qhouse4ArrayFull, "change", () => {
     if (util.inputsHaveValue(qhouse4ArrayFull)) {
         const qhouse4 = util.getInputNumericValue('qhouse4');
-
-        errorHandler.removeArrayError(qhouse4Array, '4 = 4a + 4b')
+        const message = '4 = 4a + 4b';
+        errorHandler.removeError(qhouse4ArrayFull, message)
         if (qhouse4 != util.makeSumFromElements(qhouse4Array)) {
-            errorHandler.addArrayError(qhouse4Array, '4 = 4a + 4b')
+            errorHandler.addError(qhouse4ArrayFull, message)
         }
     }
 });
@@ -438,12 +428,12 @@ util.listenArray(qhouse4ArrayFull, "change", () => {
 util.listen("sh1", "myChange", () => {
     const sh1value = util.getInputDecimalValue('sh1');
 
-    const error = locales[lang]['Value_up_to_ten'];
-    errorHandler.removeError('sh1', error);
+    const message = locales[lang]['Value_up_to_ten'];
+    errorHandler.removeError('sh1', message);
 
     if (sh1value > 10) {
         instrument.questions["sh1"].value = '-9';
-        errorHandler.addError('sh1', error);
+        errorHandler.addError('sh1', message);
     }
     else {
         instrument.questions["sh1"].value = sh1value.toString();
@@ -472,11 +462,11 @@ sh3_start_dates.forEach((startel) => {
             const timespent = document.getElementById(startel.replace("a", "f")) as HTMLInputElement;
             const sh4 = document.getElementById("sh4") as HTMLInputElement;
 
-            const error = locales[lang]['Start_before_end'];
-            errorHandler.removeArrayError([startel, endel], error);
+            const message = locales[lang]['Start_before_end'];
+            errorHandler.removeError([startel, endel], message);
 
             if (startdate > enddate) {
-                errorHandler.addArrayError([startel, endel], error);
+                errorHandler.addError([startel, endel], message);
                 instrument.questions[startel].value = '-9';
                 instrument.questions[endel].value = '-9';
                 timespent.value = "";
@@ -567,13 +557,13 @@ sk3.forEach(item => {
     (document.getElementById(item) as HTMLInputElement).addEventListener('change', () => {
         if (util.inputsHaveValue(sk3)) {
             const suma = Number(util.makeInputSumDecimal(sk3));
-            const error = locales[lang]['At_least_one_brother_or_sister'];
+            const message = locales[lang]['At_least_one_brother_or_sister'];
             const sk3_1 = document.getElementById("sk3_1") as HTMLInputElement;
             const sk3_2 = document.getElementById("sk3_2") as HTMLInputElement;
-            errorHandler.removeArrayError(sk3, error);
+            errorHandler.removeError(sk3, message);
 
             if (suma == 0) {
-                errorHandler.addArrayError(sk3, error);
+                errorHandler.addError(sk3, message);
                 instrument.questions["sk3_1"].value = "-9";
                 instrument.questions["sk3_2"].value = "-9";
             } else {

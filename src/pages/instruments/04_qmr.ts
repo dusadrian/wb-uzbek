@@ -2,7 +2,7 @@ import { ipcRenderer } from "electron";
 import { questions, questionOrder } from "./04_qmr_variables";
 import instrument from "../../libraries/instrument";
 import { QuestionObjectType, SaveInstrumentType } from "../../libraries/interfaces";
-import { util, errorHandler } from "../../libraries/validation_helpers";
+import { util, errorHandler, KeyString } from "../../libraries/validation_helpers";
 
 import * as _flatpickr from 'flatpickr';
 import { FlatpickrFn } from 'flatpickr/dist/types/instance';
@@ -75,56 +75,51 @@ export const instrument4 = {
                     instrument.seteazaValoareElement(item.variable, item.value);
                 }
 
-            } else {
-                // two digit day & month
-                const today = new Date().getDate().toString().padStart(2, '0') + "/" +
-                            (new Date().getMonth() + 1).toString().padStart(2, '0') + "/" +
-                            new Date().getFullYear().toString()
-                util.setValue("q1", today);
+            }
 
-                if (args.userData) {
-                    // set default values for user
-                    util.setValue('q2', args.userData.first_name + " " + args.userData.patronymics + " " + args.userData.last_name);
-                    util.setValue('q3', args.userData.position);
-                    util.setValue('q4', args.userData.profession);
-                    util.setValue('q5', args.userData.phone);
-                    util.setValue('q6', args.userData.email);
+            // set default values, IRRESPECTIVE of the instrument
+
+            // two digit day & month
+            util.setValue("data", util.customDate());
+
+            if (args.userData) {
+                util.setValue('q2', args.userData.first_name + " " + args.userData.patronymics + " " + args.userData.last_name);
+                util.setValue('q3', args.userData.position);
+                util.setValue('q4', args.userData.profession);
+                util.setValue('q5', args.userData.phone);
+                util.setValue('q6', args.userData.email);
+            }
+
+            if (args.institutionData) {
+
+                // set default values for institution
+                util.setValue('i1', args.institutionData.name);
+                util.setValue('i2', args.institutionData.code);
+                util.setValue('i3', args.institutionData.address);
+
+                if (Object.keys(regions).indexOf(args.institutionData.region) >= 0) {
+                    util.setValue('i4a', (regions[args.institutionData.region] as KeyString)[lang]);
                 }
 
-                if (args.institutionData) {
-                    type keystring = { [key: string]: string };
-
-                    // set default values for institution
-                    util.setValue('i1', args.institutionData.name);
-                    util.setValue('i2', args.institutionData.code);
-                    util.setValue('i3', args.institutionData.address);
-
-                    if (Object.keys(regions).indexOf(args.institutionData.region) >= 0) {
-                        util.setValue('i4a', (regions[args.institutionData.region] as keystring)[lang]);
-                    }
-
-                    if (Object.keys(districts).indexOf(args.institutionData.district) >= 0) {
-                        util.setValue('i4', args.institutionData.district);
-                        util.setValue('i4b', (districts[args.institutionData.district] as keystring)[lang]);
-                    }
-
-                    if (Object.keys(settlements).indexOf(args.institutionData.settlement) >= 0) {
-                        util.setValue('i4', args.institutionData.settlement);
-                        util.setValue('i4c', (settlements[args.institutionData.settlement] as keystring)[lang]);
-                        util.setValue('i4d', (settlement_types[settlements[args.institutionData.settlement].type] as keystring)[lang]);
-                    }
-
-                    // Type of institution
-                    util.setValue('i9', args.institutionData.type);
-
+                if (Object.keys(districts).indexOf(args.institutionData.district) >= 0) {
+                    util.setValue('i4', args.institutionData.district);
+                    util.setValue('i4b', (districts[args.institutionData.district] as KeyString)[lang]);
                 }
+
+                if (Object.keys(settlements).indexOf(args.institutionData.settlement) >= 0) {
+                    util.setValue('i4', args.institutionData.settlement);
+                    const settlement = settlements[args.institutionData.settlement];
+                    util.setValue('i4c', (settlement as KeyString)[lang]);
+                    util.setValue('i4d', (settlement_types[settlement.type] as KeyString)[lang]);
+                }
+
+                // Type of institution
+                util.setValue('i9', args.institutionData.type);
 
             }
 
             instrument.start(instrumentID, instrument.trimis, saveChestionar, validateChestionar);
 
-            //TODO: functie de i4d (type of settlement, completata automat)
-            // daca NU e comunitate rurala atunci sa se inchida la5 (si sa fie setat cu "-7")
         });
     }
 }
@@ -148,38 +143,38 @@ const saveChestionar = (obj: SaveInstrumentType): void => {
 
 const i13bf = ['i13b', 'i13c', 'i13d', 'i13e', 'i13f'];
 const i13 = [...i13bf, 'i13a'];
-util.listenArray(i13, util.repString('change', i13.length), () => {
-        if (util.inputsHaveValue(i13)) {
-            errorHandler.removeArrayError(i13, 'a >= b + c + d + e + f')
-            if (util.getInputDecimalValue('i13a') < util.makeSumFromElements(i13bf)) {
-                errorHandler.addArrayError(i13, 'a >= b + c + d + e + f');
-            }
+util.listen(i13, 'change', () => {
+    if (util.inputsHaveValue(i13)) {
+        const eroare = 'a >= b + c + d + e + f';
+        errorHandler.removeError(i13, eroare)
+        if (util.getInputDecimalValue('i13a') < util.makeSumFromElements(i13bf)) {
+            errorHandler.addError(i13, eroare);
         }
+    }
 })
 
 const la6 = ['la6a', 'la6b'];
 const la6la7 = [...la6, 'la7'];
-la6la7.forEach(item => {
-    (document.getElementById(item) as HTMLInputElement).addEventListener('change', () => {
-        if (util.inputsHaveValue(la6la7)) {
-            errorHandler.removeArrayError(la6la7, 'LA7 <= LA6 (a. + b.)')
-            if (util.getInputDecimalValue('la7') > util.makeSumFromElements(la6)) {
-                errorHandler.addArrayError(la6la7, 'LA7 <= LA6 (a. + b.)');
-            }
+util.listen(la6la7, 'change', () => {
+    if (util.inputsHaveValue(la6la7)) {
+        const eroare = 'LA7 <= LA6 (a. + b.)';
+        errorHandler.removeError(la6la7, eroare)
+        if (util.getInputDecimalValue('la7') > util.makeSumFromElements(la6)) {
+            errorHandler.addError(la6la7, eroare);
         }
-    })
-})
+    }
+});
+
 
 const la6la8 = [...la6, 'la8'];
-la6la8.forEach(item => {
-    (document.getElementById(item) as HTMLInputElement).addEventListener('change', () => {
-        if (util.inputsHaveValue(la6la8)) {
-            errorHandler.removeArrayError(la6la8, 'LA8 <= LA6 (a. + b.)')
-            if (util.getInputDecimalValue('la8') > util.makeSumFromElements(la6)) {
-                errorHandler.addArrayError(la6la8, 'LA8 <= LA6 (a. + b.)');
-            }
+util.listen(la6la8, 'change', () => {
+    if (util.inputsHaveValue(la6la8)) {
+        const eroare = 'LA8 <= LA6 (a. + b.)';
+        errorHandler.removeError(la6la8, eroare)
+        if (util.getInputDecimalValue('la8') > util.makeSumFromElements(la6)) {
+            errorHandler.addError(la6la8, eroare);
         }
-    })
+    }
 })
 
 const af5_a = [
@@ -199,9 +194,9 @@ af5af1.forEach(item => {
             const af5_deschis_af1 = [...af5_deschis, 'af1'];
 
             if (util.inputsHaveValue(af5_deschis_af1)) {
-                errorHandler.removeArrayError(af5_deschis_af1, 'AF1 >= AF5 (a.)')
+                errorHandler.removeError(af5_deschis_af1, 'AF1 >= AF5 (a.)')
                 if (util.getInputDecimalValue('af1') < util.makeSumFromElements(af5_deschis)) {
-                    errorHandler.addArrayError(af5_deschis_af1, 'AF1 >= AF5 (a.)');
+                    errorHandler.addError(af5_deschis_af1, 'AF1 >= AF5 (a.)');
                 }
             }
         }
@@ -213,9 +208,9 @@ const ac1_1 = [...ac1be1, 'ac1a1'];
 ac1_1.forEach(item => {
     (document.getElementById(item) as HTMLInputElement).addEventListener('change', () => {
         if (util.inputsHaveValue(ac1_1)) {
-            errorHandler.removeArrayError(ac1_1, 'AC1a1 >= AC1b1 + ... AC1e1')
+            errorHandler.removeError(ac1_1, 'AC1a1 >= AC1b1 + ... AC1e1')
             if (util.makeSumFromElements(ac1be1) > util.getInputDecimalValue('ac1a1')) {
-                errorHandler.addArrayError(ac1_1, 'AC1a1 >= AC1b1 + ... AC1e1');
+                errorHandler.addError(ac1_1, 'AC1a1 >= AC1b1 + ... AC1e1');
             }
         }
     })
@@ -226,9 +221,9 @@ const ac1_2 = [...ac1be2, 'ac1a2'];
 ac1_2.forEach(item => {
     (document.getElementById(item) as HTMLInputElement).addEventListener('change', () => {
         if (util.inputsHaveValue(ac1_2)) {
-            errorHandler.removeArrayError(ac1_2, 'AC1a2 >= AC1b2 + ... AC1e2')
+            errorHandler.removeError(ac1_2, 'AC1a2 >= AC1b2 + ... AC1e2')
             if (util.makeSumFromElements(ac1be2) > util.getInputDecimalValue('ac1a2')) {
-                errorHandler.addArrayError(ac1_2, 'AC1a2 >= AC1b2 + ... AC1e2');
+                errorHandler.addError(ac1_2, 'AC1a2 >= AC1b2 + ... AC1e2');
             }
         }
     })
@@ -243,15 +238,15 @@ compare.forEach(item1 => {
 
     function check() {
         if (util.inputsHaveValue([item, item1])) {
-            errorHandler.removeArrayError([item, item1], (item + ' >= ' + item1).toUpperCase());
+            errorHandler.removeError([item, item1], (item + ' >= ' + item1).toUpperCase());
             if (util.getInputDecimalValue(item) < util.getInputDecimalValue(item1)) {
-                errorHandler.addArrayError([item, item1], (item + ' >= ' + item1).toUpperCase());
+                errorHandler.addError([item, item1], (item + ' >= ' + item1).toUpperCase());
             }
         }
     }
 
-    (document.getElementById(item) as HTMLInputElement).addEventListener('change', check);
-    (document.getElementById(item1) as HTMLInputElement).addEventListener('change', check);
+    util.listen(item, 'change', check);
+    util.listen(item1, 'change', check);
 });
 
 
@@ -260,9 +255,9 @@ cc5i12a.forEach(item => {
     (document.getElementById(item) as HTMLInputElement).addEventListener('change', () => {
         if (util.inputsHaveValue(cc5i12a)) {
             ///--------
-            errorHandler.removeArrayError(cc5i12a, 'CC5 <= I12a')
+            errorHandler.removeError(cc5i12a, 'CC5 <= I12a')
             if (util.getInputDecimalValue('cc5') > util.getInputDecimalValue('i12a')) {
-                errorHandler.addArrayError(cc5i12a, 'CC5 <= I12a');
+                errorHandler.addError(cc5i12a, 'CC5 <= I12a');
             }
             // sau verifica daca eroarea exista deja, sa nu o adaug de mai multe ori
             // in principiu, addError() ar trebui sa verifice, insa am testat si
@@ -276,9 +271,9 @@ const cc5i13a = ['cc5', 'i13a'];
 cc5i13a.forEach(item => {
     (document.getElementById(item) as HTMLInputElement).addEventListener('change', () => {
         if (util.inputsHaveValue(cc5i13a)) {
-            errorHandler.removeArrayError(cc5i13a, 'CC5 <= I13a')
+            errorHandler.removeError(cc5i13a, 'CC5 <= I13a')
             if (util.getInputDecimalValue('cc5') > util.getInputDecimalValue('i13a')) {
-                errorHandler.addArrayError(cc5i13a, 'CC5 <= I13a');
+                errorHandler.addError(cc5i13a, 'CC5 <= I13a');
             }
         }
     })
@@ -289,9 +284,9 @@ const de2a_i13a = [...de2a, 'i13a'];
 de2a_i13a.forEach(item => {
     (document.getElementById(item) as HTMLInputElement).addEventListener('change', () => {
         if (util.inputsHaveValue(de2a_i13a)) {
-            errorHandler.removeArrayError(de2a_i13a, 'I13a >= DE2a + DE2b + DE2c + DE2d + DE2e')
+            errorHandler.removeError(de2a_i13a, 'I13a >= DE2a + DE2b + DE2c + DE2d + DE2e')
             if (util.makeSumFromElements(de2a) > util.getInputDecimalValue('i13a')) {
-                errorHandler.addArrayError(de2a_i13a, 'I13a >= DE2a + DE2b + DE2c + DE2d + DE2e');
+                errorHandler.addError(de2a_i13a, 'I13a >= DE2a + DE2b + DE2c + DE2d + DE2e');
             }
         }
     })
@@ -301,9 +296,9 @@ const rce1i12a = ['rce1', 'i12a'];
 rce1i12a.forEach(item => {
     (document.getElementById(item) as HTMLInputElement).addEventListener('change', () => {
         if (util.inputsHaveValue(rce1i12a)) {
-            errorHandler.removeArrayError(rce1i12a, 'RCE1 <= I12a')
+            errorHandler.removeError(rce1i12a, 'RCE1 <= I12a')
             if (util.getInputDecimalValue('rce1') > util.getInputDecimalValue('i12a')) {
-                errorHandler.addArrayError(rce1i12a, 'RCE1 <= I12a');
+                errorHandler.addError(rce1i12a, 'RCE1 <= I12a');
             }
         }
     })
@@ -313,9 +308,9 @@ const rce1 = ['rce1', 'rce1a', 'rce1b'];
 rce1.forEach(item => {
     (document.getElementById(item) as HTMLInputElement).addEventListener('change', () => {
         if (util.inputsHaveValue(rce1)) {
-            errorHandler.removeArrayError(rce1, 'RCE1 = RCE1a + RCE1b')
+            errorHandler.removeError(rce1, 'RCE1 = RCE1a + RCE1b')
             if (util.getInputDecimalValue('rce1') != util.makeSumFromElements(rce1)) {
-                errorHandler.addArrayError(rce1, 'RCE1 = RCE1a + RCE1b');
+                errorHandler.addError(rce1, 'RCE1 = RCE1a + RCE1b');
             }
         }
     })
@@ -339,9 +334,9 @@ af5edu5.forEach(item => {
 
             if (util.inputsHaveValue(af5_deschis_edu5)) {
                 console.log(111);
-                errorHandler.removeArrayError(af5_deschis_edu5, 'EDU5 <= AF5 (c.)')
+                errorHandler.removeError(af5_deschis_edu5, 'EDU5 <= AF5 (c.)')
                 if (util.getInputDecimalValue('edu5') > util.makeSumFromElements(af5_deschis)) {
-                    errorHandler.addArrayError(af5_deschis_edu5, 'EDU5 <= AF5 (c.)');
+                    errorHandler.addError(af5_deschis_edu5, 'EDU5 <= AF5 (c.)');
                 }
             }
         }
@@ -353,9 +348,9 @@ const ft7i12a = ['ft7', 'i12a'];
 ft7i12a.forEach(item => {
     (document.getElementById(item) as HTMLInputElement).addEventListener('change', () => {
         if (util.inputsHaveValue(ft7i12a)) {
-            errorHandler.removeArrayError(ft7i12a, 'FT7 <= I12a')
+            errorHandler.removeError(ft7i12a, 'FT7 <= I12a')
             if (util.getInputDecimalValue('ft7') > util.getInputDecimalValue('i12a')) {
-                errorHandler.addArrayError(ft7i12a, 'FT7 <= I12a');
+                errorHandler.addError(ft7i12a, 'FT7 <= I12a');
             }
         }
     })
@@ -365,9 +360,9 @@ const ft7i13a = ['ft7', 'i13a'];
 ft7i13a.forEach(item => {
     (document.getElementById(item) as HTMLInputElement).addEventListener('change', () => {
         if (util.inputsHaveValue(ft7i13a)) {
-            errorHandler.removeArrayError(ft7i13a, 'FT7 <= I13a')
+            errorHandler.removeError(ft7i13a, 'FT7 <= I13a')
             if (util.getInputDecimalValue('ft7') > util.getInputDecimalValue('i13a')) {
-                errorHandler.addArrayError(ft7i13a, 'FT7 <= I13a');
+                errorHandler.addError(ft7i13a, 'FT7 <= I13a');
             }
         }
     })
@@ -377,9 +372,9 @@ const ft2af1 = ['ft2', 'af1'];
 ft2af1.forEach(item => {
     (document.getElementById(item) as HTMLInputElement).addEventListener('change', () => {
         if (util.inputsHaveValue(ft2af1)) {
-            errorHandler.removeArrayError(ft2af1, 'FT2 < AF1')
+            errorHandler.removeError(ft2af1, 'FT2 < AF1')
             if (util.getInputDecimalValue('ft2') > util.getInputDecimalValue('af1')) {
-                errorHandler.addArrayError(ft2af1, 'FT2 < AF1');
+                errorHandler.addError(ft2af1, 'FT2 < AF1');
             }
         }
     })
@@ -396,9 +391,9 @@ e00ArrayFull.forEach(item => {
         if (util.inputsHaveValue(e00ArrayFull)) {
             const e00 = util.getInputDecimalValue('e00');
 
-            errorHandler.removeArrayError(e00Array, '00 = 01 + 02 + 03')
+            errorHandler.removeError(e00Array, '00 = 01 + 02 + 03')
             if (e00 != parseFloat(util.makeInputSumDecimal(e00Array))) {
-                errorHandler.addArrayError(e00Array, '00 = 01 + 02 + 03')
+                errorHandler.addError(e00Array, '00 = 01 + 02 + 03')
             }
         }
     })
@@ -412,9 +407,9 @@ e01ArrayFull.forEach(item => {
         if (util.inputsHaveValue(e01ArrayFull)) {
             const e01 = util.getInputDecimalValue('e01');
 
-            errorHandler.removeArrayError(e01Array, '01 = 10 + 20')
+            errorHandler.removeError(e01Array, '01 = 10 + 20')
             if (e01 != parseFloat(util.makeInputSumDecimal(e01Array))) {
-                errorHandler.addArrayError(e01Array, '01 = 10 + 20')
+                errorHandler.addError(e01Array, '01 = 10 + 20')
             }
         }
     })
@@ -427,9 +422,9 @@ e10ArrayFull.forEach(item => {
     (document.getElementById(item) as HTMLInputElement).addEventListener('change', () => {
         if (util.inputsHaveValue(e10ArrayFull)) {
             const e10 = util.getInputDecimalValue('e10');
-            errorHandler.removeArrayError(e10Array, '10 = 10.1 + ... + 10.5')
+            errorHandler.removeError(e10Array, '10 = 10.1 + ... + 10.5')
             if (e10 != parseFloat(util.makeInputSumDecimal(e10Array))) {
-                errorHandler.addArrayError(e10Array, '10 = 10.1 + ... + 10.5')
+                errorHandler.addError(e10Array, '10 = 10.1 + ... + 10.5')
             }
         }
     })
@@ -443,9 +438,9 @@ e20ArrayFull.forEach(item => {
         if (util.inputsHaveValue(e20ArrayFull)) {
             const e20 = util.getInputDecimalValue('e20');
 
-            errorHandler.removeArrayError(e20Array, '20 = 20.1 + ... + 20.19')
+            errorHandler.removeError(e20Array, '20 = 20.1 + ... + 20.19')
             if (e20 != parseFloat(util.makeInputSumDecimal(e20Array))) {
-                errorHandler.addArrayError(e20Array, '20 = 20.1 + ... + 20.19')
+                errorHandler.addError(e20Array, '20 = 20.1 + ... + 20.19')
             }
         }
     })
@@ -459,9 +454,9 @@ e02ArrayFull.forEach(item => {
         if (util.inputsHaveValue(e02ArrayFull)) {
             const e02 = util.getInputDecimalValue('e02');
 
-            errorHandler.removeArrayError(e02Array, '02 = 2.1 + 2.2')
+            errorHandler.removeError(e02Array, '02 = 2.1 + 2.2')
             if (e02 != parseFloat(util.makeInputSumDecimal(e02Array))) {
-                errorHandler.addArrayError(e02Array, '02 = 2.1 + 2.2')
+                errorHandler.addError(e02Array, '02 = 2.1 + 2.2')
             }
         }
     })
@@ -475,9 +470,9 @@ e21ArrayFull.forEach(item => {
         if (util.inputsHaveValue(e21ArrayFull)) {
             const e21 = util.getInputDecimalValue('e2_1');
 
-            errorHandler.removeArrayError(e21Array, '2_1 = 2.1.1 + ... + 2.1.4')
+            errorHandler.removeError(e21Array, '2_1 = 2.1.1 + ... + 2.1.4')
             if (e21 != parseFloat(util.makeInputSumDecimal(e21Array))) {
-                errorHandler.addArrayError(e21Array, '2_1 = 2.1.1 + ... + 2.1.4')
+                errorHandler.addError(e21Array, '2_1 = 2.1.1 + ... + 2.1.4')
             }
         }
     })

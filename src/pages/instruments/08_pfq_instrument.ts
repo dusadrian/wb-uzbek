@@ -149,9 +149,9 @@ pf.forEach((el) => {
             const message = "PF5 <= PF4a + PF4b";
             const error = util.getInputNumericValue('pf5') > util.makeSumFromElements(pf4);
 
-            errorHandler.removeArrayError(pf, message);
+            errorHandler.removeError(pf, message);
             if (error) {
-                errorHandler.addArrayError(pf, message);
+                errorHandler.addError(pf, message);
             }
 
             return error;

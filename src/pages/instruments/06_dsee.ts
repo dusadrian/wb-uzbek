@@ -2,7 +2,7 @@ import { ipcRenderer } from "electron";
 import { questions, questionOrder } from "./06_dsee_variables";
 import instrument from "../../libraries/instrument";
 import { QuestionObjectType, SaveInstrumentType } from "../../libraries/interfaces";
-import { util, errorHandler } from "../../libraries/validation_helpers";
+import { util, errorHandler, KeyString } from "../../libraries/validation_helpers";
 
 import * as _flatpickr from 'flatpickr';
 import { FlatpickrFn } from 'flatpickr/dist/types/instance';
@@ -12,6 +12,7 @@ const flatpickr: FlatpickrFn = _flatpickr as any;
 import { Russian } from "flatpickr/dist/l10n/ru";
 import { UzbekLatin } from "flatpickr/dist/l10n/uz_latn";
 import { regions, districts, settlements, settlement_types } from "../../libraries/administrative";
+
 
 export const instrument6 = {
     init: async () => {
@@ -66,50 +67,49 @@ export const instrument6 = {
                     instrument.seteazaValoareElement(item.variable, item.value);
                 }
 
-            } else {
-                // two digit day & month
-                const today = new Date().getDate().toString().padStart(2, '0') + "/" +
-                            (new Date().getMonth() + 1).toString().padStart(2, '0') + "/" +
-                            new Date().getFullYear().toString()
-                util.setValue("q1", today);
-
-                if (args.userData) {
-                    // set default values for user
-                    util.setValue('q2', args.userData.first_name + " " + args.userData.patronymics + " " + args.userData.last_name);
-                    util.setValue('q3', args.userData.position);
-                    util.setValue('q4', args.userData.profession);
-                    util.setValue('q5', args.userData.phone);
-                    util.setValue('q6', args.userData.email);
-                }
-
-                if (args.institutionData) {
-                    type keystring = { [key: string]: string };
-
-                    // set default values for institution
-                    util.setValue('i1', args.institutionData.name);
-                    util.setValue('i2', args.institutionData.code);
-                    util.setValue('i3', args.institutionData.address);
-
-                    if (Object.keys(regions).indexOf(args.institutionData.region) >= 0) {
-                        util.setValue('i4a', (regions[args.institutionData.region] as keystring)[lang]);
-                    }
-
-                    if (Object.keys(districts).indexOf(args.institutionData.district) >= 0) {
-                        util.setValue('i4', args.institutionData.district);
-                        util.setValue('i4b', (districts[args.institutionData.district] as keystring)[lang]);
-                    }
-
-                    if (Object.keys(settlements).indexOf(args.institutionData.settlement) >= 0) {
-                        util.setValue('i4', args.institutionData.settlement);
-                        util.setValue('i4c', (settlements[args.institutionData.settlement] as keystring)[lang]);
-                        util.setValue('i4d', (settlement_types[settlements[args.institutionData.settlement].type] as keystring)[lang]);
-                    }
-
-                    // Type of institution
-                    util.setValue('i9', args.institutionData.type);
-                }
-
             }
+
+            // set default values, IRRESPECTIVE of the instrument
+
+            // two digit day & month
+            util.setValue("data", util.customDate());
+
+            if (args.userData) {
+                // set default values for user
+                util.setValue('q2', args.userData.first_name + " " + args.userData.patronymics + " " + args.userData.last_name);
+                util.setValue('q3', args.userData.position);
+                util.setValue('q4', args.userData.profession);
+                util.setValue('q5', args.userData.phone);
+                util.setValue('q6', args.userData.email);
+            }
+
+            if (args.institutionData) {
+
+                // set default values for institution
+                util.setValue('i1', args.institutionData.name);
+                util.setValue('i2', args.institutionData.code);
+                util.setValue('i3', args.institutionData.address);
+
+                if (Object.keys(regions).indexOf(args.institutionData.region) >= 0) {
+                    util.setValue('i4a', (regions[args.institutionData.region] as KeyString)[lang]);
+                }
+
+                if (Object.keys(districts).indexOf(args.institutionData.district) >= 0) {
+                    util.setValue('i4', args.institutionData.district);
+                    util.setValue('i4b', (districts[args.institutionData.district] as KeyString)[lang]);
+                }
+
+                if (Object.keys(settlements).indexOf(args.institutionData.settlement) >= 0) {
+                    util.setValue('i4', args.institutionData.settlement);
+                    const settlement = settlements[args.institutionData.settlement];
+                    util.setValue('i4c', (settlement as KeyString)[lang]);
+                    util.setValue('i4d', (settlement_types[settlement.type] as KeyString)[lang]);
+                }
+
+                // Type of institution
+                util.setValue('i9', args.institutionData.type);
+            }
+
             instrument.start(instrumentID, instrument.trimis, saveChestionar, validateChestionar);
         });
     }
@@ -276,9 +276,9 @@ unu_bt.forEach((item) => {
         if (util.inputsHaveValue(unu_b)) {
             const tnet_b = util.getInputNumericValue('tnet_b');
 
-            errorHandler.removeArrayError(unu_bt, 'NESTb + NEOb = TNETb')
+            errorHandler.removeError(unu_bt, 'NESTb + NEOb = TNETb')
             if (tnet_b != Number(util.makeInputSumDecimal(unu_bt))) {
-                errorHandler.addArrayError(unu_bt, 'NESTSb + NEOb = TNETb');
+                errorHandler.addError(unu_bt, 'NESTSb + NEOb = TNETb');
             }
         }
     });
@@ -293,9 +293,9 @@ unu_gt.forEach((item) => {
         if (util.inputsHaveValue(unu_g)) {
             const tnet_g = util.getInputNumericValue('tnet_g');
 
-            errorHandler.removeArrayError(unu_gt, 'NESTg + NEOg = TNETg')
+            errorHandler.removeError(unu_gt, 'NESTg + NEOg = TNETg')
             if (tnet_g != Number(util.makeInputSumDecimal(unu_gt))) {
-                errorHandler.addArrayError(unu_gt, 'NESTg + NEOg = TNETg');
+                errorHandler.addError(unu_gt, 'NESTg + NEOg = TNETg');
             }
         }
     });
@@ -310,9 +310,9 @@ unu_tt.forEach((item) => {
         if (util.inputsHaveValue(unu_t)) {
             const tnet_t = util.getInputNumericValue('tnet_t');
 
-            errorHandler.removeArrayError(unu_tt, 'NEST + NEO = TNET')
+            errorHandler.removeError(unu_tt, 'NEST + NEO = TNET')
             if (tnet_t != Number(util.makeInputSumDecimal(unu_tt))) {
-                errorHandler.addArrayError(unu_tt, 'NEST + NEO = TNET');
+                errorHandler.addError(unu_tt, 'NEST + NEO = TNET');
             }
         }
     });
@@ -540,9 +540,9 @@ final.forEach((item) => {
             const next_t = util.getInputNumericValue('next_t');
             const tnr0 = util.getInputNumericValue('tnr0');
 
-            errorHandler.removeArrayError(final, 'TNR0 + TNET - NEXT = TNR1')
+            errorHandler.removeError(final, 'TNR0 + TNET - NEXT = TNR1')
             if (tnr1_t != (tnr0 + tnet_t - next_t)) {
-                errorHandler.addArrayError(final, 'TNR0 + TNET - NEXT = TNR1');
+                errorHandler.addError(final, 'TNR0 + TNET - NEXT = TNR1');
             }
         }
     });

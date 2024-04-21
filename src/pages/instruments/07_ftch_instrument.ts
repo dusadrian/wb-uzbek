@@ -2,7 +2,7 @@ import { ipcRenderer } from "electron";
 import { questions, questionOrder } from "./07_ftch_variables";
 import instrument from "../../libraries/instrument";
 import { QuestionObjectType, SaveInstrumentType } from "../../libraries/interfaces";
-import { util, errorHandler } from "../../libraries/validation_helpers";
+import { util, errorHandler, KeyString } from "../../libraries/validation_helpers";
 
 import * as _flatpickr from 'flatpickr';
 import { FlatpickrFn } from 'flatpickr/dist/types/instance';
@@ -10,11 +10,11 @@ import { FlatpickrFn } from 'flatpickr/dist/types/instance';
 const flatpickr: FlatpickrFn = _flatpickr as any;
 import { Russian } from "flatpickr/dist/l10n/ru";
 import { UzbekLatin } from "flatpickr/dist/l10n/uz_latn";
-// import { administrative, regions, districts, settlements, settlement_types } from "../../libraries/administrative";
+import { administrative, regions, districts, settlements, settlement_types } from "../../libraries/administrative";
 
 
 const general_dates = [
-    'data', 'ifp2', 'ifm4', 'ift4'
+    'ifp2', 'ifm4', 'ift4' // 'data' completat automat
 ]
 
 const admission_dates = [
@@ -45,15 +45,14 @@ export const instrument7 = {
             flatpickrConfig.locale = Russian;
         }
 
-
-        [...general_dates, ...admission_dates].forEach((el) => {
+        [...general_dates, ...admission_dates].forEach(el => {
             let config;
             if (el == "ifp2") {
                 config = { ...flatpickrConfig, minDate: "01/01/1950" };
             } else if (admission_dates.indexOf(el) >= 0) {
                 config = { ...flatpickrConfig, minDate: "01/01/1990" };
                 config.maxDate = "30/04/2024";
-            } else if (el != "data") {
+            } else { // if (el != "data") completata automat
                 config = { ...flatpickrConfig, minDate: "01/01/1930" };
             }
             flatpickr(util.htmlElement(el), config);
@@ -74,23 +73,20 @@ console.log(args);
                 for (const item of args.questions) {
                     instrument.seteazaValoareElement(item.variable, item.value);
                 }
-
-            } else {
-                // two digit day & month
-                const today = new Date().getDate().toString().padStart(2, '0') + "/" +
-                            (new Date().getMonth() + 1).toString().padStart(2, '0') + "/" +
-                            new Date().getFullYear().toString()
-                util.setValue("data", today);
-
-                if (args.userData) {
-                    // set default values for user
-                    util.setValue('q2', args.userData.first_name + " " + args.userData.patronymics + " " + args.userData.last_name);
-                    util.setValue('q3', args.userData.position);
-                    util.setValue('q4', args.userData.profession);
-                    util.setValue('q5', args.userData.phone);
-                    util.setValue('q6', args.userData.email);
-                }
             }
+
+            // set default values, IRRESPECTIVE of the instrument
+
+            // two digit day & month
+            util.setValue("data", util.customDate());
+            if (args.userData) {
+                util.setValue('q2', args.userData.first_name + " " + args.userData.patronymics + " " + args.userData.last_name);
+                util.setValue('q3', args.userData.position);
+                util.setValue('q4', args.userData.profession);
+                util.setValue('q5', args.userData.phone);
+                util.setValue('q6', args.userData.email);
+            }
+
             instrument.start(instrumentID, instrument.trimis, saveChestionar, validateChestionar);
         });
     }
@@ -136,10 +132,8 @@ util.listen("ifp2", "myChange", () => {
             "months"
         )
 
-        util.htmlElement('ifp2am').value = months.toString();
-        instrument.questions.ifp2am.value = months.toString();
-        util.htmlElement('ifp2ay').value = years.toString();
-        util.trigger("ifp2ay", "change");
+        util.setValue('ifp2am', months.toString());
+        util.setValue('ifp2ay', years.toString());
     }
 });
 
@@ -153,8 +147,7 @@ util.listen("ifm4", "myChange", () => {
             "years"
         )
 
-        util.htmlElement('ifm4_age').value = age.toString();
-        util.trigger("ifm4_age", "change");
+        util.setValue('ifm4_age', age.toString());
 
     }
 });
@@ -169,8 +162,7 @@ util.listen("ift4", "myChange", () => {
             "years"
         )
 
-        util.htmlElement('ift4_age').value = age.toString();
-        util.trigger("ift4_age", "change");
+        util.setValue('ift4_age', age.toString());
     }
 });
 
@@ -179,14 +171,14 @@ util.listen("ift4", "myChange", () => {
 const ifp4 = ['ifp4a', 'ifp4b'];
 const ifp = [...ifp4, 'ifp5'];
 
-util.listenArray(ifp, ["myChange"], () => {
+util.listen(ifp, ["myChange"], () => {
     if (util.inputsHaveValue(ifp)) {
         const message = "IFP5 <= IFP4a + IFP4b";
         const error = util.getInputNumericValue('ifp5') > util.makeSumFromElements(ifp4);
 
-        errorHandler.removeArrayError(ifp, message);
+        errorHandler.removeError(ifp, message);
         if (error) {
-            errorHandler.addArrayError(ifp, message);
+            errorHandler.addError(ifp, message);
         }
 
         return error;
@@ -195,13 +187,13 @@ util.listenArray(ifp, ["myChange"], () => {
 
 
 const fc = ['fc1', 'fc3'];
-util.listenArray(fc, ["myChange"], () => {
+util.listen(fc, ["myChange"], () => {
     if (util.inputsHaveValue(fc)) {
         const message = "FC3 <= FC1";
         const error = util.getInputDecimalValue('fc3') > util.getInputDecimalValue('fc1');
-        errorHandler.removeArrayError(fc, message);
+        errorHandler.removeError(fc, message);
         if (error) {
-            errorHandler.addArrayError(fc, message);
+            errorHandler.addError(fc, message);
         }
     }
 });
