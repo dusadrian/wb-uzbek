@@ -17,9 +17,8 @@ interface UtilHelpersInterface {
     inputsHaveValue: (array: string[]) => boolean;
     radioIDs: (name: string) => string[];
     htmlElement: (element: string) => HTMLInputElement;
-    setValue: (element: string, value: string) => void;
-    trigger: (element: string, change: string) => void;
-    triggerArray: (elements: string[], changes: string | string[]) => void;
+    setValue: (element: string | string[], value: string) => void;
+    trigger: (element: string | string[], change: string | string[]) => void;
     listen: (element: string | string[], event: string | string[], callback: () => void) => void;
     customDate: (el?: string) => string;
     standardDate: (date: string) => Date;
@@ -282,26 +281,29 @@ export const util: UtilHelpersInterface = {
         return document.getElementById(element) as HTMLInputElement;
     },
     setValue: (element, value) => {
-        util.htmlElement(element).value = value;
-        util.trigger(element, "change");
+        if (!Array.isArray(element)) {
+            element = [element]
+        }
+        element.forEach((el) => {
+            util.htmlElement(el).value = value;
+            util.trigger(el, "change");
+        });
     },
     trigger: (element, change) => {
-        util.htmlElement(element).dispatchEvent(new Event(change));
-    },
-    triggerArray: (elements, changes) => {
-        let change;
-        if (Array.isArray(changes)) {
-            if (elements.length !== changes.length) {
-                change = util.repString(changes[0], elements.length);
-            } else {
-                change = [...changes];
-            }
-        } else {
-            change = util.repString(changes, elements.length);
+        if (!Array.isArray(element)) {
+            element = [element];
         }
 
-        for (let i = 0; i < elements.length; i++) {
-            util.trigger(elements[i], change[i]);
+        if (!Array.isArray(change)) {
+            change = [change];
+        }
+
+        if (element.length !== change.length) {
+            change = util.repString(change[0], element.length);
+        }
+
+        for (let i = 0; i < element.length; i++) {
+            util.htmlElement(element[i]).dispatchEvent(new Event(change[i]));
         }
     },
     listen: (element, event, callback) => {
