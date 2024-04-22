@@ -503,8 +503,8 @@ sh3_start_dates.forEach((startel) => {
         }
     }
 
-    util.listen("startel", "myChange", check);
-    util.listen("endel", "myChange", check);
+    util.listen(startel, "myChange", check);
+    util.listen(endel, "myChange", check);
 });
 
 
