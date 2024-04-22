@@ -136,23 +136,23 @@ export const instrument2 = {
                 util.htmlElement(setElements[x]).disabled = false;
                 set_el.innerHTML = "";
                 if (Number(selectedRegion) > 0 && Number(selectedDistrict) > 0) {
-                    const regdisset = administrative[selectedRegion].districts[selectedDistrict].settlements;
-                    if (regdisset) {
-                        const settlements = Object.keys(regdisset);
+                    const seldist = administrative[selectedRegion].districts[selectedDistrict];
+                    if (seldist.settlements) {
+                        const set_codes = Object.keys(seldist.settlements);
                         const option = document.createElement("option");
                         option.value = "-9";
                         option.text = locales[lang]['t_choose'];
                         set_el.appendChild(option);
 
-                        for (let i = 0; i < settlements.length; i++) {
+                        for (let i = 0; i < set_codes.length; i++) {
                             const option = document.createElement("option");
-                            option.value = settlements[i];
-                            option.text = (regdisset[settlements[i]] as KeyString)[lang];
+                            option.value = set_codes[i];
+                            option.text = (seldist.settlements[set_codes[i]] as KeyString)[lang];
                             set_el.appendChild(option);
                         }
                     }
                     else {
-                        const set_type = settlement_types[settlements[selectedDistrict].type]
+                        const set_type = settlement_types[seldist.type];
                         util.setValue(typeElements[x], (set_type as KeyString)[lang]);
                         instrument.questions[setElements[x]].skip = true;
                         instrument.questions[setElements[x]].value = '-7';
