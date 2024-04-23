@@ -2,7 +2,7 @@ import { ipcRenderer } from "electron";
 import { questions, questionOrder } from "./03_csr_variables";
 import instrument from "../../libraries/instrument";
 import { QuestionObjectType, SaveInstrumentType } from "../../libraries/interfaces";
-import { util, KeyString } from "../../libraries/validation_helpers";
+import { util } from "../../libraries/validation_helpers";
 
 import * as _flatpickr from 'flatpickr';
 import { FlatpickrFn } from 'flatpickr/dist/types/instance';
@@ -10,7 +10,7 @@ import { FlatpickrFn } from 'flatpickr/dist/types/instance';
 const flatpickr: FlatpickrFn = _flatpickr as any;
 import { Russian } from "flatpickr/dist/l10n/ru";
 import { UzbekLatin } from "flatpickr/dist/l10n/uz_latn";
-import { regions, districts, settlements, settlement_types } from "../../libraries/administrative";
+import { KeyString, regions, districts, settlements, settlement_types } from "../../libraries/administrative";
 
 export const instrument3 = {
     init: async () => {
@@ -80,19 +80,19 @@ export const instrument3 = {
                 util.setValue('i3', args.institutionData.address);
 
                 if (Object.keys(regions).indexOf(args.institutionData.region) >= 0) {
-                    util.setValue('i4a', (regions[args.institutionData.region] as KeyString)[lang]);
+                    util.setValue('i4a', "" + (regions[args.institutionData.region] as KeyString)[lang]);
                 }
 
                 if (Object.keys(districts).indexOf(args.institutionData.district) >= 0) {
                     util.setValue('i4', args.institutionData.district);
-                    util.setValue('i4b', (districts[args.institutionData.district] as KeyString)[lang]);
+                    util.setValue('i4b', "" + (districts[args.institutionData.district] as KeyString)[lang]);
                 }
 
                 if (Object.keys(settlements).indexOf(args.institutionData.settlement) >= 0) {
                     util.setValue('i4', args.institutionData.settlement);
                     const settlement = settlements[args.institutionData.settlement];
-                    util.setValue('i4c', (settlement as KeyString)[lang]);
-                    util.setValue('i4d', (settlement_types[settlement.type] as KeyString)[lang]);
+                    util.setValue('i4c', "" + (settlement as KeyString)[lang]);
+                    util.setValue('i4d', "" + (settlement_types[settlement.type] as KeyString)[lang]);
                 }
 
                 // Type of institution

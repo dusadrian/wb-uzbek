@@ -2,7 +2,7 @@ import { ipcRenderer } from "electron";
 import { questions, questionOrder } from "./07_ftch_variables";
 import instrument from "../../libraries/instrument";
 import { QuestionObjectType, SaveInstrumentType } from "../../libraries/interfaces";
-import { util, errorHandler, KeyString } from "../../libraries/validation_helpers";
+import { util, errorHandler } from "../../libraries/validation_helpers";
 
 import * as _flatpickr from 'flatpickr';
 import { FlatpickrFn } from 'flatpickr/dist/types/instance';
@@ -10,7 +10,7 @@ import { FlatpickrFn } from 'flatpickr/dist/types/instance';
 const flatpickr: FlatpickrFn = _flatpickr as any;
 import { Russian } from "flatpickr/dist/l10n/ru";
 import { UzbekLatin } from "flatpickr/dist/l10n/uz_latn";
-import { administrative, regions, districts, settlements, settlement_types } from "../../libraries/administrative";
+// import { regions, districts, settlements, settlement_types } from "../../libraries/administrative";
 
 
 const general_dates = [

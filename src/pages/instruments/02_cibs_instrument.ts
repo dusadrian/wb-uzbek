@@ -2,7 +2,7 @@ import { ipcRenderer } from "electron";
 import { questions, questionOrder } from "./02_cibs_variables";
 import instrument from "../../libraries/instrument";
 import { QuestionObjectType, SaveInstrumentType } from "../../libraries/interfaces";
-import { util, errorHandler, KeyString } from "../../libraries/validation_helpers";
+import { util, errorHandler } from "../../libraries/validation_helpers";
 
 import * as _flatpickr from 'flatpickr';
 import { FlatpickrFn } from 'flatpickr/dist/types/instance';
@@ -10,7 +10,7 @@ import { FlatpickrFn } from 'flatpickr/dist/types/instance';
 const flatpickr: FlatpickrFn = _flatpickr as any;
 import { Russian } from "flatpickr/dist/l10n/ru";
 import { UzbekLatin } from "flatpickr/dist/l10n/uz_latn";
-import { administrative, regions, districts, settlements, settlement_types } from "../../libraries/administrative";
+import { KeyString, regions, districts, settlements, settlement_types } from "../../libraries/administrative";
 
 import * as en from "../../locales/en.json";
 import * as uz from "../../locales/uz.json";
@@ -79,7 +79,7 @@ export const instrument2 = {
             flatpickr(element, config);
         });
 
-        const reg_codes = Object.keys(administrative);
+        const reg_codes = Object.keys(regions);
         for (let x = 0; x < regElements.length; x++) {
             const reg_el = util.htmlElement(regElements[x]);
 
@@ -100,23 +100,17 @@ export const instrument2 = {
             const set_el = util.htmlElement(setElements[x]);
 
             util.listen(regElements[x], "change", function () {
+                set_el.innerHTML = "";
                 util.htmlElement(typeElements[x]).value = "";
                 const selectedRegion = reg_el.value;
                 if (Number(selectedRegion) > 0) {
-                    const regdist = administrative[selectedRegion].districts;
-                    const dis_codes = Object.keys(regdist);
+                    const dis_codes = regions[selectedRegion].districts;
 
                     const option = document.createElement("option");
                     option.value = "-9";
                     option.text = locales[lang]['t_choose'];
                     dis_el.innerHTML = "";
                     dis_el.appendChild(option);
-
-                    const option2 = document.createElement("option");
-                    option2.value = "-9";
-                    option2.text = locales[lang]['t_choose'];
-                    set_el.innerHTML = "";
-                    set_el.appendChild(option2);
 
                     for (let i = 0; i < dis_codes.length; i++) {
                         const option = document.createElement("option");
@@ -129,15 +123,14 @@ export const instrument2 = {
 
             util.listen(disElements[x], "change", function () {
                 util.htmlElement(typeElements[x]).value = "";
-                const selectedRegion = reg_el.value;
                 const selectedDistrict = dis_el.value;
                 instrument.questions[setElements[x]].skip = false;
                 util.htmlElement(setElements[x]).disabled = false;
                 set_el.innerHTML = "";
-                if (Number(selectedRegion) > 0 && Number(selectedDistrict) > 0) {
-                    const seldist = administrative[selectedRegion].districts[selectedDistrict];
-                    if (seldist.settlements) {
-                        const set_codes = Object.keys(seldist.settlements);
+                if (Number(selectedDistrict) > 0) {
+                    const set_codes = districts[selectedDistrict].settlements;
+
+                    if (set_codes.length > 0) {
                         const option = document.createElement("option");
                         option.value = "-9";
                         option.text = locales[lang]['t_choose'];
@@ -146,13 +139,13 @@ export const instrument2 = {
                         for (let i = 0; i < set_codes.length; i++) {
                             const option = document.createElement("option");
                             option.value = set_codes[i];
-                            option.text = set_codes[i] + ": " + (seldist.settlements[set_codes[i]] as KeyString)[lang];
+                            option.text = set_codes[i] + ": " + (settlements[set_codes[i]] as KeyString)[lang];
                             set_el.appendChild(option);
                         }
                     }
                     else {
-                        const set_type = settlement_types[seldist.type];
-                        util.setValue(typeElements[x], (set_type as KeyString)[lang]);
+                        const dis_type = districts[selectedDistrict].type;
+                        util.setValue(typeElements[x], "" + dis_type[lang as keyof typeof dis_type]);
                         instrument.questions[setElements[x]].skip = true;
                         instrument.questions[setElements[x]].value = '-7';
                         util.htmlElement(setElements[x]).disabled = true;
@@ -189,11 +182,11 @@ export const instrument2 = {
             if (args.institutionData) {
 
                 if (Object.keys(regions).indexOf(args.institutionData.region) >= 0) {
-                    util.setValue('reg', (regions[args.institutionData.region] as KeyString)[lang]);
+                    util.setValue('reg', "" + (regions[args.institutionData.region] as KeyString)[lang]);
                 }
 
                 if (Object.keys(districts).indexOf(args.institutionData.district) >= 0) {
-                    util.setValue('dis', (districts[args.institutionData.district] as KeyString)[lang]);
+                    util.setValue('dis', "" + (districts[args.institutionData.district] as KeyString)[lang]);
                 }
             }
 
@@ -252,7 +245,7 @@ for (let i = 0; i < setElements.length; i++) {
     util.listen(setElements[i], "change", () => {
         const value = util.htmlElement(setElements[i]).value;
         const set_type = settlement_types[settlements[value].type];
-        util.setValue(typeElements[i], (set_type as KeyString)[lang]);
+        util.setValue(typeElements[i], "" + (set_type as KeyString)[lang]);
     })
 }
 
