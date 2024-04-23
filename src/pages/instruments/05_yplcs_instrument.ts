@@ -2,7 +2,7 @@ import { ipcRenderer } from "electron";
 import { questions, questionOrder } from "./05_yplcs_variables";
 import instrument from "../../libraries/instrument";
 import { QuestionObjectType, SaveInstrumentType } from "../../libraries/interfaces";
-import { util, errorHandler, KeyString } from "../../libraries/validation_helpers";
+import { util, errorHandler} from "../../libraries/validation_helpers";
 
 import * as _flatpickr from 'flatpickr';
 import { FlatpickrFn } from 'flatpickr/dist/types/instance';
@@ -10,7 +10,7 @@ import { FlatpickrFn } from 'flatpickr/dist/types/instance';
 const flatpickr: FlatpickrFn = _flatpickr as any;
 import { Russian } from "flatpickr/dist/l10n/ru";
 import { UzbekLatin } from "flatpickr/dist/l10n/uz_latn";
-import { administrative, regions, districts, settlements, settlement_types } from "../../libraries/administrative";
+import { KeyString, services, regions, districts, settlements, settlement_types } from "../../libraries/administrative";
 import * as en from "../../locales/en.json";
 import * as uz from "../../locales/uz.json";
 import * as ru from "../../locales/ru.json";
@@ -20,12 +20,11 @@ const locales: { [key: string]: typeof en | typeof uz | typeof ru} = {
     'ru': ru
 }
 
-import { min } from "lodash";
 const lang = localStorage.getItem("language");
-const regElements = ["pi4b", "pi9c"];
-const disElements = ["pi4c", "pi9d"];
-const setElements = ["pi4d", "pi9h"];
-const typeElements = ["pi4e", "pi9i"];
+const regElements  = ["pi4b", "pi6r", "pi9c"];
+const disElements  = ["pi4c", "pi6d", "pi9d"];
+const setElements  = ["pi4d", "", "pi9h"];
+const typeElements = ["pi4e", "", "pi9i"];
 
 
 export const instrument5 = {
@@ -56,7 +55,7 @@ export const instrument5 = {
         flatpickrConfig.minDate = "01/01/2023";
         flatpickr(util.htmlElement('pi7'), flatpickrConfig);
 
-        const reg_codes = Object.keys(administrative);
+        const reg_codes = Object.keys(regions);
         for (let x = 0; x < regElements.length; x++) {
             const reg_el = util.htmlElement(regElements[x]);
 
@@ -69,8 +68,7 @@ export const instrument5 = {
             for (let i = 0; i < reg_codes.length; i++) {
                 const option = document.createElement("option");
                 option.value = reg_codes[i];
-                const reg = regions[reg_codes[i]];
-                option.text = reg[lang as keyof typeof reg];
+                option.text = reg_codes[i] + ": " + (regions[reg_codes[i]] as KeyString)[lang];
                 reg_el.appendChild(option);
             }
 
@@ -78,10 +76,17 @@ export const instrument5 = {
             const set_el = util.htmlElement(setElements[x]);
 
             util.listen(regElements[x], "change", function () {
+                if (typeElements[x] != "") {
+                    util.htmlElement(typeElements[x]).value = "";
+                }
+
+                if (setElements[x] != "") {
+                    set_el.innerHTML = "";
+                }
+
                 const selectedRegion = reg_el.value;
-                if (selectedRegion != "-9") {
-                    const regdist = administrative[selectedRegion].districts;
-                    const dis_codes = Object.keys(regdist);
+                if (Number(selectedRegion) > 0) {
+                    const dis_codes = regions[selectedRegion].districts;
 
                     const option = document.createElement("option");
                     option.value = "-9";
@@ -89,49 +94,80 @@ export const instrument5 = {
                     dis_el.innerHTML = "";
                     dis_el.appendChild(option);
 
-                    const option2 = document.createElement("option");
-                    option2.value = "-9";
-                    option2.text = locales[lang]['t_choose'];
-                    set_el.innerHTML = "";
-                    set_el.appendChild(option2);
-
                     for (let i = 0; i < dis_codes.length; i++) {
                         const option = document.createElement("option");
                         option.value = dis_codes[i];
-                        option.text = (districts[dis_codes[i]] as KeyString)[lang];
+                        option.text = dis_codes[i] + ": " + (districts[dis_codes[i]] as KeyString)[lang];
                         dis_el.appendChild(option);
                     }
                 }
             })
 
             util.listen(disElements[x], "change", function () {
-                const selectedRegion = reg_el.value;
+                if (typeElements[x] != "") {
+                    util.htmlElement(typeElements[x]).value = "";
+                }
                 const selectedDistrict = dis_el.value;
-                if (selectedRegion != "-9" && selectedDistrict != "-9") {
-                    const regdisset = administrative[selectedRegion].districts[selectedDistrict].settlements;
-                    if (regdisset) {
-                        const settlements = Object.keys(regdisset);
-                        set_el.innerHTML = "";
-                        const option = document.createElement("option");
-                        option.value = "-9";
-                        option.text = locales[lang]['t_choose'];
-                        set_el.appendChild(option);
 
-                        for (let i = 0; i < settlements.length; i++) {
-                            const option = document.createElement("option");
-                            option.value = settlements[i];
-                            option.text = (regdisset[settlements[i]] as KeyString)[lang];
+                if (setElements[x] != "") {
+                    instrument.questions[setElements[x]].skip = false;
+                    util.htmlElement(setElements[x]).disabled = false;
+                    set_el.innerHTML = "";
+                }
+
+                if (Number(selectedDistrict) > 0) {
+                    const option = document.createElement("option");
+                    option.value = "-9";
+                    option.text = locales[lang]['t_choose'];
+
+                    if (setElements[x] != "") {
+                        const set_codes = districts[selectedDistrict].settlements;
+
+                        if (set_codes.length > 0) {
                             set_el.appendChild(option);
+
+                            for (let i = 0; i < set_codes.length; i++) {
+                                const option = document.createElement("option");
+                                option.value = set_codes[i];
+                                option.text = set_codes[i] + ": " + (settlements[set_codes[i]] as KeyString)[lang];
+                                set_el.appendChild(option);
+                            }
                         }
-                    }
-                    else {
-                        util.setValue(typeElements[x], (settlement_types["20"] as KeyString)[lang]);
-                        // TODO dezactiveaza select-ul pentru settlement
+                        else {
+                            if (typeElements[x] != "") {
+                                const dis_type = districts[selectedDistrict].type;
+                                util.setValue(typeElements[x], "" + dis_type[lang as keyof typeof dis_type]);
+                            }
+                            instrument.questions[setElements[x]].skip = true;
+                            instrument.questions[setElements[x]].value = '-7';
+                            util.htmlElement(setElements[x]).disabled = true;
+                        }
+                    } else {
+                        const pi6 = util.htmlElement("pi6");
+                        pi6.innerHTML = "";
+                        const serv = districts[selectedDistrict].services;
+                        pi6.appendChild(option);
+
+                        if (serv.length > 0) {
+                            for (let i = 0; i < serv.length; i++) {
+                                const option = document.createElement("option");
+                                option.value = serv[i];
+                                option.text = serv[i] + ': ' + services[serv[i]].name;
+                                pi6.appendChild(option);
+                            }
+                        }
+
+                        const optgroup = document.createElement("optgroup");
+                        const option999 = document.createElement("option");
+                        option999.value = '999';
+                        option999.text = '999: ' + locales[lang]['not_in_registry'];
+                        optgroup.appendChild(option999);
+                        pi6.appendChild(optgroup);
+
                     }
                 }
             })
         }
-
 
 
 
@@ -162,11 +198,11 @@ export const instrument5 = {
             if (args.institutionData) {
 
                 if (Object.keys(regions).indexOf(args.institutionData.region) >= 0) {
-                    util.setValue('reg', (regions[args.institutionData.region] as KeyString)[lang]);
+                    util.setValue('reg', "" + (regions[args.institutionData.region] as KeyString)[lang]);
                 }
 
                 if (Object.keys(districts).indexOf(args.institutionData.district) >= 0) {
-                    util.setValue('dis', (districts[args.institutionData.district] as KeyString)[lang]);
+                    util.setValue('dis', "" + (districts[args.institutionData.district] as KeyString)[lang]);
                 }
 
                 util.setValue("omr9", args.institutionData.name);
@@ -228,16 +264,18 @@ util.listen("pi3", "myChange", () => {
 
 util.listen("pi4d", "change", () => {
     const value = util.htmlElement("pi4d").value;
-    util.setValue("pi4e", (settlement_types[settlements[value].type] as KeyString)[lang]);
+    util.setValue("pi4e", "" + (settlement_types[settlements[value].type] as KeyString)[lang]);
 })
 
 
 for (let i = 0; i < setElements.length; i++) {
-    util.listen(setElements[i], "change", () => {
-        const value = util.htmlElement(setElements[i]).value;
-        const set_type = settlement_types[settlements[value].type];
-        util.setValue(typeElements[i], (set_type as KeyString)[lang]);
-    })
+    if (typeElements[i] != "") {
+        util.listen(setElements[i], "change", () => {
+            const value = util.htmlElement(setElements[i]).value;
+            const set_type = settlement_types[settlements[value].type];
+            util.setValue(typeElements[i], "" + (set_type as KeyString)[lang]);
+        })
+    }
 }
 
 const pi10 = ['pi10a', 'pi10b'];

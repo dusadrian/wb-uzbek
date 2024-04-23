@@ -251,22 +251,45 @@
             </div>
         </div>
 
+        <p class="mt-6"><br><%= it.pi6header %></b></p>
+
+        <div class="grid grid-cols-2 items-center gap-4 mt-6">
+            <div>PI6r. <%= it.t54 %></div>
+            <div>
+                <select id="pi6reg" name="pi6reg" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+                    <option value="-9" class="t_choose">--- choose ---</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-2 items-center gap-4 mt-6">
+            <div>PI6d. <%= it.t57 %></div>
+            <div>
+                <select id="pi6dis" name="pi6dis" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+                    <option value="-9" class="t_choose">--- choose ---</option>
+                </select>
+            </div>
+        </div>
+
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
-            <div><%= it.t71 %>. <%= it.t72 %></div>
+            <div><%= it.t71 %>. <%= it.pi6institution %></div>
             <div class="flex gap-4">
                 <select id="pi6" name="pi6" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
                     <option value="-9" class="t_choose">--- choose ---</option>
                 </select>
             </div>
         </div>
+
+
+
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
-            <div><%= it.t73 %>. <%= it.t74 %></div>
+            <div><%= it.t73 %>. <%= it.pi6code %></div>
             <div>
                 <input type="text" id="pi6a" name="pi6a" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
             </div>
         </div>
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
-            <div><%= it.t76 %>. <%= it.t77 %></div>
+            <div><%= it.t76 %>. <%= it.pi6name %></div>
             <div>
                 <input type="text" id="pi6b" name="pi6b" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
             </div>

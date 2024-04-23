@@ -77,7 +77,7 @@
     "t76": "PI6b",
     "t77": "Vasiylik manzili",
     "t78": "Avtomatik ravishda noyob kodi asosida, roʻyxatdan olinadi. Aks holda, maʼmuriy-hududiy birlikning 10 xonali kodini toʻldiring (MHOBT)",
-    "t79": "PI6C",
+    "t79": "PI6c",
     "t80": "Muassasa turi",
     "t81": "Avtomatik ravishda noyob kodi asosida, roʻyxatdan olinadi. Aks holda, iltimos, kodlardan birini tanlang",
     "t82": "Bolalar muassasalari:",
@@ -588,6 +588,9 @@
     "t587": "0. Yo'q",
     "t588": "CR10",
     "t589": "Yosh odam ko'proq yordam ko'rsatish uchun qanday mahsus tavsiyalaringiz bor?",
-    "settlement": "Settlement",
-    "typeofsettlement": "Type of settlement"
+    "settlement": "Aholi punkti",
+    "typeofsettlement": "Aholi punkti turi",
+    "pi6header": "Tegishli reyestrga koʻra, bolalarga vasiylik turining tizimidan chiqishdan oldin yosh odam yashagan oxirgi muassasining",
+    "pi6institution": "Xizmat nomi",
+    "pi6code": "Xizmat kodi"
 }

@@ -77,7 +77,7 @@
     "t76": "PI6b",
     "t77": "Service location",
     "t78": "Automatically retrieved from the Registry based on the unique code. Otherwise, fill in the 10-digit code of the administrative-territorial unit (МҲОБТ)",
-    "t79": "PI6C",
+    "t79": "PI6c",
     "t80": "Type of institution",
     "t81": "Automatically retrieved from the Registry based on the unique code. Otherwise, please select one of the codes",
     "t82": "Childcare institutions:",
@@ -589,5 +589,8 @@
     "t588": "CR10",
     "t589": "What specific recommendations do you have for providing increased support to the young person?",
     "settlement": "Settlement",
-    "typeofsettlement": "Type of settlement"
+    "typeofsettlement": "Type of settlement",
+    "pi6header": "The last institution where the young person lived before leaving the child care system, according to the corresponding Register",
+    "pi6institution": "Institution",
+    "pi6code": "Unique institution code"
 }
