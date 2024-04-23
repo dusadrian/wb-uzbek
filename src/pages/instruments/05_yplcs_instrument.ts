@@ -278,6 +278,18 @@ for (let i = 0; i < setElements.length; i++) {
     }
 }
 
+util.listen("pi6", "change", function () {
+    util.setValue("pi6c", "-9");
+    const value = util.htmlElement("pi6").value;
+    const serv_codes = Object.keys(services);
+    if (serv_codes.indexOf(value) >= 0) {
+        const type = services[value].type;
+        if (["11", "12", "13", "14", "21", "22", "23", "24", "25", "26"].indexOf(type) >= 0) {
+            util.setValue("pi6c", type);
+        }
+    }
+})
+
 const pi10 = ['pi10a', 'pi10b'];
 util.listen(pi10, "change", () => {
     const message = 'PI10b <= PI10a';

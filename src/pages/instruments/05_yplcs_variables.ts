@@ -330,7 +330,7 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 29,
-        active: function () { return (Number(instrument.questions.pi6.value) == 999) },
+        active: function () { return (Number(instrument.questions.pi6.value) > 0) },
         error: ''
     },
     'pi7': {
