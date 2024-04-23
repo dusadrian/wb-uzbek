@@ -113,14 +113,14 @@ const fillTable = (table: any, children: Array<ChildType>) => {
 const editItem = function (id: number) {
     ipcRenderer.send('changeWindow', {
         'name': 'instruments',
-        'instrument': 'CPIS',
+        'instrument': 'CIBS',
         'id': id,
     });
 };
 
 // sterge eveniment
 const deleteItem = function (id: number) {
-    ipcRenderer.send('deleteChild', {
+    ipcRenderer.send('deleteCIBS', {
         'id': id,
     });
 };
