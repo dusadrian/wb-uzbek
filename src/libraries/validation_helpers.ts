@@ -395,5 +395,3 @@ export const util: UtilHelpersInterface = {
     },
 }
 
-
-export type KeyString = { [key: string]: string };
