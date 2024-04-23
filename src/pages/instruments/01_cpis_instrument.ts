@@ -101,8 +101,7 @@ export const instrument1 = {
             for (let i = 0; i < reg_codes.length; i++) {
                 const option = document.createElement("option");
                 option.value = reg_codes[i];
-                const reg = regions[reg_codes[i]];
-                option.text = reg[lang as keyof typeof reg];
+                option.text = reg_codes[i] + ": " + (regions[reg_codes[i]] as KeyString)[lang];
                 reg_el.appendChild(option);
             }
 
@@ -131,7 +130,7 @@ export const instrument1 = {
                     for (let i = 0; i < dis_codes.length; i++) {
                         const option = document.createElement("option");
                         option.value = dis_codes[i];
-                        option.text = (districts[dis_codes[i]] as KeyString)[lang];
+                        option.text = dis_codes[i] + ": " + (districts[dis_codes[i]] as KeyString)[lang];
                         dis_el.appendChild(option);
                     }
                 }
@@ -156,7 +155,7 @@ export const instrument1 = {
                         for (let i = 0; i < set_codes.length; i++) {
                             const option = document.createElement("option");
                             option.value = set_codes[i];
-                            option.text = (seldist.settlements[set_codes[i]] as KeyString)[lang];
+                            option.text = set_codes[i] + ": " + (seldist.settlements[set_codes[i]] as KeyString)[lang];
                             set_el.appendChild(option);
                         }
                     }
