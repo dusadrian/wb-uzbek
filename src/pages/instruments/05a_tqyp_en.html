@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8" />
+        <title>WorldBank</title>
+        <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src http: https: data: ; script-src 'self';" />
+        <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; img-src http: https: data: ; script-src 'self';" />
+        <link href="../../../dist/main.css" rel="stylesheet">
+        <link rel="stylesheet" href="../../../node_modules/flatpickr/dist/flatpickr.min.css">
+    </head>
+
+    <body class="relative max-h-screen">
+        <div class="fixed top-0 right-0 left-0 bg-slate-200 h-10 z-50 shadow" id="header">
+        </div>
+        <div class="relative w-full mt-10 pb-10 h-[calc(100vh-5.5rem)] overflow-y-auto">
+
+            <form class="px-6 mt-10">
+                <div class="grid grid-cols-12 border">
+                    <div class="col-span-1 bg-stone-200 p-2"></div>
+                    <div class="col-span-11 p-2">
+                        <h1 class="text-4xl text-gray-700 pl-4 tracking-wide mb-4">Trace questionnaire about the young person who left the alternative care system</h1>
+                    </div>
+                </div>
+
+                <p class="mt-4 mb-2 text-xl">INTRODUCTION </p>
+                <p class="mb-2">This questionnaire aims to identify and reconnect with young people who have left the alternative care system during the previous year.</p>
+                <p class="mb-2">Please complete this questionnaire separately for each young person (18+) who in the last 12 months left the alternative child care system, regardless of the type of service they receive (residential or family-based). This questionnaire will be completed for young persons who were in the following types of services of the alternative child care system: Mehribonlik houses, Muruvvat houses for children with disabilities, family-type children’s homes, SOS children’s villages/families. For specialized boarding schools, this questionnaire should be filled in for each young person (16+) who completed their studies in boarding schools during the previous year.</p>
+                
+
+                <div class="grid grid-cols-2 gap-4 items-center mt-12">
+                    <div>REG. Region</div>
+                    <div>
+                        <input type="text" id="reg" name="reg"
+                               class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                    <div>DIS. District</div>
+                    <div>
+                        <input type="text" id="dis" name="dis"
+                               class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                    <div>DATA. Completion date of questionnaire</div>
+                    <div>
+                        <input type="text" id="data" name="data"
+                               class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                    </div>
+                </div>
+
+                <h2 class="mt-10 mb-4 text-2xl font-bold text-gray-700">1. THE PERSON WHO COMPLETED THE INFORMATION ABOUT THIS YOUNG PERSON</h2>
+
+                <div class="grid grid-cols-2 gap-4 items-center mt-4">
+                    <div>OMR1. Name</div>
+                    <div>
+                        <input type="text" id="omr1" name="omr1"
+                               class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 gap-4 items-center mt-4">
+                    <div>OMR2. Patronymics</div>
+                    <div>
+                        <input type="text" id="omr2" name="omr2"
+                               class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 gap-4 items-center mt-4">
+                    <div>OMR3. Surname</div>
+                    <div>
+                        <input type="text" id="omr3" name="omr3"
+                               class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-2 gap-4 items-center mt-4">
+                    <div>
+                        OMR4. Position/role <small class="block italic text-red-500">Fill in case manager if the person plays this role.</small>
+                    </div>
+                    <div>
+                        <input type="text" id="omr4" name="omr4"
+                               class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 gap-4 items-center mt-4">
+                    <div>
+                        OMR5. Profession </div>
+                    <div>
+                        <input type="text" id="omr5" name="omr5"
+                               class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-2 gap-4 items-center mt-4">
+                    <div>
+                        OMR6. Phone </div>
+                    <div>
+                        <input type="text" id="omr6" name="omr6"
+                               class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-2 gap-4 items-center mt-4">
+                    <div>
+                        OMR7. E-mail</div>
+                    <div>
+                        <input type="text" id="omr7" name="omr7"
+                               class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-2 gap-4 items-center mt-4">
+                    <div>OMR9. Name of the institution where the person works</div>
+                    <div>
+                        <input type="text" id="omr9" name="omr9"
+                               class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                    </div>
+                </div>
+
+                <h2 class="mt-10 mb-4 text-2xl font-bold text-gray-700">2. PERSONAL INFORMATION ABOUT THE YOUNG PERSON</h2>
+
+
+                <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                    <div>PI1. Birth certificate/Passport/Identification document</div>
+                    <div>
+                        <input type="text" id="pi1" name="pi1"
+                               class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                    </div>
+                </div>
+
+                <p class="italic text-red-500">Fill in the person&#39;s birth certification/ID/Passport Number. If the person does not have one, fill in 0 (zero).</p>
+
+                <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                    <div>PI1a. Name</div>
+                    <div>
+                        <input type="text" id="pi1a" name="pi1a"
+                               class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                    <div>PI1b Patronymics</div>
+                    <div>
+                        <input type="text" id="pi1b" name="pi1b"
+                               class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                    <div>PI1c. Surname</div>
+                    <div>
+                        <input type="text" id="pi1c" name="pi1c"
+                               class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                    <div class="col-span-1">PI2. Gender</div>
+                    <div class="col-span-1 flex gap-4">
+                        <div class="flex items-center">
+                            <input id="pi2-1" type="radio" value="1" name="pi2" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                            <label for="pi2-1" class="ms-2 text-sm text-gray-900">1. Male</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="pi2-2" type="radio" value="0" name="pi2" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                            <label for="pi2-2" class="ms-2 text-sm text-gray-900">2. Female</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                    <div>PI3. Date of birth (dd/mm/yyyy)</div>
+                    <div>
+                        <input type="text" id="pi3" name="pi3"
+                               class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                    <div>
+                        <p>PI3a. Person&#39;s age (at the date of the monitoring round)</p>
+                    </div>
+                    <div>
+                        <input type="text" id="pi3a" name="pi3a"
+                               class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                    <div>PI4a. Place of birth</div>
+                    <div class="flex items-center">
+                        <input id="pi4a_dk" name="pi4a_dk" type="checkbox" value="9" class="w-4 h-4 text-blue-600 border-gray-400 rounded focus:ring-blue-500 disabled:bg-gray-100">
+                        <label for="pi4a_dk" class="ms-2 text-sm text-gray-900">9. Not known</label>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-2 items-center gap-4 mt-6">
+                    <div>PI4b. Region</div>
+                    <div>
+                        <select id="pi4b" name="pi4b"
+                                class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+                            <option value="-9" class="t_choose">--- choose ---</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-2 items-center gap-4 mt-6">
+                    <div>PI4c. District</div>
+                    <div>
+                        <select id="pi4c" name="pi4c"
+                                class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+                            <option value="-9" class="t_choose">--- choose ---</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 items-center gap-4 mt-6">
+                    <div>PI4d. Settlement</div>
+                    <div>
+                        <select id="pi4d" name="pi4d"
+                                class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+                            <option value="-9" class="t_choose">--- choose ---</option>
+                        </select>
+
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                    <div>PI4e. Type of settlement</div>
+                    <div class="flex gap-4">
+                        <input type="text" id="pi4e" name="pi4e"
+                               class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                    </div>
+                </div>
+
+
+                <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                    <div class="col-span-1">PI5. Child&#39;s ethnicity (nationality)</div>
+                    <div class="col-span-1 flex flex-col gap-2">
+                        <div class="flex items-center">
+                            <input id="pi5-1" type="radio" value="1" name="pi2" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                            <label for="pi5-1" class="ms-2 text-sm text-gray-900">1. Uzbek</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="pi5-2" type="radio" value="2" name="pi5" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                            <label for="pi5-2" class="ms-2 text-sm text-gray-900">2. Russian</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="pi5-3" type="radio" value="3" name="pi5" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                            <label for="pi5-3" class="ms-2 text-sm text-gray-900">3. Kazakh</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="pi5-4" type="radio" value="4" name="pi5" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                            <label for="pi5-4" class="ms-2 text-sm text-gray-900">4. Tajik</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="pi5-5" type="radio" value="5" name="pi5" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                            <label for="pi5-5" class="ms-2 text-sm text-gray-900">5. Tatar</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="pi5-6" type="radio" value="6" name="pi5" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                            <label for="pi5-6" class="ms-2 text-sm text-gray-900">6. Karakalpaks</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="pi5-7" type="radio" value="7" name="pi5" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                            <label for="pi5-7" class="ms-2 text-sm text-gray-900">7. Kyrgyz</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="pi5-8" type="radio" value="8" name="pi5" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                            <label for="pi5-8" class="ms-2 text-sm text-gray-900">8. Korean</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="pi5-9" type="radio" value="9" name="pi5" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                            <label for="pi5-9" class="ms-2 text-sm text-gray-900">9. Other</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="pi5-10" type="radio" value="0" name="pi5" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                            <label for="pi5-20" class="ms-2 text-sm text-gray-900">0. Not declared/unknown</label>
+                        </div>
+                    </div>
+                </div>
+
+                <p class="mt-6"><b>The last institution where the young person lived before leaving the child care system, according to the corresponding Register</b></p>
+
+                <div class="grid grid-cols-2 items-center gap-4 mt-6">
+                    <div>PI6r. Region</div>
+                    <div>
+                        <select id="pi6r" name="pi6r"
+                                class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+                            <option value="-9" class="t_choose">--- choose ---</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-2 items-center gap-4 mt-6">
+                    <div>PI6d. District</div>
+                    <div>
+                        <select id="pi6d" name="pi6d"
+                                class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+                            <option value="-9" class="t_choose">--- choose ---</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                    <div>PI6. Institution</div>
+                    <div class="flex gap-4">
+                        <select id="pi6" name="pi6"
+                                class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+                            <option value="-9" class="t_choose">--- choose ---</option>
+                        </select>
+                    </div>
+                </div>
+
+
+                <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                    <div>PI6a. Service code</div>
+                    <div>
+                        <input type="text" id="pi6a" name="pi6a"
+                               class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                    <div>PI6b. Service name</div>
+                    <div>
+                        <input type="text" id="pi6b" name="pi6b"
+                               class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                    </div>
+                </div>
+
+
+
+                <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                    <div>PI6c. Type of institution</div>
+                    <div>
+                        <select id="pi6c" name="pi6c"
+                                class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100">
+                            <option selected value="-9" class="t_choose">------</option>
+                            <optgroup label="Childcare institutions:">
+                                <option value="11">11. Mehribonlik house</option>
+                                <option value="12">12. Muruvat house for children with disabilities</option>
+                                <option value="13">13. Family-type home</option>
+                                <option value="14">14. SOS Children's Village</option>
+                            </optgroup>
+                            <optgroup label="Boarding schools:">
+                                <option value="21">21. Type I-II for deaf or with hearing impairments children</option>
+                                <option value="22">22. Type III-IV for blind or visually impaired children</option>
+                                <option value="23">23. Type V for children with severe speech impairments</option>
+                                <option value="24">24. Type VI for children with musculoskeletal disorders</option>
+                                <option value="25">25. Type VII for children with children with slow mental development/mental disorders</option>
+                                <option value="26">26. Type VIII for children with intellectual disabilities</option>
+                            </optgroup>
+                        </select>
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                    <div>PI7. Date when the person left the childcare system (dd/mm/yyyy)</div>
+                    <div>
+                        <input type="text" id="pi7" name="pi7"
+                               class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                    <div>PI8. Total time spent within the child care system (in months)</div>
+                    <div>
+                        <input type="text" id="pi8" name="pi8"
+                               class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                    </div>
+                </div>
+
+                <p class="mt-6">PI9. Current domicile:</p>
+                <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                    <div class="col-span-1">a. Do they live…?</div>
+                    <div class="col-span-1 flex flex-col gap-2">
+                        <div class="flex items-center">
+                            <input id="pi10a-1" type="radio" value="1" name="pi9a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                            <label for="pi10-1" class="ms-2 text-sm text-gray-900">1. In the community, with family/relatives</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="pi10a-2" type="radio" value="2" name="pi9a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                            <label for="pi10-2" class="ms-2 text-sm text-gray-900">2. In the community, independently</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="pi10a-3" type="radio" value="3" name="pi9a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                            <label for="pi10-3" class="ms-2 text-sm text-gray-900">3. In an institution / residential service for adults</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="pi10a-4" type="radio" value="4" name="pi9a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                            <label for="pi10-4" class="ms-2 text-sm text-gray-900">4. Abroad</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="pi10a-5" type="radio" value="5" name="pi9a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                            <label for="pi10-5" class="ms-2 text-sm text-gray-900">5. Not known</label>
+                        </div>
+                    </div>
+                </div>
+
+                <p>b. Legal domicile - City/Village:</p>
+                <div class="grid grid-cols-2 items-center gap-4 mt-6">
+                    <div class="ml-4">c. Region:</div>
+                    <div>
+                        <select id="pi9c" name="pi9c"
+                                class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+                            <option value="-9" class="t_choose">--- choose ---</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-2 items-center gap-4 mt-6">
+                    <div class="ml-4">(Automatically retrieved from CM11b)</div>
+                    <div>
+                        <select id="pi9d" name="pi9d"
+                                class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+                            <option value="-9" class="t_choose">--- choose ---</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 items-center gap-4 mt-6">
+                    <div class="ml-4">h. Settlement</div>
+                    <div>
+                        <select id="pi9h" name="pi9h"
+                                class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+                            <option value="-9" class="t_choose">--- choose ---</option>
+                        </select>
+
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                    <div class="ml-4">i. Type of settlement</div>
+                    <div class="flex gap-4">
+                        <input type="text" id="pi9i" name="pi9i"
+                               class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                    <div class="ml-4">e. Address:</div>
+                    <div>
+                        <input type="text" id="pi9e" name="pi9e"
+                               class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                    <div class="ml-4">f. Phone number:</div>
+                    <div>
+                        <input type="text" id="pi9f" name="pi9f"
+                               class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                    </div>
+                </div>
+
+                <small class="block italic mt-6">If living in an institution:</small>
+                <div class="grid grid-cols-2 gap-4 items-center mt-2">
+                    <div>g. Name of the institution</div>
+                    <div>
+                        <input type="text" id="pi9g" name="pi9g"
+                               class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                    <div class="col-span-1">PI10. Does the person have children?</div>
+                    <div class="col-span-1 flex gap-4">
+                        <div class="flex items-center">
+                            <input id="pi10-1" type="radio" value="1" name="pi10" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                            <label for="pi10-1" class="ms-2 text-sm text-gray-900">1. Yes</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="pi10-2" type="radio" value="0" name="pi10" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                            <label for="pi10-2" class="ms-2 text-sm text-gray-900">0. No</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                    <div>PI10a. How many children does he/she has?</div>
+                    <div>
+                        <input type="text" id="pi10a" name="pi10a"
+                               class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                    <div>PI10b. How many of them are currently placed in the child care system?</div>
+                    <div>
+                        <input type="text" id="pi10b" name="pi10b"
+                               class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                    </div>
+                </div>
+
+                <h2 class="mt-10 mb-4 text-2xl font-bold text-gray-700">3. HOUSING</h2>
+
+                <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                    <div class="col-span-1">PR1. Has the young person had any legal entitlement to their parents&#39; or other persons&#39; properties?</div>
+                    <div class="col-span-1 flex gap-4">
+                        <div class="flex items-center">
+                            <input id="pr1-1" type="radio" value="1" name="pr1" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                            <label for="pr1-1" class="ms-2 text-sm text-gray-900">1. Yes</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="pr1-2" type="radio" value="0" name="pr1" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                            <label for="pr1-2" class="ms-2 text-sm text-gray-900">0. No</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                    <div class="col-span-1">PR2. Has the young person obtained their property rights officially?</div>
+                    <div class="col-span-1 flex flex-col gap-2">
+                        <div class="flex items-center">
+                            <input id="pr2-1" type="radio" value="1" name="pr2" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                            <label for="pr2-1" class="ms-2 text-sm text-gray-900">1. Has fully obtained their property rights</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="pr2-2" type="radio" value="2" name="pr2" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                            <label for="pr2-2" class="ms-2 text-sm text-gray-900">2. Has obtained some, but not all, of their property rights</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="pr2-3" type="radio" value="3" name="pr2" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                            <label for="pr2-3" class="ms-2 text-sm text-gray-900">3. Has not obtained any of their property rights</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                    <div class="col-span-1">PR3. Has the young person taken any steps to obtain the remainder of their property rights?</div>
+                    <div class="col-span-1 flex gap-4">
+                        <div class="flex items-center">
+                            <input id="pr3-1" type="radio" value="1" name="pr3" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                            <label for="pr3-1" class="ms-2 text-sm text-gray-900">1. Yes</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="pr3-2" type="radio" value="0" name="pr3" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                            <label for="pr3-2" class="ms-2 text-sm text-gray-900">0. No</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                    <div class="col-span-1">PR4. Has the young person received any legal or/and financial support to help him/her obtain the remainder of his/her property rights?</div>
+                    <div class="col-span-1 flex gap-4">
+                        <div class="flex items-center">
+                            <input id="pr4-1" type="radio" value="1" name="pr4" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                            <label for="pr4-1" class="ms-2 text-sm text-gray-900">1. Yes</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="pr4-2" type="radio" value="0" name="pr4" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                            <label for="pr4-2" class="ms-2 text-sm text-gray-900">0. No</label>
+                        </div>
+                    </div>
+                </div>
+              
+
+            </form>
+
+            <footer id="footer" class="fixed bottom-0 w-full h-12 bg-slate-200 shadow">
+                <div class="flex justify-center h-full items-center">
+                    <button type="button"
+                            class="flex items-center gap-2 text-white bg-menuButton/80 hover:bg-menuButton focus:ring-4 focus:ring-menuButton/50 font-medium rounded-lg text-sm px-3 py-1"
+                            id="salveazaForm">
+                        <svg class="fill-white w-4 h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                            <!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                            <path
+                                  d="M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V173.3c0-17-6.7-33.3-18.7-45.3L352 50.7C340 38.7 323.7 32 306.7 32H64zm0 96c0-17.7 14.3-32 32-32H288c17.7 0 32 14.3 32 32v64c0 17.7-14.3 32-32 32H96c-17.7 0-32-14.3-32-32V128zM224 288a64 64 0 1 1 0 128 64 64 0 1 1 0-128z" />
+                        </svg>
+                        <span class="t_button_save"></span>
+                    </button>
+                    <button type="button"
+                            class="flex items-center gap-2 text-white bg-red-500 hover:bg-red-500 focus:ring-4 focus:ring-red-500/50 font-medium rounded-lg text-sm px-3 py-1 ml-4"
+                            id="debugForm">
+                        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="bug" class="fill-white w-4 h-4" role="img" xmlns="http://www.w3.org/2000/svg"
+                             viewbox="0 0 512 512">
+                            <path fill="currentColor"
+                                  d="M511.988 288.9c-.478 17.43-15.217 31.1-32.653 31.1H424v16c0 21.864-4.882 42.584-13.6 61.145l60.228 60.228c12.496 12.497 12.496 32.758 0 45.255-12.498 12.497-32.759 12.496-45.256 0l-54.736-54.736C345.886 467.965 314.351 480 280 480V236c0-6.627-5.373-12-12-12h-24c-6.627 0-12 5.373-12 12v244c-34.351 0-65.886-12.035-90.636-32.108l-54.736 54.736c-12.498 12.497-32.759 12.496-45.256 0-12.496-12.497-12.496-32.758 0-45.255l60.228-60.228C92.882 378.584 88 357.864 88 336v-16H32.666C15.23 320 .491 306.33.013 288.9-.484 270.816 14.028 256 32 256h56v-58.745l-46.628-46.628c-12.496-12.497-12.496-32.758 0-45.255 12.498-12.497 32.758-12.497 45.256 0L141.255 160h229.489l54.627-54.627c12.498-12.497 32.758-12.497 45.256 0 12.496 12.497 12.496 32.758 0 45.255L424 197.255V256h56c17.972 0 32.484 14.816 31.988 32.9zM257 0c-61.856 0-112 50.144-112 112h224C369 50.144 318.856 0 257 0z">
+                            </path>
+                        </svg>&nbsp;debug</button>
+                </div>
+            </footer>
+
+        </div>
+    </body>
+
+</html>

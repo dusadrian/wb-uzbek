@@ -155,6 +155,14 @@ window.addEventListener("DOMContentLoaded", () => {
         case 'instruments/02_cibs_ru.html':
             instrumentCIBS();
             break;
+        case 'instruments/05a_tqyp.html':
+            TQYP();
+            break;
+        case 'instruments/05a_tqyp_en.html':
+        case 'instruments/05a_tqyp_uz.html':
+        case 'instruments/05a_tqyp_ru.html':
+            instrumentTQYP();
+            break;
     }
 
 });
@@ -565,6 +573,32 @@ const instrumentCIBS = () => {
         return await import("./pages/instruments/02_cibs_instrument");
     };
     importFile().then(result => result.instrument2.init().catch(error => {
+        console.log(error);
+    }));
+};
+
+// Instrument 5a Trace questionnaire about the young person who left the alternative care system
+const TQYP = () => {
+
+    topMenu('localCoordinator/01_dashboard');
+
+    translatePage();
+    const importFile = async () => {
+        return await import("./pages/instruments/05a_tqyp");
+    };
+    importFile().then(result => result.tqyp.init().catch(error => {
+        console.log(error);
+    }));
+};
+const instrumentTQYP = () => {
+
+    topMenu('instruments/05a_tqyp');
+
+    translatePage();
+    const importFile = async () => {
+        return await import("./pages/instruments/05a_tqyp_instrument");
+    };
+    importFile().then(result => result.instrument5a.init().catch(error => {
         console.log(error);
     }));
 };

@@ -375,6 +375,37 @@ ipcMain.on('deleteYPLCS', (event, args) => {
     });
 });
 
+// Instrument 5a
+const goToTQYPList = () => {
+    const newPage = path.join(__dirname, "../src/pages/instruments/05a_tqyp.html");
+    mainWindow.loadURL("file://" + newPage);
+};
+ipcMain.on('getTQYP', () => {
+    database.tqypList(db).then((result) => {
+        mainWindow.webContents.send("tqyp", result);
+    });
+});
+ipcMain.on('deleteTQYP', (event, args) => {
+    // save to DB
+    dialog.showMessageBox(mainWindow, {
+        type: 'warning',
+        message: i18n.__('Are you sure you want to delete this item?'),
+        buttons: ['Yes', 'No']
+    }).then((result) => {
+        if (result.response === 0) {
+            database.deleteTQYP(args.id, db).then(() => {
+                // send message
+                dialog.showMessageBox(mainWindow, {
+                    type: 'info',
+                    message: i18n.__('Item deleted.'),
+                }).then(() => {
+                    goToTQYPList();
+                });
+            });
+        }
+    });
+});
+
 // Instrument 7
 const goToFTCHList = () => {
     const newPage = path.join(__dirname, "../src/pages/instruments/07_ftch.html");
@@ -497,6 +528,9 @@ const goToInstrument = (instrument: string, id: string) => {
             break;
         case "CIBS":
             goToCIBS(id);
+            break;
+        case "TQYP":
+            goToTQYP(id);
             break;
         default:
             dialog.showMessageBox(mainWindow, {
@@ -810,6 +844,28 @@ const goToCIBS = (id: string) => {
         }
     });
 }
+const goToTQYP = (id: string) => {
+    const newPage = path.join(__dirname, "../src/pages/instruments/05a_tqyp_" + appSession.language + ".html");
+    mainWindow.loadURL("file://" + newPage);
+    database.getUserData(appSession.userId).then((userDataArray) => {
+        if (id) {
+            mainWindow.webContents.once("did-finish-load", () => {
+                database.instrumentGet(id, 'tqyp', db).then((questions) => {
+                    mainWindow.webContents.send("instrumentDataReady", {
+                        questions: questions,
+                        userData: userDataArray[0],
+                    });
+                });
+            });
+        } else {
+            mainWindow.webContents.once("did-finish-load", () => {
+                mainWindow.webContents.send("instrumentDataReady", {
+                    userData: userDataArray[0],
+                });
+            });
+        }
+    });
+}
 
 // save instrument
 ipcMain.on('saveInstrument', (event, args) => {
@@ -845,6 +901,10 @@ ipcMain.on('saveInstrument', (event, args) => {
             }
             if (args.table === 'cibs') {
                 goToCIBSList();
+                return;
+            }
+            if (args.table === 'tqyp') {
+                goToTQYPList();
                 return;
             }
         });

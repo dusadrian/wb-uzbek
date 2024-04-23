@@ -399,7 +399,7 @@ export const yplcsList = async (db: DuckDB.Database) => {
 
         db.all(sql, (error, result) => {
             if (error) {
-                console.log("===== Error get instrument PFQ (Patronat Family Questionnaire) =====");
+                console.log("===== Error get instrument YPLSC =====");
                 console.log(error);
             }
             resolve(result as Array<Instrument>);
@@ -423,3 +423,49 @@ export const deleteYPLCS = async (id: string, db: DuckDB.Database) => {
     });
     return await connection;
 }
+
+// Instrument 5a
+export const tqypList = async (db: DuckDB.Database) => {
+    const connection = new Promise<Array<Instrument>>((resolve) => {
+
+        const sql = `
+        SELECT c.id,
+            c.uuid,
+            MAX(CASE WHEN variable = 'ptr1' THEN value ELSE NULL END) ptr1,
+            MAX(CASE WHEN variable = 'ptr2a' THEN value ELSE NULL END) ptr2a,
+            MAX(CASE WHEN variable = 'ptr2b' THEN value ELSE NULL END) ptr2b,
+            MAX(CASE WHEN variable = 'ptr2c' THEN value ELSE NULL END) ptr2c,
+        FROM instrument_tqyp AS c
+        LEFT JOIN values_tqyp AS v ON v.instrument_id = c.id
+        GROUP BY c.id, c.uuid;`;
+
+        db.all(sql, (error, result) => {
+            if (error) {
+                console.log("===== Error get instrument TQYP (Trace questionnaire about the young person who left the alternative care system) =====");
+                console.log(error);
+            }
+            resolve(result as Array<Instrument>);
+        });
+    });
+    return await connection;
+}
+export const deleteTQYP = async (id: string, db: DuckDB.Database) => {
+    const connection = new Promise<boolean>((resolve) => {
+        db.run(`DELETE FROM instrument_tqyp WHERE id = '${id}'`, (error) => {
+            if (error) {
+                console.log(error);
+            }
+            db.run(`DELETE FROM values_tqyp WHERE instrument_id = '${id}'`, (error) => {
+                if (error) {
+                    console.log(error);
+                }
+                resolve(true);
+            });
+        });
+    });
+    return await connection;
+}
+
+
+
+
