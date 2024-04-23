@@ -213,7 +213,7 @@ export const instrument2 = {
     }
 }
 
-// const lk22_2 = ['lk22_2_1', 'lk22_2_2', 'lk22_2_3', 'lk22_2_4', 'lk22_2_5'];
+const lk22_2 = ['lk22_2_1', 'lk22_2_2', 'lk22_2_3', 'lk22_2_4', 'lk22_2_5'];
 
 const validateChestionar = (_questions: QuestionObjectType) => {
 
@@ -314,227 +314,78 @@ util.listen("sa1a", "myChange", () => {
 })
 
 
-// function check_lk22_2(): boolean {
-//     const lk22_2_1 = util.htmlElement("lk22_2_1");
-//     const lk22_2_7_1 = util.htmlElement("lk22_2_7-1");
-//     const lk22_2_7_0 = util.htmlElement("lk22_2_7-0");
 
-//     const suma = util.makeSumFromElements(lk22_2);
+const prehealth = [
+    "prehealth5a1", "prehealth5a2", "prehealth5a3", "prehealth5a4", "prehealth5a5",
+    "prehealth5a6", "prehealth5a7", "prehealth5a8", "prehealth5a9"
+]
 
-//     const error = locales[lang]['At_least_one_disability'];
-//     errorHandler.removeArrayError(lk22_2, error);
+util.listen("prehealth5a90", "change", () => {
+    if (util.htmlElement("prehealth5a90").checked) {
+        prehealth.forEach((el) => {
+            util.htmlElement(el).checked = false;
+            instrument.questions[el].value = "0";
+        })
+    }
+})
 
-//     if (suma == 0) {
-//         errorHandler.addArrayError(lk22_2, error);
-//         lk22_2_1.scrollIntoView({ behavior: "smooth", block: "center", inline: "nearest" });
-//     }
-//     else {
-//         if (suma > 1) {
-//             lk22_2_7_1.checked = true;
-//             lk22_2_7_0.checked = false;
-//         } else {
-//             lk22_2_7_1.checked = false;
-//             lk22_2_7_0.checked = true;
-//         }
-
-//         instrument.questions["lk22_2_7"].value = Number(suma > 1).toString();
-//     }
-
-//     return(suma > 0);
-// }
-
-// util.listenArray(lk22_2, "myChange", check_lk22_2);
-
-
-// util.radioIDs("cm1a").forEach((elem) => {
-//     util.listen(elem, "myChange", () => {
-//         const val = util.htmlElement(elem).value;
-
-//         if (val == "1") {
-//             const cm1c1 = util.htmlElement("cm1c-1-disabled");
-//             if (cm1c1) {
-//                 cm1c1.removeAttribute("disabled");
-//                 cm1c1.id = "cm1c-1";
-//             }
-//         }
-//         else if (val == "2") {
-//             const cm1c1 = util.htmlElement("cm1c-1");
-//             cm1c1.setAttribute("disabled", "true");
-//             if (cm1c1.checked) {
-//                 cm1c1.checked = false;
-//                 instrument.questions["cm1c"].value = "-9";
-//             }
-
-//             cm1c1.id = "cm1c-1-disabled";
-//         }
-//         else {
-//             const cm1c1 = util.htmlElement("cm1c-1");
-//             const cm1c2 = util.htmlElement("cm1c-2");
-//             const cm1c3 = util.htmlElement("cm1c-3");
-//             cm1c1.checked = false;
-//             cm1c2.checked = false;
-//             cm1c3.checked = true;
-//             instrument.questions["cm1c"].value = "3";
-//         }
-//     });
-// });
-
-
-// util.radioIDs("ct1a").forEach((elem) => {
-//     util.listen(elem, "myChange", () => {
-//         const val = util.htmlElement(elem).value;
-
-//         if (val == "1") {
-//             const ct1c1 = util.htmlElement("ct1c-1-disabled");
-//             if (ct1c1) {
-//                 ct1c1.removeAttribute("disabled");
-//                 ct1c1.id = "ct1c-1";
-//             }
-//         }
-//         else if (val == "2" || val == "4") {
-//             const ct1c1 = util.htmlElement("ct1c-1");
-//             ct1c1.setAttribute("disabled", "true");
-//             if (ct1c1.checked) {
-//                 ct1c1.checked = false;
-//                 instrument.questions["ct1c"].value = "-9";
-//             }
-
-//             ct1c1.id = "ct1c-1-disabled";
-//         }
-//         else {
-//             const ct1c1 = util.htmlElement("ct1c-1");
-//             const ct1c2 = util.htmlElement("ct1c-2");
-//             const ct1c3 = util.htmlElement("ct1c-3");
-//             ct1c1.checked = false;
-//             ct1c2.checked = false;
-//             ct1c3.checked = true;
-//             instrument.questions["ct1c"].value = "3";
-//         }
-//     });
-// });
-
-
-// util.listenArray(['qhouse4a', 'qhouse4b'], "myChange", () => {
-//     if (instrument.questions.qhouse4a.value != "-9" && instrument.questions.qhouse4b.value != "-9") {
-//         const value = (
-//             Number(instrument.questions.qhouse4a.value) +
-//             Number(instrument.questions.qhouse4b.value)
-//         ).toString();
-
-//         util.setValue("qhouse4", value);
-//         util.trigger("qhouse4", "change");
-//     }
-// });
-
-
-// //qhouse4 = qhouse4a + qhouse4b
-// const qhouse4Array = ['qhouse4a', 'qhouse4b'];
-// const qhouse4ArrayFull = [...qhouse4Array, 'qhouse4'];
-// util.listenArray(qhouse4ArrayFull, "change", () => {
-//     if (util.inputsHaveValue(qhouse4ArrayFull)) {
-//         const qhouse4 = util.getInputNumericValue('qhouse4');
-
-//         errorHandler.removeArrayError(qhouse4Array, '4 = 4a + 4b')
-//         if (qhouse4 != util.makeSumFromElements(qhouse4Array)) {
-//             errorHandler.addArrayError(qhouse4Array, '4 = 4a + 4b')
-//         }
-//     }
-// });
-
-// util.listen("sh1", "myChange", () => {
-//     const sh1value = util.getInputDecimalValue('sh1');
-
-//     const error = locales[lang]['Value_up_to_ten'];
-//     errorHandler.removeError('sh1', error);
-
-//     if (sh1value > 10) {
-//         instrument.questions["sh1"].value = '-9';
-//         errorHandler.addError('sh1', error);
-//     }
-//     else {
-//         instrument.questions["sh1"].value = sh1value.toString();
-//     }
-
-//     // dupa ce dispare eroarea, mai trebuie facut un dispatch change pe orice element
-//     // ca sa treaca prin activatorii de la tabelul sh3
-//     util.trigger('sh2-1', 'change');
-//     util.focus('sh2-1');
-//     util.blur('sh2-1');
-//     document.getElementsByName('sh2')[0].scrollIntoView({ behavior: "instant", block: "center", inline: "center" });
-// });
+util.listen(prehealth, "change", () => {
+    if (util.makeSumFromElements(prehealth) > 0) {
+        util.htmlElement("prehealth5a90").checked = false;
+        instrument.questions["prehealth5a90"].value = "0";
+    }
+});
 
 
 
+function check_lk22_2(): boolean {
+    const lk22_2_1 = util.htmlElement("lk22_2_1");
+    const lk22_2_7_1 = util.htmlElement("lk22_2_7-1");
+    const lk22_2_7_0 = util.htmlElement("lk22_2_7-0");
 
-// const ewm = ['ewm1', 'ewm2', 'ewm3', 'ewm4'];
-// ewm.forEach((el) => {
-//     document.querySelectorAll('input[name="' + el + '"]').forEach((elem) => {
-//         elem.addEventListener("myChange", function() {
-//             let suma = 0;
-//             ewm.forEach((item) => {
-//                 const valoare = Number(instrument.questions[item].value);
-//                 if (valoare > 0) {
-//                     suma += valoare;
-//                 }
-//             });
+    const suma = util.makeSumFromElements(lk22_2);
 
-//             const ewm5_0 = document.getElementById("ewm5-0") as HTMLInputElement;
-//             const ewm5_1 = document.getElementById("ewm5-1") as HTMLInputElement;
+    const error = locales[lang]['At_least_one_disability'];
+    errorHandler.removeArrayError(lk22_2, error);
 
-//             if (suma > 0) {
-//                 ewm5_1.checked = true;
-//                 ewm5_0.checked = false;
-//             }
-//             else {
-//                 ewm5_1.checked = false;
-//                 ewm5_0.checked = true;
-//             }
+    if (suma == 0) {
+        errorHandler.addArrayError(lk22_2, error);
+        lk22_2_1.scrollIntoView({ behavior: "smooth", block: "center", inline: "nearest" });
+    }
+    else {
+        if (suma > 1) {
+            lk22_2_7_1.checked = true;
+            lk22_2_7_0.checked = false;
+        } else {
+            lk22_2_7_1.checked = false;
+            lk22_2_7_0.checked = true;
+        }
 
-//             instrument.questions["ewm5"].value = Number(suma > 0).toString();
-//         });
-//     });
-// });
+        instrument.questions["lk22_2_7"].value = Number(suma > 1).toString();
+    }
 
-// const cmgt1a = document.getElementById('cmgt1a') as HTMLInputElement;
-// cmgt1a.addEventListener("myChange", function() {
+    return(suma > 0);
+}
 
-//     const start = document.getElementById("data") as HTMLInputElement;
-//     const end = document.getElementById("cmgt1a") as HTMLInputElement;
-//     const cmgt1b = document.getElementById("cmgt1b") as HTMLInputElement;
-
-//     const startdate = new Date(start.value.replace(/(\d{2})\/(\d{2})\/(\d{4})/,'$3-$2-$1'));
-//     const enddate = new Date(end.value.replace(/(\d{2})\/(\d{2})\/(\d{4})/,'$3-$2-$1'));
+util.listen(lk22_2, "myChange", check_lk22_2);
 
 
-//     let monthDiff = (enddate.getFullYear() - startdate.getFullYear()) * 12 + enddate.getMonth() - startdate.getMonth();
-//     if (monthDiff > 0 && enddate.getDate() < startdate.getDate()) {
-//         monthDiff--;
-//     }
+const sk3 = ["sk3_1", "sk3_2"]
+util.listen(sk3, "change", () => {
+    if (util.inputsHaveValue(sk3)) {
+        const suma = Number(util.makeInputSumDecimal(sk3));
+        const message = locales[lang]['At_least_one_brother_or_sister'];
+        const sk3_1 = util.htmlElement("sk3_1");
+        const sk3_2 = util.htmlElement("sk3_2");
+        errorHandler.removeError(sk3, message);
 
-//     cmgt1b.value = monthDiff.toString();
-//     instrument.questions["cmgt1b"].value = cmgt1b.value;
-//     cmgt1b.dispatchEvent(new Event('change'));
-
-// });
-
-// const sk3 = ["sk3_1", "sk3_2"]
-// sk3.forEach(item => {
-//     (document.getElementById(item) as HTMLInputElement).addEventListener('change', () => {
-//         if (util.inputsHaveValue(sk3)) {
-//             const suma = Number(util.makeInputSumDecimal(sk3));
-//             const error = locales[lang]['At_least_one_brother_or_sister'];
-//             const sk3_1 = document.getElementById("sk3_1") as HTMLInputElement;
-//             const sk3_2 = document.getElementById("sk3_2") as HTMLInputElement;
-//             errorHandler.removeArrayError(sk3, error);
-
-//             if (suma == 0) {
-//                 errorHandler.addArrayError(sk3, error);
-//                 instrument.questions["sk3_1"].value = "-9";
-//                 instrument.questions["sk3_2"].value = "-9";
-//             } else {
-//                 instrument.questions["sk3_1"].value = sk3_1.value;
-//                 instrument.questions["sk3_2"].value = sk3_2.value;
-//             }
-//         }
-//     })
-// });
+        if (suma == 0) {
+            errorHandler.addError(sk3, message);
+            instrument.questions["sk3_1"].value = "-9";
+            instrument.questions["sk3_2"].value = "-9";
+        } else {
+            instrument.questions["sk3_1"].value = sk3_1.value;
+            instrument.questions["sk3_2"].value = sk3_2.value;
+        }
+    }
+});
