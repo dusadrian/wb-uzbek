@@ -59,16 +59,13 @@ window.addEventListener("DOMContentLoaded", () => {
             institutionDetails();
             break;
         case 'local/03_users.html':
-            localCoordinatorUsers();
+            localUsers();
             break;
         case 'local/04_add_user.html':
-            localCoordinatorAddUser();
+            localAddUser();
             break;
         case 'local/05_edit_user.html':
-            localCoordinatorEditUser();
-            break;
-        case 'evaluator/01_dashboard.html':
-            evaluatorDashboard();
+            localEditUser();
             break;
         case 'regional/01_dashboard.html':
             regionalDashboard();
@@ -127,6 +124,7 @@ window.addEventListener("DOMContentLoaded", () => {
         case 'instruments/08_pfq_ru.html':
             instrumentPFQ();
             break;
+        // the evaluator user goes to the EEF instrument directly
         case 'instruments/09_eef.html':
             EEF();
             break;
@@ -237,14 +235,15 @@ const localDashboard = () => {
 
     const importFile = async () => {
         return await import("./pages/local/01_dashboard");
-    };
-    importFile().then(result => result.localCoordinator.init().catch(error => {
+    }; 
+
+    importFile().then(result => result.local.init().catch(error => {
         console.log(error);
     }));
 };
 const institutionDetails = () => {
 
-    topMenu('localCoordinator/01_dashboard');
+    topMenu('local/01_dashboard');
 
     translatePage();
 
@@ -255,9 +254,9 @@ const institutionDetails = () => {
         console.log(error);
     }));
 };
-const localCoordinatorUsers = () => {
+const localUsers = () => {
 
-    topMenu('localCoordinator/01_dashboard');
+    topMenu('local/01_dashboard');
 
     translatePage();
 
@@ -268,9 +267,9 @@ const localCoordinatorUsers = () => {
         console.log(error);
     }));
 };
-const localCoordinatorAddUser = () => {
+const localAddUser = () => {
 
-    topMenu('localCoordinator/03_users');
+    topMenu('local/03_users');
 
     translatePage();
 
@@ -281,9 +280,9 @@ const localCoordinatorAddUser = () => {
         console.log(error);
     }));
 };
-const localCoordinatorEditUser = () => {
+const localEditUser = () => {
 
-    topMenu('localCoordinator/03_users'); // back button
+    topMenu('local/03_users'); // back button
 
     translatePage();
 
@@ -295,19 +294,6 @@ const localCoordinatorEditUser = () => {
     }));
 };
 
-const evaluatorDashboard = () => {
-
-    topMenu('index');
-
-    translatePage();
-
-    const importFile = async () => {
-        return await import("./pages/evaluator/01_dashboard");
-    };
-    importFile().then(result => result.evaluator.init().catch(error => {
-        console.log(error);
-    }));
-};
 const regionalDashboard = () => {
 
     topMenu('index');
@@ -334,33 +320,11 @@ const nationalDashboard = () => {
 };
 
 // Instruments ==========
-const instrumentQMR = () => {
 
-    topMenu('localCoordinator/01_dashboard');
-
-    translatePage();
-    const importFile = async () => {
-        return await import("./pages/instruments/04_qmr");
-    };
-    importFile().then(result => result.instrument4.init().catch(error => {
-        console.log(error);
-    }));
-};
-const instrumentDSEE = () => {
-
-    topMenu('localCoordinator/01_dashboard');
-
-    const importFile = async () => {
-        return await import("./pages/instruments/06_dsee");
-    };
-    importFile().then(result => result.instrument6.init().catch(error => {
-        console.log(error);
-    }));
-};
-// Instrument1 1_UZ_ChildDI_Children_in_the_child_care_system
+// Instrument1
 const CPIS = () => {
 
-    topMenu('localCoordinator/01_dashboard');
+    topMenu('local/01_dashboard');
 
     translatePage();
     const importFile = async () => {
@@ -382,11 +346,36 @@ const instrumentCPIS = () => {
         console.log(error);
     }));
 };
+// Instrument 2 Questionnaire about the child placed in specialized boarding schools
+const CIBS = () => {
 
-// Instrument 3 3_UZ_ChildDI_Staff_Registry
+    topMenu('local/01_dashboard');
+
+    translatePage();
+    const importFile = async () => {
+        return await import("./pages/instruments/02_cibs");
+    };
+    importFile().then(result => result.cibs.init().catch(error => {
+        console.log(error);
+    }));
+};
+const instrumentCIBS = () => {
+
+    topMenu('instruments/02_cibs');
+
+    translatePage();
+    const importFile = async () => {
+        return await import("./pages/instruments/02_cibs_instrument");
+    };
+    importFile().then(result => result.instrument2.init().catch(error => {
+        console.log(error);
+    }));
+};
+
+// Instrument 3
 const CSR = () => {
 
-    topMenu('localCoordinator/01_dashboard');
+    topMenu('local/01_dashboard');
 
     translatePage();
     const importFile = async () => {
@@ -409,10 +398,89 @@ const instrumentCSR = () => {
     }));
 };
 
+// Instrument 4
+const instrumentQMR = () => {
+
+    topMenu('local/01_dashboard');
+
+    translatePage();
+    const importFile = async () => {
+        return await import("./pages/instruments/04_qmr");
+    };
+    importFile().then(result => result.instrument4.init().catch(error => {
+        console.log(error);
+    }));
+};
+
+// Instrument 5a Trace questionnaire about the young person who left the alternative care system
+const TQYP = () => {
+
+    topMenu('local/01_dashboard');
+
+    translatePage();
+    const importFile = async () => {
+        return await import("./pages/instruments/05a_tqyp");
+    };
+    importFile().then(result => result.tqyp.init().catch(error => {
+        console.log(error);
+    }));
+};
+const instrumentTQYP = () => {
+
+    topMenu('instruments/05a_tqyp');
+
+    translatePage();
+    const importFile = async () => {
+        return await import("./pages/instruments/05a_tqyp_instrument");
+    };
+    importFile().then(result => result.instrument5a.init().catch(error => {
+        console.log(error);
+    }));
+};
+
+// Instrument 5 Questionnaire about the young person leaving the child care system
+const YPLCS = () => {
+
+    topMenu('local/01_dashboard');
+
+    translatePage();
+    const importFile = async () => {
+        return await import("./pages/instruments/05_yplcs");
+    };
+    importFile().then(result => result.yplcs.init().catch(error => {
+        console.log(error);
+    }));
+};
+const instrumentYPLCS = () => {
+
+    topMenu('instruments/05_yplcs');
+
+    translatePage();
+    const importFile = async () => {
+        return await import("./pages/instruments/05_yplcs_instrument");
+    };
+    importFile().then(result => result.instrument5.init().catch(error => {
+        console.log(error);
+    }));
+};
+
+// Instrument 6
+const instrumentDSEE = () => {
+
+    topMenu('local/01_dashboard');
+
+    const importFile = async () => {
+        return await import("./pages/instruments/06_dsee");
+    };
+    importFile().then(result => result.instrument6.init().catch(error => {
+        console.log(error);
+    }));
+};
+
 // Instrument 7 Family-Type Children's Home Questionnaire
 const FTCH = () => {
 
-    topMenu('cityCollector/01_dashboard');
+    topMenu('local/01_dashboard');
 
     translatePage();
     const importFile = async () => {
@@ -438,7 +506,7 @@ const instrumentFTCH = () => {
 // Instrument 8 Patronat Family Questionnaire
 const PFQ = () => {
 
-    topMenu('cityCollector/01_dashboard');
+    topMenu('local/01_dashboard');
 
     translatePage();
     const importFile = async () => {
@@ -464,7 +532,7 @@ const instrumentPFQ = () => {
 // Instrument 9 External evaluation form of the childcare institutions and boarding schools
 const EEF = () => {
 
-    topMenu('evaluator/01_dashboard');
+    topMenu('index');
 
     translatePage();
     const importFile = async () => {
@@ -486,85 +554,6 @@ const instrumentEEF = () => {
         console.log(error);
     }));
 };
-
-// Instrument 5 Questionnaire about the young person leaving the child care system
-const YPLCS = () => {
-
-    topMenu('localCoordinator/01_dashboard');
-
-    translatePage();
-    const importFile = async () => {
-        return await import("./pages/instruments/05_yplcs");
-    };
-    importFile().then(result => result.yplcs.init().catch(error => {
-        console.log(error);
-    }));
-};
-const instrumentYPLCS = () => {
-
-    topMenu('instruments/05_yplcs');
-
-    translatePage();
-    const importFile = async () => {
-        return await import("./pages/instruments/05_yplcs_instrument");
-    };
-    importFile().then(result => result.instrument5.init().catch(error => {
-        console.log(error);
-    }));
-};
-
-// Instrument 2 Questionnaire about the child placed in specialized boarding schools
-const CIBS = () => {
-
-    topMenu('localCoordinator/01_dashboard');
-
-    translatePage();
-    const importFile = async () => {
-        return await import("./pages/instruments/02_cibs");
-    };
-    importFile().then(result => result.cibs.init().catch(error => {
-        console.log(error);
-    }));
-};
-const instrumentCIBS = () => {
-
-    topMenu('instruments/02_cibs');
-
-    translatePage();
-    const importFile = async () => {
-        return await import("./pages/instruments/02_cibs_instrument");
-    };
-    importFile().then(result => result.instrument2.init().catch(error => {
-        console.log(error);
-    }));
-};
-
-// Instrument 5a Trace questionnaire about the young person who left the alternative care system
-const TQYP = () => {
-
-    topMenu('localCoordinator/01_dashboard');
-
-    translatePage();
-    const importFile = async () => {
-        return await import("./pages/instruments/05a_tqyp");
-    };
-    importFile().then(result => result.tqyp.init().catch(error => {
-        console.log(error);
-    }));
-};
-const instrumentTQYP = () => {
-
-    topMenu('instruments/05a_tqyp');
-
-    translatePage();
-    const importFile = async () => {
-        return await import("./pages/instruments/05a_tqyp_instrument");
-    };
-    importFile().then(result => result.instrument5a.init().catch(error => {
-        console.log(error);
-    }));
-};
-
 
 
 const translatePage = () => {

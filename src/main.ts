@@ -141,14 +141,14 @@ ipcMain.on("changeWindow", (event, args) => {
         case "dashboard":
             goToDashboard();
             break;
-        case "localCoordinator/02_institution_details":
+        case "local/02_institution_details":
             institutionDetails();
             break;
-        case "localCoordinator/03_users":
-            localCoordinatorUsers();
+        case "local/03_users":
+            localUsers();
             break;
-        case "localCoordinator/05_edit_user":
-            localCoordinatorEditUser(args.id);
+        case "local/05_edit_user":
+            localEditUser(args.id);
             break;
         case "01_login":
             goToLogin(newPage);
@@ -197,7 +197,8 @@ const goToDashboard = () => {
     } else if (appSession.userData.role_code === "10") {
         page = path.join(__dirname, "../src/pages/regional/01_dashboard.html");
     } else if (appSession.userData.role_code === "5") {
-        page = path.join(__dirname, "../src/pages/evaluator/01_dashboard.html");
+        // go directly to instrument list and skip dashboard
+        page = path.join(__dirname, "../src/pages/instruments/09_eef.html");
     } else if (appSession.userData.role_code === "1" || appSession.userData.role_code === "2" || appSession.userData.role_code === "3" || appSession.userData.role_code === "4") {
         page = path.join(__dirname, "../src/pages/local/01_dashboard.html");
     } else {
@@ -206,7 +207,7 @@ const goToDashboard = () => {
             message: i18n.__('User error. Please login again.'),
         })
         console.log(appSession.userData);
-        
+
         return;
     }
 
@@ -230,20 +231,14 @@ const goToDashboard = () => {
             appSession.institutionName = "";
             mainWindow.webContents.send("appSession", appSession);
         }
-
-        // TODO -- to be updated -- only first time not working on back!!!!
-        console.log(appSession.user_type);
-        console.log(appSession.user_type === "localCoordinator");
-        if (appSession.user_type === "localCoordinator") {
-            database.getExisting(db).then((result: { qmr: number | null, dsee: number | null }) => {
-                console.log(result);
-
-                mainWindow.webContents.send('existing', result);
-            });
-        }
     });
-
 }
+// return ID for instruments 4 and 6
+ipcMain.on('getInstrumentsId', () => {
+    database.getExisting(db).then((result: { qmr: number | null, dsee: number | null }) => {
+        mainWindow.webContents.send('existing', result);
+    });
+})
 
 // Instrument 1
 const goToCPISList = () => {
@@ -541,9 +536,10 @@ const goToInstrument = (instrument: string, id: string) => {
 
 
 // Local Coordinator =================
+
 // -- institution details
 const institutionDetails = () => {
-    const newPage = path.join(__dirname, "../src/pages/localCoordinator/02_institution_details.html");
+    const newPage = path.join(__dirname, "../src/pages/local/02_institution_details.html");
     mainWindow.loadURL("file://" + newPage);
     mainWindow.webContents.once("did-finish-load", () => {
         mainWindow.webContents.send("institutionDetails", appSession.institutionDetails);
@@ -557,6 +553,8 @@ ipcMain.on('getRegionDistrict', (event, args) => {
         'district': 'Yunusabad'
     });
 });
+
+// Institution update
 ipcMain.on('saveInstitutionDetails', (event, args) => {
     console.log(args);
     database.saveInstitutionDetails(args).then(() => {
@@ -568,8 +566,10 @@ ipcMain.on('saveInstitutionDetails', (event, args) => {
         });
     });
 });
-const localCoordinatorUsers = () => {
-    const newPage = path.join(__dirname, "../src/pages/localCoordinator/03_users.html");
+
+// Users
+const localUsers = () => {
+    const newPage = path.join(__dirname, "../src/pages/local/03_users.html");
     mainWindow.loadURL("file://" + newPage);
     mainWindow.webContents.once("did-finish-load", () => {
         database.getInstitutionUsers(appSession.userData.institution_code).then((result) => {
@@ -577,8 +577,8 @@ const localCoordinatorUsers = () => {
         });
     });
 }
-const localCoordinatorEditUser = (id: string) => {
-    const newPage = path.join(__dirname, "../src/pages/localCoordinator/05_edit_user.html");
+const localEditUser = (id: string) => {
+    const newPage = path.join(__dirname, "../src/pages/local/05_edit_user.html");
     mainWindow.loadURL("file://" + newPage);
     mainWindow.webContents.once("did-finish-load", () => {
         database.getUser(id).then((result) => {
@@ -596,7 +596,7 @@ ipcMain.on('addUser', (event, args) => {
             type: 'info',
             message: i18n.__('User added.'),
         }).then(() => {
-            localCoordinatorUsers();
+            localUsers();
         });
     });
 });
@@ -608,7 +608,7 @@ ipcMain.on('updateUser', (event, args) => {
             type: 'info',
             message: i18n.__('User updated.'),
         }).then(() => {
-            localCoordinatorUsers();
+            localUsers();
         });
     });
 })
@@ -626,7 +626,7 @@ ipcMain.on('deleteUser', (event, args) => {
                     type: 'info',
                     message: i18n.__('User deleted.'),
                 }).then(() => {
-                    localCoordinatorUsers();
+                    localUsers();
                 });
             });
         }
