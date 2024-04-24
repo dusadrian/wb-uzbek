@@ -469,6 +469,7 @@ const instrumentDSEE = () => {
 
     topMenu('local/01_dashboard');
 
+    translatePage();
     const importFile = async () => {
         return await import("./pages/instruments/06_dsee");
     };
