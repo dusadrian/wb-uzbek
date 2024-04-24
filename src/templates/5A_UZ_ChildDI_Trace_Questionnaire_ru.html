@@ -15,54 +15,54 @@
         <div class="grid grid-cols-12 border">
             <div class="col-span-1 bg-stone-200 p-2"></div>
             <div class="col-span-11 p-2">
-                <h1 class="text-4xl text-gray-700 pl-4 tracking-wide mb-4"><%= it.t1 %></h1>
+                <h1 class="text-4xl text-gray-700 pl-4 tracking-wide mb-4">Опросник по отслеживанию молодых людей покинувших систему альтернативной опеки</h1>
             </div>
         </div>
 
-        <p class="mt-4 mb-2 text-xl"><%= it.t2 %></p>
-        <p class="mb-2"><%= it.t3 %></p>
-        <p class="mb-2"><%= it.t4 %></p>
+        <p class="mt-4 mb-2 text-xl">ВВЕДЕНИЕ</p>
+        <p class="mb-2">Цель этого опросника - выявить молодых людей, покинувших систему альтернативного опеки в течение предыдущего года, и восстановить с ними связь.</p>
+        <p class="mb-2">Пожалуйста, заполните эту анкету отдельно для каждого молодого человека (старше 18 лет), который за последние 12 месяцев покинул систему альтернативной опеки , независимо от типа услуг, которые он получает (в учреждении или в семье). Эта анкета будет заполнена для молодых людей, которые находились в следующих учреждениях системы альтернативной опеки : дома Мехрибонлик, дома Мурувват для детей с инвалидностью, детские дома семейного типа, SOS Детские деревни/семьи SOS. Для специализированных школ-интернатов эта анкета должна быть заполнена для каждого молодого человека (старше 16 лет), который завершил свое обучение в школах-интернатах в течение предыдущего года.</p>
 
-        <h2 class="mt-10 mb-4 text-2xl font-bold text-gray-700"><%= it.t5 %></h2>
+        <h2 class="mt-10 mb-4 text-2xl font-bold text-gray-700">1. ИНФОРМАЦИЯ ОБ УЧРЕЖДЕНИИ И ЛИЦЕ, ЗАПОЛНИВШЕМ АНКЕТУ ПО ОТСЛЕЖИВАНИЮ</h2>
 
         <div class="grid grid-cols-2 gap-4 items-center mt-12">
-            <div>STR1. <%= it.t6 %></div>
+            <div>STR1. Код услуги из реестра</div>
             <div>
                 <input type="text" id="str1" name="str1" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
             </div>
         </div>
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
-            <div>STR2. <%= it.t7 %></div>
+            <div>STR2. Название услуги</div>
             <div>
                 <input type="text" id="str2" name="str2" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
             </div>
         </div>
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
-            <div>STR3. <%= it.t8 %></div>
+            <div>STR3. Местоположение службы (код MHOBT)</div>
             <div>
                 <input type="text" id="str3" name="str3" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
             </div>
         </div>
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
-            <div>a. <%= it.t9 %></div>
+            <div>a. Область</div>
             <div>
                 <input type="text" id="str3a" name="str3a" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
             </div>
         </div>
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
-            <div>b. <%= it.t10 %></div>
+            <div>b. Район</div>
             <div>
                 <input type="text" id="str3b" name="str3b" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
             </div>
         </div>
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
-            <div>c. <%= it.t11 %></div>
+            <div>c. Населённый пункт</div>
             <div>
                 <input type="text" id="str3c" name="str3c" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
             </div>
         </div>
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
-            <div>STR4. <%= it.t12 %></div>
+            <div>STR4. Тип учреждения</div>
             <div>
                 <input type="text" id="str4" name="str4" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
             </div>
@@ -71,19 +71,19 @@
         <input type="hidden" id="data" name="data" />
 
         <div class="grid grid-cols-2 gap-4 items-center mt-4">
-            <div>OMR1. <%= it.t26 %></div>
+            <div>OMR1. Имя</div>
             <div>
                 <input type="text" id="omr1" name="omr1" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
             </div>
         </div>
         <div class="grid grid-cols-2 gap-4 items-center mt-4">
-            <div>OMR2. <%= it.t27 %></div>
+            <div>OMR2. Отчество</div>
             <div>
                 <input type="text" id="omr2" name="omr2" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
             </div>
         </div>
         <div class="grid grid-cols-2 gap-4 items-center mt-4">
-            <div>OMR3. <%= it.t28 %></div>
+            <div>OMR3. Фамилия</div>
             <div>
                 <input type="text" id="omr3" name="omr3" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
             </div>
@@ -91,7 +91,7 @@
 
         <div class="grid grid-cols-2 gap-4 items-center mt-4">
             <div>
-                OMR4. <%= it.t29 %> <small class="block italic text-red-500">Fill in case manager if the person plays this role.</small>
+                OMR4. Должность/функции <small class="block italic text-red-500">Fill in case manager if the person plays this role.</small>
             </div>
             <div>
                 <input type="text" id="omr4" name="omr4" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
@@ -99,7 +99,7 @@
         </div>
         <div class="grid grid-cols-2 gap-4 items-center mt-4">
             <div>
-                OMR5. <%= it.t30 %></div>
+                OMR5. Профессия</div>
             <div>
                 <input type="text" id="omr5" name="omr5" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
             </div>
@@ -107,7 +107,7 @@
 
         <div class="grid grid-cols-2 gap-4 items-center mt-4">
             <div>
-                OMR6. <%= it.t31 %></div>
+                OMR6. Телефон</div>
             <div>
                 <input type="text" id="omr6" name="omr6" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
             </div>
@@ -115,64 +115,64 @@
 
         <div class="grid grid-cols-2 gap-4 items-center mt-4">
             <div>
-                OMR7. <%= it.t32 %></div>
+                OMR7. Электронная почта</div>
             <div>
                 <input type="text" id="omr7" name="omr7" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
             </div>
         </div>
 
-        <h2 class="mt-10 mb-4 text-2xl font-bold text-gray-700"><%= it.t34 %></h2>
+        <h2 class="mt-10 mb-4 text-2xl font-bold text-gray-700">2. ПЕРСОНАЛЬНАЯ ИНФОРМАЦИЯ О МОЛОДОМ ЧЕЛОВЕКЕ</h2>
 
 
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
-            <div>PTR1. <%= it.t35 %></div>
+            <div>PTR1. Свидетельство о рождении/Паспорт/Документ, удостоверяющий личность</div>
             <div>
                 <input type="text" id="ptr1" name="ptr1" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
             </div>
         </div>
 
-        <p class="italic text-red-500"><%= it.t36 %></p>
+        <p class="italic text-red-500">Введите номер свидетельства о рождении/удостоверения личности/номер паспорта человека. Если у человека его нет, введите 0 (ноль).</p>
 
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
-            <div>PTR2a. <%= it.t37 %></div>
+            <div>PTR2a. Имя</div>
             <div>
                 <input type="text" id="ptr2a" name="ptr2a" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
             </div>
         </div>
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
-            <div>PTR2b <%= it.t38 %></div>
+            <div>PTR2b Отчество</div>
             <div>
                 <input type="text" id="ptr2b" name="ptr2b" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
             </div>
         </div>
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
-            <div>PTR2c. <%= it.t39 %></div>
+            <div>PTR2c. Фамилия</div>
             <div>
                 <input type="text" id="ptr2c" name="ptr2c" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
             </div>
         </div>
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
-            <div class="col-span-1">PTR3. <%= it.t40 %></div>
+            <div class="col-span-1">PTR3. Пол</div>
             <div class="col-span-1 flex gap-4">
                 <div class="flex items-center">
                     <input id="ptr3-1" type="radio" value="1" name="ptr3" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="ptr3-1" class="ms-2 text-sm text-gray-900"><%= it.t41 %></label>
+                    <label for="ptr3-1" class="ms-2 text-sm text-gray-900">1. Мужской</label>
                 </div>
                 <div class="flex items-center">
                     <input id="ptr3-2" type="radio" value="0" name="ptr3" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="ptr3-2" class="ms-2 text-sm text-gray-900"><%= it.t42 %></label>
+                    <label for="ptr3-2" class="ms-2 text-sm text-gray-900">2. Женский</label>
                 </div>
             </div>
         </div>
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
-            <div>PTR4. <%= it.t43 %></div>
+            <div>PTR4. Дата рождения (дд/мм/гггг)</div>
             <div>
                 <input type="text" id="ptr4" name="ptr4" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
             </div>
         </div>
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
             <div>
-                <p>PTR4a. <%= it.t44 %></p>
+                <p>PTR4a. Возраст молодого человека (на дату проведения мониторинга)</p>
             </div>
             <div>
                 <input type="text" id="ptr4a" name="ptr4a" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
@@ -180,7 +180,7 @@
         </div>
 
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
-            <div>PTR5a. <%= it.t46 %></div>
+            <div>PTR5a. Место рождения</div>
             <div class="flex items-center">
                 <input id="ptr5a_dk" name="ptr5a_dk" type="checkbox" value="9" class="w-4 h-4 text-blue-600 border-gray-400 rounded focus:ring-blue-500 disabled:bg-gray-100">
                 <label for="ptr5a_dk" class="ms-2 text-sm text-gray-900">9. Not known</label>
@@ -188,7 +188,7 @@
         </div>
 
         <div class="grid grid-cols-2 items-center gap-4 mt-6">
-            <div>PTR5b. <%= it.t48 %></div>
+            <div>PTR5b. Область</div>
             <div>
                 <select id="ptr5b" name="ptr5b" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
                     <option value="-9" class="t_choose">--- choose ---</option>
@@ -197,7 +197,7 @@
         </div>
 
         <div class="grid grid-cols-2 items-center gap-4 mt-6">
-            <div>PTR5c. <%= it.t50 %></div>
+            <div>PTR5c. Район</div>
             <div>
                 <select id="ptr5c" name="ptr5c" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
                     <option value="-9" class="t_choose">--- choose ---</option>
@@ -205,7 +205,7 @@
             </div>
         </div>
         <div class="grid grid-cols-2 items-center gap-4 mt-6">
-            <div>ptr5d. <%= it.t81 %></div>
+            <div>ptr5d. Поселение</div>
             <div>
                 <select id="ptr5d" name="ptr5d" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
                     <option value="-9" class="t_choose">--- choose ---</option>
@@ -218,7 +218,7 @@
 
 
         <div class="grid grid-cols-2 items-center gap-4 mt-6">
-            <div>PTR6. <%= it.t52 %></div>
+            <div>PTR6. Дата, когда молодой человек покинул систему опеки (дд/мм/гггг)</div>
             <div>
                 <select id="ptr6" name="ptr6" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
                     <option value="-9" class="t_choose">--- choose ---</option>
@@ -227,106 +227,106 @@
         </div>
 
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
-            <div class="col-span-1">PTR7. <%= it.t53 %></div>
+            <div class="col-span-1">PTR7. Куда направился этот молодой человек, когда он/она покинул(а) систему альтернативной опеки?</div>
             <div class="col-span-1 flex flex-col gap-2">
                 <div class="flex items-center">
                     <input id="ptr7-1" type="radio" value="1" name="ptr7" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="ptr7-1" class="ms-2 text-sm text-gray-900"><%= it.t54 %></label>
+                    <label for="ptr7-1" class="ms-2 text-sm text-gray-900">1. Вернулся(асть) в свою семью</label>
                 </div>
                 <div class="flex items-center">
                     <input id="ptr7-2" type="radio" value="2" name="ptr7" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="ptr7-2" class="ms-2 text-sm text-gray-900"><%= it.t55 %></label>
+                    <label for="ptr7-2" class="ms-2 text-sm text-gray-900">2. Живёт самостоятельно в  сообществе ( махалле)</label>
                 </div>
                 <div class="flex items-center">
                     <input id="ptr7-3" type="radio" value="3" name="ptr7" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="ptr7-3" class="ms-2 text-sm text-gray-900"><%= it.t56 %>e alternative
+                    <label for="ptr7-3" class="ms-2 text-sm text-gray-900">3. Переехал(а) в квартиру/дом, предоставленные государством или благотворительными организациями e alternative
                         care </label>
                 </div>
                 <div class="flex items-center">
                     <input id="ptr7-4" type="radio" value="4" name="ptr7" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="ptr7-4" class="ms-2 text-sm text-gray-900"><%= it.t57 %></label>
+                    <label for="ptr7-4" class="ms-2 text-sm text-gray-900">4. Переведен(а) в учреждение/интернат для взрослых</label>
                 </div>
                 <div class="flex items-center">
                     <input id="ptr7-5" type="radio" value="5" name="ptr7" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="ptr7-5" class="ms-2 text-sm text-gray-900"><%= it.t58 %></label>
+                    <label for="ptr7-5" class="ms-2 text-sm text-gray-900">5. Переехал(а) в общежитие, предоставляемое высшим учебным заведением</label>
                 </div>
                 <div class="flex items-center">
                     <input id="ptr7-6" type="radio" value="6" name="ptr7" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="ptr7-6" class="ms-2 text-sm text-gray-900"><%= it.t59 %></label>
+                    <label for="ptr7-6" class="ms-2 text-sm text-gray-900">6. Уехал за границу</label>
                 </div>
                 <div class="flex items-center">
                     <input id="ptr7-7" type="radio" value="7" name="ptr7" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="ptr7-7" class="ms-2 text-sm text-gray-900"><%= it.t60 %></label>
+                    <label for="ptr7-7" class="ms-2 text-sm text-gray-900">7. Другии ситуации, укажите</label>
                 </div>
                 <div class="flex items-center">
                     <input type="text" id="ptr7_other" name="ptr7_other" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
                 </div>
                 <div class="flex items-center">
                     <input id="ptr7-8" type="radio" value="8" name="ptr7" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="ptr7-8" class="ms-2 text-sm text-gray-900"><%= it.t61 %></label>
+                    <label for="ptr7-8" class="ms-2 text-sm text-gray-900">8. Неизвестно</label>
                 </div>
             </div>
         </div>
 
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
-            <div class="col-span-1">PTR8. <%= it.t62 %></div>
+            <div class="col-span-1">PTR8. Если вам известно, укажите, где в настоящее время проживает этот молодой человек?</div>
             <div class="col-span-1 flex flex-col gap-2">
                 <div class="flex items-center">
                     <input id="ptr8-1" type="radio" value="1" name="ptr8" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="ptr8-1" class="ms-2 text-sm text-gray-900"><%= it.t63 %></label>
+                    <label for="ptr8-1" class="ms-2 text-sm text-gray-900">1. В сообществе ( махалле)</label>
                 </div>
                 <div class="flex items-center">
                     <input id="ptr8-2" type="radio" value="2" name="ptr8" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="ptr8-2" class="ms-2 text-sm text-gray-900"><%= it.t64 %></label>
+                    <label for="ptr8-2" class="ms-2 text-sm text-gray-900">2. В интернатном учреждении</label>
                 </div>
                 <div class="flex items-center">
                     <input id="ptr8-3" type="radio" value="3" name="ptr8" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="ptr8-3" class="ms-2 text-sm text-gray-900"><%= it.t65 %></label>
+                    <label for="ptr8-3" class="ms-2 text-sm text-gray-900">3. Умер</label>
                 </div>
                 <div class="flex items-center">
                     <input id="ptr8-4" type="radio" value="4" name="ptr8" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="ptr8-4" class="ms-2 text-sm text-gray-900"><%= it.t66 %></label>
+                    <label for="ptr8-4" class="ms-2 text-sm text-gray-900">4. В тюрьме</label>
                 </div>
                 <div class="flex items-center">
                     <input id="ptr8-5" type="radio" value="5" name="ptr8" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="ptr8-5" class="ms-2 text-sm text-gray-900"><%= it.t67 %></label>
+                    <label for="ptr8-5" class="ms-2 text-sm text-gray-900">5. Другое, пожалуйста, укажите</label>
                 </div>
                 <div class="flex items-center">
                     <input type="text" id="ptr8_other" name="ptr8_other" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
                 </div>
                 <div class="flex items-center">
                     <input id="ptr8-6" type="radio" value="6" name="ptr8" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="ptr8-6" class="ms-2 text-sm text-gray-900"><%= it.t68 %></label>
+                    <label for="ptr8-6" class="ms-2 text-sm text-gray-900">8. Неизвестно</label>
                 </div>
             </div>
         </div>
 
 
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
-            <div>a <%= it.t73 %></div>
+            <div>a Название заведения</div>
             <div class="flex items-center">
                 <input type="text" id="ptr8a" name="ptr8a" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
             </div>
         </div>
 
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
-            <div>b. <%= it.t74 %>:</div>
+            <div>b. Адрес::</div>
             <div class="flex items-center">
                 <input type="text" id="ptr8b" name="ptr8b" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
             </div>
         </div>
 
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
-            <div>c. <%= it.t75 %>:</div>
+            <div>c. Номер телефона::</div>
             <div class="flex items-center">
                 <input type="text" id="ptr8c" name="ptr8c" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
             </div>
         </div>
 
-        <p class="mt-6">d. <%= it.t76 %></p>
+        <p class="mt-6">d. Заполните 10-значный код административно-территориальной единицы (МҲОБТ)</p>
 
         <div class="grid grid-cols-2 items-center gap-4 mt-6">
-            <div>e. <%= it.t77 %>:</div>
+            <div>e. Область:</div>
             <div>
                 <select id="ptr8e" name="ptr8e" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
                     <option value="-9" class="t_choose">--- choose ---</option>
@@ -335,7 +335,7 @@
         </div>
 
         <div class="grid grid-cols-2 items-center gap-4 mt-6">
-            <div>f. <%= it.t79 %>:</div>
+            <div>f. Район:</div>
             <div>
                 <select id="ptr8f" name="ptr8f" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
                     <option value="-9" class="t_choose">--- choose ---</option>
@@ -343,7 +343,7 @@
             </div>
         </div>
         <div class="grid grid-cols-2 items-center gap-4 mt-6">
-            <div>g. <%= it.t81 %></div>
+            <div>g. Поселение</div>
             <div>
                 <select id="ptr8g" name="ptr8g" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
                     <option value="-9" class="t_choose">--- choose ---</option>
@@ -355,20 +355,20 @@
         <input type="hidden" id="ptr8h" name="ptr8h" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
 
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
-            <div>PTR9. <%= it.t83 %></div>
+            <div>PTR9. Пожалуйста, укажите любые альтернативные контактные данные, такие как профиль в социальных сетях, родители, братья и сестры, родственники или друзья, которые могут быть использованы для связи с этим молодым человеком</div>
             <div class="flex items-center">
                 <textarea id="ptr9" name="ptr9" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100"></textarea>
             </div>
         </div>
 
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
-            <div>PTR10. <%= it.t84 %></div>
+            <div>PTR10. Пожалуйста, напишите любую информацию которая могла бы помочь нам идентифицировать этого молодого человека и связаться с ним.</div>
             <div class="flex items-center">
                 <textarea id="ptr10" name="ptr10" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100"></textarea>
             </div>
         </div>
 
-        <p class="mt-10 bg-gray-200 px-2 py-1"><strong><%= it.t85 %></strong></p>
+        <p class="mt-10 bg-gray-200 px-2 py-1"><strong> Центр ИНСОН, который должен проводить мониторинг этого человека.</strong></p>
 
     </form>
 

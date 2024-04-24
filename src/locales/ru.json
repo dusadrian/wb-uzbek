@@ -131,5 +131,7 @@
 	"t_yplcs_list": "Questionnaire about the young person leaving the child care system",
 	"t_child_placed_in_specialized_boarding_schools": "t_child_placed_in_specialized_boarding_schools",
 	"t_cibs_list": "t_cibs_list",
-	"not_in_registry": "The institution does not appear in the Registry"
+	"not_in_registry": "The institution does not appear in the Registry",
+	"t_trace_questionnaire_about_the_young_person_who_left_the_alternative_care_system": "t_trace_questionnaire_about_the_young_person_who_left_the_alternative_care_system",
+	"t_tqyp_list": "t_tqyp_list"
 }
