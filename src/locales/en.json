@@ -140,5 +140,7 @@
 	"The following fields are mandatory: PI1, PI1A, PI1B, PI1C!": "The following fields are mandatory: PI1, PI1A, PI1B, PI1C!",
 	"t_child_placed_in_specialized_boarding_schools": "Children placed in specialized boarding schools",
 	"t_cibs_list": "Questionnaire about the child placed in specialized boarding schools",
-	"not_in_registry": "The institution does not appear in the Registry"
+	"not_in_registry": "The institution does not appear in the Registry",
+	"t_trace_questionnaire_about_the_young_person_who_left_the_alternative_care_system": "Trace questionnaire about the young person who left the alternative care system",
+	"t_tqyp_list": "Trace questionnaire about the young person who left the alternative care system"
 }

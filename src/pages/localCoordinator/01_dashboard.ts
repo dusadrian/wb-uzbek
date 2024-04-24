@@ -81,6 +81,15 @@ export const localCoordinator = {
                 });
             });
         }
+        // Children placed in specialized boarding schools
+        const viewEdit_TQYP = (<HTMLButtonElement>document.getElementById('viewEdit_TQYP'));
+        if (viewEdit_TQYP !== null) {
+            viewEdit_TQYP.addEventListener('click', () => {
+                ipcRenderer.send('changeWindow', {
+                    'name': 'tqyp',
+                });
+            });
+        }
 
         // Institution details
         (<HTMLButtonElement>document.getElementById('viewEdit_ID')).addEventListener('click', () => {

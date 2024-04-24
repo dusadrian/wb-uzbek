@@ -179,6 +179,9 @@ ipcMain.on("changeWindow", (event, args) => {
         case "yplcs":
             goToYPLCSList();
             break;
+        case "tqyp":
+            goToTQYPList();
+            break;
         default:
             mainWindow.loadURL("file://" + newPage);
     }
