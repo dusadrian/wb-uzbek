@@ -34,7 +34,8 @@ const appSession = {
     userId: 0,
     userInstitution: 0,
     institutionName: "",
-    institutionDetails: {}
+    institutionDetails: {},
+    userData: {} as DI.User
 };
 
 function createWindow() {
@@ -121,12 +122,9 @@ ipcMain.on('login', (event, args) => {
             })
             return
         }
-        // TODO load institution data
-        appSession.userName = result[0].username;
-        appSession.user_type = result[0].user_type;
-        appSession.userId = result[0].id;
-        appSession.userInstitution = result[0].institution_id;
+        // TODO load institution data ?
         appSession.language = args.language;
+        appSession.userData = result[0];
         // go to next page
         goToDashboard();
     });
@@ -194,30 +192,28 @@ const goToLogin = (page: string) => {
 const goToDashboard = () => {
 
     let page = '';
-    if (appSession.user_type === "localCollector") {
-        page = path.join(__dirname, "../src/pages/localCollector/01_dashboard.html");
-    } else if (appSession.user_type === "localCoordinator") {
-        page = path.join(__dirname, "../src/pages/localCoordinator/01_dashboard.html");
-    } else if (appSession.user_type === "cityCollector") {
-        page = path.join(__dirname, "../src/pages/cityCollector/01_dashboard.html");
-    } else if (appSession.user_type === "evaluator") {
+    if (appSession.userData.role_code === "100") {
+        page = path.join(__dirname, "../src/pages/national/01_dashboard.html");
+    } else if (appSession.userData.role_code === "10") {
+        page = path.join(__dirname, "../src/pages/regional/01_dashboard.html");
+    } else if (appSession.userData.role_code === "5") {
         page = path.join(__dirname, "../src/pages/evaluator/01_dashboard.html");
-    } else if (appSession.user_type === "regionalCoordinator") {
-        page = path.join(__dirname, "../src/pages/regionalCoordinator/01_dashboard.html");
-    } else if (appSession.user_type === "main") {
-        page = path.join(__dirname, "../src/pages/main/01_dashboard.html");
+    } else if (appSession.userData.role_code === "1" || appSession.userData.role_code === "2" || appSession.userData.role_code === "3" || appSession.userData.role_code === "4") {
+        page = path.join(__dirname, "../src/pages/local/01_dashboard.html");
     } else {
         dialog.showMessageBox(mainWindow, {
             type: 'error',
             message: i18n.__('User error. Please login again.'),
         })
+        console.log(appSession.userData);
+        
         return;
     }
 
     mainWindow.loadURL("file://" + page);
     mainWindow.webContents.once("did-finish-load", () => {
-        if (appSession.user_type === "localCollector" || appSession.user_type === "localCoordinator" || appSession.user_type === "cityCollector") {
-            database.getUserInstitution(appSession.userInstitution).then((result: Array<DI.Institution>) => {
+        if (appSession.userData.role_code === "1" || appSession.userData.role_code === "2" || appSession.userData.role_code === "3" || appSession.userData.role_code === "4") {
+            database.getUserInstitution(appSession.userData.institution_code).then((result: Array<DI.Institution>) => {
                 if (result.length === 0) {
                     dialog.showMessageBox(mainWindow, {
                         type: 'error',
@@ -576,7 +572,7 @@ const localCoordinatorUsers = () => {
     const newPage = path.join(__dirname, "../src/pages/localCoordinator/03_users.html");
     mainWindow.loadURL("file://" + newPage);
     mainWindow.webContents.once("did-finish-load", () => {
-        database.getInstitutionUsers(appSession.userInstitution, appSession.userId).then((result) => {
+        database.getInstitutionUsers(appSession.userData.institution_code).then((result) => {
             mainWindow.webContents.send("users", result);
         });
     });
@@ -593,7 +589,7 @@ const localCoordinatorEditUser = (id: string) => {
 ipcMain.on('addUser', (event, args) => {
     console.log(args);
     // save to DB
-    const userObj = { ...args, institution_id: appSession.userInstitution, user_type: "localCollector" };
+    const userObj = { ...args, institution_id: appSession.userData.institution_code, user_type: "localCollector" };
     database.addUser(userObj).then(() => {
         // send message
         dialog.showMessageBox(mainWindow, {
@@ -643,7 +639,7 @@ const goToQMR = (id: string) => {
     const newPage = path.join(__dirname, "../src/pages/instruments/04_qmr_" + appSession.language + ".html");
     mainWindow.loadURL("file://" + newPage);
     database.getUserData(appSession.userId).then((userDataArray) => {
-        database.getUserInstitution(appSession.userInstitution).then((institutionDataArray) => {
+        database.getUserInstitution(appSession.userData.institution_code).then((institutionDataArray) => {
             if (id) {
                 mainWindow.webContents.once("did-finish-load", () => {
                     database.instrumentGet(id, 'qmr', db).then((instrument) => {
@@ -669,7 +665,7 @@ const goToDSEE = (id: string) => {
     const newPage = path.join(__dirname, "../src/pages/instruments/06_dsee_" + appSession.language + ".html");
     mainWindow.loadURL("file://" + newPage);
     database.getUserData(appSession.userId).then((userDataArray) => {
-        database.getUserInstitution(appSession.userInstitution).then((institutionDataArray) => {
+        database.getUserInstitution(appSession.userData.institution_code).then((institutionDataArray) => {
             if (id) {
                 mainWindow.webContents.once("did-finish-load", () => {
                     database.instrumentGet(id, 'dsee', db).then((result) => {
@@ -715,7 +711,7 @@ const goToCSR = (id: string) => {
     const newPage = path.join(__dirname, "../src/pages/instruments/03_csr_" + appSession.language + ".html");
     mainWindow.loadURL("file://" + newPage);
     database.getUserData(appSession.userId).then((userDataArray) => {
-        database.getUserInstitution(appSession.userInstitution).then((institutionDataArray) => {
+        database.getUserInstitution(appSession.userData.institution_code).then((institutionDataArray) => {
             if (id) {
                 mainWindow.webContents.once("did-finish-load", () => {
                     database.instrumentGet(id, 'csr', db).then((instrument) => {

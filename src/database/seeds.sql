@@ -16,3 +16,7 @@ VALUES
     ('main', 'main', 'main', NULL);
 
 
+INSERT INTO
+    uzbek.main.users (user_type, username, password, institution_id)
+VALUES
+    ('national', 'national', 'national', null);

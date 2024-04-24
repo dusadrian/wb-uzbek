@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8" />
+        <title>WorldBank</title>
+        <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'" />
+        <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self'" />
+        <link href="../../../dist/main.css" rel="stylesheet">
+    </head>
+
+    <body class="relative">
+        <div class="absolute top-0 right-0 left-0 bg-slate-200 h-10 z-50" id="header"></div>
+        <div class="relative w-full pt-10 min-h-screen">
+
+            <div class="grid grid-cols-2 mt-10">
+                <h1 class="px-5 text-xl flex items-center">
+                    <span class="t_regionalCoordinator_level_view_regionalCoordinators"></span>
+                </h1>
+                <div class="flex gap-10">
+                    <button class="bg-gray-200 hover:bg-gray-300 px-4 py-2 rounded w-28 flex items-center justify-center gap-4">
+                        <span class="t_filter"></span>
+                        <svg class="h-5 fill-slate-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                            <!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                            <path
+                                  d="M3.9 54.9C10.5 40.9 24.5 32 40 32H472c15.5 0 29.5 8.9 36.1 22.9s4.6 30.5-5.2 42.5L320 320.9V448c0 12.1-6.8 23.2-17.7 28.6s-23.8 4.3-33.5-3l-64-48c-8.1-6-12.8-15.5-12.8-25.6V320.9L9 97.3C-.7 85.4-2.8 68.8 3.9 54.9z" />
+                        </svg>
+                    </button>
+                    <button class="bg-gray-200 hover:bg-gray-300 px-4 py-2 rounded flex items-center justify-center gap-4 w-28">
+                        <span class="t_export"></span>
+                        <svg class="h-5 fill-green-700" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+                            <!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                            <path
+                                  d="M48 448V64c0-8.8 7.2-16 16-16H224v80c0 17.7 14.3 32 32 32h80V448c0 8.8-7.2 16-16 16H64c-8.8 0-16-7.2-16-16zM64 0C28.7 0 0 28.7 0 64V448c0 35.3 28.7 64 64 64H320c35.3 0 64-28.7 64-64V154.5c0-17-6.7-33.3-18.7-45.3L274.7 18.7C262.7 6.7 246.5 0 229.5 0H64zm90.9 233.3c-8.1-10.5-23.2-12.3-33.7-4.2s-12.3 23.2-4.2 33.7L161.6 320l-44.5 57.3c-8.1 10.5-6.3 25.5 4.2 33.7s25.5 6.3 33.7-4.2L192 359.1l37.1 47.6c8.1 10.5 23.2 12.3 33.7 4.2s12.3-23.2 4.2-33.7L222.4 320l44.5-57.3c8.1-10.5 6.3-25.5-4.2-33.7s-25.5-6.3-33.7 4.2L192 280.9l-37.1-47.6z" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+
+            <div class="grid grid-cols-7 w-full mt-10 px-5 gap-0.5">
+                <div class="bg-tableHeader flex items-center text-white px-3 py-1.5 font-medium col-span-2">
+                    <span class="t_individual_level_questionnaires"></span>
+                </div>
+                <div class="bg-tableHeader flex justify-center items-center text-center text-white  px-3 py-1.5 font-medium">
+                    <span class="t_total_to_be_filled"></span>
+                </div>
+                <div class="bg-tableHeader flex justify-center items-center text-center text-white  px-3 py-1.5 font-medium">
+                    <span class="t_completed"></span>
+                </div>
+                <div class="bg-tableHeader flex justify-center items-center text-center text-white  px-3 py-1.5 font-medium">
+                    <span class="t_in_progress"></span>
+                </div>
+                <div class="bg-tableHeader flex justify-center items-center text-center text-white  px-3 py-1.5 font-medium" id="collector_dashboard_th6">
+                    <span class="t_completion_rate"></span>
+                </div>
+                <div class="bg-tableHeader flex justify-center items-center text-center text-white  px-3 py-1.5 font-medium" id="collector_dashboard_th2">
+                    <span class="t_actions"></span>
+                </div>
+
+
+                <div class="bg-tableRow text-gray-600 px-3 py-1.5 font-medium col-span-2 flex items-center">
+                    <span class="t_questionnaire_on_the_material_resources"></span>
+                </div>
+                <div class="bg-tableRow text-gray-600 text-center px-3 py-1.5 font-medium  flex items-center justify-center">
+                    <span id="t1c11"></span>
+                </div>
+                <div class="bg-tableRow text-gray-600 text-center px-3 py-1.5 font-medium  flex items-center justify-center">
+                    <span id="t1c12"></span>
+                </div>
+                <div class="bg-tableRow text-gray-600 text-center px-3 py-1.5 font-medium  flex items-center justify-center">
+                    <span id="t1c13"></span>
+                </div>
+                <div class="bg-tableRow text-gray-600 text-center px-3 py-1.5 font-medium  flex items-center justify-center">
+                    <span id="t1c14"></span>
+                </div>
+                <div class="bg-tableRow text-gray-600 text-center px-3 py-1.5 font-medium flex justify-center items-center">
+                    <button class="border border-gray-400 px-2 py-0.5 rounded bg-tableHeader/50 hover:bg-tableHeader" id="details_QMR">
+                        <span class="t_details"></span>
+                    </button>
+                </div>
+
+                <div class="bg-tableRowHover text-gray-600 px-3 py-1.5 font-medium col-span-2 flex items-center">
+                    <span class="t_data_sheet_on_entries_and_exits"></span>
+                </div>
+                <div class="bg-tableRowHover text-gray-600 text-center px-3 py-1.5 font-medium  flex items-center justify-center">
+                    <span id="t1c21"></span>
+                </div>
+                <div class="bg-tableRowHover text-gray-600 text-center px-3 py-1.5 font-medium  flex items-center justify-center">
+                    <span id="t1c22"></span>
+                </div>
+                <div class="bg-tableRowHover text-gray-600 text-center px-3 py-1.5 font-medium  flex items-center justify-center">
+                    <span id="t1c23"></span>
+                </div>
+                <div class="bg-tableRowHover text-gray-600 text-center px-3 py-1.5 font-medium  flex items-center justify-center">
+                    <span id="t1c24"></span>
+                </div>
+                <div class="bg-tableRowHover text-gray-600 text-center px-3 py-1.5 font-medium flex justify-center items-center">
+                    <button class="border border-gray-400 px-2 py-0.5 rounded bg-tableHeader/50 hover:bg-tableHeader" id="details_DSEE">
+                        <span class="t_details"></span>
+                    </button>
+                </div>
+
+                <div class="bg-tableRow text-gray-600 px-3 py-1.5 font-medium col-span-2 flex items-center">
+                    <span class="t_family_type_children_s_home_questionnaire"></span>
+                </div>
+                <div class="bg-tableRow text-gray-600 text-center px-3 py-1.5 font-medium  flex items-center justify-center">
+                    <span id="t1c31"></span>
+                </div>
+                <div class="bg-tableRow text-gray-600 text-center px-3 py-1.5 font-medium  flex items-center justify-center">
+                    <span id="t1c32"></span>
+                </div>
+                <div class="bg-tableRow text-gray-600 text-center px-3 py-1.5 font-medium  flex items-center justify-center">
+                    <span id="t1c33"></span>
+                </div>
+                <div class="bg-tableRow text-gray-600 text-center px-3 py-1.5 font-medium  flex items-center justify-center">
+                    <span id="t1c34"></span>
+                </div>
+                <div class="bg-tableRow text-gray-600 text-center px-3 py-1.5 font-medium flex justify-center items-center">
+                    <button class="border border-gray-400 px-2 py-0.5 rounded bg-tableHeader/50 hover:bg-tableHeader" id="details_FTCH">
+                        <span class="t_details"></span>
+                    </button>
+                </div>
+
+                <div class="bg-tableRowHover text-gray-600 px-3 py-1.5 font-medium col-span-2 flex items-center">
+                    <span class="t_patronat_family_questionnaires"></span>
+                </div>
+                <div class="bg-tableRowHover text-gray-600 text-center px-3 py-1.5 font-medium  flex items-center justify-center">
+                    <span id="t1c41"></span>
+                </div>
+                <div class="bg-tableRowHover text-gray-600 text-center px-3 py-1.5 font-medium  flex items-center justify-center">
+                    <span id="t1c42"></span>
+                </div>
+                <div class="bg-tableRowHover text-gray-600 text-center px-3 py-1.5 font-medium  flex items-center justify-center">
+                    <span id="t1c43"></span>
+                </div>
+                <div class="bg-tableRowHover text-gray-600 text-center px-3 py-1.5 font-medium  flex items-center justify-center">
+                    <span id="t1c44"></span>
+                </div>
+                <div class="bg-tableRowHover text-gray-600 text-center px-3 py-1.5 font-medium flex justify-center items-center">
+                    <button class="border border-gray-400 px-2 py-0.5 rounded bg-tableHeader/50 hover:bg-tableHeader" id="details_PFQ">
+                        <span class="t_details"></span>
+                    </button>
+                </div>
+
+                <div class="bg-tableRow text-gray-600 px-3 py-1.5 font-medium col-span-2 flex items-center">
+                    <span class="t_staff_working_in_the_service"></span>
+                </div>
+                <div class="bg-tableRow text-gray-600 text-center px-3 py-1.5 font-medium  flex items-center justify-center">
+                    <span id="t1c51"></span>
+                </div>
+                <div class="bg-tableRow text-gray-600 text-center px-3 py-1.5 font-medium  flex items-center justify-center">
+                    <span id="t1c52"></span>
+                </div>
+                <div class="bg-tableRow text-gray-600 text-center px-3 py-1.5 font-medium  flex items-center justify-center">
+                    <span id="t1c53"></span>
+                </div>
+                <div class="bg-tableRow text-gray-600 text-center px-3 py-1.5 font-medium  flex items-center justify-center">
+                    <span id="t1c54"></span>
+                </div>
+                <div class="bg-tableRow text-gray-600 text-center px-3 py-1.5 font-medium flex justify-center items-center">
+                    <button class="border border-gray-400 px-2 py-0.5 rounded bg-tableHeader/50 hover:bg-tableHeader" id="details_SWIS">
+                        <span class="t_details"></span>
+                    </button>
+                </div>
+
+                <div class="bg-tableRowHover text-gray-600 px-3 py-1.5 font-medium col-span-2 flex items-center">
+                    <span class="t_children_placed_in_the_service"></span>
+                </div>
+                <div class="bg-tableRowHover text-gray-600 text-center px-3 py-1.5 font-medium  flex items-center justify-center">
+                    <span id="t1c61"></span>
+                </div>
+                <div class="bg-tableRowHover text-gray-600 text-center px-3 py-1.5 font-medium  flex items-center justify-center">
+                    <span id="t1c62"></span>
+                </div>
+                <div class="bg-tableRowHover text-gray-600 text-center px-3 py-1.5 font-medium  flex items-center justify-center">
+                    <span id="t1c63"></span>
+                </div>
+                <div class="bg-tableRowHover text-gray-600 text-center px-3 py-1.5 font-medium  flex items-center justify-center">
+                    <span id="t1c64"></span>
+                </div>
+                <div class="bg-tableRowHover text-gray-600 text-center px-3 py-1.5 font-medium flex justify-center items-center">
+                    <button class="border border-gray-400 px-2 py-0.5 rounded bg-tableHeader/50 hover:bg-tableHeader" id="details_CPIS">
+                        <span class="t_details"></span>
+                    </button>
+                </div>
+
+                <div class="bg-tableRow text-gray-600 px-3 py-1.5 font-medium col-span-2 flex items-center">
+                    <span class="t_young_people_who_left_care_system"></span>
+                </div>
+                <div class="bg-tableRow text-gray-600 text-center px-3 py-1.5 font-medium  flex items-center justify-center">
+                    <span id="t1c71"></span>
+                </div>
+                <div class="bg-tableRow text-gray-600 text-center px-3 py-1.5 font-medium  flex items-center justify-center">
+                    <span id="t1c72"></span>
+                </div>
+                <div class="bg-tableRow text-gray-600 text-center px-3 py-1.5 font-medium  flex items-center justify-center">
+                    <span id="t1c73"></span>
+                </div>
+                <div class="bg-tableRow text-gray-600 text-center px-3 py-1.5 font-medium  flex items-center justify-center">
+                    <span id="t1c74"></span>
+                </div>
+                <div class="bg-tableRow text-gray-600 text-center px-3 py-1.5 font-medium flex justify-center items-center">
+                    <button class="border border-gray-400 px-2 py-0.5 rounded bg-tableHeader/50 hover:bg-tableHeader" id="details_YPLS">
+                        <span class="t_details"></span>
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </body>
+
+</html>

@@ -63,9 +63,9 @@ export const database = {
         return await connection;
     },
 
-    getUserInstitution: async (institution_id: number) => {
+    getUserInstitution: async (institution_code: string) => {
         const connection = new Promise<Array<DI.Institution>>((resolve) => {
-            db.all(`SELECT * FROM institutions WHERE id = '${institution_id}'`, (error, result) => {
+            db.all(`SELECT * FROM institutions WHERE code = '${institution_code}'`, (error, result) => {
                 if (error) {
                     console.log(error);
                 }
@@ -85,11 +85,11 @@ export const database = {
         });
         return await connection;
     },
-    getInstitutionUsers: async (institution_id: number, userId: number) => {
+    getInstitutionUsers: async (institution_code: string) => {
         const connection = new Promise<Array<DI.User>>((resolve) => {
-            // db.all(`SELECT * FROM users WHERE institution_id = '${institution_id}' AND id != '${userId}'`, (error, result) => {
+            // db.all(`SELECT * FROM users WHERE institution_code = '${institution_id}' AND id != '${userId}'`, (error, result) => {
             // TODO -- testing only
-            db.all(`SELECT * FROM users WHERE institution_id = '${institution_id}'`, (error, result) => {
+            db.all(`SELECT * FROM users WHERE institution_code = '${institution_code}'`, (error, result) => {
                 if (error) {
                     console.log(error);
                 }
@@ -98,7 +98,9 @@ export const database = {
         });
         return await connection;
     },
-    addUser: async (user: DI.User) => {
+    // TODO -- this does not work anymore
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    addUser: async (user: any) => {
         const connection = new Promise<boolean>((resolve) => {
             db.run(`INSERT INTO users (user_type, username, password, institution_id, first_name, patronymics, last_name, position, profession, phone, email) VALUES ('${user.user_type}', '${user.username}', '${user.password}', '${user.institution_id}', '${user.first_name}', '${user.patronymics}', '${user.last_name}', '${user.position}', '${user.profession}', '${user.phone}', '${user.email}')`, (error) => {
                 if (error) {
@@ -121,7 +123,9 @@ export const database = {
 
         return await connection;
     },
-    updateUser: async (user: DI.User) => {
+    // TODO -- update this as is not working anymore
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    updateUser: async (user: any) => {
         const connection = new Promise<boolean>((resolve) => {
             db.run(`UPDATE users SET username = '${user.username}', password = '${user.password}', first_name = '${user.first_name}', patronymics = '${user.patronymics}', last_name = '${user.last_name}', position = '${user.position}', profession = '${user.profession}', phone = '${user.phone}', email = '${user.email}' WHERE id = '${user.id}'`, (error) => {
                 if (error) {

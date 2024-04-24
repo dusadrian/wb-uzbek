@@ -139,5 +139,17 @@
 	"t_cibs_list": "Questionnaire about the child placed in specialized boarding schools",
 	"not_in_registry": "The institution does not appear in the Registry",
 	"t_trace_questionnaire_about_the_young_person_who_left_the_alternative_care_system": "Trace questionnaire about the young person who left the alternative care system",
-	"t_tqyp_list": "Trace questionnaire about the young person who left the alternative care system"
+	"t_tqyp_list": "Trace questionnaire about the young person who left the alternative care system",
+	"t_number_to_be_filled": "Number to be filled ",
+	"t_number_completed": "Number completed",
+	"t_instrument1": "I1. Questionnaire about the child placed into the child protection system",
+	"t_instrument2": "I2. Questionnaire about the child placed in specialized boarding schools",
+	"t_instrument3": "I3. Staff registry",
+	"t_instrument4": "I4. Questionnaire on the material resources of the institution and the living conditions of the residing children 1",
+	"t_instrument5A": "I5A. Trace questionnaire about the young person who left the alternative care system",
+	"t_instrument5": "I5. Monitoring questionnaire about the young people who left care system 1",
+	"t_instrument6": "I6. Data sheet on entries and exits from childcare institutions",
+	"t_instrument7": "I7. Family-Type Children's Home Questionnaire",
+	"t_instrument8": "I8. Patronat Family Questionnaire",
+	"t_instrument9": "I9. External evaluation form"
 }

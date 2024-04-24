@@ -1,32 +1,36 @@
-.open uzbek.duckdb
+.open uzbek.duckdb -- Create user table
 
--- Create user table
+DROP TABLE users;
+DROP SEQUENCE id_users_sequence;
 CREATE SEQUENCE id_users_sequence START 1;
-
--- Creates new user defined type 'mood' as an Enum
-CREATE TYPE user_typeEnum AS ENUM (
-    'localCollector',
-    'localCoordinator',
-    'cityCollector',
-    'regionalCoordinator',
-    'evaluator',
-    'main'
-);
 
 CREATE TABLE users (
     id INTEGER DEFAULT nextval('id_users_sequence'),
     uuid UUID DEFAULT uuid(),
-    user_type user_typeEnum,
     username VARCHAR NOT NULL,
     password VARCHAR NOT NULL,
-    institution_id INTEGER,
-    first_name VARCHAR NULL,
+    institution_code VARCHAR NULL,
+    institution_name VARCHAR NULL,
+    name VARCHAR NULL,
     patronymics VARCHAR NULL,
-    last_name VARCHAR NULL,
-    position VARCHAR NULL,
+    surname VARCHAR NULL,
+    job_title VARCHAR NULL,
     profession VARCHAR NULL,
     phone VARCHAR NULL,
     email VARCHAR NULL,
+    role_name VARCHAR NULL,
+    region_code VARCHAR NULL,
+    role_code VARCHAR NULL,
+    service_type_code VARCHAR NULL,
+    q1 VARCHAR NULL,
+    q2 VARCHAR NULL,
+    q3 VARCHAR NULL,
+    q4 VARCHAR NULL,
+    q6 VARCHAR NULL,
+    q5a VARCHAR NULL,
+    q5 VARCHAR NULL,
+    q7 VARCHAR NULL,
+    q8 VARCHAR NULL,
     PRIMARY KEY (id)
 );
 
@@ -122,6 +126,7 @@ CREATE TABLE values_csr (
     value VARCHAR NOT NULL,
     PRIMARY KEY (instrument_id, variable)
 );
+
 -- Create instrument 7
 CREATE SEQUENCE id_instrument_ftch_sequence START 1;
 
@@ -139,6 +144,7 @@ CREATE TABLE values_ftch (
     value VARCHAR NOT NULL,
     PRIMARY KEY (instrument_id, variable)
 );
+
 -- Create instrument 8
 CREATE SEQUENCE id_instrument_pfq_sequence START 1;
 
@@ -156,6 +162,7 @@ CREATE TABLE values_pfq (
     value VARCHAR NOT NULL,
     PRIMARY KEY (instrument_id, variable)
 );
+
 -- Create instrument 9
 CREATE SEQUENCE id_instrument_eef_sequence START 1;
 
@@ -228,27 +235,19 @@ CREATE TABLE values_tqyp (
     PRIMARY KEY (instrument_id, variable)
 );
 
-
 INSERT INTO
-    institutions (name, code, address, atuCode, region, district, type, staffCount, childrenCount, youngAdultCount, childrenHomeCount, patronatCount)
+    users (username,password,institution_code,institution_name,name,patronymics,surname,job_title,profession,phone,email,role_name,region_code,role_code,service_type_code,q1,q2,q3,q4,q6,q5a,q5,q7,q8)
 VALUES
-    ('Orphanage', '', '', '', '', '', '',10, 10, 0, 0, 0),
-    ('City', '', '', '', '', '', '', 0, 0, 10, 10, 10);
-
-INSERT INTO
-    users (user_type, username, password, institution_id)
-VALUES
-    ('localCollector', 'localCollector', 'localCollector', 1),
-    ('localCoordinator', 'localCoordinator', 'localCoordinator', 1),
-    ('cityCollector', 'cityCollector', 'cityCollector', 2),
-    ('evaluator', 'evaluator', 'evaluator', NULL),
-    ('regionalCoordinator', 'regionalCoordinator', 'regionalCoordinator', NULL),
-    ('main', 'main', 'main', NULL);
-
-
-
-
-
-
-
+    ('national', 'national', '', '', '', '', '', '', '', '', '', '', '1703', '100', '', '', '', '', '', '', '', '', '', ''),
+    ('regional', 'regional', '', '', '', '', '', '', '', '', '', '', '1703', '10', '', '', '', '', '', '', '', '', '', ''),
+    ('evaluator', 'evaluator', '', '', '', '', '', '', '', '', '', '', '1703', '5', '', '', '', '', '', '', '', '', '', ''),
+    ('admin_specialit', 'admin_specialit', '', '', '', '', '', '', '', '', '', '', '1703', '4', '1', '', '', '', '', '', '', '', '', ''),
+    ('hr_specialit', 'hr_specialit', '', '', '', '', '', '', '', '', '', '', '1703', '3', '1', '', '', '', '', '', '', '', '', ''),
+    ('childcare', 'childcare', '', '', '', '', '', '', '', '', '', '', '1703', '2', '1', '', '', '', '', '', '', '', '', ''),
+    ('bording', 'bording', '', '', '', '', '', '', '', '', '', '', '1703', '2', '4', '', '', '', '', '', '', '', '', ''),
+    ('inson', 'inson', '', '', '', '', '', '', '', '', '', '', '1703', '2', '9', '', '', '', '', '', '', '', '', ''),
+    ('coordinator_cd', 'coordinator_cd', '', '', '', '', '', '', '', '', '', '', '1703', '1', '1', '', '', '', '', '', '', '', '', ''),
+    ('coordinator_bording', 'coordinator_bording', '', '', '', '', '', '', '', '', '', '', '1703', '1', '4', '', '', '', '', '', '', '', '', ''),
+    ('coordinator_inson', 'coordinator_inson', '', '', '', '', '', '', '', '', '', '', '1703', '1', '9', '', '', '', '', '', '', '', '', '');
+    
 

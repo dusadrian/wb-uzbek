@@ -30,7 +30,7 @@ export const header = {
         const appSessionStorage = sessionStorage.getItem('appSession');
         if (appSessionStorage !== null) {
             const appSession = JSON.parse(appSessionStorage);
-            (document.getElementById('header_username') as HTMLSpanElement).innerText = (appSession.institutionName ? appSession.institutionName + ' | ' : '') + appSession.userName;
+            (document.getElementById('header_username') as HTMLSpanElement).innerText = (appSession.userData.institution_name ? appSession.userData.institution_name + ' | ' : '') + appSession.userData.username;
         }
 
         (document.getElementById('logout_text') as HTMLSpanElement).innerText = i18n.__("logout");

@@ -12,7 +12,7 @@ const i18n = new I18n({
 let username = '';
 ipcRenderer.on('appSession', (event, arg) => {
     sessionStorage.setItem('appSession', JSON.stringify(arg));
-    username = (arg.institutionName ? arg.institutionName + ' | ' : '') + arg.userName;
+    username = (arg.userData.institution_name ? arg.userData.institution_name + ' | ' : '') + arg.userData.username;
     const us = document.getElementById('header_username');
     if (us) {
         us.innerText = username;
@@ -25,23 +25,17 @@ window.addEventListener("DOMContentLoaded", () => {
     let file = path.basename(location.href);
 
     // set file path
-    if (location.href.includes('localCollector')) {
-        file = 'localCollector/' + file;
+    if (location.href.includes('national')) {
+        file = 'national/' + file;
     }
-    if (location.href.includes('localCoordinator')) {
-        file = 'localCoordinator/' + file;
-    }
-    if (location.href.includes('cityCollector')) {
-        file = 'cityCollector/' + file;
-    }
-    if (location.href.includes('regionalCoordinator')) {
-        file = 'regionalCoordinator/' + file;
+    if (location.href.includes('regional')) {
+        file = 'regional/' + file;
     }
     if (location.href.includes('evaluator')) {
         file = 'evaluator/' + file;
     }
-    if (location.href.includes('main')) {
-        file = 'main/' + file;
+    if (location.href.includes('local')) {
+        file = 'local/' + file;
     }
     if (location.href.includes('instruments')) {
         file = 'instruments/' + file;
@@ -58,35 +52,29 @@ window.addEventListener("DOMContentLoaded", () => {
         case 'index.html':
             index();
             break;
-        case 'localCollector/01_dashboard.html':
-            localCollectorDashboard();
+        case 'local/01_dashboard.html':
+            localDashboard();
             break;
-        case 'localCoordinator/01_dashboard.html':
-            localCoordinatorDashboard();
-            break;
-        case 'localCoordinator/02_institution_details.html':
+        case 'local/02_institution_details.html':
             institutionDetails();
             break;
-        case 'localCoordinator/03_users.html':
+        case 'local/03_users.html':
             localCoordinatorUsers();
             break;
-        case 'localCoordinator/04_add_user.html':
+        case 'local/04_add_user.html':
             localCoordinatorAddUser();
             break;
-        case 'localCoordinator/05_edit_user.html':
+        case 'local/05_edit_user.html':
             localCoordinatorEditUser();
-            break;
-        case 'cityCollector/01_dashboard.html':
-            cityCollectorDashboard();
             break;
         case 'evaluator/01_dashboard.html':
             evaluatorDashboard();
             break;
-        case 'regionalCoordinator/01_dashboard.html':
-            regionalCoordinatorDashboard();
+        case 'regional/01_dashboard.html':
+            regionalDashboard();
             break;
-        case 'main/01_dashboard.html':
-            mainDashboard();
+        case 'national/01_dashboard.html':
+            nationalDashboard();
             break;
 
         case 'instruments/01_cpis.html':
@@ -241,27 +229,14 @@ const topMenu = (backPage: string) => {
     });
 }
 
-const localCollectorDashboard = () => {
+const localDashboard = () => {
 
     topMenu('index');
 
     translatePage();
 
     const importFile = async () => {
-        return await import("./pages/localCollector/01_dashboard");
-    };
-    importFile().then(result => result.localCollector.init().catch(error => {
-        console.log(error);
-    }));
-};
-const localCoordinatorDashboard = () => {
-
-    topMenu('index');
-
-    translatePage();
-
-    const importFile = async () => {
-        return await import("./pages/localCoordinator/01_dashboard");
+        return await import("./pages/local/01_dashboard");
     };
     importFile().then(result => result.localCoordinator.init().catch(error => {
         console.log(error);
@@ -274,7 +249,7 @@ const institutionDetails = () => {
     translatePage();
 
     const importFile = async () => {
-        return await import("./pages/localCoordinator/02_institution_details");
+        return await import("./pages/local/02_institution_details");
     };
     importFile().then(result => result.institutionDetails.init().catch(error => {
         console.log(error);
@@ -287,7 +262,7 @@ const localCoordinatorUsers = () => {
     translatePage();
 
     const importFile = async () => {
-        return await import("./pages/localCoordinator/03_users");
+        return await import("./pages/local/03_users");
     };
     importFile().then(result => result.users.init().catch(error => {
         console.log(error);
@@ -300,7 +275,7 @@ const localCoordinatorAddUser = () => {
     translatePage();
 
     const importFile = async () => {
-        return await import("./pages/localCoordinator/04_add_user");
+        return await import("./pages/local/04_add_user");
     };
     importFile().then(result => result.addUser.init().catch(error => {
         console.log(error);
@@ -313,26 +288,13 @@ const localCoordinatorEditUser = () => {
     translatePage();
 
     const importFile = async () => {
-        return await import("./pages/localCoordinator/05_edit_user");
+        return await import("./pages/local/05_edit_user");
     };
     importFile().then(result => result.editUser.init().catch(error => {
         console.log(error);
     }));
 };
 
-const cityCollectorDashboard = () => {
-
-    topMenu('index');
-
-    translatePage();
-
-    const importFile = async () => {
-        return await import("./pages/cityCollector/01_dashboard");
-    };
-    importFile().then(result => result.cityCollector.init().catch(error => {
-        console.log(error);
-    }));
-};
 const evaluatorDashboard = () => {
 
     topMenu('index');
@@ -346,27 +308,27 @@ const evaluatorDashboard = () => {
         console.log(error);
     }));
 };
-const regionalCoordinatorDashboard = () => {
+const regionalDashboard = () => {
 
     topMenu('index');
 
     translatePage();
     const importFile = async () => {
-        return await import("./pages/regionalCoordinator/01_dashboard");
+        return await import("./pages/regional/01_dashboard");
     };
     importFile().then(result => result.regionalCoordinator.init().catch(error => {
         console.log(error);
     }));
 };
-const mainDashboard = () => {
+const nationalDashboard = () => {
 
     topMenu('index');
 
     translatePage();
     const importFile = async () => {
-        return await import("./pages/main/01_dashboard");
+        return await import("./pages/national/01_dashboard");
     };
-    importFile().then(result => result.mainDashboard.init().catch(error => {
+    importFile().then(result => result.nationalDashboard.init().catch(error => {
         console.log(error);
     }));
 };

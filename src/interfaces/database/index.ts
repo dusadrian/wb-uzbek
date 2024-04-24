@@ -1,17 +1,30 @@
 export interface User {
     id: number;
     uuid: string;
-    user_type: string;
     username: string;
     password: string;
-    institution_id: number;
-    first_name: string;
+    institution_code: string;
+    institution_name: string;
+    name: string;
     patronymics: string;
-    last_name: string;
-    position: string;
+    surname: string;
+    job_title: string;
     profession: string;
     phone: string;
     email: string;
+    role_name: string;
+    region_code: string;
+    role_code: string;
+    service_type_code: string;
+    q1: string;
+    q2: string;
+    q3: string;
+    q4: string;
+    q6: string;
+    q5a: string;
+    q5: string;
+    q7: string;
+    q8: string;
 }
 
 export interface Institution {
