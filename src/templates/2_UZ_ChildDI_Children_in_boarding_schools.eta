@@ -254,7 +254,7 @@
                 </div>
                 <div class="flex items-center">
                     <input id="lk15-4" type="radio" value="4" name="lk15" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="lk15-4" class="ms-2 text-sm text-gray-900"><%= it.t89 %></label>
+                    <label for="lk15-4" class="ms-2 text-sm text-gray-900">4. Other staff of the institution</label>
                 </div>
                 <div class="flex items-center">
                     <input id="lk15-5" type="radio" value="5" name="lk15" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
@@ -262,7 +262,7 @@
                 </div>
                 <div class="flex items-center">
                     <input id="lk15-6" type="radio" value="6" name="lk15" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="lk15-6" class="ms-2 text-sm text-gray-900">6. Other, please specify: …</label>
+                    <label for="lk15-6" class="ms-2 text-sm text-gray-900"><%= it.t89 %></label>
                 </div>
                 <div class="flex items-center">
                     <input type="text" id="lk15_other" name="lk15_other" class="bg-white disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
@@ -270,7 +270,7 @@
             </div>
         </div>
 
-        <div class="grid grid-cols-2 gap-4 items-center mt-6">
+        <% /* <div class="grid grid-cols-2 gap-4 items-center mt-6">
             <div>LK16. Is there currently a decision regarding the placement of the child in alternative care, either in an institution or a family-type setting?</div>
             <div class="col-span-1 flex gap-4">
                 <div class="flex items-center">
@@ -316,7 +316,7 @@
                     <label for="lk17-7" class="ms-2 text-sm text-gray-900">7. SOS children's villages/families</label>
                 </div>
             </div>
-        </div>
+        </div> */ %>
 
         <h2 class="mt-10 mb-4 text-2xl font-bold text-gray-700"><%= it.t90 %></h2>
 
@@ -342,14 +342,14 @@
                 </div>
                 <div class="flex items-center">
                     <input id="qfam1-5" type="radio" value="3" name="qfam1" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="qfam1-5" class="ms-2 text-sm text-gray-900"><%= it.t98 %></label>
+                    <label for="qfam1-5" class="ms-2 text-sm text-gray-900"><%= it.t99 %></label>
                 </div>
                 <div class="flex items-center">
                     <input type="text" id="qfam1_other" name="qfam1_other" class="bg-white disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
                 </div>
                 <div class="flex items-center">
                     <input id="qfam1-6" type="radio" value="3" name="qfam1" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="qfam1-6" class="ms-2 text-sm text-gray-900"><%= it.t99 %></label>
+                    <label for="qfam1-6" class="ms-2 text-sm text-gray-900"><%= it.t101 %></label>
                 </div>
             </div>
         </div>
