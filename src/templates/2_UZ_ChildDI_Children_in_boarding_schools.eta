@@ -320,6 +320,8 @@
 
         <h2 class="mt-10 mb-4 text-2xl font-bold text-gray-700"><%= it.t90 %></h2>
 
+
+
         <p class="mt-6"><%= it.t91 %>: <%= it.t92 %></p>
         <div class="grid grid-cols-2 gap-4 items-center mt-4">
             <div class="ml-6"><%= it.t93 %></div>
@@ -337,18 +339,18 @@
                     <label for="qfam1-3" class="ms-2 text-sm text-gray-900"><%= it.t96 %></label>
                 </div>
                 <div class="flex items-center">
-                    <input id="qfam1-4" type="radio" value="3" name="qfam1" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <input id="qfam1-4" type="radio" value="4" name="qfam1" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                     <label for="qfam1-4" class="ms-2 text-sm text-gray-900"><%= it.t97 %></label>
                 </div>
                 <div class="flex items-center">
-                    <input id="qfam1-5" type="radio" value="3" name="qfam1" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <input id="qfam1-5" type="radio" value="7" name="qfam1" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                     <label for="qfam1-5" class="ms-2 text-sm text-gray-900"><%= it.t99 %></label>
                 </div>
                 <div class="flex items-center">
                     <input type="text" id="qfam1_other" name="qfam1_other" class="bg-white disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
                 </div>
                 <div class="flex items-center">
-                    <input id="qfam1-6" type="radio" value="3" name="qfam1" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <input id="qfam1-6" type="radio" value="9" name="qfam1" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                     <label for="qfam1-6" class="ms-2 text-sm text-gray-900"><%= it.t101 %></label>
                 </div>
             </div>
@@ -440,63 +442,41 @@
                 </select>
             </div>
         </div>
+
+
+
+
         <div class="grid grid-cols-2 items-center gap-4 mt-6">
-            <div>SA3c. <%= it.settlement %></div>
+            <div>SA5a. Institution</div>
             <div>
-                <select id="sa3c" name="sa3c" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                    <option value="-9" class="t_choose">--- choose ---</option>
-                </select>
-
-            </div>
-        </div>
-
-        <input type="hidden" id="sa3d" name="sa3d" />
-
-        <div class="grid grid-cols-2 gap-4 items-center mt-10">
-            <div><%= it.t130 %>. <%= it.t131 %></div>
-            <div class="col-span-1 flex flex-col gap-2">
-                <div class="flex items-center">
-                    <input id="sa5a-1" type="radio" value="1" name="sa5a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="sa5a-1" class="ms-2 text-sm text-gray-900"><%= it.t132 %></label>
-                </div>
-                <div class="flex items-center">
-                    <input id="sa5a-2" type="radio" value="2" name="sa5a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="sa5a-2" class="ms-2 text-sm text-gray-900"><%= it.t133 %></label>
-                </div>
-                <div class="flex items-center">
-                    <input id="sa5a-3" type="radio" value="3" name="sa5a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="sa5a-3" class="ms-2 text-sm text-gray-900"><%= it.t134 %></label>
-                </div>
-                <div class="flex items-center">
-                    <input id="sa5a-4" type="radio" value="4" name="sa5a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="sa5a-4" class="ms-2 text-sm text-gray-900"><%= it.t135 %></label>
-                </div>
-                <div class="flex items-center">
-                    <input id="sa5a-5" type="radio" value="5" name="sa5a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="sa5a-5" class="ms-2 text-sm text-gray-900"><%= it.t136 %></label>
-                </div>
-                <div class="flex items-center">
-                    <input id="sa5a-6" type="radio" value="6" name="sa5a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="sa5a-6" class="ms-2 text-sm text-gray-900"><%= it.t137 %></label>
-                </div>
-                <div class="flex items-center">
-                    <input id="sa5a-7" type="radio" value="7" name="sa5a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="sa5a-7" class="ms-2 text-sm text-gray-900"><%= it.t138 %></label>
-                </div>
-            </div>
-        </div>
-        <div class="grid grid-cols-2 items-center gap-4 mt-6">
-            <div><%= it.t139 %>. <%= it.t140 %></div>
-            <div>
-                <select id="sa5b" name="sa5b" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+                <select id="sa5a" name="sa5a" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
                     <option value="-9" class="t_choose">--- choose ---</option>
                 </select>
             </div>
         </div>
+
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
-            <div><%= it.t141 %>. <%= it.t142 %></div>
+            <div>SA5b. Service name</div>
             <div class="flex gap-4">
-                <input type="text" id="sa5c" name="sa5c" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                <input type="text" id="sa5b" name="sa5b" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+            </div>
+        </div>
+
+
+        <div class="grid grid-cols-2 gap-4 items-center mt-6">
+            <div>SA5c. Type of institution</div>
+            <div>
+                <select id="sa5c" name="sa5c"
+                        class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100">
+                    <option selected value="-9" class="t_choose">------</option>
+                    <option value="11"><%= it.t132 %></option>
+                    <option value="12"><%= it.t133 %></option>
+                    <option value="13"><%= it.t134 %></option>
+                    <option value="14"><%= it.t135 %></option>
+                    <option value="15"><%= it.t136 %></option>
+                    <option value="16"><%= it.t137 %></option>
+                    <option value="17"><%= it.t138 %></option>
+                </select>
             </div>
         </div>
 

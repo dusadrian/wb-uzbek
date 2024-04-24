@@ -10,7 +10,7 @@ import { FlatpickrFn } from 'flatpickr/dist/types/instance';
 const flatpickr: FlatpickrFn = _flatpickr as any;
 import { Russian } from "flatpickr/dist/l10n/ru";
 import { UzbekLatin } from "flatpickr/dist/l10n/uz_latn";
-import { KeyString, regions, districts, settlements, settlement_types } from "../../libraries/administrative";
+import { KeyString, services, regions, districts, settlements, settlement_types } from "../../libraries/administrative";
 
 import * as en from "../../locales/en.json";
 import * as uz from "../../locales/uz.json";
@@ -30,8 +30,8 @@ const general_dates = [
 
 const regElements  = ["lk14b", "sa3a", "cm3b", "cm11c", "ct11c", "cg11c"];
 const disElements  = ["lk14c", "sa3b", "cm3c", "cm11d", "ct11d", "cg11d"];
-const setElements  = ["lk14d", "sa3c", "cm3d", "cm11e", "ct11e", "cg11e"];
-const typeElements = ["lk14e", "sa3d", "cm3e", "cm11f", "ct11f", "cg11f"];
+const setElements  = ["lk14d", "", "cm3d", "cm11e", "ct11e", "cg11e"];
+const typeElements = ["lk14e", "", "cm3e", "cm11f", "ct11f", "cg11f"];
 
 export const instrument2 = {
     init: async () => {
@@ -79,6 +79,7 @@ export const instrument2 = {
             flatpickr(element, config);
         });
 
+        const sa5a = util.htmlElement("sa5a");
         const reg_codes = Object.keys(regions);
         for (let x = 0; x < regElements.length; x++) {
             const reg_el = util.htmlElement(regElements[x]);
@@ -100,8 +101,18 @@ export const instrument2 = {
             const set_el = util.htmlElement(setElements[x]);
 
             util.listen(regElements[x], "change", function () {
-                set_el.innerHTML = "";
-                util.htmlElement(typeElements[x]).value = "";
+                if (regElements[x] == "sa3a") {
+                    sa5a.innerHTML = "";
+                }
+
+                if (typeElements[x] != "") {
+                    util.htmlElement(typeElements[x]).value = "";
+                }
+
+                if (setElements[x] != "") {
+                    set_el.innerHTML = "";
+                }
+
                 const selectedRegion = reg_el.value;
                 if (Number(selectedRegion) > 0) {
                     const dis_codes = regions[selectedRegion].districts;
@@ -122,33 +133,67 @@ export const instrument2 = {
             })
 
             util.listen(disElements[x], "change", function () {
-                util.htmlElement(typeElements[x]).value = "";
+                if (typeElements[x] != "") {
+                    util.htmlElement(typeElements[x]).value = "";
+                }
                 const selectedDistrict = dis_el.value;
-                instrument.questions[setElements[x]].skip = false;
-                util.htmlElement(setElements[x]).disabled = false;
-                set_el.innerHTML = "";
+
+                if (setElements[x] != "") {
+                    instrument.questions[setElements[x]].skip = false;
+                    util.htmlElement(setElements[x]).disabled = false;
+                    set_el.innerHTML = "";
+                }
+
                 if (Number(selectedDistrict) > 0) {
-                    const set_codes = districts[selectedDistrict].settlements;
+                    const option = document.createElement("option");
+                    option.value = "-9";
+                    option.text = locales[lang]['t_choose'];
 
-                    if (set_codes.length > 0) {
-                        const option = document.createElement("option");
-                        option.value = "-9";
-                        option.text = locales[lang]['t_choose'];
-                        set_el.appendChild(option);
+                    if (setElements[x] != "") {
+                        const set_codes = districts[selectedDistrict].settlements;
 
-                        for (let i = 0; i < set_codes.length; i++) {
-                            const option = document.createElement("option");
-                            option.value = set_codes[i];
-                            option.text = set_codes[i] + ": " + (settlements[set_codes[i]] as KeyString)[lang];
+                        if (set_codes.length > 0) {
                             set_el.appendChild(option);
+
+                            for (let i = 0; i < set_codes.length; i++) {
+                                const option = document.createElement("option");
+                                option.value = set_codes[i];
+                                option.text = set_codes[i] + ": " + (settlements[set_codes[i]] as KeyString)[lang];
+                                set_el.appendChild(option);
+                            }
                         }
-                    }
-                    else {
-                        const dis_type = districts[selectedDistrict].type;
-                        util.setValue(typeElements[x], "" + dis_type[lang as keyof typeof dis_type]);
-                        instrument.questions[setElements[x]].skip = true;
-                        instrument.questions[setElements[x]].value = '-7';
-                        util.htmlElement(setElements[x]).disabled = true;
+                        else {
+                            if (typeElements[x] != "") {
+                                const dis_type = districts[selectedDistrict].type;
+                                util.setValue(typeElements[x], "" + dis_type[lang as keyof typeof dis_type]);
+                            }
+                            instrument.questions[setElements[x]].skip = true;
+                            instrument.questions[setElements[x]].value = '-7';
+                            util.htmlElement(setElements[x]).disabled = true;
+                        }
+                    } else {
+                        sa5a.innerHTML = "";
+                        const serv = districts[selectedDistrict].services;
+                        sa5a.appendChild(option);
+
+                        if (serv.length > 0) {
+                            for (let i = 0; i < serv.length; i++) {
+                                if (services[serv[i]].type != "") {
+                                    const option = document.createElement("option");
+                                    option.value = serv[i];
+                                    option.text = serv[i] + ': ' + services[serv[i]].name;
+                                    sa5a.appendChild(option);
+                                }
+                            }
+                        }
+
+                        const optgroup = document.createElement("optgroup");
+                        const option999 = document.createElement("option");
+                        option999.value = '999';
+                        option999.text = '999: ' + locales[lang]['not_in_registry'];
+                        optgroup.appendChild(option999);
+                        sa5a.appendChild(optgroup);
+
                     }
                 }
             })
@@ -242,11 +287,13 @@ const saveChestionar = (obj: SaveInstrumentType): void => {
 
 // settlement type
 for (let i = 0; i < setElements.length; i++) {
-    util.listen(setElements[i], "change", () => {
-        const value = util.htmlElement(setElements[i]).value;
-        const set_type = settlement_types[settlements[value].type];
-        util.setValue(typeElements[i], "" + (set_type as KeyString)[lang]);
-    })
+    if (setElements[i] != "") {
+        util.listen(setElements[i], "change", () => {
+            const value = util.htmlElement(setElements[i]).value;
+            const set_type = settlement_types[settlements[value].type];
+            util.setValue(typeElements[i], (set_type as KeyString)[lang].toString());
+        })
+    }
 }
 
 
@@ -315,6 +362,43 @@ util.listen("sa1a", "myChange", () => {
 
 
 
+util.listen("sa5a", "change", function () {
+    util.setValue("sa5c", "-9");
+    const value = util.htmlElement("sa5a").value;
+    const serv_codes = Object.keys(services);
+    if (serv_codes.indexOf(value) >= 0) {
+        const type = services[value].type;
+        console.log(type, services[value].name);
+        if (["11", "12", "13", "14", "15"].indexOf(type) >= 0) {
+            util.setValue("sa5c", type);
+        }
+    }
+})
+
+
+const qfam = [
+    'qfam2_1', 'qfam2_2', 'qfam2_3', 'qfam2_4', 'qfam2_5',
+    'qfam2_6', 'qfam2_7', 'qfam2_8', 'qfam2_9'
+]
+
+util.listen("qfam2_90", "change", () => {
+    if (util.htmlElement("qfam2_90").checked) {
+        qfam.forEach((el) => {
+            util.htmlElement(el).checked = false;
+            instrument.questions[el].value = "0";
+        })
+    }
+})
+
+util.listen(qfam, "change", () => {
+    if (util.makeSumFromElements(qfam) > 0) {
+        util.htmlElement("qfam2_90").checked = false;
+        instrument.questions["qfam2_90"].value = "0";
+    }
+});
+
+
+
 const prehealth = [
     "prehealth5a1", "prehealth5a2", "prehealth5a3", "prehealth5a4", "prehealth5a5",
     "prehealth5a6", "prehealth5a7", "prehealth5a8", "prehealth5a9"
@@ -345,11 +429,11 @@ function check_lk22_2(): boolean {
 
     const suma = util.makeSumFromElements(lk22_2);
 
-    const error = locales[lang]['At_least_one_disability'];
-    errorHandler.removeArrayError(lk22_2, error);
+    const message = locales[lang]['At_least_one_disability'];
+    errorHandler.removeError(lk22_2, message);
 
     if (suma == 0) {
-        errorHandler.addArrayError(lk22_2, error);
+        errorHandler.addError(lk22_2, message);
         lk22_2_1.scrollIntoView({ behavior: "smooth", block: "center", inline: "nearest" });
     }
     else {

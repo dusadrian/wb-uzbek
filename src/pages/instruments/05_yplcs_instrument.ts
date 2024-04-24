@@ -55,6 +55,7 @@ export const instrument5 = {
         flatpickrConfig.minDate = "01/01/2023";
         flatpickr(util.htmlElement('pi7'), flatpickrConfig);
 
+        const pi6 = util.htmlElement("pi6");
         const reg_codes = Object.keys(regions);
         for (let x = 0; x < regElements.length; x++) {
             const reg_el = util.htmlElement(regElements[x]);
@@ -76,6 +77,10 @@ export const instrument5 = {
             const set_el = util.htmlElement(setElements[x]);
 
             util.listen(regElements[x], "change", function () {
+                if (regElements[x] == "pi6r") {
+                    pi6.innerHTML = "";
+                }
+
                 if (typeElements[x] != "") {
                     util.htmlElement(typeElements[x]).value = "";
                 }
@@ -143,17 +148,19 @@ export const instrument5 = {
                             util.htmlElement(setElements[x]).disabled = true;
                         }
                     } else {
-                        const pi6 = util.htmlElement("pi6");
+
                         pi6.innerHTML = "";
                         const serv = districts[selectedDistrict].services;
                         pi6.appendChild(option);
 
                         if (serv.length > 0) {
                             for (let i = 0; i < serv.length; i++) {
-                                const option = document.createElement("option");
-                                option.value = serv[i];
-                                option.text = serv[i] + ': ' + services[serv[i]].name;
-                                pi6.appendChild(option);
+                                if (services[serv[i]].type != "15") {
+                                    const option = document.createElement("option");
+                                    option.value = serv[i];
+                                    option.text = serv[i] + ': ' + services[serv[i]].name;
+                                    pi6.appendChild(option);
+                                }
                             }
                         }
 
