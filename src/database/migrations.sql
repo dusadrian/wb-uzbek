@@ -26,9 +26,9 @@ CREATE TABLE users (
     q2 VARCHAR NULL,
     q3 VARCHAR NULL,
     q4 VARCHAR NULL,
-    q6 VARCHAR NULL,
-    q5a VARCHAR NULL,
     q5 VARCHAR NULL,
+    q5a VARCHAR NULL,
+    q6 VARCHAR NULL,
     q7 VARCHAR NULL,
     q8 VARCHAR NULL,
     PRIMARY KEY (id)
@@ -249,5 +249,5 @@ VALUES
     ('coordinator_cd', 'coordinator_cd', '', '', '', '', '', '', '', '', '', '', '1703', '1', '1', '', '', '', '', '', '', '', '', ''),
     ('coordinator_boarding', 'coordinator_boarding', '', '', '', '', '', '', '', '', '', '', '1703', '1', '4', '', '', '', '', '', '', '', '', ''),
     ('coordinator_inson', 'coordinator_inson', '', '', '', '', '', '', '', '', '', '', '1703', '1', '9', '', '', '', '', '', '', '', '', '');
-    
+
 
