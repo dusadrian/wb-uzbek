@@ -49,6 +49,19 @@ interface Services {
     }
 }
 
+interface Insons {
+    [key: string]: {
+        "region": number;
+        "district": number;
+        "name": string;
+        "no_pf": number;
+        "no_fth": number;
+        "no_ch_fth": number;
+        "no_ext_fth": number;
+        "services": number[]
+    }
+}
+
 export type KeyString = { [key: string]: string | string[] };
 
 export const services: Services = {
@@ -23868,5 +23881,2276 @@ export const settlement_types: Code_Names = {
         "en": "City District",
         "uz": "Shaxarning tumanlari",
         "ru": "Районы города"
+    }
+}
+
+export const insons: Insons = {
+    "9170301": {
+        "region": 1703,
+        "district": 1703202,
+        "name": "Олтинкўл туман  \"Инсон\" ижтимоий хизматлар маркази",
+        "no_pf": 0,
+        "no_fth": 0,
+        "no_ch_fth": 0,
+        "no_ext_fth": 0,
+        "services": []
+    },
+    "9170302": {
+        "region": 1703,
+        "district": 1703203,
+        "name": "Андижон туман  \"Инсон\" ижтимоий хизматлар маркази",
+        "no_pf": 9,
+        "no_fth": 0,
+        "no_ch_fth": 0,
+        "no_ext_fth": 0,
+        "services": []
+    },
+    "9170303": {
+        "region": 1703,
+        "district": 1703206,
+        "name": "Балиқчи туман  \"Инсон\" ижтимоий хизматлар маркази",
+        "no_pf": 3,
+        "no_fth": 0,
+        "no_ch_fth": 0,
+        "no_ext_fth": 0,
+        "services": []
+    },
+    "9170304": {
+        "region": 1703,
+        "district": 1703210,
+        "name": "Булоқбоши туман  \"Инсон\" ижтимоий хизматлар маркази",
+        "no_pf": 3,
+        "no_fth": 0,
+        "no_ch_fth": 0,
+        "no_ext_fth": 0,
+        "services": []
+    },
+    "9170305": {
+        "region": 1703,
+        "district": 1703209,
+        "name": "Бўстон туман  \"Инсон\" ижтимоий хизматлар маркази",
+        "no_pf": 0,
+        "no_fth": 0,
+        "no_ch_fth": 0,
+        "no_ext_fth": 0,
+        "services": []
+    },
+    "9170306": {
+        "region": 1703,
+        "district": 1703211,
+        "name": "Жалақудуқ туман  \"Инсон\" ижтимоий хизматлар маркази",
+        "no_pf": 4,
+        "no_fth": 0,
+        "no_ch_fth": 0,
+        "no_ext_fth": 0,
+        "services": []
+    },
+    "9170307": {
+        "region": 1703,
+        "district": 1703214,
+        "name": "Избоскан туман  \"Инсон\" ижтимоий хизматлар маркази",
+        "no_pf": 3,
+        "no_fth": 0,
+        "no_ch_fth": 0,
+        "no_ext_fth": 0,
+        "services": []
+    },
+    "9170308": {
+        "region": 1703,
+        "district": 1703217,
+        "name": "Улуғнор  туман  \"Инсон\" ижтимоий хизматлар маркази",
+        "no_pf": 0,
+        "no_fth": 0,
+        "no_ch_fth": 0,
+        "no_ext_fth": 0,
+        "services": []
+    },
+    "9170309": {
+        "region": 1703,
+        "district": 1703220,
+        "name": "Қўрғонтепа  туман  \"Инсон\" ижтимоий хизматлар маркази",
+        "no_pf": 0,
+        "no_fth": 1,
+        "no_ch_fth": 0,
+        "no_ext_fth": 0,
+        "services": []
+    },
+    "9170310": {
+        "region": 1703,
+        "district": 1703224,
+        "name": "Асака  туман  \"Инсон\" ижтимоий хизматлар маркази",
+        "no_pf": 11,
+        "no_fth": 1,
+        "no_ch_fth": 4,
+        "no_ext_fth": 2,
+        "services": [
+            6170301
+        ]
+    },
+    "9170311": {
+        "region": 1703,
+        "district": 1703227,
+        "name": "Марҳамат  туман  \"Инсон\" ижтимоий хизматлар маркази",
+        "no_pf": 2,
+        "no_fth": 0,
+        "no_ch_fth": 0,
+        "no_ext_fth": 0,
+        "services": []
+    },
+    "9170312": {
+        "region": 1703,
+        "district": 1703230,
+        "name": "Шахрихон туман  \"Инсон\" ижтимоий хизматлар маркази",
+        "no_pf": 4,
+        "no_fth": 0,
+        "no_ch_fth": 0,
+        "no_ext_fth": 0,
+        "services": []
+    },
+    "9170313": {
+        "region": 1703,
+        "district": 1703232,
+        "name": "Пахтаобод  туман  \"Инсон\" ижтимоий хизматлар маркази",
+        "no_pf": 28,
+        "no_fth": 0,
+        "no_ch_fth": 0,
+        "no_ext_fth": 0,
+        "services": []
+    },
+    "9170314": {
+        "region": 1703,
+        "district": 1703236,
+        "name": "Пахтаобод  туман  \"Инсон\" ижтимоий хизматлар маркази",
+        "no_pf": 0,
+        "no_fth": 0,
+        "no_ch_fth": 0,
+        "no_ext_fth": 0,
+        "services": []
+    },
+    "9170315": {
+        "region": 1703,
+        "district": 1703401,
+        "name": "Андижон шахар  \"Инсон\" ижтимоий хизматлар маркази",
+        "no_pf": 10,
+        "no_fth": 2,
+        "no_ch_fth": 10,
+        "no_ext_fth": 1,
+        "services": [
+            6170302,
+            6170303
+        ]
+    },
+    "9170316": {
+        "region": 1703,
+        "district": 1703408,
+        "name": "Хонобод шахар \"Инсон\" ижтимоий хизматлар маркази",
+        "no_pf": 4,
+        "no_fth": 0,
+        "no_ch_fth": 0,
+        "no_ext_fth": 0,
+        "services": []
+    },
+    "9170601": {
+        "region": 1706,
+        "district": 1706401,
+        "name": "Buxoro shahar \"Inson\" ijtimoiy xizmatlari markazi",
+        "no_pf": 38,
+        "no_fth": 4,
+        "no_ch_fth": 20,
+        "no_ext_fth": 0,
+        "services": [
+            6170604,
+            6170605,
+            6170606,
+            6170607
+        ]
+    },
+    "9170602": {
+        "region": 1706,
+        "district": 1706403,
+        "name": "Kogon shahri \"Inson\" ijtimoiy xizmatlari markazi",
+        "no_pf": 7,
+        "no_fth": 4,
+        "no_ch_fth": 0,
+        "no_ext_fth": 0,
+        "services": []
+    },
+    "9170603": {
+        "region": 1706,
+        "district": 1706207,
+        "name": "Buxoro tumani \"Inson\" ijtimoiy xizmatlari markazi",
+        "no_pf": 14,
+        "no_fth": 0,
+        "no_ch_fth": 0,
+        "no_ext_fth": 0,
+        "services": [
+            6170601
+        ]
+    },
+    "9170604": {
+        "region": 1706,
+        "district": 1706212,
+        "name": "Vobkent tumani \"Inson\" ijtimoiy xizmatlari markazi",
+        "no_pf": 5,
+        "no_fth": 0,
+        "no_ch_fth": 0,
+        "no_ext_fth": 0,
+        "services": []
+    },
+    "9170605": {
+        "region": 1706,
+        "district": 1706215,
+        "name": "Gʻijduvon tumani \"Inson\" ijtimoiy xizmatlari markazi",
+        "no_pf": 29,
+        "no_fth": 0,
+        "no_ch_fth": 0,
+        "no_ext_fth": 0,
+        "services": []
+    },
+    "9170606": {
+        "region": 1706,
+        "district": 1706246,
+        "name": "Jondor tumani \"Inson\" ijtimoiy xizmatlari markazi",
+        "no_pf": 6,
+        "no_fth": 0,
+        "no_ch_fth": 0,
+        "no_ext_fth": 0,
+        "services": []
+    },
+    "9170607": {
+        "region": 1706,
+        "district": 1706219,
+        "name": "Kogon tumani \"Inson\" ijtimoiy xizmatlari markazi",
+        "no_pf": 6,
+        "no_fth": 0,
+        "no_ch_fth": 0,
+        "no_ext_fth": 0,
+        "services": []
+    },
+    "9170608": {
+        "region": 1706,
+        "district": 1706230,
+        "name": "Qorako‘l tumani \"Inson\" ijtimoiy xizmatlari markazi",
+        "no_pf": 0,
+        "no_fth": 0,
+        "no_ch_fth": 0,
+        "no_ext_fth": 0,
+        "services": []
+    },
+    "9170609": {
+        "region": 1706,
+        "district": 1706232,
+        "name": "Qorovulbozor tumani \"Inson\" ijtimoiy xizmatlari markazi",
+        "no_pf": 1,
+        "no_fth": 0,
+        "no_ch_fth": 0,
+        "no_ext_fth": 0,
+        "services": []
+    },
+    "9170610": {
+        "region": 1706,
+        "district": 1706204,
+        "name": "Olot tumani \"Inson\" ijtimoiy xizmatlari markazi",
+        "no_pf": 1,
+        "no_fth": 0,
+        "no_ch_fth": 0,
+        "no_ext_fth": 0,
+        "services": []
+    },
+    "9170611": {
+        "region": 1706,
+        "district": 1706240551,
+        "name": "Peshku tumani \"Inson\" ijtimoiy xizmatlari markazi",
+        "no_pf": 5,
+        "no_fth": 2,
+        "no_ch_fth": 8,
+        "no_ext_fth": 1,
+        "services": [
+            6170602,
+            6170603
+        ]
+    },
+    "9170612": {
+        "region": 1706,
+        "district": 1706242,
+        "name": "Romitan tumani \"Inson\" ijtimoiy xizmatlari markazi",
+        "no_pf": 8,
+        "no_fth": 0,
+        "no_ch_fth": 0,
+        "no_ext_fth": 0,
+        "services": []
+    },
+    "9170613": {
+        "region": 1706,
+        "district": 1706258,
+        "name": "Shofirkon tumani \"Inson\" ijtimoiy xizmatlari markazi",
+        "no_pf": 0,
+        "no_fth": 0,
+        "no_ch_fth": 0,
+        "no_ext_fth": 0,
+        "services": []
+    },
+    "9170801": {
+        "region": 1708,
+        "district": 1708201,
+        "name": "Arnasoy tumani \"Inson\" markazi",
+        "no_pf": 0,
+        "no_fth": 1,
+        "no_ch_fth": 5,
+        "no_ext_fth": 0,
+        "services": [
+            6170812
+        ]
+    },
+    "9170802": {
+        "region": 1708,
+        "district": 1708204551,
+        "name": "Baxmal tumani \"inson\" markazi",
+        "no_pf": 1,
+        "no_fth": 0,
+        "no_ch_fth": 0,
+        "no_ext_fth": 0,
+        "services": []
+    },
+    "9170803": {
+        "region": 1708,
+        "district": 1708215,
+        "name": "Do'stlik tumani \"Inson markazi",
+        "no_pf": 1,
+        "no_fth": 0,
+        "no_ch_fth": 0,
+        "no_ext_fth": 0,
+        "services": []
+    },
+    "9170804": {
+        "region": 1708,
+        "district": 1708209,
+        "name": "G'allaorol tumani \"Inson\" markazi",
+        "no_pf": 0,
+        "no_fth": 0,
+        "no_ch_fth": 0,
+        "no_ext_fth": 0,
+        "services": []
+    },
+    "9170805": {
+        "region": 1708,
+        "district": 1708220551,
+        "name": "Zarbdor tumani \"Inson\" markazi",
+        "no_pf": 6,
+        "no_fth": 0,
+        "no_ch_fth": 0,
+        "no_ext_fth": 0,
+        "services": []
+    },
+    "9170806": {
+        "region": 1708,
+        "district": 1708225551,
+        "name": "Zafarobod tumani \"Inson\" markazi",
+        "no_pf": 0,
+        "no_fth": 0,
+        "no_ch_fth": 0,
+        "no_ext_fth": 0,
+        "services": []
+    },
+    "9170807": {
+        "region": 1708,
+        "district": 1708218551,
+        "name": "Zomin tumani \"Inson\" markazi",
+        "no_pf": 4,
+        "no_fth": 0,
+        "no_ch_fth": 0,
+        "no_ext_fth": 0,
+        "services": []
+    },
+    "9170808": {
+        "region": 1708,
+        "district": 1708223501,
+        "name": "Mirzacho'l tumani \"Inson\" markazi",
+        "no_pf": 3,
+        "no_fth": 0,
+        "no_ch_fth": 0,
+        "no_ext_fth": 0,
+        "services": []
+    },
+    "9170809": {
+        "region": 1708,
+        "district": 1708228501,
+        "name": "Paxtakor tumani \"Inson\" markazi",
+        "no_pf": 0,
+        "no_fth": 0,
+        "no_ch_fth": 0,
+        "no_ext_fth": 0,
+        "services": []
+    },
+    "9170810": {
+        "region": 1708,
+        "district": 1708235551,
+        "name": "Forish tumani \"Inson\" markazi",
+        "no_pf": 0,
+        "no_fth": 1,
+        "no_ch_fth": 4,
+        "no_ext_fth": 0,
+        "services": [
+            6170806
+        ]
+    },
+    "9170811": {
+        "region": 1708,
+        "district": 1708212551,
+        "name": "Sh.Rashidov tumani \"Inson\" markazi",
+        "no_pf": 27,
+        "no_fth": 5,
+        "no_ch_fth": 26,
+        "no_ext_fth": 7,
+        "services": [
+            6170801,
+            6170802,
+            6170803,
+            6170804,
+            6170805
+        ]
+    },
+    "9170812": {
+        "region": 1708,
+        "district": 1708237552,
+        "name": "Yangiobod tumani \"Inson\" markazi",
+        "no_pf": 3,
+        "no_fth": 0,
+        "no_ch_fth": 0,
+        "no_ext_fth": 0,
+        "services": []
+    },
+    "9170813": {
+        "region": 1708,
+        "district": 1708401,
+        "name": "Jizzax shahar \"Inson\" markazi",
+        "no_pf": 7,
+        "no_fth": 5,
+        "no_ch_fth": 20,
+        "no_ext_fth": 13,
+        "services": [
+            6170807,
+            6170808,
+            6170809,
+            6170810,
+            6170811
+        ]
+    },
+    "9171001": {
+        "region": 1710,
+        "district": 1710207501,
+        "name": "Ғузор туман \"Инсон\" ижтимоий ҳимоя маркази",
+        "no_pf": 2,
+        "no_fth": 0,
+        "no_ch_fth": 0,
+        "no_ext_fth": 0,
+        "services": []
+    },
+    "9171002": {
+        "region": 1710,
+        "district": 1710212551,
+        "name": "Деҳқонобод туман \"Инсон\" ижтимоий ҳимоя маркази",
+        "no_pf": 0,
+        "no_fth": 0,
+        "no_ch_fth": 0,
+        "no_ext_fth": 0,
+        "services": []
+    },
+    "9171003": {
+        "region": 1710,
+        "district": 1710237551,
+        "name": "Касби туман \"Инсон\" ижтимоий ҳимоя маркази",
+        "no_pf": 0,
+        "no_fth": 1,
+        "no_ch_fth": 5,
+        "no_ext_fth": 1,
+        "services": [
+            6171011
+        ]
+    },
+    "9171004": {
+        "region": 1710,
+        "district": 1710232501,
+        "name": "Китоб туман \"Инсон\" ижтимоий ҳимоя маркази",
+        "no_pf": 0,
+        "no_fth": 6,
+        "no_ch_fth": 36,
+        "no_ext_fth": 1,
+        "services": [
+            6171005,
+            6171006,
+            6171007,
+            6171008,
+            6171009,
+            6171015
+        ]
+    },
+    "9171005": {
+        "region": 1710,
+        "district": 1710229501,
+        "name": "Косон туман \"Инсон\" ижтимоий ҳимоя маркази",
+        "no_pf": 2,
+        "no_fth": 1,
+        "no_ch_fth": 3,
+        "no_ext_fth": 1,
+        "services": [
+            6171014
+        ]
+    },
+    "9171006": {
+        "region": 1710,
+        "district": 1710242573,
+        "name": "Кўкдала туман \"Инсон\" ижтимоий ҳимоя маркази",
+        "no_pf": 0,
+        "no_fth": 0,
+        "no_ch_fth": 0,
+        "no_ext_fth": 0,
+        "services": []
+    },
+    "9171007": {
+        "region": 1710,
+        "district": 1710220501,
+        "name": "Қамаши туман \"Инсон\" ижтимоий ҳимоя маркази",
+        "no_pf": 0,
+        "no_fth": 3,
+        "no_ch_fth": 14,
+        "no_ext_fth": 1,
+        "services": [
+            6171001,
+            6171002,
+            6171003
+        ]
+    },
+    "9171008": {
+        "region": 1710,
+        "district": 1710224501,
+        "name": "Қарши туман \"Инсон\" ижтимоий ҳимоя маркази",
+        "no_pf": 4,
+        "no_fth": 1,
+        "no_ch_fth": 4,
+        "no_ext_fth": 0,
+        "services": [
+            6171004
+        ]
+    },
+    "9171009": {
+        "region": 1710,
+        "district": 1710401555,
+        "name": "Қарши шаҳар  \"Инсон\" ижтимоий ҳимоя маркази",
+        "no_pf": 1,
+        "no_fth": 1,
+        "no_ch_fth": 8,
+        "no_ext_fth": 0,
+        "services": [
+            6171013
+        ]
+    },
+    "9171010": {
+        "region": 1710,
+        "district": 1710233551,
+        "name": "Миришкор туман \"Инсон\" ижтимоий ҳимоя маркази",
+        "no_pf": 0,
+        "no_fth": 0,
+        "no_ch_fth": 0,
+        "no_ext_fth": 0,
+        "services": []
+    },
+    "9171011": {
+        "region": 1710,
+        "district": 1710234501,
+        "name": "Муборак туман \"Инсон\" ижтимоий ҳимоя маркази",
+        "no_pf": 0,
+        "no_fth": 1,
+        "no_ch_fth": 8,
+        "no_ext_fth": 0,
+        "services": [
+            6171010
+        ]
+    },
+    "9171012": {
+        "region": 1710,
+        "district": 1710235501,
+        "name": "Нишон туман \"Инсон\" ижтимоий ҳимоя маркази",
+        "no_pf": 0,
+        "no_fth": 0,
+        "no_ch_fth": 0,
+        "no_ext_fth": 0,
+        "services": []
+    },
+    "9171013": {
+        "region": 1710,
+        "district": 1710242501,
+        "name": "Чироқчи туман \"Инсон\" ижтимоий ҳимоя маркази",
+        "no_pf": 0,
+        "no_fth": 0,
+        "no_ch_fth": 0,
+        "no_ext_fth": 0,
+        "services": []
+    },
+    "9171014": {
+        "region": 1710,
+        "district": 1710405,
+        "name": "Шаҳрисабз туман \"Инсон\" ижтимоий ҳимоя маркази",
+        "no_pf": 0,
+        "no_fth": 0,
+        "no_ch_fth": 0,
+        "no_ext_fth": 0,
+        "services": []
+    },
+    "9171015": {
+        "region": 1710,
+        "district": 1710405,
+        "name": "Шаҳрисабз шаҳар \"Инсон\" ижтимоий ҳимоя маркази",
+        "no_pf": 2,
+        "no_fth": 1,
+        "no_ch_fth": 5,
+        "no_ext_fth": 0,
+        "services": [
+            6171012
+        ]
+    },
+    "9171016": {
+        "region": 1710,
+        "district": 1710250501,
+        "name": "Яккабоғ туман \"Инсон\" ижтимоий ҳимоя маркази",
+        "no_pf": 0,
+        "no_fth": 0,
+        "no_ch_fth": 0,
+        "no_ext_fth": 0,
+        "services": []
+    },
+    "9171201": {
+        "region": 1712,
+        "district": 1712401,
+        "name": "Navoiy shahar Inson ijtimoiy xizmatlar markazi",
+        "no_pf": 1,
+        "no_fth": 0,
+        "no_ch_fth": 0,
+        "no_ext_fth": 0,
+        "services": []
+    },
+    "9171202": {
+        "region": 1712,
+        "district": 1712408,
+        "name": "Zarafshon shahar Inson ijtimoiy xizmatlar markazi",
+        "no_pf": 8,
+        "no_fth": 0,
+        "no_ch_fth": 0,
+        "no_ext_fth": 0,
+        "services": []
+    },
+    "9171203": {
+        "region": 1712,
+        "district": 1712412,
+        "name": "G'ozg'on shahar Inson ijtimoiy xizmatlar markazi",
+        "no_pf": 0,
+        "no_fth": 0,
+        "no_ch_fth": 0,
+        "no_ext_fth": 0,
+        "services": []
+    },
+    "9171204": {
+        "region": 1712,
+        "district": 1712234551,
+        "name": "Karmana tumani Inson ijtimoiy xizmatlar markazi",
+        "no_pf": 1,
+        "no_fth": 3,
+        "no_ch_fth": 20,
+        "no_ext_fth": 3,
+        "services": [
+            6171201,
+            6171202,
+            6171203
+        ]
+    },
+    "9171205": {
+        "region": 1712,
+        "district": 1712248501,
+        "name": "Uchquduq tumani Inson ijtimoiy xizmatlar markazi",
+        "no_pf": 0,
+        "no_fth": 0,
+        "no_ch_fth": 0,
+        "no_ext_fth": 0,
+        "services": []
+    },
+    "9171206": {
+        "region": 1712,
+        "district": 1712244551,
+        "name": "Tomdi tumani Inson ijtimoiy xizmatlar markazi",
+        "no_pf": 0,
+        "no_fth": 4,
+        "no_ch_fth": 27,
+        "no_ext_fth": 8,
+        "services": [
+            6171204,
+            6171205,
+            6171206,
+            6171207
+        ]
+    },
+    "9171207": {
+        "region": 1712,
+        "district": 1712251501,
+        "name": "Xatirchi tumani Inson ijtimoiy xizmatlar markazi",
+        "no_pf": 0,
+        "no_fth": 0,
+        "no_ch_fth": 0,
+        "no_ext_fth": 0,
+        "services": []
+    },
+    "9171208": {
+        "region": 1712,
+        "district": 1712216501,
+        "name": "Qiziltepa tumani Inson ijtimoiy xizmatlar markazi",
+        "no_pf": 0,
+        "no_fth": 0,
+        "no_ch_fth": 0,
+        "no_ext_fth": 0,
+        "services": []
+    },
+    "9171209": {
+        "region": 1712,
+        "district": 1712230882,
+        "name": "Navbahor tumani Inson ijtimoiy xizmatlar markazi",
+        "no_pf": 0,
+        "no_fth": 0,
+        "no_ch_fth": 0,
+        "no_ext_fth": 0,
+        "services": []
+    },
+    "9171210": {
+        "region": 1712,
+        "district": 1712238501,
+        "name": "Nurota tumani Inson ijtimoiy xizmatlar markazi",
+        "no_pf": 0,
+        "no_fth": 0,
+        "no_ch_fth": 0,
+        "no_ext_fth": 0,
+        "services": []
+    },
+    "9171211": {
+        "region": 1712,
+        "district": 1712211551,
+        "name": "Konimex tumani Inson ijtimoiy xizmatlar markazi",
+        "no_pf": 0,
+        "no_fth": 0,
+        "no_ch_fth": 0,
+        "no_ext_fth": 0,
+        "services": []
+    },
+    "9171401": {
+        "region": 1714,
+        "district": 1714219501,
+        "name": "Поп тумани \"Инсон\" ижтимоий хизматлар маркази",
+        "no_pf": 0,
+        "no_fth": 0,
+        "no_ch_fth": 0,
+        "no_ext_fth": 0,
+        "services": []
+    },
+    "9171402": {
+        "region": 1714,
+        "district": 1714401,
+        "name": "Наманган шаҳар \"Инсон\" ижтимоий хизматлар маркази",
+        "no_pf": 2,
+        "no_fth": 0,
+        "no_ch_fth": 0,
+        "no_ext_fth": 0,
+        "services": []
+    },
+    "9171403": {
+        "region": 1714,
+        "district": 1714401365,
+        "name": "Давлатобод тумани \"Инсон\" ижтимоий хизматлар маркази",
+        "no_pf": 2,
+        "no_fth": 0,
+        "no_ch_fth": 0,
+        "no_ext_fth": 0,
+        "services": []
+    },
+    "9171404": {
+        "region": 1714,
+        "district": 1714207,
+        "name": "Косонсой тумани \"Инсон\" ижтимоий хизматлар маркази",
+        "no_pf": 1,
+        "no_fth": 0,
+        "no_ch_fth": 0,
+        "no_ext_fth": 0,
+        "services": []
+    },
+    "9171405": {
+        "region": 1714,
+        "district": 1714204,
+        "name": "Мингбулоқ \"Инсон\" ижтимоий хизматлар маркази",
+        "no_pf": 0,
+        "no_fth": 0,
+        "no_ch_fth": 0,
+        "no_ext_fth": 0,
+        "services": []
+    },
+    "9171406": {
+        "region": 1714,
+        "district": 1714212551,
+        "name": "Наманган тумани \"Инсон\" ижтимоий хизматлар маркази",
+        "no_pf": 2,
+        "no_fth": 0,
+        "no_ch_fth": 0,
+        "no_ext_fth": 0,
+        "services": []
+    },
+    "9171407": {
+        "region": 1714,
+        "district": 1714216501,
+        "name": "Норин тумани \"Инсон\" ижтимоий хизматлар маркази",
+        "no_pf": 0,
+        "no_fth": 0,
+        "no_ch_fth": 0,
+        "no_ext_fth": 0,
+        "services": [
+            6171403
+        ]
+    },
+    "9171408": {
+        "region": 1714,
+        "district": 1714224,
+        "name": "Тўрақўрғон тумани \"Инсон\"ижтимоий хизматлар маркази",
+        "no_pf": 0,
+        "no_fth": 1,
+        "no_ch_fth": 5,
+        "no_ext_fth": 0,
+        "services": [
+            6171401
+        ]
+    },
+    "9171409": {
+        "region": 1714,
+        "district": 1714229,
+        "name": "Уйчи тумани \"Инсон\" ижтимоий хизматлар маркази",
+        "no_pf": 1,
+        "no_fth": 1,
+        "no_ch_fth": 3,
+        "no_ext_fth": 1,
+        "services": [
+            6171402
+        ]
+    },
+    "9171410": {
+        "region": 1714,
+        "district": 1714234501,
+        "name": "Учқўрғон тумани \"Инсон\" ижтимоий хизматлар маркази",
+        "no_pf": 2,
+        "no_fth": 0,
+        "no_ch_fth": 0,
+        "no_ext_fth": 0,
+        "services": []
+    },
+    "9171411": {
+        "region": 1714,
+        "district": 1714236,
+        "name": "Чортоқ тумани \"Инсон\" ижтимоий хизматлар маркази",
+        "no_pf": 0,
+        "no_fth": 0,
+        "no_ch_fth": 0,
+        "no_ext_fth": 0,
+        "services": []
+    },
+    "9171412": {
+        "region": 1714,
+        "district": 1714237,
+        "name": "Чуст тумани \"Инсон\" ижтимоий хизматлар маркази",
+        "no_pf": 3,
+        "no_fth": 0,
+        "no_ch_fth": 0,
+        "no_ext_fth": 0,
+        "services": []
+    },
+    "9171413": {
+        "region": 1714,
+        "district": 1714401367,
+        "name": "Янги Наманган тумани \"Инсон\" ижтимоий хизматлар маркази",
+        "no_pf": 4,
+        "no_fth": 0,
+        "no_ch_fth": 0,
+        "no_ext_fth": 0,
+        "services": []
+    },
+    "9171414": {
+        "region": 1714,
+        "district": 1714242,
+        "name": "Янгиқўрғон тумани \"Инсон\" ижтимоий хизматлар маркази",
+        "no_pf": 0,
+        "no_fth": 0,
+        "no_ch_fth": 0,
+        "no_ext_fth": 0,
+        "services": []
+    },
+    "9171801": {
+        "region": 1718,
+        "district": 1718401,
+        "name": "Samarqand shahar \"Inson\" markazi",
+        "no_pf": 8,
+        "no_fth": 2,
+        "no_ch_fth": 5,
+        "no_ext_fth": 2,
+        "services": [
+            6171806,
+            6171807
+        ]
+    },
+    "9171802": {
+        "region": 1718,
+        "district": 1718406,
+        "name": "Kattaqo'rg'on shahar  \"Inson\" markazi",
+        "no_pf": 0,
+        "no_fth": 0,
+        "no_ch_fth": 0,
+        "no_ext_fth": 0,
+        "services": []
+    },
+    "9171803": {
+        "region": 1718,
+        "district": 1718233,
+        "name": "Samarqand tuman \"Inson\" markazi",
+        "no_pf": 0,
+        "no_fth": 1,
+        "no_ch_fth": 5,
+        "no_ext_fth": 1,
+        "services": [
+            6171805
+        ]
+    },
+    "9171804": {
+        "region": 1718,
+        "district": 1718218,
+        "name": "Narpay tuman \"Inson\" markazi",
+        "no_pf": 6,
+        "no_fth": 0,
+        "no_ch_fth": 0,
+        "no_ext_fth": 0,
+        "services": []
+    },
+    "9171805": {
+        "region": 1718,
+        "district": 1718203,
+        "name": "Oqdaryo tuman \"Inson\" markazi",
+        "no_pf": 0,
+        "no_fth": 2,
+        "no_ch_fth": 10,
+        "no_ext_fth": 2,
+        "services": [
+            6171808,
+            6171809
+        ]
+    },
+    "9171806": {
+        "region": 1718,
+        "district": 1718230,
+        "name": "Paxtachi tuman \"Inson\" markazi",
+        "no_pf": 0,
+        "no_fth": 1,
+        "no_ch_fth": 5,
+        "no_ext_fth": 1,
+        "services": [
+            6171804
+        ]
+    },
+    "9171807": {
+        "region": 1718,
+        "district": 1718216,
+        "name": "Qo'shrabot tuman \"Inson\" markazi",
+        "no_pf": 0,
+        "no_fth": 0,
+        "no_ch_fth": 0,
+        "no_ext_fth": 0,
+        "services": []
+    },
+    "9171808": {
+        "region": 1718,
+        "district": 1718238551,
+        "name": "Toyloq tuman \"Inson\" markazi",
+        "no_pf": 2,
+        "no_fth": 0,
+        "no_ch_fth": 0,
+        "no_ext_fth": 0,
+        "services": []
+    },
+    "9171809": {
+        "region": 1718,
+        "district": 1718206,
+        "name": "Bulung'ur tuman \"Inson\" markazi",
+        "no_pf": 0,
+        "no_fth": 0,
+        "no_ch_fth": 0,
+        "no_ext_fth": 0,
+        "services": []
+    },
+    "9171810": {
+        "region": 1718,
+        "district": 1718212,
+        "name": "Ishtixon tuman \"Inson\" markazi",
+        "no_pf": 0,
+        "no_fth": 0,
+        "no_ch_fth": 0,
+        "no_ext_fth": 0,
+        "services": []
+    },
+    "9171811": {
+        "region": 1718,
+        "district": 1718215,
+        "name": "Kattaqo'rg'on tuman \"Inson\" markazi",
+        "no_pf": 5,
+        "no_fth": 1,
+        "no_ch_fth": 4,
+        "no_ext_fth": 0,
+        "services": [
+            6171801
+        ]
+    },
+    "9171812": {
+        "region": 1718,
+        "district": 1718227,
+        "name": "Pastdarg'om tuman \"Inson\" markazi",
+        "no_pf": 1,
+        "no_fth": 2,
+        "no_ch_fth": 9,
+        "no_ext_fth": 0,
+        "services": [
+            6171802,
+            6171803
+        ]
+    },
+    "9171813": {
+        "region": 1718,
+        "district": 1718236,
+        "name": "Urgut tuman \"Inson\" markazi",
+        "no_pf": 0,
+        "no_fth": 0,
+        "no_ch_fth": 0,
+        "no_ext_fth": 0,
+        "services": []
+    },
+    "9171814": {
+        "region": 1718,
+        "district": 1718224,
+        "name": "Payariq tuman \"Inson\" markazi",
+        "no_pf": 0,
+        "no_fth": 0,
+        "no_ch_fth": 0,
+        "no_ext_fth": 0,
+        "services": []
+    },
+    "9171815": {
+        "region": 1718,
+        "district": 1718235,
+        "name": "Nurobod tumani \"Inson\" markazi",
+        "no_pf": 0,
+        "no_fth": 0,
+        "no_ch_fth": 0,
+        "no_ext_fth": 0,
+        "services": []
+    },
+    "9171816": {
+        "region": 1718,
+        "district": 1718209,
+        "name": "Jomboy tuman \"Inson\" markazi",
+        "no_pf": 1,
+        "no_fth": 0,
+        "no_ch_fth": 0,
+        "no_ext_fth": 0,
+        "services": []
+    },
+    "9172201": {
+        "region": 1722,
+        "district": 1722202,
+        "name": "Ангор тумани \"Инсон\" ижтимоий хизматлар маркази",
+        "no_pf": 1,
+        "no_fth": 1,
+        "no_ch_fth": 10,
+        "no_ext_fth": 1,
+        "services": [
+            6172204
+        ]
+    },
+    "9172202": {
+        "region": 1722,
+        "district": 1722215,
+        "name": "Бандихон тумани \"Инсон\" ижтимоий хизматлар маркази",
+        "no_pf": 0,
+        "no_fth": 0,
+        "no_ch_fth": 0,
+        "no_ext_fth": 0,
+        "services": []
+    },
+    "9172203": {
+        "region": 1722,
+        "district": 1722203,
+        "name": "Бойсун тумани \"Инсон\" ижтимоий хизматлар маркази",
+        "no_pf": 1,
+        "no_fth": 0,
+        "no_ch_fth": 0,
+        "no_ext_fth": 0,
+        "services": []
+    },
+    "9172204": {
+        "region": 1722,
+        "district": 1722210,
+        "name": "Денов тумани \"Инсон\" ижтимоий хизматлар маркази",
+        "no_pf": 1,
+        "no_fth": 1,
+        "no_ch_fth": 7,
+        "no_ext_fth": 5,
+        "services": [
+            6172201
+        ]
+    },
+    "9172205": {
+        "region": 1722,
+        "district": 1722212,
+        "name": "Жарқўрғон тумани \"Инсон\" ижтимоий хизматлар маркази",
+        "no_pf": 0,
+        "no_fth": 0,
+        "no_ch_fth": 0,
+        "no_ext_fth": 0,
+        "services": []
+    },
+    "9172206": {
+        "region": 1722,
+        "district": 1722215,
+        "name": "Қизириқ тумани \"Инсон\" ижтимоий хизматлар маркази",
+        "no_pf": 1,
+        "no_fth": 0,
+        "no_ch_fth": 0,
+        "no_ext_fth": 0,
+        "services": []
+    },
+    "9172207": {
+        "region": 1722,
+        "district": 1722214,
+        "name": "Қумқўрғон тумани \"Инсон\" ижтимоий хизматлар маркази",
+        "no_pf": 0,
+        "no_fth": 0,
+        "no_ch_fth": 0,
+        "no_ext_fth": 0,
+        "services": []
+    },
+    "9172208": {
+        "region": 1722,
+        "district": 1722207,
+        "name": "Музработ тумани \"Инсон\" ижтимоий хизматлар маркази",
+        "no_pf": 0,
+        "no_fth": 0,
+        "no_ch_fth": 0,
+        "no_ext_fth": 0,
+        "services": []
+    },
+    "9172209": {
+        "region": 1722,
+        "district": 1722201,
+        "name": "Олтинсой тумани \"Инсон\" ижтимоий хизматлар маркази",
+        "no_pf": 0,
+        "no_fth": 0,
+        "no_ch_fth": 0,
+        "no_ext_fth": 0,
+        "services": []
+    },
+    "9172210": {
+        "region": 1722,
+        "district": 1722217,
+        "name": "Сариосиё тумани \"Инсон\" ижтимоий хизматлар маркази",
+        "no_pf": 0,
+        "no_fth": 0,
+        "no_ch_fth": 0,
+        "no_ext_fth": 0,
+        "services": []
+    },
+    "9172211": {
+        "region": 1722,
+        "district": 1722220,
+        "name": "Термиз тумани \"Инсон\" ижтимоий хизматлар маркази",
+        "no_pf": 3,
+        "no_fth": 1,
+        "no_ch_fth": 6,
+        "no_ext_fth": 0,
+        "services": [
+            6172205
+        ]
+    },
+    "9172212": {
+        "region": 1722,
+        "district": 1722401,
+        "name": "Термиз шаҳар \"Инсон\" ижтимоий хизматлар маркази",
+        "no_pf": 12,
+        "no_fth": 2,
+        "no_ch_fth": 6,
+        "no_ext_fth": 10,
+        "services": [
+            6172202,
+            6172203
+        ]
+    },
+    "9172213": {
+        "region": 1722,
+        "district": 1722221,
+        "name": "Узун тумани \"Инсон\" ижтимоий хизматлар маркази",
+        "no_pf": 0,
+        "no_fth": 0,
+        "no_ch_fth": 0,
+        "no_ext_fth": 0,
+        "services": []
+    },
+    "9172214": {
+        "region": 1722,
+        "district": 1722223,
+        "name": "Шеробод тумани \"Инсон\" ижтимоий хизматлар маркази",
+        "no_pf": 1,
+        "no_fth": 0,
+        "no_ch_fth": 0,
+        "no_ext_fth": 0,
+        "services": []
+    },
+    "9172215": {
+        "region": 1722,
+        "district": 1722226,
+        "name": "Шўрчи тумани \"Инсон\" ижтимоий хизматлар маркази",
+        "no_pf": 0,
+        "no_fth": 0,
+        "no_ch_fth": 0,
+        "no_ext_fth": 0,
+        "services": []
+    },
+    "9172401": {
+        "region": 1724,
+        "district": 1724212,
+        "name": "Boyovut tumani Inson markazi",
+        "no_pf": 9,
+        "no_fth": 0,
+        "no_ch_fth": 0,
+        "no_ext_fth": 0,
+        "services": []
+    },
+    "9172402": {
+        "region": 1724,
+        "district": 1724206,
+        "name": "Oqoltin tumani Inson markazi",
+        "no_pf": 0,
+        "no_fth": 0,
+        "no_ch_fth": 0,
+        "no_ext_fth": 0,
+        "services": []
+    },
+    "9172403": {
+        "region": 1724,
+        "district": 1724216,
+        "name": "Sayxunobod tumani Inson markazi",
+        "no_pf": 0,
+        "no_fth": 0,
+        "no_ch_fth": 0,
+        "no_ext_fth": 0,
+        "services": []
+    },
+    "9172404": {
+        "region": 1724,
+        "district": 1724220,
+        "name": "Guliston tumani Inson markazi",
+        "no_pf": 16,
+        "no_fth": 1,
+        "no_ch_fth": 5,
+        "no_ext_fth": 0,
+        "services": [
+            6172401
+        ]
+    },
+    "9172405": {
+        "region": 1724,
+        "district": 1724226,
+        "name": "Sardoba tumani Inson markazi",
+        "no_pf": 0,
+        "no_fth": 0,
+        "no_ch_fth": 0,
+        "no_ext_fth": 0,
+        "services": []
+    },
+    "9172406": {
+        "region": 1724,
+        "district": 1724228,
+        "name": "Mirzaobod tumani Inson markazi",
+        "no_pf": 0,
+        "no_fth": 1,
+        "no_ch_fth": 4,
+        "no_ext_fth": 0,
+        "services": [
+            6172402
+        ]
+    },
+    "9172407": {
+        "region": 1724,
+        "district": 1724231,
+        "name": "Sirdaryo tumani Inson markazi",
+        "no_pf": 4,
+        "no_fth": 0,
+        "no_ch_fth": 0,
+        "no_ext_fth": 0,
+        "services": []
+    },
+    "9172408": {
+        "region": 1724,
+        "district": 1724235,
+        "name": "Xovos tumani Inson markazi",
+        "no_pf": 11,
+        "no_fth": 0,
+        "no_ch_fth": 0,
+        "no_ext_fth": 0,
+        "services": []
+    },
+    "9172409": {
+        "region": 1724,
+        "district": 1724401,
+        "name": "Guliston shahar Inson markazi",
+        "no_pf": 12,
+        "no_fth": 6,
+        "no_ch_fth": 37,
+        "no_ext_fth": 5,
+        "services": [
+            6172403,
+            6172404,
+            6172405,
+            6172406,
+            6172407,
+            6172408
+        ]
+    },
+    "9172410": {
+        "region": 1724,
+        "district": 1724410,
+        "name": "Shirin shahar Inson markazi",
+        "no_pf": 2,
+        "no_fth": 0,
+        "no_ch_fth": 0,
+        "no_ext_fth": 0,
+        "services": []
+    },
+    "9172411": {
+        "region": 1724,
+        "district": 1724413,
+        "name": "Yangiyer shahar Inson markazi",
+        "no_pf": 6,
+        "no_fth": 0,
+        "no_ch_fth": 0,
+        "no_ext_fth": 0,
+        "services": []
+    },
+    "9172601": {
+        "region": 1726,
+        "district": 1726264,
+        "name": "Bektemir tuman \"Inson ijtimoiy xizmatlar markazi\"",
+        "no_pf": 8,
+        "no_fth": 0,
+        "no_ch_fth": 0,
+        "no_ext_fth": 0,
+        "services": []
+    },
+    "9172602": {
+        "region": 1726,
+        "district": 1726273,
+        "name": "Mirobod tuman  \"Inson ijtimoiy xizmatlar markazi\"",
+        "no_pf": 17,
+        "no_fth": 0,
+        "no_ch_fth": 0,
+        "no_ext_fth": 0,
+        "services": []
+    },
+    "9172603": {
+        "region": 1726,
+        "district": 1726269,
+        "name": "Mirzo-Ulug'bek tuman \"Inson ijtimoiy xizmatlar markazi\"",
+        "no_pf": 12,
+        "no_fth": 0,
+        "no_ch_fth": 0,
+        "no_ext_fth": 0,
+        "services": []
+    },
+    "9172604": {
+        "region": 1726,
+        "district": 1726280,
+        "name": "Olmazor tuman \"Inson ijtimoiy xizmatlar markazi\"",
+        "no_pf": 13,
+        "no_fth": 1,
+        "no_ch_fth": 9,
+        "no_ext_fth": 0,
+        "services": [
+            6172610,
+            6172611
+        ]
+    },
+    "9172605": {
+        "region": 1726,
+        "district": 1726283,
+        "name": "Sergeli tuman \"Inson ijtimoiy xizmatlar markazi\"",
+        "no_pf": 8,
+        "no_fth": 0,
+        "no_ch_fth": 0,
+        "no_ext_fth": 0,
+        "services": []
+    },
+    "9172606": {
+        "region": 1726,
+        "district": 1726262,
+        "name": "Uchtepa tuman \"Inson ijtimoiy xizmatlar markazi\"",
+        "no_pf": 2,
+        "no_fth": 8,
+        "no_ch_fth": 35,
+        "no_ext_fth": 2,
+        "services": [
+            6172601,
+            6172602,
+            6172603,
+            6172604,
+            6172605,
+            6172606,
+            6172607,
+            6172608
+        ]
+    },
+    "9172607": {
+        "region": 1726,
+        "district": 1726294,
+        "name": "Chilonzor tuman  \"Inson ijtimoiy xizmatlar markazi\"",
+        "no_pf": 11,
+        "no_fth": 0,
+        "no_ch_fth": 0,
+        "no_ext_fth": 0,
+        "services": []
+    },
+    "9172608": {
+        "region": 1726,
+        "district": 1726277,
+        "name": "Shayxontohur tuman \"Inson ijtimoiy xizmatlar markazi\"",
+        "no_pf": 6,
+        "no_fth": 1,
+        "no_ch_fth": 0,
+        "no_ext_fth": 0,
+        "services": []
+    },
+    "9172609": {
+        "region": 1726,
+        "district": 1726266,
+        "name": "Yunsobod tuman \"Inson ijtimoiy xizmatlar markazi\"",
+        "no_pf": 20,
+        "no_fth": 1,
+        "no_ch_fth": 4,
+        "no_ext_fth": 0,
+        "services": [
+            6172609
+        ]
+    },
+    "9172610": {
+        "region": 1726,
+        "district": 1726287,
+        "name": "Yakkasaroy tuman \"Inson ijtimoiy xizmatlar markazi\"",
+        "no_pf": 3,
+        "no_fth": 0,
+        "no_ch_fth": 0,
+        "no_ext_fth": 0,
+        "services": []
+    },
+    "9172611": {
+        "region": 1726,
+        "district": 1726292,
+        "name": "Yangi hayot tuman  \"Inson ijtimoiy xizmatlar markazi\"",
+        "no_pf": 8,
+        "no_fth": 0,
+        "no_ch_fth": 0,
+        "no_ext_fth": 0,
+        "services": []
+    },
+    "9172612": {
+        "region": 1726,
+        "district": 1726290,
+        "name": "Yashnobod tuman  \"Inson ijtimoiy xizmatlar markazi\"",
+        "no_pf": 7,
+        "no_fth": 1,
+        "no_ch_fth": 4,
+        "no_ext_fth": 0,
+        "services": [
+            6172612
+        ]
+    },
+    "9172701": {
+        "region": 1727,
+        "district": 1727401,
+        "name": "Nurafshon shahri \"Inson\" ijtimoiy hizmatlar markazi",
+        "no_pf": 2,
+        "no_fth": 2,
+        "no_ch_fth": 10,
+        "no_ext_fth": 0,
+        "services": [
+            6172705,
+            6172706
+        ]
+    },
+    "9172702": {
+        "region": 1727,
+        "district": 1727404,
+        "name": "Olmaliq shahar \"Inson\" ijtimoiy hizmatlar markazi",
+        "no_pf": 12,
+        "no_fth": 0,
+        "no_ch_fth": 0,
+        "no_ext_fth": 0,
+        "services": []
+    },
+    "9172703": {
+        "region": 1727,
+        "district": 1727407,
+        "name": "Angren shahar \"Inson\" ijtimoiy hizmatlar markazi",
+        "no_pf": 2,
+        "no_fth": 0,
+        "no_ch_fth": 0,
+        "no_ext_fth": 0,
+        "services": []
+    },
+    "9172704": {
+        "region": 1727,
+        "district": 1727415,
+        "name": "Ohangaron shahar \"Inson\" ijtimoiy hizmatlar markazi",
+        "no_pf": 5,
+        "no_fth": 0,
+        "no_ch_fth": 0,
+        "no_ext_fth": 0,
+        "services": []
+    },
+    "9172705": {
+        "region": 1727,
+        "district": 1727413,
+        "name": "Bekobod shahar \"Inson\" ijtimoiy hizmatlar markazi",
+        "no_pf": 3,
+        "no_fth": 0,
+        "no_ch_fth": 0,
+        "no_ext_fth": 0,
+        "services": []
+    },
+    "9172706": {
+        "region": 1727,
+        "district": 1727419,
+        "name": "Chirchiq shahar \"Inson\" ijtimoiy hizmatlar markazi",
+        "no_pf": 12,
+        "no_fth": 4,
+        "no_ch_fth": 14,
+        "no_ext_fth": 3,
+        "services": [
+            6172707,
+            6172708,
+            6172709,
+            6172710
+        ]
+    },
+    "9172707": {
+        "region": 1727,
+        "district": 1727424,
+        "name": "Yangiyo'l shahar \"Inson\" ijtimoiy hizmatlar markazi",
+        "no_pf": 7,
+        "no_fth": 0,
+        "no_ch_fth": 0,
+        "no_ext_fth": 0,
+        "services": []
+    },
+    "9172708": {
+        "region": 1727,
+        "district": 1727212,
+        "name": "Ohangaron tuman \"Inson\" ijtimoiy hizmatlar markazi",
+        "no_pf": 4,
+        "no_fth": 0,
+        "no_ch_fth": 0,
+        "no_ext_fth": 0,
+        "services": []
+    },
+    "9172709": {
+        "region": 1727,
+        "district": 1727220,
+        "name": "Bekobod tuman \"Inson\" ijtimoiy hizmatlar markazi",
+        "no_pf": 9,
+        "no_fth": 0,
+        "no_ch_fth": 0,
+        "no_ext_fth": 0,
+        "services": []
+    },
+    "9172710": {
+        "region": 1727,
+        "district": 1727206,
+        "name": "Oqqo'rg'on tuman \"Inson\" ijtimoiy hizmatlar markazi",
+        "no_pf": 8,
+        "no_fth": 0,
+        "no_ch_fth": 0,
+        "no_ext_fth": 0,
+        "services": []
+    },
+    "9172711": {
+        "region": 1727,
+        "district": 1727224,
+        "name": "Bo'stonliq tumani \"Inson\" ijtimoiy hizmatlar markazi",
+        "no_pf": 2,
+        "no_fth": 0,
+        "no_ch_fth": 0,
+        "no_ext_fth": 0,
+        "services": []
+    },
+    "9172712": {
+        "region": 1727,
+        "district": 1727228,
+        "name": "Bo'ka tuman \"Inson\" ijtimoiy hizmatlar markazi",
+        "no_pf": 1,
+        "no_fth": 0,
+        "no_ch_fth": 0,
+        "no_ext_fth": 0,
+        "services": []
+    },
+    "9172713": {
+        "region": 1727,
+        "district": 1727239,
+        "name": "Yuqorichirchiq tuman \"Inson\" ijtimoiy hizmatlar markazi",
+        "no_pf": 2,
+        "no_fth": 0,
+        "no_ch_fth": 0,
+        "no_ext_fth": 0,
+        "services": []
+    },
+    "9172714": {
+        "region": 1727,
+        "district": 1727233,
+        "name": "Quyichirchiq tuman \"Inson\" ijtimoiy hizmatlar markazi",
+        "no_pf": 1,
+        "no_fth": 0,
+        "no_ch_fth": 0,
+        "no_ext_fth": 0,
+        "services": []
+    },
+    "9172715": {
+        "region": 1727,
+        "district": 1727237,
+        "name": "Zangiota tuman \"Inson\" ijtimoiy hizmatlar markazi",
+        "no_pf": 25,
+        "no_fth": 0,
+        "no_ch_fth": 0,
+        "no_ext_fth": 0,
+        "services": []
+    },
+    "9172716": {
+        "region": 1727,
+        "district": 1727248,
+        "name": "Qibray tuman \"Inson\" ijtimoiy hizmatlar markazi",
+        "no_pf": 3,
+        "no_fth": 0,
+        "no_ch_fth": 0,
+        "no_ext_fth": 0,
+        "services": []
+    },
+    "9172717": {
+        "region": 1727,
+        "district": 1727249,
+        "name": "Parkent tuman \"Inson\" ijtimoiy hizmatlar markazi",
+        "no_pf": 2,
+        "no_fth": 1,
+        "no_ch_fth": 5,
+        "no_ext_fth": 2,
+        "services": [
+            6172701
+        ]
+    },
+    "9172718": {
+        "region": 1727,
+        "district": 1727250,
+        "name": "Piskent tuman \"Inson\" ijtimoiy hizmatlar markazi",
+        "no_pf": 3,
+        "no_fth": 0,
+        "no_ch_fth": 0,
+        "no_ext_fth": 0,
+        "services": []
+    },
+    "9172719": {
+        "region": 1727,
+        "district": 1727253,
+        "name": "O'rtachirchiq tuman \"Inson\" ijtimoiy hizmatlar markazi",
+        "no_pf": 0,
+        "no_fth": 0,
+        "no_ch_fth": 0,
+        "no_ext_fth": 0,
+        "services": []
+    },
+    "9172720": {
+        "region": 1727,
+        "district": 1727265,
+        "name": "Toshkent tuman \"Inson\" ijtimoiy hizmatlar markazi",
+        "no_pf": 5,
+        "no_fth": 1,
+        "no_ch_fth": 3,
+        "no_ext_fth": 0,
+        "services": [
+            6172704
+        ]
+    },
+    "9172721": {
+        "region": 1727,
+        "district": 1727256,
+        "name": "Chinoz tuman \"Inson\" ijtimoiy hizmatlar markazi",
+        "no_pf": 1,
+        "no_fth": 0,
+        "no_ch_fth": 0,
+        "no_ext_fth": 0,
+        "services": []
+    },
+    "9172722": {
+        "region": 1727,
+        "district": 1727259,
+        "name": "Yangiyo'l tuman \"Inson\" ijtimoiy hizmatlar markazi",
+        "no_pf": 3,
+        "no_fth": 3,
+        "no_ch_fth": 17,
+        "no_ext_fth": 1,
+        "services": [
+            6172702,
+            6172703,
+            6172711
+        ]
+    },
+    "9173001": {
+        "region": 1730,
+        "district": 1730209551,
+        "name": "Фарғона вилояти Бағдод тумани \"Инсон\" ижтимоий хизматлар маркази",
+        "no_pf": 0,
+        "no_fth": 0,
+        "no_ch_fth": 0,
+        "no_ext_fth": 0,
+        "services": []
+    },
+    "9173002": {
+        "region": 1730,
+        "district": 1730215501,
+        "name": "Фарғона вилояти Бешариқ тумани \"Инсон\" ижтимоий хизматлар маркази",
+        "no_pf": 1,
+        "no_fth": 0,
+        "no_ch_fth": 0,
+        "no_ext_fth": 0,
+        "services": []
+    },
+    "9173003": {
+        "region": 1730,
+        "district": 1730212,
+        "name": "Фарғона вилояти Бувайда тумани \"Инсон\" ижтимоий хизматлар маркази",
+        "no_pf": 0,
+        "no_fth": 0,
+        "no_ch_fth": 0,
+        "no_ext_fth": 0,
+        "services": []
+    },
+    "9173004": {
+        "region": 1730,
+        "district": 1730236,
+        "name": "Фарғона вилоятиДанғара  тумани \"Инсон\" ижтимоий хизматлар маркази",
+        "no_pf": 2,
+        "no_fth": 0,
+        "no_ch_fth": 0,
+        "no_ext_fth": 0,
+        "services": []
+    },
+    "9173005": {
+        "region": 1730,
+        "district": 1730242,
+        "name": "Фарғона вилояти Ёзёвон  тумани \"Инсон\" ижтимоий хизматлар маркази",
+        "no_pf": 0,
+        "no_fth": 0,
+        "no_ch_fth": 0,
+        "no_ext_fth": 0,
+        "services": []
+    },
+    "9173006": {
+        "region": 1730,
+        "district": 1730218,
+        "name": "Фарғона вилояти Қува тумани \"Инсон\" ижтимоий хизматлар маркази",
+        "no_pf": 3,
+        "no_fth": 2,
+        "no_ch_fth": 6,
+        "no_ext_fth": 2,
+        "services": [
+            6173001,
+            6173002
+        ]
+    },
+    "9173007": {
+        "region": 1730,
+        "district": 1730408,
+        "name": "Фарғона вилояти Қувасой шаҳар \"Инсон\" ижтимоий хизматлар маркази",
+        "no_pf": 0,
+        "no_fth": 0,
+        "no_ch_fth": 0,
+        "no_ext_fth": 0,
+        "services": []
+    },
+    "9173008": {
+        "region": 1730,
+        "district": 1730238,
+        "name": "Фарғона вилояти Қўқон шаҳар \"Инсон\" ижтимоий хизматлар маркази",
+        "no_pf": 9,
+        "no_fth": 4,
+        "no_ch_fth": 17,
+        "no_ext_fth": 0,
+        "services": [
+            6173008,
+            6173009,
+            6173010,
+            6173011
+        ]
+    },
+    "9173009": {
+        "region": 1730,
+        "district": 1730206,
+        "name": "Фарғона вилояти Қўштепа тумани \"Инсон\" ижтимоий хизматлар маркази",
+        "no_pf": 0,
+        "no_fth": 2,
+        "no_ch_fth": 8,
+        "no_ext_fth": 3,
+        "services": [
+            6173013,
+            6173014
+        ]
+    },
+    "9173010": {
+        "region": 1730,
+        "district": 1730412,
+        "name": "Фарғона вилояти Марғилон шаҳар \"Инсон\" ижтимоий хзматлар маркази",
+        "no_pf": 4,
+        "no_fth": 0,
+        "no_ch_fth": 0,
+        "no_ext_fth": 0,
+        "services": []
+    },
+    "9173011": {
+        "region": 1730,
+        "district": 1730401,
+        "name": "Фарғона вилояти  Фарғона шаҳар \"Инсон\" ижтимоий хизматлар маркази",
+        "no_pf": 21,
+        "no_fth": 1,
+        "no_ch_fth": 5,
+        "no_ext_fth": 0,
+        "services": [
+            6173012
+        ]
+    },
+    "9173012": {
+        "region": 1730,
+        "district": 1730203,
+        "name": "Фарғона вилояти  Олтиариқ тумани \"Инсон\" ижтимоий хизматлар маркази",
+        "no_pf": 0,
+        "no_fth": 0,
+        "no_ch_fth": 0,
+        "no_ext_fth": 0,
+        "services": []
+    },
+    "9173013": {
+        "region": 1730,
+        "district": 1730224,
+        "name": "Фарғона вилояти Риштон тумани \"Инсон\" ижтимоий хизматлар маркази",
+        "no_pf": 0,
+        "no_fth": 0,
+        "no_ch_fth": 0,
+        "no_ext_fth": 0,
+        "services": []
+    },
+    "9173014": {
+        "region": 1730,
+        "district": 1730226561,
+        "name": "Фарғона вилояти Сўх тумани \"Инсон\" ижтимоий хизматлар маркази",
+        "no_pf": 0,
+        "no_fth": 0,
+        "no_ch_fth": 0,
+        "no_ext_fth": 0,
+        "services": []
+    },
+    "9173015": {
+        "region": 1730,
+        "district": 1730227,
+        "name": "Фарғона вилояти Тошлоқ тумани \"Инсон\" ижтимоий хизматлар маркази",
+        "no_pf": 0,
+        "no_fth": 1,
+        "no_ch_fth": 4,
+        "no_ext_fth": 0,
+        "services": [
+            6173005
+        ]
+    },
+    "9173016": {
+        "region": 1730,
+        "district": 1730230501,
+        "name": "Фарғона вилояти Ўзбекистон  тумани \"Инсон\" ижтимоий хизматлар маркази",
+        "no_pf": 52,
+        "no_fth": 0,
+        "no_ch_fth": 0,
+        "no_ext_fth": 0,
+        "services": []
+    },
+    "9173017": {
+        "region": 1730,
+        "district": 1730221551,
+        "name": "Фарғона вилояти Учкўприк тумани \"Инсон\" ижтимоий хизматлар маркази",
+        "no_pf": 7,
+        "no_fth": 0,
+        "no_ch_fth": 0,
+        "no_ext_fth": 0,
+        "services": []
+    },
+    "9173018": {
+        "region": 1730,
+        "district": 1730233563,
+        "name": "Фарғона вилояти Фарғона тумани \"Инсон\" ижтимоий хизматлар маркази",
+        "no_pf": 2,
+        "no_fth": 2,
+        "no_ch_fth": 7,
+        "no_ext_fth": 2,
+        "services": [
+            6173003,
+            6173004
+        ]
+    },
+    "9173019": {
+        "region": 1730,
+        "district": 1730238,
+        "name": "Фарғона вилояти Фурқат тумани \"Инсон\" ижтимоий хизматлар маркази",
+        "no_pf": 2,
+        "no_fth": 2,
+        "no_ch_fth": 14,
+        "no_ext_fth": 0,
+        "services": [
+            6173006,
+            6173007
+        ]
+    },
+    "9173301": {
+        "region": 1733,
+        "district": 1733401,
+        "name": "Ургенч шахар Инсон ижтимоий хизматлар маркази",
+        "no_pf": 19,
+        "no_fth": 1,
+        "no_ch_fth": 6,
+        "no_ext_fth": 1,
+        "services": [
+            6173302
+        ]
+    },
+    "9173302": {
+        "region": 1733,
+        "district": 1733406,
+        "name": "Хива шахар Инсон ижтимоий хизматлар маркази",
+        "no_pf": 0,
+        "no_fth": 8,
+        "no_ch_fth": 45,
+        "no_ext_fth": 7,
+        "services": [
+            6173303,
+            6173304,
+            6173305,
+            6173306,
+            6173307,
+            6173308,
+            6173309
+        ]
+    },
+    "9173303": {
+        "region": 1733,
+        "district": 1733204,
+        "name": "Богот туман ИНСОН ижтимоий хизматлар маркази",
+        "no_pf": 3,
+        "no_fth": 0,
+        "no_ch_fth": 0,
+        "no_ext_fth": 0,
+        "services": []
+    },
+    "9173304": {
+        "region": 1733,
+        "district": 1733208,
+        "name": "Гурлан туман Инсон ижтимоий хизматлар маркази",
+        "no_pf": 0,
+        "no_fth": 0,
+        "no_ch_fth": 0,
+        "no_ext_fth": 0,
+        "services": []
+    },
+    "9173305": {
+        "region": 1733,
+        "district": 1733212,
+        "name": "Кушкупыр туман Инсон ижтимоий хизматлармаркази",
+        "no_pf": 8,
+        "no_fth": 0,
+        "no_ch_fth": 0,
+        "no_ext_fth": 0,
+        "services": []
+    },
+    "9173306": {
+        "region": 1733,
+        "district": 1733221,
+        "name": "Тупрокаллъа туман Инсон ижтимоий хизматлар маркази",
+        "no_pf": 0,
+        "no_fth": 0,
+        "no_ch_fth": 0,
+        "no_ext_fth": 0,
+        "services": []
+    },
+    "9173307": {
+        "region": 1733,
+        "district": 1733217,
+        "name": "Ургенч туман Инсон ижтимоий хизматлар маркази",
+        "no_pf": 23,
+        "no_fth": 1,
+        "no_ch_fth": 13,
+        "no_ext_fth": 4,
+        "services": [
+            6173301,
+            6173310
+        ]
+    },
+    "9173308": {
+        "region": 1733,
+        "district": 1733220,
+        "name": "Хазарасп туман Инсон ижтимоий хизматлар маркази",
+        "no_pf": 4,
+        "no_fth": 0,
+        "no_ch_fth": 0,
+        "no_ext_fth": 0,
+        "services": []
+    },
+    "9173309": {
+        "region": 1733,
+        "district": 1733226,
+        "name": "Хива туман Инсонижтимоий хизматлар маркази",
+        "no_pf": 2,
+        "no_fth": 0,
+        "no_ch_fth": 0,
+        "no_ext_fth": 0,
+        "services": []
+    },
+    "9173310": {
+        "region": 1733,
+        "district": 1733223,
+        "name": "Хонка  Исон ижтимоий хизматлар маркази",
+        "no_pf": 10,
+        "no_fth": 0,
+        "no_ch_fth": 0,
+        "no_ext_fth": 0,
+        "services": []
+    },
+    "9173311": {
+        "region": 1733,
+        "district": 1733230,
+        "name": "Шават  Инсон ижтимоий хизматлар маркази",
+        "no_pf": 11,
+        "no_fth": 0,
+        "no_ch_fth": 0,
+        "no_ext_fth": 0,
+        "services": []
+    },
+    "9173312": {
+        "region": 1733,
+        "district": 1733233,
+        "name": "Янгиарик туман Инсон ижтимоий хизматлар маркази",
+        "no_pf": 2,
+        "no_fth": 0,
+        "no_ch_fth": 0,
+        "no_ext_fth": 0,
+        "services": []
+    },
+    "9173313": {
+        "region": 1733,
+        "district": 1733236,
+        "name": "Янгибозор туман Инсон ижтимоий хизматлар маркази",
+        "no_pf": 1,
+        "no_fth": 0,
+        "no_ch_fth": 0,
+        "no_ext_fth": 0,
+        "services": []
+    },
+    "9173501": {
+        "region": 1735,
+        "district": 1735401,
+        "name": "Нукус шахар Инсон маркази",
+        "no_pf": 2,
+        "no_fth": 3,
+        "no_ch_fth": 0,
+        "no_ext_fth": 0,
+        "services": []
+    },
+    "9173502": {
+        "region": 1735,
+        "district": 1735207,
+        "name": "Беруний тумани  Инсон маркази",
+        "no_pf": 6,
+        "no_fth": 2,
+        "no_ch_fth": 7,
+        "no_ext_fth": 5,
+        "services": [
+            6173501,
+            6173502
+        ]
+    },
+    "9173503": {
+        "region": 1735,
+        "district": 1735209551,
+        "name": "Бузатов тумани  Инсон маркази",
+        "no_pf": 0,
+        "no_fth": 0,
+        "no_ch_fth": 0,
+        "no_ext_fth": 0,
+        "services": []
+    },
+    "9173504": {
+        "region": 1735,
+        "district": 1735212,
+        "name": "Кегейли тумани Инсон маркази",
+        "no_pf": 0,
+        "no_fth": 0,
+        "no_ch_fth": 0,
+        "no_ext_fth": 0,
+        "services": []
+    },
+    "9173505": {
+        "region": 1735,
+        "district": 1735218,
+        "name": "Конликул тумани Инсон маркази",
+        "no_pf": 0,
+        "no_fth": 0,
+        "no_ch_fth": 0,
+        "no_ext_fth": 0,
+        "services": []
+    },
+    "9173506": {
+        "region": 1735,
+        "district": 1735211,
+        "name": "Кораузак тумани Инсон маркази",
+        "no_pf": 0,
+        "no_fth": 0,
+        "no_ch_fth": 0,
+        "no_ext_fth": 0,
+        "services": []
+    },
+    "9173507": {
+        "region": 1735,
+        "district": 1735215,
+        "name": "Кунгирот тумани Инсон маркази",
+        "no_pf": 1,
+        "no_fth": 0,
+        "no_ch_fth": 0,
+        "no_ext_fth": 0,
+        "services": []
+    },
+    "9173508": {
+        "region": 1735,
+        "district": 1735222,
+        "name": "Муйнок тумани Инсон маркази",
+        "no_pf": 0,
+        "no_fth": 0,
+        "no_ch_fth": 0,
+        "no_ext_fth": 0,
+        "services": []
+    },
+    "9173509": {
+        "region": 1735,
+        "district": 1735225551,
+        "name": "Нукус тумани Инсон маркази",
+        "no_pf": 0,
+        "no_fth": 3,
+        "no_ch_fth": 17,
+        "no_ext_fth": 7,
+        "services": [
+            6173506,
+            6173507,
+            6173510
+        ]
+    },
+    "9173510": {
+        "region": 1735,
+        "district": 1735228,
+        "name": "Тахиатош тумани Инсон маркази",
+        "no_pf": 0,
+        "no_fth": 2,
+        "no_ch_fth": 14,
+        "no_ext_fth": 2,
+        "services": [
+            6173508,
+            6173509
+        ]
+    },
+    "9173511": {
+        "region": 1735,
+        "district": 1735230,
+        "name": "Тахтакупир тумани Инсон маркази",
+        "no_pf": 0,
+        "no_fth": 0,
+        "no_ch_fth": 0,
+        "no_ext_fth": 0,
+        "services": []
+    },
+    "9173512": {
+        "region": 1735,
+        "district": 1735233,
+        "name": "Турткул  тумани Инсон маркази",
+        "no_pf": 0,
+        "no_fth": 0,
+        "no_ch_fth": 0,
+        "no_ext_fth": 0,
+        "services": []
+    },
+    "9173513": {
+        "region": 1735,
+        "district": 1735236,
+        "name": "Хужайли тумани Инсон маркази",
+        "no_pf": 1,
+        "no_fth": 6,
+        "no_ch_fth": 36,
+        "no_ext_fth": 0,
+        "services": [
+            6173503,
+            6173504,
+            6173505,
+            6173511,
+            6173512,
+            6173513,
+            6173514
+        ]
+    },
+    "9173514": {
+        "region": 1735,
+        "district": 1735240,
+        "name": "Чимбой тумани Инсон маркази",
+        "no_pf": 0,
+        "no_fth": 0,
+        "no_ch_fth": 0,
+        "no_ext_fth": 0,
+        "services": []
+    },
+    "9173515": {
+        "region": 1735,
+        "district": 1735243,
+        "name": "Шуманай тумани Инсон маркази",
+        "no_pf": 0,
+        "no_fth": 0,
+        "no_ch_fth": 0,
+        "no_ext_fth": 0,
+        "services": []
+    },
+    "9173516": {
+        "region": 1735,
+        "district": 1735204,
+        "name": "Амударьё  тумани Инсон маркази",
+        "no_pf": 0,
+        "no_fth": 0,
+        "no_ch_fth": 0,
+        "no_ext_fth": 0,
+        "services": []
+    },
+    "9173517": {
+        "region": 1735,
+        "district": 1735250827,
+        "name": "Элликкальа тумани Инсон маркази",
+        "no_pf": 0,
+        "no_fth": 1,
+        "no_ch_fth": 0,
+        "no_ext_fth": 0,
+        "services": []
     }
 }

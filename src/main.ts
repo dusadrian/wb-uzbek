@@ -7,6 +7,7 @@ import * as path from "path";
 import { db, database } from "./database/database";
 import * as DI from "../src/interfaces/database";
 import build_templates from "./libraries/build_templates";
+import { insons, services } from "./libraries/administrative";
 
 if (process.env.NODE_ENV === "development") {
     build_templates();
@@ -214,18 +215,25 @@ const goToDashboard = () => {
     mainWindow.loadURL("file://" + page);
     mainWindow.webContents.once("did-finish-load", () => {
         if (appSession.userData.role_code === "1" || appSession.userData.role_code === "2" || appSession.userData.role_code === "3" || appSession.userData.role_code === "4") {
-            database.getUserInstitution(appSession.userData.institution_code).then((result: Array<DI.Institution>) => {
-                if (result.length === 0) {
-                    dialog.showMessageBox(mainWindow, {
-                        type: 'error',
-                        message: 'Institution error. Please login again.',
-                    })
-                    return;
-                }
-                appSession.institutionName = result[0].name;
-                appSession.institutionDetails = result[0];
+
+            if (appSession.userData.service_type_code !== "9" && services[appSession.userData.institution_code]) {
+                const inst = JSON.parse(JSON.stringify(services[appSession.userData.institution_code]));
+                appSession.institutionName = inst.name;
+                appSession.institutionDetails = inst;
                 mainWindow.webContents.send("appSession", appSession);
-            });
+            } else if (appSession.userData.service_type_code === "9" && insons[appSession.userData.institution_code]) {
+
+                const inst = JSON.parse(JSON.stringify(insons[appSession.userData.institution_code]));
+
+                appSession.institutionName = inst.name;
+                appSession.institutionDetails = inst;
+                mainWindow.webContents.send("appSession", appSession);
+            } else {
+                dialog.showMessageBox(mainWindow, {
+                    type: 'error',
+                    message: 'Institution error. Please login again.',
+                })
+            }
         } else {
             // there is no institution for this user
             appSession.institutionName = "";
@@ -638,7 +646,7 @@ ipcMain.on('deleteUser', (event, args) => {
 const goToQMR = (id: string) => {
     const newPage = path.join(__dirname, "../src/pages/instruments/04_qmr_" + appSession.language + ".html");
     mainWindow.loadURL("file://" + newPage);
-    database.getUserData(appSession.userId).then((userDataArray) => {
+    database.getUserData(appSession.userData.id).then((userDataArray) => {
         database.getUserInstitution(appSession.userData.institution_code).then((institutionDataArray) => {
             if (id) {
                 mainWindow.webContents.once("did-finish-load", () => {
@@ -664,7 +672,7 @@ const goToQMR = (id: string) => {
 const goToDSEE = (id: string) => {
     const newPage = path.join(__dirname, "../src/pages/instruments/06_dsee_" + appSession.language + ".html");
     mainWindow.loadURL("file://" + newPage);
-    database.getUserData(appSession.userId).then((userDataArray) => {
+    database.getUserData(appSession.userData.id).then((userDataArray) => {
         database.getUserInstitution(appSession.userData.institution_code).then((institutionDataArray) => {
             if (id) {
                 mainWindow.webContents.once("did-finish-load", () => {
@@ -691,26 +699,30 @@ const goToDSEE = (id: string) => {
 const goToCPIS = (id: string) => {
     const newPage = path.join(__dirname, "../src/pages/instruments/01_cpis_" + appSession.language + ".html");
     mainWindow.loadURL("file://" + newPage);
-
-    if (id) {
-        mainWindow.webContents.once("did-finish-load", () => {
-            database.instrumentGet(id, 'cpis', db).then((result) => {
-                mainWindow.webContents.send("instrumentDataReady", {
-                    id: id,
-                    questions: result,
+    database.getUserData(appSession.userData.id).then((userDataArray) => {
+        if (id) {
+            mainWindow.webContents.once("did-finish-load", () => {
+                database.instrumentGet(id, 'cpis', db).then((result) => {
+                    mainWindow.webContents.send("instrumentDataReady", {
+                        id: id,
+                        questions: result,
+                        userData: userDataArray[0],
+                    });
                 });
             });
-        });
-    } else {
-        mainWindow.webContents.once("did-finish-load", () => {
-            mainWindow.webContents.send("instrumentDataReady", {});
-        });
-    }
+        } else {
+            mainWindow.webContents.once("did-finish-load", () => {
+                mainWindow.webContents.send("instrumentDataReady", {
+                    userData: userDataArray[0],
+                });
+            });
+        }
+    });
 }
 const goToCSR = (id: string) => {
     const newPage = path.join(__dirname, "../src/pages/instruments/03_csr_" + appSession.language + ".html");
     mainWindow.loadURL("file://" + newPage);
-    database.getUserData(appSession.userId).then((userDataArray) => {
+    database.getUserData(appSession.userData.id).then((userDataArray) => {
         database.getUserInstitution(appSession.userData.institution_code).then((institutionDataArray) => {
             if (id) {
                 mainWindow.webContents.once("did-finish-load", () => {
@@ -736,7 +748,7 @@ const goToCSR = (id: string) => {
 const goToFTCH = (id: string) => {
     const newPage = path.join(__dirname, "../src/pages/instruments/07_ftch_" + appSession.language + ".html");
     mainWindow.loadURL("file://" + newPage);
-    database.getUserData(appSession.userId).then((userDataArray) => {
+    database.getUserData(appSession.userData.id).then((userDataArray) => {
         if (id) {
             mainWindow.webContents.once("did-finish-load", () => {
                 database.instrumentGet(id, 'ftch', db).then((questions) => {
@@ -758,7 +770,7 @@ const goToFTCH = (id: string) => {
 const goToPFQ = (id: string) => {
     const newPage = path.join(__dirname, "../src/pages/instruments/08_pfq_" + appSession.language + ".html");
     mainWindow.loadURL("file://" + newPage);
-    database.getUserData(appSession.userId).then((userDataArray) => {
+    database.getUserData(appSession.userData.id).then((userDataArray) => {
         if (id) {
             mainWindow.webContents.once("did-finish-load", () => {
                 database.instrumentGet(id, 'pfq', db).then((questions) => {
@@ -780,7 +792,7 @@ const goToPFQ = (id: string) => {
 const goToEEF = (id: string) => {
     const newPage = path.join(__dirname, "../src/pages/instruments/09_eef_" + appSession.language + ".html");
     mainWindow.loadURL("file://" + newPage);
-    database.getUserData(appSession.userId).then((userDataArray) => {
+    database.getUserData(appSession.userData.id).then((userDataArray) => {
         if (id) {
             mainWindow.webContents.once("did-finish-load", () => {
                 database.instrumentGet(id, 'eef', db).then((questions) => {
@@ -802,7 +814,7 @@ const goToEEF = (id: string) => {
 const goToYPLCS = (id: string) => {
     const newPage = path.join(__dirname, "../src/pages/instruments/05_yplcs_" + appSession.language + ".html");
     mainWindow.loadURL("file://" + newPage);
-    database.getUserData(appSession.userId).then((userDataArray) => {
+    database.getUserData(appSession.userData.id).then((userDataArray) => {
         if (id) {
             mainWindow.webContents.once("did-finish-load", () => {
                 database.instrumentGet(id, 'yplcs', db).then((questions) => {
@@ -824,7 +836,7 @@ const goToYPLCS = (id: string) => {
 const goToCIBS = (id: string) => {
     const newPage = path.join(__dirname, "../src/pages/instruments/02_cibs_" + appSession.language + ".html");
     mainWindow.loadURL("file://" + newPage);
-    database.getUserData(appSession.userId).then((userDataArray) => {
+    database.getUserData(appSession.userData.id).then((userDataArray) => {
         if (id) {
             mainWindow.webContents.once("did-finish-load", () => {
                 database.instrumentGet(id, 'cibs', db).then((questions) => {
@@ -846,7 +858,7 @@ const goToCIBS = (id: string) => {
 const goToTQYP = (id: string) => {
     const newPage = path.join(__dirname, "../src/pages/instruments/05a_tqyp_" + appSession.language + ".html");
     mainWindow.loadURL("file://" + newPage);
-    database.getUserData(appSession.userId).then((userDataArray) => {
+    database.getUserData(appSession.userData.id).then((userDataArray) => {
         if (id) {
             mainWindow.webContents.once("did-finish-load", () => {
                 database.instrumentGet(id, 'tqyp', db).then((questions) => {
