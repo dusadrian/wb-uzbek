@@ -80,7 +80,7 @@ export const instrument4 = {
             // set default values, IRRESPECTIVE of the instrument
 
             // two digit day & month
-            util.setValue("data", util.customDate());
+            util.setValue("q1", util.customDate());
 
             if (args.userData) {
                 util.setValue('q2', args.userData.first_name + " " + args.userData.patronymics + " " + args.userData.last_name);
