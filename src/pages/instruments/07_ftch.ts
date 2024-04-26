@@ -94,15 +94,13 @@ const fillTable = (table: any, ftch: Array<any>) => {
             item.ifm3,
             buttons.outerHTML
         ]).draw();
+    });
 
-
-
-        document.querySelectorAll('.editButton').forEach(item => {
-            item.addEventListener('click', editItem.bind(this, (<HTMLButtonElement>item).dataset.myid));
-        });
-        document.querySelectorAll('.deleteButton').forEach(item => {
-            item.addEventListener('click', deleteItem.bind(this, (<HTMLButtonElement>item).dataset.myid));
-        });
+    document.querySelectorAll('.editButton').forEach(item => {
+        item.addEventListener('click', editItem.bind(this, (<HTMLButtonElement>item).dataset.myid));
+    });
+    document.querySelectorAll('.deleteButton').forEach(item => {
+        item.addEventListener('click', deleteItem.bind(this, (<HTMLButtonElement>item).dataset.myid));
     });
 };
 
