@@ -125,7 +125,7 @@ const editItem = function (id: number) {
 
 // sterge eveniment
 const deleteItem = function (id: number) {
-    ipcRenderer.send('deleteChild', {
+    ipcRenderer.send('deleteCPIS', {
         'id': id,
     });
 };
