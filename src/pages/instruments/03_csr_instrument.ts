@@ -40,9 +40,7 @@ export const instrument3 = {
         flatpickr(util.htmlElement('e7'), flatpickrConfig);
 
         ipcRenderer.on("instrumentDataReady", (_event, args) => {
-
-            console.log(args);
-
+            // console.log(args);
 
             // set instrument question !!!!!!
             instrument.setQuestions(questions, questionOrder);

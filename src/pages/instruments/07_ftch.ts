@@ -1,3 +1,4 @@
+import { showByPermissions } from './../../libraries/showBasedOnPermissions';
 import { ipcRenderer } from "electron";
 declare global {
     interface Window {
@@ -12,6 +13,9 @@ dt(window, $);
 
 export const ftch = {
     init: async () => {
+
+        // call this to show based on permissions hidden sections
+        showByPermissions();
 
         ipcRenderer.send('getFTCH');
 
@@ -40,7 +44,7 @@ export const ftch = {
             }
         });
 
-        ipcRenderer.on('ftch', (event, ftch) => { 
+        ipcRenderer.on('ftch', (event, ftch) => {
             fillTable(table, ftch);
         });
 
@@ -64,7 +68,7 @@ const fillTable = (table: any, ftch: Array<any>) => {
         buttonEdit.classList.add('editButton');
         buttonEdit.setAttribute("data-myId", item.id + '');
         buttonEdit.setAttribute("title", "Edit item");
-        
+
         const buttonDelete = document.createElement('button');
         buttonDelete.innerHTML = '<svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="trash-alt" class="fill-white w-4 h-4" role="img" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 448 512"><path fill="currentColor" d="M268 416h24a12 12 0 0 0 12-12V188a12 12 0 0 0-12-12h-24a12 12 0 0 0-12 12v216a12 12 0 0 0 12 12zM432 80h-82.41l-34-56.7A48 48 0 0 0 274.41 0H173.59a48 48 0 0 0-41.16 23.3L98.41 80H16A16 16 0 0 0 0 96v16a16 16 0 0 0 16 16h16v336a48 48 0 0 0 48 48h288a48 48 0 0 0 48-48V128h16a16 16 0 0 0 16-16V96a16 16 0 0 0-16-16zM171.84 50.91A6 6 0 0 1 177 48h94a6 6 0 0 1 5.15 2.91L293.61 80H154.39zM368 464H80V128h288zm-212-48h24a12 12 0 0 0 12-12V188a12 12 0 0 0-12-12h-24a12 12 0 0 0-12 12v216a12 12 0 0 0 12 12z"></path></svg>';
         buttonDelete.classList.add('bg-red-500');
@@ -93,12 +97,12 @@ const fillTable = (table: any, ftch: Array<any>) => {
 
 
 
-    document.querySelectorAll('.editButton').forEach(item => {
-        item.addEventListener('click', editItem.bind(this, (<HTMLButtonElement>item).dataset.myid));
-    });
-    document.querySelectorAll('.deleteButton').forEach(item => {
-        item.addEventListener('click', deleteItem.bind(this, (<HTMLButtonElement>item).dataset.myid));
-    });
+        document.querySelectorAll('.editButton').forEach(item => {
+            item.addEventListener('click', editItem.bind(this, (<HTMLButtonElement>item).dataset.myid));
+        });
+        document.querySelectorAll('.deleteButton').forEach(item => {
+            item.addEventListener('click', deleteItem.bind(this, (<HTMLButtonElement>item).dataset.myid));
+        });
     });
 };
 

@@ -1,3 +1,4 @@
+import { showByPermissions } from './../../libraries/showBasedOnPermissions';
 import { ipcRenderer } from "electron";
 declare global {
     interface Window {
@@ -12,6 +13,9 @@ dt(window, $);
 
 export const yplcs = {
     init: async () => {
+
+        // call this to show based on permissions hidden sections
+        showByPermissions()
 
         ipcRenderer.send('getYPLCS');
 

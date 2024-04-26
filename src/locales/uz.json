@@ -37,7 +37,7 @@
     "t_regionalCoordinator_level_view_regionalCoordinators": "Hududiy koordinator/hududiy koordinatorlarning ko'rish darajasi",
     "t_details": "Ma'lumotlar",
     "t_export": "Eksport",
-    "t_export_data": "",
+    "t_export_data": "Ma'lumotlarni eksport qilish",
     "t_filter": "Filtr",
     "t_filter_by": "... bo'yicha filtrlash",
     "t_external_evaluators": "Tashqi baholovchilar",
@@ -150,8 +150,8 @@
     "t_instrument5A": "I5A. Muqobil vasiylik tizimini tark etgan yosh shaxsning kuzatuv so'rovnomasi",
     "t_external_evaluation_forms": "Bolalar muassasalari va maktab-internatlarning tashqi baholash shakli",
     "t_instrument9": "I9. Bolalar muassasalari va maktab-internatlarning tashqi baholash shakli",
-    "t_instruments": "",
-    "t_button_complete": "",
-    "t_number_to_be_filled": "",
-    "t_number_completed": ""
+    "t_instruments": "Instruments list",
+    "t_button_complete": "Completed",
+    "t_number_to_be_filled": "Number to be filled",
+    "t_number_completed": "Number completed"
 }

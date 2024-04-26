@@ -1,3 +1,4 @@
+import { showByPermissions } from './../../libraries/showBasedOnPermissions';
 import { ipcRenderer } from "electron";
 declare global {
     interface Window {
@@ -13,9 +14,12 @@ dt(window, $);
 export const tqyp = {
     init: async () => {
 
+        // call this to show based on permissions hidden sections
+        showByPermissions()
+
         ipcRenderer.send('getTQYP');
 
-        (<HTMLButtonElement>document.getElementById('add_young_people')).addEventListener('click', () => {
+        (<HTMLButtonElement>document.getElementById('add_young_people_a')).addEventListener('click', () => {
             ipcRenderer.send('changeWindow', {
                 'name': 'instruments',
                 'instrument': 'TQYP',

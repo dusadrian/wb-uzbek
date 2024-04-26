@@ -37,7 +37,7 @@
     "t_regionalCoordinator_level_view_regionalCoordinators": "Уровень просмотра Регионального координатора/региональных координаторов",
     "t_details": "Данные",
     "t_export": "Экспорт",
-    "t_export_data": "",
+    "t_export_data": "Экспорт данных",
     "t_filter": "Фильтр",
     "t_filter_by": "Фильтровать по",
     "t_external_evaluators": "Внешние оценщики",
@@ -150,8 +150,8 @@
     "t_instrument5A": "I5A. Опросник по отслеживанию молодых людей покинувших систему альтернативной опеки",
     "t_external_evaluation_forms": "Форма внешней оценки детских учреждений и школ-интернатов",
     "t_instrument9": "I9. Форма внешней оценки детских учреждений и школ-интернатов",
-    "t_instruments": "",
-    "t_button_complete": "",
-    "t_number_to_be_filled": "",
-    "t_number_completed": ""
+    "t_instruments": "Instruments list",
+    "t_button_complete": "Completed",
+    "t_number_to_be_filled": "Number to be filled",
+    "t_number_completed": "Number completed"
 }

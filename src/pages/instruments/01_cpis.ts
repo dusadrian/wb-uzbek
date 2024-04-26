@@ -1,4 +1,7 @@
 import { ipcRenderer } from "electron";
+import { showByPermissions } from "../../libraries/showBasedOnPermissions";
+
+
 declare global {
     interface Window {
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -9,13 +12,15 @@ const $ = window.require('jquery');
 const dt = window.require('datatables.net-dt');
 dt(window, $);
 
-
 export const cpis = {
     init: async () => {
 
+        // call this to show based on permissions hidden sections
+        showByPermissions()
+
         ipcRenderer.send('getChildren');
 
-        (<HTMLButtonElement>document.getElementById('add_child')).addEventListener('click', () => {
+        (<HTMLButtonElement>document.getElementById('add_child_cpis')).addEventListener('click', () => {
             ipcRenderer.send('changeWindow', {
                 'name': 'instruments',
                 'instrument': 'CPIS'
@@ -35,7 +40,7 @@ export const cpis = {
                 "url": langpath
             },
             "createdRow": function (row: HTMLTableRowElement) {
-                // $(row).addClass('text-center');
+                // $(row).addClass('text-right');
                 $(row).addClass('align-middle');
             }
         });
