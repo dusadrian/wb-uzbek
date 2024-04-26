@@ -51,8 +51,9 @@ export const instrument6 = {
             flatpickrConfig2.locale = Russian;
         }
 
-        flatpickr(util.htmlElement('i10'), flatpickrConfig1);
-        flatpickr(util.htmlElement('af13b'), flatpickrConfig2);
+        // cine sunt astea ca nu exista in instrument?
+        // flatpickr(util.htmlElement('i10'), flatpickrConfig1); 
+        // flatpickr(util.htmlElement('af13b'), flatpickrConfig2);
 
         ipcRenderer.on("instrumentDataReady", (_event, args) => {
 
@@ -72,7 +73,7 @@ export const instrument6 = {
             // set default values, IRRESPECTIVE of the instrument
 
             // two digit day & month
-            util.setValue("data", util.customDate());
+            util.setValue("q1", util.customDate());
 
             if (args.userData) {
                 // set default values for user
