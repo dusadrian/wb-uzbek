@@ -219,13 +219,14 @@ export const instrument5 = {
 
             if (args.userData) {
                 // set default values for user
-                util.setValue("omr1", args.userData.first_name);
+                util.setValue("omr1", args.userData.name);
                 util.setValue("omr2", args.userData.patronymics);
-                util.setValue("omr3", args.userData.last_name);
-                util.setValue("omr4", args.userData.position);
+                util.setValue("omr3", args.userData.surname);
+                util.setValue("omr4", args.userData.job_title);
                 util.setValue("omr5", args.userData.profession);
                 util.setValue("omr6", args.userData.phone);
                 util.setValue("omr7", args.userData.email);
+                util.setValue("omr9", args.userData.institution_name);
             }
 
             instrument.start(instrumentID, instrument.trimis, saveChestionar, validateChestionar);

@@ -143,6 +143,12 @@ const initInstruments = (userData: User) => {
             });
         }
     }
+
+    // users
+    if (userData.role_code === '1') {
+        document.getElementById('users').classList.remove('hidden');
+        document.getElementById('users').classList.add('flex');
+    }
 }
 
 export const local = {

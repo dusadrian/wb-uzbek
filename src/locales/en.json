@@ -154,5 +154,6 @@
 	"t_button_complete": "Completed",
 	"t_number_to_be_filled": "Number to be filled",
 	"t_number_completed": "Number completed",
-	"The following fields are mandatory: PTR1, PTR2A, PTR2B, PTR2C!": "The following fields are mandatory: PTR1, PTR2A, PTR2B, PTR2C!"
+	"The following fields are mandatory: PTR1, PTR2A, PTR2B, PTR2C!": "The following fields are mandatory: PTR1, PTR2A, PTR2B, PTR2C!",
+	"Пожалуйста заполните все поля": "Пожалуйста заполните все поля"
 }

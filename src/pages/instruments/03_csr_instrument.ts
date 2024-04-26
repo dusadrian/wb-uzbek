@@ -62,8 +62,8 @@ export const instrument3 = {
 
             if (args.userData) {
                 // set default values for user
-                util.setValue('q2', args.userData.first_name + " " + args.userData.patronymics + " " + args.userData.last_name);
-                util.setValue('q3', args.userData.position);
+                util.setValue('q2', args.userData.name + " " + args.userData.patronymics + " " + args.userData.surname);
+                util.setValue('q3', args.userData.job_title);
                 util.setValue('q4', args.userData.profession);
                 util.setValue('q5', args.userData.phone);
                 util.setValue('q6', args.userData.email);

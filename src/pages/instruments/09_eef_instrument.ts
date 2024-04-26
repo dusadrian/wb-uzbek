@@ -49,7 +49,7 @@ export const instrument9 = {
             } else {
                 if (args.userData) {
                     // set default values for user
-                    util.setValue('q2', args.userData.first_name + " " + args.userData.patronymics + " " + args.userData.last_name);
+                    util.setValue('q2', args.userData.name + " " + args.userData.patronymics + " " + args.userData.surname);
                 }
             }
             instrument.start(instrumentID, instrument.trimis, saveChestionar, validateChestionar);
