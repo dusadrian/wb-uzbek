@@ -21,10 +21,10 @@ const locales: { [key: string]: typeof en | typeof uz | typeof ru} = {
 }
 
 const lang = localStorage.getItem("language");
-const regElements  = ["pi4b", "pi6r", "pi9c"];
-const disElements  = ["pi4c", "pi6d", "pi9d"];
-const setElements  = ["pi4d", "", "pi9h"];
-const typeElements = ["pi4e", "", "pi9i"];
+const regElements  = ["ptr5b"];
+const disElements  = ["ptr5c"];
+const setElements  = ["ptr5d"];
+const typeElements = ["ptr5e"];
 
 
 export const instrument5a = {
@@ -51,9 +51,9 @@ export const instrument5a = {
             flatpickrConfig.locale = Russian;
         }
 
-        flatpickr(util.htmlElement('pi3'), flatpickrConfig);
+        // flatpickr(util.htmlElement('pi3'), flatpickrConfig);
         flatpickrConfig.minDate = "01/01/2023";
-        flatpickr(util.htmlElement('pi7'), flatpickrConfig);
+        flatpickr(util.htmlElement('ptr6'), flatpickrConfig);
 
         const reg_codes = Object.keys(regions);
         for (let x = 0; x < regElements.length; x++) {
@@ -250,92 +250,93 @@ const saveChestionar = (obj: SaveInstrumentType): void => {
 
 // validari custom
 
-util.listen("pi3", "myChange", () => {
-    if (instrument.questions.pi3.value != "-9") {
-        const age = util.diffDates(
-            util.standardDate(instrument.questions.pi3.value),
-            new Date(2024, 5, 1)
-        )
+// cine si ce e asta?
+// util.listen("pi3", "myChange", () => {
+//     if (instrument.questions.pi3.value != "-9") {
+//         const age = util.diffDates(
+//             util.standardDate(instrument.questions.pi3.value),
+//             new Date(2024, 5, 1)
+//         )
 
-        util.setValue("pi3a", age.toString());
-    }
-});
+//         util.setValue("pi3a", age.toString());
+//     }
+// });
 
-util.listen("pi4d", "change", () => {
-    const value = util.htmlElement("pi4d").value;
-    util.setValue("pi4e", "" + (settlement_types[settlements[value].type] as KeyString)[lang]);
-})
+// util.listen("pi4d", "change", () => {
+//     const value = util.htmlElement("pi4d").value;
+//     util.setValue("pi4e", "" + (settlement_types[settlements[value].type] as KeyString)[lang]);
+// })
 
 
-for (let i = 0; i < setElements.length; i++) {
-    if (typeElements[i] != "") {
-        util.listen(setElements[i], "change", () => {
-            const value = util.htmlElement(setElements[i]).value;
-            const set_type = settlement_types[settlements[value].type];
-            util.setValue(typeElements[i], "" + (set_type as KeyString)[lang]);
-        })
-    }
-}
+// for (let i = 0; i < setElements.length; i++) {
+//     if (typeElements[i] != "") {
+//         util.listen(setElements[i], "change", () => {
+//             const value = util.htmlElement(setElements[i]).value;
+//             const set_type = settlement_types[settlements[value].type];
+//             util.setValue(typeElements[i], "" + (set_type as KeyString)[lang]);
+//         })
+//     }
+// }
 
-util.listen("pi6", "change", function () {
-    util.setValue("pi6c", "-9");
-    const value = util.htmlElement("pi6").value;
-    const serv_codes = Object.keys(services);
-    if (serv_codes.indexOf(value) >= 0) {
-        const type = services[value].type;
-        if (["11", "12", "13", "14", "21", "22", "23", "24", "25", "26"].indexOf(type) >= 0) {
-            util.setValue("pi6c", type);
-        }
-    }
-})
+// util.listen("pi6", "change", function () {
+//     util.setValue("pi6c", "-9");
+//     const value = util.htmlElement("pi6").value;
+//     const serv_codes = Object.keys(services);
+//     if (serv_codes.indexOf(value) >= 0) {
+//         const type = services[value].type;
+//         if (["11", "12", "13", "14", "21", "22", "23", "24", "25", "26"].indexOf(type) >= 0) {
+//             util.setValue("pi6c", type);
+//         }
+//     }
+// })
 
-const pi10 = ['pi10a', 'pi10b'];
-util.listen(pi10, "change", () => {
-    const message = 'PI10b <= PI10a';
-    errorHandler.removeError(pi10, message)
-    if (util.getInputDecimalValue('pi10b') > util.getInputDecimalValue('pi10b')) {
-        errorHandler.addError(pi10, message);
-    }
-})
+// const pi10 = ['pi10a', 'pi10b'];
+// util.listen(pi10, "change", () => {
+//     const message = 'PI10b <= PI10a';
+//     errorHandler.removeError(pi10, message)
+//     if (util.getInputDecimalValue('pi10b') > util.getInputDecimalValue('pi10b')) {
+//         errorHandler.addError(pi10, message);
+//     }
+// })
 
-const lv = ['lv2_2', 'lv2_3', 'lv2_4', 'lv2_5', 'lv2_6', 'lv2_7', 'lv2_8', 'lv2_9']
-util.listen("lv2_1", "change", () => {
-    if (util.htmlElement("lv2_1").checked) {
-        lv.forEach((el) => {
-            util.htmlElement(el).checked = false;
-            instrument.questions[el].value = "0";
-        })
-    }
-})
+// const lv = ['lv2_2', 'lv2_3', 'lv2_4', 'lv2_5', 'lv2_6', 'lv2_7', 'lv2_8', 'lv2_9']
+// util.listen("lv2_1", "change", () => {
+//     if (util.htmlElement("lv2_1").checked) {
+//         lv.forEach((el) => {
+//             util.htmlElement(el).checked = false;
+//             instrument.questions[el].value = "0";
+//         })
+//     }
+// })
 
-util.listen(lv, "change", () => {
-    if (util.makeSumFromElements(lv) > 0) {
-        util.htmlElement("lv2_1").checked = false;
-        instrument.questions["lv2_1"].value = "0";
-    }
-});
+// util.listen(lv, "change", () => {
+//     if (util.makeSumFromElements(lv) > 0) {
+//         util.htmlElement("lv2_1").checked = false;
+//         instrument.questions["lv2_1"].value = "0";
+//     }
+// });
 
-const ls = ["ls2_1", "ls2_2", "ls2_3", "ls2_4", "ls2_5", "ls2_6", "ls2_7", "ls2_8", "ls2_9", "ls2_10"];
-util.listen("ls2_11", "change", () => {
-    if (util.htmlElement("ls2_11").checked) {
-        ls.forEach((el) => {
-            util.htmlElement(el).checked = false;
-            instrument.questions[el].value = "0";
-        })
-    }
-})
+// const ls = ["ls2_1", "ls2_2", "ls2_3", "ls2_4", "ls2_5", "ls2_6", "ls2_7", "ls2_8", "ls2_9", "ls2_10"];
+// util.listen("ls2_11", "change", () => {
+//     if (util.htmlElement("ls2_11").checked) {
+//         ls.forEach((el) => {
+//             util.htmlElement(el).checked = false;
+//             instrument.questions[el].value = "0";
+//         })
+//     }
+// })
 
-util.listen(ls, "change", () => {
-    if (util.makeSumFromElements(ls) > 0) {
-        util.htmlElement("ls2_11").checked = false;
-        instrument.questions["ls2_11"].value = "0";
-    }
-});
+// util.listen(ls, "change", () => {
+//     if (util.makeSumFromElements(ls) > 0) {
+//         util.htmlElement("ls2_11").checked = false;
+//         instrument.questions["ls2_11"].value = "0";
+//     }
+// });
 
-util.listen("pi8", "myChange", () => {
-    const message = "PI8 <= 230";
-    errorHandler.removeError("pi8", message);
-    if (Number(instrument.questions.pi8.value) > 230) {
-        errorHandler.addError("pi8", message);
-    }
-})
+// util.listen("pi8", "myChange", () => {
+//     const message = "PI8 <= 230";
+//     errorHandler.removeError("pi8", message);
+//     if (Number(instrument.questions.pi8.value) > 230) {
+//         errorHandler.addError("pi8", message);
+//     }
+// })

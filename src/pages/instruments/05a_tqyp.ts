@@ -92,15 +92,13 @@ const fillTable = (table: any, tqyp: Array<any>) => {
             item.ptr2c,
             buttons.outerHTML
         ]).draw();
+    });
 
-
-
-        document.querySelectorAll('.editButton').forEach(item => {
-            item.addEventListener('click', editItem.bind(this, (<HTMLButtonElement>item).dataset.myid));
-        });
-        document.querySelectorAll('.deleteButton').forEach(item => {
-            item.addEventListener('click', deleteItem.bind(this, (<HTMLButtonElement>item).dataset.myid));
-        });
+    document.querySelectorAll('.editButton').forEach(item => {
+        item.addEventListener('click', editItem.bind(this, (<HTMLButtonElement>item).dataset.myid));
+    });
+    document.querySelectorAll('.deleteButton').forEach(item => {
+        item.addEventListener('click', deleteItem.bind(this, (<HTMLButtonElement>item).dataset.myid));
     });
 };
 
