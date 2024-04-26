@@ -43,9 +43,7 @@ export const pfq = {
             }
         });
 
-        ipcRenderer.on('pfq', (event, pfq) => { 
-            console.log(pfq);
-            
+        ipcRenderer.on('pfq', (event, pfq) => {
             fillTable(table, pfq);
         });
 

@@ -333,7 +333,7 @@ af5edu5.forEach(item => {
             const af5_deschis_edu5 = [...af5_deschis, 'edu5'];
 
             if (util.inputsHaveValue(af5_deschis_edu5)) {
-                console.log(111);
+                // console.log(111);
                 errorHandler.removeError(af5_deschis_edu5, 'EDU5 <= AF5 (c.)')
                 if (util.getInputDecimalValue('edu5') > util.makeSumFromElements(af5_deschis)) {
                     errorHandler.addError(af5_deschis_edu5, 'EDU5 <= AF5 (c.)');

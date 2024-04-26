@@ -366,7 +366,7 @@ util.listen("sa5a", "change", function () {
     const serv_codes = Object.keys(services);
     if (serv_codes.indexOf(value) >= 0) {
         const type = services[value].type;
-        console.log(type, services[value].name);
+        // console.log(type, services[value].name);
         if (["11", "12", "13", "14", "15"].indexOf(type) >= 0) {
             util.setValue("sa5c", type);
         }

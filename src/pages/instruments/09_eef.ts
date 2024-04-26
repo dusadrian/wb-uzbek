@@ -40,8 +40,6 @@ export const eef = {
         });
 
         ipcRenderer.on('eef', (event, eef) => { 
-            console.log(eef);
-            
             fillTable(table, eef);
         });
 
