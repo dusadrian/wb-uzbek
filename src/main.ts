@@ -906,6 +906,10 @@ ipcMain.on('saveInstrument', (event, args) => {
                 goToTQYPList();
                 return;
             }
+            if (args.table === 'eef') {
+                goToEEFList();
+                return;
+            }
         });
     });
 });

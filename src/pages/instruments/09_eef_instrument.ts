@@ -30,7 +30,7 @@ export const instrument9 = {
             flatpickrConfig.locale = Russian;
         }
 
-        // flatpickr(util.htmlElement('lk3'), flatpickrConfig);
+        flatpickr(document.getElementById('q1'), flatpickrConfig);
 
         ipcRenderer.on("instrumentDataReady", (_event, args) => {
             // console.log(args);
