@@ -30,8 +30,8 @@ const general_dates = [
 
 const regElements  = ["lk14b", "sa3a", "cm3b", "cm11c", "ct11c", "cg11c"];
 const disElements  = ["lk14c", "sa3b", "cm3c", "cm11d", "ct11d", "cg11d"];
-const setElements  = ["lk14d", "", "cm3d", "cm11e", "ct11e", "cg11e"];
-const typeElements = ["lk14e", "", "cm3e", "cm11f", "ct11f", "cg11f"];
+const setElements  = ["lk14d", "",     "cm3d", "cm11e", "ct11e", "cg11e"];
+const typeElements = ["lk14e", "",     "cm3e", "cm11f", "ct11f", "cg11f"];
 
 export const instrument2 = {
     init: async () => {
