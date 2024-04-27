@@ -638,11 +638,11 @@
     "t633": "9. Qo'shimcha sabablar (ko'rsatilsin): …",
     "t634": "SA5a",
     "t635": "Bola qanday xizmat turiga joylashtirilgan?",
-    "t636": "1. Bolalar uyi",
-    "t637": "2. Mehribonlik uyi",
-    "t638": "3. \"Muruvvat\" nogironligi bo'lgan bolalar uchun internat uyi",
+    "t636": "1. Mehribonlik uyi",
+    "t637": "2. \"Muruvvat\" nogironligi bo'lgan bolalar uchun internat uyi",
+    "t638": "3. Oilaviy bolalar uyi",
     "t639": "4. SOS Bolalar makhallalari/oilalari",
-    "t640": "5. Oilaviy bolalar uyi",
+    "t640": "5. Bolalar uyi",
     "t641": "6. Patronat oila",
     "t642": "7. Vasiylik/homiylik",
     "t643": "SA5b",
@@ -1487,5 +1487,9 @@
     "t1481": "SK11",
     "t1482": "Bolani farzandlikka olish imkoniyati bo'yicha ish olib borayotgan aniq belgilangan oilasi (ismlari va manzili ko'rsatilgan) mavjudmi?",
     "t1483": "1. Ha",
-    "t1484": "2. Yo'q"
+    "t1484": "2. Yo'q",
+    "t_institution": "Muassasa",
+    "t_code": "Muassasa kodi",
+    "t_name": "Muassasa nomi",
+    "t_type": "Muassasa turi"
 }

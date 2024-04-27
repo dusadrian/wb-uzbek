@@ -638,11 +638,11 @@
     "t633": "9. Additional causes (please specify): …",
     "t634": "SA5a",
     "t635": "In what type of service was the child placed?",
-    "t636": "1. Children's home/Baby home",
-    "t637": "2. Mehribonlik house",
-    "t638": "3. Muruvat house for children with disabilities",
+    "t636": "1. Mehribonlik house",
+    "t637": "2. Muruvat house for children with disabilities",
+    "t638": "3. Family-type children's home",
     "t639": "4. SOS children's villages/families",
-    "t640": "5. Family-type children's home",
+    "t640": "5. Children's home/Baby home",
     "t641": "6. Patronat family",
     "t642": "7. Trusteeship/Guardianship care",
     "t643": "SA5b",
@@ -1487,5 +1487,9 @@
     "t1481": "SK11",
     "t1482": "Does the child have an identified family (with names and address) engaged in working towards a possible adoption?",
     "t1483": "1. Yes",
-    "t1484": "2. No"
+    "t1484": "2. No",
+    "t_institution": "Institution",
+    "t_code": "Unique institution code",
+    "t_name": "Institution name",
+    "t_type": "Type of institution"
 }

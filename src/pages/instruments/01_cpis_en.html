@@ -2866,57 +2866,69 @@
                     </div>
                 </div>
 
-                <div class="grid grid-cols-2 gap-4 items-center mt-10">
+
+                <p>In what type of service was the child placed?</p>
+
+                <div class="grid grid-cols-2 items-center gap-4 mt-6">
+                    <div>SA5r. Region</div>
                     <div>
-                        SA5a. In what type of service was the child placed? </div>
-                    <div class="col-span-1 flex flex-col gap-2">
-                        <div class="flex items-center">
-                            <input id="sa5a-1" type="radio" value="1" name="sa5a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                            <label for="sa5a-1" class="ms-2 text-sm text-gray-900">1. Children&#39;s home/Baby home</label>
-                        </div>
-                        <div class="flex items-center">
-                            <input id="sa5a-2" type="radio" value="2" name="sa5a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                            <label for="sa5a-2" class="ms-2 text-sm text-gray-900">2. Mehribonlik house</label>
-                        </div>
-                        <div class="flex items-center">
-                            <input id="sa5a-3" type="radio" value="3" name="sa5a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                            <label for="sa5a-3" class="ms-2 text-sm text-gray-900">3. Muruvat house for children with disabilities</label>
-                        </div>
-                        <div class="flex items-center">
-                            <input id="sa5a-4" type="radio" value="4" name="sa5a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                            <label for="sa5a-4" class="ms-2 text-sm text-gray-900">4. SOS children&#39;s villages/families</label>
-                        </div>
-                        <div class="flex items-center">
-                            <input id="sa5a-5" type="radio" value="5" name="sa5a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                            <label for="sa5a-5" class="ms-2 text-sm text-gray-900">5. Family-type children&#39;s home</label>
-                        </div>
-                        <div class="flex items-center">
-                            <input id="sa5a-6" type="radio" value="6" name="sa5a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                            <label for="sa5a-6" class="ms-2 text-sm text-gray-900">6. Patronat family</label>
-                        </div>
-                        <div class="flex items-center">
-                            <input id="sa5a-7" type="radio" value="7" name="sa5a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                            <label for="sa5a-7" class="ms-2 text-sm text-gray-900">7. Trusteeship/Guardianship care</label>
-                        </div>
+                        <select id="sa5r" name="sa5r"
+                                class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+                            <option value="-9" class="t_choose">--- choose ---</option>
+                        </select>
                     </div>
                 </div>
 
-
-                <div class="grid grid-cols-2 gap-4 items-center mt-6">
-                    <div>SA5b. Please enter the code of the institution/family home from the registry:</div>
+                <div class="grid grid-cols-2 items-center gap-4 mt-6">
+                    <div>SA5d. District</div>
                     <div>
-                        <select id="sa5b" name="sa5b"
+                        <select id="sa5d" name="sa5d"
                                 class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                            <option value="">-----</option>
+                            <option value="-9" class="t_choose">--- choose ---</option>
                         </select>
                     </div>
                 </div>
 
                 <div class="grid grid-cols-2 gap-4 items-center mt-6">
-                    <div>SA5c. For institutions that don&#39;t appear in the registry, please write the name:</div>
+                    <div>SA5i. Institution</div>
+                    <div class="flex gap-4">
+                        <select id="sa5i" name="sa5i"
+                                class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+                            <option value="-9" class="t_choose">--- choose ---</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                    <div>SA5c. Unique institution code</div>
                     <div>
                         <input type="text" id="sa5c" name="sa5c"
                                class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                    <div>SA5n. Institution name</div>
+                    <div>
+                        <input type="text" id="sa5n" name="sa5n"
+                               class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                    <div>SA5t. Type of service</div>
+                    <div>
+                        <select id="sa5t" name="sa5t"
+                                class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100">
+                            <option selected value="-9" class="t_choose">------</option>
+                            <option value="11">1. Mehribonlik house</option>
+                            <option value="12">2. Muruvat house for children with disabilities</option>
+                            <option value="13">3. Family-type home</option>
+                            <option value="14">4. SOS Children's Village</option>
+                            <option value="15">5. Children&#39;s home (Baby home)</option>
+                            <option value="16">6. Patronat Family</option>
+                            <option value="17">7. Trusteeship/Guardianship care</option>
+                        </select>
                     </div>
                 </div>
 
