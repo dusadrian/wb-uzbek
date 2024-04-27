@@ -24,26 +24,55 @@ CREATE TABLE users (
     PRIMARY KEY (id)
 );
 
--- Create institution table table
+-- Create institutions table
+
+DROP TABLE institutions;
+DROP SEQUENCE id_institution_sequence;
+
 CREATE SEQUENCE id_institution_sequence START 1;
 
 CREATE TABLE institutions (
     id INTEGER DEFAULT nextval('id_institution_sequence'),
     uuid UUID DEFAULT uuid(),
-    name VARCHAR NOT NULL,
     code VARCHAR NOT NULL,
+    name VARCHAR NOT NULL,
+    type VARCHAR NOT NULL,
     address VARCHAR NOT NULL,
-    atuCode VARCHAR NOT NULL,
     region VARCHAR NOT NULL,
     district VARCHAR NOT NULL,
-    type VARCHAR NOT NULL,
-    staffCount INTEGER NOT NULL,
-    childrenCount INTEGER NOT NULL,
-    youngAdultCount INTEGER NOT NULL,
-    childrenHomeCount INTEGER NOT NULL,
-    patronatCount INTEGER NOT NULL,
+    capacity INTEGER NOT NULL,
+    children INTEGER NOT NULL,
+    leavers INTEGER,
+    employees INTEGER,
+    inson INTEGER,
     PRIMARY KEY (id)
 );
+
+
+-- Create INSON table
+DROP TABLE inson;
+DROP SEQUENCE id_inson_sequence;
+
+CREATE SEQUENCE id_inson_sequence START 1;
+CREATE TABLE inson (
+    id INTEGER DEFAULT nextval('id_inson_sequence'),
+    uuid UUID DEFAULT uuid(),
+    code VARCHAR NOT NULL,
+    name VARCHAR NOT NULL,
+    region VARCHAR NOT NULL,
+    district VARCHAR NOT NULL,
+    pf INTEGER NOT NULL,
+    fth INTEGER NOT NULL,
+    children_fth INTEGER NOT NULL,
+    leavers_fth INTEGER NOT NULL,
+    services VARCHAR,
+    PRIMARY KEY (id)
+);
+
+INSERT INTO inson
+SELECT * FROM st_read('INSON.xlsx', layer = 'Sheet1', open_options = ['HEADERS=FORCE']);
+
+
 
 -- Create instrument table QMR
 CREATE SEQUENCE id_instrument_qmr_sequence START 1;
