@@ -10,7 +10,7 @@ import { FlatpickrFn } from 'flatpickr/dist/types/instance';
 const flatpickr: FlatpickrFn = _flatpickr as any;
 import { Russian } from "flatpickr/dist/l10n/ru";
 import { UzbekLatin } from "flatpickr/dist/l10n/uz_latn";
-import { KeyString, services, regions, districts, settlements, settlement_types } from "../../libraries/administrative";
+import { KeyString, regions, districts, settlements, settlement_types } from "../../libraries/administrative";
 import * as en from "../../locales/en.json";
 import * as uz from "../../locales/uz.json";
 import * as ru from "../../locales/ru.json";
@@ -21,10 +21,13 @@ const locales: { [key: string]: typeof en | typeof uz | typeof ru} = {
 }
 
 const lang = localStorage.getItem("language");
-const regElements  = ["ptr5b"];
-const disElements  = ["ptr5c"];
-const setElements  = ["ptr5d"];
-const typeElements = ["ptr5e"];
+const general_dates = [
+    'data', 'ptr4', 'ptr6'
+];
+const regElements  = ["ptr5b", "ptr8e"];
+const disElements  = ["ptr5c", "ptr8f"];
+const setElements  = ["ptr5d", "ptr8g"];
+const typeElements = ["ptr5e", "ptr8h"];
 
 
 export const instrument5a = {
@@ -51,9 +54,12 @@ export const instrument5a = {
             flatpickrConfig.locale = Russian;
         }
 
-        // flatpickr(util.htmlElement('pi3'), flatpickrConfig);
-        flatpickrConfig.minDate = "01/01/2023";
-        flatpickr(util.htmlElement('ptr6'), flatpickrConfig);
+        general_dates.forEach((el) => {
+            if (el == "ptr6") {
+                flatpickrConfig.minDate = "01/01/2022";
+            }
+            flatpickr(util.htmlElement(el), flatpickrConfig);
+        });
 
         const reg_codes = Object.keys(regions);
         for (let x = 0; x < regElements.length; x++) {
@@ -76,14 +82,8 @@ export const instrument5a = {
             const set_el = util.htmlElement(setElements[x]);
 
             util.listen(regElements[x], "change", function () {
-                if (typeElements[x] != "") {
-                    util.htmlElement(typeElements[x]).value = "";
-                }
-
-                if (setElements[x] != "") {
-                    set_el.innerHTML = "";
-                }
-
+                set_el.innerHTML = "";
+                util.htmlElement(typeElements[x]).value = "";
                 const selectedRegion = reg_el.value;
                 if (Number(selectedRegion) > 0) {
                     const dis_codes = regions[selectedRegion].districts;
@@ -104,66 +104,34 @@ export const instrument5a = {
             })
 
             util.listen(disElements[x], "change", function () {
-                if (typeElements[x] != "") {
-                    util.htmlElement(typeElements[x]).value = "";
-                }
+                util.htmlElement(typeElements[x]).value = "";
                 const selectedDistrict = dis_el.value;
-
-                if (setElements[x] != "") {
-                    instrument.questions[setElements[x]].skip = false;
-                    util.htmlElement(setElements[x]).disabled = false;
-                    set_el.innerHTML = "";
-                }
-
+                instrument.questions[setElements[x]].skip = false;
+                util.htmlElement(setElements[x]).disabled = false;
+                set_el.innerHTML = "";
                 if (Number(selectedDistrict) > 0) {
-                    const option = document.createElement("option");
-                    option.value = "-9";
-                    option.text = locales[lang]['t_choose'];
+                    const set_codes = districts[selectedDistrict].settlements;
 
-                    if (setElements[x] != "") {
-                        const set_codes = districts[selectedDistrict].settlements;
+                    if (set_codes.length > 0) {
+                        const option = document.createElement("option");
+                        option.value = "-9";
+                        option.text = locales[lang]['t_choose'];
+                        set_el.appendChild(option);
 
-                        if (set_codes.length > 0) {
+                        for (let i = 0; i < set_codes.length; i++) {
+                            const option = document.createElement("option");
+                            option.value = set_codes[i];
+                            option.text = set_codes[i] + ": " + (settlements[set_codes[i]] as KeyString)[lang];
                             set_el.appendChild(option);
-
-                            for (let i = 0; i < set_codes.length; i++) {
-                                const option = document.createElement("option");
-                                option.value = set_codes[i];
-                                option.text = set_codes[i] + ": " + (settlements[set_codes[i]] as KeyString)[lang];
-                                set_el.appendChild(option);
-                            }
                         }
-                        else {
-                            if (typeElements[x] != "") {
-                                const dis_type = districts[selectedDistrict].type;
-                                util.setValue(typeElements[x], "" + dis_type[lang as keyof typeof dis_type]);
-                            }
-                            instrument.questions[setElements[x]].skip = true;
-                            instrument.questions[setElements[x]].value = '-7';
-                            util.htmlElement(setElements[x]).disabled = true;
-                        }
-                    } else {
-                        const pi6 = util.htmlElement("pi6");
-                        pi6.innerHTML = "";
-                        const serv = districts[selectedDistrict].services;
-                        pi6.appendChild(option);
-
-                        if (serv.length > 0) {
-                            for (let i = 0; i < serv.length; i++) {
-                                const option = document.createElement("option");
-                                option.value = serv[i];
-                                option.text = serv[i] + ': ' + services[serv[i]].name;
-                                pi6.appendChild(option);
-                            }
-                        }
-
-                        const optgroup = document.createElement("optgroup");
-                        const option999 = document.createElement("option");
-                        option999.value = '999';
-                        option999.text = '999: ' + locales[lang]['not_in_registry'];
-                        optgroup.appendChild(option999);
-                        pi6.appendChild(optgroup);
-
+                    }
+                    else {
+                        const dis_type = districts[selectedDistrict].type;
+                        const type_lang = dis_type[lang as keyof typeof dis_type];
+                        util.setValue(typeElements[x], type_lang.toString());
+                        instrument.questions[setElements[x]].skip = true;
+                        instrument.questions[setElements[x]].value = '-7';
+                        util.htmlElement(setElements[x]).disabled = true;
                     }
                 }
             })
@@ -211,7 +179,7 @@ export const instrument5a = {
             util.setValue("data", util.customDate());
 
             console.log(args.userData);
-            
+
             if (args.userData) {
                 // set default values for user
                 util.setValue("omr1", args.userData.name);
@@ -249,96 +217,25 @@ const saveChestionar = (obj: SaveInstrumentType): void => {
     ipcRenderer.send("saveInstrument", obj);
 }
 
-
 // validari custom
 
-// cine si ce e asta?
-// util.listen("pi3", "myChange", () => {
-//     if (instrument.questions.pi3.value != "-9") {
-//         const age = util.diffDates(
-//             util.standardDate(instrument.questions.pi3.value),
-//             new Date(2024, 5, 1)
-//         )
 
-//         util.setValue("pi3a", age.toString());
-//     }
-// });
+// settlement type
+for (let i = 0; i < setElements.length; i++) {
+    util.listen(setElements[i], "change", () => {
+        const value = util.htmlElement(setElements[i]).value;
+        const set_type = settlement_types[settlements[value].type];
+        util.setValue(typeElements[i], "" + (set_type as KeyString)[lang]);
+    })
+}
 
-// util.listen("pi4d", "change", () => {
-//     const value = util.htmlElement("pi4d").value;
-//     util.setValue("pi4e", "" + (settlement_types[settlements[value].type] as KeyString)[lang]);
-// })
+util.listen("ptr4", "myChange", () => {
+    if (instrument.questions.ptr4.value != "-9") {
+        const age = util.diffDates(
+            util.standardDate(instrument.questions.ptr4.value),
+            new Date(2024, 5, 1)
+        )
 
-
-// for (let i = 0; i < setElements.length; i++) {
-//     if (typeElements[i] != "") {
-//         util.listen(setElements[i], "change", () => {
-//             const value = util.htmlElement(setElements[i]).value;
-//             const set_type = settlement_types[settlements[value].type];
-//             util.setValue(typeElements[i], "" + (set_type as KeyString)[lang]);
-//         })
-//     }
-// }
-
-// util.listen("pi6", "change", function () {
-//     util.setValue("pi6c", "-9");
-//     const value = util.htmlElement("pi6").value;
-//     const serv_codes = Object.keys(services);
-//     if (serv_codes.indexOf(value) >= 0) {
-//         const type = services[value].type;
-//         if (["11", "12", "13", "14", "21", "22", "23", "24", "25", "26"].indexOf(type) >= 0) {
-//             util.setValue("pi6c", type);
-//         }
-//     }
-// })
-
-// const pi10 = ['pi10a', 'pi10b'];
-// util.listen(pi10, "change", () => {
-//     const message = 'PI10b <= PI10a';
-//     errorHandler.removeError(pi10, message)
-//     if (util.getInputDecimalValue('pi10b') > util.getInputDecimalValue('pi10b')) {
-//         errorHandler.addError(pi10, message);
-//     }
-// })
-
-// const lv = ['lv2_2', 'lv2_3', 'lv2_4', 'lv2_5', 'lv2_6', 'lv2_7', 'lv2_8', 'lv2_9']
-// util.listen("lv2_1", "change", () => {
-//     if (util.htmlElement("lv2_1").checked) {
-//         lv.forEach((el) => {
-//             util.htmlElement(el).checked = false;
-//             instrument.questions[el].value = "0";
-//         })
-//     }
-// })
-
-// util.listen(lv, "change", () => {
-//     if (util.makeSumFromElements(lv) > 0) {
-//         util.htmlElement("lv2_1").checked = false;
-//         instrument.questions["lv2_1"].value = "0";
-//     }
-// });
-
-// const ls = ["ls2_1", "ls2_2", "ls2_3", "ls2_4", "ls2_5", "ls2_6", "ls2_7", "ls2_8", "ls2_9", "ls2_10"];
-// util.listen("ls2_11", "change", () => {
-//     if (util.htmlElement("ls2_11").checked) {
-//         ls.forEach((el) => {
-//             util.htmlElement(el).checked = false;
-//             instrument.questions[el].value = "0";
-//         })
-//     }
-// })
-
-// util.listen(ls, "change", () => {
-//     if (util.makeSumFromElements(ls) > 0) {
-//         util.htmlElement("ls2_11").checked = false;
-//         instrument.questions["ls2_11"].value = "0";
-//     }
-// });
-
-// util.listen("pi8", "myChange", () => {
-//     const message = "PI8 <= 230";
-//     errorHandler.removeError("pi8", message);
-//     if (Number(instrument.questions.pi8.value) > 230) {
-//         errorHandler.addError("pi8", message);
-//     }
-// })
+        util.setValue("ptr4a", age.toString());
+    }
+});
