@@ -1,16 +1,9 @@
 import { ipcRenderer } from "electron";
 import { questions, questionOrder } from "./06_dsee_variables";
 import instrument from "../../libraries/instrument";
-import { QuestionObjectType, SaveInstrumentType } from "../../libraries/interfaces";
+import { SaveInstrumentType } from "../../libraries/interfaces";
 import { util, errorHandler } from "../../libraries/validation_helpers";
 
-import * as _flatpickr from 'flatpickr';
-import { FlatpickrFn } from 'flatpickr/dist/types/instance';
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-const flatpickr: FlatpickrFn = _flatpickr as any;
-
-import { Russian } from "flatpickr/dist/l10n/ru";
-import { UzbekLatin } from "flatpickr/dist/l10n/uz_latn";
 import { KeyString, regions, districts, settlements, settlement_types } from "../../libraries/administrative";
 
 
@@ -18,42 +11,6 @@ export const instrument6 = {
     init: async () => {
 
         const lang = localStorage.getItem("language");
-
-        const flatpickrConfig1: {
-            enableTime: boolean;
-            dateFormat: string;
-            maxDate: string;
-            locale?: typeof Russian | typeof UzbekLatin
-        } = {
-            enableTime: false,
-            dateFormat: "Y",
-            maxDate: "30/04/2024"
-        }
-
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        const flatpickrConfig2: {
-            enableTime: boolean;
-            dateFormat: string;
-            maxDate: string;
-            locale?: typeof Russian | typeof UzbekLatin
-        } = {
-            enableTime: false,
-            dateFormat: "m/Y",
-            maxDate: "30/04/2024"
-        }
-
-        if (lang == "uz") {
-            flatpickrConfig1.locale = UzbekLatin;
-            flatpickrConfig2.locale = UzbekLatin;
-        }
-        if (lang == "ru") {
-            flatpickrConfig1.locale = Russian;
-            flatpickrConfig2.locale = Russian;
-        }
-
-        // cine sunt astea ca nu exista in instrument?
-        // flatpickr(util.htmlElement('i10'), flatpickrConfig1); 
-        // flatpickr(util.htmlElement('af13b'), flatpickrConfig2);
 
         ipcRenderer.on("instrumentDataReady", (_event, args) => {
 
@@ -116,8 +73,7 @@ export const instrument6 = {
     }
 }
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-const validateChestionar = (_questions: QuestionObjectType) => true;
+const validateChestionar = () => true;
 
 const saveChestionar = (obj: SaveInstrumentType): void => {
     obj.table = "dsee";
@@ -129,42 +85,28 @@ const net1_g = ['net1a_g','net1b_g','net1c_g','net1d_g','net1e_g']; // tnet_g
 const net1_t = ['net1a_t', 'net1b_t', 'net1c_t', 'net1d_t', 'net1e_t']; // tnet_t
 
 net1_b.forEach((b) => {
-    document.getElementById(b).addEventListener('change', () => {
+    util.listen(b, 'change', () => {
         const index = net1_b.indexOf(b);
         const g = net1_g[index];
         const t = net1_t[index];
-
-        const rowsum = document.getElementById(t) as HTMLInputElement;
-        rowsum.value = util.makeSumFromElements([b, g]).toString();
-        rowsum.dispatchEvent(new Event('change'));
-
-        const colsum = document.getElementById('tnet_b') as HTMLInputElement;
-        colsum.value = util.makeSumFromElements(net1_b).toString();
-        colsum.dispatchEvent(new Event('change'));
+        util.setValue(t, util.makeSumFromElements([b, g]).toString());
+        util.setValue('tnet_b', util.makeSumFromElements(net1_b).toString());
     });
 });
 
 net1_g.forEach((g) => {
-    document.getElementById(g).addEventListener('change', () => {
+    util.listen(g, 'change', () => {
         const index = net1_g.indexOf(g);
         const b = net1_b[index];
         const t = net1_t[index];
-
-        const rowsum = document.getElementById(t) as HTMLInputElement;
-        rowsum.value = util.makeSumFromElements([b, g]).toString();
-        rowsum.dispatchEvent(new Event('change'));
-
-        const colsum = document.getElementById('tnet_g') as HTMLInputElement;
-        colsum.value = util.makeSumFromElements(net1_g).toString();
-        colsum.dispatchEvent(new Event('change'));
+        util.setValue(t, util.makeSumFromElements([b, g]).toString());
+        util.setValue('tnet_g', util.makeSumFromElements(net1_g).toString());
     });
 });
 
 net1_t.forEach((t) => {
-    document.getElementById(t).addEventListener('change', () => {
-        const colsum = document.getElementById('tnet_t') as HTMLInputElement;
-        colsum.value = util.makeSumFromElements(net1_t).toString();
-        colsum.dispatchEvent(new Event('change'));
+    util.listen(t, 'change', () => {
+        util.setValue('tnet_t', util.makeSumFromElements(net1_t).toString());
     });
 });
 
@@ -173,42 +115,28 @@ const nes_g = ['nes1_g','nes2_g','nes3_g']; // nest_g
 const nes_t = ['nes1_t','nes2_t','nes3_t']; // nest_t
 
 nes_b.forEach((b) => {
-    document.getElementById(b).addEventListener('change', () => {
+    util.listen(b, 'change', () => {
         const index = nes_b.indexOf(b);
         const g = nes_g[index];
         const t = nes_t[index];
-
-        const rowsum = document.getElementById(t) as HTMLInputElement;
-        rowsum.value = util.makeSumFromElements([b, g]).toString();
-        rowsum.dispatchEvent(new Event('change'));
-
-        const colsum = document.getElementById('nest_b') as HTMLInputElement;
-        colsum.value = util.makeSumFromElements(nes_b).toString();
-        colsum.dispatchEvent(new Event('change'));
+        util.setValue(t, util.makeSumFromElements([b, g]).toString());
+        util.setValue('nest_b', util.makeSumFromElements(nes_b).toString());
     });
 });
 
 nes_g.forEach((g) => {
-    document.getElementById(g).addEventListener('change', () => {
+    util.listen(g, 'change', () => {
         const index = nes_g.indexOf(g);
         const b = nes_b[index];
         const t = nes_t[index];
-
-        const rowsum = document.getElementById(t) as HTMLInputElement;
-        rowsum.value = util.makeSumFromElements([b, g]).toString();
-        rowsum.dispatchEvent(new Event('change'));
-
-        const colsum = document.getElementById('nest_g') as HTMLInputElement;
-        colsum.value = util.makeSumFromElements(nes_g).toString();
-        colsum.dispatchEvent(new Event('change'));
+        util.setValue(t, util.makeSumFromElements([b, g]).toString());
+        util.setValue('nest_g', util.makeSumFromElements(nes_g).toString());
     });
 });
 
 nes_t.forEach((t) => {
     document.getElementById(t).addEventListener('change', () => {
-        const colsum = document.getElementById('nest_t') as HTMLInputElement;
-        colsum.value = util.makeSumFromElements(nes_t).toString();
-        colsum.dispatchEvent(new Event('change'));
+        util.setValue('nest_t', util.makeSumFromElements(nes_t).toString());
     });
 });
 
@@ -218,52 +146,28 @@ const neo_g = ['neo1_g','neo2_g','neo3_g','neo4_g','neo5_g','neo6_g','neo7_g','n
 const neo_t = ['neo1_t','neo2_t','neo3_t','neo4_t','neo5_t','neo6_t','neo7_t','neo8_t']; // neo_t
 
 neo_b.forEach((b) => {
-    document.getElementById(b).addEventListener('change', () => {
+    util.listen(b, 'change', () => {
         const index = neo_b.indexOf(b);
         const g = neo_g[index];
         const t = neo_t[index];
-
-        if (util.inputsHaveValue([b, g])) {
-            const rowsum = document.getElementById(t) as HTMLInputElement;
-            rowsum.value = util.makeSumFromElements([b, g]).toString();
-            rowsum.dispatchEvent(new Event('change'));
-        }
-
-        if (util.inputsHaveValue(neo_b)) {
-            const colsum = document.getElementById('neo_b') as HTMLInputElement;
-            colsum.value = util.makeSumFromElements(neo_b).toString();
-            colsum.dispatchEvent(new Event('change'));
-        }
+        util.setValue(t, util.makeSumFromElements([b, g]).toString());
+        util.setValue('neo_b', util.makeSumFromElements(neo_b).toString());
     });
 });
 
 neo_g.forEach((g) => {
-    document.getElementById(g).addEventListener('change', () => {
+    util.listen(g, 'change', () => {
         const index = neo_g.indexOf(g);
         const b = neo_b[index];
         const t = neo_t[index];
-
-        if (util.inputsHaveValue([b, g])) {
-            const rowsum = document.getElementById(t) as HTMLInputElement;
-            rowsum.value = util.makeSumFromElements([b, g]).toString();
-            rowsum.dispatchEvent(new Event('change'));
-        }
-
-        if (util.inputsHaveValue(neo_g)) {
-            const colsum = document.getElementById('neo_g') as HTMLInputElement;
-            colsum.value = util.makeSumFromElements(neo_g).toString();
-            colsum.dispatchEvent(new Event('change'));
-        }
+        util.setValue(t, util.makeSumFromElements([b, g]).toString());
+        util.setValue('neo_g', util.makeSumFromElements(neo_g).toString());
     });
 });
 
 neo_t.forEach((t) => {
-    document.getElementById(t).addEventListener('change', () => {
-        if (util.inputsHaveValue(neo_t)) {
-            const colsum = document.getElementById('neo_t') as HTMLInputElement;
-            colsum.value = util.makeSumFromElements(neo_t).toString();
-            colsum.dispatchEvent(new Event('change'));
-        }
+    util.listen(t, 'change', () => {
+        util.setValue('neo_t', util.makeSumFromElements(neo_t).toString());
     });
 });
 
@@ -273,13 +177,14 @@ neo_t.forEach((t) => {
 const unu_b = ['nest_b', 'neo_b'];
 const unu_bt = [...unu_b, 'tnet_b'];
 unu_bt.forEach((item) => {
-    document.getElementById(item).addEventListener('change', () => {
-        if (util.inputsHaveValue(unu_b)) {
+    util.listen(item, 'change', () => {
+        if (util.inputsHaveValue(unu_bt)) {
             const tnet_b = util.getInputNumericValue('tnet_b');
+            const message = 'NESTb + NEOb = TNETb';
 
-            errorHandler.removeError(unu_bt, 'NESTb + NEOb = TNETb')
-            if (tnet_b != Number(util.makeInputSumDecimal(unu_bt))) {
-                errorHandler.addError(unu_bt, 'NESTSb + NEOb = TNETb');
+            errorHandler.removeError(unu_bt, message)
+            if (tnet_b != Number(util.makeInputSumDecimal(unu_b))) {
+                errorHandler.addError(unu_bt, message);
             }
         }
     });
@@ -290,13 +195,14 @@ unu_bt.forEach((item) => {
 const unu_g = ['nest_g', 'neo_g'];
 const unu_gt = [...unu_g, 'tnet_g'];
 unu_gt.forEach((item) => {
-    document.getElementById(item).addEventListener('change', () => {
-        if (util.inputsHaveValue(unu_g)) {
+    util.listen(item, 'change', () => {
+        if (util.inputsHaveValue(unu_gt)) {
             const tnet_g = util.getInputNumericValue('tnet_g');
+            const message = 'NESTg + NEOg = TNETg';
 
-            errorHandler.removeError(unu_gt, 'NESTg + NEOg = TNETg')
-            if (tnet_g != Number(util.makeInputSumDecimal(unu_gt))) {
-                errorHandler.addError(unu_gt, 'NESTg + NEOg = TNETg');
+            errorHandler.removeError(unu_gt, message)
+            if (tnet_g != Number(util.makeInputSumDecimal(unu_g))) {
+                errorHandler.addError(unu_gt, message);
             }
         }
     });
@@ -307,13 +213,14 @@ unu_gt.forEach((item) => {
 const unu_t = ['nest_t', 'neo_t'];
 const unu_tt = [...unu_t, 'tnet_t'];
 unu_tt.forEach((item) => {
-    document.getElementById(item).addEventListener('change', () => {
-        if (util.inputsHaveValue(unu_t)) {
+    util.listen(item, 'change', () => {
+        if (util.inputsHaveValue(unu_tt)) {
             const tnet_t = util.getInputNumericValue('tnet_t');
+            const message = 'NEST + NEO = TNET';
 
-            errorHandler.removeError(unu_tt, 'NEST + NEO = TNET')
-            if (tnet_t != Number(util.makeInputSumDecimal(unu_tt))) {
-                errorHandler.addError(unu_tt, 'NEST + NEO = TNET');
+            errorHandler.removeError(unu_tt, message)
+            if (tnet_t != Number(util.makeInputSumDecimal(unu_t))) {
+                errorHandler.addError(unu_tt, message);
             }
         }
     });
@@ -326,52 +233,28 @@ const nex1_g = ['nex1a_g','nex1b_g','nex1c_g','nex1d_g','nex1e_g','nex1f_g']; //
 const nex1_t = ['nex1a_t', 'nex1b_t', 'nex1c_t', 'nex1d_t', 'nex1e_t']; // next_t
 
 nex1_b.forEach((b) => {
-    document.getElementById(b).addEventListener('change', () => {
+    util.listen(b, 'change', () => {
         const index = nex1_b.indexOf(b);
         const g = nex1_g[index];
         const t = nex1_t[index];
-
-        if (util.inputsHaveValue([b, g])) {
-            const rowsum = document.getElementById(t) as HTMLInputElement;
-            rowsum.value = util.makeSumFromElements([b, g]).toString();
-            rowsum.dispatchEvent(new Event('change'));
-        }
-
-        if (util.inputsHaveValue(nex1_b)) {
-            const colsum = document.getElementById('next_b') as HTMLInputElement;
-            colsum.value = util.makeSumFromElements(nex1_b).toString();
-            colsum.dispatchEvent(new Event('change'));
-        }
+        util.setValue(t, util.makeSumFromElements([b, g]).toString());
+        util.setValue('next_b', util.makeSumFromElements(nex1_b).toString());
     });
 });
 
 nex1_g.forEach((g) => {
-    document.getElementById(g).addEventListener('change', () => {
+    util.listen(g, 'change', () => {
         const index = nex1_g.indexOf(g);
         const b = nex1_b[index];
         const t = nex1_t[index];
-
-        if (util.inputsHaveValue([b, g])) {
-            const rowsum = document.getElementById(t) as HTMLInputElement;
-            rowsum.value = util.makeSumFromElements([b, g]).toString();
-            rowsum.dispatchEvent(new Event('change'));
-        }
-
-        if (util.inputsHaveValue(nex1_g)) {
-            const colsum = document.getElementById('next_g') as HTMLInputElement;
-            colsum.value = util.makeSumFromElements(nex1_g).toString();
-            colsum.dispatchEvent(new Event('change'));
-        }
+        util.setValue(t, util.makeSumFromElements([b, g]).toString());
+        util.setValue('next_g', util.makeSumFromElements(nex1_g).toString());
     });
 });
 
 nex1_t.forEach((t) => {
-    document.getElementById(t).addEventListener('change', () => {
-        if (util.inputsHaveValue(nex1_t)) {
-            const colsum = document.getElementById('next_t') as HTMLInputElement;
-            colsum.value = util.makeSumFromElements(nex1_t).toString();
-            colsum.dispatchEvent(new Event('change'));
-        }
+    util.listen(t, 'change', () => {
+        util.setValue('next_t', util.makeSumFromElements(nex1_t).toString());
     });
 });
 
@@ -382,52 +265,28 @@ const eos_g = ['eos1_g','eos2_g','eos3_g','eos4_g']; // eos_g
 const eost_t = ['eos1_t','eos2_t','eos3_t','eos4_t']; // eost_t
 
 eos_b.forEach((b) => {
-    document.getElementById(b).addEventListener('change', () => {
+    util.listen(b, 'change', () => {
         const index = eos_b.indexOf(b);
         const g = eos_g[index];
         const t = eost_t[index];
-
-        if (util.inputsHaveValue([b, g])) {
-            const rowsum = document.getElementById(t) as HTMLInputElement;
-            rowsum.value = util.makeSumFromElements([b, g]).toString();
-            rowsum.dispatchEvent(new Event('change'));
-        }
-
-        if (util.inputsHaveValue(eos_b)) {
-            const colsum = document.getElementById('eost_b') as HTMLInputElement;
-            colsum.value = util.makeSumFromElements(eos_b).toString();
-            colsum.dispatchEvent(new Event('change'));
-        }
+        util.setValue(t, util.makeSumFromElements([b, g]).toString());
+        util.setValue('eost_b', util.makeSumFromElements(eos_b).toString());
     });
 });
 
 eos_g.forEach((g) => {
-    document.getElementById(g).addEventListener('change', () => {
+    util.listen(g, 'change', () => {
         const index = eos_g.indexOf(g);
         const b = eos_b[index];
         const t = eost_t[index];
-
-        if (util.inputsHaveValue([b, g])) {
-            const rowsum = document.getElementById(t) as HTMLInputElement;
-            rowsum.value = util.makeSumFromElements([b, g]).toString();
-            rowsum.dispatchEvent(new Event('change'));
-        }
-
-        if (util.inputsHaveValue(eos_g)) {
-            const colsum = document.getElementById('eost_g') as HTMLInputElement;
-            colsum.value = util.makeSumFromElements(eos_g).toString();
-            colsum.dispatchEvent(new Event('change'));
-        }
+        util.setValue(t, util.makeSumFromElements([b, g]).toString());
+        util.setValue('eost_g', util.makeSumFromElements(eos_g).toString());
     });
 });
 
 eost_t.forEach((t) => {
-    document.getElementById(t).addEventListener('change', () => {
-        if (util.inputsHaveValue(eost_t)) {
-            const colsum = document.getElementById('eost_t') as HTMLInputElement;
-            colsum.value = util.makeSumFromElements(eost_t).toString();
-            colsum.dispatchEvent(new Event('change'));
-        }
+    util.listen(t, 'change', () => {
+        util.setValue('eost_t', util.makeSumFromElements(eost_t).toString());
     });
 });
 
@@ -438,52 +297,28 @@ const ext_g = ['ext0_g','ext1_g','ext2_g','ext3_g','ext4_g','ext5_g','ext6_g','e
 const extt_t = ['ext0_t','ext1_t','ext2_t','ext3_t','ext4_t','ext5_t','ext6_t','ext7_t']; // extt_t
 
 ext_b.forEach((b) => {
-    document.getElementById(b).addEventListener('change', () => {
+    util.listen(b, 'change', () => {
         const index = ext_b.indexOf(b);
         const g = ext_g[index];
         const t = extt_t[index];
-
-        if (util.inputsHaveValue([b, g])) {
-            const rowsum = document.getElementById(t) as HTMLInputElement;
-            rowsum.value = util.makeSumFromElements([b, g]).toString();
-            rowsum.dispatchEvent(new Event('change'));
-        }
-
-        if (util.inputsHaveValue(ext_b)) {
-            const colsum = document.getElementById('extt_b') as HTMLInputElement;
-            colsum.value = util.makeSumFromElements(ext_b).toString();
-            colsum.dispatchEvent(new Event('change'));
-        }
+        util.setValue(t, util.makeSumFromElements([b, g]).toString());
+        util.setValue('extt_b', util.makeSumFromElements(ext_b).toString());
     });
 });
 
 ext_g.forEach((g) => {
-    document.getElementById(g).addEventListener('change', () => {
+    util.listen(g, 'change', () => {
         const index = ext_g.indexOf(g);
         const b = ext_b[index];
         const t = extt_t[index];
-
-        if (util.inputsHaveValue([b, g])) {
-            const rowsum = document.getElementById(t) as HTMLInputElement;
-            rowsum.value = util.makeSumFromElements([b, g]).toString();
-            rowsum.dispatchEvent(new Event('change'));
-        }
-
-        if (util.inputsHaveValue(ext_g)) {
-            const colsum = document.getElementById('extt_g') as HTMLInputElement;
-            colsum.value = util.makeSumFromElements(ext_g).toString();
-            colsum.dispatchEvent(new Event('change'));
-        }
+        util.setValue(t, util.makeSumFromElements([b, g]).toString());
+        util.setValue('extt_g', util.makeSumFromElements(ext_g).toString());
     });
 });
 
 extt_t.forEach((t) => {
-    document.getElementById(t).addEventListener('change', () => {
-        if (util.inputsHaveValue(extt_t)) {
-            const colsum = document.getElementById('extt_t') as HTMLInputElement;
-            colsum.value = util.makeSumFromElements(extt_t).toString();
-            colsum.dispatchEvent(new Event('change'));
-        }
+    util.listen(t, 'change', () => {
+        util.setValue('extt_t', util.makeSumFromElements(extt_t).toString());
     });
 });
 
@@ -494,56 +329,44 @@ const tsa_g = ['tsa1_g','tsa2_g','tsa3_g']; // tsa_g
 const tsat_t = ['tsa1_t','tsa2_t','tsa3_t']; // tsat_t
 
 tsa_b.forEach((b) => {
-    document.getElementById(b).addEventListener('change', () => {
+    util.listen(b, 'change', () => {
         const index = tsa_b.indexOf(b);
         const g = tsa_g[index];
         const t = tsat_t[index];
-
-        if (util.inputsHaveValue([b, g])) {
-            const rowsum = document.getElementById(t) as HTMLInputElement;
-            rowsum.value = util.makeSumFromElements([b, g]).toString();
-            rowsum.dispatchEvent(new Event('change'));
-        }
+        util.setValue(t, util.makeSumFromElements([b, g]).toString());
     });
 });
 
 tsa_g.forEach((g) => {
-    document.getElementById(g).addEventListener('change', () => {
+    util.listen(g, 'change', () => {
         const index = tsa_g.indexOf(g);
         const b = tsa_b[index];
         const t = tsat_t[index];
-
-        if (util.inputsHaveValue([b, g])) {
-            const rowsum = document.getElementById(t) as HTMLInputElement;
-            rowsum.value = util.makeSumFromElements([b, g]).toString();
-            rowsum.dispatchEvent(new Event('change'));
-        }
+        util.setValue(t, util.makeSumFromElements([b, g]).toString());
     });
 });
 
 const tnr = ['tnr1_b','tnr1_g','tnr1_t'];
 tnr.forEach((item) => {
-    document.getElementById(item).addEventListener('change', () => {
-        if (util.inputsHaveValue(tnr)) {
-            const tnr_t = document.getElementById('tnr1_t') as HTMLInputElement;
-            tnr_t.value = util.makeSumFromElements(tnr).toString();
-            tnr_t.dispatchEvent(new Event('change'));
-        }
+    util.listen(item, 'change', () => {
+        util.setValue('tnr1_t', util.makeSumFromElements(tnr).toString());
     });
 });
 
 const final = ['tnr0', 'tnet_t', 'next_t', 'tnr1_t'];
+
 final.forEach((item) => {
-    document.getElementById(item).addEventListener('change', () => {
+    util.listen(item, 'change', () => {
         if (util.inputsHaveValue(final)) {
             const tnr1_t = util.getInputNumericValue('tnr1_t');
             const tnet_t = util.getInputNumericValue('tnet_t');
             const next_t = util.getInputNumericValue('next_t');
             const tnr0 = util.getInputNumericValue('tnr0');
+            const message = 'TNR0 + TNET - NEXT = TNR1';
 
-            errorHandler.removeError(final, 'TNR0 + TNET - NEXT = TNR1')
+            errorHandler.removeError(final, message)
             if (tnr1_t != (tnr0 + tnet_t - next_t)) {
-                errorHandler.addError(final, 'TNR0 + TNET - NEXT = TNR1');
+                errorHandler.addError(final, message);
             }
         }
     });
