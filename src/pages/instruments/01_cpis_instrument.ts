@@ -10,7 +10,7 @@ import { FlatpickrFn } from 'flatpickr/dist/types/instance';
 const flatpickr: FlatpickrFn = _flatpickr as any;
 import { Russian } from "flatpickr/dist/l10n/ru";
 import { UzbekLatin } from "flatpickr/dist/l10n/uz_latn";
-import { KeyString, regions, districts, settlements, settlement_types } from "../../libraries/administrative";
+import { KeyString, services, regions, districts, settlements, settlement_types } from "../../libraries/administrative";
 
 import * as en from "../../locales/en.json";
 import * as uz from "../../locales/uz.json";
@@ -35,10 +35,10 @@ const sh3_end_dates = [
     'sh3_s1d', 'sh3_s2d', 'sh3_s3d', 'sh3_s4d', 'sh3_s5d', 'sh3_s6d', 'sh3_s7d', 'sh3_s8d', 'sh3_s9d', 'sh3_s10d', 'sh3_csd'
 ];
 
-const regElements = ["lk14b", "cm3b", "cm10c", "cm11c", "ct3b", "ct10c", "ct11c", "cg10c", "cg11c", "sa3a"];
-const disElements = ["lk14c", "cm3c", "cm10d", "cm11d", "ct3c", "ct10d", "ct11d", "cg10d", "cg11d", "sa3b"];
-const setElements = ["lk14d", "cm3d", "cm10e", "cm11e", "ct3d", "ct10e", "ct11e", "cg10e", "cg11e", "sa3c"];
-const typeElements = ["lk14e", "cm3e", "cm10f", "cm11f", "ct3e", "ct10f", "ct11f", "cg10f", "cg11f", "sa3d"];
+const regElements =  ["lk14b", "cm3b", "cm10c", "cm11c", "ct3b", "ct10c", "ct11c", "cg10c", "cg11c", "sa3a", "sa5r"];
+const disElements =  ["lk14c", "cm3c", "cm10d", "cm11d", "ct3c", "ct10d", "ct11d", "cg10d", "cg11d", "sa3b", "sa5d"];
+const setElements =  ["lk14d", "cm3d", "cm10e", "cm11e", "ct3d", "ct10e", "ct11e", "cg10e", "cg11e", "sa3c", ""];
+const typeElements = ["lk14e", "cm3e", "cm10f", "cm11f", "ct3e", "ct10f", "ct11f", "cg10f", "cg11f", "sa3d", ""];
 
 export const instrument1 = {
     init: async () => {
@@ -88,6 +88,7 @@ export const instrument1 = {
             flatpickr(element, config);
         });
 
+        const sa5i = util.htmlElement("sa5i");
         const reg_codes = Object.keys(regions);
         for (let x = 0; x < regElements.length; x++) {
             const reg_el = util.htmlElement(regElements[x]);
@@ -109,8 +110,18 @@ export const instrument1 = {
             const set_el = util.htmlElement(setElements[x]);
 
             util.listen(regElements[x], "change", function () {
-                set_el.innerHTML = "";
-                util.htmlElement(typeElements[x]).value = "";
+                if (regElements[x] == "sa5r") {
+                    sa5i.innerHTML = "";
+                }
+
+                if (typeElements[x] != "") {
+                    util.htmlElement(typeElements[x]).value = "";
+                }
+
+                if (setElements[x] != "") {
+                    set_el.innerHTML = "";
+                }
+
                 const selectedRegion = reg_el.value;
                 if (Number(selectedRegion) > 0) {
                     const dis_codes = regions[selectedRegion].districts;
@@ -131,34 +142,68 @@ export const instrument1 = {
             })
 
             util.listen(disElements[x], "change", function () {
-                util.htmlElement(typeElements[x]).value = "";
+                if (typeElements[x] != "") {
+                    util.htmlElement(typeElements[x]).value = "";
+                }
                 const selectedDistrict = dis_el.value;
-                instrument.questions[setElements[x]].skip = false;
-                util.htmlElement(setElements[x]).disabled = false;
-                set_el.innerHTML = "";
+
+                if (setElements[x] != "") {
+                    instrument.questions[setElements[x]].skip = false;
+                    util.htmlElement(setElements[x]).disabled = false;
+                    set_el.innerHTML = "";
+                }
+
                 if (Number(selectedDistrict) > 0) {
-                    const set_codes = districts[selectedDistrict].settlements;
+                    const option = document.createElement("option");
+                    option.value = "-9";
+                    option.text = locales[lang]['t_choose'];
 
-                    if (set_codes.length > 0) {
-                        const option = document.createElement("option");
-                        option.value = "-9";
-                        option.text = locales[lang]['t_choose'];
-                        set_el.appendChild(option);
+                    if (setElements[x] != "") {
+                        const set_codes = districts[selectedDistrict].settlements;
 
-                        for (let i = 0; i < set_codes.length; i++) {
-                            const option = document.createElement("option");
-                            option.value = set_codes[i];
-                            option.text = set_codes[i] + ": " + (settlements[set_codes[i]] as KeyString)[lang];
+                        if (set_codes.length > 0) {
                             set_el.appendChild(option);
+
+                            for (let i = 0; i < set_codes.length; i++) {
+                                const option = document.createElement("option");
+                                option.value = set_codes[i];
+                                option.text = set_codes[i] + ": " + (settlements[set_codes[i]] as KeyString)[lang];
+                                set_el.appendChild(option);
+                            }
                         }
-                    }
-                    else {
-                        const dis_type = districts[selectedDistrict].type;
-                        const type_lang = dis_type[lang as keyof typeof dis_type];
-                        util.setValue(typeElements[x], type_lang.toString());
-                        instrument.questions[setElements[x]].skip = true;
-                        instrument.questions[setElements[x]].value = '-7';
-                        util.htmlElement(setElements[x]).disabled = true;
+                        else {
+                            if (typeElements[x] != "") {
+                                const dis_type = districts[selectedDistrict].type;
+                                util.setValue(typeElements[x], "" + dis_type[lang as keyof typeof dis_type]);
+                            }
+                            instrument.questions[setElements[x]].skip = true;
+                            instrument.questions[setElements[x]].value = '-7';
+                            util.htmlElement(setElements[x]).disabled = true;
+                        }
+                    } else {
+
+                        sa5i.innerHTML = "";
+                        const serv = districts[selectedDistrict].services;
+                        sa5i.appendChild(option);
+
+                        if (serv.length > 0) {
+                            for (let i = 0; i < serv.length; i++) {
+                                if (services[serv[i]].type != "") {
+                                    const option = document.createElement("option");
+                                    option.value = serv[i];
+                                    option.text = serv[i] + ': ' + services[serv[i]].name;
+                                    sa5i.appendChild(option);
+                                }
+                            }
+                        }
+
+                        const optgroup = document.createElement("optgroup");
+                        const option999 = document.createElement("option");
+                        option999.value = '999';
+                        option999.text = '999: ' + locales[lang]['not_in_registry'];
+                        optgroup.appendChild(option999);
+                        sa5i.appendChild(optgroup);
+
                     }
                 }
             })
@@ -243,13 +288,29 @@ const saveChestionar = (obj: SaveInstrumentType): void => {
     ipcRenderer.send("saveInstrument", obj);
 }
 
+
+// Set service type
+util.listen("sa5i", "change", function () {
+    util.setValue("sa5t", "-9");
+    const value = util.htmlElement("sa5i").value;
+    const serv_codes = Object.keys(services);
+    if (serv_codes.indexOf(value) >= 0) {
+        const type = services[value].type;
+        if (["11", "12", "13", "14", "15", "16", "17"].indexOf(type) >= 0) {
+            util.setValue("sa5t", type);
+        }
+    }
+})
+
 // settlement type
 for (let i = 0; i < setElements.length; i++) {
-    util.listen(setElements[i], "change", () => {
-        const value = util.htmlElement(setElements[i]).value;
-        const set_type = settlement_types[settlements[value].type];
-        util.setValue(typeElements[i], "" + (set_type as KeyString)[lang]);
-    })
+    if (setElements[i] != "" && typeElements[i] != "") {
+        util.listen(setElements[i], "change", () => {
+            const value = util.htmlElement(setElements[i]).value;
+            const set_type = settlement_types[settlements[value].type];
+            util.setValue(typeElements[i], "" + (set_type as KeyString)[lang]);
+        })
+    }
 }
 
 
