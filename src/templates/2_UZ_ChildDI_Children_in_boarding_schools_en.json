@@ -1308,5 +1308,9 @@
     "t1307": "2. No",
     "settlement": "Settlement",
     "brothers": "Brothers",
-    "sisters": "Sisters"
+    "sisters": "Sisters",
+    "t_institution": "Institution",
+    "t_code": "Unique institution code",
+    "t_name": "Institution name",
+    "t_type": "Type of institution"
 }

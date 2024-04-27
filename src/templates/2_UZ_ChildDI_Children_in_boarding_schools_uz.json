@@ -1308,5 +1308,9 @@
     "t1307": "2. Yo'q",
     "settlement": "Settlement",
     "brothers": "Aka-ukalar",
-    "sisters": "Opa-singillar"
+    "sisters": "Opa-singillar",
+    "t_institution": "Muassasa",
+    "t_code": "Muassasa kodi",
+    "t_name": "Muassasa nomi",
+    "t_type": "Muassasa turi"
 }

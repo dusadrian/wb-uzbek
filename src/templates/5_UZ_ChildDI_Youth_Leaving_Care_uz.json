@@ -591,6 +591,7 @@
     "settlement": "Aholi punkti",
     "typeofsettlement": "Aholi punkti turi",
     "pi6header": "Tegishli reyestrga koʻra, bolalarga vasiylik turining tizimidan chiqishdan oldin yosh odam yashagan oxirgi muassasining",
-    "pi6institution": "Xizmat nomi",
-    "pi6code": "Xizmat kodi"
+    "t_institution": "Muassasa",
+    "t_code": "Muassasa kodi",
+    "t_name": "Muassasa nomi"
 }

@@ -591,6 +591,7 @@
     "settlement": "Settlement",
     "typeofsettlement": "Type of settlement",
     "pi6header": "The last institution where the young person lived before leaving the child care system, according to the corresponding Register",
-    "pi6institution": "Institution",
-    "pi6code": "Unique institution code"
+    "t_institution": "Institution",
+    "t_code": "Unique institution code",
+    "t_name": "Institution name"
 }
