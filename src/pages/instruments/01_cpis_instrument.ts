@@ -154,7 +154,8 @@ export const instrument1 = {
                     }
                     else {
                         const dis_type = districts[selectedDistrict].type;
-                        util.setValue(typeElements[x], "" + dis_type[lang as keyof typeof dis_type]);
+                        const type_lang = dis_type[lang as keyof typeof dis_type];
+                        util.setValue(typeElements[x], type_lang.toString());
                         instrument.questions[setElements[x]].skip = true;
                         instrument.questions[setElements[x]].value = '-7';
                         util.htmlElement(setElements[x]).disabled = true;

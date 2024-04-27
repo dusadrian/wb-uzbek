@@ -171,7 +171,7 @@ util.listen("ift4", "myChange", () => {
 const ifp4 = ['ifp4a', 'ifp4b'];
 const ifp = [...ifp4, 'ifp5'];
 
-util.listen(ifp, ["myChange"], () => {
+util.listen(ifp, "myChange", () => {
     if (util.inputsHaveValue(ifp)) {
         const message = "IFP5 <= IFP4a + IFP4b";
         const error = util.getInputNumericValue('ifp5') > util.makeSumFromElements(ifp4);
@@ -187,7 +187,7 @@ util.listen(ifp, ["myChange"], () => {
 
 
 const fc = ['fc1', 'fc3'];
-util.listen(fc, ["myChange"], () => {
+util.listen(fc, "myChange", () => {
     if (util.inputsHaveValue(fc)) {
         const message = "FC3 <= FC1";
         const error = util.getInputDecimalValue('fc3') > util.getInputDecimalValue('fc1');
