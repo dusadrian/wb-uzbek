@@ -40,6 +40,28 @@ export const db = new DuckDB.Database(dbFile, duckdbOptions,
 );
 
 export const database = {
+    getInstitutions: async () => {
+        const connection = new Promise<Array<DI.Institution>>((resolve) => {
+            db.all(`SELECT * FROM institutions`, (error, result) => {
+                if (error) {
+                    console.log(error);
+                }
+                resolve(result as DI.Institution[]);
+            });
+        });
+        return await connection;
+    },
+    getINSON: async () => {
+        const connection = new Promise<Array<DI.INSON>>((resolve) => {
+            db.all(`SELECT * FROM inson`, (error, result) => {
+                if (error) {
+                    console.log(error);
+                }
+                resolve(result as DI.INSON[]);
+            });
+        });
+        return await connection;
+    },
     checkUser: async (username: string, password: string) => {
         const connection = new Promise<Array<DI.User>>((resolve) => {
             db.all(`SELECT * FROM users WHERE username = '${username}' AND password = '${password}'`, (error, result) => {
@@ -76,7 +98,21 @@ export const database = {
     },
     saveInstitutionDetails: async (institution: DI.Institution) => {
         const connection = new Promise<boolean>((resolve) => {
-            db.run(`UPDATE institutions SET name = '${institution.name}', code = '${institution.code}', address = '${institution.address}', region = '${institution.region}', district = '${institution.district}', type = '${institution.type}', staffCount = '${institution.staffCount}', childrenCount = '${institution.childrenCount}', youngAdultCount = '${institution.youngAdultCount}', atuCode = '${institution.atuCode}' WHERE id = '${institution.id}'`, (error) => {
+            db.run(`
+                UPDATE institutions SET
+                    code = '${institution.code}',
+                    name = '${institution.name}',
+                    type = '${institution.type}',
+                    address = '${institution.address}',
+                    region = '${institution.region}',
+                    district = '${institution.district}',
+                    capacity = '${institution.capacity}',
+                    children = '${institution.children}'
+                    leavers = '${institution.leavers}'
+                    employees = '${institution.employees}',
+                    inson = '${institution.inson}',
+                WHERE id = '${institution.id}'
+            `, (error) => {
                 if (error) {
                     console.log(error);
                 }
@@ -123,11 +159,26 @@ export const database = {
 
         return await connection;
     },
-    // TODO -- update this as is not working anymore
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    updateUser: async (user: any) => {
+    updateUser: async (user: DI.User) => {
         const connection = new Promise<boolean>((resolve) => {
-            db.run(`UPDATE users SET username = '${user.username}', password = '${user.password}', first_name = '${user.first_name}', patronymics = '${user.patronymics}', last_name = '${user.last_name}', position = '${user.position}', profession = '${user.profession}', phone = '${user.phone}', email = '${user.email}' WHERE id = '${user.id}'`, (error) => {
+            db.run(`
+                UPDATE users SET
+                    username = '${user.username}',
+                    password = '${user.password}',
+                    institution_code = '${user.institution_code}',
+                    institution_name = '${user.institution_name}',
+                    name = '${user.name}',
+                    patronymics = '${user.patronymics}',
+                    surname = '${user.surname}',
+                    job_title = '${user.job_title}',
+                    profession = '${user.profession}',
+                    phone = '${user.phone}',
+                    email = '${user.email}',
+                    region_code = '${user.region_code}',
+                    role_code = '${user.role_code}',
+                    service_type_code = '${user.service_type_code}'
+                WHERE id = '${user.id}'
+            `, (error) => {
                 if (error) {
                     console.log(error);
                 }

@@ -699,25 +699,41 @@ const goToDSEE = (id: string) => {
 const goToCPIS = (id: string) => {
     const newPage = path.join(__dirname, "../src/pages/instruments/01_cpis_" + appSession.language + ".html");
     mainWindow.loadURL("file://" + newPage);
-    database.getUserData(appSession.userData.id).then((userDataArray) => {
-        if (id) {
-            mainWindow.webContents.once("did-finish-load", () => {
-                database.instrumentGet(id, 'cpis', db).then((result) => {
-                    mainWindow.webContents.send("instrumentDataReady", {
-                        id: id,
-                        questions: result,
-                        userData: userDataArray[0],
-                    });
-                });
-            });
-        } else {
-            mainWindow.webContents.once("did-finish-load", () => {
-                mainWindow.webContents.send("instrumentDataReady", {
-                    userData: userDataArray[0],
-                });
-            });
+    database.getInstitutions().then((instarray) => {
+        const services: {[key: string]: DI.Institution} = {};
+        for (let i = 0; i < instarray.length; i++) {
+            services[instarray[i].code] = instarray[i];
         }
-    });
+        database.getINSON().then((insonarray) => {
+            const insons: {[key: string]: DI.INSON} = {};
+            for (let i = 0; i < insonarray.length; i++) {
+                insons[insonarray[i].code] = insonarray[i];
+            }
+            database.getUserData(appSession.userData.id).then((userDataArray) => {
+                if (id) {
+                    mainWindow.webContents.once("did-finish-load", () => {
+                        database.instrumentGet(id, 'cpis', db).then((result) => {
+                            mainWindow.webContents.send("instrumentDataReady", {
+                                id: id,
+                                questions: result,
+                                userData: userDataArray[0],
+                                services: services,
+                                inson: insons,
+                            });
+                        });
+                    });
+                } else {
+                    mainWindow.webContents.once("did-finish-load", () => {
+                        mainWindow.webContents.send("instrumentDataReady", {
+                            userData: userDataArray[0],
+                            services: services,
+                            inson: insons,
+                        });
+                    });
+                }
+            });
+        });
+    })
 }
 const goToCSR = (id: string) => {
     const newPage = path.join(__dirname, "../src/pages/instruments/03_csr_" + appSession.language + ".html");
