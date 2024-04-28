@@ -1,6 +1,6 @@
 {
     "password": "Пароль",
-    "username": "Код учреждения",
+    "username": "Имя пользователя",
     "login": "Логин",
     "login_message": "Привет! Пожалуйста войдите",
     "empty_username_password": "Пожалуйста заполните все поля",
