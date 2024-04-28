@@ -92,7 +92,7 @@ export const instrument1 = {
 
 
         ipcRenderer.on("instrumentDataReady", (_event, args) => {
-            // console.log(args);
+            console.log(args);
             services = args.services;
 
             const sa5i = util.htmlElement("sa5i");
@@ -236,15 +236,9 @@ export const instrument1 = {
 
             // set default values for user, IRRESPECTIVE of the instrument
 
-            if (args.institutionData) {
-
-                if (Object.keys(regions).indexOf(args.institutionData.region) >= 0) {
-                    util.setValue('reg', "" + (regions[args.institutionData.region] as KeyString)[lang]);
-                }
-
-                if (Object.keys(districts).indexOf(args.institutionData.district) >= 0) {
-                    util.setValue('dis', "" + (districts[args.institutionData.district] as KeyString)[lang]);
-                }
+            if (args.userData.institution_code) {
+                util.setValue('reg', "" + (regions[services[args.userData.institution_code].region] as KeyString)[lang]);
+                util.setValue('dis', "" + (districts[services[args.userData.institution_code].district] as KeyString)[lang]);
             }
 
             util.setValue("data", util.customDate());
