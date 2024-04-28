@@ -126,7 +126,7 @@ export const instrument5a = {
                         }
                     }
                     else {
-                        const dis_type = districts[selectedDistrict].type;
+                        const dis_type = settlement_types[districts[selectedDistrict].type];
                         const type_lang = dis_type[lang as keyof typeof dis_type];
                         util.setValue(typeElements[x], type_lang.toString());
                         instrument.questions[setElements[x]].skip = true;

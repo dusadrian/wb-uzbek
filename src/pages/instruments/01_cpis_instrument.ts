@@ -180,8 +180,11 @@ export const instrument1 = {
                             }
                             else {
                                 if (typeElements[x] != "") {
-                                    const dis_type = districts[selectedDistrict].type;
+                                    console.log(selectedDistrict);
+                                    console.log(districts[selectedDistrict]);
+                                    const dis_type = settlement_types[districts[selectedDistrict].type];
                                     util.setValue(typeElements[x], "" + dis_type[lang as keyof typeof dis_type]);
+
                                 }
                                 instrument.questions[setElements[x]].skip = true;
                                 instrument.questions[setElements[x]].value = '-7';
@@ -345,73 +348,52 @@ function check_lk22_2(): boolean {
 util.listen(lk22_2, "myChange", check_lk22_2);
 
 
-util.radioIDs("cm1a").forEach((elem) => {
-    util.listen(elem, "myChange", () => {
-        const val = util.htmlElement(elem).value;
+util.listen(util.radioIDs("cm1a"), "myChange", () => {
+    if (instrument.questions["cm1a"].value == "3") {
+        util.htmlElement('cm1c-1').checked = false;
+        util.htmlElement('cm1c-2').checked = false;
+        util.htmlElement("cm1c-3").checked = true;
+    }
+})
 
-        if (val == "1") {
-            const cm1c1 = util.htmlElement("cm1c-1-disabled");
-            if (cm1c1) {
-                cm1c1.removeAttribute("disabled");
-                cm1c1.id = "cm1c-1";
-            }
-        }
-        else if (val == "2") {
-            const cm1c1 = util.htmlElement("cm1c-1");
-            cm1c1.setAttribute("disabled", "true");
-            if (cm1c1.checked) {
-                cm1c1.checked = false;
-                instrument.questions["cm1c"].value = "-9";
-            }
+const cm1c = util.radioIDs("cm1c");
+util.listen(cm1c, "myChange", () => {
+    const message = locales[lang]['no_unknown'];
 
-            cm1c1.id = "cm1c-1-disabled";
-        }
-        else {
-            const cm1c1 = util.htmlElement("cm1c-1");
-            const cm1c2 = util.htmlElement("cm1c-2");
-            const cm1c3 = util.htmlElement("cm1c-3");
-            cm1c1.checked = false;
-            cm1c2.checked = false;
-            cm1c3.checked = true;
-            instrument.questions["cm1c"].value = "3";
-        }
-    });
-});
+    errorHandler.removeError(cm1c, message);
+    if (
+        instrument.questions["cm1a"].value == "2" &&
+        instrument.questions["cm1c"].value == "1"
+    ) {
+        errorHandler.addError(cm1c, message);
+        util.focus(cm1c[0]);
+    }
+})
 
+util.listen(util.radioIDs("ct1a"), "myChange", () => {
+    if (instrument.questions["ct1a"].value == "3") {
+        util.htmlElement('ct1c-1').checked = false;
+        util.htmlElement('ct1c-2').checked = false;
+        util.htmlElement("ct1c-3").checked = true;
+    }
+})
 
-util.radioIDs("ct1a").forEach((elem) => {
-    util.listen(elem, "myChange", () => {
-        const val = util.htmlElement(elem).value;
+const ct1c = util.radioIDs("ct1c");
+util.listen(ct1c, "myChange", () => {
+    const message = locales[lang]['no_unknown'];
 
-        if (val == "1") {
-            const ct1c1 = util.htmlElement("ct1c-1-disabled");
-            if (ct1c1) {
-                ct1c1.removeAttribute("disabled");
-                ct1c1.id = "ct1c-1";
-            }
-        }
-        else if (val == "2" || val == "4") {
-            const ct1c1 = util.htmlElement("ct1c-1");
-            ct1c1.setAttribute("disabled", "true");
-            if (ct1c1.checked) {
-                ct1c1.checked = false;
-                instrument.questions["ct1c"].value = "-9";
-            }
-
-            ct1c1.id = "ct1c-1-disabled";
-        }
-        else {
-            const ct1c1 = util.htmlElement("ct1c-1");
-            const ct1c2 = util.htmlElement("ct1c-2");
-            const ct1c3 = util.htmlElement("ct1c-3");
-            ct1c1.checked = false;
-            ct1c2.checked = false;
-            ct1c3.checked = true;
-            instrument.questions["ct1c"].value = "3";
-        }
-    });
-});
-
+    errorHandler.removeError(ct1c, message);
+    if (
+        (
+            instrument.questions["ct1a"].value == "4" ||
+            instrument.questions["ct1a"].value == "2"
+        ) &&
+        instrument.questions["ct1c"].value == "1"
+    ) {
+        errorHandler.addError(ct1c, message);
+        util.focus(ct1c[0]);
+    }
+})
 
 util.listen("lk3", "myChange", () => {
     if (instrument.questions.lk3.value != "-9") {
@@ -439,22 +421,16 @@ util.listen("sa1", "myChange", () => {
     }
 });
 
-util.listen("sa1a", "myChange", () => {
-    const qeduc21 = util.htmlElement('qeduc2-1');
-    const qeduc22 = util.htmlElement('qeduc2-2');
-    const qeduc27disabled = util.htmlElement("qeduc2-7-disabled");
-    const age = Number(instrument.questions["sa1a"].value);
+const qeduc2 = util.radioIDs("qeduc2");
+util.listen([...qeduc2, "sa1a"], "myChange", () => {
+    const qeduc = Number(instrument.questions["qeduc2"].value);
+    if (qeduc > 0) {
+        const age = Number(instrument.questions["sa1a"].value);
+        const message = locales[lang]["child_under_7"];
 
-    if (age < 7) {
-        qeduc21.checked = false;
-        qeduc22.checked = false;
-        qeduc27disabled.checked = true;
-        instrument.questions["qeduc2"].value = "7";
-    }
-    else {
-        if (qeduc27disabled.checked) {
-            instrument.questions["qeduc2"].value = "-9";
-            qeduc27disabled.checked = false;
+        errorHandler.removeError(qeduc2, message);
+        if (age < 7 && qeduc < 7) {
+            errorHandler.addError(qeduc2, message);
         }
     }
 })

@@ -362,7 +362,9 @@ export const util: UtilHelpersInterface = {
         }
     },
     focus: (element) => {
-        util.htmlElement(element).focus();
+        const el = util.htmlElement(element);
+        el.scrollIntoView({ behavior: "instant", block: "center", inline: "nearest" });
+        el.focus();
     },
     blur: (element) => {
         util.htmlElement(element).blur();

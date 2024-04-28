@@ -153,5 +153,7 @@
     "t_instruments": "Instruments list",
     "t_button_complete": "Completed",
     "t_number_to_be_filled": "Number to be filled",
-    "t_number_completed": "Number completed"
+    "t_number_completed": "Number completed",
+	"no_unknown": "Noma'lum bo'lishi mumkin emas",
+    "child_under_7": "Bola 7 yoshdan kichik edi"
 }

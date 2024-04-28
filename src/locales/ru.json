@@ -153,5 +153,7 @@
     "t_instruments": "Instruments list",
     "t_button_complete": "Completed",
     "t_number_to_be_filled": "Number to be filled",
-    "t_number_completed": "Number completed"
+    "t_number_completed": "Number completed",
+    "no_unknown": "Не может быть неизвестным",
+    "child_under_7": "Ребенок был младше 7 лет"
 }

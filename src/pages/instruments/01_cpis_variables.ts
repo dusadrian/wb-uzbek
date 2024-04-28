@@ -330,6 +330,7 @@ export const questions: QuestionObjectType = {
         disabled: false,
         hidden: false,
         readonly: false,
+        skip: false,
         order: 29,
         active: function () { return (Number(instrument.questions.cm1a.value) < 3) },
         error: ''
@@ -917,7 +918,7 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 82,
-        active: function () { return ((Number(instrument.questions.ct1a.value) == 2 || Number(instrument.questions.ct1a.value) == 4 || Number(instrument.questions.ct1c.value) == 2) && Number(instrument.questions.ct3a_dk.value) == 0 && Number(instrument.questions.c3tb.value) > 0) },
+        active: function () { return ( Number(instrument.questions.ct3b.value) > 0) },
         error: ''
     },
     'ct3d': {
@@ -928,7 +929,7 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 83,
-        active: function () { return ((Number(instrument.questions.ct1a.value) == 2 || Number(instrument.questions.ct1a.value) == 4 || Number(instrument.questions.ct1c.value) == 2) && Number(instrument.questions.ct3a_dk.value) == 0 && Number(instrument.questions.c3tc.value) > 0) },
+        active: function () { return ( Number(instrument.questions.ct3c.value) > 0) },
         error: ''
     },
     'ct3e': {
@@ -939,7 +940,7 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: true,
         order: 84,
-        active: function () { return ((Number(instrument.questions.ct1a.value) == 2 || Number(instrument.questions.ct1a.value) == 4 || Number(instrument.questions.ct1c.value) == 2) && Number(instrument.questions.ct3a_dk.value) == 0) },
+        active: function () { return ( Number(instrument.questions.ct3d.value) > 0) },
         error: ''
     },
     'ct4': {

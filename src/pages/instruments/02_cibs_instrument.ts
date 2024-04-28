@@ -171,7 +171,7 @@ export const instrument2 = {
                             }
                             else {
                                 if (typeElements[x] != "") {
-                                    const dis_type = districts[selectedDistrict].type;
+                                    const dis_type = settlement_types[districts[selectedDistrict].type];
                                     util.setValue(typeElements[x], "" + dis_type[lang as keyof typeof dis_type]);
                                 }
                                 instrument.questions[setElements[x]].skip = true;
