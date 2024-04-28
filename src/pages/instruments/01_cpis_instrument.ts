@@ -24,6 +24,7 @@ const locales: { [key: string]: typeof en | typeof uz | typeof ru} = {
 
 const lang = localStorage.getItem("language");
 let services: {[key: string]: DI.Institution};
+let insons: {[key: string]: DI.INSON};
 
 const general_dates = [
     'data', 'lk3', 'cm3', 'ct3', 'cg1c', 'cg3b', 'sa1', 'cmgt1a'
@@ -37,10 +38,11 @@ const sh3_end_dates = [
     'sh3_s1d', 'sh3_s2d', 'sh3_s3d', 'sh3_s4d', 'sh3_s5d', 'sh3_s6d', 'sh3_s7d', 'sh3_s8d', 'sh3_s9d', 'sh3_s10d', 'sh3_csd'
 ];
 
-const regElements =  ["lk14b", "cm3b", "cm10c", "cm11c", "ct3b", "ct10c", "ct11c", "cg10c", "cg11c", "sa3a", "sa5r"];
-const disElements =  ["lk14c", "cm3c", "cm10d", "cm11d", "ct3c", "ct10d", "ct11d", "cg10d", "cg11d", "sa3b", "sa5d"];
-const setElements =  ["lk14d", "cm3d", "cm10e", "cm11e", "ct3d", "ct10e", "ct11e", "cg10e", "cg11e", "sa3c", ""];
-const typeElements = ["lk14e", "cm3e", "cm10f", "cm11f", "ct3e", "ct10f", "ct11f", "cg10f", "cg11f", "sa3d", ""];
+const regElements =  ["lk14b", "cm3b", "cm10c", "cm11c", "ct3b", "ct10c", "ct11c", "cg10c", "cg11c", "sa3a", "sa5r"]; //, "sh5r"];
+const disElements =  ["lk14c", "cm3c", "cm10d", "cm11d", "ct3c", "ct10d", "ct11d", "cg10d", "cg11d", "sa3b", "sa5d"]; //, "sh5d"];
+const setElements =  ["lk14d", "cm3d", "cm10e", "cm11e", "ct3d", "ct10e", "ct11e", "cg10e", "cg11e", "sa3c", ""    ]; //, ""    ];
+const typeElements = ["lk14e", "cm3e", "cm10f", "cm11f", "ct3e", "ct10f", "ct11f", "cg10f", "cg11f", "sa3d", ""    ]; //, ""    ];
+
 
 export const instrument1 = {
     init: async () => {
@@ -81,10 +83,8 @@ export const instrument1 = {
             } else if (el == "cmgt1a") {
                 config = { ...flatpickrConfig, minDate: "01/01/2000" };
                 config.dateFormat = "m/Y";
-            } else if (el == "lk3" || el == "cg1c") {
-                config = { ...flatpickrConfig, minDate: "01/01/1990" };
             } else {
-                config = { ...flatpickrConfig, minDate: "01/01/2000" };
+                config = { ...flatpickrConfig, minDate: "01/01/1990" };
             }
 
             flatpickr(element, config);
@@ -93,7 +93,17 @@ export const instrument1 = {
 
         ipcRenderer.on("instrumentDataReady", (_event, args) => {
             console.log(args);
+
             services = args.services;
+            insons = args.insons;
+            const inson_codes = Object.keys(insons);
+            let institution_code = "";
+
+            let inson_user = false;
+            if (args.userData && args.userData.institution_code) {
+                inson_user = inson_codes.indexOf(args.userData.institution_code) >= 0;
+                institution_code = args.userData.institution_code;
+            }
 
             const sa5i = util.htmlElement("sa5i");
             const reg_codes = Object.keys(regions);
@@ -180,8 +190,6 @@ export const instrument1 = {
                             }
                             else {
                                 if (typeElements[x] != "") {
-                                    console.log(selectedDistrict);
-                                    console.log(districts[selectedDistrict]);
                                     const dis_type = settlement_types[districts[selectedDistrict].type];
                                     util.setValue(typeElements[x], "" + dis_type[lang as keyof typeof dis_type]);
 
@@ -199,10 +207,16 @@ export const instrument1 = {
                             if (serv.length > 0) {
                                 for (let i = 0; i < serv.length; i++) {
                                     if (services[serv[i]].type != "") {
-                                        const option = document.createElement("option");
-                                        option.value = serv[i];
-                                        option.text = serv[i] + ': ' + services[serv[i]].name;
-                                        sa5i.appendChild(option);
+                                        let service_included = true;
+                                        if (insons[institution_code]) {
+                                            service_included = insons[institution_code].services.includes(serv[i]);
+                                        }
+                                        if (service_included) {
+                                            const option = document.createElement("option");
+                                            option.value = serv[i];
+                                            option.text = serv[i] + ': ' + services[serv[i]].name;
+                                            sa5i.appendChild(option);
+                                        }
                                     }
                                 }
                             }
@@ -235,18 +249,30 @@ export const instrument1 = {
                                                                                 // trigger change event
                     instrument.seteazaValoareElement(item.variable, item.value, index >= 0);
                 }
-            }
-
-            // set default values for user, IRRESPECTIVE of the instrument
-
-            if (args.userData.institution_code) {
-                util.setValue('reg', "" + (regions[services[args.userData.institution_code].region] as KeyString)[lang]);
-                util.setValue('dis', "" + (districts[services[args.userData.institution_code].district] as KeyString)[lang]);
+            } else {
+                instrument.seteazaValoareElement("sa5r", insons[institution_code].region, true);
+                instrument.seteazaValoareElement("sa5d", insons[institution_code].district, true);
             }
 
             util.setValue("data", util.customDate());
 
+            // set default values for user, IRRESPECTIVE of the instrument
             if (args.userData) {
+                if (args.userData.institution_code) {
+
+                    const institution_code = args.userData.institution_code;
+
+                    if (inson_user) {
+                        util.setValue('reg', "" + (regions[insons[institution_code].region] as KeyString)[lang]);
+                        util.setValue('dis', "" + (districts[insons[institution_code].district] as KeyString)[lang]);
+                    }
+                    else {
+                        util.setValue('reg', "" + (regions[services[institution_code].region] as KeyString)[lang]);
+                        util.setValue('dis', "" + (districts[services[institution_code].district] as KeyString)[lang]);
+                    }
+
+                }
+
                 util.setValue('omr1', args.userData.name);
                 util.setValue('omr2', args.userData.patronymics);
                 util.setValue('omr3', args.userData.surname);
@@ -481,7 +507,6 @@ util.listen("sh1", "myChange", () => {
     util.trigger('sh2-1', 'change');
     util.focus('sh2-1');
     util.blur('sh2-1');
-    document.getElementsByName('sh2')[0].scrollIntoView({ behavior: "instant", block: "center", inline: "center" });
 });
 
 
@@ -608,3 +633,49 @@ util.listen(sk3, "change", () => {
         }
     }
 });
+
+
+const qfam2 = [
+    'qfam2_1', 'qfam2_2', 'qfam2_3', 'qfam2_4', 'qfam2_5',
+    'qfam2_6', 'qfam2_7', 'qfam2_8', 'qfam2_9'
+]
+
+util.listen("qfam2_90", "change", () => {
+    if (util.htmlElement("qfam2_90").checked) {
+        qfam2.forEach((el) => {
+            util.htmlElement(el).checked = false;
+            instrument.questions[el].value = "0";
+        })
+    }
+})
+
+util.listen(qfam2, "change", () => {
+    if (util.makeSumFromElements(qfam2) > 0) {
+        util.htmlElement("qfam2_90").checked = false;
+        instrument.questions["qfam2_90"].value = "0";
+    }
+});
+
+
+const qfam3 = [
+    'qfam3_1', 'qfam3_2', 'qfam3_3', 'qfam3_4', 'qfam3_5'
+]
+
+util.listen("qfam3_9", "change", () => {
+    if (util.htmlElement("qfam3_9").checked) {
+        qfam3.forEach((el) => {
+            util.htmlElement(el).checked = false;
+            instrument.questions[el].value = "0";
+        })
+    }
+})
+
+util.listen(qfam3, "change", () => {
+    if (util.makeSumFromElements(qfam3) > 0) {
+        util.htmlElement("qfam3_9").checked = false;
+        instrument.questions["qfam3_9"].value = "0";
+    }
+});
+
+
+// TODO SH5
