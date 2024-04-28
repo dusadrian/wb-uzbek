@@ -7,7 +7,6 @@ import * as path from "path";
 import { db, database } from "./database/database";
 import * as DI from "../src/interfaces/database";
 import build_templates from "./libraries/build_templates";
-import { insons, services } from "./libraries/administrative";
 
 if (process.env.NODE_ENV === "development") {
     build_templates();
@@ -214,26 +213,41 @@ const goToDashboard = () => {
 
     mainWindow.loadURL("file://" + page);
     mainWindow.webContents.once("did-finish-load", () => {
-        if (appSession.userData.role_code === "1" || appSession.userData.role_code === "2" || appSession.userData.role_code === "3" || appSession.userData.role_code === "4") {
+        if (
+            appSession.userData.role_code === "1" ||
+            appSession.userData.role_code === "2" ||
+            appSession.userData.role_code === "3" ||
+            appSession.userData.role_code === "4"
+        ) {
 
-            if (appSession.userData.service_type_code !== "9" && services[appSession.userData.institution_code]) {
-                const inst = JSON.parse(JSON.stringify(services[appSession.userData.institution_code]));
-                appSession.institutionName = inst.name;
-                appSession.institutionDetails = inst;
-                mainWindow.webContents.send("appSession", appSession);
-            } else if (appSession.userData.service_type_code === "9" && insons[appSession.userData.institution_code]) {
+            database.getInstitutions().then((instarray) => {
+                const services: {[key: string]: DI.Institution} = {};
+                for (let i = 0; i < instarray.length; i++) {
+                    services[instarray[i].code] = instarray[i];
+                }
+                database.getINSON().then((insonarray) => {
+                    const insons: {[key: string]: DI.INSON} = {};
+                    for (let i = 0; i < insonarray.length; i++) {
+                        insons[insonarray[i].code] = insonarray[i];
+                    }
 
-                const inst = JSON.parse(JSON.stringify(insons[appSession.userData.institution_code]));
+                    if (appSession.userData.service_type_code !== "9" && services[appSession.userData.institution_code]) {
+                        appSession.institutionName = services[appSession.userData.institution_code].name;
+                        appSession.institutionDetails = services[appSession.userData.institution_code];
+                        mainWindow.webContents.send("appSession", appSession);
+                    } else if (appSession.userData.service_type_code === "9" && insons[appSession.userData.institution_code]) {
+                        appSession.institutionName = insons[appSession.userData.institution_code].name;
+                        appSession.institutionDetails = insons[appSession.userData.institution_code];
+                        mainWindow.webContents.send("appSession", appSession);
+                    } else {
+                        dialog.showMessageBox(mainWindow, {
+                            type: 'error',
+                            message: 'Institution error. Please login again.',
+                        })
+                    }
+                });
+            });
 
-                appSession.institutionName = inst.name;
-                appSession.institutionDetails = inst;
-                mainWindow.webContents.send("appSession", appSession);
-            } else {
-                dialog.showMessageBox(mainWindow, {
-                    type: 'error',
-                    message: 'Institution error. Please login again.',
-                })
-            }
         } else {
             // there is no institution for this user
             appSession.institutionName = "";
@@ -718,7 +732,7 @@ const goToCPIS = (id: string) => {
                                 questions: result,
                                 userData: userDataArray[0],
                                 services: services,
-                                inson: insons,
+                                insons: insons,
                             });
                         });
                     });
@@ -727,7 +741,7 @@ const goToCPIS = (id: string) => {
                         mainWindow.webContents.send("instrumentDataReady", {
                             userData: userDataArray[0],
                             services: services,
-                            inson: insons,
+                            insons: insons,
                         });
                     });
                 }
@@ -830,45 +844,77 @@ const goToEEF = (id: string) => {
 const goToYPLCS = (id: string) => {
     const newPage = path.join(__dirname, "../src/pages/instruments/05_yplcs_" + appSession.language + ".html");
     mainWindow.loadURL("file://" + newPage);
-    database.getUserData(appSession.userData.id).then((userDataArray) => {
-        if (id) {
-            mainWindow.webContents.once("did-finish-load", () => {
-                database.instrumentGet(id, 'yplcs', db).then((questions) => {
-                    mainWindow.webContents.send("instrumentDataReady", {
-                        questions: questions,
-                        userData: userDataArray[0],
-                    });
-                });
-            });
-        } else {
-            mainWindow.webContents.once("did-finish-load", () => {
-                mainWindow.webContents.send("instrumentDataReady", {
-                    userData: userDataArray[0],
-                });
-            });
+    database.getInstitutions().then((instarray) => {
+        const services: {[key: string]: DI.Institution} = {};
+        for (let i = 0; i < instarray.length; i++) {
+            services[instarray[i].code] = instarray[i];
         }
+        database.getINSON().then((insonarray) => {
+            const insons: {[key: string]: DI.INSON} = {};
+            for (let i = 0; i < insonarray.length; i++) {
+                insons[insonarray[i].code] = insonarray[i];
+            }
+            database.getUserData(appSession.userData.id).then((userDataArray) => {
+                if (id) {
+                    mainWindow.webContents.once("did-finish-load", () => {
+                        database.instrumentGet(id, 'yplcs', db).then((questions) => {
+                            mainWindow.webContents.send("instrumentDataReady", {
+                                questions: questions,
+                                userData: userDataArray[0],
+                                services: services,
+                                insons: insons,
+                            });
+                        });
+                    });
+                } else {
+                    mainWindow.webContents.once("did-finish-load", () => {
+                        mainWindow.webContents.send("instrumentDataReady", {
+                            userData: userDataArray[0],
+                            services: services,
+                            insons: insons,
+                        });
+                    });
+                }
+            });
+        });
     });
 }
 const goToCIBS = (id: string) => {
     const newPage = path.join(__dirname, "../src/pages/instruments/02_cibs_" + appSession.language + ".html");
     mainWindow.loadURL("file://" + newPage);
-    database.getUserData(appSession.userData.id).then((userDataArray) => {
-        if (id) {
-            mainWindow.webContents.once("did-finish-load", () => {
-                database.instrumentGet(id, 'cibs', db).then((questions) => {
-                    mainWindow.webContents.send("instrumentDataReady", {
-                        questions: questions,
-                        userData: userDataArray[0],
-                    });
-                });
-            });
-        } else {
-            mainWindow.webContents.once("did-finish-load", () => {
-                mainWindow.webContents.send("instrumentDataReady", {
-                    userData: userDataArray[0],
-                });
-            });
+    database.getInstitutions().then((instarray) => {
+        const services: {[key: string]: DI.Institution} = {};
+        for (let i = 0; i < instarray.length; i++) {
+            services[instarray[i].code] = instarray[i];
         }
+        database.getINSON().then((insonarray) => {
+            const insons: {[key: string]: DI.INSON} = {};
+            for (let i = 0; i < insonarray.length; i++) {
+                insons[insonarray[i].code] = insonarray[i];
+            }
+            database.getUserData(appSession.userData.id).then((userDataArray) => {
+                if (id) {
+                    mainWindow.webContents.once("did-finish-load", () => {
+                        database.instrumentGet(id, 'cibs', db).then((questions) => {
+                            mainWindow.webContents.send("instrumentDataReady", {
+                                questions: questions,
+                                userData: userDataArray[0],
+                                services: services,
+                                insons: insons,
+                            });
+                        });
+                    });
+                } else {
+                    mainWindow.webContents.once("did-finish-load", () => {
+                        mainWindow.webContents.send("instrumentDataReady", {
+                            userData: userDataArray[0],
+                            services: services,
+                            insons: insons,
+                        });
+                    });
+                }
+            });
+        });
     });
 }
 const goToTQYP = (id: string) => {

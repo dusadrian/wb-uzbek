@@ -92,7 +92,7 @@ export const instrument1 = {
 
 
         ipcRenderer.on("instrumentDataReady", (_event, args) => {
-            console.log(args);
+            // console.log(args);
             services = args.services;
 
             const sa5i = util.htmlElement("sa5i");
