@@ -30,19 +30,35 @@ export interface User {
 export interface Institution {
     id: number;
     uuid: string;
+    code: string;
     name: string;
-    code?: string;
-    address?: string;
-    atuCode?: string;
-    region?: string;
-    district?: string;
-    type?: string;
-    staffCount: number;
-    childrenCount: number;
-    youngAdultCount: number;
-    childrenHomeCount: number;
-    patronatCount: number;
+    type: string;
+    address: string;
+    region: string;
+    district: string;
+    capacity: number;
+    children: number;
+    leavers: number;
+    employees: number;
+    inson: number;
 }
+
+export interface INSON {
+    id: number;
+    uuid: string;
+    code: string;
+    name: string;
+    type: string;
+    address: string;
+    region: string;
+    district: string;
+    pf: number; // number of patronat families
+    fth: number; // number of family-type homes
+    children_fth: number;
+    leavers_fth: number;
+    services: string;
+}
+
 
 export interface DatabaseInterface {
     checkUser: (username: string, password: string) => Promise<Array<User>>;

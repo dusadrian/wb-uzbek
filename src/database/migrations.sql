@@ -36,7 +36,7 @@ CREATE TABLE institutions (
     uuid UUID DEFAULT uuid(),
     code VARCHAR NOT NULL,
     name VARCHAR NOT NULL,
-    type VARCHAR NOT NULL,
+    type VARCHAR,
     address VARCHAR NOT NULL,
     region VARCHAR NOT NULL,
     district VARCHAR NOT NULL,
@@ -47,6 +47,13 @@ CREATE TABLE institutions (
     inson INTEGER,
     PRIMARY KEY (id)
 );
+
+INSTALL spatial;
+LOAD spatial;
+INSERT INTO institutions
+SELECT * FROM st_read('Services.xlsx', layer = 'Sheet1', open_options = ['HEADERS=FORCE']);
+
+
 
 
 -- Create INSON table
