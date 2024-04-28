@@ -81,7 +81,6 @@
         <div class="grid grid-cols-2 gap-4 items-center mt-4">
             <div>
                 <%= it.t24 %>. <%= it.t25 %>
-                <small class="block italic text-red-500"><%= it.t23 %></small>
             </div>
             <div>
                 <input type="text" id="omr5" name="omr5" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
@@ -210,7 +209,7 @@
             </div>
         </div>
         <div class="grid grid-cols-2 items-center gap-4 mt-6">
-            <div><%= it.tLK14d %>. <%= it.settlement %></div>
+            <div>LK14d. <%= it.settlement %></div>
             <div>
                 <select id="lk14d" name="lk14d" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
                     <option value="-9" class="t_choose">--- choose ---</option>
@@ -218,13 +217,8 @@
 
             </div>
         </div>
-        <div class="grid grid-cols-2 gap-4 items-center mt-6">
-            <div><%= it.tLK14e %>. <%= it.typeofsettlement %></div>
-            <div class="flex gap-4">
-                <input type="text" id="lk14e" name="lk14e" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
-            </div>
-        </div>
-
+        
+        <input type="hidden" id="lk14e" name="lk14e" />
 
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
             <div><%= it.t66 %>. <%= it.t67 %></div>
@@ -443,11 +437,8 @@
 
             </div>
         </div>
-        <div class="grid grid-cols-2 gap-4 items-center mt-6">
-            <div>CM3e. <%= it.typeofsettlement %></div>
-            <div class="flex gap-4">
-                <input type="text" id="cm3e" name="cm3e" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />            </div>
-        </div>
+        
+        <input type="hidden" id="cm3e" name="cm3e" />
 
 
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
@@ -1005,12 +996,8 @@
 
             </div>
         </div>
-        <div class="grid grid-cols-2 gap-4 items-center mt-6">
-            <div>CM10f. <%= it.typeofsettlement %></div>
-            <div class="flex gap-4">
-                    <input type="text" id="cm10f" name="cm10f" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
-            </div>
-        </div>
+
+        <input type="hidden" id="cm10f" name="cm10f" />
 
         <div class="grid grid-cols-2 gap-4 items-center mt-10">
             <div>
@@ -1056,7 +1043,7 @@
         </div>
 
         <div class="grid grid-cols-2 items-center gap-4 mt-6">
-            <div>CM11e. <%= it.settlement %></div>
+            <div>e. <%= it.settlement %></div>
             <div>
                 <select id="cm11e" name="cm11e" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
                     <option value="-9" class="t_choose">--- choose ---</option>
@@ -1065,12 +1052,7 @@
             </div>
         </div>
 
-        <div class="grid grid-cols-2 gap-4 items-center mt-6">
-            <div>CM11f. <%= it.typeofsettlement %></div>
-            <div class="flex gap-4">
-                <input type="text" id="cm11f" name="cm11f" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
-            </div>
-        </div>
+        <input type="hidden" id="cm11f" name="cm11f"/>
 
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
             <div><%= it.t260 %></div>
@@ -1236,7 +1218,7 @@
             <div><%= it.t306 %>. <%= it.t307 %></div>
             <div class="flex items-center">
                 <input id="ct3a_dk" type="checkbox" value="9" class="w-4 h-4 text-blue-600 border-gray-400 rounded focus:ring-blue-500 disabled:bg-gray-100">
-                <label for="ct3a_dk" class="ms-2 text-sm text-gray-900">9. Not known</label>
+                <label for="ct3a_dk" class="ms-2 text-sm text-gray-900"><%= it.t59 %></label>
             </div>
         </div>
 
@@ -1266,12 +1248,8 @@
 
             </div>
         </div>
-        <div class="grid grid-cols-2 gap-4 items-center mt-6">
-            <div>CT3e. <%= it.typeofsettlement %></div>
-            <div class="flex gap-4">
-                <input type="text" id="ct3e" name="ct3e" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
-            </div>
-        </div>
+        
+        <input type="hidden" id="ct3e" name="ct3e"/>
 
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
             <div><%= it.t315 %>. <%= it.t316 %></div>
@@ -1816,7 +1794,7 @@
             </div>
         </div>
         <div class="grid grid-cols-2 items-center gap-4 mt-6">
-            <div>CT10e. <%= it.settlement %></div>
+            <div>e. <%= it.settlement %></div>
             <div>
                 <select id="ct10e" name="ct10e" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
                     <option value="-9" class="t_choose">--- choose ---</option>
@@ -1824,12 +1802,8 @@
 
             </div>
         </div>
-        <div class="grid grid-cols-2 gap-4 items-center mt-6">
-            <div>CT10f. <%= it.typeofsettlement %></div>
-            <div class="flex gap-4">
-                <input type="text" id="ct10f" name="ct10f" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
-            </div>
-        </div>
+
+        <input type="hidden" id="ct10f" name="ct10f" />
 
         <div class="grid grid-cols-2 gap-4 items-center mt-10">
             <div>
@@ -1875,7 +1849,7 @@
         </div>
 
         <div class="grid grid-cols-2 items-center gap-4 mt-6">
-            <div>CT11e. <%= it.settlement %></div>
+            <div>e. <%= it.settlement %></div>
             <div>
                 <select id="ct11e" name="ct11e" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
                     <option value="-9" class="t_choose">--- choose ---</option>
@@ -1884,12 +1858,7 @@
             </div>
         </div>
 
-        <div class="grid grid-cols-2 gap-4 items-center mt-6">
-            <div>CT11f. <%= it.typeofsettlement %></div>
-            <div class="flex gap-4">
-                <input type="text" id="ct11f" name="ct11f" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
-            </div>
-        </div>
+        <input type="hidden" id="ct11f" name="ct11f" />
 
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
             <div><%= it.t439 %></div>
@@ -2563,7 +2532,7 @@
             </div>
         </div>
         <div class="grid grid-cols-2 items-center gap-4 mt-6">
-            <div>cg10e. <%= it.settlement %></div>
+            <div>e. <%= it.settlement %></div>
             <div>
                 <select id="cg10e" name="cg10e" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
                     <option value="-9" class="t_choose">--- choose ---</option>
@@ -2571,12 +2540,8 @@
 
             </div>
         </div>
-        <div class="grid grid-cols-2 gap-4 items-center mt-6">
-            <div>cg10f. <%= it.typeofsettlement %></div>
-            <div class="flex gap-4">
-                <input type="text" id="cg10f" name="cg10f" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
-            </div>
-        </div>
+        
+        <input type="hidden" id="cg10f" name="cg10f" />
 
         <div class="grid grid-cols-2 gap-4 items-center mt-10">
             <div>
@@ -2621,7 +2586,7 @@
         </div>
 
         <div class="grid grid-cols-2 items-center gap-4 mt-6">
-            <div>cg11e. <%= it.settlement %></div>
+            <div>e. <%= it.settlement %></div>
             <div>
                 <select id="cg11e" name="cg11e" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
                     <option value="-9" class="t_choose">--- choose ---</option>
@@ -2630,12 +2595,7 @@
             </div>
         </div>
 
-        <div class="grid grid-cols-2 gap-4 items-center mt-6">
-            <div>cg11f. <%= it.typeofsettlement %></div>
-            <div class="flex gap-4">
-                <input type="text" id="cg11f" name="cg11f" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
-            </div>
-        </div>
+        <input type="hidden" id="cg11f" name="cg11f"/>
 
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
             <div><%= it.t595 %></div>
@@ -2734,12 +2694,7 @@
             </div>
         </div>
 
-        <div class="grid grid-cols-2 gap-4 items-center mt-6">
-            <div>SA3d. <%= it.typeofsettlement %></div>
-            <div class="flex gap-4">
-                <input type="text" id="sa3d" name="sa3d" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
-            </div>
-        </div>
+        <input type="hidden" id="sa3d" name="sa3d" />
 
         <div class="grid grid-cols-2 gap-4 items-center mt-10">
             <div>
@@ -5481,8 +5436,7 @@
 
         <div class="grid grid-cols-2 gap-4 items-center mt-10">
             <div class="ml-3">
-                <%= it.t1186 %>. Is the child enrolled in preschool/school?
-                <small class="my-2 block italic text-red-500"><%= it.t1187 %></small>
+                <%= it.t1186 %>. <%= it.t1187 %>
             </div>
             <div class="col-span-1 flex items-center gap-4">
                 <div class="flex items-center">

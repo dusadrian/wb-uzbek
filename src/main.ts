@@ -222,13 +222,13 @@ const goToDashboard = () => {
 
             database.getInstitutions().then((instarray) => {
                 const services: {[key: string]: DI.Institution} = {};
-                for (let i = 0; i < instarray.length; i++) {
-                    services[instarray[i].code] = instarray[i];
+                for (const element of instarray) {
+                    services[element.code] = element;
                 }
                 database.getINSON().then((insonarray) => {
                     const insons: {[key: string]: DI.INSON} = {};
-                    for (let i = 0; i < insonarray.length; i++) {
-                        insons[insonarray[i].code] = insonarray[i];
+                    for (const element of insonarray) {
+                        insons[element.code] = element;
                     }
 
                     if (appSession.userData.service_type_code !== "9" && services[appSession.userData.institution_code]) {
