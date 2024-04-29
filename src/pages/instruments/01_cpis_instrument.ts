@@ -250,8 +250,21 @@ export const instrument1 = {
                     instrument.seteazaValoareElement(item.variable, item.value, index >= 0);
                 }
             } else {
-                instrument.seteazaValoareElement("sa5r", insons[institution_code].region, true);
-                instrument.seteazaValoareElement("sa5d", insons[institution_code].district, true);
+                // if (inson_user) {
+                //     instrument.seteazaValoareElement("sa5r", insons[institution_code].region, true);
+                //     instrument.seteazaValoareElement("sa5d", insons[institution_code].district, true);
+                // }
+
+                instrument.seteazaValoareElement(
+                    "sa5r",
+                    inson_user ? insons[institution_code].region : services[institution_code].region,
+                    true
+                );
+                instrument.seteazaValoareElement(
+                    "sa5d",
+                    inson_user ? insons[institution_code].district : services[institution_code].district,
+                    true
+                );
             }
 
             util.setValue("data", util.customDate());
