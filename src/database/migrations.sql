@@ -81,53 +81,23 @@ SELECT * FROM st_read('INSON.xlsx', layer = 'Sheet1', open_options = ['HEADERS=F
 
 
 
--- Create instrument table QMR
-CREATE SEQUENCE id_instrument_qmr_sequence START 1;
-
-CREATE TABLE instrument_qmr (
-    id INTEGER DEFAULT nextval('id_instrument_qmr_sequence'),
-    uuid UUID DEFAULT uuid(),
-    created_at TIMESTAMP DEFAULT current_timestamp,
-    updated_at TIMESTAMP DEFAULT current_timestamp,
-    PRIMARY KEY (id)
-);
-
-CREATE TABLE values_qmr (
-    instrument_id INTEGER NOT NULL,
-    variable VARCHAR NOT NULL,
-    value VARCHAR NOT NULL,
-    PRIMARY KEY (instrument_id, variable)
-);
-
--- Create instrument table QMR
-CREATE SEQUENCE id_instrument_dsee_sequence START 1;
-
-CREATE TABLE instrument_dsee (
-    id INTEGER DEFAULT nextval('id_instrument_dsee_sequence'),
-    uuid UUID DEFAULT uuid(),
-    created_at TIMESTAMP DEFAULT current_timestamp,
-    updated_at TIMESTAMP DEFAULT current_timestamp,
-    PRIMARY KEY (id)
-);
-
-CREATE TABLE values_dsee (
-    instrument_id INTEGER NOT NULL,
-    variable VARCHAR NOT NULL,
-    value VARCHAR NOT NULL,
-    PRIMARY KEY (instrument_id, variable)
-);
-
 -- Create instrument 1
+DROP TABLE instrument_cpis;
+DROP SEQUENCE id_instrument_cpis_sequence;
 CREATE SEQUENCE id_instrument_cpis_sequence START 1;
 
 CREATE TABLE instrument_cpis (
     id INTEGER DEFAULT nextval('id_instrument_cpis_sequence'),
     uuid UUID DEFAULT uuid(),
+    region_code VARCHAR,
+    institution_type VARCHAR,
+    status VARCHAR DEFAULT 'partial',
     created_at TIMESTAMP DEFAULT current_timestamp,
     updated_at TIMESTAMP DEFAULT current_timestamp,
     PRIMARY KEY (id)
 );
 
+DROP TABLE values_cpis;
 CREATE TABLE values_cpis (
     instrument_id INTEGER NOT NULL,
     variable VARCHAR NOT NULL,
@@ -135,17 +105,48 @@ CREATE TABLE values_cpis (
     PRIMARY KEY (instrument_id, variable)
 );
 
--- Create instrument 3
-CREATE SEQUENCE id_instrument_csr_sequence START 1;
+-- Create instrument 2
+DROP TABLE instrument_cibs;
+DROP SEQUENCE id_instrument_cibs_sequence;
+CREATE SEQUENCE id_instrument_cibs_sequence START 1;
 
-CREATE TABLE instrument_csr (
-    id INTEGER DEFAULT nextval('id_instrument_csr_sequence'),
+CREATE TABLE instrument_cibs (
+    id INTEGER DEFAULT nextval('id_instrument_cibs_sequence'),
     uuid UUID DEFAULT uuid(),
+    region_code VARCHAR,
+    institution_type VARCHAR,
+    status VARCHAR DEFAULT 'partial',
     created_at TIMESTAMP DEFAULT current_timestamp,
     updated_at TIMESTAMP DEFAULT current_timestamp,
     PRIMARY KEY (id)
 );
 
+DROP TABLE values_cibs;
+CREATE TABLE values_cibs (
+    instrument_id INTEGER NOT NULL,
+    variable VARCHAR NOT NULL,
+    value VARCHAR NOT NULL,
+    PRIMARY KEY (instrument_id, variable)
+);
+
+
+-- Create instrument 3
+DROP TABLE instrument_cibs;
+DROP SEQUENCE id_instrument_csr_sequence;
+CREATE SEQUENCE id_instrument_csr_sequence START 1;
+
+CREATE TABLE instrument_csr (
+    id INTEGER DEFAULT nextval('id_instrument_csr_sequence'),
+    uuid UUID DEFAULT uuid(),
+    region_code VARCHAR,
+    institution_type VARCHAR,
+    status VARCHAR DEFAULT 'partial',
+    created_at TIMESTAMP DEFAULT current_timestamp,
+    updated_at TIMESTAMP DEFAULT current_timestamp,
+    PRIMARY KEY (id)
+);
+
+DROP TABLE values_csr;
 CREATE TABLE values_csr (
     instrument_id INTEGER NOT NULL,
     variable VARCHAR NOT NULL,
@@ -153,12 +154,114 @@ CREATE TABLE values_csr (
     PRIMARY KEY (instrument_id, variable)
 );
 
+-- Create instrument 4
+DROP TABLE instrument_qmr;
+DROP SEQUENCE id_instrument_qmr_sequence;
+CREATE SEQUENCE id_instrument_qmr_sequence START 1;
+
+CREATE TABLE instrument_qmr (
+    id INTEGER DEFAULT nextval('id_instrument_qmr_sequence'),
+    uuid UUID DEFAULT uuid(),
+    region_code VARCHAR,
+    institution_type VARCHAR,
+    status VARCHAR DEFAULT 'partial',
+    created_at TIMESTAMP DEFAULT current_timestamp,
+    updated_at TIMESTAMP DEFAULT current_timestamp,
+    PRIMARY KEY (id)
+);
+
+DROP TABLE values_qmr;
+CREATE TABLE values_qmr (
+    instrument_id INTEGER NOT NULL,
+    variable VARCHAR NOT NULL,
+    value VARCHAR NOT NULL,
+    PRIMARY KEY (instrument_id, variable)
+);
+
+-- Create instrument 5a
+DROP TABLE instrument_tqyp;
+DROP SEQUENCE id_instrument_tqyp_sequence;
+CREATE SEQUENCE id_instrument_tqyp_sequence START 1;
+
+CREATE TABLE instrument_tqyp (
+    id INTEGER DEFAULT nextval('id_instrument_tqyp_sequence'),
+    uuid UUID DEFAULT uuid(),
+    region_code VARCHAR,
+    institution_type VARCHAR,
+    status VARCHAR DEFAULT 'partial',
+    created_at TIMESTAMP DEFAULT current_timestamp,
+    updated_at TIMESTAMP DEFAULT current_timestamp,
+    PRIMARY KEY (id)
+);
+
+DROP TABLE values_tqyp;
+CREATE TABLE values_tqyp (
+    instrument_id INTEGER NOT NULL,
+    variable VARCHAR NOT NULL,
+    value VARCHAR NOT NULL,
+    PRIMARY KEY (instrument_id, variable)
+);
+
+-- Create instrument 5
+DROP TABLE instrument_yplcs;
+DROP SEQUENCE id_instrument_yplcs_sequence;
+CREATE SEQUENCE id_instrument_yplcs_sequence START 1;
+
+CREATE TABLE instrument_yplcs (
+    id INTEGER DEFAULT nextval('id_instrument_yplcs_sequence'),
+    uuid UUID DEFAULT uuid(),
+    region_code VARCHAR,
+    institution_type VARCHAR,
+    status VARCHAR DEFAULT 'partial',
+    created_at TIMESTAMP DEFAULT current_timestamp,
+    updated_at TIMESTAMP DEFAULT current_timestamp,
+    PRIMARY KEY (id)
+);
+
+DROP TABLE values_yplcs;
+CREATE TABLE values_yplcs (
+    instrument_id INTEGER NOT NULL,
+    variable VARCHAR NOT NULL,
+    value VARCHAR NOT NULL,
+    PRIMARY KEY (instrument_id, variable)
+);
+
+
+-- Create instrument table QMR
+DROP TABLE instrument_dsee;
+DROP SEQUENCE id_instrument_dsee_sequence;
+CREATE SEQUENCE id_instrument_dsee_sequence START 1;
+
+CREATE TABLE instrument_dsee (
+    id INTEGER DEFAULT nextval('id_instrument_dsee_sequence'),
+    uuid UUID DEFAULT uuid(),
+    region_code VARCHAR,
+    institution_type VARCHAR,
+    status VARCHAR DEFAULT 'partial',
+    created_at TIMESTAMP DEFAULT current_timestamp,
+    updated_at TIMESTAMP DEFAULT current_timestamp,
+    PRIMARY KEY (id)
+);
+
+DROP TABLE values_dsee;
+CREATE TABLE values_dsee (
+    instrument_id INTEGER NOT NULL,
+    variable VARCHAR NOT NULL,
+    value VARCHAR NOT NULL,
+    PRIMARY KEY (instrument_id, variable)
+);
+
 -- Create instrument 7
+DROP TABLE instrument_ftch;
+DROP SEQUENCE id_instrument_ftch_sequence;
 CREATE SEQUENCE id_instrument_ftch_sequence START 1;
 
 CREATE TABLE instrument_ftch (
     id INTEGER DEFAULT nextval('id_instrument_ftch_sequence'),
     uuid UUID DEFAULT uuid(),
+    region_code VARCHAR,
+    institution_type VARCHAR,
+    status VARCHAR DEFAULT 'partial',
     created_at TIMESTAMP DEFAULT current_timestamp,
     updated_at TIMESTAMP DEFAULT current_timestamp,
     PRIMARY KEY (id)
@@ -172,16 +275,22 @@ CREATE TABLE values_ftch (
 );
 
 -- Create instrument 8
+DROP TABLE instrument_pfq;
+DROP SEQUENCE id_instrument_pfq_sequence;
 CREATE SEQUENCE id_instrument_pfq_sequence START 1;
 
 CREATE TABLE instrument_pfq (
     id INTEGER DEFAULT nextval('id_instrument_pfq_sequence'),
     uuid UUID DEFAULT uuid(),
+    region_code VARCHAR,
+    institution_type VARCHAR,
+    status VARCHAR DEFAULT 'partial',
     created_at TIMESTAMP DEFAULT current_timestamp,
     updated_at TIMESTAMP DEFAULT current_timestamp,
     PRIMARY KEY (id)
 );
 
+DROP TABLE values_pfq;
 CREATE TABLE values_pfq (
     instrument_id INTEGER NOT NULL,
     variable VARCHAR NOT NULL,
@@ -190,74 +299,25 @@ CREATE TABLE values_pfq (
 );
 
 -- Create instrument 9
+DROP TABLE instrument_eef;
+DROP SEQUENCE id_instrument_eef_sequence;
 CREATE SEQUENCE id_instrument_eef_sequence START 1;
 
 CREATE TABLE instrument_eef (
     id INTEGER DEFAULT nextval('id_instrument_eef_sequence'),
     uuid UUID DEFAULT uuid(),
+    region_code VARCHAR,
+    institution_type VARCHAR,
+    status VARCHAR DEFAULT 'partial',
     created_at TIMESTAMP DEFAULT current_timestamp,
     updated_at TIMESTAMP DEFAULT current_timestamp,
     PRIMARY KEY (id)
 );
 
+DROP TABLE values_eef;
 CREATE TABLE values_eef (
     instrument_id INTEGER NOT NULL,
     variable VARCHAR NOT NULL,
     value VARCHAR NOT NULL,
     PRIMARY KEY (instrument_id, variable)
 );
-
--- Create instrument 5
-CREATE SEQUENCE id_instrument_yplcs_sequence START 1;
-
-CREATE TABLE instrument_yplcs (
-    id INTEGER DEFAULT nextval('id_instrument_yplcs_sequence'),
-    uuid UUID DEFAULT uuid(),
-    created_at TIMESTAMP DEFAULT current_timestamp,
-    updated_at TIMESTAMP DEFAULT current_timestamp,
-    PRIMARY KEY (id)
-);
-
-CREATE TABLE values_yplcs (
-    instrument_id INTEGER NOT NULL,
-    variable VARCHAR NOT NULL,
-    value VARCHAR NOT NULL,
-    PRIMARY KEY (instrument_id, variable)
-);
-
--- Create instrument 2
-CREATE SEQUENCE id_instrument_cibs_sequence START 1;
-
-CREATE TABLE instrument_cibs (
-    id INTEGER DEFAULT nextval('id_instrument_cibs_sequence'),
-    uuid UUID DEFAULT uuid(),
-    created_at TIMESTAMP DEFAULT current_timestamp,
-    updated_at TIMESTAMP DEFAULT current_timestamp,
-    PRIMARY KEY (id)
-);
-
-CREATE TABLE values_cibs (
-    instrument_id INTEGER NOT NULL,
-    variable VARCHAR NOT NULL,
-    value VARCHAR NOT NULL,
-    PRIMARY KEY (instrument_id, variable)
-);
-
--- Create instrument 5a
-CREATE SEQUENCE id_instrument_tqyp_sequence START 1;
-
-CREATE TABLE instrument_tqyp (
-    id INTEGER DEFAULT nextval('id_instrument_tqyp_sequence'),
-    uuid UUID DEFAULT uuid(),
-    created_at TIMESTAMP DEFAULT current_timestamp,
-    updated_at TIMESTAMP DEFAULT current_timestamp,
-    PRIMARY KEY (id)
-);
-
-CREATE TABLE values_tqyp (
-    instrument_id INTEGER NOT NULL,
-    variable VARCHAR NOT NULL,
-    value VARCHAR NOT NULL,
-    PRIMARY KEY (instrument_id, variable)
-);
-

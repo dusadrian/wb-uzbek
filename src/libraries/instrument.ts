@@ -62,7 +62,7 @@ const instrumentHelper = {
 const instrument: InstrumentObjectType = {
 	debug: false,
 	instrumentID: 0,
-	status: "Parțial",
+	status: "partial",
 	questions: {},
 	questionsOrder: [],
 	trimis: 0,
@@ -496,7 +496,7 @@ const instrument: InstrumentObjectType = {
 					return false;
 				}
 			}
-			instrument.status = "Finalizat";
+			instrument.status = "complete";
 		}
 
 		// custom validation

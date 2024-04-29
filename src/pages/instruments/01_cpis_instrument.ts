@@ -42,7 +42,7 @@ const regElements =  ["lk14b", "cm3b", "cm10c", "cm11c", "ct3b", "ct10c", "ct11c
 const disElements =  ["lk14c", "cm3c", "cm10d", "cm11d", "ct3c", "ct10d", "ct11d", "cg10d", "cg11d", "sa3b", "sa5d"]; //, "sh5d"];
 const setElements =  ["lk14d", "cm3d", "cm10e", "cm11e", "ct3d", "ct10e", "ct11e", "cg10e", "cg11e", "sa3c", ""    ]; //, ""    ];
 const typeElements = ["lk14e", "cm3e", "cm10f", "cm11f", "ct3e", "ct10f", "ct11f", "cg10f", "cg11f", "sa3d", ""    ]; //, ""    ];
-
+let regionCode = '';
 
 export const instrument1 = {
     init: async () => {
@@ -281,6 +281,7 @@ export const instrument1 = {
                 util.setValue('omr6', args.userData.phone);
                 util.setValue('omr7', args.userData.email);
                 util.setValue("omr9", args.userData.institution_name);
+                regionCode = args.userData.region_code;
             }
 
             instrument.start(instrumentID, instrument.trimis, saveChestionar, validateChestionar);
@@ -313,6 +314,10 @@ const validateChestionar = (_questions: QuestionObjectType) => {
 
 const saveChestionar = (obj: SaveInstrumentType): void => {
     obj.table = "cpis";
+    obj.extras = {
+        region_code: regionCode,
+        institution_type: util.htmlElement("sa5t").value,
+    }
     ipcRenderer.send("saveInstrument", obj);
 }
 
