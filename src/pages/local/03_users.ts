@@ -38,7 +38,7 @@ export const users = {
 
         (<HTMLButtonElement>document.getElementById('add_user')).addEventListener('click', () => {
             ipcRenderer.send('changeWindow', {
-                'name': 'localCoordinator/04_add_user'
+                'name': 'local/04_add_user'
             });
         });
 
@@ -81,9 +81,9 @@ const fillTable = (table: any, users: Array<any>) => {
         buttons.appendChild(buttonDelete);
 
         table.row.add([
-            user.first_name,
+            user.name,
             user.patronymics,
-            user.last_name,
+            user.surname,
             user.username,
             buttons.outerHTML
         ]).draw();
@@ -103,7 +103,7 @@ const fillTable = (table: any, users: Array<any>) => {
 // modifica modifica
 const editItem = function (id: number) {
     ipcRenderer.send('changeWindow', {
-        'name': 'localCoordinator/05_edit_user',
+        'name': 'local/05_edit_user',
         'id': id,
     });
 };
