@@ -447,6 +447,52 @@ util.listen("lk3", "myChange", () => {
 
         util.setValue("lk13a", age.toString());
         util.trigger("sa1", "change");
+
+        if (instrument.questions.cg1c.value != "-9") {
+            const startdate = util.standardDate(util.htmlElement("lk3").value);
+            const enddate = util.standardDate(util.htmlElement("cg1c").value);
+            const message = "CG1c >= LK3";
+            errorHandler.removeError(["lk3", "cg1c"], message);
+            if (startdate > enddate) {
+                errorHandler.addError(["lk3", "cg1c"], message);
+            }
+        }
+    }
+});
+
+util.listen("cg1c", "myChange", () => {
+    if (instrument.questions.cg1c.value != "-9") {
+        const enddate = util.standardDate(util.htmlElement("cg1c").value);
+
+        if (instrument.questions.lk3.value != "-9") {
+            const startdate = util.standardDate(util.htmlElement("lk3").value);
+            const message = "CG1c >= LK3";
+            errorHandler.removeError(["lk3", "cg1c"], message);
+            if (startdate > enddate) {
+                errorHandler.addError(["lk3", "cg1c"], message);
+            }
+        }
+
+        if (instrument.questions.cg3b.value != "-9") {
+            const startdate = util.standardDate(util.htmlElement("cg3b").value);
+            const message = "CG1c >= CG3b";
+            errorHandler.removeError(["cg1c", "cg3b"], message);
+            if (startdate > enddate) {
+                errorHandler.addError(["cg1c", "cg3b"], message);
+            }
+        }
+    }
+})
+
+util.listen("cg3b", "myChange", () => {
+    if (util.inputsHaveValue(["cg3b", "cg1c"])) {
+        const startdate = util.standardDate(util.htmlElement("cg3b").value);
+        const enddate = util.standardDate(util.htmlElement("cg1c").value);
+        const message = "CG1c >= CG3b";
+        errorHandler.removeError(["cg1c", "cg3b"], message);
+        if (startdate > enddate) {
+            errorHandler.addError(["cg1c", "cg3b"], message);
+        }
     }
 });
 
