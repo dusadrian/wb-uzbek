@@ -121,7 +121,7 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 10,
-        active: function () { return (true) },
+        active: function () { return (Number(instrument.questions.ifp1a.value) > 0) },
         error: ''
     },
     'ifp1c': {
@@ -132,12 +132,12 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 11,
-        active: function () { return (true) },
+        active: function () { return (Number(instrument.questions.ifp1b.value) > 0) },
         error: ''
     },
     'ifp1d': {
         name: 'ifp1d',
-        type: 'radio',
+        type: 'select',
         value: '-9',
         disabled: true,
         hidden: false,
