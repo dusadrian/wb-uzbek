@@ -114,7 +114,7 @@ export const questions: QuestionObjectType = {
     },
     'i4a': {
         name: 'i4a',
-        type: 'input',
+        type: 'select',
         value: '-9',
         disabled: true,
         hidden: false,
@@ -125,7 +125,7 @@ export const questions: QuestionObjectType = {
     },
     'i4b': {
         name: 'i4b',
-        type: 'input',
+        type: 'select',
         value: '-9',
         disabled: true,
         hidden: false,
@@ -135,8 +135,8 @@ export const questions: QuestionObjectType = {
         error: ''
     },
     'i4c': {
-        name: 'i4c',
-        type: 'input',
+        name: 'select',
+        type: 'select',
         value: '-9',
         disabled: true,
         hidden: false,
@@ -146,11 +146,11 @@ export const questions: QuestionObjectType = {
         error: ''
     },
     'i4d': {
-        name: 'i4d',
+        name: 'select',
         type: 'input',
         value: '-9',
         disabled: true,
-        hidden: false,
+        hidden: true,
         readonly: true,
         order: 13,
         active: function () { return (true) },
