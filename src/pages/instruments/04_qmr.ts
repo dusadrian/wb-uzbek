@@ -40,8 +40,6 @@ const end_dates = [
 
 const regElements  = ["i4a"];
 const disElements  = ["i4b"];
-const setElements  = ["i4c"];
-const typeElements = ["i4d"];
 
 export const instrument4 = {
     init: async () => {
@@ -87,7 +85,7 @@ export const instrument4 = {
         flatpickr(util.htmlElement('af13b'), flatpickrConfig2);
 
         ipcRenderer.on("instrumentDataReady", (_event, args) => {
-
+console.log(args);
             services = args.services;
             insons = args.insons;
             const inson_codes = Object.keys(insons);
@@ -117,16 +115,8 @@ export const instrument4 = {
                 }
 
                 const dis_el = util.htmlElement(disElements[x]);
-                const set_el = util.htmlElement(setElements[x]);
 
                 util.listen(regElements[x], "change", function () {
-                    if (typeElements[x] != "") {
-                        util.htmlElement(typeElements[x]).value = "";
-                    }
-
-                    if (setElements[x] != "") {
-                        set_el.innerHTML = "";
-                    }
 
                     const selectedRegion = reg_el.value;
                     if (Number(selectedRegion) > 0) {
@@ -143,49 +133,6 @@ export const instrument4 = {
                             option.value = dis_codes[i];
                             option.text = dis_codes[i] + ": " + (districts[dis_codes[i]] as KeyString)[lang];
                             dis_el.appendChild(option);
-                        }
-                    }
-                })
-
-                util.listen(disElements[x], "change", function () {
-                    if (typeElements[x] != "") {
-                        util.htmlElement(typeElements[x]).value = "";
-                    }
-                    const selectedDistrict = dis_el.value;
-
-                    if (setElements[x] != "") {
-                        instrument.questions[setElements[x]].skip = false;
-                        util.htmlElement(setElements[x]).disabled = false;
-                        set_el.innerHTML = "";
-                    }
-
-                    if (Number(selectedDistrict) > 0) {
-                        const option = document.createElement("option");
-                        option.value = "-9";
-                        option.text = translations['t_choose'];
-
-                        if (setElements[x] != "") {
-                            const set_codes = districts[selectedDistrict].settlements;
-
-                            if (set_codes.length > 0) {
-                                set_el.appendChild(option);
-
-                                for (let i = 0; i < set_codes.length; i++) {
-                                    const option = document.createElement("option");
-                                    option.value = set_codes[i];
-                                    option.text = set_codes[i] + ": " + (settlements[set_codes[i]] as KeyString)[lang];
-                                    set_el.appendChild(option);
-                                }
-                            }
-                            else {
-                                if (typeElements[x] != "") {
-                                    const dis_type = settlement_types[districts[selectedDistrict].type];
-                                    util.setValue(typeElements[x], "" + dis_type[lang as keyof typeof dis_type]);
-                                }
-                                instrument.questions[setElements[x]].skip = true;
-                                instrument.questions[setElements[x]].value = '-7';
-                                util.htmlElement(setElements[x]).disabled = true;
-                            }
                         }
                     }
                 })
@@ -218,6 +165,7 @@ export const instrument4 = {
                     else {
                         util.setValue('i4a', "" + services[institution_code].region);
                         util.setValue('i4b', "" + services[institution_code].district);
+                        util.setValue('i4d', "" + services[institution_code].settlement_type);
                     }
                 }
                 util.setValue('q2', args.userData.name + " " + args.userData.patronymics + " " + args.userData.surname);
@@ -278,18 +226,6 @@ const saveChestionar = (obj: SaveInstrumentType): void => {
 // Validari custom
 
 
-
-// settlement type
-for (let i = 0; i < setElements.length; i++) {
-    if (setElements[i] != "" && typeElements[i] != "") {
-        util.listen(setElements[i], "change", () => {
-            const value = util.htmlElement(setElements[i]).value;
-            util.setValue(typeElements[i], settlements[value].type);
-        })
-    }
-}
-
-
 const i13bf = ['i13b', 'i13c', 'i13d', 'i13e', 'i13f'];
 const i13 = [...i13bf, 'i13a'];
 util.listen(i13, 'change', () => {
@@ -343,9 +279,10 @@ af5af1.forEach(item => {
             const af5_deschis_af1 = [...af5_deschis, 'af1'];
 
             if (util.inputsHaveValue(af5_deschis_af1)) {
-                errorHandler.removeError(af5_deschis_af1, 'AF1 >= AF5 (a.)')
+                const message = translations["af1_instrument_04"]
+                errorHandler.removeError(af5_deschis_af1, message)
                 if (util.getInputDecimalValue('af1') < util.makeSumFromElements(af5_deschis)) {
-                    errorHandler.addError(af5_deschis_af1, 'AF1 >= AF5 (a.)');
+                    errorHandler.addError(af5_deschis_af1, message);
                 }
             }
         }
@@ -370,9 +307,9 @@ const ac1_2 = [...ac1be2, 'ac1a2'];
 ac1_2.forEach(item => {
     util.listen(item, 'change', () => {
         if (util.inputsHaveValue(ac1_2)) {
-            errorHandler.removeError(ac1_2, 'AC1a2 >= AC1b2 + ... AC1e2')
-            if (util.makeSumFromElements(ac1be2) > util.getInputDecimalValue('ac1a2')) {
-                errorHandler.addError(ac1_2, 'AC1a2 >= AC1b2 + ... AC1e2');
+            errorHandler.removeError(ac1_2, 'AC1a2 <> AC1b2 + ... AC1e2')
+            if (util.makeSumFromElements(ac1be2) != util.getInputDecimalValue('ac1a2')) {
+                errorHandler.addError(ac1_2, 'AC1a2 <> AC1b2 + ... AC1e2');
             }
         }
     })
@@ -494,12 +431,14 @@ af5edu5.forEach(item => {
 
 
 const ft7i12a = ['ft7', 'i12a'];
-ft7i12a.forEach(item => {
+[...ft7i12a, 'i9'].forEach(item => {
     util.listen(item, 'change', () => {
-        if (util.inputsHaveValue(ft7i12a)) {
-            errorHandler.removeError(ft7i12a, 'FT7 <= I12a')
-            if (util.getInputDecimalValue('ft7') > util.getInputDecimalValue('i12a')) {
-                errorHandler.addError(ft7i12a, 'FT7 <= I12a');
+        if (util.inputsHaveValue([...ft7i12a, 'i9'])) {
+            if (util.getInputDecimalValue('i9') < 20) {
+                errorHandler.removeError(ft7i12a, 'FT7 <= I12a')
+                if (util.getInputDecimalValue('ft7') > util.getInputDecimalValue('i12a')) {
+                    errorHandler.addError(ft7i12a, 'FT7 <= I12a');
+                }
             }
         }
     })
@@ -553,6 +492,14 @@ rce612.forEach(item => {
             }
         }
     })
+})
+
+util.listen("rce8", 'change', () => {
+    const message = "RCE8 <= 168";
+    errorHandler.removeError("rce8", message)
+    if (util.getInputDecimalValue('rce8') > 168) {
+        errorHandler.addError("rce8", message);
+    }
 })
 
 
