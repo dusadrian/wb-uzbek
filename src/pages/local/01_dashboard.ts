@@ -10,9 +10,6 @@ interface IObj {
 
 const initInstruments = (userData: User, institutionDetails: any) => {
 
-    console.log(userData, institutionDetails);
-
-
     // get ID for instruments 4 and 6 -- QMR and DSEE
     if (userData.role_code == '4' || userData.role_code == '1') {
         ipcRenderer.send('getInstrumentsId');
@@ -198,14 +195,28 @@ export const local = {
                 'name': 'local/03_users'
             });
         });
+        // Export data
+        (<HTMLButtonElement>document.getElementById('exportData')).addEventListener('click', () => {
+            const appSession = JSON.parse(sessionStorage.getItem('appSession'));
+            ipcRenderer.send('exportData', {
+                'userRoleCode': appSession.userData.role_code,
+                'userServiceTypeCode': appSession.userData.service_type_code,
+            });
+        });
+        // Import data
+        (<HTMLButtonElement>document.getElementById('importData')).addEventListener('click', () => {
+            const appSession = JSON.parse(sessionStorage.getItem('appSession'));
+            ipcRenderer.send('importData', {
+                'userRoleCode': appSession.userData.role_code,
+                'userServiceTypeCode': appSession.userData.service_type_code,
+            });
+        });
 
         ipcRenderer.on("existing", (_event, args) => {
             document.getElementById('view_instrument4').dataset.id = args.qmr;
             document.getElementById('view_instrument6').dataset.id = args.dsee;
-            console.log('aici');
         });
         ipcRenderer.on("dashStats", (_event, args) => {
-            console.log(args);
 
             if (args.instrument1.length > 0) {
                 const totalCompletedObj = args.instrument1.filter((el: StatusInterface) => el.status === 'completed');

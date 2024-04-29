@@ -68,3 +68,16 @@ export interface StatusInterface {
     status: string;
     total: number
 }
+
+export interface DataExportInterface {
+    id: string;
+    uuid: string;
+    region_code: string;
+    institution_type: string;
+    status: string;
+    created_at: string;
+    updated_at: string;
+    instrument_id: number;
+    variable: string;
+    value: string;
+}

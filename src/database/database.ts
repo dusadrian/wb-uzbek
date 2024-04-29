@@ -200,19 +200,17 @@ export const database = {
     },
 
     filledInstruments: async (region?: string, typeOfInstitution?: string) => {
-        console.log(region, typeOfInstitution);
-        
         let where = '';
-        if(region || typeOfInstitution) {
+        if (region || typeOfInstitution) {
             where = 'WHERE ';
         }
-        if(region) {
+        if (region) {
             where += `region_code = '${region}'`;
         }
-        if(region && typeOfInstitution) {
+        if (region && typeOfInstitution) {
             where += ' AND ';
         }
-        if(typeOfInstitution) {
+        if (typeOfInstitution) {
             where += `institution_type = '${typeOfInstitution}'`;
         }
 
@@ -280,7 +278,7 @@ export const database = {
         });
         const instrument8 = await i8;
 
-        return { 
+        return {
             instrument1,
             instrument2,
             instrument3,
@@ -292,6 +290,20 @@ export const database = {
             instrument8
         };
     },
+
+    async getDataForDownload(table: string) {
+        const connection = new Promise<DI.DataExportInterface[]>((resolve) => {
+            db.all(`SELECT * FROM instrument_${table} LEFT JOIN values_${table} ON values_${table}.instrument_id = instrument_${table}.id WHERE status = 'partial'`, (error, result) => {
+                if (error) {
+                    console.log("===== Error getDataForDownload =====");
+                    console.log(error);
+                }
+                resolve(result as DI.DataExportInterface[]);
+            });
+        });
+        return await connection;
+    },
+
 
     // Instruments
     instrumentSave,

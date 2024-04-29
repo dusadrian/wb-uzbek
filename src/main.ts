@@ -5,7 +5,9 @@ process.env.NODE_ENV = "development";
 import { app, BrowserWindow, dialog, ipcMain } from "electron";
 import * as path from "path";
 import { db, database } from "./database/database";
-import * as DI from "../src/interfaces/database";
+import * as DI from "./interfaces/database";
+import * as fs from 'fs';
+import { crypt } from './libraries/crypt';
 import build_templates from "./libraries/build_templates";
 
 if (process.env.NODE_ENV === "development") {
@@ -1001,45 +1003,264 @@ ipcMain.on('saveInstrument', (event, args) => {
     });
 });
 
-// (function test() {
-//     database.instrumentSave({
-//         instrument_id: 3,
-//         table: "qmr",
-//         questions: {
-//             "question1": {
-//                 value: "answer1"
-//             },
-//             "question2": {
-//                 value: "answer2"
-//             },
-//             "question3": {
-//                 value: "answer3"
-//             },
-//             "question4": {
-//                 value: "4"
-//             },
-//             "question5": {
-//                 value: "answer5"
-//             },
-//         },
-//         // extras: {
-//         //     cucu: 'bau',
-//         // }
-//     }, db)
-// }());
+
+ipcMain.on('importData', (event, args) => {
+    let filesToUpload: string[] = [];
+    filesToUpload = dialog.showOpenDialogSync(mainWindow, {
+        title: i18n.__('_chooseFile'),
+        properties: ['openFile'],
+        filters: [
+            { name: 'Date', extensions: ['dat'] }
+        ]
+    });
+
+    if (filesToUpload === void 0 || filesToUpload.length === 0) {
+        return;
+    }
+    console.log(filesToUpload);
+
+    crypt.decryptFile(filesToUpload[0]).then(() => {
+
+        const decryptedFile = filesToUpload[0].slice(0, -4) + '.json';
+
+        console.log(decryptedFile);
+        // only the first file
+        fs.readFile(decryptedFile, 'utf8', (err, data) => {
+            if (err) throw err;
+
+            let dateDinFisier = {};
+            // let arrayData = [];
+            dateDinFisier = JSON.parse(data);
+
+            console.log(dateDinFisier);
+            
+
+            // 		if(dateDinFisier[args.importFor] === void 0){
+            // 			dialog.showMessageBox(mainWindow, {
+            // 				type: 'error',
+            // 				title: i18n.__('main._error'),
+            // 				message: i18n.__('main._dataImportError1')
+            // 			});
+            // 			return;
+            // 		} else if(dateDinFisier.judet != sessionObj.judet_id) {
+            // 		// } else if(dateDinFisier.judet != sessionObj.judet_id && sessionObj.user_name != 'national') {
+            // 			dialog.showMessageBox(mainWindow, {
+            // 				type: 'error',
+            // 				title: i18n.__('main._error'),
+            // 				message: i18n.__('main._dataImportError2')
+            // 			});
+            // 			return;
+            // 		} else if(dateDinFisier.runda != sessionObj.runda) {
+            // 			dialog.showMessageBox(mainWindow, {
+            // 				type: 'error',
+            // 				title: i18n.__('main._error'),
+            // 				message: i18n.__('main._dataImportError3')
+            // 			});
+            // 			return;
+            // 		} else {
+            // 			arrayData = Object.keys(dateDinFisier[args.importFor]);
+            // 		}
+
+            // 		// save data for later
+            // 		dataForImport.table 		= args.importFor;
+            // 		dataForImport.data 			= dateDinFisier[args.importFor];
+            // 		dataForImport.judet_id 		= dateDinFisier.judet;
+            // 		dataForImport.runda 		= dateDinFisier.runda;
 
 
+            // 		let fileName = path.basename(filesToUpload[0]) + '';
 
-// Local Collector =================
+            // 		event.reply('importData-reply', {
+            // 			'fileName': fileName,
+            // 			'noRecords': arrayData.length,
+            // 		});
+        });
 
-// City Collector =================
+        fs.unlinkSync(decryptedFile);
 
-// const goTo = () => {
-//     const newPage = path.join(__dirname, "../src/pages/login.html");
-//     mainWindow.loadURL("file://" + newPage);
-//     mainWindow.webContents.once("did-finish-load", () => {
-//         database.getRezidentiDeclaratiCR12().then(() => {
+    });
+});
 
+
+const getLisOfInstrumentsToExport = (roleCode: string, serviceType: string) => {
+    const childCareInstitutions = ['1', '2', '3', '7'];
+    const specializedBoardingSchools = ['4', '5'];
+    if (roleCode == '1' && childCareInstitutions.includes(serviceType)) {
+        return ['cpis', 'csr', 'qmr', 'tqyp', 'dsee'];
+    }
+    if (roleCode == '1' && specializedBoardingSchools.includes(serviceType)) {
+        return ['cibs', 'csr', 'qmr', 'tqyp', 'dsee'];
+    }
+
+    if (roleCode == '2' && childCareInstitutions.includes(serviceType)) {
+        return ['cpis', 'tqyp'];
+    }
+    if (roleCode == '2' && specializedBoardingSchools.includes(serviceType)) {
+        return ['cibs', 'tqyp'];
+    }
+
+    if (roleCode == '1' || (roleCode == '2' && serviceType == '9')) {
+        return ['cpis', 'tqyp', 'yplcs', 'ftch', 'pfq'];
+    }
+
+    if (roleCode == '3') {
+        return ['csr'];
+    }
+
+    if (roleCode == '4') {
+        return ['qmr', 'dsee'];
+    }
+
+    if (roleCode == '5') {
+        return ['eef'];
+    }
+
+    if (roleCode == '10') {
+        return ['cpis', 'cibs', 'csr', 'qmr', 'tqyp', 'dsee', 'yplcs', 'ftch', 'pfq', 'eef'];
+    }
+}
+
+// download instrument data for consolidation
+
+ipcMain.on('exportData', function exportData(event, args) {
+
+    const folderPath = dialog.showOpenDialogSync(mainWindow, {
+        title: i18n.__('main._chooseFolder'),
+        properties: ['openDirectory', 'createDirectory', 'promptToCreate']
+    });
+
+    if (folderPath !== void 0) {
+
+        mainWindow.webContents.send("startLoader");
+        const cale = folderPath[0] + '/export-data';
+        console.log(cale);
+        const instruments = getLisOfInstrumentsToExport(args.userRoleCode, args.userServiceTypeCode);
+        console.log(instruments);
+
+        asyncForArray(instruments, downloadUserInstruments).then(processedData => {
+            // console.log(processedData);            
+
+            fs.writeFile(cale, JSON.stringify(processedData), (err) => {
+                if (err) throw err;
+
+                // clear data after use
+                processedData = null;
+
+                crypt.encryptFile(cale);
+
+                // TODO -- after the file is written
+                // remove the json file
+                fs.unlinkSync(cale);
+            });
+
+            // let problems = false;
+            // let message = 'Urmatoarele registre nu au putut fi salvate: ';
+            // for (const key in result) {
+            //     if (!result[key]) {
+            //         message += key.toUpperCase() + ' ';
+            //         problems = true;
+            //     }
+            // }
+            // mainWindow.webContents.send("clearLoader");
+            // if (problems) {
+            //     dialog.showMessageBox(mainWindow, {
+            //         type: 'error',
+            //         title: i18n.__('main._error'),
+            //         message: message
+            //     });
+            // } else {
+            //     dialog.showMessageBox(mainWindow, {
+            //         type: 'info',
+            //         title: i18n.__('main.success'),
+            //         message: i18n.__('main._dataDownloaded')
+            //     });
+            // }
+        });
+    } else {
+        mainWindow.webContents.send("clearLoader");
+        dialog.showMessageBox(mainWindow, {
+            type: 'error',
+            title: i18n.__('main._error'),
+            message: i18n.__('main._dataDownloadedError')
+        });
+    }
+});
+async function downloadUserInstruments(table: string) {
+    return new Promise(resolve => {
+        database.getDataForDownload(table).then((result) => {
+            if (result.length == 0) {
+                resolve(false);
+                return; // needs return otherwise it will try to write the file
+            }
+            resolve(prepareDataForDownload(result));
+        });
+    });
+}
+// async function exportData(table, cale) {
+//     return new Promise(resolve => {
+//         database.getDataForDownload(table, sessionObj.judet_id, sessionObj.runda).then((result) => {
+//             if (result.length == 0) {
+//                 resolve(false);
+// 				return; // needs return otherwise it will try to write the file
+//             }
+//             // console.log(result);
+//             let processedData = prepareDataForDownload(result, table, true);
+
+// 			if(table === 'kids'){ table = 'copii'}
+// 			cale = cale + "/Registrul" + table.toUpperCase() + "-Consolidare-Nationala" + (sessionObj.judet_acronim ? "-" + sessionObj.judet_acronim : "") + ".enc";
+
+//             fs.writeFile(cale, JSON.stringify(processedData), (err) => {
+//                 if (err) throw err;
+
+//                 // clear data after use
+//                 processedData = null;
+
+//                 crypt.encryptFile(cale);
+// 				resolve(true);
+//             });
 //         });
 //     });
 // }
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+async function asyncForArray(arr: string[], callback: (...params: any[]) => void, ...params: any[]) {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const data: { [key: string]: any } = {};
+    for (let i = 0; i < arr.length; i++) {
+        data[arr[i]] = await callback(arr[i], ...params);
+    }
+    return data;
+}
+// prepare data for Download
+function prepareDataForDownload(data: DI.DataExportInterface[]) {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const response: { [key: string]: any } = {};
+    response.regionCode = appSession.userData.region_code;
+    response.institutionCode = appSession.userData.institution_code;
+
+    // console.log(data);
+
+    for (let i = 0; i < data.length; i++) {
+
+        if (response[data[i].uuid] !== void 0) {
+            //https://stackoverflow.com/questions/19837916/creating-object-with-dynamic-keys
+            response[data[i].uuid].data[data[i].variable] = { 'value': data[i].value };
+
+        } else {
+
+            response[data[i].uuid] = {
+                'uuid': data[i].uuid,
+                'region_code': data[i].region_code,
+                'institution_type': data[i].institution_type,
+                'created_at': data[i].created_at,
+                'updated_at': data[i].updated_at,
+            };
+
+            response[data[i].uuid].data = {};
+            // console.log(data[i].variabila);
+            response[data[i].uuid].data[data[i].variable] = { 'value': data[i].value };
+        }
+    }
+
+    return response;
+}

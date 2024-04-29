@@ -157,5 +157,7 @@
 	"The following fields are mandatory: PTR1, PTR2A, PTR2B, PTR2C!": "The following fields are mandatory: PTR1, PTR2A, PTR2B, PTR2C!",
 	"Пожалуйста заполните все поля": "Пожалуйста заполните все поля",
 	"no_unknown": "Cannot be unknown",
-    "child_under_7": "The child was under 7 years of age"
+	"child_under_7": "The child was under 7 years of age",
+	"main._chooseFolder": "main._chooseFolder",
+	"_chooseFile": "_chooseFile"
 }
