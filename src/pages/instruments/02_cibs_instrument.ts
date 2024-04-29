@@ -33,10 +33,10 @@ const general_dates = [
 ];
 
 
-const regElements  = ["lk14b", "sa3a", "cm3b", "cm11c", "ct11c", "cg11c"];
-const disElements  = ["lk14c", "sa3b", "cm3c", "cm11d", "ct11d", "cg11d"];
-const setElements  = ["lk14d", "",     "cm3d", "cm11e", "ct11e", "cg11e"];
-const typeElements = ["lk14e", "",     "cm3e", "cm11f", "ct11f", "cg11f"];
+const regElements  = ["reg", "lk14b", "sa3a", "cm3b", "cm11c", "ct11c", "cg11c"];
+const disElements  = ["dis", "lk14c", "sa3b", "cm3c", "cm11d", "ct11d", "cg11d"];
+const setElements  = [""   , "lk14d", "",     "cm3d", "cm11e", "ct11e", "cg11e"];
+const typeElements = [""   , "lk14e", "",     "cm3e", "cm11f", "ct11f", "cg11f"];
 
 export const instrument2 = {
     init: async () => {
@@ -190,7 +190,7 @@ export const instrument2 = {
                                 instrument.questions[setElements[x]].value = '-7';
                                 util.htmlElement(setElements[x]).disabled = true;
                             }
-                        } else {
+                        } else if (regElements[x] != "reg") {
                             sa5a.innerHTML = "";
                             const serv = districts[selectedDistrict].services;
                             sa5a.appendChild(option);
@@ -212,7 +212,6 @@ export const instrument2 = {
                             option999.text = '999: ' + translations['not_in_registry'];
                             optgroup.appendChild(option999);
                             sa5a.appendChild(optgroup);
-
                         }
                     }
                 })
@@ -241,12 +240,12 @@ export const instrument2 = {
             if (args.userData) {
                 if (args.userData.institution_code) {
                     if (inson_user) {
-                        util.setValue('reg', "" + (regions[insons[institution_code].region] as KeyString)[lang]);
-                        util.setValue('dis', "" + (districts[insons[institution_code].district] as KeyString)[lang]);
+                        util.setValue('reg', "" + insons[institution_code].region);
+                        util.setValue('dis', "" + insons[institution_code].district);
                     }
                     else {
-                        util.setValue('reg', "" + (regions[services[institution_code].region] as KeyString)[lang]);
-                        util.setValue('dis', "" + (districts[services[institution_code].district] as KeyString)[lang]);
+                        util.setValue('reg', "" + services[institution_code].region);
+                        util.setValue('dis', "" + services[institution_code].district);
                     }
                 }
 
