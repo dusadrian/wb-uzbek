@@ -1017,20 +1017,36 @@ ipcMain.on('importData', (event, args) => {
     if (filesToUpload === void 0 || filesToUpload.length === 0) {
         return;
     }
-    console.log(filesToUpload);
-
     crypt.decryptFile(filesToUpload[0]).then(() => {
-
         const decryptedFile = filesToUpload[0].slice(0, -4) + '.json';
 
-        console.log(decryptedFile);
         // only the first file
-        fs.readFile(decryptedFile, 'utf8', (err, data) => {
+        fs.readFile(decryptedFile, 'utf8', async (err, data) => {
             if (err) throw err;
 
-            let dateDinFisier = {};
             // let arrayData = [];
-            dateDinFisier = JSON.parse(data);
+            const dateDinFisier = JSON.parse(data);
+            // const instrumentsInFile = Object.keys(dateDinFisier);
+            // const userInstruments = getLisOfInstrumentsToExport(appSession.userData.role_code, appSession.userData.service_type_code);
+            const error = false
+
+            // // check if we have errors
+            // for (const instrument of instrumentsInFile) {
+            //     if (!userInstruments.includes(instrument)) {
+            //         error = true;
+            //     }
+            //     if (dateDinFisier[instrument]) { // avem date
+            //         for (const item of dateDinFisier[instrument]) {
+            //             await database.getInstrumentIdFromUUId(instrument,).then(async (result) => {
+            //                 await database.instrumentSave(dateDinFisier[instrument], db, result[0].id);
+            //             });
+            //         }
+            //     }
+            // }
+
+            
+
+
 
             console.log(dateDinFisier);
 
@@ -1038,7 +1054,7 @@ ipcMain.on('importData', (event, args) => {
             // 		if(dateDinFisier[args.importFor] === void 0){
             // 			dialog.showMessageBox(mainWindow, {
             // 				type: 'error',
-            // 				title: i18n.__('main._error'),
+            // 				title: i18n.__('Error'),
             // 				message: i18n.__('main._dataImportError1')
             // 			});
             // 			return;
@@ -1046,14 +1062,14 @@ ipcMain.on('importData', (event, args) => {
             // 		// } else if(dateDinFisier.judet != sessionObj.judet_id && sessionObj.user_name != 'national') {
             // 			dialog.showMessageBox(mainWindow, {
             // 				type: 'error',
-            // 				title: i18n.__('main._error'),
+            // 				title: i18n.__('Error'),
             // 				message: i18n.__('main._dataImportError2')
             // 			});
             // 			return;
             // 		} else if(dateDinFisier.runda != sessionObj.runda) {
             // 			dialog.showMessageBox(mainWindow, {
             // 				type: 'error',
-            // 				title: i18n.__('main._error'),
+            // 				title: i18n.__('Error'),
             // 				message: i18n.__('main._dataImportError3')
             // 			});
             // 			return;
@@ -1074,6 +1090,14 @@ ipcMain.on('importData', (event, args) => {
             // 			'fileName': fileName,
             // 			'noRecords': arrayData.length,
             // 		});
+
+            if (error) {
+                dialog.showMessageBox(mainWindow, {
+                    type: 'error',
+                    title: i18n.__('Error'),
+                    message: i18n.__('Some instruments are not allowed to be imported. Please check the file and try again.')
+                });
+            }
         });
 
         fs.unlinkSync(decryptedFile);
@@ -1132,6 +1156,7 @@ ipcMain.on('exportData', function exportData(event, args) {
     if (folderPath !== void 0) {
 
         // mainWindow.webContents.send("startLoader");
+        // TODO -- add user code
         const cale = folderPath[0] + '/export-data';
         console.log(cale);
         const instruments = getLisOfInstrumentsToExport(args.userRoleCode, args.userServiceTypeCode);
@@ -1159,7 +1184,7 @@ ipcMain.on('exportData', function exportData(event, args) {
         // mainWindow.webContents.send("clearLoader");
         dialog.showMessageBox(mainWindow, {
             type: 'error',
-            title: i18n.__('main._error'),
+            title: i18n.__('Error'),
             message: i18n.__('main._dataDownloadedError')
         });
     }
@@ -1188,6 +1213,7 @@ async function asyncForArray(arr: string[], callback: (...params: any[]) => void
 function prepareDataForDownload(data: DI.DataExportInterface[]) {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const response: { [key: string]: any } = {};
+    response.data = {};
     response.regionCode = appSession.userData.region_code;
     response.institutionCode = appSession.userData.institution_code;
 
@@ -1195,13 +1221,13 @@ function prepareDataForDownload(data: DI.DataExportInterface[]) {
 
     for (let i = 0; i < data.length; i++) {
 
-        if (response[data[i].uuid] !== void 0) {
+        if (response['data'][data[i].uuid] !== void 0) {
             //https://stackoverflow.com/questions/19837916/creating-object-with-dynamic-keys
-            response[data[i].uuid].data[data[i].variable] = { 'value': data[i].value };
+            response['data'][data[i].uuid].questions[data[i].variable] = { 'value': data[i].value };
 
         } else {
 
-            response[data[i].uuid] = {
+            response['data'][data[i].uuid] = {
                 'uuid': data[i].uuid,
                 'region_code': data[i].region_code,
                 'institution_type': data[i].institution_type,
@@ -1209,9 +1235,9 @@ function prepareDataForDownload(data: DI.DataExportInterface[]) {
                 'updated_at': data[i].updated_at,
             };
 
-            response[data[i].uuid].data = {};
+            response['data'][data[i].uuid].questions = {};
             // console.log(data[i].variabila);
-            response[data[i].uuid].data[data[i].variable] = { 'value': data[i].value };
+            response['data'][data[i].uuid].questions[data[i].variable] = { 'value': data[i].value };
         }
     }
 
