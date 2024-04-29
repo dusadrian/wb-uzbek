@@ -25,7 +25,7 @@ class AppendInitVect extends Transform {
 
 export const crypt = {
 
-    key: crypto.scryptSync('5WvvWX\/G3"T:ybSn@5z-m1J', 'salt', 24),
+    key: crypto.scryptSync('Bl^b8t{B@OQM&FMM_!i/tdXz', 'salt', 24),
 
     // cale fisier pentru criptat .json
     encryptFile: function (cale: string) {
