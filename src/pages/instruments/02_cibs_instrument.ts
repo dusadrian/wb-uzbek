@@ -23,7 +23,10 @@ const locales: { [key: string]: typeof en | typeof uz | typeof ru} = {
 }
 
 const lang = localStorage.getItem("language");
+const translations = locales[lang as keyof typeof locales] as Record<string, string>;
 let services: {[key: string]: DI.Institution};
+let insons: {[key: string]: DI.INSON};
+// let regionCode = '';
 
 const general_dates = [
     'data', 'lk3', 'cm3', 'ct3', 'cg1c', 'cg3b', 'sa1'
@@ -83,8 +86,17 @@ export const instrument2 = {
 
 
         ipcRenderer.on("instrumentDataReady", (_event, args) => {
-            // console.log(args);
+            console.log(args);
             services = args.services;
+            insons = args.insons;
+            const inson_codes = Object.keys(insons);
+            let institution_code = "";
+
+            let inson_user = false;
+            if (args.userData && args.userData.institution_code) {
+                inson_user = inson_codes.indexOf(args.userData.institution_code) >= 0;
+                institution_code = args.userData.institution_code;
+            }
 
             const sa5a = util.htmlElement("sa5a");
             const reg_codes = Object.keys(regions);
@@ -94,7 +106,7 @@ export const instrument2 = {
                 reg_el.innerHTML = "";
                 const option = document.createElement("option");
                 option.value = "-9";
-                option.text = locales[lang]['t_choose'];
+                option.text = translations['t_choose'];
                 reg_el.appendChild(option);
 
                 for (let i = 0; i < reg_codes.length; i++) {
@@ -126,7 +138,7 @@ export const instrument2 = {
 
                         const option = document.createElement("option");
                         option.value = "-9";
-                        option.text = locales[lang]['t_choose'];
+                        option.text = translations['t_choose'];
                         dis_el.innerHTML = "";
                         dis_el.appendChild(option);
 
@@ -154,7 +166,7 @@ export const instrument2 = {
                     if (Number(selectedDistrict) > 0) {
                         const option = document.createElement("option");
                         option.value = "-9";
-                        option.text = locales[lang]['t_choose'];
+                        option.text = translations['t_choose'];
 
                         if (setElements[x] != "") {
                             const set_codes = districts[selectedDistrict].settlements;
@@ -197,7 +209,7 @@ export const instrument2 = {
                             const optgroup = document.createElement("optgroup");
                             const option999 = document.createElement("option");
                             option999.value = '999';
-                            option999.text = '999: ' + locales[lang]['not_in_registry'];
+                            option999.text = '999: ' + translations['not_in_registry'];
                             optgroup.appendChild(option999);
                             sa5a.appendChild(optgroup);
 
@@ -224,22 +236,21 @@ export const instrument2 = {
                 }
             }
 
-            // set default values for user, IRRESPECTIVE of the instrument
-
-            if (args.institutionData) {
-
-                if (Object.keys(regions).indexOf(args.institutionData.region) >= 0) {
-                    util.setValue('reg', "" + (regions[args.institutionData.region] as KeyString)[lang]);
-                }
-
-                if (Object.keys(districts).indexOf(args.institutionData.district) >= 0) {
-                    util.setValue('dis', "" + (districts[args.institutionData.district] as KeyString)[lang]);
-                }
-            }
-
             util.setValue("data", util.customDate());
 
             if (args.userData) {
+                if (args.userData.institution_code) {
+                    const institution_code = args.userData.institution_code;
+                    if (inson_user) {
+                        util.setValue('reg', "" + (regions[insons[institution_code].region] as KeyString)[lang]);
+                        util.setValue('dis', "" + (districts[insons[institution_code].district] as KeyString)[lang]);
+                    }
+                    else {
+                        util.setValue('reg', "" + (regions[services[institution_code].region] as KeyString)[lang]);
+                        util.setValue('dis', "" + (districts[services[institution_code].district] as KeyString)[lang]);
+                    }
+                }
+
                 util.setValue('omr1', args.userData.name);
                 util.setValue('omr2', args.userData.patronymics);
                 util.setValue('omr3', args.userData.surname);
@@ -247,11 +258,22 @@ export const instrument2 = {
                 util.setValue('omr5', args.userData.profession);
                 util.setValue('omr6', args.userData.phone);
                 util.setValue('omr7', args.userData.email);
-                util.setValue("omr9", args.userData.institution_name);
-                // TODO: de adaugat astea trei in userData
-                // util.setValue('omr8', args.userData.work);
-                // util.setValue('omr9', args.userData.institution);
-                // util.setValue('omr10', args.userData.type);
+                util.setValue("omr8", args.userData.institution_name);
+                util.setValue("omr9", args.userData.institution_code);
+
+                const serv_codes = Object.keys(services);
+                if (serv_codes.indexOf(args.userData.institution_code) >= 0) {
+                    const type = services[args.userData.institution_code].type;
+                    if (["11", "12", "13", "14", "15", "16", "17"].indexOf(type) >= 0) {
+                        instrument.questions.omr10.value = type;
+                        const institutionType = translations["t_institution_type_option_" + type];
+                        util.htmlElement("omr10").value = "" + institutionType;
+                    } else {
+                        util.setValue("omr10", "--");
+                    }
+                }
+
+                // regionCode = args.userData.region_code;
             }
 
             instrument.start(instrumentID, instrument.trimis, saveChestionar, validateChestionar);
@@ -432,7 +454,7 @@ function check_lk22_2(): boolean {
 
     const suma = util.makeSumFromElements(lk22_2);
 
-    const message = locales[lang]['At_least_one_disability'];
+    const message = translations['At_least_one_disability'];
     errorHandler.removeError(lk22_2, message);
 
     if (suma == 0) {
@@ -461,7 +483,7 @@ const sk3 = ["sk3_1", "sk3_2"]
 util.listen(sk3, "change", () => {
     if (util.inputsHaveValue(sk3)) {
         const suma = Number(util.makeInputSumDecimal(sk3));
-        const message = locales[lang]['At_least_one_brother_or_sister'];
+        const message = translations['At_least_one_brother_or_sister'];
         const sk3_1 = util.htmlElement("sk3_1");
         const sk3_2 = util.htmlElement("sk3_2");
         errorHandler.removeError(sk3, message);

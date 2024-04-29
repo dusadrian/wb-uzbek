@@ -23,6 +23,7 @@ const locales: { [key: string]: typeof en | typeof uz | typeof ru} = {
 }
 
 const lang = localStorage.getItem("language");
+const translations = locales[lang as keyof typeof locales] as Record<string, string>;
 let services: {[key: string]: DI.Institution};
 let insons: {[key: string]: DI.INSON};
 
@@ -113,7 +114,7 @@ export const instrument1 = {
                 reg_el.innerHTML = "";
                 const option = document.createElement("option");
                 option.value = "-9";
-                option.text = locales[lang]['t_choose'];
+                option.text = translations['t_choose'];
                 reg_el.appendChild(option);
 
                 for (let i = 0; i < reg_codes.length; i++) {
@@ -145,7 +146,7 @@ export const instrument1 = {
 
                         const option = document.createElement("option");
                         option.value = "-9";
-                        option.text = locales[lang]['t_choose'];
+                        option.text = translations['t_choose'];
                         dis_el.innerHTML = "";
                         dis_el.appendChild(option);
 
@@ -173,7 +174,7 @@ export const instrument1 = {
                     if (Number(selectedDistrict) > 0) {
                         const option = document.createElement("option");
                         option.value = "-9";
-                        option.text = locales[lang]['t_choose'];
+                        option.text = translations['t_choose'];
 
                         if (setElements[x] != "") {
                             const set_codes = districts[selectedDistrict].settlements;
@@ -224,7 +225,7 @@ export const instrument1 = {
                             const optgroup = document.createElement("optgroup");
                             const option999 = document.createElement("option");
                             option999.value = '999';
-                            option999.text = '999: ' + locales[lang]['not_in_registry'];
+                            option999.text = '999: ' + translations['not_in_registry'];
                             optgroup.appendChild(option999);
                             sa5i.appendChild(optgroup);
 
@@ -367,7 +368,7 @@ function check_lk22_2(): boolean {
 
     const suma = util.makeSumFromElements(lk22_2);
 
-    const message = locales[lang]['At_least_one_disability'];
+    const message = translations['At_least_one_disability'];
     errorHandler.removeError(lk22_2, message);
 
     if (suma == 0) {
@@ -402,7 +403,7 @@ util.listen(util.radioIDs("cm1a"), "myChange", () => {
 
 const cm1c = util.radioIDs("cm1c");
 util.listen(cm1c, "myChange", () => {
-    const message = locales[lang]['no_unknown'];
+    const message = translations['no_unknown'];
 
     errorHandler.removeError(cm1c, message);
     if (
@@ -424,7 +425,7 @@ util.listen(util.radioIDs("ct1a"), "myChange", () => {
 
 const ct1c = util.radioIDs("ct1c");
 util.listen(ct1c, "myChange", () => {
-    const message = locales[lang]['no_unknown'];
+    const message = translations['no_unknown'];
 
     errorHandler.removeError(ct1c, message);
     if (
@@ -470,7 +471,7 @@ util.listen([...qeduc2, "sa1a"], "myChange", () => {
     const qeduc = Number(instrument.questions["qeduc2"].value);
     if (qeduc > 0) {
         const age = Number(instrument.questions["sa1a"].value);
-        const message = locales[lang]["child_under_7"];
+        const message = translations["child_under_7"];
 
         errorHandler.removeError(qeduc2, message);
         if (age < 7 && qeduc < 7) {
@@ -509,7 +510,7 @@ util.listen(qhouse4ArrayFull, "change", () => {
 util.listen("sh1", "myChange", () => {
     const sh1value = util.getInputDecimalValue('sh1');
 
-    const message = locales[lang]['Value_up_to_ten'];
+    const message = translations['Value_up_to_ten'];
     errorHandler.removeError('sh1', message);
 
     if (sh1value > 10) {
@@ -542,7 +543,7 @@ sh3_start_dates.forEach((startel) => {
             const timespent = util.htmlElement(startel.replace("a", "f"));
             const sh4 = util.htmlElement("sh4");
 
-            const message = locales[lang]['Start_before_end'];
+            const message = translations['Start_before_end'];
             errorHandler.removeError([startel, endel], message);
 
             if (startdate > enddate) {
@@ -636,7 +637,7 @@ const sk3 = ["sk3_1", "sk3_2"]
 util.listen(sk3, "change", () => {
     if (util.inputsHaveValue(sk3)) {
         const suma = Number(util.makeInputSumDecimal(sk3));
-        const message = locales[lang]['At_least_one_brother_or_sister'];
+        const message = translations['At_least_one_brother_or_sister'];
         const sk3_1 = util.htmlElement("sk3_1");
         const sk3_2 = util.htmlElement("sk3_2");
         errorHandler.removeError(sk3, message);
