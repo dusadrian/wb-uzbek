@@ -2360,7 +2360,7 @@ export const questions: QuestionObjectType = {
     },
     'qeduc2b': {
         name: 'qeduc2b',
-        type: 'input',
+        type: 'number',
         value: '-7',
         disabled: true,
         hidden: false,
