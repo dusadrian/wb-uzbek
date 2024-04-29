@@ -681,6 +681,7 @@ const goToQMR = (id: string) => {
                 mainWindow.webContents.once("did-finish-load", () => {
                     database.instrumentGet(id, 'qmr', db).then((instrument) => {
                         mainWindow.webContents.send("instrumentDataReady", {
+                            id: id,
                             instrument: instrument,
                             userData: userDataArray[0],
                             institutionData: institutionDataArray[0],
@@ -707,6 +708,7 @@ const goToDSEE = (id: string) => {
                 mainWindow.webContents.once("did-finish-load", () => {
                     database.instrumentGet(id, 'dsee', db).then((result) => {
                         mainWindow.webContents.send("dsee", {
+                            id: id,
                             instrument: result,
                             userData: userDataArray[0],
                             institutionData: institutionDataArray[0],
@@ -773,6 +775,7 @@ const goToCSR = (id: string) => {
                 mainWindow.webContents.once("did-finish-load", () => {
                     database.instrumentGet(id, 'csr', db).then((instrument) => {
                         mainWindow.webContents.send("instrumentDataReady", {
+                            id: id,
                             instrument: instrument,
                             userData: userDataArray[0],
                             institutionData: institutionDataArray[0],
@@ -798,6 +801,7 @@ const goToFTCH = (id: string) => {
             mainWindow.webContents.once("did-finish-load", () => {
                 database.instrumentGet(id, 'ftch', db).then((questions) => {
                     mainWindow.webContents.send("instrumentDataReady", {
+                        id: id,
                         questions: questions,
                         userData: userDataArray[0],
                     });
@@ -820,6 +824,7 @@ const goToPFQ = (id: string) => {
             mainWindow.webContents.once("did-finish-load", () => {
                 database.instrumentGet(id, 'pfq', db).then((questions) => {
                     mainWindow.webContents.send("instrumentDataReady", {
+                        id: id,
                         questions: questions,
                         userData: userDataArray[0],
                     });
@@ -842,6 +847,7 @@ const goToEEF = (id: string) => {
             mainWindow.webContents.once("did-finish-load", () => {
                 database.instrumentGet(id, 'eef', db).then((questions) => {
                     mainWindow.webContents.send("instrumentDataReady", {
+                        id: id,
                         questions: questions,
                         userData: userDataArray[0],
                     });
@@ -874,6 +880,7 @@ const goToYPLCS = (id: string) => {
                     mainWindow.webContents.once("did-finish-load", () => {
                         database.instrumentGet(id, 'yplcs', db).then((questions) => {
                             mainWindow.webContents.send("instrumentDataReady", {
+                                id: id,
                                 questions: questions,
                                 userData: userDataArray[0],
                                 services: services,
@@ -912,6 +919,7 @@ const goToCIBS = (id: string) => {
                     mainWindow.webContents.once("did-finish-load", () => {
                         database.instrumentGet(id, 'cibs', db).then((questions) => {
                             mainWindow.webContents.send("instrumentDataReady", {
+                                id: id,
                                 questions: questions,
                                 userData: userDataArray[0],
                                 services: services,
@@ -940,6 +948,7 @@ const goToTQYP = (id: string) => {
             mainWindow.webContents.once("did-finish-load", () => {
                 database.instrumentGet(id, 'tqyp', db).then((questions) => {
                     mainWindow.webContents.send("instrumentDataReady", {
+                        id: id,
                         questions: questions,
                         userData: userDataArray[0],
                     });
@@ -1044,7 +1053,7 @@ ipcMain.on('importData', (event, args) => {
             //     }
             // }
 
-            
+
 
 
 
@@ -1163,7 +1172,7 @@ ipcMain.on('exportData', function exportData(event, args) {
         console.log(instruments);
 
         asyncForArray(instruments, downloadUserInstruments).then(processedData => {
-            // console.log(processedData);            
+            // console.log(processedData);
 
             fs.writeFile(cale, JSON.stringify(processedData), (err) => {
                 if (err) throw err;
