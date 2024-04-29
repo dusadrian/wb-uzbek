@@ -171,11 +171,11 @@
 	"t_settlement_type_23": "Tuman ahamiyatiga ega shaharlar",
 	"t_settlement_type_24": "Tuman ichidagi shaharchalar",
 	"t_settlement_type_31": "Qishloq fuqarolar yig'ini",
-	"t_settlement_type_region_10": "10",
-	"t_settlement_type_district_20": "20",
-	"t_settlement_type_dlc_21": "21",
-	"t_settlement_type_city_22": "22",
-	"t_settlement_type_town_23": "23",
-	"t_settlement_type_uts_24": "24",
-	"t_settlement_type_rural_31": "31"
+	"t_settlement_type_10_value": "10",
+	"t_settlement_type_20_value": "20",
+	"t_settlement_type_21_value": "21",
+	"t_settlement_type_22_value": "22",
+	"t_settlement_type_23_value": "23",
+	"t_settlement_type_24_value": "24",
+	"t_settlement_type_31_value": "31"
 }
