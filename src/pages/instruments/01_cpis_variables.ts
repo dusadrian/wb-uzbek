@@ -5,7 +5,7 @@ import { QuestionObjectType } from '../../libraries/interfaces';
 export const questions: QuestionObjectType = {
     'reg': {
         name: 'reg',
-        type: 'input',
+        type: 'select',
         value: '-9',
         disabled: true,
         hidden: false,
@@ -16,7 +16,7 @@ export const questions: QuestionObjectType = {
     },
     'dis': {
         name: 'dis',
-        type: 'input',
+        type: 'select',
         value: '-9',
         disabled: true,
         hidden: false,

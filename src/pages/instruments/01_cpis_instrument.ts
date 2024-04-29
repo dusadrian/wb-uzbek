@@ -39,10 +39,10 @@ const sh3_end_dates = [
     'sh3_s1d', 'sh3_s2d', 'sh3_s3d', 'sh3_s4d', 'sh3_s5d', 'sh3_s6d', 'sh3_s7d', 'sh3_s8d', 'sh3_s9d', 'sh3_s10d', 'sh3_csd'
 ];
 
-const regElements =  ["lk14b", "cm3b", "cm10c", "cm11c", "ct3b", "ct10c", "ct11c", "cg10c", "cg11c", "sa3a", "sa5r"]; //, "sh5r"];
-const disElements =  ["lk14c", "cm3c", "cm10d", "cm11d", "ct3c", "ct10d", "ct11d", "cg10d", "cg11d", "sa3b", "sa5d"]; //, "sh5d"];
-const setElements =  ["lk14d", "cm3d", "cm10e", "cm11e", "ct3d", "ct10e", "ct11e", "cg10e", "cg11e", "sa3c", ""    ]; //, ""    ];
-const typeElements = ["lk14e", "cm3e", "cm10f", "cm11f", "ct3e", "ct10f", "ct11f", "cg10f", "cg11f", "sa3d", ""    ]; //, ""    ];
+const regElements =  ["reg", "lk14b", "cm3b", "cm10c", "cm11c", "ct3b", "ct10c", "ct11c", "cg10c", "cg11c", "sa3a", "sa5r"]; //, "sh5r"];
+const disElements =  ["dis", "lk14c", "cm3c", "cm10d", "cm11d", "ct3c", "ct10d", "ct11d", "cg10d", "cg11d", "sa3b", "sa5d"]; //, "sh5d"];
+const setElements =  ["",    "lk14d", "cm3d", "cm10e", "cm11e", "ct3d", "ct10e", "ct11e", "cg10e", "cg11e", "sa3c", ""    ]; //, ""    ];
+const typeElements = ["",    "lk14e", "cm3e", "cm10f", "cm11f", "ct3e", "ct10f", "ct11f", "cg10f", "cg11f", "sa3d", ""    ]; //, ""    ];
 
 let regionCode = '';
 
@@ -200,7 +200,7 @@ export const instrument1 = {
                                 instrument.questions[setElements[x]].value = '-7';
                                 util.htmlElement(setElements[x]).disabled = true;
                             }
-                        } else {
+                        } else if (regElements[x] != "reg") {
 
                             sa5i.innerHTML = "";
                             const serv = districts[selectedDistrict].services;
@@ -229,7 +229,6 @@ export const instrument1 = {
                             option999.text = '999: ' + translations['not_in_registry'];
                             optgroup.appendChild(option999);
                             sa5i.appendChild(optgroup);
-
                         }
                     }
                 })
@@ -276,14 +275,16 @@ export const instrument1 = {
                 if (args.userData.institution_code) {
                     const institution_code = args.userData.institution_code;
                     if (inson_user) {
-                        util.setValue('reg', "" + (regions[insons[institution_code].region] as KeyString)[lang]);
-                        util.setValue('dis', "" + (districts[insons[institution_code].district] as KeyString)[lang]);
+                        util.setValue('reg', "" + insons[institution_code].region);
+                        util.setValue('dis', "" + insons[institution_code].district);
                     }
                     else {
-                        util.setValue('reg', "" + (regions[services[institution_code].region] as KeyString)[lang]);
-                        util.setValue('dis', "" + (districts[services[institution_code].district] as KeyString)[lang]);
+                        util.setValue('reg', "" + services[institution_code].region);
+                        util.setValue('dis', "" + services[institution_code].district);
                     }
                 }
+
+                console.log(util.htmlElement("reg").value, util.htmlElement("dis").value);
 
                 util.setValue('omr1', args.userData.name);
                 util.setValue('omr2', args.userData.patronymics);
