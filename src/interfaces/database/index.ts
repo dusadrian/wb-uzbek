@@ -31,11 +31,12 @@ export interface Institution {
     id: number;
     uuid: string;
     code: string;
-    name: string;
     type: string;
+    name: string;
     address: string;
     region: string;
     district: string;
+    settlement_type: number;
     capacity: number;
     children: number;
     leavers: number;
