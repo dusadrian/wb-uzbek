@@ -1921,17 +1921,6 @@ export const questions: QuestionObjectType = {
         active: function () { return (Number(instrument.questions.sa5d.value) > 0) },
         error: ''
     },
-    'sa5c': {
-        name: 'sa5c',
-        type: 'input',
-        value: '-7',
-        disabled: true,
-        hidden: false,
-        readonly: false,
-        order: 173,
-        active: function () { return (Number(instrument.questions.sa5i.value) == 999) },
-        error: ''
-    },
     'sa5n': {
         name: 'sa5n',
         type: 'input',
@@ -5091,7 +5080,7 @@ export const questionOrder: Array<string> = [
     'ct11e', 'ct11f', 'ct11g', 'ct11h', 'cg0', 'cg1a', 'cg1b', 'cg1c', 'cg1d',
     'cg2a', 'cg2b', 'cg2c', 'cg3a', 'cg3b', 'cg4', 'cgad', 'cg5a', 'cg5b', 'cg6a', 'cg6b', 'cg6c', 'cg7a',
     'cg7b', 'cg8a', 'cg8a_other', 'cg8b', 'cg8b_other', 'cg9a', 'cg9b', 'cg9c', 'cg9d', 'cg10a', 'cg10c', 'cg10d', 'cg10e', 'cg10f', 'cg11a', 'cg11c', 'cg11d', 'cg11e', 'cg11f', 'cg11g', 'cg11h', 'sa1', 'sa1a', 'sa2', 'sa2_other', 'sa3a', 'sa3b', 'sa3c', 'sa3d', 'sa4_1', 'sa4_2', 'sa4_3', 'sa4_4', 'sa4_5', 'sa4_6',
-    'sa4_7', 'sa4_8', 'sa4_9', 'sa4_9_other', 'sa5r', 'sa5d', 'sa5i', 'sa5c', 'sa5n', 'sa5t', 'sa6a', 'sa6b', 'sa6c', 'sa6d', 'sa6e',
+    'sa4_7', 'sa4_8', 'sa4_9', 'sa4_9_other', 'sa5r', 'sa5d', 'sa5i', 'sa5n', 'sa5t', 'sa6a', 'sa6b', 'sa6c', 'sa6d', 'sa6e',
     'sa6f', 'sa6g', 'sa6h_1', 'sa6h_2', 'sa6h_3', 'sa6h_4', 'sa6h_5', 'sa6h_6', 'sa6h_7', 'sa6h_8',
     'sa6h_8_other', 'sa6i', 'sa6', 'qhealth1', 'qhealth2', 'qhealth3', 'qhealth4', 'qhealth5', 'qhealth6',
     'qhealth7', 'qhealth8', 'qhealth9a', 'qhealth9b', 'qhealth9c', 'qhealth9d', 'qhealth9e', 'qhealth9f',
@@ -5296,7 +5285,6 @@ export const exportHeader: Array<{ id: string; title: string }> = [
     { 'id': 'sa5r', 'title': 'SA5R' },
     { 'id': 'sa5d', 'title': 'SA5D' },
     { 'id': 'sa5i', 'title': 'SA5I' },
-    { 'id': 'sa5c', 'title': 'SA5C' },
     { 'id': 'sa5c', 'title': 'SA5N' },
     { 'id': 'sa5t', 'title': 'SA5T' },
     { 'id': 'sa6a', 'title': 'SA6A' },
