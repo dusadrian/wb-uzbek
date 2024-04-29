@@ -364,7 +364,13 @@ function check_lk22_2(): boolean {
     const lk22_2_7_1 = util.htmlElement("lk22_2_7-1");
     const lk22_2_7_0 = util.htmlElement("lk22_2_7-0");
 
-    const suma = util.makeSumFromElements(lk22_2);
+
+    let suma = 0;
+    for (let i = 0; i < lk22_2.length; i++) {
+        if (util.htmlElement(lk22_2[i]).checked) {
+            suma++;
+        }
+    }
 
     const message = translations['At_least_one_disability'];
     errorHandler.removeError(lk22_2, message);
@@ -413,18 +419,28 @@ util.listen(cm1c, "myChange", () => {
     }
 })
 
-util.listen(util.radioIDs("ct1a"), "myChange", () => {
+const ct1a = util.radioIDs("ct1a");
+util.listen(ct1a, "myChange", () => {
+    instrument.questions["ct1c"].skip = false;
+    util.htmlElement('ct1c-1').disabled = false;
+    util.htmlElement('ct1c-2').disabled = false;
+    util.htmlElement("ct1c-3").disabled = false;
     if (instrument.questions["ct1a"].value == "3") {
         util.htmlElement('ct1c-1').checked = false;
         util.htmlElement('ct1c-2').checked = false;
         util.htmlElement("ct1c-3").checked = true;
+        util.htmlElement('ct1c-1').disabled = true;
+        util.htmlElement('ct1c-2').disabled = true;
+        util.htmlElement("ct1c-3").disabled = true;
+        instrument.questions["ct1c"].value = "3";
+        instrument.questions["ct1c"].skip = true;
     }
 })
 
 const ct1c = util.radioIDs("ct1c");
-util.listen(ct1c, "myChange", () => {
-    const message = translations['no_unknown'];
 
+util.listen([...ct1a, ...ct1c], "myChange", () => {
+    const message = translations['no_unknown'];
     errorHandler.removeError(ct1c, message);
     if (
         (
@@ -435,6 +451,7 @@ util.listen(ct1c, "myChange", () => {
     ) {
         errorHandler.addError(ct1c, message);
         util.focus(ct1c[0]);
+        util.blur(ct1c[0]);
     }
 })
 
@@ -447,6 +464,8 @@ util.listen("lk3", "myChange", () => {
 
         util.setValue("lk13a", age.toString());
         util.trigger("sa1", "change");
+        util.focus("lk14a_dk");
+        util.blur("lk14a_dk");
 
         if (instrument.questions.cg1c.value != "-9") {
             const startdate = util.standardDate(util.htmlElement("lk3").value);
@@ -658,23 +677,13 @@ ewm.forEach((el) => {
 const cmgt1a = util.htmlElement('cmgt1a');
 cmgt1a.addEventListener("myChange", function() {
 
-    const start = util.htmlElement("data");
-    const end = util.htmlElement("cmgt1a");
-    const cmgt1b = util.htmlElement("cmgt1b");
+    const months = util.diffDates(
+        util.standardDate(instrument.questions.cmgt1a.value),
+        new Date(2024, 5, 1),
+        "months"
+    )
 
-    const startdate = new Date(start.value.replace(/(\d{2})\/(\d{2})\/(\d{4})/,'$3-$2-$1'));
-    const enddate = new Date(end.value.replace(/(\d{2})\/(\d{2})\/(\d{4})/,'$3-$2-$1'));
-
-
-    let monthDiff = (enddate.getFullYear() - startdate.getFullYear()) * 12 + enddate.getMonth() - startdate.getMonth();
-    if (monthDiff > 0 && enddate.getDate() < startdate.getDate()) {
-        monthDiff--;
-    }
-
-    cmgt1b.value = monthDiff.toString();
-    instrument.questions["cmgt1b"].value = cmgt1b.value;
-    cmgt1b.dispatchEvent(new Event('change'));
-
+    util.setValue("cmgt1b", months.toString());
 });
 
 const sk3 = ["sk3_1", "sk3_2"]

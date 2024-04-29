@@ -29,7 +29,7 @@ let insons: {[key: string]: DI.INSON};
 // let regionCode = '';
 
 const general_dates = [
-    'data', 'lk3', 'cm3', 'ct3', 'cg1c', 'cg3b', 'sa1'
+    'data', 'lk3', 'cm3', 'ct3', 'cg3b', 'sa1'
 ];
 
 
@@ -75,7 +75,7 @@ export const instrument2 = {
             } else if (el == "cmgt1a") {
                 config = { ...flatpickrConfig, minDate: "01/01/2000" };
                 config.dateFormat = "m/Y";
-            } else if (el == "lk3" || el == "cg1c") {
+            } else if (el == "lk3") {
                 config = { ...flatpickrConfig, minDate: "01/01/1990" };
             } else {
                 config = { ...flatpickrConfig, minDate: "01/01/2000" };
@@ -334,7 +334,7 @@ util.listen("lk3", "myChange", () => {
 
 
 util.listen("sa1", "myChange", () => {
-    if (Number(instrument.questions.lk3.value) > 0 && Number(instrument.questions.sa1.value) > 0) {
+    if (util.inputsHaveValue(["sa1", "lk3"])) {
         const age = util.diffDates(
             util.standardDate(instrument.questions.lk3.value),
             util.standardDate(instrument.questions.sa1.value)
@@ -449,7 +449,12 @@ function check_lk22_2(): boolean {
     const lk22_2_7_1 = util.htmlElement("lk22_2_7-1");
     const lk22_2_7_0 = util.htmlElement("lk22_2_7-0");
 
-    const suma = util.makeSumFromElements(lk22_2);
+    let suma = 0;
+    for (let i = 0; i < lk22_2.length; i++) {
+        if (util.htmlElement(lk22_2[i]).checked) {
+            suma++;
+        }
+    }
 
     const message = translations['At_least_one_disability'];
     errorHandler.removeError(lk22_2, message);
