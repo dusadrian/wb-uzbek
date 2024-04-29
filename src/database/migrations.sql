@@ -131,7 +131,7 @@ CREATE TABLE values_cibs (
 
 
 -- Create instrument 3
-DROP TABLE instrument_cibs;
+DROP TABLE instrument_csr;
 DROP SEQUENCE id_instrument_csr_sequence;
 CREATE SEQUENCE id_instrument_csr_sequence START 1;
 

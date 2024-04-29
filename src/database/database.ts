@@ -199,6 +199,100 @@ export const database = {
         return await connection;
     },
 
+    filledInstruments: async (region?: string, typeOfInstitution?: string) => {
+        console.log(region, typeOfInstitution);
+        
+        let where = '';
+        if(region || typeOfInstitution) {
+            where = 'WHERE ';
+        }
+        if(region) {
+            where += `region_code = '${region}'`;
+        }
+        if(region && typeOfInstitution) {
+            where += ' AND ';
+        }
+        if(typeOfInstitution) {
+            where += `institution_type = '${typeOfInstitution}'`;
+        }
+
+        const i1 = new Promise<DI.StatusInterface[]>((resolve) => {
+            db.all(`SELECT status, COUNT(*) AS total FROM instrument_cpis ${where} GROUP BY status`, (error, result) => {
+                if (error) { console.log(error); }
+                resolve(result as DI.StatusInterface[]);
+            });
+        });
+        const instrument1 = await i1;
+        const i2 = new Promise<DI.StatusInterface[]>((resolve) => {
+            db.all(`SELECT status, COUNT(*) AS total FROM instrument_cibs ${where} GROUP BY status`, (error, result) => {
+                if (error) { console.log(error); }
+                resolve(result as DI.StatusInterface[]);
+            });
+        });
+        const instrument2 = await i2;
+        const i3 = new Promise<DI.StatusInterface[]>((resolve) => {
+            db.all(`SELECT status, COUNT(*) AS total FROM instrument_csr ${where} GROUP BY status`, (error, result) => {
+                if (error) { console.log(error); }
+                resolve(result as DI.StatusInterface[]);
+            });
+        });
+        const instrument3 = await i3;
+        const i4 = new Promise<DI.StatusInterface[]>((resolve) => {
+            db.all(`SELECT status, COUNT(*) AS total FROM instrument_qmr ${where} GROUP BY status`, (error, result) => {
+                if (error) { console.log(error); }
+                resolve(result as DI.StatusInterface[]);
+            });
+        });
+        const instrument4 = await i4;
+        const i5a = new Promise<DI.StatusInterface[]>((resolve) => {
+            db.all(`SELECT status, COUNT(*) AS total FROM instrument_tqyp ${where} GROUP BY status`, (error, result) => {
+                if (error) { console.log(error); }
+                resolve(result as DI.StatusInterface[]);
+            });
+        });
+        const instrument5a = await i5a;
+        const i5 = new Promise<DI.StatusInterface[]>((resolve) => {
+            db.all(`SELECT status, COUNT(*) AS total FROM instrument_yplcs ${where} GROUP BY status`, (error, result) => {
+                if (error) { console.log(error); }
+                resolve(result as DI.StatusInterface[]);
+            });
+        });
+        const instrument5 = await i5;
+        const i6 = new Promise<DI.StatusInterface[]>((resolve) => {
+            db.all(`SELECT status, COUNT(*) AS total FROM instrument_dsee ${where} GROUP BY status`, (error, result) => {
+                if (error) { console.log(error); }
+                resolve(result as DI.StatusInterface[]);
+            });
+        });
+        const instrument6 = await i6;
+        const i7 = new Promise<DI.StatusInterface[]>((resolve) => {
+            db.all(`SELECT status, COUNT(*) AS total FROM instrument_ftch ${where} GROUP BY status`, (error, result) => {
+                if (error) { console.log(error); }
+                resolve(result as DI.StatusInterface[]);
+            });
+        });
+        const instrument7 = await i7;
+        const i8 = new Promise<DI.StatusInterface[]>((resolve) => {
+            db.all(`SELECT status, COUNT(*) AS total FROM instrument_pfq ${where} GROUP BY status`, (error, result) => {
+                if (error) { console.log(error); }
+                resolve(result as DI.StatusInterface[]);
+            });
+        });
+        const instrument8 = await i8;
+
+        return { 
+            instrument1,
+            instrument2,
+            instrument3,
+            instrument4,
+            instrument5a,
+            instrument5,
+            instrument6,
+            instrument7,
+            instrument8
+        };
+    },
+
     // Instruments
     instrumentSave,
     instrumentGet,

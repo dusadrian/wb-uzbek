@@ -496,7 +496,7 @@ const instrument: InstrumentObjectType = {
 					return false;
 				}
 			}
-			instrument.status = "complete";
+			instrument.status = "completed";
 		}
 
 		// custom validation

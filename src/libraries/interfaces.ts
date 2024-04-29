@@ -21,8 +21,7 @@ export interface SaveInstrumentType {
 	status: string;
 	questions: { [id: string]: { value: string } };
 	// eslint-disable-next-line @typescript-eslint/no-explicit-any
-	payload?: any;
-	nevoi?: SectiuniNevoiLocuinte;
+	extras?: any;
 	table?: string;
 }
 

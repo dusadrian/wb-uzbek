@@ -221,12 +221,12 @@ const goToDashboard = () => {
         ) {
 
             database.getInstitutions().then((instarray) => {
-                const services: {[key: string]: DI.Institution} = {};
+                const services: { [key: string]: DI.Institution } = {};
                 for (const element of instarray) {
                     services[element.code] = element;
                 }
                 database.getINSON().then((insonarray) => {
-                    const insons: {[key: string]: DI.INSON} = {};
+                    const insons: { [key: string]: DI.INSON } = {};
                     for (const element of insonarray) {
                         insons[element.code] = element;
                     }
@@ -255,6 +255,19 @@ const goToDashboard = () => {
         }
     });
 }
+
+ipcMain.on('getLocalDashStats', (event, args) => {
+    let region = null;
+    let typeOfInstitution = null;
+    if (args?.region) { region = args.region; }
+    if (args?.typeOfInstitution) { typeOfInstitution = args.typeOfInstitution; }
+
+    database.filledInstruments(region, typeOfInstitution).then((dashStats) => {
+        // Dashboard stats for all users
+        mainWindow.webContents.send("dashStats", dashStats);
+    });
+});
+
 // return ID for instruments 4 and 6
 ipcMain.on('getInstrumentsId', () => {
     database.getExisting(db).then((result: { qmr: number | null, dsee: number | null }) => {
@@ -714,12 +727,12 @@ const goToCPIS = (id: string) => {
     const newPage = path.join(__dirname, "../src/pages/instruments/01_cpis_" + appSession.language + ".html");
     mainWindow.loadURL("file://" + newPage);
     database.getInstitutions().then((instarray) => {
-        const services: {[key: string]: DI.Institution} = {};
+        const services: { [key: string]: DI.Institution } = {};
         for (let i = 0; i < instarray.length; i++) {
             services[instarray[i].code] = instarray[i];
         }
         database.getINSON().then((insonarray) => {
-            const insons: {[key: string]: DI.INSON} = {};
+            const insons: { [key: string]: DI.INSON } = {};
             for (let i = 0; i < insonarray.length; i++) {
                 insons[insonarray[i].code] = insonarray[i];
             }
@@ -845,12 +858,12 @@ const goToYPLCS = (id: string) => {
     const newPage = path.join(__dirname, "../src/pages/instruments/05_yplcs_" + appSession.language + ".html");
     mainWindow.loadURL("file://" + newPage);
     database.getInstitutions().then((instarray) => {
-        const services: {[key: string]: DI.Institution} = {};
+        const services: { [key: string]: DI.Institution } = {};
         for (let i = 0; i < instarray.length; i++) {
             services[instarray[i].code] = instarray[i];
         }
         database.getINSON().then((insonarray) => {
-            const insons: {[key: string]: DI.INSON} = {};
+            const insons: { [key: string]: DI.INSON } = {};
             for (let i = 0; i < insonarray.length; i++) {
                 insons[insonarray[i].code] = insonarray[i];
             }
@@ -883,12 +896,12 @@ const goToCIBS = (id: string) => {
     const newPage = path.join(__dirname, "../src/pages/instruments/02_cibs_" + appSession.language + ".html");
     mainWindow.loadURL("file://" + newPage);
     database.getInstitutions().then((instarray) => {
-        const services: {[key: string]: DI.Institution} = {};
+        const services: { [key: string]: DI.Institution } = {};
         for (let i = 0; i < instarray.length; i++) {
             services[instarray[i].code] = instarray[i];
         }
         database.getINSON().then((insonarray) => {
-            const insons: {[key: string]: DI.INSON} = {};
+            const insons: { [key: string]: DI.INSON } = {};
             for (let i = 0; i < insonarray.length; i++) {
                 insons[insonarray[i].code] = insonarray[i];
             }

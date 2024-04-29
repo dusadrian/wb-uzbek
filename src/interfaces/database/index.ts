@@ -63,3 +63,8 @@ export interface INSON {
 export interface DatabaseInterface {
     checkUser: (username: string, password: string) => Promise<Array<User>>;
 }
+
+export interface StatusInterface {
+    status: string;
+    total: number
+}
