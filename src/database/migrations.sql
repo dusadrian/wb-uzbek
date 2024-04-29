@@ -24,6 +24,13 @@ CREATE TABLE users (
     PRIMARY KEY (id)
 );
 
+INSTALL spatial;
+LOAD spatial;
+INSERT INTO users
+SELECT * FROM st_read('utilizatori.xlsx', layer = 'utilizatori', open_options = ['HEADERS=FORCE']);
+
+
+
 -- Create institutions table
 
 DROP TABLE institutions;
