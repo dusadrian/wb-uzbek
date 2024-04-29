@@ -134,17 +134,6 @@ export const questions: QuestionObjectType = {
         active: function () { return (true) },
         error: ''
     },
-    'i4c': {
-        name: 'select',
-        type: 'select',
-        value: '-9',
-        disabled: true,
-        hidden: false,
-        readonly: true,
-        order: 12,
-        active: function () { return (true) },
-        error: ''
-    },
     'i4d': {
         name: 'select',
         type: 'input',
@@ -4022,7 +4011,7 @@ export const questions: QuestionObjectType = {
 }
 
 export const questionOrder: Array<string> = [
-    'q1', 'q2', 'q3', 'q4', 'q5', 'q6', 'i1', 'i2', 'i3', 'i4', 'i4a', 'i4b', 'i4c', 'i4d', 'i9', 'i10', 'i12a',
+    'q1', 'q2', 'q3', 'q4', 'q5', 'q6', 'i1', 'i2', 'i3', 'i4', 'i4a', 'i4b', 'i4d', 'i9', 'i10', 'i12a',
     'i13a', 'i13b', 'i13c', 'i13d', 'i13e', 'i13f', 'i13g', 'la1a', 'la1b', 'la1c', 'la1d', 'la1e', 'la1f',
     'la2a', 'la2b', 'la2c', 'la2d', 'la2e', 'la2f', 'la2g', 'la2h', 'la2i', 'la2j', 'la2k', 'la2l', 'la2m',
     'la2n', 'la3', 'la4', 'la5', 'la6a', 'la6b', 'la7', 'la8', 'af1', 'af3', 'af4a', 'af4b', 'af5_1_a',
@@ -4068,7 +4057,6 @@ export const exportHeader: Array<{ id: string; title: string }> = [
     { 'id': 'i4', 'title': 'I4' },
     { 'id': 'i4a', 'title': 'I4A' },
     { 'id': 'i4b', 'title': 'I4B' },
-    { 'id': 'i4c', 'title': 'I4C' },
     { 'id': 'i4d', 'title': 'I4D' },
     { 'id': 'i9', 'title': 'I9' },
     { 'id': 'i10', 'title': 'I10' },
