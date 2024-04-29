@@ -306,7 +306,7 @@ export const database = {
 
     getInstrumentIdFromUUId: async (table: string, uuid: string) => {
         const connection = new Promise<DI.DataExportInterface[]>((resolve) => {
-            db.all(`SELECT * FROM instrument_${table} WHERE uuid = '${uuid}'`, (error, result) => {
+            db.all(`SELECT id FROM instrument_${table} WHERE uuid = '${uuid}'`, (error, result) => {
                 if (error) {
                     console.log(error);
                 }

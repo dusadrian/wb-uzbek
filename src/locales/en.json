@@ -182,5 +182,6 @@
 	"main._chooseFolder": "main._chooseFolder",
 	"_chooseFile": "_chooseFile",
 	"main.success": "main.success",
-	"main._dataDownloaded": "main._dataDownloaded"
+	"main._dataDownloaded": "main._dataDownloaded",
+	"Please fill in all fields": "Please fill in all fields"
 }

@@ -1145,72 +1145,39 @@ ipcMain.on('importData', (event, args) => {
         fs.readFile(decryptedFile, 'utf8', async (err, data) => {
             if (err) throw err;
 
-            // let arrayData = [];
             const dateDinFisier = JSON.parse(data);
-            // const instrumentsInFile = Object.keys(dateDinFisier);
-            // const userInstruments = getLisOfInstrumentsToExport(appSession.userData.role_code, appSession.userData.service_type_code);
-            const error = false
+            const instrumentsInFile = Object.keys(dateDinFisier);
+            const userInstruments = getLisOfInstrumentsToExport(appSession.userData.role_code, appSession.userData.service_type_code);
+            let error = false
 
-            // // check if we have errors
-            // for (const instrument of instrumentsInFile) {
-            //     if (!userInstruments.includes(instrument)) {
-            //         error = true;
-            //     }
-            //     if (dateDinFisier[instrument]) { // avem date
-            //         for (const item of dateDinFisier[instrument]) {
-            //             await database.getInstrumentIdFromUUId(instrument,).then(async (result) => {
-            //                 await database.instrumentSave(dateDinFisier[instrument], db, result[0].id);
-            //             });
-            //         }
-            //     }
-            // }
+            // check if we have errors
+            for (const instrument of instrumentsInFile) {
+                if (!userInstruments.includes(instrument)) {
+                    error = true; // there are instruments not belonging to the user
+                }
+                
+                if (dateDinFisier[instrument]) { // there is data
+                    for (const itemUUID in dateDinFisier[instrument].data) {
+                        const item = dateDinFisier[instrument].data[itemUUID];
+                        const instrumentID = await database.getInstrumentIdFromUUId(instrument, itemUUID);
+                        console.log(instrumentID);
 
+                        const dataToImport = {
+                            'instrument_id': instrumentID.length > 0 ? Number(instrumentID[0]?.id) : null,
+                            'table': instrument,
+                            'status': 'completed',
+                            'questions': item.questions,
+                            'extras': {
+                                region_code: item.region_code,
+                                institution_type: item.institution_type,
+                                uuid: itemUUID
+                            }
+                        };
+                        await database.instrumentSave(dataToImport, db);
 
-
-
-
-            console.log(dateDinFisier);
-
-
-            // 		if(dateDinFisier[args.importFor] === void 0){
-            // 			dialog.showMessageBox(mainWindow, {
-            // 				type: 'error',
-            // 				title: i18n.__('Error'),
-            // 				message: i18n.__('main._dataImportError1')
-            // 			});
-            // 			return;
-            // 		} else if(dateDinFisier.judet != sessionObj.judet_id) {
-            // 		// } else if(dateDinFisier.judet != sessionObj.judet_id && sessionObj.user_name != 'national') {
-            // 			dialog.showMessageBox(mainWindow, {
-            // 				type: 'error',
-            // 				title: i18n.__('Error'),
-            // 				message: i18n.__('main._dataImportError2')
-            // 			});
-            // 			return;
-            // 		} else if(dateDinFisier.runda != sessionObj.runda) {
-            // 			dialog.showMessageBox(mainWindow, {
-            // 				type: 'error',
-            // 				title: i18n.__('Error'),
-            // 				message: i18n.__('main._dataImportError3')
-            // 			});
-            // 			return;
-            // 		} else {
-            // 			arrayData = Object.keys(dateDinFisier[args.importFor]);
-            // 		}
-
-            // 		// save data for later
-            // 		dataForImport.table 		= args.importFor;
-            // 		dataForImport.data 			= dateDinFisier[args.importFor];
-            // 		dataForImport.judet_id 		= dateDinFisier.judet;
-            // 		dataForImport.runda 		= dateDinFisier.runda;
-
-
-            // 		let fileName = path.basename(filesToUpload[0]) + '';
-
-            // 		event.reply('importData-reply', {
-            // 			'fileName': fileName,
-            // 			'noRecords': arrayData.length,
-            // 		});
+                    }
+                }
+            }
 
             if (error) {
                 dialog.showMessageBox(mainWindow, {
@@ -1219,6 +1186,7 @@ ipcMain.on('importData', (event, args) => {
                     message: i18n.__('Some instruments are not allowed to be imported. Please check the file and try again.')
                 });
             }
+            goToDashboard();
         });
 
         fs.unlinkSync(decryptedFile);

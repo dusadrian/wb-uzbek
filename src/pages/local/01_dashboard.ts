@@ -230,7 +230,7 @@ export const local = {
 
                 let percent = '0';
                 if (totalCompletedObj.length > 0 && toBefilled) {
-                    percent = ((totalCompletedObj[0].total / toBefilled) * 100).toFixed(2);
+                    percent = ((Number(totalCompletedObj[0].total) / toBefilled) * 100).toFixed(2);
                 }
                 document.getElementById('t1c14').innerText = percent + '%';
             } else {
@@ -243,14 +243,14 @@ export const local = {
                 const totalCompletedObj = args.instrument2.filter((el: StatusInterface) => el.status === 'completed');
                 const totalPartialObj = args.instrument2.filter((el: StatusInterface) => el.status === 'partial');
 
-                const toBefilled = Number(document.getElementById('t1c21').innerText);
+                const toBefilled = Number(document.getElementById('t1c21').innerText);                
 
                 document.getElementById('t1c22').innerText = totalCompletedObj[0]?.total || 0;
                 document.getElementById('t1c23').innerText = totalPartialObj[0]?.total || 0;
 
                 let percent = '0';
                 if (totalCompletedObj.length > 0 && toBefilled) {
-                    percent = ((totalCompletedObj[0].total / toBefilled) * 100).toFixed(2);
+                    percent = ((Number(totalCompletedObj[0].total) / toBefilled) * 100).toFixed(2);
                 }
                 document.getElementById('t1c24').innerText = percent + '%';
             } else {
@@ -262,14 +262,14 @@ export const local = {
             if (args.instrument3.length > 0) {
                 const totalCompletedObj = args.instrument3.filter((el: StatusInterface) => el.status === 'completed');
                 const totalPartialObj = args.instrument3.filter((el: StatusInterface) => el.status === 'partial');
-                const toBefilled = Number(document.getElementById('t1c31').innerText);
+                const toBefilled = Number(document.getElementById('t1c31').innerText);                
 
                 document.getElementById('t1c32').innerText = totalCompletedObj[0]?.total || 0;
                 document.getElementById('t1c33').innerText = totalPartialObj[0]?.total || 0;
 
                 let percent = '0';
                 if (totalCompletedObj.length > 0 && toBefilled) {
-                    percent = ((totalCompletedObj[0].total / toBefilled) * 100).toFixed(2);
+                    percent = ((Number(totalCompletedObj[0].total) / toBefilled) * 100).toFixed(2);
                 }
                 document.getElementById('t1c34').innerText = percent + '%';
             } else {
@@ -281,14 +281,14 @@ export const local = {
             if (args.instrument4.length > 0) {
                 const totalCompletedObj = args.instrument4.filter((el: StatusInterface) => el.status === 'completed');
                 const totalPartialObj = args.instrument4.filter((el: StatusInterface) => el.status === 'partial');
-                const toBefilled = Number(document.getElementById('t1c31').innerText);
+                const toBefilled = Number(document.getElementById('t1c31').innerText);                
 
                 document.getElementById('t1c42').innerText = totalCompletedObj[0]?.total || 0;
                 document.getElementById('t1c43').innerText = totalPartialObj[0]?.total || 0;
 
                 let percent = '0';
                 if (totalCompletedObj.length > 0 && toBefilled) {
-                    percent = ((totalCompletedObj[0].total / toBefilled) * 100).toFixed(2);
+                    percent = ((Number(totalCompletedObj[0].total) / toBefilled) * 100).toFixed(2);
                 }
                 document.getElementById('t1c44').innerText = percent + '%';
             } else {
@@ -300,14 +300,14 @@ export const local = {
             if (args.instrument5a.length > 0) {
                 const totalCompletedObj = args.instrument5a.filter((el: StatusInterface) => el.status === 'completed');
                 const totalPartialObj = args.instrument5a.filter((el: StatusInterface) => el.status === 'partial');
-                const toBefilled = Number(document.getElementById('t1c31').innerText);
+                const toBefilled = Number(document.getElementById('t1c31').innerText);                
 
                 document.getElementById('t1c52').innerText = totalCompletedObj[0]?.total || 0;
                 document.getElementById('t1c53').innerText = totalPartialObj[0]?.total || 0;
 
                 let percent = '0';
                 if (totalCompletedObj.length > 0 && toBefilled) {
-                    percent = ((totalCompletedObj[0].total / toBefilled) * 100).toFixed(2);
+                    percent = ((Number(totalCompletedObj[0].total) / toBefilled) * 100).toFixed(2);
                 }
                 document.getElementById('t1c54').innerText = percent + '%';
             } else {
@@ -319,14 +319,14 @@ export const local = {
             if (args.instrument5.length > 0) {
                 const totalCompletedObj = args.instrument5.filter((el: StatusInterface) => el.status === 'completed');
                 const totalPartialObj = args.instrument5.filter((el: StatusInterface) => el.status === 'partial');
-                const toBefilled = Number(document.getElementById('t1c31').innerText);
+                const toBefilled = Number(document.getElementById('t1c31').innerText);                
 
                 document.getElementById('t1c62').innerText = totalCompletedObj[0]?.total || 0;
                 document.getElementById('t1c63').innerText = totalPartialObj[0]?.total || 0;
 
                 let percent = '0';
                 if (totalCompletedObj.length > 0 && toBefilled) {
-                    percent = ((totalCompletedObj[0].total / toBefilled) * 100).toFixed(2);
+                    percent = ((Number(totalCompletedObj[0].total) / toBefilled) * 100).toFixed(2);
                 }
                 document.getElementById('t1c64').innerText = percent + '%';
             } else {
@@ -338,14 +338,14 @@ export const local = {
             if (args.instrument6.length > 0) {
                 const totalCompletedObj = args.instrument6.filter((el: StatusInterface) => el.status === 'completed');
                 const totalPartialObj = args.instrument6.filter((el: StatusInterface) => el.status === 'partial');
-                const toBefilled = Number(document.getElementById('t1c31').innerText);
+                const toBefilled = Number(document.getElementById('t1c31').innerText);                
 
                 document.getElementById('t1c72').innerText = totalCompletedObj[0]?.total || 0;
                 document.getElementById('t1c73').innerText = totalPartialObj[0]?.total || 0;
 
                 let percent = '0';
                 if (totalCompletedObj.length > 0 && toBefilled) {
-                    percent = ((totalCompletedObj[0].total / toBefilled) * 100).toFixed(2);
+                    percent = ((Number(totalCompletedObj[0].total) / toBefilled) * 100).toFixed(2);
                 }
                 document.getElementById('t1c74').innerText = percent + '%';
             } else {
@@ -357,14 +357,14 @@ export const local = {
             if (args.instrument7.length > 0) {
                 const totalCompletedObj = args.instrument7.filter((el: StatusInterface) => el.status === 'completed');
                 const totalPartialObj = args.instrument7.filter((el: StatusInterface) => el.status === 'partial');
-                const toBefilled = Number(document.getElementById('t1c31').innerText);
+                const toBefilled = Number(document.getElementById('t1c31').innerText);                
 
                 document.getElementById('t1c82').innerText = totalCompletedObj[0]?.total || 0;
                 document.getElementById('t1c83').innerText = totalPartialObj[0]?.total || 0;
 
                 let percent = '0';
                 if (totalCompletedObj.length > 0 && toBefilled) {
-                    percent = ((totalCompletedObj[0].total / toBefilled) * 100).toFixed(2);
+                    percent = ((Number(totalCompletedObj[0].total) / toBefilled) * 100).toFixed(2);
                 }
                 document.getElementById('t1c84').innerText = percent + '%';
             } else {
@@ -376,14 +376,14 @@ export const local = {
             if (args.instrument8.length > 0) {
                 const totalCompletedObj = args.instrument8.filter((el: StatusInterface) => el.status === 'completed');
                 const totalPartialObj = args.instrument8.filter((el: StatusInterface) => el.status === 'partial');
-                const toBefilled = Number(document.getElementById('t1c31').innerText);
+                const toBefilled = Number(document.getElementById('t1c31').innerText);                
 
                 document.getElementById('t1c92').innerText = totalCompletedObj[0]?.total || 0;
                 document.getElementById('t1c93').innerText = totalPartialObj[0]?.total || 0;
 
                 let percent = '0';
                 if (totalCompletedObj.length > 0 && toBefilled) {
-                    percent = ((totalCompletedObj[0].total / toBefilled) * 100).toFixed(2);
+                    percent = ((Number(totalCompletedObj[0].total) / toBefilled) * 100).toFixed(2);
                 }
                 document.getElementById('t1c94').innerText = percent + '%';
             } else {

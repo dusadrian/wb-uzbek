@@ -3,6 +3,7 @@ import * as DuckDB from "duckdb";
 export interface InstrumentData {
     instrument_id: number | null;
     table: string;
+    status: string;
     extras?: Record<string, string>;
     questions: Record<string, { value: string }>;
 }
@@ -23,7 +24,7 @@ export const save = async (data: InstrumentData, db: DuckDB.Database) => {
             // update data
             let sql = "";
             const extras = data.extras;
-            const sqlStart = "UPDATE instrument_" + data.table + " SET updated_at = now()";
+            const sqlStart = "UPDATE instrument_" + data.table + " SET updated_at = now(), status = '" + data.status +"'";
             let sqlValues = '';
             const sqlEnd = ' WHERE id = ?';
 
