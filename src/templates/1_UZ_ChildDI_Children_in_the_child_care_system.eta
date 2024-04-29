@@ -217,7 +217,7 @@
 
             </div>
         </div>
-        
+
         <input type="hidden" id="lk14e" name="lk14e" />
 
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
@@ -437,7 +437,7 @@
 
             </div>
         </div>
-        
+
         <input type="hidden" id="cm3e" name="cm3e" />
 
 
@@ -1248,7 +1248,7 @@
 
             </div>
         </div>
-        
+
         <input type="hidden" id="ct3e" name="ct3e"/>
 
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
@@ -2540,7 +2540,7 @@
 
             </div>
         </div>
-        
+
         <input type="hidden" id="cg10f" name="cg10f" />
 
         <div class="grid grid-cols-2 gap-4 items-center mt-10">
@@ -4244,7 +4244,7 @@
                     </td>
                     <td class="p-1">
                         <select id="sh3_s1b" name="sh3_s1b" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                            <option value="">-----</option>
+                            <option value="-9" class="t_choose">--- choose ---</option>
                             <option value="1"><%= it.t992 %></option>
                             <option value="2"><%= it.t993 %></option>
                             <option value="3"><%= it.t994 %></option>
@@ -4257,7 +4257,7 @@
                     </td>
                     <td class="p-1">
                         <select id="sh3_s1c" name="sh3_s1c" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                            <option value="">-----</option>
+                            <option value="-9" class="t_choose">--- choose ---</option>
                             <option value="0"><%= it.t1001 %></option>
                             <option value="1"><%= it.t1002 %></option>
                             <option value="2"><%= it.t1003 %></option>
@@ -4269,7 +4269,7 @@
                     </td>
                     <td class="p-1">
                         <select id="sh3_s1e" name="sh3_s1e" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                            <option value="">-----</option>
+                            <option value="-9" class="t_choose">--- choose ---</option>
                             <option value="1"><%= it.t1006 %></option>
                             <option value="2"><%= it.t1007 %></option>
                             <option value="3"><%= it.t1008 %></option>
@@ -4287,7 +4287,7 @@
                     </td>
                     <td class="p-1">
                         <select id="sh3_s2b" name="sh3_s2b" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                            <option value="">-----</option>
+                            <option value="-9" class="t_choose">--- choose ---</option>
                             <option value="1"><%= it.t992 %></option>
                             <option value="2"><%= it.t993 %></option>
                             <option value="3"><%= it.t994 %></option>
@@ -4300,7 +4300,7 @@
                     </td>
                     <td class="p-1">
                         <select id="sh3_s2c" name="sh3_s2c" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                            <option value="">-----</option>
+                            <option value="-9" class="t_choose">--- choose ---</option>
                             <option value="0"><%= it.t1001 %></option>
                             <option value="1"><%= it.t1002 %></option>
                             <option value="2"><%= it.t1003 %></option>
@@ -4312,7 +4312,7 @@
                     </td>
                     <td class="p-1">
                         <select id="sh3_s2e" name="sh3_s2e" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                            <option value="">-----</option>
+                            <option value="-9" class="t_choose">--- choose ---</option>
                             <option value="1"><%= it.t1006 %></option>
                             <option value="2"><%= it.t1007 %></option>
                             <option value="3"><%= it.t1008 %></option>
@@ -4330,7 +4330,7 @@
                     </td>
                     <td class="p-1">
                         <select id="sh3_s3b" name="sh3_s3b" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                            <option value="">-----</option>
+                            <option value="-9" class="t_choose">--- choose ---</option>
                             <option value="1"><%= it.t992 %></option>
                             <option value="2"><%= it.t993 %></option>
                             <option value="3"><%= it.t994 %></option>
@@ -4343,7 +4343,7 @@
                     </td>
                     <td class="p-1">
                         <select id="sh3_s3c" name="sh3_s3c" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                            <option value="">-----</option>
+                            <option value="-9" class="t_choose">--- choose ---</option>
                             <option value="0"><%= it.t1001 %></option>
                             <option value="1"><%= it.t1002 %></option>
                             <option value="2"><%= it.t1003 %></option>
@@ -4355,7 +4355,7 @@
                     </td>
                     <td class="p-1">
                         <select id="sh3_s3e" name="sh3_s3e" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                            <option value="">-----</option>
+                            <option value="-9" class="t_choose">--- choose ---</option>
                             <option value="1"><%= it.t1006 %></option>
                             <option value="2"><%= it.t1007 %></option>
                             <option value="3"><%= it.t1008 %></option>
@@ -4373,7 +4373,7 @@
                     </td>
                     <td class="p-1">
                         <select id="sh3_s4b" name="sh3_s4b" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                            <option value="">-----</option>
+                            <option value="-9" class="t_choose">--- choose ---</option>
                             <option value="1"><%= it.t992 %></option>
                             <option value="2"><%= it.t993 %></option>
                             <option value="3"><%= it.t994 %></option>
@@ -4386,7 +4386,7 @@
                     </td>
                     <td class="p-1">
                         <select id="sh3_s4c" name="sh3_s4c" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                            <option value="">-----</option>
+                            <option value="-9" class="t_choose">--- choose ---</option>
                             <option value="0"><%= it.t1001 %></option>
                             <option value="1"><%= it.t1002 %></option>
                             <option value="2"><%= it.t1003 %></option>
@@ -4398,7 +4398,7 @@
                     </td>
                     <td class="p-1">
                         <select id="sh3_s4e" name="sh3_s4e" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                            <option value="">-----</option>
+                            <option value="-9" class="t_choose">--- choose ---</option>
                             <option value="1"><%= it.t1006 %></option>
                             <option value="2"><%= it.t1007 %></option>
                             <option value="3"><%= it.t1008 %></option>
@@ -4416,7 +4416,7 @@
                     </td>
                     <td class="p-1">
                         <select id="sh3_s5b" name="sh3_s5b" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                            <option value="">-----</option>
+                            <option value="-9" class="t_choose">--- choose ---</option>
                             <option value="1"><%= it.t992 %></option>
                             <option value="2"><%= it.t993 %></option>
                             <option value="3"><%= it.t994 %></option>
@@ -4429,7 +4429,7 @@
                     </td>
                     <td class="p-1">
                         <select id="sh3_s5c" name="sh3_s5c" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                            <option value="">-----</option>
+                            <option value="-9" class="t_choose">--- choose ---</option>
                             <option value="0"><%= it.t1001 %></option>
                             <option value="1"><%= it.t1002 %></option>
                             <option value="2"><%= it.t1003 %></option>
@@ -4441,7 +4441,7 @@
                     </td>
                     <td class="p-1">
                         <select id="sh3_s5e" name="sh3_s5e" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                            <option value="">-----</option>
+                            <option value="-9" class="t_choose">--- choose ---</option>
                             <option value="1"><%= it.t1006 %></option>
                             <option value="2"><%= it.t1007 %></option>
                             <option value="3"><%= it.t1008 %></option>
@@ -4459,7 +4459,7 @@
                     </td>
                     <td class="p-1">
                         <select id="sh3_s6b" name="sh3_s6b" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                            <option value="">-----</option>
+                            <option value="-9" class="t_choose">--- choose ---</option>
                             <option value="1"><%= it.t992 %></option>
                             <option value="2"><%= it.t993 %></option>
                             <option value="3"><%= it.t994 %></option>
@@ -4472,7 +4472,7 @@
                     </td>
                     <td class="p-1">
                         <select id="sh3_s6c" name="sh3_s6c" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                            <option value="">-----</option>
+                            <option value="-9" class="t_choose">--- choose ---</option>
                             <option value="0"><%= it.t1001 %></option>
                             <option value="1"><%= it.t1002 %></option>
                             <option value="2"><%= it.t1003 %></option>
@@ -4484,7 +4484,7 @@
                     </td>
                     <td class="p-1">
                         <select id="sh3_s6e" name="sh3_s6e" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                            <option value="">-----</option>
+                            <option value="-9" class="t_choose">--- choose ---</option>
                             <option value="1"><%= it.t1006 %></option>
                             <option value="2"><%= it.t1007 %></option>
                             <option value="3"><%= it.t1008 %></option>
@@ -4502,7 +4502,7 @@
                     </td>
                     <td class="p-1">
                         <select id="sh3_s7b" name="sh3_s7b" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                            <option value="">-----</option>
+                            <option value="-9" class="t_choose">--- choose ---</option>
                             <option value="1"><%= it.t992 %></option>
                             <option value="2"><%= it.t993 %></option>
                             <option value="3"><%= it.t994 %></option>
@@ -4515,7 +4515,7 @@
                     </td>
                     <td class="p-1">
                         <select id="sh3_s7c" name="sh3_s7c" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                            <option value="">-----</option>
+                            <option value="-9" class="t_choose">--- choose ---</option>
                             <option value="0"><%= it.t1001 %></option>
                             <option value="1"><%= it.t1002 %></option>
                             <option value="2"><%= it.t1003 %></option>
@@ -4527,7 +4527,7 @@
                     </td>
                     <td class="p-1">
                         <select id="sh3_s7e" name="sh3_s7e" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                            <option value="">-----</option>
+                            <option value="-9" class="t_choose">--- choose ---</option>
                             <option value="1"><%= it.t1006 %></option>
                             <option value="2"><%= it.t1007 %></option>
                             <option value="3"><%= it.t1008 %></option>
@@ -4545,7 +4545,7 @@
                     </td>
                     <td class="p-1">
                         <select id="sh3_s8b" name="sh3_s8b" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                            <option value="">-----</option>
+                            <option value="-9" class="t_choose">--- choose ---</option>
                             <option value="1"><%= it.t992 %></option>
                             <option value="2"><%= it.t993 %></option>
                             <option value="3"><%= it.t994 %></option>
@@ -4558,7 +4558,7 @@
                     </td>
                     <td class="p-1">
                         <select id="sh3_s8c" name="sh3_s8c" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                            <option value="">-----</option>
+                            <option value="-9" class="t_choose">--- choose ---</option>
                             <option value="0"><%= it.t1001 %></option>
                             <option value="1"><%= it.t1002 %></option>
                             <option value="2"><%= it.t1003 %></option>
@@ -4570,7 +4570,7 @@
                     </td>
                     <td class="p-1">
                         <select id="sh3_s8e" name="sh3_s8e" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                            <option value="">-----</option>
+                            <option value="-9" class="t_choose">--- choose ---</option>
                             <option value="1"><%= it.t1006 %></option>
                             <option value="2"><%= it.t1007 %></option>
                             <option value="3"><%= it.t1008 %></option>
@@ -4588,7 +4588,7 @@
                     </td>
                     <td class="p-1">
                         <select id="sh3_s9b" name="sh3_s9b" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                            <option value="">-----</option>
+                            <option value="-9" class="t_choose">--- choose ---</option>
                             <option value="1"><%= it.t992 %></option>
                             <option value="2"><%= it.t993 %></option>
                             <option value="3"><%= it.t994 %></option>
@@ -4601,7 +4601,7 @@
                     </td>
                     <td class="p-1">
                         <select id="sh3_s9c" name="sh3_s9c" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                            <option value="">-----</option>
+                            <option value="-9" class="t_choose">--- choose ---</option>
                             <option value="0"><%= it.t1001 %></option>
                             <option value="1"><%= it.t1002 %></option>
                             <option value="2"><%= it.t1003 %></option>
@@ -4613,7 +4613,7 @@
                     </td>
                     <td class="p-1">
                         <select id="sh3_s9e" name="sh3_s9e" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                            <option value="">-----</option>
+                            <option value="-9" class="t_choose">--- choose ---</option>
                             <option value="1"><%= it.t1006 %></option>
                             <option value="2"><%= it.t1007 %></option>
                             <option value="3"><%= it.t1008 %></option>
@@ -4631,7 +4631,7 @@
                     </td>
                     <td class="p-1">
                         <select id="sh3_s10b" name="sh3_s10b" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                            <option value="">-----</option>
+                            <option value="-9" class="t_choose">--- choose ---</option>
                             <option value="1"><%= it.t992 %></option>
                             <option value="2"><%= it.t993 %></option>
                             <option value="3"><%= it.t994 %></option>
@@ -4644,7 +4644,7 @@
                     </td>
                     <td class="p-1">
                         <select id="sh3_s10c" name="sh3_s10c" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                            <option value="">-----</option>
+                            <option value="-9" class="t_choose">--- choose ---</option>
                             <option value="0"><%= it.t1001 %></option>
                             <option value="1"><%= it.t1002 %></option>
                             <option value="2"><%= it.t1003 %></option>
@@ -4656,7 +4656,7 @@
                     </td>
                     <td class="p-1">
                         <select id="sh3_s10e" name="sh3_s10e" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                            <option value="">-----</option>
+                            <option value="-9" class="t_choose">--- choose ---</option>
                             <option value="1"><%= it.t1006 %></option>
                             <option value="2"><%= it.t1007 %></option>
                             <option value="3"><%= it.t1008 %></option>
@@ -4674,7 +4674,7 @@
                     </td>
                     <td class="p-1">
                         <select id="sh3_csb" name="sh3_csb" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                            <option value="">-----</option>
+                            <option value="-9" class="t_choose">--- choose ---</option>
                             <option value="1"><%= it.t992 %></option>
                             <option value="2"><%= it.t993 %></option>
                             <option value="3"><%= it.t994 %></option>
@@ -4687,7 +4687,7 @@
                     </td>
                     <td class="p-1">
                         <select id="sh3_csc" name="sh3_csc" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                            <option value="">-----</option>
+                            <option value="-9" class="t_choose">--- choose ---</option>
                             <option value="0"><%= it.t1001 %></option>
                             <option value="1"><%= it.t1002 %></option>
                             <option value="2"><%= it.t1003 %></option>
@@ -4699,7 +4699,7 @@
                     </td>
                     <td class="p-1">
                         <select id="sh3_cse" name="sh3_cse" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                            <option value="">-----</option>
+                            <option value="-9" class="t_choose">--- choose ---</option>
                             <option value="1"><%= it.t1006 %></option>
                             <option value="2"><%= it.t1007 %></option>
                             <option value="3"><%= it.t1008 %></option>
