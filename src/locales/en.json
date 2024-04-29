@@ -179,6 +179,7 @@
 	"t_settlement_type_24_value": "24",
 	"t_settlement_type_31_value": "31",
 	"af1_instrument_04": "The sum of the areas of the buildings where children are accommodated (AF5a) must be less than or equal to the total area of the institution (AF1).",
+	"impossible": "Impossible",
 	"The following fields are mandatory: PTR1, PTR2A, PTR2B, PTR2C!": "The following fields are mandatory: PTR1, PTR2A, PTR2B, PTR2C!",
 	"main._chooseFolder": "main._chooseFolder",
 	"_chooseFile": "_chooseFile",
