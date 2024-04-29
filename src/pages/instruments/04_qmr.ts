@@ -3,6 +3,7 @@ import { questions, questionOrder } from "./04_qmr_variables";
 import instrument from "../../libraries/instrument";
 import { QuestionObjectType, SaveInstrumentType } from "../../libraries/interfaces";
 import { util, errorHandler } from "../../libraries/validation_helpers";
+import * as DI from "../../interfaces/database";
 
 import * as _flatpickr from 'flatpickr';
 import { FlatpickrFn } from 'flatpickr/dist/types/instance';
@@ -12,6 +13,35 @@ import { Russian } from "flatpickr/dist/l10n/ru";
 import { UzbekLatin } from "flatpickr/dist/l10n/uz_latn";
 import { KeyString, regions, districts, settlements, settlement_types } from "../../libraries/administrative";
 
+import * as en from "../../locales/en.json";
+import * as uz from "../../locales/uz.json";
+import * as ru from "../../locales/ru.json";
+const locales: { [key: string]: typeof en | typeof uz | typeof ru} = {
+    'en': en,
+    'uz': uz,
+    'ru': ru
+}
+
+const lang = localStorage.getItem("language");
+const translations = locales[lang as keyof typeof locales] as Record<string, string>;
+let services: {[key: string]: DI.Institution};
+let insons: {[key: string]: DI.INSON};
+
+
+const start_dates = [
+    'af5_1_d', 'af5_2_d', 'af5_3_d', 'af5_4_d', 'af5_5_d',
+    'af5_6_d', 'af5_7_d', 'af5_8_d', 'af5_9_d', 'af5_10_d'
+];
+
+const end_dates = [
+    'af5_1_d', 'af5_2_d', 'af5_3_d', 'af5_4_d', 'af5_5_d',
+    'af5_6_d', 'af5_7_d', 'af5_8_d', 'af5_9_d', 'af5_10_d'
+];
+
+const regElements  = ["i4a"];
+const disElements  = ["i4b"];
+const setElements  = ["i4c"];
+const typeElements = ["i4d"];
 
 export const instrument4 = {
     init: async () => {
@@ -50,19 +80,116 @@ export const instrument4 = {
             flatpickrConfig2.locale = Russian;
         }
 
-        const af5_dates = [
-            'af5_1_d', 'af5_2_d', 'af5_3_d', 'af5_4_d', 'af5_5_d',
-            'af5_6_d', 'af5_7_d', 'af5_8_d', 'af5_9_d', 'af5_10_d'
-        ]
-
-        af5_dates.forEach(item => {
+        [...start_dates, ...end_dates, 'i10'].forEach(item => {
             flatpickr(util.htmlElement(item), flatpickrConfig1);
         });
 
-        flatpickr(util.htmlElement('i10'), flatpickrConfig1);
         flatpickr(util.htmlElement('af13b'), flatpickrConfig2);
 
         ipcRenderer.on("instrumentDataReady", (_event, args) => {
+
+            services = args.services;
+            insons = args.insons;
+            const inson_codes = Object.keys(insons);
+            let institution_code = "";
+
+            let inson_user = false;
+            if (args.userData && args.userData.institution_code) {
+                inson_user = inson_codes.indexOf(args.userData.institution_code) >= 0;
+                institution_code = args.userData.institution_code;
+            }
+
+            const reg_codes = Object.keys(regions);
+            for (let x = 0; x < regElements.length; x++) {
+                const reg_el = util.htmlElement(regElements[x]);
+
+                reg_el.innerHTML = "";
+                const option = document.createElement("option");
+                option.value = "-9";
+                option.text = translations['t_choose'];
+                reg_el.appendChild(option);
+
+                for (let i = 0; i < reg_codes.length; i++) {
+                    const option = document.createElement("option");
+                    option.value = reg_codes[i];
+                    option.text = reg_codes[i] + ": " + (regions[reg_codes[i]] as KeyString)[lang];
+                    reg_el.appendChild(option);
+                }
+
+                const dis_el = util.htmlElement(disElements[x]);
+                const set_el = util.htmlElement(setElements[x]);
+
+                util.listen(regElements[x], "change", function () {
+                    if (typeElements[x] != "") {
+                        util.htmlElement(typeElements[x]).value = "";
+                    }
+
+                    if (setElements[x] != "") {
+                        set_el.innerHTML = "";
+                    }
+
+                    const selectedRegion = reg_el.value;
+                    if (Number(selectedRegion) > 0) {
+                        const dis_codes = regions[selectedRegion].districts;
+
+                        const option = document.createElement("option");
+                        option.value = "-9";
+                        option.text = translations['t_choose'];
+                        dis_el.innerHTML = "";
+                        dis_el.appendChild(option);
+
+                        for (let i = 0; i < dis_codes.length; i++) {
+                            const option = document.createElement("option");
+                            option.value = dis_codes[i];
+                            option.text = dis_codes[i] + ": " + (districts[dis_codes[i]] as KeyString)[lang];
+                            dis_el.appendChild(option);
+                        }
+                    }
+                })
+
+                util.listen(disElements[x], "change", function () {
+                    if (typeElements[x] != "") {
+                        util.htmlElement(typeElements[x]).value = "";
+                    }
+                    const selectedDistrict = dis_el.value;
+
+                    if (setElements[x] != "") {
+                        instrument.questions[setElements[x]].skip = false;
+                        util.htmlElement(setElements[x]).disabled = false;
+                        set_el.innerHTML = "";
+                    }
+
+                    if (Number(selectedDistrict) > 0) {
+                        const option = document.createElement("option");
+                        option.value = "-9";
+                        option.text = translations['t_choose'];
+
+                        if (setElements[x] != "") {
+                            const set_codes = districts[selectedDistrict].settlements;
+
+                            if (set_codes.length > 0) {
+                                set_el.appendChild(option);
+
+                                for (let i = 0; i < set_codes.length; i++) {
+                                    const option = document.createElement("option");
+                                    option.value = set_codes[i];
+                                    option.text = set_codes[i] + ": " + (settlements[set_codes[i]] as KeyString)[lang];
+                                    set_el.appendChild(option);
+                                }
+                            }
+                            else {
+                                if (typeElements[x] != "") {
+                                    const dis_type = settlement_types[districts[selectedDistrict].type];
+                                    util.setValue(typeElements[x], "" + dis_type[lang as keyof typeof dis_type]);
+                                }
+                                instrument.questions[setElements[x]].skip = true;
+                                instrument.questions[setElements[x]].value = '-7';
+                                util.htmlElement(setElements[x]).disabled = true;
+                            }
+                        }
+                    }
+                })
+            }
 
             // set instrument question !!!!!!
             instrument.setQuestions(questions, questionOrder);
@@ -83,6 +210,16 @@ export const instrument4 = {
             util.setValue("q1", util.customDate());
 
             if (args.userData) {
+                if (institution_code != "") {
+                    if (inson_user) {
+                        util.setValue('i4a', "" + insons[institution_code].region);
+                        util.setValue('i4b', "" + insons[institution_code].district);
+                    }
+                    else {
+                        util.setValue('i4a', "" + services[institution_code].region);
+                        util.setValue('i4b', "" + services[institution_code].district);
+                    }
+                }
                 util.setValue('q2', args.userData.name + " " + args.userData.patronymics + " " + args.userData.surname);
                 util.setValue('q3', args.userData.job_title);
                 util.setValue('q4', args.userData.profession);
@@ -141,6 +278,18 @@ const saveChestionar = (obj: SaveInstrumentType): void => {
 // Validari custom
 
 
+
+// settlement type
+for (let i = 0; i < setElements.length; i++) {
+    if (setElements[i] != "" && typeElements[i] != "") {
+        util.listen(setElements[i], "change", () => {
+            const value = util.htmlElement(setElements[i]).value;
+            util.setValue(typeElements[i], settlements[value].type);
+        })
+    }
+}
+
+
 const i13bf = ['i13b', 'i13c', 'i13d', 'i13e', 'i13f'];
 const i13 = [...i13bf, 'i13a'];
 util.listen(i13, 'change', () => {
@@ -183,7 +332,7 @@ const af5_a = [
 ];
 const af5af1 = [...af5_a, 'af1'];
 af5af1.forEach(item => {
-    (document.getElementById(item) as HTMLInputElement).addEventListener('change', () => {
+    util.listen(item, 'change', () => {
         const af4b = Number(instrument.questions.af4b.value);
         if (af4b > 0) {
             const af5_deschis = new Array<string>(af4b);
@@ -206,7 +355,7 @@ af5af1.forEach(item => {
 const ac1be1 = ['ac1b1', 'ac1c1', 'ac1d1', 'ac1e1'];
 const ac1_1 = [...ac1be1, 'ac1a1'];
 ac1_1.forEach(item => {
-    (document.getElementById(item) as HTMLInputElement).addEventListener('change', () => {
+    util.listen(item, 'change', () => {
         if (util.inputsHaveValue(ac1_1)) {
             errorHandler.removeError(ac1_1, 'AC1a1 >= AC1b1 + ... AC1e1')
             if (util.makeSumFromElements(ac1be1) > util.getInputDecimalValue('ac1a1')) {
@@ -219,7 +368,7 @@ ac1_1.forEach(item => {
 const ac1be2 = ['ac1b2', 'ac1c2', 'ac1d2', 'ac1e2'];
 const ac1_2 = [...ac1be2, 'ac1a2'];
 ac1_2.forEach(item => {
-    (document.getElementById(item) as HTMLInputElement).addEventListener('change', () => {
+    util.listen(item, 'change', () => {
         if (util.inputsHaveValue(ac1_2)) {
             errorHandler.removeError(ac1_2, 'AC1a2 >= AC1b2 + ... AC1e2')
             if (util.makeSumFromElements(ac1be2) > util.getInputDecimalValue('ac1a2')) {
@@ -252,7 +401,7 @@ compare.forEach(item1 => {
 
 const cc5i12a = ['cc5', 'i12a'];
 cc5i12a.forEach(item => {
-    (document.getElementById(item) as HTMLInputElement).addEventListener('change', () => {
+    util.listen(item, 'change', () => {
         if (util.inputsHaveValue(cc5i12a)) {
             ///--------
             errorHandler.removeError(cc5i12a, 'CC5 <= I12a')
@@ -269,7 +418,7 @@ cc5i12a.forEach(item => {
 
 const cc5i13a = ['cc5', 'i13a'];
 cc5i13a.forEach(item => {
-    (document.getElementById(item) as HTMLInputElement).addEventListener('change', () => {
+    util.listen(item, 'change', () => {
         if (util.inputsHaveValue(cc5i13a)) {
             errorHandler.removeError(cc5i13a, 'CC5 <= I13a')
             if (util.getInputDecimalValue('cc5') > util.getInputDecimalValue('i13a')) {
@@ -282,7 +431,7 @@ cc5i13a.forEach(item => {
 const de2a = ['de2a', 'de2b', 'de2c', 'de2d', 'de2e'];
 const de2a_i13a = [...de2a, 'i13a'];
 de2a_i13a.forEach(item => {
-    (document.getElementById(item) as HTMLInputElement).addEventListener('change', () => {
+    util.listen(item, 'change', () => {
         if (util.inputsHaveValue(de2a_i13a)) {
             errorHandler.removeError(de2a_i13a, 'I13a >= DE2a + DE2b + DE2c + DE2d + DE2e')
             if (util.makeSumFromElements(de2a) > util.getInputDecimalValue('i13a')) {
@@ -294,7 +443,7 @@ de2a_i13a.forEach(item => {
 
 const rce1i12a = ['rce1', 'i12a'];
 rce1i12a.forEach(item => {
-    (document.getElementById(item) as HTMLInputElement).addEventListener('change', () => {
+    util.listen(item, 'change', () => {
         if (util.inputsHaveValue(rce1i12a)) {
             errorHandler.removeError(rce1i12a, 'RCE1 <= I12a')
             if (util.getInputDecimalValue('rce1') > util.getInputDecimalValue('i12a')) {
@@ -306,7 +455,7 @@ rce1i12a.forEach(item => {
 
 const rce1 = ['rce1', 'rce1a', 'rce1b'];
 rce1.forEach(item => {
-    (document.getElementById(item) as HTMLInputElement).addEventListener('change', () => {
+    util.listen(item, 'change', () => {
         if (util.inputsHaveValue(rce1)) {
             errorHandler.removeError(rce1, 'RCE1 = RCE1a + RCE1b')
             if (util.getInputDecimalValue('rce1') != util.makeSumFromElements(rce1)) {
@@ -322,7 +471,7 @@ const af5_c = [
 ];
 const af5edu5 = [...af5_c, 'edu5'];
 af5edu5.forEach(item => {
-    (document.getElementById(item) as HTMLInputElement).addEventListener('change', () => {
+    util.listen(item, 'change', () => {
         const af4b = Number(instrument.questions.af4b.value);
         if (af4b > 0) {
             const af5_deschis = new Array<string>(af4b);
@@ -346,7 +495,7 @@ af5edu5.forEach(item => {
 
 const ft7i12a = ['ft7', 'i12a'];
 ft7i12a.forEach(item => {
-    (document.getElementById(item) as HTMLInputElement).addEventListener('change', () => {
+    util.listen(item, 'change', () => {
         if (util.inputsHaveValue(ft7i12a)) {
             errorHandler.removeError(ft7i12a, 'FT7 <= I12a')
             if (util.getInputDecimalValue('ft7') > util.getInputDecimalValue('i12a')) {
@@ -358,7 +507,7 @@ ft7i12a.forEach(item => {
 
 const ft7i13a = ['ft7', 'i13a'];
 ft7i13a.forEach(item => {
-    (document.getElementById(item) as HTMLInputElement).addEventListener('change', () => {
+    util.listen(item, 'change', () => {
         if (util.inputsHaveValue(ft7i13a)) {
             errorHandler.removeError(ft7i13a, 'FT7 <= I13a')
             if (util.getInputDecimalValue('ft7') > util.getInputDecimalValue('i13a')) {
@@ -370,11 +519,37 @@ ft7i13a.forEach(item => {
 
 const ft2af1 = ['ft2', 'af1'];
 ft2af1.forEach(item => {
-    (document.getElementById(item) as HTMLInputElement).addEventListener('change', () => {
+    util.listen(item, 'change', () => {
         if (util.inputsHaveValue(ft2af1)) {
             errorHandler.removeError(ft2af1, 'FT2 < AF1')
             if (util.getInputDecimalValue('ft2') > util.getInputDecimalValue('af1')) {
                 errorHandler.addError(ft2af1, 'FT2 < AF1');
+            }
+        }
+    })
+})
+
+const af4ab = ['af4a', 'af4b'];
+af4ab.forEach(item => {
+    util.listen(item, 'change', () => {
+        if (util.inputsHaveValue(af4ab)) {
+            const message = "AF4b <= AF4a";
+            errorHandler.removeError(af4ab, message)
+            if (util.getInputDecimalValue('af4b') > util.getInputDecimalValue('af4a')) {
+                errorHandler.addError(af4ab, message);
+            }
+        }
+    })
+})
+
+const rce612 = ['rce61', 'rce62'];
+rce612.forEach(item => {
+    util.listen(item, 'change', () => {
+        if (util.inputsHaveValue(rce612)) {
+            const message = "RCE62 <= RCE61";
+            errorHandler.removeError(rce612, message)
+            if (util.getInputDecimalValue('rce62') > util.getInputDecimalValue('rce61')) {
+                errorHandler.addError(rce612, message);
             }
         }
     })
@@ -387,7 +562,7 @@ ft2af1.forEach(item => {
 const e00Array = ['e01', 'e02', 'e03'];
 const e00ArrayFull = [...e00Array, 'e00'];
 e00ArrayFull.forEach(item => {
-    (document.getElementById(item) as HTMLInputElement).addEventListener('change', () => {
+    util.listen(item, 'change', () => {
         if (util.inputsHaveValue(e00ArrayFull)) {
             const e00 = util.getInputDecimalValue('e00');
 
@@ -403,7 +578,7 @@ e00ArrayFull.forEach(item => {
 const e01Array = ['e10', 'e20'];
 const e01ArrayFull = [...e01Array, 'e01'];
 e01ArrayFull.forEach(item => {
-    (document.getElementById(item) as HTMLInputElement).addEventListener('change', () => {
+    util.listen(item, 'change', () => {
         if (util.inputsHaveValue(e01ArrayFull)) {
             const e01 = util.getInputDecimalValue('e01');
 
@@ -419,7 +594,7 @@ e01ArrayFull.forEach(item => {
 const e10Array = ['e10_1', 'e10_2', 'e10_3', 'e10_4', 'e10_5'];
 const e10ArrayFull = [...e10Array, 'e10'];
 e10ArrayFull.forEach(item => {
-    (document.getElementById(item) as HTMLInputElement).addEventListener('change', () => {
+    util.listen(item, 'change', () => {
         if (util.inputsHaveValue(e10ArrayFull)) {
             const e10 = util.getInputDecimalValue('e10');
             errorHandler.removeError(e10Array, '10 = 10.1 + ... + 10.5')
@@ -434,7 +609,7 @@ e10ArrayFull.forEach(item => {
 const e20Array = ['e20_1', 'e20_2', 'e20_3', 'e20_4', 'e20_5', 'e20_6', 'e20_7', 'e20_8', 'e20_9', 'e20_10', 'e20_11', 'e20_12', 'e20_13', 'e20_14', 'e20_15', 'e20_16', 'e20_17', 'e20_18', 'e20_19'];
 const e20ArrayFull = [...e20Array, 'e20'];
 e20ArrayFull.forEach(item => {
-    (document.getElementById(item) as HTMLInputElement).addEventListener('change', () => {
+    util.listen(item, 'change', () => {
         if (util.inputsHaveValue(e20ArrayFull)) {
             const e20 = util.getInputDecimalValue('e20');
 
@@ -450,7 +625,7 @@ e20ArrayFull.forEach(item => {
 const e02Array = ['e2_1', 'e2_2'];
 const e02ArrayFull = [...e02Array, 'e02'];
 e02ArrayFull.forEach(item => {
-    (document.getElementById(item) as HTMLInputElement).addEventListener('change', () => {
+    util.listen(item, 'change', () => {
         if (util.inputsHaveValue(e02ArrayFull)) {
             const e02 = util.getInputDecimalValue('e02');
 
@@ -466,7 +641,7 @@ e02ArrayFull.forEach(item => {
 const e21Array = ['e2_1_1','e2_1_2','e2_1_3','e2_1_4'];
 const e21ArrayFull = [...e21Array, 'e2_1'];
 e21ArrayFull.forEach(item => {
-    (document.getElementById(item) as HTMLInputElement).addEventListener('change', () => {
+    util.listen(item, 'change', () => {
         if (util.inputsHaveValue(e21ArrayFull)) {
             const e21 = util.getInputDecimalValue('e2_1');
 
@@ -476,6 +651,33 @@ e21ArrayFull.forEach(item => {
             }
         }
     })
+});
+
+
+
+start_dates.forEach((start) => {
+    const index = start_dates.indexOf(start);
+    const end = end_dates[index];
+
+    const check = function() {
+        if (util.inputsHaveValue([start, end])) {
+
+            const startdate = util.standardDate(util.htmlElement(start).value);
+            const enddate = util.standardDate(util.htmlElement(end).value);
+
+            const message = translations['Start_before_end'];
+            errorHandler.removeError([start, end], message);
+
+            if (startdate > enddate) {
+                errorHandler.addError([start, end], message);
+                instrument.questions[start].value = '-9';
+                instrument.questions[end].value = '-9';
+            }
+        }
+    }
+
+    util.listen(start, "myChange", check);
+    util.listen(end, "myChange", check);
 });
 
 

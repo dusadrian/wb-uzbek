@@ -516,7 +516,7 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 46,
-        active: function () { return instrument.questions.i4d.value == 'rural community' },
+        active: function () { return Number(instrument.questions.i4d.value) == 31 },
         error: ''
     },
     'la6a': {
