@@ -163,5 +163,19 @@
     "t_number_to_be_filled": "Number to be filled",
     "t_number_completed": "Number completed",
     "no_unknown": "Не может быть неизвестным",
-    "child_under_7": "Ребенок был младше 7 лет"
+    "child_under_7": "Ребенок был младше 7 лет",
+	"t_settlement_type_10": "Oбласть",
+	"t_settlement_type_20": "Район",
+	"t_settlement_type_21": "Города областного подчинения",
+	"t_settlement_type_22": "Районы города",
+	"t_settlement_type_23": "Города районного подч",
+	"t_settlement_type_24": "Городские поселки",
+	"t_settlement_type_31": "Сельские сходы граждан",
+	"t_settlement_type_region_10": "10",
+	"t_settlement_type_district_20": "20",
+	"t_settlement_type_dlc_21": "21",
+	"t_settlement_type_city_22": "22",
+	"t_settlement_type_town_23": "23",
+	"t_settlement_type_uts_24": "24",
+	"t_settlement_type_rural_31": "31"
 }

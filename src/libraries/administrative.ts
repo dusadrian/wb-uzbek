@@ -20971,7 +20971,7 @@ export const settlement_types: Code_Names = {
     "23": {
         "en": "Town",
         "uz": "Tuman ahamiyatiga ega shaharlar",
-        "ru": "Города районного подч."
+        "ru": "Города районного подч"
     },
     "21": {
         "en": "District-level city",

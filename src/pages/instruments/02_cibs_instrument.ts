@@ -240,7 +240,6 @@ export const instrument2 = {
 
             if (args.userData) {
                 if (args.userData.institution_code) {
-                    const institution_code = args.userData.institution_code;
                     if (inson_user) {
                         util.setValue('reg', "" + (regions[insons[institution_code].region] as KeyString)[lang]);
                         util.setValue('dis', "" + (districts[insons[institution_code].district] as KeyString)[lang]);
@@ -312,11 +311,10 @@ const saveChestionar = (obj: SaveInstrumentType): void => {
 
 // settlement type
 for (let i = 0; i < setElements.length; i++) {
-    if (setElements[i] != "") {
+    if (setElements[i] != "" && typeElements[i] != "") {
         util.listen(setElements[i], "change", () => {
             const value = util.htmlElement(setElements[i]).value;
-            const set_type = settlement_types[settlements[value].type];
-            util.setValue(typeElements[i], (set_type as KeyString)[lang].toString());
+            util.setValue(typeElements[i], settlements[value].type);
         })
     }
 }

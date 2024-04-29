@@ -43,6 +43,7 @@ const regElements =  ["lk14b", "cm3b", "cm10c", "cm11c", "ct3b", "ct10c", "ct11c
 const disElements =  ["lk14c", "cm3c", "cm10d", "cm11d", "ct3c", "ct10d", "ct11d", "cg10d", "cg11d", "sa3b", "sa5d"]; //, "sh5d"];
 const setElements =  ["lk14d", "cm3d", "cm10e", "cm11e", "ct3d", "ct10e", "ct11e", "cg10e", "cg11e", "sa3c", ""    ]; //, ""    ];
 const typeElements = ["lk14e", "cm3e", "cm10f", "cm11f", "ct3e", "ct10f", "ct11f", "cg10f", "cg11f", "sa3d", ""    ]; //, ""    ];
+
 let regionCode = '';
 
 export const instrument1 = {
@@ -93,7 +94,7 @@ export const instrument1 = {
 
 
         ipcRenderer.on("instrumentDataReady", (_event, args) => {
-            console.log(args);
+            // console.log(args);
 
             services = args.services;
             insons = args.insons;
@@ -273,9 +274,7 @@ export const instrument1 = {
             // set default values for user, IRRESPECTIVE of the instrument
             if (args.userData) {
                 if (args.userData.institution_code) {
-
                     const institution_code = args.userData.institution_code;
-
                     if (inson_user) {
                         util.setValue('reg', "" + (regions[insons[institution_code].region] as KeyString)[lang]);
                         util.setValue('dis', "" + (districts[insons[institution_code].district] as KeyString)[lang]);
@@ -284,7 +283,6 @@ export const instrument1 = {
                         util.setValue('reg', "" + (regions[services[institution_code].region] as KeyString)[lang]);
                         util.setValue('dis', "" + (districts[services[institution_code].district] as KeyString)[lang]);
                     }
-
                 }
 
                 util.setValue('omr1', args.userData.name);
@@ -354,8 +352,7 @@ for (let i = 0; i < setElements.length; i++) {
     if (setElements[i] != "" && typeElements[i] != "") {
         util.listen(setElements[i], "change", () => {
             const value = util.htmlElement(setElements[i]).value;
-            const set_type = settlement_types[settlements[value].type];
-            util.setValue(typeElements[i], "" + (set_type as KeyString)[lang]);
+            util.setValue(typeElements[i], settlements[value].type);
         })
     }
 }

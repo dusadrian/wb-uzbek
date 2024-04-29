@@ -3,6 +3,7 @@ import { questions, questionOrder } from "./05a_tqyp_variables";
 import instrument from "../../libraries/instrument";
 import { QuestionObjectType, SaveInstrumentType } from "../../libraries/interfaces";
 import { util } from "../../libraries/validation_helpers";
+// import * as DI from "../../interfaces/database";
 
 import * as _flatpickr from 'flatpickr';
 import { FlatpickrFn } from 'flatpickr/dist/types/instance';
@@ -20,7 +21,13 @@ const locales: { [key: string]: typeof en | typeof uz | typeof ru} = {
     'ru': ru
 }
 
+
 const lang = localStorage.getItem("language");
+// const translations = locales[lang as keyof typeof locales] as Record<string, string>;
+// let services: {[key: string]: DI.Institution};
+// let insons: {[key: string]: DI.INSON};
+
+
 const general_dates = [
     'data', 'ptr4', 'ptr6'
 ];
@@ -222,11 +229,12 @@ const saveChestionar = (obj: SaveInstrumentType): void => {
 
 // settlement type
 for (let i = 0; i < setElements.length; i++) {
-    util.listen(setElements[i], "change", () => {
-        const value = util.htmlElement(setElements[i]).value;
-        const set_type = settlement_types[settlements[value].type];
-        util.setValue(typeElements[i], "" + (set_type as KeyString)[lang]);
-    })
+    if (setElements[i] != "" && typeElements[i] != "") {
+        util.listen(setElements[i], "change", () => {
+            const value = util.htmlElement(setElements[i]).value;
+            util.setValue(typeElements[i], settlements[value].type);
+        })
+    }
 }
 
 util.listen("ptr4", "myChange", () => {
