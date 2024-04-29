@@ -998,7 +998,7 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 82,
-        active: function() {return(c3tb > 0)},
+        active: function() {return(Number(instrument.questions.ct3b.value) > 0)},
         error: '',
         skip: false
     },
@@ -1010,7 +1010,7 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 83,
-        active: function() {return(c3tc > 0)},
+        active: function() {return(Number(instrument.questions.ct3c.value) > 0)},
         error: '',
         skip: false
     },
