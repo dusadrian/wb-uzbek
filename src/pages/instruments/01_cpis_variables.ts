@@ -259,7 +259,7 @@ export const questions: QuestionObjectType = {
     },
     'lk14e': {
         name: 'lk14e',
-        type: 'radio',
+        type: 'input',
         value: '-7',
         disabled: true,
         hidden: false,
@@ -459,7 +459,7 @@ export const questions: QuestionObjectType = {
     },
     'cm3e': {
         name: 'cm3e',
-        type: 'radio',
+        type: 'input',
         value: '-7',
         disabled: true,
         hidden: false,
@@ -691,7 +691,7 @@ export const questions: QuestionObjectType = {
     },
     'cm10f': {
         name: 'cm10f',
-        type: 'radio',
+        type: 'input',
         value: '-7',
         disabled: true,
         hidden: false,
@@ -746,7 +746,7 @@ export const questions: QuestionObjectType = {
     },
     'cm11f': {
         name: 'cm11f',
-        type: 'radio',
+        type: 'input',
         value: '-7',
         disabled: true,
         hidden: false,
@@ -934,7 +934,7 @@ export const questions: QuestionObjectType = {
     },
     'ct3e': {
         name: 'ct3e',
-        type: 'radio',
+        type: 'input',
         value: '-7',
         disabled: true,
         hidden: false,
@@ -1165,7 +1165,7 @@ export const questions: QuestionObjectType = {
     },
     'ct10f': {
         name: 'ct10f',
-        type: 'radio',
+        type: 'input',
         value: '-7',
         disabled: true,
         hidden: false,
@@ -1220,7 +1220,7 @@ export const questions: QuestionObjectType = {
     },
     'ct11f': {
         name: 'ct11f',
-        type: 'radio',
+        type: 'input',
         value: '-7',
         disabled: true,
         hidden: false,
@@ -1595,7 +1595,7 @@ export const questions: QuestionObjectType = {
     },
     'cg10f': {
         name: 'cg10f',
-        type: 'radio',
+        type: 'input',
         value: '-7',
         disabled: true,
         hidden: false,
@@ -1650,7 +1650,7 @@ export const questions: QuestionObjectType = {
     },
     'cg11f': {
         name: 'cg11f',
-        type: 'radio',
+        type: 'input',
         value: '-7',
         disabled: true,
         hidden: false,
@@ -1760,7 +1760,7 @@ export const questions: QuestionObjectType = {
     },
     'sa3d': {
         name: 'sa3d',
-        type: 'radio',
+        type: 'input',
         value: '-9',
         disabled: false,
         hidden: false,
