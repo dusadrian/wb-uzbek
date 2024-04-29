@@ -1033,7 +1033,7 @@ ipcMain.on('importData', (event, args) => {
             dateDinFisier = JSON.parse(data);
 
             console.log(dateDinFisier);
-            
+
 
             // 		if(dateDinFisier[args.importFor] === void 0){
             // 			dialog.showMessageBox(mainWindow, {
@@ -1115,7 +1115,7 @@ const getLisOfInstrumentsToExport = (roleCode: string, serviceType: string) => {
         return ['eef'];
     }
 
-    if (roleCode == '10') {
+    if (roleCode == '10' || roleCode == '100') {
         return ['cpis', 'cibs', 'csr', 'qmr', 'tqyp', 'dsee', 'yplcs', 'ftch', 'pfq', 'eef'];
     }
 }
@@ -1131,7 +1131,7 @@ ipcMain.on('exportData', function exportData(event, args) {
 
     if (folderPath !== void 0) {
 
-        mainWindow.webContents.send("startLoader");
+        // mainWindow.webContents.send("startLoader");
         const cale = folderPath[0] + '/export-data';
         console.log(cale);
         const instruments = getLisOfInstrumentsToExport(args.userRoleCode, args.userServiceTypeCode);
@@ -1148,36 +1148,15 @@ ipcMain.on('exportData', function exportData(event, args) {
 
                 crypt.encryptFile(cale);
 
-                // TODO -- after the file is written
-                // remove the json file
-                fs.unlinkSync(cale);
+                dialog.showMessageBox(mainWindow, {
+                    type: 'info',
+                    title: i18n.__('main.success'),
+                    message: i18n.__('main._dataDownloaded')
+                });
             });
-
-            // let problems = false;
-            // let message = 'Urmatoarele registre nu au putut fi salvate: ';
-            // for (const key in result) {
-            //     if (!result[key]) {
-            //         message += key.toUpperCase() + ' ';
-            //         problems = true;
-            //     }
-            // }
-            // mainWindow.webContents.send("clearLoader");
-            // if (problems) {
-            //     dialog.showMessageBox(mainWindow, {
-            //         type: 'error',
-            //         title: i18n.__('main._error'),
-            //         message: message
-            //     });
-            // } else {
-            //     dialog.showMessageBox(mainWindow, {
-            //         type: 'info',
-            //         title: i18n.__('main.success'),
-            //         message: i18n.__('main._dataDownloaded')
-            //     });
-            // }
         });
     } else {
-        mainWindow.webContents.send("clearLoader");
+        // mainWindow.webContents.send("clearLoader");
         dialog.showMessageBox(mainWindow, {
             type: 'error',
             title: i18n.__('main._error'),
@@ -1196,32 +1175,6 @@ async function downloadUserInstruments(table: string) {
         });
     });
 }
-// async function exportData(table, cale) {
-//     return new Promise(resolve => {
-//         database.getDataForDownload(table, sessionObj.judet_id, sessionObj.runda).then((result) => {
-//             if (result.length == 0) {
-//                 resolve(false);
-// 				return; // needs return otherwise it will try to write the file
-//             }
-//             // console.log(result);
-//             let processedData = prepareDataForDownload(result, table, true);
-
-// 			if(table === 'kids'){ table = 'copii'}
-// 			cale = cale + "/Registrul" + table.toUpperCase() + "-Consolidare-Nationala" + (sessionObj.judet_acronim ? "-" + sessionObj.judet_acronim : "") + ".enc";
-
-//             fs.writeFile(cale, JSON.stringify(processedData), (err) => {
-//                 if (err) throw err;
-
-//                 // clear data after use
-//                 processedData = null;
-
-//                 crypt.encryptFile(cale);
-// 				resolve(true);
-//             });
-//         });
-//     });
-// }
-
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 async function asyncForArray(arr: string[], callback: (...params: any[]) => void, ...params: any[]) {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any

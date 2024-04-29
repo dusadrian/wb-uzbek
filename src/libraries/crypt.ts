@@ -46,7 +46,11 @@ export const crypt = {
             .pipe(zip)
             .pipe(cipher)
             .pipe(appendInitVect)
-            .pipe(output);
+            .pipe(output)
+            .on('finish', () => {
+                // remove the json file
+                fs.unlinkSync(cale);
+            })
     },
 
     // cale fisier criptat .dat
