@@ -24,7 +24,7 @@ export const save = async (data: InstrumentData, db: DuckDB.Database) => {
             // update data
             let sql = "";
             const extras = data.extras;
-            const sqlStart = "UPDATE instrument_" + data.table + " SET updated_at = now(), status = '" + data.status +"'";
+            const sqlStart = "UPDATE instrument_" + data.table + " SET updated_at = now(), status = '" + data.status + "'";
             let sqlValues = '';
             const sqlEnd = ' WHERE id = ?';
 
@@ -63,8 +63,8 @@ export const save = async (data: InstrumentData, db: DuckDB.Database) => {
 
             let sql = "";
             const extras = data.extras;
-            let sqlStart = "INSERT INTO instrument_" + data.table + " (created_at, updated_at";
-            let sqlValues = ') VALUES (now(), now()';
+            let sqlStart = "INSERT INTO instrument_" + data.table + " (status, created_at, updated_at";
+            let sqlValues = ") VALUES ('" + data.status + "', now(), now()";
             const sqlEnd = ') RETURNING *';
 
             const params = [];

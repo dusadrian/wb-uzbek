@@ -1160,7 +1160,6 @@ ipcMain.on('importData', (event, args) => {
                     for (const itemUUID in dateDinFisier[instrument].data) {
                         const item = dateDinFisier[instrument].data[itemUUID];
                         const instrumentID = await database.getInstrumentIdFromUUId(instrument, itemUUID);
-                        console.log(instrumentID);
 
                         const dataToImport = {
                             'instrument_id': instrumentID.length > 0 ? Number(instrumentID[0]?.id) : null,
@@ -1174,7 +1173,6 @@ ipcMain.on('importData', (event, args) => {
                             }
                         };
                         await database.instrumentSave(dataToImport, db);
-
                     }
                 }
             }
@@ -1246,14 +1244,11 @@ ipcMain.on('exportData', function exportData(event, args) {
 
         // mainWindow.webContents.send("startLoader");
         // TODO -- add user code
-        const cale = folderPath[0] + '/export-data';
-        console.log(cale);
+        const currenDate = new Date();
+        const cale = folderPath[0] + '/' + appSession.userData.username + '_' + currenDate.getFullYear() + '-' + (currenDate.getMonth() + 1) + '-' + currenDate.getDate();
         const instruments = getLisOfInstrumentsToExport(args.userRoleCode, args.userServiceTypeCode);
-        console.log(instruments);
 
         asyncForArray(instruments, downloadUserInstruments).then(processedData => {
-            // console.log(processedData);
-
             fs.writeFile(cale, JSON.stringify(processedData), (err) => {
                 if (err) throw err;
 
@@ -1293,8 +1288,8 @@ async function downloadUserInstruments(table: string) {
 async function asyncForArray(arr: string[], callback: (...params: any[]) => void, ...params: any[]) {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const data: { [key: string]: any } = {};
-    for (let i = 0; i < arr.length; i++) {
-        data[arr[i]] = await callback(arr[i], ...params);
+    for (const element of arr) {
+        data[element] = await callback(element, ...params);
     }
     return data;
 }
@@ -1306,27 +1301,24 @@ function prepareDataForDownload(data: DI.DataExportInterface[]) {
     response.regionCode = appSession.userData.region_code;
     response.institutionCode = appSession.userData.institution_code;
 
-    // console.log(data);
+    for (const element of data) {
 
-    for (let i = 0; i < data.length; i++) {
-
-        if (response['data'][data[i].uuid] !== void 0) {
+        if (response['data'][element.uuid] !== void 0) {
             //https://stackoverflow.com/questions/19837916/creating-object-with-dynamic-keys
-            response['data'][data[i].uuid].questions[data[i].variable] = { 'value': data[i].value };
+            response['data'][element.uuid].questions[element.variable] = { 'value': element.value };
 
         } else {
 
-            response['data'][data[i].uuid] = {
-                'uuid': data[i].uuid,
-                'region_code': data[i].region_code,
-                'institution_type': data[i].institution_type,
-                'created_at': data[i].created_at,
-                'updated_at': data[i].updated_at,
+            response['data'][element.uuid] = {
+                'uuid': element.uuid,
+                'region_code': element.region_code,
+                'institution_type': element.institution_type,
+                'created_at': element.created_at,
+                'updated_at': element.updated_at,
             };
 
-            response['data'][data[i].uuid].questions = {};
-            // console.log(data[i].variabila);
-            response['data'][data[i].uuid].questions[data[i].variable] = { 'value': data[i].value };
+            response['data'][element.uuid].questions = {};
+            response['data'][element.uuid].questions[element.variable] = { 'value': element.value };
         }
     }
 

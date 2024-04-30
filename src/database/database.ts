@@ -293,7 +293,8 @@ export const database = {
 
     async getDataForDownload(table: string) {
         const connection = new Promise<DI.DataExportInterface[]>((resolve) => {
-            db.all(`SELECT * FROM instrument_${table} LEFT JOIN values_${table} ON values_${table}.instrument_id = instrument_${table}.id WHERE status = 'partial'`, (error, result) => {
+            // only completed instruments
+            db.all(`SELECT * FROM instrument_${table} LEFT JOIN values_${table} ON values_${table}.instrument_id = instrument_${table}.id WHERE status = 'completed'`, (error, result) => {
                 if (error) {
                     console.log("===== Error getDataForDownload =====");
                     console.log(error);
