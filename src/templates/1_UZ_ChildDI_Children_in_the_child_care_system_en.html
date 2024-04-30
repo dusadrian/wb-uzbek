@@ -31,14 +31,18 @@
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
             <div>REG. Region</div>
             <div>
-                <input type="text" id="reg" name="reg" disabled class="disabled:bg-gray-100 bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+                <select id="reg" name="reg" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+                    <option value="-9" class="t_choose">--- choose ---</option>
+                </select>
             </div>
         </div>
 
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
             <div>DIS. District</div>
             <div>
-                <input type="text" id="dis" name="dis" disabled class="disabled:bg-gray-100 bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+                <select id="dis" name="dis" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+                    <option value="-9" class="t_choose">--- choose ---</option>
+                </select>
             </div>
         </div>
 
@@ -213,7 +217,7 @@
 
             </div>
         </div>
-        
+
         <input type="hidden" id="lk14e" name="lk14e" />
 
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
@@ -249,13 +253,25 @@
                     <input id="lk15-3" type="radio" value="3" name="lk15" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                     <label for="lk15-3" class="ms-2 text-sm text-gray-900">3. The director of the institution</label>
                 </div>
-                <div class="flex items-center">
-                    <input id="lk15-4" type="radio" value="4" name="lk15" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="lk15-4" class="ms-2 text-sm text-gray-900">4. Other, please specify</label>
-                </div>
-                <div class="flex items-center">
-                    <input type="text" id="lk15_other" name="lk15_other" class="bg-white disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
-                </div>
+                    <div class="flex items-center">
+                        <input id="lk15-4" type="radio" value="4" name="lk15"
+                            class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <label for="lk15-4" class="ms-2 text-sm text-gray-900">4. Other staff of the institution</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="lk15-5" type="radio" value="5" name="lk15"
+                            class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <label for="lk15-5" class="ms-2 text-sm text-gray-900">5. Another state employee</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="lk15-6" type="radio" value="6" name="lk15"
+                            class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <label for="lk15-6" class="ms-2 text-sm text-gray-900">6. Other, please specify</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input type="text" id="lk15_other" name="lk15_other"
+                            class="bg-white disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+                    </div>
             </div>
         </div>
 
@@ -338,7 +354,7 @@
             <div class="col-span-1 flex flex-col gap-2">
                 <div class="flex items-center">
                     <input id="cm1dw-1" type="radio" value="1" name="cm1dw" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="cm1dw-1" class="ms-2 text-sm text-gray-900">1. The parent has abused or neglected the child..</label>
+                    <label for="cm1dw-1" class="ms-2 text-sm text-gray-900">1. The parent has abused or neglected the child.</label>
                 </div>
                 <div class="flex items-center">
                     <input id="cm1dw-2" type="radio" value="2" name="cm1dw" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
@@ -354,7 +370,7 @@
                 </div>
                 <div class="flex items-center">
                     <input id="cm1dw-5" type="radio" value="5" name="cm1dw" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="cm1dw-5" class="ms-2 text-sm text-gray-900">5. The parent has failed to establish or maintain a relationship with the child, or to comply with the court orders or plans regarding the child&#39;s custody, visitation, or reunification..</label>
+                    <label for="cm1dw-5" class="ms-2 text-sm text-gray-900">5. The parent has failed to establish or maintain a relationship with the child, or to comply with the court orders or plans regarding the child&#39;s custody, visitation, or reunification.</label>
                 </div>
                 <div class="flex items-center">
                     <input id="cm1dw-6" type="radio" value="6" name="cm1dw" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
@@ -430,7 +446,7 @@
 
             </div>
         </div>
-        
+
         <input type="hidden" id="cm3e" name="cm3e" />
 
 
@@ -942,6 +958,10 @@
                             <input id="cm10a-2" type="radio" value="2" name="cm10a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                             <label for="cm10a-2" class="ms-2 text-sm text-gray-900">2. Abroad</label>
                         </div>
+                        <div class="flex items-center">
+                            <input id="cm10a-9" type="radio" value="9" name="cm10a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                            <label for="cm10a-9" class="ms-2 text-sm text-gray-900">9. Not known</label>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -983,7 +1003,7 @@
 
         <div class="grid grid-cols-2 gap-4 items-center mt-10">
             <div>
-                CM11 Mother&#39;s current domicile            </div>
+                CM11 Mother&#39;s current domicile.            </div>
             <div>
 
                 <div class="mb-2">a. Is she living…?</div>
@@ -995,6 +1015,10 @@
                     <div class="flex items-center">
                         <input id="cm11a-2" type="radio" value="2" name="cm11a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="cm11a-2" class="ms-2 text-sm text-gray-900">2. Abroad</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="cm11a-9" type="radio" value="9" name="cm11a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <label for="cm11a-9" class="ms-2 text-sm text-gray-900">9. Not known</label>
                     </div>
                 </div>
             </div>
@@ -1227,7 +1251,7 @@
 
             </div>
         </div>
-        
+
         <input type="hidden" id="ct3e" name="ct3e"/>
 
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
@@ -1279,7 +1303,7 @@
                 </div>
                 <div class="flex items-center">
                     <input id="ct5a-7" type="radio" value="7" name="ct5a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="ct5a-7" class="ms-2 text-sm text-gray-900">7. Separated**</label>
+                    <label for="ct5a-7" class="ms-2 text-sm text-gray-900">7. Separated*</label>
                 </div>
                 <div class="flex items-center">
                     <input id="ct5a-8" type="radio" value="8" name="ct5a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
@@ -1323,7 +1347,7 @@
                 </div>
                 <div class="flex items-center">
                     <input id="ct5b-7" type="radio" value="7" name="ct5b" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="ct5b-7" class="ms-2 text-sm text-gray-900">7. Separated**</label>
+                    <label for="ct5b-7" class="ms-2 text-sm text-gray-900">7. Separated*</label>
                 </div>
                 <div class="flex items-center">
                     <input id="ct5b-8" type="radio" value="8" name="ct5b" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
@@ -1345,7 +1369,7 @@
                 </div>
                 <div class="flex items-center">
                     <input id="ct6a-2" type="radio" value="1" name="ct6a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="ct6a-2" class="ms-2 text-sm text-gray-900">1. The father is diagnosed with a current disease (e.g., tuberculosis))</label>
+                    <label for="ct6a-2" class="ms-2 text-sm text-gray-900">1. The father is diagnosed with a current disease (e.g., tuberculosis)</label>
                 </div>
                 <div class="flex items-center">
                     <input id="ct6a-3" type="radio" value="2" name="ct6a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
@@ -1357,8 +1381,7 @@
                 </div>
                 <div class="flex items-center">
                     <input id="ct6a-5" type="radio" value="4" name="ct6a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="ct6a-5" class="ms-2 text-sm text-gray-900">4. The father is suffering from both a mental and a physical impairment or disabilityimpairment or
-                        disability</label>
+                    <label for="ct6a-5" class="ms-2 text-sm text-gray-900">4. The father is suffering from both a mental and a physical impairment or disability</label>
                 </div>
                 <div class="flex items-center">
                     <input id="ct6a-6" type="radio" value="9" name="ct6a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
@@ -1376,7 +1399,7 @@
                 </div>
                 <div class="flex items-center">
                     <input id="ct6b-2" type="radio" value="1" name="ct6b" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="ct6b-2" class="ms-2 text-sm text-gray-900">1. The father is diagnosed with a current disease (e.g., tuberculosis))</label>
+                    <label for="ct6b-2" class="ms-2 text-sm text-gray-900">1. The father is diagnosed with a current disease (e.g., tuberculosis)</label>
                 </div>
                 <div class="flex items-center">
                     <input id="ct6b-3" type="radio" value="2" name="ct6b" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
@@ -1737,6 +1760,10 @@
                         <input id="ct10a-2" type="radio" value="2" name="ct10a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="ct10a-2" class="ms-2 text-sm text-gray-900">2. Abroad</label>
                     </div>
+                    <div class="flex items-center">
+                        <input id="ct10a-9" type="radio" value="9" name="ct10a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <label for="ct10a-9" class="ms-2 text-sm text-gray-900">9. Not known</label>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1789,6 +1816,10 @@
                     <div class="flex items-center">
                         <input id="ct11a-2" type="radio" value="2" name="ct11a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="ct11a-2" class="ms-2 text-sm text-gray-900">2. Abroad</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="ct11a-9" type="radio" value="9" name="ct11a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <label for="ct11a-9" class="ms-2 text-sm text-gray-900">9. Not known</label>
                     </div>
                 </div>
             </div>
@@ -1885,10 +1916,37 @@
 
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
             <div>CG1d. Kinship relation: </div>
-            <div>
-                <input type="text" id="cg1d" name="cg1d" class="bg-white disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+             <div class="flex flex-col gap-2">
+                <div class="flex items-center">
+                    <input id="cg1d-1" type="radio" value="1" name="cg1d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="cg1d-1" class="ms-2 text-sm text-gray-900">1. Brother / Sister (2nd degree)</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="cg1d-2" type="radio" value="2" name="cg1d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="cg1d-2" class="ms-2 text-sm text-gray-900">2. Grandfather / Grandmother (2nd degree)</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="cg1d-3" type="radio" value="3" name="cg1d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="cg1d-3" class="ms-2 text-sm text-gray-900">3. Uncle / Aunt (3rd degree)</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="cg1d-4" type="radio" value="4" name="cg1d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="cg1d-4" class="ms-2 text-sm text-gray-900">4. Grand-Grandparent (3rd degree)</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="cg1d-5" type="radio" value="5" name="cg1d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="cg1d-5" class="ms-2 text-sm text-gray-900">5. Cousin (4th degree)</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="cg1d-6" type="radio" value="6" name="cg1d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="cg1d-6" class="ms-2 text-sm text-gray-900">6. Other 4th degree relative or more distant relative</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="cg1d-7" type="radio" value="7" name="cg1d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="cg1d-7" class="ms-2 text-sm text-gray-900">7. Step-relatives (family relationship established through (re)marriage)</label>
+                </div>
             </div>
-        </div>
+                    </div>
 
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
             <div>CG2a. Caregiver&#39;s name:</div>
@@ -1966,7 +2024,7 @@
 
         <div class="grid grid-cols-2 gap-4 items-center mt-10">
             <div>
-                CG5a. Caregiver&#39;s marital status at the time of the child&#39;s entry into the child care system                <small class="italic block text-red-500">* &quot;Separated&quot; means he is still legally married but does not live together with his spouse.</small>
+                CG5a. Caregiver&#39;s marital status at the time of the child&#39;s entry into the child care system                <small class="italic block text-red-500">* &quot;Separated&quot; means the person is still officially legally married but does not live together with his/her spouse.</small>
             </div>
             <div class="col-span-1 flex flex-col gap-2">
                 <div class="flex items-center">
@@ -2005,16 +2063,12 @@
                     <input id="cg5a-0" type="radio" value="0" name="cg5a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                     <label for="cg5a-0" class="ms-2 text-sm text-gray-900">0. Not declared/unknown</label>
                 </div>
-                <div class="flex items-center">
-                    <input id="cg5a-90" type="radio" value="90" name="cg5a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="cg5a-90" class="ms-2 text-sm text-gray-900">90. Deceased</label>
-                </div>
             </div>
         </div>
 
         <div class="grid grid-cols-2 gap-4 items-center mt-10">
             <div>
-                CG5b. Caregiver&#39;s current marital status                <small class="italic block text-red-500">* &quot;Separated&quot; means she is still legally married but does not live together with her spouse.</small>
+                CG5b. Caregiver&#39;s current marital status                <small class="italic block text-red-500">* &quot;Separated&quot; means the person is still officially legally married but does not live together with his/her spouse.</small>
             </div>
             <div class="col-span-1 flex flex-col gap-2">
                 <div class="flex items-center">
@@ -2184,7 +2238,7 @@
         </div>
         <div class="grid grid-cols-2 gap-4 items-center mt-10">
             <div>
-                CG7b. Please use one of the codes below            </div>
+                CG7b. Caregiver&#39;s current education            </div>
             <div class="col-span-1 flex flex-col gap-2">
                 <div class="flex items-center">
                     <input id="cg7b-1" type="radio" value="0" name="cg7b" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
@@ -2498,7 +2552,7 @@
 
             </div>
         </div>
-        
+
         <input type="hidden" id="cg10f" name="cg10f" />
 
         <div class="grid grid-cols-2 gap-4 items-center mt-10">
@@ -2587,7 +2641,7 @@
 
         <div class="grid grid-cols-2 gap-4 items-center mt-10">
             <div>
-                (Automatically computed from SA1-LK3). SA2            </div>
+                SA2. Where did the child come from?            </div>
             <div class="col-span-1 flex flex-col gap-2">
                 <div class="flex items-center">
                     <input id="sa2-1" type="radio" value="1" name="sa2" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
@@ -2653,7 +2707,8 @@
 
         <div class="grid grid-cols-2 gap-4 items-center mt-10">
             <div>
-                SA4. What were the causes for the separation of the child from his/her family?            </div>
+                SA4. What were the causes for the separation of the child from his/her family?                <small class="mt-2 block italic text-red-500">MULTIPLE ANSWERS POSSIBLE</small>
+            </div>
             <div class="col-span-1 flex flex-col gap-2">
                 <div class="flex items-center">
                     <input id="sa4_1" type="checkbox" value="1" name="sa4_1" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
@@ -2695,7 +2750,7 @@
             </div>
         </div>
 
-        <p>In what type of service was the child placed?</p>
+        <p class="mt-6">SA5. In what type of service was the child placed?</p>
 
         <div class="grid grid-cols-2 items-center gap-4 mt-6">
             <div>SA5r. Region</div>
@@ -2724,14 +2779,6 @@
                         class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
                     <option value="-9" class="t_choose">--- choose ---</option>
                 </select>
-            </div>
-        </div>
-
-        <div class="grid grid-cols-2 gap-4 items-center mt-6">
-            <div>SA5c. Unique institution code</div>
-            <div>
-                <input type="text" id="sa5c" name="sa5c"
-                        class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
             </div>
         </div>
 
@@ -3230,11 +3277,11 @@
             <div class="col-span-1 flex flex-col gap-2">
                 <div class="flex items-center">
                     <input id="qeduc1a-1" type="radio" value="1" name="qeduc1a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="qeduc1a-1" class="ms-2 text-sm text-gray-900">1. Common type kindergarten,</label>
+                    <label for="qeduc1a-1" class="ms-2 text-sm text-gray-900">1. Common type kindergarten</label>
                 </div>
                 <div class="flex items-center">
                     <input id="qeduc1a-2" type="radio" value="2" name="qeduc1a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="qeduc1a-2" class="ms-2 text-sm text-gray-900">2. State multy-disciplinary specialized preschool educational organizations (SMSPEO))</label>
+                    <label for="qeduc1a-2" class="ms-2 text-sm text-gray-900">2. State multidisciplinary specialized preschool educational organizations (SMSPEO)</label>
                 </div>
                 <div class="flex items-center">
                     <input id="qeduc1a-3" type="radio" value="3" name="qeduc1a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
@@ -3308,7 +3355,6 @@
             <div>
                 2b. What grade was the child in?                <small class="mb-1 block italic text-red-500">Fill in 0 (zero) for preparatory class</small>
             </div>
-            <div>2b. What grade was the child in?</div>
             <div>
                 <input type="text" id="qeduc2b" name="qeduc2b" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
             </div>
@@ -3377,15 +3423,15 @@
             <div class="col-span-1 flex flex-col gap-2">
                 <div class="flex items-center">
                     <input id="qeduc2f-1" type="radio" value="1" name="qeduc2f" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="qeduc2f-1" class="ms-2 text-sm text-gray-900">1. The child had a disability or health condition that hindered school attendance..</label>
+                    <label for="qeduc2f-1" class="ms-2 text-sm text-gray-900">1. The child had a disability or health condition that hindered school attendance.</label>
                 </div>
                 <div class="flex items-center">
                     <input id="qeduc2f-2" type="radio" value="2" name="qeduc2f" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="qeduc2f-2" class="ms-2 text-sm text-gray-900">2. The child was living in a remote or rural area with difficult access to schools..</label>
+                    <label for="qeduc2f-2" class="ms-2 text-sm text-gray-900">2. The child was living in a remote or rural area with difficult access to schools.</label>
                 </div>
                 <div class="flex items-center">
                     <input id="qeduc2f-3" type="radio" value="3" name="qeduc2f" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="qeduc2f-3" class="ms-2 text-sm text-gray-900">3. The child&#39;s family or caregivers could not afford the child&#39;s education..</label>
+                    <label for="qeduc2f-3" class="ms-2 text-sm text-gray-900">3. The child&#39;s family or caregivers could not afford the child&#39;s education.</label>
                 </div>
                 <div class="flex items-center">
                     <input id="qeduc2f-4" type="radio" value="4" name="qeduc2f" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
@@ -4093,7 +4139,7 @@
             </div>
         </div>
         <div class="grid grid-cols-2 gap-4 items-center mt-10">
-            <div class="ml-3">
+            <div>
                 SH2. Has the child ever left the child care system and returned after their first admission until present?            </div>
             <div class="col-span-1 flex flex-col gap-2">
                 <div class="flex items-center">
@@ -4108,7 +4154,7 @@
         </div>
 
         <p class="mt-10">SH3. Please list all the care services in which the child was admitted, since their admission in the child care system until present. </p>
-        <small class="block italic text-red-500 mt-4">Please fill in chronological order. The number of rows filled in should be equal to the number of services specified in SH1. If the child was only admitted into the current service, please fill in only the last row of the table.</small>
+        <small class="block italic text-red-500 mt-4">Please fill out in chronological order. The number of rows filled in should be equal to the number of services specified in SH1, to which the current service is added. If the child was only admitted into the current service (SH1 is 0), fill in only about that service.</small>
 
         <table class="mt-4 w-full" aria-label="list all the care services">
             <thead>
@@ -4130,12 +4176,12 @@
                     </td>
                     <td class="p-1">
                         <select id="sh3_s1b" name="sh3_s1b" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                            <option value="">-----</option>
-                            <option value="1">1. Children&#39;s home (Baby home)</option>
-                            <option value="2">2. Mehribonlik house</option>
-                            <option value="3">3. Muruvat house for children with disabilities</option>
+                            <option value="-9" class="t_choose">--- choose ---</option>
+                            <option value="1">1. Mehribonlik house</option>
+                            <option value="2">2. Muruvat house for children with disabilities</option>
+                            <option value="3">3. Family children&#39;s home</option>
                             <option value="4">4. SOS children&#39;s villages/families</option>
-                            <option value="5">5. Family children&#39;s home</option>
+                            <option value="5">5. Children&#39;s home (Baby home)</option>
                             <option value="6">6. Patronat family</option>
                             <option value="7">7. Trusteeship/Guardianship care</option>
                             <option value="8">8. Other service</option>
@@ -4143,7 +4189,7 @@
                     </td>
                     <td class="p-1">
                         <select id="sh3_s1c" name="sh3_s1c" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                            <option value="">-----</option>
+                            <option value="-9" class="t_choose">--- choose ---</option>
                             <option value="0">0. No IPP</option>
                             <option value="1">1. New IPP</option>
                             <option value="2">2. The previous IPP, unchanged</option>
@@ -4155,7 +4201,7 @@
                     </td>
                     <td class="p-1">
                         <select id="sh3_s1e" name="sh3_s1e" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                            <option value="">-----</option>
+                            <option value="-9" class="t_choose">--- choose ---</option>
                             <option value="1">1. Transfer to another service within the child care system</option>
                             <option value="2">2. Reintegration within the family</option>
                             <option value="3">3. Adoption</option>
@@ -4173,12 +4219,12 @@
                     </td>
                     <td class="p-1">
                         <select id="sh3_s2b" name="sh3_s2b" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                            <option value="">-----</option>
-                            <option value="1">1. Children&#39;s home (Baby home)</option>
-                            <option value="2">2. Mehribonlik house</option>
-                            <option value="3">3. Muruvat house for children with disabilities</option>
+                            <option value="-9" class="t_choose">--- choose ---</option>
+                            <option value="1">1. Mehribonlik house</option>
+                            <option value="2">2. Muruvat house for children with disabilities</option>
+                            <option value="3">3. Family children&#39;s home</option>
                             <option value="4">4. SOS children&#39;s villages/families</option>
-                            <option value="5">5. Family children&#39;s home</option>
+                            <option value="5">5. Children&#39;s home (Baby home)</option>
                             <option value="6">6. Patronat family</option>
                             <option value="7">7. Trusteeship/Guardianship care</option>
                             <option value="8">8. Other service</option>
@@ -4186,7 +4232,7 @@
                     </td>
                     <td class="p-1">
                         <select id="sh3_s2c" name="sh3_s2c" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                            <option value="">-----</option>
+                            <option value="-9" class="t_choose">--- choose ---</option>
                             <option value="0">0. No IPP</option>
                             <option value="1">1. New IPP</option>
                             <option value="2">2. The previous IPP, unchanged</option>
@@ -4198,7 +4244,7 @@
                     </td>
                     <td class="p-1">
                         <select id="sh3_s2e" name="sh3_s2e" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                            <option value="">-----</option>
+                            <option value="-9" class="t_choose">--- choose ---</option>
                             <option value="1">1. Transfer to another service within the child care system</option>
                             <option value="2">2. Reintegration within the family</option>
                             <option value="3">3. Adoption</option>
@@ -4216,12 +4262,12 @@
                     </td>
                     <td class="p-1">
                         <select id="sh3_s3b" name="sh3_s3b" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                            <option value="">-----</option>
-                            <option value="1">1. Children&#39;s home (Baby home)</option>
-                            <option value="2">2. Mehribonlik house</option>
-                            <option value="3">3. Muruvat house for children with disabilities</option>
+                            <option value="-9" class="t_choose">--- choose ---</option>
+                            <option value="1">1. Mehribonlik house</option>
+                            <option value="2">2. Muruvat house for children with disabilities</option>
+                            <option value="3">3. Family children&#39;s home</option>
                             <option value="4">4. SOS children&#39;s villages/families</option>
-                            <option value="5">5. Family children&#39;s home</option>
+                            <option value="5">5. Children&#39;s home (Baby home)</option>
                             <option value="6">6. Patronat family</option>
                             <option value="7">7. Trusteeship/Guardianship care</option>
                             <option value="8">8. Other service</option>
@@ -4229,7 +4275,7 @@
                     </td>
                     <td class="p-1">
                         <select id="sh3_s3c" name="sh3_s3c" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                            <option value="">-----</option>
+                            <option value="-9" class="t_choose">--- choose ---</option>
                             <option value="0">0. No IPP</option>
                             <option value="1">1. New IPP</option>
                             <option value="2">2. The previous IPP, unchanged</option>
@@ -4241,7 +4287,7 @@
                     </td>
                     <td class="p-1">
                         <select id="sh3_s3e" name="sh3_s3e" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                            <option value="">-----</option>
+                            <option value="-9" class="t_choose">--- choose ---</option>
                             <option value="1">1. Transfer to another service within the child care system</option>
                             <option value="2">2. Reintegration within the family</option>
                             <option value="3">3. Adoption</option>
@@ -4259,12 +4305,12 @@
                     </td>
                     <td class="p-1">
                         <select id="sh3_s4b" name="sh3_s4b" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                            <option value="">-----</option>
-                            <option value="1">1. Children&#39;s home (Baby home)</option>
-                            <option value="2">2. Mehribonlik house</option>
-                            <option value="3">3. Muruvat house for children with disabilities</option>
+                            <option value="-9" class="t_choose">--- choose ---</option>
+                            <option value="1">1. Mehribonlik house</option>
+                            <option value="2">2. Muruvat house for children with disabilities</option>
+                            <option value="3">3. Family children&#39;s home</option>
                             <option value="4">4. SOS children&#39;s villages/families</option>
-                            <option value="5">5. Family children&#39;s home</option>
+                            <option value="5">5. Children&#39;s home (Baby home)</option>
                             <option value="6">6. Patronat family</option>
                             <option value="7">7. Trusteeship/Guardianship care</option>
                             <option value="8">8. Other service</option>
@@ -4272,7 +4318,7 @@
                     </td>
                     <td class="p-1">
                         <select id="sh3_s4c" name="sh3_s4c" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                            <option value="">-----</option>
+                            <option value="-9" class="t_choose">--- choose ---</option>
                             <option value="0">0. No IPP</option>
                             <option value="1">1. New IPP</option>
                             <option value="2">2. The previous IPP, unchanged</option>
@@ -4284,7 +4330,7 @@
                     </td>
                     <td class="p-1">
                         <select id="sh3_s4e" name="sh3_s4e" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                            <option value="">-----</option>
+                            <option value="-9" class="t_choose">--- choose ---</option>
                             <option value="1">1. Transfer to another service within the child care system</option>
                             <option value="2">2. Reintegration within the family</option>
                             <option value="3">3. Adoption</option>
@@ -4302,12 +4348,12 @@
                     </td>
                     <td class="p-1">
                         <select id="sh3_s5b" name="sh3_s5b" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                            <option value="">-----</option>
-                            <option value="1">1. Children&#39;s home (Baby home)</option>
-                            <option value="2">2. Mehribonlik house</option>
-                            <option value="3">3. Muruvat house for children with disabilities</option>
+                            <option value="-9" class="t_choose">--- choose ---</option>
+                            <option value="1">1. Mehribonlik house</option>
+                            <option value="2">2. Muruvat house for children with disabilities</option>
+                            <option value="3">3. Family children&#39;s home</option>
                             <option value="4">4. SOS children&#39;s villages/families</option>
-                            <option value="5">5. Family children&#39;s home</option>
+                            <option value="5">5. Children&#39;s home (Baby home)</option>
                             <option value="6">6. Patronat family</option>
                             <option value="7">7. Trusteeship/Guardianship care</option>
                             <option value="8">8. Other service</option>
@@ -4315,7 +4361,7 @@
                     </td>
                     <td class="p-1">
                         <select id="sh3_s5c" name="sh3_s5c" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                            <option value="">-----</option>
+                            <option value="-9" class="t_choose">--- choose ---</option>
                             <option value="0">0. No IPP</option>
                             <option value="1">1. New IPP</option>
                             <option value="2">2. The previous IPP, unchanged</option>
@@ -4327,7 +4373,7 @@
                     </td>
                     <td class="p-1">
                         <select id="sh3_s5e" name="sh3_s5e" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                            <option value="">-----</option>
+                            <option value="-9" class="t_choose">--- choose ---</option>
                             <option value="1">1. Transfer to another service within the child care system</option>
                             <option value="2">2. Reintegration within the family</option>
                             <option value="3">3. Adoption</option>
@@ -4345,12 +4391,12 @@
                     </td>
                     <td class="p-1">
                         <select id="sh3_s6b" name="sh3_s6b" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                            <option value="">-----</option>
-                            <option value="1">1. Children&#39;s home (Baby home)</option>
-                            <option value="2">2. Mehribonlik house</option>
-                            <option value="3">3. Muruvat house for children with disabilities</option>
+                            <option value="-9" class="t_choose">--- choose ---</option>
+                            <option value="1">1. Mehribonlik house</option>
+                            <option value="2">2. Muruvat house for children with disabilities</option>
+                            <option value="3">3. Family children&#39;s home</option>
                             <option value="4">4. SOS children&#39;s villages/families</option>
-                            <option value="5">5. Family children&#39;s home</option>
+                            <option value="5">5. Children&#39;s home (Baby home)</option>
                             <option value="6">6. Patronat family</option>
                             <option value="7">7. Trusteeship/Guardianship care</option>
                             <option value="8">8. Other service</option>
@@ -4358,7 +4404,7 @@
                     </td>
                     <td class="p-1">
                         <select id="sh3_s6c" name="sh3_s6c" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                            <option value="">-----</option>
+                            <option value="-9" class="t_choose">--- choose ---</option>
                             <option value="0">0. No IPP</option>
                             <option value="1">1. New IPP</option>
                             <option value="2">2. The previous IPP, unchanged</option>
@@ -4370,7 +4416,7 @@
                     </td>
                     <td class="p-1">
                         <select id="sh3_s6e" name="sh3_s6e" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                            <option value="">-----</option>
+                            <option value="-9" class="t_choose">--- choose ---</option>
                             <option value="1">1. Transfer to another service within the child care system</option>
                             <option value="2">2. Reintegration within the family</option>
                             <option value="3">3. Adoption</option>
@@ -4388,12 +4434,12 @@
                     </td>
                     <td class="p-1">
                         <select id="sh3_s7b" name="sh3_s7b" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                            <option value="">-----</option>
-                            <option value="1">1. Children&#39;s home (Baby home)</option>
-                            <option value="2">2. Mehribonlik house</option>
-                            <option value="3">3. Muruvat house for children with disabilities</option>
+                            <option value="-9" class="t_choose">--- choose ---</option>
+                            <option value="1">1. Mehribonlik house</option>
+                            <option value="2">2. Muruvat house for children with disabilities</option>
+                            <option value="3">3. Family children&#39;s home</option>
                             <option value="4">4. SOS children&#39;s villages/families</option>
-                            <option value="5">5. Family children&#39;s home</option>
+                            <option value="5">5. Children&#39;s home (Baby home)</option>
                             <option value="6">6. Patronat family</option>
                             <option value="7">7. Trusteeship/Guardianship care</option>
                             <option value="8">8. Other service</option>
@@ -4401,7 +4447,7 @@
                     </td>
                     <td class="p-1">
                         <select id="sh3_s7c" name="sh3_s7c" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                            <option value="">-----</option>
+                            <option value="-9" class="t_choose">--- choose ---</option>
                             <option value="0">0. No IPP</option>
                             <option value="1">1. New IPP</option>
                             <option value="2">2. The previous IPP, unchanged</option>
@@ -4413,7 +4459,7 @@
                     </td>
                     <td class="p-1">
                         <select id="sh3_s7e" name="sh3_s7e" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                            <option value="">-----</option>
+                            <option value="-9" class="t_choose">--- choose ---</option>
                             <option value="1">1. Transfer to another service within the child care system</option>
                             <option value="2">2. Reintegration within the family</option>
                             <option value="3">3. Adoption</option>
@@ -4431,12 +4477,12 @@
                     </td>
                     <td class="p-1">
                         <select id="sh3_s8b" name="sh3_s8b" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                            <option value="">-----</option>
-                            <option value="1">1. Children&#39;s home (Baby home)</option>
-                            <option value="2">2. Mehribonlik house</option>
-                            <option value="3">3. Muruvat house for children with disabilities</option>
+                            <option value="-9" class="t_choose">--- choose ---</option>
+                            <option value="1">1. Mehribonlik house</option>
+                            <option value="2">2. Muruvat house for children with disabilities</option>
+                            <option value="3">3. Family children&#39;s home</option>
                             <option value="4">4. SOS children&#39;s villages/families</option>
-                            <option value="5">5. Family children&#39;s home</option>
+                            <option value="5">5. Children&#39;s home (Baby home)</option>
                             <option value="6">6. Patronat family</option>
                             <option value="7">7. Trusteeship/Guardianship care</option>
                             <option value="8">8. Other service</option>
@@ -4444,7 +4490,7 @@
                     </td>
                     <td class="p-1">
                         <select id="sh3_s8c" name="sh3_s8c" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                            <option value="">-----</option>
+                            <option value="-9" class="t_choose">--- choose ---</option>
                             <option value="0">0. No IPP</option>
                             <option value="1">1. New IPP</option>
                             <option value="2">2. The previous IPP, unchanged</option>
@@ -4456,7 +4502,7 @@
                     </td>
                     <td class="p-1">
                         <select id="sh3_s8e" name="sh3_s8e" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                            <option value="">-----</option>
+                            <option value="-9" class="t_choose">--- choose ---</option>
                             <option value="1">1. Transfer to another service within the child care system</option>
                             <option value="2">2. Reintegration within the family</option>
                             <option value="3">3. Adoption</option>
@@ -4474,12 +4520,12 @@
                     </td>
                     <td class="p-1">
                         <select id="sh3_s9b" name="sh3_s9b" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                            <option value="">-----</option>
-                            <option value="1">1. Children&#39;s home (Baby home)</option>
-                            <option value="2">2. Mehribonlik house</option>
-                            <option value="3">3. Muruvat house for children with disabilities</option>
+                            <option value="-9" class="t_choose">--- choose ---</option>
+                            <option value="1">1. Mehribonlik house</option>
+                            <option value="2">2. Muruvat house for children with disabilities</option>
+                            <option value="3">3. Family children&#39;s home</option>
                             <option value="4">4. SOS children&#39;s villages/families</option>
-                            <option value="5">5. Family children&#39;s home</option>
+                            <option value="5">5. Children&#39;s home (Baby home)</option>
                             <option value="6">6. Patronat family</option>
                             <option value="7">7. Trusteeship/Guardianship care</option>
                             <option value="8">8. Other service</option>
@@ -4487,7 +4533,7 @@
                     </td>
                     <td class="p-1">
                         <select id="sh3_s9c" name="sh3_s9c" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                            <option value="">-----</option>
+                            <option value="-9" class="t_choose">--- choose ---</option>
                             <option value="0">0. No IPP</option>
                             <option value="1">1. New IPP</option>
                             <option value="2">2. The previous IPP, unchanged</option>
@@ -4499,7 +4545,7 @@
                     </td>
                     <td class="p-1">
                         <select id="sh3_s9e" name="sh3_s9e" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                            <option value="">-----</option>
+                            <option value="-9" class="t_choose">--- choose ---</option>
                             <option value="1">1. Transfer to another service within the child care system</option>
                             <option value="2">2. Reintegration within the family</option>
                             <option value="3">3. Adoption</option>
@@ -4517,12 +4563,12 @@
                     </td>
                     <td class="p-1">
                         <select id="sh3_s10b" name="sh3_s10b" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                            <option value="">-----</option>
-                            <option value="1">1. Children&#39;s home (Baby home)</option>
-                            <option value="2">2. Mehribonlik house</option>
-                            <option value="3">3. Muruvat house for children with disabilities</option>
+                            <option value="-9" class="t_choose">--- choose ---</option>
+                            <option value="1">1. Mehribonlik house</option>
+                            <option value="2">2. Muruvat house for children with disabilities</option>
+                            <option value="3">3. Family children&#39;s home</option>
                             <option value="4">4. SOS children&#39;s villages/families</option>
-                            <option value="5">5. Family children&#39;s home</option>
+                            <option value="5">5. Children&#39;s home (Baby home)</option>
                             <option value="6">6. Patronat family</option>
                             <option value="7">7. Trusteeship/Guardianship care</option>
                             <option value="8">8. Other service</option>
@@ -4530,7 +4576,7 @@
                     </td>
                     <td class="p-1">
                         <select id="sh3_s10c" name="sh3_s10c" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                            <option value="">-----</option>
+                            <option value="-9" class="t_choose">--- choose ---</option>
                             <option value="0">0. No IPP</option>
                             <option value="1">1. New IPP</option>
                             <option value="2">2. The previous IPP, unchanged</option>
@@ -4542,7 +4588,7 @@
                     </td>
                     <td class="p-1">
                         <select id="sh3_s10e" name="sh3_s10e" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                            <option value="">-----</option>
+                            <option value="-9" class="t_choose">--- choose ---</option>
                             <option value="1">1. Transfer to another service within the child care system</option>
                             <option value="2">2. Reintegration within the family</option>
                             <option value="3">3. Adoption</option>
@@ -4560,12 +4606,12 @@
                     </td>
                     <td class="p-1">
                         <select id="sh3_csb" name="sh3_csb" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                            <option value="">-----</option>
-                            <option value="1">1. Children&#39;s home (Baby home)</option>
-                            <option value="2">2. Mehribonlik house</option>
-                            <option value="3">3. Muruvat house for children with disabilities</option>
+                            <option value="-9" class="t_choose">--- choose ---</option>
+                            <option value="1">1. Mehribonlik house</option>
+                            <option value="2">2. Muruvat house for children with disabilities</option>
+                            <option value="3">3. Family children&#39;s home</option>
                             <option value="4">4. SOS children&#39;s villages/families</option>
-                            <option value="5">5. Family children&#39;s home</option>
+                            <option value="5">5. Children&#39;s home (Baby home)</option>
                             <option value="6">6. Patronat family</option>
                             <option value="7">7. Trusteeship/Guardianship care</option>
                             <option value="8">8. Other service</option>
@@ -4573,7 +4619,7 @@
                     </td>
                     <td class="p-1">
                         <select id="sh3_csc" name="sh3_csc" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                            <option value="">-----</option>
+                            <option value="-9" class="t_choose">--- choose ---</option>
                             <option value="0">0. No IPP</option>
                             <option value="1">1. New IPP</option>
                             <option value="2">2. The previous IPP, unchanged</option>
@@ -4584,14 +4630,7 @@
                         <input type="text" id="sh3_csd" name="sh3_csd" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
                     </td>
                     <td class="p-1">
-                        <select id="sh3_cse" name="sh3_cse" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                            <option value="">-----</option>
-                            <option value="1">1. Transfer to another service within the child care system</option>
-                            <option value="2">2. Reintegration within the family</option>
-                            <option value="3">3. Adoption</option>
-                            <option value="4">4. Other</option>
-                        </select>
-                    </td>
+                                            </td>
                     <td class="p-1">
                         <input type="text" id="sh3_csf" name="sh3_csf" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
                     </td>
@@ -4845,7 +4884,7 @@
 
         <div class="grid grid-cols-2 gap-4 items-center mt-10">
             <div>
-                IF MENTAL DISABILITY IS CHECKED IN LK22_2</label>
+                <p class="mb-2">IF MENTAL DISABILITY IS CHECKED IN LK22_2<p>
                 LK22_2m. According to the certificate, what degree of disability does the child experience?            </div>
             <div class="col-span-1 flex flex-col gap-2">
                 <div class="flex items-center">
@@ -5080,7 +5119,7 @@
 
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
             <div>
-                LK22_9. The child is part of the vulnerable group - Brother/sister with another child/other children from the child care system, regardless of the service(s) they are all admitted.            </div>
+                LK22_9. The child is part of the vulnerable group - Child with brother/sister in the child care system            </div>
             <div class="col-span-1 flex items-center gap-4">
                 <div class="flex items-center">
                     <input id="lk22_9-1" type="radio" value="1" name="lk22_9" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
@@ -5095,7 +5134,7 @@
 
         <div class="grid grid-cols-2 gap-4 items-center mt-10">
             <div>
-                LK22_10. The child is part of the vulnerable group - Brother/sister with another child/other children from the same social service.            </div>
+                LK22_10. The child is part of the vulnerable group - Child with brother/sister in the same social service.            </div>
             <div class="col-span-1 flex items-center gap-4">
                 <div class="flex items-center">
                     <input id="lk22_10-1" type="radio" value="1" name="lk22_10" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
@@ -5110,7 +5149,7 @@
 
         <h2 class="mt-10 mb-4 text-2xl font-bold text-gray-700">9. THE CHILD&#39;S CURRENT HEALTH STATUS</h2>
 
-        <p>QHEALTHP: : At present...</p>
+        <p>QHEALTHP:  At present...</p>
         <div class="grid grid-cols-2 gap-4 items-center mt-4">
             <div class="ml-3">
                 1. Does the child have mandatory vaccines done to date?            </div>
@@ -5285,15 +5324,16 @@
 
         <div class="grid grid-cols-2 gap-4 items-center mt-10">
             <div class="ml-3">
-                EDK0. Is the child enrolled in preschool/school?            </div>
+                EDK0. Is the child enrolled in preschool/school?                <small class="my-2 block italic text-red-500">Check 1. Yes also for homeschooled children.</small>
+            </div>
             <div class="col-span-1 flex items-center gap-4">
-                <div class="flex items-center">
-                    <input id="edk0-0" type="radio" value="2" name="edk0" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="edk0-0" class="ms-2 text-sm text-gray-900">0. No </label>
-                </div>
                 <div class="flex items-center">
                     <input id="edk0-1" type="radio" value="1" name="edk0" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                     <label for="edk0-1" class="ms-2 text-sm text-gray-900">1. Yes</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="edk0-0" type="radio" value="2" name="edk0" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="edk0-0" class="ms-2 text-sm text-gray-900">0. No </label>
                 </div>
             </div>
         </div>
@@ -5331,7 +5371,7 @@
                 </div>
                 <div class="flex items-center">
                     <input id="edk2-1" type="radio" value="1" name="edk2" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="edk2-1" class="ms-2 text-sm text-gray-900">1. Primary education (grades 1-4)</label>
+                    <label for="edk2-1" class="ms-2 text-sm text-gray-900">1. Primary education (preparatory and grades 1-4)</label>
                 </div>
                 <div class="flex items-center">
                     <input id="edk2-2" type="radio" value="2" name="edk2" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
@@ -5350,7 +5390,8 @@
 
         <div class="grid grid-cols-2 gap-4 items-center mt-10">
             <div>
-                EDK3. And in what grade?            </div>
+                EDK3. And in what grade?                <small class="mt-2 block italic text-red-500">Fill in 0 (zero) for preparatory class</small>
+            </div>
             <div class="col-span-1 flex items-center gap-4">
                 <input type="text" id="edk3" name="edk3" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
             </div>
@@ -5361,12 +5402,12 @@
                 EWM1. In the past six months, did the student have low school attendance?            </div>
             <div class="col-span-1 flex items-center gap-4">
                 <div class="flex items-center">
-                    <input id="ewm1-0" type="radio" value="0" name="ewm1" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="ewm1-0" class="ms-2 text-sm text-gray-900">0. No</label>
-                </div>
-                <div class="flex items-center">
                     <input id="ewm1-1" type="radio" value="1" name="ewm1" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                     <label for="ewm1-1" class="ms-2 text-sm text-gray-900">1. Yes</label>
+                </div>
+                                <div class="flex items-center">
+                    <input id="ewm1-0" type="radio" value="0" name="ewm1" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="ewm1-0" class="ms-2 text-sm text-gray-900">0. No</label>
                 </div>
             </div>
         </div>
@@ -5376,12 +5417,12 @@
                 EWM2. Did the student have poor or below average school performances?            </div>
             <div class="col-span-1 flex items-center gap-4">
                 <div class="flex items-center">
-                    <input id="ewm2-0" type="radio" value="0" name="ewm2" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="ewm2-0" class="ms-2 text-sm text-gray-900">0. No</label>
-                </div>
-                <div class="flex items-center">
                     <input id="ewm2-1" type="radio" value="1" name="ewm2" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                     <label for="ewm2-1" class="ms-2 text-sm text-gray-900">1. Yes</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="ewm2-0" type="radio" value="0" name="ewm2" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="ewm2-0" class="ms-2 text-sm text-gray-900">0. No</label>
                 </div>
             </div>
         </div>
@@ -5389,7 +5430,7 @@
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
             <div>
                 EWM3. Has the student ever repeated a school year since he is in school?            </div>
-            <div class="col-span-1 flex items-center gap-4">
+            <div class="col-span-1 flex flex-col gap-2">
                 <div class="flex items-center">
                     <input id="ewm3-0" type="radio" value="0" name="ewm3" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                     <label for="ewm3-0" class="ms-2 text-sm text-gray-900">0. No</label>
@@ -5411,12 +5452,12 @@
             </div>
             <div class="col-span-1 flex items-center gap-4">
                 <div class="flex items-center">
-                    <input id="ewm4-0" type="radio" value="0" name="ewm4" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="ewm4-0" class="ms-2 text-sm text-gray-900">0. No</label>
-                </div>
-                <div class="flex items-center">
                     <input id="ewm4-1" type="radio" value="1" name="ewm4" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                     <label for="ewm4-1" class="ms-2 text-sm text-gray-900">1. Yes</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="ewm4-0" type="radio" value="0" name="ewm4" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="ewm4-0" class="ms-2 text-sm text-gray-900">0. No</label>
                 </div>
             </div>
         </div>
@@ -5426,13 +5467,13 @@
                 EWM5. Is the student at risk of early school leaving?            </div>
             <div class="col-span-1 flex items-center gap-4">
                 <div class="flex items-center">
-                    <input id="ewm5-0" type="radio" value="0" name="ewm5" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="ewm5-0" class="ms-2 text-sm text-gray-900">0. No</label>
-                </div>
-                <div class="flex items-center">
                     <input id="ewm5-1" type="radio" value="1" name="ewm5" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                     <label for="ewm5-1" class="ms-2 text-sm text-gray-900">1. Yes</label>
                 </div>
+                <div class="flex items-center">
+                    <input id="ewm5-0" type="radio" value="0" name="ewm5" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="ewm5-0" class="ms-2 text-sm text-gray-900">0. No</label>
+                </div>                
             </div>
         </div>
 
@@ -5805,7 +5846,7 @@
 
         <h2 class="mt-10 mb-4 text-2xl font-bold text-gray-700">12. RISK BEHAVIORS</h2>
         <small class="my-2 block italic text-red-500">Attention! This section is to be filled in only for children older than 10.</small>
-        <p>QRISKP : During the child&#39;s time into the system (from their last admission until present), has the child had any of the following risk behaviors:</p>
+        <p>QRISKP: During the child&#39;s time into the system (from their last admission until present), has the child had any of the following risk behaviors:</p>
         <div class="grid grid-cols-2 gap-4 items-center mt-10">
             <div class="ml-3">
                 1. Early sexual activity (initiation before the age of 16)            </div>
@@ -6130,7 +6171,7 @@
 
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
             <div>
-                SQ5. In the past six months, did the child benefit from independent living activities?                <small class="my-2 block italic text-red-500">Independent living activities include tasks such as food preparation and serving, cleaning, using the washing machine, ironing or arranging clothes, going shopping, being able to use money and manage a budget, etc.</small>
+                SQ5. In the past six months, did the child participate in independent living activities?                <small class="my-2 block italic text-red-500">Independent living activities include tasks such as food preparation and serving, cleaning, using the washing machine, ironing or arranging clothes, going shopping, being able to use money and manage a budget, etc.</small>
             </div>
             <div class="col-span-1 flex items-center gap-4">
                 <div class="flex items-center">

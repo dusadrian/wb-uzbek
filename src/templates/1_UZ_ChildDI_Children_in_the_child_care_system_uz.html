@@ -31,14 +31,18 @@
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
             <div>VIL. Viloyat</div>
             <div>
-                <input type="text" id="reg" name="reg" disabled class="disabled:bg-gray-100 bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+                <select id="reg" name="reg" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+                    <option value="-9" class="t_choose">--- choose ---</option>
+                </select>
             </div>
         </div>
 
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
             <div>TUM. Tuman</div>
             <div>
-                <input type="text" id="dis" name="dis" disabled class="disabled:bg-gray-100 bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+                <select id="dis" name="dis" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+                    <option value="-9" class="t_choose">--- choose ---</option>
+                </select>
             </div>
         </div>
 
@@ -213,7 +217,7 @@
 
             </div>
         </div>
-        
+
         <input type="hidden" id="lk14e" name="lk14e" />
 
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
@@ -249,13 +253,25 @@
                     <input id="lk15-3" type="radio" value="3" name="lk15" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                     <label for="lk15-3" class="ms-2 text-sm text-gray-900">3. Muassasa direktori</label>
                 </div>
-                <div class="flex items-center">
-                    <input id="lk15-4" type="radio" value="4" name="lk15" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="lk15-4" class="ms-2 text-sm text-gray-900">4. Agar boshqa bo&#39;lsa, ko&#39;rsatilsin</label>
-                </div>
-                <div class="flex items-center">
-                    <input type="text" id="lk15_other" name="lk15_other" class="bg-white disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
-                </div>
+                    <div class="flex items-center">
+                        <input id="lk15-4" type="radio" value="4" name="lk15"
+                            class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <label for="lk15-4" class="ms-2 text-sm text-gray-900">4. Tashkilotning boshqa xodimlari</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="lk15-5" type="radio" value="5" name="lk15"
+                            class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <label for="lk15-5" class="ms-2 text-sm text-gray-900">5. Yana bir davlat xodimi</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="lk15-6" type="radio" value="6" name="lk15"
+                            class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <label for="lk15-6" class="ms-2 text-sm text-gray-900">6. Agar boshqa bo&#39;lsa, ko&#39;rsatilsin</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input type="text" id="lk15_other" name="lk15_other"
+                            class="bg-white disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+                    </div>
             </div>
         </div>
 
@@ -338,7 +354,7 @@
             <div class="col-span-1 flex flex-col gap-2">
                 <div class="flex items-center">
                     <input id="cm1dw-1" type="radio" value="1" name="cm1dw" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="cm1dw-1" class="ms-2 text-sm text-gray-900">1. Ona bolaga nisbatan zo&#39;ravonlik qo&#39;llagan yohud uni e&#39;tiborsiz qoldirgan..</label>
+                    <label for="cm1dw-1" class="ms-2 text-sm text-gray-900">1. Ona bolaga nisbatan zo&#39;ravonlik qo&#39;llagan yohud uni e&#39;tiborsiz qoldirgan.</label>
                 </div>
                 <div class="flex items-center">
                     <input id="cm1dw-2" type="radio" value="2" name="cm1dw" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
@@ -354,7 +370,7 @@
                 </div>
                 <div class="flex items-center">
                     <input id="cm1dw-5" type="radio" value="5" name="cm1dw" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="cm1dw-5" class="ms-2 text-sm text-gray-900">5. Ona bola bilan munosabatlarni o&#39;rnatmagan yoki ularni qo&#39;llab kelmagan, yohud bola ustidan vasiylik yuritish, uni ko&#39;rishga tashrif buyurish yoki oilaga qaytarish yuzasidan sud qarorlari yoki rejalarini bajarmagan..</label>
+                    <label for="cm1dw-5" class="ms-2 text-sm text-gray-900">5. Ona bola bilan munosabatlarni o&#39;rnatmagan yoki ularni qo&#39;llab kelmagan, yohud bola ustidan vasiylik yuritish, uni ko&#39;rishga tashrif buyurish yoki oilaga qaytarish yuzasidan sud qarorlari yoki rejalarini bajarmagan.</label>
                 </div>
                 <div class="flex items-center">
                     <input id="cm1dw-6" type="radio" value="6" name="cm1dw" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
@@ -430,7 +446,7 @@
 
             </div>
         </div>
-        
+
         <input type="hidden" id="cm3e" name="cm3e" />
 
 
@@ -942,6 +958,10 @@
                             <input id="cm10a-2" type="radio" value="2" name="cm10a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                             <label for="cm10a-2" class="ms-2 text-sm text-gray-900">2. Chet elda</label>
                         </div>
+                        <div class="flex items-center">
+                            <input id="cm10a-9" type="radio" value="9" name="cm10a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                            <label for="cm10a-9" class="ms-2 text-sm text-gray-900">9. Ma&#39;lum emas</label>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -983,7 +1003,7 @@
 
         <div class="grid grid-cols-2 gap-4 items-center mt-10">
             <div>
-                CM11 Onaning xozirgi kundagi yashash manzili            </div>
+                CM11 Onaning xozirgi kundagi yashash manzili.            </div>
             <div>
 
                 <div class="mb-2">a. U qayerda istiqomat qilib keladi...?</div>
@@ -995,6 +1015,10 @@
                     <div class="flex items-center">
                         <input id="cm11a-2" type="radio" value="2" name="cm11a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="cm11a-2" class="ms-2 text-sm text-gray-900">2. Chet elda</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="cm11a-9" type="radio" value="9" name="cm11a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <label for="cm11a-9" class="ms-2 text-sm text-gray-900">9. Ma&#39;lum emas</label>
                     </div>
                 </div>
             </div>
@@ -1227,7 +1251,7 @@
 
             </div>
         </div>
-        
+
         <input type="hidden" id="ct3e" name="ct3e"/>
 
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
@@ -1279,7 +1303,7 @@
                 </div>
                 <div class="flex items-center">
                     <input id="ct5a-7" type="radio" value="7" name="ct5a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="ct5a-7" class="ms-2 text-sm text-gray-900">7. Alohida yashaydi**</label>
+                    <label for="ct5a-7" class="ms-2 text-sm text-gray-900">7. Alohida yashaydi*</label>
                 </div>
                 <div class="flex items-center">
                     <input id="ct5a-8" type="radio" value="8" name="ct5a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
@@ -1323,7 +1347,7 @@
                 </div>
                 <div class="flex items-center">
                     <input id="ct5b-7" type="radio" value="7" name="ct5b" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="ct5b-7" class="ms-2 text-sm text-gray-900">7. Alohida yashaydi**</label>
+                    <label for="ct5b-7" class="ms-2 text-sm text-gray-900">7. Alohida yashaydi*</label>
                 </div>
                 <div class="flex items-center">
                     <input id="ct5b-8" type="radio" value="8" name="ct5b" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
@@ -1345,7 +1369,7 @@
                 </div>
                 <div class="flex items-center">
                     <input id="ct6a-2" type="radio" value="1" name="ct6a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="ct6a-2" class="ms-2 text-sm text-gray-900">1. Otaga joriy kasallik (masalan, sil) tashxisi qo&#39;yilgan)</label>
+                    <label for="ct6a-2" class="ms-2 text-sm text-gray-900">1. Otaga joriy kasallik (masalan, sil) tashxisi qo&#39;yilgan</label>
                 </div>
                 <div class="flex items-center">
                     <input id="ct6a-3" type="radio" value="2" name="ct6a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
@@ -1357,8 +1381,7 @@
                 </div>
                 <div class="flex items-center">
                     <input id="ct6a-5" type="radio" value="4" name="ct6a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="ct6a-5" class="ms-2 text-sm text-gray-900">4. Otaning ham ruhiy, ham jismoniy nuqsoni yoki nogironligi bor impairment or
-                        disability</label>
+                    <label for="ct6a-5" class="ms-2 text-sm text-gray-900">4. Otaning ham ruhiy, ham jismoniy nuqsoni yoki nogironligi bor </label>
                 </div>
                 <div class="flex items-center">
                     <input id="ct6a-6" type="radio" value="9" name="ct6a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
@@ -1376,7 +1399,7 @@
                 </div>
                 <div class="flex items-center">
                     <input id="ct6b-2" type="radio" value="1" name="ct6b" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="ct6b-2" class="ms-2 text-sm text-gray-900">1. Otaga joriy kasallik (masalan, sil) tashxisi qo&#39;yilgan)</label>
+                    <label for="ct6b-2" class="ms-2 text-sm text-gray-900">1. Otaga joriy kasallik (masalan, sil) tashxisi qo&#39;yilgan</label>
                 </div>
                 <div class="flex items-center">
                     <input id="ct6b-3" type="radio" value="2" name="ct6b" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
@@ -1737,6 +1760,10 @@
                         <input id="ct10a-2" type="radio" value="2" name="ct10a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="ct10a-2" class="ms-2 text-sm text-gray-900">2. Chet elda</label>
                     </div>
+                    <div class="flex items-center">
+                        <input id="ct10a-9" type="radio" value="9" name="ct10a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <label for="ct10a-9" class="ms-2 text-sm text-gray-900">9. Ma&#39;lum emas</label>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1789,6 +1816,10 @@
                     <div class="flex items-center">
                         <input id="ct11a-2" type="radio" value="2" name="ct11a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="ct11a-2" class="ms-2 text-sm text-gray-900">2. Chet elda</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="ct11a-9" type="radio" value="9" name="ct11a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <label for="ct11a-9" class="ms-2 text-sm text-gray-900">9. Ma&#39;lum emas</label>
                     </div>
                 </div>
             </div>
@@ -1885,10 +1916,37 @@
 
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
             <div>CG1d. Qarindoshlik aloqalari: </div>
-            <div>
-                <input type="text" id="cg1d" name="cg1d" class="bg-white disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+             <div class="flex flex-col gap-2">
+                <div class="flex items-center">
+                    <input id="cg1d-1" type="radio" value="1" name="cg1d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="cg1d-1" class="ms-2 text-sm text-gray-900">1. Aka / opa (2-darajali)</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="cg1d-2" type="radio" value="2" name="cg1d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="cg1d-2" class="ms-2 text-sm text-gray-900">2. Bobo / buvisi (2-darajali)</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="cg1d-3" type="radio" value="3" name="cg1d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="cg1d-3" class="ms-2 text-sm text-gray-900">3. Amaki/xola (3-darajali)</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="cg1d-4" type="radio" value="4" name="cg1d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="cg1d-4" class="ms-2 text-sm text-gray-900">4. Buva va buva (3-darajali)</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="cg1d-5" type="radio" value="5" name="cg1d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="cg1d-5" class="ms-2 text-sm text-gray-900">5. Amakivachcha (4-darajali)</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="cg1d-6" type="radio" value="6" name="cg1d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="cg1d-6" class="ms-2 text-sm text-gray-900">6. Boshqa 4-darajali qarindosh yoki undan uzoqroq qarindosh</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="cg1d-7" type="radio" value="7" name="cg1d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="cg1d-7" class="ms-2 text-sm text-gray-900">7. O&#39;gay qarindoshlar (qayta nikoh orqali o&#39;rnatilgan oilaviy munosabatlar)</label>
+                </div>
             </div>
-        </div>
+                    </div>
 
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
             <div>CG2a. Vasiyning ismi:</div>
@@ -2005,16 +2063,12 @@
                     <input id="cg5a-0" type="radio" value="0" name="cg5a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                     <label for="cg5a-0" class="ms-2 text-sm text-gray-900">0. Ko&#39;rsatilmagan/noma&#39;lum</label>
                 </div>
-                <div class="flex items-center">
-                    <input id="cg5a-90" type="radio" value="90" name="cg5a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="cg5a-90" class="ms-2 text-sm text-gray-900">90. Deceased</label>
-                </div>
             </div>
         </div>
 
         <div class="grid grid-cols-2 gap-4 items-center mt-10">
             <div>
-                CG5b. Vasiyning hozirgi oilaviy holati                <small class="italic block text-red-500">* &quot;Separated&quot; means she is still legally married but does not live together with her spouse.</small>
+                CG5b. Vasiyning hozirgi oilaviy holati                <small class="italic block text-red-500">* &quot;Alohida yashaydi&quot; degani, u hali ham qonuniy nikohda, lekin turmush o&#39;rtog&#39;i bilan birga yashamaydi.</small>
             </div>
             <div class="col-span-1 flex flex-col gap-2">
                 <div class="flex items-center">
@@ -2184,7 +2238,7 @@
         </div>
         <div class="grid grid-cols-2 gap-4 items-center mt-10">
             <div>
-                CG7b. Quyidagi kodlardan birini ishlating            </div>
+                CG7b. Vasiyning hozirgi ma&#39;lumot darajasi            </div>
             <div class="col-span-1 flex flex-col gap-2">
                 <div class="flex items-center">
                     <input id="cg7b-1" type="radio" value="0" name="cg7b" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
@@ -2498,7 +2552,7 @@
 
             </div>
         </div>
-        
+
         <input type="hidden" id="cg10f" name="cg10f" />
 
         <div class="grid grid-cols-2 gap-4 items-center mt-10">
@@ -2587,7 +2641,7 @@
 
         <div class="grid grid-cols-2 gap-4 items-center mt-10">
             <div>
-                (SA1-LK3 asosida avtomatik hisoblab chiqiladi). SA2            </div>
+                SA2. Bola qayerdan olib kelindi?            </div>
             <div class="col-span-1 flex flex-col gap-2">
                 <div class="flex items-center">
                     <input id="sa2-1" type="radio" value="1" name="sa2" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
@@ -2653,7 +2707,8 @@
 
         <div class="grid grid-cols-2 gap-4 items-center mt-10">
             <div>
-                SA4. Bola oilasidan ajratilishining sabablari nimada?            </div>
+                SA4. Bola oilasidan ajratilishining sabablari nimada?                <small class="mt-2 block italic text-red-500">BIRDAN ORTIQ JAVOBLARNI TANLASH MUMKIN </small>
+            </div>
             <div class="col-span-1 flex flex-col gap-2">
                 <div class="flex items-center">
                     <input id="sa4_1" type="checkbox" value="1" name="sa4_1" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
@@ -2695,7 +2750,7 @@
             </div>
         </div>
 
-        <p>Bola qanday xizmat turiga joylashtirilgan?</p>
+        <p class="mt-6">SA5. Bola qanday xizmat turiga joylashtirilgan?</p>
 
         <div class="grid grid-cols-2 items-center gap-4 mt-6">
             <div>SA5r. Viloyat</div>
@@ -2724,14 +2779,6 @@
                         class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
                     <option value="-9" class="t_choose">--- choose ---</option>
                 </select>
-            </div>
-        </div>
-
-        <div class="grid grid-cols-2 gap-4 items-center mt-6">
-            <div>SA5c. Muassasa kodi</div>
-            <div>
-                <input type="text" id="sa5c" name="sa5c"
-                        class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
             </div>
         </div>
 
@@ -3230,11 +3277,11 @@
             <div class="col-span-1 flex flex-col gap-2">
                 <div class="flex items-center">
                     <input id="qeduc1a-1" type="radio" value="1" name="qeduc1a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="qeduc1a-1" class="ms-2 text-sm text-gray-900">1. Umumiy turdagi bolalar bog&#39;chasi,</label>
+                    <label for="qeduc1a-1" class="ms-2 text-sm text-gray-900">1. Umumiy turdagi bolalar bog&#39;chasi</label>
                 </div>
                 <div class="flex items-center">
                     <input id="qeduc1a-2" type="radio" value="2" name="qeduc1a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="qeduc1a-2" class="ms-2 text-sm text-gray-900">2. Davlat ko&#39;ptarmoqli ixtisoslashtirilgan maktabgacha ta&#39;lim tashkilotlari (KTIDMTT))</label>
+                    <label for="qeduc1a-2" class="ms-2 text-sm text-gray-900">2. Davlat ko&#39;ptarmoqli ixtisoslashtirilgan maktabgacha ta&#39;lim tashkilotlari (KTIDMTT)</label>
                 </div>
                 <div class="flex items-center">
                     <input id="qeduc1a-3" type="radio" value="3" name="qeduc1a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
@@ -3308,7 +3355,6 @@
             <div>
                 2b. Bola qaysi sinfda edi?                <small class="mb-1 block italic text-red-500">Fill in 0 (zero) for preparatory class</small>
             </div>
-            <div>2b. Bola qaysi sinfda edi?</div>
             <div>
                 <input type="text" id="qeduc2b" name="qeduc2b" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
             </div>
@@ -3377,15 +3423,15 @@
             <div class="col-span-1 flex flex-col gap-2">
                 <div class="flex items-center">
                     <input id="qeduc2f-1" type="radio" value="1" name="qeduc2f" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="qeduc2f-1" class="ms-2 text-sm text-gray-900">1. Bolaning maktabga borishiga to&#39;sqinlik qiluvchi nogironligi yoki sog&#39;lig&#39;i bilan bog&#39;liq holati mavjud edi..</label>
+                    <label for="qeduc2f-1" class="ms-2 text-sm text-gray-900">1. Bolaning maktabga borishiga to&#39;sqinlik qiluvchi nogironligi yoki sog&#39;lig&#39;i bilan bog&#39;liq holati mavjud edi.</label>
                 </div>
                 <div class="flex items-center">
                     <input id="qeduc2f-2" type="radio" value="2" name="qeduc2f" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="qeduc2f-2" class="ms-2 text-sm text-gray-900">2. Bola maktabga borilishi qiyin bo&#39;lgan chekka yoki qishloq hududda yashagan..</label>
+                    <label for="qeduc2f-2" class="ms-2 text-sm text-gray-900">2. Bola maktabga borilishi qiyin bo&#39;lgan chekka yoki qishloq hududda yashagan.</label>
                 </div>
                 <div class="flex items-center">
                     <input id="qeduc2f-3" type="radio" value="3" name="qeduc2f" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="qeduc2f-3" class="ms-2 text-sm text-gray-900">3. Bolaning oilasi yoki uning vasiylari ta&#39;lim olishini ta&#39;minlay olmagan..</label>
+                    <label for="qeduc2f-3" class="ms-2 text-sm text-gray-900">3. Bolaning oilasi yoki uning vasiylari ta&#39;lim olishini ta&#39;minlay olmagan.</label>
                 </div>
                 <div class="flex items-center">
                     <input id="qeduc2f-4" type="radio" value="4" name="qeduc2f" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
@@ -4093,7 +4139,7 @@
             </div>
         </div>
         <div class="grid grid-cols-2 gap-4 items-center mt-10">
-            <div class="ml-3">
+            <div>
                 SH2. Bola ilk qabul qilinganidan beri vasiylik tizimini tark etganmi va so&#39;ngra qaytib kelganmi?            </div>
             <div class="col-span-1 flex flex-col gap-2">
                 <div class="flex items-center">
@@ -4130,12 +4176,12 @@
                     </td>
                     <td class="p-1">
                         <select id="sh3_s1b" name="sh3_s1b" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                            <option value="">-----</option>
-                            <option value="1">1. Bolalar uyi </option>
-                            <option value="2">2. Mehribonlik uyi</option>
-                            <option value="3">3. &quot;Muruvvat&quot; nogironligi bo&#39;lgan bolalar uchun  internat uyi</option>
+                            <option value="-9" class="t_choose">--- choose ---</option>
+                            <option value="1">1. Mehribonlik uyi</option>
+                            <option value="2">2. &quot;Muruvvat&quot; nogironligi bo&#39;lgan bolalar uchun  internat uyi</option>
+                            <option value="3">3. Oilaviy bolalar uyi</option>
                             <option value="4">4. SOS Bolalar makhallalari/oilalari</option>
-                            <option value="5">5. Oilaviy bolalar uyi</option>
+                            <option value="5">5. Bolalar uyi </option>
                             <option value="6">6. Patronat oila</option>
                             <option value="7">7. Vasiylik/homiylik</option>
                             <option value="8">8. Boshqa xizmatlar</option>
@@ -4143,7 +4189,7 @@
                     </td>
                     <td class="p-1">
                         <select id="sh3_s1c" name="sh3_s1c" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                            <option value="">-----</option>
+                            <option value="-9" class="t_choose">--- choose ---</option>
                             <option value="0">0. IHR mavjud emas </option>
                             <option value="1">1. Yangi IHR</option>
                             <option value="2">2. Oldingi IHR, o&#39;zgarishsiz</option>
@@ -4155,7 +4201,7 @@
                     </td>
                     <td class="p-1">
                         <select id="sh3_s1e" name="sh3_s1e" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                            <option value="">-----</option>
+                            <option value="-9" class="t_choose">--- choose ---</option>
                             <option value="1">1. Bolalarni vasiylik tizimi doirasida boshqa xizmatga o&#39;tkazildi</option>
                             <option value="2">2. Oilaga qaytdi (reintegratsiya)</option>
                             <option value="3">3. Farzandlikka olindi </option>
@@ -4173,12 +4219,12 @@
                     </td>
                     <td class="p-1">
                         <select id="sh3_s2b" name="sh3_s2b" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                            <option value="">-----</option>
-                            <option value="1">1. Bolalar uyi </option>
-                            <option value="2">2. Mehribonlik uyi</option>
-                            <option value="3">3. &quot;Muruvvat&quot; nogironligi bo&#39;lgan bolalar uchun  internat uyi</option>
+                            <option value="-9" class="t_choose">--- choose ---</option>
+                            <option value="1">1. Mehribonlik uyi</option>
+                            <option value="2">2. &quot;Muruvvat&quot; nogironligi bo&#39;lgan bolalar uchun  internat uyi</option>
+                            <option value="3">3. Oilaviy bolalar uyi</option>
                             <option value="4">4. SOS Bolalar makhallalari/oilalari</option>
-                            <option value="5">5. Oilaviy bolalar uyi</option>
+                            <option value="5">5. Bolalar uyi </option>
                             <option value="6">6. Patronat oila</option>
                             <option value="7">7. Vasiylik/homiylik</option>
                             <option value="8">8. Boshqa xizmatlar</option>
@@ -4186,7 +4232,7 @@
                     </td>
                     <td class="p-1">
                         <select id="sh3_s2c" name="sh3_s2c" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                            <option value="">-----</option>
+                            <option value="-9" class="t_choose">--- choose ---</option>
                             <option value="0">0. IHR mavjud emas </option>
                             <option value="1">1. Yangi IHR</option>
                             <option value="2">2. Oldingi IHR, o&#39;zgarishsiz</option>
@@ -4198,7 +4244,7 @@
                     </td>
                     <td class="p-1">
                         <select id="sh3_s2e" name="sh3_s2e" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                            <option value="">-----</option>
+                            <option value="-9" class="t_choose">--- choose ---</option>
                             <option value="1">1. Bolalarni vasiylik tizimi doirasida boshqa xizmatga o&#39;tkazildi</option>
                             <option value="2">2. Oilaga qaytdi (reintegratsiya)</option>
                             <option value="3">3. Farzandlikka olindi </option>
@@ -4216,12 +4262,12 @@
                     </td>
                     <td class="p-1">
                         <select id="sh3_s3b" name="sh3_s3b" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                            <option value="">-----</option>
-                            <option value="1">1. Bolalar uyi </option>
-                            <option value="2">2. Mehribonlik uyi</option>
-                            <option value="3">3. &quot;Muruvvat&quot; nogironligi bo&#39;lgan bolalar uchun  internat uyi</option>
+                            <option value="-9" class="t_choose">--- choose ---</option>
+                            <option value="1">1. Mehribonlik uyi</option>
+                            <option value="2">2. &quot;Muruvvat&quot; nogironligi bo&#39;lgan bolalar uchun  internat uyi</option>
+                            <option value="3">3. Oilaviy bolalar uyi</option>
                             <option value="4">4. SOS Bolalar makhallalari/oilalari</option>
-                            <option value="5">5. Oilaviy bolalar uyi</option>
+                            <option value="5">5. Bolalar uyi </option>
                             <option value="6">6. Patronat oila</option>
                             <option value="7">7. Vasiylik/homiylik</option>
                             <option value="8">8. Boshqa xizmatlar</option>
@@ -4229,7 +4275,7 @@
                     </td>
                     <td class="p-1">
                         <select id="sh3_s3c" name="sh3_s3c" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                            <option value="">-----</option>
+                            <option value="-9" class="t_choose">--- choose ---</option>
                             <option value="0">0. IHR mavjud emas </option>
                             <option value="1">1. Yangi IHR</option>
                             <option value="2">2. Oldingi IHR, o&#39;zgarishsiz</option>
@@ -4241,7 +4287,7 @@
                     </td>
                     <td class="p-1">
                         <select id="sh3_s3e" name="sh3_s3e" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                            <option value="">-----</option>
+                            <option value="-9" class="t_choose">--- choose ---</option>
                             <option value="1">1. Bolalarni vasiylik tizimi doirasida boshqa xizmatga o&#39;tkazildi</option>
                             <option value="2">2. Oilaga qaytdi (reintegratsiya)</option>
                             <option value="3">3. Farzandlikka olindi </option>
@@ -4259,12 +4305,12 @@
                     </td>
                     <td class="p-1">
                         <select id="sh3_s4b" name="sh3_s4b" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                            <option value="">-----</option>
-                            <option value="1">1. Bolalar uyi </option>
-                            <option value="2">2. Mehribonlik uyi</option>
-                            <option value="3">3. &quot;Muruvvat&quot; nogironligi bo&#39;lgan bolalar uchun  internat uyi</option>
+                            <option value="-9" class="t_choose">--- choose ---</option>
+                            <option value="1">1. Mehribonlik uyi</option>
+                            <option value="2">2. &quot;Muruvvat&quot; nogironligi bo&#39;lgan bolalar uchun  internat uyi</option>
+                            <option value="3">3. Oilaviy bolalar uyi</option>
                             <option value="4">4. SOS Bolalar makhallalari/oilalari</option>
-                            <option value="5">5. Oilaviy bolalar uyi</option>
+                            <option value="5">5. Bolalar uyi </option>
                             <option value="6">6. Patronat oila</option>
                             <option value="7">7. Vasiylik/homiylik</option>
                             <option value="8">8. Boshqa xizmatlar</option>
@@ -4272,7 +4318,7 @@
                     </td>
                     <td class="p-1">
                         <select id="sh3_s4c" name="sh3_s4c" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                            <option value="">-----</option>
+                            <option value="-9" class="t_choose">--- choose ---</option>
                             <option value="0">0. IHR mavjud emas </option>
                             <option value="1">1. Yangi IHR</option>
                             <option value="2">2. Oldingi IHR, o&#39;zgarishsiz</option>
@@ -4284,7 +4330,7 @@
                     </td>
                     <td class="p-1">
                         <select id="sh3_s4e" name="sh3_s4e" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                            <option value="">-----</option>
+                            <option value="-9" class="t_choose">--- choose ---</option>
                             <option value="1">1. Bolalarni vasiylik tizimi doirasida boshqa xizmatga o&#39;tkazildi</option>
                             <option value="2">2. Oilaga qaytdi (reintegratsiya)</option>
                             <option value="3">3. Farzandlikka olindi </option>
@@ -4302,12 +4348,12 @@
                     </td>
                     <td class="p-1">
                         <select id="sh3_s5b" name="sh3_s5b" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                            <option value="">-----</option>
-                            <option value="1">1. Bolalar uyi </option>
-                            <option value="2">2. Mehribonlik uyi</option>
-                            <option value="3">3. &quot;Muruvvat&quot; nogironligi bo&#39;lgan bolalar uchun  internat uyi</option>
+                            <option value="-9" class="t_choose">--- choose ---</option>
+                            <option value="1">1. Mehribonlik uyi</option>
+                            <option value="2">2. &quot;Muruvvat&quot; nogironligi bo&#39;lgan bolalar uchun  internat uyi</option>
+                            <option value="3">3. Oilaviy bolalar uyi</option>
                             <option value="4">4. SOS Bolalar makhallalari/oilalari</option>
-                            <option value="5">5. Oilaviy bolalar uyi</option>
+                            <option value="5">5. Bolalar uyi </option>
                             <option value="6">6. Patronat oila</option>
                             <option value="7">7. Vasiylik/homiylik</option>
                             <option value="8">8. Boshqa xizmatlar</option>
@@ -4315,7 +4361,7 @@
                     </td>
                     <td class="p-1">
                         <select id="sh3_s5c" name="sh3_s5c" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                            <option value="">-----</option>
+                            <option value="-9" class="t_choose">--- choose ---</option>
                             <option value="0">0. IHR mavjud emas </option>
                             <option value="1">1. Yangi IHR</option>
                             <option value="2">2. Oldingi IHR, o&#39;zgarishsiz</option>
@@ -4327,7 +4373,7 @@
                     </td>
                     <td class="p-1">
                         <select id="sh3_s5e" name="sh3_s5e" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                            <option value="">-----</option>
+                            <option value="-9" class="t_choose">--- choose ---</option>
                             <option value="1">1. Bolalarni vasiylik tizimi doirasida boshqa xizmatga o&#39;tkazildi</option>
                             <option value="2">2. Oilaga qaytdi (reintegratsiya)</option>
                             <option value="3">3. Farzandlikka olindi </option>
@@ -4345,12 +4391,12 @@
                     </td>
                     <td class="p-1">
                         <select id="sh3_s6b" name="sh3_s6b" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                            <option value="">-----</option>
-                            <option value="1">1. Bolalar uyi </option>
-                            <option value="2">2. Mehribonlik uyi</option>
-                            <option value="3">3. &quot;Muruvvat&quot; nogironligi bo&#39;lgan bolalar uchun  internat uyi</option>
+                            <option value="-9" class="t_choose">--- choose ---</option>
+                            <option value="1">1. Mehribonlik uyi</option>
+                            <option value="2">2. &quot;Muruvvat&quot; nogironligi bo&#39;lgan bolalar uchun  internat uyi</option>
+                            <option value="3">3. Oilaviy bolalar uyi</option>
                             <option value="4">4. SOS Bolalar makhallalari/oilalari</option>
-                            <option value="5">5. Oilaviy bolalar uyi</option>
+                            <option value="5">5. Bolalar uyi </option>
                             <option value="6">6. Patronat oila</option>
                             <option value="7">7. Vasiylik/homiylik</option>
                             <option value="8">8. Boshqa xizmatlar</option>
@@ -4358,7 +4404,7 @@
                     </td>
                     <td class="p-1">
                         <select id="sh3_s6c" name="sh3_s6c" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                            <option value="">-----</option>
+                            <option value="-9" class="t_choose">--- choose ---</option>
                             <option value="0">0. IHR mavjud emas </option>
                             <option value="1">1. Yangi IHR</option>
                             <option value="2">2. Oldingi IHR, o&#39;zgarishsiz</option>
@@ -4370,7 +4416,7 @@
                     </td>
                     <td class="p-1">
                         <select id="sh3_s6e" name="sh3_s6e" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                            <option value="">-----</option>
+                            <option value="-9" class="t_choose">--- choose ---</option>
                             <option value="1">1. Bolalarni vasiylik tizimi doirasida boshqa xizmatga o&#39;tkazildi</option>
                             <option value="2">2. Oilaga qaytdi (reintegratsiya)</option>
                             <option value="3">3. Farzandlikka olindi </option>
@@ -4388,12 +4434,12 @@
                     </td>
                     <td class="p-1">
                         <select id="sh3_s7b" name="sh3_s7b" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                            <option value="">-----</option>
-                            <option value="1">1. Bolalar uyi </option>
-                            <option value="2">2. Mehribonlik uyi</option>
-                            <option value="3">3. &quot;Muruvvat&quot; nogironligi bo&#39;lgan bolalar uchun  internat uyi</option>
+                            <option value="-9" class="t_choose">--- choose ---</option>
+                            <option value="1">1. Mehribonlik uyi</option>
+                            <option value="2">2. &quot;Muruvvat&quot; nogironligi bo&#39;lgan bolalar uchun  internat uyi</option>
+                            <option value="3">3. Oilaviy bolalar uyi</option>
                             <option value="4">4. SOS Bolalar makhallalari/oilalari</option>
-                            <option value="5">5. Oilaviy bolalar uyi</option>
+                            <option value="5">5. Bolalar uyi </option>
                             <option value="6">6. Patronat oila</option>
                             <option value="7">7. Vasiylik/homiylik</option>
                             <option value="8">8. Boshqa xizmatlar</option>
@@ -4401,7 +4447,7 @@
                     </td>
                     <td class="p-1">
                         <select id="sh3_s7c" name="sh3_s7c" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                            <option value="">-----</option>
+                            <option value="-9" class="t_choose">--- choose ---</option>
                             <option value="0">0. IHR mavjud emas </option>
                             <option value="1">1. Yangi IHR</option>
                             <option value="2">2. Oldingi IHR, o&#39;zgarishsiz</option>
@@ -4413,7 +4459,7 @@
                     </td>
                     <td class="p-1">
                         <select id="sh3_s7e" name="sh3_s7e" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                            <option value="">-----</option>
+                            <option value="-9" class="t_choose">--- choose ---</option>
                             <option value="1">1. Bolalarni vasiylik tizimi doirasida boshqa xizmatga o&#39;tkazildi</option>
                             <option value="2">2. Oilaga qaytdi (reintegratsiya)</option>
                             <option value="3">3. Farzandlikka olindi </option>
@@ -4431,12 +4477,12 @@
                     </td>
                     <td class="p-1">
                         <select id="sh3_s8b" name="sh3_s8b" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                            <option value="">-----</option>
-                            <option value="1">1. Bolalar uyi </option>
-                            <option value="2">2. Mehribonlik uyi</option>
-                            <option value="3">3. &quot;Muruvvat&quot; nogironligi bo&#39;lgan bolalar uchun  internat uyi</option>
+                            <option value="-9" class="t_choose">--- choose ---</option>
+                            <option value="1">1. Mehribonlik uyi</option>
+                            <option value="2">2. &quot;Muruvvat&quot; nogironligi bo&#39;lgan bolalar uchun  internat uyi</option>
+                            <option value="3">3. Oilaviy bolalar uyi</option>
                             <option value="4">4. SOS Bolalar makhallalari/oilalari</option>
-                            <option value="5">5. Oilaviy bolalar uyi</option>
+                            <option value="5">5. Bolalar uyi </option>
                             <option value="6">6. Patronat oila</option>
                             <option value="7">7. Vasiylik/homiylik</option>
                             <option value="8">8. Boshqa xizmatlar</option>
@@ -4444,7 +4490,7 @@
                     </td>
                     <td class="p-1">
                         <select id="sh3_s8c" name="sh3_s8c" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                            <option value="">-----</option>
+                            <option value="-9" class="t_choose">--- choose ---</option>
                             <option value="0">0. IHR mavjud emas </option>
                             <option value="1">1. Yangi IHR</option>
                             <option value="2">2. Oldingi IHR, o&#39;zgarishsiz</option>
@@ -4456,7 +4502,7 @@
                     </td>
                     <td class="p-1">
                         <select id="sh3_s8e" name="sh3_s8e" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                            <option value="">-----</option>
+                            <option value="-9" class="t_choose">--- choose ---</option>
                             <option value="1">1. Bolalarni vasiylik tizimi doirasida boshqa xizmatga o&#39;tkazildi</option>
                             <option value="2">2. Oilaga qaytdi (reintegratsiya)</option>
                             <option value="3">3. Farzandlikka olindi </option>
@@ -4474,12 +4520,12 @@
                     </td>
                     <td class="p-1">
                         <select id="sh3_s9b" name="sh3_s9b" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                            <option value="">-----</option>
-                            <option value="1">1. Bolalar uyi </option>
-                            <option value="2">2. Mehribonlik uyi</option>
-                            <option value="3">3. &quot;Muruvvat&quot; nogironligi bo&#39;lgan bolalar uchun  internat uyi</option>
+                            <option value="-9" class="t_choose">--- choose ---</option>
+                            <option value="1">1. Mehribonlik uyi</option>
+                            <option value="2">2. &quot;Muruvvat&quot; nogironligi bo&#39;lgan bolalar uchun  internat uyi</option>
+                            <option value="3">3. Oilaviy bolalar uyi</option>
                             <option value="4">4. SOS Bolalar makhallalari/oilalari</option>
-                            <option value="5">5. Oilaviy bolalar uyi</option>
+                            <option value="5">5. Bolalar uyi </option>
                             <option value="6">6. Patronat oila</option>
                             <option value="7">7. Vasiylik/homiylik</option>
                             <option value="8">8. Boshqa xizmatlar</option>
@@ -4487,7 +4533,7 @@
                     </td>
                     <td class="p-1">
                         <select id="sh3_s9c" name="sh3_s9c" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                            <option value="">-----</option>
+                            <option value="-9" class="t_choose">--- choose ---</option>
                             <option value="0">0. IHR mavjud emas </option>
                             <option value="1">1. Yangi IHR</option>
                             <option value="2">2. Oldingi IHR, o&#39;zgarishsiz</option>
@@ -4499,7 +4545,7 @@
                     </td>
                     <td class="p-1">
                         <select id="sh3_s9e" name="sh3_s9e" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                            <option value="">-----</option>
+                            <option value="-9" class="t_choose">--- choose ---</option>
                             <option value="1">1. Bolalarni vasiylik tizimi doirasida boshqa xizmatga o&#39;tkazildi</option>
                             <option value="2">2. Oilaga qaytdi (reintegratsiya)</option>
                             <option value="3">3. Farzandlikka olindi </option>
@@ -4517,12 +4563,12 @@
                     </td>
                     <td class="p-1">
                         <select id="sh3_s10b" name="sh3_s10b" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                            <option value="">-----</option>
-                            <option value="1">1. Bolalar uyi </option>
-                            <option value="2">2. Mehribonlik uyi</option>
-                            <option value="3">3. &quot;Muruvvat&quot; nogironligi bo&#39;lgan bolalar uchun  internat uyi</option>
+                            <option value="-9" class="t_choose">--- choose ---</option>
+                            <option value="1">1. Mehribonlik uyi</option>
+                            <option value="2">2. &quot;Muruvvat&quot; nogironligi bo&#39;lgan bolalar uchun  internat uyi</option>
+                            <option value="3">3. Oilaviy bolalar uyi</option>
                             <option value="4">4. SOS Bolalar makhallalari/oilalari</option>
-                            <option value="5">5. Oilaviy bolalar uyi</option>
+                            <option value="5">5. Bolalar uyi </option>
                             <option value="6">6. Patronat oila</option>
                             <option value="7">7. Vasiylik/homiylik</option>
                             <option value="8">8. Boshqa xizmatlar</option>
@@ -4530,7 +4576,7 @@
                     </td>
                     <td class="p-1">
                         <select id="sh3_s10c" name="sh3_s10c" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                            <option value="">-----</option>
+                            <option value="-9" class="t_choose">--- choose ---</option>
                             <option value="0">0. IHR mavjud emas </option>
                             <option value="1">1. Yangi IHR</option>
                             <option value="2">2. Oldingi IHR, o&#39;zgarishsiz</option>
@@ -4542,7 +4588,7 @@
                     </td>
                     <td class="p-1">
                         <select id="sh3_s10e" name="sh3_s10e" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                            <option value="">-----</option>
+                            <option value="-9" class="t_choose">--- choose ---</option>
                             <option value="1">1. Bolalarni vasiylik tizimi doirasida boshqa xizmatga o&#39;tkazildi</option>
                             <option value="2">2. Oilaga qaytdi (reintegratsiya)</option>
                             <option value="3">3. Farzandlikka olindi </option>
@@ -4560,12 +4606,12 @@
                     </td>
                     <td class="p-1">
                         <select id="sh3_csb" name="sh3_csb" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                            <option value="">-----</option>
-                            <option value="1">1. Bolalar uyi </option>
-                            <option value="2">2. Mehribonlik uyi</option>
-                            <option value="3">3. &quot;Muruvvat&quot; nogironligi bo&#39;lgan bolalar uchun  internat uyi</option>
+                            <option value="-9" class="t_choose">--- choose ---</option>
+                            <option value="1">1. Mehribonlik uyi</option>
+                            <option value="2">2. &quot;Muruvvat&quot; nogironligi bo&#39;lgan bolalar uchun  internat uyi</option>
+                            <option value="3">3. Oilaviy bolalar uyi</option>
                             <option value="4">4. SOS Bolalar makhallalari/oilalari</option>
-                            <option value="5">5. Oilaviy bolalar uyi</option>
+                            <option value="5">5. Bolalar uyi </option>
                             <option value="6">6. Patronat oila</option>
                             <option value="7">7. Vasiylik/homiylik</option>
                             <option value="8">8. Boshqa xizmatlar</option>
@@ -4573,7 +4619,7 @@
                     </td>
                     <td class="p-1">
                         <select id="sh3_csc" name="sh3_csc" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                            <option value="">-----</option>
+                            <option value="-9" class="t_choose">--- choose ---</option>
                             <option value="0">0. IHR mavjud emas </option>
                             <option value="1">1. Yangi IHR</option>
                             <option value="2">2. Oldingi IHR, o&#39;zgarishsiz</option>
@@ -4584,14 +4630,7 @@
                         <input type="text" id="sh3_csd" name="sh3_csd" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
                     </td>
                     <td class="p-1">
-                        <select id="sh3_cse" name="sh3_cse" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                            <option value="">-----</option>
-                            <option value="1">1. Bolalarni vasiylik tizimi doirasida boshqa xizmatga o&#39;tkazildi</option>
-                            <option value="2">2. Oilaga qaytdi (reintegratsiya)</option>
-                            <option value="3">3. Farzandlikka olindi </option>
-                            <option value="4">4. Boshqa</option>
-                        </select>
-                    </td>
+                                            </td>
                     <td class="p-1">
                         <input type="text" id="sh3_csf" name="sh3_csf" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
                     </td>
@@ -4845,7 +4884,7 @@
 
         <div class="grid grid-cols-2 gap-4 items-center mt-10">
             <div>
-                AGAR LK22_2 DA INTELLEKTUAL NOGIRONLIK BELGILLANGAN B&#39;OLSA</label>
+                <p class="mb-2">AGAR LK22_2 DA INTELLEKTUAL NOGIRONLIK BELGILLANGAN B&#39;OLSA<p>
                 LK22_2m. Nogironlik to&#39;g&#39;risidagi guvohnomaga ko&#39;ra, bolada nogironlikning qanday darajasi?            </div>
             <div class="col-span-1 flex flex-col gap-2">
                 <div class="flex items-center">
@@ -5110,7 +5149,7 @@
 
         <h2 class="mt-10 mb-4 text-2xl font-bold text-gray-700">9. BOLA SALOMATLIGINING JORIY HOLATI</h2>
 
-        <p>QHEALTHP:: Hozirda ...</p>
+        <p>QHEALTHP: Hozirda ...</p>
         <div class="grid grid-cols-2 gap-4 items-center mt-4">
             <div class="ml-3">
                 1. Bolaga hozirgi kungacha majburiy emlashlar qilinganmi?            </div>
@@ -5285,15 +5324,16 @@
 
         <div class="grid grid-cols-2 gap-4 items-center mt-10">
             <div class="ml-3">
-                EDK0. Bola maktabgacha ta&#39;lim muassasasiga qabul qilinganmi?            </div>
+                EDK0. Bola maktabgacha ta&#39;lim muassasasiga qabul qilinganmi?                <small class="my-2 block italic text-red-500">Tekshiring 1. Ha, uyda o&#39;qiydigan bolalar uchun ham.</small>
+            </div>
             <div class="col-span-1 flex items-center gap-4">
-                <div class="flex items-center">
-                    <input id="edk0-0" type="radio" value="2" name="edk0" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="edk0-0" class="ms-2 text-sm text-gray-900">0. Yo&#39;q</label>
-                </div>
                 <div class="flex items-center">
                     <input id="edk0-1" type="radio" value="1" name="edk0" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                     <label for="edk0-1" class="ms-2 text-sm text-gray-900">1. Ha</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="edk0-0" type="radio" value="2" name="edk0" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="edk0-0" class="ms-2 text-sm text-gray-900">0. Yo&#39;q</label>
                 </div>
             </div>
         </div>
@@ -5350,7 +5390,8 @@
 
         <div class="grid grid-cols-2 gap-4 items-center mt-10">
             <div>
-                EDK3. Qaysi sinfga?            </div>
+                EDK3. Qaysi sinfga?                <small class="mt-2 block italic text-red-500">Fill in 0 (zero) for preparatory class</small>
+            </div>
             <div class="col-span-1 flex items-center gap-4">
                 <input type="text" id="edk3" name="edk3" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
             </div>
@@ -5361,12 +5402,12 @@
                 EWM1. O&#39;tgan olti oy ichida o&#39;quvchining maktabda davomati past bo&#39;lganmi?            </div>
             <div class="col-span-1 flex items-center gap-4">
                 <div class="flex items-center">
-                    <input id="ewm1-0" type="radio" value="0" name="ewm1" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="ewm1-0" class="ms-2 text-sm text-gray-900">0. Yo&#39;q</label>
-                </div>
-                <div class="flex items-center">
                     <input id="ewm1-1" type="radio" value="1" name="ewm1" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                     <label for="ewm1-1" class="ms-2 text-sm text-gray-900">1. Ha</label>
+                </div>
+                                <div class="flex items-center">
+                    <input id="ewm1-0" type="radio" value="0" name="ewm1" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="ewm1-0" class="ms-2 text-sm text-gray-900">0. Yo&#39;q</label>
                 </div>
             </div>
         </div>
@@ -5376,12 +5417,12 @@
                 EWM2. O&#39;quvchining maktabdagi ko&#39;rsatkichlari yomonmi yoki o&#39;rtachadan pastmi?            </div>
             <div class="col-span-1 flex items-center gap-4">
                 <div class="flex items-center">
-                    <input id="ewm2-0" type="radio" value="0" name="ewm2" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="ewm2-0" class="ms-2 text-sm text-gray-900">0. Yo&#39;q</label>
-                </div>
-                <div class="flex items-center">
                     <input id="ewm2-1" type="radio" value="1" name="ewm2" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                     <label for="ewm2-1" class="ms-2 text-sm text-gray-900">1. Ha</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="ewm2-0" type="radio" value="0" name="ewm2" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="ewm2-0" class="ms-2 text-sm text-gray-900">0. Yo&#39;q</label>
                 </div>
             </div>
         </div>
@@ -5389,7 +5430,7 @@
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
             <div>
                 EWM3. O&#39;quvchi maktabga kirganidan beri sinfda qolganmi?            </div>
-            <div class="col-span-1 flex items-center gap-4">
+            <div class="col-span-1 flex flex-col gap-2">
                 <div class="flex items-center">
                     <input id="ewm3-0" type="radio" value="0" name="ewm3" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                     <label for="ewm3-0" class="ms-2 text-sm text-gray-900">0. Yo&#39;q</label>
@@ -5411,12 +5452,12 @@
             </div>
             <div class="col-span-1 flex items-center gap-4">
                 <div class="flex items-center">
-                    <input id="ewm4-0" type="radio" value="0" name="ewm4" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="ewm4-0" class="ms-2 text-sm text-gray-900">0. Yo&#39;q</label>
-                </div>
-                <div class="flex items-center">
                     <input id="ewm4-1" type="radio" value="1" name="ewm4" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                     <label for="ewm4-1" class="ms-2 text-sm text-gray-900">1. Ha</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="ewm4-0" type="radio" value="0" name="ewm4" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="ewm4-0" class="ms-2 text-sm text-gray-900">0. Yo&#39;q</label>
                 </div>
             </div>
         </div>
@@ -5426,13 +5467,13 @@
                 EWM5. O&#39;quvchining maktabdan muddatidan ilgari chiqish xavfi mavjudmi?            </div>
             <div class="col-span-1 flex items-center gap-4">
                 <div class="flex items-center">
-                    <input id="ewm5-0" type="radio" value="0" name="ewm5" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="ewm5-0" class="ms-2 text-sm text-gray-900">0. Yo&#39;q</label>
-                </div>
-                <div class="flex items-center">
                     <input id="ewm5-1" type="radio" value="1" name="ewm5" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                     <label for="ewm5-1" class="ms-2 text-sm text-gray-900">1. Ha</label>
                 </div>
+                <div class="flex items-center">
+                    <input id="ewm5-0" type="radio" value="0" name="ewm5" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="ewm5-0" class="ms-2 text-sm text-gray-900">0. Yo&#39;q</label>
+                </div>                
             </div>
         </div>
 
@@ -5805,7 +5846,7 @@
 
         <h2 class="mt-10 mb-4 text-2xl font-bold text-gray-700">12. XAVFLI XULQ-ATVOR</h2>
         <small class="my-2 block italic text-red-500">Diqqat! Ushbu bo&#39;lim faqat 10 yoshdan katta bolalar uchun to&#39;ldirilishi kerak.</small>
-        <p>QRISKP: Bolaning tizimga qabul qilinishi davomida (so&#39;nggi qabul qilinganidan to hozirgi kungacha) bolada quyidagi xavfli xatti-harakatlardan birortasi bo&#39;lganmi:</p>
+        <p>QRISKP Bolaning tizimga qabul qilinishi davomida (so&#39;nggi qabul qilinganidan to hozirgi kungacha) bolada quyidagi xavfli xatti-harakatlardan birortasi bo&#39;lganmi:</p>
         <div class="grid grid-cols-2 gap-4 items-center mt-10">
             <div class="ml-3">
                 1. Jinsiy hayotni erta boshlash (16 yoshga to&#39;lguniga qadar)            </div>

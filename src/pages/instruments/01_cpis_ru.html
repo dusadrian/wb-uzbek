@@ -56,7 +56,8 @@
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
                 <div>ОБЛ. Область</div>
                 <div>
-                    <select id="reg" name="reg" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+                    <select id="reg" name="reg"
+                        class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
                         <option value="-9" class="t_choose">--- choose ---</option>
                     </select>
                 </div>
@@ -65,7 +66,8 @@
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
                 <div>РАЙ. Район </div>
                 <div>
-                    <select id="dis" name="dis" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+                    <select id="dis" name="dis"
+                        class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
                         <option value="-9" class="t_choose">--- choose ---</option>
                     </select>
                 </div>
@@ -311,7 +313,17 @@
                     <div class="flex items-center">
                         <input id="lk15-4" type="radio" value="4" name="lk15"
                             class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                        <label for="lk15-4" class="ms-2 text-sm text-gray-900">4. Если другой, укажите</label>
+                        <label for="lk15-4" class="ms-2 text-sm text-gray-900">4. Другие сотрудники учреждения</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="lk15-5" type="radio" value="5" name="lk15"
+                            class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <label for="lk15-5" class="ms-2 text-sm text-gray-900">5. Еще один госслужащий</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="lk15-6" type="radio" value="6" name="lk15"
+                            class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <label for="lk15-6" class="ms-2 text-sm text-gray-900">6. Если другой, укажите</label>
                     </div>
                     <div class="flex items-center">
                         <input type="text" id="lk15_other" name="lk15_other"
@@ -418,7 +430,7 @@
                         <input id="cm1dw-1" type="radio" value="1" name="cm1dw"
                             class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="cm1dw-1" class="ms-2 text-sm text-gray-900">1. Мать жестоко обращалась с ребенком
-                            или пренебрегал им..</label>
+                            или пренебрегал им.</label>
                     </div>
                     <div class="flex items-center">
                         <input id="cm1dw-2" type="radio" value="2" name="cm1dw"
@@ -444,7 +456,7 @@
                             class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="cm1dw-5" class="ms-2 text-sm text-gray-900">5. Мать не установила или не
                             поддерживала отношения с ребенком, а также не выполнила постановления или планы суда
-                            относительно опеки, посещения или воссоединения ребенка с семьей..</label>
+                            относительно опеки, посещения или воссоединения ребенка с семьей.</label>
                     </div>
                     <div class="flex items-center">
                         <input id="cm1dw-6" type="radio" value="6" name="cm1dw"
@@ -1179,6 +1191,11 @@
                                     class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                                 <label for="cm10a-2" class="ms-2 text-sm text-gray-900">2. За границей</label>
                             </div>
+                            <div class="flex items-center">
+                                <input id="cm10a-9" type="radio" value="9" name="cm10a"
+                                    class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                                <label for="cm10a-9" class="ms-2 text-sm text-gray-900">9. Неизвестно</label>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -1223,7 +1240,7 @@
 
             <div class="grid grid-cols-2 gap-4 items-center mt-10">
                 <div>
-                    СМ11 Текущее место жительство матери </div>
+                    СМ11 Текущее место жительство матери. </div>
                 <div>
 
                     <div class="mb-2">а. Проживает ли она ...?</div>
@@ -1237,6 +1254,11 @@
                             <input id="cm11a-2" type="radio" value="2" name="cm11a"
                                 class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                             <label for="cm11a-2" class="ms-2 text-sm text-gray-900">2. За границей</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="cm11a-9" type="radio" value="9" name="cm11a"
+                                class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                            <label for="cm11a-9" class="ms-2 text-sm text-gray-900">9. Неизвестно</label>
                         </div>
                     </div>
                 </div>
@@ -1578,7 +1600,7 @@
                     <div class="flex items-center">
                         <input id="ct5a-7" type="radio" value="7" name="ct5a"
                             class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                        <label for="ct5a-7" class="ms-2 text-sm text-gray-900">7. Живет отдельно**</label>
+                        <label for="ct5a-7" class="ms-2 text-sm text-gray-900">7. Живет отдельно*</label>
                     </div>
                     <div class="flex items-center">
                         <input id="ct5a-8" type="radio" value="8" name="ct5a"
@@ -1634,7 +1656,7 @@
                     <div class="flex items-center">
                         <input id="ct5b-7" type="radio" value="7" name="ct5b"
                             class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                        <label for="ct5b-7" class="ms-2 text-sm text-gray-900">7. Живет отдельно**</label>
+                        <label for="ct5b-7" class="ms-2 text-sm text-gray-900">7. Живет отдельно*</label>
                     </div>
                     <div class="flex items-center">
                         <input id="ct5b-8" type="radio" value="8" name="ct5b"
@@ -1661,7 +1683,7 @@
                         <input id="ct6a-2" type="radio" value="1" name="ct6a"
                             class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="ct6a-2" class="ms-2 text-sm text-gray-900">1. У отца диагностировано текущее
-                            заболевание (например, туберкулез))</label>
+                            заболевание (например, туберкулез)</label>
                     </div>
                     <div class="flex items-center">
                         <input id="ct6a-3" type="radio" value="2" name="ct6a"
@@ -1679,8 +1701,7 @@
                         <input id="ct6a-5" type="radio" value="4" name="ct6a"
                             class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="ct6a-5" class="ms-2 text-sm text-gray-900">4. Отец страдает как психическим, так и
-                            физическим нарушением или инвалидностьюimpairment or
-                            disability</label>
+                            физическим нарушением или инвалидностью</label>
                     </div>
                     <div class="flex items-center">
                         <input id="ct6a-6" type="radio" value="9" name="ct6a"
@@ -1702,7 +1723,7 @@
                         <input id="ct6b-2" type="radio" value="1" name="ct6b"
                             class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="ct6b-2" class="ms-2 text-sm text-gray-900">1. У отца диагностировано текущее
-                            заболевание (например, туберкулез))</label>
+                            заболевание (например, туберкулез)</label>
                     </div>
                     <div class="flex items-center">
                         <input id="ct6b-3" type="radio" value="2" name="ct6b"
@@ -2156,6 +2177,11 @@
                                 class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                             <label for="ct10a-2" class="ms-2 text-sm text-gray-900">2. За границей</label>
                         </div>
+                        <div class="flex items-center">
+                            <input id="ct10a-9" type="radio" value="9" name="ct10a"
+                                class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                            <label for="ct10a-9" class="ms-2 text-sm text-gray-900">9. Неизвестно</label>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -2213,6 +2239,11 @@
                             <input id="ct11a-2" type="radio" value="2" name="ct11a"
                                 class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                             <label for="ct11a-2" class="ms-2 text-sm text-gray-900">2. За границей</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="ct11a-9" type="radio" value="9" name="ct11a"
+                                class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                            <label for="ct11a-9" class="ms-2 text-sm text-gray-900">9. Неизвестно</label>
                         </div>
                     </div>
                 </div>
@@ -2323,9 +2354,44 @@
 
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
                 <div>CG1d. Родственные связи: </div>
-                <div>
-                    <input type="text" id="cg1d" name="cg1d"
-                        class="bg-white disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+                <div class="flex flex-col gap-2">
+                    <div class="flex items-center">
+                        <input id="cg1d-1" type="radio" value="1" name="cg1d"
+                            class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <label for="cg1d-1" class="ms-2 text-sm text-gray-900">1. Брат/Сестра (2-я степень)</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="cg1d-2" type="radio" value="2" name="cg1d"
+                            class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <label for="cg1d-2" class="ms-2 text-sm text-gray-900">2. Дедушка/Бабушка (2-я степень)</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="cg1d-3" type="radio" value="3" name="cg1d"
+                            class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <label for="cg1d-3" class="ms-2 text-sm text-gray-900">3. Дядя/Тётя (3-я степень)</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="cg1d-4" type="radio" value="4" name="cg1d"
+                            class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <label for="cg1d-4" class="ms-2 text-sm text-gray-900">4. Прадедушка (3-я степень)</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="cg1d-5" type="radio" value="5" name="cg1d"
+                            class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <label for="cg1d-5" class="ms-2 text-sm text-gray-900">5. Двоюродный брат (4-я степень)</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="cg1d-6" type="radio" value="6" name="cg1d"
+                            class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <label for="cg1d-6" class="ms-2 text-sm text-gray-900">6. Другой родственник 4-й степени родства
+                            или более дальний родственник</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="cg1d-7" type="radio" value="7" name="cg1d"
+                            class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <label for="cg1d-7" class="ms-2 text-sm text-gray-900">7. Сводные родственники (семейные
+                            отношения, установленные посредством (повторного) брака)</label>
+                    </div>
                 </div>
             </div>
 
@@ -2468,19 +2534,14 @@
                             class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="cg5a-0" class="ms-2 text-sm text-gray-900">0. Не заявлено/неизвестно</label>
                     </div>
-                    <div class="flex items-center">
-                        <input id="cg5a-90" type="radio" value="90" name="cg5a"
-                            class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                        <label for="cg5a-90" class="ms-2 text-sm text-gray-900">90. Deceased</label>
-                    </div>
                 </div>
             </div>
 
             <div class="grid grid-cols-2 gap-4 items-center mt-10">
                 <div>
-                    CG5b. Текущее семейное положение опекуна <small class="italic block text-red-500">*
-                        &quot;Separated&quot; means she is still legally married but does not live together with her
-                        spouse.</small>
+                    CG5b. Текущее семейное положение опекуна <small class="italic block text-red-500">* «Живет отдельно»
+                        означает, что он/она все еще состоит в законном браке, но не проживает вместе с
+                        супругой(-ом).</small>
                 </div>
                 <div class="col-span-1 flex flex-col gap-2">
                     <div class="flex items-center">
@@ -2699,7 +2760,7 @@
             </div>
             <div class="grid grid-cols-2 gap-4 items-center mt-10">
                 <div>
-                    CG7b. Пожалуйста, используйте один из нижеуказанных кодов </div>
+                    CG7b. Текущее образование опекуна </div>
                 <div class="col-span-1 flex flex-col gap-2">
                     <div class="flex items-center">
                         <input id="cg7b-1" type="radio" value="0" name="cg7b"
@@ -3190,7 +3251,7 @@
 
             <div class="grid grid-cols-2 gap-4 items-center mt-10">
                 <div>
-                    (Автоматически рассчитывается на основе SA1-LK3). SA2 </div>
+                    SA2. Откуда прибыл/доставлен ребенок? </div>
                 <div class="col-span-1 flex flex-col gap-2">
                     <div class="flex items-center">
                         <input id="sa2-1" type="radio" value="1" name="sa2"
@@ -3270,7 +3331,9 @@
 
             <div class="grid grid-cols-2 gap-4 items-center mt-10">
                 <div>
-                    SA4. Каковы были причины разлучения ребенка с семьей? </div>
+                    SA4. Каковы были причины разлучения ребенка с семьей? <small
+                        class="mt-2 block italic text-red-500">ВОЗМОЖЕН ВЫБОР НЕСКОЛЬКИХ ОТВЕТОВ</small>
+                </div>
                 <div class="col-span-1 flex flex-col gap-2">
                     <div class="flex items-center">
                         <input id="sa4_1" type="checkbox" value="1" name="sa4_1"
@@ -3332,7 +3395,7 @@
                 </div>
             </div>
 
-            <p>В какой вид услуг был помещен ребенок?</p>
+            <p class="mt-6">SA5. В какой вид услуг был помещен ребенок?</p>
 
             <div class="grid grid-cols-2 items-center gap-4 mt-6">
                 <div>SA5r. Область</div>
@@ -3966,13 +4029,13 @@
                     <div class="flex items-center">
                         <input id="qeduc1a-1" type="radio" value="1" name="qeduc1a"
                             class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                        <label for="qeduc1a-1" class="ms-2 text-sm text-gray-900">1. Детский сад общего типа,</label>
+                        <label for="qeduc1a-1" class="ms-2 text-sm text-gray-900">1. Детский сад общего типа</label>
                     </div>
                     <div class="flex items-center">
                         <input id="qeduc1a-2" type="radio" value="2" name="qeduc1a"
                             class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="qeduc1a-2" class="ms-2 text-sm text-gray-900">2. Государственные многопрофильные
-                            специализированные дошкольные образовательные учреждения (ГМСДОУ))</label>
+                            специализированные дошкольные образовательные учреждения (ГМСДОУ)</label>
                     </div>
                     <div class="flex items-center">
                         <input id="qeduc1a-3" type="radio" value="3" name="qeduc1a"
@@ -4148,19 +4211,19 @@
                         <input id="qeduc2f-1" type="radio" value="1" name="qeduc2f"
                             class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="qeduc2f-1" class="ms-2 text-sm text-gray-900">1. У ребенка была инвалидность или
-                            состояние здоровья, препятствующее посещению школы..</label>
+                            состояние здоровья, препятствующее посещению школы.</label>
                     </div>
                     <div class="flex items-center">
                         <input id="qeduc2f-2" type="radio" value="2" name="qeduc2f"
                             class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="qeduc2f-2" class="ms-2 text-sm text-gray-900">2. Ребенок жил в отдаленном или
-                            сельском районе с затрудненным доступом к школам..</label>
+                            сельском районе с затрудненным доступом к школам.</label>
                     </div>
                     <div class="flex items-center">
                         <input id="qeduc2f-3" type="radio" value="3" name="qeduc2f"
                             class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="qeduc2f-3" class="ms-2 text-sm text-gray-900">3. Семья ребенка или опекуны не могли
-                            позволить себе образование ребенка..</label>
+                            позволить себе образование ребенка.</label>
                     </div>
                     <div class="flex items-center">
                         <input id="qeduc2f-4" type="radio" value="4" name="qeduc2f"
@@ -5017,7 +5080,7 @@
                 </div>
             </div>
             <div class="grid grid-cols-2 gap-4 items-center mt-10">
-                <div class="ml-3">
+                <div>
                     SH2. Выходил ли ребенок когда-либо из системы опеки и возвращался ли он после первого приема до
                     настоящего времени? </div>
                 <div class="col-span-1 flex flex-col gap-2">
@@ -5064,12 +5127,12 @@
                         <td class="p-1">
                             <select id="sh3_s1b" name="sh3_s1b"
                                 class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                                <option value="">-----</option>
-                                <option value="1">1. Детский дом (Дом ребенка)</option>
-                                <option value="2">2. Дом «Мехрибонлик»</option>
-                                <option value="3">3. Дом-интернат «Мурувват» для детей с инвалидностью</option>
+                                <option value="-9" class="t_choose">--- choose ---</option>
+                                <option value="1">1. Дом «Мехрибонлик»</option>
+                                <option value="2">2. Дом-интернат «Мурувват» для детей с инвалидностью</option>
+                                <option value="3">3. Детский дом семейного типа</option>
                                 <option value="4">4. SOS Детские деревни/семьи</option>
-                                <option value="5">5. Детский дом семейного типа</option>
+                                <option value="5">5. Детский дом (Дом ребенка)</option>
                                 <option value="6">6. Патронатная семья</option>
                                 <option value="7">7. Опека/попечительство</option>
                                 <option value="8">8. Прочие услуги</option>
@@ -5078,7 +5141,7 @@
                         <td class="p-1">
                             <select id="sh3_s1c" name="sh3_s1c"
                                 class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                                <option value="">-----</option>
+                                <option value="-9" class="t_choose">--- choose ---</option>
                                 <option value="0">0. ИПЗ отсутствует</option>
                                 <option value="1">1. Новый ИПЗ</option>
                                 <option value="2">2. Предыдущий ИПЗ, неизмененный </option>
@@ -5092,7 +5155,7 @@
                         <td class="p-1">
                             <select id="sh3_s1e" name="sh3_s1e"
                                 class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                                <option value="">-----</option>
+                                <option value="-9" class="t_choose">--- choose ---</option>
                                 <option value="1">1. Перевод в другую службу системы опеки </option>
                                 <option value="2">2. Ре-интеграция в семью</option>
                                 <option value="3">3. Усыновление/удочерение</option>
@@ -5113,12 +5176,12 @@
                         <td class="p-1">
                             <select id="sh3_s2b" name="sh3_s2b"
                                 class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                                <option value="">-----</option>
-                                <option value="1">1. Детский дом (Дом ребенка)</option>
-                                <option value="2">2. Дом «Мехрибонлик»</option>
-                                <option value="3">3. Дом-интернат «Мурувват» для детей с инвалидностью</option>
+                                <option value="-9" class="t_choose">--- choose ---</option>
+                                <option value="1">1. Дом «Мехрибонлик»</option>
+                                <option value="2">2. Дом-интернат «Мурувват» для детей с инвалидностью</option>
+                                <option value="3">3. Детский дом семейного типа</option>
                                 <option value="4">4. SOS Детские деревни/семьи</option>
-                                <option value="5">5. Детский дом семейного типа</option>
+                                <option value="5">5. Детский дом (Дом ребенка)</option>
                                 <option value="6">6. Патронатная семья</option>
                                 <option value="7">7. Опека/попечительство</option>
                                 <option value="8">8. Прочие услуги</option>
@@ -5127,7 +5190,7 @@
                         <td class="p-1">
                             <select id="sh3_s2c" name="sh3_s2c"
                                 class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                                <option value="">-----</option>
+                                <option value="-9" class="t_choose">--- choose ---</option>
                                 <option value="0">0. ИПЗ отсутствует</option>
                                 <option value="1">1. Новый ИПЗ</option>
                                 <option value="2">2. Предыдущий ИПЗ, неизмененный </option>
@@ -5141,7 +5204,7 @@
                         <td class="p-1">
                             <select id="sh3_s2e" name="sh3_s2e"
                                 class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                                <option value="">-----</option>
+                                <option value="-9" class="t_choose">--- choose ---</option>
                                 <option value="1">1. Перевод в другую службу системы опеки </option>
                                 <option value="2">2. Ре-интеграция в семью</option>
                                 <option value="3">3. Усыновление/удочерение</option>
@@ -5162,12 +5225,12 @@
                         <td class="p-1">
                             <select id="sh3_s3b" name="sh3_s3b"
                                 class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                                <option value="">-----</option>
-                                <option value="1">1. Детский дом (Дом ребенка)</option>
-                                <option value="2">2. Дом «Мехрибонлик»</option>
-                                <option value="3">3. Дом-интернат «Мурувват» для детей с инвалидностью</option>
+                                <option value="-9" class="t_choose">--- choose ---</option>
+                                <option value="1">1. Дом «Мехрибонлик»</option>
+                                <option value="2">2. Дом-интернат «Мурувват» для детей с инвалидностью</option>
+                                <option value="3">3. Детский дом семейного типа</option>
                                 <option value="4">4. SOS Детские деревни/семьи</option>
-                                <option value="5">5. Детский дом семейного типа</option>
+                                <option value="5">5. Детский дом (Дом ребенка)</option>
                                 <option value="6">6. Патронатная семья</option>
                                 <option value="7">7. Опека/попечительство</option>
                                 <option value="8">8. Прочие услуги</option>
@@ -5176,7 +5239,7 @@
                         <td class="p-1">
                             <select id="sh3_s3c" name="sh3_s3c"
                                 class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                                <option value="">-----</option>
+                                <option value="-9" class="t_choose">--- choose ---</option>
                                 <option value="0">0. ИПЗ отсутствует</option>
                                 <option value="1">1. Новый ИПЗ</option>
                                 <option value="2">2. Предыдущий ИПЗ, неизмененный </option>
@@ -5190,7 +5253,7 @@
                         <td class="p-1">
                             <select id="sh3_s3e" name="sh3_s3e"
                                 class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                                <option value="">-----</option>
+                                <option value="-9" class="t_choose">--- choose ---</option>
                                 <option value="1">1. Перевод в другую службу системы опеки </option>
                                 <option value="2">2. Ре-интеграция в семью</option>
                                 <option value="3">3. Усыновление/удочерение</option>
@@ -5211,12 +5274,12 @@
                         <td class="p-1">
                             <select id="sh3_s4b" name="sh3_s4b"
                                 class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                                <option value="">-----</option>
-                                <option value="1">1. Детский дом (Дом ребенка)</option>
-                                <option value="2">2. Дом «Мехрибонлик»</option>
-                                <option value="3">3. Дом-интернат «Мурувват» для детей с инвалидностью</option>
+                                <option value="-9" class="t_choose">--- choose ---</option>
+                                <option value="1">1. Дом «Мехрибонлик»</option>
+                                <option value="2">2. Дом-интернат «Мурувват» для детей с инвалидностью</option>
+                                <option value="3">3. Детский дом семейного типа</option>
                                 <option value="4">4. SOS Детские деревни/семьи</option>
-                                <option value="5">5. Детский дом семейного типа</option>
+                                <option value="5">5. Детский дом (Дом ребенка)</option>
                                 <option value="6">6. Патронатная семья</option>
                                 <option value="7">7. Опека/попечительство</option>
                                 <option value="8">8. Прочие услуги</option>
@@ -5225,7 +5288,7 @@
                         <td class="p-1">
                             <select id="sh3_s4c" name="sh3_s4c"
                                 class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                                <option value="">-----</option>
+                                <option value="-9" class="t_choose">--- choose ---</option>
                                 <option value="0">0. ИПЗ отсутствует</option>
                                 <option value="1">1. Новый ИПЗ</option>
                                 <option value="2">2. Предыдущий ИПЗ, неизмененный </option>
@@ -5239,7 +5302,7 @@
                         <td class="p-1">
                             <select id="sh3_s4e" name="sh3_s4e"
                                 class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                                <option value="">-----</option>
+                                <option value="-9" class="t_choose">--- choose ---</option>
                                 <option value="1">1. Перевод в другую службу системы опеки </option>
                                 <option value="2">2. Ре-интеграция в семью</option>
                                 <option value="3">3. Усыновление/удочерение</option>
@@ -5260,12 +5323,12 @@
                         <td class="p-1">
                             <select id="sh3_s5b" name="sh3_s5b"
                                 class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                                <option value="">-----</option>
-                                <option value="1">1. Детский дом (Дом ребенка)</option>
-                                <option value="2">2. Дом «Мехрибонлик»</option>
-                                <option value="3">3. Дом-интернат «Мурувват» для детей с инвалидностью</option>
+                                <option value="-9" class="t_choose">--- choose ---</option>
+                                <option value="1">1. Дом «Мехрибонлик»</option>
+                                <option value="2">2. Дом-интернат «Мурувват» для детей с инвалидностью</option>
+                                <option value="3">3. Детский дом семейного типа</option>
                                 <option value="4">4. SOS Детские деревни/семьи</option>
-                                <option value="5">5. Детский дом семейного типа</option>
+                                <option value="5">5. Детский дом (Дом ребенка)</option>
                                 <option value="6">6. Патронатная семья</option>
                                 <option value="7">7. Опека/попечительство</option>
                                 <option value="8">8. Прочие услуги</option>
@@ -5274,7 +5337,7 @@
                         <td class="p-1">
                             <select id="sh3_s5c" name="sh3_s5c"
                                 class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                                <option value="">-----</option>
+                                <option value="-9" class="t_choose">--- choose ---</option>
                                 <option value="0">0. ИПЗ отсутствует</option>
                                 <option value="1">1. Новый ИПЗ</option>
                                 <option value="2">2. Предыдущий ИПЗ, неизмененный </option>
@@ -5288,7 +5351,7 @@
                         <td class="p-1">
                             <select id="sh3_s5e" name="sh3_s5e"
                                 class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                                <option value="">-----</option>
+                                <option value="-9" class="t_choose">--- choose ---</option>
                                 <option value="1">1. Перевод в другую службу системы опеки </option>
                                 <option value="2">2. Ре-интеграция в семью</option>
                                 <option value="3">3. Усыновление/удочерение</option>
@@ -5309,12 +5372,12 @@
                         <td class="p-1">
                             <select id="sh3_s6b" name="sh3_s6b"
                                 class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                                <option value="">-----</option>
-                                <option value="1">1. Детский дом (Дом ребенка)</option>
-                                <option value="2">2. Дом «Мехрибонлик»</option>
-                                <option value="3">3. Дом-интернат «Мурувват» для детей с инвалидностью</option>
+                                <option value="-9" class="t_choose">--- choose ---</option>
+                                <option value="1">1. Дом «Мехрибонлик»</option>
+                                <option value="2">2. Дом-интернат «Мурувват» для детей с инвалидностью</option>
+                                <option value="3">3. Детский дом семейного типа</option>
                                 <option value="4">4. SOS Детские деревни/семьи</option>
-                                <option value="5">5. Детский дом семейного типа</option>
+                                <option value="5">5. Детский дом (Дом ребенка)</option>
                                 <option value="6">6. Патронатная семья</option>
                                 <option value="7">7. Опека/попечительство</option>
                                 <option value="8">8. Прочие услуги</option>
@@ -5323,7 +5386,7 @@
                         <td class="p-1">
                             <select id="sh3_s6c" name="sh3_s6c"
                                 class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                                <option value="">-----</option>
+                                <option value="-9" class="t_choose">--- choose ---</option>
                                 <option value="0">0. ИПЗ отсутствует</option>
                                 <option value="1">1. Новый ИПЗ</option>
                                 <option value="2">2. Предыдущий ИПЗ, неизмененный </option>
@@ -5337,7 +5400,7 @@
                         <td class="p-1">
                             <select id="sh3_s6e" name="sh3_s6e"
                                 class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                                <option value="">-----</option>
+                                <option value="-9" class="t_choose">--- choose ---</option>
                                 <option value="1">1. Перевод в другую службу системы опеки </option>
                                 <option value="2">2. Ре-интеграция в семью</option>
                                 <option value="3">3. Усыновление/удочерение</option>
@@ -5358,12 +5421,12 @@
                         <td class="p-1">
                             <select id="sh3_s7b" name="sh3_s7b"
                                 class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                                <option value="">-----</option>
-                                <option value="1">1. Детский дом (Дом ребенка)</option>
-                                <option value="2">2. Дом «Мехрибонлик»</option>
-                                <option value="3">3. Дом-интернат «Мурувват» для детей с инвалидностью</option>
+                                <option value="-9" class="t_choose">--- choose ---</option>
+                                <option value="1">1. Дом «Мехрибонлик»</option>
+                                <option value="2">2. Дом-интернат «Мурувват» для детей с инвалидностью</option>
+                                <option value="3">3. Детский дом семейного типа</option>
                                 <option value="4">4. SOS Детские деревни/семьи</option>
-                                <option value="5">5. Детский дом семейного типа</option>
+                                <option value="5">5. Детский дом (Дом ребенка)</option>
                                 <option value="6">6. Патронатная семья</option>
                                 <option value="7">7. Опека/попечительство</option>
                                 <option value="8">8. Прочие услуги</option>
@@ -5372,7 +5435,7 @@
                         <td class="p-1">
                             <select id="sh3_s7c" name="sh3_s7c"
                                 class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                                <option value="">-----</option>
+                                <option value="-9" class="t_choose">--- choose ---</option>
                                 <option value="0">0. ИПЗ отсутствует</option>
                                 <option value="1">1. Новый ИПЗ</option>
                                 <option value="2">2. Предыдущий ИПЗ, неизмененный </option>
@@ -5386,7 +5449,7 @@
                         <td class="p-1">
                             <select id="sh3_s7e" name="sh3_s7e"
                                 class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                                <option value="">-----</option>
+                                <option value="-9" class="t_choose">--- choose ---</option>
                                 <option value="1">1. Перевод в другую службу системы опеки </option>
                                 <option value="2">2. Ре-интеграция в семью</option>
                                 <option value="3">3. Усыновление/удочерение</option>
@@ -5407,12 +5470,12 @@
                         <td class="p-1">
                             <select id="sh3_s8b" name="sh3_s8b"
                                 class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                                <option value="">-----</option>
-                                <option value="1">1. Детский дом (Дом ребенка)</option>
-                                <option value="2">2. Дом «Мехрибонлик»</option>
-                                <option value="3">3. Дом-интернат «Мурувват» для детей с инвалидностью</option>
+                                <option value="-9" class="t_choose">--- choose ---</option>
+                                <option value="1">1. Дом «Мехрибонлик»</option>
+                                <option value="2">2. Дом-интернат «Мурувват» для детей с инвалидностью</option>
+                                <option value="3">3. Детский дом семейного типа</option>
                                 <option value="4">4. SOS Детские деревни/семьи</option>
-                                <option value="5">5. Детский дом семейного типа</option>
+                                <option value="5">5. Детский дом (Дом ребенка)</option>
                                 <option value="6">6. Патронатная семья</option>
                                 <option value="7">7. Опека/попечительство</option>
                                 <option value="8">8. Прочие услуги</option>
@@ -5421,7 +5484,7 @@
                         <td class="p-1">
                             <select id="sh3_s8c" name="sh3_s8c"
                                 class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                                <option value="">-----</option>
+                                <option value="-9" class="t_choose">--- choose ---</option>
                                 <option value="0">0. ИПЗ отсутствует</option>
                                 <option value="1">1. Новый ИПЗ</option>
                                 <option value="2">2. Предыдущий ИПЗ, неизмененный </option>
@@ -5435,7 +5498,7 @@
                         <td class="p-1">
                             <select id="sh3_s8e" name="sh3_s8e"
                                 class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                                <option value="">-----</option>
+                                <option value="-9" class="t_choose">--- choose ---</option>
                                 <option value="1">1. Перевод в другую службу системы опеки </option>
                                 <option value="2">2. Ре-интеграция в семью</option>
                                 <option value="3">3. Усыновление/удочерение</option>
@@ -5456,12 +5519,12 @@
                         <td class="p-1">
                             <select id="sh3_s9b" name="sh3_s9b"
                                 class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                                <option value="">-----</option>
-                                <option value="1">1. Детский дом (Дом ребенка)</option>
-                                <option value="2">2. Дом «Мехрибонлик»</option>
-                                <option value="3">3. Дом-интернат «Мурувват» для детей с инвалидностью</option>
+                                <option value="-9" class="t_choose">--- choose ---</option>
+                                <option value="1">1. Дом «Мехрибонлик»</option>
+                                <option value="2">2. Дом-интернат «Мурувват» для детей с инвалидностью</option>
+                                <option value="3">3. Детский дом семейного типа</option>
                                 <option value="4">4. SOS Детские деревни/семьи</option>
-                                <option value="5">5. Детский дом семейного типа</option>
+                                <option value="5">5. Детский дом (Дом ребенка)</option>
                                 <option value="6">6. Патронатная семья</option>
                                 <option value="7">7. Опека/попечительство</option>
                                 <option value="8">8. Прочие услуги</option>
@@ -5470,7 +5533,7 @@
                         <td class="p-1">
                             <select id="sh3_s9c" name="sh3_s9c"
                                 class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                                <option value="">-----</option>
+                                <option value="-9" class="t_choose">--- choose ---</option>
                                 <option value="0">0. ИПЗ отсутствует</option>
                                 <option value="1">1. Новый ИПЗ</option>
                                 <option value="2">2. Предыдущий ИПЗ, неизмененный </option>
@@ -5484,7 +5547,7 @@
                         <td class="p-1">
                             <select id="sh3_s9e" name="sh3_s9e"
                                 class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                                <option value="">-----</option>
+                                <option value="-9" class="t_choose">--- choose ---</option>
                                 <option value="1">1. Перевод в другую службу системы опеки </option>
                                 <option value="2">2. Ре-интеграция в семью</option>
                                 <option value="3">3. Усыновление/удочерение</option>
@@ -5505,12 +5568,12 @@
                         <td class="p-1">
                             <select id="sh3_s10b" name="sh3_s10b"
                                 class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                                <option value="">-----</option>
-                                <option value="1">1. Детский дом (Дом ребенка)</option>
-                                <option value="2">2. Дом «Мехрибонлик»</option>
-                                <option value="3">3. Дом-интернат «Мурувват» для детей с инвалидностью</option>
+                                <option value="-9" class="t_choose">--- choose ---</option>
+                                <option value="1">1. Дом «Мехрибонлик»</option>
+                                <option value="2">2. Дом-интернат «Мурувват» для детей с инвалидностью</option>
+                                <option value="3">3. Детский дом семейного типа</option>
                                 <option value="4">4. SOS Детские деревни/семьи</option>
-                                <option value="5">5. Детский дом семейного типа</option>
+                                <option value="5">5. Детский дом (Дом ребенка)</option>
                                 <option value="6">6. Патронатная семья</option>
                                 <option value="7">7. Опека/попечительство</option>
                                 <option value="8">8. Прочие услуги</option>
@@ -5519,7 +5582,7 @@
                         <td class="p-1">
                             <select id="sh3_s10c" name="sh3_s10c"
                                 class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                                <option value="">-----</option>
+                                <option value="-9" class="t_choose">--- choose ---</option>
                                 <option value="0">0. ИПЗ отсутствует</option>
                                 <option value="1">1. Новый ИПЗ</option>
                                 <option value="2">2. Предыдущий ИПЗ, неизмененный </option>
@@ -5533,7 +5596,7 @@
                         <td class="p-1">
                             <select id="sh3_s10e" name="sh3_s10e"
                                 class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                                <option value="">-----</option>
+                                <option value="-9" class="t_choose">--- choose ---</option>
                                 <option value="1">1. Перевод в другую службу системы опеки </option>
                                 <option value="2">2. Ре-интеграция в семью</option>
                                 <option value="3">3. Усыновление/удочерение</option>
@@ -5554,12 +5617,12 @@
                         <td class="p-1">
                             <select id="sh3_csb" name="sh3_csb"
                                 class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                                <option value="">-----</option>
-                                <option value="1">1. Детский дом (Дом ребенка)</option>
-                                <option value="2">2. Дом «Мехрибонлик»</option>
-                                <option value="3">3. Дом-интернат «Мурувват» для детей с инвалидностью</option>
+                                <option value="-9" class="t_choose">--- choose ---</option>
+                                <option value="1">1. Дом «Мехрибонлик»</option>
+                                <option value="2">2. Дом-интернат «Мурувват» для детей с инвалидностью</option>
+                                <option value="3">3. Детский дом семейного типа</option>
                                 <option value="4">4. SOS Детские деревни/семьи</option>
-                                <option value="5">5. Детский дом семейного типа</option>
+                                <option value="5">5. Детский дом (Дом ребенка)</option>
                                 <option value="6">6. Патронатная семья</option>
                                 <option value="7">7. Опека/попечительство</option>
                                 <option value="8">8. Прочие услуги</option>
@@ -5568,7 +5631,7 @@
                         <td class="p-1">
                             <select id="sh3_csc" name="sh3_csc"
                                 class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                                <option value="">-----</option>
+                                <option value="-9" class="t_choose">--- choose ---</option>
                                 <option value="0">0. ИПЗ отсутствует</option>
                                 <option value="1">1. Новый ИПЗ</option>
                                 <option value="2">2. Предыдущий ИПЗ, неизмененный </option>
@@ -5580,14 +5643,6 @@
                                 class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
                         </td>
                         <td class="p-1">
-                            <!-- <select id="sh3_cse" name="sh3_cse"
-                                class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                                <option value="">-----</option>
-                                <option value="1">1. Перевод в другую службу системы опеки </option>
-                                <option value="2">2. Ре-интеграция в семью</option>
-                                <option value="3">3. Усыновление/удочерение</option>
-                                <option value="4">4. Другое</option>
-                            </select> -->
                         </td>
                         <td class="p-1">
                             <input type="text" id="sh3_csf" name="sh3_csf"
@@ -5888,8 +5943,10 @@
 
             <div class="grid grid-cols-2 gap-4 items-center mt-10">
                 <div>
-                    ЕCЛИ ИНТЕЛЛЕКТУАЛЬНАЯ ИНВАЛИДНОСТЬ ОТМЕЧЕНА В LK22_2</label>
-                    LK22_2m. Cогласно справке об инвалидности, какая степень инвалидности у ребенка? </div>
+                    <p class="mb-2">ЕCЛИ ИНТЕЛЛЕКТУАЛЬНАЯ ИНВАЛИДНОСТЬ ОТМЕЧЕНА В LK22_2
+                    <p>
+                        LK22_2m. Cогласно справке об инвалидности, какая степень инвалидности у ребенка?
+                </div>
                 <div class="col-span-1 flex flex-col gap-2">
                     <div class="flex items-center">
                         <input id="lk22_2m-1" type="radio" value="1" name="lk22_2m"
@@ -6200,7 +6257,7 @@
 
             <h2 class="mt-10 mb-4 text-2xl font-bold text-gray-700">9. ТЕКУЩЕЕ СОСТОЯНИЕ ЗДОРОВЬЯ РЕБЕНКА </h2>
 
-            <p>QHEALTHP:: В настоящее время...</p>
+            <p>QHEALTHP: В настоящее время...</p>
             <div class="grid grid-cols-2 gap-4 items-center mt-4">
                 <div class="ml-3">
                     1. Сделаны ли ребенку на сегодняшний день обязательные прививки? </div>
@@ -6410,17 +6467,20 @@
 
             <div class="grid grid-cols-2 gap-4 items-center mt-10">
                 <div class="ml-3">
-                    EDK0. Зачислен ли ребенок в детский сад/школу? </div>
+                    EDK0. Зачислен ли ребенок в детский сад/школу? <small
+                        class="my-2 block italic text-red-500">Проверить 1. Да, также для детей, обучающихся на
+                        дому.</small>
+                </div>
                 <div class="col-span-1 flex items-center gap-4">
-                    <div class="flex items-center">
-                        <input id="edk0-0" type="radio" value="2" name="edk0"
-                            class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                        <label for="edk0-0" class="ms-2 text-sm text-gray-900">0. Нет</label>
-                    </div>
                     <div class="flex items-center">
                         <input id="edk0-1" type="radio" value="1" name="edk0"
                             class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="edk0-1" class="ms-2 text-sm text-gray-900">1. Да</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="edk0-0" type="radio" value="2" name="edk0"
+                            class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <label for="edk0-0" class="ms-2 text-sm text-gray-900">0. Нет</label>
                     </div>
                 </div>
             </div>
@@ -6489,7 +6549,9 @@
 
             <div class="grid grid-cols-2 gap-4 items-center mt-10">
                 <div>
-                    EDK3. В какой класс? </div>
+                    EDK3. В какой класс? <small class="mt-2 block italic text-red-500">Fill in 0 (zero) for preparatory
+                        class</small>
+                </div>
                 <div class="col-span-1 flex items-center gap-4">
                     <input type="text" id="edk3" name="edk3"
                         class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
@@ -6502,14 +6564,14 @@
                 </div>
                 <div class="col-span-1 flex items-center gap-4">
                     <div class="flex items-center">
-                        <input id="ewm1-0" type="radio" value="0" name="ewm1"
-                            class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                        <label for="ewm1-0" class="ms-2 text-sm text-gray-900">0. Нет</label>
-                    </div>
-                    <div class="flex items-center">
                         <input id="ewm1-1" type="radio" value="1" name="ewm1"
                             class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="ewm1-1" class="ms-2 text-sm text-gray-900">1. Да</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="ewm1-0" type="radio" value="0" name="ewm1"
+                            class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <label for="ewm1-0" class="ms-2 text-sm text-gray-900">0. Нет</label>
                     </div>
                 </div>
             </div>
@@ -6520,14 +6582,14 @@
                 </div>
                 <div class="col-span-1 flex items-center gap-4">
                     <div class="flex items-center">
-                        <input id="ewm2-0" type="radio" value="0" name="ewm2"
-                            class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                        <label for="ewm2-0" class="ms-2 text-sm text-gray-900">0. Нет</label>
-                    </div>
-                    <div class="flex items-center">
                         <input id="ewm2-1" type="radio" value="1" name="ewm2"
                             class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="ewm2-1" class="ms-2 text-sm text-gray-900">1. Да</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="ewm2-0" type="radio" value="0" name="ewm2"
+                            class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <label for="ewm2-0" class="ms-2 text-sm text-gray-900">0. Нет</label>
                     </div>
                 </div>
             </div>
@@ -6536,7 +6598,7 @@
                 <div>
                     EWM3. Был(-a) ли учащийся(-щаяся) когда-нибудь оставлен(-a) на второй год с тех пор, как он/a учится
                     в школе? </div>
-                <div class="col-span-1 flex items-center gap-4">
+                <div class="col-span-1 flex flex-col gap-2">
                     <div class="flex items-center">
                         <input id="ewm3-0" type="radio" value="0" name="ewm3"
                             class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
@@ -6564,14 +6626,14 @@
                 </div>
                 <div class="col-span-1 flex items-center gap-4">
                     <div class="flex items-center">
-                        <input id="ewm4-0" type="radio" value="0" name="ewm4"
-                            class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                        <label for="ewm4-0" class="ms-2 text-sm text-gray-900">0. Нет</label>
-                    </div>
-                    <div class="flex items-center">
                         <input id="ewm4-1" type="radio" value="1" name="ewm4"
                             class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="ewm4-1" class="ms-2 text-sm text-gray-900">1. Да</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="ewm4-0" type="radio" value="0" name="ewm4"
+                            class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <label for="ewm4-0" class="ms-2 text-sm text-gray-900">0. Нет</label>
                     </div>
                 </div>
             </div>
@@ -6581,14 +6643,14 @@
                     EWM5. Есть ли у учащегося риск досрочного прекращения учебы в школе? </div>
                 <div class="col-span-1 flex items-center gap-4">
                     <div class="flex items-center">
-                        <input id="ewm5-0" type="radio" value="0" name="ewm5"
-                            class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                        <label for="ewm5-0" class="ms-2 text-sm text-gray-900">0. Нет</label>
-                    </div>
-                    <div class="flex items-center">
                         <input id="ewm5-1" type="radio" value="1" name="ewm5"
                             class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="ewm5-1" class="ms-2 text-sm text-gray-900">1. Да</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="ewm5-0" type="radio" value="0" name="ewm5"
+                            class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <label for="ewm5-0" class="ms-2 text-sm text-gray-900">0. Нет</label>
                     </div>
                 </div>
             </div>
@@ -6990,8 +7052,8 @@
             <h2 class="mt-10 mb-4 text-2xl font-bold text-gray-700">12. РИСКОВАННОЕ ПОВЕДЕНИЕ</h2>
             <small class="my-2 block italic text-red-500">Внимание! Данный раздел заполняется только для детей старше 10
                 лет.</small>
-            <p>QRISKP : За время пребывания ребенка в системе (с момента его последнего приема до настоящего времени)
-                было ли у ребенка какое-либо из следующих рискованных форм поведения:</p>
+            <p>QRISKP За время пребывания ребенка в системе (с момента его последнего приема до настоящего времени) было
+                ли у ребенка какое-либо из следующих рискованных форм поведения:</p>
             <div class="grid grid-cols-2 gap-4 items-center mt-10">
                 <div class="ml-3">
                     1. Ранняя половая жизнь (начало до 16 лет) </div>

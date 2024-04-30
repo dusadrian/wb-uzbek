@@ -257,13 +257,25 @@
                     <input id="lk15-3" type="radio" value="3" name="lk15" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                     <label for="lk15-3" class="ms-2 text-sm text-gray-900"><%= it.t82 %></label>
                 </div>
-                <div class="flex items-center">
-                    <input id="lk15-4" type="radio" value="4" name="lk15" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="lk15-4" class="ms-2 text-sm text-gray-900"><%= it.t83 %></label>
-                </div>
-                <div class="flex items-center">
-                    <input type="text" id="lk15_other" name="lk15_other" class="bg-white disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
-                </div>
+                    <div class="flex items-center">
+                        <input id="lk15-4" type="radio" value="4" name="lk15"
+                            class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <label for="lk15-4" class="ms-2 text-sm text-gray-900"><%= it.t82_4 %></label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="lk15-5" type="radio" value="5" name="lk15"
+                            class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <label for="lk15-5" class="ms-2 text-sm text-gray-900"><%= it.t82_5 %></label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="lk15-6" type="radio" value="6" name="lk15"
+                            class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <label for="lk15-6" class="ms-2 text-sm text-gray-900"><%= it.t83 %></label>
+                    </div>
+                    <div class="flex items-center">
+                        <input type="text" id="lk15_other" name="lk15_other"
+                            class="bg-white disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+                    </div>
             </div>
         </div>
 
@@ -349,7 +361,7 @@
             <div class="col-span-1 flex flex-col gap-2">
                 <div class="flex items-center">
                     <input id="cm1dw-1" type="radio" value="1" name="cm1dw" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="cm1dw-1" class="ms-2 text-sm text-gray-900"><%= it.t111 %>.</label>
+                    <label for="cm1dw-1" class="ms-2 text-sm text-gray-900"><%= it.t111 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="cm1dw-2" type="radio" value="2" name="cm1dw" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
@@ -365,7 +377,7 @@
                 </div>
                 <div class="flex items-center">
                     <input id="cm1dw-5" type="radio" value="5" name="cm1dw" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="cm1dw-5" class="ms-2 text-sm text-gray-900"><%= it.t115 %>.</label>
+                    <label for="cm1dw-5" class="ms-2 text-sm text-gray-900"><%= it.t115 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="cm1dw-6" type="radio" value="6" name="cm1dw" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
@@ -964,6 +976,10 @@
                             <input id="cm10a-2" type="radio" value="2" name="cm10a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                             <label for="cm10a-2" class="ms-2 text-sm text-gray-900"><%= it.t242 %></label>
                         </div>
+                        <div class="flex items-center">
+                            <input id="cm10a-9" type="radio" value="9" name="cm10a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                            <label for="cm10a-9" class="ms-2 text-sm text-gray-900"><%= it.t59 %></label>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1018,6 +1034,10 @@
                     <div class="flex items-center">
                         <input id="cm11a-2" type="radio" value="2" name="cm11a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="cm11a-2" class="ms-2 text-sm text-gray-900"><%= it.t253 %></label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="cm11a-9" type="radio" value="9" name="cm11a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <label for="cm11a-9" class="ms-2 text-sm text-gray-900"><%= it.t59 %></label>
                     </div>
                 </div>
             </div>
@@ -1304,7 +1324,7 @@
                 </div>
                 <div class="flex items-center">
                     <input id="ct5a-7" type="radio" value="7" name="ct5a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="ct5a-7" class="ms-2 text-sm text-gray-900"><%= it.t339 %>*</label>
+                    <label for="ct5a-7" class="ms-2 text-sm text-gray-900"><%= it.t339 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="ct5a-8" type="radio" value="8" name="ct5a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
@@ -1348,7 +1368,7 @@
                 </div>
                 <div class="flex items-center">
                     <input id="ct5b-7" type="radio" value="7" name="ct5b" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="ct5b-7" class="ms-2 text-sm text-gray-900"><%= it.t339 %>*</label>
+                    <label for="ct5b-7" class="ms-2 text-sm text-gray-900"><%= it.t339 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="ct5b-8" type="radio" value="8" name="ct5b" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
@@ -1371,7 +1391,7 @@
                 </div>
                 <div class="flex items-center">
                     <input id="ct6a-2" type="radio" value="1" name="ct6a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="ct6a-2" class="ms-2 text-sm text-gray-900"><%= it.t350 %>)</label>
+                    <label for="ct6a-2" class="ms-2 text-sm text-gray-900"><%= it.t350 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="ct6a-3" type="radio" value="2" name="ct6a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
@@ -1383,8 +1403,7 @@
                 </div>
                 <div class="flex items-center">
                     <input id="ct6a-5" type="radio" value="4" name="ct6a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="ct6a-5" class="ms-2 text-sm text-gray-900"><%= it.t353 %>impairment or
-                        disability</label>
+                    <label for="ct6a-5" class="ms-2 text-sm text-gray-900"><%= it.t353 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="ct6a-6" type="radio" value="9" name="ct6a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
@@ -1403,7 +1422,7 @@
                 </div>
                 <div class="flex items-center">
                     <input id="ct6b-2" type="radio" value="1" name="ct6b" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="ct6b-2" class="ms-2 text-sm text-gray-900"><%= it.t350 %>)</label>
+                    <label for="ct6b-2" class="ms-2 text-sm text-gray-900"><%= it.t350 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="ct6b-3" type="radio" value="2" name="ct6b" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
@@ -1771,6 +1790,10 @@
                         <input id="ct10a-2" type="radio" value="2" name="ct10a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="ct10a-2" class="ms-2 text-sm text-gray-900"><%= it.t421 %></label>
                     </div>
+                    <div class="flex items-center">
+                        <input id="ct10a-9" type="radio" value="9" name="ct10a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <label for="ct10a-9" class="ms-2 text-sm text-gray-900"><%= it.t59 %></label>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1824,6 +1847,10 @@
                     <div class="flex items-center">
                         <input id="ct11a-2" type="radio" value="2" name="ct11a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="ct11a-2" class="ms-2 text-sm text-gray-900"><%= it.t432 %></label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="ct11a-9" type="radio" value="9" name="ct11a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <label for="ct11a-9" class="ms-2 text-sm text-gray-900"><%= it.t59 %></label>
                     </div>
                 </div>
             </div>
@@ -1920,9 +1947,39 @@
 
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
             <div><%= it.t455 %>. <%= it.t458 %> </div>
-            <div>
-                <input type="text" id="cg1d" name="cg1d" class="bg-white disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+             <div class="flex flex-col gap-2">
+                <div class="flex items-center">
+                    <input id="cg1d-1" type="radio" value="1" name="cg1d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="cg1d-1" class="ms-2 text-sm text-gray-900"><%= it.t458_1 %></label>
+                </div>
+                <div class="flex items-center">
+                    <input id="cg1d-2" type="radio" value="2" name="cg1d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="cg1d-2" class="ms-2 text-sm text-gray-900"><%= it.t458_2 %></label>
+                </div>
+                <div class="flex items-center">
+                    <input id="cg1d-3" type="radio" value="3" name="cg1d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="cg1d-3" class="ms-2 text-sm text-gray-900"><%= it.t458_3 %></label>
+                </div>
+                <div class="flex items-center">
+                    <input id="cg1d-4" type="radio" value="4" name="cg1d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="cg1d-4" class="ms-2 text-sm text-gray-900"><%= it.t458_4 %></label>
+                </div>
+                <div class="flex items-center">
+                    <input id="cg1d-5" type="radio" value="5" name="cg1d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="cg1d-5" class="ms-2 text-sm text-gray-900"><%= it.t458_5 %></label>
+                </div>
+                <div class="flex items-center">
+                    <input id="cg1d-6" type="radio" value="6" name="cg1d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="cg1d-6" class="ms-2 text-sm text-gray-900"><%= it.t458_6 %></label>
+                </div>
+                <div class="flex items-center">
+                    <input id="cg1d-7" type="radio" value="7" name="cg1d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="cg1d-7" class="ms-2 text-sm text-gray-900"><%= it.t458_7 %></label>
+                </div>
             </div>
+            <% /* <div>
+                <input type="text" id="cg1d" name="cg1d" class="bg-white disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+            </div> */ %>
         </div>
 
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
@@ -2041,17 +2098,13 @@
                     <input id="cg5a-0" type="radio" value="0" name="cg5a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                     <label for="cg5a-0" class="ms-2 text-sm text-gray-900"><%= it.t497 %></label>
                 </div>
-                <div class="flex items-center">
-                    <input id="cg5a-90" type="radio" value="90" name="cg5a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="cg5a-90" class="ms-2 text-sm text-gray-900">90. Deceased</label>
-                </div>
             </div>
         </div>
 
         <div class="grid grid-cols-2 gap-4 items-center mt-10">
             <div>
                 <%= it.t486 %>. <%= it.t487 %>
-                <small class="italic block text-red-500">* &quot;Separated&quot; means she is still legally married but does not live together with her spouse.</small>
+                <small class="italic block text-red-500"><%= it.t498 %></small>
             </div>
             <div class="col-span-1 flex flex-col gap-2">
                 <div class="flex items-center">
@@ -2225,7 +2278,7 @@
         </div>
         <div class="grid grid-cols-2 gap-4 items-center mt-10">
             <div>
-                <%= it.t521 %>. <%= it.t523 %>
+                <%= it.t521 %>. <%= it.t522 %>
             </div>
             <div class="col-span-1 flex flex-col gap-2">
                 <div class="flex items-center">
@@ -2635,7 +2688,7 @@
 
         <div class="grid grid-cols-2 gap-4 items-center mt-10">
             <div>
-                <%= it.t603 %>. <%= it.t604 %>
+                <%= it.t604 %>. <%= it.t605 %>
             </div>
             <div class="col-span-1 flex flex-col gap-2">
                 <div class="flex items-center">
@@ -2703,6 +2756,7 @@
         <div class="grid grid-cols-2 gap-4 items-center mt-10">
             <div>
                 <%= it.t622 %>. <%= it.t623 %>
+                <small class="mt-2 block italic text-red-500"><%= it.t624 %></small>
             </div>
             <div class="col-span-1 flex flex-col gap-2">
                 <div class="flex items-center">
@@ -2745,7 +2799,7 @@
             </div>
         </div>
 
-        <p><%= it.t635 %></p>
+        <p class="mt-6">SA5. <%= it.t635 %></p>
 
         <div class="grid grid-cols-2 items-center gap-4 mt-6">
             <div>SA5r. <%= it.t9 %></div>
@@ -3293,11 +3347,11 @@
             <div class="col-span-1 flex flex-col gap-2">
                 <div class="flex items-center">
                     <input id="qeduc1a-1" type="radio" value="1" name="qeduc1a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="qeduc1a-1" class="ms-2 text-sm text-gray-900"><%= it.t757 %>,</label>
+                    <label for="qeduc1a-1" class="ms-2 text-sm text-gray-900"><%= it.t757 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="qeduc1a-2" type="radio" value="2" name="qeduc1a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="qeduc1a-2" class="ms-2 text-sm text-gray-900"><%= it.t758 %>)</label>
+                    <label for="qeduc1a-2" class="ms-2 text-sm text-gray-900"><%= it.t758 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="qeduc1a-3" type="radio" value="3" name="qeduc1a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
@@ -3446,15 +3500,15 @@
             <div class="col-span-1 flex flex-col gap-2">
                 <div class="flex items-center">
                     <input id="qeduc2f-1" type="radio" value="1" name="qeduc2f" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="qeduc2f-1" class="ms-2 text-sm text-gray-900"><%= it.t789 %>.</label>
+                    <label for="qeduc2f-1" class="ms-2 text-sm text-gray-900"><%= it.t789 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="qeduc2f-2" type="radio" value="2" name="qeduc2f" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="qeduc2f-2" class="ms-2 text-sm text-gray-900"><%= it.t790 %>.</label>
+                    <label for="qeduc2f-2" class="ms-2 text-sm text-gray-900"><%= it.t790 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="qeduc2f-3" type="radio" value="3" name="qeduc2f" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="qeduc2f-3" class="ms-2 text-sm text-gray-900"><%= it.t791 %>.</label>
+                    <label for="qeduc2f-3" class="ms-2 text-sm text-gray-900"><%= it.t791 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="qeduc2f-4" type="radio" value="4" name="qeduc2f" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
@@ -4201,7 +4255,7 @@
             </div>
         </div>
         <div class="grid grid-cols-2 gap-4 items-center mt-10">
-            <div class="ml-3">
+            <div>
                 <%= it.t968 %>. <%= it.t969 %>
             </div>
             <div class="col-span-1 flex flex-col gap-2">
@@ -4970,7 +5024,7 @@
 
         <div class="grid grid-cols-2 gap-4 items-center mt-10">
             <div>
-                <%= it.t1084 %></label>
+                <p class="mb-2"><%= it.t1084 %><p>
                 <%= it.t1085 %>. <%= it.t1086 %>
             </div>
             <div class="col-span-1 flex flex-col gap-2">
@@ -5252,7 +5306,7 @@
 
         <h2 class="mt-10 mb-4 text-2xl font-bold text-gray-700"><%= it.t1157 %></h2>
 
-        <p><%= it.t1158 %>: <%= it.t1159 %></p>
+        <p><%= it.t1158 %> <%= it.t1159 %></p>
         <div class="grid grid-cols-2 gap-4 items-center mt-4">
             <div class="ml-3">
                 <%= it.t1160 %>
@@ -5432,15 +5486,16 @@
         <div class="grid grid-cols-2 gap-4 items-center mt-10">
             <div class="ml-3">
                 <%= it.t1186 %>. <%= it.t1187 %>
+                <small class="my-2 block italic text-red-500"><%= it.t1188 %></small>
             </div>
             <div class="col-span-1 flex items-center gap-4">
                 <div class="flex items-center">
-                    <input id="edk0-0" type="radio" value="2" name="edk0" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="edk0-0" class="ms-2 text-sm text-gray-900"><%= it.t1190 %></label>
-                </div>
-                <div class="flex items-center">
                     <input id="edk0-1" type="radio" value="1" name="edk0" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                     <label for="edk0-1" class="ms-2 text-sm text-gray-900"><%= it.t1189 %></label>
+                </div>
+                <div class="flex items-center">
+                    <input id="edk0-0" type="radio" value="2" name="edk0" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="edk0-0" class="ms-2 text-sm text-gray-900"><%= it.t1190 %></label>
                 </div>
             </div>
         </div>
@@ -5500,6 +5555,7 @@
         <div class="grid grid-cols-2 gap-4 items-center mt-10">
             <div>
                 <%= it.t1206 %>. <%= it.t1207 %>
+                <small class="mt-2 block italic text-red-500"><%= it.t774_instruction %></small>
             </div>
             <div class="col-span-1 flex items-center gap-4">
                 <input type="text" id="edk3" name="edk3" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
@@ -5512,12 +5568,12 @@
             </div>
             <div class="col-span-1 flex items-center gap-4">
                 <div class="flex items-center">
-                    <input id="ewm1-0" type="radio" value="0" name="ewm1" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="ewm1-0" class="ms-2 text-sm text-gray-900"><%= it.t1211 %></label>
-                </div>
-                <div class="flex items-center">
                     <input id="ewm1-1" type="radio" value="1" name="ewm1" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                     <label for="ewm1-1" class="ms-2 text-sm text-gray-900"><%= it.t1210 %></label>
+                </div>
+                                <div class="flex items-center">
+                    <input id="ewm1-0" type="radio" value="0" name="ewm1" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="ewm1-0" class="ms-2 text-sm text-gray-900"><%= it.t1211 %></label>
                 </div>
             </div>
         </div>
@@ -5528,12 +5584,12 @@
             </div>
             <div class="col-span-1 flex items-center gap-4">
                 <div class="flex items-center">
-                    <input id="ewm2-0" type="radio" value="0" name="ewm2" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="ewm2-0" class="ms-2 text-sm text-gray-900"><%= it.t1215 %></label>
-                </div>
-                <div class="flex items-center">
                     <input id="ewm2-1" type="radio" value="1" name="ewm2" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                     <label for="ewm2-1" class="ms-2 text-sm text-gray-900"><%= it.t1214 %></label>
+                </div>
+                <div class="flex items-center">
+                    <input id="ewm2-0" type="radio" value="0" name="ewm2" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="ewm2-0" class="ms-2 text-sm text-gray-900"><%= it.t1215 %></label>
                 </div>
             </div>
         </div>
@@ -5542,7 +5598,7 @@
             <div>
                 <%= it.t1216 %>. <%= it.t1217 %>
             </div>
-            <div class="col-span-1 flex items-center gap-4">
+            <div class="col-span-1 flex flex-col gap-2">
                 <div class="flex items-center">
                     <input id="ewm3-0" type="radio" value="0" name="ewm3" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                     <label for="ewm3-0" class="ms-2 text-sm text-gray-900"><%= it.t1218 %></label>
@@ -5565,12 +5621,12 @@
             </div>
             <div class="col-span-1 flex items-center gap-4">
                 <div class="flex items-center">
-                    <input id="ewm4-0" type="radio" value="0" name="ewm4" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="ewm4-0" class="ms-2 text-sm text-gray-900"><%= it.t1225 %></label>
-                </div>
-                <div class="flex items-center">
                     <input id="ewm4-1" type="radio" value="1" name="ewm4" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                     <label for="ewm4-1" class="ms-2 text-sm text-gray-900"><%= it.t1224 %></label>
+                </div>
+                <div class="flex items-center">
+                    <input id="ewm4-0" type="radio" value="0" name="ewm4" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="ewm4-0" class="ms-2 text-sm text-gray-900"><%= it.t1225 %></label>
                 </div>
             </div>
         </div>
@@ -5581,13 +5637,13 @@
             </div>
             <div class="col-span-1 flex items-center gap-4">
                 <div class="flex items-center">
-                    <input id="ewm5-0" type="radio" value="0" name="ewm5" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="ewm5-0" class="ms-2 text-sm text-gray-900"><%= it.t1230 %></label>
-                </div>
-                <div class="flex items-center">
                     <input id="ewm5-1" type="radio" value="1" name="ewm5" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                     <label for="ewm5-1" class="ms-2 text-sm text-gray-900"><%= it.t1229 %></label>
                 </div>
+                <div class="flex items-center">
+                    <input id="ewm5-0" type="radio" value="0" name="ewm5" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="ewm5-0" class="ms-2 text-sm text-gray-900"><%= it.t1230 %></label>
+                </div>                
             </div>
         </div>
 
@@ -5980,7 +6036,7 @@
 
         <h2 class="mt-10 mb-4 text-2xl font-bold text-gray-700"><%= it.t1317 %></h2>
         <small class="my-2 block italic text-red-500"><%= it.t1318 %></small>
-        <p><%= it.t1319 %>: <%= it.t1320 %></p>
+        <p><%= it.t1319 %> <%= it.t1320 %></p>
         <div class="grid grid-cols-2 gap-4 items-center mt-10">
             <div class="ml-3">
                 <%= it.t1321 %>
