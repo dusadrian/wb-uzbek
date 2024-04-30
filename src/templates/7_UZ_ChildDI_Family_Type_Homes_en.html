@@ -117,7 +117,16 @@
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
             <div>IFP1d. Type of settlement</div>
             <div>
-                <input type="text" id="ifp1d" name="ifp1d" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                <select id="ifp1d" name="ifp1d" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+                    <option value="-9" class="t_choose"></option>
+                    <option value="10" class="t_settlement_type_10"></option>
+                    <option value="20" class="t_settlement_type_20"></option>
+                    <option value="21" class="t_settlement_type_21"></option>
+                    <option value="22" class="t_settlement_type_22"></option>
+                    <option value="23" class="t_settlement_type_23"></option>
+                    <option value="24" class="t_settlement_type_24"></option>
+                    <option value="31" class="t_settlement_type_31"></option>
+                </select>
             </div>
         </div>
 
@@ -129,7 +138,7 @@
         </div>
 
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
-            <div>IFP2a. Years of experience as foster parents::</div>
+            <div>IFP2a. Years of experience as foster parents:</div>
             <div>
                 <input type="text" id="ifp2ay" name="ifp2ay" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
             </div>
@@ -137,7 +146,7 @@
         <input type="hidden" id="ifp2am" name="ifp2am" />
 
         <div class="grid grid-cols-2 gap-4 items-center mt-10">
-            <div>IFP3. Ownership rights over the residence::</div>
+            <div>IFP3. Ownership rights over the residence:</div>
             <div class="col-span-1 flex flex-col gap-2">
                 <div class="flex items-center">
                     <input id="ifp3-1" type="radio" value="1" name="ifp3" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
@@ -335,7 +344,7 @@
             </div>
         </div>
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
-            <div>IFT4_AGE. Foster mother&#39;s age in years (at the date of the completion of the questionnaire)</div>
+            <div>IFT4_AGE. Foster father&#39;s age in years (at the date of the completion of the questionnaire)</div>
             <div>
                 <input type="text" id="ift4_age" name="ift4_age" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
             </div>
@@ -481,7 +490,7 @@
             </div>
         </div>
 
-        <p class="mt-6">FC2. Have these foster parents ever cared (from the first certification up to December 31 2023) for children and young people from the following vulnerable groups</p>
+        <p class="mt-6">FC2. Have these foster parents ever cared (from the first certification up to December 31, 2023) for children and young people from the following vulnerable groups</p>
         <small class="italic mt-2">The child/children in fostered at the time of monitoring is/are also considered.</small>
 
         <div class="grid grid-cols-2 gap-4 items-center mt-10">
@@ -940,7 +949,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td class="p-2">Child #1</td>
+                    <td class="p-2">Child #2</td>
                     <td class="p-2">
                         <div class="flex items-center justify-center gap-2">
                             <div class="flex items-center">
@@ -986,7 +995,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td class="p-2">Child #1</td>
+                    <td class="p-2">Child #3</td>
                     <td class="p-2">
                         <div class="flex items-center justify-center gap-2">
                             <div class="flex items-center">
@@ -1032,7 +1041,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td class="p-2">Child #1</td>
+                    <td class="p-2">Child #4</td>
                     <td class="p-2">
                         <div class="flex items-center justify-center gap-2">
                             <div class="flex items-center">
@@ -1078,7 +1087,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td class="p-2">Child #1</td>
+                    <td class="p-2">Child #5</td>
                     <td class="p-2">
                         <div class="flex items-center justify-center gap-2">
                             <div class="flex items-center">
@@ -1174,20 +1183,22 @@
         </div>
 
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
-            <div>QS3a. The name, patronymics, and surname of the specialist</div>
+            <div>
+                QS3a. The name, patronymics, and surname of the specialist                <small class="block mt-2">Please note in the clear</small>
+            </div>
             <div>
                 <input type="text" id="qs3a" name="qs3a" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
             </div>
         </div>
 
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
-            <div>Please note in the clear. QS4</div>
-            <div>
+            <div>QS4. In the past 12 months, how many times has the specialist assigned to monitor this family-type home or other person from the child protection department visited the foster parents?</div>
+            <div class="flex items-center gap-4">
                 <input type="text" id="qs4" name="qs4" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
-            </div>
+                Visits            </div>
         </div>
 
-        <p class="mt-6">QS5. Have the foster parents ever::</p>
+        <p class="mt-6">QS5. Have the foster parents ever:</p>
 
         <div class="grid grid-cols-2 gap-4 items-center mt-10">
             <div class="ml-4">a.  ... refused to care for a child?</div>
@@ -1203,7 +1214,7 @@
             </div>
         </div>
         <div class="grid grid-cols-2 gap-4 items-center mt-10">
-            <div class="ml-4">b. ... refused to care for children with disabilities (with a certificate of disability), HIV-infected or AIDS patients</div>
+            <div class="ml-4">b. ... refused to care for children with disabilities (with a certificate of disability), HIV-infected or AIDS patients?</div>
             <div class="col-span-1 flex items-center gap-4">
                 <div class="flex items-center">
                     <input id="qs5b-1" type="radio" value="1" name="qs5b" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
@@ -1216,7 +1227,7 @@
             </div>
         </div>
         <div class="grid grid-cols-2 gap-4 items-center mt-10">
-            <div class="ml-4">c. ... refused to care for adolescent children (10+ years) with behavioral disorders</div>
+            <div class="ml-4">c. ... refused to care for adolescent children (10+ years) with behavioral disorders?</div>
             <div class="col-span-1 flex items-center gap-4">
                 <div class="flex items-center">
                     <input id="qs5c-1" type="radio" value="1" name="qs5c" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">

@@ -138,7 +138,7 @@
         </div>
 
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
-            <div><%= it.t36 %>. <%= it.t37 %>:</div>
+            <div><%= it.t36 %>. <%= it.t37 %></div>
             <div>
                 <input type="text" id="ifp2ay" name="ifp2ay" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
             </div>
@@ -146,7 +146,7 @@
         <input type="hidden" id="ifp2am" name="ifp2am" />
 
         <div class="grid grid-cols-2 gap-4 items-center mt-10">
-            <div><%= it.t39 %>. <%= it.t40 %>:</div>
+            <div><%= it.t39 %>. <%= it.t40 %></div>
             <div class="col-span-1 flex flex-col gap-2">
                 <div class="flex items-center">
                     <input id="ifp3-1" type="radio" value="1" name="ifp3" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
@@ -903,7 +903,7 @@
             </thead>
             <tbody>
                 <tr>
-                    <td class="p-2"><%= it.t207 %></td>
+                    <td class="p-2"><%= it.t171 %></td>
                     <td class="p-2">
                         <div class="flex items-center justify-center gap-2">
                             <div class="flex items-center">
@@ -949,7 +949,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td class="p-2"><%= it.t207 %></td>
+                    <td class="p-2"><%= it.t176 %></td>
                     <td class="p-2">
                         <div class="flex items-center justify-center gap-2">
                             <div class="flex items-center">
@@ -995,7 +995,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td class="p-2"><%= it.t207 %></td>
+                    <td class="p-2"><%= it.t177 %></td>
                     <td class="p-2">
                         <div class="flex items-center justify-center gap-2">
                             <div class="flex items-center">
@@ -1041,7 +1041,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td class="p-2"><%= it.t207 %></td>
+                    <td class="p-2"><%= it.t178 %></td>
                     <td class="p-2">
                         <div class="flex items-center justify-center gap-2">
                             <div class="flex items-center">
@@ -1087,7 +1087,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td class="p-2"><%= it.t207 %></td>
+                    <td class="p-2"><%= it.t179 %></td>
                     <td class="p-2">
                         <div class="flex items-center justify-center gap-2">
                             <div class="flex items-center">
@@ -1183,20 +1183,24 @@
         </div>
 
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
-            <div><%= it.t240 %>. <%= it.t241 %></div>
+            <div>
+                <%= it.t240 %>. <%= it.t241 %>
+                <small class="block mt-2"><%= it.t242 %></small>
+            </div>
             <div>
                 <input type="text" id="qs3a" name="qs3a" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
             </div>
         </div>
 
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
-            <div><%= it.t242 %>. <%= it.t243 %></div>
-            <div>
+            <div><%= it.t243 %>. <%= it.t244 %></div>
+            <div class="flex items-center gap-4">
                 <input type="text" id="qs4" name="qs4" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                <%= it.t245 %>
             </div>
         </div>
 
-        <p class="mt-6"><%= it.t246 %>. <%= it.t247 %>:</p>
+        <p class="mt-6"><%= it.t246 %>. <%= it.t247 %></p>
 
         <div class="grid grid-cols-2 gap-4 items-center mt-10">
             <div class="ml-4"><%= it.t248 %></div>
