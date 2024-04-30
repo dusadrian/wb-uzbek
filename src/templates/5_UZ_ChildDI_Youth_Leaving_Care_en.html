@@ -123,7 +123,7 @@
             </div>
         </div>
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
-            <div>PI1b Patronymics</div>
+            <div>PI1b. Patronymics</div>
             <div>
                 <input type="text" id="pi1b" name="pi1b" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
             </div>
@@ -208,7 +208,7 @@
             <div class="col-span-1">PI5. Child&#39;s ethnicity (nationality)</div>
             <div class="col-span-1 flex flex-col gap-2">
                 <div class="flex items-center">
-                    <input id="pi5-1" type="radio" value="1" name="pi2" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <input id="pi5-1" type="radio" value="1" name="pi5" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                     <label for="pi5-1" class="ms-2 text-sm text-gray-900">1. Uzbek</label>
                 </div>
                 <div class="flex items-center">
@@ -250,29 +250,51 @@
             </div>
         </div>
 
+        <p class="mt-6"><br>The last institution where the young person lived before leaving the child care system, according to the corresponding Register</b></p>
+
+        <div class="grid grid-cols-2 items-center gap-4 mt-6">
+            <div>PI6r. Region</div>
+            <div>
+                <select id="pi6reg" name="pi6reg" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+                    <option value="-9" class="t_choose">--- choose ---</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-2 items-center gap-4 mt-6">
+            <div>PI6d. District</div>
+            <div>
+                <select id="pi6dis" name="pi6dis" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+                    <option value="-9" class="t_choose">--- choose ---</option>
+                </select>
+            </div>
+        </div>
+
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
-            <div>PI6. The unique code of the last service where the person lived before leaving the childcare system, according to the corresponding Register</div>
+            <div>PI6. Institution</div>
             <div class="flex gap-4">
                 <select id="pi6" name="pi6" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
                     <option value="-9" class="t_choose">--- choose ---</option>
                 </select>
             </div>
         </div>
+
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
-            <div>PI6a. Service name</div>
+            <div>PI6a. Unique institution code</div>
             <div>
                 <input type="text" id="pi6a" name="pi6a" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
             </div>
         </div>
+
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
-            <div>PI6b. Service location</div>
+            <div>PI6b. Institution name</div>
             <div>
                 <input type="text" id="pi6b" name="pi6b" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
             </div>
         </div>
 
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
-            <div>PI6C. Type of institution</div>
+            <div>PI6c. Type of institution</div>
             <div>
                 <select id="pi6c" name="pi6c" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100">
                     <option selected>------</option>
@@ -344,7 +366,7 @@
         </div>
 
         <div class="grid grid-cols-2 items-center gap-4 mt-6">
-            <div class="ml-4">(Automatically retrieved from CM11b)</div>
+            <div class="ml-4">d. District:</div>
             <div>
                 <select id="pi9d" name="pi9d" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
                     <option value="-9" class="t_choose">--- choose ---</option>
@@ -851,7 +873,7 @@
         </div>
 
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
-            <div class="col-span-1">0. No. In the past 12 months, has the person received any support for finding or maintaining a job?</div>
+            <div class="col-span-1">EE9. In the past 12 months, has the person received any support for finding or maintaining a job?</div>
             <div class="col-span-1 flex gap-4">
                 <div class="flex items-center">
                     <input id="ee9-1" type="radio" value="1" name="ee9" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
@@ -895,7 +917,7 @@
 
         <div class="grid grid-cols-2 gap-4 items-center mt-10">
             <div>
-                EE11. What were the sources of income for the young person in the past month (REFERENCE MONTH TO BE DECIDED)?                <small class="block italic mt-1">MULTIPLE ANSWERS POSSIBLE</small>
+                EE11. What were the sources of income for the young person in the past month (REFERENCE MONTH: APRIL 2024)?                <small class="block italic mt-1">MULTIPLE ANSWERS POSSIBLE</small>
             </div>
             <div class="col-span-1 flex flex-col gap-2">
                 <div class="flex items-center">
@@ -1124,7 +1146,7 @@
         </div>
 
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
-            <div class="col-span-1">HE8 Fill in the person&#39;s birth certification/ID/Passport Number. If the person does not have one, fill in 0 (zero).</div>
+            <div class="col-span-1">HE8 Has the person had a time in the previous 12 months when he/she did not have access to his/her prescribed medication?</div>
             <div class="col-span-1 flex gap-4">
                 <div class="flex items-center">
                     <input id="he8-1" type="radio" value="1" name="he8" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
