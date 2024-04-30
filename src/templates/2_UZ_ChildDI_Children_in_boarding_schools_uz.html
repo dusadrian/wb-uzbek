@@ -31,14 +31,18 @@
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
             <div>VIL. Viloyat</div>
             <div>
-                <input type="text" id="reg" name="reg" disabled class="disabled:bg-gray-100 bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+                <select id="reg" name="reg" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+                    <option value="-9" class="t_choose">--- choose ---</option>
+                </select>
             </div>
         </div>
 
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
             <div>TUM. Tuman</div>
             <div>
-                <input type="text" id="dis" name="dis" disabled class="disabled:bg-gray-100 bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+                <select id="dis" name="dis" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+                    <option value="-9" class="t_choose">--- choose ---</option>
+                </select>
             </div>
         </div>
 
@@ -125,7 +129,7 @@
         <h2 class="mt-10 mb-4 text-2xl font-bold text-gray-700">2. BOLA HAQIDA ASOSIY MA&#39;LUMOT</h2>
 
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
-            <div>PIN.. Tug&#39;ilganlik haqidagi guvohnoma / Pasport / shaxsni tasdiqlovchi hujjat</div>
+            <div>PIN. Tug&#39;ilganlik haqidagi guvohnoma / Pasport / shaxsni tasdiqlovchi hujjat</div>
             <div>
                 <input type="text" id="pin" name="pin" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
             </div>
@@ -268,8 +272,10 @@
             </div>
         </div>
 
-
+        
         <h2 class="mt-10 mb-4 text-2xl font-bold text-gray-700">3. BOLA OILASI HAQIDA MA&#39;LUMOT</h2>
+
+
 
         <p class="mt-6">QFAM: Bolani ixtisoslashtirilgan ta&#39;lim muassasasiga ilk bor qabul qilish vaqtida...</p>
         <div class="grid grid-cols-2 gap-4 items-center mt-4">
@@ -288,18 +294,18 @@
                     <label for="qfam1-3" class="ms-2 text-sm text-gray-900">3. Ha, boshqa shaxslar bilan</label>
                 </div>
                 <div class="flex items-center">
-                    <input id="qfam1-4" type="radio" value="3" name="qfam1" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <input id="qfam1-4" type="radio" value="4" name="qfam1" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                     <label for="qfam1-4" class="ms-2 text-sm text-gray-900">4. Yo&#39;q, bola himoya muassasasida yoki homiylik ostidagi oilada yashagan</label>
                 </div>
                 <div class="flex items-center">
-                    <input id="qfam1-5" type="radio" value="3" name="qfam1" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <input id="qfam1-5" type="radio" value="7" name="qfam1" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                     <label for="qfam1-5" class="ms-2 text-sm text-gray-900">7. Boshqa holat, yozib ko&#39;rsatilsin: …</label>
                 </div>
                 <div class="flex items-center">
                     <input type="text" id="qfam1_other" name="qfam1_other" class="bg-white disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
                 </div>
                 <div class="flex items-center">
-                    <input id="qfam1-6" type="radio" value="3" name="qfam1" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <input id="qfam1-6" type="radio" value="9" name="qfam1" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                     <label for="qfam1-6" class="ms-2 text-sm text-gray-900">9. Ko&#39;rsatilmagan/Noma&#39;lum</label>
                 </div>
             </div>
@@ -389,70 +395,48 @@
                 </select>
             </div>
         </div>
+
+
+
+
         <div class="grid grid-cols-2 items-center gap-4 mt-6">
-            <div>SA3c. Settlement</div>
+            <div>SA5a. Muassasa</div>
             <div>
-                <select id="sa3c" name="sa3c" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                    <option value="-9" class="t_choose">--- choose ---</option>
-                </select>
-
-            </div>
-        </div>
-
-        <input type="hidden" id="sa3d" name="sa3d" />
-
-        <div class="grid grid-cols-2 gap-4 items-center mt-10">
-            <div>SA5a. Ushbu maktabga qabul qilinishidan oldin bola qaysi turdagi muassasaga joylashtirilgan edi?</div>
-            <div class="col-span-1 flex flex-col gap-2">
-                <div class="flex items-center">
-                    <input id="sa5a-1" type="radio" value="1" name="sa5a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="sa5a-1" class="ms-2 text-sm text-gray-900">1. Bolalar uyi (Go&#39;daklar uyi)</label>
-                </div>
-                <div class="flex items-center">
-                    <input id="sa5a-2" type="radio" value="2" name="sa5a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="sa5a-2" class="ms-2 text-sm text-gray-900">2. Mehribonlik uyi</label>
-                </div>
-                <div class="flex items-center">
-                    <input id="sa5a-3" type="radio" value="3" name="sa5a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="sa5a-3" class="ms-2 text-sm text-gray-900">3. &quot;Muruvvat&quot; nogironligi bo&#39;lgan bolalar uchun  internat uyi</label>
-                </div>
-                <div class="flex items-center">
-                    <input id="sa5a-4" type="radio" value="4" name="sa5a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="sa5a-4" class="ms-2 text-sm text-gray-900">4. Oila turidagi bolalar uyi</label>
-                </div>
-                <div class="flex items-center">
-                    <input id="sa5a-5" type="radio" value="5" name="sa5a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="sa5a-5" class="ms-2 text-sm text-gray-900">5. Patronat oila</label>
-                </div>
-                <div class="flex items-center">
-                    <input id="sa5a-6" type="radio" value="6" name="sa5a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="sa5a-6" class="ms-2 text-sm text-gray-900">6. Vasiylik/homiylik</label>
-                </div>
-                <div class="flex items-center">
-                    <input id="sa5a-7" type="radio" value="7" name="sa5a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="sa5a-7" class="ms-2 text-sm text-gray-900">7. SOS-bolalar qishloqlari / oilalari</label>
-                </div>
-            </div>
-        </div>
-        <div class="grid grid-cols-2 items-center gap-4 mt-6">
-            <div>SA5b. Iltimos, ro&#39;yxatga olish kitobidan muassasa/oila uyi kodini kiriting</div>
-            <div>
-                <select id="sa5b" name="sa5b" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+                <select id="sa5a" name="sa5a" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
                     <option value="-9" class="t_choose">--- choose ---</option>
                 </select>
             </div>
         </div>
+
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
-            <div>SA5c. Ro&#39;yxatga olish kitobida ko&#39;rsatilmagan bolalarni vasiylik tizimidagi muassasalar uchun nomini yozib ko&#39;rsating</div>
+            <div>SA5b. Muassasa nomi</div>
             <div class="flex gap-4">
-                <input type="text" id="sa5c" name="sa5c" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                <input type="text" id="sa5b" name="sa5b" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+            </div>
+        </div>
+
+
+        <div class="grid grid-cols-2 gap-4 items-center mt-6">
+            <div>SA5c. Muassasa turi</div>
+            <div>
+                <select id="sa5c" name="sa5c"
+                        class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100">
+                    <option selected value="-9" class="t_choose">------</option>
+                    <option value="1">1. Bolalar uyi</option>
+                    <option value="2">2. Mehribonlik uyi</option>
+                    <option value="3">3. &quot;Muruvvat&quot; nogironligi bo&#39;lgan bolalar uchun internat uyi</option>
+                    <option value="4">4. Oila turidagi bolalar uyi</option>
+                    <option value="5">5. patronat oila</option>
+                    <option value="6">6. Vasiylik/homiylik</option>
+                    <option value="7">7. SOS-bolalar qishloqlari / oilalari</option>
+                </select>
             </div>
         </div>
 
 
         <div class="grid grid-cols-2 gap-4 items-center mt-10">
-            <div class="ml-4">
-                2. Who did the child live with...?
+            <div>
+                SA4. Bolani oilasidan ajratishning sabablari nima edi?                <small class="block italic mt-2 text-red-500">BITTADAN KO&#39;P JAVOBLARNI BELGILASH MUMKIN</small>
             </div>
             <div class="col-span-1 flex flex-col gap-2">
                 <div class="flex items-center">
@@ -1050,6 +1034,10 @@
                     <input id="cm11a-2" type="radio" value="2" name="cm11a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                     <label for="cm11a-2" class="ms-2 text-sm text-gray-900">2. Chet elda</label>
                 </div>
+                <div class="flex items-center">
+                    <input id="cm11a-9" type="radio" value="9" name="cm11a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="cm11a-9" class="ms-2 text-sm text-gray-900">9. Ma&#39;lum emas</label>
+                </div>
             </div>
         </div>
 
@@ -1066,7 +1054,7 @@
         </div>
 
         <div class="grid grid-cols-2 items-center gap-4 mt-6">
-            <div>(CM11b dan avtomatik ravishda hisoblab chiqiladi)</div>
+            <div>d. Tuman:</div>
             <div>
                 <select id="cm11d" name="cm11d" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
                     <option value="-9" class="t_choose">--- choose ---</option>
@@ -1525,6 +1513,10 @@
                     <input id="ct11a-2" type="radio" value="2" name="ct11a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                     <label for="ct11a-2" class="ms-2 text-sm text-gray-900">2. Chet elda</label>
                 </div>
+                <div class="flex items-center">
+                    <input id="ct11a-9" type="radio" value="9" name="ct11a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="ct11a-9" class="ms-2 text-sm text-gray-900">9. Ma&#39;lum emas</label>
+                </div>
             </div>
         </div>
 
@@ -1580,11 +1572,11 @@
 
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
             <div>
-                cg0. === apare in lista de variabile, nu am habar ce inseaamna ===.
+                CG0.
             </div>
             <div class="flex gap-4">
                 <input id="cg0" name="cg0" type="checkbox" value="9" class="w-4 h-4 text-blue-600 border-gray-400 rounded focus:ring-blue-500 disabled:bg-gray-100">
-                <label for="cg0" class="ms-2 text-sm text-gray-900"> ============== </label>
+                <label for="cg0" class="ms-2 text-sm text-gray-900"> &quot;Agar bola maktab-internatga qabul qilinishidan oldin bolaning onasi yoki otasi emas, balki boshqa birovning qaramog&#39;ida bo&#39;lgan bo&#39;lsa, tekshiring. Aks holda, 4-bo&#39;limga o&#39;ting.&quot; </label>
             </div>
         </div>
 
@@ -1618,24 +1610,38 @@
             </div>
         </div>
 
-        <div class="grid grid-cols-2 gap-4 items-center mt-6">
-            <div>cg1c</div>
-            <div class="flex gap-4">
-                <input type="text" id="cg1c" name="cg1c" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
-            </div>
-        </div>
-
+        
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
             <div>
                 CG1d. Qarindoshlik darajasi:            </div>
-            <div class="flex gap-4">
+            <div class="flex flex-col gap-2">
                 <div class="flex items-center">
                     <input id="cg1d-1" type="radio" value="1" name="cg1d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="cg1d-1" class="ms-2 text-sm text-gray-900">1. ----</label>
+                    <label for="cg1d-1" class="ms-2 text-sm text-gray-900">1. Aka / opa (2-darajali)</label>
                 </div>
                 <div class="flex items-center">
                     <input id="cg1d-2" type="radio" value="2" name="cg1d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="cg1d-2" class="ms-2 text-sm text-gray-900">2. ----</label>
+                    <label for="cg1d-2" class="ms-2 text-sm text-gray-900">2. Bobo / buvisi (2-darajali)</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="cg1d-3" type="radio" value="3" name="cg1d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="cg1d-3" class="ms-2 text-sm text-gray-900">3. Amaki/xola (3-darajali)</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="cg1d-4" type="radio" value="4" name="cg1d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="cg1d-4" class="ms-2 text-sm text-gray-900">4. Buva va buva (3-darajali)</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="cg1d-5" type="radio" value="5" name="cg1d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="cg1d-5" class="ms-2 text-sm text-gray-900">5. Amakivachcha (4-darajali)</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="cg1d-6" type="radio" value="6" name="cg1d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="cg1d-6" class="ms-2 text-sm text-gray-900">6. Boshqa 4-darajali qarindosh yoki undan uzoqroq qarindosh</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="cg1d-7" type="radio" value="7" name="cg1d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="cg1d-7" class="ms-2 text-sm text-gray-900">7. O&#39;gay qarindoshlar (qayta nikoh orqali o&#39;rnatilgan oilaviy munosabatlar)</label>
                 </div>
             </div>
         </div>
@@ -1704,7 +1710,7 @@
 
         <div class="grid grid-cols-2 gap-4 items-center mt-10">
             <div>
-                CG5b. Yana bir muhim vazifa nogironligi boʻlgan bolalarga koʻrsatilayotgan xizmatlar sifatini oshirishdir. Ularning o&#39;ziga xos ehtiyojlari va tajribalarini tushunish orqali biz maqsadli aralashuvlarni ishlab chiqishimiz va ularning umumiy farovonligini oshirishimiz mumkin. Bundan tashqari, biz ushbu bolalar uchun yetarli oilaviy turdagi vasiylik alternativalarni tadqiq qilishga va targ&#39;ib qilishga harakat qilamiz.                <small class="italic block text-red-500">* &quot;Alohida yashaydi&quot; degani, u hali ham qonuniy nikohda, biroq turmush o&#39;rtog&#39;i bilan birga yashamaydi.</small>
+                CG5b. Vasiyning hozirgi oilaviy holati                <small class="italic block text-red-500">* &quot;Alohida yashaydi&quot; degani, u hali ham qonuniy nikohda, biroq turmush o&#39;rtog&#39;i bilan birga yashamaydi.</small>
             </div>
             <div class="col-span-1 flex flex-col gap-2">
                 <div class="flex items-center">
@@ -1759,7 +1765,7 @@
                 </div>
                 <div class="flex items-center">
                     <input id="cg6b-2" type="radio" value="1" name="cg6b" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="cg6b-2" class="ms-2 text-sm text-gray-900">1. Shaxsga hozirda davom etayotgan kasallik (masalan, sil) tashxisi qo&#39;yilgan)</label>
+                    <label for="cg6b-2" class="ms-2 text-sm text-gray-900">1. Shaxsga hozirda davom etayotgan kasallik (masalan, sil) tashxisi qo&#39;yilgan</label>
                 </div>
                 <div class="flex items-center">
                     <input id="cg6b-3" type="radio" value="2" name="cg6b" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
@@ -1918,7 +1924,7 @@
         </div>
         <div class="grid grid-cols-2 gap-4 items-center mt-10">
             <div>
-                CG9. 9. Ishsiz            </div>
+                CG9. Hozirgi vaqtda vasiyning xavfli xatti-harakatlari            </div>
             <div>
                 <div class="mb-4">
                     <div class="mb-2">a. Spirtli ichimliklarni suiste&#39;mol qiladimi?</div>
@@ -2098,15 +2104,23 @@
             <div class="flex flex-col gap-2">
                 <div class="flex items-center">
                     <input id="qeduc1a-1" type="radio" value="1" name="qeduc1a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="qeduc1a-1" class="ms-2 text-sm text-gray-900">1. Umumiy turdagai maktabgacha ta&#39;lim / bolalar bog&#39;chasi</label>
+                    <label for="qeduc1a-1" class="ms-2 text-sm text-gray-900">1. Umumiy turdagi bolalar bog&#39;chasi</label>
                 </div>
                 <div class="flex items-center">
                     <input id="qeduc1a-2" type="radio" value="2" name="qeduc1a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="qeduc1a-2" class="ms-2 text-sm text-gray-900">2. Ko&#39;p tarmoqli ixtisoslashtirilgan maktabgacha ta&#39;lim tashkiloti /bolalar bog&#39;chasi</label>
+                    <label for="qeduc1a-2" class="ms-2 text-sm text-gray-900">2. Davlat ko&#39;p tarmoqli ixtisoslashtirilgan maktabgacha ta&#39;lim tashkilotlari</label>
                 </div>
                 <div class="flex items-center">
                     <input id="qeduc1a-3" type="radio" value="3" name="qeduc1a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="qeduc1a-3" class="ms-2 text-sm text-gray-900">3. Qo&#39;shma turdagi maktabgacha ta&#39;lim tashkiloti Inklyuziv guruhlar bilan </label>
+                    <label for="qeduc1a-3" class="ms-2 text-sm text-gray-900">3. Inklyuziv guruhlarga ega bo&#39;lgan maktabgacha ta&#39;lim tashkilotlari</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="qeduc1a-4" type="radio" value="4" name="qeduc1a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="qeduc1a-4" class="ms-2 text-sm text-gray-900">4. SMSPEO bilan reabilitatsiya markazi</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="qeduc1a-5" type="radio" value="5" name="qeduc1a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="qeduc1a-5" class="ms-2 text-sm text-gray-900">5. Nodavlat maktabgacha ta’lim tashkiloti</label>
                 </div>
             </div>
         </div>
@@ -2637,11 +2651,11 @@
                 </div>
                 <div class="flex items-center">
                     <input id="predif1-5" type="radio" value="5" name="predif1" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="predif1-5" class="ms-2 text-sm text-gray-900">1. Fizioterapiya</label>
+                    <label for="predif1-5" class="ms-2 text-sm text-gray-900">5: Nihoyat darajada yuqori. Qiyinchilik bolaning kundalik hayotida va faoliyatida ishtirok eta olmasligiga olib keladi yoki maxsus yoki intensiv tuzatishlar yoki moslashuvlarni talab qiladi.</label>
                 </div>
                 <div class="flex items-center">
                     <input id="predif1-6" type="radio" value="9" name="predif1" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="predif1-6" class="ms-2 text-sm text-gray-900">90. Ma&#39;lum emas</label>
+                    <label for="predif1-6" class="ms-2 text-sm text-gray-900">9. Ma&#39;lum emas</label>
                 </div>
             </div>
         </div>
@@ -2667,7 +2681,7 @@
                 </div>
                 <div class="flex items-center">
                     <input id="predif2-5" type="radio" value="5" name="predif2" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="predif2-5" class="ms-2 text-sm text-gray-900">1. Fizioterapiya</label>
+                    <label for="predif2-5" class="ms-2 text-sm text-gray-900">5: Nihoyat darajada yuqori. Qiyinchilik bolaning kundalik hayotida va faoliyatida ishtirok eta olmasligiga olib keladi yoki maxsus yoki intensiv tuzatishlar yoki moslashuvlarni talab qiladi.</label>
                 </div>
                 <div class="flex items-center">
                     <input id="predif2-6" type="radio" value="9" name="predif2" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
@@ -2697,7 +2711,7 @@
                 </div>
                 <div class="flex items-center">
                     <input id="predif3-5" type="radio" value="5" name="predif3" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="predif3-5" class="ms-2 text-sm text-gray-900">1. Fizioterapiya</label>
+                    <label for="predif3-5" class="ms-2 text-sm text-gray-900">5: Nihoyat darajada yuqori. Qiyinchilik bolaning kundalik hayotida va faoliyatida ishtirok eta olmasligiga olib keladi yoki maxsus yoki intensiv tuzatishlar yoki moslashuvlarni talab qiladi.</label>
                 </div>
                 <div class="flex items-center">
                     <input id="predif3-6" type="radio" value="9" name="predif3" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
@@ -2727,7 +2741,7 @@
                 </div>
                 <div class="flex items-center">
                     <input id="predif4-5" type="radio" value="5" name="predif4" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="predif4-5" class="ms-2 text-sm text-gray-900">1. Fizioterapiya</label>
+                    <label for="predif4-5" class="ms-2 text-sm text-gray-900">5: Nihoyat darajada yuqori. Qiyinchilik bolaning kundalik hayotida va faoliyatida ishtirok eta olmasligiga olib keladi yoki maxsus yoki intensiv tuzatishlar yoki moslashuvlarni talab qiladi.</label>
                 </div>
                 <div class="flex items-center">
                     <input id="predif4-6" type="radio" value="9" name="predif4" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
@@ -2757,7 +2771,7 @@
                 </div>
                 <div class="flex items-center">
                     <input id="predif5-5" type="radio" value="5" name="predif5" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="predif5-5" class="ms-2 text-sm text-gray-900">1. Fizioterapiya</label>
+                    <label for="predif5-5" class="ms-2 text-sm text-gray-900">5: Nihoyat darajada yuqori. Qiyinchilik bolaning kundalik hayotida va faoliyatida ishtirok eta olmasligiga olib keladi yoki maxsus yoki intensiv tuzatishlar yoki moslashuvlarni talab qiladi.</label>
                 </div>
                 <div class="flex items-center">
                     <input id="predif5-6" type="radio" value="9" name="predif5" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
@@ -2787,7 +2801,7 @@
                 </div>
                 <div class="flex items-center">
                     <input id="predif6-5" type="radio" value="5" name="predif6" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="predif6-5" class="ms-2 text-sm text-gray-900">1. Fizioterapiya</label>
+                    <label for="predif6-5" class="ms-2 text-sm text-gray-900">5: Nihoyat darajada yuqori. Qiyinchilik bolaning kundalik hayotida va faoliyatida ishtirok eta olmasligiga olib keladi yoki maxsus yoki intensiv tuzatishlar yoki moslashuvlarni talab qiladi.</label>
                 </div>
                 <div class="flex items-center">
                     <input id="predif6-6" type="radio" value="9" name="predif6" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
@@ -2820,11 +2834,11 @@
                 </div>
                 <div class="flex items-center">
                     <input id="predif7-5" type="radio" value="5" name="predif7" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="predif7-5" class="ms-2 text-sm text-gray-900">1. Fizioterapiya</label>
+                    <label for="predif7-5" class="ms-2 text-sm text-gray-900">5: Nihoyat darajada yuqori. Qiyinchilik bolaning kundalik hayotida va faoliyatida ishtirok eta olmasligiga olib keladi yoki maxsus yoki intensiv tuzatishlar yoki moslashuvlarni talab qiladi.</label>
                 </div>
                 <div class="flex items-center">
                     <input id="predif7-6" type="radio" value="9" name="predif7" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="predif7-6" class="ms-2 text-sm text-gray-900">Ta&#39;sir</label>
+                    <label for="predif7-6" class="ms-2 text-sm text-gray-900">9. Ma&#39;lum emas</label>
                 </div>
             </div>
         </div>
@@ -2886,15 +2900,15 @@
                 </div>
                 <div class="flex items-center">
                     <input id="preduc6b9" type="checkbox" value="9" name="preduc6b9" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="prehealth5a9" class="ms-2 text-sm text-gray-900">10. Individuallashtirilgan ta&#39;lim </label>
+                    <label for="prehealth5a9" class="ms-2 text-sm text-gray-900">9. Individuallashtirilgan ta&#39;lim </label>
                 </div>
                 <div class="flex items-center">
                     <input id="preduc6b10" type="checkbox" value="10" name="preduc6b10" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="prehealth5a90" class="ms-2 text-sm text-gray-900">11. Tuzatish-pedagogik reabilitatsiya (tibbiy, ijtimoiy, jismoniy) orqali qo&#39;llab-quvvatlash</label>
+                    <label for="prehealth5a90" class="ms-2 text-sm text-gray-900">10. Tuzatish-pedagogik reabilitatsiya (tibbiy, ijtimoiy, jismoniy) orqali qo&#39;llab-quvvatlash</label>
                 </div>
                 <div class="flex items-center">
                     <input id="preduc6b11" type="checkbox" value="11" name="preduc6b11" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="prehealth5a90" class="ms-2 text-sm text-gray-900">12. Boshqa qo&#39;llab-quvvatlash turi, ko&#39;rsatilsin: …</label>
+                    <label for="prehealth5a90" class="ms-2 text-sm text-gray-900">11. Boshqa qo&#39;llab-quvvatlash turi, ko&#39;rsatilsin: …</label>
                 </div>
                 <div class="flex items-center">
                     <textarea id="preduc6b11_other" name="preduc6b11_other" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100"></textarea>
@@ -3949,7 +3963,7 @@
 
         <div class="grid grid-cols-2 gap-4 items-center mt-10">
             <div>
-                8a. Gigiyena: bolaning tozalikni va o&#39;z sog&#39;lig&#39;ini saqlab turish ko&#39;nikmasi, masalan, yuvinish, sochini tarash yoki o&#39;zini parvarish qilish. Bolaning rasmiy nogironlik maqomi (nogironlik guvohnomasi) bormi?            </div>
+                LK22_1. Bolaning rasmiy nogironlik maqomi (nogironlik guvohnomasi) bormi?            </div>
             <div class="col-span-1 flex items-center gap-4">
                 <div class="flex items-center">
                     <input id="lk22_1-1" type="radio" value="1" name="lk22_1" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
@@ -4794,7 +4808,7 @@
         </div>
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
             <div class="ml-3">
-                DVI12. DVI12            </div>
+                DVI12. Jamoat joylarida o&#39;zini tutish (Do&#39;konda, maktabda va h.k.)            </div>
             <select id="dvi12" name="dvi12" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
                 <option value="-9" class="t_choose">--- choose ---</option>
                 <option value="1" class="t_notatall">1</option>
