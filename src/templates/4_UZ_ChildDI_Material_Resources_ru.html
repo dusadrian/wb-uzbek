@@ -69,7 +69,7 @@
 
         <h2 class="mt-10 mb-4 text-2xl font-bold text-gray-700">1. ОБЩАЯ ИНФОРМАЦИЯ ОБ УЧРЕЖДЕНИИ</h2>
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
-            <div>I1. Название специализированного учебного заведения</div>
+            <div>I1. Название учреждения</div>
             <div>
                 <input type="text" id="i1" name="i1" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
             </div>
@@ -95,27 +95,22 @@
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
             <div>I4a. Область</div>
             <div>
-                <input type="text" id="i4a" name="i4a" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                <select id="i4a" name="i4a" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+                    <option value="-9" class="t_choose">--- choose ---</option>
+                </select>
             </div>
         </div>
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
             <div>I4b. Район</div>
             <div>
-                <input type="text" id="i4b" name="i4b" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                <select id="i4b" name="i4b" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+                    <option value="-9" class="t_choose">--- choose ---</option>
+                </select>
             </div>
         </div>
-        <div class="grid grid-cols-2 gap-4 items-center mt-6">
-            <div>I4c. Settlement</div>
-            <div>
-                <input type="text" id="i4c" name="i4c" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
-            </div>
-        </div>
-        <div class="grid grid-cols-2 gap-4 items-center mt-6">
-            <div>I4d. Type of settlement</div>
-            <div>
-                <input type="text" id="i4d" name="i4d" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
-            </div>
-        </div>
+
+        <input type="hidden" id="i4d" name="i4d" />
+
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
             <div>I9. Тип учреждения</div>
             <div>
@@ -208,7 +203,7 @@
 
         <h2 class="mt-10 mb-4 text-2xl font-bold text-gray-700">2. РАСПОЛОЖЕНИЕ И ДОСТУПНОСТЬ</h2>
 
-        <p class="mt-6">LA1 Имеет ли учреждение в непосредственной близости (в пределах 3-7 минут ходьбы от его границ) что-либо из перечисленного? …</p>
+        <p class="mt-6">LA1. Имеет ли учреждение в непосредственной близости (в пределах 3-7 минут ходьбы от его границ) что-либо из перечисленного? …</p>
 
         <div class="ml-4">
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
@@ -814,11 +809,11 @@
             <thead>
                 <tr>
                     <th></th>
-                    <th>1. Очень плохо</th>
-                    <th>2. Плохо</th>
-                    <th>3. Средне</th>
-                    <th>4. Хорошо</th>
-                    <th>5. Очень хорошо</th>
+                    <th>Очень&lt;br&gt;плохо</th>
+                    <th>Плохо</th>
+                    <th>Средне</th>
+                    <th>Хорошо</th>
+                    <th>Очень&lt;br&gt;хорошо</th>
                 </tr>
             </thead>
             <tbody>
@@ -839,7 +834,7 @@
                     <td class="p-1 text-center"><input id="af6_b-5" type="radio" value="5" name="af6_b" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
                 </tr>
                 <tr>
-                    <td class="p-1">c. Столярные элементы (окна, двери))</td>
+                    <td class="p-1">c. Столярные элементы (окна, двери)</td>
                     <td class="p-1 text-center"><input id="af6_c-1" type="radio" value="1" name="af6_c" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
                     <td class="p-1 text-center"><input id="af6_c-2" type="radio" value="2" name="af6_c" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
                     <td class="p-1 text-center"><input id="af6_c-3" type="radio" value="3" name="af6_c" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
@@ -879,7 +874,7 @@
                     <td class="p-1 text-center"><input id="af6_g-5" type="radio" value="5" name="af6_g" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
                 </tr>
                 <tr>
-                    <td class="p-1">h. Общие внутренние помещения (коридоры, лестницы и т.д.).)</td>
+                    <td class="p-1">h. Общие внутренние помещения (коридоры, лестницы и т.д.).</td>
                     <td class="p-1 text-center"><input id="af6_h-1" type="radio" value="1" name="af6_h" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
                     <td class="p-1 text-center"><input id="af6_h-2" type="radio" value="2" name="af6_h" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
                     <td class="p-1 text-center"><input id="af6_h-3" type="radio" value="3" name="af6_h" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
@@ -915,7 +910,7 @@
 
         <div class="grid grid-cols-2 gap-4 items-center mt-10">
             <div class="col-span-1">
-                AF7.. Как обеспечивается обогрев жилого помещения?                <small class="block">ОТМЕТЬТЕ ВСЕ НУЖНОЕ</small>
+                AF7. Как обеспечивается обогрев жилого помещения?                <small class="block">ОТМЕТЬТЕ ВСЕ НУЖНОЕ</small>
 
             </div>
             <div class="col-span-1 flex flex-col gap-2">
@@ -1389,7 +1384,7 @@
             </div>
         </div>
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
-            <div>f. Общее количество напольных туалетов </div>
+            <div>g. Общее количество напольных туалетов </div>
             <div class="flex items-center gap-4">
                 <input type="text" id="ac5g" name="ac5g" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full disabled:bg-gray-100" />
             </div>
@@ -2066,24 +2061,22 @@
             <div class="col-span-1 flex flex-col gap-2">
                 <div class="flex flex-col gap-4">
                     <div class="grid grid-cols-2">
-                        <div>а. Выделенные помещения</div>
+                        <div></div>
                         <div class="flex items-center gap-2">
                             <input type="text" id="rce3a" name="rce3a" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-20 disabled:bg-gray-100" />
-                            calories
-                        </div>
+                            пространства                        </div>
                     </div>
                     <div class="grid grid-cols-2">
                         <div>б. Общие помещения</div>
                         <div class="flex items-center gap-2">
                             <input type="text" id="rce3b" name="rce3b" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-20 disabled:bg-gray-100" />
-                            calories
-                        </div>
+                            пространства                        </div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <p class="mt-6">RCERCE4. Как бы вы оценили имеющиеся ресурсы для образовательной деятельности в учреждении?</p>
+        <p class="mt-6">RCE4. Как бы вы оценили имеющиеся ресурсы для образовательной деятельности в учреждении?</p>
         <small class="italic mt-2">Пожалуйста, используйте следующую шкалу от 1 (очень плохо) до 5 (отлично)</small>
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
             <div class="col-span-1 ml-4">Помещения достаточны по размеру и количеству для проведения образовательных мероприятий.</div>
@@ -2388,7 +2381,7 @@
                     <td class="p-2 text-center"><input id="edu3f-5" type="radio" value="5" name="edu3f" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
                 </tr>
                 <tr>
-                    <td class="p-2">g. Мультисенсорная комната (для психосенсорно-моторной стимуляции))</td>
+                    <td class="p-2">g. Мультисенсорная комната (для психосенсорно-моторной стимуляции)</td>
                     <td class="p-2 text-center"><input id="edu2g-1" type="radio" value="1" name="edu2g" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
                     <td class="p-2 text-center"><input id="edu2g-2" type="radio" value="2" name="edu2g" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
                     <td class="p-2 text-center"><input id="edu2g-3" type="radio" value="3" name="edu2g" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
@@ -2650,7 +2643,7 @@
                 </tr>
                 <tr class="text-black font-bold">
                     <td class="text-left p-2">10</td>
-                    <td class="text-left p-2">ИТОГО РАСХОДЫ НА ПЕРСОНАЛ (код 10.1+10.2+10.3+10.4)</td>
+                    <td class="text-left p-2">ИТОГО РАСХОДЫ НА ПЕРСОНАЛ (код 10.1+10.2+10.3+10.4+10.5)</td>
                     <td class="text-center p-2">
                         <input type="text" id="e10" name="e10" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full disabled:bg-gray-100" />
                     </td>
