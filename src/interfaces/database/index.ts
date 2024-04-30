@@ -36,6 +36,7 @@ export interface Institution {
     address: string;
     region: string;
     district: string;
+    settlement: number;
     settlement_type: number;
     capacity: number;
     children: number;

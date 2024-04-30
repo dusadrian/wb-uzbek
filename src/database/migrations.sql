@@ -47,6 +47,7 @@ CREATE TABLE institutions (
     address VARCHAR NOT NULL,
     region VARCHAR NOT NULL,
     district VARCHAR NOT NULL,
+    settlement INTEGER,
     settlement_type INTEGER NOT NULL,
     capacity INTEGER NOT NULL,
     children INTEGER NOT NULL,
