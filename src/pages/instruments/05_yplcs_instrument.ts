@@ -67,7 +67,7 @@ export const instrument5 = {
             services = args.services;
             insons = args.insons;
             const institution_code = args.userData.institution_code;
-            const inson_user = Object.keys(insons).indexOf(args.userData.institution_code) >= 0;
+            const inson_user = Object.keys(insons).indexOf(institution_code) >= 0;
 
             const pi6 = util.htmlElement("pi6");
             const reg_codes = Object.keys(regions);

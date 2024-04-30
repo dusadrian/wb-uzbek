@@ -3,7 +3,7 @@ import { questions, questionOrder } from "./05a_tqyp_variables";
 import instrument from "../../libraries/instrument";
 import { QuestionObjectType, SaveInstrumentType } from "../../libraries/interfaces";
 import { util } from "../../libraries/validation_helpers";
-// import * as DI from "../../interfaces/database";
+import * as DI from "../../interfaces/database";
 
 import * as _flatpickr from 'flatpickr';
 import { FlatpickrFn } from 'flatpickr/dist/types/instance';
@@ -15,7 +15,7 @@ import { KeyString, regions, districts, settlements, settlement_types } from "..
 import * as en from "../../locales/en.json";
 import * as uz from "../../locales/uz.json";
 import * as ru from "../../locales/ru.json";
-import { set } from "lodash";
+
 const locales: { [key: string]: typeof en | typeof uz | typeof ru} = {
     'en': en,
     'uz': uz,
@@ -25,8 +25,8 @@ const locales: { [key: string]: typeof en | typeof uz | typeof ru} = {
 
 const lang = localStorage.getItem("language");
 // const translations = locales[lang as keyof typeof locales] as Record<string, string>;
-// let services: {[key: string]: DI.Institution};
-// let insons: {[key: string]: DI.INSON};
+let services: {[key: string]: DI.Institution};
+let insons: {[key: string]: DI.INSON};
 
 
 const general_dates = [
@@ -161,7 +161,12 @@ export const instrument5a = {
 
 
         ipcRenderer.on("instrumentDataReady", (_event, args) => {
-            console.log(args);
+            // console.log(args);
+            services = args.services;
+            insons = args.insons;
+            const institution_code = args.userData.institution_code;
+            const inson_user = Object.keys(insons).indexOf(institution_code) >= 0;
+
 
             // set instrument question !!!!!!
             instrument.setQuestions(questions, questionOrder);
@@ -190,21 +195,30 @@ export const instrument5a = {
                 // set default values for user
                 regionCode = args.userData.region_code;
                 institutionType = args.userData.service_type_code;
-                util.setValue("str1", args.userData.institution_code);
-                util.setValue("str2", args.userData.institution_name);
-                util.setValue("str3a", regionCode);
-                util.setValue("str3b", args.services[args.userData.institution_code].district);
-                const type_of_institution = args.services[args.userData.institution_code].type;
-                if (["11", "12", "13", "14", "15", "16", "17"].indexOf(type_of_institution) >= 0) {
-                    util.setValue("str4", args.services[args.userData.institution_code].type);
+
+                util.setValue("str1", institution_code);
+                util.setValue("str4", "0");
+                if (inson_user) {
+                    util.setValue("str2", insons[institution_code].name ? insons[institution_code].name : "--");
+                    util.setValue("str3a", insons[institution_code].region);
+                    util.setValue("str3b", insons[institution_code].district);
+                } else {
+                    util.setValue("str2", services[institution_code].name ? services[institution_code].name : "--");
+                    util.setValue("str3a", services[institution_code].region);
+                    util.setValue("str3b", services[institution_code].district);
+                    const type = services[institution_code].type;
+                    if (["11", "12", "13", "14", "15", "16", "17"].indexOf(type) >= 0) {
+                        util.setValue("str4", type);
+                    }
                 }
-                util.setValue("omr1", args.userData.name);
-                util.setValue("omr2", args.userData.patronymics);
-                util.setValue("omr3", args.userData.surname);
-                util.setValue("omr4", args.userData.job_title);
-                util.setValue("omr5", args.userData.profession);
-                util.setValue("omr6", args.userData.phone);
-                util.setValue("omr7", args.userData.email);
+
+                util.setValue("omr1", args.userData.name ? args.userData.name : "--");
+                util.setValue("omr2", args.userData.patronymics ? args.userData.patronymics : "--");
+                util.setValue("omr3", args.userData.surname ? args.userData.surname : "--");
+                util.setValue("omr4", args.userData.job_title ? args.userData.job_title : "--");
+                util.setValue("omr5", args.userData.profession ? args.userData.profession : "--");
+                util.setValue("omr6", args.userData.phone ? args.userData.phone : "--");
+                util.setValue("omr7", args.userData.email ? args.userData.email : "--");
             }
 
             instrument.start(instrumentID, instrument.trimis, saveChestionar, validateChestionar);
