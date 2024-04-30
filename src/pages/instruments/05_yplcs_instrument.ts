@@ -24,8 +24,8 @@ const locales: { [key: string]: typeof en | typeof uz | typeof ru} = {
 const lang = localStorage.getItem("language");
 let services: {[key: string]: DI.Institution};
 
-const regElements  = ["pi4b", "pi6r", "pi9c"];
-const disElements  = ["pi4c", "pi6d", "pi9d"];
+const regElements  = ["pi4b", "pi6reg", "pi9c"];
+const disElements  = ["pi4c", "pi6dis", "pi9d"];
 const setElements  = ["pi4d", "",     "pi9h"];
 const typeElements = ["pi4e", "",     "pi9i"];
 
