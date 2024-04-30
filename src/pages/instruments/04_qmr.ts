@@ -11,7 +11,7 @@ import { FlatpickrFn } from 'flatpickr/dist/types/instance';
 const flatpickr: FlatpickrFn = _flatpickr as any;
 import { Russian } from "flatpickr/dist/l10n/ru";
 import { UzbekLatin } from "flatpickr/dist/l10n/uz_latn";
-import { KeyString, regions, districts, settlements, settlement_types } from "../../libraries/administrative";
+import { KeyString, regions, districts, settlements } from "../../libraries/administrative";
 
 import * as en from "../../locales/en.json";
 import * as uz from "../../locales/uz.json";
@@ -85,22 +85,17 @@ export const instrument4 = {
         flatpickr(util.htmlElement('af13b'), flatpickrConfig2);
 
         ipcRenderer.on("instrumentDataReady", (_event, args) => {
-
+            console.log(args);
 
             const regElements  = ["i4a"];
             const disElements  = ["i4b"];
-
+            const setElements  = ["i4c"];
 
             services = args.services;
             insons = args.insons;
             const inson_codes = Object.keys(insons);
-            let institution_code = "";
-
-            let inson_user = false;
-            if (args.userData && args.userData.institution_code) {
-                inson_user = inson_codes.indexOf(args.userData.institution_code) >= 0;
-                institution_code = args.userData.institution_code;
-            }
+            const institution_code = args.userData.institution_code;
+            const inson_user = inson_codes.indexOf(args.userData.institution_code) >= 0;
 
             const reg_codes = Object.keys(regions);
             for (let x = 0; x < regElements.length; x++) {
@@ -120,6 +115,7 @@ export const instrument4 = {
                 }
 
                 const dis_el = util.htmlElement(disElements[x]);
+                const set_el = util.htmlElement(setElements[x]);
 
                 util.listen(regElements[x], "change", function () {
 
@@ -138,6 +134,30 @@ export const instrument4 = {
                             option.value = dis_codes[i];
                             option.text = dis_codes[i] + ": " + (districts[dis_codes[i]] as KeyString)[lang];
                             dis_el.appendChild(option);
+                        }
+                    }
+                })
+
+                util.listen(disElements[x], "change", function () {
+                    set_el.innerHTML = "";
+
+                    const selectedDistrict = dis_el.value;
+                    if (Number(selectedDistrict) > 0) {
+                        const option = document.createElement("option");
+                        option.value = "--";
+                        option.text = "--";
+                        set_el.appendChild(option);
+
+                        const set_codes = districts[selectedDistrict].settlements;
+
+                        if (set_codes.length > 0) {
+
+                            for (let i = 0; i < set_codes.length; i++) {
+                                const option = document.createElement("option");
+                                option.value = set_codes[i];
+                                option.text = set_codes[i] + ": " + (settlements[set_codes[i]] as KeyString)[lang];
+                                set_el.appendChild(option);
+                            }
                         }
                     }
                 })
@@ -162,50 +182,38 @@ export const instrument4 = {
             util.setValue("q1", util.customDate());
 
             if (args.userData) {
-                if (institution_code != "") {
-                    if (inson_user) {
-                        util.setValue('i4a', "" + insons[institution_code].region);
-                        util.setValue('i4b', "" + insons[institution_code].district);
-                    }
-                    else {
-                        util.setValue('i4a', "" + services[institution_code].region);
-                        util.setValue('i4b', "" + services[institution_code].district);
-                        util.setValue('i4d', "" + services[institution_code].settlement_type);
-                    }
+                util.setValue('i2', "" + institution_code);
+
+                if (inson_user) {
+                    util.setValue('i1', insons[institution_code].name ? insons[institution_code].name : "--");
+                    util.setValue('i3', insons[institution_code].address ? insons[institution_code].address : "--");
+                    util.setValue('i4a', "" + insons[institution_code].region);
+                    util.setValue('i4b', "" + insons[institution_code].district);
+                    util.setValue('i4c', "--");
+                    util.setValue('i4d', "--");
+                    util.setValue('i9', "--");
                 }
+                else {
+                    util.setValue('i1', services[institution_code].name ? services[institution_code].name : "--");
+                    util.setValue('i3', services[institution_code].address ? services[institution_code].address : "--");
+                    util.setValue('i4a', "" + services[institution_code].region);
+                    util.setValue('i4b', "" + services[institution_code].district);
+                    const settlement = services[institution_code].settlement;
+                    util.setValue('i4c', settlement ? "" + settlement : "--");
+                    util.setValue('i4d', "" + services[institution_code].settlement_type);
+                    util.setValue('i9', services[institution_code].type ? services[institution_code].type : "--");
+                }
+
                 util.setValue('q2', args.userData.name + " " + args.userData.patronymics + " " + args.userData.surname);
-                util.setValue('q3', args.userData.job_title);
-                util.setValue('q4', args.userData.profession);
-                util.setValue('q5', args.userData.phone);
-                util.setValue('q6', args.userData.email);
+                util.setValue('q3', args.userData.job_title ? args.userData.job_title : "--");
+                util.setValue('q4', args.userData.profession ? args.userData.profession : "--");
+                util.setValue('q5', args.userData.phone ? args.userData.phone : "--");
+                util.setValue('q6', args.userData.email ? args.userData.email : "--");
                 regionCode = args.userData.region_code;
             }
 
             if (args.institutionData) {
-
-                // set default values for institution
-                util.setValue('i1', args.institutionData.name);
-                util.setValue('i2', args.institutionData.code);
-                util.setValue('i3', args.institutionData.address);
-
-                if (Object.keys(regions).indexOf(args.institutionData.region) >= 0) {
-                    util.setValue('i4a', "" + (regions[args.institutionData.region] as KeyString)[lang]);
-                }
-
-                if (Object.keys(districts).indexOf(args.institutionData.district) >= 0) {
-                    util.setValue('i4', args.institutionData.district);
-                    util.setValue('i4b', "" + (districts[args.institutionData.district] as KeyString)[lang]);
-                }
-
-                if (Object.keys(settlements).indexOf(args.institutionData.settlement) >= 0) {
-                    util.setValue('i4', args.institutionData.settlement);
-                    const settlement = settlements[args.institutionData.settlement];
-                    util.setValue('i4c', "" + (settlement as KeyString)[lang]);
-                    util.setValue('i4d', "" + (settlement_types[settlement.type] as KeyString)[lang]);
-                }
-
                 // Type of institution
-                util.setValue('i9', args.institutionData.type);
                 institutionType = args.institutionData.type;
             }
 

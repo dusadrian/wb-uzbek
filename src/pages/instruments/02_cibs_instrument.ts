@@ -93,13 +93,8 @@ export const instrument2 = {
             services = args.services;
             insons = args.insons;
             const inson_codes = Object.keys(insons);
-            let institution_code = "";
-
-            let inson_user = false;
-            if (args.userData && args.userData.institution_code) {
-                inson_user = inson_codes.indexOf(args.userData.institution_code) >= 0;
-                institution_code = args.userData.institution_code;
-            }
+            const institution_code = args.userData.institution_code;
+            const inson_user = inson_codes.indexOf(institution_code) >= 0;
 
             const sa5a = util.htmlElement("sa5a");
             const reg_codes = Object.keys(regions);
@@ -241,26 +236,25 @@ export const instrument2 = {
             util.setValue("data", util.customDate());
 
             if (args.userData) {
-                if (args.userData.institution_code) {
-                    if (inson_user) {
-                        util.setValue('reg', "" + insons[institution_code].region);
-                        util.setValue('dis', "" + insons[institution_code].district);
-                    }
-                    else {
-                        util.setValue('reg', "" + services[institution_code].region);
-                        util.setValue('dis', "" + services[institution_code].district);
-                    }
+                if (inson_user) {
+                    util.setValue('reg', "" + insons[institution_code].region);
+                    util.setValue('dis', "" + insons[institution_code].district);
+                    util.setValue("omr8", insons[institution_code].name ? insons[institution_code].name : "--");
                 }
+                else {
+                    util.setValue('reg', "" + services[institution_code].region);
+                    util.setValue('dis', "" + services[institution_code].district);
+                    util.setValue("omr8", services[institution_code].name ? services[institution_code].name : "--");
+                }
+                util.setValue("omr9", "" + institution_code);
 
-                util.setValue('omr1', args.userData.name);
-                util.setValue('omr2', args.userData.patronymics);
-                util.setValue('omr3', args.userData.surname);
-                util.setValue('omr4', args.userData.job_title);
-                util.setValue('omr5', args.userData.profession);
-                util.setValue('omr6', args.userData.phone);
-                util.setValue('omr7', args.userData.email);
-                util.setValue("omr8", args.userData.institution_name);
-                util.setValue("omr9", args.userData.institution_code);
+                util.setValue('omr1', args.userData.name ? args.userData.name : "--");
+                util.setValue('omr2', args.userData.patronymics ? args.userData.patronymics : "--");
+                util.setValue('omr3', args.userData.surname ? args.userData.surname : "--");
+                util.setValue('omr4', args.userData.job_title ? args.userData.job_title : "--");
+                util.setValue('omr5', args.userData.profession ? args.userData.profession : "--");
+                util.setValue('omr6', args.userData.phone ? args.userData.phone : "--");
+                util.setValue('omr7', args.userData.email ? args.userData.email : "--");
                 regionCode = args.userData.region_code;
                 institutionType = args.userData.service_type_code;
 

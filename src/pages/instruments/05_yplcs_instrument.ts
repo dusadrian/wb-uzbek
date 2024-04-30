@@ -23,11 +23,12 @@ const locales: { [key: string]: typeof en | typeof uz | typeof ru} = {
 
 const lang = localStorage.getItem("language");
 let services: {[key: string]: DI.Institution};
+let insons: {[key: string]: DI.INSON};
 
-const regElements  = ["pi4b", "pi6reg", "pi9c"];
-const disElements  = ["pi4c", "pi6dis", "pi9d"];
-const setElements  = ["pi4d", "",     "pi9h"];
-const typeElements = ["pi4e", "",     "pi9i"];
+const regElements  = ["reg", "pi4b", "pi6r", "pi9c"];
+const disElements  = ["dis", "pi4c", "pi6d", "pi9d"];
+const setElements  = ["",    "pi4d", "",     "pi9h"];
+const typeElements = ["",    "pi4e", "",     "pi9i"];
 
 let regionCode = '';
 let institutionType = '';
@@ -64,6 +65,10 @@ export const instrument5 = {
         ipcRenderer.on("instrumentDataReady", (_event, args) => {
             // console.log(args);
             services = args.services;
+            insons = args.insons;
+            const inson_codes = Object.keys(insons);
+            const institution_code = args.userData.institution_code;
+            const inson_user = inson_codes.indexOf(args.userData.institution_code) >= 0;
 
             const pi6 = util.htmlElement("pi6");
             const reg_codes = Object.keys(regions);
@@ -91,10 +96,6 @@ export const instrument5 = {
                         pi6.innerHTML = "";
                     }
 
-                    if (typeElements[x] != "") {
-                        util.htmlElement(typeElements[x]).value = "";
-                    }
-
                     if (setElements[x] != "") {
                         set_el.innerHTML = "";
                     }
@@ -119,9 +120,6 @@ export const instrument5 = {
                 })
 
                 util.listen(disElements[x], "change", function () {
-                    if (typeElements[x] != "") {
-                        util.htmlElement(typeElements[x]).value = "";
-                    }
                     const selectedDistrict = dis_el.value;
 
                     if (setElements[x] != "") {
@@ -147,15 +145,6 @@ export const instrument5 = {
                                     option.text = set_codes[i] + ": " + (settlements[set_codes[i]] as KeyString)[lang];
                                     set_el.appendChild(option);
                                 }
-                            }
-                            else {
-                                if (typeElements[x] != "") {
-                                    const dis_type = settlement_types[districts[selectedDistrict].type];
-                                    util.setValue(typeElements[x], "" + dis_type[lang as keyof typeof dis_type]);
-                                }
-                                instrument.questions[setElements[x]].skip = true;
-                                instrument.questions[setElements[x]].value = '-7';
-                                util.htmlElement(setElements[x]).disabled = true;
                             }
                         } else {
 
@@ -208,15 +197,6 @@ export const instrument5 = {
 
             if (args.institutionData) {
 
-                if (Object.keys(regions).indexOf(args.institutionData.region) >= 0) {
-                    util.setValue('reg', "" + (regions[args.institutionData.region] as KeyString)[lang]);
-                }
-
-                if (Object.keys(districts).indexOf(args.institutionData.district) >= 0) {
-                    util.setValue('dis', "" + (districts[args.institutionData.district] as KeyString)[lang]);
-                }
-
-                util.setValue("omr9", args.institutionData.name);
                 institutionType = args.institutionData.type;
             }
 
@@ -224,15 +204,23 @@ export const instrument5 = {
             util.setValue("data", util.customDate());
 
             if (args.userData) {
+                if (inson_user) {
+                    util.setValue("reg", insons[institution_code].region);
+                    util.setValue("dis", insons[institution_code].district);
+                    util.setValue("omr9", insons[institution_code].name ? insons[institution_code].name : "--");
+                } else {
+                    util.setValue("reg", services[institution_code].region);
+                    util.setValue("dis", services[institution_code].district);
+                    util.setValue("omr9", services[institution_code].name ? services[institution_code].name : "--");
+                }
                 // set default values for user
-                util.setValue("omr1", args.userData.name);
-                util.setValue("omr2", args.userData.patronymics);
-                util.setValue("omr3", args.userData.surname);
-                util.setValue("omr4", args.userData.job_title);
-                util.setValue("omr5", args.userData.profession);
-                util.setValue("omr6", args.userData.phone);
-                util.setValue("omr7", args.userData.email);
-                util.setValue("omr9", args.userData.institution_name);
+                util.setValue("omr1", args.userData.name ? args.userData.name : "--");
+                util.setValue("omr2", args.userData.patronymics ? args.userData.patronymics : "--");
+                util.setValue("omr3", args.userData.surname ? args.userData.surname : "--");
+                util.setValue("omr4", args.userData.job_title ? args.userData.job_title : "--");
+                util.setValue("omr5", args.userData.profession ? args.userData.profession : "--");
+                util.setValue("omr6", args.userData.phone ? args.userData.phone : "--");
+                util.setValue("omr7", args.userData.email ? args.userData.email : "--");
                 regionCode = args.userData.region_code;
             }
 
@@ -290,8 +278,7 @@ for (let i = 0; i < setElements.length; i++) {
     if (typeElements[i] != "") {
         util.listen(setElements[i], "change", () => {
             const value = util.htmlElement(setElements[i]).value;
-            const set_type = settlement_types[settlements[value].type];
-            util.setValue(typeElements[i], "" + (set_type as KeyString)[lang]);
+            util.setValue(typeElements[i], "" + settlement_types[settlements[value].type]);
         })
     }
 }

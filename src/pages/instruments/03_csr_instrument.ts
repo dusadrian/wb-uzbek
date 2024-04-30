@@ -11,7 +11,7 @@ import { FlatpickrFn } from 'flatpickr/dist/types/instance';
 const flatpickr: FlatpickrFn = _flatpickr as any;
 import { Russian } from "flatpickr/dist/l10n/ru";
 import { UzbekLatin } from "flatpickr/dist/l10n/uz_latn";
-import { KeyString, regions, districts, settlements, settlement_types } from "../../libraries/administrative";
+import { KeyString, regions, districts, settlements } from "../../libraries/administrative";
 
 import * as en from "../../locales/en.json";
 import * as uz from "../../locales/uz.json";
@@ -24,6 +24,8 @@ const locales: { [key: string]: typeof en | typeof uz | typeof ru} = {
 
 const lang = localStorage.getItem("language");
 const translations = locales[lang as keyof typeof locales] as Record<string, string>;
+let services: {[key: string]: DI.Institution};
+let insons: {[key: string]: DI.INSON};
 
 let regionCode = '';
 let institutionType = '';
@@ -56,11 +58,17 @@ export const instrument3 = {
         flatpickr(util.htmlElement('e7'), flatpickrConfig);
 
         ipcRenderer.on("instrumentDataReady", (_event, args) => {
-            console.log(args);
+            // console.log(args);
 
             const regElements  = ["i4a"];
             const disElements  = ["i4b"];
             const setElements  = ["i4c"];
+
+
+            services = args.services;
+            insons = args.insons;
+            const institution_code = args.userData.institution_code;
+            const inson_user = inson_codes.indexOf(institution_code) >= 0;
 
             const reg_codes = Object.keys(regions);
             for (let x = 0; x < regElements.length; x++) {
@@ -148,35 +156,39 @@ export const instrument3 = {
             util.setValue("q1", util.customDate());
 
             if (args.userData) {
-                // set default values for user
+                util.setValue('i2', "" + institution_code);
+
+                if (inson_user) {
+                    util.setValue('i1', insons[institution_code].name ? insons[institution_code].name : "--");
+                    util.setValue('i3', "--");
+                    util.setValue('i4a', "" + insons[institution_code].region);
+                    util.setValue('i4b', "" + insons[institution_code].district);
+                    util.setValue('i4c', "--");
+                    util.setValue('i4d', "--");
+                    util.setValue('i5', "--");
+                }
+                else {
+                    util.setValue('i1', services[institution_code].name ? services[institution_code].name : "--");
+                    util.setValue('i3', services[institution_code].address ? services[institution_code].address : "--");
+                    util.setValue('i4a', "" + services[institution_code].region);
+                    util.setValue('i4b', "" + services[institution_code].district);
+                    const settlement = services[institution_code].settlement;
+                    util.setValue('i4c', settlement ? "" + settlement : "--");
+                    util.setValue('i4d', "" + services[institution_code].settlement_type);
+                    util.setValue('i5', services[institution_code].type ? services[institution_code].type : "--");
+                }
+
                 util.setValue('q2', args.userData.name + " " + args.userData.patronymics + " " + args.userData.surname);
-                util.setValue('q3', args.userData.job_title);
-                util.setValue('q4', args.userData.profession);
-                util.setValue('q5', args.userData.phone);
-                util.setValue('q6', args.userData.email);
+                util.setValue('q3', args.userData.job_title ? args.userData.job_title : "--");
+                util.setValue('q4', args.userData.profession ? args.userData.profession : "--");
+                util.setValue('q5', args.userData.phone ? args.userData.phone : "--");
+                util.setValue('q6', args.userData.email ? args.userData.email : "--");
                 regionCode = args.userData.region_code;
             }
 
 
             if (args.institutionData) {
-
-                // set default values for institution
-                util.setValue('i1', args.institutionData.name);
-                util.setValue('i2', args.institutionData.code);
-                util.setValue('i3', args.institutionData.address);
-
-                util.setValue('i4a', args.institutionData.region);
-                if (args.institutionData.settlement) {
-                    util.setValue('i4', args.institutionData.settlement);
-                    util.setValue('i4c', args.institutionData.settlement);
-                } else {
-                    util.setValue('i4', args.institutionData.district);
-                    util.setValue('i4c', "--");
-                }
-                util.setValue('i4b', args.institutionData.district);
-                util.setValue('i4d', args.institutionData.settlement_type);
                 // Type of institution
-                util.setValue('i5', args.institutionData.type);
                 institutionType = args.institutionData.type;
             }
 
