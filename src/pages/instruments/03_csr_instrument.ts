@@ -12,6 +12,9 @@ import { Russian } from "flatpickr/dist/l10n/ru";
 import { UzbekLatin } from "flatpickr/dist/l10n/uz_latn";
 import { KeyString, regions, districts, settlements, settlement_types } from "../../libraries/administrative";
 
+let regionCode = '';
+let institutionType = '';
+
 export const instrument3 = {
     init: async () => {
 
@@ -67,6 +70,7 @@ export const instrument3 = {
                 util.setValue('q4', args.userData.profession);
                 util.setValue('q5', args.userData.phone);
                 util.setValue('q6', args.userData.email);
+                regionCode = args.userData.region_code;
             }
 
 
@@ -95,6 +99,7 @@ export const instrument3 = {
 
                 // Type of institution
                 util.setValue('i5', args.institutionData.type);
+                institutionType = args.institutionData.type;
             }
 
             instrument.start(instrumentID, instrument.trimis, saveChestionar, validateChestionar);
@@ -120,5 +125,9 @@ const validateChestionar = (_questions: QuestionObjectType) => {
 
 const saveChestionar = (obj: SaveInstrumentType): void => {
     obj.table = "csr";
+    obj.extras = {
+        region_code: regionCode,
+        institution_type: institutionType,
+    }
     ipcRenderer.send("saveInstrument", obj);
 }

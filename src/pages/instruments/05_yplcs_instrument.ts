@@ -29,6 +29,8 @@ const disElements  = ["pi4c", "pi6d", "pi9d"];
 const setElements  = ["pi4d", "",     "pi9h"];
 const typeElements = ["pi4e", "",     "pi9i"];
 
+let regionCode = '';
+let institutionType = '';
 
 export const instrument5 = {
     init: async () => {
@@ -215,6 +217,7 @@ export const instrument5 = {
                 }
 
                 util.setValue("omr9", args.institutionData.name);
+                institutionType = args.institutionData.type;
             }
 
             // two digit day & month
@@ -230,6 +233,7 @@ export const instrument5 = {
                 util.setValue("omr6", args.userData.phone);
                 util.setValue("omr7", args.userData.email);
                 util.setValue("omr9", args.userData.institution_name);
+                regionCode = args.userData.region_code;
             }
 
             instrument.start(instrumentID, instrument.trimis, saveChestionar, validateChestionar);
@@ -255,6 +259,10 @@ const validateChestionar = (_questions: QuestionObjectType) => {
 
 const saveChestionar = (obj: SaveInstrumentType): void => {
     obj.table = "yplcs";
+    obj.extras = {
+        region_code: regionCode,
+        institution_type: institutionType,
+    }
     ipcRenderer.send("saveInstrument", obj);
 }
 

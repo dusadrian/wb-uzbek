@@ -38,6 +38,9 @@ const disElements  = ["dis", "lk14c", "sa3b", "cm3c", "cm11d", "ct11d", "cg11d"]
 const setElements  = [""   , "lk14d", "",     "cm3d", "cm11e", "ct11e", "cg11e"];
 const typeElements = [""   , "lk14e", "",     "cm3e", "cm11f", "ct11f", "cg11f"];
 
+let regionCode = '';
+let institutionType = '';
+
 export const instrument2 = {
     init: async () => {
 
@@ -258,6 +261,8 @@ export const instrument2 = {
                 util.setValue('omr7', args.userData.email);
                 util.setValue("omr8", args.userData.institution_name);
                 util.setValue("omr9", args.userData.institution_code);
+                regionCode = args.userData.region_code;
+                institutionType = args.userData.service_type_code;
 
                 const serv_codes = Object.keys(services);
                 if (serv_codes.indexOf(args.userData.institution_code) >= 0) {
@@ -304,6 +309,10 @@ const validateChestionar = (_questions: QuestionObjectType) => {
 
 const saveChestionar = (obj: SaveInstrumentType): void => {
     obj.table = "cibs";
+    obj.extras = {
+        region_code: regionCode,
+        institution_type: institutionType,
+    }
     ipcRenderer.send("saveInstrument", obj);
 }
 

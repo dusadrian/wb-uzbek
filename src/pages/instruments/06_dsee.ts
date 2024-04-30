@@ -6,6 +6,8 @@ import { util, errorHandler } from "../../libraries/validation_helpers";
 
 import { KeyString, regions, districts, settlements, settlement_types } from "../../libraries/administrative";
 
+let regionCode = '';
+let institutionType = '';
 
 export const instrument6 = {
     init: async () => {
@@ -39,6 +41,7 @@ export const instrument6 = {
                 util.setValue('q4', args.userData.profession);
                 util.setValue('q5', args.userData.phone);
                 util.setValue('q6', args.userData.email);
+                regionCode = args.userData.region;
             }
 
             if (args.institutionData) {
@@ -66,6 +69,7 @@ export const instrument6 = {
 
                 // Type of institution
                 util.setValue('i9', args.institutionData.type);
+                institutionType = args.institutionData.type;
             }
 
             instrument.start(instrumentID, instrument.trimis, saveChestionar, validateChestionar);
@@ -77,6 +81,10 @@ const validateChestionar = () => true;
 
 const saveChestionar = (obj: SaveInstrumentType): void => {
     obj.table = "dsee";
+    obj.extras = {
+        region_code: regionCode,
+        institution_type: institutionType,
+    }
     ipcRenderer.send("saveInstrument", obj);
 }
 

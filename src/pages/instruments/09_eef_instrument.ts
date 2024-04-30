@@ -12,6 +12,9 @@ import { Russian } from "flatpickr/dist/l10n/ru";
 import { UzbekLatin } from "flatpickr/dist/l10n/uz_latn";
 // import { regions, districts, settlements, settlement_types } from "../../libraries/administrative";
 
+let regionCode = '';
+let institutionType = '';
+
 export const instrument9 = {
     init: async () => {
 
@@ -50,6 +53,8 @@ export const instrument9 = {
                 if (args.userData) {
                     // set default values for user
                     util.setValue('q2', args.userData.name + " " + args.userData.patronymics + " " + args.userData.surname);
+                    regionCode = args.userData.region_code;
+                    institutionType = args.userData.service_type_code;
                 }
             }
             instrument.start(instrumentID, instrument.trimis, saveChestionar, validateChestionar);
@@ -59,22 +64,15 @@ export const instrument9 = {
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 const validateChestionar = (_questions: QuestionObjectType) => {
-
-    // if (_questions.ig1.value == '-9' || _questions.ig2.value == '-9' || _questions.ig3.value == '-9') {
-    //     ipcRenderer.send("showDialogMessage", { type: "error", message: "The following fields are mandatory: IG1, IG2, IG3!" });
-    //     const el = document.getElementById("ig1");
-    //     el.scrollIntoView({ behavior: "smooth", block: "center", inline: "nearest" });
-    //     setTimeout(function () {
-    //         el.focus();
-    //     }, 1000);
-    //     return false;
-    // }
-
     return true;
 };
 
 const saveChestionar = (obj: SaveInstrumentType): void => {
     obj.table = "eef";
+    obj.extras = {
+        region_code: regionCode,
+        institution_type: institutionType,
+    }
     ipcRenderer.send("saveInstrument", obj);
 }
 

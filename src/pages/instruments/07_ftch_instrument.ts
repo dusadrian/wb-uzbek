@@ -41,7 +41,8 @@ const disElements =  ["ifp1b"];
 const setElements =  ["ifp1c"];
 const typeElements = ["ifp1d"];
 
-
+let regionCode = '';
+let institutionType = '';
 
 export const instrument7 = {
     init: async () => {
@@ -221,6 +222,8 @@ export const instrument7 = {
                 util.setValue('inst', args.userData.institution_name);
                 util.setValue('q5', args.userData.phone);
                 util.setValue('q6', args.userData.email);
+                regionCode = args.userData.region_code;
+                institutionType = args.userData.service_type_code;
             }
 
             instrument.start(instrumentID, instrument.trimis, saveChestionar, validateChestionar);
@@ -246,6 +249,10 @@ const validateChestionar = (_questions: QuestionObjectType) => {
 
 const saveChestionar = (obj: SaveInstrumentType): void => {
     obj.table = "ftch";
+    obj.extras = {
+        region_code: regionCode,
+        institution_type: institutionType,
+    }
     ipcRenderer.send("saveInstrument", obj);
 }
 

@@ -41,6 +41,9 @@ const end_dates = [
 const regElements  = ["i4a"];
 const disElements  = ["i4b"];
 
+let regionCode = '';
+let institutionType = '';
+
 export const instrument4 = {
     init: async () => {
 
@@ -85,7 +88,7 @@ export const instrument4 = {
         flatpickr(util.htmlElement('af13b'), flatpickrConfig2);
 
         ipcRenderer.on("instrumentDataReady", (_event, args) => {
-console.log(args);
+
             services = args.services;
             insons = args.insons;
             const inson_codes = Object.keys(insons);
@@ -173,6 +176,7 @@ console.log(args);
                 util.setValue('q4', args.userData.profession);
                 util.setValue('q5', args.userData.phone);
                 util.setValue('q6', args.userData.email);
+                regionCode = args.userData.region_code;
             }
 
             if (args.institutionData) {
@@ -200,7 +204,7 @@ console.log(args);
 
                 // Type of institution
                 util.setValue('i9', args.institutionData.type);
-
+                institutionType = args.institutionData.type;
             }
 
             instrument.start(instrumentID, instrument.trimis, saveChestionar, validateChestionar);
@@ -216,6 +220,10 @@ const validateChestionar = (_questions: QuestionObjectType) => {
 
 const saveChestionar = (obj: SaveInstrumentType): void => {
     obj.table = "qmr";
+    obj.extras = {
+        region_code: regionCode,
+        institution_type: institutionType,
+    }
     ipcRenderer.send("saveInstrument", obj);
 }
 

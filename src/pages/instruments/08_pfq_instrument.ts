@@ -24,6 +24,9 @@ const exit_dates = [
     'fc4_c1f', 'fc4_c2f', 'fc4_c3f', 'fc4_c4f', 'fc4_c5f'
 ]
 
+let regionCode = '';
+let institutionType = '';
+
 export const instrument8 = {
     init: async () => {
 
@@ -70,7 +73,6 @@ export const instrument8 = {
 
 
         ipcRenderer.on("instrumentDataReady", (_event, args) => {
-            console.log(args);
 
             // set instrument question !!!!!!
             instrument.setQuestions(questions, questionOrder);
@@ -92,6 +94,8 @@ export const instrument8 = {
                     util.setValue('q4', args.userData.profession);
                     util.setValue('q5', args.userData.phone);
                     util.setValue('q6', args.userData.email);
+                    regionCode = args.userData.region_code;
+                    institutionType = args.userData.service_type_code;
                 }
             }
             instrument.start(instrumentID, instrument.trimis, saveChestionar, validateChestionar);
@@ -117,6 +121,10 @@ const validateChestionar = (_questions: QuestionObjectType) => {
 
 const saveChestionar = (obj: SaveInstrumentType): void => {
     obj.table = "pfq";
+    obj.extras = {
+        region_code: regionCode,
+        institution_type: institutionType,
+    }
     ipcRenderer.send("saveInstrument", obj);
 }
 

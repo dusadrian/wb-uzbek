@@ -36,6 +36,8 @@ const disElements  = ["ptr5c", "ptr8f"];
 const setElements  = ["ptr5d", "ptr8g"];
 const typeElements = ["ptr5e", "ptr8h"];
 
+let regionCode = '';
+let institutionType = '';
 
 export const instrument5a = {
     init: async () => {
@@ -180,6 +182,7 @@ export const instrument5a = {
                 }
 
                 util.setValue("omr9", args.institutionData.name);
+                institutionType = args.institutionData.type;
             }
 
             // two digit day & month
@@ -196,6 +199,7 @@ export const instrument5a = {
                 util.setValue("omr5", args.userData.profession);
                 util.setValue("omr6", args.userData.phone);
                 util.setValue("omr7", args.userData.email);
+                regionCode = args.userData.region_code;
             }
 
             instrument.start(instrumentID, instrument.trimis, saveChestionar, validateChestionar);
@@ -221,6 +225,10 @@ const validateChestionar = (_questions: QuestionObjectType) => {
 
 const saveChestionar = (obj: SaveInstrumentType): void => {
     obj.table = "tqyp";
+    obj.extras = {
+        region_code: regionCode,
+        institution_type: institutionType,
+    }
     ipcRenderer.send("saveInstrument", obj);
 }
 
