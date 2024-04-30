@@ -157,5 +157,7 @@
     "t156": "E18",
     "t157": "Is the staff eligible for retirement within the next three years due to reaching pension age or already being of pension age?",
     "t158": "1. Yes",
-    "t159": "2. No"
+    "t159": "2. No",
+    "settlement": "Settlement",
+    "typeofsettlement": "Type of settlement"
 }
