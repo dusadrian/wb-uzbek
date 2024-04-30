@@ -28,7 +28,7 @@
         <p class="mb-2"><%= it.t7 %></p>
 
         <div class="grid grid-cols-2 gap-4 items-center mt-12">
-            <div><%= it.t8 %>. <%= it.t9 %>G</div>
+            <div><%= it.t8 %>. <%= it.t9 %></div>
             <div>
                 <input type="text" id="reg" name="reg" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
             </div>
@@ -149,25 +149,25 @@
 
         <p class="font-bold mt-6"><%= it.t41 %></p>
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
-            <div><%= it.t42 %> <%= it.t43 %></div>
+            <div><%= it.t42 %>. <%= it.t43 %></div>
             <div>
                 <input type="text" id="ig1" name="ig1" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
             </div>
         </div>
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
-            <div><%= it.t44 %> <%= it.t45 %></div>
+            <div><%= it.t44 %>. <%= it.t45 %></div>
             <div>
                 <input type="text" id="ig2" name="ig2" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
             </div>
         </div>
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
-            <div><%= it.t46 %> <%= it.t47 %></div>
+            <div><%= it.t46 %>. <%= it.t47 %></div>
             <div>
                 <input type="text" id="ig3" name="ig3" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
             </div>
         </div>
         <div class="grid grid-cols-2 gap-4 items-center mt-10">
-            <div><%= it.t48 %> <%= it.t49 %></div>
+            <div><%= it.t48 %>. <%= it.t49 %></div>
             <div class="col-span-1 flex flex-col gap-2">
                 <div class="flex items-center">
                     <input id="ig4-1" type="radio" value="1" name="ig4" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
@@ -180,20 +180,20 @@
             </div>
         </div>
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
-            <div><%= it.t52 %> <%= it.t53 %></div>
+            <div><%= it.t52 %>. <%= it.t53 %></div>
             <div>
                 <input type="text" id="ig5" name="ig5" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
             </div>
         </div>
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
-            <div><%= it.t54 %> <%= it.t55 %></div>
+            <div><%= it.t54 %>. <%= it.t55 %></div>
             <div>
                 <input type="text" id="ig5_age" name="ig5_age" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
             </div>
         </div>
 
         <div class="grid grid-cols-2 gap-4 items-center mt-10">
-            <div><%= it.t57 %> <%= it.t58 %></div>
+            <div><%= it.t57 %>. <%= it.t58 %></div>
             <div class="col-span-1 flex flex-col gap-2">
                 <div class="flex items-center">
                     <input id="ig6-1" type="radio" value="1" name="ig6" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
@@ -223,7 +223,7 @@
         </div>
 
         <div class="grid grid-cols-2 gap-4 items-center mt-10">
-            <div><%= it.t65 %> <%= it.t66 %></div>
+            <div><%= it.t65 %>. <%= it.t66 %></div>
             <div class="col-span-1 flex flex-col gap-2">
                 <div class="flex items-center">
                     <input id="ig7-1" type="radio" value="0" name="ig7" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
@@ -261,7 +261,7 @@
         </div>
 
         <div class="grid grid-cols-2 gap-4 items-center mt-10">
-            <div><%= it.t75 %> <%= it.t76 %></div>
+            <div><%= it.t75 %>. <%= it.t76 %></div>
             <div class="col-span-1 flex flex-col gap-2">
                 <div class="flex items-center">
                     <input id="ig8-1" type="radio" value="1" name="ig8" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
@@ -336,26 +336,26 @@
         </div>
 
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
-            <div><%= it.t94 %> <%= it.t95 %></div>
+            <div><%= it.t94 %>. <%= it.t95 %></div>
             <div>
                 <input type="text" id="pf4a" name="pf4a" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
             </div>
         </div>
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
-            <div><%= it.t96 %> <%= it.t97 %></div>
+            <div><%= it.t96 %>. <%= it.t97 %></div>
             <div>
                 <input type="text" id="pf4b" name="pf4b" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
             </div>
         </div>
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
-            <div><%= it.t98 %> <%= it.t99 %></div>
+            <div><%= it.t98 %>. <%= it.t99 %></div>
             <div>
                 <input type="text" id="pf5" name="pf5" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
             </div>
         </div>
 
         <h2 class="mt-10 mb-4 text-2xl font-bold text-gray-700"><%= it.t100 %></h2>
-        <p class="mt-6"><%= it.t101 %> <%= it.t102 %></p>
+        <p class="mt-6"><%= it.t101 %>. <%= it.t102 %></p>
         <table class="w-full mt-6" aria-label="For each child currently placed into care in this family-type home, please record the following information">
             <thead>
                 <tr class="border-b">
@@ -662,7 +662,7 @@
         <h2 class="mt-10 mb-4 text-2xl font-bold text-gray-700"><%= it.t131 %></h2>
 
         <div class="grid grid-cols-2 gap-4 items-center mt-10">
-            <div><%= it.t132 %> <%= it.t133 %></div>
+            <div><%= it.t132 %>. <%= it.t133 %></div>
             <div class="col-span-1 flex items-center gap-4">
                 <div class="flex items-center">
                     <input id="ex1-1" type="radio" value="1" name="ex1" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
@@ -946,7 +946,7 @@
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
             <div>
                 <%= it.t169 %>. <%= it.t170 %>
-                <small class="text-sm italic"><%= it.t171 %></small>
+                <small class="text-sm italic block mt-2"><%= it.t171 %></small>
             </div>
             <div>
                 <input type="text" id="qs1a" name="qs1a" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
