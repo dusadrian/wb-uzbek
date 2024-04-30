@@ -23,7 +23,7 @@
                         <h1 class="text-4xl text-gray-700 pl-4 tracking-wide">External evaluation form of the childcare institutions and boarding schools</h1>
                     </div>
                 </div>
-        
+
                 <p class="mt-4 mb-2 text-xl">INTRODUCTION </p>
                 <p class="mb-2">The primary goal of this data collection is to support the Government of Uzbekistan in transitioning from institutional care to family-type care for children deprived of parental care. To achieve this, we aim to build a robust monitoring mechanism at the national level. By collecting detailed data, we can inform evidence-based decisions and policies that promote family-based alternatives.</p>
                 <p class="mb-2">Another critical objective is to enhance the quality of services provided to children with disabilities in institutional care. By understanding their unique needs and experiences, we can develop targeted interventions and improve their overall well-being. Additionally, we seek to explore and promote adequate family-type alternatives for these children.</p>
@@ -32,7 +32,7 @@
                 <p class="mb-2">Source of information: direct observation and discussion with residents and staff</p>
                 <p class="mb-2">Responsible for completion: the evaluator</p>
                 <p class="mb-2">Approximate average completion time: visit duration - one day, about 60 minutes the completion of the form</p>
-        
+
                 <div class="grid grid-cols-2 gap-4 items-center mt-6">
                     <div>Q1. Date of the visit</div>
                     <div>
@@ -45,7 +45,7 @@
                         <input type="text" id="q2" name="q2" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
                     </div>
                 </div>
-        
+
                 <div class="grid grid-cols-2 gap-4 items-center mt-6">
                     <div>I1. Name of the institution</div>
                     <div>
@@ -60,66 +60,61 @@
                         <input type="text" id="i1" name="i1" value="Test institution -- to be retrieved from the DB" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
                     </div>
                 </div>
-        
+
                 <div class="grid grid-cols-2 gap-4 items-center mt-6">
                     <div>I3. Address of the institution</div>
                     <div>
                         <input type="text" id="i3" name="i3" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
                     </div>
                 </div>
-        
                 <div class="grid grid-cols-2 gap-4 items-center mt-6">
                     <div>I4a. Region</div>
                     <div>
-                        <input type="text" id="i4a" name="i4a" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                        <select id="i4a" name="i4a"
+                            class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+                            <option value="-9" class="t_choose">--- choose ---</option>
+                        </select>
                     </div>
                 </div>
-        
                 <div class="grid grid-cols-2 gap-4 items-center mt-6">
                     <div>I4b. District</div>
                     <div>
-                        <input type="text" id="i4b" name="i4b" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                        <select id="i4b" name="i4b"
+                            class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+                            <option value="-9" class="t_choose">--- choose ---</option>
+                        </select>
                     </div>
                 </div>
-        
                 <div class="grid grid-cols-2 gap-4 items-center mt-6">
-                    <div>I4c. undefined</div>
+                    <div>I4c. Settlement</div>
                     <div>
-                        <input type="text" id="i4c" name="i4c" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                        <select id="i4c" name="i4c"
+                            class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+                            <option value="0" selected>--</option>
+                        </select>
                     </div>
                 </div>
-        
-                <div class="grid grid-cols-2 gap-4 items-center mt-6">
-                    <div>I4d. undefined</div>
-                    <div>
-                        <input type="text" id="i4d" name="i4d" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
-                    </div>
-                </div>
-        
+
+                <input type="hidden" id="i4d" name="i4d" />
+
                 <div class="grid grid-cols-2 gap-4 items-center mt-6">
                     <div>I9. Type of institution</div>
                     <div>
                         <select id="i9" name="i9" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100">
-                            <option selected>Please select one of the following codes</option>
-                            <optgroup label="Childcare institutions:">
-                                <option value="11">11. Children&#39;s home (Baby home))</option>
-                                <option value="12">12. Mehribonlik house</option>
-                                <option value="13">13. Muruvat house for children with disabilities</option>
-                            </optgroup>
-                            <optgroup label="Boarding schools:">
-                                <option value="21">21. Type I-II for deaf or with hearing impairments children</option>
-                                <option value="22">22. Type III-IV for blind or visually impaired children</option>
-                                <option value="23">23. Type V for children with severe speech impairments</option>
-                                <option value="24">24. Type VI for children with musculoskeletal disorders</option>
-                                <option value="25">25. Type VII for children with children with slow mental development/mental disorders</option>
-                                <option value="26">26. Type VIII for children with intellectual disabilities</option>
-                            </optgroup>
+                            <option value="0" selected>--</option>
+                            <option value="11" class="t_institution_type_option_11"></option>
+                            <option value="12" class="t_institution_type_option_12"></option>
+                            <option value="13" class="t_institution_type_option_13"></option>
+                            <option value="14" class="t_institution_type_option_14"></option>
+                            <option value="15" class="t_institution_type_option_15"></option>
+                            <option value="16" class="t_institution_type_option_16"></option>
+                            <option value="17" class="t_institution_type_option_17"></option>
                         </select>
                     </div>
                 </div>
-        
+
                 <p class="mt-6">Based on your personal observations and interactions with the children and staff of the institution, please evaluate the following items on a scale from 1 to 5. A score of 1 indicates that the criterion is not met at all, while a score of 5 indicates that the criterion is fully met. If you dont have enough information to make an assessment, please check 0 (Non-observed). Please write down on the Notes column, any observations which helps clarify your assessment.</p>
-        
+
                 <div class="grid grid-cols-3 gap-4 items-center mt-6">
                     <div class="col-span-2">1. The institution is located in community, in close proximity to residential buildings, commerce and services</div>
                     <div class="col-span-1 flex gap-4">
@@ -146,7 +141,7 @@
                     </div>
                 </div>
                 <textarea placeholder="Notes" name="e1_n" id="e1_n" rows="3" class="mt-2 bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100"></textarea>
-        
+
                 <div class="grid grid-cols-3 gap-4 items-center mt-6">
                     <div class="col-span-2">2. The institution is easily accessible by public transportation</div>
                     <div class="col-span-1 flex gap-4">
@@ -173,7 +168,7 @@
                     </div>
                 </div>
                 <textarea placeholder="Notes" name="e2_n" id="e2_n" rows="3" class="mt-2 bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100"></textarea>
-        
+
                 <div class="grid grid-cols-3 gap-4 items-center mt-6">
                     <div class="col-span-2">3. The building(s) are well maintained</div>
                     <div class="col-span-1 flex gap-4">
@@ -200,7 +195,7 @@
                     </div>
                 </div>
                 <textarea placeholder="Notes" name="e3_n" id="e3_n" rows="3" class="mt-2 bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100"></textarea>
-        
+
                 <div class="grid grid-cols-3 gap-4 items-center mt-6">
                     <div class="col-span-2">4. The building(s) are accessible for children with disabilities</div>
                     <div class="col-span-1 flex gap-4">
@@ -227,7 +222,7 @@
                     </div>
                 </div>
                 <textarea placeholder="Notes" name="e4_n" id="e4_n" rows="3" class="mt-2 bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100"></textarea>
-        
+
                 <div class="grid grid-cols-3 gap-4 items-center mt-6">
                     <div class="col-span-2">5. Heating, ventilation, and lighting systems (natural and artificial) ensure a comfortable living and learning environment</div>
                     <div class="col-span-1 flex gap-4">
@@ -254,7 +249,7 @@
                     </div>
                 </div>
                 <textarea placeholder="Notes" name="e5_n" id="e5_n" rows="3" class="mt-2 bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100"></textarea>
-        
+
                 <div class="grid grid-cols-3 gap-4 items-center mt-6">
                     <div class="col-span-2">6. Fire and other hazard protection measures are implemented</div>
                     <div class="col-span-1 flex gap-4">
@@ -281,7 +276,7 @@
                     </div>
                 </div>
                 <textarea placeholder="Notes" name="e6_n" id="e6_n" rows="3" class="mt-2 bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100"></textarea>
-        
+
                 <div class="grid grid-cols-3 gap-4 items-center mt-6">
                     <div class="col-span-2">7. Bedrooms are not overcrowded and provide enough space for each child (including those with mobility aids))</div>
                     <div class="col-span-1 flex gap-4">
@@ -308,7 +303,7 @@
                     </div>
                 </div>
                 <textarea placeholder="Notes" name="e7_n" id="e7_n" rows="3" class="mt-2 bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100"></textarea>
-        
+
                 <div class="grid grid-cols-3 gap-4 items-center mt-6">
                     <div class="col-span-2">8. Boys and girls have separate bedrooms</div>
                     <div class="col-span-1 flex gap-4">
@@ -335,7 +330,7 @@
                     </div>
                 </div>
                 <textarea placeholder="Notes" name="e8_n" id="e8_n" rows="3" class="mt-2 bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100"></textarea>
-        
+
                 <div class="grid grid-cols-3 gap-4 items-center mt-6">
                     <div class="col-span-2">9. Children can decide on the sleeping schedule within reasonable limits</div>
                     <div class="col-span-1 flex gap-4">
@@ -362,7 +357,7 @@
                     </div>
                 </div>
                 <textarea placeholder="Notes" name="e9_n" id="e9_n" rows="3" class="mt-2 bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100"></textarea>
-        
+
                 <div class="grid grid-cols-3 gap-4 items-center mt-6">
                     <div class="col-span-2">10. Bedrooms provide privacy for children</div>
                     <div class="col-span-1 flex gap-4">
@@ -389,7 +384,7 @@
                     </div>
                 </div>
                 <textarea placeholder="Notes" name="e10_n" id="e10_n" rows="3" class="mt-2 bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100"></textarea>
-        
+
                 <div class="grid grid-cols-3 gap-4 items-center mt-6">
                     <div class="col-span-2">11. Children have sufficient blankets and bedding available and mattresses are in good condition</div>
                     <div class="col-span-1 flex gap-4">
@@ -416,7 +411,7 @@
                     </div>
                 </div>
                 <textarea placeholder="Notes" name="e11_n" id="e11_n" rows="3" class="mt-2 bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100"></textarea>
-        
+
                 <div class="grid grid-cols-3 gap-4 items-center mt-6">
                     <div class="col-span-2">12. Children can keep personal items that they can store in secure spaces</div>
                     <div class="col-span-1 flex gap-4">
@@ -443,7 +438,7 @@
                     </div>
                 </div>
                 <textarea placeholder="Notes" name="e12_n" id="e12_n" rows="3" class="mt-2 bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100"></textarea>
-        
+
                 <div class="grid grid-cols-3 gap-4 items-center mt-6">
                     <div class="col-span-2">13. Institution spaces are clean and sanitized</div>
                     <div class="col-span-1 flex gap-4">
@@ -470,7 +465,7 @@
                     </div>
                 </div>
                 <textarea placeholder="Notes" name="e13_n" id="e13_n" rows="3" class="mt-2 bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100"></textarea>
-        
+
                 <div class="grid grid-cols-3 gap-4 items-center mt-6">
                     <div class="col-span-2">14. Toilets and sanitary facilities are functional and clean</div>
                     <div class="col-span-1 flex gap-4">
@@ -497,7 +492,7 @@
                     </div>
                 </div>
                 <textarea placeholder="Notes" name="e14_n" id="e14_n" rows="3" class="mt-2 bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100"></textarea>
-        
+
                 <div class="grid grid-cols-3 gap-4 items-center mt-6">
                     <div class="col-span-2">15. Children can use the toilets and washrooms whenever they need</div>
                     <div class="col-span-1 flex gap-4">
@@ -524,7 +519,7 @@
                     </div>
                 </div>
                 <textarea placeholder="Notes" name="e15_n" id="e15_n" rows="3" class="mt-2 bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100"></textarea>
-        
+
                 <div class="grid grid-cols-3 gap-4 items-center mt-6">
                     <div class="col-span-2">16. There are separate toilets and washrooms for boys and girls, and these ensure privacy</div>
                     <div class="col-span-1 flex gap-4">
@@ -551,7 +546,7 @@
                     </div>
                 </div>
                 <textarea placeholder="Notes" name="e16_n" id="e16_n" rows="3" class="mt-2 bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100"></textarea>
-        
+
                 <div class="grid grid-cols-3 gap-4 items-center mt-6">
                     <div class="col-span-2">17. Children with reduced mobility or other special needs have assistance to meet their needs related to the use of toilets and sanitary units</div>
                     <div class="col-span-1 flex gap-4">
@@ -578,7 +573,7 @@
                     </div>
                 </div>
                 <textarea placeholder="Notes" name="e17_n" id="e17_n" rows="3" class="mt-2 bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100"></textarea>
-        
+
                 <div class="grid grid-cols-3 gap-4 items-center mt-6">
                     <div class="col-span-2">18. Drinking water and food are available in sufficient quantities, are of good quality, and meet children&#39;s cultural preferences and dietary requirements</div>
                     <div class="col-span-1 flex gap-4">
@@ -605,7 +600,7 @@
                     </div>
                 </div>
                 <textarea placeholder="Notes" name="e18_n" id="e18_n" rows="3" class="mt-2 bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100"></textarea>
-        
+
                 <div class="grid grid-cols-3 gap-4 items-center mt-6">
                     <div class="col-span-2">19. The institution maintains proper food storage facilities in order to preserve food quality and ensure the safety of childrens meals..</div>
                     <div class="col-span-1 flex gap-4">
@@ -632,7 +627,7 @@
                     </div>
                 </div>
                 <textarea placeholder="Notes" name="e19_n" id="e19_n" rows="3" class="mt-2 bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100"></textarea>
-        
+
                 <div class="grid grid-cols-3 gap-4 items-center mt-6">
                     <div class="col-span-2">20. Food is prepared and served in satisfactory conditions, and dining areas are child-friendly and community-style</div>
                     <div class="col-span-1 flex gap-4">
@@ -659,7 +654,7 @@
                     </div>
                 </div>
                 <textarea placeholder="Notes" name="e20_n" id="e20_n" rows="3" class="mt-2 bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100"></textarea>
-        
+
                 <div class="grid grid-cols-3 gap-4 items-center mt-6">
                     <div class="col-span-2">21. Choice of quality clothing and footwear appropriate to the season and cultural preferences are provided to children who do not have personal clothing</div>
                     <div class="col-span-1 flex gap-4">
@@ -686,7 +681,7 @@
                     </div>
                 </div>
                 <textarea placeholder="Notes" name="e21_n" id="e21_n" rows="3" class="mt-2 bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100"></textarea>
-        
+
                 <div class="grid grid-cols-3 gap-4 items-center mt-6">
                     <div class="col-span-2">22. Children have the right to communicate freely and access various communication channels (telephone, internet, e-mail, and sending/receiving letters) within the residential facility..</div>
                     <div class="col-span-1 flex gap-4">
@@ -713,7 +708,7 @@
                     </div>
                 </div>
                 <textarea placeholder="Notes" name="e22_n" id="e22_n" rows="3" class="mt-2 bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100"></textarea>
-        
+
                 <div class="grid grid-cols-3 gap-4 items-center mt-6">
                     <div class="col-span-2">23. Children&#39;s private communication is respected</div>
                     <div class="col-span-1 flex gap-4">
@@ -740,7 +735,7 @@
                     </div>
                 </div>
                 <textarea placeholder="Notes" name="e23_n" id="e23_n" rows="3" class="mt-2 bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100"></textarea>
-        
+
                 <div class="grid grid-cols-3 gap-4 items-center mt-6">
                     <div class="col-span-2">24. Children can communicate in their preferred language and the institution provides support (e.g., interpreters) to ensure children can express their needs</div>
                     <div class="col-span-1 flex gap-4">
@@ -767,7 +762,7 @@
                     </div>
                 </div>
                 <textarea placeholder="Notes" name="e24_n" id="e24_n" rows="3" class="mt-2 bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100"></textarea>
-        
+
                 <div class="grid grid-cols-3 gap-4 items-center mt-6">
                     <div class="col-span-2">25. Children have the right to receive visits from family members, friends, and other significant individuals. They can independently decide whom they want to meet, and this choice is respected.</div>
                     <div class="col-span-1 flex gap-4">
@@ -794,7 +789,7 @@
                     </div>
                 </div>
                 <textarea placeholder="Notes" name="e25_n" id="e25_n" rows="3" class="mt-2 bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100"></textarea>
-        
+
                 <div class="grid grid-cols-3 gap-4 items-center mt-6">
                     <div class="col-span-2">26. The building(s) are furnished with sufficient, comfortable furniture in good condition</div>
                     <div class="col-span-1 flex gap-4">
@@ -821,7 +816,7 @@
                     </div>
                 </div>
                 <textarea placeholder="Notes" name="e26_n" id="e26_n" rows="3" class="mt-2 bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100"></textarea>
-        
+
                 <div class="grid grid-cols-3 gap-4 items-center mt-6">
                     <div class="col-span-2">27. The general plan of the building (the way spaces are arranged) facilitates interaction between and among children, staff, visitors</div>
                     <div class="col-span-1 flex gap-4">
@@ -848,7 +843,7 @@
                     </div>
                 </div>
                 <textarea placeholder="Notes" name="e27_n" id="e27_n" rows="3" class="mt-2 bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100"></textarea>
-        
+
                 <div class="grid grid-cols-3 gap-4 items-center mt-6">
                     <div class="col-span-2">28. The institution provides children with the necessary resources, including equipment, to interact and participate in recreational activities</div>
                     <div class="col-span-1 flex gap-4">
@@ -875,7 +870,7 @@
                     </div>
                 </div>
                 <textarea placeholder="Notes" name="e28_n" id="e28_n" rows="3" class="mt-2 bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100"></textarea>
-        
+
                 <div class="grid grid-cols-3 gap-4 items-center mt-6">
                     <div class="col-span-2">29. There are special rooms in the institution intended for recreational and leisure activities</div>
                     <div class="col-span-1 flex gap-4">
@@ -902,7 +897,7 @@
                     </div>
                 </div>
                 <textarea placeholder="Notes" name="e29_n" id="e29_n" rows="3" class="mt-2 bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100"></textarea>
-        
+
                 <div class="grid grid-cols-3 gap-4 items-center mt-6">
                     <div class="col-span-2">30. Children can choose the recreational and leisure activities in which they want to engage</div>
                     <div class="col-span-1 flex gap-4">
@@ -929,7 +924,7 @@
                     </div>
                 </div>
                 <textarea placeholder="Notes" name="e30_n" id="e30_n" rows="3" class="mt-2 bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100"></textarea>
-        
+
                 <div class="grid grid-cols-3 gap-4 items-center mt-6">
                     <div class="col-span-2">31. Child-relevant and age-appropriate activities are organized regularly, both within the institution and in the community, at childrens request and at the initiative of the institution</div>
                     <div class="col-span-1 flex gap-4">
@@ -956,7 +951,7 @@
                     </div>
                 </div>
                 <textarea placeholder="Notes" name="e31_n" id="e31_n" rows="3" class="mt-2 bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100"></textarea>
-        
+
                 <div class="grid grid-cols-3 gap-4 items-center mt-6">
                     <div class="col-span-2">32. Staff informs and facilitates children&#39;s access to community activities</div>
                     <div class="col-span-1 flex gap-4">
@@ -983,7 +978,7 @@
                     </div>
                 </div>
                 <textarea placeholder="Notes" name="e32_n" id="e32_n" rows="3" class="mt-2 bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100"></textarea>
-        
+
                 <div class="grid grid-cols-3 gap-4 items-center mt-6">
                     <div class="col-span-2">33. Staff facilitate children&#39;s access to community entertainment activities and community entertainment activities are organized in the institution</div>
                     <div class="col-span-1 flex gap-4">
@@ -1010,7 +1005,7 @@
                     </div>
                 </div>
                 <textarea placeholder="Notes" name="e33_n" id="e33_n" rows="3" class="mt-2 bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100"></textarea>
-        
+
                 <div class="grid grid-cols-3 gap-4 items-center mt-6">
                     <div class="col-span-2">34. Children have frequent opportunities to participate in community visits under appropriate supervision, considering their age, developmental level, and specific needs.</div>
                     <div class="col-span-1 flex gap-4">
@@ -1037,7 +1032,7 @@
                     </div>
                 </div>
                 <textarea placeholder="Notes" name="e34_n" id="e34_n" rows="3" class="mt-2 bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100"></textarea>
-        
+
                 <div class="grid grid-cols-3 gap-4 items-center mt-6">
                     <div class="col-span-2">35. Children are informed and have access to mechanisms through which they can express their opinion about the provision of services and their improvement</div>
                     <div class="col-span-1 flex gap-4">
@@ -1064,7 +1059,7 @@
                     </div>
                 </div>
                 <textarea placeholder="Notes" name="e35_n" id="e35_n" rows="3" class="mt-2 bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100"></textarea>
-        
+
                 <div class="grid grid-cols-3 gap-4 items-center mt-6">
                     <div class="col-span-2">36. Children get the support they need in order to improve their school performance and the relations with teachers and other students</div>
                     <div class="col-span-1 flex gap-4">
@@ -1091,7 +1086,7 @@
                     </div>
                 </div>
                 <textarea placeholder="Notes" name="e36_n" id="e36_n" rows="3" class="mt-2 bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100"></textarea>
-        
+
                 <div class="grid grid-cols-3 gap-4 items-center mt-6">
                     <div class="col-span-2">37. Children have access to medical treatment, including immunizations, in the institution or in the community </div>
                     <div class="col-span-1 flex gap-4">
@@ -1118,7 +1113,7 @@
                     </div>
                 </div>
                 <textarea placeholder="Notes" name="e37_n" id="e37_n" rows="3" class="mt-2 bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100"></textarea>
-        
+
                 <div class="grid grid-cols-3 gap-4 items-center mt-6">
                     <div class="col-span-2">38. The institution promptly facilitates access to community services for children requiring surgical or other procedures and specialty medical evaluations/treatments that cannot be provided in the institution</div>
                     <div class="col-span-1 flex gap-4">
@@ -1145,7 +1140,7 @@
                     </div>
                 </div>
                 <textarea placeholder="Notes" name="e38_n" id="e38_n" rows="3" class="mt-2 bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100"></textarea>
-        
+
                 <div class="grid grid-cols-3 gap-4 items-center mt-6">
                     <div class="col-span-2">39. Regular health information and education sessions are held in the institution</div>
                     <div class="col-span-1 flex gap-4">
@@ -1172,7 +1167,7 @@
                     </div>
                 </div>
                 <textarea placeholder="Notes" name="e39_n" id="e39_n" rows="3" class="mt-2 bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100"></textarea>
-        
+
                 <div class="grid grid-cols-3 gap-4 items-center mt-6">
                     <div class="col-span-2">40. Children are informed and counseled on general health issues, healthy lifestyles, reproductive health and family planning issues, as appropriate</div>
                     <div class="col-span-1 flex gap-4">
@@ -1199,7 +1194,7 @@
                     </div>
                 </div>
                 <textarea placeholder="Notes" name="e40_n" id="e40_n" rows="3" class="mt-2 bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100"></textarea>
-        
+
                 <div class="grid grid-cols-3 gap-4 items-center mt-6">
                     <div class="col-span-2">41. Staff interact with children respectfully at all times, recognizing their ability to understand information and make decisions and choices</div>
                     <div class="col-span-1 flex gap-4">
@@ -1226,7 +1221,7 @@
                     </div>
                 </div>
                 <textarea placeholder="Notes" name="e41_n" id="e41_n" rows="3" class="mt-2 bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100"></textarea>
-        
+
                 <div class="grid grid-cols-3 gap-4 items-center mt-6">
                     <div class="col-span-2">42. Children are provided with clear and age-appropriate information about their rights, including through alternative formats (visual aids, simplified language etc) for those with intellectual disabilities</div>
                     <div class="col-span-1 flex gap-4">
@@ -1253,7 +1248,7 @@
                     </div>
                 </div>
                 <textarea placeholder="Notes" name="e42_n" id="e42_n" rows="3" class="mt-2 bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100"></textarea>
-        
+
                 <div class="grid grid-cols-3 gap-4 items-center mt-6">
                     <div class="col-span-2">43. Child information is confidential</div>
                     <div class="col-span-1 flex gap-4">
@@ -1280,7 +1275,7 @@
                     </div>
                 </div>
                 <textarea placeholder="Notes" name="e43_n" id="e43_n" rows="3" class="mt-2 bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100"></textarea>
-        
+
                 <div class="grid grid-cols-3 gap-4 items-center mt-6">
                     <div class="col-span-2">44. Staff treat children with humanity, dignity and respect</div>
                     <div class="col-span-1 flex gap-4">
@@ -1307,7 +1302,7 @@
                     </div>
                 </div>
                 <textarea placeholder="Notes" name="e44_n" id="e44_n" rows="3" class="mt-2 bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100"></textarea>
-        
+
                 <div class="grid grid-cols-3 gap-4 items-center mt-6">
                     <div class="col-span-2">45. No child is subject to verbal, physical, sexual or psychological abuse</div>
                     <div class="col-span-1 flex gap-4">
@@ -1334,7 +1329,7 @@
                     </div>
                 </div>
                 <textarea placeholder="Notes" name="e45_n" id="e45_n" rows="3" class="mt-2 bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100"></textarea>
-        
+
                 <div class="grid grid-cols-3 gap-4 items-center mt-6">
                     <div class="col-span-2">46. No child is subjected to physical or emotional neglect</div>
                     <div class="col-span-1 flex gap-4">
@@ -1361,7 +1356,7 @@
                     </div>
                 </div>
                 <textarea placeholder="Notes" name="e46_n" id="e46_n" rows="3" class="mt-2 bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100"></textarea>
-        
+
                 <div class="grid grid-cols-3 gap-4 items-center mt-6">
                     <div class="col-span-2">47. Adequate measures are taken to prevent any situations of abuse</div>
                     <div class="col-span-1 flex gap-4">
@@ -1388,7 +1383,7 @@
                     </div>
                 </div>
                 <textarea placeholder="Notes" name="e47_n" id="e47_n" rows="3" class="mt-2 bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100"></textarea>
-        
+
                 <div class="grid grid-cols-3 gap-4 items-center mt-6">
                     <div class="col-span-2">48. Staff support children who have been abused to access the support they need</div>
                     <div class="col-span-1 flex gap-4">
@@ -1415,7 +1410,7 @@
                     </div>
                 </div>
                 <textarea placeholder="Notes" name="e48_n" id="e48_n" rows="3" class="mt-2 bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100"></textarea>
-        
+
                 <div class="grid grid-cols-3 gap-4 items-center mt-6">
                     <div class="col-span-2">49. Children are not subject to isolation or restraint</div>
                     <div class="col-span-1 flex gap-4">
@@ -1442,7 +1437,7 @@
                     </div>
                 </div>
                 <textarea placeholder="Notes" name="e49_n" id="e49_n" rows="3" class="mt-2 bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100"></textarea>
-        
+
                 <div class="grid grid-cols-3 gap-4 items-center mt-6">
                     <div class="col-span-2">50. There are alternatives to seclusion and containment practiced in the institution, and staff are trained in de-escalation techniques to intervene in crisis situations and prevent injury to children or staff</div>
                     <div class="col-span-1 flex gap-4">
@@ -1469,7 +1464,7 @@
                     </div>
                 </div>
                 <textarea placeholder="Notes" name="e50_n" id="e50_n" rows="3" class="mt-2 bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100"></textarea>
-        
+
                 <div class="grid grid-cols-3 gap-4 items-center mt-6">
                     <div class="col-span-2">51. Children and their family or legal guardians are informed and have access to procedures to file a complaint/notify, confidentially, independent authorities and other relevant authorities (Police, Prosecutors, courts, etc.) regarding situations of neglect, abuse, isolation or contention, admission or treatment without informed consent or other relevant situations</div>
                     <div class="col-span-1 flex gap-4">
@@ -1496,7 +1491,7 @@
                     </div>
                 </div>
                 <textarea placeholder="Notes" name="e51_n" id="e51_n" rows="3" class="mt-2 bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100"></textarea>
-        
+
                 <div class="grid grid-cols-3 gap-4 items-center mt-6">
                     <div class="col-span-2">52. Children have access to independent representatives to inform them of their rights, discuss issues and support them in exercising their human rights and making complaints</div>
                     <div class="col-span-1 flex gap-4">
@@ -1523,7 +1518,7 @@
                     </div>
                 </div>
                 <textarea placeholder="Notes" name="e52_n" id="e52_n" rows="3" class="mt-2 bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100"></textarea>
-        
+
                 <div class="grid grid-cols-3 gap-4 items-center mt-6">
                     <div class="col-span-2">53. Staff support children in accessing educational opportunities, including primary, secondary and tertiary education</div>
                     <div class="col-span-1 flex gap-4">
@@ -1550,7 +1545,7 @@
                     </div>
                 </div>
                 <textarea placeholder="Notes" name="e53_n" id="e53_n" rows="3" class="mt-2 bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100"></textarea>
-        
+
                 <div class="grid grid-cols-3 gap-4 items-center mt-6">
                     <div class="col-span-2">54. Staff actively guide and assist children in developing essential life skills tailored to promote their future independence</div>
                     <div class="col-span-1 flex gap-4">
@@ -1577,7 +1572,7 @@
                     </div>
                 </div>
                 <textarea placeholder="Notes" name="e54_n" id="e54_n" rows="3" class="mt-2 bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100"></textarea>
-        
+
                 <div class="grid grid-cols-3 gap-4 items-center mt-6">
                     <div class="col-span-2">55. Staff facilitate and encourage children&#39;s connections with their biological family, siblings, and other significant individuals in their lives</div>
                     <div class="col-span-1 flex gap-4">
@@ -1604,7 +1599,7 @@
                     </div>
                 </div>
                 <textarea placeholder="Notes" name="e55_n" id="e55_n" rows="3" class="mt-2 bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100"></textarea>
-        
+
                 <div class="grid grid-cols-3 gap-4 items-center mt-6">
                     <div class="col-span-2">56. The staff supports older children in the process of career development and access to employment opportunities on the labor market</div>
                     <div class="col-span-1 flex gap-4">
@@ -1631,7 +1626,7 @@
                     </div>
                 </div>
                 <textarea placeholder="Notes" name="e56_n" id="e56_n" rows="3" class="mt-2 bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100"></textarea>
-        
+
                 <div class="grid grid-cols-3 gap-4 items-center mt-6">
                     <div class="col-span-2">57. Staff provide older children with the information they need to participate fully in political and public life and enjoy the benefits of freedom of association</div>
                     <div class="col-span-1 flex gap-4">
@@ -1658,7 +1653,7 @@
                     </div>
                 </div>
                 <textarea placeholder="Notes" name="e57_n" id="e57_n" rows="3" class="mt-2 bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100"></textarea>
-        
+
                 <div class="grid grid-cols-3 gap-4 items-center mt-6">
                     <div class="col-span-2">58. Staff provide children with clear and age-appropriate information on social, cultural, religious and leisure activities available for them in the community (local festivals, museums, workshops for children, hobby clubs, religious practices, rituals and holidays, outdoor adventures, sports clubs and events etc.).)</div>
                     <div class="col-span-1 flex gap-4">
@@ -1685,7 +1680,7 @@
                     </div>
                 </div>
                 <textarea placeholder="Notes" name="e58_n" id="e58_n" rows="3" class="mt-2 bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100"></textarea>
-        
+
                 <div class="grid grid-cols-3 gap-4 items-center mt-6">
                     <div class="col-span-2">59. Staff support and facilitate children to participate in these activities</div>
                     <div class="col-span-1 flex gap-4">
@@ -1712,10 +1707,10 @@
                     </div>
                 </div>
                 <textarea placeholder="Notes" name="e59_n" id="e59_n" rows="3" class="mt-2 bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100"></textarea>
-        
-        
+
+
             </form>
-        
+
 
             <footer id="footer" class="fixed bottom-0 w-full h-12 bg-slate-200 shadow">
                 <div class="flex justify-center h-full items-center">

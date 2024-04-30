@@ -85,7 +85,7 @@ export const instrument4 = {
         flatpickr(util.htmlElement('af13b'), flatpickrConfig2);
 
         ipcRenderer.on("instrumentDataReady", (_event, args) => {
-            console.log(args);
+            // console.log(args);
 
             const regElements  = ["i4a"];
             const disElements  = ["i4b"];
@@ -188,7 +188,7 @@ export const instrument4 = {
                     util.setValue('i3', insons[institution_code].address ? insons[institution_code].address : "--");
                     util.setValue('i4a', "" + insons[institution_code].region);
                     util.setValue('i4b', "" + insons[institution_code].district);
-                    util.setValue('i4c', "--");
+                    util.setValue('i4c', "0");
                     util.setValue('i4d', "--");
                     util.setValue('i9', "--");
                 }
@@ -198,7 +198,7 @@ export const instrument4 = {
                     util.setValue('i4a', "" + services[institution_code].region);
                     util.setValue('i4b', "" + services[institution_code].district);
                     const settlement = services[institution_code].settlement;
-                    util.setValue('i4c', settlement ? "" + settlement : "--");
+                    util.setValue('i4c', settlement ? "" + settlement : "0");
                     util.setValue('i4d', "" + services[institution_code].settlement_type);
                     util.setValue('i9', services[institution_code].type ? services[institution_code].type : "--");
                 }
