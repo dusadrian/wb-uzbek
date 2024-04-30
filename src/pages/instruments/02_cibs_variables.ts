@@ -149,7 +149,7 @@ export const questions: QuestionObjectType = {
     },
     'omr10': {
         name: 'omr10',
-        type: 'input',
+        type: 'select',
         value: '-9',
         disabled: true,
         hidden: false,

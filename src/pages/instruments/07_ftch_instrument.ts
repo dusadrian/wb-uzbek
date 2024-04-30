@@ -11,7 +11,7 @@ import { FlatpickrFn } from 'flatpickr/dist/types/instance';
 const flatpickr: FlatpickrFn = _flatpickr as any;
 import { Russian } from "flatpickr/dist/l10n/ru";
 import { UzbekLatin } from "flatpickr/dist/l10n/uz_latn";
-import { KeyString, regions, districts, settlements, settlement_types } from "../../libraries/administrative";
+import { KeyString, regions, districts, settlements } from "../../libraries/administrative";
 
 import * as en from "../../locales/en.json";
 import * as uz from "../../locales/uz.json";
@@ -36,10 +36,10 @@ const admission_dates = [
     'fc4_c1c', 'fc4_c2c', 'fc4_c3c', 'fc4_c4c', 'fc4_c5c'
 ]
 
-const regElements =  ["ifp1a"];
-const disElements =  ["ifp1b"];
-const setElements =  ["ifp1c"];
-const typeElements = ["ifp1d"];
+const regElements =  ["reg", "ifp1a"];
+const disElements =  ["dis", "ifp1b"];
+const setElements =  ["",    "ifp1c"];
+const typeElements = ["",    "ifp1d"];
 
 let regionCode = '';
 let institutionType = '';
@@ -86,14 +86,8 @@ export const instrument7 = {
 
             services = args.services;
             insons = args.insons;
-            const inson_codes = Object.keys(insons);
-            let institution_code = "";
-
-            let inson_user = false;
-            if (args.userData && args.userData.institution_code) {
-                inson_user = inson_codes.indexOf(args.userData.institution_code) >= 0;
-                institution_code = args.userData.institution_code;
-            }
+            const institution_code = args.userData.institution_code;
+            const inson_user = Object.keys(insons).indexOf(institution_code) >= 0;
 
             const reg_codes = Object.keys(regions);
             for (let x = 0; x < regElements.length; x++) {
@@ -116,9 +110,6 @@ export const instrument7 = {
                 const set_el = util.htmlElement(setElements[x]);
 
                 util.listen(regElements[x], "change", function () {
-                    if (typeElements[x] != "") {
-                        util.htmlElement(typeElements[x]).value = "";
-                    }
 
                     if (setElements[x] != "") {
                         set_el.innerHTML = "";
@@ -144,9 +135,6 @@ export const instrument7 = {
                 })
 
                 util.listen(disElements[x], "change", function () {
-                    if (typeElements[x] != "") {
-                        util.htmlElement(typeElements[x]).value = "";
-                    }
                     const selectedDistrict = dis_el.value;
 
                     if (setElements[x] != "") {
@@ -175,9 +163,7 @@ export const instrument7 = {
                             }
                             else {
                                 if (typeElements[x] != "") {
-                                    const dis_type = settlement_types[districts[selectedDistrict].type];
-                                    util.setValue(typeElements[x], "" + dis_type[lang as keyof typeof dis_type]);
-
+                                    util.setValue(typeElements[x], "" + districts[selectedDistrict].type);
                                 }
                                 instrument.questions[setElements[x]].skip = true;
                                 instrument.questions[setElements[x]].value = '-7';
@@ -205,23 +191,21 @@ export const instrument7 = {
             // two digit day & month
             util.setValue("data", util.customDate());
             if (args.userData) {
-                if (institution_code != "") {
-                    if (inson_user) {
-                        util.setValue('reg', "" + (regions[insons[institution_code].region] as KeyString)[lang]);
-                        util.setValue('dis', "" + (districts[insons[institution_code].district] as KeyString)[lang]);
-                    }
-                    else {
-                        util.setValue('reg', "" + (regions[services[institution_code].region] as KeyString)[lang]);
-                        util.setValue('dis', "" + (districts[services[institution_code].district] as KeyString)[lang]);
-                    }
+                if (inson_user) {
+                    util.setValue('reg', "" + insons[institution_code].region);
+                    util.setValue('dis', "" + insons[institution_code].district);
+                }
+                else {
+                    util.setValue('reg', "" + services[institution_code].region);
+                    util.setValue('dis', "" + services[institution_code].district);
                 }
 
                 util.setValue('q2', args.userData.name + " " + args.userData.patronymics + " " + args.userData.surname);
-                util.setValue('q3', args.userData.job_title);
-                util.setValue('q4', args.userData.profession);
-                util.setValue('inst', args.userData.institution_name);
-                util.setValue('q5', args.userData.phone);
-                util.setValue('q6', args.userData.email);
+                util.setValue('q3', args.userData.job_title ? args.userData.job_title : "--");
+                util.setValue('q4', args.userData.profession ? args.userData.profession : "--");
+                util.setValue('inst', args.userData.institution_name ? args.userData.institution_name : "--");
+                util.setValue('q5', args.userData.phone ? args.userData.phone : "--");
+                util.setValue('q6', args.userData.email ? args.userData.email : "--");
                 regionCode = args.userData.region_code;
                 institutionType = args.userData.service_type_code;
             }

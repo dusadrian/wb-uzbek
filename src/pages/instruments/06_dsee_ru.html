@@ -127,56 +127,44 @@
             <div class="grid grid-cols-2 gap-4 mt-4">
                 <div>I4a. Область</div>
                 <div>
-                    <input type="text" id="i4a" name="i4a"
-                        class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+                    <select id="i4a" name="i4a" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+                        <option value="-9" class="t_choose">--- choose ---</option>
+                    </select>
                 </div>
             </div>
             <div class="grid grid-cols-2 gap-4 mt-4">
                 <div>I4b. Район</div>
                 <div>
-                    <input type="text" id="i4b" name="i4b"
-                        class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+                    <select id="i4b" name="i4b" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+                        <option value="-9" class="t_choose">--- choose ---</option>
+                    </select>
                 </div>
             </div>
 
             <div class="grid grid-cols-2 items-center gap-4 mt-6">
                 <div>I4c. Settlement</div>
                 <div>
-                    <input type="text" id="i4c" name="i4c"
-                        class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+                    <select id="i4c" name="i4c" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+                        <option value="0" >--</option>
+                    </select>
                 </div>
             </div>
 
-            <div class="grid grid-cols-2 items-center gap-4 mt-6">
-                <div>I4d. Type of settlement</div>
-                <div>
-                    <input type="text" id="i4d" name="i4d"
-                        class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
-                </div>
-            </div>
+            <input type="hidden" id="i4d" name="i4d" />
+
 
             <div class="grid grid-cols-2 gap-4 items-center mt-4">
                 <div>I9. Тип учреждения</div>
                 <div>
-                    <select id="i9" name="i9"
-                        class="border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100">
-                        <option selected>Пожалуйста, выберите один из следующих кодов</option>
-                        <optgroup label="Детские учреждения:">
-                            <option value="11">11. Детский дом (Дом ребенка)</option>
-                            <option value="12">12. Дом «Мехрибонлик»</option>
-                            <option value="13">13. Дом-интернат «Мурувват» для детей с инвалидностью</option>
-                            <option value="14">14. SOS Детская деревня</option>
-                        </optgroup>
-                        <optgroup label="Школы-интернаты:">
-                            <option value="21">21. Тип I-II для глухих или слабослышащих детей</option>
-                            <option value="22">22. Тип III-IV для слепых или слабовидящих детей</option>
-                            <option value="23">23. V тип для детей с тяжелыми нарушениями речи</option>
-                            <option value="24">24. VI тип для детей с нарушениями опорно-двигательного аппарата</option>
-                            <option value="25">25. Тип VII для детей с детьми с задержкой психического
-                                развития/психическими нарушениями</option>
-                            <option value="26">26. Тип VIII для детей с ограниченными интеллектуальными возможностями
-                            </option>
-                        </optgroup>
+                    <select id="i9" name="i9" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100">
+                        <option value="0" selected>--</option>
+                        <option value="11" class="t_institution_type_option_11"></option>
+                        <option value="12" class="t_institution_type_option_12"></option>
+                        <option value="13" class="t_institution_type_option_13"></option>
+                        <option value="14" class="t_institution_type_option_14"></option>
+                        <option value="15" class="t_institution_type_option_15"></option>
+                        <option value="16" class="t_institution_type_option_16"></option>
+                        <option value="17" class="t_institution_type_option_17"></option>
                     </select>
                 </div>
             </div>

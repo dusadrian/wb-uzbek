@@ -25,3 +25,16 @@ Ar trebui in spate un grup de checkbox-uri care (impreuna) sa se comporte
 ca niste butoane radio, si stilizate sa arate ca niste butoane radio.
 Intrebarea este ce efect are asupra Excel-ului cu activatori, pentru ca acolo
 apare o singura variabila.
+
+
+###############
+
+In lista de servicii, apar niste tipuri de institutii. Unele se suprapun
+partial peste select-ul PI6c de la 05 YPLCS, altele nu se suprapun
+(din ce am putut sa-mi dau seama din traduceri)
+
+La 05 YPLCS, variabila pi6c la select-ul ala, sunt niste tipuri de institutii
+insa la 02 CIBA, la variabila SA5a sunt alte tipuri de institutii. Nu ar trebui sa fie ceva uniform?
+
+Spre exemplu, in lista de servicii sunt unele cu "Children's home" ("Дом ребенка") care
+apar in SA5a dar nu apar in PI6c. Deci exista tipurile alea de servicii, doar ca nu sunt mentionate la PI6c.

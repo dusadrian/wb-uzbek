@@ -11,7 +11,7 @@ import { FlatpickrFn } from 'flatpickr/dist/types/instance';
 const flatpickr: FlatpickrFn = _flatpickr as any;
 import { Russian } from "flatpickr/dist/l10n/ru";
 import { UzbekLatin } from "flatpickr/dist/l10n/uz_latn";
-import { KeyString, regions, districts, settlements, settlement_types } from "../../libraries/administrative";
+import { KeyString, regions, districts, settlements } from "../../libraries/administrative";
 
 import * as en from "../../locales/en.json";
 import * as uz from "../../locales/uz.json";
@@ -187,9 +187,7 @@ export const instrument1 = {
                             }
                             else {
                                 if (typeElements[x] != "") {
-                                    const dis_type = settlement_types[districts[selectedDistrict].type];
-                                    util.setValue(typeElements[x], "" + dis_type[lang as keyof typeof dis_type]);
-
+                                    util.setValue(typeElements[x], "" + districts[selectedDistrict].type);
                                 }
                                 instrument.questions[setElements[x]].skip = true;
                                 instrument.questions[setElements[x]].value = '-7';

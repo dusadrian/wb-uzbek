@@ -11,7 +11,7 @@ import { FlatpickrFn } from 'flatpickr/dist/types/instance';
 const flatpickr: FlatpickrFn = _flatpickr as any;
 import { Russian } from "flatpickr/dist/l10n/ru";
 import { UzbekLatin } from "flatpickr/dist/l10n/uz_latn";
-import { KeyString, regions, districts, settlements, settlement_types } from "../../libraries/administrative";
+import { KeyString, regions, districts, settlements } from "../../libraries/administrative";
 
 import * as en from "../../locales/en.json";
 import * as uz from "../../locales/uz.json";
@@ -180,8 +180,7 @@ export const instrument2 = {
                             }
                             else {
                                 if (typeElements[x] != "") {
-                                    const dis_type = settlement_types[districts[selectedDistrict].type];
-                                    util.setValue(typeElements[x], "" + dis_type[lang as keyof typeof dis_type]);
+                                    util.setValue(typeElements[x], "" + districts[selectedDistrict].type);
                                 }
                                 instrument.questions[setElements[x]].skip = true;
                                 instrument.questions[setElements[x]].value = '-7';
@@ -258,14 +257,11 @@ export const instrument2 = {
                 institutionType = args.userData.service_type_code;
 
                 const serv_codes = Object.keys(services);
-                if (serv_codes.indexOf(args.userData.institution_code) >= 0) {
+                if (serv_codes.indexOf(institution_code) >= 0) {
+                    util.setValue("omr10", "0");
                     const type = services[args.userData.institution_code].type;
                     if (["11", "12", "13", "14", "15", "16", "17"].indexOf(type) >= 0) {
-                        instrument.questions.omr10.value = type;
-                        const institutionType = translations["t_institution_type_option_" + type];
-                        util.htmlElement("omr10").value = "" + institutionType;
-                    } else {
-                        util.setValue("omr10", "--");
+                        util.setValue("omr10", type);
                     }
                 }
 
