@@ -5,25 +5,27 @@ import { QuestionObjectType } from '../../libraries/interfaces';
 export const questions: QuestionObjectType = {
     'reg': {
         name: 'reg',
-        type: 'input',
+        type: 'select',
         value: '-9',
         disabled: true,
         hidden: false,
         readonly: true,
         order: 0,
-        active: function () { return (true) },
-        error: ''
+        active: function() {return(true)},
+        error: '',
+        skip: false
     },
     'dis': {
         name: 'dis',
-        type: 'input',
+        type: 'select',
         value: '-9',
         disabled: true,
         hidden: false,
         readonly: true,
         order: 1,
-        active: function () { return (true) },
-        error: ''
+        active: function() {return(true)},
+        error: '',
+        skip: false
     },
     'data': {
         name: 'data',
@@ -33,8 +35,9 @@ export const questions: QuestionObjectType = {
         hidden: true,
         readonly: true,
         order: 2,
-        active: function () { return (true) },
-        error: ''
+        active: function() {return(true)},
+        error: '',
+        skip: false
     },
     'q2': {
         name: 'q2',
@@ -44,8 +47,9 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: true,
         order: 3,
-        active: function () { return (true) },
-        error: ''
+        active: function() {return(true)},
+        error: '',
+        skip: false
     },
     'inst': {
         name: 'inst',
@@ -55,8 +59,9 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: true,
         order: 4,
-        active: function () { return (true) },
-        error: ''
+        active: function() {return(true)},
+        error: '',
+        skip: false
     },
     'q3': {
         name: 'q3',
@@ -66,8 +71,9 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: true,
         order: 5,
-        active: function () { return (true) },
-        error: ''
+        active: function() {return(true)},
+        error: '',
+        skip: false
     },
     'q4': {
         name: 'q4',
@@ -77,8 +83,9 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: true,
         order: 6,
-        active: function () { return (true) },
-        error: ''
+        active: function() {return(true)},
+        error: '',
+        skip: false
     },
     'q5': {
         name: 'q5',
@@ -88,8 +95,9 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: true,
         order: 7,
-        active: function () { return (true) },
-        error: ''
+        active: function() {return(true)},
+        error: '',
+        skip: false
     },
     'q6': {
         name: 'q6',
@@ -99,8 +107,9 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: true,
         order: 8,
-        active: function () { return (true) },
-        error: ''
+        active: function() {return(true)},
+        error: '',
+        skip: false
     },
     'pf1a': {
         name: 'pf1a',
@@ -110,41 +119,45 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 9,
-        active: function () { return (true) },
-        error: ''
+        active: function() {return(true)},
+        error: '',
+        skip: false
     },
     'pf1b': {
         name: 'pf1b',
         type: 'select',
-        value: '-9',
-        disabled: false,
+        value: '-7',
+        disabled: true,
         hidden: false,
         readonly: false,
         order: 10,
-        active: function () { return (true) },
-        error: ''
+        active: function() {return(Number(instrument.questions.pf1a.value) > 0)},
+        error: '',
+        skip: false
     },
     'pf1c': {
         name: 'pf1c',
         type: 'select',
-        value: '-9',
-        disabled: false,
+        value: '-7',
+        disabled: true,
         hidden: false,
         readonly: false,
         order: 11,
-        active: function () { return (true) },
-        error: ''
+        active: function() {return(Number(instrument.questions.pf1b.value) > 0)},
+        error: '',
+        skip: false
     },
     'pf1d': {
         name: 'pf1d',
-        type: 'radio',
+        type: 'input',
         value: '-9',
         disabled: true,
-        hidden: false,
+        hidden: true,
         readonly: true,
         order: 12,
-        active: function () { return (true) },
-        error: ''
+        active: function() {return(true)},
+        error: '',
+        skip: false
     },
     'pf2': {
         name: 'pf2',
@@ -154,8 +167,9 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 13,
-        active: function () { return (true) },
-        error: ''
+        active: function() {return(true)},
+        error: '',
+        skip: false
     },
     'pf3': {
         name: 'pf3',
@@ -165,8 +179,9 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 14,
-        active: function () { return (true) },
-        error: ''
+        active: function() {return(true)},
+        error: '',
+        skip: false
     },
     'ig1': {
         name: 'ig1',
@@ -176,8 +191,9 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 15,
-        active: function () { return (true) },
-        error: ''
+        active: function() {return(true)},
+        error: '',
+        skip: false
     },
     'ig2': {
         name: 'ig2',
@@ -187,8 +203,9 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 16,
-        active: function () { return (true) },
-        error: ''
+        active: function() {return(true)},
+        error: '',
+        skip: false
     },
     'ig3': {
         name: 'ig3',
@@ -198,8 +215,9 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 17,
-        active: function () { return (true) },
-        error: ''
+        active: function() {return(true)},
+        error: '',
+        skip: false
     },
     'ig4': {
         name: 'ig4',
@@ -209,8 +227,9 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 18,
-        active: function () { return (true) },
-        error: ''
+        active: function() {return(true)},
+        error: '',
+        skip: false
     },
     'ig5': {
         name: 'ig5',
@@ -220,8 +239,9 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 19,
-        active: function () { return (true) },
-        error: ''
+        active: function() {return(true)},
+        error: '',
+        skip: false
     },
     'ig5_age': {
         name: 'ig5_age',
@@ -231,8 +251,9 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: true,
         order: 20,
-        active: function () { return (true) },
-        error: ''
+        active: function() {return(true)},
+        error: '',
+        skip: false
     },
     'ig6': {
         name: 'ig6',
@@ -242,8 +263,9 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 21,
-        active: function () { return (true) },
-        error: ''
+        active: function() {return(true)},
+        error: '',
+        skip: false
     },
     'ig7': {
         name: 'ig7',
@@ -253,8 +275,9 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 22,
-        active: function () { return (true) },
-        error: ''
+        active: function() {return(true)},
+        error: '',
+        skip: false
     },
     'ig8': {
         name: 'ig8',
@@ -264,8 +287,9 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 23,
-        active: function () { return (true) },
-        error: ''
+        active: function() {return(true)},
+        error: '',
+        skip: false
     },
     'ig8_other': {
         name: 'ig8_other',
@@ -275,8 +299,9 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 24,
-        active: function () { return (Number(instrument.questions.ig8.value) == 16) },
-        error: ''
+        active: function() {return(Number(instrument.questions.ig8.value) == 16)},
+        error: '',
+        skip: false
     },
     'pf4a': {
         name: 'pf4a',
@@ -286,8 +311,9 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 25,
-        active: function () { return (true) },
-        error: ''
+        active: function() {return(true)},
+        error: '',
+        skip: false
     },
     'pf4b': {
         name: 'pf4b',
@@ -297,8 +323,9 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 26,
-        active: function () { return (true) },
-        error: ''
+        active: function() {return(true)},
+        error: '',
+        skip: false
     },
     'pf5': {
         name: 'pf5',
@@ -308,8 +335,9 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 27,
-        active: function () { return (true) },
-        error: ''
+        active: function() {return(true)},
+        error: '',
+        skip: false
     },
     'fc4_c1a': {
         name: 'fc4_c1a',
@@ -319,8 +347,9 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 28,
-        active: function () { return (Number(instrument.questions.pf2.value) >= 1) },
-        error: ''
+        active: function() {return(Number(instrument.questions.pf2.value) > 0)},
+        error: '',
+        skip: false
     },
     'fc4_c1b': {
         name: 'fc4_c1b',
@@ -330,8 +359,9 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 29,
-        active: function () { return (Number(instrument.questions.pf2.value) >= 1) },
-        error: ''
+        active: function() {return(Number(instrument.questions.pf2.value) > 0)},
+        error: '',
+        skip: false
     },
     'fc4_c1c': {
         name: 'fc4_c1c',
@@ -341,8 +371,9 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 30,
-        active: function () { return (Number(instrument.questions.pf2.value) >= 1) },
-        error: ''
+        active: function() {return(Number(instrument.questions.pf2.value) > 0)},
+        error: '',
+        skip: false
     },
     'fc4_c1d': {
         name: 'fc4_c1d',
@@ -352,8 +383,9 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 31,
-        active: function () { return (Number(instrument.questions.pf2.value) >= 1) },
-        error: ''
+        active: function() {return(Number(instrument.questions.pf2.value) > 0)},
+        error: '',
+        skip: false
     },
     'fc4_c1e': {
         name: 'fc4_c1e',
@@ -363,8 +395,9 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 32,
-        active: function () { return (Number(instrument.questions.pf2.value) >= 1) },
-        error: ''
+        active: function() {return(Number(instrument.questions.pf2.value) > 0)},
+        error: '',
+        skip: false
     },
     'fc4_c1e_other': {
         name: 'fc4_c1e_other',
@@ -374,8 +407,9 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 33,
-        active: function () { return (Number(instrument.questions.pf2.value) >= 1 && Number(instrument.questions.fc4_c1e.value) == 5) },
-        error: ''
+        active: function() {return(Number(instrument.questions.pf2.value) > 0 && Number(instrument.questions.fc4_c1e.value) == 5)},
+        error: '',
+        skip: false
     },
     'fc4_c1f': {
         name: 'fc4_c1f',
@@ -385,8 +419,9 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 34,
-        active: function () { return (Number(instrument.questions.pf2.value) >= 1) },
-        error: ''
+        active: function() {return(Number(instrument.questions.pf2.value) > 0)},
+        error: '',
+        skip: false
     },
     'fc4_c1g': {
         name: 'fc4_c1g',
@@ -396,8 +431,9 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 35,
-        active: function () { return (Number(instrument.questions.pf2.value) >= 1) },
-        error: ''
+        active: function() {return(Number(instrument.questions.pf2.value) > 0)},
+        error: '',
+        skip: false
     },
     'fc4_c2a': {
         name: 'fc4_c2a',
@@ -407,8 +443,9 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 36,
-        active: function () { return (Number(instrument.questions.pf2.value) >= 2) },
-        error: ''
+        active: function() {return(Number(instrument.questions.pf2.value) > 0)},
+        error: '',
+        skip: false
     },
     'fc4_c2b': {
         name: 'fc4_c2b',
@@ -418,8 +455,9 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 37,
-        active: function () { return (Number(instrument.questions.pf2.value) >= 2) },
-        error: ''
+        active: function() {return(Number(instrument.questions.pf2.value) > 0)},
+        error: '',
+        skip: false
     },
     'fc4_c2c': {
         name: 'fc4_c2c',
@@ -429,8 +467,9 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 38,
-        active: function () { return (Number(instrument.questions.pf2.value) >= 2) },
-        error: ''
+        active: function() {return(Number(instrument.questions.pf2.value) > 0)},
+        error: '',
+        skip: false
     },
     'fc4_c2d': {
         name: 'fc4_c2d',
@@ -440,8 +479,9 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 39,
-        active: function () { return (Number(instrument.questions.pf2.value) >= 2) },
-        error: ''
+        active: function() {return(Number(instrument.questions.pf2.value) > 0)},
+        error: '',
+        skip: false
     },
     'fc4_c2e': {
         name: 'fc4_c2e',
@@ -451,8 +491,9 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 40,
-        active: function () { return (Number(instrument.questions.pf2.value) >= 2) },
-        error: ''
+        active: function() {return(Number(instrument.questions.pf2.value) > 0)},
+        error: '',
+        skip: false
     },
     'fc4_c2e_other': {
         name: 'fc4_c2e_other',
@@ -462,8 +503,9 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 41,
-        active: function () { return (Number(instrument.questions.pf2.value) >= 2 && Number(instrument.questions.fc4_c2e.value) == 5) },
-        error: ''
+        active: function() {return(Number(instrument.questions.pf2.value) > 0 && Number(instrument.questions.fc4_c2e.value) == 5)},
+        error: '',
+        skip: false
     },
     'fc4_c2f': {
         name: 'fc4_c2f',
@@ -473,8 +515,9 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 42,
-        active: function () { return (Number(instrument.questions.pf2.value) >= 2) },
-        error: ''
+        active: function() {return(Number(instrument.questions.pf2.value) > 0)},
+        error: '',
+        skip: false
     },
     'fc4_c2g': {
         name: 'fc4_c2g',
@@ -484,8 +527,9 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 43,
-        active: function () { return (Number(instrument.questions.pf2.value) >= 2) },
-        error: ''
+        active: function() {return(Number(instrument.questions.pf2.value) > 0)},
+        error: '',
+        skip: false
     },
     'fc4_c3a': {
         name: 'fc4_c3a',
@@ -495,8 +539,9 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 44,
-        active: function () { return (Number(instrument.questions.pf2.value) >= 3) },
-        error: ''
+        active: function() {return(Number(instrument.questions.pf2.value) > 0)},
+        error: '',
+        skip: false
     },
     'fc4_c3b': {
         name: 'fc4_c3b',
@@ -506,8 +551,9 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 45,
-        active: function () { return (Number(instrument.questions.pf2.value) >= 3) },
-        error: ''
+        active: function() {return(Number(instrument.questions.pf2.value) > 0)},
+        error: '',
+        skip: false
     },
     'fc4_c3c': {
         name: 'fc4_c3c',
@@ -517,8 +563,9 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 46,
-        active: function () { return (Number(instrument.questions.pf2.value) >= 3) },
-        error: ''
+        active: function() {return(Number(instrument.questions.pf2.value) > 0)},
+        error: '',
+        skip: false
     },
     'fc4_c3d': {
         name: 'fc4_c3d',
@@ -528,8 +575,9 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 47,
-        active: function () { return (Number(instrument.questions.pf2.value) >= 3) },
-        error: ''
+        active: function() {return(Number(instrument.questions.pf2.value) > 0)},
+        error: '',
+        skip: false
     },
     'fc4_c3e': {
         name: 'fc4_c3e',
@@ -539,8 +587,9 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 48,
-        active: function () { return (Number(instrument.questions.pf2.value) >= 3) },
-        error: ''
+        active: function() {return(Number(instrument.questions.pf2.value) > 0)},
+        error: '',
+        skip: false
     },
     'fc4_c3e_other': {
         name: 'fc4_c3e_other',
@@ -550,8 +599,9 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 49,
-        active: function () { return (Number(instrument.questions.pf2.value) >= 3 && Number(instrument.questions.fc4_c3e.value) == 5) },
-        error: ''
+        active: function() {return(Number(instrument.questions.pf2.value) > 0 && Number(instrument.questions.fc4_c3e.value) == 5)},
+        error: '',
+        skip: false
     },
     'fc4_c3f': {
         name: 'fc4_c3f',
@@ -561,8 +611,9 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 50,
-        active: function () { return (Number(instrument.questions.pf2.value) >= 3) },
-        error: ''
+        active: function() {return(Number(instrument.questions.pf2.value) > 0)},
+        error: '',
+        skip: false
     },
     'fc4_c3g': {
         name: 'fc4_c3g',
@@ -572,8 +623,9 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 51,
-        active: function () { return (Number(instrument.questions.pf2.value) >= 3) },
-        error: ''
+        active: function() {return(Number(instrument.questions.pf2.value) > 0)},
+        error: '',
+        skip: false
     },
     'fc4_c4a': {
         name: 'fc4_c4a',
@@ -583,8 +635,9 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 52,
-        active: function () { return (Number(instrument.questions.pf2.value) >= 4) },
-        error: ''
+        active: function() {return(Number(instrument.questions.pf2.value) > 0)},
+        error: '',
+        skip: false
     },
     'fc4_c4b': {
         name: 'fc4_c4b',
@@ -594,8 +647,9 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 53,
-        active: function () { return (Number(instrument.questions.pf2.value) >= 4) },
-        error: ''
+        active: function() {return(Number(instrument.questions.pf2.value) > 0)},
+        error: '',
+        skip: false
     },
     'fc4_c4c': {
         name: 'fc4_c4c',
@@ -605,8 +659,9 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 54,
-        active: function () { return (Number(instrument.questions.pf2.value) >= 4) },
-        error: ''
+        active: function() {return(Number(instrument.questions.pf2.value) > 0)},
+        error: '',
+        skip: false
     },
     'fc4_c4d': {
         name: 'fc4_c4d',
@@ -616,8 +671,9 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 55,
-        active: function () { return (Number(instrument.questions.pf2.value) >= 4) },
-        error: ''
+        active: function() {return(Number(instrument.questions.pf2.value) > 0)},
+        error: '',
+        skip: false
     },
     'fc4_c4e': {
         name: 'fc4_c4e',
@@ -627,8 +683,9 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 56,
-        active: function () { return (Number(instrument.questions.pf2.value) >= 4) },
-        error: ''
+        active: function() {return(Number(instrument.questions.pf2.value) > 0)},
+        error: '',
+        skip: false
     },
     'fc4_c4e_other': {
         name: 'fc4_c4e_other',
@@ -638,8 +695,9 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 57,
-        active: function () { return (Number(instrument.questions.pf2.value) >= 4 && Number(instrument.questions.fc4_c4e.value) == 5) },
-        error: ''
+        active: function() {return(Number(instrument.questions.pf2.value) > 0 && Number(instrument.questions.fc4_c4e.value) == 5)},
+        error: '',
+        skip: false
     },
     'fc4_c4f': {
         name: 'fc4_c4f',
@@ -649,8 +707,9 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 58,
-        active: function () { return (Number(instrument.questions.pf2.value) >= 4) },
-        error: ''
+        active: function() {return(Number(instrument.questions.pf2.value) > 0)},
+        error: '',
+        skip: false
     },
     'fc4_c4g': {
         name: 'fc4_c4g',
@@ -660,8 +719,9 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 59,
-        active: function () { return (Number(instrument.questions.pf2.value) >= 4) },
-        error: ''
+        active: function() {return(Number(instrument.questions.pf2.value) > 0)},
+        error: '',
+        skip: false
     },
     'fc4_c5a': {
         name: 'fc4_c5a',
@@ -671,8 +731,9 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 60,
-        active: function () { return (Number(instrument.questions.pf2.value) >= 5) },
-        error: ''
+        active: function() {return(Number(instrument.questions.pf2.value) > 0)},
+        error: '',
+        skip: false
     },
     'fc4_c5b': {
         name: 'fc4_c5b',
@@ -682,8 +743,9 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 61,
-        active: function () { return (Number(instrument.questions.pf2.value) >= 5) },
-        error: ''
+        active: function() {return(Number(instrument.questions.pf2.value) > 0)},
+        error: '',
+        skip: false
     },
     'fc4_c5c': {
         name: 'fc4_c5c',
@@ -693,8 +755,9 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 62,
-        active: function () { return (Number(instrument.questions.pf2.value) >= 5) },
-        error: ''
+        active: function() {return(Number(instrument.questions.pf2.value) > 0)},
+        error: '',
+        skip: false
     },
     'fc4_c5d': {
         name: 'fc4_c5d',
@@ -704,8 +767,9 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 63,
-        active: function () { return (Number(instrument.questions.pf2.value) >= 5) },
-        error: ''
+        active: function() {return(Number(instrument.questions.pf2.value) > 0)},
+        error: '',
+        skip: false
     },
     'fc4_c5e': {
         name: 'fc4_c5e',
@@ -715,8 +779,9 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 64,
-        active: function () { return (Number(instrument.questions.pf2.value) >= 5) },
-        error: ''
+        active: function() {return(Number(instrument.questions.pf2.value) > 0)},
+        error: '',
+        skip: false
     },
     'fc4_c5e_other': {
         name: 'fc4_c5e_other',
@@ -726,8 +791,9 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 65,
-        active: function () { return (Number(instrument.questions.pf2.value) >= 5 && Number(instrument.questions.fc4_c5e.value) == 5) },
-        error: ''
+        active: function() {return(Number(instrument.questions.pf2.value) > 0 && Number(instrument.questions.fc4_c5e.value) == 5)},
+        error: '',
+        skip: false
     },
     'fc4_c5f': {
         name: 'fc4_c5f',
@@ -737,8 +803,9 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 66,
-        active: function () { return (Number(instrument.questions.pf2.value) >= 5) },
-        error: ''
+        active: function() {return(Number(instrument.questions.pf2.value) > 0)},
+        error: '',
+        skip: false
     },
     'fc4_c5g': {
         name: 'fc4_c5g',
@@ -748,8 +815,9 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 67,
-        active: function () { return (Number(instrument.questions.pf2.value) >= 5) },
-        error: ''
+        active: function() {return(Number(instrument.questions.pf2.value) > 0)},
+        error: '',
+        skip: false
     },
     'ex1': {
         name: 'ex1',
@@ -759,8 +827,9 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 68,
-        active: function () { return (true) },
-        error: ''
+        active: function() {return(true)},
+        error: '',
+        skip: false
     },
     'ex2': {
         name: 'ex2',
@@ -770,8 +839,9 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 69,
-        active: function () { return (Number(instrument.questions.ex1.value) == 1) },
-        error: ''
+        active: function() {return(Number(instrument.questions.ex1.value) == 1)},
+        error: '',
+        skip: false
     },
     'ex3_c1a': {
         name: 'ex3_c1a',
@@ -781,8 +851,9 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 70,
-        active: function () { return (Number(instrument.questions.ex2.value) >= 1) },
-        error: ''
+        active: function() {return(Number(instrument.questions.ex2.value) > 0)},
+        error: '',
+        skip: false
     },
     'ex3_c1b': {
         name: 'ex3_c1b',
@@ -792,8 +863,9 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 71,
-        active: function () { return (Number(instrument.questions.ex2.value) >= 1) },
-        error: ''
+        active: function() {return(Number(instrument.questions.ex2.value) > 0)},
+        error: '',
+        skip: false
     },
     'ex3_c1c': {
         name: 'ex3_c1c',
@@ -803,8 +875,9 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 72,
-        active: function () { return (Number(instrument.questions.ex2.value) >= 1) },
-        error: ''
+        active: function() {return(Number(instrument.questions.ex2.value) > 0)},
+        error: '',
+        skip: false
     },
     'ex3_c1d': {
         name: 'ex3_c1d',
@@ -814,8 +887,9 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 73,
-        active: function () { return (Number(instrument.questions.ex2.value) >= 1) },
-        error: ''
+        active: function() {return(Number(instrument.questions.ex2.value) > 0)},
+        error: '',
+        skip: false
     },
     'ex3_c1d_other': {
         name: 'ex3_c1d_other',
@@ -825,8 +899,9 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 74,
-        active: function () { return (Number(instrument.questions.ex2.value) >= 1 && Number(instrument.questions.ex3_c1d.value) == 10) },
-        error: ''
+        active: function() {return(Number(instrument.questions.ex2.value) > 0 && Number(instrument.questions.ex3_c1d.value) == 10)},
+        error: '',
+        skip: false
     },
     'ex3_c2a': {
         name: 'ex3_c2a',
@@ -836,8 +911,9 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 75,
-        active: function () { return (Number(instrument.questions.ex2.value) >= 2) },
-        error: ''
+        active: function() {return(Number(instrument.questions.ex2.value) > 0)},
+        error: '',
+        skip: false
     },
     'ex3_c2b': {
         name: 'ex3_c2b',
@@ -847,8 +923,9 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 76,
-        active: function () { return (Number(instrument.questions.ex2.value) >= 2) },
-        error: ''
+        active: function() {return(Number(instrument.questions.ex2.value) > 0)},
+        error: '',
+        skip: false
     },
     'ex3_c2c': {
         name: 'ex3_c2c',
@@ -858,8 +935,9 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 77,
-        active: function () { return (Number(instrument.questions.ex2.value) >= 2) },
-        error: ''
+        active: function() {return(Number(instrument.questions.ex2.value) > 0)},
+        error: '',
+        skip: false
     },
     'ex3_c2d': {
         name: 'ex3_c2d',
@@ -869,8 +947,9 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 78,
-        active: function () { return (Number(instrument.questions.ex2.value) >= 2) },
-        error: ''
+        active: function() {return(Number(instrument.questions.ex2.value) > 0)},
+        error: '',
+        skip: false
     },
     'ex3_c2d_other': {
         name: 'ex3_c2d_other',
@@ -880,8 +959,9 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 79,
-        active: function () { return (Number(instrument.questions.ex2.value) >= 2 && Number(instrument.questions.ex3_c2d.value) == 10) },
-        error: ''
+        active: function() {return(Number(instrument.questions.ex2.value) > 0 && Number(instrument.questions.ex3_c2d.value) == 10)},
+        error: '',
+        skip: false
     },
     'ex3_c3a': {
         name: 'ex3_c3a',
@@ -891,8 +971,9 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 80,
-        active: function () { return (Number(instrument.questions.ex2.value) >= 3) },
-        error: ''
+        active: function() {return(Number(instrument.questions.ex2.value) > 0)},
+        error: '',
+        skip: false
     },
     'ex3_c3b': {
         name: 'ex3_c3b',
@@ -902,8 +983,9 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 81,
-        active: function () { return (Number(instrument.questions.ex2.value) >= 3) },
-        error: ''
+        active: function() {return(Number(instrument.questions.ex2.value) > 0)},
+        error: '',
+        skip: false
     },
     'ex3_c3c': {
         name: 'ex3_c3c',
@@ -913,8 +995,9 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 82,
-        active: function () { return (Number(instrument.questions.ex2.value) >= 3) },
-        error: ''
+        active: function() {return(Number(instrument.questions.ex2.value) > 0)},
+        error: '',
+        skip: false
     },
     'ex3_c3d': {
         name: 'ex3_c3d',
@@ -924,8 +1007,9 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 83,
-        active: function () { return (Number(instrument.questions.ex2.value) >= 3) },
-        error: ''
+        active: function() {return(Number(instrument.questions.ex2.value) > 0)},
+        error: '',
+        skip: false
     },
     'ex3_c3d_other': {
         name: 'ex3_c3d_other',
@@ -935,8 +1019,9 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 84,
-        active: function () { return (Number(instrument.questions.ex2.value) >= 3 && Number(instrument.questions.ex3_c3d.value) == 10) },
-        error: ''
+        active: function() {return(Number(instrument.questions.ex2.value) > 0 && Number(instrument.questions.ex3_c3d.value) == 10)},
+        error: '',
+        skip: false
     },
     'ex3_c4a': {
         name: 'ex3_c4a',
@@ -946,8 +1031,9 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 85,
-        active: function () { return (Number(instrument.questions.ex2.value) >= 4) },
-        error: ''
+        active: function() {return(Number(instrument.questions.ex2.value) > 0)},
+        error: '',
+        skip: false
     },
     'ex3_c4b': {
         name: 'ex3_c4b',
@@ -957,8 +1043,9 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 86,
-        active: function () { return (Number(instrument.questions.ex2.value) >= 4) },
-        error: ''
+        active: function() {return(Number(instrument.questions.ex2.value) > 0)},
+        error: '',
+        skip: false
     },
     'ex3_c4c': {
         name: 'ex3_c4c',
@@ -968,8 +1055,9 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 87,
-        active: function () { return (Number(instrument.questions.ex2.value) >= 4) },
-        error: ''
+        active: function() {return(Number(instrument.questions.ex2.value) > 0)},
+        error: '',
+        skip: false
     },
     'ex3_c4d': {
         name: 'ex3_c4d',
@@ -979,8 +1067,9 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 88,
-        active: function () { return (Number(instrument.questions.ex2.value) >= 4) },
-        error: ''
+        active: function() {return(Number(instrument.questions.ex2.value) > 0)},
+        error: '',
+        skip: false
     },
     'ex3_c4d_other': {
         name: 'ex3_c4d_other',
@@ -990,8 +1079,9 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 89,
-        active: function () { return (Number(instrument.questions.ex2.value) >= 4 && Number(instrument.questions.ex3_c4d.value) == 10) },
-        error: ''
+        active: function() {return(Number(instrument.questions.ex2.value) > 0 && Number(instrument.questions.ex3_c4d.value) == 10)},
+        error: '',
+        skip: false
     },
     'ex3_c5a': {
         name: 'ex3_c5a',
@@ -1001,8 +1091,9 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 90,
-        active: function () { return (Number(instrument.questions.ex2.value) >= 5) },
-        error: ''
+        active: function() {return(Number(instrument.questions.ex2.value) > 0)},
+        error: '',
+        skip: false
     },
     'ex3_c5b': {
         name: 'ex3_c5b',
@@ -1012,8 +1103,9 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 91,
-        active: function () { return (Number(instrument.questions.ex2.value) >= 5) },
-        error: ''
+        active: function() {return(Number(instrument.questions.ex2.value) > 0)},
+        error: '',
+        skip: false
     },
     'ex3_c5c': {
         name: 'ex3_c5c',
@@ -1023,8 +1115,9 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 92,
-        active: function () { return (Number(instrument.questions.ex2.value) >= 5) },
-        error: ''
+        active: function() {return(Number(instrument.questions.ex2.value) > 0)},
+        error: '',
+        skip: false
     },
     'ex3_c5d': {
         name: 'ex3_c5d',
@@ -1034,8 +1127,9 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 93,
-        active: function () { return (Number(instrument.questions.ex2.value) >= 5) },
-        error: ''
+        active: function() {return(Number(instrument.questions.ex2.value) > 0)},
+        error: '',
+        skip: false
     },
     'ex3_c5d_other': {
         name: 'ex3_c5d_other',
@@ -1045,8 +1139,9 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 94,
-        active: function () { return (Number(instrument.questions.ex2.value) >= 5 && Number(instrument.questions.ex3_c5d.value) == 10) },
-        error: ''
+        active: function() {return(Number(instrument.questions.ex2.value) > 0 && Number(instrument.questions.ex3_c5d.value) == 10)},
+        error: '',
+        skip: false
     },
     'qs1': {
         name: 'qs1',
@@ -1056,8 +1151,9 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 95,
-        active: function () { return (true) },
-        error: ''
+        active: function() {return(true)},
+        error: '',
+        skip: false
     },
     'qs1a': {
         name: 'qs1a',
@@ -1067,8 +1163,9 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 96,
-        active: function () { return (Number(instrument.questions.qs1.value) == 1) },
-        error: ''
+        active: function() {return(Number(instrument.questions.qs1.value) == 1)},
+        error: '',
+        skip: false
     },
     'qs2': {
         name: 'qs2',
@@ -1078,8 +1175,9 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 97,
-        active: function () { return (true) },
-        error: ''
+        active: function() {return(true)},
+        error: '',
+        skip: false
     },
     'qs3': {
         name: 'qs3',
@@ -1089,8 +1187,9 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 98,
-        active: function () { return (true) },
-        error: ''
+        active: function() {return(true)},
+        error: '',
+        skip: false
     },
     'qs4': {
         name: 'qs4',
@@ -1100,8 +1199,9 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 99,
-        active: function () { return (true) },
-        error: ''
+        active: function() {return(true)},
+        error: '',
+        skip: false
     },
     'qs5': {
         name: 'qs5',
@@ -1111,8 +1211,9 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 100,
-        active: function () { return (true) },
-        error: ''
+        active: function() {return(true)},
+        error: '',
+        skip: false
     },
     'qs6': {
         name: 'qs6',
@@ -1122,8 +1223,9 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 101,
-        active: function () { return (true) },
-        error: ''
+        active: function() {return(true)},
+        error: '',
+        skip: false
     },
     'qs7': {
         name: 'qs7',
@@ -1133,8 +1235,9 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 102,
-        active: function () { return (true) },
-        error: ''
+        active: function() {return(true)},
+        error: '',
+        skip: false
     },
     'qs8': {
         name: 'qs8',
@@ -1144,8 +1247,9 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 103,
-        active: function () { return (true) },
-        error: ''
+        active: function() {return(true)},
+        error: '',
+        skip: false
     },
 };
 
@@ -1164,108 +1268,108 @@ export const questionOrder: Array<string> = [
 ];
 
 export const exportHeader: Array<{ id: string; title: string }> = [
-    { 'id': 'reg', 'title': 'REG' },
-    { 'id': 'dis', 'title': 'DIS' },
-    { 'id': 'data', 'title': 'DATA' },
-    { 'id': 'q2', 'title': 'Q2' },
-    { 'id': 'inst', 'title': 'INST' },
-    { 'id': 'q3', 'title': 'Q3' },
-    { 'id': 'q4', 'title': 'Q4' },
-    { 'id': 'q5', 'title': 'Q5' },
-    { 'id': 'q6', 'title': 'Q6' },
-    { 'id': 'pf1a', 'title': 'PF1A' },
-    { 'id': 'pf1b', 'title': 'PF1B' },
-    { 'id': 'pf1c', 'title': 'PF1C' },
-    { 'id': 'pf1d', 'title': 'PF1D' },
-    { 'id': 'pf2', 'title': 'PF2' },
-    { 'id': 'pf3', 'title': 'PF3' },
-    { 'id': 'ig1', 'title': 'IG1' },
-    { 'id': 'ig2', 'title': 'IG2' },
-    { 'id': 'ig3', 'title': 'IG3' },
-    { 'id': 'ig4', 'title': 'IG4' },
-    { 'id': 'ig5', 'title': 'IG5' },
-    { 'id': 'ig5_age', 'title': 'IG5_AGE' },
-    { 'id': 'ig6', 'title': 'IG6' },
-    { 'id': 'ig7', 'title': 'IG7' },
-    { 'id': 'ig8', 'title': 'IG8' },
-    { 'id': 'ig8_other', 'title': 'IG8_OTHER' },
-    { 'id': 'pf4a', 'title': 'PF4A' },
-    { 'id': 'pf4b', 'title': 'PF4B' },
-    { 'id': 'pf5', 'title': 'PF5' },
-    { 'id': 'fc4_c1a', 'title': 'FC4_C1A' },
-    { 'id': 'fc4_c1b', 'title': 'FC4_C1B' },
-    { 'id': 'fc4_c1c', 'title': 'FC4_C1C' },
-    { 'id': 'fc4_c1d', 'title': 'FC4_C1D' },
-    { 'id': 'fc4_c1e', 'title': 'FC4_C1E' },
-    { 'id': 'fc4_c1e_other', 'title': 'FC4_C1E_OTHER' },
-    { 'id': 'fc4_c1f', 'title': 'FC4_C1F' },
-    { 'id': 'fc4_c1g', 'title': 'FC4_C1G' },
-    { 'id': 'fc4_c2a', 'title': 'FC4_C2A' },
-    { 'id': 'fc4_c2b', 'title': 'FC4_C2B' },
-    { 'id': 'fc4_c2c', 'title': 'FC4_C2C' },
-    { 'id': 'fc4_c2d', 'title': 'FC4_C2D' },
-    { 'id': 'fc4_c2e', 'title': 'FC4_C2E' },
-    { 'id': 'fc4_c2e_other', 'title': 'FC4_C2E_OTHER' },
-    { 'id': 'fc4_c2f', 'title': 'FC4_C2F' },
-    { 'id': 'fc4_c2g', 'title': 'FC4_C2G' },
-    { 'id': 'fc4_c3a', 'title': 'FC4_C3A' },
-    { 'id': 'fc4_c3b', 'title': 'FC4_C3B' },
-    { 'id': 'fc4_c3c', 'title': 'FC4_C3C' },
-    { 'id': 'fc4_c3d', 'title': 'FC4_C3D' },
-    { 'id': 'fc4_c3e', 'title': 'FC4_C3E' },
-    { 'id': 'fc4_c3e_other', 'title': 'FC4_C3E_OTHER' },
-    { 'id': 'fc4_c3f', 'title': 'FC4_C3F' },
-    { 'id': 'fc4_c3g', 'title': 'FC4_C3G' },
-    { 'id': 'fc4_c4a', 'title': 'FC4_C4A' },
-    { 'id': 'fc4_c4b', 'title': 'FC4_C4B' },
-    { 'id': 'fc4_c4c', 'title': 'FC4_C4C' },
-    { 'id': 'fc4_c4d', 'title': 'FC4_C4D' },
-    { 'id': 'fc4_c4e', 'title': 'FC4_C4E' },
-    { 'id': 'fc4_c4e_other', 'title': 'FC4_C4E_OTHER' },
-    { 'id': 'fc4_c4f', 'title': 'FC4_C4F' },
-    { 'id': 'fc4_c4g', 'title': 'FC4_C4G' },
-    { 'id': 'fc4_c5a', 'title': 'FC4_C5A' },
-    { 'id': 'fc4_c5b', 'title': 'FC4_C5B' },
-    { 'id': 'fc4_c5c', 'title': 'FC4_C5C' },
-    { 'id': 'fc4_c5d', 'title': 'FC4_C5D' },
-    { 'id': 'fc4_c5e', 'title': 'FC4_C5E' },
-    { 'id': 'fc4_c5e_other', 'title': 'FC4_C5E_OTHER' },
-    { 'id': 'fc4_c5f', 'title': 'FC4_C5F' },
-    { 'id': 'fc4_c5g', 'title': 'FC4_C5G' },
-    { 'id': 'ex1', 'title': 'EX1' },
-    { 'id': 'ex2', 'title': 'EX2' },
-    { 'id': 'ex3_c1a', 'title': 'EX3_C1A' },
-    { 'id': 'ex3_c1b', 'title': 'EX3_C1B' },
-    { 'id': 'ex3_c1c', 'title': 'EX3_C1C' },
-    { 'id': 'ex3_c1d', 'title': 'EX3_C1D' },
-    { 'id': 'ex3_c1d_other', 'title': 'EX3_C1D_OTHER' },
-    { 'id': 'ex3_c2a', 'title': 'EX3_C2A' },
-    { 'id': 'ex3_c2b', 'title': 'EX3_C2B' },
-    { 'id': 'ex3_c2c', 'title': 'EX3_C2C' },
-    { 'id': 'ex3_c2d', 'title': 'EX3_C2D' },
-    { 'id': 'ex3_c2d_other', 'title': 'EX3_C2D_OTHER' },
-    { 'id': 'ex3_c3a', 'title': 'EX3_C3A' },
-    { 'id': 'ex3_c3b', 'title': 'EX3_C3B' },
-    { 'id': 'ex3_c3c', 'title': 'EX3_C3C' },
-    { 'id': 'ex3_c3d', 'title': 'EX3_C3D' },
-    { 'id': 'ex3_c3d_other', 'title': 'EX3_C3D_OTHER' },
-    { 'id': 'ex3_c4a', 'title': 'EX3_C4A' },
-    { 'id': 'ex3_c4b', 'title': 'EX3_C4B' },
-    { 'id': 'ex3_c4c', 'title': 'EX3_C4C' },
-    { 'id': 'ex3_c4d', 'title': 'EX3_C4D' },
-    { 'id': 'ex3_c4d_other', 'title': 'EX3_C4D_OTHER' },
-    { 'id': 'ex3_c5a', 'title': 'EX3_C5A' },
-    { 'id': 'ex3_c5b', 'title': 'EX3_C5B' },
-    { 'id': 'ex3_c5c', 'title': 'EX3_C5C' },
-    { 'id': 'ex3_c5d', 'title': 'EX3_C5D' },
-    { 'id': 'ex3_c5d_other', 'title': 'EX3_C5D_OTHER' },
-    { 'id': 'qs1', 'title': 'QS1' },
-    { 'id': 'qs1a', 'title': 'QS1A' },
-    { 'id': 'qs2', 'title': 'QS2' },
-    { 'id': 'qs3', 'title': 'QS3' },
-    { 'id': 'qs4', 'title': 'QS4' },
-    { 'id': 'qs5', 'title': 'QS5' },
-    { 'id': 'qs6', 'title': 'QS6' },
-    { 'id': 'qs7', 'title': 'QS7' },
-    { 'id': 'qs8', 'title': 'QS8' },
-];
+    {'id': 'reg', 'title': 'REG'},
+    {'id': 'dis', 'title': 'DIS'},
+    {'id': 'data', 'title': 'DATA'},
+    {'id': 'q2', 'title': 'Q2'},
+    {'id': 'inst', 'title': 'INST'},
+    {'id': 'q3', 'title': 'Q3'},
+    {'id': 'q4', 'title': 'Q4'},
+    {'id': 'q5', 'title': 'Q5'},
+    {'id': 'q6', 'title': 'Q6'},
+    {'id': 'pf1a', 'title': 'PF1A'},
+    {'id': 'pf1b', 'title': 'PF1B'},
+    {'id': 'pf1c', 'title': 'PF1C'},
+    {'id': 'pf1d', 'title': 'PF1D'},
+    {'id': 'pf2', 'title': 'PF2'},
+    {'id': 'pf3', 'title': 'PF3'},
+    {'id': 'ig1', 'title': 'IG1'},
+    {'id': 'ig2', 'title': 'IG2'},
+    {'id': 'ig3', 'title': 'IG3'},
+    {'id': 'ig4', 'title': 'IG4'},
+    {'id': 'ig5', 'title': 'IG5'},
+    {'id': 'ig5_age', 'title': 'IG5_AGE'},
+    {'id': 'ig6', 'title': 'IG6'},
+    {'id': 'ig7', 'title': 'IG7'},
+    {'id': 'ig8', 'title': 'IG8'},
+    {'id': 'ig8_other', 'title': 'IG8_OTHER'},
+    {'id': 'pf4a', 'title': 'PF4A'},
+    {'id': 'pf4b', 'title': 'PF4B'},
+    {'id': 'pf5', 'title': 'PF5'},
+    {'id': 'fc4_c1a', 'title': 'FC4_C1A'},
+    {'id': 'fc4_c1b', 'title': 'FC4_C1B'},
+    {'id': 'fc4_c1c', 'title': 'FC4_C1C'},
+    {'id': 'fc4_c1d', 'title': 'FC4_C1D'},
+    {'id': 'fc4_c1e', 'title': 'FC4_C1E'},
+    {'id': 'fc4_c1e_other', 'title': 'FC4_C1E_OTHER'},
+    {'id': 'fc4_c1f', 'title': 'FC4_C1F'},
+    {'id': 'fc4_c1g', 'title': 'FC4_C1G'},
+    {'id': 'fc4_c2a', 'title': 'FC4_C2A'},
+    {'id': 'fc4_c2b', 'title': 'FC4_C2B'},
+    {'id': 'fc4_c2c', 'title': 'FC4_C2C'},
+    {'id': 'fc4_c2d', 'title': 'FC4_C2D'},
+    {'id': 'fc4_c2e', 'title': 'FC4_C2E'},
+    {'id': 'fc4_c2e_other', 'title': 'FC4_C2E_OTHER'},
+    {'id': 'fc4_c2f', 'title': 'FC4_C2F'},
+    {'id': 'fc4_c2g', 'title': 'FC4_C2G'},
+    {'id': 'fc4_c3a', 'title': 'FC4_C3A'},
+    {'id': 'fc4_c3b', 'title': 'FC4_C3B'},
+    {'id': 'fc4_c3c', 'title': 'FC4_C3C'},
+    {'id': 'fc4_c3d', 'title': 'FC4_C3D'},
+    {'id': 'fc4_c3e', 'title': 'FC4_C3E'},
+    {'id': 'fc4_c3e_other', 'title': 'FC4_C3E_OTHER'},
+    {'id': 'fc4_c3f', 'title': 'FC4_C3F'},
+    {'id': 'fc4_c3g', 'title': 'FC4_C3G'},
+    {'id': 'fc4_c4a', 'title': 'FC4_C4A'},
+    {'id': 'fc4_c4b', 'title': 'FC4_C4B'},
+    {'id': 'fc4_c4c', 'title': 'FC4_C4C'},
+    {'id': 'fc4_c4d', 'title': 'FC4_C4D'},
+    {'id': 'fc4_c4e', 'title': 'FC4_C4E'},
+    {'id': 'fc4_c4e_other', 'title': 'FC4_C4E_OTHER'},
+    {'id': 'fc4_c4f', 'title': 'FC4_C4F'},
+    {'id': 'fc4_c4g', 'title': 'FC4_C4G'},
+    {'id': 'fc4_c5a', 'title': 'FC4_C5A'},
+    {'id': 'fc4_c5b', 'title': 'FC4_C5B'},
+    {'id': 'fc4_c5c', 'title': 'FC4_C5C'},
+    {'id': 'fc4_c5d', 'title': 'FC4_C5D'},
+    {'id': 'fc4_c5e', 'title': 'FC4_C5E'},
+    {'id': 'fc4_c5e_other', 'title': 'FC4_C5E_OTHER'},
+    {'id': 'fc4_c5f', 'title': 'FC4_C5F'},
+    {'id': 'fc4_c5g', 'title': 'FC4_C5G'},
+    {'id': 'ex1', 'title': 'EX1'},
+    {'id': 'ex2', 'title': 'EX2'},
+    {'id': 'ex3_c1a', 'title': 'EX3_C1A'},
+    {'id': 'ex3_c1b', 'title': 'EX3_C1B'},
+    {'id': 'ex3_c1c', 'title': 'EX3_C1C'},
+    {'id': 'ex3_c1d', 'title': 'EX3_C1D'},
+    {'id': 'ex3_c1d_other', 'title': 'EX3_C1D_OTHER'},
+    {'id': 'ex3_c2a', 'title': 'EX3_C2A'},
+    {'id': 'ex3_c2b', 'title': 'EX3_C2B'},
+    {'id': 'ex3_c2c', 'title': 'EX3_C2C'},
+    {'id': 'ex3_c2d', 'title': 'EX3_C2D'},
+    {'id': 'ex3_c2d_other', 'title': 'EX3_C2D_OTHER'},
+    {'id': 'ex3_c3a', 'title': 'EX3_C3A'},
+    {'id': 'ex3_c3b', 'title': 'EX3_C3B'},
+    {'id': 'ex3_c3c', 'title': 'EX3_C3C'},
+    {'id': 'ex3_c3d', 'title': 'EX3_C3D'},
+    {'id': 'ex3_c3d_other', 'title': 'EX3_C3D_OTHER'},
+    {'id': 'ex3_c4a', 'title': 'EX3_C4A'},
+    {'id': 'ex3_c4b', 'title': 'EX3_C4B'},
+    {'id': 'ex3_c4c', 'title': 'EX3_C4C'},
+    {'id': 'ex3_c4d', 'title': 'EX3_C4D'},
+    {'id': 'ex3_c4d_other', 'title': 'EX3_C4D_OTHER'},
+    {'id': 'ex3_c5a', 'title': 'EX3_C5A'},
+    {'id': 'ex3_c5b', 'title': 'EX3_C5B'},
+    {'id': 'ex3_c5c', 'title': 'EX3_C5C'},
+    {'id': 'ex3_c5d', 'title': 'EX3_C5D'},
+    {'id': 'ex3_c5d_other', 'title': 'EX3_C5D_OTHER'},
+    {'id': 'qs1', 'title': 'QS1'},
+    {'id': 'qs1a', 'title': 'QS1A'},
+    {'id': 'qs2', 'title': 'QS2'},
+    {'id': 'qs3', 'title': 'QS3'},
+    {'id': 'qs4', 'title': 'QS4'},
+    {'id': 'qs5', 'title': 'QS5'},
+    {'id': 'qs6', 'title': 'QS6'},
+    {'id': 'qs7', 'title': 'QS7'},
+    {'id': 'qs8', 'title': 'QS8'},
+]

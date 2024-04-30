@@ -55,15 +55,17 @@
             <div class="grid grid-cols-2 gap-4 items-center mt-12">
                 <div>REG. Viloyat</div>
                 <div>
-                    <input type="text" id="reg" name="reg"
-                        class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                    <select id="reg" name="reg" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+                        <option value="-9" class="t_choose">--- choose ---</option>
+                    </select>
                 </div>
             </div>
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
                 <div>DIS. Tuman</div>
                 <div>
-                    <input type="text" id="dis" name="dis"
-                        class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                    <select id="dis" name="dis" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+                        <option value="-9" class="t_choose">--- choose ---</option>
+                    </select>
                 </div>
             </div>
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
@@ -153,13 +155,8 @@
                     </select>
                 </div>
             </div>
-            <div class="grid grid-cols-2 gap-4 items-center mt-6">
-                <div>PF1d. Type of settlement</div>
-                <div>
-                    <input type="text" id="pf1d" name="pf1d"
-                        class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
-                </div>
-            </div>
+
+            <input type="hidden" id="pf1d" name="pf1d" />
 
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
                 <div>PF2. Hozirda ushbu oilaga joylashtirilgan bolalar soni</div>
