@@ -24,13 +24,13 @@
                         <p class="pl-4 text-red-800 text-sm font-medium">Staff registry of the childcare institutions and specialized boarding-schools</p>
                     </div>
                 </div>
-        
+
                 <p class="mt-4 mb-2 text-xl">INTRODUCTION</p>
                 <p class="mb-2">The primary goal of this data collection is to support the Government of Uzbekistan in transitioning from institutional care to family-type care for children deprived of parental care. To achieve this, we aim to build a robust monitoring mechanism at the national level. By collecting detailed data, we can inform evidence-based decisions and policies that promote family-based alternatives.</p>
                 <p class="mb-2">Another critical objective is to enhance the quality of services provided to children with disabilities in institutional care. By understanding their unique needs and experiences, we can develop targeted interventions and improve their overall well-being. Additionally, we seek to explore and promote adequate family-type alternatives for these children. </p>
                 <p class="mb-2">This questionnaire serves as a crucial tool for understanding the organizational structure and individual profiles within each child care institution and boarding school. By collecting comprehensive data, we aim to enhance decision-making, improve staff management, and ensure the well-being of both employees and the children placed into care.</p>
                 <p class="mb-2">This questionnaire aims to gather information about each position within the staff structure of the institution. Whether a position is currently occupied or vacant, please complete a separate questionnaire for each position.</p>
-        
+
                 <div class="grid grid-cols-2 gap-4 items-center mt-12">
                     <div>Q1. Completion date of questionnaire</div>
                     <div>
@@ -67,7 +67,7 @@
                         <input type="text" id="q6" name="q6" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
                     </div>
                 </div>
-        
+
                 <h2 class="mt-10 mb-4 text-2xl font-bold text-gray-700">1. GENERAL INFORMATION ABOUT THE INSTITUTION</h2>
                 <div class="grid grid-cols-2 gap-4 items-center mt-6">
                     <div>I1. Name of the institution</div>
@@ -96,25 +96,43 @@
                 <div class="grid grid-cols-2 gap-4 items-center mt-6">
                     <div>I4a. Region</div>
                     <div>
-                        <input type="text" id="i4a" name="i4a" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                        <select id="i4a" name="i4a"
+                            class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+                            <option value="-9" class="t_choose">--- choose ---</option>
+                        </select>
                     </div>
                 </div>
                 <div class="grid grid-cols-2 gap-4 items-center mt-6">
                     <div>I4b. District</div>
                     <div>
-                        <input type="text" id="i4b" name="i4b" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                        <select id="i4b" name="i4b"
+                            class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+                            <option value="-9" class="t_choose">--- choose ---</option>
+                        </select>
                     </div>
                 </div>
                 <div class="grid grid-cols-2 gap-4 items-center mt-6">
                     <div>I4c. Settlement</div>
                     <div>
-                        <input type="text" id="i4c" name="i4c" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                        <select id="i4c" name="i4c"
+                            class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+                            <option value="-9" class="t_choose">--- choose ---</option>
+                        </select>
                     </div>
                 </div>
                 <div class="grid grid-cols-2 gap-4 items-center mt-6">
                     <div>I4d. Type of settlement</div>
                     <div>
-                        <input type="text" id="i4d" name="i4d" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                        <select id="i4d" name="i4d"
+                            class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+                            <option value="10" class="t_settlement_type_10"></option>
+                            <option value="20" class="t_settlement_type_20"></option>
+                            <option value="21" class="t_settlement_type_21"></option>
+                            <option value="22" class="t_settlement_type_22"></option>
+                            <option value="23" class="t_settlement_type_23"></option>
+                            <option value="24" class="t_settlement_type_24"></option>
+                            <option value="31" class="t_settlement_type_31"></option>
+                        </select>
                     </div>
                 </div>
                 <div class="grid grid-cols-2 gap-4 items-center mt-6">
@@ -138,16 +156,16 @@
                         </select>
                     </div>
                 </div>
-        
+
                 <h2 class="mt-10 mb-4 text-2xl font-bold text-gray-700">2. INFORMATION ABOUT THE POSITION</h2>
-        
+
                 <div class="grid grid-cols-2 gap-4 items-center mt-6">
                     <div>J1. Job title</div>
                     <div>
                         <input type="text" id="j1" name="j1" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
                     </div>
                 </div>
-        
+
                 <div class="grid grid-cols-2 gap-4 items-center mt-10">
                     <div>J2. Name of the department within the institution.</div>
                     <div class="col-span-1 flex items-center gap-4">
@@ -189,7 +207,7 @@
                         </div>
                     </div>
                 </div>
-        
+
                 <div class="grid grid-cols-2 gap-4 items-center mt-10">
                     <div>J4. Is there an approved job description available for this position?</div>
                     <div class="col-span-1 flex items-center gap-4">
@@ -203,14 +221,14 @@
                         </div>
                     </div>
                 </div>
-        
+
                 <div class="grid grid-cols-2 gap-4 items-center mt-6">
                     <div>J5. Number of weekly working hours</div>
                     <div>
                         <input type="text" id="j5" name="j5" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
                     </div>
                 </div>
-        
+
                 <div class="grid grid-cols-2 gap-4 items-center mt-10">
                     <div>J6. Level of qualification / education required</div>
                     <div class="col-span-1 flex flex-col gap-2">
@@ -236,14 +254,14 @@
                         </div>
                     </div>
                 </div>
-        
+
                 <div class="grid grid-cols-2 gap-4 items-center mt-6">
                     <div>J7. Required level of experience (minimum number of years of work experience) for this position</div>
                     <div class="flex items-center gap-4">
                         <input type="text" id="j7" name="j7" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-1/2 p-2.5 disabled:bg-gray-100" />
                         years            </div>
                 </div>
-        
+
                 <div class="grid grid-cols-2 gap-4 items-center mt-10">
                     <div>J8. Current status of the job:</div>
                     <div class="col-span-1 flex flex-col gap-2">
@@ -265,10 +283,10 @@
                         </div>
                     </div>
                 </div>
-        
+
                 <h2 class="mt-10 mb-4 text-2xl font-bold text-gray-700">3. INFORMATION ABOUT THE EMPLOYEE</h2>
-        
-        
+
+
                 <div class="grid grid-cols-2 gap-4 items-center mt-6">
                     <div>E1. First name, patronymic and surname of the employee</div>
                     <div>
@@ -282,14 +300,14 @@
                     </div>
                 </div>
                 <small class="italic uppercase block">AUTOMATICALLY GENERATED </small>
-        
+
                 <div class="grid grid-cols-2 gap-4 items-center mt-6">
                     <div>E2. Birth date</div>
                     <div>
                         <input type="text" id="e2" name="e2" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
                     </div>
                 </div>
-        
+
                 <div class="grid grid-cols-2 gap-4 items-center mt-10">
                     <div>E3. Gender</div>
                     <div class="col-span-1 flex items-center gap-4">
@@ -303,7 +321,7 @@
                         </div>
                     </div>
                 </div>
-        
+
                 <div class="grid grid-cols-2 gap-4 items-center mt-10">
                     <div>E4. Education level</div>
                     <div class="col-span-1 flex flex-col gap-2">
@@ -329,28 +347,28 @@
                         </div>
                     </div>
                 </div>
-        
+
                 <div class="grid grid-cols-2 gap-4 items-center mt-6">
                     <div>E5. Profession/Specialization (as per formal qualifications, diploma obtained)</div>
                     <div>
                         <input type="text" id="e5" name="e5" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
                     </div>
                 </div>
-        
+
                 <div class="grid grid-cols-2 gap-4 items-center mt-6">
                     <div>E6. Total number of years of experience in this area of work (including similar positions in other organizations)</div>
                     <div class="flex items-center gap-4">
                         <input type="text" id="e6" name="e6" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-1/2 p-2.5 disabled:bg-gray-100" /> years            </div>
                 </div>
-        
+
                 <div class="grid grid-cols-2 gap-4 items-center mt-6">
                     <div>E7. Date of hiring within the institution</div>
                     <div>
                         <input type="text" id="e7" name="e7" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
                     </div>
                 </div>
-        
-        
+
+
                 <div class="grid grid-cols-2 gap-4 items-center mt-10">
                     <div>E8. Type of contract:</div>
                     <div class="col-span-1 flex flex-col gap-2">
@@ -389,8 +407,8 @@
                         <input type="text" id="e8_other" name="e8_other" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
                     </div>
                 </div>
-        
-        
+
+
                 <div class="grid grid-cols-2 gap-4 items-center mt-10">
                     <div>E9. Position/Specialty level or rank</div>
                     <div class="col-span-1 flex flex-col gap-2">
@@ -412,8 +430,8 @@
                         </div>
                     </div>
                 </div>
-        
-        
+
+
                 <div class="grid grid-cols-2 gap-4 items-center mt-10">
                     <div>E10. Is the employee directly involved in working with children?</div>
                     <div class="col-span-1 flex items-center gap-4">
@@ -427,7 +445,7 @@
                         </div>
                     </div>
                 </div>
-        
+
                 <div class="grid grid-cols-2 gap-4 items-center mt-10">
                     <div>E11. Does the employee work in night shifts?</div>
                     <div class="col-span-1 flex items-center gap-4">
@@ -441,7 +459,7 @@
                         </div>
                     </div>
                 </div>
-        
+
                 <div class="grid grid-cols-2 gap-4 items-center mt-10">
                     <div>E12. Does the employee work during weekends?</div>
                     <div class="col-span-1 flex items-center gap-4">
@@ -455,7 +473,7 @@
                         </div>
                     </div>
                 </div>
-        
+
                 <div class="grid grid-cols-2 gap-4 items-center mt-10">
                     <div>E13. Have the employee undergone advanced training courses in their specialization in the last three years?</div>
                     <div class="col-span-1 flex items-center gap-4">
@@ -469,21 +487,21 @@
                         </div>
                     </div>
                 </div>
-        
-        
+
+
                 <div class="grid grid-cols-2 gap-4 items-center mt-6">
                     <div>E14. What is the total number of paid calendar leave days the employee is entitled to?</div>
                     <div class="flex items-center gap-4">
                         <input type="text" id="e14" name="e14" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-1/2 p-2.5 disabled:bg-gray-100" /> calendar days            </div>
                 </div>
-        
+
                 <div class="grid grid-cols-2 gap-4 items-center mt-6">
                     <div>E15. What was the employee&#39;s overall gross monthly salary in March 2024?</div>
                     <div class="flex items-center gap-4">
                         <input type="text" id="e15" name="e15" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" /> UZS
                     </div>
                 </div>
-        
+
                 <div class="grid grid-cols-2 gap-4 items-center mt-10">
                     <div>E16. In the last three years, have there been any complaints against the employees regarding misconducts, bad treatments or abuses against the children placed in the institution?</div>
                     <div class="col-span-1 flex items-center gap-4">
@@ -497,7 +515,7 @@
                         </div>
                     </div>
                 </div>
-        
+
                 <div class="grid grid-cols-2 gap-4 items-center mt-10">
                     <div>E17. In the last three years, have the employee been sanctioned for any misconduct, bad treatments or abuse against the children placed in the institution?</div>
                     <div class="col-span-1 flex items-center gap-4">
@@ -511,7 +529,7 @@
                         </div>
                     </div>
                 </div>
-        
+
                 <div class="grid grid-cols-2 gap-4 items-center mt-10">
                     <div>E18. Is the staff eligible for retirement within the next three years due to reaching pension age or already being of pension age?</div>
                     <div class="col-span-1 flex items-center gap-4">
@@ -525,7 +543,7 @@
                         </div>
                     </div>
                 </div>
-        
+
             </form>
 
             <footer id="footer" class="fixed bottom-0 w-full h-12 bg-slate-200 shadow">

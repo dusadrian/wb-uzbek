@@ -38,9 +38,6 @@ const end_dates = [
     'af5_6_d', 'af5_7_d', 'af5_8_d', 'af5_9_d', 'af5_10_d'
 ];
 
-const regElements  = ["i4a"];
-const disElements  = ["i4b"];
-
 let regionCode = '';
 let institutionType = '';
 
@@ -88,6 +85,11 @@ export const instrument4 = {
         flatpickr(util.htmlElement('af13b'), flatpickrConfig2);
 
         ipcRenderer.on("instrumentDataReady", (_event, args) => {
+
+
+            const regElements  = ["i4a"];
+            const disElements  = ["i4b"];
+
 
             services = args.services;
             insons = args.insons;
