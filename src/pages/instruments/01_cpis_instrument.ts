@@ -99,9 +99,8 @@ export const instrument1 = {
 
             services = args.services;
             insons = args.insons;
-            const inson_codes = Object.keys(insons);
             const institution_code = args.userData.institution_code;
-            const inson_user = inson_codes.indexOf(institution_code) >= 0;
+            const inson_user = Object.keys(insons).indexOf(institution_code) >= 0;
 
             const sa5i = util.htmlElement("sa5i");
             const reg_codes = Object.keys(regions);

@@ -93,9 +93,8 @@ export const instrument4 = {
 
             services = args.services;
             insons = args.insons;
-            const inson_codes = Object.keys(insons);
             const institution_code = args.userData.institution_code;
-            const inson_user = inson_codes.indexOf(args.userData.institution_code) >= 0;
+            const inson_user = Object.keys(insons).indexOf(args.userData.institution_code) >= 0;
 
             const reg_codes = Object.keys(regions);
             for (let x = 0; x < regElements.length; x++) {
