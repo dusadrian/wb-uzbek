@@ -83,5 +83,7 @@
     "t82": "(Automatically retrieved from PTR8D)",
     "t83": "Please provide any alternative contact details such as social media profile, parents, siblings, relatives or friends that can be used to reach out to the person",
     "t84": "Please write any observations that might help us identify and contact the person.",
-    "t85": "INSON Center that should track down the person."
+    "t85": "INSON Center that should track down the person.",
+    "settlement": "Settlement",
+    "typeofsettlement": "Type of settlement"
 }

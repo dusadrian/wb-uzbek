@@ -735,5 +735,7 @@
     "t722": "2.2",
     "t723": "Capital repairs for fixed assets",
     "t724": "03",
-    "t725": "Other expenditures (damage compensations, regulatory fines and penalties, etc.)"
+    "t725": "Other expenditures (damage compensations, regulatory fines and penalties, etc.)",
+    "settlement": "Settlement",
+    "typeofsettlement": "Type of settlement"
 }
