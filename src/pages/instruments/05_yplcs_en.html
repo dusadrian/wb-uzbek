@@ -55,15 +55,17 @@
             <div class="grid grid-cols-2 gap-4 items-center mt-12">
                 <div>REG. Region</div>
                 <div>
-                    <input type="text" id="reg" name="reg"
-                        class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                    <select id="reg" name="reg" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+                        <option value="-9" class="t_choose">--- choose ---</option>
+                    </select>
                 </div>
             </div>
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
                 <div>DIS. District</div>
                 <div>
-                    <input type="text" id="dis" name="dis"
-                        class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                    <select id="dis" name="dis" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+                        <option value="-9" class="t_choose">--- choose ---</option>
+                    </select>
                 </div>
             </div>
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
@@ -249,13 +251,8 @@
 
                 </div>
             </div>
-            <div class="grid grid-cols-2 gap-4 items-center mt-6">
-                <div>PI4e. Type of settlement</div>
-                <div class="flex gap-4">
-                    <input type="text" id="pi4e" name="pi4e"
-                        class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
-                </div>
-            </div>
+
+            <input type="hidden" id="pi4e" name="pi4e" />
 
 
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
@@ -320,7 +317,7 @@
             <div class="grid grid-cols-2 items-center gap-4 mt-6">
                 <div>PI6r. Region</div>
                 <div>
-                    <select id="pi6reg" name="pi6reg"
+                    <select id="pi6r" name="pi6r"
                         class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
                         <option value="-9" class="t_choose">--- choose ---</option>
                     </select>
@@ -330,7 +327,7 @@
             <div class="grid grid-cols-2 items-center gap-4 mt-6">
                 <div>PI6d. District</div>
                 <div>
-                    <select id="pi6dis" name="pi6dis"
+                    <select id="pi6d" name="pi6d"
                         class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
                         <option value="-9" class="t_choose">--- choose ---</option>
                     </select>
@@ -437,7 +434,7 @@
                 </div>
             </div>
 
-            <p>b. Legal domicile - City/Village:</p>
+            <p>b. Legal domicile:</p>
             <div class="grid grid-cols-2 items-center gap-4 mt-6">
                 <div class="ml-4">c. Region:</div>
                 <div>
@@ -467,13 +464,8 @@
 
                 </div>
             </div>
-            <div class="grid grid-cols-2 gap-4 items-center mt-6">
-                <div class="ml-4">i. Type of settlement</div>
-                <div class="flex gap-4">
-                    <input type="text" id="pi9i" name="pi9i"
-                        class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
-                </div>
-            </div>
+
+            <input type="hidden" id="pi9i" name="pi9i" />
 
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
                 <div class="ml-4">e. Address:</div>
