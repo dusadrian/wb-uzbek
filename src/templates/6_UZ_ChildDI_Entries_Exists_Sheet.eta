@@ -129,6 +129,7 @@
                         <option value="11"><%= it.t42 %></option>
                         <option value="12"><%= it.t43 %></option>
                         <option value="13"><%= it.t44 %></option>
+                        <option value="14"><%= it.t44_1 %></option>
                     </optgroup>
                     <optgroup label="<%= it.t45 %>">
                         <option value="21"><%= it.t46 %></option>
@@ -457,7 +458,7 @@
         <table class="w-full" aria-describedby="Transfers from other institutions">
             <thead>
                 <tr class="border-b pb-1 mb-1">
-                    <th class="p-2"><%= it.t117 %></th>
+                    <th class="p-2"></th>
                     <th class="p-2"><%= it.t118 %></th>
                     <th class="p-2"><%= it.t119 %></th>
                     <th class="p-2"><%= it.t120 %></th>
@@ -465,7 +466,10 @@
             </thead>
             <tbody>
                 <tr class="border-b">
-                    <td class="p-2"><%= it.t121 %>. <%= it.t122 %></td>
+                    <td class="p-2">
+                        <small class="italic block mb-2"><%= it.t117 %></small>
+                        <%= it.t121 %>. <%= it.t122 %>
+                    </td>
                     <td class="p-2 text-center">
                         <input type="text" id="nex1a_b" name="nex1a_b" class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
                     </td>

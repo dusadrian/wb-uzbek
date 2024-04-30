@@ -1,1024 +1,1053 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <head>
-        <meta charset="UTF-8" />
-        <title>WorldBank</title>
-        <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
-        <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src http: https: data: ; script-src 'self';" />
-        <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; img-src http: https: data: ; script-src 'self';" />
-        <link href="../../../dist/main.css" rel="stylesheet">
-    </head>
+<head>
+    <meta charset="UTF-8" />
+    <title>WorldBank</title>
+    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; img-src http: https: data: ; script-src 'self';" />
+    <meta http-equiv="X-Content-Security-Policy"
+        content="default-src 'self'; img-src http: https: data: ; script-src 'self';" />
+    <link href="../../../dist/main.css" rel="stylesheet">
+</head>
 
-    <body class="relative max-h-screen">
-        <div class="fixed top-0 right-0 left-0 bg-slate-200 h-14 z-50 shadow" id="header">
-        </div>
-        <div class="relative w-full mt-14 pb-10 h-[calc(100vh-6.5rem)] overflow-y-auto">
+<body class="relative max-h-screen">
+    <div class="fixed top-0 right-0 left-0 bg-slate-200 h-14 z-50 shadow" id="header">
+    </div>
+    <div class="relative w-full mt-14 pb-10 h-[calc(100vh-6.5rem)] overflow-y-auto">
 
-            <form class="px-6 mt-10">
-                <div class="grid grid-cols-12 border">
-                    <div class="col-span-1 bg-stone-200 p-2"></div>
-                    <div class="col-span-11 p-2">
-                        <h1 class="text-4xl text-gray-700 pl-4 tracking-wide">Лист сбора сводных данных о поступлении и выходе из детского учреждения и специализированной
-                            школы-интерната</h1>
+        <form class="px-6 mt-10">
+            <div class="grid grid-cols-12 border">
+                <div class="col-span-1 bg-stone-200 p-2"></div>
+                <div class="col-span-11 p-2">
+                    <h1 class="text-4xl text-gray-700 pl-4 tracking-wide">Лист сбора сводных данных о поступлении и
+                        выходе из детского учреждения и специализированной школы-интерната</h1>
+                </div>
+            </div>
+
+            <p class="mt-4 mb-2 text-xl">ВВЕДЕНИЕ</p>
+            <p class="mb-2">Основной целью данного сбора данных является оказание поддержки Правительству Узбекистана в
+                переходе от интернатной опеки к семейным видам опеки над детьми, лишенных родительской опеки Для
+                достижения этой цели мы намерены создать надежный механизм мониторинга на национальном уровне Собирая
+                подробные данные, мы можем принимать обоснованные решения и разрабатывать политику, способствующие
+                распространению альтернативных семейных форм опеки</p>
+            <p class="mb-2">Еще одной важнейшей задачей является повышение качества услуг, предоставляемых детям с
+                инвалидностью в специализированных учреждениях Понимая их уникальные потребности и опыт, мы можем
+                разработать целенаправленные виды вмешательства и улучшить их общее самочувствие Кроме того, мы
+                стремимся использовать и продвигать адекватные альтернативы семейного типа опеки для этих детей</p>
+            <p class="mb-2">Целью данного информационного бюллетеня является всестороннее отслеживание динамики
+                поступления и выхода детей из детских учреждений и школ-интернатов Собирая важную информацию, мы
+                стремимся принимать обоснованные решения, основанные на фактических данных, совершенствовать политику и
+                улучшать общее функционирование служб по опеке над детьми</p>
+            <p class="mb-2">ЦЕЛЬ: Данные, собранные с помощью этого инструмента, способствуют пониманию динамики
+                перевода детей в интернатные центры и из них Это помогает нам выявить закономерности, тенденции и
+                потенциальные области, требующие внимания или улучшения</p>
+            <p class="mb-2">Как заполнять: Данный вопросник необходимо заполнять индивидуально для каждого учреждения,
+                действующего на момент проведения исследования (1 января 2024 г)</p>
+            <p class="mb-2">Источник информации: документы учреждения</p>
+            <p class="mb-2">Ответственный за выполнение: руководитель учреждения, координатор или уполномоченное ими
+                лицо</p>
+            <p class="mb-2">Примерное среднее время выполнения: 40 минут</p>
+
+            <div class="grid grid-cols-2 gap-4 items-center mt-10">
+                <div>Q1 Дата заполнения анкеты</div>
+                <div>
+                    <input type="text" id="q1" name="q1"
+                        class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+                </div>
+            </div>
+            <div class="grid grid-cols-2 gap-4 items-center mt-4">
+                <div>Q2 Имя, отчество и фамилия лица, заполнившего анкету</div>
+                <div>
+                    <input type="text" id="q2" name="q2"
+                        class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+                </div>
+            </div>
+            <div class="grid grid-cols-2 gap-4 items-center mt-4">
+                <div>Q3 Должность</div>
+                <div>
+                    <input type="text" id="q3" name="q3"
+                        class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+                </div>
+            </div>
+            <div class="grid grid-cols-2 gap-4 items-center mt-4">
+                <div>Q4 Профессия</div>
+                <div>
+                    <input type="text" id="q4" name="q4"
+                        class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+                </div>
+            </div>
+            <div class="grid grid-cols-2 gap-4 items-center mt-4">
+                <div>Q5 Телефон</div>
+                <div>
+                    <input type="text" id="q5" name="q5"
+                        class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+                </div>
+            </div>
+            <div class="grid grid-cols-2 gap-4 items-center mt-4">
+                <div>Q6 Электронная почта</div>
+                <div>
+                    <input type="text" id="q6" name="q6"
+                        class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+                </div>
+            </div>
+
+            <h2 class="mt-10 mb-4 text-xl font-medium text-gray-700">1 ОБЩАЯ ИНФОРМАЦИЯ ОБ УЧРЕЖДЕНИИ</h2>
+
+            <div class="grid grid-cols-2 gap-4 items-center mt-4">
+                <div>I1. Название специализированного учебного заведения</div>
+                <div>
+                    <input type="text" id="i1" name="i1"
+                        class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+                </div>
+            </div>
+            <div class="grid grid-cols-2 gap-4 items-center mt-4">
+                <div>I2. Код учреждения из реестра</div>
+                <div>
+                    <input type="text" id="i2" name="i2"
+                        class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+                </div>
+            </div>
+            <div class="grid grid-cols-2 gap-4 items-center mt-4">
+                <div>I3. Адрес учреждения</div>
+                <div>
+                    <input type="text" id="i3" name="i3"
+                        class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+                </div>
+            </div>
+            <div class="grid grid-cols-2 gap-4 items-center mt-4">
+                <div>I4. Код административно-территориальной единицы (МҲОБТ)</div>
+                <div>
+                    <input type="text" id="i4" name="i4"
+                        class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4 mt-4">
+                <div>I4a. Область</div>
+                <div>
+                    <input type="text" id="i4a" name="i4a"
+                        class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+                </div>
+            </div>
+            <div class="grid grid-cols-2 gap-4 mt-4">
+                <div>I4b. Район</div>
+                <div>
+                    <input type="text" id="i4b" name="i4b"
+                        class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 items-center gap-4 mt-6">
+                <div>I4c. Settlement</div>
+                <div>
+                    <input type="text" id="i4c" name="i4c"
+                        class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 items-center gap-4 mt-6">
+                <div>I4d. Type of settlement</div>
+                <div>
+                    <input type="text" id="i4d" name="i4d"
+                        class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4 items-center mt-4">
+                <div>I9. Тип учреждения</div>
+                <div>
+                    <select id="i9" name="i9"
+                        class="border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100">
+                        <option selected>Пожалуйста, выберите один из следующих кодов</option>
+                        <optgroup label="Детские учреждения:">
+                            <option value="11">11. Детский дом (Дом ребенка)</option>
+                            <option value="12">12. Дом «Мехрибонлик»</option>
+                            <option value="13">13. Дом-интернат «Мурувват» для детей с инвалидностью</option>
+                            <option value="14">14. SOS Детская деревня</option>
+                        </optgroup>
+                        <optgroup label="Школы-интернаты:">
+                            <option value="21">21. Тип I-II для глухих или слабослышащих детей</option>
+                            <option value="22">22. Тип III-IV для слепых или слабовидящих детей</option>
+                            <option value="23">23. V тип для детей с тяжелыми нарушениями речи</option>
+                            <option value="24">24. VI тип для детей с нарушениями опорно-двигательного аппарата</option>
+                            <option value="25">25. Тип VII для детей с детьми с задержкой психического
+                                развития/психическими нарушениями</option>
+                            <option value="26">26. Тип VIII для детей с ограниченными интеллектуальными возможностями
+                            </option>
+                        </optgroup>
+                    </select>
+                </div>
+            </div>
+
+            <h2 class="mt-10 mb-4 text-xl font-medium text-gray-700">2 ПОСТУПЛЕНИЯ И ВЫХОДЫ ИЗ ЭТОГО УЧРЕЖДЕНИЯ С 1
+                ЯНВАРЯ ПО 31 ДЕКАБРЯ отчетного года (2023)</h2>
+            <div class="grid grid-cols-3 gap-4 items-center mt-4">
+                <div class="col-span-2">TNR0. Общее количество детей в данном учреждении на 31 декабря года,
+                    предшествующему отчетному году (2023)</div>
+                <div class="col-span-1">
+                    <input type="text" id="tnr0" name="tnr0"
+                        class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+                </div>
+            </div>
+            <div class="grid grid-cols-3 gap-4 items-center mt-4">
+                <div class="col-span-2">NET1. Были ли какие-либо поступления (какими-либо способами) в это заведение в
+                    период с 1 января 2023 года по 31 декабря отчетного года (2023)?</div>
+                <div class="col-span-1 flex gap-4">
+                    <div class="flex items-center">
+                        <input id="net1-1" type="radio" value="1" name="net1"
+                            class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500 disabled:bg-gray-200">
+                        <label for="net1-1" class="ms-2 text-sm font-medium text-gray-900">1 Да</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="net1-2" type="radio" value="0" name="net1"
+                            class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500 disabled:bg-gray-200">
+                        <label for="net1-2" class="ms-2 text-sm font-medium text-gray-900">0 Нет</label>
                     </div>
                 </div>
+            </div>
+            <small class="italic">Если да,</small>
+            <p class="font-medium mt-6">Количество поступлений в это учреждение в течение отчетного года (2023)</p>
+            <table class="w-full"
+                aria-describedby="Количество поступлений в это учреждение в течение отчетного года (2023)">
+                <thead>
+                    <tr class="border-b pb-1 mb-1">
+                        <th class="p-2"></th>
+                        <th class="p-2">Мальчики</th>
+                        <th class="p-2">Девочки</th>
+                        <th class="p-2">Всего</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="border-b">
+                        <td class="p-2">NET1a. Поступление детей 0-2 лет</td>
+                        <td class="p-2 text-center">
+                            <input type="text" id="net1a_b" name="net1a_b"
+                                class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
+                        </td>
+                        <td class="p-2 text-center">
+                            <input type="text" id="net1a_g" name="net1a_g"
+                                class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
+                        </td>
+                        <td class="p-2 text-center">
+                            <input type="text" id="net1a_t" name="net1a_t"
+                                class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
+                        </td>
+                    </tr>
+                    <tr class="border-b">
+                        <td class="p-2">NET1b. Поступление детей 3-6 лет</td>
+                        <td class="p-2 text-center">
+                            <input type="text" id="net1b_b" name="net1b_b"
+                                class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
+                        </td>
+                        <td class="p-2 text-center">
+                            <input type="text" id="net1b_g" name="net1b_g"
+                                class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
+                        </td>
+                        <td class="p-2 text-center">
+                            <input type="text" id="net1b_t" name="net1b_t"
+                                class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
+                        </td>
+                    </tr>
+                    <tr class="border-b">
+                        <td class="p-2">NET1c. Поступление детей 7-10 лет</td>
+                        <td class="p-2 text-center">
+                            <input type="text" id="net1c_b" name="net1c_b"
+                                class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
+                        </td>
+                        <td class="p-2 text-center">
+                            <input type="text" id="net1c_g" name="net1c_g"
+                                class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
+                        </td>
+                        <td class="p-2 text-center">
+                            <input type="text" id="net1c_t" name="net1c_t"
+                                class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
+                        </td>
+                    </tr>
+                    <tr class="border-b">
+                        <td class="p-2">NET1d. Поступление детей 11-14 лет</td>
+                        <td class="p-2 text-center">
+                            <input type="text" id="net1d_b" name="net1d_b"
+                                class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
+                        </td>
+                        <td class="p-2 text-center">
+                            <input type="text" id="net1d_g" name="net1d_g"
+                                class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
+                        </td>
+                        <td class="p-2 text-center">
+                            <input type="text" id="net1d_t" name="net1d_t"
+                                class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
+                        </td>
+                    </tr>
+                    <tr class="border-b">
+                        <td class="p-2">NET1e. Поступление детей 15-17 лет</td>
+                        <td class="p-2 text-center">
+                            <input type="text" id="net1e_b" name="net1e_b"
+                                class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
+                        </td>
+                        <td class="p-2 text-center">
+                            <input type="text" id="net1e_g" name="net1e_g"
+                                class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
+                        </td>
+                        <td class="p-2 text-center">
+                            <input type="text" id="net1e_t" name="net1e_t"
+                                class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
+                        </td>
+                    </tr>
+                    <tr class="border-b">
+                        <td class="p-2">
+                            <p class="block">ТНЕТ. Всего поступлений в это учреждение в течение отчетного года (2023)
+                            </p>
+                            <small class="italic">Рассчитывается автоматически</small>
+                        </td>
+                        <td class="p-2 text-center">
+                            <input type="text" id="tnet_b" name="tnet_b" readonly
+                                class="read-only:bg-gray-100 bg-white border disabled:bg-gray-100 border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
+                        </td>
+                        <td class="p-2 text-center">
+                            <input type="text" id="tnet_g" name="tnet_g" readonly
+                                class="read-only:bg-gray-100 bg-white border disabled:bg-gray-100 border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
+                        </td>
+                        <td class="p-2 text-center">
+                            <input type="text" id="tnet_t" name="tnet_t" readonly
+                                class="read-only:bg-gray-100 bg-white border disabled:bg-gray-100 border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <p class="mt-6 font-medium">Новые поступления в систему альтернативной опеки детей/специализированные
+                школы-интернаты</p>
+            <table class="w-full"
+                aria-describedby="Новые поступления в систему альтернативной опеки детей/специализированные школы-интернаты">
+                <thead>
+                    <tr class="border-b pb-1 mb-1">
+                        <th class="p-2"></th>
+                        <th class="p-2">Мальчики</th>
+                        <th class="p-2">Девочки</th>
+                        <th class="p-2">Всего</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="border-b">
+                        <td class="p-2">NES1. Поступления из семей</td>
+                        <td class="p-2 text-center">
+                            <input type="text" id="nes1_b" name="nes1_b"
+                                class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
+                        </td>
+                        <td class="p-2 text-center">
+                            <input type="text" id="nes1_g" name="nes1_g"
+                                class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
+                        </td>
+                        <td class="p-2 text-center">
+                            <input type="text" id="nes1_t" name="nes1_t"
+                                class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
+                        </td>
+                    </tr>
+                    <tr class="border-b">
+                        <td class="p-2">NES2. Поступления из родильного дома/больницы или брошенные дети</td>
+                        <td class="p-2 text-center">
+                            <input type="text" id="nes2_b" name="nes2_b"
+                                class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
+                        </td>
+                        <td class="p-2 text-center">
+                            <input type="text" id="nes2_g" name="nes2_g"
+                                class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
+                        </td>
+                        <td class="p-2 text-center">
+                            <input type="text" id="nes2_t" name="nes2_t"
+                                class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
+                        </td>
+                    </tr>
+                    <tr class="border-b">
+                        <td class="p-2">NES3. Поступление детей в других ситуациях</td>
+                        <td class="p-2 text-center">
+                            <input type="text" id="nes3_b" name="nes3_b"
+                                class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
+                        </td>
+                        <td class="p-2 text-center">
+                            <input type="text" id="nes3_g" name="nes3_g"
+                                class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
+                        </td>
+                        <td class="p-2 text-center">
+                            <input type="text" id="nes3_t" name="nes3_t"
+                                class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
+                        </td>
+                    </tr>
+                    <tr class="border-b">
+                        <td class="p-2">
+                            <p class="block">NEST. Новые поступления в систему - Всего</p>
+                            <small class="italic">Рассчитывается автоматически</small>
+                        </td>
+                        <td class="p-2 text-center">
+                            <input type="text" id="nest_b" name="nest_b" readonly
+                                class="read-only:bg-gray-100 bg-white border disabled:bg-gray-100 border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
+                        </td>
+                        <td class="p-2 text-center">
+                            <input type="text" id="nest_g" name="nest_g" readonly
+                                class="read-only:bg-gray-100 bg-white border disabled:bg-gray-100 border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
+                        </td>
+                        <td class="p-2 text-center">
+                            <input type="text" id="nest_t" name="nest_t" readonly
+                                class="read-only:bg-gray-100 bg-white border disabled:bg-gray-100 border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
 
-                <p class="mt-4 mb-2 text-xl">ВВЕДЕНИЕ</p>
-                <p class="mb-2">Основной целью данного сбора данных является оказание поддержки Правительству Узбекистана в переходе от интернатной опеки к семейным видам опеки над
-                    детьми, лишенных родительской опеки Для достижения этой цели мы намерены создать надежный механизм мониторинга на национальном уровне Собирая подробные данные, мы
-                    можем принимать обоснованные решения и разрабатывать политику, способствующие распространению альтернативных семейных форм опеки</p>
-                <p class="mb-2">Еще одной важнейшей задачей является повышение качества услуг, предоставляемых детям с инвалидностью в специализированных учреждениях Понимая их
-                    уникальные потребности и опыт, мы можем разработать целенаправленные виды вмешательства и улучшить их общее самочувствие Кроме того, мы стремимся использовать и
-                    продвигать адекватные альтернативы семейного типа опеки для этих детей</p>
-                <p class="mb-2">Целью данного информационного бюллетеня является всестороннее отслеживание динамики поступления и выхода детей из детских учреждений и школ-интернатов
-                    Собирая важную информацию, мы стремимся принимать обоснованные решения, основанные на фактических данных, совершенствовать политику и улучшать общее функционирование
-                    служб по опеке над детьми</p>
-                <p class="mb-2">ЦЕЛЬ: Данные, собранные с помощью этого инструмента, способствуют пониманию динамики перевода детей в интернатные центры и из них Это помогает нам
-                    выявить закономерности, тенденции и потенциальные области, требующие внимания или улучшения</p>
-                <p class="mb-2">Как заполнять: Данный вопросник необходимо заполнять индивидуально для каждого учреждения, действующего на момент проведения исследования (1 января 2024
-                    г)</p>
-                <p class="mb-2">Источник информации: документы учреждения</p>
-                <p class="mb-2">Ответственный за выполнение: руководитель учреждения, координатор или уполномоченное ими лицо</p>
-                <p class="mb-2">Примерное среднее время выполнения: 40 минут</p>
+            <p class="mt-6 font-medium">Переводы из других учреждений</p>
+            <table class="w-full" aria-describedby="Переводы из других учреждений">
+                <thead>
+                    <tr class="border-b pb-1 mb-1">
+                        <th class="p-2"></th>
+                        <th class="p-2">Мальчики</th>
+                        <th class="p-2">Девочки</th>
+                        <th class="p-2">Всего</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="border-b">
+                        <td class="p-2">NEO1. Поступления путем переводов из Детского дома (Дома ребенка)</td>
+                        <td class="p-2 text-center">
+                            <input type="text" id="neo1_b" name="neo1_b"
+                                class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
+                        </td>
+                        <td class="p-2 text-center">
+                            <input type="text" id="neo1_g" name="neo1_g"
+                                class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
+                        </td>
+                        <td class="p-2 text-center">
+                            <input type="text" id="neo1_t" name="neo1_t"
+                                class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
+                        </td>
+                    </tr>
+                    <tr class="border-b">
+                        <td class="p-2">NEO2. Поступления путем переводов из домов «Мехрибонлик»</td>
+                        <td class="p-2 text-center">
+                            <input type="text" id="neo2_b" name="neo2_b"
+                                class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
+                        </td>
+                        <td class="p-2 text-center">
+                            <input type="text" id="neo2_g" name="neo2_g"
+                                class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
+                        </td>
+                        <td class="p-2 text-center">
+                            <input type="text" id="neo2_t" name="neo2_t"
+                                class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
+                        </td>
+                    </tr>
+                    <tr class="border-b">
+                        <td class="p-2">NEO3. Поступление путем переводов из дома-интерната «Муруват» для детей с
+                            инвалидностью</td>
+                        <td class="p-2 text-center">
+                            <input type="text" id="neo3_b" name="neo3_b"
+                                class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
+                        </td>
+                        <td class="p-2 text-center">
+                            <input type="text" id="neo3_g" name="neo3_g"
+                                class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
+                        </td>
+                        <td class="p-2 text-center">
+                            <input type="text" id="neo3_t" name="neo3_t"
+                                class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
+                        </td>
+                    </tr>
+                    <tr class="border-b">
+                        <td class="p-2">NEO4. Поступление путем переводов из детских домов семейного типа</td>
+                        <td class="p-2 text-center">
+                            <input type="text" id="neo4_b" name="neo4_b"
+                                class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
+                        </td>
+                        <td class="p-2 text-center">
+                            <input type="text" id="neo4_g" name="neo4_g"
+                                class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
+                        </td>
+                        <td class="p-2 text-center">
+                            <input type="text" id="neo4_t" name="neo4_t"
+                                class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
+                        </td>
+                    </tr>
+                    <tr class="border-b">
+                        <td class="p-2">NEO5. Поступление из патронатных семей</td>
+                        <td class="p-2 text-center">
+                            <input type="text" id="neo5_b" name="neo5_b"
+                                class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
+                        </td>
+                        <td class="p-2 text-center">
+                            <input type="text" id="neo5_g" name="neo5_g"
+                                class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
+                        </td>
+                        <td class="p-2 text-center">
+                            <input type="text" id="neo5_t" name="neo5_t"
+                                class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
+                        </td>
+                    </tr>
+                    <tr class="border-b">
+                        <td class="p-2">NEO6. Поступления из семей, где оформлена опека/ попечительство на ребенка</td>
+                        <td class="p-2 text-center">
+                            <input type="text" id="neo6_b" name="neo6_b"
+                                class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
+                        </td>
+                        <td class="p-2 text-center">
+                            <input type="text" id="neo6_g" name="neo6_g"
+                                class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
+                        </td>
+                        <td class="p-2 text-center">
+                            <input type="text" id="neo6_t" name="neo6_t"
+                                class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
+                        </td>
+                    </tr>
+                    <tr class="border-b">
+                        <td class="p-2">NEO7. Поступления из (других) школ-интернатов</td>
+                        <td class="p-2 text-center">
+                            <input type="text" id="neo7_b" name="neo7_b"
+                                class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
+                        </td>
+                        <td class="p-2 text-center">
+                            <input type="text" id="neo7_g" name="neo7_g"
+                                class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
+                        </td>
+                        <td class="p-2 text-center">
+                            <input type="text" id="neo7_t" name="neo7_t"
+                                class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
+                        </td>
+                    </tr>
+                    <tr class="border-b">
+                        <td class="p-2">NEO8. Поступления путем переводов из других детских учреждений</td>
+                        <td class="p-2 text-center">
+                            <input type="text" id="neo8_b" name="neo8_b"
+                                class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
+                        </td>
+                        <td class="p-2 text-center">
+                            <input type="text" id="neo8_g" name="neo8_g"
+                                class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
+                        </td>
+                        <td class="p-2 text-center">
+                            <input type="text" id="neo8_t" name="neo8_t"
+                                class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
+                        </td>
+                    </tr>
+                    <tr class="border-b">
+                        <td class="p-2">
+                            <p class="block">NEO. Поступление в данное учреждение путем перевода (количество детей).</p>
+                            <small class="italic">Рассчитывается автоматически</small>
+                        </td>
+                        <td class="p-2 text-center">
+                            <input type="text" id="neo_b" name="neo_b" readonly
+                                class="read-only:bg-gray-100 bg-white border disabled:bg-gray-100 border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
+                        </td>
+                        <td class="p-2 text-center">
+                            <input type="text" id="neo_g" name="neo_g" readonly
+                                class="read-only:bg-gray-100 bg-white border disabled:bg-gray-100 border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
+                        </td>
+                        <td class="p-2 text-center">
+                            <input type="text" id="neo_t" name="neo_t" readonly
+                                class="read-only:bg-gray-100 bg-white border disabled:bg-gray-100 border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
 
-                <div class="grid grid-cols-2 gap-4 items-center mt-10">
-                    <div>Q1 Дата заполнения анкеты</div>
-                    <div>
-                        <input type="text" id="q1" name="q1"
-                               class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+            <div class="grid grid-cols-3 gap-4 items-center mt-4">
+                <div class="col-span-2">NEX1. Были ли выходы (любыми способами) из этого учреждения в период с 1 января
+                    2023 года по 31 декабря отчетного года (2023)?</div>
+                <div class="col-span-1 flex gap-4">
+                    <div class="flex items-center">
+                        <input id="nex1-1" type="radio" value="1" name="nex1"
+                            class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500 disabled:bg-gray-200">
+                        <label for="nex1-1" class="ms-2 text-sm font-medium text-gray-900">1 Да</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="nex1-2" type="radio" value="0" name="nex1"
+                            class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500 disabled:bg-gray-200">
+                        <label for="nex1-2" class="ms-2 text-sm font-medium text-gray-900">0 Нет</label>
                     </div>
                 </div>
-                <div class="grid grid-cols-2 gap-4 items-center mt-4">
-                    <div>Q2 Имя, отчество и фамилия лица, заполнившего анкету</div>
-                    <div>
-                        <input type="text" id="q2" name="q2"
-                               class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
-                    </div>
-                </div>
-                <div class="grid grid-cols-2 gap-4 items-center mt-4">
-                    <div>Q3 Должность</div>
-                    <div>
-                        <input type="text" id="q3" name="q3"
-                               class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
-                    </div>
-                </div>
-                <div class="grid grid-cols-2 gap-4 items-center mt-4">
-                    <div>Q4 Профессия</div>
-                    <div>
-                        <input type="text" id="q4" name="q4"
-                               class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
-                    </div>
-                </div>
-                <div class="grid grid-cols-2 gap-4 items-center mt-4">
-                    <div>Q5 Телефон</div>
-                    <div>
-                        <input type="text" id="q5" name="q5"
-                               class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
-                    </div>
-                </div>
-                <div class="grid grid-cols-2 gap-4 items-center mt-4">
-                    <div>Q6 Электронная почта</div>
-                    <div>
-                        <input type="text" id="q6" name="q6"
-                               class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
-                    </div>
-                </div>
+            </div>
+            <table class="w-full" aria-describedby="Transfers from other institutions">
+                <thead>
+                    <tr class="border-b pb-1 mb-1">
+                        <th class="p-2"></th>
+                        <th class="p-2">Мальчики</th>
+                        <th class="p-2">Девочки</th>
+                        <th class="p-2">Всего</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="border-b">
+                        <td class="p-2">
+                            <small class="italic block mb-2">Если ДА,</small>
+                            NEX1A. Выходы детей 0-2 лет
+                        </td>
+                        <td class="p-2 text-center">
+                            <input type="text" id="nex1a_b" name="nex1a_b"
+                                class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
+                        </td>
+                        <td class="p-2 text-center">
+                            <input type="text" id="nex1a_g" name="nex1a_g"
+                                class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
+                        </td>
+                        <td class="p-2 text-center">
+                            <input type="text" id="nex1a_t" name="nex1a_t"
+                                class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
+                        </td>
+                    </tr>
+                    <tr class="border-b">
+                        <td class="p-2">NEX1b. Выходы детей 3-6 лет</td>
+                        <td class="p-2 text-center">
+                            <input type="text" id="nex1b_b" name="nex1b_b"
+                                class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
+                        </td>
+                        <td class="p-2 text-center">
+                            <input type="text" id="nex1b_g" name="nex1b_g"
+                                class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
+                        </td>
+                        <td class="p-2 text-center">
+                            <input type="text" id="nex1b_t" name="nex1b_t"
+                                class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
+                        </td>
+                    </tr>
+                    <tr class="border-b">
+                        <td class="p-2">NEX1c. Выходы детей 7-10 лет</td>
+                        <td class="p-2 text-center">
+                            <input type="text" id="nex1c_b" name="nex1c_b"
+                                class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
+                        </td>
+                        <td class="p-2 text-center">
+                            <input type="text" id="nex1c_g" name="nex1c_g"
+                                class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
+                        </td>
+                        <td class="p-2 text-center">
+                            <input type="text" id="nex1c_t" name="nex1c_t"
+                                class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
+                        </td>
+                    </tr>
+                    <tr class="border-b">
+                        <td class="p-2">NEX1d. Выходы детей 11-14 лет</td>
+                        <td class="p-2 text-center">
+                            <input type="text" id="nex1d_b" name="nex1d_b"
+                                class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
+                        </td>
+                        <td class="p-2 text-center">
+                            <input type="text" id="nex1d_g" name="nex1d_g"
+                                class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
+                        </td>
+                        <td class="p-2 text-center">
+                            <input type="text" id="nex1d_t" name="nex1d_t"
+                                class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
+                        </td>
+                    </tr>
+                    <tr class="border-b">
+                        <td class="p-2">NEX1e. Выходы детей 15-17 лет</td>
+                        <td class="p-2 text-center">
+                            <input type="text" id="nex1e_b" name="nex1e_b"
+                                class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
+                        </td>
+                        <td class="p-2 text-center">
+                            <input type="text" id="nex1e_g" name="nex1e_g"
+                                class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
+                        </td>
+                        <td class="p-2 text-center">
+                            <input type="text" id="nex1e_t" name="nex1e_t"
+                                class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
+                        </td>
+                    </tr>
+                    <tr class="border-b">
+                        <td class="p-2">NEX1f. Выходы молодых людей от 18 лет и старше</td>
+                        <td class="p-2 text-center">
+                            <input type="text" id="nex1f_b" name="nex1f_b"
+                                class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
+                        </td>
+                        <td class="p-2 text-center">
+                            <input type="text" id="nex1f_g" name="nex1f_g"
+                                class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
+                        </td>
+                        <td class="p-2 text-center">
+                            <input type="text" id="nex1f_t" name="nex1f_t"
+                                class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
+                        </td>
+                    </tr>
+                    <tr class="border-b">
+                        <td class="p-2">
+                            <p class="block">NEXT. Общее количество выходов из этого учреждения в течение отчетного года
+                                (2023)</p>
+                            <small class="italic">Рассчитывается автоматически</small>
+                        </td>
+                        <td class="p-2 text-center">
+                            <input type="text" id="next_b" name="next_b" readonly
+                                class="read-only:bg-gray-100 bg-white border disabled:bg-gray-100 border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
+                        </td>
+                        <td class="p-2 text-center">
+                            <input type="text" id="next_g" name="next_g" readonly
+                                class="read-only:bg-gray-100 bg-white border disabled:bg-gray-100 border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
+                        </td>
+                        <td class="p-2 text-center">
+                            <input type="text" id="next_t" name="next_t" readonly
+                                class="read-only:bg-gray-100 bg-white border disabled:bg-gray-100 border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
 
-                <h2 class="mt-10 mb-4 text-xl font-medium text-gray-700">1 ОБЩАЯ ИНФОРМАЦИЯ ОБ УЧРЕЖДЕНИИ</h2>
+            <p class="mt-6 font-medium">Выход за пределы системы</p>
+            <table class="w-full" aria-describedby="Выход за пределы системы">
+                <thead>
+                    <tr class="border-b pb-1 mb-1">
+                        <th class="p-2"></th>
+                        <th class="p-2">Мальчики</th>
+                        <th class="p-2">Девочки</th>
+                        <th class="p-2">Всего</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="border-b">
+                        <td class="p-2">EOS1. Реинтеграция в семью</td>
+                        <td class="p-2 text-center">
+                            <input type="text" id="eos1_b" name="eos1_b"
+                                class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
+                        </td>
+                        <td class="p-2 text-center">
+                            <input type="text" id="eos1_g" name="eos1_g"
+                                class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
+                        </td>
+                        <td class="p-2 text-center">
+                            <input type="text" id="eos1_t" name="eos1_t"
+                                class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
+                        </td>
+                    </tr>
+                    <tr class="border-b">
+                        <td class="p-2">EOS2. Усыновление/удочерение</td>
+                        <td class="p-2 text-center">
+                            <input type="text" id="eos2_b" name="eos2_b"
+                                class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
+                        </td>
+                        <td class="p-2 text-center">
+                            <input type="text" id="eos2_g" name="eos2_g"
+                                class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
+                        </td>
+                        <td class="p-2 text-center">
+                            <input type="text" id="eos2_t" name="eos2_t"
+                                class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
+                        </td>
+                    </tr>
+                    <tr class="border-b">
+                        <td class="p-2">EOS3. Достижение возраста 18+ (ситуации, не встречающиеся среди
+                            вышеперечисленных)</td>
+                        <td class="p-2 text-center">
+                            <input type="text" id="eos3_b" name="eos3_b"
+                                class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
+                        </td>
+                        <td class="p-2 text-center">
+                            <input type="text" id="eos3_g" name="eos3_g"
+                                class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
+                        </td>
+                        <td class="p-2 text-center">
+                            <input type="text" id="eos3_t" name="eos3_t"
+                                class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
+                        </td>
+                    </tr>
+                    <tr class="border-b">
+                        <td class="p-2">EOS4. Окончание среднего образования (только для школы-интерната)</td>
+                        <td class="p-2 text-center">
+                            <input type="text" id="eos4_b" name="eos4_b"
+                                class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
+                        </td>
+                        <td class="p-2 text-center">
+                            <input type="text" id="eos4_g" name="eos4_g"
+                                class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
+                        </td>
+                        <td class="p-2 text-center">
+                            <input type="text" id="eos4_t" name="eos4_t"
+                                class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
+                        </td>
+                    </tr>
+                    <tr class="border-b">
+                        <td class="p-2">
+                            <p class="block">EOST. Выходы за пределы системы - Всего</p>
+                            <small class="italic">Рассчитывается автоматически</small>
+                        </td>
+                        <td class="p-2 text-center">
+                            <input type="text" id="eost_b" name="eost_b" readonly
+                                class="read-only:bg-gray-100 bg-white border disabled:bg-gray-100 border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
+                        </td>
+                        <td class="p-2 text-center">
+                            <input type="text" id="eost_g" name="eost_g" readonly
+                                class="read-only:bg-gray-100 bg-white border disabled:bg-gray-100 border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
+                        </td>
+                        <td class="p-2 text-center">
+                            <input type="text" id="eost_t" name="eost_t" readonly
+                                class="read-only:bg-gray-100 bg-white border disabled:bg-gray-100 border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
 
-                <div class="grid grid-cols-2 gap-4 items-center mt-4">
-                    <div>I1. Название специализированного учебного заведения</div>
-                    <div>
-                        <input type="text" id="i1" name="i1"
-                               class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
-                    </div>
-                </div>
-                <div class="grid grid-cols-2 gap-4 items-center mt-4">
-                    <div>I2. Код учреждения из реестра</div>
-                    <div>
-                        <input type="text" id="i2" name="i2"
-                               class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
-                    </div>
-                </div>
-                <div class="grid grid-cols-2 gap-4 items-center mt-4">
-                    <div>I3. Адрес учреждения</div>
-                    <div>
-                        <input type="text" id="i3" name="i3"
-                               class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
-                    </div>
-                </div>
-                <div class="grid grid-cols-2 gap-4 items-center mt-4">
-                    <div>I4. Код административно-территориальной единицы (МҲОБТ)</div>
-                    <div>
-                        <input type="text" id="i4" name="i4"
-                               class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
-                    </div>
-                </div>
+            <p class="mt-6 font-medium">Переводы в другие альтернативные службы для детей</p>
+            <table class="w-full" aria-describedby="Переводы в другие альтернативные службы для детей">
+                <thead>
+                    <tr class="border-b pb-1 mb-1">
+                        <th class="p-2"></th>
+                        <th class="p-2">Мальчики</th>
+                        <th class="p-2">Девочки</th>
+                        <th class="p-2">Всего</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="border-b">
+                        <td class="p-2">EXT0. Размещение в семьи с оформлением опеки/попечительства на ребенка</td>
+                        <td class="p-2 text-center">
+                            <input type="text" id="ext0_b" name="ext0_b"
+                                class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
+                        </td>
+                        <td class="p-2 text-center">
+                            <input type="text" id="ext0_g" name="ext0_g"
+                                class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
+                        </td>
+                        <td class="p-2 text-center">
+                            <input type="text" id="ext0_t" name="ext0_t"
+                                class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
+                        </td>
+                    </tr>
+                    <tr class="border-b">
+                        <td class="p-2">EXT1. Размещение в патронатные семьи</td>
+                        <td class="p-2 text-center">
+                            <input type="text" id="ext1_b" name="ext1_b"
+                                class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
+                        </td>
+                        <td class="p-2 text-center">
+                            <input type="text" id="ext1_g" name="ext1_g"
+                                class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
+                        </td>
+                        <td class="p-2 text-center">
+                            <input type="text" id="ext1_t" name="ext1_t"
+                                class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
+                        </td>
+                    </tr>
+                    <tr class="border-b">
+                        <td class="p-2">EXT2. Переводы в дома «Мехрибонлик»</td>
+                        <td class="p-2 text-center">
+                            <input type="text" id="ext2_b" name="ext2_b"
+                                class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
+                        </td>
+                        <td class="p-2 text-center">
+                            <input type="text" id="ext2_g" name="ext2_g"
+                                class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
+                        </td>
+                        <td class="p-2 text-center">
+                            <input type="text" id="ext2_t" name="ext2_t"
+                                class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
+                        </td>
+                    </tr>
+                    <tr class="border-b">
+                        <td class="p-2">EXT3. Переводы в дом -интернат «Мурувват» для детей с инвалидностью</td>
+                        <td class="p-2 text-center">
+                            <input type="text" id="ext3_b" name="ext3_b"
+                                class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
+                        </td>
+                        <td class="p-2 text-center">
+                            <input type="text" id="ext3_g" name="ext3_g"
+                                class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
+                        </td>
+                        <td class="p-2 text-center">
+                            <input type="text" id="ext3_t" name="ext3_t"
+                                class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
+                        </td>
+                    </tr>
+                    <tr class="border-b">
+                        <td class="p-2">EXT4. Переводы в детские дома семейного типа</td>
+                        <td class="p-2 text-center">
+                            <input type="text" id="ext4_b" name="ext4_b"
+                                class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
+                        </td>
+                        <td class="p-2 text-center">
+                            <input type="text" id="ext4_g" name="ext4_g"
+                                class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
+                        </td>
+                        <td class="p-2 text-center">
+                            <input type="text" id="ext4_t" name="ext4_t"
+                                class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
+                        </td>
+                    </tr>
+                    <tr class="border-b">
+                        <td class="p-2">EXT5. Переводы в другие специализированные школы-интернаты</td>
+                        <td class="p-2 text-center">
+                            <input type="text" id="ext5_b" name="ext5_b"
+                                class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
+                        </td>
+                        <td class="p-2 text-center">
+                            <input type="text" id="ext5_g" name="ext5_g"
+                                class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
+                        </td>
+                        <td class="p-2 text-center">
+                            <input type="text" id="ext5_t" name="ext5_t"
+                                class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
+                        </td>
+                    </tr>
+                    <tr class="border-b">
+                        <td class="p-2">EXT6. Переводы в школы-интернаты санаторного типа</td>
+                        <td class="p-2 text-center">
+                            <input type="text" id="ext6_b" name="ext6_b"
+                                class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
+                        </td>
+                        <td class="p-2 text-center">
+                            <input type="text" id="ext6_g" name="ext6_g"
+                                class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
+                        </td>
+                        <td class="p-2 text-center">
+                            <input type="text" id="ext6_t" name="ext6_t"
+                                class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
+                        </td>
+                    </tr>
+                    <tr class="border-b">
+                        <td class="p-2">EXT7. Перевод в другие детские учреждения</td>
+                        <td class="p-2 text-center">
+                            <input type="text" id="ext7_b" name="ext7_b"
+                                class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
+                        </td>
+                        <td class="p-2 text-center">
+                            <input type="text" id="ext7_g" name="ext7_g"
+                                class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
+                        </td>
+                        <td class="p-2 text-center">
+                            <input type="text" id="ext7_t" name="ext7_t"
+                                class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
+                        </td>
+                    </tr>
+                    <tr class="border-b">
+                        <td class="p-2">
+                            <p class="block">EXTT. Переводы на другие альтернативные службы для детей - Всего</p>
+                        </td>
+                        <td class="p-2 text-center">
+                            <input type="text" id="extt_b" name="extt_b" readonly
+                                class="read-only:bg-gray-100 bg-white border disabled:bg-gray-100 border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
+                        </td>
+                        <td class="p-2 text-center">
+                            <input type="text" id="extt_g" name="extt_g" readonly
+                                class="read-only:bg-gray-100 bg-white border disabled:bg-gray-100 border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
+                        </td>
+                        <td class="p-2 text-center">
+                            <input type="text" id="extt_t" name="extt_t" readonly
+                                class="read-only:bg-gray-100 bg-white border disabled:bg-gray-100 border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
 
-                <div class="grid grid-cols-2 gap-4 mt-4">
-                    <div>I4a. Область</div>
-                    <div>
-                        <input type="text" id="i4a" name="i4a"
-                               class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
-                    </div>
-                </div>
-                <div class="grid grid-cols-2 gap-4 mt-4">
-                    <div>I4b. Район</div>
-                    <div>
-                        <input type="text" id="i4b" name="i4b"
-                               class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
-                    </div>
-                </div>
+            <p class="mt-6 font-medium">Переводы в службы для взрослых и другие способы выхода</p>
+            <table class="w-full" aria-describedby="Переводы в службы для взрослых и другие способы выхода">
+                <thead>
+                    <tr class="border-b pb-1 mb-1">
+                        <th class="p-2"></th>
+                        <th class="p-2">Мальчики</th>
+                        <th class="p-2">Девочки</th>
+                        <th class="p-2">Всего</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="border-b">
+                        <td class="p-2">TSA1. Переводы в учреждения для взрослых</td>
+                        <td class="p-2 text-center">
+                            <input type="text" id="tsa1_b" name="tsa1_b"
+                                class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
+                        </td>
+                        <td class="p-2 text-center">
+                            <input type="text" id="tsa1_g" name="tsa1_g"
+                                class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
+                        </td>
+                        <td class="p-2 text-center">
+                            <input type="text" id="tsa1_t" name="tsa1_t"
+                                class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
+                        </td>
+                    </tr>
+                    <tr class="border-b">
+                        <td class="p-2">TSA2. Смерть </td>
+                        <td class="p-2 text-center">
+                            <input type="text" id="tsa2_b" name="tsa2_b"
+                                class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
+                        </td>
+                        <td class="p-2 text-center">
+                            <input type="text" id="tsa2_g" name="tsa2_g"
+                                class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
+                        </td>
+                        <td class="p-2 text-center">
+                            <input type="text" id="tsa2_t" name="tsa2_t"
+                                class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
+                        </td>
+                    </tr>
+                    <tr class="border-b">
+                        <td class="p-2">TSA3. Другие случаи</td>
+                        <td class="p-2 text-center">
+                            <input type="text" id="tsa3_b" name="tsa3_b"
+                                class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
+                        </td>
+                        <td class="p-2 text-center">
+                            <input type="text" id="tsa3_g" name="tsa3_g"
+                                class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
+                        </td>
+                        <td class="p-2 text-center">
+                            <input type="text" id="tsa3_t" name="tsa3_t"
+                                class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
+                        </td>
+                    </tr>
+                    <tr class="border-b">
+                        <td class="p-2">
+                            <p class="block">TNR1. Общее количество детей в этом учреждении на 31 декабря отчетного года
+                                (2023)</p>
+                        </td>
+                        <td class="p-2 text-center">
+                            <input type="text" id="tnr1_b" name="tnr1_b" readonly
+                                class="read-only:bg-gray-100 bg-white border disabled:bg-gray-100 border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
+                        </td>
+                        <td class="p-2 text-center">
+                            <input type="text" id="tnr1_g" name="tnr1_g" readonly
+                                class="read-only:bg-gray-100 bg-white border disabled:bg-gray-100 border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
+                        </td>
+                        <td class="p-2 text-center">
+                            <input type="text" id="tnr1_t" name="tnr1_t" readonly
+                                class="read-only:bg-gray-100 bg-white border disabled:bg-gray-100 border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
 
-                <div class="grid grid-cols-2 items-center gap-4 mt-6">
-                    <div>I4c. Settlement</div>
-                    <div>
-                        <input type="text" id="i4c" name="i4c"
-                               class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
-                    </div>
-                </div>
+        </form>
 
-                <div class="grid grid-cols-2 items-center gap-4 mt-6">
-                    <div>I4d. Type of settlement</div>
-                    <div>
-                        <input type="text" id="i4d" name="i4d"
-                               class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
-                    </div>
-                </div>
+        <footer id="footer" class="fixed bottom-0 w-full h-12 bg-slate-200 shadow">
+            <div class="flex justify-center h-full items-center">
 
-                <div class="grid grid-cols-2 gap-4 items-center mt-4">
-                    <div>I9. Тип учреждения</div>
-                    <div>
-                        <select id="i9" name="i9"
-                                class="border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100">
-                            <option selected>Пожалуйста, выберите один из следующих кодов</option>
-                            <optgroup label="Детские учреждения:">
-                                <option value="11">11 Детский дом (Дом ребенка)</option>
-                                <option value="12">12 Дом «Мехрибонлик»</option>
-                                <option value="13">13 Дом-интернат «Мурувват» для детей с инвалидностью</option>
-                            </optgroup>
-                            <optgroup label="Школы-интернаты:">
-                                <option value="21">21 Тип I-II для глухих или слабослышащих детей</option>
-                                <option value="22">22 Тип III-IV для слепых или слабовидящих детей</option>
-                                <option value="23">23 V тип для детей с тяжелыми нарушениями речи</option>
-                                <option value="24">24 VI тип для детей с нарушениями опорно-двигательного аппарата</option>
-                                <option value="25">25 Тип VII для детей с детьми с задержкой психического развития/психическими нарушениями</option>
-                                <option value="26">26 Тип VIII для детей с ограниченными интеллектуальными возможностями</option>
-                            </optgroup>
-                        </select>
-                    </div>
-                </div>
+                <button type="button"
+                    class="flex items-center gap-2 text-white bg-menuButton/80 hover:bg-menuButton focus:ring-4 focus:ring-menuButton/50 font-medium rounded-lg text-sm px-3 py-1"
+                    id="salveazaForm">
+                    <svg class="fill-white w-4 h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                        <!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                        <path
+                            d="M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V173.3c0-17-6.7-33.3-18.7-45.3L352 50.7C340 38.7 323.7 32 306.7 32H64zm0 96c0-17.7 14.3-32 32-32H288c17.7 0 32 14.3 32 32v64c0 17.7-14.3 32-32 32H96c-17.7 0-32-14.3-32-32V128zM224 288a64 64 0 1 1 0 128 64 64 0 1 1 0-128z" />
+                    </svg>
+                    <span class="t_button_save"></span>
+                </button>
+                <button type="button"
+                    class="flex items-center gap-2 text-white bg-menuButton/80 hover:bg-menuButton focus:ring-4 focus:ring-menuButton/50 font-medium rounded-lg text-sm px-3 py-1 ml-4"
+                    id="finalizeazaForm">
+                    <svg class="fill-white w-4 h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                        <!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                        <path
+                            d="M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V173.3c0-17-6.7-33.3-18.7-45.3L352 50.7C340 38.7 323.7 32 306.7 32H64zm0 96c0-17.7 14.3-32 32-32H288c17.7 0 32 14.3 32 32v64c0 17.7-14.3 32-32 32H96c-17.7 0-32-14.3-32-32V128zM224 288a64 64 0 1 1 0 128 64 64 0 1 1 0-128z" />
+                    </svg>
+                    <span class="t_button_complete"></span>
+                </button>
+                <button type="button"
+                    class="flex items-center gap-2 text-white bg-red-500 hover:bg-red-500 focus:ring-4 focus:ring-red-500/50 font-medium rounded-lg text-sm px-3 py-1 ml-4"
+                    id="debugForm">
+                    <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="bug"
+                        class="fill-white w-4 h-4" role="img" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512">
+                        <path fill="currentColor"
+                            d="M511.988 288.9c-.478 17.43-15.217 31.1-32.653 31.1H424v16c0 21.864-4.882 42.584-13.6 61.145l60.228 60.228c12.496 12.497 12.496 32.758 0 45.255-12.498 12.497-32.759 12.496-45.256 0l-54.736-54.736C345.886 467.965 314.351 480 280 480V236c0-6.627-5.373-12-12-12h-24c-6.627 0-12 5.373-12 12v244c-34.351 0-65.886-12.035-90.636-32.108l-54.736 54.736c-12.498 12.497-32.759 12.496-45.256 0-12.496-12.497-12.496-32.758 0-45.255l60.228-60.228C92.882 378.584 88 357.864 88 336v-16H32.666C15.23 320 .491 306.33.013 288.9-.484 270.816 14.028 256 32 256h56v-58.745l-46.628-46.628c-12.496-12.497-12.496-32.758 0-45.255 12.498-12.497 32.758-12.497 45.256 0L141.255 160h229.489l54.627-54.627c12.498-12.497 32.758-12.497 45.256 0 12.496 12.497 12.496 32.758 0 45.255L424 197.255V256h56c17.972 0 32.484 14.816 31.988 32.9zM257 0c-61.856 0-112 50.144-112 112h224C369 50.144 318.856 0 257 0z">
+                        </path>
+                    </svg>&nbsp;debug</button>
+            </div>
+        </footer>
 
-                <h2 class="mt-10 mb-4 text-xl font-medium text-gray-700">2 ПОСТУПЛЕНИЯ И ВЫХОДЫ ИЗ ЭТОГО УЧРЕЖДЕНИЯ С 1 ЯНВАРЯ ПО 31 ДЕКАБРЯ отчетного года (2023)</h2>
-                <div class="grid grid-cols-3 gap-4 items-center mt-4">
-                    <div class="col-span-2">TNR0. Общее количество детей в данном учреждении на 31 декабря года, предшествующему отчетному году (2023)</div>
-                    <div class="col-span-1">
-                        <input type="text" id="tnr0" name="tnr0"
-                               class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
-                    </div>
-                </div>
-                <div class="grid grid-cols-3 gap-4 items-center mt-4">
-                    <div class="col-span-2">NET1. Были ли какие-либо поступления (какими-либо способами) в это заведение в период с 1 января 2023 года по 31 декабря отчетного года
-                        (2023)?</div>
-                    <div class="col-span-1 flex gap-4">
-                        <div class="flex items-center">
-                            <input id="net1-1" type="radio" value="1" name="net1" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500 disabled:bg-gray-200">
-                            <label for="net1-1" class="ms-2 text-sm font-medium text-gray-900">1 Да</label>
-                        </div>
-                        <div class="flex items-center">
-                            <input id="net1-2" type="radio" value="0" name="net1" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500 disabled:bg-gray-200">
-                            <label for="net1-2" class="ms-2 text-sm font-medium text-gray-900">0 Нет</label>
-                        </div>
-                    </div>
-                </div>
-                <small class="italic">Если да,</small>
-                <p class="font-medium mt-6">Количество поступлений в это учреждение в течение отчетного года (2023)</p>
-                <table class="w-full" aria-describedby="Количество поступлений в это учреждение в течение отчетного года (2023)">
-                    <thead>
-                        <tr class="border-b pb-1 mb-1">
-                            <th class="p-2"></th>
-                            <th class="p-2">Мальчики</th>
-                            <th class="p-2">Девочки</th>
-                            <th class="p-2">Всего</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr class="border-b">
-                            <td class="p-2">NET1a. Поступление детей 0-2 лет</td>
-                            <td class="p-2 text-center">
-                                <input type="text" id="net1a_b" name="net1a_b"
-                                       class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
-                            </td>
-                            <td class="p-2 text-center">
-                                <input type="text" id="net1a_g" name="net1a_g"
-                                       class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
-                            </td>
-                            <td class="p-2 text-center">
-                                <input type="text" id="net1a_t" name="net1a_t"
-                                       class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
-                            </td>
-                        </tr>
-                        <tr class="border-b">
-                            <td class="p-2">NET1b. Поступление детей 3-6 лет</td>
-                            <td class="p-2 text-center">
-                                <input type="text" id="net1b_b" name="net1b_b"
-                                       class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
-                            </td>
-                            <td class="p-2 text-center">
-                                <input type="text" id="net1b_g" name="net1b_g"
-                                       class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
-                            </td>
-                            <td class="p-2 text-center">
-                                <input type="text" id="net1b_t" name="net1b_t"
-                                       class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
-                            </td>
-                        </tr>
-                        <tr class="border-b">
-                            <td class="p-2">NET1c. Поступление детей 7-10 лет</td>
-                            <td class="p-2 text-center">
-                                <input type="text" id="net1c_b" name="net1c_b"
-                                       class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
-                            </td>
-                            <td class="p-2 text-center">
-                                <input type="text" id="net1c_g" name="net1c_g"
-                                       class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
-                            </td>
-                            <td class="p-2 text-center">
-                                <input type="text" id="net1c_t" name="net1c_t"
-                                       class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
-                            </td>
-                        </tr>
-                        <tr class="border-b">
-                            <td class="p-2">NET1d. Поступление детей 11-14 лет</td>
-                            <td class="p-2 text-center">
-                                <input type="text" id="net1d_b" name="net1d_b"
-                                       class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
-                            </td>
-                            <td class="p-2 text-center">
-                                <input type="text" id="net1d_g" name="net1d_g"
-                                       class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
-                            </td>
-                            <td class="p-2 text-center">
-                                <input type="text" id="net1d_t" name="net1d_t"
-                                       class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
-                            </td>
-                        </tr>
-                        <tr class="border-b">
-                            <td class="p-2">NET1e. Поступление детей 15-17 лет</td>
-                            <td class="p-2 text-center">
-                                <input type="text" id="net1e_b" name="net1e_b"
-                                       class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
-                            </td>
-                            <td class="p-2 text-center">
-                                <input type="text" id="net1e_g" name="net1e_g"
-                                       class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
-                            </td>
-                            <td class="p-2 text-center">
-                                <input type="text" id="net1e_t" name="net1e_t"
-                                       class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
-                            </td>
-                        </tr>
-                        <tr class="border-b">
-                            <td class="p-2">
-                                <p class="block">ТНЕТ. Всего поступлений в это учреждение в течение отчетного года (2023)</p>
-                                <small class="italic">Рассчитывается автоматически</small>
-                            </td>
-                            <td class="p-2 text-center">
-                                <input type="text" id="tnet_b" name="tnet_b" readonly
-                                       class="read-only:bg-gray-100 bg-white border disabled:bg-gray-100 border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
-                            </td>
-                            <td class="p-2 text-center">
-                                <input type="text" id="tnet_g" name="tnet_g" readonly
-                                       class="read-only:bg-gray-100 bg-white border disabled:bg-gray-100 border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
-                            </td>
-                            <td class="p-2 text-center">
-                                <input type="text" id="tnet_t" name="tnet_t" readonly
-                                       class="read-only:bg-gray-100 bg-white border disabled:bg-gray-100 border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-                <p class="mt-6 font-medium">Новые поступления в систему альтернативной опеки детей/специализированные школы-интернаты</p>
-                <table class="w-full" aria-describedby="Новые поступления в систему альтернативной опеки детей/специализированные школы-интернаты">
-                    <thead>
-                        <tr class="border-b pb-1 mb-1">
-                            <th class="p-2"></th>
-                            <th class="p-2">Мальчики</th>
-                            <th class="p-2">Девочки</th>
-                            <th class="p-2">Всего</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr class="border-b">
-                            <td class="p-2">NES1. Поступления из семей</td>
-                            <td class="p-2 text-center">
-                                <input type="text" id="nes1_b" name="nes1_b"
-                                       class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
-                            </td>
-                            <td class="p-2 text-center">
-                                <input type="text" id="nes1_g" name="nes1_g"
-                                       class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
-                            </td>
-                            <td class="p-2 text-center">
-                                <input type="text" id="nes1_t" name="nes1_t"
-                                       class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
-                            </td>
-                        </tr>
-                        <tr class="border-b">
-                            <td class="p-2">NES2. Поступления из родильного дома/больницы или брошенные дети</td>
-                            <td class="p-2 text-center">
-                                <input type="text" id="nes2_b" name="nes2_b"
-                                       class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
-                            </td>
-                            <td class="p-2 text-center">
-                                <input type="text" id="nes2_g" name="nes2_g"
-                                       class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
-                            </td>
-                            <td class="p-2 text-center">
-                                <input type="text" id="nes2_t" name="nes2_t"
-                                       class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
-                            </td>
-                        </tr>
-                        <tr class="border-b">
-                            <td class="p-2">NES3. Поступление детей в других ситуациях</td>
-                            <td class="p-2 text-center">
-                                <input type="text" id="nes3_b" name="nes3_b"
-                                       class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
-                            </td>
-                            <td class="p-2 text-center">
-                                <input type="text" id="nes3_g" name="nes3_g"
-                                       class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
-                            </td>
-                            <td class="p-2 text-center">
-                                <input type="text" id="nes3_t" name="nes3_t"
-                                       class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
-                            </td>
-                        </tr>
-                        <tr class="border-b">
-                            <td class="p-2">
-                                <p class="block">NEST. Новые поступления в систему - Всего</p>
-                                <small class="italic">Рассчитывается автоматически</small>
-                            </td>
-                            <td class="p-2 text-center">
-                                <input type="text" id="nest_b" name="nest_b" readonly
-                                       class="read-only:bg-gray-100 bg-white border disabled:bg-gray-100 border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
-                            </td>
-                            <td class="p-2 text-center">
-                                <input type="text" id="nest_g" name="nest_g" readonly
-                                       class="read-only:bg-gray-100 bg-white border disabled:bg-gray-100 border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
-                            </td>
-                            <td class="p-2 text-center">
-                                <input type="text" id="nest_t" name="nest_t" readonly
-                                       class="read-only:bg-gray-100 bg-white border disabled:bg-gray-100 border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-
-                <p class="mt-6 font-medium">Переводы из других учреждений</p>
-                <table class="w-full" aria-describedby="Переводы из других учреждений">
-                    <thead>
-                        <tr class="border-b pb-1 mb-1">
-                            <th class="p-2"></th>
-                            <th class="p-2">Мальчики</th>
-                            <th class="p-2">Девочки</th>
-                            <th class="p-2">Всего</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr class="border-b">
-                            <td class="p-2">NEO1. Поступления путем переводов из Детского дома (Дома ребенка)</td>
-                            <td class="p-2 text-center">
-                                <input type="text" id="neo1_b" name="neo1_b"
-                                       class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
-                            </td>
-                            <td class="p-2 text-center">
-                                <input type="text" id="neo1_g" name="neo1_g"
-                                       class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
-                            </td>
-                            <td class="p-2 text-center">
-                                <input type="text" id="neo1_t" name="neo1_t"
-                                       class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
-                            </td>
-                        </tr>
-                        <tr class="border-b">
-                            <td class="p-2">NEO2. Поступления путем переводов из домов «Мехрибонлик»</td>
-                            <td class="p-2 text-center">
-                                <input type="text" id="neo2_b" name="neo2_b"
-                                       class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
-                            </td>
-                            <td class="p-2 text-center">
-                                <input type="text" id="neo2_g" name="neo2_g"
-                                       class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
-                            </td>
-                            <td class="p-2 text-center">
-                                <input type="text" id="neo2_t" name="neo2_t"
-                                       class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
-                            </td>
-                        </tr>
-                        <tr class="border-b">
-                            <td class="p-2">NEO3. Поступление путем переводов из дома-интерната «Муруват» для детей с инвалидностью</td>
-                            <td class="p-2 text-center">
-                                <input type="text" id="neo3_b" name="neo3_b"
-                                       class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
-                            </td>
-                            <td class="p-2 text-center">
-                                <input type="text" id="neo3_g" name="neo3_g"
-                                       class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
-                            </td>
-                            <td class="p-2 text-center">
-                                <input type="text" id="neo3_t" name="neo3_t"
-                                       class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
-                            </td>
-                        </tr>
-                        <tr class="border-b">
-                            <td class="p-2">NEO4. Поступление путем переводов из детских домов семейного типа</td>
-                            <td class="p-2 text-center">
-                                <input type="text" id="neo4_b" name="neo4_b"
-                                       class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
-                            </td>
-                            <td class="p-2 text-center">
-                                <input type="text" id="neo4_g" name="neo4_g"
-                                       class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
-                            </td>
-                            <td class="p-2 text-center">
-                                <input type="text" id="neo4_t" name="neo4_t"
-                                       class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
-                            </td>
-                        </tr>
-                        <tr class="border-b">
-                            <td class="p-2">NEO5. Поступление из патронатных семей</td>
-                            <td class="p-2 text-center">
-                                <input type="text" id="neo5_b" name="neo5_b"
-                                       class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
-                            </td>
-                            <td class="p-2 text-center">
-                                <input type="text" id="neo5_g" name="neo5_g"
-                                       class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
-                            </td>
-                            <td class="p-2 text-center">
-                                <input type="text" id="neo5_t" name="neo5_t"
-                                       class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
-                            </td>
-                        </tr>
-                        <tr class="border-b">
-                            <td class="p-2">NEO6. Поступления из семей, где оформлена опека/ попечительство на ребенка</td>
-                            <td class="p-2 text-center">
-                                <input type="text" id="neo6_b" name="neo6_b"
-                                       class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
-                            </td>
-                            <td class="p-2 text-center">
-                                <input type="text" id="neo6_g" name="neo6_g"
-                                       class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
-                            </td>
-                            <td class="p-2 text-center">
-                                <input type="text" id="neo6_t" name="neo6_t"
-                                       class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
-                            </td>
-                        </tr>
-                        <tr class="border-b">
-                            <td class="p-2">NEO7. Поступления из (других) школ-интернатов</td>
-                            <td class="p-2 text-center">
-                                <input type="text" id="neo7_b" name="neo7_b"
-                                       class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
-                            </td>
-                            <td class="p-2 text-center">
-                                <input type="text" id="neo7_g" name="neo7_g"
-                                       class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
-                            </td>
-                            <td class="p-2 text-center">
-                                <input type="text" id="neo7_t" name="neo7_t"
-                                       class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
-                            </td>
-                        </tr>
-                        <tr class="border-b">
-                            <td class="p-2">NEO8. Поступления путем переводов из других детских учреждений</td>
-                            <td class="p-2 text-center">
-                                <input type="text" id="neo8_b" name="neo8_b"
-                                       class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
-                            </td>
-                            <td class="p-2 text-center">
-                                <input type="text" id="neo8_g" name="neo8_g"
-                                       class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
-                            </td>
-                            <td class="p-2 text-center">
-                                <input type="text" id="neo8_t" name="neo8_t"
-                                       class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
-                            </td>
-                        </tr>
-                        <tr class="border-b">
-                            <td class="p-2">
-                                <p class="block">NEO. Поступление в данное учреждение путем перевода (количество детей).</p>
-                                <small class="italic">Рассчитывается автоматически</small>
-                            </td>
-                            <td class="p-2 text-center">
-                                <input type="text" id="neo_b" name="neo_b" readonly
-                                       class="read-only:bg-gray-100 bg-white border disabled:bg-gray-100 border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
-                            </td>
-                            <td class="p-2 text-center">
-                                <input type="text" id="neo_g" name="neo_g" readonly
-                                       class="read-only:bg-gray-100 bg-white border disabled:bg-gray-100 border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
-                            </td>
-                            <td class="p-2 text-center">
-                                <input type="text" id="neo_t" name="neo_t" readonly
-                                       class="read-only:bg-gray-100 bg-white border disabled:bg-gray-100 border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-
-                <div class="grid grid-cols-3 gap-4 items-center mt-4">
-                    <div class="col-span-2">NEX1. Были ли выходы (любыми способами) из этого учреждения в период с 1 января 2023 года по 31 декабря отчетного года (2023)?</div>
-                    <div class="col-span-1 flex gap-4">
-                        <div class="flex items-center">
-                            <input id="nex1-1" type="radio" value="1" name="nex1" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500 disabled:bg-gray-200">
-                            <label for="nex1-1" class="ms-2 text-sm font-medium text-gray-900">1 Да</label>
-                        </div>
-                        <div class="flex items-center">
-                            <input id="nex1-2" type="radio" value="0" name="nex1" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500 disabled:bg-gray-200">
-                            <label for="nex1-2" class="ms-2 text-sm font-medium text-gray-900">0 Нет</label>
-                        </div>
-                    </div>
-                </div>
-                <table class="w-full" aria-describedby="Transfers from other institutions">
-                    <thead>
-                        <tr class="border-b pb-1 mb-1">
-                            <th class="p-2">Если ДА,</th>
-                            <th class="p-2">Мальчики</th>
-                            <th class="p-2">Девочки</th>
-                            <th class="p-2">Всего</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr class="border-b">
-                            <td class="p-2">NEX1A. Выходы детей 0-2 лет</td>
-                            <td class="p-2 text-center">
-                                <input type="text" id="nex1a_b" name="nex1a_b"
-                                       class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
-                            </td>
-                            <td class="p-2 text-center">
-                                <input type="text" id="nex1a_g" name="nex1a_g"
-                                       class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
-                            </td>
-                            <td class="p-2 text-center">
-                                <input type="text" id="nex1a_t" name="nex1a_t"
-                                       class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
-                            </td>
-                        </tr>
-                        <tr class="border-b">
-                            <td class="p-2">NEX1b. Выходы детей 3-6 лет</td>
-                            <td class="p-2 text-center">
-                                <input type="text" id="nex1b_b" name="nex1b_b"
-                                       class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
-                            </td>
-                            <td class="p-2 text-center">
-                                <input type="text" id="nex1b_g" name="nex1b_g"
-                                       class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
-                            </td>
-                            <td class="p-2 text-center">
-                                <input type="text" id="nex1b_t" name="nex1b_t"
-                                       class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
-                            </td>
-                        </tr>
-                        <tr class="border-b">
-                            <td class="p-2">NEX1c. Выходы детей 7-10 лет</td>
-                            <td class="p-2 text-center">
-                                <input type="text" id="nex1c_b" name="nex1c_b"
-                                       class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
-                            </td>
-                            <td class="p-2 text-center">
-                                <input type="text" id="nex1c_g" name="nex1c_g"
-                                       class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
-                            </td>
-                            <td class="p-2 text-center">
-                                <input type="text" id="nex1c_t" name="nex1c_t"
-                                       class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
-                            </td>
-                        </tr>
-                        <tr class="border-b">
-                            <td class="p-2">NEX1d. Выходы детей 11-14 лет</td>
-                            <td class="p-2 text-center">
-                                <input type="text" id="nex1d_b" name="nex1d_b"
-                                       class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
-                            </td>
-                            <td class="p-2 text-center">
-                                <input type="text" id="nex1d_g" name="nex1d_g"
-                                       class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
-                            </td>
-                            <td class="p-2 text-center">
-                                <input type="text" id="nex1d_t" name="nex1d_t"
-                                       class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
-                            </td>
-                        </tr>
-                        <tr class="border-b">
-                            <td class="p-2">NEX1e. Выходы детей 15-17 лет</td>
-                            <td class="p-2 text-center">
-                                <input type="text" id="nex1e_b" name="nex1e_b"
-                                       class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
-                            </td>
-                            <td class="p-2 text-center">
-                                <input type="text" id="nex1e_g" name="nex1e_g"
-                                       class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
-                            </td>
-                            <td class="p-2 text-center">
-                                <input type="text" id="nex1e_t" name="nex1e_t"
-                                       class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
-                            </td>
-                        </tr>
-                        <tr class="border-b">
-                            <td class="p-2">NEX1f. Выходы молодых людей от 18 лет и старше</td>
-                            <td class="p-2 text-center">
-                                <input type="text" id="nex1f_b" name="nex1f_b"
-                                       class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
-                            </td>
-                            <td class="p-2 text-center">
-                                <input type="text" id="nex1f_g" name="nex1f_g"
-                                       class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
-                            </td>
-                            <td class="p-2 text-center">
-                                <input type="text" id="nex1f_t" name="nex1f_t"
-                                       class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
-                            </td>
-                        </tr>
-                        <tr class="border-b">
-                            <td class="p-2">
-                                <p class="block">NEXT. Общее количество выходов из этого учреждения в течение отчетного года (2023)</p>
-                                <small class="italic">Рассчитывается автоматически</small>
-                            </td>
-                            <td class="p-2 text-center">
-                                <input type="text" id="next_b" name="next_b" readonly
-                                       class="read-only:bg-gray-100 bg-white border disabled:bg-gray-100 border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
-                            </td>
-                            <td class="p-2 text-center">
-                                <input type="text" id="next_g" name="next_g" readonly
-                                       class="read-only:bg-gray-100 bg-white border disabled:bg-gray-100 border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
-                            </td>
-                            <td class="p-2 text-center">
-                                <input type="text" id="next_t" name="next_t" readonly
-                                       class="read-only:bg-gray-100 bg-white border disabled:bg-gray-100 border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-
-                <p class="mt-6 font-medium">Выход за пределы системы</p>
-                <table class="w-full" aria-describedby="Выход за пределы системы">
-                    <thead>
-                        <tr class="border-b pb-1 mb-1">
-                            <th class="p-2"></th>
-                            <th class="p-2">Мальчики</th>
-                            <th class="p-2">Девочки</th>
-                            <th class="p-2">Всего</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr class="border-b">
-                            <td class="p-2">EOS1. Реинтеграция в семью</td>
-                            <td class="p-2 text-center">
-                                <input type="text" id="eos1_b" name="eos1_b"
-                                       class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
-                            </td>
-                            <td class="p-2 text-center">
-                                <input type="text" id="eos1_g" name="eos1_g"
-                                       class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
-                            </td>
-                            <td class="p-2 text-center">
-                                <input type="text" id="eos1_t" name="eos1_t"
-                                       class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
-                            </td>
-                        </tr>
-                        <tr class="border-b">
-                            <td class="p-2">EOS2. Усыновление/удочерение</td>
-                            <td class="p-2 text-center">
-                                <input type="text" id="eos2_b" name="eos2_b"
-                                       class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
-                            </td>
-                            <td class="p-2 text-center">
-                                <input type="text" id="eos2_g" name="eos2_g"
-                                       class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
-                            </td>
-                            <td class="p-2 text-center">
-                                <input type="text" id="eos2_t" name="eos2_t"
-                                       class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
-                            </td>
-                        </tr>
-                        <tr class="border-b">
-                            <td class="p-2">EOS3. Достижение возраста 18+ (ситуации, не встречающиеся среди вышеперечисленных)</td>
-                            <td class="p-2 text-center">
-                                <input type="text" id="eos3_b" name="eos3_b"
-                                       class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
-                            </td>
-                            <td class="p-2 text-center">
-                                <input type="text" id="eos3_g" name="eos3_g"
-                                       class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
-                            </td>
-                            <td class="p-2 text-center">
-                                <input type="text" id="eos3_t" name="eos3_t"
-                                       class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
-                            </td>
-                        </tr>
-                        <tr class="border-b">
-                            <td class="p-2">EOS4. Окончание среднего образования (только для школы-интерната)</td>
-                            <td class="p-2 text-center">
-                                <input type="text" id="eos4_b" name="eos4_b"
-                                       class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
-                            </td>
-                            <td class="p-2 text-center">
-                                <input type="text" id="eos4_g" name="eos4_g"
-                                       class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
-                            </td>
-                            <td class="p-2 text-center">
-                                <input type="text" id="eos4_t" name="eos4_t"
-                                       class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
-                            </td>
-                        </tr>
-                        <tr class="border-b">
-                            <td class="p-2">
-                                <p class="block">EOST. Выходы за пределы системы - Всего</p>
-                                <small class="italic">Рассчитывается автоматически</small>
-                            </td>
-                            <td class="p-2 text-center">
-                                <input type="text" id="eost_b" name="eost_b" readonly
-                                       class="read-only:bg-gray-100 bg-white border disabled:bg-gray-100 border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
-                            </td>
-                            <td class="p-2 text-center">
-                                <input type="text" id="eost_g" name="eost_g" readonly
-                                       class="read-only:bg-gray-100 bg-white border disabled:bg-gray-100 border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
-                            </td>
-                            <td class="p-2 text-center">
-                                <input type="text" id="eost_t" name="eost_t" readonly
-                                       class="read-only:bg-gray-100 bg-white border disabled:bg-gray-100 border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-
-                <p class="mt-6 font-medium">Переводы в другие альтернативные службы для детей</p>
-                <table class="w-full" aria-describedby="Переводы в другие альтернативные службы для детей">
-                    <thead>
-                        <tr class="border-b pb-1 mb-1">
-                            <th class="p-2"></th>
-                            <th class="p-2">Мальчики</th>
-                            <th class="p-2">Девочки</th>
-                            <th class="p-2">Всего</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr class="border-b">
-                            <td class="p-2">EXT0. Размещение в семьи с оформлением опеки/попечительства на ребенка</td>
-                            <td class="p-2 text-center">
-                                <input type="text" id="ext0_b" name="ext0_b"
-                                       class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
-                            </td>
-                            <td class="p-2 text-center">
-                                <input type="text" id="ext0_g" name="ext0_g"
-                                       class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
-                            </td>
-                            <td class="p-2 text-center">
-                                <input type="text" id="ext0_t" name="ext0_t"
-                                       class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
-                            </td>
-                        </tr>
-                        <tr class="border-b">
-                            <td class="p-2">EXT1. Размещение в патронатные семьи</td>
-                            <td class="p-2 text-center">
-                                <input type="text" id="ext1_b" name="ext1_b"
-                                       class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
-                            </td>
-                            <td class="p-2 text-center">
-                                <input type="text" id="ext1_g" name="ext1_g"
-                                       class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
-                            </td>
-                            <td class="p-2 text-center">
-                                <input type="text" id="ext1_t" name="ext1_t"
-                                       class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
-                            </td>
-                        </tr>
-                        <tr class="border-b">
-                            <td class="p-2">EXT2. Переводы в дома «Мехрибонлик»</td>
-                            <td class="p-2 text-center">
-                                <input type="text" id="ext2_b" name="ext2_b"
-                                       class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
-                            </td>
-                            <td class="p-2 text-center">
-                                <input type="text" id="ext2_g" name="ext2_g"
-                                       class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
-                            </td>
-                            <td class="p-2 text-center">
-                                <input type="text" id="ext2_t" name="ext2_t"
-                                       class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
-                            </td>
-                        </tr>
-                        <tr class="border-b">
-                            <td class="p-2">EXT3. Переводы в дом -интернат «Мурувват» для детей с инвалидностью</td>
-                            <td class="p-2 text-center">
-                                <input type="text" id="ext3_b" name="ext3_b"
-                                       class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
-                            </td>
-                            <td class="p-2 text-center">
-                                <input type="text" id="ext3_g" name="ext3_g"
-                                       class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
-                            </td>
-                            <td class="p-2 text-center">
-                                <input type="text" id="ext3_t" name="ext3_t"
-                                       class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
-                            </td>
-                        </tr>
-                        <tr class="border-b">
-                            <td class="p-2">EXT4. Переводы в детские дома семейного типа</td>
-                            <td class="p-2 text-center">
-                                <input type="text" id="ext4_b" name="ext4_b"
-                                       class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
-                            </td>
-                            <td class="p-2 text-center">
-                                <input type="text" id="ext4_g" name="ext4_g"
-                                       class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
-                            </td>
-                            <td class="p-2 text-center">
-                                <input type="text" id="ext4_t" name="ext4_t"
-                                       class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
-                            </td>
-                        </tr>
-                        <tr class="border-b">
-                            <td class="p-2">EXT5. Переводы в другие специализированные школы-интернаты</td>
-                            <td class="p-2 text-center">
-                                <input type="text" id="ext5_b" name="ext5_b"
-                                       class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
-                            </td>
-                            <td class="p-2 text-center">
-                                <input type="text" id="ext5_g" name="ext5_g"
-                                       class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
-                            </td>
-                            <td class="p-2 text-center">
-                                <input type="text" id="ext5_t" name="ext5_t"
-                                       class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
-                            </td>
-                        </tr>
-                        <tr class="border-b">
-                            <td class="p-2">EXT6. Переводы в школы-интернаты санаторного типа</td>
-                            <td class="p-2 text-center">
-                                <input type="text" id="ext6_b" name="ext6_b"
-                                       class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
-                            </td>
-                            <td class="p-2 text-center">
-                                <input type="text" id="ext6_g" name="ext6_g"
-                                       class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
-                            </td>
-                            <td class="p-2 text-center">
-                                <input type="text" id="ext6_t" name="ext6_t"
-                                       class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
-                            </td>
-                        </tr>
-                        <tr class="border-b">
-                            <td class="p-2">EXT7. Перевод в другие детские учреждения</td>
-                            <td class="p-2 text-center">
-                                <input type="text" id="ext7_b" name="ext7_b"
-                                       class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
-                            </td>
-                            <td class="p-2 text-center">
-                                <input type="text" id="ext7_g" name="ext7_g"
-                                       class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
-                            </td>
-                            <td class="p-2 text-center">
-                                <input type="text" id="ext7_t" name="ext7_t"
-                                       class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
-                            </td>
-                        </tr>
-                        <tr class="border-b">
-                            <td class="p-2">
-                                <p class="block">EXTT. Переводы на другие альтернативные службы для детей - Всего</p>
-                            </td>
-                            <td class="p-2 text-center">
-                                <input type="text" id="extt_b" name="extt_b" readonly
-                                       class="read-only:bg-gray-100 bg-white border disabled:bg-gray-100 border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
-                            </td>
-                            <td class="p-2 text-center">
-                                <input type="text" id="extt_g" name="extt_g" readonly
-                                       class="read-only:bg-gray-100 bg-white border disabled:bg-gray-100 border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
-                            </td>
-                            <td class="p-2 text-center">
-                                <input type="text" id="extt_t" name="extt_t" readonly
-                                       class="read-only:bg-gray-100 bg-white border disabled:bg-gray-100 border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-
-                <p class="mt-6 font-medium">Переводы в службы для взрослых и другие способы выхода</p>
-                <table class="w-full" aria-describedby="Переводы в службы для взрослых и другие способы выхода">
-                    <thead>
-                        <tr class="border-b pb-1 mb-1">
-                            <th class="p-2"></th>
-                            <th class="p-2">Мальчики</th>
-                            <th class="p-2">Девочки</th>
-                            <th class="p-2">Всего</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr class="border-b">
-                            <td class="p-2">TSA1. Переводы в учреждения для взрослых</td>
-                            <td class="p-2 text-center">
-                                <input type="text" id="tsa1_b" name="tsa1_b"
-                                       class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
-                            </td>
-                            <td class="p-2 text-center">
-                                <input type="text" id="tsa1_g" name="tsa1_g"
-                                       class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
-                            </td>
-                            <td class="p-2 text-center">
-                                <input type="text" id="tsa1_t" name="tsa1_t"
-                                       class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
-                            </td>
-                        </tr>
-                        <tr class="border-b">
-                            <td class="p-2">TSA2. Смерть </td>
-                            <td class="p-2 text-center">
-                                <input type="text" id="tsa2_b" name="tsa2_b"
-                                       class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
-                            </td>
-                            <td class="p-2 text-center">
-                                <input type="text" id="tsa2_g" name="tsa2_g"
-                                       class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
-                            </td>
-                            <td class="p-2 text-center">
-                                <input type="text" id="tsa2_t" name="tsa2_t"
-                                       class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
-                            </td>
-                        </tr>
-                        <tr class="border-b">
-                            <td class="p-2">TSA3. Другие случаи</td>
-                            <td class="p-2 text-center">
-                                <input type="text" id="tsa3_b" name="tsa3_b"
-                                       class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
-                            </td>
-                            <td class="p-2 text-center">
-                                <input type="text" id="tsa3_g" name="tsa3_g"
-                                       class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
-                            </td>
-                            <td class="p-2 text-center">
-                                <input type="text" id="tsa3_t" name="tsa3_t"
-                                       class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
-                            </td>
-                        </tr>
-                        <tr class="border-b">
-                            <td class="p-2">
-                                <p class="block">TNR1. Общее количество детей в этом учреждении на 31 декабря отчетного года (2023)</p>
-                            </td>
-                            <td class="p-2 text-center">
-                                <input type="text" id="tnr1_b" name="tnr1_b" readonly
-                                       class="read-only:bg-gray-100 bg-white border disabled:bg-gray-100 border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
-                            </td>
-                            <td class="p-2 text-center">
-                                <input type="text" id="tnr1_g" name="tnr1_g" readonly
-                                       class="read-only:bg-gray-100 bg-white border disabled:bg-gray-100 border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
-                            </td>
-                            <td class="p-2 text-center">
-                                <input type="text" id="tnr1_t" name="tnr1_t" readonly
-                                       class="read-only:bg-gray-100 bg-white border disabled:bg-gray-100 border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block w-24 p-2.5" />
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-
-            </form>
-
-            <footer id="footer" class="fixed bottom-0 w-full h-12 bg-slate-200 shadow">
-                <div class="flex justify-center h-full items-center">
-
-                    <button type="button"
-                            class="flex items-center gap-2 text-white bg-menuButton/80 hover:bg-menuButton focus:ring-4 focus:ring-menuButton/50 font-medium rounded-lg text-sm px-3 py-1"
-                            id="salveazaForm">
-                        <svg class="fill-white w-4 h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-                            <!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
-                            <path
-                                  d="M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V173.3c0-17-6.7-33.3-18.7-45.3L352 50.7C340 38.7 323.7 32 306.7 32H64zm0 96c0-17.7 14.3-32 32-32H288c17.7 0 32 14.3 32 32v64c0 17.7-14.3 32-32 32H96c-17.7 0-32-14.3-32-32V128zM224 288a64 64 0 1 1 0 128 64 64 0 1 1 0-128z" />
-                        </svg>
-                        <span class="t_button_save"></span>
-                    </button>
-                    <button type="button"
-                            class="flex items-center gap-2 text-white bg-menuButton/80 hover:bg-menuButton focus:ring-4 focus:ring-menuButton/50 font-medium rounded-lg text-sm px-3 py-1 ml-4"
-                            id="finalizeazaForm">
-                        <svg class="fill-white w-4 h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-                            <!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
-                            <path
-                                  d="M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V173.3c0-17-6.7-33.3-18.7-45.3L352 50.7C340 38.7 323.7 32 306.7 32H64zm0 96c0-17.7 14.3-32 32-32H288c17.7 0 32 14.3 32 32v64c0 17.7-14.3 32-32 32H96c-17.7 0-32-14.3-32-32V128zM224 288a64 64 0 1 1 0 128 64 64 0 1 1 0-128z" />
-                        </svg>
-                        <span class="t_button_complete"></span>
-                    </button>
-                    <button type="button"
-                            class="flex items-center gap-2 text-white bg-red-500 hover:bg-red-500 focus:ring-4 focus:ring-red-500/50 font-medium rounded-lg text-sm px-3 py-1 ml-4"
-                            id="debugForm">
-                        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="bug" class="fill-white w-4 h-4" role="img" xmlns="http://www.w3.org/2000/svg"
-                             viewbox="0 0 512 512">
-                            <path fill="currentColor"
-                                  d="M511.988 288.9c-.478 17.43-15.217 31.1-32.653 31.1H424v16c0 21.864-4.882 42.584-13.6 61.145l60.228 60.228c12.496 12.497 12.496 32.758 0 45.255-12.498 12.497-32.759 12.496-45.256 0l-54.736-54.736C345.886 467.965 314.351 480 280 480V236c0-6.627-5.373-12-12-12h-24c-6.627 0-12 5.373-12 12v244c-34.351 0-65.886-12.035-90.636-32.108l-54.736 54.736c-12.498 12.497-32.759 12.496-45.256 0-12.496-12.497-12.496-32.758 0-45.255l60.228-60.228C92.882 378.584 88 357.864 88 336v-16H32.666C15.23 320 .491 306.33.013 288.9-.484 270.816 14.028 256 32 256h56v-58.745l-46.628-46.628c-12.496-12.497-12.496-32.758 0-45.255 12.498-12.497 32.758-12.497 45.256 0L141.255 160h229.489l54.627-54.627c12.498-12.497 32.758-12.497 45.256 0 12.496 12.497 12.496 32.758 0 45.255L424 197.255V256h56c17.972 0 32.484 14.816 31.988 32.9zM257 0c-61.856 0-112 50.144-112 112h224C369 50.144 318.856 0 257 0z">
-                            </path>
-                        </svg>&nbsp;debug</button>
-                </div>
-            </footer>
-
-        </div>
-    </body>
+    </div>
+</body>
 
 </html>
