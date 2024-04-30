@@ -148,9 +148,10 @@ export const cpisList = async (db: DuckDB.Database) => {
             MAX(CASE WHEN variable = 'lk1a' THEN value ELSE NULL END) first_name,
             MAX(CASE WHEN variable = 'lk1b' THEN value ELSE NULL END) patronymics,
             MAX(CASE WHEN variable = 'lk1c' THEN value ELSE NULL END) last_name,
+            c.status
         FROM instrument_cpis AS c
         LEFT JOIN values_cpis AS v ON v.instrument_id = c.id
-        GROUP BY c.id, c.uuid;`;
+        GROUP BY c.id, c.uuid, c.status;`;
 
         db.all(sql, (error, result) => {
             if (error) {
@@ -190,9 +191,10 @@ export const cibsList = async (db: DuckDB.Database) => {
             MAX(CASE WHEN variable = 'lk1a' THEN value ELSE NULL END) first_name,
             MAX(CASE WHEN variable = 'lk1b' THEN value ELSE NULL END) patronymics,
             MAX(CASE WHEN variable = 'lk1c' THEN value ELSE NULL END) last_name,
+            c.status
         FROM instrument_cibs AS c
         LEFT JOIN values_cibs AS v ON v.instrument_id = c.id
-        GROUP BY c.id, c.uuid;`;
+        GROUP BY c.id, c.uuid, c.status;`;
 
         db.all(sql, (error, result) => {
             if (error) {
@@ -231,9 +233,10 @@ export const csrList = async (db: DuckDB.Database) => {
             c.uuid,
             MAX(CASE WHEN variable = 'e1' THEN value ELSE NULL END) e1,
             MAX(CASE WHEN variable = 'euid' THEN value ELSE NULL END) euid,
+            c.status
         FROM instrument_csr AS c
         LEFT JOIN values_csr AS v ON v.instrument_id = c.id
-        GROUP BY c.id, c.uuid;`;
+        GROUP BY c.id, c.uuid, c.status;`;
 
         db.all(sql, (error, result) => {
             if (error) {
@@ -272,9 +275,10 @@ export const ftchList = async (db: DuckDB.Database) => {
             MAX(CASE WHEN variable = 'ifm1' THEN value ELSE NULL END) ifm1,
             MAX(CASE WHEN variable = 'ifm2' THEN value ELSE NULL END) ifm2,
             MAX(CASE WHEN variable = 'ifm3' THEN value ELSE NULL END) ifm3,
+            c.status
         FROM instrument_ftch AS c
         LEFT JOIN values_ftch AS v ON v.instrument_id = c.id
-        GROUP BY c.id, c.uuid;`;
+        GROUP BY c.id, c.uuid, c.status;`;
 
         db.all(sql, (error, result) => {
             if (error) {
@@ -313,9 +317,10 @@ export const pfqList = async (db: DuckDB.Database) => {
             MAX(CASE WHEN variable = 'ig1' THEN value ELSE NULL END) ig1,
             MAX(CASE WHEN variable = 'ig2' THEN value ELSE NULL END) ig2,
             MAX(CASE WHEN variable = 'ig3' THEN value ELSE NULL END) ig3,
+            c.status
         FROM instrument_pfq AS c
         LEFT JOIN values_pfq AS v ON v.instrument_id = c.id
-        GROUP BY c.id, c.uuid;`;
+        GROUP BY c.id, c.uuid, c.status;`;
 
         db.all(sql, (error, result) => {
             if (error) {
@@ -352,9 +357,10 @@ export const eefList = async (db: DuckDB.Database) => {
         SELECT c.id,
             c.uuid,
             MAX(CASE WHEN variable = 'i1' THEN value ELSE NULL END) i1,
+            c.status
         FROM instrument_eef AS c
         LEFT JOIN values_eef AS v ON v.instrument_id = c.id
-        GROUP BY c.id, c.uuid;`;
+        GROUP BY c.id, c.uuid, c.status;`;
 
         db.all(sql, (error, result) => {
             if (error) {
@@ -394,9 +400,10 @@ export const yplcsList = async (db: DuckDB.Database) => {
             MAX(CASE WHEN variable = 'pi1a' THEN value ELSE NULL END) pi1a,
             MAX(CASE WHEN variable = 'pi1b' THEN value ELSE NULL END) pi1b,
             MAX(CASE WHEN variable = 'pi1c' THEN value ELSE NULL END) pi1c,
+            c.status
         FROM instrument_yplcs AS c
         LEFT JOIN values_yplcs AS v ON v.instrument_id = c.id
-        GROUP BY c.id, c.uuid;`;
+        GROUP BY c.id, c.uuid, c.status;`;
 
         db.all(sql, (error, result) => {
             if (error) {
@@ -436,9 +443,10 @@ export const tqypList = async (db: DuckDB.Database) => {
             MAX(CASE WHEN variable = 'ptr2a' THEN value ELSE NULL END) ptr2a,
             MAX(CASE WHEN variable = 'ptr2b' THEN value ELSE NULL END) ptr2b,
             MAX(CASE WHEN variable = 'ptr2c' THEN value ELSE NULL END) ptr2c,
+            c.status
         FROM instrument_tqyp AS c
         LEFT JOIN values_tqyp AS v ON v.instrument_id = c.id
-        GROUP BY c.id, c.uuid;`;
+        GROUP BY c.id, c.uuid, c.status;`;
 
         db.all(sql, (error, result) => {
             if (error) {
@@ -466,7 +474,3 @@ export const deleteTQYP = async (id: string, db: DuckDB.Database) => {
     });
     return await connection;
 }
-
-
-
-
