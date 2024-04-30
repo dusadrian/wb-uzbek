@@ -2,373 +2,373 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <title>WorldBank</title>
-  <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'" />
-  <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self'" />
-  <link href="../dist/main.css" rel="stylesheet">
+    <meta charset="UTF-8" />
+    <title>WorldBank</title>
+    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'" />
+    <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self'" />
+    <link href="../dist/main.css" rel="stylesheet">
 </head>
 
 <body>
-  <form class="px-6 mt-10">
-    <div class="grid grid-cols-12 border">
-      <div class="col-span-1 bg-stone-200 p-2"></div>
-      <div class="col-span-11 p-2">
-        <h1 class="text-4xl text-gray-700 pl-4 tracking-wide mb-4">Muqobil vasiylik tizimini tark etgan yosh shaxsning kuzatuv so&#39;rovnomasi</h1>
-      </div>
-    </div>
-
-    <p class="mt-4 mb-2 text-xl">KIRISH</p>
-    <p class="mb-2">Ushbu so&#39;rovnomaning maqsadi - o&#39;tgan yil davomida muqobil vasiylik tizimini tark etgan yosh shaxslarni aniqlash va ular bilan qayta bog&#39;lanishdir.</p>
-    <p class="mb-2">Iltimos, ushbu so&#39;rovnomani oxirgi 12 oy ichida xizmat turidan qat&#39;i nazar (muassasada yoki oilada), bolalarga vasiylik qilishning muqobil tizimini tark etgan har bir yosh shaxs (18 yoshdan katta) uchun alohida to&#39;ldiring. Ushbu so&#39;rovnoma bolalarga vasiylik qilishning muqobil tizimiga kiruvchi  quyidagi muassasalarni tark etgan yoshlar uchun to&#39;ldiriladi: Mehribonlik uylari, nogironligi mavjud bolalar uchun Muruvvat uylari, oilaviy bolalar uylari, SOS bolalar qishloqlari/oilalari. Ixtisoslashgan maktab-internatlar uchun ushbu so&#39;rovnoma o&#39;tgan yil davomida maktab-internatlarda o&#39;qishni tugatgan har bir yosh shaxs (16 yoshdan katta) uchun to&#39;ldirilishi kerak.</p>
-
-    <h2 class="mt-10 mb-4 text-2xl font-bold text-gray-700">1. KUZATUV SO&#39;ROVNOMASINI TO&#39;LDIRGAN SHAXS VA MUASSASA TO&#39;G&#39;RISIDAGI MA&#39;LUMOTLAR</h2>
-
-    <div class="grid grid-cols-2 gap-4 items-center mt-12">
-      <div>STR1. Ro&#39;yxatdan o&#39;tish kitobidan xizmat kodi</div>
-      <div>
-        <input type="text" id="str1" name="str1" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
-      </div>
-    </div>
-    <div class="grid grid-cols-2 gap-4 items-center mt-6">
-      <div>STR2. Xizmat nomi</div>
-      <div>
-        <input type="text" id="str2" name="str2" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
-      </div>
-    </div>
-    <div class="grid grid-cols-2 gap-4 items-center mt-6">
-      <div>STR3. Xizmatning lokatsiyasi (MHOBT kodi)</div>
-      <div>
-        <input type="text" id="str3" name="str3" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
-      </div>
-    </div>
-    <div class="grid grid-cols-2 gap-4 items-center mt-6">
-      <div>a. Viloyat</div>
-      <div>
-        <input type="text" id="str3a" name="str3a" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
-      </div>
-    </div>
-    <div class="grid grid-cols-2 gap-4 items-center mt-6">
-      <div>b. Tuman</div>
-      <div>
-        <input type="text" id="str3b" name="str3b" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
-      </div>
-    </div>
-    <div class="grid grid-cols-2 gap-4 items-center mt-6">
-      <div>c. Aholi punkti</div>
-      <div>
-        <input type="text" id="str3c" name="str3c" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
-      </div>
-    </div>
-    <div class="grid grid-cols-2 gap-4 items-center mt-6">
-      <div>STR4. Muassasa turi</div>
-      <div>
-        <input type="text" id="str4" name="str4" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
-      </div>
-    </div>
-
-    <input type="hidden" id="data" name="data" />
-
-    <div class="grid grid-cols-2 gap-4 items-center mt-4">
-      <div>OMR1. Ismi</div>
-      <div>
-        <input type="text" id="omr1" name="omr1" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
-      </div>
-    </div>
-    <div class="grid grid-cols-2 gap-4 items-center mt-4">
-      <div>OMR2. Otasining ismi</div>
-      <div>
-        <input type="text" id="omr2" name="omr2" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
-      </div>
-    </div>
-    <div class="grid grid-cols-2 gap-4 items-center mt-4">
-      <div>OMR3. Familiyasi</div>
-      <div>
-        <input type="text" id="omr3" name="omr3" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
-      </div>
-    </div>
-
-    <div class="grid grid-cols-2 gap-4 items-center mt-4">
-      <div>
-        OMR4. Lavozim/vazifa <small class="block italic text-red-500">Fill in case manager if the person plays this role.</small>
-      </div>
-      <div>
-        <input type="text" id="omr4" name="omr4" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
-      </div>
-    </div>
-    <div class="grid grid-cols-2 gap-4 items-center mt-4">
-      <div>
-        OMR5. Kasbi</div>
-      <div>
-        <input type="text" id="omr5" name="omr5" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
-      </div>
-    </div>
-
-    <div class="grid grid-cols-2 gap-4 items-center mt-4">
-      <div>
-        OMR6. Telefon</div>
-      <div>
-        <input type="text" id="omr6" name="omr6" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
-      </div>
-    </div>
-
-    <div class="grid grid-cols-2 gap-4 items-center mt-4">
-      <div>
-        OMR7. Elektron pochta</div>
-      <div>
-        <input type="text" id="omr7" name="omr7" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
-      </div>
-    </div>
-
-    <h2 class="mt-10 mb-4 text-2xl font-bold text-gray-700">2. YOSH ODAM HAQIDA SHAXSIY MAʼLUMOTLAR</h2>
-
-
-    <div class="grid grid-cols-2 gap-4 items-center mt-6">
-      <div>PTR1. Tugʻilganlik toʻgʻrisidagi guvohnoma / pasport / shaxsni tasdiqlovchi hujjat</div>
-      <div>
-        <input type="text" id="ptr1" name="ptr1" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
-      </div>
-    </div>
-
-    <p class="italic text-red-500">Shaxsning tugʻilganlik toʻgʻrisidagi guvohnoma/shaxsini tasdiqlovchi hujjat/pasport raqamini kiriting. Agar odamda yoʻq boʻlsa, 0 (nol) ni kiriting.</p>
-
-    <div class="grid grid-cols-2 gap-4 items-center mt-6">
-      <div>PTR2a. Ismi</div>
-      <div>
-        <input type="text" id="ptr2a" name="ptr2a" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
-      </div>
-    </div>
-    <div class="grid grid-cols-2 gap-4 items-center mt-6">
-      <div>PTR2b Otasining ismi</div>
-      <div>
-        <input type="text" id="ptr2b" name="ptr2b" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
-      </div>
-    </div>
-    <div class="grid grid-cols-2 gap-4 items-center mt-6">
-      <div>PTR2c. Familiyasi</div>
-      <div>
-        <input type="text" id="ptr2c" name="ptr2c" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
-      </div>
-    </div>
-    <div class="grid grid-cols-2 gap-4 items-center mt-6">
-      <div class="col-span-1">PTR3. Jinsi</div>
-      <div class="col-span-1 flex gap-4">
-        <div class="flex items-center">
-          <input id="ptr3-1" type="radio" value="1" name="ptr3" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-          <label for="ptr3-1" class="ms-2 text-sm text-gray-900">1. Erkak</label>
+    <form class="px-6 mt-10">
+        <div class="grid grid-cols-12 border">
+            <div class="col-span-1 bg-stone-200 p-2"></div>
+            <div class="col-span-11 p-2">
+                <h1 class="text-4xl text-gray-700 pl-4 tracking-wide mb-4">Muqobil vasiylik tizimini tark etgan yosh shaxsning kuzatuv so&#39;rovnomasi</h1>
+            </div>
         </div>
-        <div class="flex items-center">
-          <input id="ptr3-2" type="radio" value="0" name="ptr3" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-          <label for="ptr3-2" class="ms-2 text-sm text-gray-900">2. Ayol</label>
+
+        <p class="mt-4 mb-2 text-xl">KIRISH</p>
+        <p class="mb-2">Ushbu so&#39;rovnomaning maqsadi - o&#39;tgan yil davomida muqobil vasiylik tizimini tark etgan yosh shaxslarni aniqlash va ular bilan qayta bog&#39;lanishdir.</p>
+        <p class="mb-2">Iltimos, ushbu so&#39;rovnomani oxirgi 12 oy ichida xizmat turidan qat&#39;i nazar (muassasada yoki oilada), bolalarga vasiylik qilishning muqobil tizimini tark etgan har bir yosh shaxs (18 yoshdan katta) uchun alohida to&#39;ldiring. Ushbu so&#39;rovnoma bolalarga vasiylik qilishning muqobil tizimiga kiruvchi  quyidagi muassasalarni tark etgan yoshlar uchun to&#39;ldiriladi: Mehribonlik uylari, nogironligi mavjud bolalar uchun Muruvvat uylari, oilaviy bolalar uylari, SOS bolalar qishloqlari/oilalari. Ixtisoslashgan maktab-internatlar uchun ushbu so&#39;rovnoma o&#39;tgan yil davomida maktab-internatlarda o&#39;qishni tugatgan har bir yosh shaxs (16 yoshdan katta) uchun to&#39;ldirilishi kerak.</p>
+
+        <h2 class="mt-10 mb-4 text-2xl font-bold text-gray-700">1. KUZATUV SO&#39;ROVNOMASINI TO&#39;LDIRGAN SHAXS VA MUASSASA TO&#39;G&#39;RISIDAGI MA&#39;LUMOTLAR</h2>
+
+        <div class="grid grid-cols-2 gap-4 items-center mt-12">
+            <div>STR1. Ro&#39;yxatdan o&#39;tish kitobidan xizmat kodi</div>
+            <div>
+                <input type="text" id="str1" name="str1" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+            </div>
         </div>
-      </div>
-    </div>
-    <div class="grid grid-cols-2 gap-4 items-center mt-6">
-      <div>PTR4. Tugʻilgan sana (kun/oy/yil)</div>
-      <div>
-        <input type="text" id="ptr4" name="ptr4" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
-      </div>
-    </div>
-    <div class="grid grid-cols-2 gap-4 items-center mt-6">
-      <div>
-        <p>PTR4a. Shaxsning yoshi (monitoring oʻtkazilgan sanada)</p>
-      </div>
-      <div>
-        <input type="text" id="ptr4a" name="ptr4a" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
-      </div>
-    </div>
-
-    <div class="grid grid-cols-2 gap-4 items-center mt-6">
-      <div>PTR5a. Tugʻilgan joyi</div>
-      <div class="flex items-center">
-        <input id="ptr5a_dk" name="ptr5a_dk" type="checkbox" value="9" class="w-4 h-4 text-blue-600 border-gray-400 rounded focus:ring-blue-500 disabled:bg-gray-100">
-        <label for="ptr5a_dk" class="ms-2 text-sm text-gray-900">9. Not known</label>
-      </div>
-    </div>
-
-    <div class="grid grid-cols-2 items-center gap-4 mt-6">
-      <div>PTR5b. Viloyat</div>
-      <div>
-        <select id="ptr5b" name="ptr5b" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-          <option value="-9" class="t_choose">--- choose ---</option>
-        </select>
-      </div>
-    </div>
-
-    <div class="grid grid-cols-2 items-center gap-4 mt-6">
-      <div>PTR5c. Tuman</div>
-      <div>
-        <select id="ptr5c" name="ptr5c" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-          <option value="-9" class="t_choose">--- choose ---</option>
-        </select>
-      </div>
-    </div>
-    <div class="grid grid-cols-2 items-center gap-4 mt-6">
-      <div>ptr5d. Aholi punkti</div>
-      <div>
-        <select id="ptr5d" name="ptr5d" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-          <option value="-9" class="t_choose">--- choose ---</option>
-        </select>
-
-      </div>
-    </div>
-
-    <input type="hidden" id="ptr5e" name="ptr5e" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
-
-
-    <div class="grid grid-cols-2 items-center gap-4 mt-6">
-      <div>PTR6. Yosh odam vasiylik tizimini tark etgan sana (kun / oy / yil)</div>
-      <div>
-        <input type="text" id="ptr6" name="ptr6" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
-      </div>
-    </div>
-
-    <div class="grid grid-cols-2 gap-4 items-center mt-6">
-      <div class="col-span-1">PTR7. Muqobil vasiylik tizimini tark etganida, ushbu yosh shaxs qayerga ketdi?</div>
-      <div class="col-span-1 flex flex-col gap-2">
-        <div class="flex items-center">
-          <input id="ptr7-1" type="radio" value="1" name="ptr7" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-          <label for="ptr7-1" class="ms-2 text-sm text-gray-900">1. Oi&#39;z olasiga qaytdi</label>
+        <div class="grid grid-cols-2 gap-4 items-center mt-6">
+            <div>STR2. Xizmat nomi</div>
+            <div>
+                <input type="text" id="str2" name="str2" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+            </div>
         </div>
-        <div class="flex items-center">
-          <input id="ptr7-2" type="radio" value="2" name="ptr7" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-          <label for="ptr7-2" class="ms-2 text-sm text-gray-900">2. Jamiyatga qo&#39;shilib, mustaqil yashamoqda</label>
+        <div class="grid grid-cols-2 gap-4 items-center mt-6">
+            <div>STR3. Xizmatning lokatsiyasi (MHOBT kodi)</div>
+            <div>
+                <input type="text" id="str3" name="str3" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+            </div>
         </div>
-        <div class="flex items-center">
-          <input id="ptr7-3" type="radio" value="3" name="ptr7" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-          <label for="ptr7-3" class="ms-2 text-sm text-gray-900">3. Davlat yoki xayriya tashkilotlari tomonidan taqdim etilgan uyga ko&#39;chib o&#39;tdie alternative
-            care </label>
+        <div class="grid grid-cols-2 gap-4 items-center mt-6">
+            <div>a. Viloyat</div>
+            <div>
+                <input type="text" id="str3a" name="str3a" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+            </div>
         </div>
-        <div class="flex items-center">
-          <input id="ptr7-4" type="radio" value="4" name="ptr7" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-          <label for="ptr7-4" class="ms-2 text-sm text-gray-900">4. Kattalar uchun muassasa / internatga o&#39;tkazildi</label>
+        <div class="grid grid-cols-2 gap-4 items-center mt-6">
+            <div>b. Tuman</div>
+            <div>
+                <input type="text" id="str3b" name="str3b" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+            </div>
         </div>
-        <div class="flex items-center">
-          <input id="ptr7-5" type="radio" value="5" name="ptr7" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-          <label for="ptr7-5" class="ms-2 text-sm text-gray-900">5. Oliy o&#39;quv muassasasi tomonidan taqdim etiladiyan yotoqxonaga o&#39;tkazildi</label>
+        <div class="grid grid-cols-2 gap-4 items-center mt-6">
+            <div>c. Aholi punkti</div>
+            <div>
+                <input type="text" id="str3c" name="str3c" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+            </div>
         </div>
-        <div class="flex items-center">
-          <input id="ptr7-6" type="radio" value="6" name="ptr7" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-          <label for="ptr7-6" class="ms-2 text-sm text-gray-900">6. Chet elga ketdi</label>
+        <div class="grid grid-cols-2 gap-4 items-center mt-6">
+            <div>STR4. Muassasa turi</div>
+            <div>
+                <input type="text" id="str4" name="str4" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+            </div>
         </div>
-        <div class="flex items-center">
-          <input id="ptr7-7" type="radio" value="7" name="ptr7" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-          <label for="ptr7-7" class="ms-2 text-sm text-gray-900">7. Boshqa holatlar, ko&#39;rsating</label>
-        </div>
-        <div class="flex items-center">
-          <input type="text" id="ptr7_other" name="ptr7_other" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
-        </div>
-        <div class="flex items-center">
-          <input id="ptr7-8" type="radio" value="8" name="ptr7" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-          <label for="ptr7-8" class="ms-2 text-sm text-gray-900">8. Noma&#39;lum</label>
-        </div>
-      </div>
-    </div>
 
-    <div class="grid grid-cols-2 gap-4 items-center mt-6">
-      <div class="col-span-1">PTR8. Agar sizga ma&#39;lum bo&#39;sa, keltiring, ushbu yosh shaxs hozirda qayerda yashaydi?</div>
-      <div class="col-span-1 flex flex-col gap-2">
-        <div class="flex items-center">
-          <input id="ptr8-1" type="radio" value="1" name="ptr8" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-          <label for="ptr8-1" class="ms-2 text-sm text-gray-900">1. Jamiyat bilan birgalikda</label>
+        <input type="hidden" id="data" name="data" />
+
+        <div class="grid grid-cols-2 gap-4 items-center mt-4">
+            <div>OMR1. Ismi</div>
+            <div>
+                <input type="text" id="omr1" name="omr1" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+            </div>
         </div>
-        <div class="flex items-center">
-          <input id="ptr8-2" type="radio" value="2" name="ptr8" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-          <label for="ptr8-2" class="ms-2 text-sm text-gray-900">2. Internat muassasasida</label>
+        <div class="grid grid-cols-2 gap-4 items-center mt-4">
+            <div>OMR2. Otasining ismi</div>
+            <div>
+                <input type="text" id="omr2" name="omr2" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+            </div>
         </div>
-        <div class="flex items-center">
-          <input id="ptr8-3" type="radio" value="3" name="ptr8" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-          <label for="ptr8-3" class="ms-2 text-sm text-gray-900">3. Vafod etgan</label>
+        <div class="grid grid-cols-2 gap-4 items-center mt-4">
+            <div>OMR3. Familiyasi</div>
+            <div>
+                <input type="text" id="omr3" name="omr3" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+            </div>
         </div>
-        <div class="flex items-center">
-          <input id="ptr8-4" type="radio" value="4" name="ptr8" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-          <label for="ptr8-4" class="ms-2 text-sm text-gray-900">4. Qamoqxonada</label>
+
+        <div class="grid grid-cols-2 gap-4 items-center mt-4">
+            <div>
+                OMR4. Lavozim/vazifa <small class="block italic text-red-500">Fill in case manager if the person plays this role.</small>
+            </div>
+            <div>
+                <input type="text" id="omr4" name="omr4" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+            </div>
         </div>
-        <div class="flex items-center">
-          <input id="ptr8-5" type="radio" value="5" name="ptr8" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-          <label for="ptr8-5" class="ms-2 text-sm text-gray-900">5. Boshqa, iltimos, ko&#39;rsating</label>
+        <div class="grid grid-cols-2 gap-4 items-center mt-4">
+            <div>
+                OMR5. Kasbi</div>
+            <div>
+                <input type="text" id="omr5" name="omr5" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+            </div>
         </div>
-        <div class="flex items-center">
-          <input type="text" id="ptr8_other" name="ptr8_other" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+
+        <div class="grid grid-cols-2 gap-4 items-center mt-4">
+            <div>
+                OMR6. Telefon</div>
+            <div>
+                <input type="text" id="omr6" name="omr6" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+            </div>
         </div>
-        <div class="flex items-center">
-          <input id="ptr8-6" type="radio" value="6" name="ptr8" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-          <label for="ptr8-6" class="ms-2 text-sm text-gray-900">8. Noma&#39;lum</label>
+
+        <div class="grid grid-cols-2 gap-4 items-center mt-4">
+            <div>
+                OMR7. Elektron pochta</div>
+            <div>
+                <input type="text" id="omr7" name="omr7" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+            </div>
         </div>
-      </div>
-    </div>
+
+        <h2 class="mt-10 mb-4 text-2xl font-bold text-gray-700">2. YOSH ODAM HAQIDA SHAXSIY MAʼLUMOTLAR</h2>
 
 
-    <div class="grid grid-cols-2 gap-4 items-center mt-6">
-      <div>a Muassasasining nomi</div>
-      <div class="flex items-center">
-        <input type="text" id="ptr8a" name="ptr8a" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
-      </div>
-    </div>
+        <div class="grid grid-cols-2 gap-4 items-center mt-6">
+            <div>PTR1. Tugʻilganlik toʻgʻrisidagi guvohnoma / pasport / shaxsni tasdiqlovchi hujjat</div>
+            <div>
+                <input type="text" id="ptr1" name="ptr1" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+            </div>
+        </div>
 
-    <div class="grid grid-cols-2 gap-4 items-center mt-6">
-      <div>b. Manzil::</div>
-      <div class="flex items-center">
-        <input type="text" id="ptr8b" name="ptr8b" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
-      </div>
-    </div>
+        <p class="italic text-red-500">Shaxsning tugʻilganlik toʻgʻrisidagi guvohnoma/shaxsini tasdiqlovchi hujjat/pasport raqamini kiriting. Agar odamda yoʻq boʻlsa, 0 (nol) ni kiriting.</p>
 
-    <div class="grid grid-cols-2 gap-4 items-center mt-6">
-      <div>c. Telefon raqami::</div>
-      <div class="flex items-center">
-        <input type="text" id="ptr8c" name="ptr8c" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
-      </div>
-    </div>
+        <div class="grid grid-cols-2 gap-4 items-center mt-6">
+            <div>PTR2a. Ismi</div>
+            <div>
+                <input type="text" id="ptr2a" name="ptr2a" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+            </div>
+        </div>
+        <div class="grid grid-cols-2 gap-4 items-center mt-6">
+            <div>PTR2b. Otasining ismi</div>
+            <div>
+                <input type="text" id="ptr2b" name="ptr2b" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+            </div>
+        </div>
+        <div class="grid grid-cols-2 gap-4 items-center mt-6">
+            <div>PTR2c. Familiyasi</div>
+            <div>
+                <input type="text" id="ptr2c" name="ptr2c" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+            </div>
+        </div>
+        <div class="grid grid-cols-2 gap-4 items-center mt-6">
+            <div class="col-span-1">PTR3. Jinsi</div>
+            <div class="col-span-1 flex gap-4">
+                <div class="flex items-center">
+                    <input id="ptr3-1" type="radio" value="1" name="ptr3" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="ptr3-1" class="ms-2 text-sm text-gray-900">1. Erkak</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="ptr3-2" type="radio" value="0" name="ptr3" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="ptr3-2" class="ms-2 text-sm text-gray-900">2. Ayol</label>
+                </div>
+            </div>
+        </div>
+        <div class="grid grid-cols-2 gap-4 items-center mt-6">
+            <div>PTR4. Tugʻilgan sana (kun/oy/yil)</div>
+            <div>
+                <input type="text" id="ptr4" name="ptr4" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+            </div>
+        </div>
+        <div class="grid grid-cols-2 gap-4 items-center mt-6">
+            <div>
+                <p>PTR4a. Shaxsning yoshi (monitoring oʻtkazilgan sanada)</p>
+            </div>
+            <div>
+                <input type="text" id="ptr4a" name="ptr4a" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+            </div>
+        </div>
 
-    <p class="mt-6">d. Maʼmuriy-hududiy birlikning 10 xonali kodini toʻldiring (MHOBT)</p>
+        <div class="grid grid-cols-2 gap-4 items-center mt-6">
+            <div>PTR5a. Tugʻilgan joyi</div>
+            <div class="flex items-center">
+                <input id="ptr5a_dk" name="ptr5a_dk" type="checkbox" value="9" class="w-4 h-4 text-blue-600 border-gray-400 rounded focus:ring-blue-500 disabled:bg-gray-100">
+                <label for="ptr5a_dk" class="ms-2 text-sm text-gray-900">9. Not known</label>
+            </div>
+        </div>
 
-    <div class="grid grid-cols-2 items-center gap-4 mt-6">
-      <div>e. Viloyat:</div>
-      <div>
-        <select id="ptr8e" name="ptr8e" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-          <option value="-9" class="t_choose">--- choose ---</option>
-        </select>
-      </div>
-    </div>
+        <div class="grid grid-cols-2 items-center gap-4 mt-6">
+            <div>PTR5b. Viloyat</div>
+            <div>
+                <select id="ptr5b" name="ptr5b" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+                    <option value="-9" class="t_choose">--- choose ---</option>
+                </select>
+            </div>
+        </div>
 
-    <div class="grid grid-cols-2 items-center gap-4 mt-6">
-      <div>f. Tuman:</div>
-      <div>
-        <select id="ptr8f" name="ptr8f" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-          <option value="-9" class="t_choose">--- choose ---</option>
-        </select>
-      </div>
-    </div>
-    <div class="grid grid-cols-2 items-center gap-4 mt-6">
-      <div>g. Aholi punkti</div>
-      <div>
-        <select id="ptr8g" name="ptr8g" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-          <option value="-9" class="t_choose">--- choose ---</option>
-        </select>
+        <div class="grid grid-cols-2 items-center gap-4 mt-6">
+            <div>PTR5c. Tuman</div>
+            <div>
+                <select id="ptr5c" name="ptr5c" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+                    <option value="-9" class="t_choose">--- choose ---</option>
+                </select>
+            </div>
+        </div>
+        <div class="grid grid-cols-2 items-center gap-4 mt-6">
+            <div>PTR5d. Aholi punkti</div>
+            <div>
+                <select id="ptr5d" name="ptr5d" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+                    <option value="-9" class="t_choose">--- choose ---</option>
+                </select>
 
-      </div>
-    </div>
+            </div>
+        </div>
 
-    <input type="hidden" id="ptr8h" name="ptr8h" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+        <input type="hidden" id="ptr5e" name="ptr5e" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
 
-    <div class="grid grid-cols-2 gap-4 items-center mt-6">
-      <div>PTR9. Iltimos, ushbu yosh shaxs bilan bog&#39;lanish uchun foydalanish mumkin bo&#39;lgan ijtimoiy media profili, ota-onalar, aka-ukalar, qarindoshlar yoki do&#39;stlar kabi muqobil aloqa ma&#39;lumotlarini kiriting</div>
-      <div class="flex items-center">
-        <textarea id="ptr9" name="ptr9" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100"></textarea>
-      </div>
-    </div>
 
-    <div class="grid grid-cols-2 gap-4 items-center mt-6">
-      <div>PTR10. Iltimos, ushbu yosh shaxsni aniqlash va ular bilan bog&#39;lanishimizga yordam beradigan har qanday ma&#39;lumotlarni yozing.</div>
-      <div class="flex items-center">
-        <textarea id="ptr10" name="ptr10" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100"></textarea>
-      </div>
-    </div>
+        <div class="grid grid-cols-2 items-center gap-4 mt-6">
+            <div>PTR6. Yosh odam vasiylik tizimini tark etgan sana (kun / oy / yil)</div>
+            <div>
+                <input type="text" id="ptr6" name="ptr6" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+            </div>
+        </div>
 
-    <p class="mt-10 bg-gray-200 px-2 py-1"><strong>Ushbu yosh shaxsga oid monitoring ishlarini o&#39;tkazishi kerak bo&#39;lgan INSON markazi.</strong></p>
+        <div class="grid grid-cols-2 gap-4 items-center mt-6">
+            <div class="col-span-1">PTR7. Muqobil vasiylik tizimini tark etganida, ushbu yosh shaxs qayerga ketdi?</div>
+            <div class="col-span-1 flex flex-col gap-2">
+                <div class="flex items-center">
+                    <input id="ptr7-1" type="radio" value="1" name="ptr7" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="ptr7-1" class="ms-2 text-sm text-gray-900">1. Oi&#39;z olasiga qaytdi</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="ptr7-2" type="radio" value="2" name="ptr7" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="ptr7-2" class="ms-2 text-sm text-gray-900">2. Jamiyatga qo&#39;shilib, mustaqil yashamoqda</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="ptr7-3" type="radio" value="3" name="ptr7" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="ptr7-3" class="ms-2 text-sm text-gray-900">3. Davlat yoki xayriya tashkilotlari tomonidan taqdim etilgan uyga ko&#39;chib o&#39;tdie alternative
+                        care </label>
+                </div>
+                <div class="flex items-center">
+                    <input id="ptr7-4" type="radio" value="4" name="ptr7" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="ptr7-4" class="ms-2 text-sm text-gray-900">4. Kattalar uchun muassasa / internatga o&#39;tkazildi</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="ptr7-5" type="radio" value="5" name="ptr7" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="ptr7-5" class="ms-2 text-sm text-gray-900">5. Oliy o&#39;quv muassasasi tomonidan taqdim etiladiyan yotoqxonaga o&#39;tkazildi</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="ptr7-6" type="radio" value="6" name="ptr7" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="ptr7-6" class="ms-2 text-sm text-gray-900">6. Chet elga ketdi</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="ptr7-7" type="radio" value="7" name="ptr7" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="ptr7-7" class="ms-2 text-sm text-gray-900">7. Boshqa holatlar, ko&#39;rsating</label>
+                </div>
+                <div class="flex items-center">
+                    <input type="text" id="ptr7_other" name="ptr7_other" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                </div>
+                <div class="flex items-center">
+                    <input id="ptr7-8" type="radio" value="8" name="ptr7" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="ptr7-8" class="ms-2 text-sm text-gray-900">8. Noma&#39;lum</label>
+                </div>
+            </div>
+        </div>
 
-  </form>
+        <div class="grid grid-cols-2 gap-4 items-center mt-6">
+            <div class="col-span-1">PTR8. Agar sizga ma&#39;lum bo&#39;sa, keltiring, ushbu yosh shaxs hozirda qayerda yashaydi?</div>
+            <div class="col-span-1 flex flex-col gap-2">
+                <div class="flex items-center">
+                    <input id="ptr8-1" type="radio" value="1" name="ptr8" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="ptr8-1" class="ms-2 text-sm text-gray-900">1. Jamiyat bilan birgalikda</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="ptr8-2" type="radio" value="2" name="ptr8" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="ptr8-2" class="ms-2 text-sm text-gray-900">2. Internat muassasasida</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="ptr8-3" type="radio" value="3" name="ptr8" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="ptr8-3" class="ms-2 text-sm text-gray-900">3. Vafod etgan</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="ptr8-4" type="radio" value="4" name="ptr8" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="ptr8-4" class="ms-2 text-sm text-gray-900">4. Qamoqxonada</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="ptr8-5" type="radio" value="5" name="ptr8" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="ptr8-5" class="ms-2 text-sm text-gray-900">5. Boshqa, iltimos, ko&#39;rsating</label>
+                </div>
+                <div class="flex items-center">
+                    <input type="text" id="ptr8_other" name="ptr8_other" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                </div>
+                <div class="flex items-center">
+                    <input id="ptr8-6" type="radio" value="6" name="ptr8" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="ptr8-6" class="ms-2 text-sm text-gray-900">8. Noma&#39;lum</label>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="grid grid-cols-2 gap-4 items-center mt-6">
+            <div>a Muassasasining nomi.</div>
+            <div class="flex items-center">
+                <input type="text" id="ptr8a" name="ptr8a" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+            </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 items-center mt-6">
+            <div>b. Manzil:</div>
+            <div class="flex items-center">
+                <input type="text" id="ptr8b" name="ptr8b" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+            </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 items-center mt-6">
+            <div>c. Telefon raqami:</div>
+            <div class="flex items-center">
+                <input type="text" id="ptr8c" name="ptr8c" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+            </div>
+        </div>
+
+        <p class="mt-6">d. Maʼmuriy-hududiy birlikning 10 xonali kodini toʻldiring (MHOBT)</p>
+
+        <div class="grid grid-cols-2 items-center gap-4 mt-6">
+            <div>e. Viloyat:</div>
+            <div>
+                <select id="ptr8e" name="ptr8e" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+                    <option value="-9" class="t_choose">--- choose ---</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-2 items-center gap-4 mt-6">
+            <div>f. Tuman:</div>
+            <div>
+                <select id="ptr8f" name="ptr8f" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+                    <option value="-9" class="t_choose">--- choose ---</option>
+                </select>
+            </div>
+        </div>
+        <div class="grid grid-cols-2 items-center gap-4 mt-6">
+            <div>g. Aholi punkti</div>
+            <div>
+                <select id="ptr8g" name="ptr8g" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+                    <option value="-9" class="t_choose">--- choose ---</option>
+                </select>
+
+            </div>
+        </div>
+
+        <input type="hidden" id="ptr8h" name="ptr8h" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+
+        <div class="grid grid-cols-2 gap-4 items-center mt-6">
+            <div>PTR9. Iltimos, ushbu yosh shaxs bilan bog&#39;lanish uchun foydalanish mumkin bo&#39;lgan ijtimoiy media profili, ota-onalar, aka-ukalar, qarindoshlar yoki do&#39;stlar kabi muqobil aloqa ma&#39;lumotlarini kiriting</div>
+            <div class="flex items-center">
+                <textarea id="ptr9" name="ptr9" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100"></textarea>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 items-center mt-6">
+            <div>PTR10. Iltimos, ushbu yosh shaxsni aniqlash va ular bilan bog&#39;lanishimizga yordam beradigan har qanday ma&#39;lumotlarni yozing.</div>
+            <div class="flex items-center">
+                <textarea id="ptr10" name="ptr10" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100"></textarea>
+            </div>
+        </div>
+
+        <p class="mt-10 bg-gray-200 px-2 py-1"><strong>Ushbu yosh shaxsga oid monitoring ishlarini o&#39;tkazishi kerak bo&#39;lgan INSON markazi.</strong></p>
+
+    </form>
 
 </body>
 
