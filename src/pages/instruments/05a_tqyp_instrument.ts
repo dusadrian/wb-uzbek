@@ -15,6 +15,7 @@ import { KeyString, regions, districts, settlements, settlement_types } from "..
 import * as en from "../../locales/en.json";
 import * as uz from "../../locales/uz.json";
 import * as ru from "../../locales/ru.json";
+import { set } from "lodash";
 const locales: { [key: string]: typeof en | typeof uz | typeof ru} = {
     'en': en,
     'uz': uz,
@@ -29,12 +30,12 @@ const lang = localStorage.getItem("language");
 
 
 const general_dates = [
-    'data', 'ptr4', 'ptr6'
+    'ptr4', 'ptr6' // 'data',
 ];
-const regElements  = ["ptr5b", "ptr8e"];
-const disElements  = ["ptr5c", "ptr8f"];
-const setElements  = ["ptr5d", "ptr8g"];
-const typeElements = ["ptr5e", "ptr8h"];
+const regElements  = ["str3a", "ptr5b", "ptr8e"];
+const disElements  = ["str3b", "ptr5c", "ptr8f"];
+const setElements  = ["",      "ptr5d", "ptr8g"];
+const typeElements = ["",      "ptr5e", "ptr8h"];
 
 let regionCode = '';
 let institutionType = '';
@@ -91,8 +92,12 @@ export const instrument5a = {
             const set_el = util.htmlElement(setElements[x]);
 
             util.listen(regElements[x], "change", function () {
-                set_el.innerHTML = "";
-                util.htmlElement(typeElements[x]).value = "";
+                if (setElements[x] != "") {
+                    set_el.innerHTML = "";
+                }
+                if (typeElements[x] != "") {
+                    util.htmlElement(typeElements[x]).value = "";
+                }
                 const selectedRegion = reg_el.value;
                 if (Number(selectedRegion) > 0) {
                     const dis_codes = regions[selectedRegion].districts;
@@ -113,34 +118,41 @@ export const instrument5a = {
             })
 
             util.listen(disElements[x], "change", function () {
-                util.htmlElement(typeElements[x]).value = "";
+                if (typeElements[x] != "") {
+                    util.htmlElement(typeElements[x]).value = "";
+                }
                 const selectedDistrict = dis_el.value;
-                instrument.questions[setElements[x]].skip = false;
-                util.htmlElement(setElements[x]).disabled = false;
-                set_el.innerHTML = "";
-                if (Number(selectedDistrict) > 0) {
-                    const set_codes = districts[selectedDistrict].settlements;
+                if (setElements[x] != "") {
+                    instrument.questions[setElements[x]].skip = false;
+                    util.htmlElement(setElements[x]).disabled = false;
+                    set_el.innerHTML = "";
 
-                    if (set_codes.length > 0) {
-                        const option = document.createElement("option");
-                        option.value = "-9";
-                        option.text = locales[lang]['t_choose'];
-                        set_el.appendChild(option);
+                    if (Number(selectedDistrict) > 0) {
+                        const set_codes = districts[selectedDistrict].settlements;
 
-                        for (let i = 0; i < set_codes.length; i++) {
+                        if (set_codes.length > 0) {
                             const option = document.createElement("option");
-                            option.value = set_codes[i];
-                            option.text = set_codes[i] + ": " + (settlements[set_codes[i]] as KeyString)[lang];
+                            option.value = "-9";
+                            option.text = locales[lang]['t_choose'];
                             set_el.appendChild(option);
+
+                            for (let i = 0; i < set_codes.length; i++) {
+                                const option = document.createElement("option");
+                                option.value = set_codes[i];
+                                option.text = set_codes[i] + ": " + (settlements[set_codes[i]] as KeyString)[lang];
+                                set_el.appendChild(option);
+                            }
                         }
-                    }
-                    else {
-                        const dis_type = settlement_types[districts[selectedDistrict].type];
-                        const type_lang = dis_type[lang as keyof typeof dis_type];
-                        util.setValue(typeElements[x], type_lang.toString());
-                        instrument.questions[setElements[x]].skip = true;
-                        instrument.questions[setElements[x]].value = '-7';
-                        util.htmlElement(setElements[x]).disabled = true;
+                        else {
+                            if (typeElements[x] != "") {
+                                const dis_type = settlement_types[districts[selectedDistrict].type];
+                                const type_lang = dis_type[lang as keyof typeof dis_type];
+                                util.setValue(typeElements[x], type_lang.toString());
+                            }
+                            instrument.questions[setElements[x]].skip = true;
+                            instrument.questions[setElements[x]].value = '-7';
+                            util.htmlElement(setElements[x]).disabled = true;
+                        }
                     }
                 }
             })
@@ -149,7 +161,7 @@ export const instrument5a = {
 
 
         ipcRenderer.on("instrumentDataReady", (_event, args) => {
-            // console.log(args);
+            console.log(args);
 
             // set instrument question !!!!!!
             instrument.setQuestions(questions, questionOrder);
@@ -171,27 +183,21 @@ export const instrument5a = {
 
             // set default values, IRRESPECTIVE of the instrument
 
-            if (args.institutionData) {
-
-                if (Object.keys(regions).indexOf(args.institutionData.region) >= 0) {
-                    util.setValue('reg', "" + (regions[args.institutionData.region] as KeyString)[lang]);
-                }
-
-                if (Object.keys(districts).indexOf(args.institutionData.district) >= 0) {
-                    util.setValue('dis', "" + (districts[args.institutionData.district] as KeyString)[lang]);
-                }
-
-                util.setValue("omr9", args.institutionData.name);
-                institutionType = args.institutionData.type;
-            }
-
             // two digit day & month
             util.setValue("data", util.customDate());
 
-            console.log(args.userData);
-
             if (args.userData) {
                 // set default values for user
+                regionCode = args.userData.region_code;
+                institutionType = args.userData.service_type_code;
+                util.setValue("str1", args.userData.institution_code);
+                util.setValue("str2", args.userData.institution_name);
+                util.setValue("str3a", regionCode);
+                util.setValue("str3b", args.services[args.userData.institution_code].district);
+                const type_of_institution = args.services[args.userData.institution_code].type;
+                if (["11", "12", "13", "14", "15", "16", "17"].indexOf(type_of_institution) >= 0) {
+                    util.setValue("str4", args.services[args.userData.institution_code].type);
+                }
                 util.setValue("omr1", args.userData.name);
                 util.setValue("omr2", args.userData.patronymics);
                 util.setValue("omr3", args.userData.surname);
@@ -199,7 +205,6 @@ export const instrument5a = {
                 util.setValue("omr5", args.userData.profession);
                 util.setValue("omr6", args.userData.phone);
                 util.setValue("omr7", args.userData.email);
-                regionCode = args.userData.region_code;
             }
 
             instrument.start(instrumentID, instrument.trimis, saveChestionar, validateChestionar);
