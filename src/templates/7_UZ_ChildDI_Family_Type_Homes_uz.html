@@ -29,13 +29,17 @@
         <div class="grid grid-cols-2 gap-4 items-center mt-12">
             <div>REG. Viloyat</div>
             <div>
-                <input type="text" id="reg" name="reg" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                <select id="reg" name="reg" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+                    <option value="-9" class="t_choose">--- choose ---</option>
+                </select>
             </div>
         </div>
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
             <div>DIS. Tuman</div>
             <div>
-                <input type="text" id="dis" name="dis" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                <select id="dis" name="dis" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+                    <option value="-9" class="t_choose">--- choose ---</option>
+                </select>
             </div>
         </div>
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
@@ -107,28 +111,15 @@
             </div>
         </div>
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
-            <div>IFP1c. Settlement</div>
+            <div>IFP1c. Aholi punkti</div>
             <div>
                 <select id="ifp1c" name="ifp1c" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
                     <option value="-9" class="t_choose">--- choose ---</option>
                 </select>
             </div>
         </div>
-        <div class="grid grid-cols-2 gap-4 items-center mt-6">
-            <div>IFP1d. Type of settlement</div>
-            <div>
-                <select id="ifp1d" name="ifp1d" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                    <option value="-9" class="t_choose"></option>
-                    <option value="10" class="t_settlement_type_10"></option>
-                    <option value="20" class="t_settlement_type_20"></option>
-                    <option value="21" class="t_settlement_type_21"></option>
-                    <option value="22" class="t_settlement_type_22"></option>
-                    <option value="23" class="t_settlement_type_23"></option>
-                    <option value="24" class="t_settlement_type_24"></option>
-                    <option value="31" class="t_settlement_type_31"></option>
-                </select>
-            </div>
-        </div>
+
+        <input type="hidden" id="ifp1d" name="ifp1d" />
 
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
             <div>IFP2. Oilaviy bolalar uyi tashkil etilgan sana: oy, yil:</div>
@@ -863,6 +854,276 @@
                         </select>
                     </td>
                 </tr>
+                <tr>
+                    <td class="p-2">6-chi bola</td>
+                    <td class="p-2">
+                        <div class="flex items-center justify-center gap-2">
+                            <div class="flex items-center">
+                                <input id="fc4_c6a-1" type="radio" value="1" name="fc4_c6a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                                <label for="fc4_c6a-1" class="ms-2 text-sm text-gray-900">1. E</label>
+                            </div>
+                            <div class="flex items-center">
+                                <input id="fc4_c6a-2" type="radio" value="2" name="fc4_c6a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                                <label for="fc4_c6a-2" class="ms-2 text-sm text-gray-900">2.A</label>
+                            </div>
+                        </div>
+                    </td>
+                    <td class="p-2">
+                        <input type="text" id="fc4_c6b" name="fc4_c6b" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                    </td>
+                    <td class="p-2">
+                        <input type="text" id="fc4_c6c" name="fc4_c6c" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                    </td>
+                    <td class="p-2">
+                        <div class="flex items-center gap-2">
+                            <div class="flex items-center">
+                                <input id="fc4_c6d-1" type="radio" value="1" name="fc4_c6d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                                <label for="fc4_c6d-1" class="ms-2 text-sm text-gray-900">1.H</label>
+                            </div>
+                            <div class="flex items-center">
+                                <input id="fc4_c6d-2" type="radio" value="2" name="fc4_c6d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                                <label for="fc4_c6d-2" class="ms-2 text-sm text-gray-900">2.Y</label>
+                            </div>
+                        </div>
+                    </td>
+                    <td class="p-2">
+                        <select id="fc4_c6e" name="fc4_c6e" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100">
+                            <option selected>------</option>
+                            <option value="1">1. O&#39;z oilasidan</option>
+                            <option value="2">2. Bolalar muassasasidan</option>
+                            <option value="3">3. Boshqa oilaviy bolalar uyidan</option>
+                            <option value="4">4. Patronat oiladan</option>
+                            <option value="5">5. Boshqa vaziyat, ko&#39;rsating</option>
+                        </select>
+                        <input type="text" id="fc4_c6e_other" name="fc4_c6e_other" class="bg-white border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                    </td>
+                    <td class="p-2">
+                        <select id="fc4_c6f" name="fc4_c6f" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100">
+                            <option selected>------</option>
+                            <option value="1">1. Umumiy ta&#39;limda</option>
+                            <option value="2">2. Ixtisoslashgan ta&#39;limda</option>
+                            <option value="3">3. Inklyuziv ta&#39;lim</option>
+                            <option value="4">4. Uydagi ta&#39;lim</option>
+                            <option value="5">5. O&#39;qimaydi</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="p-2">7-chi bola</td>
+                    <td class="p-2">
+                        <div class="flex items-center justify-center gap-2">
+                            <div class="flex items-center">
+                                <input id="fc4_c7a-1" type="radio" value="1" name="fc4_c7a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                                <label for="fc4_c7a-1" class="ms-2 text-sm text-gray-900">1. E</label>
+                            </div>
+                            <div class="flex items-center">
+                                <input id="fc4_c7a-2" type="radio" value="2" name="fc4_c7a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                                <label for="fc4_c7a-2" class="ms-2 text-sm text-gray-900">2.A</label>
+                            </div>
+                        </div>
+                    </td>
+                    <td class="p-2">
+                        <input type="text" id="fc4_c7b" name="fc4_c7b" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                    </td>
+                    <td class="p-2">
+                        <input type="text" id="fc4_c7c" name="fc4_c7c" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                    </td>
+                    <td class="p-2">
+                        <div class="flex items-center gap-2">
+                            <div class="flex items-center">
+                                <input id="fc4_c7d-1" type="radio" value="1" name="fc4_c7d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                                <label for="fc4_c7d-1" class="ms-2 text-sm text-gray-900">1.H</label>
+                            </div>
+                            <div class="flex items-center">
+                                <input id="fc4_c7d-2" type="radio" value="2" name="fc4_c7d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                                <label for="fc4_c7d-2" class="ms-2 text-sm text-gray-900">2.Y</label>
+                            </div>
+                        </div>
+                    </td>
+                    <td class="p-2">
+                        <select id="fc4_c7e" name="fc4_c7e" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100">
+                            <option selected>------</option>
+                            <option value="1">1. O&#39;z oilasidan</option>
+                            <option value="2">2. Bolalar muassasasidan</option>
+                            <option value="3">3. Boshqa oilaviy bolalar uyidan</option>
+                            <option value="4">4. Patronat oiladan</option>
+                            <option value="5">5. Boshqa vaziyat, ko&#39;rsating</option>
+                        </select>
+                        <input type="text" id="fc4_c7e_other" name="fc4_c7e_other" class="bg-white border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                    </td>
+                    <td class="p-2">
+                        <select id="fc4_c7f" name="fc4_c7f" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100">
+                            <option selected>------</option>
+                            <option value="1">1. Umumiy ta&#39;limda</option>
+                            <option value="2">2. Ixtisoslashgan ta&#39;limda</option>
+                            <option value="3">3. Inklyuziv ta&#39;lim</option>
+                            <option value="4">4. Uydagi ta&#39;lim</option>
+                            <option value="5">5. O&#39;qimaydi</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="p-2">8-chi bola</td>
+                    <td class="p-2">
+                        <div class="flex items-center justify-center gap-2">
+                            <div class="flex items-center">
+                                <input id="fc4_c8a-1" type="radio" value="1" name="fc4_c8a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                                <label for="fc4_c8a-1" class="ms-2 text-sm text-gray-900">1. E</label>
+                            </div>
+                            <div class="flex items-center">
+                                <input id="fc4_c8a-2" type="radio" value="2" name="fc4_c8a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                                <label for="fc4_c8a-2" class="ms-2 text-sm text-gray-900">2.A</label>
+                            </div>
+                        </div>
+                    </td>
+                    <td class="p-2">
+                        <input type="text" id="fc4_c8b" name="fc4_c8b" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                    </td>
+                    <td class="p-2">
+                        <input type="text" id="fc4_c8c" name="fc4_c8c" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                    </td>
+                    <td class="p-2">
+                        <div class="flex items-center gap-2">
+                            <div class="flex items-center">
+                                <input id="fc4_c8d-1" type="radio" value="1" name="fc4_c8d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                                <label for="fc4_c8d-1" class="ms-2 text-sm text-gray-900">1.H</label>
+                            </div>
+                            <div class="flex items-center">
+                                <input id="fc4_c8d-2" type="radio" value="2" name="fc4_c8d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                                <label for="fc4_c8d-2" class="ms-2 text-sm text-gray-900">2.Y</label>
+                            </div>
+                        </div>
+                    </td>
+                    <td class="p-2">
+                        <select id="fc4_c8e" name="fc4_c8e" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100">
+                            <option selected>------</option>
+                            <option value="1">1. O&#39;z oilasidan</option>
+                            <option value="2">2. Bolalar muassasasidan</option>
+                            <option value="3">3. Boshqa oilaviy bolalar uyidan</option>
+                            <option value="4">4. Patronat oiladan</option>
+                            <option value="5">5. Boshqa vaziyat, ko&#39;rsating</option>
+                        </select>
+                        <input type="text" id="fc4_c8e_other" name="fc4_c8e_other" class="bg-white border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                    </td>
+                    <td class="p-2">
+                        <select id="fc4_c8f" name="fc4_c8f" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100">
+                            <option selected>------</option>
+                            <option value="1">1. Umumiy ta&#39;limda</option>
+                            <option value="2">2. Ixtisoslashgan ta&#39;limda</option>
+                            <option value="3">3. Inklyuziv ta&#39;lim</option>
+                            <option value="4">4. Uydagi ta&#39;lim</option>
+                            <option value="5">5. O&#39;qimaydi</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="p-2">9-chi bola</td>
+                    <td class="p-2">
+                        <div class="flex items-center justify-center gap-2">
+                            <div class="flex items-center">
+                                <input id="fc4_c9a-1" type="radio" value="1" name="fc4_c9a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                                <label for="fc4_c9a-1" class="ms-2 text-sm text-gray-900">1. E</label>
+                            </div>
+                            <div class="flex items-center">
+                                <input id="fc4_c9a-2" type="radio" value="2" name="fc4_c9a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                                <label for="fc4_c9a-2" class="ms-2 text-sm text-gray-900">2.A</label>
+                            </div>
+                        </div>
+                    </td>
+                    <td class="p-2">
+                        <input type="text" id="fc4_c9b" name="fc4_c9b" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                    </td>
+                    <td class="p-2">
+                        <input type="text" id="fc4_c9c" name="fc4_c9c" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                    </td>
+                    <td class="p-2">
+                        <div class="flex items-center gap-2">
+                            <div class="flex items-center">
+                                <input id="fc4_c9d-1" type="radio" value="1" name="fc4_c9d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                                <label for="fc4_c9d-1" class="ms-2 text-sm text-gray-900">1.H</label>
+                            </div>
+                            <div class="flex items-center">
+                                <input id="fc4_c9d-2" type="radio" value="2" name="fc4_c9d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                                <label for="fc4_c9d-2" class="ms-2 text-sm text-gray-900">2.Y</label>
+                            </div>
+                        </div>
+                    </td>
+                    <td class="p-2">
+                        <select id="fc4_c9e" name="fc4_c9e" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100">
+                            <option selected>------</option>
+                            <option value="1">1. O&#39;z oilasidan</option>
+                            <option value="2">2. Bolalar muassasasidan</option>
+                            <option value="3">3. Boshqa oilaviy bolalar uyidan</option>
+                            <option value="4">4. Patronat oiladan</option>
+                            <option value="5">5. Boshqa vaziyat, ko&#39;rsating</option>
+                        </select>
+                        <input type="text" id="fc4_c9e_other" name="fc4_c9e_other" class="bg-white border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                    </td>
+                    <td class="p-2">
+                        <select id="fc4_c9f" name="fc4_c9f" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100">
+                            <option selected>------</option>
+                            <option value="1">1. Umumiy ta&#39;limda</option>
+                            <option value="2">2. Ixtisoslashgan ta&#39;limda</option>
+                            <option value="3">3. Inklyuziv ta&#39;lim</option>
+                            <option value="4">4. Uydagi ta&#39;lim</option>
+                            <option value="5">5. O&#39;qimaydi</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="p-2">10-chi bola</td>
+                    <td class="p-2">
+                        <div class="flex items-center justify-center gap-2">
+                            <div class="flex items-center">
+                                <input id="fc4_c10a-1" type="radio" value="1" name="fc4_c10a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                                <label for="fc4_c10a-1" class="ms-2 text-sm text-gray-900">1. E</label>
+                            </div>
+                            <div class="flex items-center">
+                                <input id="fc4_c10a-2" type="radio" value="2" name="fc4_c10a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                                <label for="fc4_c10a-2" class="ms-2 text-sm text-gray-900">2.A</label>
+                            </div>
+                        </div>
+                    </td>
+                    <td class="p-2">
+                        <input type="text" id="fc4_c10b" name="fc4_c10b" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                    </td>
+                    <td class="p-2">
+                        <input type="text" id="fc4_c10c" name="fc4_c10c" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                    </td>
+                    <td class="p-2">
+                        <div class="flex items-center gap-2">
+                            <div class="flex items-center">
+                                <input id="fc4_c10d-1" type="radio" value="1" name="fc4_c10d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                                <label for="fc4_c10d-1" class="ms-2 text-sm text-gray-900">1.H</label>
+                            </div>
+                            <div class="flex items-center">
+                                <input id="fc4_c10d-2" type="radio" value="2" name="fc4_c10d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                                <label for="fc4_c10d-2" class="ms-2 text-sm text-gray-900">2.Y</label>
+                            </div>
+                        </div>
+                    </td>
+                    <td class="p-2">
+                        <select id="fc4_c10e" name="fc4_c10e" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100">
+                            <option selected>------</option>
+                            <option value="1">1. O&#39;z oilasidan</option>
+                            <option value="2">2. Bolalar muassasasidan</option>
+                            <option value="3">3. Boshqa oilaviy bolalar uyidan</option>
+                            <option value="4">4. Patronat oiladan</option>
+                            <option value="5">5. Boshqa vaziyat, ko&#39;rsating</option>
+                        </select>
+                        <input type="text" id="fc4_c10e_other" name="fc4_c10e_other" class="bg-white border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                    </td>
+                    <td class="p-2">
+                        <select id="fc4_c10f" name="fc4_c10f" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100">
+                            <option selected>------</option>
+                            <option value="1">1. Umumiy ta&#39;limda</option>
+                            <option value="2">2. Ixtisoslashgan ta&#39;limda</option>
+                            <option value="3">3. Inklyuziv ta&#39;lim</option>
+                            <option value="4">4. Uydagi ta&#39;lim</option>
+                            <option value="5">5. O&#39;qimaydi</option>
+                        </select>
+                    </td>
+                </tr>
             </tbody>
         </table>
 
@@ -1130,6 +1391,236 @@
                             <option value="10">10. Boshqa sabab, ko&#39;rsating</option>
                         </select>
                         <input type="text" id="ex3_c5d_other" name="ex3_c5d_other" class="bg-white border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="p-2">6-chi bola</td>
+                    <td class="p-2">
+                        <div class="flex items-center justify-center gap-2">
+                            <div class="flex items-center">
+                                <input id="ex3_c6a-1" type="radio" value="1" name="ex3_c6a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                                <label for="ex3_c6a-1" class="ms-2 text-sm text-gray-900">1.E</label>
+                            </div>
+                            <div class="flex items-center">
+                                <input id="ex3_c6a-2" type="radio" value="2" name="ex3_c6a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                                <label for="ex3_c6a-2" class="ms-2 text-sm text-gray-900">2.A</label>
+                            </div>
+                        </div>
+                    </td>
+                    <td class="p-2">
+                        <input type="text" id="ex3_c6b" name="ex3_c6b" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                    </td>
+                    <td class="p-2">
+                        <div class="flex items-center justify-center gap-2">
+                            <div class="flex items-center">
+                                <input id="ex3_c6c-1" type="radio" value="1" name="ex3_c6c" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                                <label for="ex3_c6c-1" class="ms-2 text-sm text-gray-900">1.H</label>
+                            </div>
+                            <div class="flex items-center">
+                                <input id="ex3_c6c-2" type="radio" value="2" name="ex3_c6c" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                                <label for="ex3_c6c-2" class="ms-2 text-sm text-gray-900">2.Y</label>
+                            </div>
+                        </div>
+                    </td>
+                    <td class="p-2">
+                        <select id="ex3_c6d" name="ex3_c6d" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100">
+                            <option selected>------</option>
+                            <option value="1">1. Biologik oilaga qaytarib olingan</option>
+                            <option value="2">2. Farzandlikka olingan</option>
+                            <option value="3">3. 18 yoshga yetib, mustaqil yashay boshladi</option>
+                            <option value="4">4. Patronat oilasiga o&#39;tkazildi</option>
+                            <option value="5">5. Oilaga vasiylik yoki homiylik belgilandi</option>
+                            <option value="6">6. Boshqa oilaviy bolalar uyiga o&#39;tkazildi</option>
+                            <option value="7">7. Bolalar muassasasiga o&#39;tkazildi</option>
+                            <option value="8">8. Katta yoshdagilar muassasasiga o&#39;tkazildi</option>
+                            <option value="9">9. O&#39;lim</option>
+                            <option value="10">10. Boshqa sabab, ko&#39;rsating</option>
+                        </select>
+                        <input type="text" id="ex3_c6d_other" name="ex3_c6d_other" class="bg-white border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="p-2">7-chi bola</td>
+                    <td class="p-2">
+                        <div class="flex items-center justify-center gap-2">
+                            <div class="flex items-center">
+                                <input id="ex3_c7a-1" type="radio" value="1" name="ex3_c7a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                                <label for="ex3_c7a-1" class="ms-2 text-sm text-gray-900">1.E</label>
+                            </div>
+                            <div class="flex items-center">
+                                <input id="ex3_c7a-2" type="radio" value="2" name="ex3_c7a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                                <label for="ex3_c7a-2" class="ms-2 text-sm text-gray-900">2.A</label>
+                            </div>
+                        </div>
+                    </td>
+                    <td class="p-2">
+                        <input type="text" id="ex3_c7b" name="ex3_c7b" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                    </td>
+                    <td class="p-2">
+                        <div class="flex items-center justify-center gap-2">
+                            <div class="flex items-center">
+                                <input id="ex3_c7c-1" type="radio" value="1" name="ex3_c7c" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                                <label for="ex3_c7c-1" class="ms-2 text-sm text-gray-900">1.H</label>
+                            </div>
+                            <div class="flex items-center">
+                                <input id="ex3_c7c-2" type="radio" value="2" name="ex3_c7c" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                                <label for="ex3_c7c-2" class="ms-2 text-sm text-gray-900">2.Y</label>
+                            </div>
+                        </div>
+                    </td>
+                    <td class="p-2">
+                        <select id="ex3_c7d" name="ex3_c7d" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100">
+                            <option selected>------</option>
+                            <option value="1">1. Biologik oilaga qaytarib olingan</option>
+                            <option value="2">2. Farzandlikka olingan</option>
+                            <option value="3">3. 18 yoshga yetib, mustaqil yashay boshladi</option>
+                            <option value="4">4. Patronat oilasiga o&#39;tkazildi</option>
+                            <option value="5">5. Oilaga vasiylik yoki homiylik belgilandi</option>
+                            <option value="6">6. Boshqa oilaviy bolalar uyiga o&#39;tkazildi</option>
+                            <option value="7">7. Bolalar muassasasiga o&#39;tkazildi</option>
+                            <option value="8">8. Katta yoshdagilar muassasasiga o&#39;tkazildi</option>
+                            <option value="9">9. O&#39;lim</option>
+                            <option value="10">10. Boshqa sabab, ko&#39;rsating</option>
+                        </select>
+                        <input type="text" id="ex3_c7d_other" name="ex3_c7d_other" class="bg-white border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="p-2">8-chi bola</td>
+                    <td class="p-2">
+                        <div class="flex items-center justify-center gap-2">
+                            <div class="flex items-center">
+                                <input id="ex3_c8a-1" type="radio" value="1" name="ex3_c8a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                                <label for="ex3_c8a-1" class="ms-2 text-sm text-gray-900">1.E</label>
+                            </div>
+                            <div class="flex items-center">
+                                <input id="ex3_c8a-2" type="radio" value="2" name="ex3_c8a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                                <label for="ex3_c8a-2" class="ms-2 text-sm text-gray-900">2.A</label>
+                            </div>
+                        </div>
+                    </td>
+                    <td class="p-2">
+                        <input type="text" id="ex3_c8b" name="ex3_c8b" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                    </td>
+                    <td class="p-2">
+                        <div class="flex items-center justify-center gap-2">
+                            <div class="flex items-center">
+                                <input id="ex3_c8c-1" type="radio" value="1" name="ex3_c8c" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                                <label for="ex3_c8c-1" class="ms-2 text-sm text-gray-900">1.H</label>
+                            </div>
+                            <div class="flex items-center">
+                                <input id="ex3_c8c-2" type="radio" value="2" name="ex3_c8c" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                                <label for="ex3_c8c-2" class="ms-2 text-sm text-gray-900">2.Y</label>
+                            </div>
+                        </div>
+                    </td>
+                    <td class="p-2">
+                        <select id="ex3_c8d" name="ex3_c8d" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100">
+                            <option selected>------</option>
+                            <option value="1">1. Biologik oilaga qaytarib olingan</option>
+                            <option value="2">2. Farzandlikka olingan</option>
+                            <option value="3">3. 18 yoshga yetib, mustaqil yashay boshladi</option>
+                            <option value="4">4. Patronat oilasiga o&#39;tkazildi</option>
+                            <option value="5">5. Oilaga vasiylik yoki homiylik belgilandi</option>
+                            <option value="6">6. Boshqa oilaviy bolalar uyiga o&#39;tkazildi</option>
+                            <option value="7">7. Bolalar muassasasiga o&#39;tkazildi</option>
+                            <option value="8">8. Katta yoshdagilar muassasasiga o&#39;tkazildi</option>
+                            <option value="9">9. O&#39;lim</option>
+                            <option value="10">10. Boshqa sabab, ko&#39;rsating</option>
+                        </select>
+                        <input type="text" id="ex3_c8d_other" name="ex3_c8d_other" class="bg-white border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="p-2">9-chi bola</td>
+                    <td class="p-2">
+                        <div class="flex items-center justify-center gap-2">
+                            <div class="flex items-center">
+                                <input id="ex3_c9a-1" type="radio" value="1" name="ex3_c9a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                                <label for="ex3_c9a-1" class="ms-2 text-sm text-gray-900">1.E</label>
+                            </div>
+                            <div class="flex items-center">
+                                <input id="ex3_c9a-2" type="radio" value="2" name="ex3_c9a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                                <label for="ex3_c9a-2" class="ms-2 text-sm text-gray-900">2.A</label>
+                            </div>
+                        </div>
+                    </td>
+                    <td class="p-2">
+                        <input type="text" id="ex3_c9b" name="ex3_c9b" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                    </td>
+                    <td class="p-2">
+                        <div class="flex items-center justify-center gap-2">
+                            <div class="flex items-center">
+                                <input id="ex3_c9c-1" type="radio" value="1" name="ex3_c9c" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                                <label for="ex3_c9c-1" class="ms-2 text-sm text-gray-900">1.H</label>
+                            </div>
+                            <div class="flex items-center">
+                                <input id="ex3_c9c-2" type="radio" value="2" name="ex3_c9c" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                                <label for="ex3_c9c-2" class="ms-2 text-sm text-gray-900">2.Y</label>
+                            </div>
+                        </div>
+                    </td>
+                    <td class="p-2">
+                        <select id="ex3_c9d" name="ex3_c9d" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100">
+                            <option selected>------</option>
+                            <option value="1">1. Biologik oilaga qaytarib olingan</option>
+                            <option value="2">2. Farzandlikka olingan</option>
+                            <option value="3">3. 18 yoshga yetib, mustaqil yashay boshladi</option>
+                            <option value="4">4. Patronat oilasiga o&#39;tkazildi</option>
+                            <option value="5">5. Oilaga vasiylik yoki homiylik belgilandi</option>
+                            <option value="6">6. Boshqa oilaviy bolalar uyiga o&#39;tkazildi</option>
+                            <option value="7">7. Bolalar muassasasiga o&#39;tkazildi</option>
+                            <option value="8">8. Katta yoshdagilar muassasasiga o&#39;tkazildi</option>
+                            <option value="9">9. O&#39;lim</option>
+                            <option value="10">10. Boshqa sabab, ko&#39;rsating</option>
+                        </select>
+                        <input type="text" id="ex3_c9d_other" name="ex3_c9d_other" class="bg-white border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="p-2">10-chi bola</td>
+                    <td class="p-2">
+                        <div class="flex items-center justify-center gap-2">
+                            <div class="flex items-center">
+                                <input id="ex3_c10a-1" type="radio" value="1" name="ex3_c10a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                                <label for="ex3_c10a-1" class="ms-2 text-sm text-gray-900">1.E</label>
+                            </div>
+                            <div class="flex items-center">
+                                <input id="ex3_c10a-2" type="radio" value="2" name="ex3_c10a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                                <label for="ex3_c10a-2" class="ms-2 text-sm text-gray-900">2.A</label>
+                            </div>
+                        </div>
+                    </td>
+                    <td class="p-2">
+                        <input type="text" id="ex3_c10b" name="ex3_c10b" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                    </td>
+                    <td class="p-2">
+                        <div class="flex items-center justify-center gap-2">
+                            <div class="flex items-center">
+                                <input id="ex3_c10c-1" type="radio" value="1" name="ex3_c10c" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                                <label for="ex3_c10c-1" class="ms-2 text-sm text-gray-900">1.H</label>
+                            </div>
+                            <div class="flex items-center">
+                                <input id="ex3_c10c-2" type="radio" value="2" name="ex3_c10c" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                                <label for="ex3_c10c-2" class="ms-2 text-sm text-gray-900">2.Y</label>
+                            </div>
+                        </div>
+                    </td>
+                    <td class="p-2">
+                        <select id="ex3_c10d" name="ex3_c10d" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100">
+                            <option selected>------</option>
+                            <option value="1">1. Biologik oilaga qaytarib olingan</option>
+                            <option value="2">2. Farzandlikka olingan</option>
+                            <option value="3">3. 18 yoshga yetib, mustaqil yashay boshladi</option>
+                            <option value="4">4. Patronat oilasiga o&#39;tkazildi</option>
+                            <option value="5">5. Oilaga vasiylik yoki homiylik belgilandi</option>
+                            <option value="6">6. Boshqa oilaviy bolalar uyiga o&#39;tkazildi</option>
+                            <option value="7">7. Bolalar muassasasiga o&#39;tkazildi</option>
+                            <option value="8">8. Katta yoshdagilar muassasasiga o&#39;tkazildi</option>
+                            <option value="9">9. O&#39;lim</option>
+                            <option value="10">10. Boshqa sabab, ko&#39;rsating</option>
+                        </select>
+                        <input type="text" id="ex3_c10d_other" name="ex3_c10d_other" class="bg-white border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
                     </td>
                 </tr>
             </tbody>
