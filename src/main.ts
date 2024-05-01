@@ -899,7 +899,7 @@ const goToDSEE = (id: string) => {
                     if (id) {
                         mainWindow.webContents.once("did-finish-load", () => {
                             database.instrumentGet(id, 'dsee', db).then((questions) => {
-                                mainWindow.webContents.send("dsee", {
+                                mainWindow.webContents.send("instrumentDataReady", {
                                     id,
                                     questions,
                                     userData: userDataArray[0],
@@ -1089,7 +1089,7 @@ const goToTQYP = (id: string) => {
 
 // save instrument
 ipcMain.on('saveInstrument', (event, args) => {
-    console.log(args);
+
     database.instrumentSave(args, db).then(() => {
         dialog.showMessageBox(mainWindow, {
             type: 'info',

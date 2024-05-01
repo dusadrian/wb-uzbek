@@ -103,6 +103,8 @@ export const instrument6 = {
             instrument.setQuestions(questions, questionOrder);
             let instrumentID = null;
 
+            console.log(args);
+
             if (args.questions && args.questions.length > 0) {
                 instrumentID = parseInt(args.id);
 
@@ -133,7 +135,7 @@ export const instrument6 = {
                     util.setValue('i4', settlement ? "" + settlement : services[institution_code].district);
                     util.setValue('i4a', "" + services[institution_code].region);
                     util.setValue('i4b', "" + services[institution_code].district);
-                    institutionType = services[institution_code].type;
+                    institutionType = services[institution_code].type ?? null;
                 }
 
                 util.setValue('i4c', settlement ? "" + settlement : "0");
@@ -143,7 +145,7 @@ export const instrument6 = {
                 util.setValue('q4', args.userData.profession ? args.userData.profession : "--");
                 util.setValue('q5', args.userData.phone ? args.userData.phone : "--");
                 util.setValue('q6', args.userData.email ? args.userData.email : "--");
-                regionCode = args.userData.region;
+                regionCode = args.userData.region_code ?? null;
 
                 const serv_codes = Object.keys(services);
                 if (serv_codes.indexOf(institution_code) >= 0) {
@@ -333,7 +335,7 @@ unu_tt.forEach((item) => {
 
 const nex1_b = ['nex1a_b', 'nex1b_b', 'nex1c_b', 'nex1d_b', 'nex1e_b', 'nex1f_b']; // next_b
 const nex1_g = ['nex1a_g', 'nex1b_g', 'nex1c_g', 'nex1d_g', 'nex1e_g', 'nex1f_g']; // next_g
-const nex1_t = ['nex1a_t', 'nex1b_t', 'nex1c_t', 'nex1d_t', 'nex1e_t']; // next_t
+const nex1_t = ['nex1a_t', 'nex1b_t', 'nex1c_t', 'nex1d_t', 'nex1e_t', 'nex1f_t']; // next_t
 
 nex1_b.forEach((b) => {
     util.listen(b, 'change', () => {
@@ -449,7 +451,7 @@ tsa_g.forEach((g) => {
     });
 });
 
-const tnr = ['tnr1_b', 'tnr1_g', 'tnr1_t'];
+const tnr = ['tnr1_b', 'tnr1_g'];
 tnr.forEach((item) => {
     util.listen(item, 'change', () => {
         util.setValue('tnr1_t', util.makeSumFromElements(tnr).toString());

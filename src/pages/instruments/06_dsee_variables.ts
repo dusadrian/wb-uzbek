@@ -1294,7 +1294,7 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: true,
         order: 107,
-        active: function () { return (Number(instrument.questions.nex1.value) == 1) },
+        active: function () { return (Number(instrument.questions.nex1.value) == 1 && (Number(instrument.questions.i9.value) == 21 || Number(instrument.questions.i9.value) == 22 || Number(instrument.questions.i9.value) == 23 || Number(instrument.questions.i9.value) == 24 || Number(instrument.questions.i9.value) == 25 || Number(instrument.questions.i9.value) == 26)) },
         error: '',
         skip: false
     },
