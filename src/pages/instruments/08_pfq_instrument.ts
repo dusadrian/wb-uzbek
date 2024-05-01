@@ -16,23 +16,23 @@ import { KeyString, regions, districts, settlements } from "../../libraries/admi
 import * as en from "../../locales/en.json";
 import * as uz from "../../locales/uz.json";
 import * as ru from "../../locales/ru.json";
-const locales: { [key: string]: typeof en | typeof uz | typeof ru} = {
+const locales: { [key: string]: typeof en | typeof uz | typeof ru } = {
     'en': en,
     'uz': uz,
     'ru': ru
 }
 const lang = localStorage.getItem("language");
 const translations = locales[lang as keyof typeof locales] as Record<string, string>;
-let services: {[key: string]: DI.Institution};
-let insons: {[key: string]: DI.INSON};
+let services: { [key: string]: DI.Institution };
+let insons: { [key: string]: DI.INSON };
 
 let regionCode = '';
 let institutionType = '';
 
-const regElements =  ["reg", "pf1a"];
-const disElements =  ["dis", "pf1b"];
-const setElements =  ["",    "pf1c"];
-const typeElements = ["",    "pf1d"];
+const regElements = ["reg", "pf1a"];
+const disElements = ["dis", "pf1b"];
+const setElements = ["", "pf1c"];
+const typeElements = ["", "pf1d"];
 
 const general_dates = [
     'data', 'ig5'
@@ -213,6 +213,7 @@ export const instrument8 = {
                     else {
                         util.setValue('reg', "" + services[institution_code].region);
                         util.setValue('dis', "" + services[institution_code].district);
+                        institutionType = services[institution_code].type;
                     }
 
                     // set default values for user
@@ -223,7 +224,6 @@ export const instrument8 = {
                     util.setValue('q5', args.userData.phone ? args.userData.phone : "--");
                     util.setValue('q6', args.userData.email ? args.userData.email : "--");
                     regionCode = args.userData.region_code;
-                    institutionType = args.userData.service_type_code;
                 }
             }
             instrument.start(instrumentID, instrument.trimis, saveChestionar, validateChestionar);

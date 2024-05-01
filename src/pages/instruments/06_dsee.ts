@@ -10,22 +10,22 @@ import { KeyString, regions, districts, settlements } from "../../libraries/admi
 import * as en from "../../locales/en.json";
 import * as uz from "../../locales/uz.json";
 import * as ru from "../../locales/ru.json";
-const locales: { [key: string]: typeof en | typeof uz | typeof ru} = {
+const locales: { [key: string]: typeof en | typeof uz | typeof ru } = {
     'en': en,
     'uz': uz,
     'ru': ru
 }
 const lang = localStorage.getItem("language");
 const translations = locales[lang as keyof typeof locales] as Record<string, string>;
-let services: {[key: string]: DI.Institution};
-let insons: {[key: string]: DI.INSON};
+let services: { [key: string]: DI.Institution };
+let insons: { [key: string]: DI.INSON };
 
 let regionCode = '';
 let institutionType = '';
 
-const regElements =  ["i4a"];
-const disElements =  ["i4b"];
-const setElements =  ["i4c"];
+const regElements = ["i4a"];
+const disElements = ["i4b"];
+const setElements = ["i4c"];
 const typeElements = ["i4d"];
 
 
@@ -133,6 +133,7 @@ export const instrument6 = {
                     util.setValue('i4', settlement ? "" + settlement : services[institution_code].district);
                     util.setValue('i4a', "" + services[institution_code].region);
                     util.setValue('i4b', "" + services[institution_code].district);
+                    institutionType = services[institution_code].type;
                 }
 
                 util.setValue('i4c', settlement ? "" + settlement : "0");
@@ -152,12 +153,6 @@ export const instrument6 = {
                         util.setValue("i9", type);
                     }
                 }
-            }
-
-            if (args.institutionData) {
-
-                // Type of institution
-                institutionType = args.institutionData.type;
             }
 
             instrument.start(instrumentID, instrument.trimis, saveChestionar, validateChestionar);
@@ -188,8 +183,8 @@ for (let i = 0; i < setElements.length; i++) {
     }
 }
 
-const net1_b = ['net1a_b','net1b_b','net1c_b','net1d_b','net1e_b']; // tnet_b
-const net1_g = ['net1a_g','net1b_g','net1c_g','net1d_g','net1e_g']; // tnet_g
+const net1_b = ['net1a_b', 'net1b_b', 'net1c_b', 'net1d_b', 'net1e_b']; // tnet_b
+const net1_g = ['net1a_g', 'net1b_g', 'net1c_g', 'net1d_g', 'net1e_g']; // tnet_g
 const net1_t = ['net1a_t', 'net1b_t', 'net1c_t', 'net1d_t', 'net1e_t']; // tnet_t
 
 net1_b.forEach((b) => {
@@ -218,9 +213,9 @@ net1_t.forEach((t) => {
     });
 });
 
-const nes_b = ['nes1_b','nes2_b','nes3_b']; // nest_b
-const nes_g = ['nes1_g','nes2_g','nes3_g']; // nest_g
-const nes_t = ['nes1_t','nes2_t','nes3_t']; // nest_t
+const nes_b = ['nes1_b', 'nes2_b', 'nes3_b']; // nest_b
+const nes_g = ['nes1_g', 'nes2_g', 'nes3_g']; // nest_g
+const nes_t = ['nes1_t', 'nes2_t', 'nes3_t']; // nest_t
 
 nes_b.forEach((b) => {
     util.listen(b, 'change', () => {
@@ -249,9 +244,9 @@ nes_t.forEach((t) => {
 });
 
 
-const neo_b = ['neo1_b','neo2_b','neo3_b','neo4_b','neo5_b','neo6_b','neo7_b','neo8_b']; // neo_b
-const neo_g = ['neo1_g','neo2_g','neo3_g','neo4_g','neo5_g','neo6_g','neo7_g','neo8_g']; // neo_g
-const neo_t = ['neo1_t','neo2_t','neo3_t','neo4_t','neo5_t','neo6_t','neo7_t','neo8_t']; // neo_t
+const neo_b = ['neo1_b', 'neo2_b', 'neo3_b', 'neo4_b', 'neo5_b', 'neo6_b', 'neo7_b', 'neo8_b']; // neo_b
+const neo_g = ['neo1_g', 'neo2_g', 'neo3_g', 'neo4_g', 'neo5_g', 'neo6_g', 'neo7_g', 'neo8_g']; // neo_g
+const neo_t = ['neo1_t', 'neo2_t', 'neo3_t', 'neo4_t', 'neo5_t', 'neo6_t', 'neo7_t', 'neo8_t']; // neo_t
 
 neo_b.forEach((b) => {
     util.listen(b, 'change', () => {
@@ -336,8 +331,8 @@ unu_tt.forEach((item) => {
 
 
 
-const nex1_b = ['nex1a_b','nex1b_b','nex1c_b','nex1d_b','nex1e_b','nex1f_b']; // next_b
-const nex1_g = ['nex1a_g','nex1b_g','nex1c_g','nex1d_g','nex1e_g','nex1f_g']; // next_g
+const nex1_b = ['nex1a_b', 'nex1b_b', 'nex1c_b', 'nex1d_b', 'nex1e_b', 'nex1f_b']; // next_b
+const nex1_g = ['nex1a_g', 'nex1b_g', 'nex1c_g', 'nex1d_g', 'nex1e_g', 'nex1f_g']; // next_g
 const nex1_t = ['nex1a_t', 'nex1b_t', 'nex1c_t', 'nex1d_t', 'nex1e_t']; // next_t
 
 nex1_b.forEach((b) => {
@@ -368,9 +363,9 @@ nex1_t.forEach((t) => {
 
 
 
-const eos_b = ['eos1_b','eos2_b','eos3_b','eos4_b']; // eos_b
-const eos_g = ['eos1_g','eos2_g','eos3_g','eos4_g']; // eos_g
-const eost_t = ['eos1_t','eos2_t','eos3_t','eos4_t']; // eost_t
+const eos_b = ['eos1_b', 'eos2_b', 'eos3_b', 'eos4_b']; // eos_b
+const eos_g = ['eos1_g', 'eos2_g', 'eos3_g', 'eos4_g']; // eos_g
+const eost_t = ['eos1_t', 'eos2_t', 'eos3_t', 'eos4_t']; // eost_t
 
 eos_b.forEach((b) => {
     util.listen(b, 'change', () => {
@@ -400,9 +395,9 @@ eost_t.forEach((t) => {
 
 
 
-const ext_b = ['ext0_b','ext1_b','ext2_b','ext3_b','ext4_b','ext5_b','ext6_b','ext7_b']; // extt_b
-const ext_g = ['ext0_g','ext1_g','ext2_g','ext3_g','ext4_g','ext5_g','ext6_g','ext7_g']; // extt_g
-const extt_t = ['ext0_t','ext1_t','ext2_t','ext3_t','ext4_t','ext5_t','ext6_t','ext7_t']; // extt_t
+const ext_b = ['ext0_b', 'ext1_b', 'ext2_b', 'ext3_b', 'ext4_b', 'ext5_b', 'ext6_b', 'ext7_b']; // extt_b
+const ext_g = ['ext0_g', 'ext1_g', 'ext2_g', 'ext3_g', 'ext4_g', 'ext5_g', 'ext6_g', 'ext7_g']; // extt_g
+const extt_t = ['ext0_t', 'ext1_t', 'ext2_t', 'ext3_t', 'ext4_t', 'ext5_t', 'ext6_t', 'ext7_t']; // extt_t
 
 ext_b.forEach((b) => {
     util.listen(b, 'change', () => {
@@ -432,9 +427,9 @@ extt_t.forEach((t) => {
 
 
 
-const tsa_b = ['tsa1_b','tsa2_b','tsa3_b']; // tsa_b
-const tsa_g = ['tsa1_g','tsa2_g','tsa3_g']; // tsa_g
-const tsat_t = ['tsa1_t','tsa2_t','tsa3_t']; // tsat_t
+const tsa_b = ['tsa1_b', 'tsa2_b', 'tsa3_b']; // tsa_b
+const tsa_g = ['tsa1_g', 'tsa2_g', 'tsa3_g']; // tsa_g
+const tsat_t = ['tsa1_t', 'tsa2_t', 'tsa3_t']; // tsat_t
 
 tsa_b.forEach((b) => {
     util.listen(b, 'change', () => {
@@ -454,7 +449,7 @@ tsa_g.forEach((g) => {
     });
 });
 
-const tnr = ['tnr1_b','tnr1_g','tnr1_t'];
+const tnr = ['tnr1_b', 'tnr1_g', 'tnr1_t'];
 tnr.forEach((item) => {
     util.listen(item, 'change', () => {
         util.setValue('tnr1_t', util.makeSumFromElements(tnr).toString());

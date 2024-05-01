@@ -16,7 +16,7 @@ import { KeyString, regions, districts, settlements } from "../../libraries/admi
 import * as en from "../../locales/en.json";
 import * as uz from "../../locales/uz.json";
 import * as ru from "../../locales/ru.json";
-const locales: { [key: string]: typeof en | typeof uz | typeof ru} = {
+const locales: { [key: string]: typeof en | typeof uz | typeof ru } = {
     'en': en,
     'uz': uz,
     'ru': ru
@@ -24,8 +24,8 @@ const locales: { [key: string]: typeof en | typeof uz | typeof ru} = {
 
 const lang = localStorage.getItem("language");
 const translations = locales[lang as keyof typeof locales] as Record<string, string>;
-let services: {[key: string]: DI.Institution};
-let insons: {[key: string]: DI.INSON};
+let services: { [key: string]: DI.Institution };
+let insons: { [key: string]: DI.INSON };
 
 const general_dates = [
     'data', 'lk3', 'cm3', 'ct3', 'cg1c', 'cg3b', 'sa1', 'cmgt1a'
@@ -39,10 +39,10 @@ const sh3_end_dates = [
     'sh3_s1d', 'sh3_s2d', 'sh3_s3d', 'sh3_s4d', 'sh3_s5d', 'sh3_s6d', 'sh3_s7d', 'sh3_s8d', 'sh3_s9d', 'sh3_s10d', 'sh3_csd'
 ];
 
-const regElements =  ["reg", "lk14b", "cm3b", "cm10c", "cm11c", "ct3b", "ct10c", "ct11c", "cg10c", "cg11c", "sa3a", "sa5r"]; //, "sh5r"];
-const disElements =  ["dis", "lk14c", "cm3c", "cm10d", "cm11d", "ct3c", "ct10d", "ct11d", "cg10d", "cg11d", "sa3b", "sa5d"]; //, "sh5d"];
-const setElements =  ["",    "lk14d", "cm3d", "cm10e", "cm11e", "ct3d", "ct10e", "ct11e", "cg10e", "cg11e", "sa3c", ""    ]; //, ""    ];
-const typeElements = ["",    "lk14e", "cm3e", "cm10f", "cm11f", "ct3e", "ct10f", "ct11f", "cg10f", "cg11f", "sa3d", ""    ]; //, ""    ];
+const regElements = ["reg", "lk14b", "cm3b", "cm10c", "cm11c", "ct3b", "ct10c", "ct11c", "cg10c", "cg11c", "sa3a", "sa5r"]; //, "sh5r"];
+const disElements = ["dis", "lk14c", "cm3c", "cm10d", "cm11d", "ct3c", "ct10d", "ct11d", "cg10d", "cg11d", "sa3b", "sa5d"]; //, "sh5d"];
+const setElements = ["", "lk14d", "cm3d", "cm10e", "cm11e", "ct3d", "ct10e", "ct11e", "cg10e", "cg11e", "sa3c", ""]; //, ""    ];
+const typeElements = ["", "lk14e", "cm3e", "cm10f", "cm11f", "ct3e", "ct10f", "ct11f", "cg10f", "cg11f", "sa3d", ""]; //, ""    ];
 
 let regionCode = '';
 let institutionType = '';
@@ -240,7 +240,7 @@ export const instrument1 = {
                     // regiunea este intotdeauna inaintea districtului
                     // un event de change pe regiune populeaza districtul, iar un event
                     // de change pe district populeaza settlement-ul
-                                                                                // trigger change event
+                    // trigger change event
                     instrument.seteazaValoareElement(item.variable, item.value, index >= 0);
                 }
             } else {
@@ -274,6 +274,7 @@ export const instrument1 = {
                     util.setValue('reg', "" + services[institution_code].region);
                     util.setValue('dis', "" + services[institution_code].district);
                     util.setValue("omr9", services[institution_code].name ? services[institution_code].name : "--");
+                    institutionType = services[institution_code].type;
                 }
 
                 util.setValue('omr1', args.userData.name ? args.userData.name : "--");
@@ -284,7 +285,6 @@ export const instrument1 = {
                 util.setValue('omr6', args.userData.phone ? args.userData.phone : "--");
                 util.setValue('omr7', args.userData.email ? args.userData.email : "--");
                 regionCode = args.userData.region_code;
-                institutionType = args.userData.service_type_code;
             }
 
             instrument.start(instrumentID, instrument.trimis, saveChestionar, validateChestionar);
@@ -381,7 +381,7 @@ function check_lk22_2(): boolean {
         instrument.questions["lk22_2_7"].value = Number(suma > 1).toString();
     }
 
-    return(suma > 0);
+    return (suma > 0);
 }
 
 util.listen(lk22_2, "myChange", check_lk22_2);
@@ -588,7 +588,7 @@ sh3_start_dates.forEach((startel) => {
     const start = util.htmlElement(startel);
     const end = util.htmlElement(endel);
 
-    const check = function() {
+    const check = function () {
         if (util.inputsHaveValue([startel, endel])) {
 
             const startdate = util.standardDate(start.value);
@@ -638,7 +638,7 @@ sh3_start_dates.forEach((startel) => {
 const ewm = ['ewm1', 'ewm2', 'ewm3', 'ewm4'];
 ewm.forEach((el) => {
     document.querySelectorAll('input[name="' + el + '"]').forEach((elem) => {
-        elem.addEventListener("myChange", function() {
+        elem.addEventListener("myChange", function () {
             let suma = 0;
             ewm.forEach((item) => {
                 const valoare = Number(instrument.questions[item].value);
@@ -665,7 +665,7 @@ ewm.forEach((el) => {
 });
 
 const cmgt1a = util.htmlElement('cmgt1a');
-cmgt1a.addEventListener("myChange", function() {
+cmgt1a.addEventListener("myChange", function () {
 
     const months = util.diffDates(
         util.standardDate(instrument.questions.cmgt1a.value),

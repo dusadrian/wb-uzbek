@@ -2,7 +2,7 @@ import { ipcRenderer } from "electron";
 import { questions, questionOrder } from "./05_yplcs_variables";
 import instrument from "../../libraries/instrument";
 import { QuestionObjectType, SaveInstrumentType } from "../../libraries/interfaces";
-import { util, errorHandler} from "../../libraries/validation_helpers";
+import { util, errorHandler } from "../../libraries/validation_helpers";
 import * as DI from "../../interfaces/database";
 
 import * as _flatpickr from 'flatpickr';
@@ -15,20 +15,20 @@ import { KeyString, regions, districts, settlements, settlement_types } from "..
 import * as en from "../../locales/en.json";
 import * as uz from "../../locales/uz.json";
 import * as ru from "../../locales/ru.json";
-const locales: { [key: string]: typeof en | typeof uz | typeof ru} = {
+const locales: { [key: string]: typeof en | typeof uz | typeof ru } = {
     'en': en,
     'uz': uz,
     'ru': ru
 }
 
 const lang = localStorage.getItem("language");
-let services: {[key: string]: DI.Institution};
-let insons: {[key: string]: DI.INSON};
+let services: { [key: string]: DI.Institution };
+let insons: { [key: string]: DI.INSON };
 
-const regElements  = ["reg", "pi4b", "pi6r", "pi9c"];
-const disElements  = ["dis", "pi4c", "pi6d", "pi9d"];
-const setElements  = ["",    "pi4d", "",     "pi9h"];
-const typeElements = ["",    "pi4e", "",     "pi9i"];
+const regElements = ["reg", "pi4b", "pi6r", "pi9c"];
+const disElements = ["dis", "pi4c", "pi6d", "pi9d"];
+const setElements = ["", "pi4d", "", "pi9h"];
+const typeElements = ["", "pi4e", "", "pi9i"];
 
 let regionCode = '';
 let institutionType = '';
@@ -187,17 +187,12 @@ export const instrument5 = {
                     // regiunea este intotdeauna inaintea districtului
                     // un event de change pe regiune populeaza districtul, iar un event
                     // de change pe district populeaza settlement-ul
-                                                                                // trigger change event
+                    // trigger change event
                     instrument.seteazaValoareElement(item.variable, item.value, index >= 0);
                 }
             }
 
             // set default values, IRRESPECTIVE of the instrument
-
-            if (args.institutionData) {
-
-                institutionType = args.institutionData.type;
-            }
 
             // two digit day & month
             util.setValue("data", util.customDate());
@@ -211,6 +206,7 @@ export const instrument5 = {
                     util.setValue("reg", services[institution_code].region);
                     util.setValue("dis", services[institution_code].district);
                     util.setValue("omr9", services[institution_code].name ? services[institution_code].name : "--");
+                    institutionType = services[institution_code].type;
                 }
                 // set default values for user
                 util.setValue("omr1", args.userData.name ? args.userData.name : "--");

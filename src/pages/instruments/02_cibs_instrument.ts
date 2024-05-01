@@ -16,7 +16,7 @@ import { KeyString, regions, districts, settlements } from "../../libraries/admi
 import * as en from "../../locales/en.json";
 import * as uz from "../../locales/uz.json";
 import * as ru from "../../locales/ru.json";
-const locales: { [key: string]: typeof en | typeof uz | typeof ru} = {
+const locales: { [key: string]: typeof en | typeof uz | typeof ru } = {
     'en': en,
     'uz': uz,
     'ru': ru
@@ -24,8 +24,8 @@ const locales: { [key: string]: typeof en | typeof uz | typeof ru} = {
 
 const lang = localStorage.getItem("language");
 const translations = locales[lang as keyof typeof locales] as Record<string, string>;
-let services: {[key: string]: DI.Institution};
-let insons: {[key: string]: DI.INSON};
+let services: { [key: string]: DI.Institution };
+let insons: { [key: string]: DI.INSON };
 // let regionCode = '';
 
 const general_dates = [
@@ -33,10 +33,10 @@ const general_dates = [
 ];
 
 
-const regElements  = ["reg", "lk14b", "sa3a", "cm3b", "cm11c", "ct11c", "cg11c"];
-const disElements  = ["dis", "lk14c", "sa3b", "cm3c", "cm11d", "ct11d", "cg11d"];
-const setElements  = [""   , "lk14d", "",     "cm3d", "cm11e", "ct11e", "cg11e"];
-const typeElements = [""   , "lk14e", "",     "cm3e", "cm11f", "ct11f", "cg11f"];
+const regElements = ["reg", "lk14b", "sa3a", "cm3b", "cm11c", "ct11c", "cg11c"];
+const disElements = ["dis", "lk14c", "sa3b", "cm3c", "cm11d", "ct11d", "cg11d"];
+const setElements = ["", "lk14d", "", "cm3d", "cm11e", "ct11e", "cg11e"];
+const typeElements = ["", "lk14e", "", "cm3e", "cm11f", "ct11f", "cg11f"];
 
 let regionCode = '';
 let institutionType = '';
@@ -226,7 +226,7 @@ export const instrument2 = {
                     // regiunea este intotdeauna inaintea districtului
                     // un event de change pe regiune populeaza districtul, iar un event
                     // de change pe district populeaza settlement-ul
-                                                                                // trigger change event
+                    // trigger change event
                     instrument.seteazaValoareElement(item.variable, item.value, index >= 0);
                 }
             }
@@ -243,6 +243,7 @@ export const instrument2 = {
                     util.setValue('reg', "" + services[institution_code].region);
                     util.setValue('dis', "" + services[institution_code].district);
                     util.setValue("omr8", services[institution_code].name ? services[institution_code].name : "--");
+                    institutionType = services[institution_code].type;
                 }
                 util.setValue("omr9", "" + institution_code);
 
@@ -254,7 +255,6 @@ export const instrument2 = {
                 util.setValue('omr6', args.userData.phone ? args.userData.phone : "--");
                 util.setValue('omr7', args.userData.email ? args.userData.email : "--");
                 regionCode = args.userData.region_code;
-                institutionType = args.userData.service_type_code;
 
                 const serv_codes = Object.keys(services);
                 if (serv_codes.indexOf(institution_code) >= 0) {
@@ -264,8 +264,6 @@ export const instrument2 = {
                         util.setValue("omr10", type);
                     }
                 }
-
-                // regionCode = args.userData.region_code;
             }
 
             instrument.start(instrumentID, instrument.trimis, saveChestionar, validateChestionar);
@@ -473,7 +471,7 @@ function check_lk22_2(): boolean {
         instrument.questions["lk22_2_7"].value = Number(suma > 1).toString();
     }
 
-    return(suma > 0);
+    return (suma > 0);
 }
 
 util.listen(lk22_2, "myChange", check_lk22_2);

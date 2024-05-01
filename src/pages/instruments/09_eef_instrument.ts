@@ -16,7 +16,7 @@ import { KeyString, regions, districts, settlements } from "../../libraries/admi
 import * as en from "../../locales/en.json";
 import * as uz from "../../locales/uz.json";
 import * as ru from "../../locales/ru.json";
-const locales: { [key: string]: typeof en | typeof uz | typeof ru} = {
+const locales: { [key: string]: typeof en | typeof uz | typeof ru } = {
     'en': en,
     'uz': uz,
     'ru': ru
@@ -24,8 +24,8 @@ const locales: { [key: string]: typeof en | typeof uz | typeof ru} = {
 
 const lang = localStorage.getItem("language");
 const translations = locales[lang as keyof typeof locales] as Record<string, string>;
-let services: {[key: string]: DI.Institution};
-let insons: {[key: string]: DI.INSON};
+let services: { [key: string]: DI.Institution };
+let insons: { [key: string]: DI.INSON };
 
 let regionCode = '';
 let institutionType = '';
@@ -53,9 +53,9 @@ export const instrument9 = {
         ipcRenderer.on("instrumentDataReady", (_event, args) => {
             // console.log(args);
 
-            const regElements  = ["i4a"];
-            const disElements  = ["i4b"];
-            const setElements  = ["i4c"];
+            const regElements = ["i4a"];
+            const disElements = ["i4b"];
+            const setElements = ["i4c"];
 
             services = args.services;
             insons = args.insons;
@@ -155,11 +155,11 @@ export const instrument9 = {
                         const settlement = services[institution_code].settlement;
                         util.setValue('i4c', settlement ? "" + settlement : "0");
                         util.setValue('i4d', "" + services[institution_code].settlement_type);
+                        institutionType = services[institution_code].type;
                     }
                     // set default values for user
                     util.setValue('q2', args.userData.name + " " + args.userData.patronymics + " " + args.userData.surname);
                     regionCode = args.userData.region_code;
-                    institutionType = args.userData.service_type_code;
                 }
             }
             instrument.start(instrumentID, instrument.trimis, saveChestionar, validateChestionar);

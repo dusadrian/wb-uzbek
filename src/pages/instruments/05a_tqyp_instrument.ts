@@ -16,7 +16,7 @@ import * as en from "../../locales/en.json";
 import * as uz from "../../locales/uz.json";
 import * as ru from "../../locales/ru.json";
 
-const locales: { [key: string]: typeof en | typeof uz | typeof ru} = {
+const locales: { [key: string]: typeof en | typeof uz | typeof ru } = {
     'en': en,
     'uz': uz,
     'ru': ru
@@ -25,17 +25,17 @@ const locales: { [key: string]: typeof en | typeof uz | typeof ru} = {
 
 const lang = localStorage.getItem("language");
 // const translations = locales[lang as keyof typeof locales] as Record<string, string>;
-let services: {[key: string]: DI.Institution};
-let insons: {[key: string]: DI.INSON};
+let services: { [key: string]: DI.Institution };
+let insons: { [key: string]: DI.INSON };
 
 
 const general_dates = [
     'ptr4', 'ptr6' // 'data',
 ];
-const regElements  = ["str3a", "ptr5b", "ptr8e"];
-const disElements  = ["str3b", "ptr5c", "ptr8f"];
-const setElements  = ["",      "ptr5d", "ptr8g"];
-const typeElements = ["",      "ptr5e", "ptr8h"];
+const regElements = ["str3a", "ptr5b", "ptr8e"];
+const disElements = ["str3b", "ptr5c", "ptr8f"];
+const setElements = ["", "ptr5d", "ptr8g"];
+const typeElements = ["", "ptr5e", "ptr8h"];
 
 let regionCode = '';
 let institutionType = '';
@@ -179,7 +179,7 @@ export const instrument5a = {
                     // regiunea este intotdeauna inaintea districtului
                     // un event de change pe regiune populeaza districtul, iar un event
                     // de change pe district populeaza settlement-ul
-                                                                                // trigger change event
+                    // trigger change event
                     instrument.seteazaValoareElement(item.variable, item.value, index >= 0);
                 }
             }
@@ -192,7 +192,6 @@ export const instrument5a = {
             if (args.userData) {
                 // set default values for user
                 regionCode = args.userData.region_code;
-                institutionType = args.userData.service_type_code;
 
                 util.setValue("str1", institution_code);
                 util.setValue("str4", "0");
@@ -208,6 +207,7 @@ export const instrument5a = {
                     if (["11", "12", "13", "14", "15", "16", "17"].indexOf(type) >= 0) {
                         util.setValue("str4", type);
                     }
+                    institutionType = services[institution_code].type;
                 }
 
                 util.setValue("omr1", args.userData.name ? args.userData.name : "--");

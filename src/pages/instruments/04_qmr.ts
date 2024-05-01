@@ -16,7 +16,7 @@ import { KeyString, regions, districts, settlements } from "../../libraries/admi
 import * as en from "../../locales/en.json";
 import * as uz from "../../locales/uz.json";
 import * as ru from "../../locales/ru.json";
-const locales: { [key: string]: typeof en | typeof uz | typeof ru} = {
+const locales: { [key: string]: typeof en | typeof uz | typeof ru } = {
     'en': en,
     'uz': uz,
     'ru': ru
@@ -24,8 +24,8 @@ const locales: { [key: string]: typeof en | typeof uz | typeof ru} = {
 
 const lang = localStorage.getItem("language");
 const translations = locales[lang as keyof typeof locales] as Record<string, string>;
-let services: {[key: string]: DI.Institution};
-let insons: {[key: string]: DI.INSON};
+let services: { [key: string]: DI.Institution };
+let insons: { [key: string]: DI.INSON };
 
 
 const start_dates = [
@@ -87,9 +87,9 @@ export const instrument4 = {
         ipcRenderer.on("instrumentDataReady", (_event, args) => {
             // console.log(args);
 
-            const regElements  = ["i4a"];
-            const disElements  = ["i4b"];
-            const setElements  = ["i4c"];
+            const regElements = ["i4a"];
+            const disElements = ["i4b"];
+            const setElements = ["i4c"];
 
             services = args.services;
             insons = args.insons;
@@ -201,6 +201,7 @@ export const instrument4 = {
                     util.setValue('i4c', settlement ? "" + settlement : "0");
                     util.setValue('i4d', "" + services[institution_code].settlement_type);
                     util.setValue('i9', services[institution_code].type ? services[institution_code].type : "--");
+                    institutionType = services[institution_code].type;
                 }
 
                 util.setValue('q2', args.userData.name + " " + args.userData.patronymics + " " + args.userData.surname);
@@ -209,11 +210,6 @@ export const instrument4 = {
                 util.setValue('q5', args.userData.phone ? args.userData.phone : "--");
                 util.setValue('q6', args.userData.email ? args.userData.email : "--");
                 regionCode = args.userData.region_code;
-            }
-
-            if (args.institutionData) {
-                // Type of institution
-                institutionType = args.institutionData.type;
             }
 
             instrument.start(instrumentID, instrument.trimis, saveChestionar, validateChestionar);
@@ -602,7 +598,7 @@ e02ArrayFull.forEach(item => {
 });
 
 //E2_1 = E2_1_1 + ... + E2_1_4
-const e21Array = ['e2_1_1','e2_1_2','e2_1_3','e2_1_4'];
+const e21Array = ['e2_1_1', 'e2_1_2', 'e2_1_3', 'e2_1_4'];
 const e21ArrayFull = [...e21Array, 'e2_1'];
 e21ArrayFull.forEach(item => {
     util.listen(item, 'change', () => {
@@ -623,7 +619,7 @@ start_dates.forEach((start) => {
     const index = start_dates.indexOf(start);
     const end = end_dates[index];
 
-    const check = function() {
+    const check = function () {
         if (util.inputsHaveValue([start, end])) {
 
             const startdate = util.standardDate(util.htmlElement(start).value);

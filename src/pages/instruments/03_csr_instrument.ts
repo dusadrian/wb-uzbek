@@ -177,6 +177,7 @@ export const instrument3 = {
                     util.setValue('i4c', settlement ? "" + settlement : "--");
                     util.setValue('i4d', "" + services[institution_code].settlement_type);
                     util.setValue('i5', services[institution_code].type ? services[institution_code].type : "--");
+                    institutionType = services[institution_code].type;
                 }
 
                 util.setValue('q2', args.userData.name + " " + args.userData.patronymics + " " + args.userData.surname);
@@ -185,12 +186,6 @@ export const instrument3 = {
                 util.setValue('q5', args.userData.phone ? args.userData.phone : "--");
                 util.setValue('q6', args.userData.email ? args.userData.email : "--");
                 regionCode = args.userData.region_code;
-            }
-
-
-            if (args.institutionData) {
-                // Type of institution
-                institutionType = args.institutionData.type;
             }
 
             instrument.start(instrumentID, instrument.trimis, saveChestionar, validateChestionar);
@@ -230,12 +225,10 @@ const j8 = document.getElementsByName('j8') as NodeListOf<HTMLInputElement>;
 j8.forEach(item => {
     item.addEventListener('change', function () {
         if (item.checked) {
-            if (instrument.questions.j8.value.length <= 3) { // no value set
-                if (item.value == "1" || item.value == "2") {
-                    util.setValue('euid', uuidv4());
-                } else {
-                    util.setValue('euid', '');
-                }
+            if (item.value == "1" || item.value == "2") {
+                util.setValue('euid', uuidv4());
+            } else {
+                util.setValue('euid', '');
             }
         }
     });
