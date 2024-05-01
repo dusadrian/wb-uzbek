@@ -1118,7 +1118,6 @@ ipcMain.on('saveInstrument', (event, args) => {
             }
             if (args.table === 'eef') {
                 goToEEFList();
-                return;
             }
         });
     });
@@ -1155,7 +1154,7 @@ ipcMain.on('importData', (event, args) => {
                 if (!userInstruments.includes(instrument)) {
                     error = true; // there are instruments not belonging to the user
                 }
-                
+
                 if (dateDinFisier[instrument]) { // there is data
                     for (const itemUUID in dateDinFisier[instrument].data) {
                         const item = dateDinFisier[instrument].data[itemUUID];
