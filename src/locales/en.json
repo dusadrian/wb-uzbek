@@ -189,5 +189,6 @@
 	"Please fill in all fields": "Please fill in all fields",
 	"Error": "Error",
 	"main._dataDownloadedError": "Error. No folder selected!",
-	"The following fields are mandatory: J1!": "The following fields are mandatory: J1!"
+	"The following fields are mandatory: J1!": "The following fields are mandatory: J1!",
+	"Some instruments are not allowed to be imported. Please check the file and try again.": "Some instruments are not allowed to be imported. Please check the file and try again."
 }

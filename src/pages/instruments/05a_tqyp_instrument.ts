@@ -159,7 +159,7 @@ export const instrument5a = {
 
 
         ipcRenderer.on("instrumentDataReady", (_event, args) => {
-            // console.log(args);
+            console.log(args);
             services = args.services;
             insons = args.insons;
             const institution_code = args.userData.institution_code;
@@ -171,6 +171,8 @@ export const instrument5a = {
             let instrumentID = null;
 
             if (args.instrument && args.instrument.length > 0) {
+                console.log(args.instrument);
+
                 instrumentID = parseInt(args.instrument[0].id);
 
                 for (const item of args.instrument) {

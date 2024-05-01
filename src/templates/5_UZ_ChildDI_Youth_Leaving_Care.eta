@@ -1023,15 +1023,15 @@
             <div class="col-span-1 flex flex-col gap-2">
                 <div class="flex items-center">
                     <input id="he2-1" type="radio" value="1" name="he2" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="he3-1" class="ms-2 text-sm text-gray-900"><%= it.t297 %></label>
+                    <label for="he2-1" class="ms-2 text-sm text-gray-900"><%= it.t297 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="he2-2" type="radio" value="2" name="he2" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="he3-2" class="ms-2 text-sm text-gray-900"><%= it.t298 %></label>
+                    <label for="he2-2" class="ms-2 text-sm text-gray-900"><%= it.t298 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="he2-3" type="radio" value="3" name="he2" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="he3-3" class="ms-2 text-sm text-gray-900"><%= it.t299 %></label>
+                    <label for="he2-3" class="ms-2 text-sm text-gray-900"><%= it.t299 %></label>
                 </div>
             </div>
         </div>

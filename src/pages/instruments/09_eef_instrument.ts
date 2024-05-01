@@ -133,7 +133,7 @@ export const instrument9 = {
             let instrumentID = null;
 
             if (args.questions && args.questions.length > 0) {
-                instrumentID = parseInt(args.questions[0].id);
+                instrumentID = parseInt(args.id);
 
                 for (const item of args.questions) {
                     instrument.seteazaValoareElement(item.variable, item.value);

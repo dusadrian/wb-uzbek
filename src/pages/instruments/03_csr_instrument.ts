@@ -142,10 +142,10 @@ export const instrument3 = {
             instrument.setQuestions(questions, questionOrder);
             let instrumentID = null;
 
-            if (args.instrument && args.instrument.length > 0) {
-                instrumentID = parseInt(args.instrument[0].id);
+            if (args.questions && args.questions.length > 0) {
+                instrumentID = parseInt(args.id);
 
-                for (const item of args.instrument) {
+                for (const item of args.questions) {
                     instrument.seteazaValoareElement(item.variable, item.value);
                 }
 

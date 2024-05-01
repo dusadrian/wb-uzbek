@@ -178,10 +178,10 @@ export const instrument5 = {
             instrument.setQuestions(questions, questionOrder);
             let instrumentID = null;
 
-            if (args.instrument && args.instrument.length > 0) {
-                instrumentID = parseInt(args.instrument[0].id);
+            if (args.questions && args.questions.length > 0) {
+                instrumentID = parseInt(args.id);
 
-                for (const item of args.instrument) {
+                for (const item of args.questions) {
 
                     const index = [...regElements, ...disElements].indexOf(item.variable);
                     // regiunea este intotdeauna inaintea districtului
@@ -279,6 +279,7 @@ for (let i = 0; i < setElements.length; i++) {
 }
 
 // Set service type
+// TODO -- e o problema aici cu selectarea institutiei
 util.listen("pi6", "change", function () {
     util.setValue("pi6c", "-9");
     const value = util.htmlElement("pi6").value;
