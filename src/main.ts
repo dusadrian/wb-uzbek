@@ -1089,7 +1089,7 @@ const goToTQYP = (id: string) => {
 
 // save instrument
 ipcMain.on('saveInstrument', (event, args) => {
-    // console.log(args);
+    console.log(args);
     database.instrumentSave(args, db).then(() => {
         dialog.showMessageBox(mainWindow, {
             type: 'info',

@@ -370,7 +370,7 @@ const instrument: InstrumentObjectType = {
 						const make = !!instrument.questions[key].readonly;
 						instrument.questions[key].disabled = make;
 						instrument.questions[key].value = instrument.enableRadioElement(key, make);
-					// } else if (key != "codchest" && key != "uat_siruta" && key != "jud_siruta") { // nu mai e nevoie dar ca exemplu
+						// } else if (key != "codchest" && key != "uat_siruta" && key != "jud_siruta") { // nu mai e nevoie dar ca exemplu
 					} else {
 						// verificam daca nu este readonly, altfel nu il mai activam
 						const make = !!instrument.questions[key].readonly;
@@ -482,6 +482,8 @@ const instrument: InstrumentObjectType = {
 				// pentru ca exista input-uri disabled (cum sunt totalurile) care pot fi diferite de nu stiu ce alt camp si au eroare...
 				// aici detectez ca are eroare cu .error insa nu mai intra in if() pentru ca .disabled este 1, nu != 1
 				if ((question.value === "" || Number(question.value) == -9 || question.error != "") && !question.hidden) {
+					console.log(question.name);
+
 					if (question.type == "radio") {
 						const rEl = <HTMLInputElement>document.getElementsByName(question.name)[0].parentNode.parentNode;
 						rEl.classList.add("overrideBorder");

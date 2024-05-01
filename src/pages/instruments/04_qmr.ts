@@ -191,6 +191,8 @@ export const instrument4 = {
                     util.setValue('i4c', "0");
                     util.setValue('i4d', "--");
                     util.setValue('i9', "--");
+                    console.log(insons[institution_code], 'inson');
+
                 }
                 else {
                     util.setValue('i1', services[institution_code].name ? services[institution_code].name : "--");
@@ -198,10 +200,13 @@ export const instrument4 = {
                     util.setValue('i4a', "" + services[institution_code].region);
                     util.setValue('i4b', "" + services[institution_code].district);
                     const settlement = services[institution_code].settlement;
-                    util.setValue('i4c', settlement ? "" + settlement : "0");
+                    console.log(settlement);
+
+                    util.setValue('i4c', settlement ? "" + settlement : "--");
                     util.setValue('i4d', "" + services[institution_code].settlement_type);
-                    util.setValue('i9', services[institution_code].type ? services[institution_code].type : "--");
+                    util.setValue('i9', services[institution_code].type ? services[institution_code].type : "0");
                     institutionType = services[institution_code].type;
+                    console.log(services[institution_code]);
                 }
 
                 util.setValue('q2', args.userData.name + " " + args.userData.patronymics + " " + args.userData.surname);

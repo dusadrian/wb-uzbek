@@ -716,7 +716,7 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 58,
-        active: function () { return ((Number(instrument.questions.pi9a.value) == 1 || Number(instrument.questions.pi9a.value) == 2) && (Number(instrument.questions.lv2_1.value) == 0 && Number(instrument.questions.lv2_2.value) == 0 && Number(instrument.questions.lv2_3.value) == 0 && Number(instrument.questions.lv2_4.value) == 0 && Number(instrument.questions.lv2_5.value) == 0 && Number(instrument.questions.lv2_6.value) == 0 && Number(instrument.questions.lv2_7.value) == 0 && Number(instrument.questions.lv2_8.value) == 0 && Number(instrument.questions.lv2_9.value) == 0)) },
+        active: function () { return ((Number(instrument.questions.pi9a.value) == 1 || Number(instrument.questions.pi9a.value) == 2) && Number(instrument.questions.lv2_1.value) == 0) },
         error: '',
         skip: false
     },

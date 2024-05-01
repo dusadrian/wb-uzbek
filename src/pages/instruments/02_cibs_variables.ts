@@ -3208,7 +3208,7 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: true,
         order: 262,
-        active: function () { return (true) },
+        active: function () { return (Number(instrument.questions.lk22_1.value) == 1) },
         error: '',
         skip: false
     },
