@@ -91,8 +91,7 @@
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
             <div><%= it.t29 %>. <%= it.t30 %></div>
             <div>
-                <select id="i4a" name="i4a"
-                    class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+                <select id="i4a" name="i4a" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
                     <option value="-9" class="t_choose">--- choose ---</option>
                 </select>
             </div>
@@ -100,8 +99,7 @@
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
             <div><%= it.t32 %>. <%= it.t33 %></div>
             <div>
-                <select id="i4b" name="i4b"
-                    class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+                <select id="i4b" name="i4b" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
                     <option value="-9" class="t_choose">--- choose ---</option>
                 </select>
             </div>
@@ -109,26 +107,24 @@
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
             <div>I4c. <%= it.settlement %></div>
             <div>
-                <select id="i4c" name="i4c"
-                    class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+                <select id="i4c" name="i4c" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
                     <option value="-9" class="t_choose">--- choose ---</option>
                 </select>
             </div>
         </div>
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
             <div>I4d. <%= it.typeofsettlement %></div>
-                    <div>
-                        <select id="i4d" name="i4d"
-                            class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                            <option value="10" class="t_settlement_type_10"></option>
-                            <option value="20" class="t_settlement_type_20"></option>
-                            <option value="21" class="t_settlement_type_21"></option>
-                            <option value="22" class="t_settlement_type_22"></option>
-                            <option value="23" class="t_settlement_type_23"></option>
-                            <option value="24" class="t_settlement_type_24"></option>
-                            <option value="31" class="t_settlement_type_31"></option>
-                        </select>
-                    </div>
+            <div>
+                <select id="i4d" name="i4d" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+                    <option value="10" class="t_settlement_type_10"></option>
+                    <option value="20" class="t_settlement_type_20"></option>
+                    <option value="21" class="t_settlement_type_21"></option>
+                    <option value="22" class="t_settlement_type_22"></option>
+                    <option value="23" class="t_settlement_type_23"></option>
+                    <option value="24" class="t_settlement_type_24"></option>
+                    <option value="31" class="t_settlement_type_31"></option>
+                </select>
+            </div>
         </div>
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
             <div><%= it.t35 %>. <%= it.t36 %></div>
@@ -289,13 +285,8 @@
                 <input type="text" id="e1" name="e1" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
             </div>
         </div>
-        <div class="grid grid-cols-2 gap-4 items-center mt-6">
-            <div><%= it.t88 %>. <%= it.t89 %></div>
-            <div>
-                <input type="text" id="euid" name="euid" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
-            </div>
-        </div>
-        <small class="italic uppercase block"><%= it.t90 %></small>
+
+        <input type="hidden" id="euid" name="euid" />
 
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
             <div><%= it.t91 %>. <%= it.t92 %></div>

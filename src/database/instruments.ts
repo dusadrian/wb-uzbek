@@ -231,8 +231,7 @@ export const csrList = async (db: DuckDB.Database) => {
         const sql = `
         SELECT c.id,
             c.uuid,
-            MAX(CASE WHEN variable = 'e1' THEN value ELSE NULL END) e1,
-            MAX(CASE WHEN variable = 'euid' THEN value ELSE NULL END) euid,
+            MAX(CASE WHEN variable = 'j1' THEN value ELSE NULL END) j1,
             c.status
         FROM instrument_csr AS c
         LEFT JOIN values_csr AS v ON v.instrument_id = c.id

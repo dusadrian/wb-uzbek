@@ -104,6 +104,7 @@
 	"t_add_child": "Add child",
 	"t_csr_list": "Staff Registry List",
 	"t_add_staff": "Add staff",
+	"t_job_title": "Job title",
 	"t_pin": "PIN",
 	"Instrument saved.": "Instrument saved.",
 	"Completati corect toate campurile!": "All entries should be correctly filled in!",
@@ -187,5 +188,6 @@
 	"main._dataDownloaded": "Export successful!",
 	"Please fill in all fields": "Please fill in all fields",
 	"Error": "Error",
-	"main._dataDownloadedError": "Error. No folder selected!"
+	"main._dataDownloadedError": "Error. No folder selected!",
+	"The following fields are mandatory: J1!": "The following fields are mandatory: J1!"
 }

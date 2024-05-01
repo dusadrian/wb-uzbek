@@ -4,6 +4,7 @@ import instrument from "../../libraries/instrument";
 import { QuestionObjectType, SaveInstrumentType } from "../../libraries/interfaces";
 import { util } from "../../libraries/validation_helpers";
 import * as DI from "../../interfaces/database";
+import { v4 as uuidv4 } from 'uuid';
 
 import * as _flatpickr from 'flatpickr';
 import { FlatpickrFn } from 'flatpickr/dist/types/instance';
@@ -16,7 +17,7 @@ import { KeyString, regions, districts, settlements } from "../../libraries/admi
 import * as en from "../../locales/en.json";
 import * as uz from "../../locales/uz.json";
 import * as ru from "../../locales/ru.json";
-const locales: { [key: string]: typeof en | typeof uz | typeof ru} = {
+const locales: { [key: string]: typeof en | typeof uz | typeof ru } = {
     'en': en,
     'uz': uz,
     'ru': ru
@@ -24,8 +25,8 @@ const locales: { [key: string]: typeof en | typeof uz | typeof ru} = {
 
 const lang = localStorage.getItem("language");
 const translations = locales[lang as keyof typeof locales] as Record<string, string>;
-let services: {[key: string]: DI.Institution};
-let insons: {[key: string]: DI.INSON};
+let services: { [key: string]: DI.Institution };
+let insons: { [key: string]: DI.INSON };
 
 let regionCode = '';
 let institutionType = '';
@@ -60,9 +61,9 @@ export const instrument3 = {
         ipcRenderer.on("instrumentDataReady", (_event, args) => {
             // console.log(args);
 
-            const regElements  = ["i4a"];
-            const disElements  = ["i4b"];
-            const setElements  = ["i4c"];
+            const regElements = ["i4a"];
+            const disElements = ["i4b"];
+            const setElements = ["i4c"];
 
 
             services = args.services;
@@ -200,9 +201,9 @@ export const instrument3 = {
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 const validateChestionar = (_questions: QuestionObjectType) => {
 
-    if (_questions.e1.value == '-9' || _questions.euid.value == '-9') {
-        ipcRenderer.send("showDialogMessage", { type: "error", message: "The following fields are mandatory: E1, EUID!" });
-        const elPin = document.getElementById("e1");
+    if (_questions.j1.value == '-9') {
+        ipcRenderer.send("showDialogMessage", { type: "error", message: "The following fields are mandatory: J1!" });
+        const elPin = document.getElementById("j1");
         elPin.scrollIntoView({ behavior: "smooth", block: "center", inline: "nearest" });
         setTimeout(function () {
             elPin.focus();
@@ -221,3 +222,21 @@ const saveChestionar = (obj: SaveInstrumentType): void => {
     }
     ipcRenderer.send("saveInstrument", obj);
 }
+
+
+
+const j8 = document.getElementsByName('j8') as NodeListOf<HTMLInputElement>;
+
+j8.forEach(item => {
+    item.addEventListener('change', function () {
+        if (item.checked) {
+            if (instrument.questions.j8.value.length <= 3) { // no value set
+                if (item.value == "1" || item.value == "2") {
+                    util.setValue('euid', uuidv4());
+                } else {
+                    util.setValue('euid', '');
+                }
+            }
+        }
+    });
+});

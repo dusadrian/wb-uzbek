@@ -153,6 +153,14 @@ window.addEventListener("DOMContentLoaded", () => {
 
 });
 
+const showDebugButton = () => {
+    if (process.env.NODE_ENV !== "development") {
+        document.getElementById("debugForm").parentElement.classList.add("hidden");
+    } else {
+        document.getElementById("debugForm").parentElement.classList.remove("hidden");
+    }
+}
+
 const index = () => {
 
     (document.getElementById("username") as HTMLInputElement).placeholder = i18n.__("username");
@@ -235,7 +243,7 @@ const localDashboard = () => {
 
     const importFile = async () => {
         return await import("./pages/local/01_dashboard");
-    }; 
+    };
 
     importFile().then(result => result.local.init().catch(error => {
         console.log(error);
@@ -345,6 +353,7 @@ const instrumentCPIS = () => {
     importFile().then(result => result.instrument1.init().catch(error => {
         console.log(error);
     }));
+    showDebugButton();
 };
 // Instrument 2 Questionnaire about the child placed in specialized boarding schools
 const CIBS = () => {
@@ -370,6 +379,7 @@ const instrumentCIBS = () => {
     importFile().then(result => result.instrument2.init().catch(error => {
         console.log(error);
     }));
+    showDebugButton();
 };
 
 // Instrument 3
@@ -396,6 +406,7 @@ const instrumentCSR = () => {
     importFile().then(result => result.instrument3.init().catch(error => {
         console.log(error);
     }));
+    showDebugButton();
 };
 
 // Instrument 4
@@ -410,6 +421,7 @@ const instrumentQMR = () => {
     importFile().then(result => result.instrument4.init().catch(error => {
         console.log(error);
     }));
+    showDebugButton();
 };
 
 // Instrument 5a Trace questionnaire about the young person who left the alternative care system
@@ -436,6 +448,7 @@ const instrumentTQYP = () => {
     importFile().then(result => result.instrument5a.init().catch(error => {
         console.log(error);
     }));
+    showDebugButton();
 };
 
 // Instrument 5 Questionnaire about the young person leaving the child care system
@@ -462,6 +475,7 @@ const instrumentYPLCS = () => {
     importFile().then(result => result.instrument5.init().catch(error => {
         console.log(error);
     }));
+    showDebugButton();
 };
 
 // Instrument 6
@@ -476,6 +490,7 @@ const instrumentDSEE = () => {
     importFile().then(result => result.instrument6.init().catch(error => {
         console.log(error);
     }));
+    showDebugButton();
 };
 
 // Instrument 7 Family-Type Children's Home Questionnaire
@@ -502,6 +517,7 @@ const instrumentFTCH = () => {
     importFile().then(result => result.instrument7.init().catch(error => {
         console.log(error);
     }));
+    showDebugButton();
 };
 
 // Instrument 8 Patronat Family Questionnaire
@@ -528,6 +544,7 @@ const instrumentPFQ = () => {
     importFile().then(result => result.instrument8.init().catch(error => {
         console.log(error);
     }));
+    showDebugButton();
 };
 
 // Instrument 9 External evaluation form of the childcare institutions and boarding schools
@@ -554,6 +571,7 @@ const instrumentEEF = () => {
     importFile().then(result => result.instrument9.init().catch(error => {
         console.log(error);
     }));
+    showDebugButton();
 };
 
 
