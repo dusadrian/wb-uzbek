@@ -176,7 +176,7 @@ export const instrument3 = {
                     const settlement = services[institution_code].settlement;
                     util.setValue('i4c', settlement ? "" + settlement : "--");
                     util.setValue('i4d', "" + services[institution_code].settlement_type);
-                    util.setValue('i5', services[institution_code].type ? services[institution_code].type : "--");
+                    util.setValue('i5', services[institution_code].type ? services[institution_code].type : "0");
                     institutionType = services[institution_code].type;
                 }
 
