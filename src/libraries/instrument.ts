@@ -484,6 +484,8 @@ const instrument: InstrumentObjectType = {
 	processMyForm: function (type: string): boolean {
 		// default este partial
 		if (type === "finalizeaza") {
+			console.log(instrument.questions);
+
 			for (const key in instrument.questions) {
 				const question = instrument.questions[key];
 
@@ -493,7 +495,7 @@ const instrument: InstrumentObjectType = {
 				// am scos  && instrument.questions[key].disabled != 1
 				// pentru ca exista input-uri disabled (cum sunt totalurile) care pot fi diferite de nu stiu ce alt camp si au eroare...
 				// aici detectez ca are eroare cu .error insa nu mai intra in if() pentru ca .disabled este 1, nu != 1
-				if ((question.value === "" || Number(question.value) == -9 || question.error != "") && !question.hidden) {
+				if ((question.value === "" || Number(question.value) == -9) && !question.hidden) {
 					console.log(question.name);
 
 					if (question.type == "radio") {
