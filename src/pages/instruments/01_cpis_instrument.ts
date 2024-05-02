@@ -690,22 +690,16 @@ cmgt1a.addEventListener("myChange", function () {
     util.setValue("cmgt1b", months.toString());
 });
 
+
 const sk3 = ["sk3_1", "sk3_2"]
 util.listen(sk3, "change", () => {
     if (util.inputsHaveValue(sk3)) {
         const suma = Number(util.makeInputSumDecimal(sk3));
         const message = translations['At_least_one_brother_or_sister'];
-        const sk3_1 = util.htmlElement("sk3_1");
-        const sk3_2 = util.htmlElement("sk3_2");
-        errorHandler.removeError(sk3, message);
 
+        errorHandler.removeError(sk3, message);
         if (suma == 0) {
             errorHandler.addError(sk3, message);
-            instrument.questions["sk3_1"].value = "-9";
-            instrument.questions["sk3_2"].value = "-9";
-        } else {
-            instrument.questions["sk3_1"].value = sk3_1.value;
-            instrument.questions["sk3_2"].value = sk3_2.value;
         }
     }
 });

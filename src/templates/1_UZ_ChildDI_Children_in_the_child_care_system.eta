@@ -6476,27 +6476,36 @@
             </div>
         </div>
 
-        <div class="grid grid-cols-2 gap-4 items-center mt-10">
-            <div>
-                <%= it.t1432 %>. <%= it.t1433 %>
-            </div>
+        <div class="grid grid-cols-2 gap-4 mt-10">
+            <div> <%= it.t1432 %>. <%= it.t1433 %> </div>
             <div class="col-span-1 flex flex-col gap-2">
                 <div class="flex items-center">
-                    <input id="sk3-1" type="radio" value="1" name="sk3" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="sk3-1" class="ms-2 text-sm text-gray-900"><%= it.t1434 %></label>
+                    <input id="sk3-1" type="radio" value="1" name="sk3"
+                        class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="sk3-1" class="ms-2 text-sm text-gray-900"><%= it.t1462 %></label>
                 </div>
-                <input type="text" id="sk3_1" name="sk3_1" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
-                <div class="flex items-center">
-                    <input id="sk3-2" type="radio" value="2" name="sk3" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="sk3-2" class="ms-2 text-sm text-gray-900"><%= it.t1435 %></label>
+                <div class="grid grid-cols-2 gap-4 items-center">
+                    <div class="text-sm text-gray-700 text-center"><%= it.t1434 %></div>
+                    <div class="text-sm text-gray-700 text-center"><%= it.t1435 %></div>
                 </div>
-                <input type="text" id="sk3_2" name="sk3_2" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                <div class="grid grid-cols-2 gap-4 items-center">
+                    <div>
+                        <input type="text" id="sk3_1" name="sk3_1"
+                            class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                    </div>
+                    <div>
+                        <input type="text" id="sk3_2" name="sk3_2"
+                            class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                    </div>
+                </div>
                 <div class="flex items-center">
-                    <input id="sk3-3" type="radio" value="3" name="sk3" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <input id="sk3-3" type="radio" value="3" name="sk3"
+                        class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                     <label for="sk3-3" class="ms-2 text-sm text-gray-900"><%= it.t1436 %></label>
                 </div>
                 <div class="flex items-center">
-                    <input id="sk3-4" type="radio" value="9" name="sk3" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <input id="sk3-4" type="radio" value="9" name="sk3"
+                        class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                     <label for="sk3-4" class="ms-2 text-sm text-gray-900"><%= it.t1437 %></label>
                 </div>
             </div>
