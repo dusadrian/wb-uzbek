@@ -30,37 +30,37 @@
         <p class="mb-2"><%= it.t10 %></p>
 
         <div class="grid grid-cols-2 gap-4 items-center mt-10">
-            <div><%= it.t11 %> <%= it.t12 %></div>
+            <div><%= it.t11 %>. <%= it.t12 %></div>
             <div>
                 <input type="text" id="q1" name="q1" class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
             </div>
         </div>
         <div class="grid grid-cols-2 gap-4 items-center mt-4">
-            <div><%= it.t13 %> <%= it.t14 %></div>
+            <div><%= it.t13 %>. <%= it.t14 %></div>
             <div>
                 <input type="text" id="q2" name="q2" class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
             </div>
         </div>
         <div class="grid grid-cols-2 gap-4 items-center mt-4">
-            <div><%= it.t15 %> <%= it.t16 %></div>
+            <div><%= it.t15 %>. <%= it.t16 %></div>
             <div>
                 <input type="text" id="q3" name="q3" class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
             </div>
         </div>
         <div class="grid grid-cols-2 gap-4 items-center mt-4">
-            <div><%= it.t17 %> <%= it.t18 %></div>
+            <div><%= it.t17 %>. <%= it.t18 %></div>
             <div>
                 <input type="text" id="q4" name="q4" class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
             </div>
         </div>
         <div class="grid grid-cols-2 gap-4 items-center mt-4">
-            <div><%= it.t19 %> <%= it.t20 %></div>
+            <div><%= it.t19 %>. <%= it.t20 %></div>
             <div>
                 <input type="text" id="q5" name="q5" class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
             </div>
         </div>
         <div class="grid grid-cols-2 gap-4 items-center mt-4">
-            <div><%= it.t21 %> <%= it.t22 %></div>
+            <div><%= it.t21 %>. <%= it.t22 %></div>
             <div>
                 <input type="text" id="q6" name="q6" class="disabled:bg-gray-100 bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
             </div>
