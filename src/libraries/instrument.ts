@@ -187,6 +187,15 @@ const instrument: InstrumentObjectType = {
 			}
 		} else if (["input", "double", "select", "texarea"].includes(question.type)) {
 			question.value = htmlEl.value == "" ? "-9" : htmlEl.value;
+			if (question.type === "select" && question.value !== "-9") {
+				// remove html select option
+				const options = (htmlEl as HTMLSelectElement).options
+				for (const opt in options) {
+					if (options[opt].value == "-9") {
+						options[opt].remove();
+					}
+				}
+			}
 		} else if (question.type === "number") {
 			question.value = htmlEl.value == "" ? "-9" : htmlEl.value;
 		} else if (question.type === "select-multiple") {
@@ -247,7 +256,8 @@ const instrument: InstrumentObjectType = {
 				let nextElDOM = document.getElementById(nextEl.name);
 				jumpName = "";
 
-				if (nextEl.type === "input" && (nextEl.hidden || nextEl.readonly || nextEl.disabled)) {
+				if ((nextEl.type === "input" || nextEl.type === "number" || nextEl.type === "double") && (nextEl.hidden || (nextElDOM as HTMLInputElement).readOnly || nextEl.disabled)) {
+
 					jumpName = instrument.getNextJumpName(nextEl);
 
 					if (jumpName === void 0) {
@@ -315,11 +325,13 @@ const instrument: InstrumentObjectType = {
 			return response;
 		}
 		elements.forEach(function (item: HTMLInputElement) {
-			if (item.checked === true) {
-				response = item.value;
-				item.dispatchEvent(new Event("afterChange"));
+			if (!item.dataset.skip || item.dataset.skip !== 'true') {
+				if (item.checked === true) {
+					response = item.value;
+					item.dispatchEvent(new Event("afterChange"));
+				}
+				item.disabled = val;
 			}
-			item.disabled = val;
 		});
 		if (val) {
 			instrument.removeErrorStyle(group);
@@ -433,7 +445,7 @@ const instrument: InstrumentObjectType = {
 							const el = document.getElementById(item);
 							if (el !== null) {
 								const span = document.createElement("span");
-								span.innerText = instrument.questions[item].name;
+								span.innerText = instrument.questions[item].name + ' | ' + instrument.questions[item].value;
 								span.classList.add("debugSpan");
 								instrument.insertAfter(el, span);
 							}
