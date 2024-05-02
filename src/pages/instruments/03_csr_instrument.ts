@@ -162,19 +162,21 @@ export const instrument3 = {
                 if (inson_user) {
                     util.setValue('i1', insons[institution_code].name ? insons[institution_code].name : "--");
                     util.setValue('i3', "--");
-                    util.setValue('i4a', "" + insons[institution_code].region);
-                    util.setValue('i4b', "" + insons[institution_code].district);
+                    util.setValue('i4', insons[institution_code].district);
+                    util.setValue('i4a', insons[institution_code].region);
+                    util.setValue('i4b', insons[institution_code].district);
                     util.setValue('i4c', "--");
-                    util.setValue('i4d', "--");
+                    util.setValue('i4d', "-7");
                     util.setValue('i5', "--");
                 }
                 else {
                     util.setValue('i1', services[institution_code].name ? services[institution_code].name : "--");
                     util.setValue('i3', services[institution_code].address ? services[institution_code].address : "--");
-                    util.setValue('i4a', "" + services[institution_code].region);
-                    util.setValue('i4b', "" + services[institution_code].district);
+                    util.setValue('i4a', services[institution_code].region);
+                    util.setValue('i4b', services[institution_code].district);
                     const settlement = services[institution_code].settlement;
-                    util.setValue('i4c', settlement ? "" + settlement : "--");
+                    util.setValue('i4', settlement ? settlement : services[institution_code].district);
+                    util.setValue('i4c', settlement ? settlement : "--");
                     util.setValue('i4d', "" + services[institution_code].settlement_type);
                     util.setValue('i5', services[institution_code].type ? services[institution_code].type : "0");
                     institutionType = services[institution_code].type;
