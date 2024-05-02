@@ -3776,7 +3776,7 @@ export const questions: QuestionObjectType = {
         value: '-9',
         disabled: true,
         hidden: false,
-        readonly: false,
+        readonly: true,
         order: 339,
         active: function () { return (true) },
         error: ''
@@ -3787,7 +3787,7 @@ export const questions: QuestionObjectType = {
         value: '-9',
         disabled: true,
         hidden: false,
-        readonly: false,
+        readonly: true,
         order: 340,
         active: function () { return (true) },
         error: ''
@@ -3798,7 +3798,7 @@ export const questions: QuestionObjectType = {
         value: '-9',
         disabled: true,
         hidden: false,
-        readonly: false,
+        readonly: true,
         order: 341,
         active: function () { return (true) },
         error: ''

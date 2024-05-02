@@ -32,11 +32,11 @@ const general_dates = [
 ];
 
 const sh3_start_dates = [
-    'sh3_s1a', 'sh3_s2a', 'sh3_s3a', 'sh3_s4a', 'sh3_s5a', 'sh3_s6a', 'sh3_s7a', 'sh3_s8a', 'sh3_s9a', 'sh3_s10a', 'sh3_csa'
+    'sh3_s1a', 'sh3_s2a', 'sh3_s3a', 'sh3_s4a', 'sh3_s5a', 'sh3_s6a', 'sh3_s7a', 'sh3_s8a', 'sh3_s9a', 'sh3_s10a'
 ];
 
 const sh3_end_dates = [
-    'sh3_s1d', 'sh3_s2d', 'sh3_s3d', 'sh3_s4d', 'sh3_s5d', 'sh3_s6d', 'sh3_s7d', 'sh3_s8d', 'sh3_s9d', 'sh3_s10d', 'sh3_csd'
+    'sh3_s1d', 'sh3_s2d', 'sh3_s3d', 'sh3_s4d', 'sh3_s5d', 'sh3_s6d', 'sh3_s7d', 'sh3_s8d', 'sh3_s9d', 'sh3_s10d'
 ];
 
 const regElements = ["reg", "lk14b", "cm3b", "cm10c", "cm11c", "ct3b", "ct10c", "ct11c", "cg10c", "cg11c", "sa3a", "sa5r"]; //, "sh5r"];
@@ -262,18 +262,28 @@ export const instrument1 = {
             }
 
             util.setValue("data", util.customDate());
+            util.setValue("sh3_csd", "01/05/2024");
 
             // set default values for user, IRRESPECTIVE of the instrument
             if (args.userData) {
+                let institution_name = "";
+                let location = "";
                 if (inson_user) {
+                    institution_name = insons[institution_code].name;
+                    location = insons[institution_code].district;
                     util.setValue('reg', "" + insons[institution_code].region);
-                    util.setValue('dis', "" + insons[institution_code].district);
+                    util.setValue('dis', "" + location);
                     util.setValue("omr9", insons[institution_code].name ? insons[institution_code].name : "--");
                 }
                 else {
+                    institution_name = services[institution_code].name;
+                    location = services[institution_code].district;
+                    if (services[institution_code].settlement) {
+                        location = "" + services[institution_code].settlement;
+                    }
                     util.setValue('reg', "" + services[institution_code].region);
                     util.setValue('dis', "" + services[institution_code].district);
-                    util.setValue("omr9", services[institution_code].name ? services[institution_code].name : "--");
+                    util.setValue("omr9", institution_name);
                     institutionType = services[institution_code].type;
                 }
 
@@ -285,6 +295,10 @@ export const instrument1 = {
                 util.setValue('omr6', args.userData.phone ? args.userData.phone : "--");
                 util.setValue('omr7', args.userData.email ? args.userData.email : "--");
                 regionCode = args.userData.region_code;
+
+                util.setValue("sh5", institution_code);
+                util.setValue("sh5a", institution_name);
+                util.setValue("sh5b", location);
             }
 
             instrument.start(instrumentID, instrument.trimis, saveChestionar, validateChestionar);
