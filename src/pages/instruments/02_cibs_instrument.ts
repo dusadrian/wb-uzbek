@@ -319,7 +319,7 @@ util.listen("lk3", "myChange", () => {
     if (instrument.questions.lk3.value != "-9") {
         const age = util.diffDates(
             util.standardDate(instrument.questions.lk3.value),
-            new Date(2024, 5, 1)
+            new Date("2024-05-01")
         )
 
         util.setValue("lk13a", age.toString());
@@ -344,13 +344,13 @@ util.listen("sa1", "myChange", () => {
 
     const years = util.diffDates(
         util.standardDate(instrument.questions.sa1.value),
-        new Date(2024, 5, 1),
+        new Date("2024-05-01"),
         "years"
     )
 
     const months = util.diffDates(
         util.standardDate(instrument.questions.sa1.value),
-        new Date(2024, 5, 1),
+        new Date("2024-05-01"),
         "months"
     )
 

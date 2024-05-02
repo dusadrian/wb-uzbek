@@ -256,7 +256,7 @@ util.listen("pi3", "myChange", () => {
     if (instrument.questions.pi3.value != "-9") {
         const age = util.diffDates(
             util.standardDate(instrument.questions.pi3.value),
-            new Date(2024, 5, 1)
+            new Date("2024-05-01")
         )
 
         util.setValue("pi3a", age.toString());

@@ -268,7 +268,7 @@ util.listen("ptr4", "myChange", () => {
     if (instrument.questions.ptr4.value != "-9") {
         const age = util.diffDates(
             util.standardDate(instrument.questions.ptr4.value),
-            new Date(2024, 5, 1)
+            new Date("2024-05-01")
         )
 
         util.setValue("ptr4a", age.toString());

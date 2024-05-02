@@ -449,7 +449,7 @@ util.listen("lk3", "myChange", () => {
     if (instrument.questions.lk3.value != "-9") {
         const age = util.diffDates(
             util.standardDate(instrument.questions.lk3.value),
-            new Date(2024, 5, 1)
+            new Date("2024-05-01")
         )
 
         util.setValue("lk13a", age.toString());
@@ -669,7 +669,7 @@ cmgt1a.addEventListener("myChange", function () {
 
     const months = util.diffDates(
         util.standardDate(instrument.questions.cmgt1a.value),
-        new Date(2024, 5, 1),
+        new Date("2024-05-01"),
         "months"
     )
 

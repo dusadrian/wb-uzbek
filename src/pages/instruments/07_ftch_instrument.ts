@@ -260,13 +260,13 @@ util.listen("ifp2", "myChange", () => {
 
         const years = util.diffDates(
             util.standardDate(instrument.questions.ifp2.value),
-            new Date(2024, 5, 1),
+            new Date("2024-05-01"),
             "years"
         )
 
         const months = util.diffDates(
             util.standardDate(instrument.questions.ifp2.value),
-            new Date(2024, 5, 1),
+            new Date("2024-05-01"),
             "months"
         )
 
@@ -281,7 +281,7 @@ util.listen("ifm4", "myChange", () => {
 
         const age = util.diffDates(
             util.standardDate(instrument.questions.ifm4.value),
-            new Date(2024, 5, 1),
+            new Date("2024-05-01"),
             "years"
         )
 
@@ -296,7 +296,7 @@ util.listen("ift4", "myChange", () => {
 
         const age = util.diffDates(
             util.standardDate(instrument.questions.ift4.value),
-            new Date(2024, 5, 1),
+            new Date("2024-05-01"),
             "years"
         )
 
