@@ -279,7 +279,7 @@ export const instrument1 = {
                     institution_name = services[institution_code].name;
                     location = services[institution_code].district;
                     if (services[institution_code].settlement) {
-                        location = "" + services[institution_code].settlement;
+                        location = services[institution_code].settlement;
                     }
                     util.setValue('reg', "" + services[institution_code].region);
                     util.setValue('dis', "" + services[institution_code].district);
@@ -754,4 +754,10 @@ util.listen(qfam3, "change", () => {
 });
 
 
-// TODO SH5
+util.listen("edk3", "change", () => {
+    const message = "EDK3 <= 11"
+    errorHandler.removeError("edk3", message);
+    if (Number(util.htmlElement("edk3").value) > 11) {
+        errorHandler.addError("edk3", message);
+    }
+});
