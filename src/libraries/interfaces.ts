@@ -7,7 +7,7 @@ export interface QuestionType {
 	readonly: boolean;
 	order: number;
 	active: () => boolean;
-	error: string;
+	error?: string;
 	checked?: number;
 	skip?: boolean;
 }
