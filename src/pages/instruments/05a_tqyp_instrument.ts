@@ -24,7 +24,7 @@ const locales: { [key: string]: typeof en | typeof uz | typeof ru } = {
 
 
 const lang = localStorage.getItem("language");
-// const translations = locales[lang as keyof typeof locales] as Record<string, string>;
+const translations = locales[lang as keyof typeof locales] as Record<string, string>;
 let services: { [key: string]: DI.Institution };
 let insons: { [key: string]: DI.INSON };
 
@@ -32,10 +32,10 @@ let insons: { [key: string]: DI.INSON };
 const general_dates = [
     'ptr4', 'ptr6' // 'data',
 ];
-const regElements = ["str3a", "ptr5b", "ptr8e"];
-const disElements = ["str3b", "ptr5c", "ptr8f"];
-const setElements = ["", "ptr5d", "ptr8g"];
-const typeElements = ["", "ptr5e", "ptr8h"];
+const regElements =  ["str3a", "ptr5b", "ptr8e"];
+const disElements =  ["str3b", "ptr5c", "ptr8f"];
+const setElements =  ["str3c", "ptr5d", "ptr8g"];
+const typeElements = ["",      "ptr5e", "ptr8h"];
 
 let regionCode = '';
 let institutionType = '';
@@ -78,7 +78,7 @@ export const instrument5a = {
             reg_el.innerHTML = "";
             const option = document.createElement("option");
             option.value = "-9";
-            option.text = locales[lang]['t_choose'];
+            option.text = translations['t_choose'];
             reg_el.appendChild(option);
 
             for (let i = 0; i < reg_codes.length; i++) {
@@ -104,7 +104,7 @@ export const instrument5a = {
 
                     const option = document.createElement("option");
                     option.value = "-9";
-                    option.text = locales[lang]['t_choose'];
+                    option.text = translations['t_choose'];
                     dis_el.innerHTML = "";
                     dis_el.appendChild(option);
 
@@ -132,8 +132,8 @@ export const instrument5a = {
 
                         if (set_codes.length > 0) {
                             const option = document.createElement("option");
-                            option.value = "-9";
-                            option.text = locales[lang]['t_choose'];
+                            option.value = setElements[x] == "str3c" ? "0": "-9";
+                            option.text = setElements[x] == "str3c" ? "--" : translations['t_choose'];
                             set_el.appendChild(option);
 
                             for (let i = 0; i < set_codes.length; i++) {
@@ -196,6 +196,7 @@ export const instrument5a = {
                 regionCode = args.userData.region_code;
 
                 util.setValue("str1", institution_code);
+                util.setValue("str3c", "0");
                 util.setValue("str4", "0");
                 if (inson_user) {
                     util.setValue("str2", insons[institution_code].name ? insons[institution_code].name : "--");
@@ -208,6 +209,9 @@ export const instrument5a = {
                     const type = services[institution_code].type;
                     if (["11", "12", "13", "14", "15", "16", "17"].indexOf(type) >= 0) {
                         util.setValue("str4", type);
+                    }
+                    if (services[institution_code].settlement) {
+                        util.setValue("str3c", services[institution_code].settlement);
                     }
                     institutionType = services[institution_code].type;
                 }
