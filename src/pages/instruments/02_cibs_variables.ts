@@ -4463,11 +4463,6 @@ export const questions: QuestionObjectType = {
         readonly: false,
         order: 366,
         active: function () {
-            console.log(
-                Number(instrument.questions.lk13a.value),
-                Number(instrument.questions.sq12.value),
-                Number(instrument.questions.sq12a.value)
-            );
             return (Number(instrument.questions.lk13a.value) >= 15 && Number(instrument.questions.sq12.value) == 1 && Number(instrument.questions.sq12a.value) == 3)
         },
         error: '',
