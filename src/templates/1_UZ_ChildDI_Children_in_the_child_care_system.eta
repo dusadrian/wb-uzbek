@@ -1231,7 +1231,7 @@
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
             <div><%= it.t306 %>. <%= it.t307 %></div>
             <div class="flex items-center">
-                <input id="ct3a_dk" type="checkbox" value="9" class="w-4 h-4 text-blue-600 border-gray-400 rounded focus:ring-blue-500 disabled:bg-gray-100">
+                <input id="ct3a_dk" name="ct3a_dk" type="checkbox" value="9" class="w-4 h-4 text-blue-600 border-gray-400 rounded focus:ring-blue-500 disabled:bg-gray-100">
                 <label for="ct3a_dk" class="ms-2 text-sm text-gray-900"><%= it.t59 %></label>
             </div>
         </div>
