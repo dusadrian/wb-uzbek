@@ -32,7 +32,8 @@ const general_dates = [
 ];
 
 const sh3_start_dates = [
-    'sh3_s1a', 'sh3_s2a', 'sh3_s3a', 'sh3_s4a', 'sh3_s5a', 'sh3_s6a', 'sh3_s7a', 'sh3_s8a', 'sh3_s9a', 'sh3_s10a'
+    'sh3_s1a', 'sh3_s2a', 'sh3_s3a', 'sh3_s4a', 'sh3_s5a', 'sh3_s6a', 'sh3_s7a', 'sh3_s8a', 'sh3_s9a', 'sh3_s10a',
+    'sh3_csa'
 ];
 
 const sh3_end_dates = [
@@ -598,54 +599,79 @@ util.listen("sh1", "myChange", () => {
 
 sh3_start_dates.forEach((startel) => {
     const index = sh3_start_dates.indexOf(startel);
-    const endel = sh3_end_dates[index]
     const start = util.htmlElement(startel);
-    const end = util.htmlElement(endel);
+    if (index < sh3_start_dates.length - 1) {
+        const endel = sh3_end_dates[index];
+        const end = util.htmlElement(endel);
 
-    const check = function () {
-        if (util.inputsHaveValue([startel, endel])) {
-
+        const check = function () {
             const startdate = util.standardDate(start.value);
-            const enddate = util.standardDate(end.value);
-            const timespent = util.htmlElement(startel.replace("a", "f"));
-            const sh4 = util.htmlElement("sh4");
+            if (util.inputsHaveValue([startel, endel])) {
+                const enddate = util.standardDate(end.value);
+                const timespent = startel.replace("a", "f");
 
-            const message = translations['Start_before_end'];
-            errorHandler.removeError([startel, endel], message);
+                const message = translations['Start_before_end'];
+                errorHandler.removeError([startel, endel], message);
 
-            if (startdate > enddate) {
-                errorHandler.addError([startel, endel], message);
-                instrument.questions[startel].value = '-9';
-                instrument.questions[endel].value = '-9';
-                timespent.value = "";
-                instrument.questions[startel.replace("a", "f")].value = "-7";
-            }
-            else {
-                instrument.questions[startel].value = start.value;
-                instrument.questions[endel].value = end.value;
+                if (startdate > enddate) {
+                    errorHandler.addError([startel, endel], message);
+                    instrument.questions[startel].value = '-9';
+                    instrument.questions[endel].value = '-9';
+                    util.htmlElement(timespent).value = "";
+                    instrument.questions[timespent].value = "-9";
+                }
+                else {
+                    instrument.questions[startel].value = start.value;
+                    instrument.questions[endel].value = end.value;
+                    const monthdiff = util.diffDates(
+                        startdate,
+                        enddate,
+                        "months"
+                    ).toString();
 
-                timespent.value = util.diffDates(startdate, enddate, "months").toString();
+                    util.htmlElement(timespent).value = monthdiff;
+                    instrument.questions[timespent].value = monthdiff;
 
-                instrument.questions[startel].value = start.value;
-                instrument.questions[endel].value = end.value;
-                instrument.questions[startel.replace("a", "f")].value = timespent.value;
+                    let totalmonths = 0;
+                    [...sh3_start_dates].forEach((item) => {
+                        const nofmonths = Number(instrument.questions[item.replace("a", "f")].value);
+                        if (nofmonths > 0) {
+                            totalmonths += nofmonths;
+                        }
+                    });
 
-                let totalmonths = 0;
-                sh3_start_dates.forEach((item) => {
-                    const nofmonths = Number(instrument.questions[item.replace("a", "f")].value);
-                    if (nofmonths > 0) {
-                        totalmonths += nofmonths;
-                    }
-                });
-
-                sh4.value = totalmonths.toString();
-                instrument.questions["sh4"].value = sh4.value;
+                    util.setValue("sh4", totalmonths.toString());
+                }
             }
         }
+
+        util.listen(startel, "myChange", check);
+        util.listen(endel, "myChange", check);
+    } else {
+        util.listen(startel, "myChange", () => {
+            const startdate = util.standardDate(start.value);
+            const monthdiff = util.diffDates(
+                startdate,
+                util.standardDate("01/05/2024"),
+                "months"
+            ).toString();
+
+            util.htmlElement("sh3_csf").value = monthdiff;
+            instrument.questions.sh3_csf.value = monthdiff;
+
+            let totalmonths = 0;
+            [...sh3_start_dates].forEach((item) => {
+                const nofmonths = Number(instrument.questions[item.replace("a", "f")].value);
+                if (nofmonths > 0) {
+                    totalmonths += nofmonths;
+                }
+                console.log(item.replace("a", "f"), nofmonths, totalmonths);
+            });
+
+            util.setValue("sh4", totalmonths.toString());
+        });
     }
 
-    util.listen(startel, "myChange", check);
-    util.listen(endel, "myChange", check);
 });
 
 
