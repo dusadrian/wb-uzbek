@@ -258,7 +258,7 @@ export const instrument2 = {
 
                 const serv_codes = Object.keys(services);
                 if (serv_codes.indexOf(institution_code) >= 0) {
-                    util.setValue("omr10", "0");
+                    util.setValue("omr10", "-9");
                     const type = services[args.userData.institution_code].type;
                     if (["11", "12", "13", "14", "15", "16", "17"].indexOf(type) >= 0) {
                         util.setValue("omr10", type);
