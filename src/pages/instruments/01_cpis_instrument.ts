@@ -28,7 +28,7 @@ let services: { [key: string]: DI.Institution };
 let insons: { [key: string]: DI.INSON };
 
 const general_dates = [
-    'data', 'lk3', 'cm3', 'ct3', 'cg1c', 'cg3b', 'sa1', 'cmgt1a'
+    'lk3', 'cm3', 'ct3', 'cg1c', 'cg3b', 'sa1', 'cmgt1a'
 ];
 
 const sh3_start_dates = [
@@ -263,7 +263,6 @@ export const instrument1 = {
             }
 
             util.setValue("data", util.customDate());
-            // util.setValue("sh3_csd", "01/05/2024"); asta nu cred ca mai este nevoie de ea
 
             // set default values for user, IRRESPECTIVE of the instrument
             if (args.userData) {
