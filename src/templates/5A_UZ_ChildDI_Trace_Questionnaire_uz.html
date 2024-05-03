@@ -38,33 +38,54 @@
             </div>
         </div>
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
-            <div>STR3. Xizmatning lokatsiyasi (MHOBT kodi)</div>
-            <div>
-                <input type="text" id="str3" name="str3" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
-            </div>
+            <div>STR3. Xizmatning lokatsiyasi</div>
         </div>
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
             <div>a. Viloyat</div>
             <div>
-                <input type="text" id="str3a" name="str3a" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                <select id="str3a" name="str3a" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+                    <option value="-9" class="t_choose">--- choose ---</option>
+                </select>
             </div>
         </div>
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
             <div>b. Tuman</div>
             <div>
-                <input type="text" id="str3b" name="str3b" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                <select id="str3b" name="str3b" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+                    <option value="-9" class="t_choose">--- choose ---</option>
+                </select>
             </div>
         </div>
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
             <div>c. Aholi punkti</div>
             <div>
-                <input type="text" id="str3c" name="str3c" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                <select id="str3c" name="str3c" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+                    <option value="-9" class="t_choose">--- choose ---</option>
+                </select>
             </div>
         </div>
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
             <div>STR4. Muassasa turi</div>
             <div>
-                <input type="text" id="str4" name="str4" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                <div>
+                    <select id="str4" name="str4" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100">
+                        <option value="-9" class="t_choose">--</option>
+                        <optgroup label="Bolalar muassasalari:">
+                            <option value="11">11. Mehribonlik uyi</option>
+                            <option value="12">12. Nogironligi boʻlgan bolalar uchun Muruvvat internat uyi</option>
+                            <option value="13">13. Oila tipidagi uy</option>
+                            <option value="14">14. SOS Bolalar makhallasi</option>
+                        </optgroup>
+                        <optgroup label="Maktab-internatlar:">
+                            <option value="21">21. Kar yoki eshitish qobiliyati past boʻlgan bolalar uchun I-II toifa</option>
+                            <option value="22">22. Koʻzi koʻr yoki koʻrishi yomon boʻlgan bolalar uchun III-IV toifa</option>
+                            <option value="23">23. Nutqida ogʻir nuqsoni boʻlgan bolalar uchun V turi</option>
+                            <option value="24">24. Mushak-skelet tizimining buzilishi boʻlgan bolalar uchun VI tur</option>
+                            <option value="25">25. Ruhiy rivojlanishi sekinlashgan/ ruhiy kasallilkari boʻlgan bolalar uchun VII tur</option>
+                            <option value="26">26. Intellektual nuqsoni boʻlgan bolalar uchun VIII tur</option>
+                        </optgroup>
+                    </select>
+                </div>
             </div>
         </div>
 
@@ -293,7 +314,7 @@
                     <input type="text" id="ptr8_other" name="ptr8_other" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
                 </div>
                 <div class="flex items-center">
-                    <input id="ptr8-6" type="radio" value="6" name="ptr8" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <input id="ptr8-6" type="radio" value="8" name="ptr8" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                     <label for="ptr8-6" class="ms-2 text-sm text-gray-900">8. Noma&#39;lum</label>
                 </div>
             </div>
@@ -301,7 +322,7 @@
 
 
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
-            <div>a Muassasasining nomi.</div>
+            <div>a. Muassasasining nomi</div>
             <div class="flex items-center">
                 <input type="text" id="ptr8a" name="ptr8a" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
             </div>
@@ -320,8 +341,6 @@
                 <input type="text" id="ptr8c" name="ptr8c" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
             </div>
         </div>
-
-        <p class="mt-6">d. Maʼmuriy-hududiy birlikning 10 xonali kodini toʻldiring (MHOBT)</p>
 
         <div class="grid grid-cols-2 items-center gap-4 mt-6">
             <div>e. Viloyat:</div>

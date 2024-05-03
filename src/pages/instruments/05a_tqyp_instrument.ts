@@ -32,10 +32,10 @@ let insons: { [key: string]: DI.INSON };
 const general_dates = [
     'ptr4', 'ptr6' // 'data',
 ];
-const regElements =  ["str3a", "ptr5b", "ptr8e"];
-const disElements =  ["str3b", "ptr5c", "ptr8f"];
-const setElements =  ["str3c", "ptr5d", "ptr8g"];
-const typeElements = ["",      "ptr5e", "ptr8h"];
+const regElements = ["str3a", "ptr5b", "ptr8e"];
+const disElements = ["str3b", "ptr5c", "ptr8f"];
+const setElements = ["str3c", "ptr5d", "ptr8g"];
+const typeElements = ["", "ptr5e", "ptr8h"];
 
 let regionCode = '';
 let institutionType = '';
@@ -132,7 +132,7 @@ export const instrument5a = {
 
                         if (set_codes.length > 0) {
                             const option = document.createElement("option");
-                            option.value = setElements[x] == "str3c" ? "0": "-9";
+                            option.value = setElements[x] == "str3c" ? "0" : "-9";
                             option.text = setElements[x] == "str3c" ? "--" : translations['t_choose'];
                             set_el.appendChild(option);
 
@@ -197,7 +197,7 @@ export const instrument5a = {
 
                 util.setValue("str1", institution_code);
                 util.setValue("str3c", "0");
-                util.setValue("str4", "0");
+                util.setValue("str4", "-9");
                 if (inson_user) {
                     util.setValue("str2", insons[institution_code].name ? insons[institution_code].name : "--");
                     util.setValue("str3a", insons[institution_code].region);
