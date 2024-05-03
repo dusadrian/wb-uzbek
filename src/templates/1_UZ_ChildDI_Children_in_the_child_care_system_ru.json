@@ -1501,5 +1501,5 @@
     "t_code": "Уникальный код учреждения",
     "t_name": "Название учреждения",
     "t_type": "Тип учреждения",
-    "cg0": "\"Проверяйте только, если до поступления в интернат ребенок находился под опекой кого-либо, кроме матери или отца ребенка. В противном случае перейдите к разделу 4.\""
+    "cg0": "Check only if before entering the system, the child was under the care of someone other than the child's mother or father. Otherwise, skip to Section 4."
 }
