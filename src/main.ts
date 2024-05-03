@@ -1,6 +1,8 @@
 process.env.NODE_ENV = "development";
+process.env.DEBBUG_BUTTON = "false";
 // Set env mode
 // process.env.NODE_ENV = 'production';
+// process.env.DEBBUG_BUTTON = 'false';
 
 import { app, BrowserWindow, dialog, ipcMain } from "electron";
 import * as path from "path";

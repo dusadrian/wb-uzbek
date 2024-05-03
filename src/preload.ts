@@ -154,9 +154,7 @@ window.addEventListener("DOMContentLoaded", () => {
 });
 
 const showDebugButton = () => {
-    if (process.env.NODE_ENV !== "development") {
-        document.getElementById("debugForm").parentElement.classList.add("hidden");
-    } else {
+    if (process.env.DEBBUG_BUTTON === "true") {
         document.getElementById("debugForm").parentElement.classList.remove("hidden");
     }
 }
