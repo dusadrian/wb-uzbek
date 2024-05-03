@@ -160,14 +160,21 @@
                 <div>
                     <select id="omr10" name="omr10"
                         class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100">
-                        <option value="0" selected>--</option>
-                        <option value="11" class="t_institution_type_option_11"></option>
-                        <option value="12" class="t_institution_type_option_12"></option>
-                        <option value="13" class="t_institution_type_option_13"></option>
-                        <option value="14" class="t_institution_type_option_14"></option>
-                        <option value="15" class="t_institution_type_option_15"></option>
-                        <option value="16" class="t_institution_type_option_16"></option>
-                        <option value="17" class="t_institution_type_option_17"></option>
+                        <option value="-9" class="t_choose">--- choose ---</option>
+                        <option value="1">1. Type I - boarding schools for deaf children.</option>
+                        <option value="2">2. Type II - boarding schools for the hearing-impaired and those who later
+                            will lose their hearing.</option>
+                        <option value="3">3. Type III - &quot;Noorli Maskan&quot; specialized boarding schools for blind
+                            children.</option>
+                        <option value="4">4. Type IV - &quot;Noorli Maskan&quot; specialized boarding schools for
+                            visually impaired and those who later will lose their vision.</option>
+                        <option value="5">5. Type V - boarding schools for children with severe speech disorders.
+                        </option>
+                        <option value="6">6. Type VI - boarding schools for children with musculoskeletal disorders.
+                        </option>
+                        <option value="7">7. Type VII - boarding schools for children with mental retardation.</option>
+                        <option value="8">8. Type VIII - supporting boarding schools for mentally retarded children.
+                        </option>
                     </select>
                 </div>
             </div>
@@ -475,7 +482,7 @@
 
             <p class="mt-10">SA3. Where did the child live before being admitted to the boarding school?</p>
             <div class="grid grid-cols-2 items-center gap-4 mt-4">
-                <div>Fill in the 10-digit code of the administrative-territorial unit (МҲОБТ).. SA3a</div>
+                <div>SA3a. Region</div>
                 <div>
                     <select id="sa3a" name="sa3a"
                         class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
@@ -526,7 +533,7 @@
                         <option value="2">2. Mehribonlik house</option>
                         <option value="3">3. Muruvat house for children with disabilities</option>
                         <option value="4">4. Family-type children&#39;s home</option>
-                        <option value="5">5. Patronat family )</option>
+                        <option value="5">5. Patronat family</option>
                         <option value="6">6. Trusteeship/Guardianship care</option>
                         <option value="7">7. SOS children&#39;s villages/families</option>
                     </select>
@@ -951,7 +958,7 @@
                     <div class="flex items-center">
                         <input id="cm5b-7" type="radio" value="7" name="cm5b"
                             class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                        <label for="cm5b-7" class="ms-2 text-sm text-gray-900">7. Separated**</label>
+                        <label for="cm5b-7" class="ms-2 text-sm text-gray-900">7. Separated*</label>
                     </div>
                     <div class="flex items-center">
                         <input id="cm5b-8" type="radio" value="8" name="cm5b"
@@ -1054,24 +1061,24 @@
                     <div class="flex items-center">
                         <input id="cm7b-4" type="radio" value="3" name="cm7b"
                             class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                        <label for="cm7b-4" class="ms-2 text-sm text-gray-900">3. Specialized secondary/vocational
-                            education</label>
+                        <label for="cm7b-4" class="ms-2 text-sm text-gray-900">3. Unfinished specialized
+                            secondary</label>
                     </div>
                     <div class="flex items-center">
                         <input id="cm7b-5" type="radio" value="4" name="cm7b"
                             class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                        <label for="cm7b-5" class="ms-2 text-sm text-gray-900">4. Unfinished specialized
-                            secondary</label>
+                        <label for="cm7b-5" class="ms-2 text-sm text-gray-900">4. Specialized secondary/vocational
+                            education</label>
                     </div>
                     <div class="flex items-center">
                         <input id="cm7b-6" type="radio" value="5" name="cm7b"
                             class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                        <label for="cm7b-6" class="ms-2 text-sm text-gray-900">5. Higher education</label>
+                        <label for="cm7b-6" class="ms-2 text-sm text-gray-900">5. Unfinished higher education</label>
                     </div>
                     <div class="flex items-center">
                         <input id="cm7b-7" type="radio" value="6" name="cm7b"
                             class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                        <label for="cm7b-7" class="ms-2 text-sm text-gray-900">6. Unfinished higher education</label>
+                        <label for="cm7b-7" class="ms-2 text-sm text-gray-900">6. Higher education</label>
                     </div>
                     <div class="flex items-center">
                         <input id="cm7b-9" type="radio" value="9" name="cm7b"
@@ -1265,7 +1272,7 @@
                 </div>
             </div>
 
-            <p class="mt-10">CM11 Mother&#39;s current domicile</p>
+            <p class="mt-10">CM11. Mother&#39;s current domicile</p>
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
                 <div>
                     a. Is she living…? </div>
@@ -1325,14 +1332,14 @@
             <input type="hidden" id="cm11f" name="cm11f" />
 
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
-                <div>g. Address::</div>
+                <div>g. Address:</div>
                 <div>
                     <input type="text" id="cm11g" name="cm11g"
                         class="bg-white disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
                 </div>
             </div>
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
-                <div>h. Phone number::</div>
+                <div>h. Phone number:</div>
                 <div>
                     <input type="text" id="cm11h" name="cm11h"
                         class="bg-white disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
@@ -1568,7 +1575,7 @@
                         <input id="ct6b-2" type="radio" value="1" name="ct6b"
                             class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="ct6b-2" class="ms-2 text-sm text-gray-900">1. The father is diagnosed with a current
-                            disease (e.g., tuberculosis))</label>
+                            disease (e.g., tuberculosis)</label>
                     </div>
                     <div class="flex items-center">
                         <input id="ct6b-3" type="radio" value="2" name="ct6b"
@@ -1643,24 +1650,24 @@
                     <div class="flex items-center">
                         <input id="ct7b-4" type="radio" value="3" name="ct7b"
                             class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                        <label for="ct7b-4" class="ms-2 text-sm text-gray-900">3. Specialized secondary/vocational
-                            education</label>
+                        <label for="ct7b-4" class="ms-2 text-sm text-gray-900">3. Unfinished specialized
+                            secondary</label>
                     </div>
                     <div class="flex items-center">
                         <input id="ct7b-5" type="radio" value="4" name="ct7b"
                             class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                        <label for="ct7b-5" class="ms-2 text-sm text-gray-900">4. Unfinished specialized
-                            secondary</label>
+                        <label for="ct7b-5" class="ms-2 text-sm text-gray-900">4. Specialized secondary/vocational
+                            education</label>
                     </div>
                     <div class="flex items-center">
                         <input id="ct7b-6" type="radio" value="5" name="ct7b"
                             class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                        <label for="ct7b-6" class="ms-2 text-sm text-gray-900">5. Higher education</label>
+                        <label for="ct7b-6" class="ms-2 text-sm text-gray-900">5. Unfinished higher education</label>
                     </div>
                     <div class="flex items-center">
                         <input id="ct7b-7" type="radio" value="6" name="ct7b"
                             class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                        <label for="ct7b-7" class="ms-2 text-sm text-gray-900">6. Unfinished higher education</label>
+                        <label for="ct7b-7" class="ms-2 text-sm text-gray-900">6. Higher education</label>
                     </div>
                     <div class="flex items-center">
                         <input id="ct7b-9" type="radio" value="9" name="ct7b"
@@ -1901,7 +1908,7 @@
             </div>
 
             <div class="grid grid-cols-2 items-center gap-4 mt-6">
-                <div>Settlement</div>
+                <div>e. Settlement</div>
                 <div>
                     <select id="ct11e" name="ct11e"
                         class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
@@ -2246,24 +2253,24 @@
                     <div class="flex items-center">
                         <input id="cg7b-4" type="radio" value="3" name="cg7b"
                             class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                        <label for="cg7b-4" class="ms-2 text-sm text-gray-900">3. Specialized secondary/vocational
-                            education</label>
+                        <label for="cg7b-4" class="ms-2 text-sm text-gray-900">3. Unfinished specialized
+                            secondary</label>
                     </div>
                     <div class="flex items-center">
                         <input id="cg7b-5" type="radio" value="4" name="cg7b"
                             class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                        <label for="cg7b-5" class="ms-2 text-sm text-gray-900">4.Unfinished specialized
-                            secondary</label>
+                        <label for="cg7b-5" class="ms-2 text-sm text-gray-900">4. Specialized secondary/vocational
+                            education</label>
                     </div>
                     <div class="flex items-center">
                         <input id="cg7b-6" type="radio" value="5" name="cg7b"
                             class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                        <label for="cg7b-6" class="ms-2 text-sm text-gray-900">5. Higher education</label>
+                        <label for="cg7b-6" class="ms-2 text-sm text-gray-900">5. Unfinished higher education</label>
                     </div>
                     <div class="flex items-center">
                         <input id="cg7b-7" type="radio" value="6" name="cg7b"
                             class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                        <label for="cg7b-7" class="ms-2 text-sm text-gray-900">6. Unfinished higher education</label>
+                        <label for="cg7b-7" class="ms-2 text-sm text-gray-900">6. Higher education</label>
                     </div>
                     <div class="flex items-center">
                         <input id="cg7b-9" type="radio" value="9" name="cg7b"
@@ -2499,7 +2506,7 @@
             </div>
 
             <div class="grid grid-cols-2 items-center gap-4 mt-6">
-                <div>Settlement</div>
+                <div>e. Settlement</div>
                 <div>
                     <select id="cg11e" name="cg11e"
                         class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
@@ -3550,7 +3557,7 @@
                         <tr>
                             <td>
                                 <input id="predif7_cb" type="checkbox" value="1" name="predif7_cb"
-                                        class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                                    class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                             </td>
                             <td>
                                 <input type="text" id="predif7_other" name="predif7_other"
@@ -3863,8 +3870,9 @@
 
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
                 <div>
-                    SCH2. Currently, in which grade is the child? <small class="block italic mt-2">FILL IN IF GRADE
-                        &gt;=8, ELSE SKIP TO CEDU</small>
+                    SCH2. Currently, in which grade is the child? <small class="block italic mt-2">FILL IN 0 (ZERO) FOR
+                        PREPARARTORY CLASS</small>
+                    <small class="block italic mt-2">FILL IN IF GRADE &gt;=8, ELSE SKIP TO CEDU</small>
                 </div>
                 <div>
                     <input type="text" id="sch2" name="sch2"
@@ -5562,7 +5570,7 @@
                         <tr>
                             <td>
                                 <input id="todif7_cb" type="checkbox" value="1" name="todif7_cb"
-                                        class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                                    class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                             </td>
                             <td>
                                 <input type="text" id="todif7_other" name="todif7_other"
