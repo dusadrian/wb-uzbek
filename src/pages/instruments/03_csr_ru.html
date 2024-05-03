@@ -31,24 +31,21 @@
 
             <p class="mt-4 mb-2 text-xl">ВВЕДЕНИЕ</p>
             <p class="mb-2">Основной целью данного сбора данных является оказание поддержки Правительству Узбекистана в
-                переходе от интернатной опеки к семейным видам опеки над
-                детьми, лишенных родительской опеки. Для достижения этой цели мы намерены создать надежный механизм
-                мониторинга на национальном уровне. Собирая подробные данные, мы
-                можем принимать обоснованные решения и разрабатывать политику, способствующие распространению
-                альтернативных семейных форм опеки.</p>
+                переходе от интернатной опеки к семейным видам опеки над детьми, лишенных родительской опеки. Для
+                достижения этой цели мы намерены создать надежный механизм мониторинга на национальном уровне. Собирая
+                подробные данные, мы можем принимать обоснованные решения и разрабатывать политику, способствующие
+                распространению альтернативных семейных форм опеки.</p>
             <p class="mb-2">Еще одной важнейшей задачей является повышение качества услуг, предоставляемых детям с
-                инвалидностью в специализированных учреждениях. Понимая их
-                уникальные потребности и опыт, мы можем разработать целенаправленные виды вмешательства и улучшить их
-                общее самочувствие. Кроме того, мы стремимся использовать и
-                продвигать адекватные альтернативы семейного типа опеки для этих детей.</p>
+                инвалидностью в специализированных учреждениях. Понимая их уникальные потребности и опыт, мы можем
+                разработать целенаправленные виды вмешательства и улучшить их общее самочувствие. Кроме того, мы
+                стремимся использовать и продвигать адекватные альтернативы семейного типа опеки для этих детей.</p>
             <p class="mb-2">Этот вопросник служит важнейшим инструментом для понимания организационной структуры и
-                индивидуальных особенностей в каждом детском учреждении и
-                школе-интернате. Собирая исчерпывающие данные, мы стремимся повысить эффективность принятия решений,
-                улучшить управление персоналом и обеспечить благополучие как
-                сотрудников, так и детей, находящихся под опекой.</p>
+                индивидуальных особенностей в каждом детском учреждении и школе-интернате. Собирая исчерпывающие данные,
+                мы стремимся повысить эффективность принятия решений, улучшить управление персоналом и обеспечить
+                благополучие как сотрудников, так и детей, находящихся под опекой.</p>
             <p class="mb-2">Целью данного опросника является сбор информации о каждой должности в штатной структуре
-                учреждения. Независимо от того, занята ли в настоящее время
-                должность или вакантна, пожалуйста, заполните отдельную анкету для каждой должности.</p>
+                учреждения. Независимо от того, занята ли в настоящее время должность или вакантна, пожалуйста,
+                заполните отдельную анкету для каждой должности.</p>
 
             <div class="grid grid-cols-2 gap-4 items-center mt-12">
                 <div>Q1. Дата заполнения анкеты</div>
@@ -136,12 +133,12 @@
                 <div>
                     <select id="i4b" name="i4b"
                         class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                        <option value="-9" class="">--- choose ---</option>
+                        <option value="-9" class="t_choose">--- choose ---</option>
                     </select>
                 </div>
             </div>
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
-                <div>I4c. Пункт населения</div>
+                <div>I4c. Населённый пункт</div>
                 <div>
                     <select id="i4c" name="i4c"
                         class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
@@ -149,7 +146,21 @@
                     </select>
                 </div>
             </div>
-            <input type="hidden" id="i4d" name="i4d" />
+            <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                <div>I4d. Тип поселения</div>
+                <div>
+                    <select id="i4d" name="i4d"
+                        class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+                        <option value="10" class="t_settlement_type_10"></option>
+                        <option value="20" class="t_settlement_type_20"></option>
+                        <option value="21" class="t_settlement_type_21"></option>
+                        <option value="22" class="t_settlement_type_22"></option>
+                        <option value="23" class="t_settlement_type_23"></option>
+                        <option value="24" class="t_settlement_type_24"></option>
+                        <option value="31" class="t_settlement_type_31"></option>
+                    </select>
+                </div>
+            </div>
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
                 <div>I5. Тип учреждения</div>
                 <div>
@@ -267,7 +278,7 @@
                     <div class="flex items-center">
                         <input id="j6-1" type="radio" value="0" name="j6"
                             class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                        <label for="j6-1" class="ms-2 text-sm text-gray-900">0. Нет</label>
+                        <label for="j6-1" class="ms-2 text-sm text-gray-900">0. Нет образования</label>
                     </div>
                     <div class="flex items-center">
                         <input id="j6-2" type="radio" value="1" name="j6"
@@ -283,13 +294,29 @@
                     <div class="flex items-center">
                         <input id="j6-4" type="radio" value="3" name="j6"
                             class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                        <label for="j6-4" class="ms-2 text-sm text-gray-900">3. Среднее специальное/профессиональное
-                            образование.</label>
+                        <label for="j6-4" class="ms-2 text-sm text-gray-900">3. Незаконченное среднее специальное
+                            образование</label>
                     </div>
                     <div class="flex items-center">
                         <input id="j6-5" type="radio" value="4" name="j6"
                             class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                        <label for="j6-5" class="ms-2 text-sm text-gray-900">4. Высшее образование</label>
+                        <label for="j6-5" class="ms-2 text-sm text-gray-900">4. Среднее специальное/профессиональное
+                            образование</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="j6-6" type="radio" value="5" name="j6"
+                            class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <label for="j6-6" class="ms-2 text-sm text-gray-900">5. Незаконченное высшее образование</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="j6-7" type="radio" value="6" name="j6"
+                            class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <label for="j6-7" class="ms-2 text-sm text-gray-900">6. Высшее образование</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="j6-9" type="radio" value="9" name="j6"
+                            class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <label for="j6-9" class="ms-2 text-sm text-gray-900">9. Не указано/неизвестно</label>
                     </div>
                 </div>
             </div>
@@ -372,7 +399,7 @@
                     <div class="flex items-center">
                         <input id="e4-1" type="radio" value="0" name="e4"
                             class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                        <label for="e4-1" class="ms-2 text-sm text-gray-900">0. Нет</label>
+                        <label for="e4-1" class="ms-2 text-sm text-gray-900">0. Нет образования</label>
                     </div>
                     <div class="flex items-center">
                         <input id="e4-2" type="radio" value="1" name="e4"
@@ -388,13 +415,29 @@
                     <div class="flex items-center">
                         <input id="e4-4" type="radio" value="3" name="e4"
                             class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                        <label for="e4-4" class="ms-2 text-sm text-gray-900">3. Среднее специальное/профессиональное
-                            образование.</label>
+                        <label for="e4-4" class="ms-2 text-sm text-gray-900">3. Незаконченное среднее специальное
+                            образование</label>
                     </div>
                     <div class="flex items-center">
                         <input id="e4-5" type="radio" value="4" name="e4"
                             class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                        <label for="e4-5" class="ms-2 text-sm text-gray-900">4. Высшее образование</label>
+                        <label for="e4-5" class="ms-2 text-sm text-gray-900">4. Среднее специальное/профессиональное
+                            образование</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e4-5" type="radio" value="5" name="e4"
+                            class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <label for="e4-6" class="ms-2 text-sm text-gray-900">5. Незаконченное высшее образование</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e4-7" type="radio" value="6" name="e4"
+                            class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <label for="e4-7" class="ms-2 text-sm text-gray-900">6. Высшее образование</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e4-9" type="radio" value="9" name="e4"
+                            class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <label for="e4-9" class="ms-2 text-sm text-gray-900">9. Не указано/неизвестно</label>
                     </div>
                 </div>
             </div>
@@ -595,8 +638,7 @@
 
             <div class="grid grid-cols-2 gap-4 items-center mt-10">
                 <div>Е16. Поступали ли за последние три года жалобы на сотрудников по поводу неправомерного поведения,
-                    плохого обращения или жестокого обращения с детьми,
-                    помещенными в учреждение?</div>
+                    плохого обращения или жестокого обращения с детьми, помещенными в учреждение?</div>
                 <div class="col-span-1 flex items-center gap-4">
                     <div class="flex items-center">
                         <input id="e16-1" type="radio" value="1" name="e16"
@@ -613,8 +655,7 @@
 
             <div class="grid grid-cols-2 gap-4 items-center mt-10">
                 <div>Е17. Применялись ли к работнику за последние три года санкции за какое-либо неправомерное
-                    поведение, плохое обращение или жестокое обращение с детьми,
-                    помещенными в учреждение?</div>
+                    поведение, плохое обращение или жестокое обращение с детьми, помещенными в учреждение?</div>
                 <div class="col-span-1 flex items-center gap-4">
                     <div class="flex items-center">
                         <input id="e17-1" type="radio" value="1" name="e17"
@@ -647,7 +688,6 @@
             </div>
 
         </form>
-
         <footer id="footer" class="fixed bottom-0 w-full h-12 bg-slate-200 shadow">
             <div class="flex justify-center h-full items-center">
 

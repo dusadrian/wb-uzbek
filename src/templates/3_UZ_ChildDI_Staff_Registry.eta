@@ -225,23 +225,35 @@
             <div class="col-span-1 flex flex-col gap-2">
                 <div class="flex items-center">
                     <input id="j6-1" type="radio" value="0" name="j6" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="j6-1" class="ms-2 text-sm text-gray-900"><%= it.t71 %></label>
+                    <label for="j6-1" class="ms-2 text-sm text-gray-900"><%= it.t70_0 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="j6-2" type="radio" value="1" name="j6" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="j6-2" class="ms-2 text-sm text-gray-900"><%= it.t72 %></label>
+                    <label for="j6-2" class="ms-2 text-sm text-gray-900"><%= it.t70_1 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="j6-3" type="radio" value="2" name="j6" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="j6-3" class="ms-2 text-sm text-gray-900"><%= it.t73 %></label>
+                    <label for="j6-3" class="ms-2 text-sm text-gray-900"><%= it.t70_2 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="j6-4" type="radio" value="3" name="j6" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="j6-4" class="ms-2 text-sm text-gray-900"><%= it.t74 %></label>
+                    <label for="j6-4" class="ms-2 text-sm text-gray-900"><%= it.t70_3 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="j6-5" type="radio" value="4" name="j6" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="j6-5" class="ms-2 text-sm text-gray-900"><%= it.t75 %></label>
+                    <label for="j6-5" class="ms-2 text-sm text-gray-900"><%= it.t70_4 %></label>
+                </div>
+                <div class="flex items-center">
+                    <input id="j6-6" type="radio" value="5" name="j6" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="j6-6" class="ms-2 text-sm text-gray-900"><%= it.t70_5 %></label>
+                </div>
+                <div class="flex items-center">
+                    <input id="j6-7" type="radio" value="6" name="j6" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="j6-7" class="ms-2 text-sm text-gray-900"><%= it.t70_6 %></label>
+                </div>
+                <div class="flex items-center">
+                    <input id="j6-9" type="radio" value="9" name="j6" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="j6-9" class="ms-2 text-sm text-gray-900"><%= it.t70_7 %></label>
                 </div>
             </div>
         </div>
@@ -314,23 +326,35 @@
             <div class="col-span-1 flex flex-col gap-2">
                 <div class="flex items-center">
                     <input id="e4-1" type="radio" value="0" name="e4" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="e4-1" class="ms-2 text-sm text-gray-900"><%= it.t99 %></label>
+                    <label for="e4-1" class="ms-2 text-sm text-gray-900"><%= it.t70_0 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="e4-2" type="radio" value="1" name="e4" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="e4-2" class="ms-2 text-sm text-gray-900"><%= it.t100 %></label>
+                    <label for="e4-2" class="ms-2 text-sm text-gray-900"><%= it.t70_1 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="e4-3" type="radio" value="2" name="e4" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="e4-3" class="ms-2 text-sm text-gray-900"><%= it.t101 %></label>
+                    <label for="e4-3" class="ms-2 text-sm text-gray-900"><%= it.t70_2 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="e4-4" type="radio" value="3" name="e4" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="e4-4" class="ms-2 text-sm text-gray-900"><%= it.t102 %></label>
+                    <label for="e4-4" class="ms-2 text-sm text-gray-900"><%= it.t70_3 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="e4-5" type="radio" value="4" name="e4" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="e4-5" class="ms-2 text-sm text-gray-900"><%= it.t103 %></label>
+                    <label for="e4-5" class="ms-2 text-sm text-gray-900"><%= it.t70_4 %></label>
+                </div>
+                <div class="flex items-center">
+                    <input id="e4-5" type="radio" value="5" name="e4" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="e4-6" class="ms-2 text-sm text-gray-900"><%= it.t70_5 %></label>
+                </div>
+                <div class="flex items-center">
+                    <input id="e4-7" type="radio" value="6" name="e4" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="e4-7" class="ms-2 text-sm text-gray-900"><%= it.t70_6 %></label>
+                </div>
+                <div class="flex items-center">
+                    <input id="e4-9" type="radio" value="9" name="e4" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                    <label for="e4-9" class="ms-2 text-sm text-gray-900"><%= it.t70_7 %></label>
                 </div>
             </div>
         </div>

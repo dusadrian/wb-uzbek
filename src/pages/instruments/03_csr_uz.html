@@ -31,27 +31,24 @@
 
             <p class="mt-4 mb-2 text-xl">KIRISH</p>
             <p class="mb-2">Ushbu ma&#39;lumotlarni to&#39;plashning asosiy maqsadi O&#39;zbekiston Hukumatini ota-ona
-                qaramog&#39;idan mahrum bo&#39;lgan bolalarga institutsional
-                homiylik qilishdan oila tipidagi vasiylikka o&#39;tishda qo&#39;llab-quvvatlashdan iborat. Bunga
-                erishish uchun milliy darajada mustahkam nazorat mexanizmini
-                qurishni maqsad qilganmiz. Batafsil ma&#39;lumotlarni to&#39;plash orqali biz oilaga asoslangan
-                alternativalarni targ&#39;ib qiluvchi dalillarga asoslangan qarorlar
-                va qoidalarni ishlab chiqishimiz mumkin.</p>
+                qaramog&#39;idan mahrum bo&#39;lgan bolalarga institutsional homiylik qilishdan oila tipidagi vasiylikka
+                o&#39;tishda qo&#39;llab-quvvatlashdan iborat. Bunga erishish uchun milliy darajada mustahkam nazorat
+                mexanizmini qurishni maqsad qilganmiz. Batafsil ma&#39;lumotlarni to&#39;plash orqali biz oilaga
+                asoslangan alternativalarni targ&#39;ib qiluvchi dalillarga asoslangan qarorlar va qoidalarni ishlab
+                chiqishimiz mumkin.</p>
             <p class="mb-2">Yana bir muhim vazifa nogironligi boʻlgan bolalarga koʻrsatilayotgan xizmatlar sifatini
-                oshirishdir. Ularning o&#39;ziga xos ehtiyojlari va tajribalarini
-                tushunish orqali biz maqsadli aralashuvlarni ishlab chiqishimiz va ularning umumiy farovonligini
-                oshirishimiz mumkin. Bundan tashqari, biz ushbu bolalar uchun
-                yetarli oilaviy turdagi vasiylik alternativalarni tadqiq qilishga va targ&#39;ib qilishga harakat
-                qilamiz. </p>
+                oshirishdir. Ularning o&#39;ziga xos ehtiyojlari va tajribalarini tushunish orqali biz maqsadli
+                aralashuvlarni ishlab chiqishimiz va ularning umumiy farovonligini oshirishimiz mumkin. Bundan tashqari,
+                biz ushbu bolalar uchun yetarli oilaviy turdagi vasiylik alternativalarni tadqiq qilishga va targ&#39;ib
+                qilishga harakat qilamiz. </p>
             <p class="mb-2">Ushbu so&#39;rovnoma har bir bolalar muassasalari va internat maktabi ichidagi tashkiliy
-                tuzilma va alohida o&#39;ziga xosliklarni tushunish uchun juda
-                muhim vosita bo&#39;lib xizmat qiladi. Keng qamrovli ma&#39;lumotlarni to&#39;plash orqali biz qaror
-                qabul qilishni yanada kuchaytirish, xodimlarni boshqarishni
-                takomillashtirish, xodimlarning ham, parvarishga qo&#39;yilgan bolalarning ham farovonligini
-                ta&#39;minlashni maqsad qilganmiz.</p>
+                tuzilma va alohida o&#39;ziga xosliklarni tushunish uchun juda muhim vosita bo&#39;lib xizmat qiladi.
+                Keng qamrovli ma&#39;lumotlarni to&#39;plash orqali biz qaror qabul qilishni yanada kuchaytirish,
+                xodimlarni boshqarishni takomillashtirish, xodimlarning ham, parvarishga qo&#39;yilgan bolalarning ham
+                farovonligini ta&#39;minlashni maqsad qilganmiz.</p>
             <p class="mb-2">Ushbu so&#39;rovnoma muassasa tarkibidagi har bir lavozim to&#39;g&#39;risida ma&#39;lumot
-                to&#39;plashga qaratilgan. Hozirda lavozim egallanganmi yoki
-                bo&#39;shmi, iltimos, har bir lavozim uchun alohida so&#39;rovnomani to&#39;ldiring.</p>
+                to&#39;plashga qaratilgan. Hozirda lavozim egallanganmi yoki bo&#39;shmi, iltimos, har bir lavozim uchun
+                alohida so&#39;rovnomani to&#39;ldiring.</p>
 
             <div class="grid grid-cols-2 gap-4 items-center mt-12">
                 <div>Q1. So&#39;rovnomani to&#39;ldirish sanasi</div>
@@ -152,7 +149,21 @@
                     </select>
                 </div>
             </div>
-            <input type="hidden" id="i4d" name="i4d" />
+            <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                <div>I4d. Aholi punkti turi</div>
+                <div>
+                    <select id="i4d" name="i4d"
+                        class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+                        <option value="10" class="t_settlement_type_10"></option>
+                        <option value="20" class="t_settlement_type_20"></option>
+                        <option value="21" class="t_settlement_type_21"></option>
+                        <option value="22" class="t_settlement_type_22"></option>
+                        <option value="23" class="t_settlement_type_23"></option>
+                        <option value="24" class="t_settlement_type_24"></option>
+                        <option value="31" class="t_settlement_type_31"></option>
+                    </select>
+                </div>
+            </div>
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
                 <div>I5. Muassasa turi</div>
                 <div>
@@ -273,7 +284,8 @@
                     <div class="flex items-center">
                         <input id="j6-1" type="radio" value="0" name="j6"
                             class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                        <label for="j6-1" class="ms-2 text-sm text-gray-900">0. Yo&#39;q</label>
+                        <label for="j6-1" class="ms-2 text-sm text-gray-900">0. Ma&#39;lumoti/Ta&#39;limi
+                            yo&#39;q</label>
                     </div>
                     <div class="flex items-center">
                         <input id="j6-2" type="radio" value="1" name="j6"
@@ -289,13 +301,29 @@
                     <div class="flex items-center">
                         <input id="j6-4" type="radio" value="3" name="j6"
                             class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                        <label for="j6-4" class="ms-2 text-sm text-gray-900">3. O&#39;rta maxsus / kasb-hunar
+                        <label for="j6-4" class="ms-2 text-sm text-gray-900">3. Tugallanmagan o&#39;rta maxsus
                             ta&#39;limi</label>
                     </div>
                     <div class="flex items-center">
                         <input id="j6-5" type="radio" value="4" name="j6"
                             class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                        <label for="j6-5" class="ms-2 text-sm text-gray-900">4. Oliy ma&#39;lumot</label>
+                        <label for="j6-5" class="ms-2 text-sm text-gray-900">4. O&#39;rta maxsus/kasb-hunar
+                            ta&#39;limi</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="j6-6" type="radio" value="5" name="j6"
+                            class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <label for="j6-6" class="ms-2 text-sm text-gray-900">5. Tugallanmagan oliy ma&#39;lumot</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="j6-7" type="radio" value="6" name="j6"
+                            class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <label for="j6-7" class="ms-2 text-sm text-gray-900">6. Oliy ma&#39;lumotli</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="j6-9" type="radio" value="9" name="j6"
+                            class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <label for="j6-9" class="ms-2 text-sm text-gray-900">9. Ko&#39;rsatilmagan/noma&#39;lum</label>
                     </div>
                 </div>
             </div>
@@ -379,7 +407,8 @@
                     <div class="flex items-center">
                         <input id="e4-1" type="radio" value="0" name="e4"
                             class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                        <label for="e4-1" class="ms-2 text-sm text-gray-900">0. Yo&#39;q</label>
+                        <label for="e4-1" class="ms-2 text-sm text-gray-900">0. Ma&#39;lumoti/Ta&#39;limi
+                            yo&#39;q</label>
                     </div>
                     <div class="flex items-center">
                         <input id="e4-2" type="radio" value="1" name="e4"
@@ -395,13 +424,29 @@
                     <div class="flex items-center">
                         <input id="e4-4" type="radio" value="3" name="e4"
                             class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                        <label for="e4-4" class="ms-2 text-sm text-gray-900">3. O&#39;rta maxsus / kasb-hunar
+                        <label for="e4-4" class="ms-2 text-sm text-gray-900">3. Tugallanmagan o&#39;rta maxsus
                             ta&#39;limi</label>
                     </div>
                     <div class="flex items-center">
                         <input id="e4-5" type="radio" value="4" name="e4"
                             class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                        <label for="e4-5" class="ms-2 text-sm text-gray-900">4. Oliy ma&#39;lumot</label>
+                        <label for="e4-5" class="ms-2 text-sm text-gray-900">4. O&#39;rta maxsus/kasb-hunar
+                            ta&#39;limi</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e4-5" type="radio" value="5" name="e4"
+                            class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <label for="e4-6" class="ms-2 text-sm text-gray-900">5. Tugallanmagan oliy ma&#39;lumot</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e4-7" type="radio" value="6" name="e4"
+                            class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <label for="e4-7" class="ms-2 text-sm text-gray-900">6. Oliy ma&#39;lumotli</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e4-9" type="radio" value="9" name="e4"
+                            class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <label for="e4-9" class="ms-2 text-sm text-gray-900">9. Ko&#39;rsatilmagan/noma&#39;lum</label>
                     </div>
                 </div>
             </div>
@@ -600,8 +645,8 @@
 
             <div class="grid grid-cols-2 gap-4 items-center mt-10">
                 <div>E16. So&#39;nggi uch yil ichida muassasaga joylashtirilgan bolalarga nisbatan noto&#39;g&#39;ri
-                    xatti-harakatlar, yomon muomala yoki suiiste&#39;molliklar
-                    bo&#39;yicha xodimlar ustidan shikoyatlar bo&#39;lganmi?</div>
+                    xatti-harakatlar, yomon muomala yoki suiiste&#39;molliklar bo&#39;yicha xodimlar ustidan shikoyatlar
+                    bo&#39;lganmi?</div>
                 <div class="col-span-1 flex items-center gap-4">
                     <div class="flex items-center">
                         <input id="e16-1" type="radio" value="1" name="e16"
@@ -618,8 +663,8 @@
 
             <div class="grid grid-cols-2 gap-4 items-center mt-10">
                 <div>E17. So&#39;nggi uch yil ichida muassasaga joylashtirilgan bolalarga nisbatan biror bir
-                    noto&#39;g&#39;ri xatti-harakatlar, yomon muomila yoki zo&#39;ravonlik
-                    uchun xodimga jazo tayinlanganmi?</div>
+                    noto&#39;g&#39;ri xatti-harakatlar, yomon muomila yoki zo&#39;ravonlik uchun xodimga jazo
+                    tayinlanganmi?</div>
                 <div class="col-span-1 flex items-center gap-4">
                     <div class="flex items-center">
                         <input id="e17-1" type="radio" value="1" name="e17"
