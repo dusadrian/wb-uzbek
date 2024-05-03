@@ -256,11 +256,10 @@ export const instrument2 = {
                 util.setValue('omr7', args.userData.email ? args.userData.email : "--");
                 regionCode = args.userData.region_code;
 
-                const serv_codes = Object.keys(services);
-                if (serv_codes.indexOf(institution_code) >= 0) {
+                if (Object.keys(services).indexOf(institution_code) >= 0) {
                     util.setValue("omr10", "-9");
-                    const type = services[args.userData.institution_code].type;
-                    if (["11", "12", "13", "14", "15", "16", "17"].indexOf(type) >= 0) {
+                    const type = services[institution_code].type;
+                    if (["21", "22", "23", "24", "25", "26", "27", "28"].indexOf(type) >= 0) {
                         util.setValue("omr10", type);
                     }
                 }
