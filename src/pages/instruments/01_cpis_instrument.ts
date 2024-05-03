@@ -262,7 +262,7 @@ export const instrument1 = {
             }
 
             util.setValue("data", util.customDate());
-            util.setValue("sh3_csd", "01/05/2024");
+            // util.setValue("sh3_csd", "01/05/2024"); asta nu cred ca mai este nevoie de ea
 
             // set default values for user, IRRESPECTIVE of the instrument
             if (args.userData) {
