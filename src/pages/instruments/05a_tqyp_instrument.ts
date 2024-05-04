@@ -122,6 +122,7 @@ export const instrument5a = {
                     util.htmlElement(typeElements[x]).value = "";
                 }
                 const selectedDistrict = dis_el.value;
+
                 if (setElements[x] != "") {
                     instrument.questions[setElements[x]].skip = false;
                     util.htmlElement(setElements[x]).disabled = false;
@@ -132,7 +133,7 @@ export const instrument5a = {
 
                         if (set_codes.length > 0) {
                             const option = document.createElement("option");
-                            option.value = setElements[x] == "str3c" ? "0" : "-9";
+                            option.value = setElements[x] == "str3c" ? "--" : "-9";
                             option.text = setElements[x] == "str3c" ? "--" : translations['t_choose'];
                             set_el.appendChild(option);
 
@@ -142,14 +143,19 @@ export const instrument5a = {
                                 option.text = set_codes[i] + ": " + (settlements[set_codes[i]] as KeyString)[lang];
                                 set_el.appendChild(option);
                             }
-                        }
-                        else {
+                        } else {
                             if (typeElements[x] != "") {
                                 util.setValue(typeElements[x], "" + districts[selectedDistrict].type);
                             }
+
+                            const option = document.createElement("option");
+                            option.value = "--";
+                            option.text = "--";
+                            set_el.appendChild(option);
+
                             instrument.questions[setElements[x]].skip = true;
-                            instrument.questions[setElements[x]].value = '-7';
                             util.htmlElement(setElements[x]).disabled = true;
+                            util.setValue(setElements[x], "--");
                         }
                     }
                 }
@@ -196,7 +202,7 @@ export const instrument5a = {
                 regionCode = args.userData.region_code;
 
                 util.setValue("str1", institution_code);
-                util.setValue("str3c", "0");
+                util.setValue("str3c", "--");
                 util.setValue("str4", "-9");
                 if (inson_user) {
                     util.setValue("str2", insons[institution_code].name ? insons[institution_code].name : "--");
