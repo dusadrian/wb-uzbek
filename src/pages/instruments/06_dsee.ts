@@ -138,7 +138,7 @@ export const instrument6 = {
                     institutionType = services[institution_code].type ?? null;
                 }
 
-                util.setValue('i4c', settlement ? "" + settlement : "0");
+                util.setValue('i4c', settlement ? "" + settlement : "--");
                 // set default values for user
                 util.setValue('q2', args.userData.name + " " + args.userData.patronymics + " " + args.userData.surname);
                 util.setValue('q3', args.userData.job_title ? args.userData.job_title : "--");
