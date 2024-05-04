@@ -780,3 +780,12 @@ util.listen("edk3", "change", () => {
         errorHandler.addError("edk3", message);
     }
 });
+
+
+util.listen("qeduc2b", "change", () => {
+    const message = "QEDUC2b <= 11"
+    errorHandler.removeError("qeduc2b", message);
+    if (Number(util.htmlElement("qeduc2b").value) > 11) {
+        errorHandler.addError("qeduc2b", message);
+    }
+});
