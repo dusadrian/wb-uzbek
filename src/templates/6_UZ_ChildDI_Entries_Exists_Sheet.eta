@@ -114,7 +114,7 @@
             <div>I4c. <%= it.settlement %></div>
             <div>
                 <select id="i4c" name="i4c" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                    <option value="0" >--</option>
+                    <option value="--">--</option>
                 </select>
             </div>
         </div>
@@ -125,7 +125,7 @@
             <div><%= it.t38 %>. <%= it.t39 %></div>
             <div>
                 <select id="i9" name="i9" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100">
-                    <option value="0" selected>--</option>
+                    <option value="--" selected>--</option>
                     <option value="11" class="t_institution_type_option_11"></option>
                     <option value="12" class="t_institution_type_option_12"></option>
                     <option value="13" class="t_institution_type_option_13"></option>

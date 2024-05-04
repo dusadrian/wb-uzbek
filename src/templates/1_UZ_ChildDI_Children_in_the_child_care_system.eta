@@ -4716,7 +4716,7 @@
                     <td class="p-1">
                         <select id="sh3_csb" name="sh3_csb" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
                             <option value="-9" class="t_choose">--- choose ---</option>
-                            <option value="0">--</option>
+                            <option value="--">--</option>
                             <option value="11"><%= it.t992 %></option>
                             <option value="12"><%= it.t993 %></option>
                             <option value="13"><%= it.t994 %></option>

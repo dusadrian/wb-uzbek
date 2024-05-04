@@ -92,7 +92,7 @@ export const instrument6 = {
                             }
                         }
                         else {
-                            util.setValue(setElements[x], "0");
+                            util.setValue(setElements[x], "--");
                             util.setValue(typeElements[x], "" + districts[selectedDistrict].type);
                         }
                     }
@@ -149,7 +149,7 @@ export const instrument6 = {
 
                 const serv_codes = Object.keys(services);
                 if (serv_codes.indexOf(institution_code) >= 0) {
-                    util.setValue("i9", "0");
+                    util.setValue("i9", "--");
                     const type = services[args.userData.institution_code].type;
                     if (["11", "12", "13", "14", "15", "16", "17"].indexOf(type) >= 0) {
                         util.setValue("i9", type);

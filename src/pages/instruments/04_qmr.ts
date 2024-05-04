@@ -188,7 +188,7 @@ export const instrument4 = {
                     util.setValue('i3', insons[institution_code].address ? insons[institution_code].address : "--");
                     util.setValue('i4a', "" + insons[institution_code].region);
                     util.setValue('i4b', "" + insons[institution_code].district);
-                    util.setValue('i4c', "0");
+                    util.setValue('i4c', "--");
                     util.setValue('i4d', "--");
                     util.setValue('i9', "--");
                     console.log(insons[institution_code], 'inson');
@@ -199,12 +199,11 @@ export const instrument4 = {
                     util.setValue('i3', services[institution_code].address ? services[institution_code].address : "--");
                     util.setValue('i4a', "" + services[institution_code].region);
                     util.setValue('i4b', "" + services[institution_code].district);
-                    const settlement = services[institution_code].settlement;
-                    console.log(settlement);
 
-                    util.setValue('i4c', settlement ? "" + settlement : "--");
+                    const settlement = services[institution_code].settlement;
+                    util.setValue('i4c', settlement ? settlement : "--");
                     util.setValue('i4d', "" + services[institution_code].settlement_type);
-                    util.setValue('i9', services[institution_code].type ? services[institution_code].type : "0");
+                    util.setValue('i9', services[institution_code].type ? services[institution_code].type : "--");
                     institutionType = services[institution_code].type;
                     console.log(services[institution_code]);
                 }

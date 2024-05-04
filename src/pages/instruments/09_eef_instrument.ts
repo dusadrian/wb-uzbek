@@ -141,22 +141,32 @@ export const instrument9 = {
 
             } else {
                 if (args.userData) {
-                    util.setValue('i2', "" + institution_code);
+                    util.setValue('i2', institution_code);
 
                     if (inson_user) {
-                        util.setValue('i4a', "" + insons[institution_code].region);
-                        util.setValue('i4b', "" + insons[institution_code].district);
-                        util.setValue('i4c', "0");
+                        util.setValue('i4a', insons[institution_code].region);
+                        util.setValue('i4b', insons[institution_code].district);
+                        util.setValue('i4c', "--");
                         util.setValue('i4d', "--");
                     }
                     else {
-                        util.setValue('i4a', "" + services[institution_code].region);
-                        util.setValue('i4b', "" + services[institution_code].district);
+                        util.setValue('i4a', services[institution_code].region);
+                        util.setValue('i4b', services[institution_code].district);
                         const settlement = services[institution_code].settlement;
-                        util.setValue('i4c', settlement ? "" + settlement : "0");
+                        util.setValue('i4c', settlement ? "" + settlement : "--");
                         util.setValue('i4d', "" + services[institution_code].settlement_type);
                         institutionType = services[institution_code].type;
                     }
+
+                    const serv_codes = Object.keys(services);
+                    if (serv_codes.indexOf(institution_code) >= 0) {
+                        util.setValue("i9", "--");
+                        const type = services[args.userData.institution_code].type;
+                        if (["11", "12", "13", "14", "15", "16", "17"].indexOf(type) >= 0) {
+                            util.setValue("i9", type);
+                        }
+                    }
+
                     // set default values for user
                     util.setValue('q2', args.userData.name + " " + args.userData.patronymics + " " + args.userData.surname);
                     regionCode = args.userData.region_code;

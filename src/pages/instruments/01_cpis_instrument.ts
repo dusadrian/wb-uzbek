@@ -812,6 +812,6 @@ util.listen("sh5i", "change", () => {
     if (["11", "12", "13", "14", "15", "16", "17"].indexOf(type) >= 0) {
         util.setValue("sh3_csb", type);
     } else {
-        util.setValue("sh3_csb", "0");
+        util.setValue("sh3_csb", "--");
     }
 })

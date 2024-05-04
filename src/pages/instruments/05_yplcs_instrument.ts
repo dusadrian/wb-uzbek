@@ -100,6 +100,7 @@ export const instrument5 = {
                     }
 
                     const selectedRegion = reg_el.value;
+
                     if (Number(selectedRegion) > 0) {
                         const dis_codes = regions[selectedRegion].districts;
 
@@ -125,17 +126,15 @@ export const instrument5 = {
                         instrument.questions[setElements[x]].skip = false;
                         util.htmlElement(setElements[x]).disabled = false;
                         set_el.innerHTML = "";
-                    }
 
-                    if (Number(selectedDistrict) > 0) {
-                        const option = document.createElement("option");
-                        option.value = "-9";
-                        option.text = locales[lang]['t_choose'];
+                        if (Number(selectedDistrict) > 0) {
 
-                        if (setElements[x] != "") {
                             const set_codes = districts[selectedDistrict].settlements;
 
                             if (set_codes.length > 0) {
+                                const option = document.createElement("option");
+                                option.value = "-9";
+                                option.text = locales[lang]['t_choose'];
                                 set_el.appendChild(option);
 
                                 for (let i = 0; i < set_codes.length; i++) {
@@ -144,32 +143,44 @@ export const instrument5 = {
                                     option.text = set_codes[i] + ": " + (settlements[set_codes[i]] as KeyString)[lang];
                                     set_el.appendChild(option);
                                 }
+                            } else {
+                                const option = document.createElement("option");
+                                option.value = "--";
+                                option.text = "--";
+                                set_el.appendChild(option);
+
+                                instrument.questions[setElements[x]].skip = true;
+                                util.htmlElement(setElements[x]).disabled = true;
+                                util.setValue(setElements[x], "--");
                             }
-                        } else {
+                        }
+                    }
 
-                            pi6.innerHTML = "";
-                            const serv = districts[selectedDistrict].services;
-                            pi6.appendChild(option);
+                    if (disElements[x] == "pi6d") {
+                        pi6.innerHTML = "";
+                        const option = document.createElement("option");
+                        option.value = "-9";
+                        option.text = locales[lang]['t_choose'];
+                        pi6.appendChild(option);
 
-                            if (serv.length > 0) {
-                                for (let i = 0; i < serv.length; i++) {
-                                    if (services[serv[i]].type != "15") {
-                                        const option = document.createElement("option");
-                                        option.value = serv[i];
-                                        option.text = serv[i] + ': ' + services[serv[i]].name;
-                                        pi6.appendChild(option);
-                                    }
+                        const serv = districts[selectedDistrict].services;
+                        if (serv.length > 0) {
+                            for (let i = 0; i < serv.length; i++) {
+                                if (services[serv[i]].type != "15") {
+                                    const option = document.createElement("option");
+                                    option.value = serv[i];
+                                    option.text = serv[i] + ': ' + services[serv[i]].name;
+                                    pi6.appendChild(option);
                                 }
                             }
-
-                            const optgroup = document.createElement("optgroup");
-                            const option999 = document.createElement("option");
-                            option999.value = '999';
-                            option999.text = '999: ' + locales[lang]['not_in_registry'];
-                            optgroup.appendChild(option999);
-                            pi6.appendChild(optgroup);
-
                         }
+
+                        const optgroup = document.createElement("optgroup");
+                        const option999 = document.createElement("option");
+                        option999.value = '999';
+                        option999.text = '999: ' + locales[lang]['not_in_registry'];
+                        optgroup.appendChild(option999);
+                        pi6.appendChild(optgroup);
                     }
                 })
             }

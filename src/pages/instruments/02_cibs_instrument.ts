@@ -33,10 +33,10 @@ const general_dates = [
 ];
 
 
-const regElements = ["reg", "lk14b", "sa3a", "cm3b", "cm11c", "ct11c", "cg11c"];
-const disElements = ["dis", "lk14c", "sa3b", "cm3c", "cm11d", "ct11d", "cg11d"];
-const setElements = ["", "lk14d", "", "cm3d", "cm11e", "ct11e", "cg11e"];
-const typeElements = ["", "lk14e", "", "cm3e", "cm11f", "ct11f", "cg11f"];
+const regElements =  ["reg", "lk14b", "sa3a", "cm3b", "cm11c", "ct11c", "cg11c"];
+const disElements =  ["dis", "lk14c", "sa3b", "cm3c", "cm11d", "ct11d", "cg11d"];
+const setElements =  [""   , "lk14d", "",     "cm3d", "cm11e", "ct11e", "cg11e"];
+const typeElements = [""   , "lk14e", "",     "cm3e", "cm11f", "ct11f", "cg11f"];
 
 let regionCode = '';
 let institutionType = '';
@@ -158,14 +158,12 @@ export const instrument2 = {
                         instrument.questions[setElements[x]].skip = false;
                         util.htmlElement(setElements[x]).disabled = false;
                         set_el.innerHTML = "";
-                    }
 
-                    if (Number(selectedDistrict) > 0) {
-                        const option = document.createElement("option");
-                        option.value = "-9";
-                        option.text = translations['t_choose'];
+                        if (Number(selectedDistrict) > 0) {
+                            const option = document.createElement("option");
+                            option.value = "-9";
+                            option.text = translations['t_choose'];
 
-                        if (setElements[x] != "") {
                             const set_codes = districts[selectedDistrict].settlements;
 
                             if (set_codes.length > 0) {
@@ -186,29 +184,31 @@ export const instrument2 = {
                                 instrument.questions[setElements[x]].value = '-7';
                                 util.htmlElement(setElements[x]).disabled = true;
                             }
-                        } else if (regElements[x] != "reg") {
-                            sa5a.innerHTML = "";
-                            const serv = districts[selectedDistrict].services;
-                            sa5a.appendChild(option);
+                        }
+                    }
 
-                            if (serv.length > 0) {
-                                for (let i = 0; i < serv.length; i++) {
-                                    if (services[serv[i]].type != "") {
-                                        const option = document.createElement("option");
-                                        option.value = serv[i];
-                                        option.text = serv[i] + ': ' + services[serv[i]].name;
-                                        sa5a.appendChild(option);
-                                    }
+                    if (regElements[x] == "sa3a") {
+                        sa5a.innerHTML = "";
+                        const serv = districts[selectedDistrict].services;
+                        sa5a.appendChild(option);
+
+                        if (serv.length > 0) {
+                            for (let i = 0; i < serv.length; i++) {
+                                if (services[serv[i]].type != "") {
+                                    const option = document.createElement("option");
+                                    option.value = serv[i];
+                                    option.text = serv[i] + ': ' + services[serv[i]].name;
+                                    sa5a.appendChild(option);
                                 }
                             }
-
-                            const optgroup = document.createElement("optgroup");
-                            const option999 = document.createElement("option");
-                            option999.value = '999';
-                            option999.text = '999: ' + translations['not_in_registry'];
-                            optgroup.appendChild(option999);
-                            sa5a.appendChild(optgroup);
                         }
+
+                        const optgroup = document.createElement("optgroup");
+                        const option999 = document.createElement("option");
+                        option999.value = '999';
+                        option999.text = '999: ' + translations['not_in_registry'];
+                        optgroup.appendChild(option999);
+                        sa5a.appendChild(optgroup);
                     }
                 })
             }
