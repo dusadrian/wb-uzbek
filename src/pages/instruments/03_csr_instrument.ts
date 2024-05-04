@@ -178,7 +178,7 @@ export const instrument3 = {
                     util.setValue('i4', settlement ? settlement : services[institution_code].district);
                     util.setValue('i4c', settlement ? settlement : "--");
                     util.setValue('i4d', "" + services[institution_code].settlement_type);
-                    util.setValue('i5', services[institution_code].type ? services[institution_code].type : "0");
+                    util.setValue('i5', services[institution_code].type ? services[institution_code].type : "--");
                     institutionType = services[institution_code].type;
                 }
 

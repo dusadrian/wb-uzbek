@@ -130,20 +130,21 @@
             <div><%= it.t35 %>. <%= it.t36 %></div>
             <div>
                 <select id="i5" name="i5" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100">
-                    <option selected><%= it.t37 %></option>
-                    <optgroup label="<%= it.t38 %>">
-                        <option value="11"><%= it.t39 %>)</option>
-                        <option value="12"><%= it.t40 %></option>
-                        <option value="13"><%= it.t41 %></option>
-                    </optgroup>
-                    <optgroup label="<%= it.t42 %>">
-                        <option value="21"><%= it.t43 %></option>
-                        <option value="22"><%= it.t44 %></option>
-                        <option value="23"><%= it.t45 %></option>
-                        <option value="24"><%= it.t46 %></option>
-                        <option value="25"><%= it.t47 %></option>
-                        <option value="26"><%= it.t48 %></option>
-                    </optgroup>
+                    <option value="--">--</option>
+                    <option value="11"><%= it.t992 %></option>
+                    <option value="12"><%= it.t993 %></option>
+                    <option value="13"><%= it.t994 %></option>
+                    <option value="14"><%= it.t995 %></option>
+                    <option value="15"><%= it.t996 %></option>
+                    <option value="16"><%= it.t997 %></option>
+                    <option value="17"><%= it.t998 %></option>
+                    <option value="18"><%= it.t999 %></option>
+                    <option value="21"><%= it.t43 %></option>
+                    <option value="22"><%= it.t44 %></option>
+                    <option value="23"><%= it.t45 %></option>
+                    <option value="24"><%= it.t46 %></option>
+                    <option value="25"><%= it.t47 %></option>
+                    <option value="26"><%= it.t48 %></option>
                 </select>
             </div>
         </div>
