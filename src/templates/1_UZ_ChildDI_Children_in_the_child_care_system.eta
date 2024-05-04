@@ -105,15 +105,12 @@
 
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
             <div class="col-span-1"><%= it.t30 %>. <%= it.t31 %></div>
-            <div class="col-span-1 flex gap-4">
-                <div class="flex items-center">
-                    <input id="omr8-1" type="radio" value="1" name="omr8" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="omr8-1" class="ms-2 text-sm text-gray-900"><%= it.t32 %></label>
-                </div>
-                <div class="flex items-center">
-                    <input id="omr8-2" type="radio" value="0" name="omr8" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="omr8-2" class="ms-2 text-sm text-gray-900"><%= it.t33 %></label>
-                </div>
+            <div>
+                <select id="omr8" name="omr8"
+                    class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+                    <option value="1">Yes</option>
+                    <option value="2">No</option>
+                </select>
             </div>
         </div>
 
@@ -4289,14 +4286,14 @@
                     <td class="p-1">
                         <select id="sh3_s1b" name="sh3_s1b" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
                             <option value="-9" class="t_choose">--- choose ---</option>
-                            <option value="1"><%= it.t992 %></option>
-                            <option value="2"><%= it.t993 %></option>
-                            <option value="3"><%= it.t994 %></option>
-                            <option value="4"><%= it.t995 %></option>
-                            <option value="5"><%= it.t996 %></option>
-                            <option value="6"><%= it.t997 %></option>
-                            <option value="7"><%= it.t998 %></option>
-                            <option value="8"><%= it.t999 %></option>
+                            <option value="11"><%= it.t992 %></option>
+                            <option value="12"><%= it.t993 %></option>
+                            <option value="13"><%= it.t994 %></option>
+                            <option value="14"><%= it.t995 %></option>
+                            <option value="15"><%= it.t996 %></option>
+                            <option value="16"><%= it.t997 %></option>
+                            <option value="17"><%= it.t998 %></option>
+                            <option value="18"><%= it.t999 %></option>
                         </select>
                     </td>
                     <td class="p-1">
@@ -4332,14 +4329,14 @@
                     <td class="p-1">
                         <select id="sh3_s2b" name="sh3_s2b" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
                             <option value="-9" class="t_choose">--- choose ---</option>
-                            <option value="1"><%= it.t992 %></option>
-                            <option value="2"><%= it.t993 %></option>
-                            <option value="3"><%= it.t994 %></option>
-                            <option value="4"><%= it.t995 %></option>
-                            <option value="5"><%= it.t996 %></option>
-                            <option value="6"><%= it.t997 %></option>
-                            <option value="7"><%= it.t998 %></option>
-                            <option value="8"><%= it.t999 %></option>
+                            <option value="11"><%= it.t992 %></option>
+                            <option value="12"><%= it.t993 %></option>
+                            <option value="13"><%= it.t994 %></option>
+                            <option value="14"><%= it.t995 %></option>
+                            <option value="15"><%= it.t996 %></option>
+                            <option value="16"><%= it.t997 %></option>
+                            <option value="17"><%= it.t998 %></option>
+                            <option value="18"><%= it.t999 %></option>
                         </select>
                     </td>
                     <td class="p-1">
@@ -4375,14 +4372,14 @@
                     <td class="p-1">
                         <select id="sh3_s3b" name="sh3_s3b" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
                             <option value="-9" class="t_choose">--- choose ---</option>
-                            <option value="1"><%= it.t992 %></option>
-                            <option value="2"><%= it.t993 %></option>
-                            <option value="3"><%= it.t994 %></option>
-                            <option value="4"><%= it.t995 %></option>
-                            <option value="5"><%= it.t996 %></option>
-                            <option value="6"><%= it.t997 %></option>
-                            <option value="7"><%= it.t998 %></option>
-                            <option value="8"><%= it.t999 %></option>
+                            <option value="11"><%= it.t992 %></option>
+                            <option value="12"><%= it.t993 %></option>
+                            <option value="13"><%= it.t994 %></option>
+                            <option value="14"><%= it.t995 %></option>
+                            <option value="15"><%= it.t996 %></option>
+                            <option value="16"><%= it.t997 %></option>
+                            <option value="17"><%= it.t998 %></option>
+                            <option value="18"><%= it.t999 %></option>
                         </select>
                     </td>
                     <td class="p-1">
@@ -4418,14 +4415,14 @@
                     <td class="p-1">
                         <select id="sh3_s4b" name="sh3_s4b" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
                             <option value="-9" class="t_choose">--- choose ---</option>
-                            <option value="1"><%= it.t992 %></option>
-                            <option value="2"><%= it.t993 %></option>
-                            <option value="3"><%= it.t994 %></option>
-                            <option value="4"><%= it.t995 %></option>
-                            <option value="5"><%= it.t996 %></option>
-                            <option value="6"><%= it.t997 %></option>
-                            <option value="7"><%= it.t998 %></option>
-                            <option value="8"><%= it.t999 %></option>
+                            <option value="11"><%= it.t992 %></option>
+                            <option value="12"><%= it.t993 %></option>
+                            <option value="13"><%= it.t994 %></option>
+                            <option value="14"><%= it.t995 %></option>
+                            <option value="15"><%= it.t996 %></option>
+                            <option value="16"><%= it.t997 %></option>
+                            <option value="17"><%= it.t998 %></option>
+                            <option value="18"><%= it.t999 %></option>
                         </select>
                     </td>
                     <td class="p-1">
@@ -4461,14 +4458,14 @@
                     <td class="p-1">
                         <select id="sh3_s5b" name="sh3_s5b" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
                             <option value="-9" class="t_choose">--- choose ---</option>
-                            <option value="1"><%= it.t992 %></option>
-                            <option value="2"><%= it.t993 %></option>
-                            <option value="3"><%= it.t994 %></option>
-                            <option value="4"><%= it.t995 %></option>
-                            <option value="5"><%= it.t996 %></option>
-                            <option value="6"><%= it.t997 %></option>
-                            <option value="7"><%= it.t998 %></option>
-                            <option value="8"><%= it.t999 %></option>
+                            <option value="11"><%= it.t992 %></option>
+                            <option value="12"><%= it.t993 %></option>
+                            <option value="13"><%= it.t994 %></option>
+                            <option value="14"><%= it.t995 %></option>
+                            <option value="15"><%= it.t996 %></option>
+                            <option value="16"><%= it.t997 %></option>
+                            <option value="17"><%= it.t998 %></option>
+                            <option value="18"><%= it.t999 %></option>
                         </select>
                     </td>
                     <td class="p-1">
@@ -4504,14 +4501,14 @@
                     <td class="p-1">
                         <select id="sh3_s6b" name="sh3_s6b" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
                             <option value="-9" class="t_choose">--- choose ---</option>
-                            <option value="1"><%= it.t992 %></option>
-                            <option value="2"><%= it.t993 %></option>
-                            <option value="3"><%= it.t994 %></option>
-                            <option value="4"><%= it.t995 %></option>
-                            <option value="5"><%= it.t996 %></option>
-                            <option value="6"><%= it.t997 %></option>
-                            <option value="7"><%= it.t998 %></option>
-                            <option value="8"><%= it.t999 %></option>
+                            <option value="11"><%= it.t992 %></option>
+                            <option value="12"><%= it.t993 %></option>
+                            <option value="13"><%= it.t994 %></option>
+                            <option value="14"><%= it.t995 %></option>
+                            <option value="15"><%= it.t996 %></option>
+                            <option value="16"><%= it.t997 %></option>
+                            <option value="17"><%= it.t998 %></option>
+                            <option value="18"><%= it.t999 %></option>
                         </select>
                     </td>
                     <td class="p-1">
@@ -4547,14 +4544,14 @@
                     <td class="p-1">
                         <select id="sh3_s7b" name="sh3_s7b" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
                             <option value="-9" class="t_choose">--- choose ---</option>
-                            <option value="1"><%= it.t992 %></option>
-                            <option value="2"><%= it.t993 %></option>
-                            <option value="3"><%= it.t994 %></option>
-                            <option value="4"><%= it.t995 %></option>
-                            <option value="5"><%= it.t996 %></option>
-                            <option value="6"><%= it.t997 %></option>
-                            <option value="7"><%= it.t998 %></option>
-                            <option value="8"><%= it.t999 %></option>
+                            <option value="11"><%= it.t992 %></option>
+                            <option value="12"><%= it.t993 %></option>
+                            <option value="13"><%= it.t994 %></option>
+                            <option value="14"><%= it.t995 %></option>
+                            <option value="15"><%= it.t996 %></option>
+                            <option value="16"><%= it.t997 %></option>
+                            <option value="17"><%= it.t998 %></option>
+                            <option value="18"><%= it.t999 %></option>
                         </select>
                     </td>
                     <td class="p-1">
@@ -4590,14 +4587,14 @@
                     <td class="p-1">
                         <select id="sh3_s8b" name="sh3_s8b" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
                             <option value="-9" class="t_choose">--- choose ---</option>
-                            <option value="1"><%= it.t992 %></option>
-                            <option value="2"><%= it.t993 %></option>
-                            <option value="3"><%= it.t994 %></option>
-                            <option value="4"><%= it.t995 %></option>
-                            <option value="5"><%= it.t996 %></option>
-                            <option value="6"><%= it.t997 %></option>
-                            <option value="7"><%= it.t998 %></option>
-                            <option value="8"><%= it.t999 %></option>
+                            <option value="11"><%= it.t992 %></option>
+                            <option value="12"><%= it.t993 %></option>
+                            <option value="13"><%= it.t994 %></option>
+                            <option value="14"><%= it.t995 %></option>
+                            <option value="15"><%= it.t996 %></option>
+                            <option value="16"><%= it.t997 %></option>
+                            <option value="17"><%= it.t998 %></option>
+                            <option value="18"><%= it.t999 %></option>
                         </select>
                     </td>
                     <td class="p-1">
@@ -4633,14 +4630,14 @@
                     <td class="p-1">
                         <select id="sh3_s9b" name="sh3_s9b" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
                             <option value="-9" class="t_choose">--- choose ---</option>
-                            <option value="1"><%= it.t992 %></option>
-                            <option value="2"><%= it.t993 %></option>
-                            <option value="3"><%= it.t994 %></option>
-                            <option value="4"><%= it.t995 %></option>
-                            <option value="5"><%= it.t996 %></option>
-                            <option value="6"><%= it.t997 %></option>
-                            <option value="7"><%= it.t998 %></option>
-                            <option value="8"><%= it.t999 %></option>
+                            <option value="11"><%= it.t992 %></option>
+                            <option value="12"><%= it.t993 %></option>
+                            <option value="13"><%= it.t994 %></option>
+                            <option value="14"><%= it.t995 %></option>
+                            <option value="15"><%= it.t996 %></option>
+                            <option value="16"><%= it.t997 %></option>
+                            <option value="17"><%= it.t998 %></option>
+                            <option value="18"><%= it.t999 %></option>
                         </select>
                     </td>
                     <td class="p-1">
@@ -4676,14 +4673,14 @@
                     <td class="p-1">
                         <select id="sh3_s10b" name="sh3_s10b" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
                             <option value="-9" class="t_choose">--- choose ---</option>
-                            <option value="1"><%= it.t992 %></option>
-                            <option value="2"><%= it.t993 %></option>
-                            <option value="3"><%= it.t994 %></option>
-                            <option value="4"><%= it.t995 %></option>
-                            <option value="5"><%= it.t996 %></option>
-                            <option value="6"><%= it.t997 %></option>
-                            <option value="7"><%= it.t998 %></option>
-                            <option value="8"><%= it.t999 %></option>
+                            <option value="11"><%= it.t992 %></option>
+                            <option value="12"><%= it.t993 %></option>
+                            <option value="13"><%= it.t994 %></option>
+                            <option value="14"><%= it.t995 %></option>
+                            <option value="15"><%= it.t996 %></option>
+                            <option value="16"><%= it.t997 %></option>
+                            <option value="17"><%= it.t998 %></option>
+                            <option value="18"><%= it.t999 %></option>
                         </select>
                     </td>
                     <td class="p-1">
@@ -4719,14 +4716,15 @@
                     <td class="p-1">
                         <select id="sh3_csb" name="sh3_csb" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
                             <option value="-9" class="t_choose">--- choose ---</option>
-                            <option value="1"><%= it.t992 %></option>
-                            <option value="2"><%= it.t993 %></option>
-                            <option value="3"><%= it.t994 %></option>
-                            <option value="4"><%= it.t995 %></option>
-                            <option value="5"><%= it.t996 %></option>
-                            <option value="6"><%= it.t997 %></option>
-                            <option value="7"><%= it.t998 %></option>
-                            <option value="8"><%= it.t999 %></option>
+                            <option value="0">--</option>
+                            <option value="11"><%= it.t992 %></option>
+                            <option value="12"><%= it.t993 %></option>
+                            <option value="13"><%= it.t994 %></option>
+                            <option value="14"><%= it.t995 %></option>
+                            <option value="15"><%= it.t996 %></option>
+                            <option value="16"><%= it.t997 %></option>
+                            <option value="17"><%= it.t998 %></option>
+                            <option value="18"><%= it.t999 %></option>
                         </select>
                     </td>
                     <td class="p-1">
@@ -4766,30 +4764,39 @@
             </div>
         </div>
 
-        <div class="grid grid-cols-2 gap-4 items-center mt-6">
+        <div class="grid grid-cols-2 items-center gap-4 mt-6">
+            <div>SH5r. <%= it.t9 %></div>
             <div>
-                <%= it.t1013 %>. <%= it.t1014 %>
+                <select id="sh5r" name="sh5r" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+                    <option value="-9" class="t_choose">--- choose ---</option>
+                </select>
             </div>
+        </div>
+
+        <div class="grid grid-cols-2 items-center gap-4 mt-6">
+            <div>SH5d. <%= it.t11 %></div>
             <div>
-                <input type="text" id="sh5" name="sh5" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+                <select id="sh5d" name="sh5d" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+                    <option value="-9" class="t_choose">--- choose ---</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-2 items-center gap-4 mt-6">
+            <div>SH5s. <%= it.settlement %></div>
+            <div>
+                <select id="sh5s" name="sh5s" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+                    <option value="-9" class="t_choose">--- choose ---</option>
+                </select>
             </div>
         </div>
 
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
-            <div>
-                <%= it.t1015 %>. <%= it.t1016 %>
-            </div>
-            <div>
-                <input type="text" id="sh5a" name="sh5a" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
-            </div>
-        </div>
-
-        <div class="grid grid-cols-2 gap-4 items-center mt-6">
-            <div>
-                <%= it.t1018 %>. <%= it.t1019 %>
-            </div>
-            <div>
-                <input type="text" id="sh5b" name="sh5b" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
+            <div>SH5i. <%= it.t_institution %></div>
+            <div class="flex gap-4">
+                <select id="sh5i" name="sh5i" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+                    <option value="-9" class="t_choose">--- choose ---</option>
+                </select>
             </div>
         </div>
 

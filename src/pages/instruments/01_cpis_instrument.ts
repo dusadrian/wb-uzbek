@@ -40,10 +40,10 @@ const sh3_end_dates = [
     'sh3_s1d', 'sh3_s2d', 'sh3_s3d', 'sh3_s4d', 'sh3_s5d', 'sh3_s6d', 'sh3_s7d', 'sh3_s8d', 'sh3_s9d', 'sh3_s10d'
 ];
 
-const regElements = ["reg", "lk14b", "cm3b", "cm10c", "cm11c", "ct3b", "ct10c", "ct11c", "cg10c", "cg11c", "sa3a", "sa5r"]; //, "sh5r"];
-const disElements = ["dis", "lk14c", "cm3c", "cm10d", "cm11d", "ct3c", "ct10d", "ct11d", "cg10d", "cg11d", "sa3b", "sa5d"]; //, "sh5d"];
-const setElements = ["", "lk14d", "cm3d", "cm10e", "cm11e", "ct3d", "ct10e", "ct11e", "cg10e", "cg11e", "sa3c", ""]; //, ""    ];
-const typeElements = ["", "lk14e", "cm3e", "cm10f", "cm11f", "ct3e", "ct10f", "ct11f", "cg10f", "cg11f", "sa3d", ""]; //, ""    ];
+const regElements  = ["reg", "lk14b", "cm3b", "cm10c", "cm11c", "ct3b", "ct10c", "ct11c", "cg10c", "cg11c", "sa3a", "sa5r", "sh5r"];
+const disElements  = ["dis", "lk14c", "cm3c", "cm10d", "cm11d", "ct3c", "ct10d", "ct11d", "cg10d", "cg11d", "sa3b", "sa5d", "sh5d"];
+const setElements  = ["",    "lk14d", "cm3d", "cm10e", "cm11e", "ct3d", "ct10e", "ct11e", "cg10e", "cg11e", "sa3c", "",     "sh5s"];
+const typeElements = ["",    "lk14e", "cm3e", "cm10f", "cm11f", "ct3e", "ct10f", "ct11f", "cg10f", "cg11f", "sa3d", "",     ""    ];
 
 let regionCode = '';
 let institutionType = '';
@@ -104,6 +104,7 @@ export const instrument1 = {
             const inson_user = Object.keys(insons).indexOf(institution_code) >= 0;
 
             const sa5i = util.htmlElement("sa5i");
+            const sh5i = util.htmlElement("sh5i");
             const reg_codes = Object.keys(regions);
             for (let x = 0; x < regElements.length; x++) {
                 const reg_el = util.htmlElement(regElements[x]);
@@ -127,6 +128,10 @@ export const instrument1 = {
                 util.listen(regElements[x], "change", function () {
                     if (regElements[x] == "sa5r") {
                         sa5i.innerHTML = "";
+                    }
+
+                    if (regElements[x] == "sh5r") {
+                        sh5i.innerHTML = "";
                     }
 
                     if (typeElements[x] != "") {
@@ -157,23 +162,37 @@ export const instrument1 = {
                 })
 
                 util.listen(disElements[x], "change", function () {
+                    if (regElements[x] == "sa5r") {
+                        sa5i.innerHTML = "";
+                    }
+
+                    if (regElements[x] == "sh5r") {
+                        sh5i.innerHTML = "";
+                    }
+
                     if (typeElements[x] != "") {
                         util.htmlElement(typeElements[x]).value = "";
                     }
+
                     const selectedDistrict = dis_el.value;
 
                     if (setElements[x] != "") {
-                        instrument.questions[setElements[x]].skip = false;
-                        util.htmlElement(setElements[x]).disabled = false;
-                        set_el.innerHTML = "";
-                    }
+                        if (!instrument.questions[setElements[x]].readonly) {
+                            instrument.questions[setElements[x]].skip = false;
+                            util.htmlElement(setElements[x]).disabled = false;
+                            set_el.innerHTML = "";
+                        }
 
-                    if (Number(selectedDistrict) > 0) {
-                        const option = document.createElement("option");
-                        option.value = "-9";
-                        option.text = translations['t_choose'];
-
-                        if (setElements[x] != "") {
+                        if (Number(selectedDistrict) > 0) {
+                            const option = document.createElement("option");
+                            if (setElements[x] == "sh5s") {
+                                option.value = "--";
+                                option.text = "--";
+                            } else {
+                                option.value = "-9";
+                                option.text = translations['t_choose'];
+                            }
+                            set_el.appendChild(option);
                             const set_codes = districts[selectedDistrict].settlements;
 
                             if (set_codes.length > 0) {
@@ -194,35 +213,43 @@ export const instrument1 = {
                                 instrument.questions[setElements[x]].value = '-7';
                                 util.htmlElement(setElements[x]).disabled = true;
                             }
-                        } else if (regElements[x] != "reg") {
+                        }
+                    }
 
-                            sa5i.innerHTML = "";
-                            const serv = districts[selectedDistrict].services;
-                            sa5i.appendChild(option);
+                    if (["sa5r", "sh5r"].indexOf(regElements[x]) >= 0) {
+                        const institutie = regElements[x].replace("r", "i");
+                        const option = document.createElement("option");
+                        option.value = "-9";
+                        option.text = translations['t_choose'];
 
-                            if (serv.length > 0) {
-                                for (let i = 0; i < serv.length; i++) {
-                                    if (services[serv[i]].type != "") {
-                                        let service_included = true;
-                                        if (insons[institution_code]) {
-                                            service_included = insons[institution_code].services.includes(serv[i]);
-                                        }
-                                        if (service_included) {
-                                            const option = document.createElement("option");
-                                            option.value = serv[i];
-                                            option.text = serv[i] + ': ' + services[serv[i]].name;
-                                            sa5i.appendChild(option);
-                                        }
+                        util.htmlElement(institutie).innerHTML = "";
+                        util.htmlElement(institutie).appendChild(option);
+
+                        const serv = districts[selectedDistrict].services;
+                        if (serv.length > 0) {
+                            for (let i = 0; i < serv.length; i++) {
+                                if (services[serv[i]].type != "") {
+                                    let service_included = true;
+                                    if (insons[institution_code]) {
+                                        service_included = insons[institution_code].services.includes(serv[i]);
+                                    }
+                                    if (service_included) {
+                                        const option = document.createElement("option");
+                                        option.value = serv[i];
+                                        option.text = serv[i] + ': ' + services[serv[i]].name;
+                                        util.htmlElement(institutie).appendChild(option);
                                     }
                                 }
                             }
+                        }
 
+                        if (regElements[x] == "sa5r") {
                             const optgroup = document.createElement("optgroup");
                             const option999 = document.createElement("option");
                             option999.value = '999';
                             option999.text = '999: ' + translations['not_in_registry'];
                             optgroup.appendChild(option999);
-                            sa5i.appendChild(optgroup);
+                            util.htmlElement(institutie).appendChild(optgroup);
                         }
                     }
                 })
@@ -244,22 +271,6 @@ export const instrument1 = {
                     // trigger change event
                     instrument.seteazaValoareElement(item.variable, item.value, index >= 0);
                 }
-            } else {
-                // if (inson_user) {
-                //     instrument.seteazaValoareElement("sa5r", insons[institution_code].region, true);
-                //     instrument.seteazaValoareElement("sa5d", insons[institution_code].district, true);
-                // }
-
-                instrument.seteazaValoareElement(
-                    "sa5r",
-                    inson_user ? insons[institution_code].region : services[institution_code].region,
-                    true
-                );
-                instrument.seteazaValoareElement(
-                    "sa5d",
-                    inson_user ? insons[institution_code].district : services[institution_code].district,
-                    true
-                );
             }
 
             util.setValue("data", util.customDate());
@@ -267,22 +278,28 @@ export const instrument1 = {
             // set default values for user, IRRESPECTIVE of the instrument
             if (args.userData) {
                 let institution_name = "";
-                let location = "";
                 if (inson_user) {
                     institution_name = insons[institution_code].name;
-                    location = insons[institution_code].district;
-                    util.setValue('reg', "" + insons[institution_code].region);
-                    util.setValue('dis', "" + location);
+                    util.setValue('reg', insons[institution_code].region);
+                    util.setValue("sh5r", insons[institution_code].region);
+                    util.setValue('dis', insons[institution_code].district);
+                    util.setValue("sh5d", insons[institution_code].district);
+                    util.setValue("sh5s", "--");
+                    // instrument.questions["sh5s"].value = "-7";
+                    util.setValue('omr8', "1");
                     util.setValue("omr9", insons[institution_code].name ? insons[institution_code].name : "--");
                 }
                 else {
                     institution_name = services[institution_code].name;
-                    location = services[institution_code].district;
-                    if (services[institution_code].settlement) {
-                        location = services[institution_code].settlement;
-                    }
                     util.setValue('reg', "" + services[institution_code].region);
-                    util.setValue('dis', "" + services[institution_code].district);
+                    util.setValue("sh5r", services[institution_code].region);
+                    util.setValue("sh5d", services[institution_code].district);
+                    util.setValue("sh5i", institution_code);
+                    util.setValue('dis', services[institution_code].district);
+                    if (services[institution_code].settlement) {
+                        util.setValue("sh5s", services[institution_code].settlement);
+                    }
+                    util.setValue('omr8', "2");
                     util.setValue("omr9", institution_name);
                     institutionType = services[institution_code].type;
                 }
@@ -296,9 +313,9 @@ export const instrument1 = {
                 util.setValue('omr7', args.userData.email ? args.userData.email : "--");
                 regionCode = args.userData.region_code;
 
-                util.setValue("sh5", institution_code);
-                util.setValue("sh5a", institution_name);
-                util.setValue("sh5b", location);
+                // util.setValue("sh5", institution_code);
+                // util.setValue("sh5a", institution_name);
+                // util.setValue("sh5b", location);
             }
 
             instrument.start(instrumentID, instrument.trimis, saveChestionar, validateChestionar);
@@ -789,3 +806,12 @@ util.listen("qeduc2b", "change", () => {
         errorHandler.addError("qeduc2b", message);
     }
 });
+
+util.listen("sh5i", "change", () => {
+    const type = services[util.htmlElement("sh5i").value].type;
+    if (["11", "12", "13", "14", "15", "16", "17"].indexOf(type) >= 0) {
+        util.setValue("sh3_csb", type);
+    } else {
+        util.setValue("sh3_csb", "0");
+    }
+})
