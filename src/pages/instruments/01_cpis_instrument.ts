@@ -40,10 +40,10 @@ const sh3_end_dates = [
     'sh3_s1d', 'sh3_s2d', 'sh3_s3d', 'sh3_s4d', 'sh3_s5d', 'sh3_s6d', 'sh3_s7d', 'sh3_s8d', 'sh3_s9d', 'sh3_s10d'
 ];
 
-const regElements  = ["reg", "lk14b", "cm3b", "cm10c", "cm11c", "ct3b", "ct10c", "ct11c", "cg10c", "cg11c", "sa3a", "sa5r", "sh5r"];
-const disElements  = ["dis", "lk14c", "cm3c", "cm10d", "cm11d", "ct3c", "ct10d", "ct11d", "cg10d", "cg11d", "sa3b", "sa5d", "sh5d"];
-const setElements  = ["",    "lk14d", "cm3d", "cm10e", "cm11e", "ct3d", "ct10e", "ct11e", "cg10e", "cg11e", "sa3c", "",     "sh5s"];
-const typeElements = ["",    "lk14e", "cm3e", "cm10f", "cm11f", "ct3e", "ct10f", "ct11f", "cg10f", "cg11f", "sa3d", "",     ""    ];
+const regElements  = ["reg",  "lk14b", "cm3b", "cm10c", "cm11c", "ct3b", "ct10c", "ct11c", "cg10c", "cg11c", "sa3a", "sa5r"];
+const disElements  = ["dis",  "lk14c", "cm3c", "cm10d", "cm11d", "ct3c", "ct10d", "ct11d", "cg10d", "cg11d", "sa3b", "sa5d"];
+const setElements  = ["",     "lk14d", "cm3d", "cm10e", "cm11e", "ct3d", "ct10e", "ct11e", "cg10e", "cg11e", "sa3c", "",   ];
+const typeElements = ["",     "lk14e", "cm3e", "cm10f", "cm11f", "ct3e", "ct10f", "ct11f", "cg10f", "cg11f", "sa3d", "",   ];
 
 let regionCode = '';
 let institutionType = '';
@@ -104,7 +104,7 @@ export const instrument1 = {
             const inson_user = Object.keys(insons).indexOf(institution_code) >= 0;
 
             const sa5i = util.htmlElement("sa5i");
-            const sh5i = util.htmlElement("sh5i");
+            const sh5 = util.htmlElement("sh5");
             const reg_codes = Object.keys(regions);
             for (let x = 0; x < regElements.length; x++) {
                 const reg_el = util.htmlElement(regElements[x]);
@@ -130,8 +130,8 @@ export const instrument1 = {
                         sa5i.innerHTML = "";
                     }
 
-                    if (regElements[x] == "sh5r") {
-                        sh5i.innerHTML = "";
+                    if (regElements[x] == "reg") {
+                        sh5.innerHTML = "";
                     }
 
                     if (typeElements[x] != "") {
@@ -166,8 +166,8 @@ export const instrument1 = {
                         sa5i.innerHTML = "";
                     }
 
-                    if (regElements[x] == "sh5r") {
-                        sh5i.innerHTML = "";
+                    if (regElements[x] == "reg") {
+                        sh5.innerHTML = "";
                     }
 
                     if (typeElements[x] != "") {
@@ -185,13 +185,14 @@ export const instrument1 = {
 
                         if (Number(selectedDistrict) > 0) {
                             const option = document.createElement("option");
-                            if (setElements[x] == "sh5s") {
-                                option.value = "--";
-                                option.text = "--";
-                            } else {
+                            // if (setElements[x] == "sh5s") {
+                            //     option.value = "--";
+                            //     option.text = "--";
+                            // } else {
                                 option.value = "-9";
                                 option.text = translations['t_choose'];
-                            }
+                            // }
+
                             set_el.appendChild(option);
                             const set_codes = districts[selectedDistrict].settlements;
 
@@ -216,8 +217,8 @@ export const instrument1 = {
                         }
                     }
 
-                    if (["sa5r", "sh5r"].indexOf(regElements[x]) >= 0) {
-                        const institutie = regElements[x].replace("r", "i");
+                    if (["reg", "sa5r"].indexOf(regElements[x]) >= 0) {
+                        const institutie = regElements[x] == "reg" ? "sh5" : "sa5i";
                         const option = document.createElement("option");
                         option.value = "-9";
                         option.text = translations['t_choose'];
@@ -243,7 +244,7 @@ export const instrument1 = {
                             }
                         }
 
-                        if (regElements[x] == "sa5r") {
+                        if (institutie == "sa5i") {
                             const optgroup = document.createElement("optgroup");
                             const option999 = document.createElement("option");
                             option999.value = '999';
@@ -278,28 +279,23 @@ export const instrument1 = {
             // set default values for user, IRRESPECTIVE of the instrument
             if (args.userData) {
                 let institution_name = "";
+                util.setValue("sh5s", "--");
                 if (inson_user) {
                     institution_name = insons[institution_code].name;
                     util.setValue('reg', insons[institution_code].region);
-                    util.setValue("sh5r", insons[institution_code].region);
                     util.setValue('dis', insons[institution_code].district);
-                    util.setValue("sh5d", insons[institution_code].district);
-                    util.setValue("sh5s", "--");
-                    // instrument.questions["sh5s"].value = "-7";
-                    util.setValue('omr8', "1");
+                    util.setValue('omr8', "2");
                     util.setValue("omr9", insons[institution_code].name ? insons[institution_code].name : "--");
                 }
                 else {
                     institution_name = services[institution_code].name;
                     util.setValue('reg', "" + services[institution_code].region);
-                    util.setValue("sh5r", services[institution_code].region);
-                    util.setValue("sh5d", services[institution_code].district);
-                    util.setValue("sh5i", institution_code);
                     util.setValue('dis', services[institution_code].district);
                     if (services[institution_code].settlement) {
                         util.setValue("sh5s", services[institution_code].settlement);
                     }
-                    util.setValue('omr8', "2");
+                    util.setValue("sh5", institution_code);
+                    util.setValue('omr8', "1");
                     util.setValue("omr9", institution_name);
                     institutionType = services[institution_code].type;
                 }
@@ -807,11 +803,13 @@ util.listen("qeduc2b", "change", () => {
     }
 });
 
-util.listen("sh5i", "change", () => {
-    const type = services[util.htmlElement("sh5i").value].type;
-    if (["11", "12", "13", "14", "15", "16", "17"].indexOf(type) >= 0) {
-        util.setValue("sh3_csb", type);
-    } else {
-        util.setValue("sh3_csb", "--");
+util.listen("sh5", "change", () => {
+    util.setValue("sh3_csb", "--");
+    const value = util.htmlElement("sh5").value;
+    if (Number(value) > 0) {
+        const type = services[value].type;
+        if (["11", "12", "13", "14", "15", "16", "17"].indexOf(type) >= 0) {
+            util.setValue("sh3_csb", type);
+        }
     }
 })

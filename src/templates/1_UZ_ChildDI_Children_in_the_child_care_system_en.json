@@ -1026,7 +1026,7 @@
     "t1011": "Total time spent within the child care system (in months)",
     "t1012": "SH4 is automatically calculated from column F in SH3.",
     "t1013": "SH5",
-    "t1014": "The unique code of the current service according to the corresponding Register",
+    "t1014": "The unique code of the current service according to the corresponding Register.",
     "t1015": "SH5a",
     "t1016": "Service name",
     "t1017": "Automatically retrieved from the Registry based on the unique code. Otherwise, please specify …",

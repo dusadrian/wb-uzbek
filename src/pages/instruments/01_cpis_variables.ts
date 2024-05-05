@@ -3759,47 +3759,25 @@ export const questions: QuestionObjectType = {
         active: function() {return(true)},
         skip: false
     },
-    'sh5r': {
-        name: 'sh5r',
-        type: 'select',
-        value: '-9',
-        disabled: false,
-        hidden: false,
-        readonly: true,
-        order: 338,
-        active: function() {return(true)},
-        skip: false
-    },
-    'sh5d': {
-        name: 'sh5d',
-        type: 'select',
-        value: '-7',
-        disabled: true,
-        hidden: false,
-        readonly: true,
-        order: 339,
-        active: function() {return(Number(instrument.questions.sh5r.value) > 0)},
-        skip: false
-    },
     'sh5s': {
         name: 'sh5s',
-        type: 'select',
-        value: '-7',
-        disabled: true,
-        hidden: false,
+        type: 'input',
+        value: '-9',
+        disabled: false,
+        hidden: true,
         readonly: true,
-        order: 340,
-        active: function() {return(Number(instrument.questions.sa5d.value) > 0)},
+        order: 338,
+        active: function() { return(true)},
         skip: false
     },
-    'sh5i': {
-        name: 'sh5i',
+    'sh5': {
+        name: 'sh5',
         type: 'select',
         value: '-7',
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 341,
+        order: 339,
         active: function() {return(Number(instrument.questions.omr8.value) > 1)},
         skip: false
     },
@@ -3810,7 +3788,7 @@ export const questions: QuestionObjectType = {
         disabled: false,
         hidden: false,
         readonly: false,
-        order: 342,
+        order: 340,
         active: function() {return(true)},
         skip: false
     },
@@ -3821,7 +3799,7 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 343,
+        order: 341,
         active: function() {return(Number(instrument.questions.lk21a.value) == 1)},
         skip: false
     },
@@ -3832,7 +3810,7 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 344,
+        order: 342,
         active: function() {return(Number(instrument.questions.lk21a.value) == 1 && Number(instrument.questions.lk21a1.value) == 1)},
         skip: false
     },
@@ -3843,7 +3821,7 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 345,
+        order: 343,
         active: function() {return(Number(instrument.questions.lk21a.value) == 1)},
         skip: false
     },
@@ -3854,7 +3832,7 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 346,
+        order: 344,
         active: function() {return(Number(instrument.questions.lk21a.value) == 1 && Number(instrument.questions.lk21a3.value) == 1)},
         skip: false
     },
@@ -3865,7 +3843,7 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 347,
+        order: 345,
         active: function() {return(Number(instrument.questions.lk21a.value) == 1)},
         skip: false
     },
@@ -3876,7 +3854,7 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 348,
+        order: 346,
         active: function() {return(Number(instrument.questions.lk21a.value) == 1 && Number(instrument.questions.lk21a5.value) == 1)},
         skip: false
     },
@@ -3887,7 +3865,7 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 349,
+        order: 347,
         active: function() {return(Number(instrument.questions.lk21a.value) == 1)},
         skip: false
     },
@@ -3898,7 +3876,7 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 350,
+        order: 348,
         active: function() {return(Number(instrument.questions.lk21a.value) == 1 && Number(instrument.questions.lk21a6.value) == 1)},
         skip: false
     },
@@ -3909,7 +3887,7 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 351,
+        order: 349,
         active: function() {return(Number(instrument.questions.lk21a.value) == 1 && Number(instrument.questions.lk21a6.value) == 1)},
         skip: false
     },
@@ -3920,7 +3898,7 @@ export const questions: QuestionObjectType = {
         disabled: false,
         hidden: false,
         readonly: false,
-        order: 352,
+        order: 350,
         active: function() {return(true)},
         skip: false
     },
@@ -3931,7 +3909,7 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 353,
+        order: 351,
         active: function() {return(Number(instrument.questions.lk22_1.value) == 1)},
         skip: false,
          checked: 0
@@ -3943,7 +3921,7 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 354,
+        order: 352,
         active: function() {return(Number(instrument.questions.lk22_1.value) == 1)},
         skip: false,
          checked: 0
@@ -3955,7 +3933,7 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 355,
+        order: 353,
         active: function() {return(Number(instrument.questions.lk22_1.value) == 1)},
         skip: false,
          checked: 0
@@ -3967,7 +3945,7 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 356,
+        order: 354,
         active: function() {return(Number(instrument.questions.lk22_1.value) == 1)},
         skip: false,
          checked: 0
@@ -3979,7 +3957,7 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 357,
+        order: 355,
         active: function() {return(Number(instrument.questions.lk22_1.value) == 1)},
         skip: false,
          checked: 0
@@ -3991,7 +3969,7 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 358,
+        order: 356,
         active: function() {return(Number(instrument.questions.lk22_1.value) == 1 && Number(instrument.questions.lk22_2_5.value) == 1)},
         skip: false
     },
@@ -4002,7 +3980,7 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: true,
-        order: 359,
+        order: 357,
         active: function() {return(Number(instrument.questions.lk22_1.value) == 1)},
         skip: false
     },
@@ -4013,7 +3991,7 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 360,
+        order: 358,
         active: function() {return(Number(instrument.questions.lk22_1.value) == 1 && Number(instrument.questions.lk22_2_3.value) == 1)},
         skip: false
     },
@@ -4024,7 +4002,7 @@ export const questions: QuestionObjectType = {
         disabled: false,
         hidden: false,
         readonly: false,
-        order: 361,
+        order: 359,
         active: function() {return(true)},
         skip: false
     },
@@ -4035,7 +4013,7 @@ export const questions: QuestionObjectType = {
         disabled: false,
         hidden: false,
         readonly: false,
-        order: 362,
+        order: 360,
         active: function() {return(true)},
         skip: false
     },
@@ -4046,7 +4024,7 @@ export const questions: QuestionObjectType = {
         disabled: false,
         hidden: false,
         readonly: false,
-        order: 363,
+        order: 361,
         active: function() {return(true)},
         skip: false
     },
@@ -4057,7 +4035,7 @@ export const questions: QuestionObjectType = {
         disabled: false,
         hidden: false,
         readonly: false,
-        order: 364,
+        order: 362,
         active: function() {return(true)},
         skip: false
     },
@@ -4068,7 +4046,7 @@ export const questions: QuestionObjectType = {
         disabled: false,
         hidden: false,
         readonly: false,
-        order: 365,
+        order: 363,
         active: function() {return(true)},
         skip: false
     },
@@ -4079,7 +4057,7 @@ export const questions: QuestionObjectType = {
         disabled: false,
         hidden: false,
         readonly: false,
-        order: 366,
+        order: 364,
         active: function() {return(true)},
         skip: false
     },
@@ -4090,7 +4068,7 @@ export const questions: QuestionObjectType = {
         disabled: false,
         hidden: false,
         readonly: false,
-        order: 367,
+        order: 365,
         active: function() {return(true)},
         skip: false
     },
@@ -4101,7 +4079,7 @@ export const questions: QuestionObjectType = {
         disabled: false,
         hidden: false,
         readonly: false,
-        order: 368,
+        order: 366,
         active: function() {return(true)},
         skip: false
     },
@@ -4112,7 +4090,7 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 369,
+        order: 367,
         active: function() {return(Number(instrument.questions.lk22_3_8.value) == 1)},
         skip: false
     },
@@ -4123,7 +4101,7 @@ export const questions: QuestionObjectType = {
         disabled: false,
         hidden: false,
         readonly: false,
-        order: 370,
+        order: 368,
         active: function() {return(true)},
         skip: false
     },
@@ -4134,7 +4112,7 @@ export const questions: QuestionObjectType = {
         disabled: false,
         hidden: false,
         readonly: false,
-        order: 371,
+        order: 369,
         active: function() {return(true)},
         skip: false
     },
@@ -4145,7 +4123,7 @@ export const questions: QuestionObjectType = {
         disabled: false,
         hidden: false,
         readonly: false,
-        order: 372,
+        order: 370,
         active: function() {return(true)},
         skip: false
     },
@@ -4156,7 +4134,7 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 373,
+        order: 371,
         active: function() {return(Number(instrument.questions.lk13a.value) >= 10 && Number(instrument.questions.lk13a.value) <= 19)},
         skip: false
     },
@@ -4167,7 +4145,7 @@ export const questions: QuestionObjectType = {
         disabled: false,
         hidden: false,
         readonly: false,
-        order: 374,
+        order: 372,
         active: function() {return(true)},
         skip: false
     },
@@ -4178,7 +4156,7 @@ export const questions: QuestionObjectType = {
         disabled: false,
         hidden: false,
         readonly: false,
-        order: 375,
+        order: 373,
         active: function() {return(true)},
         skip: false
     },
@@ -4189,7 +4167,7 @@ export const questions: QuestionObjectType = {
         disabled: false,
         hidden: false,
         readonly: false,
-        order: 376,
+        order: 374,
         active: function() {return(true)},
         skip: false
     },
@@ -4200,7 +4178,7 @@ export const questions: QuestionObjectType = {
         disabled: false,
         hidden: false,
         readonly: false,
-        order: 377,
+        order: 375,
         active: function() {return(true)},
         skip: false
     },
@@ -4211,7 +4189,7 @@ export const questions: QuestionObjectType = {
         disabled: false,
         hidden: false,
         readonly: false,
-        order: 378,
+        order: 376,
         active: function() {return(true)},
         skip: false
     },
@@ -4222,7 +4200,7 @@ export const questions: QuestionObjectType = {
         disabled: false,
         hidden: false,
         readonly: false,
-        order: 379,
+        order: 377,
         active: function() {return(true)},
         skip: false
     },
@@ -4233,7 +4211,7 @@ export const questions: QuestionObjectType = {
         disabled: false,
         hidden: false,
         readonly: false,
-        order: 380,
+        order: 378,
         active: function() {return(true)},
         skip: false
     },
@@ -4244,7 +4222,7 @@ export const questions: QuestionObjectType = {
         disabled: false,
         hidden: false,
         readonly: false,
-        order: 381,
+        order: 379,
         active: function() {return(true)},
         skip: false
     },
@@ -4255,7 +4233,7 @@ export const questions: QuestionObjectType = {
         disabled: false,
         hidden: false,
         readonly: false,
-        order: 382,
+        order: 380,
         active: function() {return(true)},
         skip: false
     },
@@ -4266,7 +4244,7 @@ export const questions: QuestionObjectType = {
         disabled: false,
         hidden: false,
         readonly: false,
-        order: 383,
+        order: 381,
         active: function() {return(true)},
         skip: false
     },
@@ -4277,7 +4255,7 @@ export const questions: QuestionObjectType = {
         disabled: false,
         hidden: false,
         readonly: false,
-        order: 384,
+        order: 382,
         active: function() {return(true)},
         skip: false
     },
@@ -4288,7 +4266,7 @@ export const questions: QuestionObjectType = {
         disabled: false,
         hidden: false,
         readonly: false,
-        order: 385,
+        order: 383,
         active: function() {return(true)},
         skip: false
     },
@@ -4299,7 +4277,7 @@ export const questions: QuestionObjectType = {
         disabled: false,
         hidden: false,
         readonly: false,
-        order: 386,
+        order: 384,
         active: function() {return(true)},
         skip: false
     },
@@ -4310,7 +4288,7 @@ export const questions: QuestionObjectType = {
         disabled: false,
         hidden: false,
         readonly: false,
-        order: 387,
+        order: 385,
         active: function() {return(true)},
         skip: false
     },
@@ -4321,7 +4299,7 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 388,
+        order: 386,
         active: function() {return(Number(instrument.questions.edk0.value) == 1)},
         skip: false
     },
@@ -4332,7 +4310,7 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 389,
+        order: 387,
         active: function() {return(Number(instrument.questions.edk0.value) == 1)},
         skip: false
     },
@@ -4343,7 +4321,7 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 390,
+        order: 388,
         active: function() {return(Number(instrument.questions.edk0.value) == 1 && (Number(instrument.questions.edk2.value) == 1 || Number(instrument.questions.edk2.value) == 2 || Number(instrument.questions.edk2.value) == 3))},
         skip: false
     },
@@ -4354,7 +4332,7 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 391,
+        order: 389,
         active: function() {return(Number(instrument.questions.edk0.value) == 1 && (Number(instrument.questions.edk2.value) == 1 || Number(instrument.questions.edk2.value) == 2 || Number(instrument.questions.edk2.value) == 3))},
         skip: false
     },
@@ -4365,7 +4343,7 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 392,
+        order: 390,
         active: function() {return(Number(instrument.questions.edk0.value) == 1 && (Number(instrument.questions.edk2.value) == 1 || Number(instrument.questions.edk2.value) == 2 || Number(instrument.questions.edk2.value) == 3))},
         skip: false
     },
@@ -4376,7 +4354,7 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 393,
+        order: 391,
         active: function() {return(Number(instrument.questions.edk0.value) == 1 && (Number(instrument.questions.edk2.value) == 1 || Number(instrument.questions.edk2.value) == 2 || Number(instrument.questions.edk2.value) == 3))},
         skip: false
     },
@@ -4387,7 +4365,7 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 394,
+        order: 392,
         active: function() {return(Number(instrument.questions.edk0.value) == 1 && (Number(instrument.questions.edk2.value) == 1 || Number(instrument.questions.edk2.value) == 2 || Number(instrument.questions.edk2.value) == 3))},
         skip: false
     },
@@ -4398,7 +4376,7 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: true,
-        order: 395,
+        order: 393,
         active: function() {return(Number(instrument.questions.edk0.value) == 1 && (Number(instrument.questions.edk2.value) == 1 || Number(instrument.questions.edk2.value) == 2 || Number(instrument.questions.edk2.value) == 3))},
         skip: false
     },
@@ -4409,7 +4387,7 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 396,
+        order: 394,
         active: function() {return(Number(instrument.questions.lk13a.value) >= 16)},
         skip: false
     },
@@ -4420,7 +4398,7 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 397,
+        order: 395,
         active: function() {return(Number(instrument.questions.lk13a.value) >= 16)},
         skip: false
     },
@@ -4431,7 +4409,7 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 398,
+        order: 396,
         active: function() {return(Number(instrument.questions.lk13a.value) >= 16)},
         skip: false
     },
@@ -4442,7 +4420,7 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 399,
+        order: 397,
         active: function() {return(Number(instrument.questions.lk13a.value) >= 16)},
         skip: false
     },
@@ -4453,7 +4431,7 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 400,
+        order: 398,
         active: function() {return(Number(instrument.questions.lk13a.value) >= 16)},
         skip: false
     },
@@ -4464,7 +4442,7 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 401,
+        order: 399,
         active: function() {return(Number(instrument.questions.lk13a.value) >= 16)},
         skip: false
     },
@@ -4475,7 +4453,7 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 402,
+        order: 400,
         active: function() {return(Number(instrument.questions.lk13a.value) >= 16)},
         skip: false
     },
@@ -4486,7 +4464,7 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 403,
+        order: 401,
         active: function() {return(Number(instrument.questions.lk13a.value) >= 16)},
         skip: false
     },
@@ -4497,7 +4475,7 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 404,
+        order: 402,
         active: function() {return(Number(instrument.questions.lk13a.value) >= 16)},
         skip: false
     },
@@ -4508,7 +4486,7 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 405,
+        order: 403,
         active: function() {return(Number(instrument.questions.lk13a.value) >= 16)},
         skip: false
     },
@@ -4519,7 +4497,7 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 406,
+        order: 404,
         active: function() {return(Number(instrument.questions.lk13a.value) >= 16)},
         skip: false
     },
@@ -4530,7 +4508,7 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 407,
+        order: 405,
         active: function() {return(Number(instrument.questions.lk13a.value) >= 16)},
         skip: false
     },
@@ -4541,7 +4519,7 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 408,
+        order: 406,
         active: function() {return(Number(instrument.questions.lk13a.value) >= 16)},
         skip: false
     },
@@ -4552,7 +4530,7 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 409,
+        order: 407,
         active: function() {return(Number(instrument.questions.lk13a.value) >= 16)},
         skip: false
     },
@@ -4563,7 +4541,7 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 410,
+        order: 408,
         active: function() {return(Number(instrument.questions.lk13a.value) >= 16)},
         skip: false
     },
@@ -4574,7 +4552,7 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 411,
+        order: 409,
         active: function() {return(Number(instrument.questions.lk13a.value) >= 16)},
         skip: false
     },
@@ -4585,7 +4563,7 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 412,
+        order: 410,
         active: function() {return(Number(instrument.questions.lk13a.value) >= 16)},
         skip: false
     },
@@ -4596,7 +4574,7 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 413,
+        order: 411,
         active: function() {return(Number(instrument.questions.lk13a.value) >= 16)},
         skip: false
     },
@@ -4607,7 +4585,7 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 414,
+        order: 412,
         active: function() {return(Number(instrument.questions.lk13a.value) >= 16)},
         skip: false
     },
@@ -4618,7 +4596,7 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 415,
+        order: 413,
         active: function() {return(Number(instrument.questions.lk13a.value) >= 16)},
         skip: false
     },
@@ -4629,7 +4607,7 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 416,
+        order: 414,
         active: function() {return(Number(instrument.questions.lk13a.value) >= 10)},
         skip: false
     },
@@ -4640,7 +4618,7 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 417,
+        order: 415,
         active: function() {return(Number(instrument.questions.lk13a.value) >= 10)},
         skip: false
     },
@@ -4651,7 +4629,7 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 418,
+        order: 416,
         active: function() {return(Number(instrument.questions.lk13a.value) >= 10)},
         skip: false
     },
@@ -4662,7 +4640,7 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 419,
+        order: 417,
         active: function() {return(Number(instrument.questions.lk13a.value) >= 10)},
         skip: false
     },
@@ -4673,7 +4651,7 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 420,
+        order: 418,
         active: function() {return(Number(instrument.questions.lk13a.value) >= 10)},
         skip: false
     },
@@ -4684,7 +4662,7 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 421,
+        order: 419,
         active: function() {return(Number(instrument.questions.lk13a.value) >= 10)},
         skip: false
     },
@@ -4695,7 +4673,7 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 422,
+        order: 420,
         active: function() {return(Number(instrument.questions.lk13a.value) >= 10)},
         skip: false
     },
@@ -4706,7 +4684,7 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 423,
+        order: 421,
         active: function() {return(Number(instrument.questions.lk13a.value) >= 10)},
         skip: false
     },
@@ -4717,7 +4695,7 @@ export const questions: QuestionObjectType = {
         disabled: false,
         hidden: false,
         readonly: false,
-        order: 424,
+        order: 422,
         active: function() {return(true)},
         skip: false
     },
@@ -4728,7 +4706,7 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 425,
+        order: 423,
         active: function() {return(Number(instrument.questions.cmgt1.value) == 1)},
         skip: false
     },
@@ -4739,7 +4717,7 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: true,
-        order: 426,
+        order: 424,
         active: function() {return(Number(instrument.questions.cmgt1.value) == 1)},
         skip: false
     },
@@ -4750,7 +4728,7 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 427,
+        order: 425,
         active: function() {return(Number(instrument.questions.cmgt1.value) == 1)},
         skip: false
     },
@@ -4761,7 +4739,7 @@ export const questions: QuestionObjectType = {
         disabled: false,
         hidden: false,
         readonly: false,
-        order: 428,
+        order: 426,
         active: function() {return(true)},
         skip: false
     },
@@ -4772,7 +4750,7 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 429,
+        order: 427,
         active: function() {return(Number(instrument.questions.cmgt2.value) == 1)},
         skip: false
     },
@@ -4783,7 +4761,7 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 430,
+        order: 428,
         active: function() {return(Number(instrument.questions.cmgt2.value) == 1 && Number(instrument.questions.cmgt2a.value) == 4)},
         skip: false
     },
@@ -4794,7 +4772,7 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 431,
+        order: 429,
         active: function() {return(Number(instrument.questions.cmgt1.value) == 1)},
         skip: false
     },
@@ -4805,7 +4783,7 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 432,
+        order: 430,
         active: function() {return(Number(instrument.questions.cmgt1.value) == 1 && Number(instrument.questions.cmgt2.value) == 1)},
         skip: false
     },
@@ -4816,7 +4794,7 @@ export const questions: QuestionObjectType = {
         disabled: false,
         hidden: false,
         readonly: false,
-        order: 433,
+        order: 431,
         active: function() {return(true)},
         skip: false
     },
@@ -4827,7 +4805,7 @@ export const questions: QuestionObjectType = {
         disabled: false,
         hidden: false,
         readonly: false,
-        order: 434,
+        order: 432,
         active: function() {return(true)},
         skip: false
     },
@@ -4838,7 +4816,7 @@ export const questions: QuestionObjectType = {
         disabled: false,
         hidden: false,
         readonly: false,
-        order: 435,
+        order: 433,
         active: function() {return(true)},
         skip: false
     },
@@ -4849,7 +4827,7 @@ export const questions: QuestionObjectType = {
         disabled: false,
         hidden: false,
         readonly: false,
-        order: 436,
+        order: 434,
         active: function() {return(true)},
         skip: false
     },
@@ -4860,7 +4838,7 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 437,
+        order: 435,
         active: function() {return(Number(instrument.questions.lk13a.value) >= 10)},
         skip: false
     },
@@ -4871,7 +4849,7 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 438,
+        order: 436,
         active: function() {return(Number(instrument.questions.lk13a.value) >= 10)},
         skip: false
     },
@@ -4882,7 +4860,7 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 439,
+        order: 437,
         active: function() {return(Number(instrument.questions.lk13a.value) >= 10)},
         skip: false
     },
@@ -4893,7 +4871,7 @@ export const questions: QuestionObjectType = {
         disabled: false,
         hidden: false,
         readonly: false,
-        order: 440,
+        order: 438,
         active: function() {return(true)},
         skip: false
     },
@@ -4904,7 +4882,7 @@ export const questions: QuestionObjectType = {
         disabled: false,
         hidden: false,
         readonly: false,
-        order: 441,
+        order: 439,
         active: function() {return(true)},
         skip: false
     },
@@ -4915,7 +4893,7 @@ export const questions: QuestionObjectType = {
         disabled: false,
         hidden: false,
         readonly: false,
-        order: 442,
+        order: 440,
         active: function() {return(true)},
         skip: false
     },
@@ -4926,7 +4904,7 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 443,
+        order: 441,
         active: function() {return(Number(instrument.questions.sk3.value) == 1)},
         skip: false
     },
@@ -4937,7 +4915,7 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 444,
+        order: 442,
         active: function() {return(Number(instrument.questions.sk3.value) == 1)},
         skip: false
     },
@@ -4948,7 +4926,7 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 445,
+        order: 443,
         active: function() {return(Number(instrument.questions.sk3.value) == 1)},
         skip: false
     },
@@ -4959,7 +4937,7 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 446,
+        order: 444,
         active: function() {return(Number(instrument.questions.sk3.value) == 1)},
         skip: false
     },
@@ -4970,7 +4948,7 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 447,
+        order: 445,
         active: function() {return(Number(instrument.questions.sk3.value) == 1)},
         skip: false
     },
@@ -4981,7 +4959,7 @@ export const questions: QuestionObjectType = {
         disabled: false,
         hidden: false,
         readonly: false,
-        order: 448,
+        order: 446,
         active: function() {return(true)},
         skip: false
     },
@@ -4992,7 +4970,7 @@ export const questions: QuestionObjectType = {
         disabled: false,
         hidden: false,
         readonly: false,
-        order: 449,
+        order: 447,
         active: function() {return(true)},
         skip: false
     },
@@ -5003,7 +4981,7 @@ export const questions: QuestionObjectType = {
         disabled: false,
         hidden: false,
         readonly: false,
-        order: 450,
+        order: 448,
         active: function() {return(true)},
         skip: false
     },
@@ -5014,7 +4992,7 @@ export const questions: QuestionObjectType = {
         disabled: false,
         hidden: false,
         readonly: false,
-        order: 451,
+        order: 449,
         active: function() {return(true)},
         skip: false
     },
@@ -5025,7 +5003,7 @@ export const questions: QuestionObjectType = {
         disabled: false,
         hidden: false,
         readonly: false,
-        order: 452,
+        order: 450,
         active: function() {return(true)},
         skip: false
     },
@@ -5036,7 +5014,7 @@ export const questions: QuestionObjectType = {
         disabled: false,
         hidden: false,
         readonly: false,
-        order: 453,
+        order: 451,
         active: function() {return(true)},
         skip: false
     },
@@ -5047,7 +5025,7 @@ export const questions: QuestionObjectType = {
         disabled: false,
         hidden: false,
         readonly: false,
-        order: 454,
+        order: 452,
         active: function() {return(true)},
         skip: false
     },
@@ -5085,7 +5063,7 @@ export const questionOrder: Array<string> = [
     'sh3_s7a', 'sh3_s7b', 'sh3_s7c', 'sh3_s7d', 'sh3_s7e', 'sh3_s7f', 'sh3_s8a', 'sh3_s8b', 'sh3_s8c', 'sh3_s8d',
     'sh3_s8e', 'sh3_s8f', 'sh3_s9a', 'sh3_s9b', 'sh3_s9c', 'sh3_s9d', 'sh3_s9e', 'sh3_s9f', 'sh3_s10a',
     'sh3_s10b', 'sh3_s10c', 'sh3_s10d', 'sh3_s10e', 'sh3_s10f', 'sh3_csa', 'sh3_csb', 'sh3_csc', 'sh3_csf',
-    'sh4', 'sh5r', 'sh5d', 'sh5s', 'sh5i', 'lk21a', 'lk21a1', 'lk21a1_1', 'lk21a3', 'lk21a3_3', 'lk21a5',
+    'sh4', 'sh5s', 'sh5', 'lk21a', 'lk21a1', 'lk21a1_1', 'lk21a3', 'lk21a3_3', 'lk21a5',
     'lk21a5_5', 'lk21a6', 'lk21a6a', 'lk21a6_6', 'lk22_1', 'lk22_2_1', 'lk22_2_2', 'lk22_2_3', 'lk22_2_4',
     'lk22_2_5', 'lk22_2_5_other', 'lk22_2_7', 'lk22_2m', 'lk22_3_1', 'lk22_3_2', 'lk22_3_3', 'lk22_3_4',
     'lk22_3_5', 'lk22_3_6', 'lk22_3_7', 'lk22_3_8', 'lk22_3_9', 'lk22_4', 'lk22_5', 'lk22_6', 'lk22_7', 'lk22_8',
@@ -5438,10 +5416,8 @@ export const exportHeader: Array<{ id: string; title: string }> = [
     {'id': 'sh3_csc', 'title': 'SH3_CSC'},
     {'id': 'sh3_csf', 'title': 'SH3_CSF'},
     {'id': 'sh4', 'title': 'SH4'},
-    {'id': 'sh5r', 'title': 'SH5R'},
-    {'id': 'sh5d', 'title': 'SH5D'},
     {'id': 'sh5s', 'title': 'SH5S'},
-    {'id': 'sh5i', 'title': 'SH5I'},
+    {'id': 'sh5', 'title': 'SH5'},
     {'id': 'lk21a', 'title': 'LK21A'},
     {'id': 'lk21a1', 'title': 'LK21A1'},
     {'id': 'lk21a1_1', 'title': 'LK21A1_1'},
