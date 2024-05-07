@@ -138,12 +138,31 @@ export const database = {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     addUser: async (user: any) => {
         const connection = new Promise<boolean>((resolve) => {
-            db.run(`INSERT INTO users (user_type, username, password, institution_id, first_name, patronymics, last_name, position, profession, phone, email) VALUES ('${user.user_type}', '${user.username}', '${user.password}', '${user.institution_id}', '${user.first_name}', '${user.patronymics}', '${user.last_name}', '${user.position}', '${user.profession}', '${user.phone}', '${user.email}')`, (error) => {
-                if (error) {
-                    console.log(error);
-                }
-                resolve(true);
-            });
+            console.log('aici');
+            
+            db.run(`INSERT INTO users (username, password, institution_code, institution_name, name, patronymics, surname, job_title, profession, phone, email, region_code, role_code, service_type_code) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)`,
+                user.username,
+                user.password,
+                user.institution_code,
+                user.institution_name,
+                user.name,
+                user.patronymics,
+                user.surname,
+                user.job_title,
+                user.profession,
+                user.phone,
+                user.email,
+                user.region_code,
+                user.role_code,
+                user.service_type_code,
+                (error) => {
+                    if (error) {
+                        console.log(error);
+                        resolve(false);
+                        return;
+                    }
+                    resolve(true);
+                });
         });
         return await connection;
     },
@@ -163,33 +182,49 @@ export const database = {
         const connection = new Promise<boolean>((resolve) => {
             db.run(`
                 UPDATE users SET
-                    username = '${user.username}',
-                    password = '${user.password}',
-                    institution_code = '${user.institution_code}',
-                    institution_name = '${user.institution_name}',
-                    name = '${user.name}',
-                    patronymics = '${user.patronymics}',
-                    surname = '${user.surname}',
-                    job_title = '${user.job_title}',
-                    profession = '${user.profession}',
-                    phone = '${user.phone}',
-                    email = '${user.email}',
-                    region_code = '${user.region_code}',
-                    role_code = '${user.role_code}',
-                    service_type_code = '${user.service_type_code}'
-                WHERE id = '${user.id}'
-            `, (error) => {
-                if (error) {
-                    console.log(error);
-                }
-                resolve(true);
-            });
+                    username = ?,
+                    password = ?,
+                    institution_code = ?,
+                    institution_name = ?,
+                    name = ?,
+                    patronymics = ?,
+                    surname = ?,
+                    job_title = ?,
+                    profession = ?,
+                    phone = ?,
+                    email = ?,
+                    region_code = ?,
+                    role_code = ?,
+                    service_type_code = ?
+                WHERE id = ?
+            `,
+                user.username,
+                user.password,
+                user.institution_code,
+                user.institution_name,
+                user.name,
+                user.patronymics,
+                user.surname,
+                user.job_title,
+                user.profession,
+                user.phone,
+                user.email,
+                user.region_code,
+                user.role_code,
+                user.service_type_code,
+                user.id,
+                (error) => {
+                    if (error) {
+                        console.log(error);
+                    }
+                    resolve(true);
+                });
         });
         return await connection;
     },
     deleteUser: async (id: string) => {
         const connection = new Promise<boolean>((resolve) => {
-            db.run(`DELETE FROM users WHERE id = '${id}' AND user_type = 'localCollector'`, (error) => {
+            db.run(`DELETE FROM users WHERE id = '${id}' AND role_code in (2,3,4)`, (error) => {
                 if (error) {
                     console.log(error);
                 }

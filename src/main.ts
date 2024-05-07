@@ -33,10 +33,6 @@ let mainWindow: BrowserWindow;
 
 const appSession = {
     language: "en",
-    userName: "",
-    user_type: "",
-    userId: 0,
-    userInstitution: 0,
     institutionName: "",
     institutionDetails: {},
     userData: {} as DI.User
@@ -628,8 +624,7 @@ const localEditUser = (id: string) => {
 ipcMain.on('addUser', (event, args) => {
     console.log(args);
     // save to DB
-    const userObj = { ...args, institution_id: appSession.userData.institution_code, user_type: "localCollector" };
-    database.addUser(userObj).then(() => {
+    database.addUser(args).then(() => {
         // send message
         dialog.showMessageBox(mainWindow, {
             type: 'info',

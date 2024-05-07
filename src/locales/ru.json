@@ -188,5 +188,6 @@
     "main._dataDownloaded": "Export successful!",
     "Please fill in all fields": "Please fill in all fields",
     "Error": "Error",
-    "main._dataDownloadedError": "Error. No folder selected!"
+    "main._dataDownloadedError": "Error. No folder selected!",
+    "t_user_type": "Тип пользователя"
 }

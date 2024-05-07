@@ -191,5 +191,6 @@
 	"main._dataDownloadedError": "Error. No folder selected!",
 	"The following fields are mandatory: J1!": "The following fields are mandatory: J1!",
 	"Some instruments are not allowed to be imported. Please check the file and try again.": "Some instruments are not allowed to be imported. Please check the file and try again.",
-	"Пожалуйста заполните все поля": "Пожалуйста заполните все поля"
+	"Пожалуйста заполните все поля": "Пожалуйста заполните все поля",
+	"t_user_type": "Type of user"
 }

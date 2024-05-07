@@ -164,6 +164,8 @@ const initInstruments = (userData: User, institutionDetails: any) => {
     if (userData.role_code === '1') {
         document.getElementById('users').classList.remove('hidden');
         document.getElementById('users').classList.add('flex');
+        document.getElementById('institution').classList.remove('hidden');
+        document.getElementById('institution').classList.add('flex');
     }
 }
 
@@ -182,12 +184,12 @@ export const local = {
 
         }
 
-        // // Institution details
-        // (<HTMLButtonElement>document.getElementById('viewEdit_ID')).addEventListener('click', () => {
-        //     ipcRenderer.send('changeWindow', {
-        //         'name': 'local/02_institution_details'
-        //     });
-        // });
+        // Institution details
+        (<HTMLButtonElement>document.getElementById('institution')).addEventListener('click', () => {
+            ipcRenderer.send('changeWindow', {
+                'name': 'local/02_institution_details'
+            });
+        });
 
         // Users
         (<HTMLButtonElement>document.getElementById('users')).addEventListener('click', () => {
@@ -216,6 +218,7 @@ export const local = {
             document.getElementById('view_instrument4').dataset.id = args.qmr;
             document.getElementById('view_instrument6').dataset.id = args.dsee;
         });
+
         ipcRenderer.on("dashStats", (_event, args) => {
 
             if (args.instrument1.length > 0) {
