@@ -164,8 +164,8 @@
                         <option value="21">1. Type I - boarding schools for deaf children.</option>
                         <option value="22">2. Type II - boarding schools for the hearing-impaired and those who later
                             will lose their hearing.</option>
-                        <option value="23">3. Type III - &quot;Noorli Maskan&quot; specialized boarding schools for blind
-                            children.</option>
+                        <option value="23">3. Type III - &quot;Noorli Maskan&quot; specialized boarding schools for
+                            blind children.</option>
                         <option value="24">4. Type IV - &quot;Noorli Maskan&quot; specialized boarding schools for
                             visually impaired and those who later will lose their vision.</option>
                         <option value="25">5. Type V - boarding schools for children with severe speech disorders.
@@ -333,7 +333,7 @@
                     <div class="flex items-center">
                         <input id="lk15-5" type="radio" value="5" name="lk15"
                             class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                        <label for="lk15-5" class="ms-2 text-sm text-gray-900">5. Another state employee </label>
+                        <label for="lk15-5" class="ms-2 text-sm text-gray-900">5. Another state employee</label>
                     </div>
                     <div class="flex items-center">
                         <input id="lk15-6" type="radio" value="6" name="lk15"
@@ -1062,7 +1062,7 @@
                         <input id="cm7b-4" type="radio" value="3" name="cm7b"
                             class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="cm7b-4" class="ms-2 text-sm text-gray-900">3. Unfinished specialized
-                            secondary</label>
+                            secondary/vocational education</label>
                     </div>
                     <div class="flex items-center">
                         <input id="cm7b-5" type="radio" value="4" name="cm7b"
@@ -1651,7 +1651,7 @@
                         <input id="ct7b-4" type="radio" value="3" name="ct7b"
                             class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="ct7b-4" class="ms-2 text-sm text-gray-900">3. Unfinished specialized
-                            secondary</label>
+                            secondary/vocational education</label>
                     </div>
                     <div class="flex items-center">
                         <input id="ct7b-5" type="radio" value="4" name="ct7b"
@@ -1935,9 +1935,6 @@
                 </div>
             </div>
 
-            <p class="mt-10 italic text-red-500">This following section is to be filled in only in a situation where,
-                prior to be admitted in the boarding school, the child was cared for by a person other than his/her
-                mother or father. Otherwise, skip to Section 4.</p>
 
             <h3 class="text-xl font-semibold bg-gray-100 px-2 py-1 text-gray-700 mt-10">3.3. THE PERSON WHO WAS TAKING
                 CARE OF THE CHILD</h3>
@@ -2207,7 +2204,7 @@
             </div>
             <div class="grid grid-cols-2 gap-4 items-center mt-10">
                 <div>
-                    CT6c. What group of disability does the person have? </div>
+                    CG6c. What group of disability does the person have? </div>
                 <div class="col-span-1 flex flex-col gap-2">
                     <div class="flex items-center">
                         <input id="cg6c-1" type="radio" value="0" name="cg6c"
@@ -2233,7 +2230,7 @@
             </div>
             <div class="grid grid-cols-2 gap-4 items-center mt-10">
                 <div>
-                    CG7b. Caregiver&#39;s level of education </div>
+                    CG7b. Caregiver&#39;s current education </div>
                 <div class="col-span-1 flex flex-col gap-2">
                     <div class="flex items-center">
                         <input id="cg7b-1" type="radio" value="0" name="cg7b"
@@ -2537,8 +2534,7 @@
                 EDUCATIONAL INSTITUTION</h2>
 
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
-                <div>SA1. Date of the child&#39;s admission into the specialized educational institution Day / Month /
-                    Year</div>
+                <div>SA1. Date of the child&#39;s admission into the current specialized educational institution</div>
                 <div>
                     <input type="text" id="sa1" name="sa1"
                         class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
@@ -2552,7 +2548,7 @@
             <input type="hidden" id="sa1m" name="sa1m" />
 
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
-                <div>SA1a. Child&#39;s age upon his/her first admission into the system</div>
+                <div>SA1a. Child&#39;s age upon his/her first admission into the current educational institution</div>
                 <div>
                     <input type="text" id="sa1a" name="sa1a"
                         class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
@@ -2722,7 +2718,10 @@
             </div>
 
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
-                <div>2b. What grade was the child in?</div>
+                <div>
+                    2b. What grade was the child in? <small class="mb-1 block italic text-red-500">FILL IN 0 (ZERO) FOR
+                        PREPARATORY CLASS</small>
+                </div>
                 <div>
                     <input type="text" id="qeduc2b" name="qeduc2b"
                         class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
@@ -3872,7 +3871,6 @@
                 <div>
                     SCH2. Currently, in which grade is the child? <small class="block italic mt-2">FILL IN 0 (ZERO) FOR
                         PREPARARTORY CLASS</small>
-                    <small class="block italic mt-2">FILL IN IF GRADE &gt;=8, ELSE SKIP TO CEDU</small>
                 </div>
                 <div>
                     <input type="text" id="sch2" name="sch2"
@@ -5075,9 +5073,7 @@
 
             <div class="grid grid-cols-2 gap-4 items-center mt-10">
                 <div>
-                    <small class="mt-2 block italic text-red-500">IF MENTAL DISABILITY IS CHECKED IN LK22_2</small>
-                    LK22_2m. According to the certificate, what degree of mental disability does the child have?
-                </div>
+                    LK22_2m. According to the certificate, what degree of mental disability does the child have? </div>
                 <div class="col-span-1 flex flex-col gap-2">
                     <div class="flex items-center">
                         <input id="lk22_2m-1" type="radio" value="1" name="lk22_2m"
@@ -6717,7 +6713,7 @@
 
             <div class="grid grid-cols-2 gap-4 mt-6">
                 <div>
-                    SQ5. In the past six months, did the child benefit from independent living activities? <small
+                    SQ5. In the past six months, did the child participate in independent living activities? <small
                         class="block mt-2 italic text-red-500">
                         Independent living activities include tasks such as food preparation and serving, cleaning,
                         using the washing machine, ironing or arranging clothes, going shopping, being able to use money

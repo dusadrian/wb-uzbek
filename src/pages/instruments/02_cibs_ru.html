@@ -160,8 +160,8 @@
                         class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100">
                         <option value="-9" class="t_choose">--- choose ---</option>
                         <option value="21">1. I тип - школы-интернаты для глухих детей.</option>
-                        <option value="22">2. Тип II - школы-интернаты для слабослышащих и тех, кто впоследствии потеряет
-                            слух.</option>
+                        <option value="22">2. Тип II - школы-интернаты для слабослышащих и тех, кто впоследствии
+                            потеряет слух.</option>
                         <option value="23">3. III тип - специализированные школы-интернаты для слепых детей &quot;Нурли
                             Маскан&quot;.</option>
                         <option value="24">4. IV тип - специализированные школы-интернаты &quot;Нурли Маскан&quot; для
@@ -325,17 +325,17 @@
                     <div class="flex items-center">
                         <input id="lk15-4" type="radio" value="4" name="lk15"
                             class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                        <label for="lk15-4" class="ms-2 text-sm text-gray-900">4. Other staff of the institution</label>
+                        <label for="lk15-4" class="ms-2 text-sm text-gray-900">4. Другой персонал учреждения</label>
                     </div>
                     <div class="flex items-center">
                         <input id="lk15-5" type="radio" value="5" name="lk15"
                             class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                        <label for="lk15-5" class="ms-2 text-sm text-gray-900">5. Another state employee </label>
+                        <label for="lk15-5" class="ms-2 text-sm text-gray-900">5. Другой гос.служащий</label>
                     </div>
                     <div class="flex items-center">
                         <input id="lk15-6" type="radio" value="6" name="lk15"
                             class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                        <label for="lk15-6" class="ms-2 text-sm text-gray-900">4. Другое, укажите</label>
+                        <label for="lk15-6" class="ms-2 text-sm text-gray-900">6. Другое, укажите</label>
                     </div>
                     <div class="flex items-center">
                         <input type="text" id="lk15_other" name="lk15_other"
@@ -1932,9 +1932,6 @@
                 </div>
             </div>
 
-            <p class="mt-10 italic text-red-500">Следующий раздел заполняется только в том случае, если до помещения в
-                интернат за ребенком присматривало лицо, не являющееся его матерью или отцом. В ином случае перейдите к
-                разделу 4.</p>
 
             <h3 class="text-xl font-semibold bg-gray-100 px-2 py-1 text-gray-700 mt-10">3.3. ЛИЦО, КОТОРОЕ ЗАБОТИЛОСЬ О
                 РЕБЕНКЕ</h3>
@@ -2063,7 +2060,7 @@
                     <div class="flex items-center">
                         <input id="cg3a-1" type="radio" value="1" name="cg3a"
                             class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                        <label for="cg3a-1" class="ms-2 text-sm text-gray-900"></label>
+                        <label for="cg3a-1" class="ms-2 text-sm text-gray-900">1. Мужской</label>
                     </div>
                     <div class="flex items-center">
                         <input id="cg3a-2" type="radio" value="2" name="cg3a"
@@ -2203,7 +2200,7 @@
             </div>
             <div class="grid grid-cols-2 gap-4 items-center mt-10">
                 <div>
-                    CT6c. Какая группа инвалидности у человека? </div>
+                    CG6c. Какая группа инвалидности у человека? </div>
                 <div class="col-span-1 flex flex-col gap-2">
                     <div class="flex items-center">
                         <input id="cg6c-1" type="radio" value="0" name="cg6c"
@@ -2721,7 +2718,10 @@
             </div>
 
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
-                <div>2б. В каком классе учился ребенок?</div>
+                <div>
+                    2б. В каком классе учился ребенок? <small class="mb-1 block italic text-red-500">ПОСТАВЬТЕ 0 ( НОЛЬ)
+                        ДЛЯ ПОДГОТОВИТЕЛЬНОЙ ГРУППЫ</small>
+                </div>
                 <div>
                     <input type="text" id="qeduc2b" name="qeduc2b"
                         class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
@@ -3875,7 +3875,6 @@
                 <div>
                     SCH2. В каком классе сейчас учится ребенок? <small class="block italic mt-2">ПОСТАВЬТЕ 0 ( НОЛЬ) ДЛЯ
                         ПОДГОТОВИТЕЛЬНОЙ ГРУППЫ</small>
-                    <small class="block italic mt-2">ЗАПОЛНИТЕ, ЕСЛИ КЛАСС&gt;=8, ЛИБО ПЕРЕХОДИТЕ К CEDU</small>
                 </div>
                 <div>
                     <input type="text" id="sch2" name="sch2"
@@ -5082,10 +5081,7 @@
 
             <div class="grid grid-cols-2 gap-4 items-center mt-10">
                 <div>
-                    <small class="mt-2 block italic text-red-500">ЕСЛИ В LK22_2 ОТМЕЧЕНО ПСИХИЧЕСКОЕ
-                        РАССТРОЙСТВО</small>
-                    LK22-2m. Согласно справке по инвалидности, какая степень психического расстройства у ребенка?
-                </div>
+                    LK22-2m. Согласно справке по инвалидности, какая степень психического расстройства у ребенка? </div>
                 <div class="col-span-1 flex flex-col gap-2">
                     <div class="flex items-center">
                         <input id="lk22_2m-1" type="radio" value="1" name="lk22_2m"
@@ -6555,7 +6551,7 @@
                     <div class="flex items-center">
                         <input id="sk3-3" type="radio" value="3" name="sk3"
                             class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                        <label for="sk3-3" class="ms-2 text-sm text-gray-900">3. Ни братья, ни сестры</label>
+                        <label for="sk3-3" class="ms-2 text-sm text-gray-900">3. Hи брата ни сестры</label>
                     </div>
                     <div class="flex items-center">
                         <input id="sk3-4" type="radio" value="9" name="sk3"
@@ -6915,6 +6911,7 @@
                 </div>
             </div>
         </form>
+
         <footer id="footer" class="fixed bottom-0 w-full h-12 bg-slate-200 shadow">
             <div class="flex justify-center h-full items-center">
 

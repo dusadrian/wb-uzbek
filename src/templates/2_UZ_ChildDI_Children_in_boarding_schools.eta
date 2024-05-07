@@ -268,11 +268,11 @@
                 </div>
                 <div class="flex items-center">
                     <input id="lk15-4" type="radio" value="4" name="lk15" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="lk15-4" class="ms-2 text-sm text-gray-900">4. Other staff of the institution</label>
+                    <label for="lk15-4" class="ms-2 text-sm text-gray-900"><%= it.t88_4 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="lk15-5" type="radio" value="5" name="lk15" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="lk15-5" class="ms-2 text-sm text-gray-900">5. Another state employee </label>
+                    <label for="lk15-5" class="ms-2 text-sm text-gray-900"><%= it.t88_5 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="lk15-6" type="radio" value="6" name="lk15" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
@@ -1649,7 +1649,7 @@
             </div>
         </div>
 
-        <p class="mt-10 italic text-red-500"><%= it.t456 %></p>
+        <% /* <p class="mt-10 italic text-red-500"><%= it.t456 %></p> */ %>
 
         <h3 class="text-xl font-semibold bg-gray-100 px-2 py-1 text-gray-700 mt-10"><%= it.t457 %></h3>
 
@@ -2308,7 +2308,10 @@
         </div>
 
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
-            <div><%= it.t624 %></div>
+            <div>
+                <%= it.t624 %>
+                <small class="mb-1 block italic text-red-500"><%= it.t624_instruction %></small>
+            </div>
             <div>
                 <input type="text" id="qeduc2b" name="qeduc2b" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
             </div>
@@ -3170,7 +3173,7 @@
             <div>
                 <%= it.t808 %>. <%= it.t809 %>
                 <small class="block italic mt-2"><%= it.t810_0 %></small>
-                <small class="block italic mt-2"><%= it.t810 %></small>
+                <% /* <small class="block italic mt-2"><%= it.t810 %></small> */ %>
             </div>
             <div>
                 <input type="text" id="sch2" name="sch2" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 disabled:bg-gray-100" />
@@ -4151,7 +4154,7 @@
 
         <div class="grid grid-cols-2 gap-4 items-center mt-10">
             <div>
-                <small class="mt-2 block italic text-red-500"><%= it.t892 %></small>
+                <% /* <small class="mt-2 block italic text-red-500"><%= it.t892 %></small> */ %>
                 <%= it.t893 %>. <%= it.t894 %>
             </div>
             <div class="col-span-1 flex flex-col gap-2">
