@@ -1,10 +1,10 @@
 {
-    "inputclass":    "bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full",
+    "inputclass":    "bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5",
     "valueclass":    "w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200",
-    "cbclass":       "w-4 h-4 text-blue-600 border-gray-400 rounded focus:ring-blue-500 disabled:bg-gray-100",
+    "cbclass":       "w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-100 rounded",
     "labelclass":    "ms-2 text-sm text-gray-900",
     "divclass":      "grid grid-cols-2 gap-4 items-center",
-    "selectclass":   "disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5",
+    "selectclass":   "disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full",
     "smallclass":    "my-2 block italic text-red-500",
     "h2class":       "mt-10 mb-4 text-2xl font-bold text-gray-700",
     "h3class":       "mt-10 text-xl font-semibold bg-gray-100 px-2 py-1 text-gray-700"
