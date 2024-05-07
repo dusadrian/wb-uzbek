@@ -576,28 +576,44 @@ const goToInstrument = (instrument: string, id: string) => {
 const institutionDetails = () => {
     const newPage = path.join(__dirname, "../src/pages/local/02_institution_details.html");
     mainWindow.loadURL("file://" + newPage);
-    mainWindow.webContents.once("did-finish-load", () => {
-        mainWindow.webContents.send("institutionDetails", appSession.institutionDetails);
+    database.getInstitutionDetails(appSession.userData.institution_code, appSession.userData.service_type_code).then((result) => {
+        mainWindow.webContents.once("did-finish-load", () => {
+            mainWindow.webContents.send("institutionDetails", result[0]);
+        });
     });
 }
-ipcMain.on('getRegionDistrict', (event, args) => {
-    // TODO get from DB
-    console.log(args);
-    mainWindow.webContents.send('regionDistrict', {
-        'region': 'Tashkent',
-        'district': 'Yunusabad'
-    });
-});
 
 // Institution update
-ipcMain.on('saveInstitutionDetails', (event, args) => {
-    console.log(args);
-    database.saveInstitutionDetails(args).then(() => {
+ipcMain.on('updateInstitutionDetails', (event, args) => {
+
+    if (!args.auth_code || args.auth_code === '') {
         dialog.showMessageBox(mainWindow, {
-            type: 'info',
-            message: i18n.__('Institution details saved.'),
-        }).then(() => {
-            goToDashboard();
+            type: 'warning',
+            message: i18n.__('Authorization code missing.'),
+        });
+        return;
+    }
+
+    database.checkAuthCode(appSession.userData.institution_code, args.auth_code).then((result) => {
+
+        if (result.length === 0) {
+            dialog.showMessageBox(mainWindow, {
+                type: 'warning',
+                message: i18n.__('Invalid authorization code.'),
+            });
+            return;
+        }
+
+        database.saveInstitutionDetails(args, appSession.userData.service_type_code).then(() => {
+            // set auth code as used
+            database.updateAuthCode(appSession.userData.institution_code, args.auth_code).then(() => {
+                dialog.showMessageBox(mainWindow, {
+                    type: 'info',
+                    message: i18n.__('Institution details saved.'),
+                }).then(() => {
+                    goToDashboard();
+                });
+            });
         });
     });
 });

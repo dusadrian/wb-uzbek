@@ -83,3 +83,9 @@ export interface DataExportInterface {
     variable: string;
     value: string;
 }
+
+export interface AuthCode {
+    institution_code: string;
+    code: string;
+    used: boolean;
+}

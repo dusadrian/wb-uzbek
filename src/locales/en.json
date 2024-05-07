@@ -79,7 +79,7 @@
 	"t_institution_type_option_26_value": "26",
 	"t_children": "Number of children placed in the service",
 	"t_staff": "Number of staff working in the service",
-	"t_capacity": "Number of staff working in the service",
+	"t_capacity": "Institution capacity",
 	"t_employees": "Number of staff working in the service",
 	"t_leavers": "Number of young people who left the care system",
 	"t_no_patronat": "Number of",
@@ -194,5 +194,11 @@
 	"The following fields are mandatory: J1!": "The following fields are mandatory: J1!",
 	"Some instruments are not allowed to be imported. Please check the file and try again.": "Some instruments are not allowed to be imported. Please check the file and try again.",
 	"Пожалуйста заполните все поля": "Пожалуйста заполните все поля",
-	"t_user_type": "Type of user"
+	"t_user_type": "Type of user",
+	"t_children_fth": "Children in Family-Type Home",
+	"t_fth": "Family-Type Home",
+	"t_leavers_fth": "Young person leaving the child care system",
+	"t_pf": "Patronat Family",
+	"t_auth_code": "Authorization code",
+	"Invalid authorization code.": "Invalid authorization code."
 }

@@ -96,23 +96,32 @@ export const database = {
         });
         return await connection;
     },
-    saveInstitutionDetails: async (institution: DI.Institution) => {
+    getInstitutionDetails: async (code: string, service_type_code: string) => {
+        const connection = new Promise<Array<DI.Institution>>((resolve) => {
+            let sql = `SELECT * FROM institutions WHERE code = '${code}'`;
+            if(service_type_code == '9') {
+                sql = `SELECT * FROM inson WHERE code = '${code}'`;
+            }
+
+            db.all(sql, (error, result) => {
+                if (error) {
+                    console.log(error);
+                }
+                resolve(result as DI.Institution[]);
+            });
+        });
+        return await connection;
+    },
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    saveInstitutionDetails: async (institution: any, type: string) => {
         const connection = new Promise<boolean>((resolve) => {
-            db.run(`
-                UPDATE institutions SET
-                    code = '${institution.code}',
-                    name = '${institution.name}',
-                    type = '${institution.type}',
-                    address = '${institution.address}',
-                    region = '${institution.region}',
-                    district = '${institution.district}',
-                    capacity = '${institution.capacity}',
-                    children = '${institution.children}'
-                    leavers = '${institution.leavers}'
-                    employees = '${institution.employees}',
-                    inson = '${institution.inson}',
-                WHERE id = '${institution.id}'
-            `, (error) => {
+
+            let sql = `UPDATE institutions SET capacity = '${institution.capacity}', children = '${institution.children}', leavers = '${institution.leavers}', employees = '${institution.employees}' WHERE id = '${institution.id}' AND uuid = '${institution.uuid}';`;
+            
+            if(type == '9') { // INSON
+                sql = `UPDATE inson SET pf = '${institution.pf}', fth = '${institution.fth}', children_fth = '${institution.children_fth}', leavers_fth = '${institution.leavers_fth}' WHERE id = '${institution.id}' AND uuid = '${institution.uuid}';`;
+            }
+            db.run(sql, (error) => {
                 if (error) {
                     console.log(error);
                 }
@@ -134,6 +143,30 @@ export const database = {
         });
         return await connection;
     },
+
+    checkAuthCode: async (institution_code: string, auth_code: string) => {
+        const connection = new Promise<Array<DI.AuthCode>>((resolve) => {
+            db.all(`SELECT * FROM auth_codes WHERE code = '${auth_code}' AND institution_code = '${institution_code}' AND used = false`, (error, result) => {
+                if (error) {
+                    console.log(error);
+                }
+                resolve(result as DI.AuthCode[]);
+            });
+        });
+        return await connection;
+    },
+    updateAuthCode: async (institution_code: string, auth_code: string) => {
+        const connection = new Promise<boolean>((resolve) => {
+            db.run(`UPDATE auth_codes SET used = true WHERE code = '${auth_code}' AND institution_code = '${institution_code}'`, (error) => {
+                if (error) {
+                    console.log(error);
+                }
+                resolve(true);
+            });
+        });
+        return await connection;
+    },
+
     // TODO -- this does not work anymore
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     addUser: async (user: any) => {
