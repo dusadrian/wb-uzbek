@@ -1894,7 +1894,7 @@
 
         <!-- CAREGIVER -->
         <h3 class="text-xl mt-10 mb-2 font-semibold bg-gray-100 px-2 py-1 text-gray-700"><%= it.t441 %></h3>
-        <small class="block italic text-red-500"><%= it.t442 %></small>
+        <% /* <small class="block italic text-red-500"><%= it.t442 %></small> */ %>
 
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
             <div>
@@ -2040,15 +2040,15 @@
         </div>
 
         <div class="grid grid-cols-2 gap-4 items-center mt-6">
-            <div class="col-span-1">CGAD. At the time of the child's entry into the childcare system, was the caregiver alive or deceased?</div>
+            <div class="col-span-1">CGAD. <%= it.tcgad_1 %></div>
             <div class="col-span-1 flex gap-4">
                 <div class="flex items-center">
                     <input id="cgad-1" type="radio" value="1" name="cgad" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="cgad-1" class="ms-2 text-sm text-gray-900">1. Alive</label>
+                    <label for="cgad-1" class="ms-2 text-sm text-gray-900"><%= it.tcgad_2 %></label>
                 </div>
                 <div class="flex items-center">
                     <input id="cgad-2" type="radio" value="0" name="cgad" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="cgad-2" class="ms-2 text-sm text-gray-900">2. Deceased</label>
+                    <label for="cgad-2" class="ms-2 text-sm text-gray-900"><%= it.tcgad_3 %></label>
                 </div>
             </div>
         </div>
@@ -2142,7 +2142,7 @@
                 </div>
                 <div class="flex items-center">
                     <input id="cg5b-90" type="radio" value="90" name="cg5b" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                    <label for="cg5b-90" class="ms-2 text-sm text-gray-900">90. Deceased</label>
+                    <label for="cg5b-90" class="ms-2 text-sm text-gray-900"><%= it.t497_1 %></label>
                 </div>
             </div>
         </div>
@@ -5462,7 +5462,7 @@
         <h2 class="mt-10 mb-4 text-2xl font-bold text-gray-700"><%= it.t1185 %></h2>
 
         <div class="grid grid-cols-2 gap-4 items-center mt-10">
-            <div class="ml-3">
+            <div>
                 <%= it.t1186 %>. <%= it.t1187 %>
                 <small class="my-2 block italic text-red-500"><%= it.t1188 %></small>
             </div>
@@ -5479,7 +5479,7 @@
         </div>
 
         <div class="grid grid-cols-2 gap-4 items-center mt-10">
-            <div class="ml-3">
+            <div>
                 <%= it.t1192 %>. <%= it.t1193 %>
             </div>
             <div class="col-span-1 flex flex-col gap-2">
@@ -5503,7 +5503,7 @@
         </div>
 
         <div class="grid grid-cols-2 gap-4 items-center mt-10">
-            <div class="ml-3">
+            <div>
                 <%= it.t1198 %>. <%= it.t1199 %>
             </div>
             <div class="col-span-1 flex flex-col gap-2">
