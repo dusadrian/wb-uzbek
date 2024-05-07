@@ -1,5 +1,4 @@
-import { instrument1 } from './../instruments/01_cpis_instrument';
-import { app, ipcRenderer } from "electron";
+import { ipcRenderer } from "electron";
 import { User } from "../../interfaces/database";
 import { StatusInterface } from "../../interfaces/database";
 interface IObj {
@@ -9,6 +8,9 @@ interface IObj {
 }
 
 const initInstruments = (userData: User, institutionDetails: any) => {
+
+    console.log(institutionDetails);
+    
 
     // get ID for instruments 4 and 6 -- QMR and DSEE
     if (userData.role_code == '4' || userData.role_code == '1') {
@@ -109,6 +111,7 @@ const initInstruments = (userData: User, institutionDetails: any) => {
                 });
             });
         }
+        document.getElementById('t1c51').innerText = institutionDetails.leavers_fth;
         document.getElementById('t1c61').innerText = institutionDetails.leavers_fth;
     }
     // I6. Data sheet on entries and exits from childcare institutions
