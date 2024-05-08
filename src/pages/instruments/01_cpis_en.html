@@ -106,7 +106,7 @@
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
                 <div class="col-span-1">OMR8. Does the person work in the service where the child is currently placed?</div>
                 <div>
-                    <select id="omr8" name="omr8" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full">
+                    <select id="omr8a" name="omr8a" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full">
                         <option value="1">1. Yes</option>
                         <option value="2">2. No</option>
                     </select>
@@ -116,7 +116,7 @@
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
                 <div>OMR9. Name of the institution where the person works</div>
                 <div>
-                    <input type="text" id="omr9" name="omr9" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
+                    <input type="text" id="omr8" name="omr8" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
                 </div>
             </div>
 
@@ -179,6 +179,11 @@
 
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
                 <div>LK14a. Place of birth</div>
+                <div class="flex items-center">
+                    <input type="checkbox" id="lk14a_out" name="lk14a_out" value="8" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-100 rounded">
+                    <label for="lk14a_out" class="ms-2 text-sm text-gray-900">8. Child was born outside of the country</label>
+                </div>
+                <div></div>
                 <div class="flex items-center">
                     <input type="checkbox" id="lk14a_dk" name="lk14a_dk" value="9" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-100 rounded">
                     <label for="lk14a_dk" class="ms-2 text-sm text-gray-900">9. Not known</label>
@@ -401,6 +406,11 @@
 
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
                 <div>CM3a. Place of birth</div>
+                <div class="flex items-center">
+                    <input type="checkbox" id="cm3a_out" name="cm3a_out" value="8" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-100 rounded">
+                    <label for="cm3a_out" class="ms-2 text-sm text-gray-900">8. Mother was born outside of the country</label>
+                </div>
+                <div></div>
                 <div class="flex items-center">
                     <input type="checkbox" id="cm3a_dk" name="cm3a_dk" value="9" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-100 rounded">
                     <label for="cm3a_dk" class="ms-2 text-sm text-gray-900">9. Not known</label>
@@ -1065,7 +1075,7 @@
                     </div>
                     <div class="flex items-center">
                         <input type="radio" id="ct1a-4" name="ct1a" value="4" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                        <label for="ct1a-4" class="ms-2 text-sm text-gray-900">4. Known, but paternity is not established</label>
+                        <label for="ct1a-4" class="ms-2 text-sm text-gray-900">4. Known, but paternity was not established</label>
                     </div>
                 </div>
             </div>
@@ -1100,6 +1110,10 @@
                     <div class="flex items-center">
                         <input type="radio" id="ct1c-3" name="ct1c" value="3" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="ct1c-3" class="ms-2 text-sm text-gray-900">3. Known, deceased</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input type="radio" id="ct1c-4" name="ct1c" value="4" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <label for="ct1c-4" class="ms-2 text-sm text-gray-900">4. Known, but paternity is not established</label>
                     </div>
                 </div>
             </div>
@@ -1188,6 +1202,11 @@
 
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
                 <div>CT3a. Place of birth</div>
+                <div class="flex items-center">
+                    <input type="checkbox" id="ct3a_out" name="ct3a_out" value="8" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-100 rounded">
+                    <label for="ct3a_out" class="ms-2 text-sm text-gray-900">8. Father was born outside of the country</label>
+                </div>
+                <div></div>
                 <div class="flex items-center">
                     <input type="checkbox" id="ct3a_dk" name="ct3a_dk" value="9" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-100 rounded">
                     <label for="ct3a_dk" class="ms-2 text-sm text-gray-900">9. Not known</label>
@@ -2697,10 +2716,10 @@
                         <label for="sa4_8" class="ms-2 text-sm text-gray-900">8. The poverty of parents that prevents them from raising the child.</label>
                     </div>
                     <div class="flex items-center">
-                        <input type="checkbox" id="sa4_9" name="sa4_9" value="9" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                        <label for="sa4_9" class="ms-2 text-sm text-gray-900">9. Additional causes (please specify): …</label>
+                        <input type="checkbox" id="sa4_10" name="sa4_10" value="9" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <label for="sa4_10" class="ms-2 text-sm text-gray-900">9. Additional causes (please specify): …</label>
                     </div>
-                    <input type="text" id="sa4_9_other" name="sa4_9_other" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
+                    <input type="text" id="sa4_10_other" name="sa4_10_other" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
                 </div>
             </div>
 
@@ -3237,8 +3256,8 @@
                         <label for="qeduc2-2" class="ms-2 text-sm text-gray-900">2. No</label>
                     </div>
                     <div class="flex items-center">
-NA
-                        <label for="qeduc2-7" class="ms-2 text-sm text-gray-900">7. Not applicable, the child was below 7 years of age</label>
+                        <input type="radio" id="qeduc2-3" name="qeduc2" value="7" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <label for="qeduc2-3" class="ms-2 text-sm text-gray-900">7. Not applicable, the child was below 7 years of age</label>
                     </div>
                 </div>
             </div>

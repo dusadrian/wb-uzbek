@@ -191,5 +191,6 @@
     "Please fill in all fields": "Please fill in all fields",
     "Error": "Error",
     "main._dataDownloadedError": "Error. No folder selected!",
-    "t_user_type": "Тип пользователя"
+    "t_user_type": "Тип пользователя",
+	"must_be_earlier": "Дата в X должна быть раньше, чем Y"
 }

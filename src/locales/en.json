@@ -200,5 +200,6 @@
 	"t_leavers_fth": "Young person leaving the child care system",
 	"t_pf": "Patronat Family",
 	"t_auth_code": "Authorization code",
-	"Invalid authorization code.": "Invalid authorization code."
+	"Invalid authorization code.": "Invalid authorization code.",
+	"must_be_earlier": "X must be earlier than Y"
 }

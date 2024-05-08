@@ -49,6 +49,103 @@ let regionCode = '';
 let userUUID = '';
 let institutionType = '';
 
+const qeduc2 = util.radioIDs("qeduc2");
+
+function check_sa1a(value: string) {
+    instrument.questions["qeduc2"].readonly = false;
+    qeduc2.forEach((item) => {
+        const elem = util.htmlElement(item);
+        elem.disabled = false;
+        elem.dataset['skip'] = 'false';
+        if (Number(value) > 7 && item == "qeduc2-3") {
+            elem.checked = false;
+        }
+    })
+
+    if (Number(value) >= 3 && Number(value) < 7) {
+
+        qeduc2.forEach((item) => {
+            const elem = util.htmlElement(item);
+            elem.disabled = true;
+            elem.dataset['skip'] = 'true';
+        })
+        util.htmlElement("qeduc2-3").checked = true;
+
+        instrument.questions["qeduc2"].value = "3";
+        instrument.questions["qeduc2"].readonly = true;
+
+    } else if (Number(value) >= 7) {
+        const elem = util.htmlElement("qeduc2-3");
+        elem.checked = false;
+        elem.dataset['skip'] = "true";
+        elem.disabled = true;
+
+        if (instrument.questions.qeduc2.value == "7") {
+            instrument.questions.qeduc2.value = "-9";
+        }
+    }
+}
+
+const cm1a = util.radioIDs("cm1a");
+const cm1c = util.radioIDs("cm1c");
+
+function check_cm1(value: string) {
+    instrument.questions["cm1c"].readonly = false;
+    cm1c.forEach((item) => {
+        const elem = util.htmlElement(item);
+        elem.disabled = false;
+        elem.dataset['skip'] = 'false';
+    })
+
+    if (Number(value) == 1 || Number(value) == 2) {
+        const elem = util.htmlElement("cm1c-1");
+        elem.checked = false;
+        elem.disabled = true;
+        elem.dataset['skip'] = 'true';
+    } else if (Number(value) == 3) {
+        cm1c.forEach((item) => {
+            const elem = util.htmlElement(item);
+            elem.disabled = true;
+            elem.dataset['skip'] = 'true';
+        })
+        util.htmlElement("cm1c-3").checked = true;
+
+        instrument.questions["cm1c"].value = "3";
+        instrument.questions["cm1c"].readonly = true;
+    }
+}
+
+
+const ct1a = util.radioIDs("ct1a");
+const ct1c = util.radioIDs("ct1c");
+
+function check_ct1(value: string) {
+    instrument.questions["ct1c"].readonly = false;
+    ct1c.forEach((item) => {
+        const elem = util.htmlElement(item);
+        elem.disabled = false;
+        elem.dataset['skip'] = 'false';
+    })
+
+    if (value == "2" || value == "4") {
+        const elem = util.htmlElement("ct1c-1");
+        elem.checked = false;
+        elem.disabled = true;
+        elem.dataset['skip'] = 'true';
+    } else if (instrument.questions["ct1a"].value == "3") {
+        ct1c.forEach((item) => {
+            const elem = util.htmlElement(item);
+            elem.disabled = true;
+            elem.dataset['skip'] = 'true';
+        })
+        util.htmlElement("ct1c-3").checked = true;
+
+        instrument.questions["ct1c"].value = "3";
+        instrument.questions["ct1c"].readonly = true;
+    }
+}
+
+
 export const instrument1 = {
     init: async () => {
 
@@ -272,6 +369,18 @@ export const instrument1 = {
                     // de change pe district populeaza settlement-ul
                     // trigger change event
                     instrument.seteazaValoareElement(item.variable, item.value, index >= 0);
+
+                    if (item.variable == "qeduc2") {
+                        check_sa1a(instrument.questions.sa1a.value);
+                    }
+
+                    if (item.variable == "cm1c") {
+                        check_cm1(instrument.questions.cm1a.value);
+                    }
+
+                    if (item.variable == "ct1c") {
+                        check_ct1(instrument.questions.ct1a.value);
+                    }
                 }
             }
 
@@ -285,8 +394,8 @@ export const instrument1 = {
                     institution_name = insons[institution_code].name;
                     util.setValue('reg', insons[institution_code].region);
                     util.setValue('dis', insons[institution_code].district);
-                    util.setValue('omr8', "2");
-                    util.setValue("omr9", insons[institution_code].name ? insons[institution_code].name : "--");
+                    util.setValue('omr8a', "2");
+                    util.setValue("omr8", insons[institution_code].name ? insons[institution_code].name : "--");
                 }
                 else {
                     institution_name = services[institution_code].name;
@@ -296,8 +405,8 @@ export const instrument1 = {
                         util.setValue("sh5s", services[institution_code].settlement);
                     }
                     util.setValue("sh5", institution_code);
-                    util.setValue('omr8', "1");
-                    util.setValue("omr9", institution_name);
+                    util.setValue('omr8a', "1");
+                    util.setValue("omr8", institution_name);
                 }
 
                 util.setValue('omr1', args.userData.name ? args.userData.name : "--");
@@ -422,63 +531,19 @@ function check_lk22_2(): boolean {
 util.listen(lk22_2, "myChange", check_lk22_2);
 
 
-util.listen(util.radioIDs("cm1a"), "myChange", () => {
-    if (instrument.questions["cm1a"].value == "3") {
-        util.htmlElement('cm1c-1').checked = false;
-        util.htmlElement('cm1c-2').checked = false;
-        util.htmlElement("cm1c-3").checked = true;
-    }
+
+util.listen(cm1a, "myChange", () => {
+    check_cm1(instrument.questions["cm1a"].value);
+    util.trigger("cm1b-1", "change");
 })
 
-const cm1c = util.radioIDs("cm1c");
-util.listen(cm1c, "myChange", () => {
-    const message = translations['no_unknown'];
 
-    errorHandler.removeError(cm1c, message);
-    if (
-        instrument.questions["cm1a"].value == "2" &&
-        instrument.questions["cm1c"].value == "1"
-    ) {
-        errorHandler.addError(cm1c, message);
-        util.focus(cm1c[0]);
-    }
-})
 
-const ct1a = util.radioIDs("ct1a");
 util.listen(ct1a, "myChange", () => {
-    instrument.questions["ct1c"].skip = false;
-    util.htmlElement('ct1c-1').disabled = false;
-    util.htmlElement('ct1c-2').disabled = false;
-    util.htmlElement("ct1c-3").disabled = false;
-    if (instrument.questions["ct1a"].value == "3") {
-        util.htmlElement('ct1c-1').checked = false;
-        util.htmlElement('ct1c-2').checked = false;
-        util.htmlElement("ct1c-3").checked = true;
-        util.htmlElement('ct1c-1').disabled = true;
-        util.htmlElement('ct1c-2').disabled = true;
-        util.htmlElement("ct1c-3").disabled = true;
-        instrument.questions["ct1c"].value = "3";
-        instrument.questions["ct1c"].skip = true;
-    }
+    check_ct1(instrument.questions["ct1a"].value);
+    util.trigger("ct1b-1", "change");
 })
 
-const ct1c = util.radioIDs("ct1c");
-
-util.listen([...ct1a, ...ct1c], "myChange", () => {
-    const message = translations['no_unknown'];
-    errorHandler.removeError(ct1c, message);
-    if (
-        (
-            instrument.questions["ct1a"].value == "4" ||
-            instrument.questions["ct1a"].value == "2"
-        ) &&
-        instrument.questions["ct1c"].value == "1"
-    ) {
-        errorHandler.addError(ct1c, message);
-        util.focus(ct1c[0]);
-        util.blur(ct1c[0]);
-    }
-})
 
 util.listen("lk3", "myChange", () => {
     if (instrument.questions.lk3.value != "-9") {
@@ -491,51 +556,32 @@ util.listen("lk3", "myChange", () => {
         util.trigger("sa1", "change");
         util.focus("lk14a_dk");
         util.blur("lk14a_dk");
-
-        if (instrument.questions.cg1c.value != "-9") {
-            const startdate = util.standardDate(util.htmlElement("lk3").value);
-            const enddate = util.standardDate(util.htmlElement("cg1c").value);
-            const message = "CG1c >= LK3";
-            errorHandler.removeError(["lk3", "cg1c"], message);
-            if (startdate > enddate) {
-                errorHandler.addError(["lk3", "cg1c"], message);
-            }
-        }
     }
 });
 
-util.listen("cg1c", "myChange", () => {
-    if (instrument.questions.cg1c.value != "-9") {
+const lk3cg1 = ["lk3", "cg1c"];
+util.listen(lk3cg1, "myChange", () => {
+    if (util.inputsHaveValue(lk3cg1)) {
+        const startdate = util.standardDate(util.htmlElement("lk3").value);
         const enddate = util.standardDate(util.htmlElement("cg1c").value);
-
-        if (instrument.questions.lk3.value != "-9") {
-            const startdate = util.standardDate(util.htmlElement("lk3").value);
-            const message = "CG1c >= LK3";
-            errorHandler.removeError(["lk3", "cg1c"], message);
-            if (startdate > enddate) {
-                errorHandler.addError(["lk3", "cg1c"], message);
-            }
-        }
-
-        if (instrument.questions.cg3b.value != "-9") {
-            const startdate = util.standardDate(util.htmlElement("cg3b").value);
-            const message = "CG1c >= CG3b";
-            errorHandler.removeError(["cg1c", "cg3b"], message);
-            if (startdate > enddate) {
-                errorHandler.addError(["cg1c", "cg3b"], message);
-            }
+        const message = "CG1c >= LK3";
+        errorHandler.removeError(lk3cg1, message);
+        if (startdate > enddate) {
+            errorHandler.addError(lk3cg1, message);
         }
     }
 })
 
-util.listen("cg3b", "myChange", () => {
-    if (util.inputsHaveValue(["cg3b", "cg1c"])) {
+
+const cg1cg3 = ["cg3b", "cg1c"];
+util.listen(cg1cg3, "myChange", () => {
+    if (util.inputsHaveValue(cg1cg3)) {
         const startdate = util.standardDate(util.htmlElement("cg3b").value);
         const enddate = util.standardDate(util.htmlElement("cg1c").value);
         const message = "CG1c >= CG3b";
-        errorHandler.removeError(["cg1c", "cg3b"], message);
+        errorHandler.removeError(cg1cg3, message);
         if (startdate > enddate) {
-            errorHandler.addError(["cg1c", "cg3b"], message);
+            errorHandler.addError(cg1cg3, message);
         }
     }
 });
@@ -549,24 +595,25 @@ util.listen("sa1", "myChange", () => {
         )
 
         if (!Number.isNaN(age)) {
-            util.setValue("sa1a", age.toString());
+            const message = "SA1 must be later than or equal to LK3";
+            errorHandler.removeError("sa1", message);
+
+            if (age >= 0) {
+                util.setValue("sa1a", age.toString());
+            } else if (age < 0) {
+                if (age < 0) {
+                    util.htmlElement("sa1a").value = "";
+                    instrument.questions.sa1a.value = "-9";
+                    errorHandler.addError("sa1", message);
+                }
+            }
         }
     }
 });
 
-const qeduc2 = util.radioIDs("qeduc2");
-util.listen([...qeduc2, "sa1a"], "myChange", () => {
-    const qeduc = Number(instrument.questions["qeduc2"].value);
-    if (qeduc > 0) {
-        const age = Number(instrument.questions["sa1a"].value);
-        const message = translations["child_under_7"];
-
-        errorHandler.removeError(qeduc2, message);
-        if (age < 7 && qeduc < 7) {
-            errorHandler.addError(qeduc2, message);
-        }
-    }
-})
+util.listen("sa1a", "myChange", () => {
+    check_sa1a(instrument.questions["sa1a"].value);
+});
 
 
 // util.listen(['qhouse4a', 'qhouse4b'], "myChange", () => {
@@ -607,6 +654,18 @@ util.listen("sh1", "myChange", () => {
     }
     else {
         instrument.questions["sh1"].value = sh1value.toString();
+        if (sh1value == 0) {
+            util.setValue("sh3_csa", util.htmlElement("sa1").value);
+            util.htmlElement("sh3_s1a").value = "";
+        } else {
+            util.setValue("sh3_s1a", util.htmlElement("sa1").value);
+            if (util.htmlElement("sa1").value == util.htmlElement("sh3_csa").value) {
+                util.htmlElement("sh3_csa").value = "";
+                util.htmlElement("sh3_csf").value = "";
+                instrument.questions.sh3_csa.value = "-9";
+                instrument.questions.sh3_csf.value = "-9";
+            }
+        }
     }
 
     // dupa ce dispare eroarea, mai trebuie facut un dispatch change pe orice element
@@ -653,14 +712,17 @@ sh3_start_dates.forEach((startel) => {
                     instrument.questions[timespent].value = monthdiff;
 
                     let totalmonths = 0;
-                    [...sh3_start_dates].forEach((item) => {
+                    sh3_start_dates.forEach((item) => {
                         const nofmonths = Number(instrument.questions[item.replace("a", "f")].value);
                         if (nofmonths > 0) {
+                            console.log(nofmonths)
                             totalmonths += nofmonths;
                         }
                     });
 
-                    util.setValue("sh4", totalmonths.toString());
+                    // util.setValue("sh4", totalmonths.toString());
+                    util.htmlElement("sh4").value = totalmonths.toString();
+                    instrument.questions.sh4.value = totalmonths.toString();
                 }
             }
         }
@@ -685,12 +747,47 @@ sh3_start_dates.forEach((startel) => {
                 if (nofmonths > 0) {
                     totalmonths += nofmonths;
                 }
-                console.log(item.replace("a", "f"), nofmonths, totalmonths);
             });
 
             util.setValue("sh4", totalmonths.toString());
         });
     }
+
+});
+
+sh3_end_dates.forEach((startel) => {
+    const index = sh3_end_dates.indexOf(startel);
+    const start = util.htmlElement(startel);
+
+    const endel = sh3_start_dates[index + 1];
+    const end = util.htmlElement(endel);
+
+    const check = function () {
+        const startdate = util.standardDate(start.value);
+        if (util.inputsHaveValue([startel, endel])) {
+            const enddate = util.standardDate(end.value);
+
+            const message = translations['must_be_earlier'].
+                replace("X", startel.toUpperCase()).
+                replace("Y", endel.toUpperCase());
+
+            errorHandler.removeError([startel, endel], message);
+
+            if (startdate > enddate) {
+                errorHandler.addError([startel, endel], message);
+                instrument.questions[startel].value = '-9';
+                instrument.questions[endel].value = '-9';
+            }
+            else {
+                instrument.questions[startel].value = start.value;
+                instrument.questions[endel].value = end.value;
+            }
+        }
+    }
+
+    util.listen(startel, "myChange", check);
+    util.listen(endel, "myChange", check);
+
 
 });
 
@@ -724,17 +821,39 @@ ewm.forEach((el) => {
     });
 });
 
-const cmgt1a = util.htmlElement('cmgt1a');
-cmgt1a.addEventListener("myChange", function () {
+const cmgtsa = ["cmgt1a", "sa1"];
+cmgtsa.forEach((item) => {
+    util.listen(item, "myChange", () => {
 
-    const months = util.diffDates(
-        util.standardDate(instrument.questions.cmgt1a.value),
-        new Date("2024-05-01"),
-        "months"
-    )
+        if (item == "cmgt1a") {
+            const months = util.diffDates(
+                util.standardDate(instrument.questions.cmgt1a.value),
+                new Date("2024-05-01"),
+                "months"
+            )
 
-    util.setValue("cmgt1b", months.toString());
-});
+            util.setValue("cmgt1b", months.toString());
+        }
+
+        if (util.inputsHaveValue(cmgtsa)) {
+            const cmgt1a = util.htmlElement("cmgt1a").value;
+            const sa1 = util.htmlElement("sa1").value;
+            instrument.questions['cmgt1a'].value = cmgt1a;
+            instrument.questions['sa1'].value = sa1;
+
+            const message = translations['must_be_earlier'].replace("X", "SA1").replace("Y", "CMGT1A");
+
+            errorHandler.removeError(cmgtsa, message);
+
+            if (util.standardDate(cmgt1a) > util.standardDate(sa1)) {
+                errorHandler.addError(cmgtsa, message);
+                instrument.questions['cmgt1a'].value = '-9';
+                instrument.questions['sa1'].value = '-9';
+            }
+        }
+    });
+
+})
 
 
 const sk3 = ["sk3_1", "sk3_2"]
@@ -821,3 +940,75 @@ util.listen("sh5", "change", () => {
         }
     }
 })
+
+const lk3cm3 = ["lk3", "cm3"];
+util.listen(lk3cm3, "change", () => {
+    if (util.inputsHaveValue(lk3cm3)) {
+        const mother = util.standardDate(util.htmlElement("cm3").value);
+        const child = util.standardDate(util.htmlElement("lk3").value);
+        const message = "CM3 < LK3";
+
+        errorHandler.removeError(lk3cm3, message);
+        if (mother >= child) {
+            errorHandler.addError(lk3cm3, message);
+
+        }
+    }
+})
+
+const lk3ct3 = ["lk3", "ct3"];
+util.listen(lk3ct3, "change", () => {
+    if (util.inputsHaveValue(lk3ct3)) {
+        const mother = util.standardDate(util.htmlElement("ct3").value);
+        const child = util.standardDate(util.htmlElement("lk3").value);
+        const message = "CT3 < LK3";
+
+        errorHandler.removeError(lk3ct3, message);
+        if (mother >= child) {
+            errorHandler.addError(lk3ct3, message);
+
+        }
+    }
+})
+
+util.listen("cm3a_out", "myChange", () => {
+    if (Number(instrument.questions.cm3a_out.value) > 0) {
+        util.htmlElement("cm3a_dk").checked = false;
+        instrument.questions.cm3a_dk.value = "0";
+    }
+});
+
+util.listen("lk14a_out", "myChange", () => {
+    if (Number(instrument.questions.lk14a_out.value) > 0) {
+        util.htmlElement("lk14a_dk").checked = false;
+        instrument.questions.lk14a_dk.value = "0";
+    }
+});
+
+util.listen("lk14a_dk", "myChange", () => {
+    if (Number(instrument.questions.lk14a_dk.value) > 0) {
+        util.htmlElement("lk14a_out").checked = false;
+        instrument.questions.lk14a_out.value = "0";
+    }
+});
+
+util.listen("cm3a_dk", "myChange", () => {
+    if (Number(instrument.questions.cm3a_dk.value) > 0) {
+        util.htmlElement("cm3a_out").checked = false;
+        instrument.questions.cm3a_out.value = "0";
+    }
+});
+
+util.listen("ct3a_out", "myChange", () => {
+    if (Number(instrument.questions.ct3a_out.value) > 0) {
+        util.htmlElement("ct3a_dk").checked = false;
+        instrument.questions.ct3a_dk.value = "0";
+    }
+});
+
+util.listen("ct3a_dk", "myChange", () => {
+    if (Number(instrument.questions.ct3a_dk.value) > 0) {
+        util.htmlElement("ct3a_out").checked = false;
+        instrument.questions.ct3a_out.value = "0";
+    }
+});
