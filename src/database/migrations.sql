@@ -98,6 +98,7 @@ CREATE SEQUENCE id_instrument_cpis_sequence START 1;
 CREATE TABLE instrument_cpis (
     id INTEGER DEFAULT nextval('id_instrument_cpis_sequence'),
     uuid UUID DEFAULT uuid(),
+    user_uuid VARCHAR,
     region_code VARCHAR,
     institution_type VARCHAR,
     status VARCHAR DEFAULT 'partial',
@@ -122,6 +123,7 @@ CREATE SEQUENCE id_instrument_cibs_sequence START 1;
 CREATE TABLE instrument_cibs (
     id INTEGER DEFAULT nextval('id_instrument_cibs_sequence'),
     uuid UUID DEFAULT uuid(),
+    user_uuid VARCHAR,
     region_code VARCHAR,
     institution_type VARCHAR,
     status VARCHAR DEFAULT 'partial',
@@ -147,6 +149,7 @@ CREATE SEQUENCE id_instrument_csr_sequence START 1;
 CREATE TABLE instrument_csr (
     id INTEGER DEFAULT nextval('id_instrument_csr_sequence'),
     uuid UUID DEFAULT uuid(),
+    user_uuid VARCHAR,
     region_code VARCHAR,
     institution_type VARCHAR,
     status VARCHAR DEFAULT 'partial',
@@ -171,6 +174,7 @@ CREATE SEQUENCE id_instrument_qmr_sequence START 1;
 CREATE TABLE instrument_qmr (
     id INTEGER DEFAULT nextval('id_instrument_qmr_sequence'),
     uuid UUID DEFAULT uuid(),
+    user_uuid VARCHAR,
     region_code VARCHAR,
     institution_type VARCHAR,
     status VARCHAR DEFAULT 'partial',
@@ -195,6 +199,7 @@ CREATE SEQUENCE id_instrument_tqyp_sequence START 1;
 CREATE TABLE instrument_tqyp (
     id INTEGER DEFAULT nextval('id_instrument_tqyp_sequence'),
     uuid UUID DEFAULT uuid(),
+    user_uuid VARCHAR,
     region_code VARCHAR,
     institution_type VARCHAR,
     status VARCHAR DEFAULT 'partial',
@@ -219,6 +224,7 @@ CREATE SEQUENCE id_instrument_yplcs_sequence START 1;
 CREATE TABLE instrument_yplcs (
     id INTEGER DEFAULT nextval('id_instrument_yplcs_sequence'),
     uuid UUID DEFAULT uuid(),
+    user_uuid VARCHAR,
     region_code VARCHAR,
     institution_type VARCHAR,
     status VARCHAR DEFAULT 'partial',
@@ -244,6 +250,7 @@ CREATE SEQUENCE id_instrument_dsee_sequence START 1;
 CREATE TABLE instrument_dsee (
     id INTEGER DEFAULT nextval('id_instrument_dsee_sequence'),
     uuid UUID DEFAULT uuid(),
+    user_uuid VARCHAR,
     region_code VARCHAR,
     institution_type VARCHAR,
     status VARCHAR DEFAULT 'partial',
@@ -268,6 +275,7 @@ CREATE SEQUENCE id_instrument_ftch_sequence START 1;
 CREATE TABLE instrument_ftch (
     id INTEGER DEFAULT nextval('id_instrument_ftch_sequence'),
     uuid UUID DEFAULT uuid(),
+    user_uuid VARCHAR,
     region_code VARCHAR,
     institution_type VARCHAR,
     status VARCHAR DEFAULT 'partial',
@@ -291,6 +299,7 @@ CREATE SEQUENCE id_instrument_pfq_sequence START 1;
 CREATE TABLE instrument_pfq (
     id INTEGER DEFAULT nextval('id_instrument_pfq_sequence'),
     uuid UUID DEFAULT uuid(),
+    user_uuid VARCHAR,
     region_code VARCHAR,
     institution_type VARCHAR,
     status VARCHAR DEFAULT 'partial',
@@ -315,6 +324,7 @@ CREATE SEQUENCE id_instrument_eef_sequence START 1;
 CREATE TABLE instrument_eef (
     id INTEGER DEFAULT nextval('id_instrument_eef_sequence'),
     uuid UUID DEFAULT uuid(),
+    user_uuid VARCHAR,
     region_code VARCHAR,
     institution_type VARCHAR,
     status VARCHAR DEFAULT 'partial',
