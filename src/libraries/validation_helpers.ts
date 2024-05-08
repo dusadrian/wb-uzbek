@@ -334,7 +334,10 @@ export const util: UtilHelpersInterface = {
         }
     },
     standardDate: (date) => {
-        // const eldate = date.split('/');
+        const eldate = date.split('/');
+        if (eldate.length == 2) {
+            return new Date(Number(eldate[1]), Number(eldate[0]) - 1, 1);
+        }
         // const stdate = new Date(Number(eldate[2]), Number(eldate[1]) - 1, Number(eldate[0]));
         return new Date(date.replace(/(\d{2})\/(\d{2})\/(\d{4})/,'$3-$2-$1'));
     },

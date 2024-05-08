@@ -821,38 +821,35 @@ ewm.forEach((el) => {
     });
 });
 
+
+util.listen("cmgt1a", "myChange", () => {
+    const months = util.diffDates(
+        util.standardDate("01/" + instrument.questions.cmgt1a.value),
+        new Date("2024-05-01"),
+        "months"
+    )
+
+    util.setValue("cmgt1b", months.toString());
+})
+
 const cmgtsa = ["cmgt1a", "sa1"];
-cmgtsa.forEach((item) => {
-    util.listen(item, "myChange", () => {
+util.listen(cmgtsa, "myChange", () => {
+    if (util.inputsHaveValue(cmgtsa)) {
+        const cmgt1a = util.htmlElement("cmgt1a").value;
+        const sa1 = util.htmlElement("sa1").value;
+        instrument.questions['cmgt1a'].value = cmgt1a;
+        instrument.questions['sa1'].value = sa1;
 
-        if (item == "cmgt1a") {
-            const months = util.diffDates(
-                util.standardDate(instrument.questions.cmgt1a.value),
-                new Date("2024-05-01"),
-                "months"
-            )
+        const message = translations['must_be_earlier'].replace("X", "SA1").replace("Y", "CMGT1A");
 
-            util.setValue("cmgt1b", months.toString());
+        errorHandler.removeError(cmgtsa, message);
+
+        if (util.standardDate(cmgt1a) > util.standardDate(sa1)) {
+            errorHandler.addError(cmgtsa, message);
+            instrument.questions['cmgt1a'].value = '-9';
+            instrument.questions['sa1'].value = '-9';
         }
-
-        if (util.inputsHaveValue(cmgtsa)) {
-            const cmgt1a = util.htmlElement("cmgt1a").value;
-            const sa1 = util.htmlElement("sa1").value;
-            instrument.questions['cmgt1a'].value = cmgt1a;
-            instrument.questions['sa1'].value = sa1;
-
-            const message = translations['must_be_earlier'].replace("X", "SA1").replace("Y", "CMGT1A");
-
-            errorHandler.removeError(cmgtsa, message);
-
-            if (util.standardDate(cmgt1a) > util.standardDate(sa1)) {
-                errorHandler.addError(cmgtsa, message);
-                instrument.questions['cmgt1a'].value = '-9';
-                instrument.questions['sa1'].value = '-9';
-            }
-        }
-    });
-
+    }
 })
 
 
