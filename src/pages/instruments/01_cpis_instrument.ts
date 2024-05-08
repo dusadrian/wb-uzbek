@@ -1012,3 +1012,32 @@ util.listen("ct3a_dk", "myChange", () => {
         instrument.questions.ct3a_out.value = "0";
     }
 });
+
+const ewm1 = util.radioIDs("ewm1");
+const ewm2 = util.radioIDs("ewm2");
+const ewm3 = util.radioIDs("ewm3");
+const ewm4 = util.radioIDs("ewm4");
+
+
+
+util. listen([...ewm1, ...ewm2, ...ewm3, ...ewm4], "myChange", () => {
+    let suma = 0;
+    ["ewm1", "ewm2", "ewm3", "ewm4"].forEach((item) => {
+        if (Number(instrument.questions[item].value) > 0) {
+            suma += Number(instrument.questions[item].value);
+        }
+    });
+    const ewm5_0 = util.htmlElement("ewm5-0");
+    const ewm5_1 = util.htmlElement("ewm5-1");
+
+    if (suma > 0) {
+        ewm5_1.checked = true;
+        ewm5_0.checked = false;
+    }
+    else {
+        ewm5_1.checked = false;
+        ewm5_0.checked = true;
+    }
+
+    instrument.questions["ewm5"].value = Number(suma > 0).toString();
+})
