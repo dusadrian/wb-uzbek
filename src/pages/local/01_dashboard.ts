@@ -1,6 +1,7 @@
 import { ipcRenderer } from "electron";
 import { User } from "../../interfaces/database";
 import { StatusInterface } from "../../interfaces/database";
+import constant from "../../libraries/constants";
 interface IObj {
     'name': string,
     'instrument': string,
@@ -13,12 +14,12 @@ const initInstruments = (userData: User, institutionDetails: any) => {
 
 
     // get ID for instruments 4 and 6 -- QMR and DSEE
-    if (userData.role_code == '4' || userData.role_code == '1') {
+    if (userData.role_code ==constant.ROLE_ADMIN_SPECIALIST || userData.role_code == constant.ROLE_LOCAL) {
         ipcRenderer.send('getInstrumentsId');
     }
 
     // I1. Questionnaire about the child placed into the child protection system
-    if ((userData.role_code == '1' || userData.role_code == '2') && (userData.service_type_code == '1' || userData.service_type_code == '2' || userData.service_type_code == '3' || userData.service_type_code == '7' || userData.service_type_code == '9')) {
+    if ((userData.role_code == constant.ROLE_LOCAL || userData.role_code == constant.ROLE_DATA_COLLECTOR) && (constant.CHILD_CARE.includes(userData.service_type_code) || constant.INSON.includes(userData.service_type_code))) {
         document.getElementById('instrument1').classList.remove('hidden');
         document.getElementById('instrument1').classList.add('grid');
         const instrument1 = (<HTMLButtonElement>document.getElementById('view_instrument1'));
@@ -29,14 +30,14 @@ const initInstruments = (userData: User, institutionDetails: any) => {
                 });
             });
         }
-        if (userData.service_type_code == '9') {
+        if (constant.INSON.includes(userData.service_type_code)) {
             document.getElementById('t1c11').innerText = institutionDetails.children_fth;
         } else {
             document.getElementById('t1c11').innerText = institutionDetails.children;
         }
     }
     // I2. Questionnaire about the child placed in specialized boarding schools
-    if ((userData.role_code == '1' || userData.role_code == '2') && (userData.service_type_code == '4' || userData.service_type_code == '5')) {
+    if ((userData.role_code == constant.ROLE_LOCAL || userData.role_code == constant.ROLE_DATA_COLLECTOR) && (constant.SPECIALIZED.includes(userData.service_type_code))) {
         document.getElementById('instrument2').classList.remove('hidden');
         document.getElementById('instrument2').classList.add('grid');
         const instrument2 = (<HTMLButtonElement>document.getElementById('view_instrument2'));
@@ -50,7 +51,7 @@ const initInstruments = (userData: User, institutionDetails: any) => {
         document.getElementById('t1c21').innerText = institutionDetails.children;
     }
     // I3. Staff registry
-    if ((userData.role_code == '1' || userData.role_code == '3') && (userData.service_type_code == '1' || userData.service_type_code == '2' || userData.service_type_code == '3' || userData.service_type_code == '7' || userData.service_type_code == '4' || userData.service_type_code == '5')) {
+    if ((userData.role_code == constant.ROLE_LOCAL || userData.role_code == '3') && (constant.CHILD_CARE.includes(userData.service_type_code) || constant.SPECIALIZED.includes(userData.service_type_code))) {
         document.getElementById('instrument3').classList.remove('hidden');
         document.getElementById('instrument3').classList.add('grid');
         const instrument3 = (<HTMLButtonElement>document.getElementById('view_instrument3'));
@@ -64,7 +65,7 @@ const initInstruments = (userData: User, institutionDetails: any) => {
         document.getElementById('t1c31').innerText = institutionDetails.employees;
     }
     // I4. Questionnaire on the material resources of the institution and the living conditions of the residing children
-    if ((userData.role_code == '1' || userData.role_code == '4') && (userData.service_type_code == '1' || userData.service_type_code == '2' || userData.service_type_code == '3' || userData.service_type_code == '7' || userData.service_type_code == '4' || userData.service_type_code == '5')) {
+    if ((userData.role_code == constant.ROLE_LOCAL || userData.role_code == constant.ROLE_ADMIN_SPECIALIST) && (constant.CHILD_CARE.includes(userData.service_type_code) || constant.SPECIALIZED.includes(userData.service_type_code))) {
         document.getElementById('instrument4').classList.remove('hidden');
         document.getElementById('instrument4').classList.add('grid');
         const instrument4 = (<HTMLButtonElement>document.getElementById('view_instrument4'));
@@ -84,7 +85,7 @@ const initInstruments = (userData: User, institutionDetails: any) => {
         document.getElementById('t1c41').innerText = '1';
     }
     // I5A. Trace questionnaire about the young person who left the alternative care system
-    if ((userData.role_code == '1' || userData.role_code == '2') && (userData.service_type_code == '1' || userData.service_type_code == '2' || userData.service_type_code == '3' || userData.service_type_code == '7' || userData.service_type_code == '4' || userData.service_type_code == '5' || userData.service_type_code == '9')) {
+    if ((userData.role_code == constant.ROLE_LOCAL || userData.role_code == constant.ROLE_DATA_COLLECTOR) && (constant.CHILD_CARE.includes(userData.service_type_code) || constant.SPECIALIZED.includes(userData.service_type_code) || constant.INSON.includes(userData.service_type_code))) {
         document.getElementById('instrument5a').classList.remove('hidden');
         document.getElementById('instrument5a').classList.add('grid');
         const instrument5a = (<HTMLButtonElement>document.getElementById('view_instrument5a'));
@@ -100,7 +101,7 @@ const initInstruments = (userData: User, institutionDetails: any) => {
         }
     }
     // I5. Monitoring questionnaire about the young people who left care system
-    if ((userData.role_code == '1' || userData.role_code == '2') && userData.service_type_code == '9') {
+    if ((userData.role_code == constant.ROLE_LOCAL || userData.role_code == constant.ROLE_DATA_COLLECTOR) && constant.INSON.includes(userData.service_type_code)) {
         document.getElementById('instrument5').classList.remove('hidden');
         document.getElementById('instrument5').classList.add('grid');
         const instrument5 = (<HTMLButtonElement>document.getElementById('view_instrument5'));
@@ -115,7 +116,7 @@ const initInstruments = (userData: User, institutionDetails: any) => {
         document.getElementById('t1c61').innerText = institutionDetails.leavers_fth;
     }
     // I6. Data sheet on entries and exits from childcare institutions
-    if ((userData.role_code == '1' || userData.role_code == '4') && (userData.service_type_code == '1' || userData.service_type_code == '2' || userData.service_type_code == '3' || userData.service_type_code == '7' || userData.service_type_code == '4' || userData.service_type_code == '5')) {
+    if ((userData.role_code == constant.ROLE_LOCAL || userData.role_code == constant.ROLE_ADMIN_SPECIALIST) && (constant.CHILD_CARE.includes(userData.service_type_code) || constant.SPECIALIZED.includes(userData.service_type_code))) {
         document.getElementById('instrument6').classList.remove('hidden');
         document.getElementById('instrument6').classList.add('grid');
         const instrument6 = (<HTMLButtonElement>document.getElementById('view_instrument6'));
@@ -135,7 +136,7 @@ const initInstruments = (userData: User, institutionDetails: any) => {
         document.getElementById('t1c71').innerText = '1';
     }
     // I7. Family-Type Children's Home Questionnaire
-    if ((userData.role_code == '1' || userData.role_code == '2') && userData.service_type_code == '9') {
+    if ((userData.role_code == constant.ROLE_LOCAL || userData.role_code == constant.ROLE_DATA_COLLECTOR) && constant.INSON.includes(userData.service_type_code)) {
         document.getElementById('instrument7').classList.remove('hidden');
         document.getElementById('instrument7').classList.add('grid');
         const instrument7 = (<HTMLButtonElement>document.getElementById('view_instrument7'));
@@ -149,7 +150,7 @@ const initInstruments = (userData: User, institutionDetails: any) => {
         document.getElementById('t1c81').innerText = institutionDetails.fth;
     }
     // I8. Patronat Family Questionnaire
-    if ((userData.role_code == '1' || userData.role_code == '2') && userData.service_type_code == '9') {
+    if ((userData.role_code == constant.ROLE_LOCAL || userData.role_code == constant.ROLE_DATA_COLLECTOR) && constant.INSON.includes(userData.service_type_code)) {
         document.getElementById('instrument8').classList.remove('hidden');
         document.getElementById('instrument8').classList.add('grid');
         const instrument8 = (<HTMLButtonElement>document.getElementById('view_instrument8'));
@@ -164,7 +165,7 @@ const initInstruments = (userData: User, institutionDetails: any) => {
     }
 
     // users
-    if (userData.role_code === '1' || (userData.role_code === '2' && userData.service_type_code === '9')){
+    if (userData.role_code === constant.ROLE_LOCAL || (userData.role_code === constant.ROLE_DATA_COLLECTOR && constant.INSON.includes(userData.service_type_code))){
         if (userData.service_type_code !== '9') { // if not INSON
             document.getElementById('users').classList.remove('hidden');
             document.getElementById('users').classList.add('flex');

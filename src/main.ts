@@ -11,6 +11,7 @@ import * as DI from "./interfaces/database";
 import * as fs from 'fs';
 import { crypt } from './libraries/crypt';
 import build_templates from "./libraries/build_templates";
+import constant from "./libraries/constants";
 
 if (process.env.NODE_ENV === "development") {
     build_templates();
@@ -192,14 +193,19 @@ const goToLogin = (page: string) => {
 const goToDashboard = () => {
 
     let page = '';
-    if (appSession.userData.role_code === "100") {
+    if (appSession.userData.role_code === constant.ROLE_NATIONAL) {
         page = path.join(__dirname, "../src/pages/national/01_dashboard.html");
-    } else if (appSession.userData.role_code === "10") {
+    } else if (appSession.userData.role_code === constant.ROLE_REGIONAL) {
         page = path.join(__dirname, "../src/pages/regional/01_dashboard.html");
-    } else if (appSession.userData.role_code === "5") {
+    } else if (appSession.userData.role_code === constant.ROLE_EXT_EVALUATOR) {
         // go directly to instrument list and skip dashboard
         page = path.join(__dirname, "../src/pages/instruments/09_eef.html");
-    } else if (appSession.userData.role_code === "1" || appSession.userData.role_code === "2" || appSession.userData.role_code === "3" || appSession.userData.role_code === "4") {
+    } else if (
+        appSession.userData.role_code === constant.ROLE_LOCAL ||
+        appSession.userData.role_code === constant.ROLE_DATA_COLLECTOR ||
+        appSession.userData.role_code === constant.ROLE_HR_SPECIALIST ||
+        appSession.userData.role_code === constant.ROLE_ADMIN_SPECIALIST
+    ) {
         page = path.join(__dirname, "../src/pages/local/01_dashboard.html");
     } else {
         dialog.showMessageBox(mainWindow, {
@@ -214,10 +220,11 @@ const goToDashboard = () => {
     mainWindow.loadURL("file://" + page);
     mainWindow.webContents.once("did-finish-load", () => {
         if (
-            appSession.userData.role_code === "1" ||
-            appSession.userData.role_code === "2" ||
-            appSession.userData.role_code === "3" ||
-            appSession.userData.role_code === "4"
+            appSession.userData.role_code === constant.ROLE_LOCAL ||
+            appSession.userData.role_code === constant.ROLE_DATA_COLLECTOR ||
+            appSession.userData.role_code === constant.ROLE_HR_SPECIALIST ||
+            appSession.userData.role_code === constant.ROLE_ADMIN_SPECIALIST
+
         ) {
 
             database.getInstitutions().then((instarray) => {
@@ -262,7 +269,7 @@ ipcMain.on('getLocalDashStats', (_event, args) => {
     if (args?.region) { region = args.region; }
     if (args?.typeOfInstitution) { typeOfInstitution = args.typeOfInstitution; }
 
-    database.filledInstruments(region, typeOfInstitution).then((dashStats) => {
+    database.filledInstruments(appSession.userData.role_code, appSession.userData.uuid, region, typeOfInstitution).then((dashStats) => {
         // Dashboard stats for all users
         mainWindow.webContents.send("dashStats", dashStats);
     });
@@ -1238,39 +1245,38 @@ ipcMain.on('importData', (_event, _args) => {
 
 
 const getLisOfInstrumentsToExport = (roleCode: string, serviceType: string) => {
-    const childCareInstitutions = ['1', '2', '3', '7'];
-    const specializedBoardingSchools = ['4', '5'];
-    if (roleCode == '1' && childCareInstitutions.includes(serviceType)) {
+
+    if (roleCode == constant.ROLE_LOCAL && constant.CHILD_CARE.includes(serviceType)) {
         return ['cpis', 'csr', 'qmr', 'tqyp', 'dsee'];
     }
-    if (roleCode == '1' && specializedBoardingSchools.includes(serviceType)) {
+    if (roleCode == constant.ROLE_LOCAL && constant.SPECIALIZED.includes(serviceType)) {
         return ['cibs', 'csr', 'qmr', 'tqyp', 'dsee'];
     }
 
-    if (roleCode == '2' && childCareInstitutions.includes(serviceType)) {
+    if (roleCode == constant.ROLE_DATA_COLLECTOR && constant.CHILD_CARE.includes(serviceType)) {
         return ['cpis', 'tqyp'];
     }
-    if (roleCode == '2' && specializedBoardingSchools.includes(serviceType)) {
+    if (roleCode == constant.ROLE_DATA_COLLECTOR && constant.SPECIALIZED.includes(serviceType)) {
         return ['cibs', 'tqyp'];
     }
 
-    if (roleCode == '1' || (roleCode == '2' && serviceType == '9')) {
+    if (roleCode == constant.ROLE_LOCAL || (roleCode == constant.ROLE_DATA_COLLECTOR && constant.INSON.includes(serviceType))) {
         return ['cpis', 'tqyp', 'yplcs', 'ftch', 'pfq'];
     }
 
-    if (roleCode == '3') {
+    if (roleCode == constant.ROLE_HR_SPECIALIST) {
         return ['csr'];
     }
 
-    if (roleCode == '4') {
+    if (roleCode == constant.ROLE_ADMIN_SPECIALIST) {
         return ['qmr', 'dsee'];
     }
 
-    if (roleCode == '5') {
+    if (roleCode == constant.ROLE_EXT_EVALUATOR) {
         return ['eef'];
     }
 
-    if (roleCode == '10' || roleCode == '100') {
+    if (roleCode == constant.ROLE_REGIONAL || roleCode == constant.ROLE_NATIONAL) {
         return ['cpis', 'cibs', 'csr', 'qmr', 'tqyp', 'dsee', 'yplcs', 'ftch', 'pfq', 'eef'];
     }
 }
@@ -1319,7 +1325,7 @@ ipcMain.on('exportData', function exportData(_event, args) {
 });
 async function downloadUserInstruments(table: string) {
     return new Promise(resolve => {
-        database.getDataForDownload(table).then((result) => {
+        database.getDataForDownload(table, appSession.userData.role_code, appSession.userData.uuid).then((result) => {
             if (result.length == 0) {
                 resolve(false);
                 return; // needs return otherwise it will try to write the file
@@ -1357,6 +1363,7 @@ function prepareDataForDownload(data: DI.DataExportInterface[]) {
                 'uuid': element.uuid,
                 'region_code': element.region_code,
                 'institution_type': element.institution_type,
+                'user_uuid': element.user_uuid,
                 'created_at': element.created_at,
                 'updated_at': element.updated_at,
             };

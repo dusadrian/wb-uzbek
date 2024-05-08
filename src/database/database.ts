@@ -2,7 +2,7 @@ import * as path from "path";
 import * as DuckDB from "duckdb";
 import * as DI from "../../src/interfaces/database";
 import { save as instrumentSave, get as instrumentGet, getExisting, cpisList, deleteCPIS, cibsList, deleteCIBS, csrList, deleteStaff, ftchList, deleteFTCH, pfqList, deletePFQ, eefList, deleteEEF, yplcsList, deleteYPLCS, tqypList, deleteTQYP } from "./instruments";
-
+import constant from '../libraries/constants'
 
 const duckdbOptions: {
     access_mode: 'READ_WRITE' | 'READ_ONLY',
@@ -221,9 +221,7 @@ export const database = {
                     job_title = ?,
                     profession = ?,
                     phone = ?,
-                    email = ?,
-                    role_code = ?,
-                    service_type_code = ?
+                    email = ?
                 WHERE id = ?
             `,
                 user.name,
@@ -233,8 +231,6 @@ export const database = {
                 user.profession,
                 user.phone,
                 user.email,
-                user.role_code,
-                user.service_type_code,
                 user.id,
                 (error) => {
                     if (error) {
@@ -257,17 +253,23 @@ export const database = {
         return await connection;
     },
 
-    filledInstruments: async (region?: string, typeOfInstitution?: string) => {
+    filledInstruments: async (role_code: string, user_uuid: string, region?: string, typeOfInstitution?: string) => {
         let where = '';
-        if (region || typeOfInstitution) {
-            where = 'WHERE ';
+
+        if (role_code === constant.ROLE_DATA_COLLECTOR || role_code === constant.ROLE_HR_SPECIALIST || role_code === constant.ROLE_ADMIN_SPECIALIST) {
+            where += ` WHERE user_uuid = '${user_uuid}'`;
+        } else if(region || typeOfInstitution) {
+            where += ` WHERE `;
         }
+
         if (region) {
             where += `region_code = '${region}'`;
         }
+        
         if (region && typeOfInstitution) {
-            where += ' AND ';
+            where += ` AND `;
         }
+
         if (typeOfInstitution) {
             where += `institution_type = '${typeOfInstitution}'`;
         }
@@ -349,10 +351,16 @@ export const database = {
         };
     },
 
-    async getDataForDownload(table: string) {
+    async getDataForDownload(table: string, role_code: string, user_uuid: string) {
         const connection = new Promise<DI.DataExportInterface[]>((resolve) => {
             // only completed instruments
-            db.all(`SELECT * FROM instrument_${table} LEFT JOIN values_${table} ON values_${table}.instrument_id = instrument_${table}.id WHERE status = 'completed'`, (error, result) => {
+
+            let where = ''; // only user's data
+            if (role_code === constant.ROLE_DATA_COLLECTOR || role_code === constant.ROLE_HR_SPECIALIST || role_code === constant.ROLE_ADMIN_SPECIALIST) {
+                where += ` AND user_uuid = '${user_uuid}'`;
+            } 
+
+            db.all(`SELECT * FROM instrument_${table} LEFT JOIN values_${table} ON values_${table}.instrument_id = instrument_${table}.id WHERE status = 'completed' ${where}`, (error, result) => {
                 if (error) {
                     console.log("===== Error getDataForDownload =====");
                     console.log(error);

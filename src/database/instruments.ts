@@ -207,7 +207,7 @@ export const cibsList = async (db: DuckDB.Database, user_uuid: string, role_code
         LEFT JOIN values_cibs AS v ON v.instrument_id = c.id`;
 
         if (role_code === constant.ROLE_DATA_COLLECTOR || role_code === constant.ROLE_HR_SPECIALIST || role_code === constant.ROLE_ADMIN_SPECIALIST || role_code === constant.ROLE_EXT_EVALUATOR) {
-            sql += ` WHERE c.user_uuid = '${user_uuid}`;
+            sql += ` WHERE c.user_uuid = '${user_uuid}'`;
         }
 
         sql += ` GROUP BY c.id, c.uuid, c.status;`;

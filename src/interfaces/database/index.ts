@@ -74,6 +74,7 @@ export interface StatusInterface {
 export interface DataExportInterface {
     id: string;
     uuid: string;
+    user_uuid: string;
     region_code: string;
     institution_type: string;
     status: string;

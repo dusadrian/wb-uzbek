@@ -1,25 +1,8 @@
-import { app, ipcRenderer } from "electron";
-
-const addCoordinator = (userData: any) => {
-    if (userData.role_code === '1') {
-        const roleCode = (<HTMLSelectElement>document.getElementById('role_code'));
-        const option = document.createElement('option');
-        option.value = '1';
-        option.text = 'Coordinator';
-        roleCode.add(option);
-        roleCode.disabled = true;
-    }
-}
-
+import { ipcRenderer } from "electron";
 
 export const editUser = {
     init: async () => {
 
-        let service_type_code = '';
-        // for adding user?
-        // let institution_code = '';
-        // let institution_name = '';
-        // let region_code = '';
 
         ipcRenderer.on('user', (event, user) => {
             (<HTMLInputElement>document.getElementById('user_id')).value = user.id;
@@ -32,30 +15,6 @@ export const editUser = {
             (<HTMLSelectElement>document.getElementById('profession')).value = user.profession;
             (<HTMLSelectElement>document.getElementById('phone')).value = user.phone;
             (<HTMLSelectElement>document.getElementById('email')).value = user.email;
-            (<HTMLSelectElement>document.getElementById('role_code')).value = user.role_code;
-
-            const appSession = JSON.parse(sessionStorage.getItem('appSession'));
-            if (appSession) {
-                if (user.role_code === '1') {
-                    addCoordinator(appSession.userData);
-                }
-                service_type_code = appSession.userData.service_type_code;
-                // adding user?
-                // institution_code = appSession.userData.institution_code;
-                // institution_name = appSession.userData.institution_name;
-                // region_code = appSession.userData.region_code;
-            } else {
-                ipcRenderer.on('appSession', (event, arg) => {
-                    if (user.role_code === '1') {
-                        addCoordinator(arg.userData);
-                    }
-                    service_type_code = arg.userData.service_type_code;
-                    // adding user?
-                    // institution_code = arg.userData.institution_code;
-                    // institution_name = arg.userData.institution_name;
-                    // region_code = arg.userData.region_code;
-                });
-            }
         });
 
         (<HTMLButtonElement>document.getElementById('saveForm')).addEventListener('click', () => {
@@ -73,7 +32,6 @@ export const editUser = {
             const phone = (<HTMLSelectElement>document.getElementById('phone')).value;
             const email = (<HTMLSelectElement>document.getElementById('email')).value;
             
-            const role_code = (<HTMLSelectElement>document.getElementById('role_code')).value;
             const auth_code = (<HTMLSelectElement>document.getElementById('auth_code')).value;
             
             // validate above values
@@ -85,16 +43,6 @@ export const editUser = {
                 return;
             }
 
-            // TODO -- do we need this validation?
-            // check email is valid with regex
-            // const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
-            // if (email != '' && !emailRegex.test(email)) {
-            //     ipcRenderer.send('showDialogMessage', {
-            //         type: 'error',
-            //         message: 'The enter a valid email address is not valid.'
-            //     });
-            // }
-
             ipcRenderer.send('updateUser', {
                 'id': user_id,
                 name,
@@ -104,8 +52,6 @@ export const editUser = {
                 profession,
                 phone,
                 email,
-                role_code,
-                service_type_code,
                 status: '1',
                 auth_code
             });
