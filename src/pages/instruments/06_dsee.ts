@@ -22,6 +22,7 @@ let insons: { [key: string]: DI.INSON };
 
 let regionCode = '';
 let institutionType = '';
+let userUUID = '';
 
 const regElements = ["i4a"];
 const disElements = ["i4b"];
@@ -145,7 +146,8 @@ export const instrument6 = {
                 util.setValue('q4', args.userData.profession ? args.userData.profession : "--");
                 util.setValue('q5', args.userData.phone ? args.userData.phone : "--");
                 util.setValue('q6', args.userData.email ? args.userData.email : "--");
-                regionCode = args.userData.region_code ?? null;
+                regionCode = args.userData.region_code;
+                userUUID = args.userData.uuid;
 
                 const serv_codes = Object.keys(services);
                 if (serv_codes.indexOf(institution_code) >= 0) {
@@ -169,6 +171,7 @@ const saveChestionar = (obj: SaveInstrumentType): void => {
     obj.extras = {
         region_code: regionCode,
         institution_type: institutionType,
+        user_uuid: userUUID,
     }
     ipcRenderer.send("saveInstrument", obj);
 }

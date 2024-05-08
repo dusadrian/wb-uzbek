@@ -29,6 +29,7 @@ let insons: { [key: string]: DI.INSON };
 
 let regionCode = '';
 let institutionType = '';
+let userUUID = '';
 
 export const instrument9 = {
     init: async () => {
@@ -170,6 +171,7 @@ export const instrument9 = {
                     // set default values for user
                     util.setValue('q2', args.userData.name + " " + args.userData.patronymics + " " + args.userData.surname);
                     regionCode = args.userData.region_code;
+                    userUUID = args.userData.uuid;
                 }
             }
             instrument.start(instrumentID, instrument.trimis, saveChestionar, validateChestionar);
@@ -187,10 +189,7 @@ const saveChestionar = (obj: SaveInstrumentType): void => {
     obj.extras = {
         region_code: regionCode,
         institution_type: institutionType,
+        user_uuid: userUUID,        
     }
     ipcRenderer.send("saveInstrument", obj);
 }
-
-
-
-

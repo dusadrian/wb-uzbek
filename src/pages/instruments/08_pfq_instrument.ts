@@ -28,6 +28,7 @@ let insons: { [key: string]: DI.INSON };
 
 let regionCode = '';
 let institutionType = '';
+let userUUID = '';
 
 const regElements = ["reg", "pf1a"];
 const disElements = ["dis", "pf1b"];
@@ -45,9 +46,6 @@ const admission_dates = [
 const exit_dates = [
     'fc4_c1f', 'fc4_c2f', 'fc4_c3f', 'fc4_c4f', 'fc4_c5f'
 ]
-
-// let regionCode = '';
-// let institutionType = '';
 
 export const instrument8 = {
     init: async () => {
@@ -224,6 +222,7 @@ export const instrument8 = {
                     util.setValue('q5', args.userData.phone ? args.userData.phone : "--");
                     util.setValue('q6', args.userData.email ? args.userData.email : "--");
                     regionCode = args.userData.region_code;
+                    userUUID = args.userData.uuid;
                 }
             }
             instrument.start(instrumentID, instrument.trimis, saveChestionar, validateChestionar);
@@ -252,6 +251,7 @@ const saveChestionar = (obj: SaveInstrumentType): void => {
     obj.extras = {
         region_code: regionCode,
         institution_type: institutionType,
+        user_uuid: userUUID
     }
     ipcRenderer.send("saveInstrument", obj);
 }
@@ -305,4 +305,3 @@ pf.forEach((el) => {
         }
     });
 });
-

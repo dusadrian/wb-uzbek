@@ -39,7 +39,8 @@ const setElements = ["", "lk14d", "", "cm3d", "cm11e", "ct11e", "cg11e"];
 const typeElements = ["", "lk14e", "", "cm3e", "cm11f", "ct11f", "cg11f"];
 
 let regionCode = '';
-let institutionType = 'test';
+let institutionType = '';
+let userUUID = '';
 
 export const instrument2 = {
     init: async () => {
@@ -254,6 +255,7 @@ export const instrument2 = {
                 util.setValue('omr6', args.userData.phone ? args.userData.phone : "--");
                 util.setValue('omr7', args.userData.email ? args.userData.email : "--");
                 regionCode = args.userData.region_code;
+                userUUID = args.userData.uuid;
                 
                 if (args.userData.service_type_code === '9') {
                     institutionType = args.insons[args.userData.institution_code].type;
@@ -303,6 +305,7 @@ const saveChestionar = (obj: SaveInstrumentType): void => {
     obj.extras = {
         region_code: regionCode,
         institution_type: institutionType,
+        user_uuid: userUUID,
     }
     ipcRenderer.send("saveInstrument", obj);
 }

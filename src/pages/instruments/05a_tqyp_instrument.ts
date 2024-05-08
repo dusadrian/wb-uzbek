@@ -39,6 +39,7 @@ const typeElements = ["", "ptr5e", "ptr8h"];
 
 let regionCode = '';
 let institutionType = '';
+let userUUID = '';
 
 export const instrument5a = {
     init: async () => {
@@ -200,6 +201,7 @@ export const instrument5a = {
             if (args.userData) {
                 // set default values for user
                 regionCode = args.userData.region_code;
+                userUUID = args.userData.uuid;
 
                 util.setValue("str1", institution_code);
                 util.setValue("str3c", "--");
@@ -257,6 +259,7 @@ const saveChestionar = (obj: SaveInstrumentType): void => {
     obj.extras = {
         region_code: regionCode,
         institution_type: institutionType,
+        user_uuid: userUUID,
     }
     ipcRenderer.send("saveInstrument", obj);
 }

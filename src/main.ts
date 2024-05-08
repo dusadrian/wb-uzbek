@@ -105,14 +105,14 @@ app.on("activate", () => {
 // In this file you can include the rest of your app"s specific main process
 // code. You can also put them in separate files and require them here.
 
-ipcMain.on('showDialogMessage', (event, args) => {
+ipcMain.on('showDialogMessage', (_event, args) => {
     dialog.showMessageBox(mainWindow, {
         type: args.type,
         message: i18n.__(args.message),
     })
 });
 
-ipcMain.on('login', (event, args) => {
+ipcMain.on('login', (_event, args) => {
     // check if user is authenticated
     database.checkUser(args.username, args.password).then((result: Array<DI.User>) => {
         if (result.length === 0) {
@@ -131,7 +131,7 @@ ipcMain.on('login', (event, args) => {
 });
 
 // change window - check if authenticated
-ipcMain.on("changeWindow", (event, args) => {
+ipcMain.on("changeWindow", (_event, args) => {
     const newPage = path.join(__dirname, "../src/pages/" + args.name + ".html");
     switch (args.name) {
         case "index":
@@ -256,7 +256,7 @@ const goToDashboard = () => {
     });
 }
 
-ipcMain.on('getLocalDashStats', (event, args) => {
+ipcMain.on('getLocalDashStats', (_event, args) => {
     let region = null;
     let typeOfInstitution = null;
     if (args?.region) { region = args.region; }
@@ -279,18 +279,13 @@ ipcMain.on('getInstrumentsId', () => {
 const goToCPISList = () => {
     const newPage = path.join(__dirname, "../src/pages/instruments/01_cpis.html");
     mainWindow.loadURL("file://" + newPage);
-    // mainWindow.webContents.once("did-finish-load", () => {
-    //     mainWindow.webContents.send("getFromDB-reply", {
-    //         foo: "bar"
-    //     });
-    // });
 };
 ipcMain.on('getChildren', () => {
-    database.cpisList(db).then((result) => {
+    database.cpisList(db, appSession.userData.uuid).then((result) => {
         mainWindow.webContents.send("children", result);
     });
 });
-ipcMain.on('deleteCPIS', (event, args) => {
+ipcMain.on('deleteCPIS', (_event, args) => {
     // save to DB
     dialog.showMessageBox(mainWindow, {
         type: 'warning',
@@ -317,11 +312,11 @@ const goToCIBSList = () => {
     mainWindow.loadURL("file://" + newPage);
 };
 ipcMain.on('getChildrenCIBS', () => {
-    database.cibsList(db).then((result) => {
+    database.cibsList(db, appSession.userData.uuid).then((result) => {
         mainWindow.webContents.send("childrenCIBS", result);
     });
 });
-ipcMain.on('deleteCIBS', (event, args) => {
+ipcMain.on('deleteCIBS', (_event, args) => {
     // save to DB
     dialog.showMessageBox(mainWindow, {
         type: 'warning',
@@ -348,11 +343,11 @@ const goToCSRList = () => {
     mainWindow.loadURL("file://" + newPage);
 };
 ipcMain.on('getStaff', () => {
-    database.csrList(db).then((result) => {
+    database.csrList(db, appSession.userData.uuid).then((result) => {
         mainWindow.webContents.send("staff", result);
     });
 });
-ipcMain.on('deleteStaff', (event, args) => {
+ipcMain.on('deleteStaff', (_event, args) => {
     // save to DB
     dialog.showMessageBox(mainWindow, {
         type: 'warning',
@@ -379,11 +374,11 @@ const goToYPLCSList = () => {
     mainWindow.loadURL("file://" + newPage);
 };
 ipcMain.on('getYPLCS', () => {
-    database.yplcsList(db).then((result) => {
+    database.yplcsList(db, appSession.userData.uuid).then((result) => {
         mainWindow.webContents.send("yplcs", result);
     });
 });
-ipcMain.on('deleteYPLCS', (event, args) => {
+ipcMain.on('deleteYPLCS', (_event, args) => {
     // save to DB
     dialog.showMessageBox(mainWindow, {
         type: 'warning',
@@ -410,11 +405,11 @@ const goToTQYPList = () => {
     mainWindow.loadURL("file://" + newPage);
 };
 ipcMain.on('getTQYP', () => {
-    database.tqypList(db).then((result) => {
+    database.tqypList(db, appSession.userData.uuid).then((result) => {
         mainWindow.webContents.send("tqyp", result);
     });
 });
-ipcMain.on('deleteTQYP', (event, args) => {
+ipcMain.on('deleteTQYP', (_event, args) => {
     // save to DB
     dialog.showMessageBox(mainWindow, {
         type: 'warning',
@@ -441,11 +436,11 @@ const goToFTCHList = () => {
     mainWindow.loadURL("file://" + newPage);
 };
 ipcMain.on('getFTCH', () => {
-    database.ftchList(db).then((result) => {
+    database.ftchList(db, appSession.userData.uuid).then((result) => {
         mainWindow.webContents.send("ftch", result);
     });
 });
-ipcMain.on('deleteFTCH', (event, args) => {
+ipcMain.on('deleteFTCH', (_event, args) => {
     // save to DB
     dialog.showMessageBox(mainWindow, {
         type: 'warning',
@@ -472,11 +467,11 @@ const goToPFQList = () => {
     mainWindow.loadURL("file://" + newPage);
 };
 ipcMain.on('getPFQ', () => {
-    database.pfqList(db).then((result) => {
+    database.pfqList(db, appSession.userData.uuid).then((result) => {
         mainWindow.webContents.send("pfq", result);
     });
 });
-ipcMain.on('deletePFQ', (event, args) => {
+ipcMain.on('deletePFQ', (_event, args) => {
     // save to DB
     dialog.showMessageBox(mainWindow, {
         type: 'warning',
@@ -503,11 +498,11 @@ const goToEEFList = () => {
     mainWindow.loadURL("file://" + newPage);
 };
 ipcMain.on('getEEF', () => {
-    database.eefList(db).then((result) => {
+    database.eefList(db, appSession.userData.uuid).then((result) => {
         mainWindow.webContents.send("eef", result);
     });
 });
-ipcMain.on('deleteEEF', (event, args) => {
+ipcMain.on('deleteEEF', (_event, args) => {
     // save to DB
     dialog.showMessageBox(mainWindow, {
         type: 'warning',
@@ -584,7 +579,7 @@ const institutionDetails = () => {
 }
 
 // Institution update
-ipcMain.on('updateInstitutionDetails', (event, args) => {
+ipcMain.on('updateInstitutionDetails', (_event, args) => {
 
     if (!args.auth_code || args.auth_code === '') {
         dialog.showMessageBox(mainWindow, {
@@ -637,7 +632,7 @@ const localEditUser = (id: string) => {
         });
     });
 }
-ipcMain.on('addUser', (event, args) => {
+ipcMain.on('addUser', (_event, args) => {
     console.log(args);
     // save to DB
     database.addUser(args).then(() => {
@@ -650,7 +645,7 @@ ipcMain.on('addUser', (event, args) => {
         });
     });
 });
-ipcMain.on('updateUser', (event, args) => {
+ipcMain.on('updateUser', (_event, args) => {
 
     if (!args.auth_code || args.auth_code === '') {
         dialog.showMessageBox(mainWindow, {
@@ -685,7 +680,7 @@ ipcMain.on('updateUser', (event, args) => {
         });
     });
 })
-ipcMain.on('deleteUser', (event, args) => {
+ipcMain.on('deleteUser', (_event, args) => {
     // save to DB
     dialog.showMessageBox(mainWindow, {
         type: 'warning',
@@ -1124,7 +1119,7 @@ const goToTQYP = (id: string) => {
 }
 
 // save instrument
-ipcMain.on('saveInstrument', (event, args) => {
+ipcMain.on('saveInstrument', (_event, args) => {
 
     database.instrumentSave(args, db).then(() => {
         dialog.showMessageBox(mainWindow, {
@@ -1171,7 +1166,8 @@ ipcMain.on('saveInstrument', (event, args) => {
 });
 
 
-ipcMain.on('importData', (event, args) => {
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+ipcMain.on('importData', (_event, _args) => {
     let filesToUpload: string[] = [];
     filesToUpload = dialog.showOpenDialogSync(mainWindow, {
         title: i18n.__('_chooseFile'),
@@ -1281,7 +1277,7 @@ const getLisOfInstrumentsToExport = (roleCode: string, serviceType: string) => {
 
 // download instrument data for consolidation
 
-ipcMain.on('exportData', function exportData(event, args) {
+ipcMain.on('exportData', function exportData(_event, args) {
 
     const folderPath = dialog.showOpenDialogSync(mainWindow, {
         title: i18n.__('main._chooseFolder'),

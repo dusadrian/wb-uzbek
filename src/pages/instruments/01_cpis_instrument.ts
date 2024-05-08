@@ -46,6 +46,7 @@ const setElements  = ["",     "lk14d", "cm3d", "cm10e", "cm11e", "ct3d", "ct10e"
 const typeElements = ["",     "lk14e", "cm3e", "cm10f", "cm11f", "ct3e", "ct10f", "ct11f", "cg10f", "cg11f", "sa3d", "",   ];
 
 let regionCode = '';
+let userUUID = '';
 let institutionType = '';
 
 export const instrument1 = {
@@ -297,7 +298,6 @@ export const instrument1 = {
                     util.setValue("sh5", institution_code);
                     util.setValue('omr8', "1");
                     util.setValue("omr9", institution_name);
-                    institutionType = services[institution_code].type;
                 }
 
                 util.setValue('omr1', args.userData.name ? args.userData.name : "--");
@@ -308,6 +308,13 @@ export const instrument1 = {
                 util.setValue('omr6', args.userData.phone ? args.userData.phone : "--");
                 util.setValue('omr7', args.userData.email ? args.userData.email : "--");
                 regionCode = args.userData.region_code;
+                userUUID = args.userData.uuid;
+
+                if (args.userData.service_type_code === '9') {
+                    institutionType = args.insons[args.userData.institution_code].type;
+                } else {
+                    institutionType = args.services[args.userData.institution_code].type;
+                }
 
                 // util.setValue("sh5", institution_code);
                 // util.setValue("sh5a", institution_name);
@@ -347,6 +354,7 @@ const saveChestionar = (obj: SaveInstrumentType): void => {
     obj.extras = {
         region_code: regionCode,
         institution_type: institutionType,
+        user_uuid: userUUID
     }
     ipcRenderer.send("saveInstrument", obj);
 }

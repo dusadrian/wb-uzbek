@@ -32,6 +32,7 @@ const typeElements = ["", "pi4e", "", "pi9i"];
 
 let regionCode = '';
 let institutionType = '';
+let userUUID = '';
 
 export const instrument5 = {
     init: async () => {
@@ -217,7 +218,6 @@ export const instrument5 = {
                     util.setValue("reg", services[institution_code].region);
                     util.setValue("dis", services[institution_code].district);
                     util.setValue("omr9", services[institution_code].name ? services[institution_code].name : "--");
-                    institutionType = services[institution_code].type;
                 }
                 // set default values for user
                 util.setValue("omr1", args.userData.name ? args.userData.name : "--");
@@ -228,6 +228,13 @@ export const instrument5 = {
                 util.setValue("omr6", args.userData.phone ? args.userData.phone : "--");
                 util.setValue("omr7", args.userData.email ? args.userData.email : "--");
                 regionCode = args.userData.region_code;
+                userUUID = args.userData.uuid;
+
+                if (args.userData.service_type_code === '9') {
+                    institutionType = args.insons[args.userData.institution_code].type;
+                } else {
+                    institutionType = args.services[args.userData.institution_code].type;
+                }
             }
 
             instrument.start(instrumentID, instrument.trimis, saveChestionar, validateChestionar);
@@ -256,6 +263,7 @@ const saveChestionar = (obj: SaveInstrumentType): void => {
     obj.extras = {
         region_code: regionCode,
         institution_type: institutionType,
+        user_uuid: userUUID,
     }
     ipcRenderer.send("saveInstrument", obj);
 }

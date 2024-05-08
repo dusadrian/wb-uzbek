@@ -40,6 +40,11 @@ export const save = async (data: InstrumentData, db: DuckDB.Database) => {
             // add instrument ID to the end of the params
             params.push(data.instrument_id);
 
+            // TESTING incoming data...
+            // console.log(sql);
+            // console.log(data.extras);
+            // console.log(params);
+
             // eslint-disable-next-line @typescript-eslint/no-unused-vars
             db.all(sql, ...params, (error, _result) => {
                 if (error) {
@@ -138,7 +143,7 @@ export const getExisting = async (db: DuckDB.Database) => {
 }
 
 // Instrument 1
-export const cpisList = async (db: DuckDB.Database) => {
+export const cpisList = async (db: DuckDB.Database, user_uuid: string) => {
     const connection = new Promise<Array<Instrument>>((resolve) => {
 
         const sql = `
@@ -151,6 +156,7 @@ export const cpisList = async (db: DuckDB.Database) => {
             c.status
         FROM instrument_cpis AS c
         LEFT JOIN values_cpis AS v ON v.instrument_id = c.id
+        WHERE c.user_uuid = '${user_uuid}'
         GROUP BY c.id, c.uuid, c.status;`;
 
         db.all(sql, (error, result) => {
@@ -181,7 +187,7 @@ export const deleteCPIS = async (id: string, db: DuckDB.Database) => {
 }
 
 // Instrument 2
-export const cibsList = async (db: DuckDB.Database) => {
+export const cibsList = async (db: DuckDB.Database, user_uuid: string) => {
     const connection = new Promise<Array<Instrument>>((resolve) => {
 
         const sql = `
@@ -194,6 +200,7 @@ export const cibsList = async (db: DuckDB.Database) => {
             c.status
         FROM instrument_cibs AS c
         LEFT JOIN values_cibs AS v ON v.instrument_id = c.id
+        WHERE c.user_uuid = '${user_uuid}'
         GROUP BY c.id, c.uuid, c.status;`;
 
         db.all(sql, (error, result) => {
@@ -223,9 +230,8 @@ export const deleteCIBS = async (id: string, db: DuckDB.Database) => {
     return await connection;
 }
 
-
 // instrument 3
-export const csrList = async (db: DuckDB.Database) => {
+export const csrList = async (db: DuckDB.Database, user_uuid: string) => {
     const connection = new Promise<Array<Instrument>>((resolve) => {
 
         const sql = `
@@ -235,6 +241,7 @@ export const csrList = async (db: DuckDB.Database) => {
             c.status
         FROM instrument_csr AS c
         LEFT JOIN values_csr AS v ON v.instrument_id = c.id
+        WHERE c.user_uuid = '${user_uuid}'
         GROUP BY c.id, c.uuid, c.status;`;
 
         db.all(sql, (error, result) => {
@@ -265,7 +272,7 @@ export const deleteStaff = async (id: string, db: DuckDB.Database) => {
 }
 
 // Instrument 7
-export const ftchList = async (db: DuckDB.Database) => {
+export const ftchList = async (db: DuckDB.Database, user_uuid: string) => {
     const connection = new Promise<Array<Instrument>>((resolve) => {
 
         const sql = `
@@ -277,6 +284,7 @@ export const ftchList = async (db: DuckDB.Database) => {
             c.status
         FROM instrument_ftch AS c
         LEFT JOIN values_ftch AS v ON v.instrument_id = c.id
+        WHERE c.user_uuid = '${user_uuid}'
         GROUP BY c.id, c.uuid, c.status;`;
 
         db.all(sql, (error, result) => {
@@ -307,7 +315,7 @@ export const deleteFTCH = async (id: string, db: DuckDB.Database) => {
 }
 
 // Instrument 8
-export const pfqList = async (db: DuckDB.Database) => {
+export const pfqList = async (db: DuckDB.Database, user_uuid: string) => {
     const connection = new Promise<Array<Instrument>>((resolve) => {
 
         const sql = `
@@ -319,6 +327,7 @@ export const pfqList = async (db: DuckDB.Database) => {
             c.status
         FROM instrument_pfq AS c
         LEFT JOIN values_pfq AS v ON v.instrument_id = c.id
+        WHERE c.user_uuid = '${user_uuid}'
         GROUP BY c.id, c.uuid, c.status;`;
 
         db.all(sql, (error, result) => {
@@ -349,7 +358,7 @@ export const deletePFQ = async (id: string, db: DuckDB.Database) => {
 }
 
 // Instrument 9
-export const eefList = async (db: DuckDB.Database) => {
+export const eefList = async (db: DuckDB.Database, user_uuid: string) => {
     const connection = new Promise<Array<Instrument>>((resolve) => {
 
         const sql = `
@@ -359,6 +368,7 @@ export const eefList = async (db: DuckDB.Database) => {
             c.status
         FROM instrument_eef AS c
         LEFT JOIN values_eef AS v ON v.instrument_id = c.id
+        WHERE c.user_uuid = '${user_uuid}'
         GROUP BY c.id, c.uuid, c.status;`;
 
         db.all(sql, (error, result) => {
@@ -389,7 +399,7 @@ export const deleteEEF = async (id: string, db: DuckDB.Database) => {
 }
 
 // Instrument 5
-export const yplcsList = async (db: DuckDB.Database) => {
+export const yplcsList = async (db: DuckDB.Database, user_uuid: string) => {
     const connection = new Promise<Array<Instrument>>((resolve) => {
 
         const sql = `
@@ -402,6 +412,7 @@ export const yplcsList = async (db: DuckDB.Database) => {
             c.status
         FROM instrument_yplcs AS c
         LEFT JOIN values_yplcs AS v ON v.instrument_id = c.id
+        WHERE c.user_uuid = '${user_uuid}'
         GROUP BY c.id, c.uuid, c.status;`;
 
         db.all(sql, (error, result) => {
@@ -432,7 +443,7 @@ export const deleteYPLCS = async (id: string, db: DuckDB.Database) => {
 }
 
 // Instrument 5a
-export const tqypList = async (db: DuckDB.Database) => {
+export const tqypList = async (db: DuckDB.Database, user_uuid: string) => {
     const connection = new Promise<Array<Instrument>>((resolve) => {
 
         const sql = `
@@ -445,6 +456,7 @@ export const tqypList = async (db: DuckDB.Database) => {
             c.status
         FROM instrument_tqyp AS c
         LEFT JOIN values_tqyp AS v ON v.instrument_id = c.id
+        WHERE c.user_uuid = '${user_uuid}'
         GROUP BY c.id, c.uuid, c.status;`;
 
         db.all(sql, (error, result) => {
