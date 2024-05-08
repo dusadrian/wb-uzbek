@@ -1,4 +1,5 @@
 import * as DuckDB from "duckdb";
+import constant from "../libraries/constants";
 
 export interface InstrumentData {
     instrument_id: number | null;
@@ -143,10 +144,10 @@ export const getExisting = async (db: DuckDB.Database) => {
 }
 
 // Instrument 1
-export const cpisList = async (db: DuckDB.Database, user_uuid: string) => {
+export const cpisList = async (db: DuckDB.Database, user_uuid: string, role_code: string) => {
     const connection = new Promise<Array<Instrument>>((resolve) => {
 
-        const sql = `
+        let sql = `
         SELECT c.id,
             c.uuid,
             MAX(CASE WHEN variable = 'pin' THEN value ELSE NULL END) pin,
@@ -155,9 +156,13 @@ export const cpisList = async (db: DuckDB.Database, user_uuid: string) => {
             MAX(CASE WHEN variable = 'lk1c' THEN value ELSE NULL END) last_name,
             c.status
         FROM instrument_cpis AS c
-        LEFT JOIN values_cpis AS v ON v.instrument_id = c.id
-        WHERE c.user_uuid = '${user_uuid}'
-        GROUP BY c.id, c.uuid, c.status;`;
+        LEFT JOIN values_cpis AS v ON v.instrument_id = c.id`;
+
+        if (role_code === constant.ROLE_DATA_COLLECTOR || role_code === constant.ROLE_HR_SPECIALIST || role_code === constant.ROLE_ADMIN_SPECIALIST || role_code === constant.ROLE_EXT_EVALUATOR) {
+            sql += ` WHERE c.user_uuid = '${user_uuid}'`;
+        }
+
+        sql += ` GROUP BY c.id, c.uuid, c.status;`;
 
         db.all(sql, (error, result) => {
             if (error) {
@@ -187,10 +192,10 @@ export const deleteCPIS = async (id: string, db: DuckDB.Database) => {
 }
 
 // Instrument 2
-export const cibsList = async (db: DuckDB.Database, user_uuid: string) => {
+export const cibsList = async (db: DuckDB.Database, user_uuid: string, role_code: string) => {
     const connection = new Promise<Array<Instrument>>((resolve) => {
 
-        const sql = `
+        let sql = `
         SELECT c.id,
             c.uuid,
             MAX(CASE WHEN variable = 'pin' THEN value ELSE NULL END) pin,
@@ -199,9 +204,13 @@ export const cibsList = async (db: DuckDB.Database, user_uuid: string) => {
             MAX(CASE WHEN variable = 'lk1c' THEN value ELSE NULL END) last_name,
             c.status
         FROM instrument_cibs AS c
-        LEFT JOIN values_cibs AS v ON v.instrument_id = c.id
-        WHERE c.user_uuid = '${user_uuid}'
-        GROUP BY c.id, c.uuid, c.status;`;
+        LEFT JOIN values_cibs AS v ON v.instrument_id = c.id`;
+
+        if (role_code === constant.ROLE_DATA_COLLECTOR || role_code === constant.ROLE_HR_SPECIALIST || role_code === constant.ROLE_ADMIN_SPECIALIST || role_code === constant.ROLE_EXT_EVALUATOR) {
+            sql += ` WHERE c.user_uuid = '${user_uuid}`;
+        }
+
+        sql += ` GROUP BY c.id, c.uuid, c.status;`;
 
         db.all(sql, (error, result) => {
             if (error) {
@@ -231,18 +240,22 @@ export const deleteCIBS = async (id: string, db: DuckDB.Database) => {
 }
 
 // instrument 3
-export const csrList = async (db: DuckDB.Database, user_uuid: string) => {
+export const csrList = async (db: DuckDB.Database, user_uuid: string, role_code: string) => {
     const connection = new Promise<Array<Instrument>>((resolve) => {
 
-        const sql = `
+        let sql = `
         SELECT c.id,
             c.uuid,
             MAX(CASE WHEN variable = 'j1' THEN value ELSE NULL END) j1,
             c.status
         FROM instrument_csr AS c
-        LEFT JOIN values_csr AS v ON v.instrument_id = c.id
-        WHERE c.user_uuid = '${user_uuid}'
-        GROUP BY c.id, c.uuid, c.status;`;
+        LEFT JOIN values_csr AS v ON v.instrument_id = c.id`;
+
+        if (role_code === constant.ROLE_DATA_COLLECTOR || role_code === constant.ROLE_HR_SPECIALIST || role_code === constant.ROLE_ADMIN_SPECIALIST || role_code === constant.ROLE_EXT_EVALUATOR) {
+            sql += ` WHERE c.user_uuid = '${user_uuid}'`;
+        }
+
+        sql += ` GROUP BY c.id, c.uuid, c.status;`;
 
         db.all(sql, (error, result) => {
             if (error) {
@@ -272,10 +285,10 @@ export const deleteStaff = async (id: string, db: DuckDB.Database) => {
 }
 
 // Instrument 7
-export const ftchList = async (db: DuckDB.Database, user_uuid: string) => {
+export const ftchList = async (db: DuckDB.Database, user_uuid: string, role_code: string) => {
     const connection = new Promise<Array<Instrument>>((resolve) => {
 
-        const sql = `
+        let sql = `
         SELECT c.id,
             c.uuid,
             MAX(CASE WHEN variable = 'ifm1' THEN value ELSE NULL END) ifm1,
@@ -283,9 +296,13 @@ export const ftchList = async (db: DuckDB.Database, user_uuid: string) => {
             MAX(CASE WHEN variable = 'ifm3' THEN value ELSE NULL END) ifm3,
             c.status
         FROM instrument_ftch AS c
-        LEFT JOIN values_ftch AS v ON v.instrument_id = c.id
-        WHERE c.user_uuid = '${user_uuid}'
-        GROUP BY c.id, c.uuid, c.status;`;
+        LEFT JOIN values_ftch AS v ON v.instrument_id = c.id`;
+
+        if (role_code === constant.ROLE_DATA_COLLECTOR || role_code === constant.ROLE_HR_SPECIALIST || role_code === constant.ROLE_ADMIN_SPECIALIST || role_code === constant.ROLE_EXT_EVALUATOR) {
+            sql += ` WHERE c.user_uuid = '${user_uuid}'`;
+        }
+
+        sql += ` GROUP BY c.id, c.uuid, c.status;`;
 
         db.all(sql, (error, result) => {
             if (error) {
@@ -315,10 +332,10 @@ export const deleteFTCH = async (id: string, db: DuckDB.Database) => {
 }
 
 // Instrument 8
-export const pfqList = async (db: DuckDB.Database, user_uuid: string) => {
+export const pfqList = async (db: DuckDB.Database, user_uuid: string, role_code: string) => {
     const connection = new Promise<Array<Instrument>>((resolve) => {
 
-        const sql = `
+        let sql = `
         SELECT c.id,
             c.uuid,
             MAX(CASE WHEN variable = 'ig1' THEN value ELSE NULL END) ig1,
@@ -326,9 +343,13 @@ export const pfqList = async (db: DuckDB.Database, user_uuid: string) => {
             MAX(CASE WHEN variable = 'ig3' THEN value ELSE NULL END) ig3,
             c.status
         FROM instrument_pfq AS c
-        LEFT JOIN values_pfq AS v ON v.instrument_id = c.id
-        WHERE c.user_uuid = '${user_uuid}'
-        GROUP BY c.id, c.uuid, c.status;`;
+        LEFT JOIN values_pfq AS v ON v.instrument_id = c.id`;
+
+        if (role_code === constant.ROLE_DATA_COLLECTOR || role_code === constant.ROLE_HR_SPECIALIST || role_code === constant.ROLE_ADMIN_SPECIALIST || role_code === constant.ROLE_EXT_EVALUATOR) {
+            sql += ` WHERE c.user_uuid = '${user_uuid}'`;
+        }
+
+        sql += ` GROUP BY c.id, c.uuid, c.status;`;
 
         db.all(sql, (error, result) => {
             if (error) {
@@ -358,18 +379,22 @@ export const deletePFQ = async (id: string, db: DuckDB.Database) => {
 }
 
 // Instrument 9
-export const eefList = async (db: DuckDB.Database, user_uuid: string) => {
+export const eefList = async (db: DuckDB.Database, user_uuid: string, role_code: string) => {
     const connection = new Promise<Array<Instrument>>((resolve) => {
 
-        const sql = `
+        let sql = `
         SELECT c.id,
             c.uuid,
             MAX(CASE WHEN variable = 'i1' THEN value ELSE NULL END) i1,
             c.status
         FROM instrument_eef AS c
-        LEFT JOIN values_eef AS v ON v.instrument_id = c.id
-        WHERE c.user_uuid = '${user_uuid}'
-        GROUP BY c.id, c.uuid, c.status;`;
+        LEFT JOIN values_eef AS v ON v.instrument_id = c.id`;
+
+        if (role_code === constant.ROLE_DATA_COLLECTOR || role_code === constant.ROLE_HR_SPECIALIST || role_code === constant.ROLE_ADMIN_SPECIALIST || role_code === constant.ROLE_EXT_EVALUATOR) {
+            sql += ` WHERE c.user_uuid = '${user_uuid}'`;
+        }
+
+        sql += ` GROUP BY c.id, c.uuid, c.status;`;
 
         db.all(sql, (error, result) => {
             if (error) {
@@ -399,10 +424,10 @@ export const deleteEEF = async (id: string, db: DuckDB.Database) => {
 }
 
 // Instrument 5
-export const yplcsList = async (db: DuckDB.Database, user_uuid: string) => {
+export const yplcsList = async (db: DuckDB.Database, user_uuid: string, role_code: string) => {
     const connection = new Promise<Array<Instrument>>((resolve) => {
 
-        const sql = `
+        let sql = `
         SELECT c.id,
             c.uuid,
             MAX(CASE WHEN variable = 'pi1' THEN value ELSE NULL END) pi1,
@@ -411,9 +436,13 @@ export const yplcsList = async (db: DuckDB.Database, user_uuid: string) => {
             MAX(CASE WHEN variable = 'pi1c' THEN value ELSE NULL END) pi1c,
             c.status
         FROM instrument_yplcs AS c
-        LEFT JOIN values_yplcs AS v ON v.instrument_id = c.id
-        WHERE c.user_uuid = '${user_uuid}'
-        GROUP BY c.id, c.uuid, c.status;`;
+        LEFT JOIN values_yplcs AS v ON v.instrument_id = c.id`;
+
+        if (role_code === constant.ROLE_DATA_COLLECTOR || role_code === constant.ROLE_HR_SPECIALIST || role_code === constant.ROLE_ADMIN_SPECIALIST || role_code === constant.ROLE_EXT_EVALUATOR) {
+            sql += ` WHERE c.user_uuid = '${user_uuid}'`;
+        }
+
+        sql += ` GROUP BY c.id, c.uuid, c.status;`;
 
         db.all(sql, (error, result) => {
             if (error) {
@@ -443,10 +472,10 @@ export const deleteYPLCS = async (id: string, db: DuckDB.Database) => {
 }
 
 // Instrument 5a
-export const tqypList = async (db: DuckDB.Database, user_uuid: string) => {
+export const tqypList = async (db: DuckDB.Database, user_uuid: string, role_code: string) => {
     const connection = new Promise<Array<Instrument>>((resolve) => {
 
-        const sql = `
+        let sql = `
         SELECT c.id,
             c.uuid,
             MAX(CASE WHEN variable = 'ptr1' THEN value ELSE NULL END) ptr1,
@@ -455,9 +484,13 @@ export const tqypList = async (db: DuckDB.Database, user_uuid: string) => {
             MAX(CASE WHEN variable = 'ptr2c' THEN value ELSE NULL END) ptr2c,
             c.status
         FROM instrument_tqyp AS c
-        LEFT JOIN values_tqyp AS v ON v.instrument_id = c.id
-        WHERE c.user_uuid = '${user_uuid}'
-        GROUP BY c.id, c.uuid, c.status;`;
+        LEFT JOIN values_tqyp AS v ON v.instrument_id = c.id`;
+
+        if (role_code === constant.ROLE_DATA_COLLECTOR || role_code === constant.ROLE_HR_SPECIALIST || role_code === constant.ROLE_ADMIN_SPECIALIST || role_code === constant.ROLE_EXT_EVALUATOR) {
+            sql += ` WHERE c.user_uuid = '${user_uuid}'`;
+        }
+
+        sql += ` GROUP BY c.id, c.uuid, c.status;`;
 
         db.all(sql, (error, result) => {
             if (error) {

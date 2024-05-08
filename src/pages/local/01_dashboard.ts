@@ -9,7 +9,7 @@ interface IObj {
 
 const initInstruments = (userData: User, institutionDetails: any) => {
 
-    console.log(institutionDetails);
+    // console.log(institutionDetails);
 
 
     // get ID for instruments 4 and 6 -- QMR and DSEE
