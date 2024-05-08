@@ -33,13 +33,13 @@ const general_dates = [
 ];
 
 
-const regElements =  ["reg", "lk14b", "sa3a", "cm3b", "cm11c", "ct11c", "cg11c"];
-const disElements =  ["dis", "lk14c", "sa3b", "cm3c", "cm11d", "ct11d", "cg11d"];
-const setElements =  [""   , "lk14d", "",     "cm3d", "cm11e", "ct11e", "cg11e"];
-const typeElements = [""   , "lk14e", "",     "cm3e", "cm11f", "ct11f", "cg11f"];
+const regElements = ["reg", "lk14b", "sa3a", "cm3b", "cm11c", "ct11c", "cg11c"];
+const disElements = ["dis", "lk14c", "sa3b", "cm3c", "cm11d", "ct11d", "cg11d"];
+const setElements = ["", "lk14d", "", "cm3d", "cm11e", "ct11e", "cg11e"];
+const typeElements = ["", "lk14e", "", "cm3e", "cm11f", "ct11f", "cg11f"];
 
 let regionCode = '';
-let institutionType = '';
+let institutionType = 'test';
 
 export const instrument2 = {
     init: async () => {
@@ -243,7 +243,6 @@ export const instrument2 = {
                     util.setValue('reg', "" + services[institution_code].region);
                     util.setValue('dis', "" + services[institution_code].district);
                     util.setValue("omr8", services[institution_code].name ? services[institution_code].name : "--");
-                    institutionType = services[institution_code].type;
                 }
                 util.setValue("omr9", "" + institution_code);
 
@@ -255,6 +254,12 @@ export const instrument2 = {
                 util.setValue('omr6', args.userData.phone ? args.userData.phone : "--");
                 util.setValue('omr7', args.userData.email ? args.userData.email : "--");
                 regionCode = args.userData.region_code;
+                
+                if (args.userData.service_type_code === '9') {
+                    institutionType = args.insons[args.userData.institution_code].type;
+                } else {
+                    institutionType = args.services[args.userData.institution_code].type;
+                }
 
                 if (Object.keys(services).indexOf(institution_code) >= 0) {
                     util.setValue("omr10", "-9");
