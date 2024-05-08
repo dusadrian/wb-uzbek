@@ -26,22 +26,22 @@
 
             <input type="hidden" name="user_id" id="user_id" />
 
-            <div class="grid grid-cols-2 gap-4 mt-4">
+            <div class="grid grid-cols-3 gap-4 mt-4">
                 <div class="flex flex-col gap-2 justify-center items-start">
                     <label for="username" class="block mb-2 text-sm font-medium text-gray-900">
                         <span class="t_username">username</span>
                     </label>
                     <input type="text" id="username"
                         class="disabled:bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
-                        required />
+                        disabled />
                 </div>
-                <div class="flex flex-col gap-2 justify-center items-start">
+                <div class="flex flex-col gap-2 justify-center items-start col-span-2">
                     <label for="password" class="block mb-2 text-sm font-medium text-gray-900">
                         <span class="t_password">password</span>
                     </label>
                     <input type="text" id="password"
                         class="disabled:bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
-                        required />
+                        disabled />
                 </div>
             </div>
 
@@ -72,49 +72,63 @@
                 </div>
             </div>
 
-            <div class="mt-10 flex gap-4 items-center">
-                <label for="position" class="block mb-2 text-sm font-medium text-gray-900 w-2/12">
-                    <span class="t_position">Position</span>
-                </label>
-                <input type="text" id="position"
-                    class="disabled:bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
-                    required />
-            </div>
-            <div class="mt-4 flex gap-4 items-center">
-                <label for="profession" class="block mb-2 text-sm font-medium text-gray-900 w-2/12">
-                    <span class="t_profession">Profession</span>
-                </label>
-                <input type="text" id="profession"
-                    class="disabled:bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
-                    required />
+            <div class="grid grid-cols-3 gap-4 mt-4">
+                <div class="flex flex-col gap-2 col-span-1">
+                    <label for="position" class="block text-sm font-medium text-gray-900">
+                        <span class="t_position">Position</span>
+                    </label>
+                    <input type="text" id="position"
+                        class="disabled:bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+                        required />
+                </div>
+                <div class="flex flex-col gap-2 col-span-2">
+                    <label for="profession" class="block text-sm font-medium text-gray-900">
+                        <span class="t_profession">Profession</span>
+                    </label>
+                    <input type="text" id="profession"
+                        class="disabled:bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+                        required />
+                </div>
             </div>
 
-            <div class="mt-4 flex gap-4 items-center">
-                <label for="phone" class="block mb-2 text-sm font-medium text-gray-900 w-2/12">
-                    <span class="t_phone">Phone</span>
-                </label>
-                <input type="text" id="phone"
-                    class="disabled:bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
-                    required />
+            <div class="grid grid-cols-3 gap-4 mt-4">
+                <div class="flex flex-col gap-2">
+                    <label for="phone" class="block text-sm font-medium text-gray-900">
+                        <span class="t_phone">Phone</span>
+                    </label>
+                    <input type="text" id="phone"
+                        class="disabled:bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+                        required />
+                </div>
+                <div class="flex flex-col gap-2 col-span-2">
+                    <label for="email" class="block text-sm font-medium text-gray-900">
+                        <span class="t_email">Email</span>
+                    </label>
+                    <input type="text" id="email"
+                        class="disabled:bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+                        required />
+                </div>
             </div>
-            <div class="mt-4 flex gap-4 items-center">
-                <label for="email" class="block mb-2 text-sm font-medium text-gray-900 w-2/12">
-                    <span class="t_email">Email</span>
-                </label>
-                <input type="text" id="email"
-                    class="disabled:bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
-                    required />
-            </div>
-            <div class="mt-4 flex gap-4 items-center">
-                <label for="role_code" class="block mb-2 text-sm font-medium text-gray-900 w-2/12">
+
+            <div class="grid grid-cols-3 gap-4 mt-6 items-center">
+                <label for="role_code" class="block text-sm font-medium text-gray-900 col-span-1 text-right">
                     <span class="t_user_type">Type</span>
                 </label>
                 <select id="role_code"
-                    class="disabled:bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 ">
+                    class="disabled:bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 col-span-2">
                     <option value="2">Data</option>
                     <option value="3">HR</option>
                     <option value="4">Admin</option>
                 </select>
+            </div>
+
+            <div class="grid grid-cols-3 gap-4 mt-6 items-center">
+                <label for="auth_code" class="block mb-2 text-sm font-medium text-gray-900 col-span-1 text-right">
+                    <span class="t_auth_code">Authorization code</span>
+                </label>
+                <input type="text" id="auth_code"
+                    class="disabled:bg-gray-50 border border-amber-600 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 col-span-2"
+                    required />
             </div>
 
         </form>

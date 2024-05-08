@@ -651,14 +651,37 @@ ipcMain.on('addUser', (event, args) => {
     });
 });
 ipcMain.on('updateUser', (event, args) => {
-    // save to DB
-    database.updateUser(args).then(() => {
-        // send message
+
+    if (!args.auth_code || args.auth_code === '') {
         dialog.showMessageBox(mainWindow, {
-            type: 'info',
-            message: i18n.__('User updated.'),
-        }).then(() => {
-            localUsers();
+            type: 'warning',
+            message: i18n.__('Authorization code missing.'),
+        });
+        return;
+    }
+
+    database.checkAuthCode(appSession.userData.institution_code, args.auth_code).then((result) => {
+
+        if (result.length === 0) {
+            dialog.showMessageBox(mainWindow, {
+                type: 'warning',
+                message: i18n.__('Invalid authorization code.'),
+            });
+            return;
+        }
+
+        // save to DB
+        database.updateUser(args).then(() => {
+            // set auth code as used
+            database.updateAuthCode(appSession.userData.institution_code, args.auth_code).then(() => {
+                // send message
+                dialog.showMessageBox(mainWindow, {
+                    type: 'info',
+                    message: i18n.__('User updated.'),
+                }).then(() => {
+                    localUsers();
+                });
+            });
         });
     });
 })

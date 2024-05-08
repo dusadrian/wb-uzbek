@@ -215,10 +215,6 @@ export const database = {
         const connection = new Promise<boolean>((resolve) => {
             db.run(`
                 UPDATE users SET
-                    username = ?,
-                    password = ?,
-                    institution_code = ?,
-                    institution_name = ?,
                     name = ?,
                     patronymics = ?,
                     surname = ?,
@@ -226,15 +222,10 @@ export const database = {
                     profession = ?,
                     phone = ?,
                     email = ?,
-                    region_code = ?,
                     role_code = ?,
                     service_type_code = ?
                 WHERE id = ?
             `,
-                user.username,
-                user.password,
-                user.institution_code,
-                user.institution_name,
                 user.name,
                 user.patronymics,
                 user.surname,
@@ -242,7 +233,6 @@ export const database = {
                 user.profession,
                 user.phone,
                 user.email,
-                user.region_code,
                 user.role_code,
                 user.service_type_code,
                 user.id,
