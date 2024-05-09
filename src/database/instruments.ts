@@ -144,7 +144,7 @@ export const getExisting = async (db: DuckDB.Database) => {
 }
 
 // Instrument 1
-export const cpisList = async (db: DuckDB.Database, user_uuid: string, role_code: string) => {
+export const cpisList = async (db: DuckDB.Database, user_uuid: string, role_code: string, institution_code?: string) => {
     const connection = new Promise<Array<Instrument>>((resolve) => {
 
         let sql = `
@@ -159,10 +159,15 @@ export const cpisList = async (db: DuckDB.Database, user_uuid: string, role_code
         LEFT JOIN values_cpis AS v ON v.instrument_id = c.id`;
 
         if (role_code === constant.ROLE_DATA_COLLECTOR || role_code === constant.ROLE_HR_SPECIALIST || role_code === constant.ROLE_ADMIN_SPECIALIST || role_code === constant.ROLE_EXT_EVALUATOR) {
-            sql += ` WHERE c.user_uuid = '${user_uuid}'`;
+            sql += " WHERE c.user_uuid = '" + user_uuid + "'";
+            if (institution_code) {
+                sql += " AND c.institution_code = '" + institution_code + "'";
+            }
+        } else if (institution_code) {
+            sql += " WHERE c.institution_code = '" + institution_code + "'";
         }
 
-        sql += ` GROUP BY c.id, c.uuid, c.status;`;
+        sql += " GROUP BY c.id, c.uuid, c.status;";
 
         db.all(sql, (error, result) => {
             if (error) {

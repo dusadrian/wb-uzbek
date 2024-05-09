@@ -77,6 +77,9 @@ window.addEventListener("DOMContentLoaded", () => {
         case 'instruments/01_cpis.html':
             CPIS();
             break;
+        case 'instruments/01_cpis_inson_services.html':
+            CPIS_SERVICE();
+            break;
         case 'instruments/01_cpis_en.html':
         case 'instruments/01_cpis_uz.html':
         case 'instruments/01_cpis_ru.html':
@@ -337,6 +340,18 @@ const CPIS = () => {
         return await import("./pages/instruments/01_cpis");
     };
     importFile().then(result => result.cpis.init().catch(error => {
+        console.log(error);
+    }));
+};
+const CPIS_SERVICE = () => {
+
+    topMenu('local/01_dashboard');
+
+    translatePage();
+    const importFile = async () => {
+        return await import("./pages/instruments/01_cpis_inson_services");
+    };
+    importFile().then(result => result.cpis_services.init().catch(error => {
         console.log(error);
     }));
 };

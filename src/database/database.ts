@@ -418,6 +418,21 @@ export const database = {
             insons
         };
     },
+    getInsonServices: async (services: string, inson: string) => {
+        if(!services) {
+            return [];
+        }
+        const connection = new Promise<Array<DI.Institution>>((resolve) => {
+            db.all(`SELECT * FROM institutions WHERE code IN (${services}) AND inson ='${inson}'`, (error, result) => {
+                if (error) {
+                    console.log(error);
+                }                
+                resolve(result as DI.Institution[]);
+            });
+        });
+        return await connection;
+    },
+
     // Instruments
     instrumentSave,
     instrumentGet,

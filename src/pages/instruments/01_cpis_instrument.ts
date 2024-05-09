@@ -4,6 +4,7 @@ import instrument from "../../libraries/instrument";
 import { QuestionObjectType, SaveInstrumentType } from "../../libraries/interfaces";
 import { util, errorHandler } from "../../libraries/validation_helpers";
 import * as DI from "../../interfaces/database";
+import constant from "../../libraries/constants";
 
 import * as _flatpickr from 'flatpickr';
 import { FlatpickrFn } from 'flatpickr/dist/types/instance';
@@ -199,8 +200,8 @@ export const instrument1 = {
 
             services = args.services;
             insons = args.insons;
-            const institution_code = args.userData.institution_code;
-            const inson_user = Object.keys(insons).indexOf(institution_code) >= 0;
+            const institution_code = args.institution_code ?? args.userData.institution_code;
+            const inson_user = constant.INSON.includes(args.userData.service_type_code);
 
             const sa5i = util.htmlElement("sa5i");
             const sh5 = util.htmlElement("sh5");
@@ -392,11 +393,16 @@ export const instrument1 = {
                 let institution_name = "";
                 util.setValue("sh5s", "--");
                 if (inson_user) {
-                    institution_name = insons[institution_code].name;
-                    util.setValue('reg', insons[institution_code].region);
-                    util.setValue('dis', insons[institution_code].district);
+                    institution_name = insons[args.userData.institution_code].name;
+                    util.setValue('reg', insons[args.userData.institution_code].region);
+                    util.setValue('dis', insons[args.userData.institution_code].district);
                     util.setValue('omr8a', "2");
-                    util.setValue("omr8", insons[institution_code].name ? insons[institution_code].name : "--");
+                    util.setValue("omr8", insons[args.userData.institution_code].name ? insons[args.userData.institution_code].name : "--");
+                    
+                    if (services[institution_code].settlement) {
+                        util.setValue("sh5s", services[institution_code].settlement);
+                    }
+                    util.setValue("sh5", institution_code);
                 }
                 else {
                     institution_name = services[institution_code].name;
@@ -420,13 +426,16 @@ export const instrument1 = {
                 regionCode = args.userData.region_code;
                 userUUID = args.userData.uuid;
 
-                if (args.userData.service_type_code === '9') {
-                    institutionType = args.insons[args.userData.institution_code].type;
-                    institutionCode = args.userData.institution_code; // TODO -- THIS IS NOT OK, need to be fixed
-                } else {
-                    institutionType = args.services[args.userData.institution_code].type;
-                    institutionCode = args.userData.institution_code;
-                }
+                console.log(args);
+                
+                institutionType = args.userData.service_type_code;
+                institutionCode = args.userData.institution_code;
+
+                // if (args.userData.service_type_code === '9') {
+                //     institutionType = args.insons[args.userData.institution_code].type;
+                //     institutionCode = args.userData.institution_code; // TODO -- THIS IS NOT OK, need to be fixed
+                // } else {
+                // }
 
                 // util.setValue("sh5", institution_code);
                 // util.setValue("sh5a", institution_name);

@@ -12,18 +12,25 @@ const $ = window.require('jquery');
 const dt = window.require('datatables.net-dt');
 dt(window, $);
 
+let institutionCode: string;
+
 export const cpis = {
     init: async () => {
 
         // call this to show based on permissions hidden sections
         showByPermissions()
 
-        ipcRenderer.send('getChildren');
+        institutionCode = sessionStorage.getItem('instrument1_service');
+
+        ipcRenderer.send('getChildren', {
+            institution_code: institutionCode
+        });
 
         (<HTMLButtonElement>document.getElementById('add_child_cpis')).addEventListener('click', () => {
             ipcRenderer.send('changeWindow', {
                 'name': 'instruments',
-                'instrument': 'CPIS'
+                'instrument': 'CPIS',
+                'institution_code': institutionCode,
             });
         });
 
@@ -131,6 +138,7 @@ const editItem = function (id: number) {
         'name': 'instruments',
         'instrument': 'CPIS',
         'id': id,
+        'institution_code': institutionCode,
     });
 };
 

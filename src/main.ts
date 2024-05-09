@@ -155,7 +155,7 @@ ipcMain.on("changeWindow", (_event, args) => {
             goToLogin(newPage);
             break;
         case "instruments":
-            goToInstrument(args.instrument, args.id);
+            goToInstrument(args.instrument, args.id, args.institution_code);
             break;
         case "cpis":
             goToCPISList();
@@ -284,11 +284,23 @@ ipcMain.on('getInstrumentsId', () => {
 
 // Instrument 1
 const goToCPISList = () => {
-    const newPage = path.join(__dirname, "../src/pages/instruments/01_cpis.html");
-    mainWindow.loadURL("file://" + newPage);
+    if (constant.INSON.includes(appSession.userData.service_type_code)) {
+        mainWindow.loadURL("file://" + path.join(__dirname, "../src/pages/instruments/01_cpis_inson_services.html"));
+        database.getInsonServices((appSession.institutionDetails as DI.INSON).services, appSession.userData.institution_code).then((result) => {
+            mainWindow.webContents.once("did-finish-load", () => {
+                mainWindow.webContents.send("services", result);
+            });
+        });
+    } else {
+        const newPage = path.join(__dirname, "../src/pages/instruments/01_cpis.html");
+        mainWindow.loadURL("file://" + newPage);
+    }
 };
-ipcMain.on('getChildren', () => {
-    database.cpisList(db, appSession.userData.uuid, appSession.userData.role_code).then((result) => {
+ipcMain.on('goToCPISList', (_event, _args) => {
+    mainWindow.loadURL("file://" + path.join(__dirname, "../src/pages/instruments/01_cpis.html"));
+});
+ipcMain.on('getChildren', (_event, args) => {
+    database.cpisList(db, appSession.userData.uuid, appSession.userData.role_code, args.institution_code).then((result) => {
         mainWindow.webContents.send("children", result);
     });
 });
@@ -530,11 +542,11 @@ ipcMain.on('deleteEEF', (_event, args) => {
     });
 });
 
-const goToInstrument = (instrument: string, id: string) => {
+const goToInstrument = (instrument: string, id: string, institution_code?: string) => {
 
     switch (instrument) {
         case "CPIS":
-            goToCPIS(id);
+            goToCPIS(id, institution_code);
             break;
         case "CSR":
             goToCSR(id);
@@ -711,7 +723,9 @@ ipcMain.on('deleteUser', (_event, args) => {
 
 // Instruments =================
 // Instrument 1
-const goToCPIS = (id: string) => {
+const goToCPIS = (id: string, institution_code: string) => {
+    console.log(institution_code);
+    
     const newPage = path.join(__dirname, "../src/pages/instruments/01_cpis_" + appSession.language + ".html");
     mainWindow.loadURL("file://" + newPage);
     database.getAllServices().then((allServices) => { // Institutions and INSON
@@ -724,6 +738,7 @@ const goToCPIS = (id: string) => {
                         userData: appSession.userData,
                         services: allServices.services,
                         insons: allServices.insons,
+                        institution_code,
                     });
                 });
             });
@@ -733,6 +748,7 @@ const goToCPIS = (id: string) => {
                     userData: appSession.userData,
                     services: allServices.services,
                     insons: allServices.insons,
+                    institution_code,
                 });
             });
         }

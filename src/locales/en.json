@@ -201,5 +201,6 @@
 	"t_pf": "Patronat Family",
 	"t_auth_code": "Authorization code",
 	"Invalid authorization code.": "Invalid authorization code.",
-	"must_be_earlier": "X must be earlier than Y"
+	"must_be_earlier": "X must be earlier than Y",
+	"t_select_service_from_list": "Please select a service from the list"
 }
