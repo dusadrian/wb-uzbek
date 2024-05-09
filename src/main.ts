@@ -56,7 +56,7 @@ function createWindow() {
         backgroundColor: "#fff",
         webPreferences: {
             nodeIntegration: true,
-            contextIsolation: process.env.NODE_ENV !== "development" ? true : false,
+            contextIsolation: process.env.NODE_ENV !== "development",
             preload: path.join(__dirname, "./preload.js"),
         },
     });
