@@ -40,28 +40,6 @@ export const db = new DuckDB.Database(dbFile, duckdbOptions,
 );
 
 export const database = {
-    getInstitutions: async () => {
-        const connection = new Promise<Array<DI.Institution>>((resolve) => {
-            db.all(`SELECT * FROM institutions`, (error, result) => {
-                if (error) {
-                    console.log(error);
-                }
-                resolve(result as DI.Institution[]);
-            });
-        });
-        return await connection;
-    },
-    getINSON: async () => {
-        const connection = new Promise<Array<DI.INSON>>((resolve) => {
-            db.all(`SELECT * FROM inson`, (error, result) => {
-                if (error) {
-                    console.log(error);
-                }
-                resolve(result as DI.INSON[]);
-            });
-        });
-        return await connection;
-    },
     checkUser: async (username: string, password: string) => {
         const connection = new Promise<Array<DI.User>>((resolve) => {
             db.all(`SELECT * FROM users WHERE username = '${username}' AND password = '${password}'`, (error, result) => {
@@ -384,7 +362,62 @@ export const database = {
         return await connection;
     },
 
+    getInstitutions: async () => {
+        const connection = new Promise<Array<DI.Institution>>((resolve) => {
+            db.all(`SELECT * FROM institutions`, (error, result) => {
+                if (error) {
+                    console.log(error);
+                }
+                resolve(result as DI.Institution[]);
+            });
+        });
+        return await connection;
+    },
+    getINSON: async () => {
+        const connection = new Promise<Array<DI.INSON>>((resolve) => {
+            db.all(`SELECT * FROM inson`, (error, result) => {
+                if (error) {
+                    console.log(error);
+                }
+                resolve(result as DI.INSON[]);
+            });
+        });
+        return await connection;
+    },
+    getAllServices: async () => {
+        const institutions = new Promise<Array<DI.Institution>>((resolve) => {
+            db.all(`SELECT * FROM institutions`, (error, result) => {
+                if (error) {
+                    console.log(error);
+                }
+                resolve(result as DI.Institution[]);
+            });
+        });
+        const instarray = await institutions;
+        const services: { [key: string]: DI.Institution } = {};
+        for (const element of instarray) {
+            services[element.code] = element;
+        }
 
+        const inson = new Promise<Array<DI.INSON>>((resolve) => {
+            db.all(`SELECT * FROM inson`, (error, result) => {
+                if (error) {
+                    console.log(error);
+                }
+                resolve(result as DI.INSON[]);
+            });
+        });
+        const insonarray = await inson;
+        const insons: { [key: string]: DI.INSON } = {};
+        for (const element of insonarray) {
+            insons[element.code] = element;
+        }
+        
+        return {
+            services,
+            insons
+        };
+    },
     // Instruments
     instrumentSave,
     instrumentGet,

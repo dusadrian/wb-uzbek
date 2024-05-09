@@ -714,80 +714,56 @@ ipcMain.on('deleteUser', (_event, args) => {
 const goToCPIS = (id: string) => {
     const newPage = path.join(__dirname, "../src/pages/instruments/01_cpis_" + appSession.language + ".html");
     mainWindow.loadURL("file://" + newPage);
-    database.getInstitutions().then((instarray) => {
-        const services: { [key: string]: DI.Institution } = {};
-        for (const element of instarray) {
-            services[element.code] = element;
-        }
-        database.getINSON().then((insonarray) => {
-            const insons: { [key: string]: DI.INSON } = {};
-            for (const element of insonarray) {
-                insons[element.code] = element;
-            }
-            database.getUserData(appSession.userData.id).then((userDataArray) => {
-                if (id) {
-                    mainWindow.webContents.once("did-finish-load", () => {
-                        database.instrumentGet(id, 'cpis', db).then((questions) => {
-                            mainWindow.webContents.send("instrumentDataReady", {
-                                id,
-                                questions,
-                                userData: userDataArray[0],
-                                services: services,
-                                insons: insons,
-                            });
-                        });
+    database.getAllServices().then((allServices) => { // Institutions and INSON
+        if (id) {
+            mainWindow.webContents.once("did-finish-load", () => {
+                database.instrumentGet(id, 'cpis', db).then((questions) => {
+                    mainWindow.webContents.send("instrumentDataReady", {
+                        id,
+                        questions,
+                        userData: appSession.userData,
+                        services: allServices.services,
+                        insons: allServices.insons,
                     });
-                } else {
-                    mainWindow.webContents.once("did-finish-load", () => {
-                        mainWindow.webContents.send("instrumentDataReady", {
-                            userData: userDataArray[0],
-                            services: services,
-                            insons: insons,
-                        });
-                    });
-                }
+                });
             });
-        });
+        } else {
+            mainWindow.webContents.once("did-finish-load", () => {
+                mainWindow.webContents.send("instrumentDataReady", {
+                    userData: appSession.userData,
+                    services: allServices.services,
+                    insons: allServices.insons,
+                });
+            });
+        }
     })
 }
 // Instrument 2
 const goToCIBS = (id: string) => {
     const newPage = path.join(__dirname, "../src/pages/instruments/02_cibs_" + appSession.language + ".html");
     mainWindow.loadURL("file://" + newPage);
-    database.getInstitutions().then((instarray) => {
-        const services: { [key: string]: DI.Institution } = {};
-        for (const element of instarray) {
-            services[element.code] = element;
-        }
-        database.getINSON().then((insonarray) => {
-            const insons: { [key: string]: DI.INSON } = {};
-            for (const element of insonarray) {
-                insons[element.code] = element;
-            }
-            database.getUserData(appSession.userData.id).then((userDataArray) => {
-                if (id) {
-                    mainWindow.webContents.once("did-finish-load", () => {
-                        database.instrumentGet(id, 'cibs', db).then((questions) => {
-                            mainWindow.webContents.send("instrumentDataReady", {
-                                id,
-                                questions,
-                                userData: userDataArray[0],
-                                services: services,
-                                insons: insons,
-                            });
-                        });
+    database.getAllServices().then((allServices) => { // Institutions and INSON
+        if (id) {
+            mainWindow.webContents.once("did-finish-load", () => {
+                database.instrumentGet(id, 'cibs', db).then((questions) => {
+                    mainWindow.webContents.send("instrumentDataReady", {
+                        id,
+                        questions,
+                        userData: appSession.userData,
+                        services: allServices.services,
+                        insons: allServices.insons,
                     });
-                } else {
-                    mainWindow.webContents.once("did-finish-load", () => {
-                        mainWindow.webContents.send("instrumentDataReady", {
-                            userData: userDataArray[0],
-                            services: services,
-                            insons: insons,
-                        });
-                    });
-                }
+                });
             });
-        });
+        } else {
+            mainWindow.webContents.once("did-finish-load", () => {
+                mainWindow.webContents.send("instrumentDataReady", {
+                    userData: appSession.userData,
+                    services: allServices.services,
+                    insons: allServices.services,
+                });
+            });
+        }
     });
 }
 // Instrument 3
