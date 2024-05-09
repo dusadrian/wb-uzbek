@@ -31,8 +31,9 @@ const setElements = ["", "pi4d", "", "pi9h"];
 const typeElements = ["", "pi4e", "", "pi9i"];
 
 let regionCode = '';
-let institutionType = '';
 let userUUID = '';
+let institutionType = '';
+let institutionCode = '';
 
 export const instrument5 = {
     init: async () => {
@@ -232,8 +233,10 @@ export const instrument5 = {
 
                 if (args.userData.service_type_code === '9') {
                     institutionType = args.insons[args.userData.institution_code].type;
+                    institutionCode = args.userData.institution_code; // TODO -- Does this need to be fix for this instrument?
                 } else {
                     institutionType = args.services[args.userData.institution_code].type;
+                    institutionCode = args.userData.institution_code;
                 }
             }
 
@@ -262,8 +265,9 @@ const saveChestionar = (obj: SaveInstrumentType): void => {
     obj.table = "yplcs";
     obj.extras = {
         region_code: regionCode,
-        institution_type: institutionType,
         user_uuid: userUUID,
+        institution_type: institutionType,
+        institution_code: institutionCode,
     }
     ipcRenderer.send("saveInstrument", obj);
 }

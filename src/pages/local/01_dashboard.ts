@@ -1,6 +1,5 @@
 import { ipcRenderer } from "electron";
-import { User } from "../../interfaces/database";
-import { StatusInterface } from "../../interfaces/database";
+import { User, StatusInterface } from "../../interfaces/database";
 import constant from "../../libraries/constants";
 interface IObj {
     'name': string,
@@ -9,9 +8,6 @@ interface IObj {
 }
 
 const initInstruments = (userData: User, institutionDetails: any) => {
-
-    // console.log(institutionDetails);
-
 
     // get ID for instruments 4 and 6 -- QMR and DSEE
     if (userData.role_code ==constant.ROLE_ADMIN_SPECIALIST || userData.role_code == constant.ROLE_LOCAL) {
@@ -51,7 +47,7 @@ const initInstruments = (userData: User, institutionDetails: any) => {
         document.getElementById('t1c21').innerText = institutionDetails.children;
     }
     // I3. Staff registry
-    if ((userData.role_code == constant.ROLE_LOCAL || userData.role_code == '3') && (constant.CHILD_CARE.includes(userData.service_type_code) || constant.SPECIALIZED.includes(userData.service_type_code))) {
+    if ((userData.role_code == constant.ROLE_LOCAL || userData.role_code == constant.ROLE_HR_SPECIALIST) && (constant.CHILD_CARE.includes(userData.service_type_code) || constant.SPECIALIZED.includes(userData.service_type_code))) {
         document.getElementById('instrument3').classList.remove('hidden');
         document.getElementById('instrument3').classList.add('grid');
         const instrument3 = (<HTMLButtonElement>document.getElementById('view_instrument3'));
@@ -96,7 +92,7 @@ const initInstruments = (userData: User, institutionDetails: any) => {
                 });
             });
         }
-        if (userData.service_type_code != '9') {
+        if (!constant.INSON.includes(userData.service_type_code)) {
             document.getElementById('t1c51').innerText = institutionDetails.leavers;
         }
     }
@@ -166,7 +162,7 @@ const initInstruments = (userData: User, institutionDetails: any) => {
 
     // users
     if (userData.role_code === constant.ROLE_LOCAL || (userData.role_code === constant.ROLE_DATA_COLLECTOR && constant.INSON.includes(userData.service_type_code))){
-        if (userData.service_type_code !== '9') { // if not INSON
+        if (!constant.INSON.includes(userData.service_type_code)) { // if not INSON
             document.getElementById('users').classList.remove('hidden');
             document.getElementById('users').classList.add('flex');
         }

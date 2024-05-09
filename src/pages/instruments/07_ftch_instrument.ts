@@ -42,8 +42,9 @@ const setElements = ["", "ifp1c"];
 const typeElements = ["", "ifp1d"];
 
 let regionCode = '';
-let institutionType = '';
 let userUUID = '';
+let institutionType = '';
+let institutionCode = '';
 
 export const instrument7 = {
     init: async () => {
@@ -210,6 +211,8 @@ export const instrument7 = {
                 util.setValue('q6', args.userData.email ? args.userData.email : "--");
                 regionCode = args.userData.region_code;
                 userUUID = args.userData.uuid;
+                // TODO -- Is this okay?
+                institutionCode = args.userData.institution_code;
             }
 
             instrument.start(instrumentID, instrument.trimis, saveChestionar, validateChestionar);
@@ -237,8 +240,9 @@ const saveChestionar = (obj: SaveInstrumentType): void => {
     obj.table = "ftch";
     obj.extras = {
         region_code: regionCode,
-        institution_type: institutionType,
         user_uuid: userUUID,
+        institution_type: institutionType,
+        institution_code: institutionCode,
     }
     ipcRenderer.send("saveInstrument", obj);
 }

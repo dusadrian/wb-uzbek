@@ -38,8 +38,9 @@ const setElements = ["str3c", "ptr5d", "ptr8g"];
 const typeElements = ["", "ptr5e", "ptr8h"];
 
 let regionCode = '';
-let institutionType = '';
 let userUUID = '';
+let institutionType = '';
+let institutionCode = '';
 
 export const instrument5a = {
     init: async () => {
@@ -221,7 +222,9 @@ export const instrument5a = {
                     if (services[institution_code].settlement) {
                         util.setValue("str3c", services[institution_code].settlement);
                     }
+                    // TODO -- This needs to be checked
                     institutionType = services[institution_code].type;
+                    institutionCode = institution_code;
                 }
 
                 util.setValue("omr1", args.userData.name ? args.userData.name : "--");
@@ -258,8 +261,9 @@ const saveChestionar = (obj: SaveInstrumentType): void => {
     obj.table = "tqyp";
     obj.extras = {
         region_code: regionCode,
-        institution_type: institutionType,
         user_uuid: userUUID,
+        institution_type: institutionType,
+        institution_code: institutionCode,
     }
     ipcRenderer.send("saveInstrument", obj);
 }

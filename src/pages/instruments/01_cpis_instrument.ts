@@ -48,6 +48,7 @@ const typeElements = ["",     "lk14e", "cm3e", "cm10f", "cm11f", "ct3e", "ct10f"
 let regionCode = '';
 let userUUID = '';
 let institutionType = '';
+let institutionCode = '';
 
 const qeduc2 = util.radioIDs("qeduc2");
 
@@ -421,8 +422,10 @@ export const instrument1 = {
 
                 if (args.userData.service_type_code === '9') {
                     institutionType = args.insons[args.userData.institution_code].type;
+                    institutionCode = args.userData.institution_code; // TODO -- THIS IS NOT OK, need to be fixed
                 } else {
                     institutionType = args.services[args.userData.institution_code].type;
+                    institutionCode = args.userData.institution_code;
                 }
 
                 // util.setValue("sh5", institution_code);
@@ -462,8 +465,9 @@ const saveChestionar = (obj: SaveInstrumentType): void => {
     obj.table = "cpis";
     obj.extras = {
         region_code: regionCode,
+        user_uuid: userUUID,
         institution_type: institutionType,
-        user_uuid: userUUID
+        institution_code: institutionCode,
     }
     ipcRenderer.send("saveInstrument", obj);
 }

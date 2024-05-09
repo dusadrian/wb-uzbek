@@ -39,8 +39,9 @@ const setElements = ["", "lk14d", "", "cm3d", "cm11e", "ct11e", "cg11e"];
 const typeElements = ["", "lk14e", "", "cm3e", "cm11f", "ct11f", "cg11f"];
 
 let regionCode = '';
-let institutionType = '';
 let userUUID = '';
+let institutionType = '';
+let institutionCode = '';
 
 export const instrument2 = {
     init: async () => {
@@ -257,11 +258,9 @@ export const instrument2 = {
                 regionCode = args.userData.region_code;
                 userUUID = args.userData.uuid;
                 
-                if (args.userData.service_type_code === '9') {
-                    institutionType = args.insons[args.userData.institution_code].type;
-                } else {
-                    institutionType = args.services[args.userData.institution_code].type;
-                }
+                // utilizator de tip INSON nu completeaza instrumentul 2
+                institutionType = args.services[args.userData.institution_code].type;
+                institutionCode = args.userData.institution_code;
 
                 if (Object.keys(services).indexOf(institution_code) >= 0) {
                     util.setValue("omr10", "-9");
@@ -304,8 +303,9 @@ const saveChestionar = (obj: SaveInstrumentType): void => {
     obj.table = "cibs";
     obj.extras = {
         region_code: regionCode,
-        institution_type: institutionType,
         user_uuid: userUUID,
+        institution_type: institutionType,
+        institution_code: institutionCode,
     }
     ipcRenderer.send("saveInstrument", obj);
 }

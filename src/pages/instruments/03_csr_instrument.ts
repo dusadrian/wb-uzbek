@@ -29,8 +29,9 @@ let services: { [key: string]: DI.Institution };
 let insons: { [key: string]: DI.INSON };
 
 let regionCode = '';
-let institutionType = '';
 let userUUID = '';
+let institutionType = '';
+let institutionCode = '';
 
 export const instrument3 = {
     init: async () => {
@@ -190,6 +191,7 @@ export const instrument3 = {
                 util.setValue('q6', args.userData.email ? args.userData.email : "--");
                 regionCode = args.userData.region_code;
                 userUUID = args.userData.uuid;
+                institutionCode = args.userData.institution_code;
             }
 
             instrument.start(instrumentID, instrument.trimis, saveChestionar, validateChestionar);
@@ -217,8 +219,9 @@ const saveChestionar = (obj: SaveInstrumentType): void => {
     obj.table = "csr";
     obj.extras = {
         region_code: regionCode,
+        user_uuid: userUUID,
         institution_type: institutionType,
-        user_uuid: userUUID
+        institution_code: institutionCode,
     }
     ipcRenderer.send("saveInstrument", obj);
 }

@@ -9,5 +9,5 @@ export default Object.freeze({
 
     CHILD_CARE: ['1', '2', '3', '7'],
     SPECIALIZED: ['4', '5'],
-    INSON: ['91'],
+    INSON: ['9'],
 });
