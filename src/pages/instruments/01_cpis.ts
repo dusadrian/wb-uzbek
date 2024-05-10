@@ -146,5 +146,6 @@ const editItem = function (id: number) {
 const deleteItem = function (id: number) {
     ipcRenderer.send('deleteCPIS', {
         'id': id,
+        'service_code': institutionCode
     });
 };

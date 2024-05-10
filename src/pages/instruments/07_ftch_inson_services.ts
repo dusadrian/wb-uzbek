@@ -1,6 +1,4 @@
 import { ipcRenderer } from "electron";
-import { showByPermissions } from "../../libraries/showBasedOnPermissions";
-
 
 declare global {
     interface Window {
@@ -12,7 +10,7 @@ const $ = window.require('jquery');
 const dt = window.require('datatables.net-dt');
 dt(window, $);
 
-export const cpis_services = {
+export const ftch_services = {
     init: async () => {
 
         ipcRenderer.on('services', (event, services) => {
@@ -64,9 +62,9 @@ export const cpis_services = {
 // sterge eveniment
 const goNext = function (code: string) {
     
-    sessionStorage.setItem('instrument1_service', code);
+    sessionStorage.setItem('instrument7_service', code);
     
-    ipcRenderer.send('goToCPISList', {
+    ipcRenderer.send('goToFTCHList', {
         'code': code,
     });
 };

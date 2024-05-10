@@ -102,6 +102,7 @@ CREATE TABLE instrument_cpis (
     region_code VARCHAR,
     institution_type VARCHAR,
     institution_code VARCHAR,
+    service_code VARCHAR,
     status VARCHAR DEFAULT 'partial',
     created_at TIMESTAMP DEFAULT current_timestamp,
     updated_at TIMESTAMP DEFAULT current_timestamp,
@@ -286,12 +287,14 @@ CREATE TABLE instrument_ftch (
     region_code VARCHAR,
     institution_type VARCHAR,
     institution_code VARCHAR,
+    service_code VARCHAR,
     status VARCHAR DEFAULT 'partial',
     created_at TIMESTAMP DEFAULT current_timestamp,
     updated_at TIMESTAMP DEFAULT current_timestamp,
     PRIMARY KEY (id)
 );
 
+DROP TABLE values_ftch;
 CREATE TABLE values_ftch (
     instrument_id INTEGER NOT NULL,
     variable VARCHAR NOT NULL,

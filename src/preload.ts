@@ -114,6 +114,9 @@ window.addEventListener("DOMContentLoaded", () => {
         case 'instruments/07_ftch.html':
             FTCH();
             break;
+        case 'instruments/07_ftch_inson_services.html':
+            FTCH_SERVICE();
+            break;
         case 'instruments/07_ftch_en.html':
         case 'instruments/07_ftch_uz.html':
         case 'instruments/07_ftch_ru.html':
@@ -516,6 +519,18 @@ const FTCH = () => {
         return await import("./pages/instruments/07_ftch");
     };
     importFile().then(result => result.ftch.init().catch(error => {
+        console.log(error);
+    }));
+};
+const FTCH_SERVICE = () => {
+
+    topMenu('local/01_dashboard');
+
+    translatePage();
+    const importFile = async () => {
+        return await import("./pages/instruments/07_ftch_inson_services");
+    };
+    importFile().then(result => result.ftch_services.init().catch(error => {
         console.log(error);
     }));
 };

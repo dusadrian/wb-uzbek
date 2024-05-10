@@ -50,6 +50,7 @@ let regionCode = '';
 let userUUID = '';
 let institutionType = '';
 let institutionCode = '';
+let serviceCode = ''; // filter by service code INSON
 
 const qeduc2 = util.radioIDs("qeduc2");
 
@@ -201,6 +202,7 @@ export const instrument1 = {
             services = args.services;
             insons = args.insons;
             const institution_code = args.institution_code ?? args.userData.institution_code;
+            serviceCode = institution_code;
             const inson_user = constant.INSON.includes(args.userData.service_type_code);
 
             const sa5i = util.htmlElement("sa5i");
@@ -425,11 +427,9 @@ export const instrument1 = {
                 util.setValue('omr7', args.userData.email ? args.userData.email : "--");
                 regionCode = args.userData.region_code;
                 userUUID = args.userData.uuid;
-
-                console.log(args);
-                
                 institutionType = args.userData.service_type_code;
                 institutionCode = args.userData.institution_code;
+
 
                 // if (args.userData.service_type_code === '9') {
                 //     institutionType = args.insons[args.userData.institution_code].type;
@@ -477,7 +477,9 @@ const saveChestionar = (obj: SaveInstrumentType): void => {
         user_uuid: userUUID,
         institution_type: institutionType,
         institution_code: institutionCode,
+        service_code: serviceCode,
     }
+    obj.service_code = serviceCode;
     ipcRenderer.send("saveInstrument", obj);
 }
 

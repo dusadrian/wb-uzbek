@@ -23,6 +23,7 @@ export interface SaveInstrumentType {
 	// eslint-disable-next-line @typescript-eslint/no-explicit-any
 	extras?: any;
 	table?: string;
+	service_code?: string;
 }
 
 export interface InstrumentObjectType {

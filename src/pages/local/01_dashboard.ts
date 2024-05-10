@@ -10,8 +10,15 @@ interface IObj {
 const initInstruments = (userData: User, institutionDetails: any) => {
 
     // get ID for instruments 4 and 6 -- QMR and DSEE
-    if (userData.role_code ==constant.ROLE_ADMIN_SPECIALIST || userData.role_code == constant.ROLE_LOCAL) {
+    if (userData.role_code == constant.ROLE_ADMIN_SPECIALIST || userData.role_code == constant.ROLE_LOCAL) {
         ipcRenderer.send('getInstrumentsId');
+    }
+
+    if (constant.INSON.includes(userData.service_type_code)) {
+        (document.getElementById('view_instrument1') as HTMLButtonElement).disabled = true;
+    }
+    if (constant.INSON.includes(userData.service_type_code)) {
+        (document.getElementById('view_instrument7') as HTMLButtonElement).disabled = true;
     }
 
     // I1. Questionnaire about the child placed into the child protection system
@@ -161,7 +168,7 @@ const initInstruments = (userData: User, institutionDetails: any) => {
     }
 
     // users
-    if (userData.role_code === constant.ROLE_LOCAL || (userData.role_code === constant.ROLE_DATA_COLLECTOR && constant.INSON.includes(userData.service_type_code))){
+    if (userData.role_code === constant.ROLE_LOCAL || (userData.role_code === constant.ROLE_DATA_COLLECTOR && constant.INSON.includes(userData.service_type_code))) {
         if (!constant.INSON.includes(userData.service_type_code)) { // if not INSON
             document.getElementById('users').classList.remove('hidden');
             document.getElementById('users').classList.add('flex');
@@ -183,7 +190,6 @@ export const local = {
             ipcRenderer.on('appSession', (event, arg) => {
                 initInstruments(arg.userData, arg.institutionDetails);
             });
-
         }
 
         // Institution details
@@ -221,8 +227,7 @@ export const local = {
             document.getElementById('view_instrument6').dataset.id = args.dsee;
         });
 
-        ipcRenderer.on("dashStats", (_event, args) => {
-
+        ipcRenderer.on("dashStats", (_event, args) => {            
             if (args.instrument1.length > 0) {
                 const totalCompletedObj = args.instrument1.filter((el: StatusInterface) => el.status === 'completed');
                 const totalPartialObj = args.instrument1.filter((el: StatusInterface) => el.status === 'partial');

@@ -10,6 +10,7 @@ const $ = window.require('jquery');
 const dt = window.require('datatables.net-dt');
 dt(window, $);
 
+let institutionCode: string;
 
 export const ftch = {
     init: async () => {
@@ -17,12 +18,16 @@ export const ftch = {
         // call this to show based on permissions hidden sections
         showByPermissions();
 
-        ipcRenderer.send('getFTCH');
+        institutionCode = sessionStorage.getItem('instrument7_service');
+        ipcRenderer.send('getFTCH', {
+            institution_code: institutionCode
+        });
 
         (<HTMLButtonElement>document.getElementById('add_family_type')).addEventListener('click', () => {
             ipcRenderer.send('changeWindow', {
                 'name': 'instruments',
-                'instrument': 'FTCH'
+                'instrument': 'FTCH',
+                'institution_code': institutionCode,
             });
         });
 
@@ -121,6 +126,7 @@ const editItem = function (id: number) {
         'name': 'instruments',
         'instrument': 'FTCH',
         'id': id,
+        'institution_code': institutionCode,
     });
 };
 
@@ -128,5 +134,6 @@ const editItem = function (id: number) {
 const deleteItem = function (id: number) {
     ipcRenderer.send('deleteFTCH', {
         'id': id,
+        'service_code': institutionCode,
     });
 };

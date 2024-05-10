@@ -318,7 +318,11 @@ ipcMain.on('deleteCPIS', (_event, args) => {
                     type: 'info',
                     message: i18n.__('Item deleted.'),
                 }).then(() => {
-                    goToCPISList();
+                    if (args.service_code) { // if we have a service code, we are in the INSON services
+                        ipcMain.emit('goToCPISList', args.service_code);
+                    } else {
+                        goToCPISList();
+                    }
                 });
             });
         }
@@ -450,12 +454,24 @@ ipcMain.on('deleteTQYP', (_event, args) => {
 });
 
 // Instrument 7
+
 const goToFTCHList = () => {
-    const newPage = path.join(__dirname, "../src/pages/instruments/07_ftch.html");
-    mainWindow.loadURL("file://" + newPage);
+    if (constant.INSON.includes(appSession.userData.service_type_code)) {
+        mainWindow.loadURL("file://" + path.join(__dirname, "../src/pages/instruments/07_ftch_inson_services.html"));
+        database.getInsonServices((appSession.institutionDetails as DI.INSON).services, appSession.userData.institution_code).then((result) => {
+            mainWindow.webContents.once("did-finish-load", () => {
+                mainWindow.webContents.send("services", result);
+            });
+        });
+    } else {
+        mainWindow.loadURL("file://" + path.join(__dirname, "../src/pages/instruments/07_ftch.html"));
+    }
 };
-ipcMain.on('getFTCH', () => {
-    database.ftchList(db, appSession.userData.uuid, appSession.userData.role_code).then((result) => {
+ipcMain.on('goToFTCHList', (_event, _args) => {
+    mainWindow.loadURL("file://" + path.join(__dirname, "../src/pages/instruments/07_ftch.html"));
+});
+ipcMain.on('getFTCH', (_event, args) => {
+    database.ftchList(db, appSession.userData.uuid, appSession.userData.role_code, args.institution_code).then((result) => {
         mainWindow.webContents.send("ftch", result);
     });
 });
@@ -473,7 +489,11 @@ ipcMain.on('deleteFTCH', (_event, args) => {
                     type: 'info',
                     message: i18n.__('Item deleted.'),
                 }).then(() => {
-                    goToFTCHList();
+                    if (args.service_code) { // if we have a service code, we are in the INSON services
+                        ipcMain.emit('goToFTCHList', args.service_code);
+                    } else {
+                        goToFTCHList();
+                    }
                 });
             });
         }
@@ -558,7 +578,7 @@ const goToInstrument = (instrument: string, id: string, institution_code?: strin
             goToDSEE(id);
             break;
         case "FTCH":
-            goToFTCH(id);
+            goToFTCH(id, institution_code);
             break;
         case "PFQ":
             goToPFQ(id);
@@ -724,8 +744,6 @@ ipcMain.on('deleteUser', (_event, args) => {
 // Instruments =================
 // Instrument 1
 const goToCPIS = (id: string, institution_code: string) => {
-    console.log(institution_code);
-    
     const newPage = path.join(__dirname, "../src/pages/instruments/01_cpis_" + appSession.language + ".html");
     mainWindow.loadURL("file://" + newPage);
     database.getAllServices().then((allServices) => { // Institutions and INSON
@@ -956,44 +974,35 @@ const goToDSEE = (id: string) => {
     });
 }
 // Instrument 7
-const goToFTCH = (id: string) => {
+const goToFTCH = (id: string, institution_code: string) => {
     const newPage = path.join(__dirname, "../src/pages/instruments/07_ftch_" + appSession.language + ".html");
     mainWindow.loadURL("file://" + newPage);
-    database.getInstitutions().then((instarray) => {
-        const services: { [key: string]: DI.Institution } = {};
-        for (let i = 0; i < instarray.length; i++) {
-            services[instarray[i].code] = instarray[i];
-        }
-        database.getINSON().then((insonarray) => {
-            const insons: { [key: string]: DI.INSON } = {};
-            for (let i = 0; i < insonarray.length; i++) {
-                insons[insonarray[i].code] = insonarray[i];
-            }
-            database.getUserData(appSession.userData.id).then((userDataArray) => {
-                if (id) {
-                    mainWindow.webContents.once("did-finish-load", () => {
-                        database.instrumentGet(id, 'ftch', db).then((questions) => {
-                            mainWindow.webContents.send("instrumentDataReady", {
-                                id,
-                                questions,
-                                userData: userDataArray[0],
-                                services: services,
-                                insons: insons,
-                            });
-                        });
+    database.getAllServices().then((allServices) => { // Institutions and INSON
+        if (id) {
+            mainWindow.webContents.once("did-finish-load", () => {
+                database.instrumentGet(id, 'ftch', db).then((questions) => {
+                    mainWindow.webContents.send("instrumentDataReady", {
+                        id,
+                        questions,
+                        userData: appSession.userData,
+                        services: allServices.services,
+                        insons: allServices.insons,
+                        institution_code,
                     });
-                } else {
-                    mainWindow.webContents.once("did-finish-load", () => {
-                        mainWindow.webContents.send("instrumentDataReady", {
-                            userData: userDataArray[0],
-                            services: services,
-                            insons: insons,
-                        });
-                    });
-                }
+                });
             });
-        });
+        } else {
+            mainWindow.webContents.once("did-finish-load", () => {
+                mainWindow.webContents.send("instrumentDataReady", {
+                    userData: appSession.userData,
+                    services: allServices.services,
+                    insons: allServices.insons,
+                    institution_code,
+                });
+            });
+        }
     });
+
 }
 // Instrument 8
 const goToPFQ = (id: string) => {
@@ -1126,7 +1135,11 @@ ipcMain.on('saveInstrument', (_event, args) => {
             message: i18n.__('Instrument saved.'),
         }).then(() => {
             if (args.table === 'cpis') {
-                goToCPISList();
+                if (args.service_code) { // if we have a service code, we are in the INSON services
+                    ipcMain.emit('goToCPISList', args.service_code);
+                } else {
+                    goToCPISList();
+                }
                 return;
             }
             if (args.table === 'csr') {
@@ -1138,7 +1151,11 @@ ipcMain.on('saveInstrument', (_event, args) => {
                 return;
             }
             if (args.table === 'ftch') {
-                goToFTCHList();
+                if (args.service_code) { // if we have a service code, we are in the INSON services
+                    ipcMain.emit('goToFTCHList', args.service_code);
+                } else {
+                    goToFTCHList();
+                }
                 return;
             }
             if (args.table === 'pfq') {
