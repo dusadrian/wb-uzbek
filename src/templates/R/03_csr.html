@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>CRM Uzbek</title>
+    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; img-src http: https: data: ; script-src 'self';" />
+    <meta http-equiv="X-Content-Security-Policy"
+        content="default-src 'self'; img-src http: https: data: ; script-src 'self';" />
+    <link href="../../../dist/main.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../../node_modules/flatpickr/dist/flatpickr.min.css">
+</head>
+
+<body class="relative max-h-screen">
+    <div class="fixed top-0 right-0 left-0 bg-slate-200 h-14 z-50 shadow" id="header">
+    </div>
+    <div class="relative w-full mt-14 pb-10 h-[calc(100vh-6.5rem)] overflow-y-auto">
+
+        <form class="px-6 mt-10">
+            <div class="grid grid-cols-12 border">
+                <div class="col-span-1 bg-stone-200 p-2"></div>
+                <div class="col-span-11 p-2">
+                    <h1 class="text-4xl text-gray-700 pl-4 tracking-wide mb-4">{{T0001}}</h1>
+                    <p class="pl-4 text-red-800 text-sm font-medium">{{T0002}}</p>
+                </div>
+            </div>
+
+            <p class="mt-4 mb-2 text-xl">{{T0003}}</p>
+            <p class="mb-2">{{T0004}}</p>
+            <p class="mb-2">{{T0005}}</p>
+            <p class="mb-2">{{T0006}}</p>
+            <p class="mb-2">{{T0007}}</p>
+
+            <div class="divclass mt-12">
+                <div>{{T0008}}. {{T0009}}</div>
+                <div>
+                    <input type="text" id="q1" name="q1" class="inputclass w-full" />
+                </div>
+            </div>
+            <div class="divclass mt-6">
+                <div>{{T0010}}. {{T0011}}</div>
+                <div>
+                    <input type="text" id="q2" name="q2" class="inputclass w-full" />
+                </div>
+            </div>
+            <div class="divclass mt-6">
+                <div>{{T0012}}. {{T0013}}</div>
+                <div>
+                    <input type="text" id="q3" name="q3" class="inputclass w-full" />
+                </div>
+            </div>
+            <div class="divclass mt-6">
+                <div>{{T0014}}. {{T0015}}</div>
+                <div>
+                    <input type="text" id="q4" name="q4" class="inputclass w-full" />
+                </div>
+            </div>
+            <div class="divclass mt-6">
+                <div>{{T0016}}. {{T0017}}</div>
+                <div>
+                    <input type="text" id="q5" name="q5" class="inputclass w-full" />
+                </div>
+            </div>
+            <div class="divclass mt-6">
+                <div>{{T0018}}. {{T0019}}</div>
+                <div>
+                    <input type="text" id="q6" name="q6" class="inputclass w-full" />
+                </div>
+            </div>
+
+            <h2 class="h2class">{{T0020}}</h2>
+            <div class="divclass mt-6">
+                <div>{{T0021}}. {{T0022}}</div>
+                <div>
+                    <input type="text" id="i1" name="i1" class="inputclass w-full" />
+                </div>
+            </div>
+            <div class="divclass mt-6">
+                <div>{{T0023}}. {{T0024}}</div>
+                <div>
+                    <input type="text" id="i2" name="i2" class="inputclass w-full" />
+                </div>
+            </div>
+            <div class="divclass mt-6">
+                <div>{{T0025}}. {{T0026}}</div>
+                <div>
+                    <input type="text" id="i3" name="i3" class="inputclass w-full" />
+                </div>
+            </div>
+            <div class="divclass mt-6">
+                <div>{{T0027}}. {{T0028}}</div>
+                <div>
+                    <input type="text" id="i4" name="i4" class="inputclass w-full" />
+                </div>
+            </div>
+            <div class="divclass mt-6">
+                <div>{{T0029}}. {{T0030}}</div>
+                <div>
+                    <select id="i4a" name="i4a" class="selectclass">
+                        <option value="-9">{{T0184}}</option>
+                    </select>
+                </div>
+            </div>
+            <div class="divclass mt-6">
+                <div>{{T0032}}. {{T0033}}</div>
+                <div>
+                    <select id="i4b" name="i4b" class="selectclass">
+                        <option value="-9">{{T0184}}</option>
+                    </select>
+                </div>
+            </div>
+            <div class="divclass mt-6">
+                <div>I4c. {{T0175}}</div>
+                <div>
+                    <select id="i4c" name="i4c" class="selectclass">
+                        <option value="-9">{{T0184}}</option>
+                    </select>
+                </div>
+            </div>
+            <div class="divclass mt-6">
+                <div>I4d. {{T0176}}</div>
+                <div>
+                    <select id="i4d" name="i4d" class="selectclass">
+                        <option value="{{i4d-1}}">{{T0177}}</option>
+                        <option value="{{i4d-2}}">{{T0178}}</option>
+                        <option value="{{i4d-3}}">{{T0179}}</option>
+                        <option value="{{i4d-4}}">{{T0180}}</option>
+                        <option value="{{i4d-5}}">{{T0181}}</option>
+                        <option value="{{i4d-6}}">{{T0182}}</option>
+                        <option value="{{i4d-7}}">{{T0183}}</option>
+                    </select>
+                </div>
+            </div>
+            <div class="divclass mt-6">
+                <div>{{T0035}}. {{T0036}}</div>
+                <div>
+                    <select id="i5" name="i5" class="selectclass">
+                        <option value="--">--</option>
+                        <option value="{{i5-1}}">{{T0168}}</option>
+                        <option value="{{i5-2}}">{{T0169}}</option>
+                        <option value="{{i5-3}}">{{T0170}}</option>
+                        <option value="{{i5-4}}">{{T0171}}</option>
+                        <option value="{{i5-5}}">{{T0172}}</option>
+                        <option value="{{i5-6}}">{{T0173}}</option>
+                        <option value="{{i5-7}}">{{T0174}}</option>
+                        <option value="{{i5-8}}">{{T0043}}</option>
+                        <option value="{{i5-9}}">{{T0044}}</option>
+                        <option value="{{i5-10}}">{{T0045}}</option>
+                        <option value="{{i5-11}}">{{T0046}}</option>
+                        <option value="{{i5-12}}">{{T0047}}</option>
+                        <option value="{{i5-13}}">{{T0048}}</option>
+                    </select>
+                </div>
+            </div>
+
+            <h2 class="h2class">{{T0049}}</h2>
+
+            <div class="divclass mt-6">
+                <div>{{T0050}}. {{T0051}}</div>
+                <div>
+                    <input type="text" id="j1" name="j1" class="inputclass w-full" />
+                </div>
+            </div>
+
+            <div class="divclass mt-10">
+                <div>{{T0052}}. {{T0053}}</div>
+                <div class="divclass4">
+                    <div class="flex items-center gap-4">
+                        <input type="text" id="j2" name="j2" class="inputclass w-full" />
+                    </div>
+                    <div class="flex items-center">
+                        <input id="j2_na" type="checkbox" name="j2_na" value="{{j2_na-1}}" class="cbclass">
+                        <label for="j2_na" class="labelclass">{{T0054}}</label>
+                    </div>
+                </div>
+            </div>
+            <div class="divclass mt-10">
+                <div>{{T0055}}. {{T0056}}</div>
+                <div class="col-span-1 flex flex-col gap-2">
+                    <div class="flex items-center">
+                        <input id="j3-1" type="radio" value="{{j3-1}}" name="j3" class="valueclass">
+                        <label for="j3-1" class="labelclass">{{T0057}}</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="j3-2" type="radio" value="{{j3-2}}" name="j3" class="valueclass">
+                        <label for="j3-2" class="labelclass">{{T0058}}</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="j3-3" type="radio" value="{{j3-3}}" name="j3" class="valueclass">
+                        <label for="j3-3" class="labelclass">{{T0059}}</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="j3-4" type="radio" value="{{j3-4}}" name="j3" class="valueclass">
+                        <label for="j3-4" class="labelclass">{{T0060}}</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="j3-5" type="radio" value="{{j3-5}}" name="j3" class="valueclass">
+                        <label for="j3-5" class="labelclass">{{T0061}}</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="j3-6" type="radio" value="{{j3-6}}" name="j3" class="valueclass">
+                        <label for="j3-6" class="labelclass">{{T0062}}</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="divclass mt-10">
+                <div>{{T0063}}. {{T0064}}</div>
+                <div class="divclass4">
+                    <div class="flex items-center">
+                        <input id="j4-1" type="radio" value="{{j4-1}}" name="j4" class="valueclass">
+                        <label for="j4-1" class="labelclass">{{T0065}}</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="j4-2" type="radio" value="{{j4-2}}" name="j4" class="valueclass">
+                        <label for="j4-2" class="labelclass">{{T0066}}</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="divclass mt-6">
+                <div>{{T0067}}. {{T0068}}</div>
+                <div>
+                    <input type="text" id="j5" name="j5" class="inputclass w-full" />
+                </div>
+            </div>
+
+            <div class="divclass mt-10">
+                <div>{{T0069}}. {{T0070}}</div>
+                <div class="col-span-1 flex flex-col gap-2">
+                    <div class="flex items-center">
+                        <input id="j6-1" type="radio" value="{{j6-1}}" name="j6" class="valueclass">
+                        <label for="j6-1" class="labelclass">{{T0071}}</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="j6-2" type="radio" value="{{j6-2}}" name="j6" class="valueclass">
+                        <label for="j6-2" class="labelclass">{{T0072}}</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="j6-3" type="radio" value="{{j6-3}}" name="j6" class="valueclass">
+                        <label for="j6-3" class="labelclass">{{T0073}}</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="j6-4" type="radio" value="{{j6-4}}" name="j6" class="valueclass">
+                        <label for="j6-4" class="labelclass">{{T0074}}</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="j6-5" type="radio" value="{{j6-5}}" name="j6" class="valueclass">
+                        <label for="j6-5" class="labelclass">{{T0075}}</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="j6-6" type="radio" value="{{j6-6}}" name="j6" class="valueclass">
+                        <label for="j6-6" class="labelclass">{{T0076}}</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="j6-7" type="radio" value="{{j6-7}}" name="j6" class="valueclass">
+                        <label for="j6-7" class="labelclass">{{T0077}}</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="j6-9" type="radio" value="{{j6-8}}" name="j6" class="valueclass">
+                        <label for="j6-9" class="labelclass">{{T0078}}</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="divclass mt-6">
+                <div>{{T0084}}. {{T0085}}</div>
+                <div class="flex items-center gap-4">
+                    <input type="text" id="j7" name="j7" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-1/2 p-2.5 disabled:bg-gray-100" />
+                    {{T0086}}
+                </div>
+            </div>
+
+            <div class="divclass mt-10">
+                <div>{{T0087}}. {{T0088}}</div>
+                <div class="col-span-1 flex flex-col gap-2">
+                    <div class="flex items-center">
+                        <input id="j8-1" type="radio" value="{{j8-1}}" name="j8" class="valueclass">
+                        <label for="j8-1" class="labelclass">{{T0089}}</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="j8-2" type="radio" value="{{j8-2}}" name="j8" class="valueclass">
+                        <label for="j8-2" class="labelclass">{{T0090}}</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="j8-3" type="radio" value="{{j8-3}}" name="j8" class="valueclass">
+                        <label for="j8-3" class="labelclass">{{T0091}}</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="j8-4" type="radio" value="{{j8-4}}" name="j8" class="valueclass">
+                        <label for="j8-4" class="labelclass">{{T0092}}</label>
+                    </div>
+                </div>
+            </div>
+
+            <h2 class="h2class">{{T0093}}</h2>
+
+
+            <div class="divclass mt-6">
+                <div>{{T0094}}. {{T0095}}</div>
+                <div>
+                    <input type="text" id="e1" name="e1" class="inputclass w-full" />
+                </div>
+            </div>
+
+            <input type="hidden" id="euid" name="euid" />
+
+            <div class="divclass mt-6">
+                <div>{{T0099}}. {{T0100}}</div>
+                <div>
+                    <input type="text" id="e2" name="e2" class="inputclass w-full" />
+                </div>
+            </div>
+
+            <div class="divclass mt-10">
+                <div>{{T0101}}. {{T0102}}</div>
+                <div class="divclass4">
+                    <div class="flex items-center">
+                        <input id="e3-1" type="radio" value="{{e3-1}}" name="e3" class="valueclass">
+                        <label for="e3-1" class="labelclass">{{T0103}}</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e3-2" type="radio" value="{{e3-2}}" name="e3" class="valueclass">
+                        <label for="e3-2" class="labelclass">{{T0104}}</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="divclass mt-10">
+                <div>{{T0105}}. {{T0106}}</div>
+                <div class="col-span-1 flex flex-col gap-2">
+                    <div class="flex items-center">
+                        <input id="e4-1" type="radio" value="{{e4-1}}" name="e4" class="valueclass">
+                        <label for="e4-1" class="labelclass">{{T0071}}</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e4-2" type="radio" value="{{e4-2}}" name="e4" class="valueclass">
+                        <label for="e4-2" class="labelclass">{{T0072}}</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e4-3" type="radio" value="{{e4-3}}" name="e4" class="valueclass">
+                        <label for="e4-3" class="labelclass">{{T0073}}</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e4-4" type="radio" value="{{e4-4}}" name="e4" class="valueclass">
+                        <label for="e4-4" class="labelclass">{{T0074}}</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e4-5" type="radio" value="{{e4-5}}" name="e4" class="valueclass">
+                        <label for="e4-5" class="labelclass">{{T0075}}</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e4-5" type="radio" value="{{e4-6}}" name="e4" class="valueclass">
+                        <label for="e4-6" class="labelclass">{{T0076}}</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e4-7" type="radio" value="{{e4-7}}" name="e4" class="valueclass">
+                        <label for="e4-7" class="labelclass">{{T0077}}</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e4-9" type="radio" value="{{e4-8}}" name="e4" class="valueclass">
+                        <label for="e4-9" class="labelclass">{{T0078}}</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="divclass mt-6">
+                <div>{{T0112}}. {{T0113}}</div>
+                <div>
+                    <input type="text" id="e5" name="e5" class="inputclass w-full" />
+                </div>
+            </div>
+
+            <div class="divclass mt-6">
+                <div>{{T0114}}. {{T0115}}</div>
+                <div class="flex items-center gap-4">
+                    <input type="text" id="e6" name="e6" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-1/2 p-2.5 disabled:bg-gray-100" /> {{T0116}}
+                </div>
+            </div>
+
+            <div class="divclass mt-6">
+                <div>{{T0117}}. {{T0118}}</div>
+                <div>
+                    <input type="text" id="e7" name="e7" class="inputclass w-full" />
+                </div>
+            </div>
+
+
+            <div class="divclass mt-10">
+                <div>{{T0119}}. {{T0120}}</div>
+                <div class="col-span-1 flex flex-col gap-2">
+                    <div class="flex items-center">
+                        <input id="e8-1" type="radio" value="{{e8-1}}" name="e8" class="valueclass">
+                        <label for="e8-1" class="labelclass">{{T0121}}</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e8-2" type="radio" value="{{e8-2}}" name="e8" class="valueclass">
+                        <label for="e8-2" class="labelclass">{{T0122}}</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e8-3" type="radio" value="{{e8-3}}" name="e8" class="valueclass">
+                        <label for="e8-3" class="labelclass">{{T0123}}</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e8-4" type="radio" value="{{e8-4}}" name="e8" class="valueclass">
+                        <label for="e8-4" class="labelclass">{{T0124}}</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e8-5" type="radio" value="{{e8-5}}" name="e8" class="valueclass">
+                        <label for="e8-5" class="labelclass">{{T0125}}</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e8-6" type="radio" value="{{e8-6}}" name="e8" class="valueclass">
+                        <label for="e8-6" class="labelclass">{{T0126}}</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e8-7" type="radio" value="{{e8-7}}" name="e8" class="valueclass">
+                        <label for="e8-7" class="labelclass">{{T0127}}</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e8-8" type="radio" value="{{e8-8}}" name="e8" class="valueclass">
+                        <label for="e8-8" class="labelclass">{{T0128}}</label>
+                    </div>
+                    <input type="text" id="e8_other" name="e8_other" class="inputclass w-full" />
+                </div>
+            </div>
+
+
+            <div class="divclass mt-10">
+                <div>{{T0129}}. {{T0130}}</div>
+                <div class="col-span-1 flex flex-col gap-2">
+                    <div class="flex items-center">
+                        <input id="e9-1" type="radio" value="{{e9-1}}" name="e9" class="valueclass">
+                        <label for="e4-1" class="labelclass">{{T0131}}</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e9-2" type="radio" value="{{e9-2}}" name="e9" class="valueclass">
+                        <label for="e4-2" class="labelclass">{{T0132}}</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e9-3" type="radio" value="{{e9-3}}" name="e9" class="valueclass">
+                        <label for="e4-3" class="labelclass">{{T0133}}</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e9-4" type="radio" value="{{e9-4}}" name="e9" class="valueclass">
+                        <label for="e4-4" class="labelclass">{{T0134}}</label>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="divclass mt-10">
+                <div>{{T0135}}. {{T0136}}</div>
+                <div class="divclass4">
+                    <div class="flex items-center">
+                        <input id="e10-1" type="radio" value="{{e10-1}}" name="e10" class="valueclass">
+                        <label for="e10-1" class="labelclass">{{T0137}}</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e10-2" type="radio" value="{{e10-2}}" name="e10" class="valueclass">
+                        <label for="e10-2" class="labelclass">{{T0138}}</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="divclass mt-10">
+                <div>{{T0139}}. {{T0140}}</div>
+                <div class="divclass4">
+                    <div class="flex items-center">
+                        <input id="e11-1" type="radio" value="{{e11-1}}" name="e11" class="valueclass">
+                        <label for="e11-1" class="labelclass">{{T0141}}</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e11-2" type="radio" value="{{e11-2}}" name="e11" class="valueclass">
+                        <label for="e11-2" class="labelclass">{{T0142}}</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="divclass mt-10">
+                <div>{{T0143}}. {{T0144}}</div>
+                <div class="divclass4">
+                    <div class="flex items-center">
+                        <input id="e12-1" type="radio" value="{{e12-1}}" name="e12" class="valueclass">
+                        <label for="e12-1" class="labelclass">{{T0145}}</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e12-2" type="radio" value="{{e12-2}}" name="e12" class="valueclass">
+                        <label for="e12-2" class="labelclass">{{T0146}}</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="divclass mt-10">
+                <div>{{T0147}}. {{T0148}}</div>
+                <div class="divclass4">
+                    <div class="flex items-center">
+                        <input id="e13-1" type="radio" value="{{e13-1}}" name="e13" class="valueclass">
+                        <label for="e13-1" class="labelclass">{{T0149}}</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e13-2" type="radio" value="{{e13-2}}" name="e13" class="valueclass">
+                        <label for="e13-2" class="labelclass">{{T0150}}</label>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="divclass mt-6">
+                <div>{{T0151}}. {{T0152}}</div>
+                <div class="flex items-center gap-4">
+                    <input type="text" id="e14" name="e14" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-1/2 p-2.5 disabled:bg-gray-100" /> {{T0153}}
+                </div>
+            </div>
+
+            <div class="divclass mt-6">
+                <div>{{T0154}}. {{T0155}}</div>
+                <div class="flex items-center gap-4">
+                    <input type="text" id="e15" name="e15" class="inputclass w-full" /> UZS
+                </div>
+            </div>
+
+            <div class="divclass mt-10">
+                <div>{{T0156}}. {{T0157}}</div>
+                <div class="divclass4">
+                    <div class="flex items-center">
+                        <input id="e16-1" type="radio" value="{{e16-1}}" name="e16" class="valueclass">
+                        <label for="e16-1" class="labelclass">{{T0158}}</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e16-2" type="radio" value="{{e16-2}}" name="e16" class="valueclass">
+                        <label for="e16-2" class="labelclass">{{T0159}}</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="divclass mt-10">
+                <div>{{T0160}}. {{T0161}}</div>
+                <div class="divclass4">
+                    <div class="flex items-center">
+                        <input id="e17-1" type="radio" value="{{e17-1}}" name="e17" class="valueclass">
+                        <label for="e17-1" class="labelclass">{{T0162}}</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e17-2" type="radio" value="{{e17-2}}" name="e17" class="valueclass">
+                        <label for="e17-2" class="labelclass">{{T0163}}</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="divclass mt-10">
+                <div>{{T0164}}. {{T0165}}</div>
+                <div class="divclass4">
+                    <div class="flex items-center">
+                        <input id="e18-1" type="radio" value="{{e18-1}}" name="e18" class="valueclass">
+                        <label for="e18-1" class="labelclass">{{T0166}}</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e18-2" type="radio" value="{{e18-2}}" name="e18" class="valueclass">
+                        <label for="e18-2" class="labelclass">{{T0167}}</label>
+                    </div>
+                </div>
+            </div>
+
+        </form>
+
+        <footer id="footer" class="fixed bottom-0 w-full h-12 bg-slate-200 shadow">
+            <div class="flex justify-center h-full items-center">
+
+                <button type="button"
+                    class="flex items-center gap-2 text-white bg-menuButton/80 hover:bg-menuButton focus:ring-4 focus:ring-menuButton/50 font-medium rounded-lg text-sm px-3 py-1"
+                    id="salveazaForm">
+                    <svg class="fill-white w-4 h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                        <!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                        <path
+                            d="M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V173.3c0-17-6.7-33.3-18.7-45.3L352 50.7C340 38.7 323.7 32 306.7 32H64zm0 96c0-17.7 14.3-32 32-32H288c17.7 0 32 14.3 32 32v64c0 17.7-14.3 32-32 32H96c-17.7 0-32-14.3-32-32V128zM224 288a64 64 0 1 1 0 128 64 64 0 1 1 0-128z" />
+                    </svg>
+                    <span class="t_button_save"></span>
+                </button>
+                <button type="button"
+                    class="flex items-center gap-2 text-white bg-menuButton/80 hover:bg-menuButton focus:ring-4 focus:ring-menuButton/50 font-medium rounded-lg text-sm px-3 py-1 ml-4"
+                    id="finalizeazaForm">
+                    <svg class="fill-white w-4 h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                        <!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                        <path
+                            d="M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V173.3c0-17-6.7-33.3-18.7-45.3L352 50.7C340 38.7 323.7 32 306.7 32H64zm0 96c0-17.7 14.3-32 32-32H288c17.7 0 32 14.3 32 32v64c0 17.7-14.3 32-32 32H96c-17.7 0-32-14.3-32-32V128zM224 288a64 64 0 1 1 0 128 64 64 0 1 1 0-128z" />
+                    </svg>
+                    <span class="t_button_complete"></span>
+                </button>
+                <div class="hidden">
+                    <button type="button"
+                        class="flex items-center gap-2 text-white bg-red-500 hover:bg-red-500 focus:ring-4 focus:ring-red-500/50 font-medium rounded-lg text-sm px-3 py-1 ml-4"
+                        id="debugForm">
+                        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="bug"
+                            class="fill-white w-4 h-4" role="img" xmlns="http://www.w3.org/2000/svg"
+                            viewbox="0 0 512 512">
+                            <path fill="currentColor"
+                                d="M511.988 288.9c-.478 17.43-15.217 31.1-32.653 31.1H424v16c0 21.864-4.882 42.584-13.6 61.145l60.228 60.228c12.496 12.497 12.496 32.758 0 45.255-12.498 12.497-32.759 12.496-45.256 0l-54.736-54.736C345.886 467.965 314.351 480 280 480V236c0-6.627-5.373-12-12-12h-24c-6.627 0-12 5.373-12 12v244c-34.351 0-65.886-12.035-90.636-32.108l-54.736 54.736c-12.498 12.497-32.759 12.496-45.256 0-12.496-12.497-12.496-32.758 0-45.255l60.228-60.228C92.882 378.584 88 357.864 88 336v-16H32.666C15.23 320 .491 306.33.013 288.9-.484 270.816 14.028 256 32 256h56v-58.745l-46.628-46.628c-12.496-12.497-12.496-32.758 0-45.255 12.498-12.497 32.758-12.497 45.256 0L141.255 160h229.489l54.627-54.627c12.498-12.497 32.758-12.497 45.256 0 12.496 12.497 12.496 32.758 0 45.255L424 197.255V256h56c17.972 0 32.484 14.816 31.988 32.9zM257 0c-61.856 0-112 50.144-112 112h224C369 50.144 318.856 0 257 0z">
+                            </path>
+                        </svg>&nbsp;debug</button>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+</body>
+
+</html>

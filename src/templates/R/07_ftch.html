@@ -1,0 +1,1810 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>CRM Uzbek</title>
+    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; img-src http: https: data: ; script-src 'self';" />
+    <meta http-equiv="X-Content-Security-Policy"
+        content="default-src 'self'; img-src http: https: data: ; script-src 'self';" />
+    <link href="../../../dist/main.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../../node_modules/flatpickr/dist/flatpickr.min.css">
+</head>
+
+<body class="relative max-h-screen">
+    <div class="fixed top-0 right-0 left-0 bg-slate-200 h-14 z-50 shadow" id="header">
+    </div>
+    <div class="relative w-full mt-14 pb-10 h-[calc(100vh-6.5rem)] overflow-y-auto">
+
+        <form class="px-6 mt-10">
+            <div class="grid grid-cols-12 border">
+                <div class="col-span-1 bg-stone-200 p-2"></div>
+                <div class="col-span-11 p-2">
+                    <h1 class="h1class">{{T0001}}</h1>
+                </div>
+            </div>
+
+            <p class="mt-4 mb-2 text-xl">{{T0002}}</p>
+            <p class="mb-2">{{T0003}}</p>
+            <p class="mb-2">{{T0004}}</p>
+            <p class="mb-2">{{T0005}}</p>
+            <p class="mb-2">{{T0006}}</p>
+            <p class="mb-2">{{T0007}}</p>
+
+            <div class="divclass mt-12">
+                <div>{{T0008}}. {{T0009}}</div>
+                <div>
+                    <select id="reg" name="reg" class="selectclass">
+                        <option value="-9">{{T0271}}</option>
+                    </select>
+                </div>
+            </div>
+            <div class="divclass mt-6">
+                <div>{{T0010}}. {{T0011}}</div>
+                <div>
+                    <select id="dis" name="dis" class="selectclass">
+                        <option value="-9">{{T0271}}</option>
+                    </select>
+                </div>
+            </div>
+            <div class="divclass mt-6">
+                <div>{{T0012}}. {{T0013}}</div>
+                <div>
+                    <input type="text" id="data" name="data" class="inputclass w-full" />
+                </div>
+            </div>
+            <div class="divclass mt-6">
+                <div>{{T0014}}: {{T0015}}</div>
+                <div>
+                    <input type="text" id="q2" name="q2" class="inputclass w-full" />
+                </div>
+            </div>
+
+            <div class="divclass mt-6">
+                <div>{{T0016}}</div>
+                <div>
+                    <input type="text" id="inst" name="inst" class="inputclass w-full" />
+                </div>
+            </div>
+
+            <div class="divclass mt-6">
+                <div>{{T0017}}. {{T0018}}</div>
+                <div>
+                    <input type="text" id="q3" name="q3" class="inputclass w-full" />
+                </div>
+            </div>
+            <div class="divclass mt-6">
+                <div>{{T0019}}. {{T0020}}</div>
+                <div>
+                    <input type="text" id="q4" name="q4" class="inputclass w-full" />
+                </div>
+            </div>
+            <div class="divclass mt-6">
+                <div>{{T0021}}. {{T0022}}</div>
+                <div>
+                    <input type="text" id="q5" name="q5" class="inputclass w-full" />
+                </div>
+            </div>
+            <div class="divclass mt-6">
+                <div>{{T0023}}. {{T0024}}</div>
+                <div>
+                    <input type="text" id="q6" name="q6" class="inputclass w-full" />
+                </div>
+            </div>
+
+            <h2 class="h2class">{{T0025}}</h2>
+            <div class="divclass mt-6">
+                <div>{{T0026}}. {{T0027}}</div>
+                <div></div>
+            </div>
+            <div class="divclass mt-6">
+                <div>{{T0029}}. {{T0030}}:</div>
+                <div>
+                    <select id="ifp1a" name="ifp1a" class="selectclass">
+                        <option value="-9">{{T0271}}</option>
+                    </select>
+                </div>
+            </div>
+            <div class="divclass mt-6">
+                <div>{{T0032}}. {{T0033}}</div>
+                <div>
+                    <select id="ifp1b" name="ifp1b" class="selectclass">
+                        <option value="-9">{{T0271}}</option>
+                    </select>
+                </div>
+            </div>
+            <div class="divclass mt-6">
+                <div>IFP1c. {{T0040}}</div>
+                <div>
+                    <select id="ifp1c" name="ifp1c" class="selectclass">
+                        <option value="-9">{{T0271}}</option>
+                    </select>
+                </div>
+            </div>
+
+            <input type="hidden" id="ifp1d" name="ifp1d" />
+
+            <div class="divclass mt-6">
+                <div>{{T0034}}. {{T0035}}:</div>
+                <div>
+                    <input type="text" id="ifp2" name="ifp2" class="inputclass w-full" />
+                </div>
+            </div>
+
+            <div class="divclass mt-6">
+                <div>{{T0036}}. {{T0037}}</div>
+                <div>
+                    <input type="text" id="ifp2ay" name="ifp2ay" class="inputclass w-full" />
+                </div>
+            </div>
+            <input type="hidden" id="ifp2am" name="ifp2am" />
+
+            <div class="divclass mt-10">
+                <div>{{T0039}}. {{T0042}}</div>
+                <div class="col-span-1 flex flex-col gap-2">
+                    <div class="flex items-center">
+                        <input id="ifp3-1" type="radio" value="{{ifp3-1}}" name="ifp3" class="valueclass">
+                        <label for="ifp3-1" class="labelclass">{{T0043}}</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="ifp3-2" type="radio" value="{{ifp3-2}}" name="ifp3" class="valueclass">
+                        <label for="ifp3-2" class="labelclass">{{T0044}}</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="divclass mt-10">
+                <div>{{T0045}}. {{T0046}}</div>
+                <div class="divclass4">
+                    <div class="flex items-center">
+                        <input id="ifp4-1" type="radio" value="{{ifp4-1}}" name="ifp4" class="valueclass">
+                        <label for="ifp4-1" class="labelclass">{{T0047}}</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="ifp4-2" type="radio" value="{{ifp4-2}}" name="ifp4" class="valueclass">
+                        <label for="ifp4-2" class="labelclass">{{T0048}}</label>
+                    </div>
+                </div>
+            </div>
+
+            <p class="font-bold mt-6">{{T0049}}</p>
+            <div class="divclass mt-6">
+                <div>{{T0050}}. {{T0051}}</div>
+                <div>
+                    <input type="text" id="ifm1" name="ifm1" class="inputclass w-full" />
+                </div>
+            </div>
+            <div class="divclass mt-6">
+                <div>{{T0052}}. {{T0053}}</div>
+                <div>
+                    <input type="text" id="ifm2" name="ifm2" class="inputclass w-full" />
+                </div>
+            </div>
+            <div class="divclass mt-6">
+                <div>{{T0054}}. {{T0055}}</div>
+                <div>
+                    <input type="text" id="ifm3" name="ifm3" class="inputclass w-full" />
+                </div>
+            </div>
+            <div class="divclass mt-6">
+                <div>{{T0056}}. {{T0057}}</div>
+                <div>
+                    <input type="text" id="ifm4" name="ifm4" class="inputclass w-full" />
+                </div>
+            </div>
+            <div class="divclass mt-6">
+                <div>{{T0058}}. {{T0059}}</div>
+                <div>
+                    <input type="text" id="ifm4_age" name="ifm4_age" class="inputclass w-full" />
+                </div>
+            </div>
+
+            <div class="divclass mt-10">
+                <div>{{T0061}}. {{T0062}}</div>
+                <div class="col-span-1 flex flex-col gap-2">
+                    <div class="flex items-center">
+                        <input id="ifm5-1" type="radio" value="{{ifm5-1}}" name="ifm5" class="valueclass">
+                        <label for="ifm5-1" class="labelclass">{{T0063}}</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="ifm5-2" type="radio" value="{{ifm5-2}}" name="ifm5" class="valueclass">
+                        <label for="ifm5-2" class="labelclass">{{T0064}}</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="ifm5-3" type="radio" value="{{ifm5-3}}" name="ifm5" class="valueclass">
+                        <label for="ifm5-3" class="labelclass">{{T0065}}</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="ifm5-4" type="radio" value="{{ifm5-4}}" name="ifm5" class="valueclass">
+                        <label for="ifm5-4" class="labelclass">{{T0066}}</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="ifm5-5" type="radio" value="{{ifm5-5}}" name="ifm5" class="valueclass">
+                        <label for="ifm5-5" class="labelclass">{{T0067}}</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="ifm5-6" type="radio" value="{{ifm5-6}}" name="ifm5" class="valueclass">
+                        <label for="ifm5-6" class="labelclass">{{T0068}}</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="ifm5-7" type="radio" value="{{ifm5-7}}" name="ifm5" class="valueclass">
+                        <label for="ifm5-7" class="labelclass">{{T0069}}</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="ifm5-8" type="radio" value="{{ifm5-8}}" name="ifm5" class="valueclass">
+                        <label for="ifm5-8" class="labelclass">{{T0070}}</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="divclass mt-10">
+                <div>{{T0071}}. {{T0072}}</div>
+                <div class="col-span-1 flex flex-col gap-2">
+                    <div class="flex items-center">
+                        <input id="ifm6-1" type="radio" value="{{ifm6-1}}" name="ifm6" class="valueclass">
+                        <label for="ifm6-1" class="labelclass">{{T0073}}</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="ifm6-2" type="radio" value="{{ifm6-2}}" name="ifm6" class="valueclass">
+                        <label for="ifm6-2" class="labelclass">{{T0074}}</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="ifm6-3" type="radio" value="{{ifm6-3}}" name="ifm6" class="valueclass">
+                        <label for="ifm6-3" class="labelclass">{{T0075}}</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="ifm6-4" type="radio" value="{{ifm6-4}}" name="ifm6" class="valueclass">
+                        <label for="ifm6-4" class="labelclass">{{T0076}}</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="ifm6-5" type="radio" value="{{ifm6-5}}" name="ifm6" class="valueclass">
+                        <label for="ifm6-5" class="labelclass">{{T0077}}</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="ifm6-6" type="radio" value="{{ifm6-6}}" name="ifm6" class="valueclass">
+                        <label for="ifm6-6" class="labelclass">{{T0078}}</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="ifm6-7" type="radio" value="{{ifm6-7}}" name="ifm6" class="valueclass">
+                        <label for="ifm6-7" class="labelclass">{{T0079}}</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="ifm6-8" type="radio" value="{{ifm6-8}}" name="ifm6" class="valueclass">
+                        <label for="ifm6-8" class="labelclass">{{T0080}}</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="ifm6-9" type="radio" value="{{ifm6-9}}" name="ifm6" class="valueclass">
+                        <label for="ifm6-9" class="labelclass">{{T0081}}</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="ifm6-10" type="radio" value="{{ifm6-10}}" name="ifm6" class="valueclass">
+                        <label for="ifm6-10" class="labelclass">{{T0082}}</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="ifm6-11" type="radio" value="{{ifm6-11}}" name="ifm6" class="valueclass">
+                        <label for="ifm6-11" class="labelclass">{{T0083}}</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="ifm6-12" type="radio" value="{{ifm6-12}}" name="ifm6" class="valueclass">
+                        <label for="ifm6-12" class="labelclass">{{T0084}}</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="ifm6-13" type="radio" value="{{ifm6-13}}" name="ifm6" class="valueclass">
+                        <label for="ifm6-13" class="labelclass">{{T0085}}</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="ifm6-14" type="radio" value="{{ifm6-14}}" name="ifm6" class="valueclass">
+                        <label for="ifm6-14" class="labelclass">{{T0086}}</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="ifm6-15" type="radio" value="{{ifm6-15}}" name="ifm6" class="valueclass">
+                        <label for="ifm6-15" class="labelclass">{{T0087}}</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="ifm6-16" type="radio" value="{{ifm6-16}}" name="ifm6" class="valueclass">
+                        <label for="ifm6-16" class="labelclass">{{T0088}}</label>
+                    </div>
+                    <input type="text" id="ifm6_other" name="ifm6_other" class="inputclass w-full" />
+                    <div class="flex items-center">
+                        <input id="ifm6-17" type="radio" value="{{ifm6-17}}" name="ifm6" class="valueclass">
+                        <label for="ifm6-17" class="labelclass">{{T0089}}</label>
+                    </div>
+                </div>
+            </div>
+
+            <p class="font-bold mt-6">{{T0090}}</p>
+            <div class="divclass mt-6">
+                <div>{{T0091}}. {{T0092}}</div>
+                <div>
+                    <input type="text" id="ift1" name="ift1" class="inputclass w-full" />
+                </div>
+            </div>
+            <div class="divclass mt-6">
+                <div>{{T0093}}. {{T0094}}</div>
+                <div>
+                    <input type="text" id="ift2" name="ift2" class="inputclass w-full" />
+                </div>
+            </div>
+            <div class="divclass mt-6">
+                <div>{{T0095}}. {{T0096}}</div>
+                <div>
+                    <input type="text" id="ift3" name="ift3" class="inputclass w-full" />
+                </div>
+            </div>
+            <div class="divclass mt-6">
+                <div>{{T0097}}. {{T0098}}</div>
+                <div>
+                    <input type="text" id="ift4" name="ift4" class="inputclass w-full" />
+                </div>
+            </div>
+            <div class="divclass mt-6">
+                <div>{{T0099}}. {{T0100}}</div>
+                <div>
+                    <input type="text" id="ift4_age" name="ift4_age" class="inputclass w-full" />
+                </div>
+            </div>
+
+            <div class="divclass mt-10">
+                <div>{{T0102}}. {{T0103}}</div>
+                <div class="col-span-1 flex flex-col gap-2">
+                    <div class="flex items-center">
+                        <input id="ift5-1" type="radio" value="{{ift5-1}}" name="ift5" class="valueclass">
+                        <label for="ift5-1" class="labelclass">{{T0104}}</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="ift5-2" type="radio" value="{{ift5-2}}" name="ift5" class="valueclass">
+                        <label for="ift5-2" class="labelclass">{{T0105}}</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="ift5-3" type="radio" value="{{ift5-3}}" name="ift5" class="valueclass">
+                        <label for="ift5-3" class="labelclass">{{T0106}}</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="ift5-4" type="radio" value="{{ift5-4}}" name="ift5" class="valueclass">
+                        <label for="ift5-4" class="labelclass">{{T0107}}</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="ift5-5" type="radio" value="{{ift5-5}}" name="ift5" class="valueclass">
+                        <label for="ift5-5" class="labelclass">{{T0108}}</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="ift5-6" type="radio" value="{{ift5-6}}" name="ift5" class="valueclass">
+                        <label for="ift5-6" class="labelclass">{{T0109}}</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="ift5-7" type="radio" value="{{ift5-7}}" name="ift5" class="valueclass">
+                        <label for="ift5-7" class="labelclass">{{T0110}}</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="ift5-8" type="radio" value="{{ift5-8}}" name="ift5" class="valueclass">
+                        <label for="ift5-8" class="labelclass">{{T0111}}</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="divclass mt-10">
+                <div>{{T0112}}. {{T0113}}</div>
+                <div class="col-span-1 flex flex-col gap-2">
+                    <div class="flex items-center">
+                        <input id="ift6-1" type="radio" value="{{ift6-1}}" name="ift6" class="valueclass">
+                        <label for="ift6-1" class="labelclass">{{T0114}}</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="ift6-2" type="radio" value="{{ift6-2}}" name="ift6" class="valueclass">
+                        <label for="ift6-2" class="labelclass">{{T0115}}</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="ift6-3" type="radio" value="{{ift6-3}}" name="ift6" class="valueclass">
+                        <label for="ift6-3" class="labelclass">{{T0116}}</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="ift6-4" type="radio" value="{{ift6-4}}" name="ift6" class="valueclass">
+                        <label for="ift6-4" class="labelclass">{{T0117}}</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="ift6-5" type="radio" value="{{ift6-5}}" name="ift6" class="valueclass">
+                        <label for="ift6-5" class="labelclass">{{T0118}}</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="ift6-6" type="radio" value="{{ift6-6}}" name="ift6" class="valueclass">
+                        <label for="ift6-6" class="labelclass">{{T0119}}</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="ift6-7" type="radio" value="{{ift6-7}}" name="ift6" class="valueclass">
+                        <label for="ift6-7" class="labelclass">{{T0120}}</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="ift6-8" type="radio" value="{{ift6-8}}" name="ift6" class="valueclass">
+                        <label for="ift6-8" class="labelclass">{{T0121}}</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="ift6-9" type="radio" value="{{ift6-9}}" name="ift6" class="valueclass">
+                        <label for="ift6-9" class="labelclass">{{T0122}}</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="ift6-10" type="radio" value="{{ift6-10}}" name="ift6" class="valueclass">
+                        <label for="ift6-10" class="labelclass">{{T0123}}</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="ift6-11" type="radio" value="{{ift6-11}}" name="ift6" class="valueclass">
+                        <label for="ift6-11" class="labelclass">{{T0124}}</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="ift6-12" type="radio" value="{{ift6-12}}" name="ift6" class="valueclass">
+                        <label for="ift6-12" class="labelclass">{{T0125}}</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="ift6-13" type="radio" value="{{ift6-13}}" name="ift6" class="valueclass">
+                        <label for="ift6-13" class="labelclass">{{T0126}}</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="ift6-14" type="radio" value="{{ift6-14}}" name="ift6" class="valueclass">
+                        <label for="ift6-14" class="labelclass">{{T0127}}</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="ift6-15" type="radio" value="{{ift6-15}}" name="ift6" class="valueclass">
+                        <label for="ift6-15" class="labelclass">{{T0128}}</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="ift6-16" type="radio" value="{{ift6-16}}" name="ift6" class="valueclass">
+                        <label for="ift6-16" class="labelclass">{{T0129}}</label>
+                    </div>
+                    <input type="text" id="ift6_other" name="ift6_other" class="inputclass w-full" />
+                    <div class="flex items-center">
+                        <input id="ift6-17" type="radio" value="{{ift6-17}}" name="ift6" class="valueclass">
+                        <label for="ift6-17" class="labelclass">{{T0130}}</label>
+                    </div>
+                </div>
+            </div>
+            <div class="divclass mt-6">
+                <div>{{T0131}}. {{T0132}}</div>
+                <div>
+                    <input type="text" id="ifp4a" name="ifp4a" class="inputclass w-full" />
+                </div>
+            </div>
+            <div class="divclass mt-6">
+                <div>{{T0133}}. {{T0134}}</div>
+                <div>
+                    <input type="text" id="ifp4b" name="ifp4b" class="inputclass w-full" />
+                </div>
+            </div>
+            <div class="divclass mt-6">
+                <div>{{T0135}}. {{T0136}}</div>
+                <div>
+                    <input type="text" id="ifp5" name="ifp5" class="inputclass w-full" />
+                </div>
+            </div>
+
+            <h2 class="h2class">{{T0137}}</h2>
+
+            <div class="divclass mt-6">
+                <div>{{T0138}}. {{T0139}}</div>
+                <div>
+                    <input type="text" id="fc1" name="fc1" class="inputclass w-full" />
+                </div>
+            </div>
+
+            <p class="mt-6">{{T0140}}. {{T0141}}</p>
+            <small class="italic mt-2">{{T0142}}</small>
+
+            <div class="divclass mt-10">
+                <div class="ml-4">{{T0143}}</div>
+                <div class="divclass4">
+                    <div class="flex items-center">
+                        <input id="fc2a-1" type="radio" value="{{fc2a-1}}" name="fc2a" class="valueclass">
+                        <label for="fc2a-1" class="labelclass">{{T0144}}</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="fc2a-2" type="radio" value="{{fc2a-2}}" name="fc2a" class="valueclass">
+                        <label for="fc2a-2" class="labelclass">{{T0145}}</label>
+                    </div>
+                </div>
+            </div>
+            <div class="divclass mt-10">
+                <div class="ml-4">{{T0146}}</div>
+                <div class="divclass4">
+                    <div class="flex items-center">
+                        <input id="fc2b-1" type="radio" value="{{fc2b-1}}" name="fc2b" class="valueclass">
+                        <label for="fc2b-1" class="labelclass">{{T0147}}</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="fc2b-2" type="radio" value="{{fc2b-2}}" name="fc2b" class="valueclass">
+                        <label for="fc2b-2" class="labelclass">{{T0148}}</label>
+                    </div>
+                </div>
+            </div>
+            <div class="divclass mt-10">
+                <div class="ml-4">{{T0149}}</div>
+                <div class="divclass4">
+                    <div class="flex items-center">
+                        <input id="fc2f-1" type="radio" value="{{fc2f-1}}" name="fc2f" class="valueclass">
+                        <label for="fc2f-1" class="labelclass">{{T0150}}</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="fc2f-2" type="radio" value="{{fc2f-2}}" name="fc2f" class="valueclass">
+                        <label for="fc2f-2" class="labelclass">{{T0151}}</label>
+                    </div>
+                </div>
+            </div>
+            <div class="divclass mt-10">
+                <div class="ml-4">{{T0152}}</div>
+                <div class="divclass4">
+                    <div class="flex items-center">
+                        <input id="fc2c-1" type="radio" value="{{fc2c-1}}" name="fc2c" class="valueclass">
+                        <label for="fc2c-1" class="labelclass">{{T0153}}</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="fc2c-2" type="radio" value="{{fc2c-2}}" name="fc2c" class="valueclass">
+                        <label for="fc2c-2" class="labelclass">{{T0154}}</label>
+                    </div>
+                </div>
+            </div>
+            <div class="divclass mt-10">
+                <div class="ml-4">{{T0155}}</div>
+                <div class="divclass4">
+                    <div class="flex items-center">
+                        <input id="fc2d-1" type="radio" value="{{fc2d-1}}" name="fc2d" class="valueclass">
+                        <label for="fc2d-1" class="labelclass">{{T0156}}</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="fc2d-2" type="radio" value="{{fc2d-2}}" name="fc2d" class="valueclass">
+                        <label for="fc2d-2" class="labelclass">{{T0157}}</label>
+                    </div>
+                </div>
+            </div>
+            <div class="divclass mt-10">
+                <div class="ml-4">{{T0158}}</div>
+                <div class="divclass4">
+                    <div class="flex items-center">
+                        <input id="fc2e-1" type="radio" value="{{fc2e-1}}" name="fc2e" class="valueclass">
+                        <label for="fc2e-1" class="labelclass">{{T0159}}</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="fc2e-2" type="radio" value="{{fc2e-2}}" name="fc2e" class="valueclass">
+                        <label for="fc2e-2" class="labelclass">{{T0160}}</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="divclass mt-6">
+                <div>{{T0161}}. {{T0162}}</div>
+                <div>
+                    <input type="text" id="fc3" name="fc3" class="inputclass w-full" />
+                </div>
+            </div>
+
+            <p class="mt-6">{{T0163}}. {{T0164}}</p>
+            <table class="w-full mt-6" aria-label="{{T0164}}">
+                <thead>
+                    <tr class="border-b">
+                        <th class="p-2"></th>
+                        <th class="w-40 p-2">{{T0165}}</th>
+                        <th class="p-2">{{T0166}}</th>
+                        <th class="p-2">{{T0167}}</th>
+                        <th class="p-2">{{T0168}}</th>
+                        <th class="p-2">{{T0169}}</th>
+                        <th class="w-48 p-2">{{T0171}}</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="p-2">{{T0173}}</td>
+                        <td class="p-2">
+                            <div class="flex items-center justify-center gap-2">
+                                <div class="flex items-center">
+                                    <input id="fc4_c1a-1" type="radio" value="{{fc4_c1a-1}}" name="fc4_c1a" class="valueclass">
+                                    <label for="fc4_c1a-1" class="labelclass">{{T0174}}</label>
+                                </div>
+                                <div class="flex items-center">
+                                    <input id="fc4_c1a-2" type="radio" value="{{fc4_c1a-2}}" name="fc4_c1a" class="valueclass">
+                                    <label for="fc4_c1a-2" class="labelclass">{{T0175}}</label>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="p-2">
+                            <input type="text" id="fc4_c1b" name="fc4_c1b" class="inputclass w-full" />
+                        </td>
+                        <td class="p-2">
+                            <input type="text" id="fc4_c1c" name="fc4_c1c" class="inputclass w-full" />
+                        </td>
+                        <td class="p-2">
+                            <div class="flex items-center gap-2">
+                                <div class="flex items-center">
+                                    <input id="fc4_c1d-1" type="radio" value="{{fc4_c1d-1}}" name="fc4_c1d" class="valueclass">
+                                    <label for="fc4_c1d-1" class="labelclass">{{T0176}}</label>
+                                </div>
+                                <div class="flex items-center">
+                                    <input id="fc4_c1d-2" type="radio" value="{{fc4_c1d-2}}" name="fc4_c1d" class="valueclass">
+                                    <label for="fc4_c1d-2" class="labelclass">{{T0177}}</label>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="p-2">
+                            <select id="fc4_c1e" name="fc4_c1e" class="selectclass">
+                                <option value="-9">{{T0271}}</option>
+                                <option value="{{fc4_c1e-1}}">{{T0188}}</option>
+                                <option value="{{fc4_c1e-2}}">{{T0189}}</option>
+                                <option value="{{fc4_c1e-3}}">{{T0190}}</option>
+                                <option value="{{fc4_c1e-4}}">{{T0191}}</option>
+                                <option value="{{fc4_c1e-5}}">{{T0192}}</option>
+                            </select>
+                            <input type="text" id="fc4_c1e_other" name="fc4_c1e_other" class="bg-white selectclass" />
+                        </td>
+                        <td class="p-2">
+                            <select id="fc4_c1f" name="fc4_c1f" class="selectclass">
+                                <option value="-9">{{T0271}}</option>
+                                <option value="{{fc4_c1f-1}}">{{T0194}}</option>
+                                <option value="{{fc4_c1f-2}}">{{T0195}}</option>
+                                <option value="{{fc4_c1f-3}}">{{T0196}}</option>
+                                <option value="{{fc4_c1f-4}}">{{T0197}}</option>
+                                <option value="{{fc4_c1f-5}}">{{T0198}}</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="p-2">{{T0178}}</td>
+                        <td class="p-2">
+                            <div class="flex items-center justify-center gap-2">
+                                <div class="flex items-center">
+                                    <input id="fc4_c2a-1" type="radio" value="{{fc4_c2a-1}}" name="fc4_c2a" class="valueclass">
+                                    <label for="fc4_c2a-1" class="labelclass">{{T0174}}</label>
+                                </div>
+                                <div class="flex items-center">
+                                    <input id="fc4_c2a-2" type="radio" value="{{fc4_c2a-2}}" name="fc4_c2a" class="valueclass">
+                                    <label for="fc4_c2a-2" class="labelclass">{{T0175}}</label>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="p-2">
+                            <input type="text" id="fc4_c2b" name="fc4_c2b" class="inputclass w-full" />
+                        </td>
+                        <td class="p-2">
+                            <input type="text" id="fc4_c2c" name="fc4_c2c" class="inputclass w-full" />
+                        </td>
+                        <td class="p-2">
+                            <div class="flex items-center gap-2">
+                                <div class="flex items-center">
+                                    <input id="fc4_c2d-1" type="radio" value="{{fc4_c2d-1}}" name="fc4_c2d" class="valueclass">
+                                    <label for="fc4_c2d-1" class="labelclass">{{T0176}}</label>
+                                </div>
+                                <div class="flex items-center">
+                                    <input id="fc4_c2d-2" type="radio" value="{{fc4_c2d-2}}" name="fc4_c2d" class="valueclass">
+                                    <label for="fc4_c2d-2" class="labelclass">{{T0177}}</label>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="p-2">
+                            <select id="fc4_c2e" name="fc4_c2e" class="selectclass">
+                                <option value="-9">{{T0271}}</option>
+                                <option value="{{fc4_c2e-1}}">{{T0188}}</option>
+                                <option value="{{fc4_c2e-2}}">{{T0189}}</option>
+                                <option value="{{fc4_c2e-3}}">{{T0190}}</option>
+                                <option value="{{fc4_c2e-4}}">{{T0191}}</option>
+                                <option value="{{fc4_c2e-5}}">{{T0192}}</option>
+                            </select>
+                            <input type="text" id="fc4_c2e_other" name="fc4_c2e_other" class="bg-white selectclass" />
+                        </td>
+                        <td class="p-2">
+                            <select id="fc4_c2f" name="fc4_c2f" class="selectclass">
+                                <option value="-9">{{T0271}}</option>
+                                <option value="{{fc4_c2f-1}}">{{T0194}}</option>
+                                <option value="{{fc4_c2f-2}}">{{T0195}}</option>
+                                <option value="{{fc4_c2f-3}}">{{T0196}}</option>
+                                <option value="{{fc4_c2f-4}}">{{T0197}}</option>
+                                <option value="{{fc4_c2f-5}}">{{T0198}}</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="p-2">{{T0179}}</td>
+                        <td class="p-2">
+                            <div class="flex items-center justify-center gap-2">
+                                <div class="flex items-center">
+                                    <input id="fc4_c3a-1" type="radio" value="{{fc4_c3a-1}}" name="fc4_c3a" class="valueclass">
+                                    <label for="fc4_c3a-1" class="labelclass">{{T0174}}</label>
+                                </div>
+                                <div class="flex items-center">
+                                    <input id="fc4_c3a-2" type="radio" value="{{fc4_c3a-2}}" name="fc4_c3a" class="valueclass">
+                                    <label for="fc4_c3a-2" class="labelclass">{{T0175}}</label>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="p-2">
+                            <input type="text" id="fc4_c3b" name="fc4_c3b" class="inputclass w-full" />
+                        </td>
+                        <td class="p-2">
+                            <input type="text" id="fc4_c3c" name="fc4_c3c" class="inputclass w-full" />
+                        </td>
+                        <td class="p-2">
+                            <div class="flex items-center gap-2">
+                                <div class="flex items-center">
+                                    <input id="fc4_c3d-1" type="radio" value="{{fc4_c3d-1}}" name="fc4_c3d" class="valueclass">
+                                    <label for="fc4_c3d-1" class="labelclass">{{T0176}}</label>
+                                </div>
+                                <div class="flex items-center">
+                                    <input id="fc4_c3d-2" type="radio" value="{{fc4_c3d-2}}" name="fc4_c3d" class="valueclass">
+                                    <label for="fc4_c3d-2" class="labelclass">{{T0177}}</label>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="p-2">
+                            <select id="fc4_c3e" name="fc4_c3e" class="selectclass">
+                                <option value="-9">{{T0271}}</option>
+                                <option value="{{fc4_c3e-1}}">{{T0188}}</option>
+                                <option value="{{fc4_c3e-2}}">{{T0189}}</option>
+                                <option value="{{fc4_c3e-3}}">{{T0190}}</option>
+                                <option value="{{fc4_c3e-4}}">{{T0191}}</option>
+                                <option value="{{fc4_c3e-5}}">{{T0192}}</option>
+                            </select>
+                            <input type="text" id="fc4_c3e_other" name="fc4_c3e_other" class="bg-white selectclass" />
+                        </td>
+                        <td class="p-2">
+                            <select id="fc4_c3f" name="fc4_c3f" class="selectclass">
+                                <option value="-9">{{T0271}}</option>
+                                <option value="{{fc4_c3f-1}}">{{T0194}}</option>
+                                <option value="{{fc4_c3f-2}}">{{T0195}}</option>
+                                <option value="{{fc4_c3f-3}}">{{T0196}}</option>
+                                <option value="{{fc4_c3f-4}}">{{T0197}}</option>
+                                <option value="{{fc4_c3f-5}}">{{T0198}}</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="p-2">{{T0180}}</td>
+                        <td class="p-2">
+                            <div class="flex items-center justify-center gap-2">
+                                <div class="flex items-center">
+                                    <input id="fc4_c4a-1" type="radio" value="{{fc4_c4a-1}}" name="fc4_c4a" class="valueclass">
+                                    <label for="fc4_c4a-1" class="labelclass">{{T0174}}</label>
+                                </div>
+                                <div class="flex items-center">
+                                    <input id="fc4_c4a-2" type="radio" value="{{fc4_c4a-2}}" name="fc4_c4a" class="valueclass">
+                                    <label for="fc4_c4a-2" class="labelclass">{{T0175}}</label>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="p-2">
+                            <input type="text" id="fc4_c4b" name="fc4_c4b" class="inputclass w-full" />
+                        </td>
+                        <td class="p-2">
+                            <input type="text" id="fc4_c4c" name="fc4_c4c" class="inputclass w-full" />
+                        </td>
+                        <td class="p-2">
+                            <div class="flex items-center gap-2">
+                                <div class="flex items-center">
+                                    <input id="fc4_c4d-1" type="radio" value="{{fc4_c4d-1}}" name="fc4_c4d" class="valueclass">
+                                    <label for="fc4_c4d-1" class="labelclass">{{T0176}}</label>
+                                </div>
+                                <div class="flex items-center">
+                                    <input id="fc4_c4d-2" type="radio" value="{{fc4_c4d-2}}" name="fc4_c4d" class="valueclass">
+                                    <label for="fc4_c4d-2" class="labelclass">{{T0177}}</label>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="p-2">
+                            <select id="fc4_c4e" name="fc4_c4e" class="selectclass">
+                                <option value="-9">{{T0271}}</option>
+                                <option value="{{fc4_c4e-1}}">{{T0188}}</option>
+                                <option value="{{fc4_c4e-2}}">{{T0189}}</option>
+                                <option value="{{fc4_c4e-3}}">{{T0190}}</option>
+                                <option value="{{fc4_c4e-4}}">{{T0191}}</option>
+                                <option value="{{fc4_c4e-5}}">{{T0192}}</option>
+                            </select>
+                            <input type="text" id="fc4_c4e_other" name="fc4_c4e_other" class="bg-white selectclass" />
+                        </td>
+                        <td class="p-2">
+                            <select id="fc4_c4f" name="fc4_c4f" class="selectclass">
+                                <option value="-9">{{T0271}}</option>
+                                <option value="{{fc4_c4f-1}}">{{T0194}}</option>
+                                <option value="{{fc4_c4f-2}}">{{T0195}}</option>
+                                <option value="{{fc4_c4f-3}}">{{T0196}}</option>
+                                <option value="{{fc4_c4f-4}}">{{T0197}}</option>
+                                <option value="{{fc4_c4f-5}}">{{T0198}}</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="p-2">{{T0181}}</td>
+                        <td class="p-2">
+                            <div class="flex items-center justify-center gap-2">
+                                <div class="flex items-center">
+                                    <input id="fc4_c5a-1" type="radio" value="{{fc4_c5a-1}}" name="fc4_c5a" class="valueclass">
+                                    <label for="fc4_c5a-1" class="labelclass">{{T0174}}</label>
+                                </div>
+                                <div class="flex items-center">
+                                    <input id="fc4_c5a-2" type="radio" value="{{fc4_c5a-2}}" name="fc4_c5a" class="valueclass">
+                                    <label for="fc4_c5a-2" class="labelclass">{{T0175}}</label>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="p-2">
+                            <input type="text" id="fc4_c5b" name="fc4_c5b" class="inputclass w-full" />
+                        </td>
+                        <td class="p-2">
+                            <input type="text" id="fc4_c5c" name="fc4_c5c" class="inputclass w-full" />
+                        </td>
+                        <td class="p-2">
+                            <div class="flex items-center gap-2">
+                                <div class="flex items-center">
+                                    <input id="fc4_c5d-1" type="radio" value="{{fc4_c5d-1}}" name="fc4_c5d" class="valueclass">
+                                    <label for="fc4_c5d-1" class="labelclass">{{T0176}}</label>
+                                </div>
+                                <div class="flex items-center">
+                                    <input id="fc4_c5d-2" type="radio" value="{{fc4_c5d-2}}" name="fc4_c5d" class="valueclass">
+                                    <label for="fc4_c5d-2" class="labelclass">{{T0177}}</label>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="p-2">
+                            <select id="fc4_c5e" name="fc4_c5e" class="selectclass">
+                                <option value="-9">{{T0271}}</option>
+                                <option value="{{fc4_c5e-1}}">{{T0188}}</option>
+                                <option value="{{fc4_c5e-2}}">{{T0189}}</option>
+                                <option value="{{fc4_c5e-3}}">{{T0190}}</option>
+                                <option value="{{fc4_c5e-4}}">{{T0191}}</option>
+                                <option value="{{fc4_c5e-5}}">{{T0192}}</option>
+                            </select>
+                            <input type="text" id="fc4_c5e_other" name="fc4_c5e_other" class="bg-white selectclass" />
+                        </td>
+                        <td class="p-2">
+                            <select id="fc4_c5f" name="fc4_c5f" class="selectclass">
+                                <option value="-9">{{T0271}}</option>
+                                <option value="{{fc4_c5f-1}}">{{T0194}}</option>
+                                <option value="{{fc4_c5f-2}}">{{T0195}}</option>
+                                <option value="{{fc4_c5f-3}}">{{T0196}}</option>
+                                <option value="{{fc4_c5f-4}}">{{T0197}}</option>
+                                <option value="{{fc4_c5f-5}}">{{T0198}}</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="p-2">{{T0182}}</td>
+                        <td class="p-2">
+                            <div class="flex items-center justify-center gap-2">
+                                <div class="flex items-center">
+                                    <input id="fc4_c6a-1" type="radio" value="{{fc4_c6a-1}}" name="fc4_c6a" class="valueclass">
+                                    <label for="fc4_c6a-1" class="labelclass">{{T0174}}</label>
+                                </div>
+                                <div class="flex items-center">
+                                    <input id="fc4_c6a-2" type="radio" value="{{fc4_c6a-2}}" name="fc4_c6a" class="valueclass">
+                                    <label for="fc4_c6a-2" class="labelclass">{{T0175}}</label>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="p-2">
+                            <input type="text" id="fc4_c6b" name="fc4_c6b" class="inputclass w-full" />
+                        </td>
+                        <td class="p-2">
+                            <input type="text" id="fc4_c6c" name="fc4_c6c" class="inputclass w-full" />
+                        </td>
+                        <td class="p-2">
+                            <div class="flex items-center gap-2">
+                                <div class="flex items-center">
+                                    <input id="fc4_c6d-1" type="radio" value="{{fc4_c6d-1}}" name="fc4_c6d" class="valueclass">
+                                    <label for="fc4_c6d-1" class="labelclass">{{T0176}}</label>
+                                </div>
+                                <div class="flex items-center">
+                                    <input id="fc4_c6d-2" type="radio" value="{{fc4_c6d-2}}" name="fc4_c6d" class="valueclass">
+                                    <label for="fc4_c6d-2" class="labelclass">{{T0177}}</label>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="p-2">
+                            <select id="fc4_c6e" name="fc4_c6e" class="selectclass">
+                                <option value="-9">{{T0271}}</option>
+                                <option value="{{fc4_c6e-1}}">{{T0188}}</option>
+                                <option value="{{fc4_c6e-2}}">{{T0189}}</option>
+                                <option value="{{fc4_c6e-3}}">{{T0190}}</option>
+                                <option value="{{fc4_c6e-4}}">{{T0191}}</option>
+                                <option value="{{fc4_c6e-5}}">{{T0192}}</option>
+                            </select>
+                            <input type="text" id="fc4_c6e_other" name="fc4_c6e_other" class="bg-white selectclass" />
+                        </td>
+                        <td class="p-2">
+                            <select id="fc4_c6f" name="fc4_c6f" class="selectclass">
+                                <option value="-9">{{T0271}}</option>
+                                <option value="{{fc4_c6f-1}}">{{T0194}}</option>
+                                <option value="{{fc4_c6f-2}}">{{T0195}}</option>
+                                <option value="{{fc4_c6f-3}}">{{T0196}}</option>
+                                <option value="{{fc4_c6f-4}}">{{T0197}}</option>
+                                <option value="{{fc4_c6f-5}}">{{T0198}}</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="p-2">{{T0183}}</td>
+                        <td class="p-2">
+                            <div class="flex items-center justify-center gap-2">
+                                <div class="flex items-center">
+                                    <input id="fc4_c7a-1" type="radio" value="{{fc4_c7a-1}}" name="fc4_c7a" class="valueclass">
+                                    <label for="fc4_c7a-1" class="labelclass">{{T0174}}</label>
+                                </div>
+                                <div class="flex items-center">
+                                    <input id="fc4_c7a-2" type="radio" value="{{fc4_c7a-2}}" name="fc4_c7a" class="valueclass">
+                                    <label for="fc4_c7a-2" class="labelclass">{{T0175}}</label>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="p-2">
+                            <input type="text" id="fc4_c7b" name="fc4_c7b" class="inputclass w-full" />
+                        </td>
+                        <td class="p-2">
+                            <input type="text" id="fc4_c7c" name="fc4_c7c" class="inputclass w-full" />
+                        </td>
+                        <td class="p-2">
+                            <div class="flex items-center gap-2">
+                                <div class="flex items-center">
+                                    <input id="fc4_c7d-1" type="radio" value="{{fc4_c7d-1}}" name="fc4_c7d" class="valueclass">
+                                    <label for="fc4_c7d-1" class="labelclass">{{T0176}}</label>
+                                </div>
+                                <div class="flex items-center">
+                                    <input id="fc4_c7d-2" type="radio" value="{{fc4_c7d-2}}" name="fc4_c7d" class="valueclass">
+                                    <label for="fc4_c7d-2" class="labelclass">{{T0177}}</label>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="p-2">
+                            <select id="fc4_c7e" name="fc4_c7e" class="selectclass">
+                                <option value="-9">{{T0271}}</option>
+                                <option value="{{fc4_c7e-1}}">{{T0188}}</option>
+                                <option value="{{fc4_c7e-2}}">{{T0189}}</option>
+                                <option value="{{fc4_c7e-3}}">{{T0190}}</option>
+                                <option value="{{fc4_c7e-4}}">{{T0191}}</option>
+                                <option value="{{fc4_c7e-5}}">{{T0192}}</option>
+                            </select>
+                            <input type="text" id="fc4_c7e_other" name="fc4_c7e_other" class="bg-white selectclass" />
+                        </td>
+                        <td class="p-2">
+                            <select id="fc4_c7f" name="fc4_c7f" class="selectclass">
+                                <option value="-9">{{T0271}}</option>
+                                <option value="{{fc4_c7f-1}}">{{T0194}}</option>
+                                <option value="{{fc4_c7f-2}}">{{T0195}}</option>
+                                <option value="{{fc4_c7f-3}}">{{T0196}}</option>
+                                <option value="{{fc4_c7f-4}}">{{T0197}}</option>
+                                <option value="{{fc4_c7f-5}}">{{T0198}}</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="p-2">{{T0184}}</td>
+                        <td class="p-2">
+                            <div class="flex items-center justify-center gap-2">
+                                <div class="flex items-center">
+                                    <input id="fc4_c8a-1" type="radio" value="{{fc4_c8a-1}}" name="fc4_c8a" class="valueclass">
+                                    <label for="fc4_c8a-1" class="labelclass">{{T0174}}</label>
+                                </div>
+                                <div class="flex items-center">
+                                    <input id="fc4_c8a-2" type="radio" value="{{fc4_c8a-2}}" name="fc4_c8a" class="valueclass">
+                                    <label for="fc4_c8a-2" class="labelclass">{{T0175}}</label>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="p-2">
+                            <input type="text" id="fc4_c8b" name="fc4_c8b" class="inputclass w-full" />
+                        </td>
+                        <td class="p-2">
+                            <input type="text" id="fc4_c8c" name="fc4_c8c" class="inputclass w-full" />
+                        </td>
+                        <td class="p-2">
+                            <div class="flex items-center gap-2">
+                                <div class="flex items-center">
+                                    <input id="fc4_c8d-1" type="radio" value="{{fc4_c8d-1}}" name="fc4_c8d" class="valueclass">
+                                    <label for="fc4_c8d-1" class="labelclass">{{T0176}}</label>
+                                </div>
+                                <div class="flex items-center">
+                                    <input id="fc4_c8d-2" type="radio" value="{{fc4_c8d-2}}" name="fc4_c8d" class="valueclass">
+                                    <label for="fc4_c8d-2" class="labelclass">{{T0177}}</label>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="p-2">
+                            <select id="fc4_c8e" name="fc4_c8e" class="selectclass">
+                                <option value="-9">{{T0271}}</option>
+                                <option value="{{fc4_c8e-1}}">{{T0188}}</option>
+                                <option value="{{fc4_c8e-2}}">{{T0189}}</option>
+                                <option value="{{fc4_c8e-3}}">{{T0190}}</option>
+                                <option value="{{fc4_c8e-4}}">{{T0191}}</option>
+                                <option value="{{fc4_c8e-5}}">{{T0192}}</option>
+                            </select>
+                            <input type="text" id="fc4_c8e_other" name="fc4_c8e_other" class="bg-white selectclass" />
+                        </td>
+                        <td class="p-2">
+                            <select id="fc4_c8f" name="fc4_c8f" class="selectclass">
+                                <option value="-9">{{T0271}}</option>
+                                <option value="{{fc4_c8f-1}}">{{T0194}}</option>
+                                <option value="{{fc4_c8f-2}}">{{T0195}}</option>
+                                <option value="{{fc4_c8f-3}}">{{T0196}}</option>
+                                <option value="{{fc4_c8f-4}}">{{T0197}}</option>
+                                <option value="{{fc4_c8f-5}}">{{T0198}}</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="p-2">{{T0185}}</td>
+                        <td class="p-2">
+                            <div class="flex items-center justify-center gap-2">
+                                <div class="flex items-center">
+                                    <input id="fc4_c9a-1" type="radio" value="{{fc4_c9a-1}}" name="fc4_c9a" class="valueclass">
+                                    <label for="fc4_c9a-1" class="labelclass">{{T0174}}</label>
+                                </div>
+                                <div class="flex items-center">
+                                    <input id="fc4_c9a-2" type="radio" value="{{fc4_c9a-2}}" name="fc4_c9a" class="valueclass">
+                                    <label for="fc4_c9a-2" class="labelclass">{{T0175}}</label>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="p-2">
+                            <input type="text" id="fc4_c9b" name="fc4_c9b" class="inputclass w-full" />
+                        </td>
+                        <td class="p-2">
+                            <input type="text" id="fc4_c9c" name="fc4_c9c" class="inputclass w-full" />
+                        </td>
+                        <td class="p-2">
+                            <div class="flex items-center gap-2">
+                                <div class="flex items-center">
+                                    <input id="fc4_c9d-1" type="radio" value="{{fc4_c9d-1}}" name="fc4_c9d" class="valueclass">
+                                    <label for="fc4_c9d-1" class="labelclass">{{T0176}}</label>
+                                </div>
+                                <div class="flex items-center">
+                                    <input id="fc4_c9d-2" type="radio" value="{{fc4_c9d-2}}" name="fc4_c9d" class="valueclass">
+                                    <label for="fc4_c9d-2" class="labelclass">{{T0177}}</label>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="p-2">
+                            <select id="fc4_c9e" name="fc4_c9e" class="selectclass">
+                                <option value="-9">{{T0271}}</option>
+                                <option value="{{fc4_c9e-1}}">{{T0188}}</option>
+                                <option value="{{fc4_c9e-2}}">{{T0189}}</option>
+                                <option value="{{fc4_c9e-3}}">{{T0190}}</option>
+                                <option value="{{fc4_c9e-4}}">{{T0191}}</option>
+                                <option value="{{fc4_c9e-5}}">{{T0192}}</option>
+                            </select>
+                            <input type="text" id="fc4_c9e_other" name="fc4_c9e_other" class="bg-white selectclass" />
+                        </td>
+                        <td class="p-2">
+                            <select id="fc4_c9f" name="fc4_c9f" class="selectclass">
+                                <option value="-9">{{T0271}}</option>
+                                <option value="{{fc4_c9f-1}}">{{T0194}}</option>
+                                <option value="{{fc4_c9f-2}}">{{T0195}}</option>
+                                <option value="{{fc4_c9f-3}}">{{T0196}}</option>
+                                <option value="{{fc4_c9f-4}}">{{T0197}}</option>
+                                <option value="{{fc4_c9f-5}}">{{T0198}}</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="p-2">{{T0186}}</td>
+                        <td class="p-2">
+                            <div class="flex items-center justify-center gap-2">
+                                <div class="flex items-center">
+                                    <input id="fc4_c10a-1" type="radio" value="{{fc4_c10a-1}}" name="fc4_c10a" class="valueclass">
+                                    <label for="fc4_c10a-1" class="labelclass">{{T0174}}</label>
+                                </div>
+                                <div class="flex items-center">
+                                    <input id="fc4_c10a-2" type="radio" value="{{fc4_c10a-2}}" name="fc4_c10a" class="valueclass">
+                                    <label for="fc4_c10a-2" class="labelclass">{{T0175}}</label>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="p-2">
+                            <input type="text" id="fc4_c10b" name="fc4_c10b" class="inputclass w-full" />
+                        </td>
+                        <td class="p-2">
+                            <input type="text" id="fc4_c10c" name="fc4_c10c" class="inputclass w-full" />
+                        </td>
+                        <td class="p-2">
+                            <div class="flex items-center gap-2">
+                                <div class="flex items-center">
+                                    <input id="fc4_c10d-1" type="radio" value="{{fc4_c10d-1}}" name="fc4_c10d" class="valueclass">
+                                    <label for="fc4_c10d-1" class="labelclass">{{T0176}}</label>
+                                </div>
+                                <div class="flex items-center">
+                                    <input id="fc4_c10d-2" type="radio" value="{{fc4_c10d-2}}" name="fc4_c10d" class="valueclass">
+                                    <label for="fc4_c10d-2" class="labelclass">{{T0177}}</label>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="p-2">
+                            <select id="fc4_c10e" name="fc4_c10e" class="selectclass">
+                                <option value="-9">{{T0271}}</option>
+                                <option value="{{fc4_c10e-1}}">{{T0188}}</option>
+                                <option value="{{fc4_c10e-2}}">{{T0189}}</option>
+                                <option value="{{fc4_c10e-3}}">{{T0190}}</option>
+                                <option value="{{fc4_c10e-4}}">{{T0191}}</option>
+                                <option value="{{fc4_c10e-5}}">{{T0192}}</option>
+                            </select>
+                            <input type="text" id="fc4_c10e_other" name="fc4_c10e_other" class="bg-white selectclass" />
+                        </td>
+                        <td class="p-2">
+                            <select id="fc4_c10f" name="fc4_c10f" class="selectclass">
+                                <option value="-9">{{T0271}}</option>
+                                <option value="{{fc4_c10f-1}}">{{T0194}}</option>
+                                <option value="{{fc4_c10f-2}}">{{T0195}}</option>
+                                <option value="{{fc4_c10f-3}}">{{T0196}}</option>
+                                <option value="{{fc4_c10f-4}}">{{T0197}}</option>
+                                <option value="{{fc4_c10f-5}}">{{T0198}}</option>
+                            </select>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+
+            <h2 class="h2class">{{T0199}}</h2>
+
+            <div class="divclass mt-10">
+                <div>{{T0200}}. {{T0201}}</div>
+                <div class="divclass4">
+                    <div class="flex items-center">
+                        <input id="ex1-1" type="radio" value="{{ex1-1}}" name="ex1" class="valueclass">
+                        <label for="ex1-1" class="labelclass">{{T0202}}</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="ex1-2" type="radio" value="{{ex1-2}}" name="ex1" class="valueclass">
+                        <label for="ex1-2" class="labelclass">{{T0203}}</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="divclass mt-6">
+                <div>{{T0205}}. {{T0206}}</div>
+                <div>
+                    <input type="text" id="ex2" name="ex2" class="inputclass w-full" />
+                </div>
+            </div>
+
+            <p class="mt-6">{{T0207}}. {{T0208}}</p>
+            <table class="w-full mt-6" aria-label="{{T0208}}">
+                <thead>
+                    <tr class="border-b">
+                        <th class="p-2"></th>
+                        <th class="w-40 p-2">{{T0209}}</th>
+                        <th class="p-2">{{T0210}}</th>
+                        <th class="w-52 p-2">{{T0211}}</th>
+                        <th class="p-2">{{T0212}}</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="p-2">{{T0173}}</td>
+                        <td class="p-2">
+                            <div class="flex items-center justify-center gap-2">
+                                <div class="flex items-center">
+                                    <input id="ex3_c1a-1" type="radio" value="{{ex3_c1a-1}}" name="ex3_c1a" class="valueclass">
+                                    <label for="ex3_c1a-1" class="labelclass">{{T0215}}</label>
+                                </div>
+                                <div class="flex items-center">
+                                    <input id="ex3_c1a-2" type="radio" value="{{ex3_c1a-2}}" name="ex3_c1a" class="valueclass">
+                                    <label for="ex3_c1a-2" class="labelclass">{{T0216}}</label>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="p-2">
+                            <input type="text" id="ex3_c1b" name="ex3_c1b" class="inputclass w-full" />
+                        </td>
+                        <td class="p-2">
+                            <div class="flex items-center justify-center gap-2">
+                                <div class="flex items-center">
+                                    <input id="ex3_c1c-1" type="radio" value="{{ex3_c1c-1}}" name="ex3_c1c" class="valueclass">
+                                    <label for="ex3_c1c-1" class="labelclass">{{T0217}}</label>
+                                </div>
+                                <div class="flex items-center">
+                                    <input id="ex3_c1c-2" type="radio" value="{{ex3_c1c-2}}" name="ex3_c1c" class="valueclass">
+                                    <label for="ex3_c1c-2" class="labelclass">{{T0218}}</label>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="p-2">
+                            <select id="ex3_c1d" name="ex3_c1d" class="selectclass">
+                                <option value="-9">{{T0271}}</option>
+                                <option value="{{ex3_c1d-1}}">{{T0222}}</option>
+                                <option value="{{ex3_c1d-2}}">{{T0223}}</option>
+                                <option value="{{ex3_c1d-3}}">{{T0224}}</option>
+                                <option value="{{ex3_c1d-4}}">{{T0225}}</option>
+                                <option value="{{ex3_c1d-5}}">{{T0226}}</option>
+                                <option value="{{ex3_c1d-6}}">{{T0227}}</option>
+                                <option value="{{ex3_c1d-7}}">{{T0228}}</option>
+                                <option value="{{ex3_c1d-8}}">{{T0229}}</option>
+                                <option value="{{ex3_c1d-9}}">{{T0230}}</option>
+                                <option value="{{ex3_c1d-10}}">{{T0231}}</option>
+                            </select>
+                            <input type="text" id="ex3_c1d_other" name="ex3_c1d_other" class="bg-white selectclass" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="p-2">{{T0178}}</td>
+                        <td class="p-2">
+                            <div class="flex items-center justify-center gap-2">
+                                <div class="flex items-center">
+                                    <input id="ex3_c2a-1" type="radio" value="{{ex3_c2a-1}}" name="ex3_c2a" class="valueclass">
+                                    <label for="ex3_c2a-1" class="labelclass">{{T0215}}</label>
+                                </div>
+                                <div class="flex items-center">
+                                    <input id="ex3_c2a-2" type="radio" value="{{ex3_c2a-2}}" name="ex3_c2a" class="valueclass">
+                                    <label for="ex3_c2a-2" class="labelclass">{{T0216}}</label>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="p-2">
+                            <input type="text" id="ex3_c2b" name="ex3_c2b" class="inputclass w-full" />
+                        </td>
+                        <td class="p-2">
+                            <div class="flex items-center justify-center gap-2">
+                                <div class="flex items-center">
+                                    <input id="ex3_c2c-1" type="radio" value="{{ex3_c2c-1}}" name="ex3_c2c" class="valueclass">
+                                    <label for="ex3_c2c-1" class="labelclass">{{T0217}}</label>
+                                </div>
+                                <div class="flex items-center">
+                                    <input id="ex3_c2c-2" type="radio" value="{{ex3_c2c-2}}" name="ex3_c2c" class="valueclass">
+                                    <label for="ex3_c2c-2" class="labelclass">{{T0218}}</label>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="p-2">
+                            <select id="ex3_c2d" name="ex3_c2d" class="selectclass">
+                                <option value="-9">{{T0271}}</option>
+                                <option value="{{ex3_c2d-1}}">{{T0222}}</option>
+                                <option value="{{ex3_c2d-2}}">{{T0223}}</option>
+                                <option value="{{ex3_c2d-3}}">{{T0224}}</option>
+                                <option value="{{ex3_c2d-4}}">{{T0225}}</option>
+                                <option value="{{ex3_c2d-5}}">{{T0226}}</option>
+                                <option value="{{ex3_c2d-6}}">{{T0227}}</option>
+                                <option value="{{ex3_c2d-7}}">{{T0228}}</option>
+                                <option value="{{ex3_c2d-8}}">{{T0229}}</option>
+                                <option value="{{ex3_c2d-9}}">{{T0230}}</option>
+                                <option value="{{ex3_c2d-10}}">{{T0231}}</option>
+                            </select>
+                            <input type="text" id="ex3_c2d_other" name="ex3_c2d_other" class="bg-white selectclass" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="p-2">{{T0179}}</td>
+                        <td class="p-2">
+                            <div class="flex items-center justify-center gap-2">
+                                <div class="flex items-center">
+                                    <input id="ex3_c3a-1" type="radio" value="{{ex3_c3a-1}}" name="ex3_c3a" class="valueclass">
+                                    <label for="ex3_c3a-1" class="labelclass">{{T0215}}</label>
+                                </div>
+                                <div class="flex items-center">
+                                    <input id="ex3_c3a-2" type="radio" value="{{ex3_c3a-2}}" name="ex3_c3a" class="valueclass">
+                                    <label for="ex3_c3a-2" class="labelclass">{{T0216}}</label>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="p-2">
+                            <input type="text" id="ex3_c3b" name="ex3_c3b" class="inputclass w-full" />
+                        </td>
+                        <td class="p-2">
+                            <div class="flex items-center justify-center gap-2">
+                                <div class="flex items-center">
+                                    <input id="ex3_c3c-1" type="radio" value="{{ex3_c3c-1}}" name="ex3_c3c" class="valueclass">
+                                    <label for="ex3_c3c-1" class="labelclass">{{T0217}}</label>
+                                </div>
+                                <div class="flex items-center">
+                                    <input id="ex3_c3c-2" type="radio" value="{{ex3_c3c-2}}" name="ex3_c3c" class="valueclass">
+                                    <label for="ex3_c3c-2" class="labelclass">{{T0218}}</label>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="p-2">
+                            <select id="ex3_c3d" name="ex3_c3d" class="selectclass">
+                                <option value="-9">{{T0271}}</option>
+                                <option value="{{ex3_c3d-1}}">{{T0222}}</option>
+                                <option value="{{ex3_c3d-2}}">{{T0223}}</option>
+                                <option value="{{ex3_c3d-3}}">{{T0224}}</option>
+                                <option value="{{ex3_c3d-4}}">{{T0225}}</option>
+                                <option value="{{ex3_c3d-5}}">{{T0226}}</option>
+                                <option value="{{ex3_c3d-6}}">{{T0227}}</option>
+                                <option value="{{ex3_c3d-7}}">{{T0228}}</option>
+                                <option value="{{ex3_c3d-8}}">{{T0229}}</option>
+                                <option value="{{ex3_c3d-9}}">{{T0230}}</option>
+                                <option value="{{ex3_c3d-10}}">{{T0231}}</option>
+                            </select>
+                            <input type="text" id="ex3_c3d_other" name="ex3_c3d_other" class="bg-white selectclass" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="p-2">{{T0180}}</td>
+                        <td class="p-2">
+                            <div class="flex items-center justify-center gap-2">
+                                <div class="flex items-center">
+                                    <input id="ex3_c4a-1" type="radio" value="{{ex3_c4a-1}}" name="ex3_c4a" class="valueclass">
+                                    <label for="ex3_c4a-1" class="labelclass">{{T0215}}</label>
+                                </div>
+                                <div class="flex items-center">
+                                    <input id="ex3_c4a-2" type="radio" value="{{ex3_c4a-2}}" name="ex3_c4a" class="valueclass">
+                                    <label for="ex3_c4a-2" class="labelclass">{{T0216}}</label>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="p-2">
+                            <input type="text" id="ex3_c4b" name="ex3_c4b" class="inputclass w-full" />
+                        </td>
+                        <td class="p-2">
+                            <div class="flex items-center justify-center gap-2">
+                                <div class="flex items-center">
+                                    <input id="ex3_c4c-1" type="radio" value="{{ex3_c4c-1}}" name="ex3_c4c" class="valueclass">
+                                    <label for="ex3_c4c-1" class="labelclass">{{T0217}}</label>
+                                </div>
+                                <div class="flex items-center">
+                                    <input id="ex3_c4c-2" type="radio" value="{{ex3_c4c-2}}" name="ex3_c4c" class="valueclass">
+                                    <label for="ex3_c4c-2" class="labelclass">{{T0218}}</label>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="p-2">
+                            <select id="ex3_c4d" name="ex3_c4d" class="selectclass">
+                                <option value="-9">{{T0271}}</option>
+                                <option value="{{ex3_c4d-1}}">{{T0222}}</option>
+                                <option value="{{ex3_c4d-2}}">{{T0223}}</option>
+                                <option value="{{ex3_c4d-3}}">{{T0224}}</option>
+                                <option value="{{ex3_c4d-4}}">{{T0225}}</option>
+                                <option value="{{ex3_c4d-5}}">{{T0226}}</option>
+                                <option value="{{ex3_c4d-6}}">{{T0227}}</option>
+                                <option value="{{ex3_c4d-7}}">{{T0228}}</option>
+                                <option value="{{ex3_c4d-8}}">{{T0229}}</option>
+                                <option value="{{ex3_c4d-9}}">{{T0230}}</option>
+                                <option value="{{ex3_c4d-10}}">{{T0231}}</option>
+                            </select>
+                            <input type="text" id="ex3_c4d_other" name="ex3_c4d_other" class="bg-white selectclass" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="p-2">{{T0181}}</td>
+                        <td class="p-2">
+                            <div class="flex items-center justify-center gap-2">
+                                <div class="flex items-center">
+                                    <input id="ex3_c5a-1" type="radio" value="{{ex3_c5a-1}}" name="ex3_c5a" class="valueclass">
+                                    <label for="ex3_c5a-1" class="labelclass">{{T0215}}</label>
+                                </div>
+                                <div class="flex items-center">
+                                    <input id="ex3_c5a-2" type="radio" value="{{ex3_c5a-2}}" name="ex3_c5a" class="valueclass">
+                                    <label for="ex3_c5a-2" class="labelclass">{{T0216}}</label>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="p-2">
+                            <input type="text" id="ex3_c5b" name="ex3_c5b" class="inputclass w-full" />
+                        </td>
+                        <td class="p-2">
+                            <div class="flex items-center justify-center gap-2">
+                                <div class="flex items-center">
+                                    <input id="ex3_c5c-1" type="radio" value="{{ex3_c5c-1}}" name="ex3_c5c" class="valueclass">
+                                    <label for="ex3_c5c-1" class="labelclass">{{T0217}}</label>
+                                </div>
+                                <div class="flex items-center">
+                                    <input id="ex3_c5c-2" type="radio" value="{{ex3_c5c-2}}" name="ex3_c5c" class="valueclass">
+                                    <label for="ex3_c5c-2" class="labelclass">{{T0218}}</label>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="p-2">
+                            <select id="ex3_c5d" name="ex3_c5d" class="selectclass">
+                                <option value="-9">{{T0271}}</option>
+                                <option value="{{ex3_c5d-1}}">{{T0222}}</option>
+                                <option value="{{ex3_c5d-2}}">{{T0223}}</option>
+                                <option value="{{ex3_c5d-3}}">{{T0224}}</option>
+                                <option value="{{ex3_c5d-4}}">{{T0225}}</option>
+                                <option value="{{ex3_c5d-5}}">{{T0226}}</option>
+                                <option value="{{ex3_c5d-6}}">{{T0227}}</option>
+                                <option value="{{ex3_c5d-7}}">{{T0228}}</option>
+                                <option value="{{ex3_c5d-8}}">{{T0229}}</option>
+                                <option value="{{ex3_c5d-9}}">{{T0230}}</option>
+                                <option value="{{ex3_c5d-10}}">{{T0231}}</option>
+                            </select>
+                            <input type="text" id="ex3_c5d_other" name="ex3_c5d_other" class="bg-white selectclass" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="p-2">{{T0182}}</td>
+                        <td class="p-2">
+                            <div class="flex items-center justify-center gap-2">
+                                <div class="flex items-center">
+                                    <input id="ex3_c6a-1" type="radio" value="{{ex3_c6a-1}}" name="ex3_c6a" class="valueclass">
+                                    <label for="ex3_c6a-1" class="labelclass">{{T0215}}</label>
+                                </div>
+                                <div class="flex items-center">
+                                    <input id="ex3_c6a-2" type="radio" value="{{ex3_c6a-2}}" name="ex3_c6a" class="valueclass">
+                                    <label for="ex3_c6a-2" class="labelclass">{{T0216}}</label>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="p-2">
+                            <input type="text" id="ex3_c6b" name="ex3_c6b" class="inputclass w-full" />
+                        </td>
+                        <td class="p-2">
+                            <div class="flex items-center justify-center gap-2">
+                                <div class="flex items-center">
+                                    <input id="ex3_c6c-1" type="radio" value="{{ex3_c6c-1}}" name="ex3_c6c" class="valueclass">
+                                    <label for="ex3_c6c-1" class="labelclass">{{T0217}}</label>
+                                </div>
+                                <div class="flex items-center">
+                                    <input id="ex3_c6c-2" type="radio" value="{{ex3_c6c-2}}" name="ex3_c6c" class="valueclass">
+                                    <label for="ex3_c6c-2" class="labelclass">{{T0218}}</label>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="p-2">
+                            <select id="ex3_c6d" name="ex3_c6d" class="selectclass">
+                                <option value="-9">{{T0271}}</option>
+                                <option value="{{ex3_c6d-1}}">{{T0222}}</option>
+                                <option value="{{ex3_c6d-2}}">{{T0223}}</option>
+                                <option value="{{ex3_c6d-3}}">{{T0224}}</option>
+                                <option value="{{ex3_c6d-4}}">{{T0225}}</option>
+                                <option value="{{ex3_c6d-5}}">{{T0226}}</option>
+                                <option value="{{ex3_c6d-6}}">{{T0227}}</option>
+                                <option value="{{ex3_c6d-7}}">{{T0228}}</option>
+                                <option value="{{ex3_c6d-8}}">{{T0229}}</option>
+                                <option value="{{ex3_c6d-9}}">{{T0230}}</option>
+                                <option value="{{ex3_c6d-10}}">{{T0231}}</option>
+                            </select>
+                            <input type="text" id="ex3_c6d_other" name="ex3_c6d_other" class="bg-white selectclass" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="p-2">{{T0183}}</td>
+                        <td class="p-2">
+                            <div class="flex items-center justify-center gap-2">
+                                <div class="flex items-center">
+                                    <input id="ex3_c7a-1" type="radio" value="{{ex3_c7a-1}}" name="ex3_c7a" class="valueclass">
+                                    <label for="ex3_c7a-1" class="labelclass">{{T0215}}</label>
+                                </div>
+                                <div class="flex items-center">
+                                    <input id="ex3_c7a-2" type="radio" value="{{ex3_c7a-2}}" name="ex3_c7a" class="valueclass">
+                                    <label for="ex3_c7a-2" class="labelclass">{{T0216}}</label>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="p-2">
+                            <input type="text" id="ex3_c7b" name="ex3_c7b" class="inputclass w-full" />
+                        </td>
+                        <td class="p-2">
+                            <div class="flex items-center justify-center gap-2">
+                                <div class="flex items-center">
+                                    <input id="ex3_c7c-1" type="radio" value="{{ex3_c7c-1}}" name="ex3_c7c" class="valueclass">
+                                    <label for="ex3_c7c-1" class="labelclass">{{T0217}}</label>
+                                </div>
+                                <div class="flex items-center">
+                                    <input id="ex3_c7c-2" type="radio" value="{{ex3_c7c-2}}" name="ex3_c7c" class="valueclass">
+                                    <label for="ex3_c7c-2" class="labelclass">{{T0218}}</label>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="p-2">
+                            <select id="ex3_c7d" name="ex3_c7d" class="selectclass">
+                                <option value="-9">{{T0271}}</option>
+                                <option value="{{ex3_c7d-1}}">{{T0222}}</option>
+                                <option value="{{ex3_c7d-2}}">{{T0223}}</option>
+                                <option value="{{ex3_c7d-3}}">{{T0224}}</option>
+                                <option value="{{ex3_c7d-4}}">{{T0225}}</option>
+                                <option value="{{ex3_c7d-5}}">{{T0226}}</option>
+                                <option value="{{ex3_c7d-6}}">{{T0227}}</option>
+                                <option value="{{ex3_c7d-7}}">{{T0228}}</option>
+                                <option value="{{ex3_c7d-8}}">{{T0229}}</option>
+                                <option value="{{ex3_c7d-9}}">{{T0230}}</option>
+                                <option value="{{ex3_c7d-10}}">{{T0231}}</option>
+                            </select>
+                            <input type="text" id="ex3_c7d_other" name="ex3_c7d_other" class="bg-white selectclass" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="p-2">{{T0184}}</td>
+                        <td class="p-2">
+                            <div class="flex items-center justify-center gap-2">
+                                <div class="flex items-center">
+                                    <input id="ex3_c8a-1" type="radio" value="{{ex3_c8a-1}}" name="ex3_c8a" class="valueclass">
+                                    <label for="ex3_c8a-1" class="labelclass">{{T0215}}</label>
+                                </div>
+                                <div class="flex items-center">
+                                    <input id="ex3_c8a-2" type="radio" value="{{ex3_c8a-2}}" name="ex3_c8a" class="valueclass">
+                                    <label for="ex3_c8a-2" class="labelclass">{{T0216}}</label>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="p-2">
+                            <input type="text" id="ex3_c8b" name="ex3_c8b" class="inputclass w-full" />
+                        </td>
+                        <td class="p-2">
+                            <div class="flex items-center justify-center gap-2">
+                                <div class="flex items-center">
+                                    <input id="ex3_c8c-1" type="radio" value="{{ex3_c8c-1}}" name="ex3_c8c" class="valueclass">
+                                    <label for="ex3_c8c-1" class="labelclass">{{T0217}}</label>
+                                </div>
+                                <div class="flex items-center">
+                                    <input id="ex3_c8c-2" type="radio" value="{{ex3_c8c-2}}" name="ex3_c8c" class="valueclass">
+                                    <label for="ex3_c8c-2" class="labelclass">{{T0218}}</label>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="p-2">
+                            <select id="ex3_c8d" name="ex3_c8d" class="selectclass">
+                                <option value="-9">{{T0271}}</option>
+                                <option value="{{ex3_c8d-1}}">{{T0222}}</option>
+                                <option value="{{ex3_c8d-2}}">{{T0223}}</option>
+                                <option value="{{ex3_c8d-3}}">{{T0224}}</option>
+                                <option value="{{ex3_c8d-4}}">{{T0225}}</option>
+                                <option value="{{ex3_c8d-5}}">{{T0226}}</option>
+                                <option value="{{ex3_c8d-6}}">{{T0227}}</option>
+                                <option value="{{ex3_c8d-7}}">{{T0228}}</option>
+                                <option value="{{ex3_c8d-8}}">{{T0229}}</option>
+                                <option value="{{ex3_c8d-9}}">{{T0230}}</option>
+                                <option value="{{ex3_c8d-10}}">{{T0231}}</option>
+                            </select>
+                            <input type="text" id="ex3_c8d_other" name="ex3_c8d_other" class="bg-white selectclass" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="p-2">{{T0185}}</td>
+                        <td class="p-2">
+                            <div class="flex items-center justify-center gap-2">
+                                <div class="flex items-center">
+                                    <input id="ex3_c9a-1" type="radio" value="{{ex3_c9a-1}}" name="ex3_c9a" class="valueclass">
+                                    <label for="ex3_c9a-1" class="labelclass">{{T0215}}</label>
+                                </div>
+                                <div class="flex items-center">
+                                    <input id="ex3_c9a-2" type="radio" value="{{ex3_c9a-2}}" name="ex3_c9a" class="valueclass">
+                                    <label for="ex3_c9a-2" class="labelclass">{{T0216}}</label>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="p-2">
+                            <input type="text" id="ex3_c9b" name="ex3_c9b" class="inputclass w-full" />
+                        </td>
+                        <td class="p-2">
+                            <div class="flex items-center justify-center gap-2">
+                                <div class="flex items-center">
+                                    <input id="ex3_c9c-1" type="radio" value="{{ex3_c9c-1}}" name="ex3_c9c" class="valueclass">
+                                    <label for="ex3_c9c-1" class="labelclass">{{T0217}}</label>
+                                </div>
+                                <div class="flex items-center">
+                                    <input id="ex3_c9c-2" type="radio" value="{{ex3_c9c-2}}" name="ex3_c9c" class="valueclass">
+                                    <label for="ex3_c9c-2" class="labelclass">{{T0218}}</label>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="p-2">
+                            <select id="ex3_c9d" name="ex3_c9d" class="selectclass">
+                                <option value="-9">{{T0271}}</option>
+                                <option value="{{ex3_c9d-1}}">{{T0222}}</option>
+                                <option value="{{ex3_c9d-2}}">{{T0223}}</option>
+                                <option value="{{ex3_c9d-3}}">{{T0224}}</option>
+                                <option value="{{ex3_c9d-4}}">{{T0225}}</option>
+                                <option value="{{ex3_c9d-5}}">{{T0226}}</option>
+                                <option value="{{ex3_c9d-6}}">{{T0227}}</option>
+                                <option value="{{ex3_c9d-7}}">{{T0228}}</option>
+                                <option value="{{ex3_c9d-8}}">{{T0229}}</option>
+                                <option value="{{ex3_c9d-9}}">{{T0230}}</option>
+                                <option value="{{ex3_c9d-10}}">{{T0231}}</option>
+                            </select>
+                            <input type="text" id="ex3_c9d_other" name="ex3_c9d_other" class="bg-white selectclass" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="p-2">{{T0186}}</td>
+                        <td class="p-2">
+                            <div class="flex items-center justify-center gap-2">
+                                <div class="flex items-center">
+                                    <input id="ex3_c10a-1" type="radio" value="{{ex3_c10a-1}}" name="ex3_c10a" class="valueclass">
+                                    <label for="ex3_c10a-1" class="labelclass">{{T0215}}</label>
+                                </div>
+                                <div class="flex items-center">
+                                    <input id="ex3_c10a-2" type="radio" value="{{ex3_c10a-2}}" name="ex3_c10a" class="valueclass">
+                                    <label for="ex3_c10a-2" class="labelclass">{{T0216}}</label>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="p-2">
+                            <input type="text" id="ex3_c10b" name="ex3_c10b" class="inputclass w-full" />
+                        </td>
+                        <td class="p-2">
+                            <div class="flex items-center justify-center gap-2">
+                                <div class="flex items-center">
+                                    <input id="ex3_c10c-1" type="radio" value="{{ex3_c10c-1}}" name="ex3_c10c" class="valueclass">
+                                    <label for="ex3_c10c-1" class="labelclass">{{T0217}}</label>
+                                </div>
+                                <div class="flex items-center">
+                                    <input id="ex3_c10c-2" type="radio" value="{{ex3_c10c-2}}" name="ex3_c10c" class="valueclass">
+                                    <label for="ex3_c10c-2" class="labelclass">{{T0218}}</label>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="p-2">
+                            <select id="ex3_c10d" name="ex3_c10d" class="selectclass">
+                                <option value="-9">{{T0271}}</option>
+                                <option value="{{ex3_c10d-1}}">{{T0222}}</option>
+                                <option value="{{ex3_c10d-2}}">{{T0223}}</option>
+                                <option value="{{ex3_c10d-3}}">{{T0224}}</option>
+                                <option value="{{ex3_c10d-4}}">{{T0225}}</option>
+                                <option value="{{ex3_c10d-5}}">{{T0226}}</option>
+                                <option value="{{ex3_c10d-6}}">{{T0227}}</option>
+                                <option value="{{ex3_c10d-7}}">{{T0228}}</option>
+                                <option value="{{ex3_c10d-8}}">{{T0229}}</option>
+                                <option value="{{ex3_c10d-9}}">{{T0230}}</option>
+                                <option value="{{ex3_c10d-10}}">{{T0231}}</option>
+                            </select>
+                            <input type="text" id="ex3_c10d_other" name="ex3_c10d_other" class="bg-white selectclass" />
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+
+            <h2 class="h2class">{{T0232}}</h2>
+
+            <div class="divclass mt-10">
+                <div>{{T0233}}. {{T0234}}</div>
+                <div class="col-span-1 flex flex-col gap-2">
+                    <div class="flex items-center">
+                        <input id="qs1-1" type="radio" value="{{qs1-1}}" name="qs1" class="valueclass">
+                        <label for="qs1-1" class="labelclass">{{T0235}}</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="qs1-2" type="radio" value="{{qs1-2}}" name="qs1" class="valueclass">
+                        <label for="qs1-2" class="labelclass">{{T0236}}</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="qs1-3" type="radio" value="{{qs1-3}}" name="qs1" class="valueclass">
+                        <label for="qs1-3" class="labelclass">{{T0237}}</label>
+                    </div>
+                </div>
+            </div>
+            <div class="divclass mt-10">
+                <div>{{T0238}}. {{T0239}}</div>
+                <div class="divclass4">
+                    <div class="flex items-center">
+                        <input id="qs2-1" type="radio" value="{{qs2-1}}" name="qs2" class="valueclass">
+                        <label for="qs2-1" class="labelclass">{{T0240}}</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="qs2-2" type="radio" value="{{qs2-2}}" name="qs2" class="valueclass">
+                        <label for="qs2-2" class="labelclass">{{T0241}}</label>
+                    </div>
+                </div>
+            </div>
+            <div class="divclass mt-10">
+                <div>{{T0242}}. {{T0243}}</div>
+                <div class="divclass4">
+                    <div class="flex items-center">
+                        <input id="qs3-1" type="radio" value="{{qs3-1}}" name="qs3" class="valueclass">
+                        <label for="qs3-1" class="labelclass">{{T0244}}</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="qs3-2" type="radio" value="{{qs3-2}}" name="qs3" class="valueclass">
+                        <label for="qs3-2" class="labelclass">{{T0245}}</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="divclass mt-6">
+                <div>
+                    {{T0247}}. {{T0248}}
+                    <small class="block mt-2">{{T0249}}</small>
+                </div>
+                <div>
+                    <input type="text" id="qs3a" name="qs3a" class="inputclass w-full" />
+                </div>
+            </div>
+
+            <div class="divclass mt-6">
+                <div>{{T0250}}. {{T0251}}</div>
+                <div class="flex items-center gap-4">
+                    <input type="text" id="qs4" name="qs4" class="inputclass w-full" />
+                    {{T0252}}
+                </div>
+            </div>
+
+            <p class="mt-6">{{T0253}}. {{T0254}}</p>
+
+            <div class="divclass mt-10">
+                <div class="ml-4">{{T0255}}</div>
+                <div class="divclass4">
+                    <div class="flex items-center">
+                        <input id="qs5a-1" type="radio" value="{{qs5a-1}}" name="qs5a" class="valueclass">
+                        <label for="qs5a-1" class="labelclass">{{T0256}}</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="qs5a-2" type="radio" value="{{qs5a-2}}" name="qs5a" class="valueclass">
+                        <label for="qs5a-2" class="labelclass">{{T0257}}</label>
+                    </div>
+                </div>
+            </div>
+            <div class="divclass mt-10">
+                <div class="ml-4">{{T0258}}</div>
+                <div class="divclass4">
+                    <div class="flex items-center">
+                        <input id="qs5b-1" type="radio" value="{{qs5b-1}}" name="qs5b" class="valueclass">
+                        <label for="qs5b-1" class="labelclass">{{T0259}}</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="qs5b-2" type="radio" value="{{qs5b-2}}" name="qs5b" class="valueclass">
+                        <label for="qs5b-2" class="labelclass">{{T0260}}</label>
+                    </div>
+                </div>
+            </div>
+            <div class="divclass mt-10">
+                <div class="ml-4">{{T0261}}</div>
+                <div class="divclass4">
+                    <div class="flex items-center">
+                        <input id="qs5c-1" type="radio" value="{{qs5c-1}}" name="qs5c" class="valueclass">
+                        <label for="qs5c-1" class="labelclass">{{T0262}}</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="qs5c-2" type="radio" value="{{qs5c-2}}" name="qs5c" class="valueclass">
+                        <label for="qs5c-2" class="labelclass">{{T0263}}</label>
+                    </div>
+                </div>
+            </div>
+            <div class="divclass mt-10">
+                <div class="ml-4">{{T0264}}</div>
+                <div class="divclass4">
+                    <div class="flex items-center">
+                        <input id="qs5d-1" type="radio" value="{{qs5d-1}}" name="qs5d" class="valueclass">
+                        <label for="qs5d-1" class="labelclass">{{T0265}}</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="qs5d-2" type="radio" value="{{qs5d-2}}" name="qs5d" class="valueclass">
+                        <label for="qs5d-2" class="labelclass">{{T0266}}</label>
+                    </div>
+                </div>
+            </div>
+            <div class="divclass mt-10">
+                <div>{{T0267}}. {{T0268}}</div>
+                <div class="divclass4">
+                    <div class="flex items-center">
+                        <input id="qs6-1" type="radio" value="{{qs6-1}}" name="qs6" class="valueclass">
+                        <label for="qs6-1" class="labelclass">{{T0269}}</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="qs6-2" type="radio" value="{{qs6-2}}" name="qs6" class="valueclass">
+                        <label for="qs6-2" class="labelclass">{{T0270}}</label>
+                    </div>
+                </div>
+            </div>
+
+        </form>
+
+        <footer id="footer" class="fixed bottom-0 w-full h-12 bg-slate-200 shadow">
+            <div class="flex justify-center h-full items-center">
+
+                <button type="button"
+                    class="flex items-center gap-2 text-white bg-menuButton/80 hover:bg-menuButton focus:ring-4 focus:ring-menuButton/50 font-medium rounded-lg text-sm px-3 py-1"
+                    id="salveazaForm">
+                    <svg class="fill-white w-4 h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                        <!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                        <path
+                            d="M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V173.3c0-17-6.7-33.3-18.7-45.3L352 50.7C340 38.7 323.7 32 306.7 32H64zm0 96c0-17.7 14.3-32 32-32H288c17.7 0 32 14.3 32 32v64c0 17.7-14.3 32-32 32H96c-17.7 0-32-14.3-32-32V128zM224 288a64 64 0 1 1 0 128 64 64 0 1 1 0-128z" />
+                    </svg>
+                    <span class="t_button_save"></span>
+                </button>
+                <button type="button"
+                    class="flex items-center gap-2 text-white bg-menuButton/80 hover:bg-menuButton focus:ring-4 focus:ring-menuButton/50 font-medium rounded-lg text-sm px-3 py-1 ml-4"
+                    id="finalizeazaForm">
+                    <svg class="fill-white w-4 h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                        <!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                        <path
+                            d="M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V173.3c0-17-6.7-33.3-18.7-45.3L352 50.7C340 38.7 323.7 32 306.7 32H64zm0 96c0-17.7 14.3-32 32-32H288c17.7 0 32 14.3 32 32v64c0 17.7-14.3 32-32 32H96c-17.7 0-32-14.3-32-32V128zM224 288a64 64 0 1 1 0 128 64 64 0 1 1 0-128z" />
+                    </svg>
+                    <span class="t_button_complete"></span>
+                </button>
+                <div class="hidden">
+                    <button type="button"
+                        class="flex items-center gap-2 text-white bg-red-500 hover:bg-red-500 focus:ring-4 focus:ring-red-500/50 font-medium rounded-lg text-sm px-3 py-1 ml-4"
+                        id="debugForm">
+                        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="bug"
+                            class="fill-white w-4 h-4" role="img" xmlns="http://www.w3.org/2000/svg"
+                            viewbox="0 0 512 512">
+                            <path fill="currentColor"
+                                d="M511.988 288.9c-.478 17.43-15.217 31.1-32.653 31.1H424v16c0 21.864-4.882 42.584-13.6 61.145l60.228 60.228c12.496 12.497 12.496 32.758 0 45.255-12.498 12.497-32.759 12.496-45.256 0l-54.736-54.736C345.886 467.965 314.351 480 280 480V236c0-6.627-5.373-12-12-12h-24c-6.627 0-12 5.373-12 12v244c-34.351 0-65.886-12.035-90.636-32.108l-54.736 54.736c-12.498 12.497-32.759 12.496-45.256 0-12.496-12.497-12.496-32.758 0-45.255l60.228-60.228C92.882 378.584 88 357.864 88 336v-16H32.666C15.23 320 .491 306.33.013 288.9-.484 270.816 14.028 256 32 256h56v-58.745l-46.628-46.628c-12.496-12.497-12.496-32.758 0-45.255 12.498-12.497 32.758-12.497 45.256 0L141.255 160h229.489l54.627-54.627c12.498-12.497 32.758-12.497 45.256 0 12.496 12.497 12.496 32.758 0 45.255L424 197.255V256h56c17.972 0 32.484 14.816 31.988 32.9zM257 0c-61.856 0-112 50.144-112 112h224C369 50.144 318.856 0 257 0z">
+                            </path>
+                        </svg>&nbsp;debug</button>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+</body>
+
+</html>

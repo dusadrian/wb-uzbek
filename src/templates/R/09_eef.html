@@ -1,0 +1,1759 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>CRM Uzbek</title>
+    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; img-src http: https: data: ; script-src 'self';" />
+    <meta http-equiv="X-Content-Security-Policy"
+        content="default-src 'self'; img-src http: https: data: ; script-src 'self';" />
+    <link href="../../../dist/main.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../../node_modules/flatpickr/dist/flatpickr.min.css">
+</head>
+
+<body class="relative max-h-screen">
+    <div class="fixed top-0 right-0 left-0 bg-slate-200 h-14 z-50 shadow" id="header">
+    </div>
+    <div class="relative w-full mt-14 pb-10 h-[calc(100vh-6.5rem)] overflow-y-auto">
+
+        <form class="px-6 mt-10">
+            <div class="grid grid-cols-12 border">
+                <div class="col-span-1 bg-stone-200 p-2"></div>
+                <div class="col-span-11 p-2">
+                    <h1 class="h1class">{{T0001}}</h1>
+                </div>
+            </div>
+
+            <p class="mt-4 mb-2 text-xl">{{T0002}}</p>
+            <p class="mb-2">{{T0003}}</p>
+            <p class="mb-2">{{T0004}}</p>
+            <p class="mb-2">{{T0005}}</p>
+            <p class="mb-2">{{T0006}}</p>
+            <p class="mb-2">{{T0007}}</p>
+            <p class="mb-2">{{T0008}}</p>
+            <p class="mb-2">{{T0009}}</p>
+
+            <div class="divclass mt-6">
+                <div>{{T0010}}. {{T0011}}</div>
+                <div>
+                    <input type="text" id="q1" name="q1" class="inputclass w-full" />
+                </div>
+            </div>
+            <div class="divclass mt-6">
+                <div>{{T0012}}: {{T0013}}</div>
+                <div>
+                    <input type="text" id="q2" name="q2" class="inputclass w-full" />
+                </div>
+            </div>
+
+            <div class="divclass mt-6">
+                <div>{{T0014}}. {{T0015}}</div>
+                <div>
+                    <select id="i2" name="i2" class="selectclass">
+                        <option value="-9">{{T0110}}</option>
+                    </select>
+                </div>
+            </div>
+            <div class="divclass mt-6">
+                <div>{{T0016}}. {{T0017}}</div>
+                <div>
+                    <input type="text" id="i1" name="i1" class="inputclass w-full" />
+                </div>
+            </div>
+
+            <div class="divclass mt-6">
+                <div>{{T0018}}. {{T0019}}</div>
+                <div>
+                    <input type="text" id="i3" name="i3" class="inputclass w-full" />
+                </div>
+            </div>
+
+            <div class="divclass mt-6">
+                <div>{{T0020}}. {{T0021}}</div>
+                <div>
+                    <select id="i4a" name="i4a" class="selectclass">
+                        <option value="-9">{{T0110}}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="divclass mt-6">
+                <div>{{T0022}}. {{T0023}}</div>
+                <div>
+                    <select id="i4b" name="i4b" class="selectclass">
+                        <option value="-9">{{T0110}}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="divclass mt-6">
+                <div>I4c. {{T0101}}</div>
+                <div>
+                    <select id="i4c" name="i4c"
+                        class="selectclass">
+                        <option value="--" selected>--</option>
+                    </select>
+                </div>
+            </div>
+
+            <input type="hidden" id="i4d" name="i4d" />
+
+            <div class="divclass mt-6">
+                <div>{{T0024}}. {{T0025}}</div>
+                <div>
+                    <select id="i9" name="i9" class="selectclass">
+                        <option value="--" selected>--</option>
+                        <option value="{{i9-1}}">{{T0103}}</option>
+                        <option value="{{i9-2}}">{{T0104}}</option>
+                        <option value="{{i9-3}}">{{T0105}}</option>
+                        <option value="{{i9-4}}">{{T0106}}</option>
+                        <option value="{{i9-5}}">{{T0107}}</option>
+                        <option value="{{i9-6}}">{{T0108}}</option>
+                        <option value="{{i9-7}}">{{T0109}}</option>
+                    </select>
+                </div>
+            </div>
+
+            <p class="mt-6">{{T0038}}</p>
+
+            <div class="grid grid-cols-3 gap-4 items-center mt-6">
+                <div class="col-span-2">{{T0042}}</div>
+                <div class="col-span-1 flex gap-4">
+                    <div class="flex items-center">
+                        <input id="e1-1" type="radio" value="{{e1-1}}" name="e1" class="valueclass">
+                        <label for="e1-1" class="labelclass">1</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e1-2" type="radio" value="{{e1-2}}" name="e1" class="valueclass">
+                        <label for="e1-2" class="labelclass">2</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e1-3" type="radio" value="{{e1-3}}" name="e1" class="valueclass">
+                        <label for="e1-3" class="labelclass">3</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e1-4" type="radio" value="{{e1-4}}" name="e1" class="valueclass">
+                        <label for="e1-4" class="labelclass">4</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e1-5" type="radio" value="{{e1-5}}" name="e1" class="valueclass">
+                        <label for="e1-5" class="labelclass">5</label>
+                    </div>
+                </div>
+            </div>
+            <textarea placeholder="{{T0041}}" name="e1_n" id="e1_n" rows="3" class="mt-2 inputclass w-full"></textarea>
+
+            <div class="grid grid-cols-3 gap-4 items-center mt-6">
+                <div class="col-span-2">{{T0043}}</div>
+                <div class="col-span-1 flex gap-4">
+                    <div class="flex items-center">
+                        <input id="e2-1" type="radio" value="{{e2-1}}" name="e2" class="valueclass">
+                        <label for="e2-1" class="labelclass">1</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e2-2" type="radio" value="{{e2-2}}" name="e2" class="valueclass">
+                        <label for="e2-2" class="labelclass">2</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e2-3" type="radio" value="{{e2-3}}" name="e2" class="valueclass">
+                        <label for="e2-3" class="labelclass">3</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e2-4" type="radio" value="{{e2-4}}" name="e2" class="valueclass">
+                        <label for="e2-4" class="labelclass">4</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e2-5" type="radio" value="{{e2-5}}" name="e2" class="valueclass">
+                        <label for="e2-5" class="labelclass">5</label>
+                    </div>
+                </div>
+            </div>
+            <textarea placeholder="{{T0041}}" name="e2_n" id="e2_n" rows="3" class="mt-2 inputclass w-full"></textarea>
+
+            <div class="grid grid-cols-3 gap-4 items-center mt-6">
+                <div class="col-span-2">{{T0044}}</div>
+                <div class="col-span-1 flex gap-4">
+                    <div class="flex items-center">
+                        <input id="e3-1" type="radio" value="{{e3-1}}" name="e3" class="valueclass">
+                        <label for="e3-1" class="labelclass">1</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e3-2" type="radio" value="{{e3-2}}" name="e3" class="valueclass">
+                        <label for="e3-2" class="labelclass">2</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e3-3" type="radio" value="{{e3-3}}" name="e3" class="valueclass">
+                        <label for="e3-3" class="labelclass">3</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e3-4" type="radio" value="{{e3-4}}" name="e3" class="valueclass">
+                        <label for="e3-4" class="labelclass">4</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e3-5" type="radio" value="{{e3-5}}" name="e3" class="valueclass">
+                        <label for="e3-5" class="labelclass">5</label>
+                    </div>
+                </div>
+            </div>
+            <textarea placeholder="{{T0041}}" name="e3_n" id="e3_n" rows="3" class="mt-2 inputclass w-full"></textarea>
+
+            <div class="grid grid-cols-3 gap-4 items-center mt-6">
+                <div class="col-span-2">{{T0045}}</div>
+                <div class="col-span-1 flex gap-4">
+                    <div class="flex items-center">
+                        <input id="e4-1" type="radio" value="{{e4-1}}" name="e4" class="valueclass">
+                        <label for="e4-1" class="labelclass">1</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e4-2" type="radio" value="{{e4-2}}" name="e4" class="valueclass">
+                        <label for="e4-2" class="labelclass">2</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e4-3" type="radio" value="{{e4-3}}" name="e4" class="valueclass">
+                        <label for="e4-3" class="labelclass">3</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e4-4" type="radio" value="{{e4-4}}" name="e4" class="valueclass">
+                        <label for="e4-4" class="labelclass">4</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e4-5" type="radio" value="{{e4-5}}" name="e4" class="valueclass">
+                        <label for="e4-5" class="labelclass">5</label>
+                    </div>
+                </div>
+            </div>
+            <textarea placeholder="{{T0041}}" name="e4_n" id="e4_n" rows="3" class="mt-2 inputclass w-full"></textarea>
+
+            <div class="grid grid-cols-3 gap-4 items-center mt-6">
+                <div class="col-span-2">{{T0046}}</div>
+                <div class="col-span-1 flex gap-4">
+                    <div class="flex items-center">
+                        <input id="e5-1" type="radio" value="{{e5-1}}" name="e5" class="valueclass">
+                        <label for="e5-1" class="labelclass">1</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e5-2" type="radio" value="{{e5-2}}" name="e5" class="valueclass">
+                        <label for="e5-2" class="labelclass">2</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e5-3" type="radio" value="{{e5-3}}" name="e5" class="valueclass">
+                        <label for="e5-3" class="labelclass">3</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e5-4" type="radio" value="{{e5-4}}" name="e5" class="valueclass">
+                        <label for="e5-4" class="labelclass">4</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e5-5" type="radio" value="{{e5-5}}" name="e5" class="valueclass">
+                        <label for="e5-5" class="labelclass">5</label>
+                    </div>
+                </div>
+            </div>
+            <textarea placeholder="{{T0041}}" name="e5_n" id="e5_n" rows="3" class="mt-2 inputclass w-full"></textarea>
+
+            <div class="grid grid-cols-3 gap-4 items-center mt-6">
+                <div class="col-span-2">{{T0047}}</div>
+                <div class="col-span-1 flex gap-4">
+                    <div class="flex items-center">
+                        <input id="e6-1" type="radio" value="{{e6-1}}" name="e6" class="valueclass">
+                        <label for="e6-1" class="labelclass">1</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e6-2" type="radio" value="{{e6-2}}" name="e6" class="valueclass">
+                        <label for="e6-2" class="labelclass">2</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e6-3" type="radio" value="{{e6-3}}" name="e6" class="valueclass">
+                        <label for="e6-3" class="labelclass">3</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e6-4" type="radio" value="{{e6-4}}" name="e6" class="valueclass">
+                        <label for="e6-4" class="labelclass">4</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e6-5" type="radio" value="{{e6-5}}" name="e6" class="valueclass">
+                        <label for="e6-5" class="labelclass">5</label>
+                    </div>
+                </div>
+            </div>
+            <textarea placeholder="{{T0041}}" name="e6_n" id="e6_n" rows="3" class="mt-2 inputclass w-full"></textarea>
+
+            <div class="grid grid-cols-3 gap-4 items-center mt-6">
+                <div class="col-span-2">{{T0048}})</div>
+                <div class="col-span-1 flex gap-4">
+                    <div class="flex items-center">
+                        <input id="e7-1" type="radio" value="{{e7-1}}" name="e7" class="valueclass">
+                        <label for="e7-1" class="labelclass">1</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e7-2" type="radio" value="{{e7-2}}" name="e7" class="valueclass">
+                        <label for="e7-2" class="labelclass">2</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e7-3" type="radio" value="{{e7-3}}" name="e7" class="valueclass">
+                        <label for="e7-3" class="labelclass">3</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e7-4" type="radio" value="{{e7-4}}" name="e7" class="valueclass">
+                        <label for="e7-4" class="labelclass">4</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e7-5" type="radio" value="{{e7-5}}" name="e7" class="valueclass">
+                        <label for="e7-5" class="labelclass">5</label>
+                    </div>
+                </div>
+            </div>
+            <textarea placeholder="{{T0041}}" name="e7_n" id="e7_n" rows="3" class="mt-2 inputclass w-full"></textarea>
+
+            <div class="grid grid-cols-3 gap-4 items-center mt-6">
+                <div class="col-span-2">{{T0049}}</div>
+                <div class="col-span-1 flex gap-4">
+                    <div class="flex items-center">
+                        <input id="e8-1" type="radio" value="{{e8-1}}" name="e8" class="valueclass">
+                        <label for="e8-1" class="labelclass">1</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e8-2" type="radio" value="{{e8-2}}" name="e8" class="valueclass">
+                        <label for="e8-2" class="labelclass">2</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e8-3" type="radio" value="{{e8-3}}" name="e8" class="valueclass">
+                        <label for="e8-3" class="labelclass">3</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e8-4" type="radio" value="{{e8-4}}" name="e8" class="valueclass">
+                        <label for="e8-4" class="labelclass">4</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e8-5" type="radio" value="{{e8-5}}" name="e8" class="valueclass">
+                        <label for="e8-5" class="labelclass">5</label>
+                    </div>
+                </div>
+            </div>
+            <textarea placeholder="{{T0041}}" name="e8_n" id="e8_n" rows="3" class="mt-2 inputclass w-full"></textarea>
+
+            <div class="grid grid-cols-3 gap-4 items-center mt-6">
+                <div class="col-span-2">{{T0050}}</div>
+                <div class="col-span-1 flex gap-4">
+                    <div class="flex items-center">
+                        <input id="e9-1" type="radio" value="{{e9-1}}" name="e9" class="valueclass">
+                        <label for="e9-1" class="labelclass">1</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e9-2" type="radio" value="{{e9-2}}" name="e9" class="valueclass">
+                        <label for="e9-2" class="labelclass">2</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e9-3" type="radio" value="{{e9-3}}" name="e9" class="valueclass">
+                        <label for="e9-3" class="labelclass">3</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e9-4" type="radio" value="{{e9-4}}" name="e9" class="valueclass">
+                        <label for="e9-4" class="labelclass">4</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e9-5" type="radio" value="{{e9-5}}" name="e9" class="valueclass">
+                        <label for="e9-5" class="labelclass">5</label>
+                    </div>
+                </div>
+            </div>
+            <textarea placeholder="{{T0041}}" name="e9_n" id="e9_n" rows="3" class="mt-2 inputclass w-full"></textarea>
+
+            <div class="grid grid-cols-3 gap-4 items-center mt-6">
+                <div class="col-span-2">{{T0051}}</div>
+                <div class="col-span-1 flex gap-4">
+                    <div class="flex items-center">
+                        <input id="e10-1" type="radio" value="{{e10-1}}" name="e10" class="valueclass">
+                        <label for="e10-1" class="labelclass">1</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e10-2" type="radio" value="{{e10-2}}" name="e10" class="valueclass">
+                        <label for="e10-2" class="labelclass">2</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e10-3" type="radio" value="{{e10-3}}" name="e10" class="valueclass">
+                        <label for="e10-3" class="labelclass">3</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e10-4" type="radio" value="{{e10-4}}" name="e10" class="valueclass">
+                        <label for="e10-4" class="labelclass">4</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e10-5" type="radio" value="{{e10-5}}" name="e10" class="valueclass">
+                        <label for="e10-5" class="labelclass">5</label>
+                    </div>
+                </div>
+            </div>
+            <textarea placeholder="{{T0041}}" name="e10_n" id="e10_n" rows="3" class="mt-2 inputclass w-full"></textarea>
+
+            <div class="grid grid-cols-3 gap-4 items-center mt-6">
+                <div class="col-span-2">{{T0052}}</div>
+                <div class="col-span-1 flex gap-4">
+                    <div class="flex items-center">
+                        <input id="e11-1" type="radio" value="{{e11-1}}" name="e11" class="valueclass">
+                        <label for="e11-1" class="labelclass">1</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e11-2" type="radio" value="{{e11-2}}" name="e11" class="valueclass">
+                        <label for="e11-2" class="labelclass">2</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e11-3" type="radio" value="{{e11-3}}" name="e11" class="valueclass">
+                        <label for="e11-3" class="labelclass">3</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e11-4" type="radio" value="{{e11-4}}" name="e11" class="valueclass">
+                        <label for="e11-4" class="labelclass">4</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e11-5" type="radio" value="{{e11-5}}" name="e11" class="valueclass">
+                        <label for="e11-5" class="labelclass">5</label>
+                    </div>
+                </div>
+            </div>
+            <textarea placeholder="{{T0041}}" name="e11_n" id="e11_n" rows="3" class="mt-2 inputclass w-full"></textarea>
+
+            <div class="grid grid-cols-3 gap-4 items-center mt-6">
+                <div class="col-span-2">{{T0053}}</div>
+                <div class="col-span-1 flex gap-4">
+                    <div class="flex items-center">
+                        <input id="e12-1" type="radio" value="{{e12-1}}" name="e12" class="valueclass">
+                        <label for="e12-1" class="labelclass">1</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e12-2" type="radio" value="{{e12-2}}" name="e12" class="valueclass">
+                        <label for="e12-2" class="labelclass">2</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e12-3" type="radio" value="{{e12-3}}" name="e12" class="valueclass">
+                        <label for="e12-3" class="labelclass">3</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e12-4" type="radio" value="{{e12-4}}" name="e12" class="valueclass">
+                        <label for="e12-4" class="labelclass">4</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e12-5" type="radio" value="{{e12-5}}" name="e12" class="valueclass">
+                        <label for="e12-5" class="labelclass">5</label>
+                    </div>
+                </div>
+            </div>
+            <textarea placeholder="{{T0041}}" name="e12_n" id="e12_n" rows="3" class="mt-2 inputclass w-full"></textarea>
+
+            <div class="grid grid-cols-3 gap-4 items-center mt-6">
+                <div class="col-span-2">{{T0054}}</div>
+                <div class="col-span-1 flex gap-4">
+                    <div class="flex items-center">
+                        <input id="e13-1" type="radio" value="{{e13-1}}" name="e13" class="valueclass">
+                        <label for="e13-1" class="labelclass">1</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e13-2" type="radio" value="{{e13-2}}" name="e13" class="valueclass">
+                        <label for="e13-2" class="labelclass">2</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e13-3" type="radio" value="{{e13-3}}" name="e13" class="valueclass">
+                        <label for="e13-3" class="labelclass">3</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e13-4" type="radio" value="{{e13-4}}" name="e13" class="valueclass">
+                        <label for="e13-4" class="labelclass">4</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e13-5" type="radio" value="{{e13-5}}" name="e13" class="valueclass">
+                        <label for="e13-5" class="labelclass">5</label>
+                    </div>
+                </div>
+            </div>
+            <textarea placeholder="{{T0041}}" name="e13_n" id="e13_n" rows="3" class="mt-2 inputclass w-full"></textarea>
+
+            <div class="grid grid-cols-3 gap-4 items-center mt-6">
+                <div class="col-span-2">{{T0055}}</div>
+                <div class="col-span-1 flex gap-4">
+                    <div class="flex items-center">
+                        <input id="e14-1" type="radio" value="{{e14-1}}" name="e14" class="valueclass">
+                        <label for="e14-1" class="labelclass">1</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e14-2" type="radio" value="{{e14-2}}" name="e14" class="valueclass">
+                        <label for="e14-2" class="labelclass">2</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e14-3" type="radio" value="{{e14-3}}" name="e14" class="valueclass">
+                        <label for="e14-3" class="labelclass">3</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e14-4" type="radio" value="{{e14-4}}" name="e14" class="valueclass">
+                        <label for="e14-4" class="labelclass">4</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e14-5" type="radio" value="{{e14-5}}" name="e14" class="valueclass">
+                        <label for="e14-5" class="labelclass">5</label>
+                    </div>
+                </div>
+            </div>
+            <textarea placeholder="{{T0041}}" name="e14_n" id="e14_n" rows="3" class="mt-2 inputclass w-full"></textarea>
+
+            <div class="grid grid-cols-3 gap-4 items-center mt-6">
+                <div class="col-span-2">{{T0056}}</div>
+                <div class="col-span-1 flex gap-4">
+                    <div class="flex items-center">
+                        <input id="e15-1" type="radio" value="{{e15-1}}" name="e15" class="valueclass">
+                        <label for="e15-1" class="labelclass">1</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e15-2" type="radio" value="{{e15-2}}" name="e15" class="valueclass">
+                        <label for="e15-2" class="labelclass">2</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e15-3" type="radio" value="{{e15-3}}" name="e15" class="valueclass">
+                        <label for="e15-3" class="labelclass">3</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e15-4" type="radio" value="{{e15-4}}" name="e15" class="valueclass">
+                        <label for="e15-4" class="labelclass">4</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e15-5" type="radio" value="{{e15-5}}" name="e15" class="valueclass">
+                        <label for="e15-5" class="labelclass">5</label>
+                    </div>
+                </div>
+            </div>
+            <textarea placeholder="{{T0041}}" name="e15_n" id="e15_n" rows="3" class="mt-2 inputclass w-full"></textarea>
+
+            <div class="grid grid-cols-3 gap-4 items-center mt-6">
+                <div class="col-span-2">{{T0057}}</div>
+                <div class="col-span-1 flex gap-4">
+                    <div class="flex items-center">
+                        <input id="e16-1" type="radio" value="{{e16-1}}" name="e16" class="valueclass">
+                        <label for="e16-1" class="labelclass">1</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e16-2" type="radio" value="{{e16-2}}" name="e16" class="valueclass">
+                        <label for="e16-2" class="labelclass">2</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e16-3" type="radio" value="{{e16-3}}" name="e16" class="valueclass">
+                        <label for="e16-3" class="labelclass">3</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e16-4" type="radio" value="{{e16-4}}" name="e16" class="valueclass">
+                        <label for="e16-4" class="labelclass">4</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e16-5" type="radio" value="{{e16-5}}" name="e16" class="valueclass">
+                        <label for="e16-5" class="labelclass">5</label>
+                    </div>
+                </div>
+            </div>
+            <textarea placeholder="{{T0041}}" name="e16_n" id="e16_n" rows="3" class="mt-2 inputclass w-full"></textarea>
+
+            <div class="grid grid-cols-3 gap-4 items-center mt-6">
+                <div class="col-span-2">{{T0058}}</div>
+                <div class="col-span-1 flex gap-4">
+                    <div class="flex items-center">
+                        <input id="e17-1" type="radio" value="{{e17-1}}" name="e17" class="valueclass">
+                        <label for="e17-1" class="labelclass">1</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e17-2" type="radio" value="{{e17-2}}" name="e17" class="valueclass">
+                        <label for="e17-2" class="labelclass">2</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e17-3" type="radio" value="{{e17-3}}" name="e17" class="valueclass">
+                        <label for="e17-3" class="labelclass">3</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e17-4" type="radio" value="{{e17-4}}" name="e17" class="valueclass">
+                        <label for="e17-4" class="labelclass">4</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e17-5" type="radio" value="{{e17-5}}" name="e17" class="valueclass">
+                        <label for="e17-5" class="labelclass">5</label>
+                    </div>
+                </div>
+            </div>
+            <textarea placeholder="{{T0041}}" name="e17_n" id="e17_n" rows="3" class="mt-2 inputclass w-full"></textarea>
+
+            <div class="grid grid-cols-3 gap-4 items-center mt-6">
+                <div class="col-span-2">{{T0059}}</div>
+                <div class="col-span-1 flex gap-4">
+                    <div class="flex items-center">
+                        <input id="e18-1" type="radio" value="{{e18-1}}" name="e18" class="valueclass">
+                        <label for="e18-1" class="labelclass">1</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e18-2" type="radio" value="{{e18-2}}" name="e18" class="valueclass">
+                        <label for="e18-2" class="labelclass">2</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e18-3" type="radio" value="{{e18-3}}" name="e18" class="valueclass">
+                        <label for="e18-3" class="labelclass">3</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e18-4" type="radio" value="{{e18-4}}" name="e18" class="valueclass">
+                        <label for="e18-4" class="labelclass">4</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e18-5" type="radio" value="{{e18-5}}" name="e18" class="valueclass">
+                        <label for="e18-5" class="labelclass">5</label>
+                    </div>
+                </div>
+            </div>
+            <textarea placeholder="{{T0041}}" name="e18_n" id="e18_n" rows="3" class="mt-2 inputclass w-full"></textarea>
+
+            <div class="grid grid-cols-3 gap-4 items-center mt-6">
+                <div class="col-span-2">{{T0060}}.</div>
+                <div class="col-span-1 flex gap-4">
+                    <div class="flex items-center">
+                        <input id="e19-1" type="radio" value="{{e19-1}}" name="e19" class="valueclass">
+                        <label for="e19-1" class="labelclass">1</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e19-2" type="radio" value="{{e19-2}}" name="e19" class="valueclass">
+                        <label for="e19-2" class="labelclass">2</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e19-3" type="radio" value="{{e19-3}}" name="e19" class="valueclass">
+                        <label for="e19-3" class="labelclass">3</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e19-4" type="radio" value="{{e19-4}}" name="e19" class="valueclass">
+                        <label for="e19-4" class="labelclass">4</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e19-5" type="radio" value="{{e19-5}}" name="e19" class="valueclass">
+                        <label for="e19-5" class="labelclass">5</label>
+                    </div>
+                </div>
+            </div>
+            <textarea placeholder="{{T0041}}" name="e19_n" id="e19_n" rows="3" class="mt-2 inputclass w-full"></textarea>
+
+            <div class="grid grid-cols-3 gap-4 items-center mt-6">
+                <div class="col-span-2">{{T0061}}</div>
+                <div class="col-span-1 flex gap-4">
+                    <div class="flex items-center">
+                        <input id="e20-1" type="radio" value="{{e20-1}}" name="e20" class="valueclass">
+                        <label for="e20-1" class="labelclass">1</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e20-2" type="radio" value="{{e20-2}}" name="e20" class="valueclass">
+                        <label for="e20-2" class="labelclass">2</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e20-3" type="radio" value="{{e20-3}}" name="e20" class="valueclass">
+                        <label for="e20-3" class="labelclass">3</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e20-4" type="radio" value="{{e20-4}}" name="e20" class="valueclass">
+                        <label for="e20-4" class="labelclass">4</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e20-5" type="radio" value="{{e20-5}}" name="e20" class="valueclass">
+                        <label for="e20-5" class="labelclass">5</label>
+                    </div>
+                </div>
+            </div>
+            <textarea placeholder="{{T0041}}" name="e20_n" id="e20_n" rows="3" class="mt-2 inputclass w-full"></textarea>
+
+            <div class="grid grid-cols-3 gap-4 items-center mt-6">
+                <div class="col-span-2">{{T0062}}</div>
+                <div class="col-span-1 flex gap-4">
+                    <div class="flex items-center">
+                        <input id="e21-1" type="radio" value="{{e21-1}}" name="e21" class="valueclass">
+                        <label for="e21-1" class="labelclass">1</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e21-2" type="radio" value="{{e21-2}}" name="e21" class="valueclass">
+                        <label for="e21-2" class="labelclass">2</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e21-3" type="radio" value="{{e21-3}}" name="e21" class="valueclass">
+                        <label for="e21-3" class="labelclass">3</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e21-4" type="radio" value="{{e21-4}}" name="e21" class="valueclass">
+                        <label for="e21-4" class="labelclass">4</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e21-5" type="radio" value="{{e21-5}}" name="e21" class="valueclass">
+                        <label for="e21-5" class="labelclass">5</label>
+                    </div>
+                </div>
+            </div>
+            <textarea placeholder="{{T0041}}" name="e21_n" id="e21_n" rows="3" class="mt-2 inputclass w-full"></textarea>
+
+            <div class="grid grid-cols-3 gap-4 items-center mt-6">
+                <div class="col-span-2">{{T0063}}.</div>
+                <div class="col-span-1 flex gap-4">
+                    <div class="flex items-center">
+                        <input id="e22-1" type="radio" value="{{e22-1}}" name="e22" class="valueclass">
+                        <label for="e22-1" class="labelclass">1</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e22-2" type="radio" value="{{e22-2}}" name="e22" class="valueclass">
+                        <label for="e22-2" class="labelclass">2</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e22-3" type="radio" value="{{e22-3}}" name="e22" class="valueclass">
+                        <label for="e22-3" class="labelclass">3</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e22-4" type="radio" value="{{e22-4}}" name="e22" class="valueclass">
+                        <label for="e22-4" class="labelclass">4</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e22-5" type="radio" value="{{e22-5}}" name="e22" class="valueclass">
+                        <label for="e22-5" class="labelclass">5</label>
+                    </div>
+                </div>
+            </div>
+            <textarea placeholder="{{T0041}}" name="e22_n" id="e22_n" rows="3" class="mt-2 inputclass w-full"></textarea>
+
+            <div class="grid grid-cols-3 gap-4 items-center mt-6">
+                <div class="col-span-2">{{T0064}}</div>
+                <div class="col-span-1 flex gap-4">
+                    <div class="flex items-center">
+                        <input id="e23-1" type="radio" value="{{e23-1}}" name="e23" class="valueclass">
+                        <label for="e23-1" class="labelclass">1</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e23-2" type="radio" value="{{e23-2}}" name="e23" class="valueclass">
+                        <label for="e23-2" class="labelclass">2</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e23-3" type="radio" value="{{e23-3}}" name="e23" class="valueclass">
+                        <label for="e23-3" class="labelclass">3</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e23-4" type="radio" value="{{e23-4}}" name="e23" class="valueclass">
+                        <label for="e23-4" class="labelclass">4</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e23-5" type="radio" value="{{e23-5}}" name="e23" class="valueclass">
+                        <label for="e23-5" class="labelclass">5</label>
+                    </div>
+                </div>
+            </div>
+            <textarea placeholder="{{T0041}}" name="e23_n" id="e23_n" rows="3" class="mt-2 inputclass w-full"></textarea>
+
+            <div class="grid grid-cols-3 gap-4 items-center mt-6">
+                <div class="col-span-2">{{T0065}}</div>
+                <div class="col-span-1 flex gap-4">
+                    <div class="flex items-center">
+                        <input id="e24-1" type="radio" value="{{e24-1}}" name="e24" class="valueclass">
+                        <label for="e24-1" class="labelclass">1</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e24-2" type="radio" value="{{e24-2}}" name="e24" class="valueclass">
+                        <label for="e24-2" class="labelclass">2</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e24-3" type="radio" value="{{e24-3}}" name="e24" class="valueclass">
+                        <label for="e24-3" class="labelclass">3</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e24-4" type="radio" value="{{e24-4}}" name="e24" class="valueclass">
+                        <label for="e24-4" class="labelclass">4</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e24-5" type="radio" value="{{e24-5}}" name="e24" class="valueclass">
+                        <label for="e24-5" class="labelclass">5</label>
+                    </div>
+                </div>
+            </div>
+            <textarea placeholder="{{T0041}}" name="e24_n" id="e24_n" rows="3" class="mt-2 inputclass w-full"></textarea>
+
+            <div class="grid grid-cols-3 gap-4 items-center mt-6">
+                <div class="col-span-2">{{T0066}}.</div>
+                <div class="col-span-1 flex gap-4">
+                    <div class="flex items-center">
+                        <input id="e25-1" type="radio" value="{{e25-1}}" name="e25" class="valueclass">
+                        <label for="e25-1" class="labelclass">1</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e25-2" type="radio" value="{{e25-2}}" name="e25" class="valueclass">
+                        <label for="e25-2" class="labelclass">2</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e25-3" type="radio" value="{{e25-3}}" name="e25" class="valueclass">
+                        <label for="e25-3" class="labelclass">3</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e25-4" type="radio" value="{{e25-4}}" name="e25" class="valueclass">
+                        <label for="e25-4" class="labelclass">4</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e25-5" type="radio" value="{{e25-5}}" name="e25" class="valueclass">
+                        <label for="e25-5" class="labelclass">5</label>
+                    </div>
+                </div>
+            </div>
+            <textarea placeholder="{{T0041}}" name="e25_n" id="e25_n" rows="3" class="mt-2 inputclass w-full"></textarea>
+
+            <div class="grid grid-cols-3 gap-4 items-center mt-6">
+                <div class="col-span-2">{{T0067}}</div>
+                <div class="col-span-1 flex gap-4">
+                    <div class="flex items-center">
+                        <input id="e26-1" type="radio" value="{{e26-1}}" name="e26" class="valueclass">
+                        <label for="e26-1" class="labelclass">1</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e26-2" type="radio" value="{{e26-2}}" name="e26" class="valueclass">
+                        <label for="e26-2" class="labelclass">2</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e26-3" type="radio" value="{{e26-3}}" name="e26" class="valueclass">
+                        <label for="e26-3" class="labelclass">3</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e26-4" type="radio" value="{{e26-4}}" name="e26" class="valueclass">
+                        <label for="e26-4" class="labelclass">4</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e26-5" type="radio" value="{{e26-5}}" name="e26" class="valueclass">
+                        <label for="e26-5" class="labelclass">5</label>
+                    </div>
+                </div>
+            </div>
+            <textarea placeholder="{{T0041}}" name="e26_n" id="e26_n" rows="3" class="mt-2 inputclass w-full"></textarea>
+
+            <div class="grid grid-cols-3 gap-4 items-center mt-6">
+                <div class="col-span-2">{{T0068}}</div>
+                <div class="col-span-1 flex gap-4">
+                    <div class="flex items-center">
+                        <input id="e27-1" type="radio" value="{{e27-1}}" name="e27" class="valueclass">
+                        <label for="e27-1" class="labelclass">1</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e27-2" type="radio" value="{{e27-2}}" name="e27" class="valueclass">
+                        <label for="e27-2" class="labelclass">2</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e27-3" type="radio" value="{{e27-3}}" name="e27" class="valueclass">
+                        <label for="e27-3" class="labelclass">3</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e27-4" type="radio" value="{{e27-4}}" name="e27" class="valueclass">
+                        <label for="e27-4" class="labelclass">4</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e27-5" type="radio" value="{{e27-5}}" name="e27" class="valueclass">
+                        <label for="e27-5" class="labelclass">5</label>
+                    </div>
+                </div>
+            </div>
+            <textarea placeholder="{{T0041}}" name="e27_n" id="e27_n" rows="3" class="mt-2 inputclass w-full"></textarea>
+
+            <div class="grid grid-cols-3 gap-4 items-center mt-6">
+                <div class="col-span-2">{{T0069}}</div>
+                <div class="col-span-1 flex gap-4">
+                    <div class="flex items-center">
+                        <input id="e28-1" type="radio" value="{{e28-1}}" name="e28" class="valueclass">
+                        <label for="e28-1" class="labelclass">1</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e28-2" type="radio" value="{{e28-2}}" name="e28" class="valueclass">
+                        <label for="e28-2" class="labelclass">2</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e28-3" type="radio" value="{{e28-3}}" name="e28" class="valueclass">
+                        <label for="e28-3" class="labelclass">3</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e28-4" type="radio" value="{{e28-4}}" name="e28" class="valueclass">
+                        <label for="e28-4" class="labelclass">4</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e28-5" type="radio" value="{{e28-5}}" name="e28" class="valueclass">
+                        <label for="e28-5" class="labelclass">5</label>
+                    </div>
+                </div>
+            </div>
+            <textarea placeholder="{{T0041}}" name="e28_n" id="e28_n" rows="3" class="mt-2 inputclass w-full"></textarea>
+
+            <div class="grid grid-cols-3 gap-4 items-center mt-6">
+                <div class="col-span-2">{{T0070}}</div>
+                <div class="col-span-1 flex gap-4">
+                    <div class="flex items-center">
+                        <input id="e29-1" type="radio" value="{{e29-1}}" name="e29" class="valueclass">
+                        <label for="e29-1" class="labelclass">1</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e29-2" type="radio" value="{{e29-2}}" name="e29" class="valueclass">
+                        <label for="e29-2" class="labelclass">2</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e29-3" type="radio" value="{{e29-3}}" name="e29" class="valueclass">
+                        <label for="e29-3" class="labelclass">3</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e29-4" type="radio" value="{{e29-4}}" name="e29" class="valueclass">
+                        <label for="e29-4" class="labelclass">4</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e29-5" type="radio" value="{{e29-5}}" name="e29" class="valueclass">
+                        <label for="e29-5" class="labelclass">5</label>
+                    </div>
+                </div>
+            </div>
+            <textarea placeholder="{{T0041}}" name="e29_n" id="e29_n" rows="3" class="mt-2 inputclass w-full"></textarea>
+
+            <div class="grid grid-cols-3 gap-4 items-center mt-6">
+                <div class="col-span-2">{{T0071}}</div>
+                <div class="col-span-1 flex gap-4">
+                    <div class="flex items-center">
+                        <input id="e30-1" type="radio" value="{{e30-1}}" name="e30" class="valueclass">
+                        <label for="e30-1" class="labelclass">1</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e30-2" type="radio" value="{{e30-2}}" name="e30" class="valueclass">
+                        <label for="e30-2" class="labelclass">2</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e30-3" type="radio" value="{{e30-3}}" name="e30" class="valueclass">
+                        <label for="e30-3" class="labelclass">3</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e30-4" type="radio" value="{{e30-4}}" name="e30" class="valueclass">
+                        <label for="e30-4" class="labelclass">4</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e30-5" type="radio" value="{{e30-5}}" name="e30" class="valueclass">
+                        <label for="e30-5" class="labelclass">5</label>
+                    </div>
+                </div>
+            </div>
+            <textarea placeholder="{{T0041}}" name="e30_n" id="e30_n" rows="3" class="mt-2 inputclass w-full"></textarea>
+
+            <div class="grid grid-cols-3 gap-4 items-center mt-6">
+                <div class="col-span-2">{{T0072}}</div>
+                <div class="col-span-1 flex gap-4">
+                    <div class="flex items-center">
+                        <input id="e31-1" type="radio" value="{{e31-1}}" name="e31" class="valueclass">
+                        <label for="e31-1" class="labelclass">1</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e31-2" type="radio" value="{{e31-2}}" name="e31" class="valueclass">
+                        <label for="e31-2" class="labelclass">2</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e31-3" type="radio" value="{{e31-3}}" name="e31" class="valueclass">
+                        <label for="e31-3" class="labelclass">3</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e31-4" type="radio" value="{{e31-4}}" name="e31" class="valueclass">
+                        <label for="e31-4" class="labelclass">4</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e31-5" type="radio" value="{{e31-5}}" name="e31" class="valueclass">
+                        <label for="e31-5" class="labelclass">5</label>
+                    </div>
+                </div>
+            </div>
+            <textarea placeholder="{{T0041}}" name="e31_n" id="e31_n" rows="3" class="mt-2 inputclass w-full"></textarea>
+
+            <div class="grid grid-cols-3 gap-4 items-center mt-6">
+                <div class="col-span-2">{{T0073}}</div>
+                <div class="col-span-1 flex gap-4">
+                    <div class="flex items-center">
+                        <input id="e32-1" type="radio" value="{{e32-1}}" name="e32" class="valueclass">
+                        <label for="e32-1" class="labelclass">1</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e32-2" type="radio" value="{{e32-2}}" name="e32" class="valueclass">
+                        <label for="e32-2" class="labelclass">2</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e32-3" type="radio" value="{{e32-3}}" name="e32" class="valueclass">
+                        <label for="e32-3" class="labelclass">3</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e32-4" type="radio" value="{{e32-4}}" name="e32" class="valueclass">
+                        <label for="e32-4" class="labelclass">4</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e32-5" type="radio" value="{{e32-5}}" name="e32" class="valueclass">
+                        <label for="e32-5" class="labelclass">5</label>
+                    </div>
+                </div>
+            </div>
+            <textarea placeholder="{{T0041}}" name="e32_n" id="e32_n" rows="3" class="mt-2 inputclass w-full"></textarea>
+
+            <div class="grid grid-cols-3 gap-4 items-center mt-6">
+                <div class="col-span-2">{{T0074}}</div>
+                <div class="col-span-1 flex gap-4">
+                    <div class="flex items-center">
+                        <input id="e33-1" type="radio" value="{{e33-1}}" name="e33" class="valueclass">
+                        <label for="e33-1" class="labelclass">1</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e33-2" type="radio" value="{{e33-2}}" name="e33" class="valueclass">
+                        <label for="e33-2" class="labelclass">2</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e33-3" type="radio" value="{{e33-3}}" name="e33" class="valueclass">
+                        <label for="e33-3" class="labelclass">3</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e33-4" type="radio" value="{{e33-4}}" name="e33" class="valueclass">
+                        <label for="e33-4" class="labelclass">4</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e33-5" type="radio" value="{{e33-5}}" name="e33" class="valueclass">
+                        <label for="e33-5" class="labelclass">5</label>
+                    </div>
+                </div>
+            </div>
+            <textarea placeholder="{{T0041}}" name="e33_n" id="e33_n" rows="3" class="mt-2 inputclass w-full"></textarea>
+
+            <div class="grid grid-cols-3 gap-4 items-center mt-6">
+                <div class="col-span-2">{{T0075}}.</div>
+                <div class="col-span-1 flex gap-4">
+                    <div class="flex items-center">
+                        <input id="e34-1" type="radio" value="{{e34-1}}" name="e34" class="valueclass">
+                        <label for="e34-1" class="labelclass">1</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e34-2" type="radio" value="{{e34-2}}" name="e34" class="valueclass">
+                        <label for="e34-2" class="labelclass">2</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e34-3" type="radio" value="{{e34-3}}" name="e34" class="valueclass">
+                        <label for="e34-3" class="labelclass">3</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e34-4" type="radio" value="{{e34-4}}" name="e34" class="valueclass">
+                        <label for="e34-4" class="labelclass">4</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e34-5" type="radio" value="{{e34-5}}" name="e34" class="valueclass">
+                        <label for="e34-5" class="labelclass">5</label>
+                    </div>
+                </div>
+            </div>
+            <textarea placeholder="{{T0041}}" name="e34_n" id="e34_n" rows="3" class="mt-2 inputclass w-full"></textarea>
+
+            <div class="grid grid-cols-3 gap-4 items-center mt-6">
+                <div class="col-span-2">{{T0076}}</div>
+                <div class="col-span-1 flex gap-4">
+                    <div class="flex items-center">
+                        <input id="e35-1" type="radio" value="{{e35-1}}" name="e35" class="valueclass">
+                        <label for="e35-1" class="labelclass">1</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e35-2" type="radio" value="{{e35-2}}" name="e35" class="valueclass">
+                        <label for="e35-2" class="labelclass">2</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e35-3" type="radio" value="{{e35-3}}" name="e35" class="valueclass">
+                        <label for="e35-3" class="labelclass">3</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e35-4" type="radio" value="{{e35-4}}" name="e35" class="valueclass">
+                        <label for="e35-4" class="labelclass">4</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e35-5" type="radio" value="{{e35-5}}" name="e35" class="valueclass">
+                        <label for="e35-5" class="labelclass">5</label>
+                    </div>
+                </div>
+            </div>
+            <textarea placeholder="{{T0041}}" name="e35_n" id="e35_n" rows="3" class="mt-2 inputclass w-full"></textarea>
+
+            <div class="grid grid-cols-3 gap-4 items-center mt-6">
+                <div class="col-span-2">{{T0077}}</div>
+                <div class="col-span-1 flex gap-4">
+                    <div class="flex items-center">
+                        <input id="e36-1" type="radio" value="{{e36-1}}" name="e36" class="valueclass">
+                        <label for="e36-1" class="labelclass">1</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e36-2" type="radio" value="{{e36-2}}" name="e36" class="valueclass">
+                        <label for="e36-2" class="labelclass">2</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e36-3" type="radio" value="{{e36-3}}" name="e36" class="valueclass">
+                        <label for="e36-3" class="labelclass">3</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e36-4" type="radio" value="{{e36-4}}" name="e36" class="valueclass">
+                        <label for="e36-4" class="labelclass">4</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e36-5" type="radio" value="{{e36-5}}" name="e36" class="valueclass">
+                        <label for="e36-5" class="labelclass">5</label>
+                    </div>
+                </div>
+            </div>
+            <textarea placeholder="{{T0041}}" name="e36_n" id="e36_n" rows="3" class="mt-2 inputclass w-full"></textarea>
+
+            <div class="grid grid-cols-3 gap-4 items-center mt-6">
+                <div class="col-span-2">{{T0078}}</div>
+                <div class="col-span-1 flex gap-4">
+                    <div class="flex items-center">
+                        <input id="e37-1" type="radio" value="{{e37-1}}" name="e37" class="valueclass">
+                        <label for="e37-1" class="labelclass">1</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e37-2" type="radio" value="{{e37-2}}" name="e37" class="valueclass">
+                        <label for="e37-2" class="labelclass">2</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e37-3" type="radio" value="{{e37-3}}" name="e37" class="valueclass">
+                        <label for="e37-3" class="labelclass">3</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e37-4" type="radio" value="{{e37-4}}" name="e37" class="valueclass">
+                        <label for="e37-4" class="labelclass">4</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e37-5" type="radio" value="{{e37-5}}" name="e37" class="valueclass">
+                        <label for="e37-5" class="labelclass">5</label>
+                    </div>
+                </div>
+            </div>
+            <textarea placeholder="{{T0041}}" name="e37_n" id="e37_n" rows="3" class="mt-2 inputclass w-full"></textarea>
+
+            <div class="grid grid-cols-3 gap-4 items-center mt-6">
+                <div class="col-span-2">{{T0079}}</div>
+                <div class="col-span-1 flex gap-4">
+                    <div class="flex items-center">
+                        <input id="e38-1" type="radio" value="{{e38-1}}" name="e38" class="valueclass">
+                        <label for="e38-1" class="labelclass">1</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e38-2" type="radio" value="{{e38-2}}" name="e38" class="valueclass">
+                        <label for="e38-2" class="labelclass">2</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e38-3" type="radio" value="{{e38-3}}" name="e38" class="valueclass">
+                        <label for="e38-3" class="labelclass">3</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e38-4" type="radio" value="{{e38-4}}" name="e38" class="valueclass">
+                        <label for="e38-4" class="labelclass">4</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e38-5" type="radio" value="{{e38-5}}" name="e38" class="valueclass">
+                        <label for="e38-5" class="labelclass">5</label>
+                    </div>
+                </div>
+            </div>
+            <textarea placeholder="{{T0041}}" name="e38_n" id="e38_n" rows="3" class="mt-2 inputclass w-full"></textarea>
+
+            <div class="grid grid-cols-3 gap-4 items-center mt-6">
+                <div class="col-span-2">{{T0080}}</div>
+                <div class="col-span-1 flex gap-4">
+                    <div class="flex items-center">
+                        <input id="e39-1" type="radio" value="{{e39-1}}" name="e39" class="valueclass">
+                        <label for="e39-1" class="labelclass">1</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e39-2" type="radio" value="{{e39-2}}" name="e39" class="valueclass">
+                        <label for="e39-2" class="labelclass">2</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e39-3" type="radio" value="{{e39-3}}" name="e39" class="valueclass">
+                        <label for="e39-3" class="labelclass">3</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e39-4" type="radio" value="{{e39-4}}" name="e39" class="valueclass">
+                        <label for="e39-4" class="labelclass">4</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e39-5" type="radio" value="{{e39-5}}" name="e39" class="valueclass">
+                        <label for="e39-5" class="labelclass">5</label>
+                    </div>
+                </div>
+            </div>
+            <textarea placeholder="{{T0041}}" name="e39_n" id="e39_n" rows="3" class="mt-2 inputclass w-full"></textarea>
+
+            <div class="grid grid-cols-3 gap-4 items-center mt-6">
+                <div class="col-span-2">{{T0081}}</div>
+                <div class="col-span-1 flex gap-4">
+                    <div class="flex items-center">
+                        <input id="e40-1" type="radio" value="{{e40-1}}" name="e40" class="valueclass">
+                        <label for="e40-1" class="labelclass">1</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e40-2" type="radio" value="{{e40-2}}" name="e40" class="valueclass">
+                        <label for="e40-2" class="labelclass">2</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e40-3" type="radio" value="{{e40-3}}" name="e40" class="valueclass">
+                        <label for="e40-3" class="labelclass">3</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e40-4" type="radio" value="{{e40-4}}" name="e40" class="valueclass">
+                        <label for="e40-4" class="labelclass">4</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e40-5" type="radio" value="{{e40-5}}" name="e40" class="valueclass">
+                        <label for="e40-5" class="labelclass">5</label>
+                    </div>
+                </div>
+            </div>
+            <textarea placeholder="{{T0041}}" name="e40_n" id="e40_n" rows="3" class="mt-2 inputclass w-full"></textarea>
+
+            <div class="grid grid-cols-3 gap-4 items-center mt-6">
+                <div class="col-span-2">{{T0082}}</div>
+                <div class="col-span-1 flex gap-4">
+                    <div class="flex items-center">
+                        <input id="e41-1" type="radio" value="{{e41-1}}" name="e41" class="valueclass">
+                        <label for="e41-1" class="labelclass">1</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e41-2" type="radio" value="{{e41-2}}" name="e41" class="valueclass">
+                        <label for="e41-2" class="labelclass">2</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e41-3" type="radio" value="{{e41-3}}" name="e41" class="valueclass">
+                        <label for="e41-3" class="labelclass">3</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e41-4" type="radio" value="{{e41-4}}" name="e41" class="valueclass">
+                        <label for="e41-4" class="labelclass">4</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e41-5" type="radio" value="{{e41-5}}" name="e41" class="valueclass">
+                        <label for="e41-5" class="labelclass">5</label>
+                    </div>
+                </div>
+            </div>
+            <textarea placeholder="{{T0041}}" name="e41_n" id="e41_n" rows="3" class="mt-2 inputclass w-full"></textarea>
+
+            <div class="grid grid-cols-3 gap-4 items-center mt-6">
+                <div class="col-span-2">{{T0083}}</div>
+                <div class="col-span-1 flex gap-4">
+                    <div class="flex items-center">
+                        <input id="e42-1" type="radio" value="{{e42-1}}" name="e42" class="valueclass">
+                        <label for="e42-1" class="labelclass">1</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e42-2" type="radio" value="{{e42-2}}" name="e42" class="valueclass">
+                        <label for="e42-2" class="labelclass">2</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e42-3" type="radio" value="{{e42-3}}" name="e42" class="valueclass">
+                        <label for="e42-3" class="labelclass">3</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e42-4" type="radio" value="{{e42-4}}" name="e42" class="valueclass">
+                        <label for="e42-4" class="labelclass">4</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e42-5" type="radio" value="{{e42-5}}" name="e42" class="valueclass">
+                        <label for="e42-5" class="labelclass">5</label>
+                    </div>
+                </div>
+            </div>
+            <textarea placeholder="{{T0041}}" name="e42_n" id="e42_n" rows="3" class="mt-2 inputclass w-full"></textarea>
+
+            <div class="grid grid-cols-3 gap-4 items-center mt-6">
+                <div class="col-span-2">{{T0084}}</div>
+                <div class="col-span-1 flex gap-4">
+                    <div class="flex items-center">
+                        <input id="e43-1" type="radio" value="{{e43-1}}" name="e43" class="valueclass">
+                        <label for="e43-1" class="labelclass">1</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e43-2" type="radio" value="{{e43-2}}" name="e43" class="valueclass">
+                        <label for="e43-2" class="labelclass">2</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e43-3" type="radio" value="{{e43-3}}" name="e43" class="valueclass">
+                        <label for="e43-3" class="labelclass">3</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e43-4" type="radio" value="{{e43-4}}" name="e43" class="valueclass">
+                        <label for="e43-4" class="labelclass">4</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e43-5" type="radio" value="{{e43-5}}" name="e43" class="valueclass">
+                        <label for="e43-5" class="labelclass">5</label>
+                    </div>
+                </div>
+            </div>
+            <textarea placeholder="{{T0041}}" name="e43_n" id="e43_n" rows="3" class="mt-2 inputclass w-full"></textarea>
+
+            <div class="grid grid-cols-3 gap-4 items-center mt-6">
+                <div class="col-span-2">{{T0085}}</div>
+                <div class="col-span-1 flex gap-4">
+                    <div class="flex items-center">
+                        <input id="e44-1" type="radio" value="{{e44-1}}" name="e44" class="valueclass">
+                        <label for="e44-1" class="labelclass">1</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e44-2" type="radio" value="{{e44-2}}" name="e44" class="valueclass">
+                        <label for="e44-2" class="labelclass">2</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e44-3" type="radio" value="{{e44-3}}" name="e44" class="valueclass">
+                        <label for="e44-3" class="labelclass">3</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e44-4" type="radio" value="{{e44-4}}" name="e44" class="valueclass">
+                        <label for="e44-4" class="labelclass">4</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e44-5" type="radio" value="{{e44-5}}" name="e44" class="valueclass">
+                        <label for="e44-5" class="labelclass">5</label>
+                    </div>
+                </div>
+            </div>
+            <textarea placeholder="{{T0041}}" name="e44_n" id="e44_n" rows="3" class="mt-2 inputclass w-full"></textarea>
+
+            <div class="grid grid-cols-3 gap-4 items-center mt-6">
+                <div class="col-span-2">{{T0086}}</div>
+                <div class="col-span-1 flex gap-4">
+                    <div class="flex items-center">
+                        <input id="e45-1" type="radio" value="{{e45-1}}" name="e45" class="valueclass">
+                        <label for="e45-1" class="labelclass">1</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e45-2" type="radio" value="{{e45-2}}" name="e45" class="valueclass">
+                        <label for="e45-2" class="labelclass">2</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e45-3" type="radio" value="{{e45-3}}" name="e45" class="valueclass">
+                        <label for="e45-3" class="labelclass">3</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e45-4" type="radio" value="{{e45-4}}" name="e45" class="valueclass">
+                        <label for="e45-4" class="labelclass">4</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e45-5" type="radio" value="{{e45-5}}" name="e45" class="valueclass">
+                        <label for="e45-5" class="labelclass">5</label>
+                    </div>
+                </div>
+            </div>
+            <textarea placeholder="{{T0041}}" name="e45_n" id="e45_n" rows="3" class="mt-2 inputclass w-full"></textarea>
+
+            <div class="grid grid-cols-3 gap-4 items-center mt-6">
+                <div class="col-span-2">{{T0087}}</div>
+                <div class="col-span-1 flex gap-4">
+                    <div class="flex items-center">
+                        <input id="e46-1" type="radio" value="{{e46-1}}" name="e46" class="valueclass">
+                        <label for="e46-1" class="labelclass">1</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e46-2" type="radio" value="{{e46-2}}" name="e46" class="valueclass">
+                        <label for="e46-2" class="labelclass">2</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e46-3" type="radio" value="{{e46-3}}" name="e46" class="valueclass">
+                        <label for="e46-3" class="labelclass">3</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e46-4" type="radio" value="{{e46-4}}" name="e46" class="valueclass">
+                        <label for="e46-4" class="labelclass">4</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e46-5" type="radio" value="{{e46-5}}" name="e46" class="valueclass">
+                        <label for="e46-5" class="labelclass">5</label>
+                    </div>
+                </div>
+            </div>
+            <textarea placeholder="{{T0041}}" name="e46_n" id="e46_n" rows="3" class="mt-2 inputclass w-full"></textarea>
+
+            <div class="grid grid-cols-3 gap-4 items-center mt-6">
+                <div class="col-span-2">{{T0088}}</div>
+                <div class="col-span-1 flex gap-4">
+                    <div class="flex items-center">
+                        <input id="e47-1" type="radio" value="{{e47-1}}" name="e47" class="valueclass">
+                        <label for="e47-1" class="labelclass">1</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e47-2" type="radio" value="{{e47-2}}" name="e47" class="valueclass">
+                        <label for="e47-2" class="labelclass">2</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e47-3" type="radio" value="{{e47-3}}" name="e47" class="valueclass">
+                        <label for="e47-3" class="labelclass">3</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e47-4" type="radio" value="{{e47-4}}" name="e47" class="valueclass">
+                        <label for="e47-4" class="labelclass">4</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e47-5" type="radio" value="{{e47-5}}" name="e47" class="valueclass">
+                        <label for="e47-5" class="labelclass">5</label>
+                    </div>
+                </div>
+            </div>
+            <textarea placeholder="{{T0041}}" name="e47_n" id="e47_n" rows="3" class="mt-2 inputclass w-full"></textarea>
+
+            <div class="grid grid-cols-3 gap-4 items-center mt-6">
+                <div class="col-span-2">{{T0089}}</div>
+                <div class="col-span-1 flex gap-4">
+                    <div class="flex items-center">
+                        <input id="e48-1" type="radio" value="{{e48-1}}" name="e48" class="valueclass">
+                        <label for="e48-1" class="labelclass">1</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e48-2" type="radio" value="{{e48-2}}" name="e48" class="valueclass">
+                        <label for="e48-2" class="labelclass">2</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e48-3" type="radio" value="{{e48-3}}" name="e48" class="valueclass">
+                        <label for="e48-3" class="labelclass">3</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e48-4" type="radio" value="{{e48-4}}" name="e48" class="valueclass">
+                        <label for="e48-4" class="labelclass">4</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e48-5" type="radio" value="{{e48-5}}" name="e48" class="valueclass">
+                        <label for="e48-5" class="labelclass">5</label>
+                    </div>
+                </div>
+            </div>
+            <textarea placeholder="{{T0041}}" name="e48_n" id="e48_n" rows="3" class="mt-2 inputclass w-full"></textarea>
+
+            <div class="grid grid-cols-3 gap-4 items-center mt-6">
+                <div class="col-span-2">{{T0090}}</div>
+                <div class="col-span-1 flex gap-4">
+                    <div class="flex items-center">
+                        <input id="e49-1" type="radio" value="{{e49-1}}" name="e49" class="valueclass">
+                        <label for="e49-1" class="labelclass">1</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e49-2" type="radio" value="{{e49-2}}" name="e49" class="valueclass">
+                        <label for="e49-2" class="labelclass">2</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e49-3" type="radio" value="{{e49-3}}" name="e49" class="valueclass">
+                        <label for="e49-3" class="labelclass">3</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e49-4" type="radio" value="{{e49-4}}" name="e49" class="valueclass">
+                        <label for="e49-4" class="labelclass">4</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e49-5" type="radio" value="{{e49-5}}" name="e49" class="valueclass">
+                        <label for="e49-5" class="labelclass">5</label>
+                    </div>
+                </div>
+            </div>
+            <textarea placeholder="{{T0041}}" name="e49_n" id="e49_n" rows="3" class="mt-2 inputclass w-full"></textarea>
+
+            <div class="grid grid-cols-3 gap-4 items-center mt-6">
+                <div class="col-span-2">{{T0091}}</div>
+                <div class="col-span-1 flex gap-4">
+                    <div class="flex items-center">
+                        <input id="e50-1" type="radio" value="{{e50-1}}" name="e50" class="valueclass">
+                        <label for="e50-1" class="labelclass">1</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e50-2" type="radio" value="{{e50-2}}" name="e50" class="valueclass">
+                        <label for="e50-2" class="labelclass">2</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e50-3" type="radio" value="{{e50-3}}" name="e50" class="valueclass">
+                        <label for="e50-3" class="labelclass">3</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e50-4" type="radio" value="{{e50-4}}" name="e50" class="valueclass">
+                        <label for="e50-4" class="labelclass">4</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e50-5" type="radio" value="{{e50-5}}" name="e50" class="valueclass">
+                        <label for="e50-5" class="labelclass">5</label>
+                    </div>
+                </div>
+            </div>
+            <textarea placeholder="{{T0041}}" name="e50_n" id="e50_n" rows="3" class="mt-2 inputclass w-full"></textarea>
+
+            <div class="grid grid-cols-3 gap-4 items-center mt-6">
+                <div class="col-span-2">{{T0092}}</div>
+                <div class="col-span-1 flex gap-4">
+                    <div class="flex items-center">
+                        <input id="e51-1" type="radio" value="{{e51-1}}" name="e51" class="valueclass">
+                        <label for="e51-1" class="labelclass">1</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e51-2" type="radio" value="{{e51-2}}" name="e51" class="valueclass">
+                        <label for="e51-2" class="labelclass">2</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e51-3" type="radio" value="{{e51-3}}" name="e51" class="valueclass">
+                        <label for="e51-3" class="labelclass">3</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e51-4" type="radio" value="{{e51-4}}" name="e51" class="valueclass">
+                        <label for="e51-4" class="labelclass">4</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e51-5" type="radio" value="{{e51-5}}" name="e51" class="valueclass">
+                        <label for="e51-5" class="labelclass">5</label>
+                    </div>
+                </div>
+            </div>
+            <textarea placeholder="{{T0041}}" name="e51_n" id="e51_n" rows="3" class="mt-2 inputclass w-full"></textarea>
+
+            <div class="grid grid-cols-3 gap-4 items-center mt-6">
+                <div class="col-span-2">{{T0093}}</div>
+                <div class="col-span-1 flex gap-4">
+                    <div class="flex items-center">
+                        <input id="e52-1" type="radio" value="{{e52-1}}" name="e52" class="valueclass">
+                        <label for="e52-1" class="labelclass">1</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e52-2" type="radio" value="{{e52-2}}" name="e52" class="valueclass">
+                        <label for="e52-2" class="labelclass">2</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e52-3" type="radio" value="{{e52-3}}" name="e52" class="valueclass">
+                        <label for="e52-3" class="labelclass">3</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e52-4" type="radio" value="{{e52-4}}" name="e52" class="valueclass">
+                        <label for="e52-4" class="labelclass">4</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e52-5" type="radio" value="{{e52-5}}" name="e52" class="valueclass">
+                        <label for="e52-5" class="labelclass">5</label>
+                    </div>
+                </div>
+            </div>
+            <textarea placeholder="{{T0041}}" name="e52_n" id="e52_n" rows="3" class="mt-2 inputclass w-full"></textarea>
+
+            <div class="grid grid-cols-3 gap-4 items-center mt-6">
+                <div class="col-span-2">{{T0094}}</div>
+                <div class="col-span-1 flex gap-4">
+                    <div class="flex items-center">
+                        <input id="e53-1" type="radio" value="{{e53-1}}" name="e53" class="valueclass">
+                        <label for="e53-1" class="labelclass">1</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e53-2" type="radio" value="{{e53-2}}" name="e53" class="valueclass">
+                        <label for="e53-2" class="labelclass">2</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e53-3" type="radio" value="{{e53-3}}" name="e53" class="valueclass">
+                        <label for="e53-3" class="labelclass">3</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e53-4" type="radio" value="{{e53-4}}" name="e53" class="valueclass">
+                        <label for="e53-4" class="labelclass">4</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e53-5" type="radio" value="{{e53-5}}" name="e53" class="valueclass">
+                        <label for="e53-5" class="labelclass">5</label>
+                    </div>
+                </div>
+            </div>
+            <textarea placeholder="{{T0041}}" name="e53_n" id="e53_n" rows="3" class="mt-2 inputclass w-full"></textarea>
+
+            <div class="grid grid-cols-3 gap-4 items-center mt-6">
+                <div class="col-span-2">{{T0095}}</div>
+                <div class="col-span-1 flex gap-4">
+                    <div class="flex items-center">
+                        <input id="e54-1" type="radio" value="{{e54-1}}" name="e54" class="valueclass">
+                        <label for="e54-1" class="labelclass">1</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e54-2" type="radio" value="{{e54-2}}" name="e54" class="valueclass">
+                        <label for="e54-2" class="labelclass">2</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e54-3" type="radio" value="{{e54-3}}" name="e54" class="valueclass">
+                        <label for="e54-3" class="labelclass">3</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e54-4" type="radio" value="{{e54-4}}" name="e54" class="valueclass">
+                        <label for="e54-4" class="labelclass">4</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e54-5" type="radio" value="{{e54-5}}" name="e54" class="valueclass">
+                        <label for="e54-5" class="labelclass">5</label>
+                    </div>
+                </div>
+            </div>
+            <textarea placeholder="{{T0041}}" name="e54_n" id="e54_n" rows="3" class="mt-2 inputclass w-full"></textarea>
+
+            <div class="grid grid-cols-3 gap-4 items-center mt-6">
+                <div class="col-span-2">{{T0096}}</div>
+                <div class="col-span-1 flex gap-4">
+                    <div class="flex items-center">
+                        <input id="e55-1" type="radio" value="{{e55-1}}" name="e55" class="valueclass">
+                        <label for="e55-1" class="labelclass">1</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e55-2" type="radio" value="{{e55-2}}" name="e55" class="valueclass">
+                        <label for="e55-2" class="labelclass">2</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e55-3" type="radio" value="{{e55-3}}" name="e55" class="valueclass">
+                        <label for="e55-3" class="labelclass">3</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e55-4" type="radio" value="{{e55-4}}" name="e55" class="valueclass">
+                        <label for="e55-4" class="labelclass">4</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e55-5" type="radio" value="{{e55-5}}" name="e55" class="valueclass">
+                        <label for="e55-5" class="labelclass">5</label>
+                    </div>
+                </div>
+            </div>
+            <textarea placeholder="{{T0041}}" name="e55_n" id="e55_n" rows="3" class="mt-2 inputclass w-full"></textarea>
+
+            <div class="grid grid-cols-3 gap-4 items-center mt-6">
+                <div class="col-span-2">{{T0097}}</div>
+                <div class="col-span-1 flex gap-4">
+                    <div class="flex items-center">
+                        <input id="e56-1" type="radio" value="{{e56-1}}" name="e56" class="valueclass">
+                        <label for="e56-1" class="labelclass">1</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e56-2" type="radio" value="{{e56-2}}" name="e56" class="valueclass">
+                        <label for="e56-2" class="labelclass">2</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e56-3" type="radio" value="{{e56-3}}" name="e56" class="valueclass">
+                        <label for="e56-3" class="labelclass">3</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e56-4" type="radio" value="{{e56-4}}" name="e56" class="valueclass">
+                        <label for="e56-4" class="labelclass">4</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e56-5" type="radio" value="{{e56-5}}" name="e56" class="valueclass">
+                        <label for="e56-5" class="labelclass">5</label>
+                    </div>
+                </div>
+            </div>
+            <textarea placeholder="{{T0041}}" name="e56_n" id="e56_n" rows="3" class="mt-2 inputclass w-full"></textarea>
+
+            <div class="grid grid-cols-3 gap-4 items-center mt-6">
+                <div class="col-span-2">{{T0098}}</div>
+                <div class="col-span-1 flex gap-4">
+                    <div class="flex items-center">
+                        <input id="e57-1" type="radio" value="{{e57-1}}" name="e57" class="valueclass">
+                        <label for="e57-1" class="labelclass">1</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e57-2" type="radio" value="{{e57-2}}" name="e57" class="valueclass">
+                        <label for="e57-2" class="labelclass">2</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e57-3" type="radio" value="{{e57-3}}" name="e57" class="valueclass">
+                        <label for="e57-3" class="labelclass">3</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e57-4" type="radio" value="{{e57-4}}" name="e57" class="valueclass">
+                        <label for="e57-4" class="labelclass">4</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e57-5" type="radio" value="{{e57-5}}" name="e57" class="valueclass">
+                        <label for="e57-5" class="labelclass">5</label>
+                    </div>
+                </div>
+            </div>
+            <textarea placeholder="{{T0041}}" name="e57_n" id="e57_n" rows="3" class="mt-2 inputclass w-full"></textarea>
+
+            <div class="grid grid-cols-3 gap-4 items-center mt-6">
+                <div class="col-span-2">{{T0099}}.)</div>
+                <div class="col-span-1 flex gap-4">
+                    <div class="flex items-center">
+                        <input id="e58-1" type="radio" value="{{e58-1}}" name="e58" class="valueclass">
+                        <label for="e58-1" class="labelclass">1</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e58-2" type="radio" value="{{e58-2}}" name="e58" class="valueclass">
+                        <label for="e58-2" class="labelclass">2</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e58-3" type="radio" value="{{e58-3}}" name="e58" class="valueclass">
+                        <label for="e58-3" class="labelclass">3</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e58-4" type="radio" value="{{e58-4}}" name="e58" class="valueclass">
+                        <label for="e58-4" class="labelclass">4</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e58-5" type="radio" value="{{e58-5}}" name="e58" class="valueclass">
+                        <label for="e58-5" class="labelclass">5</label>
+                    </div>
+                </div>
+            </div>
+            <textarea placeholder="{{T0041}}" name="e58_n" id="e58_n" rows="3" class="mt-2 inputclass w-full"></textarea>
+
+            <div class="grid grid-cols-3 gap-4 items-center mt-6">
+                <div class="col-span-2">{{T0100}}</div>
+                <div class="col-span-1 flex gap-4">
+                    <div class="flex items-center">
+                        <input id="e59-1" type="radio" value="{{e59-1}}" name="e59" class="valueclass">
+                        <label for="e59-1" class="labelclass">1</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e59-2" type="radio" value="{{e59-2}}" name="e59" class="valueclass">
+                        <label for="e59-2" class="labelclass">2</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e59-3" type="radio" value="{{e59-3}}" name="e59" class="valueclass">
+                        <label for="e59-3" class="labelclass">3</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e59-4" type="radio" value="{{e59-4}}" name="e59" class="valueclass">
+                        <label for="e59-4" class="labelclass">4</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="e59-5" type="radio" value="{{e59-5}}" name="e59" class="valueclass">
+                        <label for="e59-5" class="labelclass">5</label>
+                    </div>
+                </div>
+            </div>
+            <textarea placeholder="{{T0041}}" name="e59_n" id="e59_n" rows="3" class="mt-2 inputclass w-full"></textarea>
+
+
+        </form>
+
+
+        <footer id="footer" class="fixed bottom-0 w-full h-12 bg-slate-200 shadow">
+            <div class="flex justify-center h-full items-center">
+
+                <button type="button"
+                    class="flex items-center gap-2 text-white bg-menuButton/80 hover:bg-menuButton focus:ring-4 focus:ring-menuButton/50 font-medium rounded-lg text-sm px-3 py-1"
+                    id="salveazaForm">
+                    <svg class="fill-white w-4 h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                        <!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                        <path
+                            d="M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V173.3c0-17-6.7-33.3-18.7-45.3L352 50.7C340 38.7 323.7 32 306.7 32H64zm0 96c0-17.7 14.3-32 32-32H288c17.7 0 32 14.3 32 32v64c0 17.7-14.3 32-32 32H96c-17.7 0-32-14.3-32-32V128zM224 288a64 64 0 1 1 0 128 64 64 0 1 1 0-128z" />
+                    </svg>
+                    <span class="t_button_save"></span>
+                </button>
+                <button type="button"
+                    class="flex items-center gap-2 text-white bg-menuButton/80 hover:bg-menuButton focus:ring-4 focus:ring-menuButton/50 font-medium rounded-lg text-sm px-3 py-1 ml-4"
+                    id="finalizeazaForm">
+                    <svg class="fill-white w-4 h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                        <!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                        <path
+                            d="M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V173.3c0-17-6.7-33.3-18.7-45.3L352 50.7C340 38.7 323.7 32 306.7 32H64zm0 96c0-17.7 14.3-32 32-32H288c17.7 0 32 14.3 32 32v64c0 17.7-14.3 32-32 32H96c-17.7 0-32-14.3-32-32V128zM224 288a64 64 0 1 1 0 128 64 64 0 1 1 0-128z" />
+                    </svg>
+                    <span class="t_button_complete"></span>
+                </button>
+                <div class="hidden">
+                    <button type="button"
+                        class="flex items-center gap-2 text-white bg-red-500 hover:bg-red-500 focus:ring-4 focus:ring-red-500/50 font-medium rounded-lg text-sm px-3 py-1 ml-4"
+                        id="debugForm">
+                        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="bug"
+                            class="fill-white w-4 h-4" role="img" xmlns="http://www.w3.org/2000/svg"
+                            viewbox="0 0 512 512">
+                            <path fill="currentColor"
+                                d="M511.988 288.9c-.478 17.43-15.217 31.1-32.653 31.1H424v16c0 21.864-4.882 42.584-13.6 61.145l60.228 60.228c12.496 12.497 12.496 32.758 0 45.255-12.498 12.497-32.759 12.496-45.256 0l-54.736-54.736C345.886 467.965 314.351 480 280 480V236c0-6.627-5.373-12-12-12h-24c-6.627 0-12 5.373-12 12v244c-34.351 0-65.886-12.035-90.636-32.108l-54.736 54.736c-12.498 12.497-32.759 12.496-45.256 0-12.496-12.497-12.496-32.758 0-45.255l60.228-60.228C92.882 378.584 88 357.864 88 336v-16H32.666C15.23 320 .491 306.33.013 288.9-.484 270.816 14.028 256 32 256h56v-58.745l-46.628-46.628c-12.496-12.497-12.496-32.758 0-45.255 12.498-12.497 32.758-12.497 45.256 0L141.255 160h229.489l54.627-54.627c12.498-12.497 32.758-12.497 45.256 0 12.496 12.497 12.496 32.758 0 45.255L424 197.255V256h56c17.972 0 32.484 14.816 31.988 32.9zM257 0c-61.856 0-112 50.144-112 112h224C369 50.144 318.856 0 257 0z">
+                            </path>
+                        </svg>&nbsp;debug</button>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+</body>
+
+</html>
