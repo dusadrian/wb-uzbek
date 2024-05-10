@@ -400,7 +400,7 @@ export const instrument1 = {
                     util.setValue('dis', insons[args.userData.institution_code].district);
                     util.setValue('omr8a', "2");
                     util.setValue("omr8", insons[args.userData.institution_code].name ? insons[args.userData.institution_code].name : "--");
-                    
+
                     if (services[institution_code].settlement) {
                         util.setValue("sh5s", services[institution_code].settlement);
                     }
@@ -859,7 +859,7 @@ util.listen(cmgtsa, "myChange", () => {
 
         errorHandler.removeError(cmgtsa, message);
 
-        if (util.standardDate(cmgt1a) > util.standardDate(sa1)) {
+        if (util.standardDate(sa1) > util.standardDate(cmgt1a)) {
             errorHandler.addError(cmgtsa, message);
             instrument.questions['cmgt1a'].value = '-9';
             instrument.questions['sa1'].value = '-9';
@@ -925,20 +925,28 @@ util.listen(qfam3, "change", () => {
 });
 
 
-util.listen("edk3", "change", () => {
-    const message = "EDK3 <= 11"
+util.listen("edk3", "myChange", () => {
+    const edk3 = util.htmlElement("edk3").value;
+    instrument.questions["edk3"].value = edk3;
+    const message = "EDK3 <= 11";
     errorHandler.removeError("edk3", message);
-    if (Number(util.htmlElement("edk3").value) > 11) {
+    if (Number(edk3) > 11) {
         errorHandler.addError("edk3", message);
+        instrument.questions["edk3"].value = "-9";
     }
 });
 
 
-util.listen("qeduc2b", "change", () => {
+
+util.listen("qeduc2b", "myChange", () => {
+    const qeduc2b = util.htmlElement("qeduc2b").value;
+    instrument.questions["qeduc2b"].value = qeduc2b;
+
     const message = "QEDUC2b <= 11"
     errorHandler.removeError("qeduc2b", message);
-    if (Number(util.htmlElement("qeduc2b").value) > 11) {
+    if (Number(qeduc2b) > 11) {
         errorHandler.addError("qeduc2b", message);
+        instrument.questions["qeduc2b"].value = "-9";
     }
 });
 
@@ -954,41 +962,43 @@ util.listen("sh5", "change", () => {
 })
 
 const lk3cm3 = ["lk3", "cm3"];
-util.listen(lk3cm3, "change", () => {
+util.listen(lk3cm3, "myChange", () => {
     if (util.inputsHaveValue(lk3cm3)) {
-        const mother = util.standardDate(util.htmlElement("cm3").value);
-        const child = util.standardDate(util.htmlElement("lk3").value);
-        const message = "CM3 < LK3";
+        const mother = util.htmlElement("cm3").value;
+        const child = util.htmlElement("lk3").value;
 
+        instrument.questions["cm3"].value = mother;
+        instrument.questions["lk3"].value = child;
+        const message = translations['must_be_earlier'].replace("X", "CM3").replace("Y", "LK3");
         errorHandler.removeError(lk3cm3, message);
-        if (mother >= child) {
-            errorHandler.addError(lk3cm3, message);
 
+        if (util.standardDate(mother) >= util.standardDate(child)) {
+            errorHandler.addError(lk3cm3, message);
+            instrument.questions["cm3"].value = "-9";
+            instrument.questions["lk3"].value = "-9";
         }
     }
 })
 
 const lk3ct3 = ["lk3", "ct3"];
-util.listen(lk3ct3, "change", () => {
+util.listen(lk3ct3, "myChange", () => {
     if (util.inputsHaveValue(lk3ct3)) {
-        const mother = util.standardDate(util.htmlElement("ct3").value);
-        const child = util.standardDate(util.htmlElement("lk3").value);
-        const message = "CT3 < LK3";
+        const father = util.htmlElement("ct3").value;
+        const child = util.htmlElement("lk3").value;
 
+        instrument.questions["ct3"].value = father;
+        instrument.questions["lk3"].value = child;
+
+        const message = translations['must_be_earlier'].replace("X", "CT3").replace("Y", "LK3");
         errorHandler.removeError(lk3ct3, message);
-        if (mother >= child) {
-            errorHandler.addError(lk3ct3, message);
 
+        if (util.standardDate(father) >= util.standardDate(child)) {
+            errorHandler.addError(lk3ct3, message);
+            instrument.questions["ct3"].value = "-9";
+            instrument.questions["lk3"].value = "-9";
         }
     }
 })
-
-util.listen("cm3a_out", "myChange", () => {
-    if (Number(instrument.questions.cm3a_out.value) > 0) {
-        util.htmlElement("cm3a_dk").checked = false;
-        instrument.questions.cm3a_dk.value = "0";
-    }
-});
 
 util.listen("lk14a_out", "myChange", () => {
     if (Number(instrument.questions.lk14a_out.value) > 0) {
@@ -1001,6 +1011,13 @@ util.listen("lk14a_dk", "myChange", () => {
     if (Number(instrument.questions.lk14a_dk.value) > 0) {
         util.htmlElement("lk14a_out").checked = false;
         instrument.questions.lk14a_out.value = "0";
+    }
+});
+
+util.listen("cm3a_out", "myChange", () => {
+    if (Number(instrument.questions.cm3a_out.value) > 0) {
+        util.htmlElement("cm3a_dk").checked = false;
+        instrument.questions.cm3a_dk.value = "0";
     }
 });
 

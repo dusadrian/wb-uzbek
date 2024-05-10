@@ -33,15 +33,55 @@ const general_dates = [
 ];
 
 
-const regElements = ["reg", "lk14b", "sa3a", "cm3b", "cm11c", "ct11c", "cg11c"];
-const disElements = ["dis", "lk14c", "sa3b", "cm3c", "cm11d", "ct11d", "cg11d"];
-const setElements = ["", "lk14d", "", "cm3d", "cm11e", "ct11e", "cg11e"];
-const typeElements = ["", "lk14e", "", "cm3e", "cm11f", "ct11f", "cg11f"];
+const regElements =  ["reg", "lk14b", "sa3a", "cm3b", "cm11c", "ct11c", "cg11c"];
+const disElements =  ["dis", "lk14c", "sa3b", "cm3c", "cm11d", "ct11d", "cg11d"];
+const setElements =  ["",    "lk14d", "",     "cm3d", "cm11e", "ct11e", "cg11e"];
+const typeElements = ["",    "lk14e", "",     "cm3e", "cm11f", "ct11f", "cg11f"];
 
 let regionCode = '';
 let userUUID = '';
 let institutionType = '';
 let institutionCode = '';
+
+
+const qeduc2 = util.radioIDs("qeduc2");
+
+function check_sa1a(value: string) {
+    instrument.questions["qeduc2"].readonly = false;
+    qeduc2.forEach((item) => {
+        const elem = util.htmlElement(item);
+        elem.disabled = false;
+        elem.dataset['skip'] = 'false';
+        if (Number(value) > 7 && item == "qeduc2-3") {
+            elem.checked = false;
+        }
+    })
+
+    if (Number(value) >= 3 && Number(value) < 7) {
+
+        qeduc2.forEach((item) => {
+            const elem = util.htmlElement(item);
+            elem.disabled = true;
+            elem.dataset['skip'] = 'true';
+        })
+        util.htmlElement("qeduc2-3").checked = true;
+
+        instrument.questions["qeduc2"].value = "3";
+        instrument.questions["qeduc2"].readonly = true;
+
+    } else if (Number(value) >= 7) {
+        const elem = util.htmlElement("qeduc2-3");
+        elem.checked = false;
+        elem.dataset['skip'] = "true";
+        elem.disabled = true;
+
+        if (instrument.questions.qeduc2.value == "7") {
+            instrument.questions.qeduc2.value = "-9";
+        }
+    }
+}
+
+
 
 export const instrument2 = {
     init: async () => {
@@ -230,6 +270,10 @@ export const instrument2 = {
                     // de change pe district populeaza settlement-ul
                     // trigger change event
                     instrument.seteazaValoareElement(item.variable, item.value, index >= 0);
+
+                    if (item.variable == "qeduc2") {
+                        check_sa1a(instrument.questions.sa1a.value);
+                    }
                 }
             }
 
@@ -257,18 +301,18 @@ export const instrument2 = {
                 util.setValue('omr7', args.userData.email ? args.userData.email : "--");
                 regionCode = args.userData.region_code;
                 userUUID = args.userData.uuid;
-                
+
                 // utilizator de tip INSON nu completeaza instrumentul 2
                 institutionType = args.services[args.userData.institution_code].type;
                 institutionCode = args.userData.institution_code;
 
-                if (Object.keys(services).indexOf(institution_code) >= 0) {
-                    util.setValue("omr10", "-9");
-                    const type = services[institution_code].type;
-                    if (["21", "22", "23", "24", "25", "26", "27", "28"].indexOf(type) >= 0) {
-                        util.setValue("omr10", type);
-                    }
-                }
+                // if (Object.keys(services).indexOf(institution_code) >= 0) {
+                //     util.setValue("omr10", "-9");
+                //     const type = services[institution_code].type;
+                //     if (["21", "22", "23", "24", "25", "26", "27", "28"].indexOf(type) >= 0) {
+                //         util.setValue("omr10", type);
+                //     }
+                // }
             }
 
             instrument.start(instrumentID, instrument.trimis, saveChestionar, validateChestionar);
@@ -330,7 +374,6 @@ util.listen("lk3", "myChange", () => {
         )
 
         util.setValue("lk13a", age.toString());
-        util.trigger("sa1", "change");
     }
 });
 
@@ -366,25 +409,8 @@ util.listen("sa1", "myChange", () => {
 });
 
 util.listen("sa1a", "myChange", () => {
-    const qeduc21 = util.htmlElement('qeduc2-1');
-    const qeduc22 = util.htmlElement('qeduc2-2');
-    const qeduc27disabled = util.htmlElement("qeduc2-7-disabled");
-    const age = Number(instrument.questions["sa1a"].value);
-
-    if (age < 7) {
-        qeduc21.checked = false;
-        qeduc22.checked = false;
-        qeduc27disabled.checked = true;
-        instrument.questions["qeduc2"].value = "7";
-    }
-    else {
-        if (qeduc27disabled.checked) {
-            instrument.questions["qeduc2"].value = "-9";
-            qeduc27disabled.checked = false;
-        }
-    }
-})
-
+    check_sa1a(instrument.questions["sa1a"].value);
+});
 
 
 util.listen("sa5a", "change", function () {
@@ -485,21 +511,138 @@ util.listen(lk22_2, "myChange", check_lk22_2);
 
 
 const sk3 = ["sk3_1", "sk3_2"]
-util.listen(sk3, "change", () => {
+util.listen(sk3, "myChange", () => {
     if (util.inputsHaveValue(sk3)) {
-        const suma = Number(util.makeInputSumDecimal(sk3));
-        const message = translations['At_least_one_brother_or_sister'];
         const sk3_1 = util.htmlElement("sk3_1");
         const sk3_2 = util.htmlElement("sk3_2");
+
+        instrument.questions["sk3_1"].value = sk3_1.value;
+        instrument.questions["sk3_2"].value = sk3_2.value;
+
+        const message = translations['At_least_one_brother_or_sister'];
         errorHandler.removeError(sk3, message);
 
-        if (suma == 0) {
+        if (Number(util.makeInputSumDecimal(sk3)) == 0) {
             errorHandler.addError(sk3, message);
             instrument.questions["sk3_1"].value = "-9";
             instrument.questions["sk3_2"].value = "-9";
-        } else {
-            instrument.questions["sk3_1"].value = sk3_1.value;
-            instrument.questions["sk3_2"].value = sk3_2.value;
         }
+    }
+});
+
+
+
+const lk3cm3 = ["lk3", "cm3"];
+util.listen(lk3cm3, "myChange", () => {
+    if (util.inputsHaveValue(lk3cm3)) {
+        const mother = util.htmlElement("cm3").value;
+        const child = util.htmlElement("lk3").value;
+
+        instrument.questions["cm3"].value = mother;
+        instrument.questions["lk3"].value = child;
+
+        const message = translations['must_be_earlier'].replace("X", "CM3").replace("Y", "LK3");
+        errorHandler.removeError(lk3cm3, message);
+
+        if (util.standardDate(mother) >= util.standardDate(child)) {
+            errorHandler.addError(lk3cm3, message);
+            instrument.questions["cm3"].value = "-9";
+            instrument.questions["lk3"].value = "-9";
+        }
+    }
+})
+
+
+const lk3ct3 = ["lk3", "ct3"];
+util.listen(lk3ct3, "myChange", () => {
+    if (util.inputsHaveValue(lk3ct3)) {
+        const father = util.htmlElement("ct3").value;
+        const child = util.htmlElement("lk3").value;
+
+        instrument.questions["ct3"].value = father;
+        instrument.questions["lk3"].value = child;
+
+        const message = translations['must_be_earlier'].replace("X", "CT3").replace("Y", "LK3");
+        errorHandler.removeError(lk3ct3, message);
+
+        if (util.standardDate(father) >= util.standardDate(child)) {
+            errorHandler.addError(lk3ct3, message);
+            instrument.questions["ct3"].value = "-9";
+            instrument.questions["lk3"].value = "-9";
+        }
+    }
+})
+
+
+util.listen("lk14a_out", "myChange", () => {
+    if (Number(instrument.questions.lk14a_out.value) > 0) {
+        util.htmlElement("lk14a_dk").checked = false;
+        instrument.questions.lk14a_dk.value = "0";
+    }
+});
+
+util.listen("lk14a_dk", "myChange", () => {
+    if (Number(instrument.questions.lk14a_dk.value) > 0) {
+        util.htmlElement("lk14a_out").checked = false;
+        instrument.questions.lk14a_out.value = "0";
+    }
+});
+
+util.listen("cm3a_out", "myChange", () => {
+    if (Number(instrument.questions.cm3a_out.value) > 0) {
+        util.htmlElement("cm3a_dk").checked = false;
+        instrument.questions.cm3a_dk.value = "0";
+    }
+});
+
+util.listen("cm3a_dk", "myChange", () => {
+    if (Number(instrument.questions.cm3a_dk.value) > 0) {
+        util.htmlElement("cm3a_out").checked = false;
+        instrument.questions.cm3a_out.value = "0";
+    }
+});
+
+util.listen("ct3a_out", "myChange", () => {
+    if (Number(instrument.questions.ct3a_out.value) > 0) {
+        util.htmlElement("ct3a_dk").checked = false;
+        instrument.questions.ct3a_dk.value = "0";
+    }
+});
+
+util.listen("ct3a_dk", "myChange", () => {
+    if (Number(instrument.questions.ct3a_dk.value) > 0) {
+        util.htmlElement("ct3a_out").checked = false;
+        instrument.questions.ct3a_out.value = "0";
+    }
+});
+
+
+const lk3sa1 = ["lk3", "sa1"];
+util.listen(lk3sa1, "myChange", () => {
+    if (util.inputsHaveValue(lk3sa1)) {
+        const lk3 = util.htmlElement("lk3").value;
+        const sa1 = util.htmlElement("sa1").value;
+        instrument.questions['lk3'].value = lk3;
+        instrument.questions['sa1'].value = sa1;
+
+        const message = translations['must_be_earlier'].replace("X", "LK3").replace("Y", "SA1");
+
+        errorHandler.removeError(lk3sa1, message);
+
+        if (util.standardDate(lk3) > util.standardDate(sa1)) {
+            errorHandler.addError(lk3sa1, message);
+            instrument.questions['lk3'].value = '-9';
+            instrument.questions['sa1'].value = '-9';
+        }
+    }
+})
+
+util.listen("sch2", "myChange", () => {
+    const sch2 = util.htmlElement("sch2").value;
+    const message = "SCH2 <= 9";
+    errorHandler.removeError("sch2", message);
+    if (Number(sch2) > 9) {
+        errorHandler.addError("sch2", message);
+        instrument.questions["sch2"].value = "-9";
     }
 });

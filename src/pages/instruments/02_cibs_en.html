@@ -38,7 +38,7 @@
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
                 <div>REG. Region</div>
                 <div>
-                    <select id="reg" name="reg" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full">
+                    <select id="reg" name="reg" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
                         <option value="-9">--- choose ---</option>
                     </select>
                 </div>
@@ -47,7 +47,7 @@
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
                 <div>DIS. District</div>
                 <div>
-                    <select id="dis" name="dis" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full">
+                    <select id="dis" name="dis" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
                         <option value="-9">--- choose ---</option>
                     </select>
                 </div>
@@ -118,7 +118,7 @@
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
                 <div>OMR10. Type of specialized educational institution</div>
                 <div>
-                    <select id="omr10" name="omr10" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full">
+                    <select id="omr10" name="omr10" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
                         <option value="-9">--- choose ---</option>
                         <option value="21">1. Type I - boarding schools for deaf children.</option>
                         <option value="22">2. Type II - boarding schools for the hearing-impaired and those who later will lose their hearing.</option>
@@ -192,6 +192,11 @@
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
                 <div>LK14a. Place of birth</div>
                 <div class="flex items-center">
+                    <input type="checkbox" id="lk14a_out" name="lk14a_out" value="1" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-100 rounded">
+                    <label for="lk14a_out" class="ms-2 text-sm text-gray-900">8. Child was born outside of the country</label>
+                </div>
+                <div></div>
+                <div class="flex items-center">
                     <input id="lk14a_dk" name="lk14a_dk" type="checkbox" value="9" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-100 rounded">
                     <label for="lk14a_dk" class="ms-2 text-sm text-gray-900">9. Unknown</label>
                 </div>
@@ -200,7 +205,7 @@
             <div class="grid grid-cols-2 items-center gap-4 mt-6">
                 <div>LK14b. Region</div>
                 <div>
-                    <select id="lk14b" name="lk14b" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full">
+                    <select id="lk14b" name="lk14b" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
                         <option value="-9">--- choose ---</option>
                     </select>
                 </div>
@@ -209,7 +214,7 @@
             <div class="grid grid-cols-2 items-center gap-4 mt-6">
                 <div>LK14c. District</div>
                 <div>
-                    <select id="lk14c" name="lk14c" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full">
+                    <select id="lk14c" name="lk14c" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
                         <option value="-9">--- choose ---</option>
                     </select>
                 </div>
@@ -217,7 +222,7 @@
             <div class="grid grid-cols-2 items-center gap-4 mt-6">
                 <div>LK14d. Settlement</div>
                 <div>
-                    <select id="lk14d" name="lk14d" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full">
+                    <select id="lk14d" name="lk14d" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
                         <option value="-9">--- choose ---</option>
                     </select>
 
@@ -230,7 +235,7 @@
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
                 <div>LK12. Child's ethnicity (nationality)</div>
                 <div>
-                    <select id="lk12" name="lk12" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full">
+                    <select id="lk12" name="lk12" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
                         <option value="1">1. Uzbek</option>
                         <option value="2">2. Russian</option>
                         <option value="3">3. Kazakh</option>
@@ -384,7 +389,7 @@
             <div class="grid grid-cols-2 items-center gap-4 mt-4">
                 <div>SA3a. Region</div>
                 <div>
-                    <select id="sa3a" name="sa3a" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full">
+                    <select id="sa3a" name="sa3a" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
                         <option value="-9">--- choose ---</option>
                     </select>
                 </div>
@@ -393,7 +398,7 @@
             <div class="grid grid-cols-2 items-center gap-4 mt-6">
                 <div>SA3b. District</div>
                 <div>
-                    <select id="sa3b" name="sa3b" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full">
+                    <select id="sa3b" name="sa3b" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
                         <option value="-9">--- choose ---</option>
                     </select>
                 </div>
@@ -405,7 +410,7 @@
             <div class="grid grid-cols-2 items-center gap-4 mt-6">
                 <div>SA5a. Institution</div>
                 <div>
-                    <select id="sa5a" name="sa5a" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full">
+                    <select id="sa5a" name="sa5a" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
                         <option value="-9">--- choose ---</option>
                     </select>
                 </div>
@@ -422,7 +427,7 @@
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
                 <div>SA5c. Type of institution</div>
                 <div>
-                    <select id="sa5c" name="sa5c" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full">
+                    <select id="sa5c" name="sa5c" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
                         <option selected value="-9">--- choose ---</option>
                         <option value="1">1. Children's home (Baby home)</option>
                         <option value="2">2. Mehribonlik house</option>
@@ -500,10 +505,10 @@
                         <input id="qfam5a-2" type="radio" value="2" name="qfam5a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="qfam5a-2" class="ms-2 text-sm text-gray-900">2. No</label>
                     </div>
-                    <div class="flex items-center">
+                    <!-- <div class="flex items-center">
                         <input id="qfam5a-3" type="radio" value="9" name="qfam5a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="qfam5a-3" class="ms-2 text-sm text-gray-900">9. Not known</label>
-                    </div>
+                    </div> -->
                 </div>
             </div>
 
@@ -518,10 +523,10 @@
                         <input id="qfam5b-2" type="radio" value="2" name="qfam5b" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="qfam5b-2" class="ms-2 text-sm text-gray-900">2. No</label>
                     </div>
-                    <div class="flex items-center">
+                    <!-- <div class="flex items-center">
                         <input id="qfam5b-3" type="radio" value="9" name="qfam5b" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="qfam5b-3" class="ms-2 text-sm text-gray-900">9. Not known</label>
-                    </div>
+                    </div> -->
                 </div>
             </div>
 
@@ -536,10 +541,10 @@
                         <input id="qfam5c-2" type="radio" value="2" name="qfam5c" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="qfam5c-2" class="ms-2 text-sm text-gray-900">2. No</label>
                     </div>
-                    <div class="flex items-center">
+                    <!-- <div class="flex items-center">
                         <input id="qfam5c-3" type="radio" value="9" name="qfam5c" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="qfam5c-3" class="ms-2 text-sm text-gray-900">9. Not known</label>
-                    </div>
+                    </div> -->
                 </div>
             </div>
 
@@ -554,10 +559,10 @@
                         <input id="qfam5d-2" type="radio" value="2" name="qfam5d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="qfam5d-2" class="ms-2 text-sm text-gray-900">2. No</label>
                     </div>
-                    <div class="flex items-center">
+                    <!-- <div class="flex items-center">
                         <input id="qfam5d-3" type="radio" value="9" name="qfam5d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="qfam5d-3" class="ms-2 text-sm text-gray-900">9. Not known</label>
-                    </div>
+                    </div> -->
                 </div>
             </div>
 
@@ -572,10 +577,10 @@
                         <input id="qfam5e-2" type="radio" value="2" name="qfam5e" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="qfam5e-2" class="ms-2 text-sm text-gray-900">2. No</label>
                     </div>
-                    <div class="flex items-center">
+                    <!-- <div class="flex items-center">
                         <input id="qfam5e-3" type="radio" value="9" name="qfam5e" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="qfam5e-3" class="ms-2 text-sm text-gray-900">9. Not known</label>
-                    </div>
+                    </div> -->
                 </div>
             </div>
 
@@ -682,6 +687,11 @@
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
                 <div>CM3a. Place of birth</div>
                 <div class="flex items-center">
+                    <input type="checkbox" id="cm3a_out" name="cm3a_out" value="1" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-100 rounded">
+                    <label for="cm3a_out" class="ms-2 text-sm text-gray-900">8. Mother was born outside of the country</label>
+                </div>
+                <div></div>
+                <div class="flex items-center">
                     <input id="cm3a_dk" name="cm3a_dk" type="checkbox" value="9" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-100 rounded">
                     <label for="cm3a_dk" class="ms-2 text-sm text-gray-900">9. Not known</label>
                 </div>
@@ -690,7 +700,7 @@
             <div class="grid grid-cols-2 items-center gap-4 mt-6">
                 <div>CM3b. Region</div>
                 <div>
-                    <select id="cm3b" name="cm3b" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full">
+                    <select id="cm3b" name="cm3b" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
                         <option value="-9">--- choose ---</option>
                     </select>
                 </div>
@@ -699,7 +709,7 @@
             <div class="grid grid-cols-2 items-center gap-4 mt-6">
                 <div>CM3c. District</div>
                 <div>
-                    <select id="cm3c" name="cm3c" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full">
+                    <select id="cm3c" name="cm3c" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
                         <option value="-9">--- choose ---</option>
                     </select>
                 </div>
@@ -707,7 +717,7 @@
             <div class="grid grid-cols-2 items-center gap-4 mt-6">
                 <div>CM3d. Settlement</div>
                 <div>
-                    <select id="cm3d" name="cm3d" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full">
+                    <select id="cm3d" name="cm3d" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
                         <option value="-9">--- choose ---</option>
                     </select>
 
@@ -719,7 +729,7 @@
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
                 <div>CM4. Mother's ethnicity (nationality)</div>
                 <div>
-                    <select id="cm4" name="cm4" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full">
+                    <select id="cm4" name="cm4" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
                         <option value="1">1. Uzbek</option>
                         <option value="2">2. Russian</option>
                         <option value="3">3. Kazakh</option>
@@ -841,19 +851,19 @@
                     </div>
                     <div class="flex items-center">
                         <input id="cm7b-4" type="radio" value="3" name="cm7b" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                        <label for="cm7b-4" class="ms-2 text-sm text-gray-900">3. Unfinished specialized secondary/vocational education</label>
+                        <label for="cm7b-4" class="ms-2 text-sm text-gray-900">4. Specialized secondary/vocational education</label>
                     </div>
                     <div class="flex items-center">
                         <input id="cm7b-5" type="radio" value="4" name="cm7b" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                        <label for="cm7b-5" class="ms-2 text-sm text-gray-900">4. Specialized secondary/vocational education</label>
+                        <label for="cm7b-5" class="ms-2 text-sm text-gray-900">3. Unfinished specialized secondary/vocational education</label>
                     </div>
                     <div class="flex items-center">
                         <input id="cm7b-6" type="radio" value="5" name="cm7b" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                        <label for="cm7b-6" class="ms-2 text-sm text-gray-900">5. Unfinished higher education</label>
+                        <label for="cm7b-6" class="ms-2 text-sm text-gray-900">6. Higher education</label>
                     </div>
                     <div class="flex items-center">
                         <input id="cm7b-7" type="radio" value="6" name="cm7b" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                        <label for="cm7b-7" class="ms-2 text-sm text-gray-900">6. Higher education</label>
+                        <label for="cm7b-7" class="ms-2 text-sm text-gray-900">5. Unfinished higher education</label>
                     </div>
                     <div class="flex items-center">
                         <input id="cm7b-9" type="radio" value="9" name="cm7b" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
@@ -1036,7 +1046,7 @@
             <div class="grid grid-cols-2 items-center gap-4 mt-6">
                 <div>c. Region:</div>
                 <div>
-                    <select id="cm11c" name="cm11c" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full">
+                    <select id="cm11c" name="cm11c" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
                         <option value="-9">--- choose ---</option>
                     </select>
                 </div>
@@ -1045,7 +1055,7 @@
             <div class="grid grid-cols-2 items-center gap-4 mt-6">
                 <div>d. District:</div>
                 <div>
-                    <select id="cm11d" name="cm11d" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full">
+                    <select id="cm11d" name="cm11d" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
                         <option value="-9">--- choose ---</option>
                     </select>
                 </div>
@@ -1054,7 +1064,7 @@
             <div class="grid grid-cols-2 items-center gap-4 mt-6">
                 <div>e. Settlement</div>
                 <div>
-                    <select id="cm11e" name="cm11e" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full">
+                    <select id="cm11e" name="cm11e" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
                         <option value="-9">--- choose ---</option>
                     </select>
 
@@ -1183,9 +1193,52 @@
             </div>
 
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                <div>CT3a. Place of birth</div>
+                <div class="flex items-center">
+                    <input type="checkbox" id="ct3a_out" name="ct3a_out" value="{{ct3a_out-1}}" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-100 rounded">
+                    <label for="ct3a_out" class="ms-2 text-sm text-gray-900">8. Mother was born outside of the country</label>
+                </div>
+                <div></div>
+                <div class="flex items-center">
+                    <input type="checkbox" id="ct3a_dk" name="ct3a_dk" value="{{ct3a_dk-1}}" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-100 rounded">
+                    <label for="ct3a_dk" class="ms-2 text-sm text-gray-900">9. Not known</label>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 items-center gap-4 mt-6">
+                <div>CT3b. Region</div>
+                <div>
+                    <select id="ct3b" name="ct3b" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
+                        <option value="-9">--- choose ---</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 items-center gap-4 mt-6">
+                <div>CT3c. District</div>
+                <div>
+                    <select id="ct3c" name="ct3c" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
+                        <option value="-9">--- choose ---</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 items-center gap-4 mt-6">
+                <div>CT3d. Settlement</div>
+                <div>
+                    <select id="ct3d" name="ct3d" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
+                        <option value="-9">--- choose ---</option>
+                    </select>
+                </div>
+            </div>
+
+            <input type="hidden" id="ct3e" name="ct3e" />
+
+
+            <div class="grid grid-cols-2 gap-4 items-center mt-6">
                 <div>CT4. Father's ethnicity (nationality)</div>
                 <div>
-                    <select id="ct4" name="ct4" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full">
+                    <select id="ct4" name="ct4" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
                         <option value="1">1. Uzbek</option>
                         <option value="2">2. Russian</option>
                         <option value="3">3. Kazakh</option>
@@ -1309,19 +1362,19 @@
                     </div>
                     <div class="flex items-center">
                         <input id="ct7b-4" type="radio" value="3" name="ct7b" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                        <label for="ct7b-4" class="ms-2 text-sm text-gray-900">3. Unfinished specialized secondary/vocational education</label>
+                        <label for="ct7b-4" class="ms-2 text-sm text-gray-900">4. Specialized secondary/vocational education</label>
                     </div>
                     <div class="flex items-center">
                         <input id="ct7b-5" type="radio" value="4" name="ct7b" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                        <label for="ct7b-5" class="ms-2 text-sm text-gray-900">4. Specialized secondary/vocational education</label>
+                        <label for="ct7b-5" class="ms-2 text-sm text-gray-900">3. Unfinished specialized secondary/vocational education</label>
                     </div>
                     <div class="flex items-center">
                         <input id="ct7b-6" type="radio" value="5" name="ct7b" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                        <label for="ct7b-6" class="ms-2 text-sm text-gray-900">5. Unfinished higher education</label>
+                        <label for="ct7b-6" class="ms-2 text-sm text-gray-900">6. Higher education</label>
                     </div>
                     <div class="flex items-center">
                         <input id="ct7b-7" type="radio" value="6" name="ct7b" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                        <label for="ct7b-7" class="ms-2 text-sm text-gray-900">6. Higher education</label>
+                        <label for="ct7b-7" class="ms-2 text-sm text-gray-900">5. Unfinished higher education</label>
                     </div>
                     <div class="flex items-center">
                         <input id="ct7b-9" type="radio" value="9" name="ct7b" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
@@ -1503,7 +1556,7 @@
             <div class="grid grid-cols-2 items-center gap-4 mt-6">
                 <div>c. Region:</div>
                 <div>
-                    <select id="ct11c" name="ct11c" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full">
+                    <select id="ct11c" name="ct11c" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
                         <option value="-9">--- choose ---</option>
                     </select>
                 </div>
@@ -1512,7 +1565,7 @@
             <div class="grid grid-cols-2 items-center gap-4 mt-6">
                 <div>d. District:</div>
                 <div>
-                    <select id="ct11d" name="ct11d" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full">
+                    <select id="ct11d" name="ct11d" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
                         <option value="-9">--- choose ---</option>
                     </select>
                 </div>
@@ -1521,7 +1574,7 @@
             <div class="grid grid-cols-2 items-center gap-4 mt-6">
                 <div>e. Settlement</div>
                 <div>
-                    <select id="ct11e" name="ct11e" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full">
+                    <select id="ct11e" name="ct11e" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
                         <option value="-9">--- choose ---</option>
                     </select>
 
@@ -1551,7 +1604,7 @@
                 <div>CG0.</div>
                 <div class="flex gap-4">
                     <input id="cg0" name="cg0" type="checkbox" value="1" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-100 rounded">
-                    <label for="cg0" class="ms-2 text-sm text-gray-900"> "Check only if before being admitted in the boarding school, the child was under the care of someone other than the child's mother or father. Otherwise, skip to Section 4." </label>
+                    <label for="cg0" class="ms-2 text-sm text-gray-900"> Check only if before being admitted in the boarding school, the child was under the care of someone other than the child's mother or father. Otherwise, skip to Section 4. </label>
                 </div>
             </div>
 
@@ -1663,7 +1716,7 @@
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
                 <div>CG4. Caregiver's ethnicity (nationality)</div>
                 <div>
-                    <select id="cg4" name="cg4" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full">
+                    <select id="cg4" name="cg4" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
                         <option value="1">1. Uzbek</option>
                         <option value="2">2. Russian</option>
                         <option value="3">3. Kazakh</option>
@@ -1791,19 +1844,19 @@
                     </div>
                     <div class="flex items-center">
                         <input id="cg7b-4" type="radio" value="3" name="cg7b" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                        <label for="cg7b-4" class="ms-2 text-sm text-gray-900">3. Unfinished specialized secondary</label>
+                        <label for="cg7b-4" class="ms-2 text-sm text-gray-900">4. Specialized secondary/vocational education</label>
                     </div>
                     <div class="flex items-center">
                         <input id="cg7b-5" type="radio" value="4" name="cg7b" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                        <label for="cg7b-5" class="ms-2 text-sm text-gray-900">4. Specialized secondary/vocational education</label>
+                        <label for="cg7b-5" class="ms-2 text-sm text-gray-900">3. Unfinished specialized secondary</label>
                     </div>
                     <div class="flex items-center">
                         <input id="cg7b-6" type="radio" value="5" name="cg7b" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                        <label for="cg7b-6" class="ms-2 text-sm text-gray-900">5. Unfinished higher education</label>
+                        <label for="cg7b-6" class="ms-2 text-sm text-gray-900">6. Higher education</label>
                     </div>
                     <div class="flex items-center">
                         <input id="cg7b-7" type="radio" value="6" name="cg7b" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                        <label for="cg7b-7" class="ms-2 text-sm text-gray-900">6. Higher education</label>
+                        <label for="cg7b-7" class="ms-2 text-sm text-gray-900">5. Unfinished higher education</label>
                     </div>
                     <div class="flex items-center">
                         <input id="cg7b-9" type="radio" value="9" name="cg7b" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
@@ -1982,7 +2035,7 @@
             <div class="grid grid-cols-2 items-center gap-4 mt-6">
                 <div>c. Region:</div>
                 <div>
-                    <select id="cg11c" name="cg11c" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full">
+                    <select id="cg11c" name="cg11c" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
                         <option value="-9">--- choose ---</option>
                     </select>
                 </div>
@@ -1991,7 +2044,7 @@
             <div class="grid grid-cols-2 items-center gap-4 mt-6">
                 <div>d. District:</div>
                 <div>
-                    <select id="cg11d" name="cg11d" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full">
+                    <select id="cg11d" name="cg11d" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
                         <option value="-9">--- choose ---</option>
                     </select>
                 </div>
@@ -2000,7 +2053,7 @@
             <div class="grid grid-cols-2 items-center gap-4 mt-6">
                 <div>e. Settlement</div>
                 <div>
-                    <select id="cg11e" name="cg11e" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full">
+                    <select id="cg11e" name="cg11e" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
                         <option value="-9">--- choose ---</option>
                     </select>
 
@@ -2030,7 +2083,7 @@
                     <input type="text" id="sa1" name="sa1" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
                 </div>
             </div>
-            <small class="block italic text-red-500">If the child exited the system and later returned (whether once or multiple times), please record the date of the first admission and not of the subsequent return dates (i.e., the second, third, etc. entries).</small>
+            <small class="my-2 block italic text-red-500">If the child exited the system and later returned (whether once or multiple times), please record the date of the first admission and not of the subsequent return dates (i.e., the second, third, etc. entries).</small>
 
             <input type="hidden" id="sa1y" name="sa1y" />
             <input type="hidden" id="sa1m" name="sa1m" />
@@ -2088,11 +2141,11 @@
                 </div>
             </div>
 
-            <small class="block italic text-red-500 mt-6">IF THE CHILD ATTENDED A MULTY-DISCIPLINARY SPECIALIZED PRESCHOOL EDUCATION ORGANIZATION/KINDERGARTEN</small>
+            <small class="my-2 block italic text-red-500 mt-6">IF THE CHILD ATTENDED A MULTY-DISCIPLINARY SPECIALIZED PRESCHOOL EDUCATION ORGANIZATION/KINDERGARTEN</small>
             <div class="grid grid-cols-2 items-center gap-4 mt-2">
                 <div>1a1. Please enter the code from the registry of the last specialized pre-school the child came from</div>
                 <div>
-                    <select id="qeduc1a1" name="qeduc1a1" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full">
+                    <select id="qeduc1a1" name="qeduc1a1" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
                         <option value="-9">--- choose ---</option>
                     </select>
                 </div>
@@ -2117,8 +2170,8 @@
                         <label for="qeduc2-2" class="ms-2 text-sm text-gray-900">2. No</label>
                     </div>
                     <div class="flex items-center">
-                        <input id="qeduc2-7" type="radio" value="7" name="qeduc2" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                        <label for="qeduc2-7" class="ms-2 text-sm text-gray-900">7. Not applicable, the child is below 7 years</label>
+                        <input id="qeduc2-3" type="radio" value="7" name="qeduc2" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <label for="qeduc2-3" class="ms-2 text-sm text-gray-900">7. Not applicable, the child is below 7 years</label>
                     </div>
                 </div>
             </div>
@@ -2153,11 +2206,11 @@
                 </div>
             </div>
 
-            <small class="block italic text-red-500 mt-6">IF CHILD ATTENDED A SPECIALIZED EDUCATION INSTITUTION</small>
+            <small class="my-2 block italic text-red-500 mt-6">IF CHILD ATTENDED A SPECIALIZED EDUCATION INSTITUTION</small>
             <div class="grid grid-cols-2 gap-4 items-center mt-2">
                 <div>2a1. Please enter the code from the registry of the last educational institution the child came from</div>
                 <div>
-                    <select id="qeduc2a1" name="qeduc2a1" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full">
+                    <select id="qeduc2a1" name="qeduc2a1" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
                         <option value="-9">--- choose ---</option>
                     </select>
                 </div>
@@ -2171,7 +2224,7 @@
             </div>
 
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
-                <div>2b. What grade was the child in?<small class="mb-1 block italic text-red-500">FILL IN 0 (ZERO) FOR PREPARATORY CLASS</small>
+                <div>2b. What grade was the child in?<small class="mb-1 my-2 block italic text-red-500">FILL IN 0 (ZERO) FOR PREPARATORY CLASS</small>
                 </div>
                 <div>
                     <input type="text" id="qeduc2b" name="qeduc2b" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
@@ -2237,16 +2290,16 @@
                 <div>3. Was the child transferred from another boarding school?</div>
                 <div class="flex flex-col gap-2">
                     <div class="flex items-center">
-                        <input id="qeduc3-1" type="radio" value="1" name="qeduc3" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                        <label for="qeduc3-1" class="ms-2 text-sm text-gray-900">1. Yes, from a boarding school of the same type</label>
+                        <input id="qeduc4-1" type="radio" value="{{qeduc4-1}}" name="qeduc4" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <label for="qeduc4-1" class="ms-2 text-sm text-gray-900">1. Yes, from a boarding school of the same type</label>
                     </div>
                     <div class="flex items-center">
-                        <input id="qeduc3-2" type="radio" value="2" name="qeduc3" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                        <label for="qeduc3-2" class="ms-2 text-sm text-gray-900">2. Yes, from a boarding school of a different type</label>
+                        <input id="qeduc4-2" type="radio" value="{{qeduc4-2}}" name="qeduc4" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <label for="qeduc4-2" class="ms-2 text-sm text-gray-900">2. Yes, from a boarding school of a different type</label>
                     </div>
                     <div class="flex items-center">
-                        <input id="qeduc3-3" type="radio" value="9" name="qeduc3" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                        <label for="qeduc3-3" class="ms-2 text-sm text-gray-900">3. No</label>
+                        <input id="qeduc4-3" type="radio" value="{{qeduc4-3}}" name="qeduc4" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <label for="qeduc4-3" class="ms-2 text-sm text-gray-900">3. No</label>
                     </div>
                 </div>
             </div>
@@ -2255,31 +2308,31 @@
                 <div>3a. What was the reason for the child being transferred from another boarding school?</div>
                 <div class="flex flex-col gap-2">
                     <div class="flex items-center">
-                        <input id="qeduc3a-1" type="radio" value="1" name="qeduc3a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                        <label for="qeduc3a-1" class="ms-2 text-sm text-gray-900">1. The child had academic, social, or behavioral difficulties in the previous boarding school and needed a more suitable environment or program.</label>
+                        <input id="qeduc4a-1" type="radio" value="{{qeduc4a-1}}" name="qeduc4a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <label for="qeduc4a-1" class="ms-2 text-sm text-gray-900">1. The child had academic, social, or behavioral difficulties in the previous boarding school and needed a more suitable environment or program.</label>
                     </div>
                     <div class="flex items-center">
-                        <input id="qeduc3a-2" type="radio" value="2" name="qeduc3a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                        <label for="qeduc3a-2" class="ms-2 text-sm text-gray-900">2. The child had a change in their diagnosis, needs, or goals and required different specialized education or support.</label>
+                        <input id="qeduc4a-2" type="radio" value="{{qeduc4a-2}}" name="qeduc4a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <label for="qeduc4a-2" class="ms-2 text-sm text-gray-900">2. The child had a change in their diagnosis, needs, or goals and required different specialized education or support.</label>
                     </div>
                     <div class="flex items-center">
-                        <input id="qeduc3a-3" type="radio" value="3" name="qeduc3a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                        <label for="qeduc3a-3" class="ms-2 text-sm text-gray-900">3. The child or the parents were dissatisfied with the quality or location of the previous boarding school and wanted a better option.</label>
+                        <input id="qeduc4a-3" type="radio" value="{{qeduc4a-3}}" name="qeduc4a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <label for="qeduc4a-3" class="ms-2 text-sm text-gray-900">3. The child or the parents were dissatisfied with the quality or location of the previous boarding school and wanted a better option.</label>
                     </div>
                     <div class="flex items-center">
-                        <input id="qeduc3a-4" type="radio" value="4" name="qeduc3a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                        <label for="qeduc3a-4" class="ms-2 text-sm text-gray-900">4. The child had a personal or family situation that influenced their decision to change schools, such as moving to a different area, experiencing a traumatic event, or having a health issue.</label>
+                        <input id="qeduc4a-4" type="radio" value="{{qeduc4a-4}}" name="qeduc4a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <label for="qeduc4a-4" class="ms-2 text-sm text-gray-900">4. The child had a personal or family situation that influenced their decision to change schools, such as moving to a different area, experiencing a traumatic event, or having a health issue.</label>
                     </div>
                     <div class="flex items-center">
-                        <input id="qeduc3a-5" type="radio" value="5" name="qeduc3a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                        <label for="qeduc3a-5" class="ms-2 text-sm text-gray-900">5. The child was expelled from the previous boarding school.</label>
+                        <input id="qeduc4a-5" type="radio" value="{{qeduc4a-5}}" name="qeduc4a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <label for="qeduc4a-5" class="ms-2 text-sm text-gray-900">5. The child was expelled from the previous boarding school.</label>
                     </div>
                     <div class="flex items-center">
-                        <input id="qeduc3a-6" type="radio" value="6" name="qeduc3a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                        <label for="qeduc3a-6" class="ms-2 text-sm text-gray-900">6. Other, please specify: …</label>
+                        <input id="qeduc4a-6" type="radio" value="{{qeduc4a-6}}" name="qeduc4a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <label for="qeduc4a-6" class="ms-2 text-sm text-gray-900">6. Other, please specify: …</label>
                     </div>
                     <div class="flex items-center">
-                        <input type="text" id="qeduc3a_other" name="qeduc3a_other" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
+                        <input type="text" id="qeduc4a_other" name="qeduc4a_other" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
                     </div>
                 </div>
             </div>
@@ -2385,7 +2438,7 @@
             <p class="mt-6">PREHEALTH. What was the detailed diagnosis and description of the child's general development, mental development, hearing, vision, and musculoskeletal system, as reported by the relevant medical specialists?</p>
 
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
-                <div>5a. The diagnosis and description of the child's general development was…<small class="block italic text-red-500 mt-2">Please summarize the main findings of the pediatrician's opinion</small>
+                <div>5a. The diagnosis and description of the child's general development was…<small class="my-2 block italic text-red-500 mt-2">Please summarize the main findings of the pediatrician's opinion</small>
                 </div>
                 <div class="col-span-1 flex flex-col gap-2">
                     <div class="flex items-center">
@@ -2437,7 +2490,7 @@
 
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
                 <div>5b. The diagnosis and description of the child's mental development was…
-                    <small class="block italic text-red-500 mt-2">Please summarize the main findings of the psychoneurologist's medical diagnosis and description.</small>
+                    <small class="my-2 block italic text-red-500 mt-2">Please summarize the main findings of the psychoneurologist's medical diagnosis and description.</small>
                 </div>
                 <div class="flex flex-col gap-2">
                     <div class="flex items-center">
@@ -2476,7 +2529,7 @@
 
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
                 <div>5c. The diagnosis and description of the child's hearing was…
-                    <small class="block italic text-red-500 mt-2">Please summarize the main findings of the otorhinolaryngologist's description and the audiogram data.</small>
+                    <small class="my-2 block italic text-red-500 mt-2">Please summarize the main findings of the otorhinolaryngologist's description and the audiogram data.</small>
                 </div>
                 <div class="flex flex-col gap-2">
                     <div class="flex items-center">
@@ -2511,7 +2564,7 @@
 
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
                 <div>5d. The diagnosis and description of the child's vision was…
-                    <small class="block italic text-red-500 mt-2">Please summarize the main findings of the ophthalmologist's description.</small>
+                    <small class="my-2 block italic text-red-500 mt-2">Please summarize the main findings of the ophthalmologist's description.</small>
                 </div>
                 <div class="flex flex-col gap-2">
                     <div class="flex items-center">
@@ -2546,7 +2599,7 @@
 
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
                 <div>5e. The diagnosis and description of the child's musculoskeletal system was…
-                    <small class="block italic text-red-500 mt-2">Please summarize the main findings of the orthopedic's opinion</small>
+                    <small class="my-2 block italic text-red-500 mt-2">Please summarize the main findings of the orthopedic's opinion</small>
                 </div>
                 <div class="flex flex-col gap-2">
                     <div class="flex items-center">
@@ -2839,7 +2892,7 @@
             </div>
 
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
-                <div>6b. If yes, what kind of specific support did they receive?<small class="block italic text-red-500 mt-2">MULTIPLE ANSWERS POSSIBLE</small>
+                <div>6b. If yes, what kind of specific support did they receive?<small class="my-2 block italic text-red-500 mt-2">MULTIPLE ANSWERS POSSIBLE</small>
                 </div>
                 <div class="col-span-1 flex flex-col gap-2">
                     <div class="flex items-center">
@@ -3024,7 +3077,7 @@
             </div>
 
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
-                <div>SCH2. Currently, in which grade is the child?<small class="block italic mt-2">FILL IN 0 (ZERO) FOR PREPARARTORY CLASS</small>
+                <div>SCH2. Currently, in which grade is the child?<small class="my-2 block italic text-red-500">FILL IN 0 (ZERO) FOR PREPARATORY CLASS</small>
                     <!-- <small class="block italic mt-2">FILL IN IF GRADE >=8, ELSE SKIP TO CEDU</small> -->
                 </div>
                 <div>
@@ -3947,7 +4000,7 @@
             </div>
 
             <div class="grid grid-cols-2 gap-4 items-center mt-10">
-                <div>LK22_2. What kind of disability does the child have, according to the certificate? <small class="mt-2 block italic text-red-500">CHECK ALL THAT APPLY</small></div>
+                <div>LK22_2. What kind of disability does the child have, according to the certificate? <small class="mt-2 my-2 block italic text-red-500">CHECK ALL THAT APPLY</small></div>
                 <div class="col-span-1 flex flex-col gap-2">
                     <div class="flex items-center">
                         <input id="lk22_2_1" type="checkbox" value="1" name="lk22_2_1" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
@@ -3976,7 +4029,7 @@
             </div>
 
             <div class="grid grid-cols-2 gap-4 items-center mt-10">
-                <div>LK22_2_7. The child/young person has associated disabilities (two or more types of disability)<small class="mt-2 block italic text-red-500">Automatically filled in.</small>
+                <div>LK22_2_7. The child/young person has associated disabilities (two or more types of disability)<small class="mt-2 my-2 block italic text-red-500">Automatically filled in.</small>
                 </div>
                 <div class="col-span-1 flex flex-col gap-2">
                     <div class="flex items-center">
@@ -3992,7 +4045,7 @@
 
             <div class="grid grid-cols-2 gap-4 items-center mt-10">
                 <div>
-                    <!-- <small class="mt-2 block italic text-red-500">IF MENTAL DISABILITY IS CHECKED IN LK22_2</small> -->
+                    <!-- <small class="mt-2 my-2 block italic text-red-500">IF MENTAL DISABILITY IS CHECKED IN LK22_2</small> -->
                     LK22_2m. According to the certificate, what degree of mental disability does the child have?
                 </div>
                 <div class="col-span-1 flex flex-col gap-2">
@@ -4019,7 +4072,7 @@
                 </div>
             </div>
 
-            <small class="mt-10 block italic text-red-500">FOR ANY CHILD, REGARDLESS OF THE EXISTENCE OF A DISABILITY CERTIFICATE</small>
+            <small class="mt-10 my-2 block italic text-red-500">FOR ANY CHILD, REGARDLESS OF THE EXISTENCE OF A DISABILITY CERTIFICATE</small>
 
             <div class="grid grid-cols-2 gap-4 items-center mt-10">
                 <div>LK22_3_1. Does the child have visual impairments?</div><div class="col-span-1 flex items-center gap-4">
@@ -4180,7 +4233,7 @@
                 </div>
             </div>
 
-            <small class="mt-2 block italic text-red-500">This refers to children who are underage mothers themselves, not children of underage mothers.</small>
+            <small class="mt-2 my-2 block italic text-red-500">This refers to children who are underage mothers themselves, not children of underage mothers.</small>
 
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
                 <div>LK22_11. The child is part of the vulnerable group - Child from the child protection system deprived of parental care.</div>
@@ -4199,7 +4252,7 @@
             <h3 class="mt-10 text-xl font-semibold bg-gray-100 px-2 py-1 text-gray-700">5.3. THE CHILD'S CURRENT HEALTH STATUS</h3>
 
             <div class="grid grid-cols-2 gap-4 items-center mt-10">
-                <div>QHEALTHP3. In his/her daily activities, is the child...?<small class="block italic text-red-500">Attention! Autonomous means that he/she eats, gets dressed or walks by him/herself.</small>
+                <div>QHEALTHP3. In his/her daily activities, is the child...?<small class="my-2 block italic text-red-500">Attention! Autonomous means that he/she eats, gets dressed or walks by him/herself.</small>
                 </div>
                 <div class="col-span-1 flex flex-col gap-2">
                     <div class="flex items-center">
@@ -4244,7 +4297,7 @@
             </div>
 
             <div class="grid grid-cols-2 gap-4 items-center mt-10">
-                <div>MED3. What kind of psychotropic medication does the child take?<small class="mt-2 block italic text-red-500">MULTIPLE ANSWERS POSSIBLE</small>
+                <div>MED3. What kind of psychotropic medication does the child take?<small class="mt-2 my-2 block italic text-red-500">MULTIPLE ANSWERS POSSIBLE</small>
                 </div>
                 <div class="col-span-1 flex flex-col gap-2">
                     <div class="flex items-center">
@@ -4525,7 +4578,7 @@
             </div>
 
             <div class="grid grid-cols-2 gap-4 items-center mt-10">
-                <div>LK21.a.6.a. What other therapies? <small class="mt-2 block italic text-red-500">Fill in what other therapies.</small></div>
+                <div>LK21.a.6.a. What other therapies? <small class="mt-2 my-2 block italic text-red-500">Fill in what other therapies.</small></div>
                 <div class="col-span-1 flex items-center gap-4">
                     <textarea id="lk21a6a" name="lk21a6a" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full"></textarea>
                 </div>
@@ -4547,11 +4600,11 @@
 
             <h2 class="mt-10 mb-4 text-2xl font-bold text-gray-700">6. INDEPENDENT LIVING SKILLS</h2>
 
-            <small class="my-2 block italic text-red-500">The section only applies to youth aged 16 and over.</small>
+            <small class="my-2 my-2 block italic text-red-500">The section only applies to youth aged 16 and over.</small>
             <p>DVI. On a scale from 1 = not at all to 10 = total, how do you assess the level of development of the youth in the following areas of independent living skills/abilities?</p>
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
                 <div class="ml-3">DVI1. Preparing and serving food (Food selection, cooking, arranging/serving meals)</div>
-                <select id="dvi1" name="dvi1" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full">
+                <select id="dvi1" name="dvi1" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
                     <option value="-9">--- choose ---</option>
                     <option value="1">1. Not at all</option>
                     <option value="2">2</option>
@@ -4568,7 +4621,7 @@
             </div>
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
                 <div class="ml-3">DVI2. Use of household appliances (Stove, refrigerator, washing machine, etc.)</div>
-                <select id="dvi2" name="dvi2" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full">
+                <select id="dvi2" name="dvi2" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
                     <option value="-9">--- choose ---</option>
                     <option value="1">1. Not at all</option>
                     <option value="2">2</option>
@@ -4585,7 +4638,7 @@
             </div>
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
                 <div class="ml-3">DVI3. Washing and ironing (Clothes care)</div>
-                <select id="dvi3" name="dvi3" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full">
+                <select id="dvi3" name="dvi3" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
                     <option value="-9">--- choose ---</option>
                     <option value="1">1. Not at all</option>
                     <option value="2">2</option>
@@ -4602,7 +4655,7 @@
             </div>
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
                 <div class="ml-3">DVI4. Living space hygiene (Room/house cleaning, including tidying things up or changing linen)</div>
-                <select id="dvi4" name="dvi4" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full">
+                <select id="dvi4" name="dvi4" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
                     <option value="-9">--- choose ---</option>
                     <option value="1">1. Not at all</option>
                     <option value="2">2</option>
@@ -4618,7 +4671,7 @@
                 </select>
             </div>
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
-                <div class="ml-3">DVI5. Financial management (Familiar with money, budgeting, paying bills, shopping)</div><select id="dvi5" name="dvi5" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full">
+                <div class="ml-3">DVI5. Financial management (Familiar with money, budgeting, paying bills, shopping)</div><select id="dvi5" name="dvi5" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
                     <option value="-9">--- choose ---</option>
                     <option value="1">1. Not at all</option>
                     <option value="2">2</option>
@@ -4634,7 +4687,7 @@
                 </select>
             </div>
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
-                <div class="ml-3">DVI6. Orientation in the city and use of transportation </div><select id="dvi6" name="dvi6" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full">
+                <div class="ml-3">DVI6. Orientation in the city and use of transportation </div><select id="dvi6" name="dvi6" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
                     <option value="-9">--- choose ---</option>
                     <option value="1">1. Not at all</option>
                     <option value="2">2</option>
@@ -4650,7 +4703,7 @@
                 </select>
             </div>
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
-                <div class="ml-3">DVI7. Personal hygiene (Washing/cleansing the body, maintaining hygiene) </div><select id="dvi7" name="dvi7" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full">
+                <div class="ml-3">DVI7. Personal hygiene (Washing/cleansing the body, maintaining hygiene) </div><select id="dvi7" name="dvi7" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
                     <option value="-9">--- choose ---</option>
                     <option value="1">1. Not at all</option>
                     <option value="2">2</option>
@@ -4666,7 +4719,7 @@
                 </select>
             </div>
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
-                <div class="ml-3">DVI8. Healthy lifestyle (Sports, nutrition) </div><select id="dvi8" name="dvi8" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full">
+                <div class="ml-3">DVI8. Healthy lifestyle (Sports, nutrition) </div><select id="dvi8" name="dvi8" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
                     <option value="-9">--- choose ---</option>
                     <option value="1">1. Not at all</option>
                     <option value="2">2</option>
@@ -4682,7 +4735,7 @@
                 </select>
             </div>
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
-                <div class="ml-3">DVI9. Reproductive health (Prevention of unwanted pregnancies, prevention, identification and treatment of sexually transmitted diseases)</div><select id="dvi9" name="dvi9" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full">
+                <div class="ml-3">DVI9. Reproductive health (Prevention of unwanted pregnancies, prevention, identification and treatment of sexually transmitted diseases)</div><select id="dvi9" name="dvi9" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
                     <option value="-9">--- choose ---</option>
                     <option value="1">1. Not at all</option>
                     <option value="2">2</option>
@@ -4698,7 +4751,7 @@
                 </select>
             </div>
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
-                <div class="ml-3">DVI10. Free time (Meeting friends, playing sports, going to the movies, going out, going to concerts, etc.)</div><select id="dvi10" name="dvi10" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full">
+                <div class="ml-3">DVI10. Free time (Meeting friends, playing sports, going to the movies, going out, going to concerts, etc.)</div><select id="dvi10" name="dvi10" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
                     <option value="-9">--- choose ---</option>
                     <option value="1">1. Not at all</option>
                     <option value="2">2</option>
@@ -4715,7 +4768,7 @@
             </div>
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
                 <div class="ml-3">DVI11. Time management (Punctuality)</div>
-                <select id="dvi11" name="dvi11" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full">
+                <select id="dvi11" name="dvi11" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
                     <option value="-9">--- choose ---</option>
                     <option value="1">1. Not at all</option>
                     <option value="2">2</option>
@@ -4732,7 +4785,7 @@
             </div>
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
                 <div class="ml-3">DVI12. Behavior in public (At the store, at school, etc.)</div>
-                <select id="dvi12" name="dvi12" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full">
+                <select id="dvi12" name="dvi12" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
                     <option value="-9">--- choose ---</option>
                     <option value="1">1. Not at all</option>
                     <option value="2">2</option>
@@ -4748,7 +4801,7 @@
                 </select>
             </div>
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
-                <div class="ml-3">DVI13. Use of social networks (Development and use of a support system, community)</div><select id="dvi13" name="dvi13" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full">
+                <div class="ml-3">DVI13. Use of social networks (Development and use of a support system, community)</div><select id="dvi13" name="dvi13" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
                     <option value="-9">--- choose ---</option>
                     <option value="1">1. Not at all</option>
                     <option value="2">2</option>
@@ -4765,7 +4818,7 @@
             </div>
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
                 <div class="ml-3">DVI14. Developing and maintaining social relationships (Friends, family, neighbors, colleagues etc.)</div>
-                <select id="dvi14" name="dvi14" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full">
+                <select id="dvi14" name="dvi14" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
                     <option value="-9">--- choose ---</option>
                     <option value="1">1. Not at all</option>
                     <option value="2">2</option>
@@ -4782,7 +4835,7 @@
             </div>
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
                 <div class="ml-3">DVI15. Self-respect</div>
-                <select id="dvi15" name="dvi15" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full">
+                <select id="dvi15" name="dvi15" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
                     <option value="-9">--- choose ---</option>
                     <option value="1">1. Not at all</option>
                     <option value="2">2</option>
@@ -4799,7 +4852,7 @@
             </div>
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
                 <div class="ml-3">DVI16. Attitude towards school/learning</div>
-                <select id="dvi16" name="dvi16" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full">
+                <select id="dvi16" name="dvi16" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
                     <option value="-9">--- choose ---</option>
                     <option value="1">1. Not at all</option>
                     <option value="2">2</option>
@@ -4816,7 +4869,7 @@
             </div>
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
                 <div class="ml-3">DVI17. Knowledge of the benefits of a job</div>
-                <select id="dvi17" name="dvi17" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full">
+                <select id="dvi17" name="dvi17" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
                     <option value="-9">--- choose ---</option>
                     <option value="1">1. Not at all</option>
                     <option value="2">2</option>
@@ -4833,7 +4886,7 @@
             </div>
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
                 <div class="ml-3">DVI18. Finding a job</div>
-                <select id="dvi18" name="dvi18" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full">
+                <select id="dvi18" name="dvi18" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
                     <option value="-9">--- choose ---</option>
                     <option value="1">1. Not at all</option>
                     <option value="2">2</option>
@@ -4849,7 +4902,7 @@
                 </select>
             </div>
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
-                <div class="ml-3">DVI19. Relationships at work </div><select id="dvi19" name="dvi19" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full">
+                <div class="ml-3">DVI19. Relationships at work </div><select id="dvi19" name="dvi19" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
                     <option value="-9">--- choose ---</option>
                     <option value="1">1. Not at all</option>
                     <option value="2">2</option>
@@ -4867,7 +4920,7 @@
             </div>
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
                 <div class="ml-3">DVI20. Keeping a job</div>
-                <select id="dvi20" name="dvi20" class="disabled:bg-gray-100 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full">
+                <select id="dvi20" name="dvi20" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
                     <option value="-9">--- choose ---</option>
                     <option value="1">1. Not at all</option>
                     <option value="2">2</option>
@@ -4886,7 +4939,7 @@
 
             <h2 class="mt-10 mb-4 text-2xl font-bold text-gray-700">7. RISK BEHAVIORS</h2>
 
-            <small class="my-2 block italic text-red-500">Attention! This section is to be filled in only for children older than 10 years.</small>
+            <small class="my-2 my-2 block italic text-red-500">Attention! This section is to be filled in only for children older than 10 years.</small>
             <p>QRISKP: During the child's time into the system (from their last admission until present), has the child had any of the following risk behaviors:</p>
             <div class="grid grid-cols-2 gap-4 items-center mt-10">
                 <div class="ml-3">1. Early sexual activity (initiation before the age of 16)</div>
@@ -5246,12 +5299,12 @@
                 <div>SK7. Did the parents/guardians apply for the child to be transferred to a general education school?</div>
                 <div class="col-span-1 flex items-center gap-4">
                     <div class="flex items-center">
-                        <input id="sk7-1" type="radio" value="1" name="sk7" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                        <label for="sk7-1" class="ms-2 text-sm text-gray-900">1. Yes</label>
+                        <input id="sk12-1" type="radio" value="{{sk12-1}}" name="sk12" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <label for="sk12-1" class="ms-2 text-sm text-gray-900">1. Yes</label>
                     </div>
                     <div class="flex items-center">
-                        <input id="sk7-2" type="radio" value="2" name="sk7" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                        <label for="sk7-2" class="ms-2 text-sm text-gray-900">2. No</label>
+                        <input id="sk12-2" type="radio" value="{{sk12-2}}" name="sk12" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <label for="sk12-2" class="ms-2 text-sm text-gray-900">2. No</label>
                     </div>
                 </div>
             </div>
@@ -5260,12 +5313,12 @@
                 <div>SK8. Is there a recommendation from the psychological-medical-pedagogical commission supporting the child's transfer to a general education school?</div>
                 <div class="col-span-1 flex items-center gap-4">
                     <div class="flex items-center">
-                        <input id="sk8-1" type="radio" value="1" name="sk8" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                        <label for="sk8-1" class="ms-2 text-sm text-gray-900">1. Yes</label>
+                        <input id="sk13-1" type="radio" value="{{sk13-1}}" name="sk13" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <label for="sk13-1" class="ms-2 text-sm text-gray-900">1. Yes</label>
                     </div>
                     <div class="flex items-center">
-                        <input id="sk8-2" type="radio" value="2" name="sk8" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                        <label for="sk8-2" class="ms-2 text-sm text-gray-900">2. No</label>
+                        <input id="sk13-2" type="radio" value="{{sk13-2}}" name="sk13" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <label for="sk13-2" class="ms-2 text-sm text-gray-900">2. No</label>
                     </div>
                 </div>
             </div>
@@ -5274,12 +5327,12 @@
                 <div>SK9. In the past six months, did the child have opportunities to spend time in the community and interact with typical children?</div>
                 <div class="col-span-1 flex items-center gap-4">
                     <div class="flex items-center">
-                        <input id="sk9-1" type="radio" value="1" name="sk9" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                        <label for="sk9-1" class="ms-2 text-sm text-gray-900">1. Yes, at least once</label>
+                        <input id="sk14-1" type="radio" value="{{sk14-1}}" name="sk14" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <label for="sk14-1" class="ms-2 text-sm text-gray-900">1. Yes, at least once</label>
                     </div>
                     <div class="flex items-center">
-                        <input id="sk9-2" type="radio" value="0" name="sk9" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                        <label for="sk9-2" class="ms-2 text-sm text-gray-900">0. No</label>
+                        <input id="sk14-2" type="radio" value="{{sk14-2}}" name="sk14" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <label for="sk14-2" class="ms-2 text-sm text-gray-900">0. No</label>
                     </div>
                 </div>
             </div>
