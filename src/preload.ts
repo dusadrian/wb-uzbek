@@ -55,8 +55,11 @@ window.addEventListener("DOMContentLoaded", () => {
         case 'local/01_dashboard.html':
             localDashboard();
             break;
-        case 'local/02_institution_details.html':
-            institutionDetails();
+        case 'local/02_institution_details_service.html':
+            institutionDetailsService();
+            break;
+        case 'local/02_institution_details_inson.html':
+            institutionDetailsInson();
             break;
         case 'local/03_users.html':
             localUsers();
@@ -253,19 +256,36 @@ const localDashboard = () => {
         console.log(error);
     }));
 };
-const institutionDetails = () => {
+// INSTITUTION DETAILS
+// Sevices
+const institutionDetailsService = () => {
 
     topMenu('local/01_dashboard');
 
     translatePage();
 
     const importFile = async () => {
-        return await import("./pages/local/02_institution_details");
+        return await import("./pages/local/02_institution_details_service");
     };
     importFile().then(result => result.institutionDetails.init().catch(error => {
         console.log(error);
     }));
 };
+// Inson
+const institutionDetailsInson = () => {
+
+    topMenu('local/01_dashboard');
+
+    translatePage();
+
+    const importFile = async () => {
+        return await import("./pages/local/02_institution_details_inson");
+    };
+    importFile().then(result => result.institutionDetails.init().catch(error => {
+        console.log(error);
+    }));
+};
+
 const localUsers = () => {
 
     topMenu('local/01_dashboard');

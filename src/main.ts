@@ -597,13 +597,26 @@ const goToInstrument = (instrument: string, id: string, institution_code?: strin
 
 // -- institution details
 const institutionDetails = () => {
-    const newPage = path.join(__dirname, "../src/pages/local/02_institution_details.html");
-    mainWindow.loadURL("file://" + newPage);
-    database.getInstitutionDetails(appSession.userData.institution_code, appSession.userData.service_type_code).then((result) => {
-        mainWindow.webContents.once("did-finish-load", () => {
-            mainWindow.webContents.send("institutionDetails", result[0]);
+    if (constant.INSON.includes(appSession.userData.service_type_code)) {
+        mainWindow.loadURL("file://" + path.join(__dirname, "../src/pages/local/02_institution_details_inson.html"));
+        database.getInstitutionDetails(appSession.userData.institution_code, appSession.userData.service_type_code).then((institution) => {
+            database.getInsonServices((appSession.institutionDetails as DI.INSON).services, appSession.userData.institution_code).then((services) => {
+                mainWindow.webContents.once("did-finish-load", () => {
+                    mainWindow.webContents.send("institutionDetails", {
+                        institution: institution[0],
+                        services: services
+                    });
+                });
+            });
         });
-    });
+    } else {
+        mainWindow.loadURL("file://" + path.join(__dirname, "../src/pages/local/02_institution_details_service.html"));
+        database.getInstitutionDetails(appSession.userData.institution_code, appSession.userData.service_type_code).then((result) => {
+            mainWindow.webContents.once("did-finish-load", () => {
+                mainWindow.webContents.send("institutionDetails", result[0]);
+            });
+        });
+    }
 }
 
 // Institution update
