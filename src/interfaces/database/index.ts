@@ -61,6 +61,29 @@ export interface INSON {
     services: string;
 }
 
+export interface UpdateInsonObjInterface {
+    institution_id: string;
+    institutionUUID: string;
+    auth_code: string;
+    services: {
+        id: number;
+        uuid: string;
+        children: string;
+        leavers: string;
+    }[]
+    pf: string;
+    children_fth: string;
+    leavers_fth: string;
+}
+
+export interface UpdateServiceObjInterface {
+    institution_id: string;
+    institutionUUID: string;
+    auth_code: string;
+    children: string;
+    employees: string;
+    leavers: string;
+}
 
 export interface DatabaseInterface {
     checkUser: (username: string, password: string) => Promise<Array<User>>;

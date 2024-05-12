@@ -1,6 +1,6 @@
 import * as path from "path";
 import * as DuckDB from "duckdb";
-import * as DI from "../../src/interfaces/database";
+import * as DI from "../interfaces/database";
 import { save as instrumentSave, get as instrumentGet, getExisting, cpisList, deleteCPIS, cibsList, deleteCIBS, csrList, deleteStaff, ftchList, deleteFTCH, pfqList, deletePFQ, eefList, deleteEEF, yplcsList, deleteYPLCS, tqypList, deleteTQYP } from "./instruments";
 import constant from '../libraries/constants'
 
@@ -97,15 +97,10 @@ export const database = {
         return await connection;
     },
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    saveInstitutionDetails: async (institution: any, type: string) => {
+    updateService: async (data: DI.UpdateServiceObjInterface) => {
         const connection = new Promise<boolean>((resolve) => {
 
-            let sql = `UPDATE institutions SET capacity = '${institution.capacity}', children = '${institution.children}', leavers = '${institution.leavers}', employees = '${institution.employees}' WHERE id = '${institution.id}' AND uuid = '${institution.uuid}';`;
-
-            if (type == '9') { // INSON
-                sql = `UPDATE inson SET pf = '${institution.pf}', fth = '${institution.fth}', children_fth = '${institution.children_fth}', leavers_fth = '${institution.leavers_fth}' WHERE id = '${institution.id}' AND uuid = '${institution.uuid}';`;
-            }
-            db.run(sql, (error) => {
+            db.run(`UPDATE institutions SET children = '${data.children}', leavers = '${data.leavers}', employees = '${data.employees}' WHERE id = '${data.institution_id}' AND uuid = '${data.institutionUUID}';`, (error) => {
                 if (error) {
                     console.log(error);
                 }
@@ -114,6 +109,33 @@ export const database = {
         });
         return await connection;
     },
+    updateInson : async (data: DI.UpdateInsonObjInterface) => {
+
+        if(data.services.length > 0) {
+            for(const service of data.services) {
+                const connection = new Promise<boolean>((resolve) => {
+                    db.run(`UPDATE institutions SET children = '${service.children}', leavers = '${service.leavers}' WHERE id = '${service.id}' AND uuid = '${service.uuid}'`, (error) => {
+                        if (error) {
+                            console.log(error);
+                        }
+                        resolve(true);
+                    });
+                });
+                await connection;
+            }
+        }
+
+        const connection = new Promise<boolean>((resolve) => {
+            db.run(`UPDATE inson SET pf = '${data.pf}', children_fth = '${data.children_fth}', leavers_fth = '${data.leavers_fth}' WHERE id = '${data.institution_id}' AND uuid = '${data.institutionUUID}'`, (error) => {
+                if (error) {
+                    console.log(error);
+                }
+                resolve(true);
+            });
+        });
+        return await connection;
+    },
+
     getInstitutionUsers: async (institution_code: string) => {
         const connection = new Promise<Array<DI.User>>((resolve) => {
             // db.all(`SELECT * FROM users WHERE institution_code = '${institution_id}' AND id != '${userId}'`, (error, result) => {

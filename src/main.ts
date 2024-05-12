@@ -618,9 +618,17 @@ const institutionDetails = () => {
         });
     }
 }
+// Institution/Service update
+ipcMain.on('updateService', (_event, args) => {
 
-// Institution update
-ipcMain.on('updateInstitutionDetails', (_event, args) => {
+    // NOT INSON
+    if (constant.INSON.includes(appSession.userData.service_type_code)) {
+        dialog.showMessageBox(mainWindow, {
+            type: 'warning',
+            message: i18n.__('Service type error.'),
+        });
+        return;
+    }
 
     if (!args.auth_code || args.auth_code === '') {
         dialog.showMessageBox(mainWindow, {
@@ -640,13 +648,63 @@ ipcMain.on('updateInstitutionDetails', (_event, args) => {
             return;
         }
 
-        database.saveInstitutionDetails(args, appSession.userData.service_type_code).then(() => {
+        database.updateService(args).then(() => {
             // set auth code as used
             database.updateAuthCode(appSession.userData.institution_code, args.auth_code).then(() => {
                 dialog.showMessageBox(mainWindow, {
                     type: 'info',
                     message: i18n.__('Institution details saved.'),
                 }).then(() => {
+                    // update session
+                    (appSession.institutionDetails as DI.Institution).children = args.children;
+                    (appSession.institutionDetails as DI.Institution).leavers = args.leavers;
+                    (appSession.institutionDetails as DI.Institution).employees = args.employees;
+                    goToLocalDashboard();
+                });
+            });
+        });
+    });
+});
+// Update INSON services
+ipcMain.on('updateInson', (_event, args) => {
+
+    if (!constant.INSON.includes(appSession.userData.service_type_code)) {
+        dialog.showMessageBox(mainWindow, {
+            type: 'warning',
+            message: i18n.__('Service type error.'),
+        });
+        return;
+    }
+
+    if (!args.auth_code || args.auth_code === '') {
+        dialog.showMessageBox(mainWindow, {
+            type: 'warning',
+            message: i18n.__('Authorization code missing.'),
+        });
+        return;
+    }
+
+    database.checkAuthCode(appSession.userData.institution_code, args.auth_code).then((result) => {
+
+        if (result.length === 0) {
+            dialog.showMessageBox(mainWindow, {
+                type: 'warning',
+                message: i18n.__('Invalid authorization code.'),
+            });
+            return;
+        }
+
+        database.updateInson(args).then(() => {
+            // set auth code as used
+            database.updateAuthCode(appSession.userData.institution_code, args.auth_code).then(() => {
+                dialog.showMessageBox(mainWindow, {
+                    type: 'info',
+                    message: i18n.__('Institution details saved.'),
+                }).then(() => {
+                    // update session
+                    (appSession.institutionDetails as DI.INSON).pf = args.pf;
+                    (appSession.institutionDetails as DI.INSON).children_fth = args.children_fth;
+                    (appSession.institutionDetails as DI.INSON).leavers_fth = args.leavers_fth;
                     goToLocalDashboard();
                 });
             });

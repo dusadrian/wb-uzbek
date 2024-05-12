@@ -1,21 +1,8 @@
-import { app, ipcRenderer } from "electron";
-import { first } from "lodash";
+import { ipcRenderer } from "electron";
+import * as DI from "../../interfaces/database";
 
-interface UpdateObjInterface {
-    institution_id: string;
-    institutionUUID: string;
-    auth_code: string;
-    services: {
-        id: string;
-        service_type_code: string;
-        service_type_name: string;
-        service_type_description: string;
-        service_type_value: string;
-    }[]
-    pf: string;
-}
-
-const updateObj = {} as UpdateObjInterface;
+const updateObj = {} as DI.UpdateInsonObjInterface;
+let services: DI.Institution[] = [];
 
 export const institutionDetails = {
     init: async () => {
@@ -23,78 +10,100 @@ export const institutionDetails = {
         ipcRenderer.on('institutionDetails', (_event, args) => {
 
             const institution = args.institution;
-            const services = args.services;
+            services = args.services;
 
             updateObj.institution_id = institution.id
             updateObj.institutionUUID = institution.uuid;
+            updateObj.children_fth = institution.children_fth;
+            updateObj.leavers_fth = institution.leavers_fth;
             (document.getElementById('institution_name') as HTMLDivElement).innerText = institution.name;
-            (document.getElementById('pf') as HTMLDivElement).innerText = institution.pf;
-
-            console.log(args);
-
+            (document.getElementById('pf') as HTMLInputElement).value = institution.pf;
 
             const serviceList = document.getElementById('serviceList') as HTMLDivElement;
             const serviceTemplate = document.getElementById('serviceTemplate') as HTMLTemplateElement;
 
-            for (const service of services) {
-                console.log(service);
-                
-                const clone = serviceTemplate.content.cloneNode(true) as HTMLElement;
-                // Set the service name
-                clone.querySelector('.serviceName').textContent = service.name;
-                // first element
-                const firstElement = clone.querySelector('.firstElement');
-                // label
-                const firstLabel = (firstElement.children[0] as HTMLLabelElement);
-                firstLabel.textContent = 'Children';
-                firstLabel.htmlFor = `children_${service.id}`;
-                const firstInput = (firstElement.children[1] as HTMLInputElement);
-                firstInput.id = `children_${service.id}`;
-                firstInput.value = service.children;
-                
-                // second element
-                const secondElement = clone.querySelector('.secondElement');
-                // label
-                const secondLabel = (secondElement.children[0] as HTMLLabelElement);
-                secondLabel.textContent = 'Leavers';
-                secondLabel.htmlFor = `leavers_${service.id}`;
-                const secondInput = (secondElement.children[1] as HTMLInputElement);
-                secondInput.id = `leavers_${service.id}`;
-                secondInput.value = service.leavers;
-                
+            if (services.length !== 0) {
+                for (const service of services) {
+                    console.log(service);
 
-                serviceList.appendChild(clone);
+                    const clone = serviceTemplate.content.cloneNode(true) as HTMLElement;
+                    // Set the service name
+                    clone.querySelector('.serviceName').textContent = service.name;
+                    // first element
+                    const firstElement = clone.querySelector('.firstElement');
+                    // label
+                    const firstLabel = (firstElement.children[0] as HTMLLabelElement);
+                    firstLabel.textContent = 'Children';
+                    firstLabel.htmlFor = `children_${service.id}`;
+                    const firstInput = (firstElement.children[1] as HTMLInputElement);
+                    firstInput.id = `children_${service.id}`;
+                    firstInput.value = String(service.children);
+
+                    // second element
+                    const secondElement = clone.querySelector('.secondElement');
+                    // label
+                    const secondLabel = (secondElement.children[0] as HTMLLabelElement);
+                    secondLabel.textContent = 'Leavers';
+                    secondLabel.htmlFor = `leavers_${service.id}`;
+                    const secondInput = (secondElement.children[1] as HTMLInputElement);
+                    secondInput.id = `leavers_${service.id}`;
+                    secondInput.value = String(service.leavers);
+
+                    serviceList.appendChild(clone);
+                }
+            } else {
+                const p = document.createElement('p');
+                // Set the service name
+                p.classList.add('mt-5', 'mb-2', 'text-center', 'font-bold');
+                p.innerText = 'No services available';
+                serviceList.appendChild(p);
             }
 
         });
 
         (<HTMLButtonElement>document.getElementById('saveForm')).addEventListener('click', () => {
 
-
             const auth_code = (document.getElementById('auth_code') as HTMLInputElement).value;
             updateObj.auth_code = auth_code;
             const pf = (document.getElementById('pf') as HTMLInputElement).value;
             updateObj.pf = pf;
 
+            updateObj.services = [];
+            let totalChildren = 0;
+            let totalLeavers = 0;
+            for (const service of services) {
+                const children = (document.getElementById(`children_${service.id}`) as HTMLInputElement).value;
+                const leavers = (document.getElementById(`leavers_${service.id}`) as HTMLInputElement).value;
 
+                totalChildren += Number(children);
+                totalLeavers += Number(leavers);
 
-            const children_fth = (document.getElementById('children_fth') as HTMLInputElement).value;
-            const fth = (document.getElementById('fth') as HTMLInputElement).value;
-            const leavers_fth = (document.getElementById('leavers_fth') as HTMLInputElement).value;
+                updateObj.services.push({
+                    id: service.id,
+                    uuid: service.uuid,
+                    children,
+                    leavers
+                });
+            }
 
+            updateObj.children_fth = String(totalChildren);
+            updateObj.leavers_fth = String(totalLeavers);
 
-            // validate all data
-            if (children_fth === '' || fth === '' || leavers_fth === '' || pf === '' || auth_code === '') {
+            if (pf === '' || auth_code === '') {
                 ipcRenderer.send('showDialogMessage', {
                     type: 'warning',
                     message: 'Please fill all fields'
                 });
+                // scroll into view auth_code
+                document.getElementById('auth_code').scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'center'
+                });
+                document.getElementById('auth_code').focus();
                 return;
             }
 
-            ipcRenderer.send('updateInstitutionDetails', updateObj);
-
-
+            ipcRenderer.send('updateInson', updateObj);
         });
     }
 }

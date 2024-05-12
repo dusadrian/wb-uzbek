@@ -29,17 +29,14 @@
                 <label for="pf" class="block mb-2 text-sm font-medium text-gray-900 w-1/2">
                     <span class="t_pf">Patronat Family</span>
                 </label>
-                <input type="text" id="pf"
+                <input type="number" min="0" id="pf"
                     class="disabled:bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-1/2 p-2.5"
                     required />
             </div>
             <h3 class="mt-6 bg-gray-100 px-2 py-1">
                 <span class="t_inson_services">Services</span>
             </h3>
-            <div id="serviceList">
-
-            </div>
-
+            <div id="serviceList"></div>
 
             <template id="serviceTemplate">
                 <div class="grid grid-cols-2 gap-4 my-2 py-2 items-center border-b border-gray-300">
@@ -49,7 +46,7 @@
                             <label class="text-sm font-medium text-gray-900 w-1/2 text-right" for="aa">
                                 <span class="t_children">children</span>
                             </label>
-                            <input type="text" id="aa"
+                            <input type="number" min="0" id="aa"
                                 class="disabled:bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-1/2 p-2.5"
                                 required />
                         </div>
@@ -57,7 +54,7 @@
                             <label for="bb" class="block mb-2 text-sm font-medium text-gray-900 w-1/2 text-right">
                                 <span class="t_leavers">leavers</span>
                             </label>
-                            <input type="text" id="bb"
+                            <input type="number" min="0" id="bb"
                                 class="disabled:bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-1/2 p-2.5"
                                 required />
                         </div>
@@ -66,15 +63,11 @@
                 </div>
             </template>
 
-
-
-
-            <div class="mt-10 flex flex-col items-start">
-                <label for="auth_code" class="block mb-2 text-sm font-medium text-gray-900 w-1/2">
-                    <span class="t_auth_code">Authorization code</span>
-                </label>
+            <div class="mt-5 flex gap-6 items-center justify-start bg-red-100 px-4 py-2">
+                <label for="auth_code" class="block text-sm font-medium text-gray-900"><span
+                        class="t_auth_code">Authorization code</span></label>
                 <input type="text" id="auth_code"
-                    class="disabled:bg-gray-50 border border-amber-600 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-1/2 p-2.5"
+                    class="disabled:bg-gray-50 border border-amber-600 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5"
                     required />
             </div>
 

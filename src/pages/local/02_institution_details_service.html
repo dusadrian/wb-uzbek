@@ -24,21 +24,11 @@
         <form class="px-6 mt-10">
             <div id="institution_name" class="font-bold"></div>
             
-            <div id="institution" class="hidden">
                 <div class="mt-10 flex gap-4 items-center">
-                    <label for="capacity" class="block mb-2 text-sm font-medium text-gray-900 w-1/2">
-                        <span class="t_capacity">Capacity</span>
-                    </label>
-                    <input type="text" id="capacity"
-                        class="disabled:bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-1/2 p-2.5"
-                        required />
-                </div>
-    
-                <div class="mt-4 flex gap-4 items-center">
                     <label for="children" class="block mb-2 text-sm font-medium text-gray-900 w-1/2">
                         <span class="t_children">Children</span>
                     </label>
-                    <input type="text" id="children"
+                    <input type="number" min="0" id="children"
                         class="disabled:bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-1/2 p-2.5"
                         required />
                 </div>
@@ -47,7 +37,7 @@
                     <label for="employees" class="block mb-2 text-sm font-medium text-gray-900 w-1/2">
                         <span class="t_employees">Employees</span>
                     </label>
-                    <input type="text" id="employees"
+                    <input type="number" min="0" id="employees"
                         class="disabled:bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-1/2 p-2.5"
                         required />
                 </div>
@@ -56,58 +46,17 @@
                     <label for="leavers" class="block mb-2 text-sm font-medium text-gray-900 w-1/2">
                         <span class="t_leavers">Leavers</span>
                     </label>
-                    <input type="text" id="leavers"
-                        class="disabled:bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-1/2 p-2.5"
-                        required />
-                </div>
-            </div>
-
-            <div id="inson" class="hidden">
-                
-                <div class="mt-10 flex gap-4 items-center">
-                    <label for="children_fth" class="block mb-2 text-sm font-medium text-gray-900 w-1/2">
-                        <span class="t_children_fth">Children FTH</span>
-                    </label>
-                    <input type="text" id="children_fth"
-                        class="disabled:bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-1/2 p-2.5"
-                        required />
-                </div>
-                
-                <div class="mt-4 flex gap-4 items-center">
-                    <label for="fth" class="block mb-2 text-sm font-medium text-gray-900 w-1/2">
-                        <span class="t_fth">Family-Type Home</span>
-                    </label>
-                    <input type="text" id="fth"
-                        class="disabled:bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-1/2 p-2.5"
-                        required />
-                </div>
-                
-                <div class="mt-4 flex gap-4 items-center">
-                    <label for="leavers_fth" class="block mb-2 text-sm font-medium text-gray-900 w-1/2">
-                        <span class="t_leavers_fth">Young person who left the alternative care system</span>
-                    </label>
-                    <input type="text" id="leavers_fth"
+                    <input type="number" min="0" id="leavers"
                         class="disabled:bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-1/2 p-2.5"
                         required />
                 </div>
 
-                <div class="mt-4 flex gap-4 items-center">
-                    <label for="pf" class="block mb-2 text-sm font-medium text-gray-900 w-1/2">
-                        <span class="t_pf">Patronat Family</span>
-                    </label>
-                    <input type="text" id="pf"
-                        class="disabled:bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-1/2 p-2.5"
-                        required />
-                </div>
 
-            </div>
-
-            <div class="mt-10 flex flex-col items-start">
-                <label for="auth_code" class="block mb-2 text-sm font-medium text-gray-900 w-1/2">
-                    <span class="t_auth_code">Authorization code</span>
-                </label>
+            <div class="mt-10 flex gap-6 items-center justify-start bg-red-100 px-4 py-2">
+                <label for="auth_code" class="block text-sm font-medium text-gray-900"><span
+                        class="t_auth_code">Authorization code</span></label>
                 <input type="text" id="auth_code"
-                    class="disabled:bg-gray-50 border border-amber-600 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-1/2 p-2.5"
+                    class="disabled:bg-gray-50 border border-amber-600 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5"
                     required />
             </div>
 

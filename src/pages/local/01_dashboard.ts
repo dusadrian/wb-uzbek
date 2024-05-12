@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { ipcRenderer } from "electron";
 import { User, StatusInterface } from "../../interfaces/database";
 import constant from "../../libraries/constants";
@@ -193,7 +194,7 @@ const initInstruments = (userData: User, institutionDetails: any) => {
     }
 }
 
-const processDashStats = (args: any, userData: User) => {
+const processDashStats = (args: any,) => {
     if (args.instrument1.length > 0) {
         const totalCompletedObj = args.instrument1.filter((el: StatusInterface) => el.status === 'completed');
         const totalPartialObj = args.instrument1.filter((el: StatusInterface) => el.status === 'partial');
@@ -380,7 +381,7 @@ export const local = {
             initInstruments(userData, institutionDetails);
             ipcRenderer.send('getLocalDashStats');
             ipcRenderer.on("dashStats", (_event, args) => {
-                processDashStats(args, userData);
+                processDashStats(args);
             })
         });
 
