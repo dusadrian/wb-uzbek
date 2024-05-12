@@ -15,19 +15,18 @@ dt(window, $);
 export const cpis_services = {
     init: async () => {
 
-        ipcRenderer.on('services', (event, services) => {
-            console.log(services);
-
+        ipcRenderer.on('services', (event, args) => {
+            
             const serviceList = document.getElementById('service_list') as HTMLDivElement;
-            if(services.length === 0) {
+            if(args.services.length === 0) {
                 serviceList.innerHTML = '<h1>No services available</h1>';
             }
 
             // eslint-disable-next-line @typescript-eslint/no-explicit-any
-            services.forEach((service: any) => {
+            args.services.forEach((service: any) => {
                 const div = document.createElement('div');
                 // grid-cols-7 w-full mt-0.5 px-5 gap-0.5
-                div.classList.add('grid', 'grid-cols-4', 'w-full' ,'mt-0.5', 'gap-0.5');
+                div.classList.add('grid', 'grid-cols-5', 'w-full' ,'mt-0.5', 'gap-0.5');
                 const div1 = document.createElement('div');
                 // bg-tableRow text-gray-600 px-3 py-1.5 font-medium col-span-2 flex items-center
                 div1.classList.add('bg-tableRow', 'text-gray-600', 'px-3', 'py-1.5', 'font-medium', 'col-span-2', 'flex', 'items-center', 'col-span-2');
@@ -38,9 +37,14 @@ export const cpis_services = {
                 div2.classList.add('bg-tableRow', 'text-gray-600', 'px-3', 'py-1.5', 'font-medium', 'col-span-1', 'flex', 'items-center', 'justify-center');
                 div2.innerHTML = service.children;
                 div.appendChild(div2);
-                
+
                 const div3 = document.createElement('div');
                 div3.classList.add('bg-tableRow', 'text-gray-600', 'px-3', 'py-1.5', 'font-medium', 'col-span-1', 'flex', 'items-center', 'justify-center');
+                div3.innerHTML = args.filled[service.code] ?? '-';
+                div.appendChild(div3);
+                
+                const div4 = document.createElement('div');
+                div4.classList.add('bg-tableRow', 'text-gray-600', 'px-3', 'py-1.5', 'font-medium', 'col-span-1', 'flex', 'items-center', 'justify-center');
                 const serviceButton = document.createElement('button');
                 // border border-gray-400 px-2 py-0.5 rounded bg-tableHeader/50 hover:bg-tableHeader
                 serviceButton.classList.add('border', 'border-gray-400', 'px-2', 'py-0.5', 'rounded', 'bg-tableHeader/50', 'hover:bg-tableHeader');
@@ -48,8 +52,8 @@ export const cpis_services = {
                 serviceButton.classList.add('serviceButton');
                 serviceButton.setAttribute("data-mycode", service.code + '');
                 
-                div3.appendChild(serviceButton);
-                div.appendChild(div3);
+                div4.appendChild(serviceButton);
+                div.appendChild(div4);
 
                 serviceList.appendChild(div);
             });

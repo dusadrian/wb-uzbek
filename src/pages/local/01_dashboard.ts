@@ -14,13 +14,6 @@ const initInstruments = (userData: User, institutionDetails: any) => {
         ipcRenderer.send('getInstrumentsId');
     }
 
-    if (constant.INSON.includes(userData.service_type_code)) {
-        (document.getElementById('view_instrument1') as HTMLButtonElement).disabled = true;
-    }
-    if (constant.INSON.includes(userData.service_type_code)) {
-        (document.getElementById('view_instrument7') as HTMLButtonElement).disabled = true;
-    }
-
     // I1. Questionnaire about the child placed into the child protection system
     if ((userData.role_code == constant.ROLE_LOCAL || userData.role_code == constant.ROLE_DATA_COLLECTOR) && (constant.CHILD_CARE.includes(userData.service_type_code) || constant.INSON.includes(userData.service_type_code))) {
         document.getElementById('instrument1').classList.remove('hidden');
@@ -35,8 +28,14 @@ const initInstruments = (userData: User, institutionDetails: any) => {
         }
         if (constant.INSON.includes(userData.service_type_code)) {
             document.getElementById('t1c11').innerText = institutionDetails.children_fth;
+            if (Number(institutionDetails.children_fth) === 0) {
+                (document.getElementById('view_instrument1') as HTMLButtonElement).disabled = true;
+            }
         } else {
             document.getElementById('t1c11').innerText = institutionDetails.children;
+            if (Number(institutionDetails.children) === 0) {
+                (document.getElementById('view_instrument1') as HTMLButtonElement).disabled = true;
+            }
         }
     }
     // I2. Questionnaire about the child placed in specialized boarding schools
@@ -52,6 +51,9 @@ const initInstruments = (userData: User, institutionDetails: any) => {
             });
         }
         document.getElementById('t1c21').innerText = institutionDetails.children;
+        if (Number(institutionDetails.children) === 0) {
+            (document.getElementById('view_instrument2') as HTMLButtonElement).disabled = true;
+        }
     }
     // I3. Staff registry
     if ((userData.role_code == constant.ROLE_LOCAL || userData.role_code == constant.ROLE_HR_SPECIALIST) && (constant.CHILD_CARE.includes(userData.service_type_code) || constant.SPECIALIZED.includes(userData.service_type_code))) {
@@ -101,9 +103,14 @@ const initInstruments = (userData: User, institutionDetails: any) => {
         }
         if (!constant.INSON.includes(userData.service_type_code)) {
             document.getElementById('t1c51').innerText = institutionDetails.leavers;
+        } else {
+            document.getElementById('t1c51').innerText = institutionDetails.leavers_fth;
+            if (Number(institutionDetails.leavers_fth) === 0) {
+                (document.getElementById('view_instrument5a') as HTMLButtonElement).disabled = true;
+            }
         }
     }
-    // I5. Monitoring questionnaire about the young people who left care system
+    // I5. Monitoring questionnaire about the young people who left care system -- only INSON
     if ((userData.role_code == constant.ROLE_LOCAL || userData.role_code == constant.ROLE_DATA_COLLECTOR) && constant.INSON.includes(userData.service_type_code)) {
         document.getElementById('instrument5').classList.remove('hidden');
         document.getElementById('instrument5').classList.add('grid');
@@ -115,8 +122,10 @@ const initInstruments = (userData: User, institutionDetails: any) => {
                 });
             });
         }
-        document.getElementById('t1c51').innerText = institutionDetails.leavers_fth;
         document.getElementById('t1c61').innerText = institutionDetails.leavers_fth;
+        if (Number(institutionDetails.leavers_fth) === 0) {
+            (document.getElementById('view_instrument5') as HTMLButtonElement).disabled = true;
+        }
     }
     // I6. Data sheet on entries and exits from childcare institutions
     if ((userData.role_code == constant.ROLE_LOCAL || userData.role_code == constant.ROLE_ADMIN_SPECIALIST) && (constant.CHILD_CARE.includes(userData.service_type_code) || constant.SPECIALIZED.includes(userData.service_type_code))) {
@@ -151,6 +160,9 @@ const initInstruments = (userData: User, institutionDetails: any) => {
             });
         }
         document.getElementById('t1c81').innerText = institutionDetails.fth;
+        if (Number(institutionDetails.fth) === 0) {
+            (document.getElementById('view_instrument7') as HTMLButtonElement).disabled = true;
+        }
     }
     // I8. Patronat Family Questionnaire
     if ((userData.role_code == constant.ROLE_LOCAL || userData.role_code == constant.ROLE_DATA_COLLECTOR) && constant.INSON.includes(userData.service_type_code)) {
@@ -165,6 +177,9 @@ const initInstruments = (userData: User, institutionDetails: any) => {
             });
         }
         document.getElementById('t1c91').innerText = institutionDetails.pf;
+        if (Number(institutionDetails.pf) === 0) {
+            (document.getElementById('view_instrument8') as HTMLButtonElement).disabled = true;
+        }
     }
 
     // users
@@ -178,19 +193,196 @@ const initInstruments = (userData: User, institutionDetails: any) => {
     }
 }
 
+const processDashStats = (args: any, userData: User) => {
+    if (args.instrument1.length > 0) {
+        const totalCompletedObj = args.instrument1.filter((el: StatusInterface) => el.status === 'completed');
+        const totalPartialObj = args.instrument1.filter((el: StatusInterface) => el.status === 'partial');
+
+        const toBefilled = Number(document.getElementById('t1c11').innerText);
+
+        document.getElementById('t1c12').innerText = totalCompletedObj[0]?.total || 0;
+        document.getElementById('t1c13').innerText = totalPartialObj[0]?.total || 0;
+
+
+        let percent = '0';
+        if (totalCompletedObj.length > 0 && toBefilled) {
+            percent = ((Number(totalCompletedObj[0].total) / toBefilled) * 100).toFixed(2);
+        }
+        document.getElementById('t1c14').innerText = percent + '%';
+    } else {
+        document.getElementById('t1c12').innerText = '0';
+        document.getElementById('t1c13').innerText = '0';
+        document.getElementById('t1c14').innerText = '0%';
+    }
+    // =======
+    if (args.instrument2.length > 0) {
+        const totalCompletedObj = args.instrument2.filter((el: StatusInterface) => el.status === 'completed');
+        const totalPartialObj = args.instrument2.filter((el: StatusInterface) => el.status === 'partial');
+
+        const toBefilled = Number(document.getElementById('t1c21').innerText);
+
+        document.getElementById('t1c22').innerText = totalCompletedObj[0]?.total || 0;
+        document.getElementById('t1c23').innerText = totalPartialObj[0]?.total || 0;
+
+        let percent = '0';
+        if (totalCompletedObj.length > 0 && toBefilled) {
+            percent = ((Number(totalCompletedObj[0].total) / toBefilled) * 100).toFixed(2);
+        }
+        document.getElementById('t1c24').innerText = percent + '%';
+    } else {
+        document.getElementById('t1c22').innerText = '0';
+        document.getElementById('t1c23').innerText = '0';
+        document.getElementById('t1c24').innerText = '0%';
+    }
+    // =======
+    if (args.instrument3.length > 0) {
+        const totalCompletedObj = args.instrument3.filter((el: StatusInterface) => el.status === 'completed');
+        const totalPartialObj = args.instrument3.filter((el: StatusInterface) => el.status === 'partial');
+        const toBefilled = Number(document.getElementById('t1c31').innerText);
+
+        document.getElementById('t1c32').innerText = totalCompletedObj[0]?.total || 0;
+        document.getElementById('t1c33').innerText = totalPartialObj[0]?.total || 0;
+
+        let percent = '0';
+        if (totalCompletedObj.length > 0 && toBefilled) {
+            percent = ((Number(totalCompletedObj[0].total) / toBefilled) * 100).toFixed(2);
+        }
+        document.getElementById('t1c34').innerText = percent + '%';
+    } else {
+        document.getElementById('t1c32').innerText = '0';
+        document.getElementById('t1c33').innerText = '0';
+        document.getElementById('t1c34').innerText = '0%';
+    }
+    // =======
+    if (args.instrument4.length > 0) {
+        const totalCompletedObj = args.instrument4.filter((el: StatusInterface) => el.status === 'completed');
+        const totalPartialObj = args.instrument4.filter((el: StatusInterface) => el.status === 'partial');
+        const toBefilled = Number(document.getElementById('t1c31').innerText);
+
+        document.getElementById('t1c42').innerText = totalCompletedObj[0]?.total || 0;
+        document.getElementById('t1c43').innerText = totalPartialObj[0]?.total || 0;
+
+        let percent = '0';
+        if (totalCompletedObj.length > 0 && toBefilled) {
+            percent = ((Number(totalCompletedObj[0].total) / toBefilled) * 100).toFixed(2);
+        }
+        document.getElementById('t1c44').innerText = percent + '%';
+    } else {
+        document.getElementById('t1c42').innerText = '0';
+        document.getElementById('t1c43').innerText = '0';
+        document.getElementById('t1c44').innerText = '0%';
+    }
+    // =======
+    if (args.instrument5a.length > 0) {
+        const totalCompletedObj = args.instrument5a.filter((el: StatusInterface) => el.status === 'completed');
+        const totalPartialObj = args.instrument5a.filter((el: StatusInterface) => el.status === 'partial');
+        const toBefilled = Number(document.getElementById('t1c31').innerText);
+
+        document.getElementById('t1c52').innerText = totalCompletedObj[0]?.total || 0;
+        document.getElementById('t1c53').innerText = totalPartialObj[0]?.total || 0;
+
+        let percent = '0';
+        if (totalCompletedObj.length > 0 && toBefilled) {
+            percent = ((Number(totalCompletedObj[0].total) / toBefilled) * 100).toFixed(2);
+        }
+        document.getElementById('t1c54').innerText = percent + '%';
+    } else {
+        document.getElementById('t1c52').innerText = '0';
+        document.getElementById('t1c53').innerText = '0';
+        document.getElementById('t1c54').innerText = '0%';
+    }
+    // =======
+    if (args.instrument5.length > 0) {
+        const totalCompletedObj = args.instrument5.filter((el: StatusInterface) => el.status === 'completed');
+        const totalPartialObj = args.instrument5.filter((el: StatusInterface) => el.status === 'partial');
+        const toBefilled = Number(document.getElementById('t1c31').innerText);
+
+        document.getElementById('t1c62').innerText = totalCompletedObj[0]?.total || 0;
+        document.getElementById('t1c63').innerText = totalPartialObj[0]?.total || 0;
+
+        let percent = '0';
+        if (totalCompletedObj.length > 0 && toBefilled) {
+            percent = ((Number(totalCompletedObj[0].total) / toBefilled) * 100).toFixed(2);
+        }
+        document.getElementById('t1c64').innerText = percent + '%';
+    } else {
+        document.getElementById('t1c62').innerText = '0';
+        document.getElementById('t1c63').innerText = '0';
+        document.getElementById('t1c64').innerText = '0%';
+    }
+    // =======
+    if (args.instrument6.length > 0) {
+        const totalCompletedObj = args.instrument6.filter((el: StatusInterface) => el.status === 'completed');
+        const totalPartialObj = args.instrument6.filter((el: StatusInterface) => el.status === 'partial');
+        const toBefilled = Number(document.getElementById('t1c31').innerText);
+
+        document.getElementById('t1c72').innerText = totalCompletedObj[0]?.total || 0;
+        document.getElementById('t1c73').innerText = totalPartialObj[0]?.total || 0;
+
+        let percent = '0';
+        if (totalCompletedObj.length > 0 && toBefilled) {
+            percent = ((Number(totalCompletedObj[0].total) / toBefilled) * 100).toFixed(2);
+        }
+        document.getElementById('t1c74').innerText = percent + '%';
+    } else {
+        document.getElementById('t1c72').innerText = '0';
+        document.getElementById('t1c73').innerText = '0';
+        document.getElementById('t1c74').innerText = '0%';
+    }
+    // =======
+    if (args.instrument7.length > 0) {
+        const totalCompletedObj = args.instrument7.filter((el: StatusInterface) => el.status === 'completed');
+        const totalPartialObj = args.instrument7.filter((el: StatusInterface) => el.status === 'partial');
+        const toBefilled = Number(document.getElementById('t1c31').innerText);
+
+        document.getElementById('t1c82').innerText = totalCompletedObj[0]?.total || 0;
+        document.getElementById('t1c83').innerText = totalPartialObj[0]?.total || 0;
+
+        let percent = '0';
+        if (totalCompletedObj.length > 0 && toBefilled) {
+            percent = ((Number(totalCompletedObj[0].total) / toBefilled) * 100).toFixed(2);
+        }
+        document.getElementById('t1c84').innerText = percent + '%';
+    } else {
+        document.getElementById('t1c82').innerText = '0';
+        document.getElementById('t1c83').innerText = '0';
+        document.getElementById('t1c84').innerText = '0%';
+    }
+    // =======
+    if (args.instrument8.length > 0) {
+        const totalCompletedObj = args.instrument8.filter((el: StatusInterface) => el.status === 'completed');
+        const totalPartialObj = args.instrument8.filter((el: StatusInterface) => el.status === 'partial');
+        const toBefilled = Number(document.getElementById('t1c31').innerText);
+
+        document.getElementById('t1c92').innerText = totalCompletedObj[0]?.total || 0;
+        document.getElementById('t1c93').innerText = totalPartialObj[0]?.total || 0;
+
+        let percent = '0';
+        if (totalCompletedObj.length > 0 && toBefilled) {
+            percent = ((Number(totalCompletedObj[0].total) / toBefilled) * 100).toFixed(2);
+        }
+        document.getElementById('t1c94').innerText = percent + '%';
+    } else {
+        document.getElementById('t1c92').innerText = '0';
+        document.getElementById('t1c93').innerText = '0';
+        document.getElementById('t1c94').innerText = '0%';
+    }
+}
+
+
 export const local = {
     init: async () => {
 
-        ipcRenderer.send('getLocalDashStats');
-
-        const appSession = JSON.parse(sessionStorage.getItem('appSession'));
-        if (appSession) {
-            initInstruments(appSession.userData, appSession.institutionDetails);
-        } else {
-            ipcRenderer.on('appSession', (event, arg) => {
-                initInstruments(arg.userData, arg.institutionDetails);
-            });
-        }
+        // On app session
+        ipcRenderer.on('appSession', (event, arg) => {
+            const userData = arg.userData;
+            const institutionDetails = arg.institutionDetails;
+            initInstruments(userData, institutionDetails);
+            ipcRenderer.send('getLocalDashStats');
+            ipcRenderer.on("dashStats", (_event, args) => {
+                processDashStats(args, userData);
+            })
+        });
 
         // Institution details
         (<HTMLButtonElement>document.getElementById('institution')).addEventListener('click', () => {
@@ -226,182 +418,5 @@ export const local = {
             document.getElementById('view_instrument4').dataset.id = args.qmr;
             document.getElementById('view_instrument6').dataset.id = args.dsee;
         });
-
-        ipcRenderer.on("dashStats", (_event, args) => {            
-            if (args.instrument1.length > 0) {
-                const totalCompletedObj = args.instrument1.filter((el: StatusInterface) => el.status === 'completed');
-                const totalPartialObj = args.instrument1.filter((el: StatusInterface) => el.status === 'partial');
-
-                const toBefilled = Number(document.getElementById('t1c11').innerText);
-
-                document.getElementById('t1c12').innerText = totalCompletedObj[0]?.total || 0;
-                document.getElementById('t1c13').innerText = totalPartialObj[0]?.total || 0;
-
-
-                let percent = '0';
-                if (totalCompletedObj.length > 0 && toBefilled) {
-                    percent = ((Number(totalCompletedObj[0].total) / toBefilled) * 100).toFixed(2);
-                }
-                document.getElementById('t1c14').innerText = percent + '%';
-            } else {
-                document.getElementById('t1c12').innerText = '0';
-                document.getElementById('t1c13').innerText = '0';
-                document.getElementById('t1c14').innerText = '0%';
-            }
-            // =======
-            if (args.instrument2.length > 0) {
-                const totalCompletedObj = args.instrument2.filter((el: StatusInterface) => el.status === 'completed');
-                const totalPartialObj = args.instrument2.filter((el: StatusInterface) => el.status === 'partial');
-
-                const toBefilled = Number(document.getElementById('t1c21').innerText);
-
-                document.getElementById('t1c22').innerText = totalCompletedObj[0]?.total || 0;
-                document.getElementById('t1c23').innerText = totalPartialObj[0]?.total || 0;
-
-                let percent = '0';
-                if (totalCompletedObj.length > 0 && toBefilled) {
-                    percent = ((Number(totalCompletedObj[0].total) / toBefilled) * 100).toFixed(2);
-                }
-                document.getElementById('t1c24').innerText = percent + '%';
-            } else {
-                document.getElementById('t1c22').innerText = '0';
-                document.getElementById('t1c23').innerText = '0';
-                document.getElementById('t1c24').innerText = '0%';
-            }
-            // =======
-            if (args.instrument3.length > 0) {
-                const totalCompletedObj = args.instrument3.filter((el: StatusInterface) => el.status === 'completed');
-                const totalPartialObj = args.instrument3.filter((el: StatusInterface) => el.status === 'partial');
-                const toBefilled = Number(document.getElementById('t1c31').innerText);
-
-                document.getElementById('t1c32').innerText = totalCompletedObj[0]?.total || 0;
-                document.getElementById('t1c33').innerText = totalPartialObj[0]?.total || 0;
-
-                let percent = '0';
-                if (totalCompletedObj.length > 0 && toBefilled) {
-                    percent = ((Number(totalCompletedObj[0].total) / toBefilled) * 100).toFixed(2);
-                }
-                document.getElementById('t1c34').innerText = percent + '%';
-            } else {
-                document.getElementById('t1c32').innerText = '0';
-                document.getElementById('t1c33').innerText = '0';
-                document.getElementById('t1c34').innerText = '0%';
-            }
-            // =======
-            if (args.instrument4.length > 0) {
-                const totalCompletedObj = args.instrument4.filter((el: StatusInterface) => el.status === 'completed');
-                const totalPartialObj = args.instrument4.filter((el: StatusInterface) => el.status === 'partial');
-                const toBefilled = Number(document.getElementById('t1c31').innerText);
-
-                document.getElementById('t1c42').innerText = totalCompletedObj[0]?.total || 0;
-                document.getElementById('t1c43').innerText = totalPartialObj[0]?.total || 0;
-
-                let percent = '0';
-                if (totalCompletedObj.length > 0 && toBefilled) {
-                    percent = ((Number(totalCompletedObj[0].total) / toBefilled) * 100).toFixed(2);
-                }
-                document.getElementById('t1c44').innerText = percent + '%';
-            } else {
-                document.getElementById('t1c42').innerText = '0';
-                document.getElementById('t1c43').innerText = '0';
-                document.getElementById('t1c44').innerText = '0%';
-            }
-            // =======
-            if (args.instrument5a.length > 0) {
-                const totalCompletedObj = args.instrument5a.filter((el: StatusInterface) => el.status === 'completed');
-                const totalPartialObj = args.instrument5a.filter((el: StatusInterface) => el.status === 'partial');
-                const toBefilled = Number(document.getElementById('t1c31').innerText);
-
-                document.getElementById('t1c52').innerText = totalCompletedObj[0]?.total || 0;
-                document.getElementById('t1c53').innerText = totalPartialObj[0]?.total || 0;
-
-                let percent = '0';
-                if (totalCompletedObj.length > 0 && toBefilled) {
-                    percent = ((Number(totalCompletedObj[0].total) / toBefilled) * 100).toFixed(2);
-                }
-                document.getElementById('t1c54').innerText = percent + '%';
-            } else {
-                document.getElementById('t1c52').innerText = '0';
-                document.getElementById('t1c53').innerText = '0';
-                document.getElementById('t1c54').innerText = '0%';
-            }
-            // =======
-            if (args.instrument5.length > 0) {
-                const totalCompletedObj = args.instrument5.filter((el: StatusInterface) => el.status === 'completed');
-                const totalPartialObj = args.instrument5.filter((el: StatusInterface) => el.status === 'partial');
-                const toBefilled = Number(document.getElementById('t1c31').innerText);
-
-                document.getElementById('t1c62').innerText = totalCompletedObj[0]?.total || 0;
-                document.getElementById('t1c63').innerText = totalPartialObj[0]?.total || 0;
-
-                let percent = '0';
-                if (totalCompletedObj.length > 0 && toBefilled) {
-                    percent = ((Number(totalCompletedObj[0].total) / toBefilled) * 100).toFixed(2);
-                }
-                document.getElementById('t1c64').innerText = percent + '%';
-            } else {
-                document.getElementById('t1c62').innerText = '0';
-                document.getElementById('t1c63').innerText = '0';
-                document.getElementById('t1c64').innerText = '0%';
-            }
-            // =======
-            if (args.instrument6.length > 0) {
-                const totalCompletedObj = args.instrument6.filter((el: StatusInterface) => el.status === 'completed');
-                const totalPartialObj = args.instrument6.filter((el: StatusInterface) => el.status === 'partial');
-                const toBefilled = Number(document.getElementById('t1c31').innerText);
-
-                document.getElementById('t1c72').innerText = totalCompletedObj[0]?.total || 0;
-                document.getElementById('t1c73').innerText = totalPartialObj[0]?.total || 0;
-
-                let percent = '0';
-                if (totalCompletedObj.length > 0 && toBefilled) {
-                    percent = ((Number(totalCompletedObj[0].total) / toBefilled) * 100).toFixed(2);
-                }
-                document.getElementById('t1c74').innerText = percent + '%';
-            } else {
-                document.getElementById('t1c72').innerText = '0';
-                document.getElementById('t1c73').innerText = '0';
-                document.getElementById('t1c74').innerText = '0%';
-            }
-            // =======
-            if (args.instrument7.length > 0) {
-                const totalCompletedObj = args.instrument7.filter((el: StatusInterface) => el.status === 'completed');
-                const totalPartialObj = args.instrument7.filter((el: StatusInterface) => el.status === 'partial');
-                const toBefilled = Number(document.getElementById('t1c31').innerText);
-
-                document.getElementById('t1c82').innerText = totalCompletedObj[0]?.total || 0;
-                document.getElementById('t1c83').innerText = totalPartialObj[0]?.total || 0;
-
-                let percent = '0';
-                if (totalCompletedObj.length > 0 && toBefilled) {
-                    percent = ((Number(totalCompletedObj[0].total) / toBefilled) * 100).toFixed(2);
-                }
-                document.getElementById('t1c84').innerText = percent + '%';
-            } else {
-                document.getElementById('t1c82').innerText = '0';
-                document.getElementById('t1c83').innerText = '0';
-                document.getElementById('t1c84').innerText = '0%';
-            }
-            // =======
-            if (args.instrument8.length > 0) {
-                const totalCompletedObj = args.instrument8.filter((el: StatusInterface) => el.status === 'completed');
-                const totalPartialObj = args.instrument8.filter((el: StatusInterface) => el.status === 'partial');
-                const toBefilled = Number(document.getElementById('t1c31').innerText);
-
-                document.getElementById('t1c92').innerText = totalCompletedObj[0]?.total || 0;
-                document.getElementById('t1c93').innerText = totalPartialObj[0]?.total || 0;
-
-                let percent = '0';
-                if (totalCompletedObj.length > 0 && toBefilled) {
-                    percent = ((Number(totalCompletedObj[0].total) / toBefilled) * 100).toFixed(2);
-                }
-                document.getElementById('t1c94').innerText = percent + '%';
-            } else {
-                document.getElementById('t1c92').innerText = '0';
-                document.getElementById('t1c93').innerText = '0';
-                document.getElementById('t1c94').innerText = '0%';
-            }
-
-        })
     }
 }

@@ -63,9 +63,15 @@ export const database = {
         return await connection;
     },
 
-    getUserInstitution: async (institution_code: string) => {
+    getUserInstitution: async (institution_code: string, service_type_code: string) => {
         const connection = new Promise<Array<DI.Institution>>((resolve) => {
-            db.all(`SELECT * FROM institutions WHERE code = '${institution_code}'`, (error, result) => {
+
+            let sql = `SELECT * FROM institutions WHERE code = '${institution_code}'`;
+            if (constant.INSON.includes(service_type_code)) {
+                sql = `SELECT * FROM inson WHERE code = '${institution_code}'`;
+            }
+
+            db.all(sql, (error, result) => {
                 if (error) {
                     console.log(error);
                 }
@@ -77,7 +83,7 @@ export const database = {
     getInstitutionDetails: async (code: string, service_type_code: string) => {
         const connection = new Promise<Array<DI.Institution>>((resolve) => {
             let sql = `SELECT * FROM institutions WHERE code = '${code}'`;
-            if(service_type_code == '9') {
+            if (service_type_code == '9') {
                 sql = `SELECT * FROM inson WHERE code = '${code}'`;
             }
 
@@ -95,8 +101,8 @@ export const database = {
         const connection = new Promise<boolean>((resolve) => {
 
             let sql = `UPDATE institutions SET capacity = '${institution.capacity}', children = '${institution.children}', leavers = '${institution.leavers}', employees = '${institution.employees}' WHERE id = '${institution.id}' AND uuid = '${institution.uuid}';`;
-            
-            if(type == '9') { // INSON
+
+            if (type == '9') { // INSON
                 sql = `UPDATE inson SET pf = '${institution.pf}', fth = '${institution.fth}', children_fth = '${institution.children_fth}', leavers_fth = '${institution.leavers_fth}' WHERE id = '${institution.id}' AND uuid = '${institution.uuid}';`;
             }
             db.run(sql, (error) => {
@@ -150,7 +156,7 @@ export const database = {
     addUser: async (user: any) => {
         const connection = new Promise<boolean>((resolve) => {
             console.log('aici');
-            
+
             db.run(`INSERT INTO users (username, password, institution_code, institution_name, name, patronymics, surname, job_title, profession, phone, email, region_code, role_code, service_type_code) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)`,
                 user.username,
                 user.password,
@@ -236,14 +242,14 @@ export const database = {
 
         if (role_code === constant.ROLE_DATA_COLLECTOR || role_code === constant.ROLE_HR_SPECIALIST || role_code === constant.ROLE_ADMIN_SPECIALIST) {
             where += ` WHERE user_uuid = '${user_uuid}'`;
-        } else if(region || typeOfInstitution) {
+        } else if (region || typeOfInstitution) {
             where += ` WHERE `;
         }
 
         if (region) {
             where += `region_code = '${region}'`;
         }
-        
+
         if (region && typeOfInstitution) {
             where += ` AND `;
         }
@@ -336,7 +342,7 @@ export const database = {
             let where = ''; // only user's data
             if (role_code === constant.ROLE_DATA_COLLECTOR || role_code === constant.ROLE_HR_SPECIALIST || role_code === constant.ROLE_ADMIN_SPECIALIST) {
                 where += ` AND user_uuid = '${user_uuid}'`;
-            } 
+            }
 
             db.all(`SELECT * FROM instrument_${table} LEFT JOIN values_${table} ON values_${table}.instrument_id = instrument_${table}.id WHERE status = 'completed' ${where}`, (error, result) => {
                 if (error) {
@@ -412,25 +418,50 @@ export const database = {
         for (const element of insonarray) {
             insons[element.code] = element;
         }
-        
+
         return {
             services,
             insons
         };
     },
     getInsonServices: async (services: string, inson: string) => {
-        if(!services) {
+        if (!services) {
             return [];
         }
         const connection = new Promise<Array<DI.Institution>>((resolve) => {
             db.all(`SELECT * FROM institutions WHERE code IN (${services}) AND inson ='${inson}'`, (error, result) => {
                 if (error) {
                     console.log(error);
-                }                
+                }
                 resolve(result as DI.Institution[]);
             });
         });
         return await connection;
+    },
+    getInsonServicesFilled: async (services: string, user_uuid: string, table: string) => {
+        if (!services && typeof services !== 'string') {
+            return {};
+        }
+        const serviceList = services.split(',');
+        const response: {[key:string]: string} = {};
+
+        for (const srv of serviceList) {
+            const connection = new Promise<string>((resolve) => {
+                const sql = `SELECT COUNT(*) as total FROM instrument_${table} WHERE service_code = '${srv}' AND user_uuid = '${user_uuid}'`;                
+                db.all(sql, (error, result) => {
+                    if (error) {
+                        console.log(error);
+                    }
+                    if (result && result.length > 0) {
+                        resolve(Number(result[0].total).toString());
+                    } else {
+                        resolve('0');
+                    }
+                });
+            });
+            response[srv] =  await connection;
+        }
+        return response;
     },
 
     // Instruments

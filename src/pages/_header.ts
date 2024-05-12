@@ -45,6 +45,8 @@ export const header = {
             }
             (document.getElementById('back_text') as HTMLSpanElement).innerText = i18n.__("back");
             back.addEventListener("click", () => {
+                console.log('backPage', backPage);
+                
                 ipcRenderer.send("changeWindow", { name: backPage });
             });
         }

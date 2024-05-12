@@ -123,11 +123,29 @@ ipcMain.on('login', (_event, args) => {
             })
             return
         }
-        // TODO load institution data ?
         appSession.language = args.language;
-        appSession.userData = result[0];
-        // go to next page
-        goToDashboard();
+        appSession.userData = result[0]; // user data
+        if (
+            appSession.userData.role_code === constant.ROLE_LOCAL ||
+            appSession.userData.role_code === constant.ROLE_DATA_COLLECTOR ||
+            appSession.userData.role_code === constant.ROLE_HR_SPECIALIST ||
+            appSession.userData.role_code === constant.ROLE_ADMIN_SPECIALIST
+
+        ) { // load user institution details if needed
+            database.getUserInstitution(appSession.userData.institution_code, appSession.userData.service_type_code).then((institution) => {
+                if (institution.length > 0) {
+                    appSession.institutionName = institution[0].name;
+                    appSession.institutionDetails = institution[0];
+                    // go to next page
+                    goToLocalDashboard();
+                } else {
+                    dialog.showMessageBox(mainWindow, {
+                        type: 'error',
+                        message: 'Institution error. Please login again.',
+                    })
+                }
+            });
+        }
     });
 });
 
@@ -139,8 +157,8 @@ ipcMain.on("changeWindow", (_event, args) => {
             // go to login? -- reset session
             mainWindow.loadURL("file://" + path.join(__dirname, "../src/index.html"));
             break;
-        case "dashboard":
-            goToDashboard();
+        case "local/01_dashboard":
+            goToLocalDashboard();
             break;
         case "local/02_institution_details":
             institutionDetails();
@@ -190,7 +208,7 @@ const goToLogin = (page: string) => {
     mainWindow.loadURL("file://" + page);
 }
 
-const goToDashboard = () => {
+const goToLocalDashboard = () => {
 
     let page = '';
     if (appSession.userData.role_code === constant.ROLE_NATIONAL) {
@@ -212,54 +230,13 @@ const goToDashboard = () => {
             type: 'error',
             message: i18n.__('User error. Please login again.'),
         })
-        console.log(appSession.userData);
-
+        console.log('Invalid user type: ', appSession);
         return;
     }
 
     mainWindow.loadURL("file://" + page);
     mainWindow.webContents.once("did-finish-load", () => {
-        if (
-            appSession.userData.role_code === constant.ROLE_LOCAL ||
-            appSession.userData.role_code === constant.ROLE_DATA_COLLECTOR ||
-            appSession.userData.role_code === constant.ROLE_HR_SPECIALIST ||
-            appSession.userData.role_code === constant.ROLE_ADMIN_SPECIALIST
-
-        ) {
-
-            database.getInstitutions().then((instarray) => {
-                const services: { [key: string]: DI.Institution } = {};
-                for (const element of instarray) {
-                    services[element.code] = element;
-                }
-                database.getINSON().then((insonarray) => {
-                    const insons: { [key: string]: DI.INSON } = {};
-                    for (const element of insonarray) {
-                        insons[element.code] = element;
-                    }
-
-                    if (appSession.userData.service_type_code !== "9" && services[appSession.userData.institution_code]) {
-                        appSession.institutionName = services[appSession.userData.institution_code].name;
-                        appSession.institutionDetails = services[appSession.userData.institution_code];
-                        mainWindow.webContents.send("appSession", appSession);
-                    } else if (appSession.userData.service_type_code === "9" && insons[appSession.userData.institution_code]) {
-                        appSession.institutionName = insons[appSession.userData.institution_code].name;
-                        appSession.institutionDetails = insons[appSession.userData.institution_code];
-                        mainWindow.webContents.send("appSession", appSession);
-                    } else {
-                        dialog.showMessageBox(mainWindow, {
-                            type: 'error',
-                            message: 'Institution error. Please login again.',
-                        })
-                    }
-                });
-            });
-
-        } else {
-            // there is no institution for this user
-            appSession.institutionName = "";
-            mainWindow.webContents.send("appSession", appSession);
-        }
+        mainWindow.webContents.send("appSession", appSession);
     });
 }
 
@@ -287,8 +264,13 @@ const goToCPISList = () => {
     if (constant.INSON.includes(appSession.userData.service_type_code)) {
         mainWindow.loadURL("file://" + path.join(__dirname, "../src/pages/instruments/01_cpis_inson_services.html"));
         database.getInsonServices((appSession.institutionDetails as DI.INSON).services, appSession.userData.institution_code).then((result) => {
-            mainWindow.webContents.once("did-finish-load", () => {
-                mainWindow.webContents.send("services", result);
+            database.getInsonServicesFilled((appSession.institutionDetails as DI.INSON).services, appSession.userData.uuid, 'cpis').then((filled) => {
+                mainWindow.webContents.once("did-finish-load", () => {
+                    mainWindow.webContents.send("services", {
+                        services: result,
+                        filled: filled
+                    });
+                });
             });
         });
     } else {
@@ -296,6 +278,7 @@ const goToCPISList = () => {
         mainWindow.loadURL("file://" + newPage);
     }
 };
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 ipcMain.on('goToCPISList', (_event, _args) => {
     mainWindow.loadURL("file://" + path.join(__dirname, "../src/pages/instruments/01_cpis.html"));
 });
@@ -459,14 +442,20 @@ const goToFTCHList = () => {
     if (constant.INSON.includes(appSession.userData.service_type_code)) {
         mainWindow.loadURL("file://" + path.join(__dirname, "../src/pages/instruments/07_ftch_inson_services.html"));
         database.getInsonServices((appSession.institutionDetails as DI.INSON).services, appSession.userData.institution_code).then((result) => {
-            mainWindow.webContents.once("did-finish-load", () => {
-                mainWindow.webContents.send("services", result);
+            database.getInsonServicesFilled((appSession.institutionDetails as DI.INSON).services, appSession.userData.uuid, 'ftch').then((filled) => {
+                mainWindow.webContents.once("did-finish-load", () => {
+                    mainWindow.webContents.send("services", {
+                        services: result,
+                        filled: filled
+                    });
+                });
             });
         });
     } else {
         mainWindow.loadURL("file://" + path.join(__dirname, "../src/pages/instruments/07_ftch.html"));
     }
 };
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 ipcMain.on('goToFTCHList', (_event, _args) => {
     mainWindow.loadURL("file://" + path.join(__dirname, "../src/pages/instruments/07_ftch.html"));
 });
@@ -645,7 +634,7 @@ ipcMain.on('updateInstitutionDetails', (_event, args) => {
                     type: 'info',
                     message: i18n.__('Institution details saved.'),
                 }).then(() => {
-                    goToDashboard();
+                    goToLocalDashboard();
                 });
             });
         });
@@ -815,7 +804,7 @@ const goToCSR = (id: string) => {
                 insons[insonarray[i].code] = insonarray[i];
             }
             database.getUserData(appSession.userData.id).then((userDataArray) => {
-                database.getUserInstitution(appSession.userData.institution_code).then((institutionDataArray) => {
+                database.getUserInstitution(appSession.userData.institution_code, appSession.userData.service_type_code).then((institutionDataArray) => {
                     if (id) {
                         mainWindow.webContents.once("did-finish-load", () => {
                             database.instrumentGet(id, 'csr', db).then((questions) => {
@@ -859,7 +848,7 @@ const goToQMR = (id: string) => {
                 insons[element.code] = element;
             }
             database.getUserData(appSession.userData.id).then((userDataArray) => {
-                database.getUserInstitution(appSession.userData.institution_code).then((institutionDataArray) => {
+                database.getUserInstitution(appSession.userData.institution_code, appSession.userData.service_type_code).then((institutionDataArray) => {
                     if (id) {
                         mainWindow.webContents.once("did-finish-load", () => {
                             database.instrumentGet(id, 'qmr', db).then((questions) => {
@@ -943,7 +932,7 @@ const goToDSEE = (id: string) => {
                 insons[element.code] = element;
             }
             database.getUserData(appSession.userData.id).then((userDataArray) => {
-                database.getUserInstitution(appSession.userData.institution_code).then((institutionDataArray) => {
+                database.getUserInstitution(appSession.userData.institution_code, appSession.userData.service_type_code).then((institutionDataArray) => {
                     if (id) {
                         mainWindow.webContents.once("did-finish-load", () => {
                             database.instrumentGet(id, 'dsee', db).then((questions) => {
@@ -1147,7 +1136,7 @@ ipcMain.on('saveInstrument', (_event, args) => {
                 return;
             }
             if (args.table === 'qmr' || args.table === 'dsee') {
-                goToDashboard();
+                goToLocalDashboard();
                 return;
             }
             if (args.table === 'ftch') {
@@ -1244,7 +1233,7 @@ ipcMain.on('importData', (_event, _args) => {
                     message: i18n.__('Some instruments are not allowed to be imported. Please check the file and try again.')
                 });
             }
-            goToDashboard();
+            goToLocalDashboard();
         });
 
         fs.unlinkSync(decryptedFile);
