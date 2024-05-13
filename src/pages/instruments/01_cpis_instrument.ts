@@ -167,7 +167,8 @@ export const instrument1 = {
             dateFormat: "dd/mm/yy",
             minDate: "01/01/1990",
             maxDate: "30/04/2024",
-            yearRange: "c-100:c+10"
+            yearRange: "c-100:c+10",
+            firstDay: 1
         }
 
         date_elements.forEach((el) => {
@@ -189,12 +190,7 @@ export const instrument1 = {
             }
 
             // flatpickr(element, config);
-            $("#" + el).datepicker({
-                changeMonth: true,
-                changeYear: true,
-                dateFormat: "dd/mm/yy",
-                yearRange: "c-100:c+10"
-            });
+            $("#" + el).datepicker(config);
         });
 
 
