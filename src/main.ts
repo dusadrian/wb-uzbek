@@ -1350,8 +1350,7 @@ const getLisOfInstrumentsToExport = (roleCode: string, serviceType: string) => {
     }
 }
 
-// download instrument data for consolidation
-
+// download instrument data
 ipcMain.on('exportData', function exportData(_event, args) {
 
     const folderPath = dialog.showOpenDialogSync(mainWindow, {
@@ -1367,7 +1366,7 @@ ipcMain.on('exportData', function exportData(_event, args) {
         const cale = folderPath[0] + '/' + appSession.userData.username + '_' + currenDate.getFullYear() + '-' + (currenDate.getMonth() + 1) + '-' + currenDate.getDate();
         const instruments = getLisOfInstrumentsToExport(args.userRoleCode, args.userServiceTypeCode);
 
-        asyncForArray(instruments, downloadUserInstruments).then(processedData => {
+        asyncForArray(instruments, downloadUserInstruments, appSession.userData.role_code, appSession.userData.uuid, appSession.userData.institution_code).then(processedData => {
             fs.writeFile(cale, JSON.stringify(processedData), (err) => {
                 if (err) throw err;
 
@@ -1392,9 +1391,52 @@ ipcMain.on('exportData', function exportData(_event, args) {
         });
     }
 });
-async function downloadUserInstruments(table: string) {
+// Export user instruments
+ipcMain.on('exportUserData', function exportUserData(_event, args) {
+    
+    const folderPath = dialog.showOpenDialogSync(mainWindow, {
+        title: i18n.__('main._chooseFolder'),
+        properties: ['openDirectory', 'createDirectory', 'promptToCreate']
+    });
+
+    if (folderPath !== void 0) {
+
+        // mainWindow.webContents.send("startLoader");
+        // TODO -- add user code
+        const currenDate = new Date();
+        const cale = folderPath[0] + '/' + appSession.userData.username + '_' + currenDate.getFullYear() + '-' + (currenDate.getMonth() + 1) + '-' + currenDate.getDate();
+        const instruments = getLisOfInstrumentsToExport(args.roleCode, args.serviceType);
+
+        // Only the local coordinators can export at institution level
+        asyncForArray(instruments, downloadUserInstruments, args.roleCode, args.uuid, appSession.userData.institution_code).then(processedData => {
+            fs.writeFile(cale, JSON.stringify(processedData), (err) => {
+                if (err) throw err;
+
+                // clear data after use
+                processedData = null;
+
+                crypt.encryptFile(cale);
+
+                dialog.showMessageBox(mainWindow, {
+                    type: 'info',
+                    title: i18n.__('main.success'),
+                    message: i18n.__('main._dataDownloaded')
+                });
+            });
+        });
+    } else {
+        // mainWindow.webContents.send("clearLoader");
+        dialog.showMessageBox(mainWindow, {
+            type: 'error',
+            title: i18n.__('Error'),
+            message: i18n.__('main._dataDownloadedError')
+        });
+    }
+});
+
+async function downloadUserInstruments(table: string, role_code: string, user_uuid: string, institutionCode?: string) {
     return new Promise(resolve => {
-        database.getDataForDownload(table, appSession.userData.role_code, appSession.userData.uuid).then((result) => {
+        database.getDataForDownload(table, role_code, user_uuid, institutionCode).then((result) => {
             if (result.length == 0) {
                 resolve(false);
                 return; // needs return otherwise it will try to write the file

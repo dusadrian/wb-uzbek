@@ -359,13 +359,15 @@ export const database = {
         };
     },
 
-    async getDataForDownload(table: string, role_code: string, user_uuid: string) {
+    async getDataForDownload(table: string, role_code: string, user_uuid: string, institution_code: string) {
         const connection = new Promise<DI.DataExportInterface[]>((resolve) => {
             // only completed instruments
 
             let where = ''; // only user's data
             if (role_code === constant.ROLE_DATA_COLLECTOR || role_code === constant.ROLE_HR_SPECIALIST || role_code === constant.ROLE_ADMIN_SPECIALIST) {
                 where += ` AND user_uuid = '${user_uuid}'`;
+            } else if (role_code === constant.ROLE_LOCAL) {
+                where += ` AND institution_code = '${institution_code}'`;
             }
 
             db.all(`SELECT * FROM instrument_${table} LEFT JOIN values_${table} ON values_${table}.instrument_id = instrument_${table}.id WHERE status = 'completed' ${where}`, (error, result) => {
