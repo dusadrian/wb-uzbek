@@ -137,7 +137,6 @@ export const instrument6 = {
                     util.setValue('i4', settlement ? "" + settlement : services[institution_code].district);
                     util.setValue('i4a', "" + services[institution_code].region);
                     util.setValue('i4b', "" + services[institution_code].district);
-                    institutionType = services[institution_code].type ?? null;
                 }
 
                 util.setValue('i4c', settlement ? "" + settlement : "--");
@@ -149,6 +148,7 @@ export const instrument6 = {
                 util.setValue('q6', args.userData.email ? args.userData.email : "--");
                 regionCode = args.userData.region_code;
                 userUUID = args.userData.uuid;
+                institutionType = args.userData.service_type_code;
                 institutionCode = args.userData.institution_code;
 
                 const serv_codes = Object.keys(services);

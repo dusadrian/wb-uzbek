@@ -212,7 +212,6 @@ export const instrument8 = {
                     else {
                         util.setValue('reg', "" + services[institution_code].region);
                         util.setValue('dis', "" + services[institution_code].district);
-                        institutionType = services[institution_code].type;
                     }
 
                     // set default values for user
@@ -224,6 +223,7 @@ export const instrument8 = {
                     util.setValue('q6', args.userData.email ? args.userData.email : "--");
                     regionCode = args.userData.region_code;
                     userUUID = args.userData.uuid;
+                    institutionType = args.userData.service_type_code;
                     institutionCode = args.userData.institution_code;
                 }
             }

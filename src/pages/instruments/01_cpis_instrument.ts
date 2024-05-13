@@ -430,13 +430,6 @@ export const instrument1 = {
                 institutionType = args.userData.service_type_code;
                 institutionCode = args.userData.institution_code;
 
-
-                // if (args.userData.service_type_code === '9') {
-                //     institutionType = args.insons[args.userData.institution_code].type;
-                //     institutionCode = args.userData.institution_code; // TODO -- THIS IS NOT OK, need to be fixed
-                // } else {
-                // }
-
                 // util.setValue("sh5", institution_code);
                 // util.setValue("sh5a", institution_name);
                 // util.setValue("sh5b", location);
@@ -479,7 +472,6 @@ const saveChestionar = (obj: SaveInstrumentType): void => {
         institution_code: institutionCode,
         service_code: serviceCode,
     }
-    obj.service_code = serviceCode;
     ipcRenderer.send("saveInstrument", obj);
 }
 

@@ -313,7 +313,6 @@ export const ftchList = async (db: DuckDB.Database, user_uuid: string, role_code
         }
 
         sql += ` GROUP BY c.id, c.uuid, c.status;`;
-console.log(sql);
 
         db.all(sql, (error, result) => {
             if (error) {

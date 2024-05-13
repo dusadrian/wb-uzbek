@@ -203,6 +203,8 @@ export const instrument5a = {
                 // set default values for user
                 regionCode = args.userData.region_code;
                 userUUID = args.userData.uuid;
+                institutionType = args.userData.service_type_code;
+                institutionCode = args.userData.institution_code;
 
                 util.setValue("str1", institution_code);
                 util.setValue("str3c", "--");
@@ -222,9 +224,6 @@ export const instrument5a = {
                     if (services[institution_code].settlement) {
                         util.setValue("str3c", services[institution_code].settlement);
                     }
-                    // TODO -- This needs to be checked
-                    institutionType = services[institution_code].type;
-                    institutionCode = institution_code;
                 }
 
                 util.setValue("omr1", args.userData.name ? args.userData.name : "--");

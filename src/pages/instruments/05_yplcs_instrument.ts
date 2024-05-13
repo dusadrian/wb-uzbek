@@ -230,14 +230,8 @@ export const instrument5 = {
                 util.setValue("omr7", args.userData.email ? args.userData.email : "--");
                 regionCode = args.userData.region_code;
                 userUUID = args.userData.uuid;
-
-                if (args.userData.service_type_code === '9') {
-                    institutionType = args.insons[args.userData.institution_code].type;
-                    institutionCode = args.userData.institution_code; // TODO -- Does this need to be fix for this instrument?
-                } else {
-                    institutionType = args.services[args.userData.institution_code].type;
-                    institutionCode = args.userData.institution_code;
-                }
+                institutionType = args.userData.service_type_code;
+                institutionCode = args.userData.institution_code;
             }
 
             instrument.start(instrumentID, instrument.trimis, saveChestionar, validateChestionar);

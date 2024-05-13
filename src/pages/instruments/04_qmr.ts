@@ -206,8 +206,6 @@ export const instrument4 = {
                     util.setValue('i4c', settlement ? settlement : "--");
                     util.setValue('i4d', "" + services[institution_code].settlement_type);
                     util.setValue('i9', services[institution_code].type ? services[institution_code].type : "--");
-                    institutionType = services[institution_code].type;
-                    console.log(services[institution_code]);
                 }
 
                 util.setValue('q2', args.userData.name + " " + args.userData.patronymics + " " + args.userData.surname);
@@ -217,6 +215,7 @@ export const instrument4 = {
                 util.setValue('q6', args.userData.email ? args.userData.email : "--");
                 regionCode = args.userData.region_code;
                 userUUID = args.userData.uuid;
+                institutionType = args.userData.service_type_code;
                 institutionCode = args.userData.institution_code;
             }
 
@@ -240,11 +239,7 @@ const saveChestionar = (obj: SaveInstrumentType): void => {
         institution_code: institutionCode,
     }
     ipcRenderer.send("saveInstrument", obj);
-}
-
-
-
-
+};
 
 // Validari custom
 

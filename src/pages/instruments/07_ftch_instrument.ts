@@ -204,7 +204,6 @@ export const instrument7 = {
                 else {
                     util.setValue('reg', "" + services[institution_code].region);
                     util.setValue('dis', "" + services[institution_code].district);
-                    
                 }
 
                 util.setValue('q2', args.userData.name + " " + args.userData.patronymics + " " + args.userData.surname);
@@ -249,7 +248,6 @@ const saveChestionar = (obj: SaveInstrumentType): void => {
         institution_code: institutionCode,
         service_code: serviceCode,
     }
-    obj.service_code = serviceCode;
     ipcRenderer.send("saveInstrument", obj);
 }
 

@@ -301,9 +301,7 @@ export const instrument2 = {
                 util.setValue('omr7', args.userData.email ? args.userData.email : "--");
                 regionCode = args.userData.region_code;
                 userUUID = args.userData.uuid;
-
-                // utilizator de tip INSON nu completeaza instrumentul 2
-                institutionType = args.services[args.userData.institution_code].type;
+                institutionType = args.userData.service_type_code;
                 institutionCode = args.userData.institution_code;
 
                 // if (Object.keys(services).indexOf(institution_code) >= 0) {
