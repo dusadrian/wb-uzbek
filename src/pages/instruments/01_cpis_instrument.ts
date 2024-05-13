@@ -6,6 +6,15 @@ import { util, errorHandler } from "../../libraries/validation_helpers";
 import * as DI from "../../interfaces/database";
 import constant from "../../libraries/constants";
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const globalAny: any = global;
+window.require('jquery');
+globalAny.jQuery = window.require('jquery');
+globalAny.$ = window.require('jquery');
+window.require('jquery-ui-dist/jquery-ui');
+// window.require('jquery-ui');
+import "jquery-ui/ui/i18n/datepicker-ru";
+
 import * as _flatpickr from 'flatpickr';
 import { FlatpickrFn } from 'flatpickr/dist/types/instance';
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -41,10 +50,10 @@ const sh3_end_dates = [
     'sh3_s1d', 'sh3_s2d', 'sh3_s3d', 'sh3_s4d', 'sh3_s5d', 'sh3_s6d', 'sh3_s7d', 'sh3_s8d', 'sh3_s9d', 'sh3_s10d'
 ];
 
-const regElements  = ["reg",  "lk14b", "cm3b", "cm10c", "cm11c", "ct3b", "ct10c", "ct11c", "cg10c", "cg11c", "sa3a", "sa5r"];
-const disElements  = ["dis",  "lk14c", "cm3c", "cm10d", "cm11d", "ct3c", "ct10d", "ct11d", "cg10d", "cg11d", "sa3b", "sa5d"];
-const setElements  = ["",     "lk14d", "cm3d", "cm10e", "cm11e", "ct3d", "ct10e", "ct11e", "cg10e", "cg11e", "sa3c", "",   ];
-const typeElements = ["",     "lk14e", "cm3e", "cm10f", "cm11f", "ct3e", "ct10f", "ct11f", "cg10f", "cg11f", "sa3d", "",   ];
+const regElements = ["reg", "lk14b", "cm3b", "cm10c", "cm11c", "ct3b", "ct10c", "ct11c", "cg10c", "cg11c", "sa3a", "sa5r"];
+const disElements = ["dis", "lk14c", "cm3c", "cm10d", "cm11d", "ct3c", "ct10d", "ct11d", "cg10d", "cg11d", "sa3b", "sa5d"];
+const setElements = ["", "lk14d", "cm3d", "cm10e", "cm11e", "ct3d", "ct10e", "ct11e", "cg10e", "cg11e", "sa3c", "",];
+const typeElements = ["", "lk14e", "cm3e", "cm10f", "cm11f", "ct3e", "ct10f", "ct11f", "cg10f", "cg11f", "sa3d", "",];
 
 let regionCode = '';
 let userUUID = '';
@@ -192,13 +201,20 @@ export const instrument1 = {
                 config = { ...flatpickrConfig, minDate: "01/01/1990" };
             }
 
-            flatpickr(element, config);
+            // flatpickr(element, config);
         });
 
+        // datepicker for lk3
+        $.datepicker.setDefaults( $.datepicker.regional[ "ru" ] );
+        $("#lk3").datepicker({
+            changeMonth: true,
+            changeYear: true,
+            dateFormat: "dd/mm/yy",
+            yearRange: "c-100:c+10"
+        });
 
         ipcRenderer.on("instrumentDataReady", (_event, args) => {
-            // console.log(args);
-
+            
             services = args.services;
             insons = args.insons;
             const institution_code = args.institution_code ?? args.userData.institution_code;
@@ -291,8 +307,8 @@ export const instrument1 = {
                             //     option.value = "--";
                             //     option.text = "--";
                             // } else {
-                                option.value = "-9";
-                                option.text = translations['t_choose'];
+                            option.value = "-9";
+                            option.text = translations['t_choose'];
                             // }
 
                             set_el.appendChild(option);
@@ -1041,7 +1057,7 @@ const ewm4 = util.radioIDs("ewm4");
 
 
 
-util. listen([...ewm1, ...ewm2, ...ewm3, ...ewm4], "myChange", () => {
+util.listen([...ewm1, ...ewm2, ...ewm3, ...ewm4], "myChange", () => {
     let suma = 0;
     ["ewm1", "ewm2", "ewm3", "ewm4"].forEach((item) => {
         if (Number(instrument.questions[item].value) > 0) {

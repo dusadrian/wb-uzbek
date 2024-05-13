@@ -173,3 +173,11 @@ span.errorSpan {
     width: 16px;
     height: 6px
 }
+
+.ui-datepicker-month, .ui-datepicker-year{
+    font-size: 0.8rem;
+    padding: 0px 5px;
+}
+.ui-datepicker-year{
+    
+}
