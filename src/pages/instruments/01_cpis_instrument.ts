@@ -14,13 +14,9 @@ globalAny.$ = window.require('jquery');
 window.require('jquery-ui-dist/jquery-ui');
 // window.require('jquery-ui');
 import "jquery-ui/ui/i18n/datepicker-ru";
+import "jquery-ui/ui/i18n/datepicker-uz";
 
-import * as _flatpickr from 'flatpickr';
-import { FlatpickrFn } from 'flatpickr/dist/types/instance';
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-const flatpickr: FlatpickrFn = _flatpickr as any;
-import { Russian } from "flatpickr/dist/l10n/ru";
-import { UzbekLatin } from "flatpickr/dist/l10n/uz_latn";
 import { KeyString, regions, districts, settlements } from "../../libraries/administrative";
 
 import * as en from "../../locales/en.json";
@@ -158,63 +154,52 @@ function check_ct1(value: string) {
 }
 
 
+$.datepicker.setDefaults( $.datepicker.regional[ lang ] );
+
 export const instrument1 = {
     init: async () => {
 
-        const flatpickrConfig: {
-            enableTime: boolean;
-            dateFormat: string;
-            maxDate: string;
-            locale?: typeof Russian | typeof UzbekLatin
-        } = {
-            enableTime: false,
-            dateFormat: "d/m/Y",
-            maxDate: "30/04/2024"
-        }
-
-        if (lang == "uz") {
-            flatpickrConfig.locale = UzbekLatin;
-        }
-
-        if (lang == "ru") {
-            flatpickrConfig.locale = Russian;
-        }
-
         const date_elements = [...general_dates, ...sh3_start_dates, ...sh3_end_dates];
 
-        date_elements.forEach((el) => {
-            const element = util.htmlElement(el);
-            let config;
-            if (el == "data") {
-                config = { ...flatpickrConfig, minDate: "01/04/2024" };
-                config.maxDate = "31/12/2025";
-            } else if (el == "cm3") {
-                config = { ...flatpickrConfig, minDate: "01/01/1950" };
-                config.maxDate = "31/12/2023";
-            } else if (el == "ct3" || el == "cg3b") {
-                config = { ...flatpickrConfig, minDate: "01/01/1930" };
-                config.maxDate = "31/12/2023";
-            } else if (el == "cmgt1a") {
-                config = { ...flatpickrConfig, minDate: "01/01/2000" };
-                config.dateFormat = "m/Y";
-            } else {
-                config = { ...flatpickrConfig, minDate: "01/01/1990" };
-            }
-
-            // flatpickr(element, config);
-        });
-
-        // datepicker for lk3
-        $.datepicker.setDefaults( $.datepicker.regional[ "ru" ] );
-        $("#lk3").datepicker({
+        const jQueryConfig = {
             changeMonth: true,
             changeYear: true,
             dateFormat: "dd/mm/yy",
+            minDate: "01/01/1990",
+            maxDate: "30/04/2024",
             yearRange: "c-100:c+10"
+        }
+
+        date_elements.forEach((el) => {
+            let config;
+            if (el == "data") {
+                config = { ...jQueryConfig, minDate: "01/04/2024" };
+                config.maxDate = "31/12/2025";
+            } else if (el == "cm3") {
+                config = { ...jQueryConfig, minDate: "01/01/1950" };
+                config.maxDate = "31/12/2023";
+            } else if (el == "ct3" || el == "cg3b") {
+                config = { ...jQueryConfig, minDate: "01/01/1930" };
+                config.maxDate = "31/12/2023";
+            } else if (el == "cmgt1a") {
+                config = { ...jQueryConfig, minDate: "01/01/2000" };
+                config.dateFormat = "mm/yy";
+            } else {
+                config = { ...jQueryConfig, minDate: "01/01/1990" };
+            }
+
+            // flatpickr(element, config);
+            $("#" + el).datepicker({
+                changeMonth: true,
+                changeYear: true,
+                dateFormat: "dd/mm/yy",
+                yearRange: "c-100:c+10"
+            });
         });
 
+
         ipcRenderer.on("instrumentDataReady", (_event, args) => {
-            
+
             services = args.services;
             insons = args.insons;
             const institution_code = args.institution_code ?? args.userData.institution_code;
