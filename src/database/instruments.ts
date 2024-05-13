@@ -144,7 +144,7 @@ export const getExisting = async (db: DuckDB.Database) => {
 }
 
 // Instrument 1
-export const cpisList = async (db: DuckDB.Database, user_uuid: string, role_code: string, service_code?: string) => {
+export const cpisList = async (db: DuckDB.Database, user_uuid: string, role_code: string, institution_code: string, service_code?: string) => {
     const connection = new Promise<Array<Instrument>>((resolve) => {
 
         let sql = `
@@ -163,6 +163,8 @@ export const cpisList = async (db: DuckDB.Database, user_uuid: string, role_code
             if (service_code) {
                 sql += " AND c.service_code = '" + service_code + "'";
             }
+        } else if (role_code === constant.ROLE_LOCAL) {
+            sql += " WHERE c.institution_code = '" + institution_code + "'";
         } else if (service_code) {
             sql += " WHERE c.service_code = '" + service_code + "'";
         }
@@ -197,7 +199,7 @@ export const deleteCPIS = async (id: string, db: DuckDB.Database) => {
 }
 
 // Instrument 2
-export const cibsList = async (db: DuckDB.Database, user_uuid: string, role_code: string) => {
+export const cibsList = async (db: DuckDB.Database, user_uuid: string, role_code: string, institution_code: string) => {
     const connection = new Promise<Array<Instrument>>((resolve) => {
 
         let sql = `
@@ -213,6 +215,8 @@ export const cibsList = async (db: DuckDB.Database, user_uuid: string, role_code
 
         if (role_code === constant.ROLE_DATA_COLLECTOR || role_code === constant.ROLE_HR_SPECIALIST || role_code === constant.ROLE_ADMIN_SPECIALIST || role_code === constant.ROLE_EXT_EVALUATOR) {
             sql += ` WHERE c.user_uuid = '${user_uuid}'`;
+        } else if (role_code === constant.ROLE_LOCAL) {
+            sql += " WHERE c.institution_code = '" + institution_code + "'";
         }
 
         sql += ` GROUP BY c.id, c.uuid, c.status;`;
@@ -245,7 +249,7 @@ export const deleteCIBS = async (id: string, db: DuckDB.Database) => {
 }
 
 // instrument 3
-export const csrList = async (db: DuckDB.Database, user_uuid: string, role_code: string) => {
+export const csrList = async (db: DuckDB.Database, user_uuid: string, role_code: string, institution_code: string) => {
     const connection = new Promise<Array<Instrument>>((resolve) => {
 
         let sql = `
@@ -258,6 +262,8 @@ export const csrList = async (db: DuckDB.Database, user_uuid: string, role_code:
 
         if (role_code === constant.ROLE_DATA_COLLECTOR || role_code === constant.ROLE_HR_SPECIALIST || role_code === constant.ROLE_ADMIN_SPECIALIST || role_code === constant.ROLE_EXT_EVALUATOR) {
             sql += ` WHERE c.user_uuid = '${user_uuid}'`;
+        } else if (role_code === constant.ROLE_LOCAL) {
+            sql += " WHERE c.institution_code = '" + institution_code + "'";
         }
 
         sql += ` GROUP BY c.id, c.uuid, c.status;`;
@@ -290,7 +296,7 @@ export const deleteStaff = async (id: string, db: DuckDB.Database) => {
 }
 
 // Instrument 7
-export const ftchList = async (db: DuckDB.Database, user_uuid: string, role_code: string, service_code?: string) => {
+export const ftchList = async (db: DuckDB.Database, user_uuid: string, role_code: string, institution_code: string, service_code?: string) => {
     const connection = new Promise<Array<Instrument>>((resolve) => {
 
         let sql = `
@@ -308,6 +314,8 @@ export const ftchList = async (db: DuckDB.Database, user_uuid: string, role_code
             if (service_code) {
                 sql += " AND c.service_code = '" + service_code + "'";
             }
+        } else if (role_code === constant.ROLE_LOCAL) {
+            sql += " WHERE c.institution_code = '" + institution_code + "'";
         } else if (service_code) {
             sql += " WHERE c.service_code = '" + service_code + "'";
         }
@@ -342,7 +350,7 @@ export const deleteFTCH = async (id: string, db: DuckDB.Database) => {
 }
 
 // Instrument 8
-export const pfqList = async (db: DuckDB.Database, user_uuid: string, role_code: string) => {
+export const pfqList = async (db: DuckDB.Database, user_uuid: string, role_code: string, institution_code: string) => {
     const connection = new Promise<Array<Instrument>>((resolve) => {
 
         let sql = `
@@ -357,8 +365,10 @@ export const pfqList = async (db: DuckDB.Database, user_uuid: string, role_code:
 
         if (role_code === constant.ROLE_DATA_COLLECTOR || role_code === constant.ROLE_HR_SPECIALIST || role_code === constant.ROLE_ADMIN_SPECIALIST || role_code === constant.ROLE_EXT_EVALUATOR) {
             sql += ` WHERE c.user_uuid = '${user_uuid}'`;
+        } else if (role_code === constant.ROLE_LOCAL) {
+            sql += " WHERE c.institution_code = '" + institution_code + "'";
         }
-
+        
         sql += ` GROUP BY c.id, c.uuid, c.status;`;
 
         db.all(sql, (error, result) => {
@@ -434,7 +444,7 @@ export const deleteEEF = async (id: string, db: DuckDB.Database) => {
 }
 
 // Instrument 5
-export const yplcsList = async (db: DuckDB.Database, user_uuid: string, role_code: string) => {
+export const yplcsList = async (db: DuckDB.Database, user_uuid: string, role_code: string, institution_code: string) => {
     const connection = new Promise<Array<Instrument>>((resolve) => {
 
         let sql = `
@@ -450,6 +460,8 @@ export const yplcsList = async (db: DuckDB.Database, user_uuid: string, role_cod
 
         if (role_code === constant.ROLE_DATA_COLLECTOR || role_code === constant.ROLE_HR_SPECIALIST || role_code === constant.ROLE_ADMIN_SPECIALIST || role_code === constant.ROLE_EXT_EVALUATOR) {
             sql += ` WHERE c.user_uuid = '${user_uuid}'`;
+        } else if (role_code === constant.ROLE_LOCAL) {
+            sql += " WHERE c.institution_code = '" + institution_code + "'";
         }
 
         sql += ` GROUP BY c.id, c.uuid, c.status;`;
@@ -482,7 +494,7 @@ export const deleteYPLCS = async (id: string, db: DuckDB.Database) => {
 }
 
 // Instrument 5a
-export const tqypList = async (db: DuckDB.Database, user_uuid: string, role_code: string) => {
+export const tqypList = async (db: DuckDB.Database, user_uuid: string, role_code: string, institution_code: string) => {
     const connection = new Promise<Array<Instrument>>((resolve) => {
 
         let sql = `
@@ -498,6 +510,8 @@ export const tqypList = async (db: DuckDB.Database, user_uuid: string, role_code
 
         if (role_code === constant.ROLE_DATA_COLLECTOR || role_code === constant.ROLE_HR_SPECIALIST || role_code === constant.ROLE_ADMIN_SPECIALIST || role_code === constant.ROLE_EXT_EVALUATOR) {
             sql += ` WHERE c.user_uuid = '${user_uuid}'`;
+        } else if (role_code === constant.ROLE_LOCAL) {
+            sql += " WHERE c.institution_code = '" + institution_code + "'";
         }
 
         sql += ` GROUP BY c.id, c.uuid, c.status;`;

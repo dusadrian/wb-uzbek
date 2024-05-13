@@ -109,10 +109,10 @@ export const database = {
         });
         return await connection;
     },
-    updateInson : async (data: DI.UpdateInsonObjInterface) => {
+    updateInson: async (data: DI.UpdateInsonObjInterface) => {
 
-        if(data.services.length > 0) {
-            for(const service of data.services) {
+        if (data.services.length > 0) {
+            for (const service of data.services) {
                 const connection = new Promise<boolean>((resolve) => {
                     db.run(`UPDATE institutions SET children = '${service.children}', leavers = '${service.leavers}' WHERE id = '${service.id}' AND uuid = '${service.uuid}'`, (error) => {
                         if (error) {
@@ -259,11 +259,13 @@ export const database = {
         return await connection;
     },
 
-    filledInstruments: async (role_code: string, user_uuid: string, region?: string, typeOfInstitution?: string) => {
+    filledInstruments: async (role_code: string, user_uuid: string, institution_code: string, region?: string, typeOfInstitution?: string) => {
         let where = '';
 
         if (role_code === constant.ROLE_DATA_COLLECTOR || role_code === constant.ROLE_HR_SPECIALIST || role_code === constant.ROLE_ADMIN_SPECIALIST) {
             where += ` WHERE user_uuid = '${user_uuid}'`;
+        } else if (role_code === constant.ROLE_LOCAL) {
+            where += ` WHERE institution_code = '${institution_code}'`;
         } else if (region || typeOfInstitution) {
             where += ` WHERE `;
         }
@@ -465,11 +467,11 @@ export const database = {
             return {};
         }
         const serviceList = services.split(',');
-        const response: {[key:string]: string} = {};
+        const response: { [key: string]: string } = {};
 
         for (const srv of serviceList) {
             const connection = new Promise<string>((resolve) => {
-                const sql = `SELECT COUNT(*) as total FROM instrument_${table} WHERE service_code = '${srv}' AND user_uuid = '${user_uuid}'`;                
+                const sql = `SELECT COUNT(*) as total FROM instrument_${table} WHERE service_code = '${srv}' AND user_uuid = '${user_uuid}'`;
                 db.all(sql, (error, result) => {
                     if (error) {
                         console.log(error);
@@ -481,7 +483,7 @@ export const database = {
                     }
                 });
             });
-            response[srv] =  await connection;
+            response[srv] = await connection;
         }
         return response;
     },

@@ -246,7 +246,7 @@ ipcMain.on('getLocalDashStats', (_event, args) => {
     if (args?.region) { region = args.region; }
     if (args?.typeOfInstitution) { typeOfInstitution = args.typeOfInstitution; }
 
-    database.filledInstruments(appSession.userData.role_code, appSession.userData.uuid, region, typeOfInstitution).then((dashStats) => {
+    database.filledInstruments(appSession.userData.role_code, appSession.userData.uuid, appSession.userData.institution_code, region, typeOfInstitution).then((dashStats) => {
         // Dashboard stats for all users
         mainWindow.webContents.send("dashStats", dashStats);
     });
@@ -283,7 +283,7 @@ ipcMain.on('goToCPISList', (_event, _args) => {
     mainWindow.loadURL("file://" + path.join(__dirname, "../src/pages/instruments/01_cpis.html"));
 });
 ipcMain.on('getChildren', (_event, args) => {
-    database.cpisList(db, appSession.userData.uuid, appSession.userData.role_code, args.institution_code).then((result) => {
+    database.cpisList(db, appSession.userData.uuid, appSession.userData.role_code, appSession.userData.institution_code, args.institution_code).then((result) => {
         mainWindow.webContents.send("children", result);
     });
 });
@@ -318,7 +318,7 @@ const goToCIBSList = () => {
     mainWindow.loadURL("file://" + newPage);
 };
 ipcMain.on('getChildrenCIBS', () => {
-    database.cibsList(db, appSession.userData.uuid, appSession.userData.role_code).then((result) => {
+    database.cibsList(db, appSession.userData.uuid, appSession.userData.role_code, appSession.userData.institution_code).then((result) => {
         mainWindow.webContents.send("childrenCIBS", result);
     });
 });
@@ -349,7 +349,7 @@ const goToCSRList = () => {
     mainWindow.loadURL("file://" + newPage);
 };
 ipcMain.on('getStaff', () => {
-    database.csrList(db, appSession.userData.uuid, appSession.userData.role_code).then((result) => {
+    database.csrList(db, appSession.userData.uuid, appSession.userData.role_code, appSession.userData.institution_code).then((result) => {
         mainWindow.webContents.send("staff", result);
     });
 });
@@ -380,7 +380,7 @@ const goToYPLCSList = () => {
     mainWindow.loadURL("file://" + newPage);
 };
 ipcMain.on('getYPLCS', () => {
-    database.yplcsList(db, appSession.userData.uuid, appSession.userData.role_code).then((result) => {
+    database.yplcsList(db, appSession.userData.uuid, appSession.userData.role_code, appSession.userData.institution_code).then((result) => {
         mainWindow.webContents.send("yplcs", result);
     });
 });
@@ -411,7 +411,7 @@ const goToTQYPList = () => {
     mainWindow.loadURL("file://" + newPage);
 };
 ipcMain.on('getTQYP', () => {
-    database.tqypList(db, appSession.userData.uuid, appSession.userData.role_code).then((result) => {
+    database.tqypList(db, appSession.userData.uuid, appSession.userData.role_code, appSession.userData.institution_code).then((result) => {
         mainWindow.webContents.send("tqyp", result);
     });
 });
@@ -460,7 +460,7 @@ ipcMain.on('goToFTCHList', (_event, _args) => {
     mainWindow.loadURL("file://" + path.join(__dirname, "../src/pages/instruments/07_ftch.html"));
 });
 ipcMain.on('getFTCH', (_event, args) => {
-    database.ftchList(db, appSession.userData.uuid, appSession.userData.role_code, args.institution_code).then((result) => {
+    database.ftchList(db, appSession.userData.uuid, appSession.userData.role_code, appSession.userData.institution_code, args.institution_code).then((result) => {
         mainWindow.webContents.send("ftch", result);
     });
 });
@@ -495,7 +495,7 @@ const goToPFQList = () => {
     mainWindow.loadURL("file://" + newPage);
 };
 ipcMain.on('getPFQ', () => {
-    database.pfqList(db, appSession.userData.uuid, appSession.userData.role_code).then((result) => {
+    database.pfqList(db, appSession.userData.uuid, appSession.userData.role_code, appSession.userData.institution_code).then((result) => {
         mainWindow.webContents.send("pfq", result);
     });
 });
