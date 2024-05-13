@@ -35,11 +35,88 @@ export const editUser = {
             const auth_code = (<HTMLSelectElement>document.getElementById('auth_code')).value;
             
             // validate above values
-            if (name === '' || patronymics === '' || surname === '' || job_title === '' || profession === '' || phone === '' || auth_code === '') {
+            if (name === '') {
                 ipcRenderer.send('showDialogMessage', {
                     type: 'error',
                     message: 'Please fill all fields'
                 });
+                document.getElementById('name').scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'center'
+                });
+                document.getElementById('name').focus();
+                return;
+            }
+            if (patronymics === '') {
+                ipcRenderer.send('showDialogMessage', {
+                    type: 'error',
+                    message: 'Please fill all fields'
+                });
+                document.getElementById('patronymics').scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'center'
+                });
+                document.getElementById('patronymics').focus();
+                return;
+            }
+            if (surname === '') {
+                ipcRenderer.send('showDialogMessage', {
+                    type: 'error',
+                    message: 'Please fill all fields'
+                });
+                document.getElementById('surname').scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'center'
+                });
+                document.getElementById('surname').focus();
+                return;
+            }
+            if (job_title === '') {
+                ipcRenderer.send('showDialogMessage', {
+                    type: 'error',
+                    message: 'Please fill all fields'
+                });
+                document.getElementById('job_title').scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'center'
+                });
+                document.getElementById('job_title').focus();
+                return;
+            }
+            if (profession === '') {
+                ipcRenderer.send('showDialogMessage', {
+                    type: 'error',
+                    message: 'Please fill all fields'
+                });
+                document.getElementById('profession').scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'center'
+                });
+                document.getElementById('profession').focus();
+                return;
+            }
+            if (phone === '') {
+                ipcRenderer.send('showDialogMessage', {
+                    type: 'error',
+                    message: 'Please fill all fields'
+                });
+                document.getElementById('phone').scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'center'
+                });
+                document.getElementById('phone').focus();
+                return;
+            }
+            if (auth_code === '') {
+                ipcRenderer.send('showDialogMessage', {
+                    type: 'error',
+                    message: 'Please fill all fields'
+                });
+                document.getElementById('auth_code').scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'center'
+                });
+                document.getElementById('auth_code').focus();
                 return;
             }
 

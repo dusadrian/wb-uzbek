@@ -383,6 +383,19 @@ export const local = {
             ipcRenderer.on("dashStats", (_event, args) => {
                 processDashStats(args);
             })
+
+            if(constant.INSON.includes(userData.service_type_code)){
+                const insonUser = document.getElementById('inson_user') as HTMLButtonElement;
+                insonUser.classList.remove('hidden');
+                insonUser.classList.add('flex');
+                insonUser.dataset.id = userData.id;
+                insonUser.addEventListener('click', () => {
+                    ipcRenderer.send('changeWindow', {
+                        'name': 'local/05_edit_user',
+                        'id': userData.id,
+                    });
+                });
+            }
         });
 
         // Institution details

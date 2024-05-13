@@ -2,6 +2,7 @@ import { ipcRenderer } from "electron";
 import * as path from "path";
 import { I18n } from "i18n";
 import { header } from "./pages/_header";
+import constant from "./libraries/constants";
 
 const i18n = new I18n({
     locales: ['en', 'uz', 'ru'],
@@ -314,7 +315,12 @@ const localAddUser = () => {
 };
 const localEditUser = () => {
 
-    topMenu('local/03_users'); // back button
+    const appSession = JSON.parse(sessionStorage.getItem('appSession'));
+    if (constant.INSON.includes(appSession.userData.service_type_code)) {
+        topMenu('local/01_dashboard'); // back button
+    } else {
+        topMenu('local/03_users'); // back button
+    }
 
     translatePage();
 

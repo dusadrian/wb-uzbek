@@ -86,6 +86,7 @@
 	"t_no_young_left": "Number of young people who left the care system",
 	"t_button_save": "Save",
 	"t_users": "Users",
+	"t_user": "User",
 	"t_name": "Name",
 	"t_email": "E-mail",
 	"t_role": "Role",

@@ -740,7 +740,11 @@ ipcMain.on('addUser', (_event, args) => {
             type: 'info',
             message: i18n.__('User added.'),
         }).then(() => {
-            localUsers();
+            if (constant.INSON.includes(appSession.userData.service_type_code)) { // go to dashboard
+                goToLocalDashboard();
+            } else if (appSession.userData.role_code === constant.ROLE_LOCAL) { // go to users list
+                localUsers();
+            }
         });
     });
 });
@@ -1393,7 +1397,7 @@ ipcMain.on('exportData', function exportData(_event, args) {
 });
 // Export user instruments
 ipcMain.on('exportUserData', function exportUserData(_event, args) {
-    
+
     const folderPath = dialog.showOpenDialogSync(mainWindow, {
         title: i18n.__('main._chooseFolder'),
         properties: ['openDirectory', 'createDirectory', 'promptToCreate']
