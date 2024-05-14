@@ -92,7 +92,7 @@ export const instrument7 = {
             const institution_code = args.institution_code ?? args.userData.institution_code;
             serviceCode = args.institution_code ?? '';
             console.log(args);
-            
+
             const inson_user = Object.keys(insons).indexOf(institution_code) >= 0;
 
             const reg_codes = Object.keys(regions);

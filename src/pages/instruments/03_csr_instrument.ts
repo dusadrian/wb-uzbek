@@ -12,7 +12,7 @@ import { FlatpickrFn } from 'flatpickr/dist/types/instance';
 const flatpickr: FlatpickrFn = _flatpickr as any;
 import { Russian } from "flatpickr/dist/l10n/ru";
 import { UzbekLatin } from "flatpickr/dist/l10n/uz_latn";
-import { KeyString, regions, districts, settlements } from "../../libraries/administrative";
+import { KeyString, KeyStringNumber, regions, districts, settlements } from "../../libraries/administrative";
 
 import * as en from "../../locales/en.json";
 import * as uz from "../../locales/uz.json";
@@ -159,10 +159,12 @@ export const instrument3 = {
             util.setValue("q1", util.customDate());
 
             if (args.userData) {
+                let institution_name = "";
                 util.setValue('i2', "" + institution_code);
 
                 if (inson_user) {
-                    util.setValue('i1', insons[institution_code].name ? insons[institution_code].name : "--");
+                    const inson = { ...insons[args.userData.institution_code]} as KeyStringNumber;
+                    institution_name = "" + inson['name_'+ lang];
                     util.setValue('i3', "--");
                     util.setValue('i4', insons[institution_code].district);
                     util.setValue('i4a', insons[institution_code].region);
@@ -172,7 +174,8 @@ export const instrument3 = {
                     util.setValue('i5', "--");
                 }
                 else {
-                    util.setValue('i1', services[institution_code].name ? services[institution_code].name : "--");
+                    const serviciu = { ...services[institution_code] } as KeyStringNumber;
+                    institution_name = '' + serviciu['name_'+ lang];
                     util.setValue('i3', services[institution_code].address ? services[institution_code].address : "--");
                     util.setValue('i4a', services[institution_code].region);
                     util.setValue('i4b', services[institution_code].district);
@@ -183,6 +186,7 @@ export const instrument3 = {
                     util.setValue('i5', services[institution_code].type ? services[institution_code].type : "--");
                 }
 
+                util.setValue('i1', institution_name ? institution_name : "--");
                 util.setValue('q2', args.userData.name + " " + args.userData.patronymics + " " + args.userData.surname);
                 util.setValue('q3', args.userData.job_title ? args.userData.job_title : "--");
                 util.setValue('q4', args.userData.profession ? args.userData.profession : "--");

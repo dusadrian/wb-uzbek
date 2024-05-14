@@ -5,7 +5,7 @@ import { SaveInstrumentType } from "../../libraries/interfaces";
 import { util, errorHandler } from "../../libraries/validation_helpers";
 import * as DI from "../../interfaces/database";
 
-import { KeyString, regions, districts, settlements } from "../../libraries/administrative";
+import { KeyString, KeyStringNumber, regions, districts, settlements } from "../../libraries/administrative";
 
 import * as en from "../../locales/en.json";
 import * as uz from "../../locales/uz.json";
@@ -122,23 +122,28 @@ export const instrument6 = {
             util.setValue("q1", util.customDate());
 
             if (args.userData) {
+                let institution_name = "--";
                 util.setValue("i2", institution_code);
+
                 const settlement = services[institution_code].settlement;
                 if (inson_user) {
-                    util.setValue("i1", insons[institution_code].name ? insons[institution_code].name : "--");
-                    util.setValue("i3", insons[institution_code].address ? insons[institution_code].address : "--");
+                    const inson = { ...insons[args.userData.institution_code]} as KeyStringNumber;
+                    institution_name = "" + inson['name_'+ lang];
+                    util.setValue("i3", "--");
                     util.setValue('i4', "" + insons[institution_code].district);
                     util.setValue('i4a', "" + insons[institution_code].region);
                     util.setValue('i4b', "" + insons[institution_code].district);
                 }
                 else {
-                    util.setValue("i1", services[institution_code].name ? services[institution_code].name : "--");
+                    const serviciu = { ...services[institution_code] } as KeyStringNumber;
+                    institution_name = '' + serviciu['name_'+ lang];
                     util.setValue("i3", services[institution_code].address ? services[institution_code].address : "--");
                     util.setValue('i4', settlement ? "" + settlement : services[institution_code].district);
                     util.setValue('i4a', "" + services[institution_code].region);
                     util.setValue('i4b', "" + services[institution_code].district);
                 }
 
+                util.setValue("i1", institution_name);
                 util.setValue('i4c', settlement ? "" + settlement : "--");
                 // set default values for user
                 util.setValue('q2', args.userData.name + " " + args.userData.patronymics + " " + args.userData.surname);

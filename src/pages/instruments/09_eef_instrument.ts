@@ -190,7 +190,7 @@ const saveChestionar = (obj: SaveInstrumentType): void => {
     obj.table = "eef";
     obj.extras = {
         region_code: regionCode,
-        user_uuid: userUUID,        
+        user_uuid: userUUID,
         institution_type: institutionType,
         institution_code: institutionCode
     }

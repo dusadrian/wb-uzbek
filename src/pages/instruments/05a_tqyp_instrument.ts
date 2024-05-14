@@ -11,7 +11,7 @@ import { FlatpickrFn } from 'flatpickr/dist/types/instance';
 const flatpickr: FlatpickrFn = _flatpickr as any;
 import { Russian } from "flatpickr/dist/l10n/ru";
 import { UzbekLatin } from "flatpickr/dist/l10n/uz_latn";
-import { KeyString, regions, districts, settlements } from "../../libraries/administrative";
+import { KeyString, KeyStringNumber, regions, districts, settlements } from "../../libraries/administrative";
 import * as en from "../../locales/en.json";
 import * as uz from "../../locales/uz.json";
 import * as ru from "../../locales/ru.json";
@@ -200,6 +200,8 @@ export const instrument5a = {
             util.setValue("data", util.customDate());
 
             if (args.userData) {
+                let institution_name = "--";
+
                 // set default values for user
                 regionCode = args.userData.region_code;
                 userUUID = args.userData.uuid;
@@ -210,11 +212,13 @@ export const instrument5a = {
                 util.setValue("str3c", "--");
                 util.setValue("str4", "-9");
                 if (inson_user) {
-                    util.setValue("str2", insons[institution_code].name ? insons[institution_code].name : "--");
+                    const inson = { ...insons[args.userData.institution_code]} as KeyStringNumber;
+                    institution_name = "" + inson['name_'+ lang];
                     util.setValue("str3a", insons[institution_code].region);
                     util.setValue("str3b", insons[institution_code].district);
                 } else {
-                    util.setValue("str2", services[institution_code].name ? services[institution_code].name : "--");
+                    const serviciu = { ...services[institution_code] } as KeyStringNumber;
+                    institution_name = '' + serviciu['name_'+ lang];
                     util.setValue("str3a", services[institution_code].region);
                     util.setValue("str3b", services[institution_code].district);
                     const type = services[institution_code].type;
@@ -226,6 +230,7 @@ export const instrument5a = {
                     }
                 }
 
+                util.setValue("str2", institution_name);
                 util.setValue("omr1", args.userData.name ? args.userData.name : "--");
                 util.setValue("omr2", args.userData.patronymics ? args.userData.patronymics : "--");
                 util.setValue("omr3", args.userData.surname ? args.userData.surname : "--");

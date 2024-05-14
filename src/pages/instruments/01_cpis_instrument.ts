@@ -17,7 +17,7 @@ import "jquery-ui/ui/i18n/datepicker-ru";
 import "jquery-ui/ui/i18n/datepicker-uz";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-import { KeyString, regions, districts, settlements } from "../../libraries/administrative";
+import { KeyString, KeyStringNumber, regions, districts, settlements } from "../../libraries/administrative";
 
 import * as en from "../../locales/en.json";
 import * as uz from "../../locales/uz.json";
@@ -328,7 +328,7 @@ export const instrument1 = {
                         const serv = districts[selectedDistrict].services;
                         if (serv.length > 0) {
                             for (let i = 0; i < serv.length; i++) {
-                                if (services[serv[i]].type != "") {
+                                if (Number(services[serv[i]].type) < 20) {
                                     let service_included = true;
                                     if (insons[institution_code]) {
                                         service_included = insons[institution_code].services.includes(serv[i]);
@@ -336,7 +336,8 @@ export const instrument1 = {
                                     if (service_included) {
                                         const option = document.createElement("option");
                                         option.value = serv[i];
-                                        option.text = serv[i] + ': ' + services[serv[i]].name;
+                                        const serviciu = { ...services[serv[i]] } as KeyStringNumber;
+                                        option.text = serv[i] + ': ' + serviciu['name_'+ lang];
                                         util.htmlElement(institutie).appendChild(option);
                                     }
                                 }
@@ -389,14 +390,15 @@ export const instrument1 = {
 
             // set default values for user, IRRESPECTIVE of the instrument
             if (args.userData) {
-                let institution_name = "";
+                let institution_name = "--";
                 util.setValue("sh5s", "--");
+
                 if (inson_user) {
-                    institution_name = insons[args.userData.institution_code].name;
+                    const inson = { ...insons[args.userData.institution_code]} as KeyStringNumber;
+                    institution_name = "" + inson['name_'+ lang];
                     util.setValue('reg', insons[args.userData.institution_code].region);
                     util.setValue('dis', insons[args.userData.institution_code].district);
                     util.setValue('omr8a', "2");
-                    util.setValue("omr8", insons[args.userData.institution_code].name ? insons[args.userData.institution_code].name : "--");
 
                     if (services[institution_code].settlement) {
                         util.setValue("sh5s", services[institution_code].settlement);
@@ -404,7 +406,8 @@ export const instrument1 = {
                     util.setValue("sh5", institution_code);
                 }
                 else {
-                    institution_name = services[institution_code].name;
+                    const serviciu = { ...services[institution_code] } as KeyStringNumber;
+                    institution_name = '' + serviciu['name_'+ lang];
                     util.setValue('reg', "" + services[institution_code].region);
                     util.setValue('dis', services[institution_code].district);
                     if (services[institution_code].settlement) {
@@ -412,9 +415,9 @@ export const instrument1 = {
                     }
                     util.setValue("sh5", institution_code);
                     util.setValue('omr8a', "1");
-                    util.setValue("omr8", institution_name);
                 }
 
+                util.setValue("omr8", institution_name);
                 util.setValue('omr1', args.userData.name ? args.userData.name : "--");
                 util.setValue('omr2', args.userData.patronymics ? args.userData.patronymics : "--");
                 util.setValue('omr3', args.userData.surname ? args.userData.surname : "--");

@@ -11,7 +11,7 @@ import { FlatpickrFn } from 'flatpickr/dist/types/instance';
 const flatpickr: FlatpickrFn = _flatpickr as any;
 import { Russian } from "flatpickr/dist/l10n/ru";
 import { UzbekLatin } from "flatpickr/dist/l10n/uz_latn";
-import { KeyString, regions, districts, settlements, settlement_types } from "../../libraries/administrative";
+import { KeyString, KeyStringNumber, regions, districts, settlements, settlement_types } from "../../libraries/administrative";
 import * as en from "../../locales/en.json";
 import * as uz from "../../locales/uz.json";
 import * as ru from "../../locales/ru.json";
@@ -168,10 +168,12 @@ export const instrument5 = {
                         const serv = districts[selectedDistrict].services;
                         if (serv.length > 0) {
                             for (let i = 0; i < serv.length; i++) {
-                                if (services[serv[i]].type != "15") {
+                                const type = Number(services[serv[i]].type);
+                                if (( type >= 12 && type <= 15 ) || type > 20) {
                                     const option = document.createElement("option");
                                     option.value = serv[i];
-                                    option.text = serv[i] + ': ' + services[serv[i]].name;
+                                    const serviciu = { ...services[serv[i]] } as KeyStringNumber;
+                                    option.text = serv[i] + ': ' + serviciu['name_'+ lang];
                                     pi6.appendChild(option);
                                 }
                             }
@@ -211,15 +213,21 @@ export const instrument5 = {
             util.setValue("data", util.customDate());
 
             if (args.userData) {
+                let institution_name = "--";
+
                 if (inson_user) {
+                    const inson = { ...insons[args.userData.institution_code]} as KeyStringNumber;
+                    institution_name = "" + inson['name_'+ lang];
                     util.setValue("reg", insons[institution_code].region);
                     util.setValue("dis", insons[institution_code].district);
-                    util.setValue("omr9", insons[institution_code].name ? insons[institution_code].name : "--");
                 } else {
+                    const serviciu = { ...services[institution_code] } as KeyStringNumber;
+                    institution_name = "" + serviciu['name_'+ lang];
                     util.setValue("reg", services[institution_code].region);
                     util.setValue("dis", services[institution_code].district);
-                    util.setValue("omr9", services[institution_code].name ? services[institution_code].name : "--");
                 }
+
+                util.setValue("omr9", institution_name);
                 // set default values for user
                 util.setValue("omr1", args.userData.name ? args.userData.name : "--");
                 util.setValue("omr2", args.userData.patronymics ? args.userData.patronymics : "--");
