@@ -405,15 +405,7 @@ CREATE TABLE auth_codes (
     used BOOLEAN DEFAULT FALSE,
 );
 
-INSERT INTO auth_codes (institution_code, code) VALUES ('9173512', '125Ho7OcQirox9K');
-INSERT INTO auth_codes (institution_code, code) VALUES ('9173512', 'jxuh8X3OFaEYCW4');
-INSERT INTO auth_codes (institution_code, code) VALUES ('9173512', 'shqefx0ihsWk5bf');
-INSERT INTO auth_codes (institution_code, code) VALUES ('9173512', '3oEEwITVbtR5ddP');
-INSERT INTO auth_codes (institution_code, code) VALUES ('9173512', 'iYkla71bQvPIFmg');
-INSERT INTO auth_codes (institution_code, code) VALUES ('5173504', 'NJP7M_Xnqi52XJV');
-INSERT INTO auth_codes (institution_code, code) VALUES ('5173504', '8s3VFOJPdkcKSjS');
-INSERT INTO auth_codes (institution_code, code) VALUES ('5173504', 'jfZv_3qhWsEXoHx');
-INSERT INTO auth_codes (institution_code, code) VALUES ('2173001', '4AwCdRcoQOJpODF');
-INSERT INTO auth_codes (institution_code, code) VALUES ('2173001', '4hBfF_yoMXmQmnP');
-INSERT INTO auth_codes (institution_code, code) VALUES ('2173001', '4V5gxFxP30lh10_');
-
+INSTALL spatial;
+LOAD spatial;
+INSERT INTO auth_codes
+SELECT * FROM st_read('authentication_codes.xlsx', layer = 'auth_codes', open_options = ['HEADERS=FORCE']);
