@@ -31,7 +31,6 @@ INSERT INTO users
 SELECT * FROM st_read('utilizatori.xlsx', layer = 'utilizatori', open_options = ['HEADERS=FORCE']);
 
 
-
 -- Create institutions table
 
 INSTALL spatial;

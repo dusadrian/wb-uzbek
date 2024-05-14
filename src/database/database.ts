@@ -51,6 +51,33 @@ export const database = {
         });
         return await connection;
     },
+    checkDisabledUser: async (username: string, password: string) => {
+        const connection = new Promise<Array<DI.User>>((resolve) => {
+
+            const localUserRole = constant.ROLE_LOCAL;
+            const localUserType = constant.CHILD_CARE.concat(constant.SPECIALIZED).join(',');
+            const insonUserType = constant.INSON.join(',');
+            
+            db.all(`SELECT * FROM users WHERE username = '${username}' AND password = '${password}' AND status = false AND ((role_code = ${localUserRole} AND service_type_code IN (${localUserType})) OR service_type_code IN (${insonUserType}))`, (error, result) => {
+                if (error) {
+                    console.log(error);
+                }
+                resolve(result as DI.User[]);
+            });
+        });
+        return await connection;
+    },
+    enableUser: async (uuid: string) => {
+        const connection = new Promise<boolean>((resolve) => {
+            db.run(`UPDATE users SET status = true WHERE uuid = '${uuid}'`, (error) => {
+                if (error) {
+                    console.log(error);
+                }
+                resolve(true);
+            });
+        });
+        return await connection;
+    },
     getUserData: async (userId: number) => {
         const connection = new Promise<Array<DI.User>>((resolve) => {
             db.all(`SELECT * FROM users WHERE id = '${userId}'`, (error, result) => {

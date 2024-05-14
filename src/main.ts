@@ -116,33 +116,44 @@ ipcMain.on('login', (_event, args) => {
     // check if user is authenticated
     database.checkUser(args.username, args.password).then((result: Array<DI.User>) => {
         if (result.length === 0) {
-            dialog.showMessageBox(mainWindow, {
-                type: 'error',
-                message: 'Invalid username or password',
-            })
-            return
-        }
-        appSession.language = args.language;
-        appSession.userData = result[0]; // user data
-        if (
-            appSession.userData.role_code === constant.ROLE_LOCAL ||
-            appSession.userData.role_code === constant.ROLE_DATA_COLLECTOR ||
-            appSession.userData.role_code === constant.ROLE_HR_SPECIALIST ||
-            appSession.userData.role_code === constant.ROLE_ADMIN_SPECIALIST
-
-        ) { // load user institution details if needed
-            database.getUserInstitution(appSession.userData.institution_code, appSession.userData.service_type_code).then((institution) => {
-                if (institution.length > 0) {
-                    appSession.institutionDetails = institution[0];
-                    // go to next page
-                    goToLocalDashboard();
-                } else {
+            database.checkDisabledUser(args.username, args.password).then((disabled: Array<DI.User>) => {
+                if (disabled.length === 0) {
                     dialog.showMessageBox(mainWindow, {
                         type: 'error',
-                        message: 'Institution error. Please login again.',
+                        message: 'Invalid username or password',
                     })
+                } else {
+                    mainWindow.loadURL("file://" + path.join(__dirname, "../src/pages/enable_user.html"));
+                    mainWindow.webContents.once("did-finish-load", () => {
+                        mainWindow.webContents.send("user", disabled[0]);
+                    });
+                    return;
                 }
             });
+        } else {
+
+            appSession.language = args.language;
+            appSession.userData = result[0]; // user data
+            if (
+                appSession.userData.role_code === constant.ROLE_LOCAL ||
+                appSession.userData.role_code === constant.ROLE_DATA_COLLECTOR ||
+                appSession.userData.role_code === constant.ROLE_HR_SPECIALIST ||
+                appSession.userData.role_code === constant.ROLE_ADMIN_SPECIALIST
+
+            ) { // load user institution details if needed
+                database.getUserInstitution(appSession.userData.institution_code, appSession.userData.service_type_code).then((institution) => {
+                    if (institution.length > 0) {
+                        appSession.institutionDetails = institution[0];
+                        // go to next page
+                        goToLocalDashboard();
+                    } else {
+                        dialog.showMessageBox(mainWindow, {
+                            type: 'error',
+                            message: 'Institution error. Please login again.',
+                        })
+                    }
+                });
+            }
         }
     });
 });
@@ -203,6 +214,10 @@ ipcMain.on("changeWindow", (_event, args) => {
 });
 
 const goToLogin = (page: string) => {
+    // reset data when going to login
+    appSession.language = "en";
+    appSession.institutionDetails = {};
+    appSession.userData = {} as DI.User;
     mainWindow.loadURL("file://" + page);
 }
 
@@ -781,7 +796,38 @@ ipcMain.on('updateUser', (_event, args) => {
         });
     });
 })
+ipcMain.on('enableUser', (_event, args) => {
 
+    if (!args.auth_code || args.auth_code === '') {
+        dialog.showMessageBox(mainWindow, {
+            type: 'warning',
+            message: i18n.__('Authorization code missing.'),
+        });
+        return;
+    }
+
+    database.checkAuthCode(args.institution_code, args.auth_code).then((result) => {
+        
+        if (result.length === 0) {
+            dialog.showMessageBox(mainWindow, {
+                type: 'warning',
+                message: i18n.__('Invalid authorization code.'),
+            });
+            return;
+        }
+
+        database.enableUser(args.uuid).then(() => {
+            database.updateAuthCode(args.institution_code, args.auth_code).then(() => {
+                dialog.showMessageBox(mainWindow, {
+                    type: 'info',
+                    message: i18n.__('User enabled. Please login.'),
+                }).then(() => {
+                    goToLogin(path.join(__dirname, "../src/index.html"));
+                });
+            });
+        });
+    });
+});
 
 // Instruments =================
 // Instrument 1

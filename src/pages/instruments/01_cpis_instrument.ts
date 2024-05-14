@@ -14,7 +14,7 @@ globalAny.$ = window.require('jquery');
 window.require('jquery-ui-dist/jquery-ui');
 // window.require('jquery-ui');
 import "jquery-ui/ui/i18n/datepicker-ru";
-import "jquery-ui/ui/i18n/datepicker-uz";
+// import "jquery-ui/ui/i18n/datepicker-uz";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 import { KeyString, KeyStringNumber, regions, districts, settlements } from "../../libraries/administrative";

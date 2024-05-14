@@ -205,5 +205,9 @@
 	"t_auth_code": "Authorization code",
 	"Invalid authorization code.": "Invalid authorization code.",
 	"must_be_earlier": "X must be earlier than Y",
-	"t_select_service_from_list": "Please select a service from the list"
+	"t_select_service_from_list": "Please select a service from the list",
+	"t_enable_user": "This user is disabled. Please contact the regional coordinator for an authorization code to enable it.",
+	"t_enable_user_button": "Enable user",
+	"User enabled. Please login.": "User enabled. Please login.",
+	"Authorization code missing.": "Authorization code missing."
 }

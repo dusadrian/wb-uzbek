@@ -193,5 +193,7 @@
 	"must_be_earlier": "X dagi sana Y dan oldinroq bo'lishi kerak",
 	"t_pf": "t_pf",
 	"t_inson_services": "t_inson_services",
-	"t_auth_code": "t_auth_code"
+	"t_auth_code": "Authorization code",
+	"t_enable_user": "This user is disabled. Please contact the regional coordinator for an authorization code to enable it.",
+	"t_enable_user_button": "Enable user"
 }

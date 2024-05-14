@@ -13,7 +13,7 @@ const i18n = new I18n({
 let username = '';
 ipcRenderer.on('appSession', (event, arg) => {
     sessionStorage.setItem('appSession', JSON.stringify(arg));
-    
+
     let institutionName = '';
     if (arg.language === 'uz') {
         institutionName = arg.institutionDetails.name_uz;
@@ -61,6 +61,9 @@ window.addEventListener("DOMContentLoaded", () => {
     switch (file) {
         case 'index.html':
             index();
+            break;
+        case 'enable_user.html':
+            enable_user();
             break;
         case 'local/01_dashboard.html':
             localDashboard();
@@ -242,6 +245,19 @@ const index = () => {
         }
     });
 
+}
+
+const enable_user = () => {
+    
+    translatePage();
+
+    const importFile = async () => {
+        return await import("./pages/enable_user");
+    };
+
+    importFile().then(result => result.enable_user.init().catch(error => {
+        console.log(error);
+    }));
 }
 
 const topMenu = (backPage: string) => {
