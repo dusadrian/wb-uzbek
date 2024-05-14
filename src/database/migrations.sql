@@ -21,6 +21,7 @@ CREATE TABLE users (
     region_code VARCHAR NULL,
     role_code VARCHAR NULL,
     service_type_code VARCHAR NULL,
+    status BOOLEAN DEFAULT TRUE,
     PRIMARY KEY (id)
 );
 

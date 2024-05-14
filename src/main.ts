@@ -783,26 +783,6 @@ ipcMain.on('updateUser', (_event, args) => {
         });
     });
 })
-ipcMain.on('deleteUser', (_event, args) => {
-    // save to DB
-    dialog.showMessageBox(mainWindow, {
-        type: 'warning',
-        message: i18n.__('Are you sure you want to delete this user?'),
-        buttons: ['Yes', 'No']
-    }).then((result) => {
-        if (result.response === 0) {
-            database.deleteUser(args.id).then(() => {
-                // send message
-                dialog.showMessageBox(mainWindow, {
-                    type: 'info',
-                    message: i18n.__('User deleted.'),
-                }).then(() => {
-                    localUsers();
-                });
-            });
-        }
-    });
-});
 
 
 // Instruments =================

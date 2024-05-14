@@ -42,7 +42,7 @@ export const db = new DuckDB.Database(dbFile, duckdbOptions,
 export const database = {
     checkUser: async (username: string, password: string) => {
         const connection = new Promise<Array<DI.User>>((resolve) => {
-            db.all(`SELECT * FROM users WHERE username = '${username}' AND password = '${password}'`, (error, result) => {
+            db.all(`SELECT * FROM users WHERE username = '${username}' AND password = '${password}' AND status = true`, (error, result) => {
                 if (error) {
                     console.log(error);
                 }
@@ -140,7 +140,7 @@ export const database = {
         const connection = new Promise<Array<DI.User>>((resolve) => {
             // db.all(`SELECT * FROM users WHERE institution_code = '${institution_id}' AND id != '${userId}'`, (error, result) => {
             // TODO -- testing only
-            db.all(`SELECT * FROM users WHERE institution_code = '${institution_code}'`, (error, result) => {
+            db.all(`SELECT * FROM users WHERE institution_code = '${institution_code}' AND status = true`, (error, result) => {
                 if (error) {
                     console.log(error);
                 }
@@ -244,17 +244,6 @@ export const database = {
                     }
                     resolve(true);
                 });
-        });
-        return await connection;
-    },
-    deleteUser: async (id: string) => {
-        const connection = new Promise<boolean>((resolve) => {
-            db.run(`DELETE FROM users WHERE id = '${id}' AND role_code in (2,3,4)`, (error) => {
-                if (error) {
-                    console.log(error);
-                }
-                resolve(true);
-            });
         });
         return await connection;
     },

@@ -7,7 +7,7 @@ export default Object.freeze({
     ROLE_ADMIN_SPECIALIST: '4',
     ROLE_EXT_EVALUATOR: '5',
 
-    CHILD_CARE: ['1', '2', '3', '7'],
-    SPECIALIZED: ['4', '5'],
-    INSON: ['9'],
+    CHILD_CARE: ['11', '12', '13', '14'],
+    SPECIALIZED: ['21', '22', '23', '24', '25', '26', '27', '28'],
+    INSON: ['91'],
 });
