@@ -32,7 +32,10 @@ export interface Institution {
     uuid: string;
     code: string;
     type: string;
-    name: string;
+    name_en: string;
+    name_uz: string;
+    name_ru: string;
+    shorttype: string;
     address: string;
     region: string;
     district: string;
@@ -43,22 +46,33 @@ export interface Institution {
     leavers: number;
     employees: number;
     inson: number;
+    activcode1: string;
+    activcode2: string;
+    activcode3: string;
+    activcode4: string;
+    activcode5: string;
 }
 
 export interface INSON {
     id: number;
     uuid: string;
     code: string;
-    name: string;
-    type: string;
-    address: string;
+    name_en: string;
+    name_uz: string;
+    name_ru: string;
     region: string;
     district: string;
+    settlement: string;
     pf: number; // number of patronat families
     fth: number; // number of family-type homes
     children_fth: number;
     leavers_fth: number;
     services: string;
+    activcode1: string;
+    activcode2: string;
+    activcode3: string;
+    activcode4: string;
+    activcode5: string;
 }
 
 export interface UpdateInsonObjInterface {
