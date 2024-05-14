@@ -34,6 +34,9 @@ SELECT * FROM st_read('utilizatori.xlsx', layer = 'utilizatori', open_options = 
 
 -- Create institutions table
 
+INSTALL spatial;
+LOAD spatial;
+
 DROP TABLE institutions;
 DROP SEQUENCE id_institution_sequence;
 
@@ -43,30 +46,62 @@ CREATE TABLE institutions (
     id INTEGER DEFAULT nextval('id_institution_sequence'),
     uuid UUID DEFAULT uuid(),
     code VARCHAR NOT NULL,
-    type VARCHAR,
-    name VARCHAR NOT NULL,
-    address VARCHAR NOT NULL,
+    type VARCHAR NOT NULL,
+    name_en VARCHAR NOT NULL,
+    name_uz VARCHAR NOT NULL,
+    name_ru VARCHAR NOT NULL,
+    shorttype VARCHAR NOT NULL,
+    address VARCHAR,
     region VARCHAR NOT NULL,
     district VARCHAR NOT NULL,
     settlement VARCHAR,
     settlement_type INTEGER NOT NULL,
-    capacity INTEGER NOT NULL,
-    children INTEGER NOT NULL,
+    capacity INTEGER,
+    children INTEGER,
     leavers INTEGER,
     employees INTEGER,
     inson INTEGER,
+    activcode1 VARCHAR,
+    activcode2 VARCHAR,
+    activcode3 VARCHAR,
+    activcode4 VARCHAR,
+    activcode5 VARCHAR,
     PRIMARY KEY (id)
 );
 
-INSTALL spatial;
-LOAD spatial;
 INSERT INTO institutions
 SELECT * FROM st_read('Services.xlsx', layer = 'Sheet1', open_options = ['HEADERS=FORCE']);
 
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 -- Create INSON table
+INSTALL spatial;
+LOAD spatial;
+
 DROP TABLE inson;
 DROP SEQUENCE id_inson_sequence;
 
@@ -75,14 +110,22 @@ CREATE TABLE inson (
     id INTEGER DEFAULT nextval('id_inson_sequence'),
     uuid UUID DEFAULT uuid(),
     code VARCHAR NOT NULL,
-    name VARCHAR NOT NULL,
+    name_en VARCHAR NOT NULL,
+    name_uz VARCHAR NOT NULL,
+    name_ru VARCHAR NOT NULL,
     region VARCHAR NOT NULL,
     district VARCHAR NOT NULL,
+    settlement VARCHAR,
     pf INTEGER NOT NULL,
     fth INTEGER NOT NULL,
     children_fth INTEGER NOT NULL,
     leavers_fth INTEGER NOT NULL,
     services VARCHAR,
+    activcode1 VARCHAR,
+    activcode2 VARCHAR,
+    activcode3 VARCHAR,
+    activcode4 VARCHAR,
+    activcode5 VARCHAR,
     PRIMARY KEY (id)
 );
 
