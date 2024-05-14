@@ -4,6 +4,8 @@ import * as DI from "../../interfaces/database";
 const updateObj = {} as DI.UpdateInsonObjInterface;
 let services: DI.Institution[] = [];
 
+const appSession = JSON.parse(sessionStorage.getItem('appSession'));
+
 export const institutionDetails = {
     init: async () => {
 
@@ -16,7 +18,13 @@ export const institutionDetails = {
             updateObj.institutionUUID = institution.uuid;
             updateObj.children_fth = institution.children_fth;
             updateObj.leavers_fth = institution.leavers_fth;
-            (document.getElementById('institution_name') as HTMLDivElement).innerText = institution.name;
+            if (appSession.language === 'uz') {
+                (document.getElementById('institution_name') as HTMLDivElement).innerText = institution.name_uz;
+            } else if (appSession.language === 'ru') {
+                (document.getElementById('institution_name') as HTMLDivElement).innerText = institution.name_ru;
+            } else { // fallback to english
+                (document.getElementById('institution_name') as HTMLDivElement).innerText = institution.name_en;
+            }
             (document.getElementById('pf') as HTMLInputElement).value = institution.pf;
 
             const serviceList = document.getElementById('serviceList') as HTMLDivElement;
@@ -28,7 +36,13 @@ export const institutionDetails = {
 
                     const clone = serviceTemplate.content.cloneNode(true) as HTMLElement;
                     // Set the service name
-                    clone.querySelector('.serviceName').textContent = service.name;
+                    if (appSession.language === 'uz') {
+                        clone.querySelector('.serviceName').textContent = service.name_uz;
+                    } else if (appSession.language === 'ru') {
+                        clone.querySelector('.serviceName').textContent = service.name_ru;
+                    } else { // fallback to english
+                        clone.querySelector('.serviceName').textContent = service.name_en;
+                    }
                     // first element
                     const firstElement = clone.querySelector('.firstElement');
                     // label

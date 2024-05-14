@@ -30,7 +30,17 @@ export const header = {
         const appSessionStorage = sessionStorage.getItem('appSession');
         if (appSessionStorage !== null) {
             const appSession = JSON.parse(appSessionStorage);
-            (document.getElementById('header_username') as HTMLSpanElement).innerText = (appSession.userData.institution_name ? appSession.userData.institution_name + ' | ' : '') + appSession.userData.username;
+
+            let institutionName = '';
+            if (appSession.language === 'uz') {
+                institutionName= appSession.institutionDetails.name_uz;
+            } else if (appSession.language === 'ru') {
+                institutionName= appSession.institutionDetails.name_ru;
+            } else { // fallback to english
+                institutionName= appSession.institutionDetails.name_en;
+            }
+
+            (document.getElementById('header_username') as HTMLSpanElement).innerText = (institutionName ? institutionName + ' | ' : '') + appSession.userData.username;
         }
 
         (document.getElementById('logout_text') as HTMLSpanElement).innerText = i18n.__("logout");

@@ -194,5 +194,8 @@
 	"main._dataDownloadedError": "Error. No folder selected!",
 	"t_user_type": "Тип пользователя",
 	"must_be_earlier": "Дата в X должна быть раньше, чем Y",
-	"t_select_service_from_list": "t_select_service_from_list"
+	"t_select_service_from_list": "t_select_service_from_list",
+	"t_pf": "t_pf",
+	"t_inson_services": "t_inson_services",
+	"t_auth_code": "t_auth_code"
 }

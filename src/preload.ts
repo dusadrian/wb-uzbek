@@ -13,7 +13,16 @@ const i18n = new I18n({
 let username = '';
 ipcRenderer.on('appSession', (event, arg) => {
     sessionStorage.setItem('appSession', JSON.stringify(arg));
-    username = (arg.userData.institution_name ? arg.userData.institution_name + ' | ' : '') + arg.userData.username;
+    
+    let institutionName = '';
+    if (arg.language === 'uz') {
+        institutionName = arg.institutionDetails.name_uz;
+    } else if (arg.language === 'ru') {
+        institutionName = arg.institutionDetails.name_ru;
+    } else { // fallback to english
+        institutionName = arg.institutionDetails.name_en;
+    }
+    username = (institutionName ? institutionName + ' | ' : '') + arg.userData.username;
     const us = document.getElementById('header_username');
     if (us) {
         us.innerText = username;

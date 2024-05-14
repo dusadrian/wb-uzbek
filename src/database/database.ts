@@ -82,8 +82,8 @@ export const database = {
     },
     getInstitutionDetails: async (code: string, service_type_code: string) => {
         const connection = new Promise<Array<DI.Institution>>((resolve) => {
-            let sql = `SELECT * FROM institutions WHERE code = '${code}'`;
-            if (service_type_code == '9') {
+            let sql = `SELECT * FROM institutions WHERE code = '${code}'`;            
+            if (constant.INSON.includes(service_type_code)) {
                 sql = `SELECT * FROM inson WHERE code = '${code}'`;
             }
 

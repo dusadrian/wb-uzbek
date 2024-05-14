@@ -34,7 +34,6 @@ let mainWindow: BrowserWindow;
 
 const appSession = {
     language: "en",
-    institutionName: "",
     institutionDetails: {},
     userData: {} as DI.User
 };
@@ -134,7 +133,6 @@ ipcMain.on('login', (_event, args) => {
         ) { // load user institution details if needed
             database.getUserInstitution(appSession.userData.institution_code, appSession.userData.service_type_code).then((institution) => {
                 if (institution.length > 0) {
-                    appSession.institutionName = institution[0].name;
                     appSession.institutionDetails = institution[0];
                     // go to next page
                     goToLocalDashboard();

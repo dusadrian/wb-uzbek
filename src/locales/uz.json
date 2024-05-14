@@ -190,5 +190,8 @@
 	"Error": "Error",
 	"main._dataDownloadedError": "Error. No folder selected!",
 	"t_user_type": "Foydalanuvchi turi",
-	"must_be_earlier": "X dagi sana Y dan oldinroq bo'lishi kerak"
+	"must_be_earlier": "X dagi sana Y dan oldinroq bo'lishi kerak",
+	"t_pf": "t_pf",
+	"t_inson_services": "t_inson_services",
+	"t_auth_code": "t_auth_code"
 }
