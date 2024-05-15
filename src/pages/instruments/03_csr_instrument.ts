@@ -2,16 +2,20 @@ import { ipcRenderer } from "electron";
 import { questions, questionOrder } from "./03_csr_variables";
 import instrument from "../../libraries/instrument";
 import { QuestionObjectType, SaveInstrumentType } from "../../libraries/interfaces";
-import { util } from "../../libraries/validation_helpers";
+import { util, errorHandler } from "../../libraries/validation_helpers";
 import * as DI from "../../interfaces/database";
 import { v4 as uuidv4 } from 'uuid';
 
-import * as _flatpickr from 'flatpickr';
-import { FlatpickrFn } from 'flatpickr/dist/types/instance';
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-const flatpickr: FlatpickrFn = _flatpickr as any;
-import { Russian } from "flatpickr/dist/l10n/ru";
-import { UzbekLatin } from "flatpickr/dist/l10n/uz_latn";
+const globalAny: any = global;
+window.require('jquery');
+globalAny.jQuery = window.require('jquery');
+globalAny.$ = window.require('jquery');
+window.require('jquery-ui-dist/jquery-ui');
+// window.require('jquery-ui');
+import "jquery-ui/ui/i18n/datepicker-ru";
+import "jquery-ui/ui/i18n/datepicker-uz";
+
 import { KeyString, KeyStringNumber, regions, districts, settlements } from "../../libraries/administrative";
 
 import * as en from "../../locales/en.json";
@@ -33,32 +37,43 @@ let userUUID = '';
 let institutionType = '';
 let institutionCode = '';
 
+
+const e2e7 = ["e2", "e7"]; // date elements
+
 export const instrument3 = {
     init: async () => {
 
-        const lang = localStorage.getItem("language");
+        $.datepicker.setDefaults( $.datepicker.regional[ lang ] );
+        const jQueryDatepickerConfig = {
+            changeMonth: true,
+            constrainInput: true,
+            changeYear: true,
+            dateFormat: "dd/mm/yy",
+            minDate: "01/01/1930",
+            maxDate: "30/04/2024",
+            yearRange: "c-100:c+10",
+            firstDay: 1,
+            onSelect: function() {
+                util.trigger(this.id, "change");
+            }
+        };
 
-        const flatpickrConfig: {
-            enableTime: boolean;
-            dateFormat: string;
-            maxDate: string;
-            locale?: typeof Russian | typeof UzbekLatin
-        } = {
-            enableTime: false,
-            dateFormat: "d/m/Y",
-            maxDate: 'today'
-        }
+        e2e7.forEach((el) => {
+            $("#" + el).datepicker(jQueryDatepickerConfig);
 
-        if (lang == "uz") {
-            flatpickrConfig.locale = UzbekLatin;
-        }
-
-        if (lang == "ru") {
-            flatpickrConfig.locale = Russian;
-        }
-
-        flatpickr(util.htmlElement('e2'), flatpickrConfig);
-        flatpickr(util.htmlElement('e7'), flatpickrConfig);
+            util.listen(el, "change", () => {
+                errorHandler.removeError(el, translations['invalid_date']);
+                try {
+                    $.datepicker.parseDate(
+                        jQueryDatepickerConfig.dateFormat,
+                        util.htmlElement(el).value
+                    )
+                } catch (error) {
+                    instrument.questions[el].value = '-9';
+                    errorHandler.addError(el, translations['invalid_date']);
+                }
+            });
+        });
 
         ipcRenderer.on("instrumentDataReady", (_event, args) => {
             // console.log(args);
@@ -245,3 +260,27 @@ j8.forEach(item => {
         }
     });
 });
+
+
+
+e2e7.forEach(item => {
+    util.listen(item, "myChange", () => {
+        const e2 = util.htmlElement("e2").value;
+        const e7 = util.htmlElement("e7").value;
+
+        if (util.inputsHaveValue(e2e7)) {
+            instrument.questions['e2'].value = e2;
+            instrument.questions['e7'].value = e7;
+
+            const message = translations['must_be_earlier'].replace("X", "e2").replace("Y", "e7");
+
+            errorHandler.removeError(e2e7, message);
+
+            if (util.standardDate(e2) > util.standardDate(e7)) {
+                errorHandler.addError(e2e7, message);
+                instrument.questions['e2'].value = '-9';
+                instrument.questions['e7'].value = '-9';
+            }
+        }
+    })
+})

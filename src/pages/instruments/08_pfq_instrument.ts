@@ -5,12 +5,16 @@ import { QuestionObjectType, SaveInstrumentType } from "../../libraries/interfac
 import { util, errorHandler } from "../../libraries/validation_helpers";
 import * as DI from "../../interfaces/database";
 
-import * as _flatpickr from 'flatpickr';
-import { FlatpickrFn } from 'flatpickr/dist/types/instance';
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-const flatpickr: FlatpickrFn = _flatpickr as any;
-import { Russian } from "flatpickr/dist/l10n/ru";
-import { UzbekLatin } from "flatpickr/dist/l10n/uz_latn";
+const globalAny: any = global;
+window.require('jquery');
+globalAny.jQuery = window.require('jquery');
+globalAny.$ = window.require('jquery');
+window.require('jquery-ui-dist/jquery-ui');
+// window.require('jquery-ui');
+import "jquery-ui/ui/i18n/datepicker-ru";
+import "jquery-ui/ui/i18n/datepicker-uz";
+
 import { KeyString, regions, districts, settlements } from "../../libraries/administrative";
 
 import * as en from "../../locales/en.json";
@@ -37,7 +41,7 @@ const setElements = ["", "pf1c"];
 const typeElements = ["", "pf1d"];
 
 const general_dates = [
-    'data', 'ig5'
+    'ig5' // 'data',
 ]
 
 const admission_dates = [
@@ -48,49 +52,52 @@ const exit_dates = [
     'fc4_c1f', 'fc4_c2f', 'fc4_c3f', 'fc4_c4f', 'fc4_c5f'
 ]
 
+const date_elements = [...general_dates, ...admission_dates, ...exit_dates];
+
+
 export const instrument8 = {
     init: async () => {
 
-        const lang = localStorage.getItem("language");
-
-        const flatpickrConfig: {
-            enableTime: boolean;
-            dateFormat: string;
-            maxDate: string;
-            locale?: typeof Russian | typeof UzbekLatin
-        } = {
-            enableTime: false,
-            dateFormat: "d/m/Y",
-            maxDate: "30/04/2024"
-        }
-
-        if (lang == "uz") {
-            flatpickrConfig.locale = UzbekLatin;
-        }
-        if (lang == "ru") {
-            flatpickrConfig.locale = Russian;
-        }
-
-        const date_elements = [...general_dates, ...admission_dates, ...exit_dates];
-
-        const flatpickr_elements = date_elements.map((el) => {
-            const element = util.htmlElement(el);
-            let config;
-            if (admission_dates.indexOf(el) >= 0) {
-                config = { ...flatpickrConfig, minDate: "01/01/2000" };
-                config.maxDate = "30/04/2024";
-            } else if (exit_dates.indexOf(el) >= 0) {
-                config = { ...flatpickrConfig, minDate: "01/05/2024" };
-                config.maxDate = "31/12/2048";
-            } else if (el != "data") {
-                config = { ...flatpickrConfig, minDate: "01/01/1930" };
+        $.datepicker.setDefaults( $.datepicker.regional[ lang ] );
+        const jQueryDatepickerConfig = {
+            changeMonth: true,
+            changeYear: true,
+            dateFormat: "dd/mm/yy",
+            minDate: "01/01/1930",
+            maxDate: "30/04/2024",
+            yearRange: "c-100:c+10",
+            firstDay: 1,
+            onSelect: function() {
+                util.trigger(this.id, "change");
             }
-            return flatpickr(element, config);
+        };
+
+        date_elements.forEach((el) => {
+            const config = { ...jQueryDatepickerConfig };
+            if (admission_dates.indexOf(el) >= 0) {
+                config.minDate = "01/01/2000";
+            } else if (exit_dates.indexOf(el) >= 0) {
+                config.minDate = "01/05/2024";
+                config.maxDate = "31/12/2048";
+            }
+
+            $("#" + el).datepicker(config);
+
+            util.listen(el, "change", () => {
+                errorHandler.removeError(el, translations['invalid_date']);
+                try {
+                    $.datepicker.parseDate(
+                        jQueryDatepickerConfig.dateFormat,
+                        util.htmlElement(el).value
+                    )
+                } catch (error) {
+                    instrument.questions[el].value = '-9';
+                    errorHandler.addError(el, translations['invalid_date']);
+                }
+            });
         });
 
-        const today = new Date();
-        flatpickr_elements[date_elements.indexOf('data')].setDate(today);
-        util.trigger("data", "change");
+        util.setValue("data", util.customDate());
 
 
         ipcRenderer.on("instrumentDataReady", (_event, args) => {

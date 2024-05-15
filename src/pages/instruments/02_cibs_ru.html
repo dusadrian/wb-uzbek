@@ -6,11 +6,13 @@
     <title>CRM Uzbek</title>
     <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
     <meta http-equiv="Content-Security-Policy"
-        content="default-src 'self'; img-src http: https: data: ; script-src 'self';" />
+        content="default-src 'self'; img-src 'self' http: https: data: ; script-src 'self';" />
     <meta http-equiv="X-Content-Security-Policy"
-        content="default-src 'self'; img-src http: https: data: ; script-src 'self';" />
+        content="default-src 'self'; img-src http: https: 'self' data: ; script-src 'self';" />
     <link href="../../../dist/main.css" rel="stylesheet">
-    <link rel="stylesheet" href="../../../node_modules/flatpickr/dist/flatpickr.min.css">
+    <link rel="stylesheet" href="../../../node_modules/jquery-ui-dist/jquery-ui.min.css">
+    <link rel="stylesheet" href="../../../node_modules/jquery-ui-dist/jquery-ui.structure.min.css">
+    <link rel="stylesheet" href="../../../node_modules/jquery-ui-dist/jquery-ui.theme.min.css">
 </head>
 
 <body class="relative max-h-screen">
@@ -169,7 +171,7 @@
                         <label for="lk2-1" class="ms-2 text-sm text-gray-900">1. Мужской</label>
                     </div>
                     <div class="flex items-center">
-                        <input id="lk2-2" type="radio" value="0" name="lk2" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <input id="lk2-2" type="radio" value="2" name="lk2" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="lk2-2" class="ms-2 text-sm text-gray-900">2. Женский</label>
                     </div>
                 </div>
@@ -202,7 +204,7 @@
                 </div>
             </div>
 
-            <div class="grid grid-cols-2 items-center gap-4 mt-6">
+            <div class="grid grid-cols-2 gap-4 items-center mt-6">
                 <div>LK14б. Область</div>
                 <div>
                     <select id="lk14b" name="lk14b" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
@@ -211,7 +213,7 @@
                 </div>
             </div>
 
-            <div class="grid grid-cols-2 items-center gap-4 mt-6">
+            <div class="grid grid-cols-2 gap-4 items-center mt-6">
                 <div>LK14с. Район</div>
                 <div>
                     <select id="lk14c" name="lk14c" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
@@ -219,7 +221,7 @@
                     </select>
                 </div>
             </div>
-            <div class="grid grid-cols-2 items-center gap-4 mt-6">
+            <div class="grid grid-cols-2 gap-4 items-center mt-6">
                 <div>LK14d. Населённый пункт</div>
                 <div>
                     <select id="lk14d" name="lk14d" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
@@ -304,12 +306,12 @@
                         <label for="qfam1-3" class="ms-2 text-sm text-gray-900">3. Да, с другими людьми</label>
                     </div>
                     <div class="flex items-center">
-                        <input id="qfam1-4" type="radio" value="4" name="qfam1" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                        <label for="qfam1-4" class="ms-2 text-sm text-gray-900">4. Нет, ребенок проживал в учреждении опеки или в приемной семье.</label>
+                        <input id="qfam1-4" type="radio" value="7" name="qfam1" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <label for="qfam1-4" class="ms-2 text-sm text-gray-900">7. Нет, ребенок проживал в учреждении опеки или в приемной семье.</label>
                     </div>
                     <div class="flex items-center">
-                        <input id="qfam1-5" type="radio" value="7" name="qfam1" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                        <label for="qfam1-5" class="ms-2 text-sm text-gray-900">7. Другая ситуация, уточните: …</label>
+                        <input id="qfam1-5" type="radio" value="8" name="qfam1" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <label for="qfam1-5" class="ms-2 text-sm text-gray-900">8. Другая ситуация, уточните: …</label>
                     </div>
                     <div class="flex items-center">
                         <input type="text" id="qfam1_other" name="qfam1_other" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
@@ -386,7 +388,7 @@
             </div>
 
             <p class="mt-10">SA3. Где проживал ребенок до поступления в интернат?</p>
-            <div class="grid grid-cols-2 items-center gap-4 mt-4">
+            <div class="grid grid-cols-2 gap-4 items-center mt-4">
                 <div>SA3a. Область</div>
                 <div>
                     <select id="sa3a" name="sa3a" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
@@ -395,7 +397,7 @@
                 </div>
             </div>
 
-            <div class="grid grid-cols-2 items-center gap-4 mt-6">
+            <div class="grid grid-cols-2 gap-4 items-center mt-6">
                 <div>SA3b. Район</div>
                 <div>
                     <select id="sa3b" name="sa3b" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
@@ -404,38 +406,77 @@
                 </div>
             </div>
 
-
-
-
-            <div class="grid grid-cols-2 items-center gap-4 mt-6">
-                <div>SA5a. учреждение</div>
+            <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                <div>SA3c. Населённый пункт</div>
                 <div>
-                    <select id="sa5a" name="sa5a" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
+                    <select id="sa3c" name="sa3c" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
+                        <option value="-9">--- выбрать ---</option>
+                    </select>
+                </div>
+            </div>
+
+            <input type="hidden" id="sa3d" name="sa3d" />
+
+            <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                <div>SA5r. Область</div>
+                <div>
+                    <select id="sa5r" name="sa5r" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
                         <option value="-9">--- выбрать ---</option>
                     </select>
                 </div>
             </div>
 
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
-                <div>SA5b. Название учреждения</div>
-                <div class="flex gap-4">
-                    <input type="text" id="sa5b" name="sa5b" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
+                <div>SA5d. Район</div>
+                <div>
+                    <select id="sa5d" name="sa5d" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
+                        <option value="-9">--- выбрать ---</option>
+                    </select>
                 </div>
             </div>
 
+            <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                <div>SA5i. учреждение</div>
+                <div class="flex gap-4">
+                    <select id="sa5i" name="sa5i" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
+                        <option value="-9">--- выбрать ---</option>
+                    </select>
+                </div>
+            </div>
 
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
-                <div>SA5c. Тип учреждения</div>
+                <div>SA5n. Название учреждения</div>
                 <div>
-                    <select id="sa5c" name="sa5c" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
-                        <option selected value="-9">--- выбрать ---</option>
-                        <option value="1">1. Детский дом (Дом ребенка)"</option>
-                        <option value="2">2. Дом "Мехрибонлик"</option>
-                        <option value="3">3. Дом-интернат "Мурувват"для детей с инвалидностью</option>
-                        <option value="4">4. Детский дом семейного типа</option>
-                        <option value="5">5. Патронатная семья)</option>
-                        <option value="6">6. Опека/ Попечительство</option>
-                        <option value="7">7. SOS Детские деревни/семьи</option>
+                    <input type="text" id="sa5n" name="sa5n" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                <div>SA5t. Тип учреждения</div>
+                <div>
+                    <select id="sa5t" name="sa5t" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
+                        <option value="-9">--- выбрать ---</option>
+                        <option value="11">11. Дом ребенка</option>
+                        <option value="12">12. детские «дома милосердия» - Мехрибонлик</option>
+                        <option value="13">13. Дома-Интернаты Для Детей С Инвалидностью «Мурувват»</option>
+                        <option value="14">14. SOS Детские деревни</option>
+                        <option value="15">15. Детские дома семейного типа</option>
+                        <option value="16">16. Патронатная семья</option>
+                        <option value="17">17. Опека/ Попечительство</option>
+                        <option value="21">21. I тип - школы-интернаты для глухих детей</option>
+                        <option value="22">22. Тип II - школы-интернаты для слабослышащих и тех, кто впоследствии потеряет слух</option>
+                        <option value="23">23. III тип - специализированные школы-интернаты для слепых детей “Нурли Маскан”</option>
+                        <option value="24">24. IV тип - специализированные школы-интернаты “Нурли Маскан” для слабовидящих и тех, кто впоследствии потеряет зрение</option>
+                        <option value="25">25. V тип - школы-интернаты для детей с тяжелыми нарушениями речи</option>
+                        <option value="26">26. VI тип - школы-интернаты для детей с нарушениями опорно-двигательного аппарата</option>
+                        <option value="27">27. Тип VII - школы-интернаты для детей с задержкой психического развития</option>
+                        <option value="28">28. Тип VIII - поддержка школ-интернатов для детей с задержкой интеллектуального развития</option>
+                        <option value="31">31. многопрофильные специализированные дошкольные образовательные организации</option>
+                        <option value="32">32. специализированные школы для детей с особыми образовательными потребностями</option>
+                        <option value="33">33. Республиканский специализированный колледж для лиц с ограниченными возможностями</option>
+                        <option value="34">34. специализированные  государственные образовательные учреждения санаторного типа</option>
+                        <option value="35">35. Республиканские  учебно-воспитательные учреждения (РУВУ)</option>
+                        <option value="36">36. Центры социальной и правовой помощи несовершеннолетним</option>
                     </select>
                 </div>
             </div>
@@ -505,10 +546,6 @@
                         <input id="qfam5a-2" type="radio" value="2" name="qfam5a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="qfam5a-2" class="ms-2 text-sm text-gray-900">2. Нет</label>
                     </div>
-                    <!-- <div class="flex items-center">
-                        <input id="qfam5a-3" type="radio" value="9" name="qfam5a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                        <label for="qfam5a-3" class="ms-2 text-sm text-gray-900">9. Неизвестно</label>
-                    </div> -->
                 </div>
             </div>
 
@@ -523,10 +560,6 @@
                         <input id="qfam5b-2" type="radio" value="2" name="qfam5b" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="qfam5b-2" class="ms-2 text-sm text-gray-900">2. Нет</label>
                     </div>
-                    <!-- <div class="flex items-center">
-                        <input id="qfam5b-3" type="radio" value="9" name="qfam5b" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                        <label for="qfam5b-3" class="ms-2 text-sm text-gray-900">9. Неизвестно</label>
-                    </div> -->
                 </div>
             </div>
 
@@ -541,10 +574,6 @@
                         <input id="qfam5c-2" type="radio" value="2" name="qfam5c" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="qfam5c-2" class="ms-2 text-sm text-gray-900">2. Нет</label>
                     </div>
-                    <!-- <div class="flex items-center">
-                        <input id="qfam5c-3" type="radio" value="9" name="qfam5c" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                        <label for="qfam5c-3" class="ms-2 text-sm text-gray-900">9. Неизвестно</label>
-                    </div> -->
                 </div>
             </div>
 
@@ -559,10 +588,6 @@
                         <input id="qfam5d-2" type="radio" value="2" name="qfam5d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="qfam5d-2" class="ms-2 text-sm text-gray-900">2. Нет</label>
                     </div>
-                    <!-- <div class="flex items-center">
-                        <input id="qfam5d-3" type="radio" value="9" name="qfam5d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                        <label for="qfam5d-3" class="ms-2 text-sm text-gray-900">9. Неизвестно</label>
-                    </div> -->
                 </div>
             </div>
 
@@ -577,10 +602,6 @@
                         <input id="qfam5e-2" type="radio" value="2" name="qfam5e" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="qfam5e-2" class="ms-2 text-sm text-gray-900">2. Нет</label>
                     </div>
-                    <!-- <div class="flex items-center">
-                        <input id="qfam5e-3" type="radio" value="9" name="qfam5e" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                        <label for="qfam5e-3" class="ms-2 text-sm text-gray-900">9. Неизвестно</label>
-                    </div> -->
                 </div>
             </div>
 
@@ -697,7 +718,7 @@
                 </div>
             </div>
 
-            <div class="grid grid-cols-2 items-center gap-4 mt-6">
+            <div class="grid grid-cols-2 gap-4 items-center mt-6">
                 <div>CM3b. Область</div>
                 <div>
                     <select id="cm3b" name="cm3b" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
@@ -706,7 +727,7 @@
                 </div>
             </div>
 
-            <div class="grid grid-cols-2 items-center gap-4 mt-6">
+            <div class="grid grid-cols-2 gap-4 items-center mt-6">
                 <div>CM3c. Район</div>
                 <div>
                     <select id="cm3c" name="cm3c" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
@@ -714,7 +735,8 @@
                     </select>
                 </div>
             </div>
-            <div class="grid grid-cols-2 items-center gap-4 mt-6">
+
+            <div class="grid grid-cols-2 gap-4 items-center mt-6">
                 <div>CM3d. Населённый пункт</div>
                 <div>
                     <select id="cm3d" name="cm3d" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
@@ -835,7 +857,7 @@
                 </div>
             </div>
             <div class="grid grid-cols-2 gap-4 items-center mt-10">
-                <div>CM7b. Уровень образования матери</div>
+                <div>CM7b. Текущее образование матери</div>
                 <div class="col-span-1 flex flex-col gap-2">
                     <div class="flex items-center">
                         <input id="cm7b-1" type="radio" value="0" name="cm7b" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
@@ -1043,7 +1065,7 @@
 
             <p class="mt-6">б. Регистрация по месту жительства:</p>
 
-            <div class="grid grid-cols-2 items-center gap-4 mt-6">
+            <div class="grid grid-cols-2 gap-4 items-center mt-6">
                 <div>в. Область:</div>
                 <div>
                     <select id="cm11c" name="cm11c" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
@@ -1052,7 +1074,7 @@
                 </div>
             </div>
 
-            <div class="grid grid-cols-2 items-center gap-4 mt-6">
+            <div class="grid grid-cols-2 gap-4 items-center mt-6">
                 <div>д. Район:</div>
                 <div>
                     <select id="cm11d" name="cm11d" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
@@ -1061,7 +1083,7 @@
                 </div>
             </div>
 
-            <div class="grid grid-cols-2 items-center gap-4 mt-6">
+            <div class="grid grid-cols-2 gap-4 items-center mt-6">
                 <div>e. Населённый пункт</div>
                 <div>
                     <select id="cm11e" name="cm11e" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
@@ -1205,7 +1227,7 @@
                 </div>
             </div>
 
-            <div class="grid grid-cols-2 items-center gap-4 mt-6">
+            <div class="grid grid-cols-2 gap-4 items-center mt-6">
                 <div>CT3b. Область</div>
                 <div>
                     <select id="ct3b" name="ct3b" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
@@ -1214,7 +1236,7 @@
                 </div>
             </div>
 
-            <div class="grid grid-cols-2 items-center gap-4 mt-6">
+            <div class="grid grid-cols-2 gap-4 items-center mt-6">
                 <div>CT3c. Район</div>
                 <div>
                     <select id="ct3c" name="ct3c" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
@@ -1223,7 +1245,7 @@
                 </div>
             </div>
 
-            <div class="grid grid-cols-2 items-center gap-4 mt-6">
+            <div class="grid grid-cols-2 gap-4 items-center mt-6">
                 <div>CT3d. Населённый пункт</div>
                 <div>
                     <select id="ct3d" name="ct3d" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
@@ -1346,7 +1368,7 @@
                 </div>
             </div>
             <div class="grid grid-cols-2 gap-4 items-center mt-10">
-                <div>CT7b. Уровень образования отца</div>
+                <div>CT7b. Текущее образование отца</div>
                 <div class="col-span-1 flex flex-col gap-2">
                     <div class="flex items-center">
                         <input id="ct7b-1" type="radio" value="0" name="ct7b" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
@@ -1553,7 +1575,7 @@
 
             <p class="mt-6">б. Регистрация по месту жительства:</p>
 
-            <div class="grid grid-cols-2 items-center gap-4 mt-6">
+            <div class="grid grid-cols-2 gap-4 items-center mt-6">
                 <div>в. Область:</div>
                 <div>
                     <select id="ct11c" name="ct11c" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
@@ -1562,7 +1584,7 @@
                 </div>
             </div>
 
-            <div class="grid grid-cols-2 items-center gap-4 mt-6">
+            <div class="grid grid-cols-2 gap-4 items-center mt-6">
                 <div>д. Район:</div>
                 <div>
                     <select id="ct11d" name="ct11d" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
@@ -1571,7 +1593,7 @@
                 </div>
             </div>
 
-            <div class="grid grid-cols-2 items-center gap-4 mt-6">
+            <div class="grid grid-cols-2 gap-4 items-center mt-6">
                 <div>e. Населённый пункт</div>
                 <div>
                     <select id="ct11e" name="ct11e" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
@@ -1637,35 +1659,35 @@
             </div>
 
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
-                <div>CG1d. Степень родства:</div>
+                <div>CG1d. Родственные отношения</div>
                 <div class="flex flex-col gap-2">
                     <div class="flex items-center">
                         <input id="cg1d-1" type="radio" value="1" name="cg1d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                        <label for="cg1d-1" class="ms-2 text-sm text-gray-900">1. Брат/Сестра (2-я степень)</label>
+                        <label for="cg1d-1" class="ms-2 text-sm text-gray-900">1. Брат/Сестра (2-я ступень родства)</label>
                     </div>
                     <div class="flex items-center">
                         <input id="cg1d-2" type="radio" value="2" name="cg1d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                        <label for="cg1d-2" class="ms-2 text-sm text-gray-900">2. Дедушка/Бабушка (2-я степень)</label>
+                        <label for="cg1d-2" class="ms-2 text-sm text-gray-900">2. Дедушка/Бабушка ( 2-я ступень родства)</label>
                     </div>
                     <div class="flex items-center">
                         <input id="cg1d-3" type="radio" value="3" name="cg1d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                        <label for="cg1d-3" class="ms-2 text-sm text-gray-900">3. Дядя/Тётя (3-я степень)</label>
+                        <label for="cg1d-3" class="ms-2 text-sm text-gray-900">3. Дядя/Тетя ( 3-я ступень родства)</label>
                     </div>
                     <div class="flex items-center">
                         <input id="cg1d-4" type="radio" value="4" name="cg1d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                        <label for="cg1d-4" class="ms-2 text-sm text-gray-900">4. Прадедушка (3-я степень)</label>
+                        <label for="cg1d-4" class="ms-2 text-sm text-gray-900">4. Прабабушка/прадедушка ( 3-я ступень родства)</label>
                     </div>
                     <div class="flex items-center">
                         <input id="cg1d-5" type="radio" value="5" name="cg1d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                        <label for="cg1d-5" class="ms-2 text-sm text-gray-900">5. Двоюродный брат (4-я степень)</label>
+                        <label for="cg1d-5" class="ms-2 text-sm text-gray-900">5. Двоюродный брат/сестра ( 4-я ступень родства)</label>
                     </div>
                     <div class="flex items-center">
                         <input id="cg1d-6" type="radio" value="6" name="cg1d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                        <label for="cg1d-6" class="ms-2 text-sm text-gray-900">6. Другой родственник 4-й степени родства или более дальний родственник</label>
+                        <label for="cg1d-6" class="ms-2 text-sm text-gray-900">6. Другой родственник 4-й ступени родства или более дальний родственник</label>
                     </div>
                     <div class="flex items-center">
                         <input id="cg1d-7" type="radio" value="7" name="cg1d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                        <label for="cg1d-7" class="ms-2 text-sm text-gray-900">7. Сводные родственники (семейные отношения, установленные посредством (повторного) брака)</label>
+                        <label for="cg1d-7" class="ms-2 text-sm text-gray-900">7. Некровное родство (посредством брака или повторного брака)</label>
                     </div>
                 </div>
             </div>
@@ -2032,7 +2054,7 @@
 
             <p class="mt-6">б. Регистрация по месту жительства:</p>
 
-            <div class="grid grid-cols-2 items-center gap-4 mt-6">
+            <div class="grid grid-cols-2 gap-4 items-center mt-6">
                 <div>в. Область:</div>
                 <div>
                     <select id="cg11c" name="cg11c" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
@@ -2041,7 +2063,7 @@
                 </div>
             </div>
 
-            <div class="grid grid-cols-2 items-center gap-4 mt-6">
+            <div class="grid grid-cols-2 gap-4 items-center mt-6">
                 <div>д. Район:</div>
                 <div>
                     <select id="cg11d" name="cg11d" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
@@ -2050,7 +2072,7 @@
                 </div>
             </div>
 
-            <div class="grid grid-cols-2 items-center gap-4 mt-6">
+            <div class="grid grid-cols-2 gap-4 items-center mt-6">
                 <div>e. Населённый пункт</div>
                 <div>
                     <select id="cg11e" name="cg11e" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
@@ -2142,7 +2164,26 @@
             </div>
 
             <small class="my-2 block italic text-red-500 mt-6">ЕСЛИ РЕБЕНОК ПОСЕЩАЛ МНОГОПРОФИЛЬНУЮ СПЕЦИАЛИЗИРОВАННУЮ ДОШКОЛЬНУЮ ОБРАЗОВАТЕЛЬНУЮ ОРГАНИЗАЦИЮ /ДЕТСКИЙ САД</small>
-            <div class="grid grid-cols-2 items-center gap-4 mt-2">
+
+            <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                <div>1ar. Область</div>
+                <div>
+                    <select id="qeduc1ar" name="qeduc1ar" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
+                        <option value="-9">--- выбрать ---</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                <div>1ad. Район</div>
+                <div>
+                    <select id="qeduc1ad" name="qeduc1ad" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
+                        <option value="-9">--- выбрать ---</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4 items-center mt-2">
                 <div>1а1. Введите код из реестра последнего специализированного дошкольного учреждения, из которого поступил ребенок</div>
                 <div>
                     <select id="qeduc1a1" name="qeduc1a1" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
@@ -2224,10 +2265,23 @@
             </div>
 
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
-                <div>2б. В каком классе учился ребенок?<small class="mb-1 my-2 block italic text-red-500">ПОСТАВЬТЕ 0 ( НОЛЬ) ДЛЯ ПОДГОТОВИТЕЛЬНОЙ ГРУППЫ</small>
-                </div>
+                <div>2б. В каком классе учился ребенок?<small class="mb-1 my-2 block italic text-red-500">ПОСТАВЬТЕ 0 ( НОЛЬ) ДЛЯ ПОДГОТОВИТЕЛЬНОЙ ГРУППЫ</small></div>
                 <div>
-                    <input type="text" id="qeduc2b" name="qeduc2b" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
+                    <select id="qeduc2b" name="qeduc2b" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
+                        <option value="-9">--- выбрать ---</option>
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                    </select>
                 </div>
             </div>
 
@@ -2290,15 +2344,15 @@
                 <div>3. Был ли ребенок переведен из другой школы-интерната?</div>
                 <div class="flex flex-col gap-2">
                     <div class="flex items-center">
-                        <input id="qeduc4-1" type="radio" value="{{qeduc4-1}}" name="qeduc4" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <input id="qeduc4-1" type="radio" value="1" name="qeduc4" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="qeduc4-1" class="ms-2 text-sm text-gray-900">1. Да, из школы-интената того же типа</label>
                     </div>
                     <div class="flex items-center">
-                        <input id="qeduc4-2" type="radio" value="{{qeduc4-2}}" name="qeduc4" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <input id="qeduc4-2" type="radio" value="2" name="qeduc4" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="qeduc4-2" class="ms-2 text-sm text-gray-900">2. Да, из школы-интерната другого типа</label>
                     </div>
                     <div class="flex items-center">
-                        <input id="qeduc4-3" type="radio" value="{{qeduc4-3}}" name="qeduc4" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <input id="qeduc4-3" type="radio" value="9" name="qeduc4" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="qeduc4-3" class="ms-2 text-sm text-gray-900">3. Нет</label>
                     </div>
                 </div>
@@ -2308,27 +2362,27 @@
                 <div>3а. По какой причине ребенка перевели из другой школы- интерната?</div>
                 <div class="flex flex-col gap-2">
                     <div class="flex items-center">
-                        <input id="qeduc4a-1" type="radio" value="{{qeduc4a-1}}" name="qeduc4a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <input id="qeduc4a-1" type="radio" value="1" name="qeduc4a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="qeduc4a-1" class="ms-2 text-sm text-gray-900">1. У ребенка были академические, социальные или поведенческие трудности в предыдущей школе-интернате, и ему требовалась более подходящая среда или программа.</label>
                     </div>
                     <div class="flex items-center">
-                        <input id="qeduc4a-2" type="radio" value="{{qeduc4a-2}}" name="qeduc4a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <input id="qeduc4a-2" type="radio" value="2" name="qeduc4a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="qeduc4a-2" class="ms-2 text-sm text-gray-900">2. У ребенка изменился диагноз, потребности или цели, и ему потребовалось другое специализированное образование или сопровождение.</label>
                     </div>
                     <div class="flex items-center">
-                        <input id="qeduc4a-3" type="radio" value="{{qeduc4a-3}}" name="qeduc4a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <input id="qeduc4a-3" type="radio" value="3" name="qeduc4a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="qeduc4a-3" class="ms-2 text-sm text-gray-900">3. Ребенок или родители были недовольны качеством или расположением предыдущей школы-интерната и хотели выбрать лучший вариант.</label>
                     </div>
                     <div class="flex items-center">
-                        <input id="qeduc4a-4" type="radio" value="{{qeduc4a-4}}" name="qeduc4a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <input id="qeduc4a-4" type="radio" value="4" name="qeduc4a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="qeduc4a-4" class="ms-2 text-sm text-gray-900">4. У ребенка была личная или семейная ситуация, которая повлияла на его решение сменить школу, например, переезд в другой район, переживание травмирующего события или проблемы со здоровьем.</label>
                     </div>
                     <div class="flex items-center">
-                        <input id="qeduc4a-5" type="radio" value="{{qeduc4a-5}}" name="qeduc4a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <input id="qeduc4a-5" type="radio" value="5" name="qeduc4a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="qeduc4a-5" class="ms-2 text-sm text-gray-900">5. Ребенка исключили из предыдущей школы-интерната.</label>
                     </div>
                     <div class="flex items-center">
-                        <input id="qeduc4a-6" type="radio" value="{{qeduc4a-6}}" name="qeduc4a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <input id="qeduc4a-6" type="radio" value="6" name="qeduc4a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="qeduc4a-6" class="ms-2 text-sm text-gray-900">6. Если другое, уточните:  …</label>
                     </div>
                     <div class="flex items-center">
@@ -3077,11 +3131,23 @@
             </div>
 
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
-                <div>SCH2. В каком классе сейчас учится ребенок?<small class="my-2 block italic text-red-500">ПОСТАВЬТЕ 0 ( НОЛЬ) ДЛЯ ПОДГОТОВИТЕЛЬНОЙ ГРУППЫ</small>
-                    <!-- <small class="block italic mt-2">ЗАПОЛНИТЕ, ЕСЛИ КЛАСС>=8, ЛИБО ПЕРЕХОДИТЕ К CEDU</small> -->
-                </div>
+                <div>SCH2. В каком классе сейчас учится ребенок?<small class="my-2 block italic text-red-500">ПОСТАВЬТЕ 0 ( НОЛЬ) ДЛЯ ПОДГОТОВИТЕЛЬНОЙ ГРУППЫ</small></div>
                 <div>
-                    <input type="text" id="sch2" name="sch2" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
+                    <select id="sch2" name="sch2" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
+                        <option value="-9">--- выбрать ---</option>
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                    </select>
                 </div>
             </div>
 
@@ -5299,11 +5365,11 @@
                 <div>SK7. Подали ли родители/опекуны заявление о переводе ребенка в общеобразовательную школу?</div>
                 <div class="col-span-1 flex items-center gap-4">
                     <div class="flex items-center">
-                        <input id="sk12-1" type="radio" value="{{sk12-1}}" name="sk12" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <input id="sk12-1" type="radio" value="1" name="sk12" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="sk12-1" class="ms-2 text-sm text-gray-900">1. Да</label>
                     </div>
                     <div class="flex items-center">
-                        <input id="sk12-2" type="radio" value="{{sk12-2}}" name="sk12" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <input id="sk12-2" type="radio" value="2" name="sk12" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="sk12-2" class="ms-2 text-sm text-gray-900">2. Нет</label>
                     </div>
                 </div>
@@ -5313,11 +5379,11 @@
                 <div>SK8. Есть ли заключение психолого-медико-педагогической комиссии о переводе ребенка в общеобразовательную школу?</div>
                 <div class="col-span-1 flex items-center gap-4">
                     <div class="flex items-center">
-                        <input id="sk13-1" type="radio" value="{{sk13-1}}" name="sk13" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <input id="sk13-1" type="radio" value="1" name="sk13" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="sk13-1" class="ms-2 text-sm text-gray-900">1. Да</label>
                     </div>
                     <div class="flex items-center">
-                        <input id="sk13-2" type="radio" value="{{sk13-2}}" name="sk13" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <input id="sk13-2" type="radio" value="2" name="sk13" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="sk13-2" class="ms-2 text-sm text-gray-900">2. Нет</label>
                     </div>
                 </div>
@@ -5327,11 +5393,11 @@
                 <div>SK9. Была ли у ребенка за последние шесть месяцев возможность проводить время в сообществе и общаться с обычными детьми?</div>
                 <div class="col-span-1 flex items-center gap-4">
                     <div class="flex items-center">
-                        <input id="sk14-1" type="radio" value="{{sk14-1}}" name="sk14" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <input id="sk14-1" type="radio" value="1" name="sk14" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="sk14-1" class="ms-2 text-sm text-gray-900">1. Да, как минимум один раз</label>
                     </div>
                     <div class="flex items-center">
-                        <input id="sk14-2" type="radio" value="{{sk14-2}}" name="sk14" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <input id="sk14-2" type="radio" value="0" name="sk14" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="sk14-2" class="ms-2 text-sm text-gray-900">0. Нет</label>
                     </div>
                 </div>
@@ -5517,6 +5583,11 @@
                         <label for="sq13-2" class="ms-2 text-sm text-gray-900">2. Нет</label>
                     </div>
                 </div>
+            </div>
+
+            <div class="grid mt-10">
+                <label for="obs">OBS. Наблюдения</label>
+                <textarea class="form-control" rows="3" id="obs" name="obs"></textarea>
             </div>
         </form>
 

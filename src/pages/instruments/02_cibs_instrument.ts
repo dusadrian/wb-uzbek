@@ -5,12 +5,16 @@ import { QuestionObjectType, SaveInstrumentType } from "../../libraries/interfac
 import { util, errorHandler } from "../../libraries/validation_helpers";
 import * as DI from "../../interfaces/database";
 
-import * as _flatpickr from 'flatpickr';
-import { FlatpickrFn } from 'flatpickr/dist/types/instance';
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-const flatpickr: FlatpickrFn = _flatpickr as any;
-import { Russian } from "flatpickr/dist/l10n/ru";
-import { UzbekLatin } from "flatpickr/dist/l10n/uz_latn";
+const globalAny: any = global;
+window.require('jquery');
+globalAny.jQuery = window.require('jquery');
+globalAny.$ = window.require('jquery');
+window.require('jquery-ui-dist/jquery-ui');
+// window.require('jquery-ui');
+import "jquery-ui/ui/i18n/datepicker-ru";
+import "jquery-ui/ui/i18n/datepicker-uz";
+
 import { KeyString, KeyStringNumber, regions, districts, settlements } from "../../libraries/administrative";
 
 import * as en from "../../locales/en.json";
@@ -33,10 +37,10 @@ const general_dates = [
 ];
 
 
-const regElements =  ["reg", "lk14b", "sa3a", "cm3b", "cm11c", "ct11c", "cg11c"];
-const disElements =  ["dis", "lk14c", "sa3b", "cm3c", "cm11d", "ct11d", "cg11d"];
-const setElements =  ["",    "lk14d", "",     "cm3d", "cm11e", "ct11e", "cg11e"];
-const typeElements = ["",    "lk14e", "",     "cm3e", "cm11f", "ct11f", "cg11f"];
+const regElements =  ["reg", "lk14b", "sa3a", "sa5r", "cm3b", "cm11c", "ct11c", "cg11c", "qeduc1ar"];
+const disElements =  ["dis", "lk14c", "sa3b", "sa5d", "cm3c", "cm11d", "ct11d", "cg11d", "qeduc1ad"];
+const setElements =  ["",    "lk14d", "sa3c", "",     "cm3d", "cm11e", "ct11e", "cg11e", ""];
+const typeElements = ["",    "lk14e", "sa3d", "",     "cm3e", "cm11f", "ct11f", "cg11f", ""];
 
 let regionCode = '';
 let userUUID = '';
@@ -86,47 +90,51 @@ function check_sa1a(value: string) {
 export const instrument2 = {
     init: async () => {
 
-        const flatpickrConfig: {
-            enableTime: boolean;
-            dateFormat: string;
-            maxDate: string;
-            locale?: typeof Russian | typeof UzbekLatin
-        } = {
-            enableTime: false,
-            dateFormat: "d/m/Y",
-            maxDate: "30/04/2024"
-        }
-
-        if (lang == "uz") {
-            flatpickrConfig.locale = UzbekLatin;
-        }
-
-        if (lang == "ru") {
-            flatpickrConfig.locale = Russian;
-        }
+        $.datepicker.setDefaults( $.datepicker.regional[ lang ] );
+        const jQueryDatepickerConfig = {
+            changeMonth: true,
+            changeYear: true,
+            dateFormat: "dd/mm/yy",
+            minDate: "01/01/2000",
+            maxDate: "30/04/2024",
+            yearRange: "c-100:c+10",
+            firstDay: 1,
+            onSelect: function() {
+                util.trigger(this.id, "change");
+            }
+        };
 
         general_dates.forEach((el) => {
-            const element = document.getElementById(el) as HTMLInputElement;
-            let config;
+            const config = { ...jQueryDatepickerConfig };
             if (el == "data") {
-                config = { ...flatpickrConfig, minDate: "01/04/2024" };
+                config.minDate = "01/04/2024";
                 config.maxDate = "31/12/2025";
             } else if (el == "cm3") {
-                config = { ...flatpickrConfig, minDate: "01/01/1950" };
+                config.minDate = "01/01/1950";
                 config.maxDate = "31/12/2023";
             } else if (el == "ct3" || el == "cg3b") {
-                config = { ...flatpickrConfig, minDate: "01/01/1930" };
+                config.minDate = "01/01/1930";
                 config.maxDate = "31/12/2023";
             } else if (el == "cmgt1a") {
-                config = { ...flatpickrConfig, minDate: "01/01/2000" };
-                config.dateFormat = "m/Y";
+                config.dateFormat = "mm/yy";
             } else if (el == "lk3") {
-                config = { ...flatpickrConfig, minDate: "01/01/1990" };
-            } else {
-                config = { ...flatpickrConfig, minDate: "01/01/2000" };
+                config.minDate = "01/01/1990";
             }
 
-            flatpickr(element, config);
+            $("#" + el).datepicker(config);
+
+            util.listen(el, "change", () => {
+                errorHandler.removeError(el, translations['invalid_date']);
+                try {
+                    $.datepicker.parseDate(
+                        jQueryDatepickerConfig.dateFormat,
+                        util.htmlElement(el).value
+                    )
+                } catch (error) {
+                    instrument.questions[el].value = '-9';
+                    errorHandler.addError(el, translations['invalid_date']);
+                }
+            });
         });
 
 
@@ -137,7 +145,7 @@ export const instrument2 = {
             const institution_code = args.userData.institution_code;
             const inson_user = Object.keys(insons).indexOf(institution_code) >= 0;
 
-            const sa5a = util.htmlElement("sa5a");
+            const sa5i = util.htmlElement("sa5i");
             const reg_codes = Object.keys(regions);
             for (let x = 0; x < regElements.length; x++) {
                 const reg_el = util.htmlElement(regElements[x]);
@@ -159,8 +167,9 @@ export const instrument2 = {
                 const set_el = util.htmlElement(setElements[x]);
 
                 util.listen(regElements[x], "change", function () {
-                    if (regElements[x] == "sa3a") {
-                        sa5a.innerHTML = "";
+
+                    if (regElements[x] == "sa5r") {
+                        sa5i.innerHTML = "";
                     }
 
                     if (typeElements[x] != "") {
@@ -191,9 +200,14 @@ export const instrument2 = {
                 })
 
                 util.listen(disElements[x], "change", function () {
+                    if (regElements[x] == "sa5r") {
+                        sa5i.innerHTML = "";
+                    }
+
                     if (typeElements[x] != "") {
                         util.htmlElement(typeElements[x]).value = "";
                     }
+
                     const selectedDistrict = dis_el.value;
 
                     if (setElements[x] != "") {
@@ -227,31 +241,6 @@ export const instrument2 = {
                                 util.htmlElement(setElements[x]).disabled = true;
                             }
                         }
-                    }
-
-                    if (regElements[x] == "sa3a") {
-                        sa5a.innerHTML = "";
-                        const serv = districts[selectedDistrict].services;
-                        sa5a.appendChild(option);
-
-                        if (serv.length > 0) {
-                            for (let i = 0; i < serv.length; i++) {
-                                if (Number(services[serv[i]].type) < 20) {
-                                    const option = document.createElement("option");
-                                    option.value = serv[i];
-                                    const serviciu = { ...services[serv[i]] } as KeyStringNumber;
-                                    option.text = serv[i] + ': ' + serviciu['name_'+ lang];
-                                    sa5a.appendChild(option);
-                                }
-                            }
-                        }
-
-                        const optgroup = document.createElement("optgroup");
-                        const option999 = document.createElement("option");
-                        option999.value = '999';
-                        option999.text = '999: ' + translations['not_in_registry'];
-                        optgroup.appendChild(option999);
-                        sa5a.appendChild(optgroup);
                     }
                 })
             }
@@ -416,18 +405,18 @@ util.listen("sa1a", "myChange", () => {
 });
 
 
-util.listen("sa5a", "change", function () {
-    util.setValue("sa5c", "-9");
-    const value = util.htmlElement("sa5a").value;
-    const serv_codes = Object.keys(services);
-    if (serv_codes.indexOf(value) >= 0) {
-        const type = services[value].type;
-        // console.log(type, services[value].name);
-        if (["11", "12", "13", "14", "15"].indexOf(type) >= 0) {
-            util.setValue("sa5c", type);
-        }
-    }
-})
+// util.listen("sa5a", "change", function () {
+//     util.setValue("sa5c", "-9");
+//     const value = util.htmlElement("sa5a").value;
+//     const serv_codes = Object.keys(services);
+//     if (serv_codes.indexOf(value) >= 0) {
+//         const type = services[value].type;
+//         // console.log(type, services[value].name);
+//         if (["11", "12", "13", "14", "15"].indexOf(type) >= 0) {
+//             util.setValue("sa5c", type);
+//         }
+//     }
+// })
 
 
 const qfam = [
@@ -649,3 +638,97 @@ util.listen("sch2", "myChange", () => {
         instrument.questions["sch2"].value = "-9";
     }
 });
+
+
+util.listen("sa5d", "myChange", () => {
+    const selectedDistrict = util.htmlElement("sa5d").value;
+    const institutie = util.htmlElement("qeduc1a1");
+
+    const option = document.createElement("option");
+    option.value = "-9";
+    option.text = translations['t_choose'];
+
+    institutie.innerHTML = "";
+    institutie.appendChild(option);
+
+    const serv = districts[selectedDistrict].services;
+    if (serv.length > 0) {
+        for (let i = 0; i < serv.length; i++) {
+            if (Number(services[serv[i]].type) < 20) {
+                let service_included = true;
+                if (insons[institutionCode]) {
+                    service_included = insons[institutionCode].services.includes(serv[i]);
+                }
+
+                if (service_included) {
+                    const option = document.createElement("option");
+                    option.value = serv[i];
+                    const serviciu = { ...services[serv[i]] } as KeyStringNumber;
+                    option.text = serv[i] + ': ' + serviciu['name_'+ lang];
+                    institutie.appendChild(option);
+                }
+            }
+        }
+    }
+
+    const optgroup = document.createElement("optgroup");
+    const option999 = document.createElement("option");
+    option999.value = '999';
+    option999.text = '999: ' + translations['not_in_registry'];
+    optgroup.appendChild(option999);
+    institutie.appendChild(optgroup);
+})
+
+const qeduc1a = util.radioIDs("qeduc1a");
+util.listen(qeduc1a, "myChange", () => {
+    if (Number(util.htmlElement("qeduc1ad").value) > 0) {
+        util.trigger("qeduc1ad", "change");
+    }
+})
+
+util.listen("qeduc1ad", "myChange", () => {
+    const qeduc1a = instrument.questions.qeduc1a.value;
+    const selectedDistrict = util.htmlElement("qeduc1ad").value;
+    const institutie = util.htmlElement("qeduc1a1");
+
+    const option = document.createElement("option");
+    option.value = "-9";
+    option.text = translations['t_choose'];
+
+    institutie.innerHTML = "";
+    institutie.appendChild(option);
+
+    const serv = districts[selectedDistrict].services;
+    if (serv.length > 0) {
+        for (let i = 0; i < serv.length; i++) {
+            if (Number(services[serv[i]].type) < 20) {
+                let service_included = true;
+                if (insons[institutionCode]) {
+                    console.log(insons[institutionCode])
+                    service_included = insons[institutionCode].services.includes(serv[i]);
+                }
+
+                if (qeduc1a == "2") {
+                    if (services[serv[i]].type != "31") {
+                        service_included = false;
+                    }
+                }
+
+                if (service_included) {
+                    const option = document.createElement("option");
+                    option.value = serv[i];
+                    const serviciu = { ...services[serv[i]] } as KeyStringNumber;
+                    option.text = serv[i] + ': ' + serviciu['name_'+ lang];
+                    institutie.appendChild(option);
+                }
+            }
+        }
+    }
+
+    const optgroup = document.createElement("optgroup");
+    const option999 = document.createElement("option");
+    option999.value = '999';
+    option999.text = '999: ' + translations['not_in_registry'];
+    optgroup.appendChild(option999);
+    institutie.appendChild(optgroup);
+})

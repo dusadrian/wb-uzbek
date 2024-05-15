@@ -2,15 +2,19 @@ import { ipcRenderer } from "electron";
 import { questions, questionOrder } from "./09_eef_variables";
 import instrument from "../../libraries/instrument";
 import { QuestionObjectType, SaveInstrumentType } from "../../libraries/interfaces";
-import { util } from "../../libraries/validation_helpers";
+import { util, errorHandler } from "../../libraries/validation_helpers";
 import * as DI from "../../interfaces/database";
 
-import * as _flatpickr from 'flatpickr';
-import { FlatpickrFn } from 'flatpickr/dist/types/instance';
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-const flatpickr: FlatpickrFn = _flatpickr as any;
-import { Russian } from "flatpickr/dist/l10n/ru";
-import { UzbekLatin } from "flatpickr/dist/l10n/uz_latn";
+const globalAny: any = global;
+window.require('jquery');
+globalAny.jQuery = window.require('jquery');
+globalAny.$ = window.require('jquery');
+window.require('jquery-ui-dist/jquery-ui');
+// window.require('jquery-ui');
+import "jquery-ui/ui/i18n/datepicker-ru";
+import "jquery-ui/ui/i18n/datepicker-uz";
+
 import { KeyString, regions, districts, settlements } from "../../libraries/administrative";
 
 import * as en from "../../locales/en.json";
@@ -35,22 +39,34 @@ let institutionCode = '';
 export const instrument9 = {
     init: async () => {
 
-        const lang = localStorage.getItem("language");
+        $.datepicker.setDefaults( $.datepicker.regional[ lang ] );
+        const jQueryDatepickerConfig = {
+            changeMonth: true,
+            changeYear: true,
+            dateFormat: "dd/mm/yy",
+            minDate: "01/01/1990",
+            maxDate: "30/04/2024",
+            yearRange: "c-100:c+10",
+            firstDay: 1,
+            onSelect: function() {
+                util.trigger(this.id, "change");
+            }
+        };
 
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        const flatpickrConfig: { enableTime: boolean; dateFormat: string; locale?: any } = {
-            enableTime: false,
-            dateFormat: "d/m/Y",
-        }
+        $("#q1").datepicker(jQueryDatepickerConfig);
 
-        if (lang == "uz") {
-            flatpickrConfig.locale = UzbekLatin;
-        }
-        if (lang == "ru") {
-            flatpickrConfig.locale = Russian;
-        }
-
-        flatpickr(document.getElementById('q1'), flatpickrConfig);
+        util.listen("q1", "change", () => {
+            errorHandler.removeError("q1", translations['invalid_date']);
+            try {
+                $.datepicker.parseDate(
+                    jQueryDatepickerConfig.dateFormat,
+                    util.htmlElement("q1").value
+                )
+            } catch (error) {
+                instrument.questions["q1"].value = '-9';
+                errorHandler.addError("q1", translations['invalid_date']);
+            }
+        });
 
         ipcRenderer.on("instrumentDataReady", (_event, args) => {
             // console.log(args);

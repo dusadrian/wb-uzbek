@@ -474,7 +474,7 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 42,
-        active: function() {return((Number(instrument.questions.j8.value) == 1 || Number(instrument.questions.j8.value) == 2))},
+        active: function() {return(Number(instrument.questions.j8.value) == 1 || Number(instrument.questions.j8.value) == 2)},
         skip: false
     },
     'e18': {
@@ -488,12 +488,23 @@ export const questions: QuestionObjectType = {
         active: function() {return(Number(instrument.questions.j8.value) == 1 || Number(instrument.questions.j8.value) == 2)},
         skip: false
     },
+    'obs': {
+        name: 'obs',
+        type: 'textarea',
+        value: '-9',
+        disabled: false,
+        hidden: false,
+        readonly: false,
+        order: 44,
+        active: function() {return(true)},
+        skip: true
+    },
 };
 
 export const questionOrder: Array<string> = [
     'q1', 'q2', 'q3', 'q4', 'q5', 'q6', 'i1', 'i2', 'i3', 'i4', 'i4a', 'i4b', 'i4c', 'i4d', 'i5', 'j1', 'j2_na',
     'j2', 'j3', 'j4', 'j5', 'j6', 'j7', 'j8', 'e1', 'euid', 'e2', 'e3', 'e4', 'e5', 'e6', 'e7', 'e8', 'e8_other',
-    'e9', 'e10', 'e11', 'e12', 'e13', 'e14', 'e15', 'e16', 'e17', 'e18'
+    'e9', 'e10', 'e11', 'e12', 'e13', 'e14', 'e15', 'e16', 'e17', 'e18', 'obs'
 ];
 
 export const exportHeader: Array<{ id: string; title: string }> = [
@@ -541,4 +552,5 @@ export const exportHeader: Array<{ id: string; title: string }> = [
     {'id': 'e16', 'title': 'E16'},
     {'id': 'e17', 'title': 'E17'},
     {'id': 'e18', 'title': 'E18'},
+    {'id': 'obs', 'title': 'OBS'},
 ];

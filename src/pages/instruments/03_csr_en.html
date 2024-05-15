@@ -6,11 +6,13 @@
     <title>CRM Uzbek</title>
     <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
     <meta http-equiv="Content-Security-Policy"
-        content="default-src 'self'; img-src http: https: data: ; script-src 'self';" />
+        content="default-src 'self'; img-src 'self' http: https: data: ; script-src 'self';" />
     <meta http-equiv="X-Content-Security-Policy"
-        content="default-src 'self'; img-src http: https: data: ; script-src 'self';" />
+        content="default-src 'self'; img-src http: https: 'self' data: ; script-src 'self';" />
     <link href="../../../dist/main.css" rel="stylesheet">
-    <link rel="stylesheet" href="../../../node_modules/flatpickr/dist/flatpickr.min.css">
+    <link rel="stylesheet" href="../../../node_modules/jquery-ui-dist/jquery-ui.min.css">
+    <link rel="stylesheet" href="../../../node_modules/jquery-ui-dist/jquery-ui.structure.min.css">
+    <link rel="stylesheet" href="../../../node_modules/jquery-ui-dist/jquery-ui.theme.min.css">
 </head>
 
 <body class="relative max-h-screen">
@@ -138,19 +140,18 @@
                 <div>
                     <select id="i5" name="i5" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
                         <option value="--">--</option>
-                        <option value="11">11. Mehribonlik house</option>
-                        <option value="12">12. Muruvat house for children with disabilities</option>
-                        <option value="13">13. Family children's home</option>
-                        <option value="14">14. SOS children's villages/families</option>
-                        <option value="15">15. Children's home (Baby home)</option>
-                        <option value="16">16. Patronat family</option>
-                        <option value="17">17. Trusteeship/Guardianship care</option>
-                        <option value="21">21. Type I-II for deaf or with hearing impairments children</option>
-                        <option value="22">22. Type III-IV for blind or visually impaired children</option>
-                        <option value="23">23. Type V for children with severe speech impairments</option>
-                        <option value="24">24. Type VI for children with musculoskeletal disorders</option>
-                        <option value="25">25. Type VII for children with children with slow mental development/mental disorders</option>
-                        <option value="26">26. Type VIII for children with intellectual disabilities</option>
+                        <option value="11">11. Children's home (Baby home)</option>
+                        <option value="12">12. Mehribonlik house</option>
+                        <option value="13">13. Muruvvat house for children with disabilities</option>
+                        <option value="14">14. SOS children’s villages</option>
+                        <option value="21">21. Type I - boarding schools for deaf children</option>
+                        <option value="22">22. Type II - boarding schools for the hearing-impaired and those who later will lose their hearing</option>
+                        <option value="23">23. Type III - "Noorli Maskan" specialized boarding schools for blind children</option>
+                        <option value="24">24. Type IV - "Noorli Maskan" specialized boarding schools for visually impaired and those who later will lose their vision</option>
+                        <option value="25">25. Type V - boarding schools for children with severe speech disorders</option>
+                        <option value="26">26. Type VI - boarding schools for children with musculoskeletal disorders</option>
+                        <option value="27">27. Type VII - boarding schools for children with mental retardation</option>
+                        <option value="28">28. Type VIII - supporting boarding schools for mentally retarded children</option>
                     </select>
                 </div>
             </div>
@@ -562,6 +563,11 @@
                         <label for="e18-2" class="ms-2 text-sm text-gray-900">2. No</label>
                     </div>
                 </div>
+            </div>
+
+            <div class="grid mt-10">
+                <label for="obs">OBS. Observations</label>
+                <textarea class="form-control" rows="3" id="obs" name="obs"></textarea>
             </div>
 
         </form>

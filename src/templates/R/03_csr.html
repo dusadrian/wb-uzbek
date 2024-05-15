@@ -6,11 +6,13 @@
     <title>CRM Uzbek</title>
     <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
     <meta http-equiv="Content-Security-Policy"
-        content="default-src 'self'; img-src http: https: data: ; script-src 'self';" />
+        content="default-src 'self'; img-src 'self' http: https: data: ; script-src 'self';" />
     <meta http-equiv="X-Content-Security-Policy"
-        content="default-src 'self'; img-src http: https: data: ; script-src 'self';" />
+        content="default-src 'self'; img-src http: https: 'self' data: ; script-src 'self';" />
     <link href="../../../dist/main.css" rel="stylesheet">
-    <link rel="stylesheet" href="../../../node_modules/flatpickr/dist/flatpickr.min.css">
+    <link rel="stylesheet" href="../../../node_modules/jquery-ui-dist/jquery-ui.min.css">
+    <link rel="stylesheet" href="../../../node_modules/jquery-ui-dist/jquery-ui.structure.min.css">
+    <link rel="stylesheet" href="../../../node_modules/jquery-ui-dist/jquery-ui.theme.min.css">
 </head>
 
 <body class="relative max-h-screen">
@@ -138,19 +140,18 @@
                 <div>
                     <select id="i5" name="i5" class="selectclass">
                         <option value="--">--</option>
-                        <option value="{{i5-1}}">{{T0168}}</option>
-                        <option value="{{i5-2}}">{{T0169}}</option>
-                        <option value="{{i5-3}}">{{T0170}}</option>
-                        <option value="{{i5-4}}">{{T0171}}</option>
-                        <option value="{{i5-5}}">{{T0172}}</option>
-                        <option value="{{i5-6}}">{{T0173}}</option>
-                        <option value="{{i5-7}}">{{T0174}}</option>
-                        <option value="{{i5-8}}">{{T0043}}</option>
-                        <option value="{{i5-9}}">{{T0044}}</option>
-                        <option value="{{i5-10}}">{{T0045}}</option>
-                        <option value="{{i5-11}}">{{T0046}}</option>
-                        <option value="{{i5-12}}">{{T0047}}</option>
-                        <option value="{{i5-13}}">{{T0048}}</option>
+                        <option value="{{i5-1}}">{{T0188}}</option>
+                        <option value="{{i5-2}}">{{T0189}}</option>
+                        <option value="{{i5-3}}">{{T0190}}</option>
+                        <option value="{{i5-4}}">{{T0191}}</option>
+                        <option value="{{i5-5}}">{{T0193}}</option>
+                        <option value="{{i5-6}}">{{T0194}}</option>
+                        <option value="{{i5-7}}">{{T0195}}</option>
+                        <option value="{{i5-8}}">{{T0196}}</option>
+                        <option value="{{i5-9}}">{{T0197}}</option>
+                        <option value="{{i5-10}}">{{T0198}}</option>
+                        <option value="{{i5-11}}">{{T0199}}</option>
+                        <option value="{{i5-12}}">{{T0200}}</option>
                     </select>
                 </div>
             </div>
@@ -562,6 +563,11 @@
                         <label for="e18-2" class="labelclass">{{T0167}}</label>
                     </div>
                 </div>
+            </div>
+
+            <div class="grid mt-10">
+                <label for="obs">{{T0186}}. {{T0187}}</label>
+                <textarea class="form-control" rows="3" id="obs" name="obs"></textarea>
             </div>
 
         </form>

@@ -6,11 +6,13 @@
     <title>CRM Uzbek</title>
     <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
     <meta http-equiv="Content-Security-Policy"
-        content="default-src 'self'; img-src http: https: data: ; script-src 'self';" />
+        content="default-src 'self'; img-src 'self' http: https: data: ; script-src 'self';" />
     <meta http-equiv="X-Content-Security-Policy"
-        content="default-src 'self'; img-src http: https: data: ; script-src 'self';" />
+        content="default-src 'self'; img-src http: https: 'self' data: ; script-src 'self';" />
     <link href="../../../dist/main.css" rel="stylesheet">
-    <link rel="stylesheet" href="../../../node_modules/flatpickr/dist/flatpickr.min.css">
+    <link rel="stylesheet" href="../../../node_modules/jquery-ui-dist/jquery-ui.min.css">
+    <link rel="stylesheet" href="../../../node_modules/jquery-ui-dist/jquery-ui.structure.min.css">
+    <link rel="stylesheet" href="../../../node_modules/jquery-ui-dist/jquery-ui.theme.min.css">
 </head>
 
 <body class="relative max-h-screen">
@@ -169,7 +171,7 @@
                         <label for="lk2-1" class="ms-2 text-sm text-gray-900">1. Male</label>
                     </div>
                     <div class="flex items-center">
-                        <input id="lk2-2" type="radio" value="0" name="lk2" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <input id="lk2-2" type="radio" value="2" name="lk2" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="lk2-2" class="ms-2 text-sm text-gray-900">2. Female</label>
                     </div>
                 </div>
@@ -202,7 +204,7 @@
                 </div>
             </div>
 
-            <div class="grid grid-cols-2 items-center gap-4 mt-6">
+            <div class="grid grid-cols-2 gap-4 items-center mt-6">
                 <div>LK14b. Region</div>
                 <div>
                     <select id="lk14b" name="lk14b" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
@@ -211,7 +213,7 @@
                 </div>
             </div>
 
-            <div class="grid grid-cols-2 items-center gap-4 mt-6">
+            <div class="grid grid-cols-2 gap-4 items-center mt-6">
                 <div>LK14c. District</div>
                 <div>
                     <select id="lk14c" name="lk14c" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
@@ -219,7 +221,7 @@
                     </select>
                 </div>
             </div>
-            <div class="grid grid-cols-2 items-center gap-4 mt-6">
+            <div class="grid grid-cols-2 gap-4 items-center mt-6">
                 <div>LK14d. Settlement</div>
                 <div>
                     <select id="lk14d" name="lk14d" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
@@ -304,12 +306,12 @@
                         <label for="qfam1-3" class="ms-2 text-sm text-gray-900">3. Yes, with other persons</label>
                     </div>
                     <div class="flex items-center">
-                        <input id="qfam1-4" type="radio" value="4" name="qfam1" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                        <label for="qfam1-4" class="ms-2 text-sm text-gray-900">4. No, the child was living in a protection institution or in a foster family</label>
+                        <input id="qfam1-4" type="radio" value="7" name="qfam1" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <label for="qfam1-4" class="ms-2 text-sm text-gray-900">7. No, the child was living in a protection institution or in a foster family</label>
                     </div>
                     <div class="flex items-center">
-                        <input id="qfam1-5" type="radio" value="7" name="qfam1" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                        <label for="qfam1-5" class="ms-2 text-sm text-gray-900">7. Another situation, please specify: …</label>
+                        <input id="qfam1-5" type="radio" value="8" name="qfam1" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <label for="qfam1-5" class="ms-2 text-sm text-gray-900">8. Another situation, please specify: …</label>
                     </div>
                     <div class="flex items-center">
                         <input type="text" id="qfam1_other" name="qfam1_other" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
@@ -359,7 +361,7 @@
                     </div>
                     <div class="flex items-center">
                         <input id="qfam2_9" type="checkbox" value="1" name="qfam2_9" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                        <label for="qfam2_9" class="ms-2 text-sm text-gray-900">9. Other persons,</label>
+                        <label for="qfam2_9" class="ms-2 text-sm text-gray-900">9. Other persons</label>
                     </div>
                     <div class="flex items-center">
                         <input id="qfam2_90" type="checkbox" value="1" name="qfam2_90" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
@@ -386,7 +388,7 @@
             </div>
 
             <p class="mt-10">SA3. Where did the child live before being admitted to the boarding school?</p>
-            <div class="grid grid-cols-2 items-center gap-4 mt-4">
+            <div class="grid grid-cols-2 gap-4 items-center mt-4">
                 <div>SA3a. Region</div>
                 <div>
                     <select id="sa3a" name="sa3a" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
@@ -395,7 +397,7 @@
                 </div>
             </div>
 
-            <div class="grid grid-cols-2 items-center gap-4 mt-6">
+            <div class="grid grid-cols-2 gap-4 items-center mt-6">
                 <div>SA3b. District</div>
                 <div>
                     <select id="sa3b" name="sa3b" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
@@ -404,38 +406,77 @@
                 </div>
             </div>
 
-
-
-
-            <div class="grid grid-cols-2 items-center gap-4 mt-6">
-                <div>SA5a. Institution</div>
+            <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                <div>SA3c. Settlement</div>
                 <div>
-                    <select id="sa5a" name="sa5a" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
+                    <select id="sa3c" name="sa3c" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
+                        <option value="-9">--- choose ---</option>
+                    </select>
+                </div>
+            </div>
+
+            <input type="hidden" id="sa3d" name="sa3d" />
+
+            <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                <div>SA5r. Region</div>
+                <div>
+                    <select id="sa5r" name="sa5r" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
                         <option value="-9">--- choose ---</option>
                     </select>
                 </div>
             </div>
 
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
-                <div>SA5b. Institution name</div>
-                <div class="flex gap-4">
-                    <input type="text" id="sa5b" name="sa5b" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
+                <div>SA5d. District</div>
+                <div>
+                    <select id="sa5d" name="sa5d" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
+                        <option value="-9">--- choose ---</option>
+                    </select>
                 </div>
             </div>
 
+            <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                <div>SA5i. Institution</div>
+                <div class="flex gap-4">
+                    <select id="sa5i" name="sa5i" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
+                        <option value="-9">--- choose ---</option>
+                    </select>
+                </div>
+            </div>
 
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
-                <div>SA5c. Type of institution</div>
+                <div>SA5n. Institution name</div>
                 <div>
-                    <select id="sa5c" name="sa5c" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
-                        <option selected value="-9">--- choose ---</option>
-                        <option value="1">1. Children's home (Baby home)</option>
-                        <option value="2">2. Mehribonlik house</option>
-                        <option value="3">3. Muruvat house for children with disabilities</option>
-                        <option value="4">4. Family-type children's home</option>
-                        <option value="5">5. Patronat family</option>
-                        <option value="6">6. Trusteeship/Guardianship care</option>
-                        <option value="7">7. SOS children's villages/families</option>
+                    <input type="text" id="sa5n" name="sa5n" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                <div>SA5t. Type of institution</div>
+                <div>
+                    <select id="sa5t" name="sa5t" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
+                        <option value="-9">--- choose ---</option>
+                        <option value="11">11. Children’s home (Baby home)</option>
+                        <option value="12">12. Mehribonlik house</option>
+                        <option value="13">13. Muruvvat house for children with disabilities</option>
+                        <option value="14">14. SOS children’s villages</option>
+                        <option value="15">15. Family-type children’s home</option>
+                        <option value="16">16. Patronat family</option>
+                        <option value="17">17. Trusteeship/Guardianship care</option>
+                        <option value="21">21. Type I - boarding schools for deaf children</option>
+                        <option value="22">22. Type II - boarding schools for the hearing-impaired and those who later will lose their hearing</option>
+                        <option value="23">23. Type III - "Noorli Maskan" specialized boarding schools for blind children</option>
+                        <option value="24">24. Type IV - "Noorli Maskan" specialized boarding schools for visually impaired and those who later will lose their vision</option>
+                        <option value="25">25. Type V - boarding schools for children with severe speech disorders</option>
+                        <option value="26">26. Type VI - boarding schools for children with musculoskeletal disorders</option>
+                        <option value="27">27. Type VII - boarding schools for children with mental retardation</option>
+                        <option value="28">28. Type VIII - supporting boarding schools for mentally retarded children</option>
+                        <option value="31">31. Multidisciplinary specialized preschool educational organizations</option>
+                        <option value="32">32. Specialized schools for children with special educational needs</option>
+                        <option value="33">33. Republican Specialized College for Persons with Disabilities</option>
+                        <option value="34">34. Specialized state educational institutions of sanatorium type</option>
+                        <option value="35">35. Republican educational institutions</option>
+                        <option value="36">36. Social and legal support centers</option>
                     </select>
                 </div>
             </div>
@@ -505,10 +546,6 @@
                         <input id="qfam5a-2" type="radio" value="2" name="qfam5a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="qfam5a-2" class="ms-2 text-sm text-gray-900">2. No</label>
                     </div>
-                    <!-- <div class="flex items-center">
-                        <input id="qfam5a-3" type="radio" value="9" name="qfam5a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                        <label for="qfam5a-3" class="ms-2 text-sm text-gray-900">9. Not known</label>
-                    </div> -->
                 </div>
             </div>
 
@@ -523,10 +560,6 @@
                         <input id="qfam5b-2" type="radio" value="2" name="qfam5b" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="qfam5b-2" class="ms-2 text-sm text-gray-900">2. No</label>
                     </div>
-                    <!-- <div class="flex items-center">
-                        <input id="qfam5b-3" type="radio" value="9" name="qfam5b" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                        <label for="qfam5b-3" class="ms-2 text-sm text-gray-900">9. Not known</label>
-                    </div> -->
                 </div>
             </div>
 
@@ -541,10 +574,6 @@
                         <input id="qfam5c-2" type="radio" value="2" name="qfam5c" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="qfam5c-2" class="ms-2 text-sm text-gray-900">2. No</label>
                     </div>
-                    <!-- <div class="flex items-center">
-                        <input id="qfam5c-3" type="radio" value="9" name="qfam5c" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                        <label for="qfam5c-3" class="ms-2 text-sm text-gray-900">9. Not known</label>
-                    </div> -->
                 </div>
             </div>
 
@@ -559,10 +588,6 @@
                         <input id="qfam5d-2" type="radio" value="2" name="qfam5d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="qfam5d-2" class="ms-2 text-sm text-gray-900">2. No</label>
                     </div>
-                    <!-- <div class="flex items-center">
-                        <input id="qfam5d-3" type="radio" value="9" name="qfam5d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                        <label for="qfam5d-3" class="ms-2 text-sm text-gray-900">9. Not known</label>
-                    </div> -->
                 </div>
             </div>
 
@@ -577,10 +602,6 @@
                         <input id="qfam5e-2" type="radio" value="2" name="qfam5e" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="qfam5e-2" class="ms-2 text-sm text-gray-900">2. No</label>
                     </div>
-                    <!-- <div class="flex items-center">
-                        <input id="qfam5e-3" type="radio" value="9" name="qfam5e" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                        <label for="qfam5e-3" class="ms-2 text-sm text-gray-900">9. Not known</label>
-                    </div> -->
                 </div>
             </div>
 
@@ -697,7 +718,7 @@
                 </div>
             </div>
 
-            <div class="grid grid-cols-2 items-center gap-4 mt-6">
+            <div class="grid grid-cols-2 gap-4 items-center mt-6">
                 <div>CM3b. Region</div>
                 <div>
                     <select id="cm3b" name="cm3b" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
@@ -706,7 +727,7 @@
                 </div>
             </div>
 
-            <div class="grid grid-cols-2 items-center gap-4 mt-6">
+            <div class="grid grid-cols-2 gap-4 items-center mt-6">
                 <div>CM3c. District</div>
                 <div>
                     <select id="cm3c" name="cm3c" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
@@ -714,7 +735,8 @@
                     </select>
                 </div>
             </div>
-            <div class="grid grid-cols-2 items-center gap-4 mt-6">
+
+            <div class="grid grid-cols-2 gap-4 items-center mt-6">
                 <div>CM3d. Settlement</div>
                 <div>
                     <select id="cm3d" name="cm3d" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
@@ -835,7 +857,7 @@
                 </div>
             </div>
             <div class="grid grid-cols-2 gap-4 items-center mt-10">
-                <div>CM7b. Mother's level of education</div>
+                <div>CM7b. Mother's current education</div>
                 <div class="col-span-1 flex flex-col gap-2">
                     <div class="flex items-center">
                         <input id="cm7b-1" type="radio" value="0" name="cm7b" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
@@ -1043,7 +1065,7 @@
 
             <p class="mt-6">b. Legal domicile:</p>
 
-            <div class="grid grid-cols-2 items-center gap-4 mt-6">
+            <div class="grid grid-cols-2 gap-4 items-center mt-6">
                 <div>c. Region:</div>
                 <div>
                     <select id="cm11c" name="cm11c" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
@@ -1052,7 +1074,7 @@
                 </div>
             </div>
 
-            <div class="grid grid-cols-2 items-center gap-4 mt-6">
+            <div class="grid grid-cols-2 gap-4 items-center mt-6">
                 <div>d. District:</div>
                 <div>
                     <select id="cm11d" name="cm11d" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
@@ -1061,7 +1083,7 @@
                 </div>
             </div>
 
-            <div class="grid grid-cols-2 items-center gap-4 mt-6">
+            <div class="grid grid-cols-2 gap-4 items-center mt-6">
                 <div>e. Settlement</div>
                 <div>
                     <select id="cm11e" name="cm11e" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
@@ -1205,7 +1227,7 @@
                 </div>
             </div>
 
-            <div class="grid grid-cols-2 items-center gap-4 mt-6">
+            <div class="grid grid-cols-2 gap-4 items-center mt-6">
                 <div>CT3b. Region</div>
                 <div>
                     <select id="ct3b" name="ct3b" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
@@ -1214,7 +1236,7 @@
                 </div>
             </div>
 
-            <div class="grid grid-cols-2 items-center gap-4 mt-6">
+            <div class="grid grid-cols-2 gap-4 items-center mt-6">
                 <div>CT3c. District</div>
                 <div>
                     <select id="ct3c" name="ct3c" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
@@ -1223,7 +1245,7 @@
                 </div>
             </div>
 
-            <div class="grid grid-cols-2 items-center gap-4 mt-6">
+            <div class="grid grid-cols-2 gap-4 items-center mt-6">
                 <div>CT3d. Settlement</div>
                 <div>
                     <select id="ct3d" name="ct3d" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
@@ -1346,7 +1368,7 @@
                 </div>
             </div>
             <div class="grid grid-cols-2 gap-4 items-center mt-10">
-                <div>CT7b. Father's level of education</div>
+                <div>CT7b. Father's current education</div>
                 <div class="col-span-1 flex flex-col gap-2">
                     <div class="flex items-center">
                         <input id="ct7b-1" type="radio" value="0" name="ct7b" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
@@ -1553,7 +1575,7 @@
 
             <p class="mt-6">b. Legal domicile:</p>
 
-            <div class="grid grid-cols-2 items-center gap-4 mt-6">
+            <div class="grid grid-cols-2 gap-4 items-center mt-6">
                 <div>c. Region:</div>
                 <div>
                     <select id="ct11c" name="ct11c" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
@@ -1562,7 +1584,7 @@
                 </div>
             </div>
 
-            <div class="grid grid-cols-2 items-center gap-4 mt-6">
+            <div class="grid grid-cols-2 gap-4 items-center mt-6">
                 <div>d. District:</div>
                 <div>
                     <select id="ct11d" name="ct11d" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
@@ -1571,7 +1593,7 @@
                 </div>
             </div>
 
-            <div class="grid grid-cols-2 items-center gap-4 mt-6">
+            <div class="grid grid-cols-2 gap-4 items-center mt-6">
                 <div>e. Settlement</div>
                 <div>
                     <select id="ct11e" name="ct11e" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
@@ -1637,7 +1659,7 @@
             </div>
 
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
-                <div>CG1d. Kinship degree:</div>
+                <div>CG1d. Kinship relation:</div>
                 <div class="flex flex-col gap-2">
                     <div class="flex items-center">
                         <input id="cg1d-1" type="radio" value="1" name="cg1d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
@@ -2032,7 +2054,7 @@
 
             <p class="mt-6">b. Legal domicile:</p>
 
-            <div class="grid grid-cols-2 items-center gap-4 mt-6">
+            <div class="grid grid-cols-2 gap-4 items-center mt-6">
                 <div>c. Region:</div>
                 <div>
                     <select id="cg11c" name="cg11c" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
@@ -2041,7 +2063,7 @@
                 </div>
             </div>
 
-            <div class="grid grid-cols-2 items-center gap-4 mt-6">
+            <div class="grid grid-cols-2 gap-4 items-center mt-6">
                 <div>d. District:</div>
                 <div>
                     <select id="cg11d" name="cg11d" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
@@ -2050,7 +2072,7 @@
                 </div>
             </div>
 
-            <div class="grid grid-cols-2 items-center gap-4 mt-6">
+            <div class="grid grid-cols-2 gap-4 items-center mt-6">
                 <div>e. Settlement</div>
                 <div>
                     <select id="cg11e" name="cg11e" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
@@ -2141,8 +2163,27 @@
                 </div>
             </div>
 
-            <small class="my-2 block italic text-red-500 mt-6">IF THE CHILD ATTENDED A MULTY-DISCIPLINARY SPECIALIZED PRESCHOOL EDUCATION ORGANIZATION/KINDERGARTEN</small>
-            <div class="grid grid-cols-2 items-center gap-4 mt-2">
+            <small class="my-2 block italic text-red-500 mt-6">IF THE CHILD ATTENDED A MULTIDISCIPLINARY SPECIALIZED PRESCHOOL EDUCATION ORGANIZATION/KINDERGARTEN</small>
+
+            <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                <div>1ar. Region</div>
+                <div>
+                    <select id="qeduc1ar" name="qeduc1ar" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
+                        <option value="-9">--- choose ---</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                <div>1ad. District</div>
+                <div>
+                    <select id="qeduc1ad" name="qeduc1ad" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
+                        <option value="-9">--- choose ---</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4 items-center mt-2">
                 <div>1a1. Please enter the code from the registry of the last specialized pre-school the child came from</div>
                 <div>
                     <select id="qeduc1a1" name="qeduc1a1" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
@@ -2224,10 +2265,23 @@
             </div>
 
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
-                <div>2b. What grade was the child in?<small class="mb-1 my-2 block italic text-red-500">FILL IN 0 (ZERO) FOR PREPARATORY CLASS</small>
-                </div>
+                <div>2b. What grade was the child in?<small class="mb-1 my-2 block italic text-red-500">FILL IN 0 (ZERO) FOR PREPARATORY CLASS</small></div>
                 <div>
-                    <input type="text" id="qeduc2b" name="qeduc2b" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
+                    <select id="qeduc2b" name="qeduc2b" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
+                        <option value="-9">--- choose ---</option>
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                    </select>
                 </div>
             </div>
 
@@ -2290,15 +2344,15 @@
                 <div>3. Was the child transferred from another boarding school?</div>
                 <div class="flex flex-col gap-2">
                     <div class="flex items-center">
-                        <input id="qeduc4-1" type="radio" value="{{qeduc4-1}}" name="qeduc4" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <input id="qeduc4-1" type="radio" value="1" name="qeduc4" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="qeduc4-1" class="ms-2 text-sm text-gray-900">1. Yes, from a boarding school of the same type</label>
                     </div>
                     <div class="flex items-center">
-                        <input id="qeduc4-2" type="radio" value="{{qeduc4-2}}" name="qeduc4" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <input id="qeduc4-2" type="radio" value="2" name="qeduc4" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="qeduc4-2" class="ms-2 text-sm text-gray-900">2. Yes, from a boarding school of a different type</label>
                     </div>
                     <div class="flex items-center">
-                        <input id="qeduc4-3" type="radio" value="{{qeduc4-3}}" name="qeduc4" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <input id="qeduc4-3" type="radio" value="9" name="qeduc4" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="qeduc4-3" class="ms-2 text-sm text-gray-900">3. No</label>
                     </div>
                 </div>
@@ -2308,27 +2362,27 @@
                 <div>3a. What was the reason for the child being transferred from another boarding school?</div>
                 <div class="flex flex-col gap-2">
                     <div class="flex items-center">
-                        <input id="qeduc4a-1" type="radio" value="{{qeduc4a-1}}" name="qeduc4a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <input id="qeduc4a-1" type="radio" value="1" name="qeduc4a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="qeduc4a-1" class="ms-2 text-sm text-gray-900">1. The child had academic, social, or behavioral difficulties in the previous boarding school and needed a more suitable environment or program.</label>
                     </div>
                     <div class="flex items-center">
-                        <input id="qeduc4a-2" type="radio" value="{{qeduc4a-2}}" name="qeduc4a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <input id="qeduc4a-2" type="radio" value="2" name="qeduc4a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="qeduc4a-2" class="ms-2 text-sm text-gray-900">2. The child had a change in their diagnosis, needs, or goals and required different specialized education or support.</label>
                     </div>
                     <div class="flex items-center">
-                        <input id="qeduc4a-3" type="radio" value="{{qeduc4a-3}}" name="qeduc4a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <input id="qeduc4a-3" type="radio" value="3" name="qeduc4a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="qeduc4a-3" class="ms-2 text-sm text-gray-900">3. The child or the parents were dissatisfied with the quality or location of the previous boarding school and wanted a better option.</label>
                     </div>
                     <div class="flex items-center">
-                        <input id="qeduc4a-4" type="radio" value="{{qeduc4a-4}}" name="qeduc4a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <input id="qeduc4a-4" type="radio" value="4" name="qeduc4a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="qeduc4a-4" class="ms-2 text-sm text-gray-900">4. The child had a personal or family situation that influenced their decision to change schools, such as moving to a different area, experiencing a traumatic event, or having a health issue.</label>
                     </div>
                     <div class="flex items-center">
-                        <input id="qeduc4a-5" type="radio" value="{{qeduc4a-5}}" name="qeduc4a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <input id="qeduc4a-5" type="radio" value="5" name="qeduc4a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="qeduc4a-5" class="ms-2 text-sm text-gray-900">5. The child was expelled from the previous boarding school.</label>
                     </div>
                     <div class="flex items-center">
-                        <input id="qeduc4a-6" type="radio" value="{{qeduc4a-6}}" name="qeduc4a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <input id="qeduc4a-6" type="radio" value="6" name="qeduc4a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="qeduc4a-6" class="ms-2 text-sm text-gray-900">6. Other, please specify: …</label>
                     </div>
                     <div class="flex items-center">
@@ -3077,11 +3131,23 @@
             </div>
 
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
-                <div>SCH2. Currently, in which grade is the child?<small class="my-2 block italic text-red-500">FILL IN 0 (ZERO) FOR PREPARATORY CLASS</small>
-                    <!-- <small class="block italic mt-2">FILL IN IF GRADE >=8, ELSE SKIP TO CEDU</small> -->
-                </div>
+                <div>SCH2. Currently, in which grade is the child?<small class="my-2 block italic text-red-500">FILL IN 0 (ZERO) FOR PREPARATORY CLASS</small></div>
                 <div>
-                    <input type="text" id="sch2" name="sch2" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
+                    <select id="sch2" name="sch2" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
+                        <option value="-9">--- choose ---</option>
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                    </select>
                 </div>
             </div>
 
@@ -5299,11 +5365,11 @@
                 <div>SK7. Did the parents/guardians apply for the child to be transferred to a general education school?</div>
                 <div class="col-span-1 flex items-center gap-4">
                     <div class="flex items-center">
-                        <input id="sk12-1" type="radio" value="{{sk12-1}}" name="sk12" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <input id="sk12-1" type="radio" value="1" name="sk12" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="sk12-1" class="ms-2 text-sm text-gray-900">1. Yes</label>
                     </div>
                     <div class="flex items-center">
-                        <input id="sk12-2" type="radio" value="{{sk12-2}}" name="sk12" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <input id="sk12-2" type="radio" value="2" name="sk12" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="sk12-2" class="ms-2 text-sm text-gray-900">2. No</label>
                     </div>
                 </div>
@@ -5313,11 +5379,11 @@
                 <div>SK8. Is there a recommendation from the psychological-medical-pedagogical commission supporting the child's transfer to a general education school?</div>
                 <div class="col-span-1 flex items-center gap-4">
                     <div class="flex items-center">
-                        <input id="sk13-1" type="radio" value="{{sk13-1}}" name="sk13" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <input id="sk13-1" type="radio" value="1" name="sk13" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="sk13-1" class="ms-2 text-sm text-gray-900">1. Yes</label>
                     </div>
                     <div class="flex items-center">
-                        <input id="sk13-2" type="radio" value="{{sk13-2}}" name="sk13" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <input id="sk13-2" type="radio" value="2" name="sk13" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="sk13-2" class="ms-2 text-sm text-gray-900">2. No</label>
                     </div>
                 </div>
@@ -5327,11 +5393,11 @@
                 <div>SK9. In the past six months, did the child have opportunities to spend time in the community and interact with typical children?</div>
                 <div class="col-span-1 flex items-center gap-4">
                     <div class="flex items-center">
-                        <input id="sk14-1" type="radio" value="{{sk14-1}}" name="sk14" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <input id="sk14-1" type="radio" value="1" name="sk14" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="sk14-1" class="ms-2 text-sm text-gray-900">1. Yes, at least once</label>
                     </div>
                     <div class="flex items-center">
-                        <input id="sk14-2" type="radio" value="{{sk14-2}}" name="sk14" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <input id="sk14-2" type="radio" value="0" name="sk14" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="sk14-2" class="ms-2 text-sm text-gray-900">0. No</label>
                     </div>
                 </div>
@@ -5517,6 +5583,11 @@
                         <label for="sq13-2" class="ms-2 text-sm text-gray-900">2. No</label>
                     </div>
                 </div>
+            </div>
+
+            <div class="grid mt-10">
+                <label for="obs">OBS. Observations</label>
+                <textarea class="form-control" rows="3" id="obs" name="obs"></textarea>
             </div>
         </form>
 

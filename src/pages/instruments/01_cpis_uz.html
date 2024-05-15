@@ -6,11 +6,13 @@
     <title>CRM Uzbek</title>
     <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
     <meta http-equiv="Content-Security-Policy"
-        content="default-src 'self'; img-src http: https: data: ; script-src 'self';" />
+        content="default-src 'self'; img-src 'self' http: https: data: ; script-src 'self';" />
     <meta http-equiv="X-Content-Security-Policy"
-        content="default-src 'self'; img-src http: https: data: ; script-src 'self';" />
+        content="default-src 'self'; img-src http: https: 'self' data: ; script-src 'self';" />
     <link href="../../../dist/main.css" rel="stylesheet">
-    <link rel="stylesheet" href="../../../node_modules/flatpickr/dist/flatpickr.min.css">
+    <link rel="stylesheet" href="../../../node_modules/jquery-ui-dist/jquery-ui.min.css">
+    <link rel="stylesheet" href="../../../node_modules/jquery-ui-dist/jquery-ui.structure.min.css">
+    <link rel="stylesheet" href="../../../node_modules/jquery-ui-dist/jquery-ui.theme.min.css">
 </head>
 
 <body class="relative max-h-screen">
@@ -23,7 +25,7 @@
             <div class="grid grid-cols-12 border">
                 <div class="col-span-1 bg-stone-200 p-2"></div>
                 <div class="col-span-11 p-2">
-                    <h1 class="text-4xl text-gray-700 pl-4 tracking-wide">Bolalarning vasiylik tizimiga joylashtirilgan bola to'g'risida so'rovnoma</h1>
+                    <h1 class="text-4xl text-gray-700 pl-4 tracking-wide">Bolalarga vasiylik qilish tizimiga joylashtirilgan bola to'g'risida so'rovnoma</h1>
                 </div>
             </div>
 
@@ -254,15 +256,15 @@
                     </div>
                     <div class="flex items-center">
                         <input type="radio" id="lk15-4" name="lk15" value="4" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                        <label for="lk15-4" class="ms-2 text-sm text-gray-900">4. Tashkilotning boshqa xodimlari</label>
+                        <label for="lk15-4" class="ms-2 text-sm text-gray-900">4. Muassasaning boshqa hodimi</label>
                     </div>
                     <div class="flex items-center">
                         <input type="radio" id="lk15-5" name="lk15" value="5" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                        <label for="lk15-5" class="ms-2 text-sm text-gray-900">5. Yana bir davlat xodimi</label>
+                        <label for="lk15-5" class="ms-2 text-sm text-gray-900">5. Davlat xizmatchilaridan bo’gan boshqa kishi</label>
                     </div>
                     <div class="flex items-center">
                         <input type="radio" id="lk15-6" name="lk15" value="6" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                        <label for="lk15-6" class="ms-2 text-sm text-gray-900">6. Agar boshqa bo'lsa, ko'rsatilsin</label>
+                        <label for="lk15-6" class="ms-2 text-sm text-gray-900">6. Boshqasi bo'lsa, ko'rsatilsin</label>
                     </div>
                     <div class="flex items-center">
                         <input type="text" id="lk15_other" name="lk15_other" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
@@ -1204,7 +1206,7 @@
                 <div>CT3a. Tug'ilgan joyi</div>
                 <div class="flex items-center">
                     <input type="checkbox" id="ct3a_out" name="ct3a_out" value="8" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-100 rounded">
-                    <label for="ct3a_out" class="ms-2 text-sm text-gray-900">8.Ota boshqa mamlakatda tug'ilgan</label>
+                    <label for="ct3a_out" class="ms-2 text-sm text-gray-900">8. Ota boshqa mamlakatda tug'ilgan</label>
                 </div>
                 <div></div>
                 <div class="flex items-center">
@@ -1858,7 +1860,7 @@
                 </div>
                 <div class="flex gap-4">
                     <input type="checkbox" id="cg0" name="cg0" value="1" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-100 rounded">
-                    <label for="cg0" class="ms-2 text-sm text-gray-900"> Check only if before entering the system, the child was under the care of someone other than the child's mother or father. Otherwise, skip to Section 4." </label>
+                    <label for="cg0" class="ms-2 text-sm text-gray-900"> Agar bola muqobil vasiylik tizimiga kirishdan oldin boshqa shaxs (uning otasi yoki onasi emas)ning qaramog'ida bo'lgan bo'lsa belgilang. Aks holda, 4-Bo'limga o'ting. </label>
                 </div>
             </div>
 
@@ -2771,6 +2773,20 @@
                         <option value="15">15. Oila turidagi bolalar uyi</option>
                         <option value="16">16. Patronat oila</option>
                         <option value="17">17. Vasiylik/homiylik</option>
+                        <option value="21">21. I tur - kar bolalar uchun internatlar</option>
+                        <option value="22">22. II tur - eshitish qobiliyati zaif va kelgusida eshitish qobiliyatini yo’qotadiganlar uchun internatlar</option>
+                        <option value="23">23. III tur - “Nurli maskan” ko’zi ojiz bolalar uchun ixtisoslashtirilgan maktab-internatlari</option>
+                        <option value="24">24. IV tur - ko’zi ojiz va keyinchalik ko’rish qobiliyatini yo’qotadiganlar uchun “Noorli maskan” ixtisoslashtirilgan maktab-internatlari</option>
+                        <option value="25">25. V tur - og’ir nutq buzilishi bo’lgan bolalar uchun internatlar</option>
+                        <option value="26">26. VI tur - tayanch-harakat apparati nuqsonlari bo’lgan bolalar uchun internatlar</option>
+                        <option value="27">27. VII tur - aqli zaif bolalar maktab-internatlari</option>
+                        <option value="28">28. VIII tur - aqli zaif bolalar maktab-internatlarini qo’llash</option>
+                        <option value="31">31. Ko'p tarmoqli ixtisoslashtirilgan maktabgacha ta'lim tashkilotlari</option>
+                        <option value="32">32. Maxsus ta'lim ehtiyojlariga ega bolalar uchun ixtisoslashtirilgan maktablar</option>
+                        <option value="33">33. Imkoniyatlari cheklangan shaxslar uchun ixtisoslashtirilgan respublika kasb-hunar kolleji</option>
+                        <option value="34">34. Sanatoriy turidagi ixtisoslashtirilgan davlat ta'lim muassasalari</option>
+                        <option value="35">35. Respublika ta'lim-tarbiya muassasalari (RTTM)</option>
+                        <option value="36">36. Voyaga yetmaganlar uchun ijtimoiy va huquqiy yordam markazlari</option>
                     </select>
                 </div>
             </div>
@@ -2807,6 +2823,10 @@
                     <div class="flex items-center">
                         <input type="radio" id="sa6b-3" name="sa6b" value="3" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="sa6b-3" class="ms-2 text-sm text-gray-900">3. Profilaktika inspektori</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input type="radio" id="sa6b-4" name="sa6b" value="4" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <label for="sa6b-4" class="ms-2 text-sm text-gray-900">4. Boshqa muassasa</label>
                     </div>
                 </div>
             </div>
@@ -3074,7 +3094,11 @@
                     </div>
                     <div class="flex items-center">
                         <input type="radio" id="qhealth7-3" name="qhealth7" value="3" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                        <label for="qhealth7-3" class="ms-2 text-sm text-gray-900">3. Tamomila boshqalarga bog'liq</label>
+                        <label for="qhealth7-3" class="ms-2 text-sm text-gray-900">3. Yoshi tufayli butunlay boshqalarga bog'liq</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input type="radio" id="qhealth7-4" name="qhealth7" value="4" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <label for="qhealth7-4" class="ms-2 text-sm text-gray-900">4. Nogironlik tufayli butunlay boshqalarga bog'liq</label>
                     </div>
                     <div class="flex items-center">
                         <input type="radio" id="qhealth7-9" name="qhealth7" value="9" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
@@ -3093,6 +3117,10 @@
                     <div class="flex items-center">
                         <input type="radio" id="qhealth8-2" name="qhealth8" value="2" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="qhealth8-2" class="ms-2 text-sm text-gray-900">2. Yo'q</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input type="radio" id="qhealth8-3" name="qhealth8" value="9" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <label for="qhealth8-3" class="ms-2 text-sm text-gray-900">9. Noma'lum</label>
                     </div>
                 </div>
             </div>
@@ -3294,11 +3322,23 @@
             </div>
 
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
-
-                <div>2b. Bola qaysi sinfda edi?<small class="mb-1 my-2 block italic text-red-500">TAYYORLOV GURUHI UCHUN 0 (NOL) QO'YING</small>
-                </div>
+                <div>2b. Bola qaysi sinfda edi?<small class="mb-1 my-2 block italic text-red-500">TAYYORLOV GURUHI UCHUN 0 (NOL) QO'YING</small></div>
                 <div>
-                    <input type="text" id="qeduc2b" name="qeduc2b" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
+                    <select id="qeduc2b" name="qeduc2b" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
+                        <option value="-9">--- tanlang ---</option>
+                        <option value="0>0</option>
+                        <option value="1>1</option>
+                        <option value="2>2</option>
+                        <option value="3>3</option>
+                        <option value="4>4</option>
+                        <option value="5>5</option>
+                        <option value="6>6</option>
+                        <option value="7>7</option>
+                        <option value="8>8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                    </select>
                 </div>
             </div>
 
@@ -3628,6 +3668,10 @@
                     <div class="flex items-center">
                         <input type="checkbox" id="qfam3_5" name="qfam3_5" value="5" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="qfam3_5" class="ms-2 text-sm text-gray-900">5. Sudlanganlik holati</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input type="checkbox" id="qfam3_6" name="qfam3_6" value="6" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <label for="qfam3_6" class="ms-2 text-sm text-gray-900">6. Yuqoridagilarning hech biri</label>
                     </div>
                     <div class="flex items-center">
                         <input type="checkbox" id="qfam3_9" name="qfam3_9" value="9" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
@@ -4085,14 +4129,27 @@
                         <td class="p-1">
                             <select id="sh3_s1b" name="sh3_s1b" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
                                 <option value="-9">--- tanlang ---</option>
-                                <option value="1">1. Mehribonlik uyi</option>
-                                <option value="2">2. "Muruvvat" nogironligi bo'lgan bolalar uchun  internat uyi</option>
-                                <option value="3">3. Oilaviy bolalar uyi</option>
-                                <option value="4">4. SOS Bolalar makhallalari/oilalari</option>
-                                <option value="5">5. Bolalar uyi</option>
-                                <option value="6">6. Patronat oila</option>
-                                <option value="7">7. Vasiylik/homiylik</option>
-                                <option value="8">8. Boshqa xizmatlar</option>
+                                <option value="11">11. Bolalar uyi</option>
+                                <option value="12">12. Mehribonlik uyi</option>
+                                <option value="13">13. “Muruvvat” nogironligi bo’lgan bolalar uchun internat uyi</option>
+                                <option value="14">14. SOS-bolalar qishloqlari / oilalari</option>
+                                <option value="15">15. Oila turidagi bolalar uyi</option>
+                                <option value="16">16. Patronat oila</option>
+                                <option value="17">17. Vasiylik/homiylik</option>
+                                <option value="21">21. I tur - kar bolalar uchun internatlar</option>
+                                <option value="22">22. II tur - eshitish qobiliyati zaif va kelgusida eshitish qobiliyatini yo’qotadiganlar uchun internatlar</option>
+                                <option value="23">23. III tur - “Nurli maskan” ko’zi ojiz bolalar uchun ixtisoslashtirilgan maktab-internatlari</option>
+                                <option value="24">24. IV tur - ko’zi ojiz va keyinchalik ko’rish qobiliyatini yo’qotadiganlar uchun “Noorli maskan” ixtisoslashtirilgan maktab-internatlari</option>
+                                <option value="25">25. V tur - og’ir nutq buzilishi bo’lgan bolalar uchun internatlar</option>
+                                <option value="26">26. VI tur - tayanch-harakat apparati nuqsonlari bo’lgan bolalar uchun internatlar</option>
+                                <option value="27">27. VII tur - aqli zaif bolalar maktab-internatlari</option>
+                                <option value="28">28. VIII tur - aqli zaif bolalar maktab-internatlarini qo’llash</option>
+                                <option value="31">31. Ko'p tarmoqli ixtisoslashtirilgan maktabgacha ta'lim tashkilotlari</option>
+                                <option value="32">32. Maxsus ta'lim ehtiyojlariga ega bolalar uchun ixtisoslashtirilgan maktablar</option>
+                                <option value="33">33. Imkoniyatlari cheklangan shaxslar uchun ixtisoslashtirilgan respublika kasb-hunar kolleji</option>
+                                <option value="34">34. Sanatoriy turidagi ixtisoslashtirilgan davlat ta'lim muassasalari</option>
+                                <option value="35">35. Respublika ta'lim-tarbiya muassasalari (RTTM)</option>
+                                <option value="36">36. Voyaga yetmaganlar uchun ijtimoiy va huquqiy yordam markazlari</option>
                             </select>
                         </td>
                         <td class="p-1">
@@ -4128,14 +4185,27 @@
                         <td class="p-1">
                             <select id="sh3_s2b" name="sh3_s2b" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
                                 <option value="-9">--- tanlang ---</option>
-                                <option value="1">1. Mehribonlik uyi</option>
-                                <option value="2">2. "Muruvvat" nogironligi bo'lgan bolalar uchun  internat uyi</option>
-                                <option value="3">3. Oilaviy bolalar uyi</option>
-                                <option value="4">4. SOS Bolalar makhallalari/oilalari</option>
-                                <option value="5">5. Bolalar uyi</option>
-                                <option value="6">6. Patronat oila</option>
-                                <option value="7">7. Vasiylik/homiylik</option>
-                                <option value="8">8. Boshqa xizmatlar</option>
+                                <option value="11">11. Bolalar uyi</option>
+                                <option value="12">12. Mehribonlik uyi</option>
+                                <option value="13">13. “Muruvvat” nogironligi bo’lgan bolalar uchun internat uyi</option>
+                                <option value="14">14. SOS-bolalar qishloqlari / oilalari</option>
+                                <option value="15">15. Oila turidagi bolalar uyi</option>
+                                <option value="16">16. Patronat oila</option>
+                                <option value="17">17. Vasiylik/homiylik</option>
+                                <option value="21">21. I tur - kar bolalar uchun internatlar</option>
+                                <option value="22">22. II tur - eshitish qobiliyati zaif va kelgusida eshitish qobiliyatini yo’qotadiganlar uchun internatlar</option>
+                                <option value="23">23. III tur - “Nurli maskan” ko’zi ojiz bolalar uchun ixtisoslashtirilgan maktab-internatlari</option>
+                                <option value="24">24. IV tur - ko’zi ojiz va keyinchalik ko’rish qobiliyatini yo’qotadiganlar uchun “Noorli maskan” ixtisoslashtirilgan maktab-internatlari</option>
+                                <option value="25">25. V tur - og’ir nutq buzilishi bo’lgan bolalar uchun internatlar</option>
+                                <option value="26">26. VI tur - tayanch-harakat apparati nuqsonlari bo’lgan bolalar uchun internatlar</option>
+                                <option value="27">27. VII tur - aqli zaif bolalar maktab-internatlari</option>
+                                <option value="28">28. VIII tur - aqli zaif bolalar maktab-internatlarini qo’llash</option>
+                                <option value="31">31. Ko'p tarmoqli ixtisoslashtirilgan maktabgacha ta'lim tashkilotlari</option>
+                                <option value="32">32. Maxsus ta'lim ehtiyojlariga ega bolalar uchun ixtisoslashtirilgan maktablar</option>
+                                <option value="33">33. Imkoniyatlari cheklangan shaxslar uchun ixtisoslashtirilgan respublika kasb-hunar kolleji</option>
+                                <option value="34">34. Sanatoriy turidagi ixtisoslashtirilgan davlat ta'lim muassasalari</option>
+                                <option value="35">35. Respublika ta'lim-tarbiya muassasalari (RTTM)</option>
+                                <option value="36">36. Voyaga yetmaganlar uchun ijtimoiy va huquqiy yordam markazlari</option>
                             </select>
                         </td>
                         <td class="p-1">
@@ -4171,14 +4241,27 @@
                         <td class="p-1">
                             <select id="sh3_s3b" name="sh3_s3b" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
                                 <option value="-9">--- tanlang ---</option>
-                                <option value="1">1. Mehribonlik uyi</option>
-                                <option value="2">2. "Muruvvat" nogironligi bo'lgan bolalar uchun  internat uyi</option>
-                                <option value="3">3. Oilaviy bolalar uyi</option>
-                                <option value="4">4. SOS Bolalar makhallalari/oilalari</option>
-                                <option value="5">5. Bolalar uyi</option>
-                                <option value="6">6. Patronat oila</option>
-                                <option value="7">7. Vasiylik/homiylik</option>
-                                <option value="8">8. Boshqa xizmatlar</option>
+                                <option value="11">11. Bolalar uyi</option>
+                                <option value="12">12. Mehribonlik uyi</option>
+                                <option value="13">13. “Muruvvat” nogironligi bo’lgan bolalar uchun internat uyi</option>
+                                <option value="14">14. SOS-bolalar qishloqlari / oilalari</option>
+                                <option value="15">15. Oila turidagi bolalar uyi</option>
+                                <option value="16">16. Patronat oila</option>
+                                <option value="17">17. Vasiylik/homiylik</option>
+                                <option value="21">21. I tur - kar bolalar uchun internatlar</option>
+                                <option value="22">22. II tur - eshitish qobiliyati zaif va kelgusida eshitish qobiliyatini yo’qotadiganlar uchun internatlar</option>
+                                <option value="23">23. III tur - “Nurli maskan” ko’zi ojiz bolalar uchun ixtisoslashtirilgan maktab-internatlari</option>
+                                <option value="24">24. IV tur - ko’zi ojiz va keyinchalik ko’rish qobiliyatini yo’qotadiganlar uchun “Noorli maskan” ixtisoslashtirilgan maktab-internatlari</option>
+                                <option value="25">25. V tur - og’ir nutq buzilishi bo’lgan bolalar uchun internatlar</option>
+                                <option value="26">26. VI tur - tayanch-harakat apparati nuqsonlari bo’lgan bolalar uchun internatlar</option>
+                                <option value="27">27. VII tur - aqli zaif bolalar maktab-internatlari</option>
+                                <option value="28">28. VIII tur - aqli zaif bolalar maktab-internatlarini qo’llash</option>
+                                <option value="31">31. Ko'p tarmoqli ixtisoslashtirilgan maktabgacha ta'lim tashkilotlari</option>
+                                <option value="32">32. Maxsus ta'lim ehtiyojlariga ega bolalar uchun ixtisoslashtirilgan maktablar</option>
+                                <option value="33">33. Imkoniyatlari cheklangan shaxslar uchun ixtisoslashtirilgan respublika kasb-hunar kolleji</option>
+                                <option value="34">34. Sanatoriy turidagi ixtisoslashtirilgan davlat ta'lim muassasalari</option>
+                                <option value="35">35. Respublika ta'lim-tarbiya muassasalari (RTTM)</option>
+                                <option value="36">36. Voyaga yetmaganlar uchun ijtimoiy va huquqiy yordam markazlari</option>
                             </select>
                         </td>
                         <td class="p-1">
@@ -4214,14 +4297,27 @@
                         <td class="p-1">
                             <select id="sh3_s4b" name="sh3_s4b" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
                                 <option value="-9">--- tanlang ---</option>
-                                <option value="1">1. Mehribonlik uyi</option>
-                                <option value="2">2. "Muruvvat" nogironligi bo'lgan bolalar uchun  internat uyi</option>
-                                <option value="3">3. Oilaviy bolalar uyi</option>
-                                <option value="4">4. SOS Bolalar makhallalari/oilalari</option>
-                                <option value="5">5. Bolalar uyi</option>
-                                <option value="6">6. Patronat oila</option>
-                                <option value="7">7. Vasiylik/homiylik</option>
-                                <option value="8">8. Boshqa xizmatlar</option>
+                                <option value="11">11. Bolalar uyi</option>
+                                <option value="12">12. Mehribonlik uyi</option>
+                                <option value="13">13. “Muruvvat” nogironligi bo’lgan bolalar uchun internat uyi</option>
+                                <option value="14">14. SOS-bolalar qishloqlari / oilalari</option>
+                                <option value="15">15. Oila turidagi bolalar uyi</option>
+                                <option value="16">16. Patronat oila</option>
+                                <option value="17">17. Vasiylik/homiylik</option>
+                                <option value="21">21. I tur - kar bolalar uchun internatlar</option>
+                                <option value="22">22. II tur - eshitish qobiliyati zaif va kelgusida eshitish qobiliyatini yo’qotadiganlar uchun internatlar</option>
+                                <option value="23">23. III tur - “Nurli maskan” ko’zi ojiz bolalar uchun ixtisoslashtirilgan maktab-internatlari</option>
+                                <option value="24">24. IV tur - ko’zi ojiz va keyinchalik ko’rish qobiliyatini yo’qotadiganlar uchun “Noorli maskan” ixtisoslashtirilgan maktab-internatlari</option>
+                                <option value="25">25. V tur - og’ir nutq buzilishi bo’lgan bolalar uchun internatlar</option>
+                                <option value="26">26. VI tur - tayanch-harakat apparati nuqsonlari bo’lgan bolalar uchun internatlar</option>
+                                <option value="27">27. VII tur - aqli zaif bolalar maktab-internatlari</option>
+                                <option value="28">28. VIII tur - aqli zaif bolalar maktab-internatlarini qo’llash</option>
+                                <option value="31">31. Ko'p tarmoqli ixtisoslashtirilgan maktabgacha ta'lim tashkilotlari</option>
+                                <option value="32">32. Maxsus ta'lim ehtiyojlariga ega bolalar uchun ixtisoslashtirilgan maktablar</option>
+                                <option value="33">33. Imkoniyatlari cheklangan shaxslar uchun ixtisoslashtirilgan respublika kasb-hunar kolleji</option>
+                                <option value="34">34. Sanatoriy turidagi ixtisoslashtirilgan davlat ta'lim muassasalari</option>
+                                <option value="35">35. Respublika ta'lim-tarbiya muassasalari (RTTM)</option>
+                                <option value="36">36. Voyaga yetmaganlar uchun ijtimoiy va huquqiy yordam markazlari</option>
                             </select>
                         </td>
                         <td class="p-1">
@@ -4257,14 +4353,27 @@
                         <td class="p-1">
                             <select id="sh3_s5b" name="sh3_s5b" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
                                 <option value="-9">--- tanlang ---</option>
-                                <option value="1">1. Mehribonlik uyi</option>
-                                <option value="2">2. "Muruvvat" nogironligi bo'lgan bolalar uchun  internat uyi</option>
-                                <option value="3">3. Oilaviy bolalar uyi</option>
-                                <option value="4">4. SOS Bolalar makhallalari/oilalari</option>
-                                <option value="5">5. Bolalar uyi</option>
-                                <option value="6">6. Patronat oila</option>
-                                <option value="7">7. Vasiylik/homiylik</option>
-                                <option value="8">8. Boshqa xizmatlar</option>
+                                <option value="11">11. Bolalar uyi</option>
+                                <option value="12">12. Mehribonlik uyi</option>
+                                <option value="13">13. “Muruvvat” nogironligi bo’lgan bolalar uchun internat uyi</option>
+                                <option value="14">14. SOS-bolalar qishloqlari / oilalari</option>
+                                <option value="15">15. Oila turidagi bolalar uyi</option>
+                                <option value="16">16. Patronat oila</option>
+                                <option value="17">17. Vasiylik/homiylik</option>
+                                <option value="21">21. I tur - kar bolalar uchun internatlar</option>
+                                <option value="22">22. II tur - eshitish qobiliyati zaif va kelgusida eshitish qobiliyatini yo’qotadiganlar uchun internatlar</option>
+                                <option value="23">23. III tur - “Nurli maskan” ko’zi ojiz bolalar uchun ixtisoslashtirilgan maktab-internatlari</option>
+                                <option value="24">24. IV tur - ko’zi ojiz va keyinchalik ko’rish qobiliyatini yo’qotadiganlar uchun “Noorli maskan” ixtisoslashtirilgan maktab-internatlari</option>
+                                <option value="25">25. V tur - og’ir nutq buzilishi bo’lgan bolalar uchun internatlar</option>
+                                <option value="26">26. VI tur - tayanch-harakat apparati nuqsonlari bo’lgan bolalar uchun internatlar</option>
+                                <option value="27">27. VII tur - aqli zaif bolalar maktab-internatlari</option>
+                                <option value="28">28. VIII tur - aqli zaif bolalar maktab-internatlarini qo’llash</option>
+                                <option value="31">31. Ko'p tarmoqli ixtisoslashtirilgan maktabgacha ta'lim tashkilotlari</option>
+                                <option value="32">32. Maxsus ta'lim ehtiyojlariga ega bolalar uchun ixtisoslashtirilgan maktablar</option>
+                                <option value="33">33. Imkoniyatlari cheklangan shaxslar uchun ixtisoslashtirilgan respublika kasb-hunar kolleji</option>
+                                <option value="34">34. Sanatoriy turidagi ixtisoslashtirilgan davlat ta'lim muassasalari</option>
+                                <option value="35">35. Respublika ta'lim-tarbiya muassasalari (RTTM)</option>
+                                <option value="36">36. Voyaga yetmaganlar uchun ijtimoiy va huquqiy yordam markazlari</option>
                             </select>
                         </td>
                         <td class="p-1">
@@ -4300,14 +4409,27 @@
                         <td class="p-1">
                             <select id="sh3_s6b" name="sh3_s6b" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
                                 <option value="-9">--- tanlang ---</option>
-                                <option value="1">1. Mehribonlik uyi</option>
-                                <option value="2">2. "Muruvvat" nogironligi bo'lgan bolalar uchun  internat uyi</option>
-                                <option value="3">3. Oilaviy bolalar uyi</option>
-                                <option value="4">4. SOS Bolalar makhallalari/oilalari</option>
-                                <option value="5">5. Bolalar uyi</option>
-                                <option value="6">6. Patronat oila</option>
-                                <option value="7">7. Vasiylik/homiylik</option>
-                                <option value="8">8. Boshqa xizmatlar</option>
+                                <option value="11">11. Bolalar uyi</option>
+                                <option value="12">12. Mehribonlik uyi</option>
+                                <option value="13">13. “Muruvvat” nogironligi bo’lgan bolalar uchun internat uyi</option>
+                                <option value="14">14. SOS-bolalar qishloqlari / oilalari</option>
+                                <option value="15">15. Oila turidagi bolalar uyi</option>
+                                <option value="16">16. Patronat oila</option>
+                                <option value="17">17. Vasiylik/homiylik</option>
+                                <option value="21">21. I tur - kar bolalar uchun internatlar</option>
+                                <option value="22">22. II tur - eshitish qobiliyati zaif va kelgusida eshitish qobiliyatini yo’qotadiganlar uchun internatlar</option>
+                                <option value="23">23. III tur - “Nurli maskan” ko’zi ojiz bolalar uchun ixtisoslashtirilgan maktab-internatlari</option>
+                                <option value="24">24. IV tur - ko’zi ojiz va keyinchalik ko’rish qobiliyatini yo’qotadiganlar uchun “Noorli maskan” ixtisoslashtirilgan maktab-internatlari</option>
+                                <option value="25">25. V tur - og’ir nutq buzilishi bo’lgan bolalar uchun internatlar</option>
+                                <option value="26">26. VI tur - tayanch-harakat apparati nuqsonlari bo’lgan bolalar uchun internatlar</option>
+                                <option value="27">27. VII tur - aqli zaif bolalar maktab-internatlari</option>
+                                <option value="28">28. VIII tur - aqli zaif bolalar maktab-internatlarini qo’llash</option>
+                                <option value="31">31. Ko'p tarmoqli ixtisoslashtirilgan maktabgacha ta'lim tashkilotlari</option>
+                                <option value="32">32. Maxsus ta'lim ehtiyojlariga ega bolalar uchun ixtisoslashtirilgan maktablar</option>
+                                <option value="33">33. Imkoniyatlari cheklangan shaxslar uchun ixtisoslashtirilgan respublika kasb-hunar kolleji</option>
+                                <option value="34">34. Sanatoriy turidagi ixtisoslashtirilgan davlat ta'lim muassasalari</option>
+                                <option value="35">35. Respublika ta'lim-tarbiya muassasalari (RTTM)</option>
+                                <option value="36">36. Voyaga yetmaganlar uchun ijtimoiy va huquqiy yordam markazlari</option>
                             </select>
                         </td>
                         <td class="p-1">
@@ -4343,14 +4465,27 @@
                         <td class="p-1">
                             <select id="sh3_s7b" name="sh3_s7b" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
                                 <option value="-9">--- tanlang ---</option>
-                                <option value="1">1. Mehribonlik uyi</option>
-                                <option value="2">2. "Muruvvat" nogironligi bo'lgan bolalar uchun  internat uyi</option>
-                                <option value="3">3. Oilaviy bolalar uyi</option>
-                                <option value="4">4. SOS Bolalar makhallalari/oilalari</option>
-                                <option value="5">5. Bolalar uyi</option>
-                                <option value="6">6. Patronat oila</option>
-                                <option value="7">7. Vasiylik/homiylik</option>
-                                <option value="8">8. Boshqa xizmatlar</option>
+                                <option value="11">11. Bolalar uyi</option>
+                                <option value="12">12. Mehribonlik uyi</option>
+                                <option value="13">13. “Muruvvat” nogironligi bo’lgan bolalar uchun internat uyi</option>
+                                <option value="14">14. SOS-bolalar qishloqlari / oilalari</option>
+                                <option value="15">15. Oila turidagi bolalar uyi</option>
+                                <option value="16">16. Patronat oila</option>
+                                <option value="17">17. Vasiylik/homiylik</option>
+                                <option value="21">21. I tur - kar bolalar uchun internatlar</option>
+                                <option value="22">22. II tur - eshitish qobiliyati zaif va kelgusida eshitish qobiliyatini yo’qotadiganlar uchun internatlar</option>
+                                <option value="23">23. III tur - “Nurli maskan” ko’zi ojiz bolalar uchun ixtisoslashtirilgan maktab-internatlari</option>
+                                <option value="24">24. IV tur - ko’zi ojiz va keyinchalik ko’rish qobiliyatini yo’qotadiganlar uchun “Noorli maskan” ixtisoslashtirilgan maktab-internatlari</option>
+                                <option value="25">25. V tur - og’ir nutq buzilishi bo’lgan bolalar uchun internatlar</option>
+                                <option value="26">26. VI tur - tayanch-harakat apparati nuqsonlari bo’lgan bolalar uchun internatlar</option>
+                                <option value="27">27. VII tur - aqli zaif bolalar maktab-internatlari</option>
+                                <option value="28">28. VIII tur - aqli zaif bolalar maktab-internatlarini qo’llash</option>
+                                <option value="31">31. Ko'p tarmoqli ixtisoslashtirilgan maktabgacha ta'lim tashkilotlari</option>
+                                <option value="32">32. Maxsus ta'lim ehtiyojlariga ega bolalar uchun ixtisoslashtirilgan maktablar</option>
+                                <option value="33">33. Imkoniyatlari cheklangan shaxslar uchun ixtisoslashtirilgan respublika kasb-hunar kolleji</option>
+                                <option value="34">34. Sanatoriy turidagi ixtisoslashtirilgan davlat ta'lim muassasalari</option>
+                                <option value="35">35. Respublika ta'lim-tarbiya muassasalari (RTTM)</option>
+                                <option value="36">36. Voyaga yetmaganlar uchun ijtimoiy va huquqiy yordam markazlari</option>
                             </select>
                         </td>
                         <td class="p-1">
@@ -4386,14 +4521,27 @@
                         <td class="p-1">
                             <select id="sh3_s8b" name="sh3_s8b" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
                                 <option value="-9">--- tanlang ---</option>
-                                <option value="1">1. Mehribonlik uyi</option>
-                                <option value="2">2. "Muruvvat" nogironligi bo'lgan bolalar uchun  internat uyi</option>
-                                <option value="3">3. Oilaviy bolalar uyi</option>
-                                <option value="4">4. SOS Bolalar makhallalari/oilalari</option>
-                                <option value="5">5. Bolalar uyi</option>
-                                <option value="6">6. Patronat oila</option>
-                                <option value="7">7. Vasiylik/homiylik</option>
-                                <option value="8">8. Boshqa xizmatlar</option>
+                                <option value="11">11. Bolalar uyi</option>
+                                <option value="12">12. Mehribonlik uyi</option>
+                                <option value="13">13. “Muruvvat” nogironligi bo’lgan bolalar uchun internat uyi</option>
+                                <option value="14">14. SOS-bolalar qishloqlari / oilalari</option>
+                                <option value="15">15. Oila turidagi bolalar uyi</option>
+                                <option value="16">16. Patronat oila</option>
+                                <option value="17">17. Vasiylik/homiylik</option>
+                                <option value="21">21. I tur - kar bolalar uchun internatlar</option>
+                                <option value="22">22. II tur - eshitish qobiliyati zaif va kelgusida eshitish qobiliyatini yo’qotadiganlar uchun internatlar</option>
+                                <option value="23">23. III tur - “Nurli maskan” ko’zi ojiz bolalar uchun ixtisoslashtirilgan maktab-internatlari</option>
+                                <option value="24">24. IV tur - ko’zi ojiz va keyinchalik ko’rish qobiliyatini yo’qotadiganlar uchun “Noorli maskan” ixtisoslashtirilgan maktab-internatlari</option>
+                                <option value="25">25. V tur - og’ir nutq buzilishi bo’lgan bolalar uchun internatlar</option>
+                                <option value="26">26. VI tur - tayanch-harakat apparati nuqsonlari bo’lgan bolalar uchun internatlar</option>
+                                <option value="27">27. VII tur - aqli zaif bolalar maktab-internatlari</option>
+                                <option value="28">28. VIII tur - aqli zaif bolalar maktab-internatlarini qo’llash</option>
+                                <option value="31">31. Ko'p tarmoqli ixtisoslashtirilgan maktabgacha ta'lim tashkilotlari</option>
+                                <option value="32">32. Maxsus ta'lim ehtiyojlariga ega bolalar uchun ixtisoslashtirilgan maktablar</option>
+                                <option value="33">33. Imkoniyatlari cheklangan shaxslar uchun ixtisoslashtirilgan respublika kasb-hunar kolleji</option>
+                                <option value="34">34. Sanatoriy turidagi ixtisoslashtirilgan davlat ta'lim muassasalari</option>
+                                <option value="35">35. Respublika ta'lim-tarbiya muassasalari (RTTM)</option>
+                                <option value="36">36. Voyaga yetmaganlar uchun ijtimoiy va huquqiy yordam markazlari</option>
                             </select>
                         </td>
                         <td class="p-1">
@@ -4429,14 +4577,27 @@
                         <td class="p-1">
                             <select id="sh3_s9b" name="sh3_s9b" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
                                 <option value="-9">--- tanlang ---</option>
-                                <option value="1">1. Mehribonlik uyi</option>
-                                <option value="2">2. "Muruvvat" nogironligi bo'lgan bolalar uchun  internat uyi</option>
-                                <option value="3">3. Oilaviy bolalar uyi</option>
-                                <option value="4">4. SOS Bolalar makhallalari/oilalari</option>
-                                <option value="5">5. Bolalar uyi</option>
-                                <option value="6">6. Patronat oila</option>
-                                <option value="7">7. Vasiylik/homiylik</option>
-                                <option value="8">8. Boshqa xizmatlar</option>
+                                <option value="11">11. Bolalar uyi</option>
+                                <option value="12">12. Mehribonlik uyi</option>
+                                <option value="13">13. “Muruvvat” nogironligi bo’lgan bolalar uchun internat uyi</option>
+                                <option value="14">14. SOS-bolalar qishloqlari / oilalari</option>
+                                <option value="15">15. Oila turidagi bolalar uyi</option>
+                                <option value="16">16. Patronat oila</option>
+                                <option value="17">17. Vasiylik/homiylik</option>
+                                <option value="21">21. I tur - kar bolalar uchun internatlar</option>
+                                <option value="22">22. II tur - eshitish qobiliyati zaif va kelgusida eshitish qobiliyatini yo’qotadiganlar uchun internatlar</option>
+                                <option value="23">23. III tur - “Nurli maskan” ko’zi ojiz bolalar uchun ixtisoslashtirilgan maktab-internatlari</option>
+                                <option value="24">24. IV tur - ko’zi ojiz va keyinchalik ko’rish qobiliyatini yo’qotadiganlar uchun “Noorli maskan” ixtisoslashtirilgan maktab-internatlari</option>
+                                <option value="25">25. V tur - og’ir nutq buzilishi bo’lgan bolalar uchun internatlar</option>
+                                <option value="26">26. VI tur - tayanch-harakat apparati nuqsonlari bo’lgan bolalar uchun internatlar</option>
+                                <option value="27">27. VII tur - aqli zaif bolalar maktab-internatlari</option>
+                                <option value="28">28. VIII tur - aqli zaif bolalar maktab-internatlarini qo’llash</option>
+                                <option value="31">31. Ko'p tarmoqli ixtisoslashtirilgan maktabgacha ta'lim tashkilotlari</option>
+                                <option value="32">32. Maxsus ta'lim ehtiyojlariga ega bolalar uchun ixtisoslashtirilgan maktablar</option>
+                                <option value="33">33. Imkoniyatlari cheklangan shaxslar uchun ixtisoslashtirilgan respublika kasb-hunar kolleji</option>
+                                <option value="34">34. Sanatoriy turidagi ixtisoslashtirilgan davlat ta'lim muassasalari</option>
+                                <option value="35">35. Respublika ta'lim-tarbiya muassasalari (RTTM)</option>
+                                <option value="36">36. Voyaga yetmaganlar uchun ijtimoiy va huquqiy yordam markazlari</option>
                             </select>
                         </td>
                         <td class="p-1">
@@ -4472,14 +4633,27 @@
                         <td class="p-1">
                             <select id="sh3_s10b" name="sh3_s10b" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
                                 <option value="-9">--- tanlang ---</option>
-                                <option value="1">1. Mehribonlik uyi</option>
-                                <option value="2">2. "Muruvvat" nogironligi bo'lgan bolalar uchun  internat uyi</option>
-                                <option value="3">3. Oilaviy bolalar uyi</option>
-                                <option value="4">4. SOS Bolalar makhallalari/oilalari</option>
-                                <option value="5">5. Bolalar uyi</option>
-                                <option value="6">6. Patronat oila</option>
-                                <option value="7">7. Vasiylik/homiylik</option>
-                                <option value="8">8. Boshqa xizmatlar</option>
+                                <option value="11">11. Bolalar uyi</option>
+                                <option value="12">12. Mehribonlik uyi</option>
+                                <option value="13">13. “Muruvvat” nogironligi bo’lgan bolalar uchun internat uyi</option>
+                                <option value="14">14. SOS-bolalar qishloqlari / oilalari</option>
+                                <option value="15">15. Oila turidagi bolalar uyi</option>
+                                <option value="16">16. Patronat oila</option>
+                                <option value="17">17. Vasiylik/homiylik</option>
+                                <option value="21">21. I tur - kar bolalar uchun internatlar</option>
+                                <option value="22">22. II tur - eshitish qobiliyati zaif va kelgusida eshitish qobiliyatini yo’qotadiganlar uchun internatlar</option>
+                                <option value="23">23. III tur - “Nurli maskan” ko’zi ojiz bolalar uchun ixtisoslashtirilgan maktab-internatlari</option>
+                                <option value="24">24. IV tur - ko’zi ojiz va keyinchalik ko’rish qobiliyatini yo’qotadiganlar uchun “Noorli maskan” ixtisoslashtirilgan maktab-internatlari</option>
+                                <option value="25">25. V tur - og’ir nutq buzilishi bo’lgan bolalar uchun internatlar</option>
+                                <option value="26">26. VI tur - tayanch-harakat apparati nuqsonlari bo’lgan bolalar uchun internatlar</option>
+                                <option value="27">27. VII tur - aqli zaif bolalar maktab-internatlari</option>
+                                <option value="28">28. VIII tur - aqli zaif bolalar maktab-internatlarini qo’llash</option>
+                                <option value="31">31. Ko'p tarmoqli ixtisoslashtirilgan maktabgacha ta'lim tashkilotlari</option>
+                                <option value="32">32. Maxsus ta'lim ehtiyojlariga ega bolalar uchun ixtisoslashtirilgan maktablar</option>
+                                <option value="33">33. Imkoniyatlari cheklangan shaxslar uchun ixtisoslashtirilgan respublika kasb-hunar kolleji</option>
+                                <option value="34">34. Sanatoriy turidagi ixtisoslashtirilgan davlat ta'lim muassasalari</option>
+                                <option value="35">35. Respublika ta'lim-tarbiya muassasalari (RTTM)</option>
+                                <option value="36">36. Voyaga yetmaganlar uchun ijtimoiy va huquqiy yordam markazlari</option>
                             </select>
                         </td>
                         <td class="p-1">
@@ -4515,14 +4689,27 @@
                         <td class="p-1">
                             <select id="sh3_csb" name="sh3_csb" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
                                 <option value="-9">--- tanlang ---</option>
-                                <option value="1">1. Mehribonlik uyi</option>
-                                <option value="2">2. "Muruvvat" nogironligi bo'lgan bolalar uchun  internat uyi</option>
-                                <option value="3">3. Oilaviy bolalar uyi</option>
-                                <option value="4">4. SOS Bolalar makhallalari/oilalari</option>
-                                <option value="5">5. Bolalar uyi</option>
-                                <option value="6">6. Patronat oila</option>
-                                <option value="7">7. Vasiylik/homiylik</option>
-                                <option value="8">8. Boshqa xizmatlar</option>
+                                <option value="11">11. Bolalar uyi</option>
+                                <option value="12">12. Mehribonlik uyi</option>
+                                <option value="13">13. “Muruvvat” nogironligi bo’lgan bolalar uchun internat uyi</option>
+                                <option value="14">14. SOS-bolalar qishloqlari / oilalari</option>
+                                <option value="15">15. Oila turidagi bolalar uyi</option>
+                                <option value="16">16. Patronat oila</option>
+                                <option value="17">17. Vasiylik/homiylik</option>
+                                <option value="21">21. I tur - kar bolalar uchun internatlar</option>
+                                <option value="22">22. II tur - eshitish qobiliyati zaif va kelgusida eshitish qobiliyatini yo’qotadiganlar uchun internatlar</option>
+                                <option value="23">23. III tur - “Nurli maskan” ko’zi ojiz bolalar uchun ixtisoslashtirilgan maktab-internatlari</option>
+                                <option value="24">24. IV tur - ko’zi ojiz va keyinchalik ko’rish qobiliyatini yo’qotadiganlar uchun “Noorli maskan” ixtisoslashtirilgan maktab-internatlari</option>
+                                <option value="25">25. V tur - og’ir nutq buzilishi bo’lgan bolalar uchun internatlar</option>
+                                <option value="26">26. VI tur - tayanch-harakat apparati nuqsonlari bo’lgan bolalar uchun internatlar</option>
+                                <option value="27">27. VII tur - aqli zaif bolalar maktab-internatlari</option>
+                                <option value="28">28. VIII tur - aqli zaif bolalar maktab-internatlarini qo’llash</option>
+                                <option value="31">31. Ko'p tarmoqli ixtisoslashtirilgan maktabgacha ta'lim tashkilotlari</option>
+                                <option value="32">32. Maxsus ta'lim ehtiyojlariga ega bolalar uchun ixtisoslashtirilgan maktablar</option>
+                                <option value="33">33. Imkoniyatlari cheklangan shaxslar uchun ixtisoslashtirilgan respublika kasb-hunar kolleji</option>
+                                <option value="34">34. Sanatoriy turidagi ixtisoslashtirilgan davlat ta'lim muassasalari</option>
+                                <option value="35">35. Respublika ta'lim-tarbiya muassasalari (RTTM)</option>
+                                <option value="36">36. Voyaga yetmaganlar uchun ijtimoiy va huquqiy yordam markazlari</option>
                             </select>
                         </td>
                         <td class="p-1">
@@ -4984,7 +5171,7 @@
             <small class="my-2 block italic text-red-500">Bu voyaga yetmagan onalarning farzandlari emas, balki o'zi voyaga yetmagan bo'la turib ona bo'lgan bolalarga tegishlidir.</small>
 
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
-                <div>LK22_9. Bola quyidagi zaif guruhga tegishli - vasiylik tizimidagi boshqa bola/bolalar bilan bo'lgan aka-uka/opa-singil, ular qabul qilingan xizmat(lar)dan qat'iy nazar.</div>
+                <div>LK22_9. Bolaning muqobil vasiylik tizimida (muassasa/xizmat turidan qatiy nazar) aka-ukasi/opa-singlisi bor</div>
                 <div class="col-span-1 flex items-center gap-4">
                     <div class="flex items-center">
                         <input type="radio" id="lk22_9-1" name="lk22_9" value="1" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
@@ -4998,7 +5185,7 @@
             </div>
 
             <div class="grid grid-cols-2 gap-4 items-center mt-10">
-                <div>LK22_10. Bola quyidagi zaif guruhga tegishli - bir xil ijtimoiy xizmatdan bo'lgan boshqa bolalar bilan aka-uka/opa-singil.</div>
+                <div>LK22_10. Bolaning aka-ukasi/opa-singlisi bir xil muassasada yoki xizmat turida joylashtirilgan</div>
                 <div class="col-span-1 flex items-center gap-4">
                     <div class="flex items-center">
                         <input type="radio" id="lk22_10-1" name="lk22_10" value="1" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
@@ -5065,7 +5252,11 @@
                     </div>
                     <div class="flex items-center">
                         <input type="radio" id="qhealthp3-3" name="qhealthp3" value="3" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                        <label for="qhealthp3-3" class="ms-2 text-sm text-gray-900">3. Tamomila boshqalarga bog'liq</label>
+                        <label for="qhealthp3-3" class="ms-2 text-sm text-gray-900">3. Yoshi tufayli butunlay boshqalarga bog'liq</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input type="radio" id="qhealthp3-4" name="qhealthp3" value="4" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <label for="qhealthp3-4" class="ms-2 text-sm text-gray-900">4. Nogironlik tufayli butunlay boshqalarga bog'liq</label>
                     </div>
                 </div>
             </div>
@@ -5247,8 +5438,22 @@
 
             <div class="grid grid-cols-2 gap-4 items-center mt-10">
                 <div>EDK3. Qaysi sinfga?<small class="my-2 block italic text-red-500">TAYYORLOV GURUHI UCHUN 0 (NOL) QO'YING</small></div>
-                <div class="col-span-1 flex items-center gap-4">
-                    <input type="text" id="edk3" name="edk3" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
+                <div>
+                    <select id="edk3" name="edk3" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
+                        <option value="-9">--- tanlang ---</option>
+                        <option value="0>0</option>
+                        <option value="1>1</option>
+                        <option value="2>2</option>
+                        <option value="3>3</option>
+                        <option value="4>4</option>
+                        <option value="5>5</option>
+                        <option value="6>6</option>
+                        <option value="7>7</option>
+                        <option value="8>8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                    </select>
                 </div>
             </div>
 
@@ -6064,7 +6269,7 @@
             </div>
 
             <div class="grid grid-cols-2 gap-4 items-center mt-10">
-                <div> SK3. Bolaning vasiylik h tizimida aka-uka va/yoki opa-singillari mavjudmi? Ha bo'lsa, nechta aka-uka va nechta opa-singil? </div>
+                <div> SK3. Bolaning vasiylik tizimida aka-uka va/yoki opa-singillari mavjudmi? Ha bo'lsa, nechta aka-uka va nechta opa-singil? </div>
                 <div class="col-span-1 flex flex-col gap-2">
                     <div class="flex items-center">
                         <input type="radio" id="sk3-1" name="sk3" value="1" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
@@ -6084,7 +6289,7 @@
                     </div>
                     <div class="flex items-center">
                         <input type="radio" id="sk3-3" name="sk3" value="3" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                        <label for="sk3-3" class="ms-2 text-sm text-gray-900">3. Na aka-uka, na opa-singillari</label>
+                        <label for="sk3-3" class="ms-2 text-sm text-gray-900">3. Ha, aka-uka va opa-singillari</label>
                     </div>
                     <div class="flex items-center">
                         <input type="radio" id="sk3-4" name="sk3" value="9" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
@@ -6247,7 +6452,7 @@
             </div>
 
             <div class="grid grid-cols-2 gap-4 items-center mt-10">
-                <div>SK11. Bolani farzandlikka olish imkoniyati bo'yicha ish olib borayotgan aniq belgilangan oilasi (ismlari va manzili ko'rsatilgan) mavjudmi?</div>
+                <div>SK11. Bolani farzandlikka olish imkoniyati bo'yicha ish olib borayotgan aniq belgilangan oilasi (ismlari va manzili) mavjudmi?</div>
                 <div class="col-span-1 flex items-center gap-4">
                     <div class="flex items-center">
                         <input type="radio" id="sk11-1" name="sk11" value="1" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
@@ -6258,6 +6463,11 @@
                         <label for="sk11-2" class="ms-2 text-sm text-gray-900">2. Yo'q</label>
                     </div>
                 </div>
+            </div>
+
+            <div class="grid mt-10">
+                <label for="obs">OBS. Kuzatuvlarni</label>
+                <textarea class="form-control" rows="3" id="obs" name="obs"></textarea>
             </div>
 
         </form>

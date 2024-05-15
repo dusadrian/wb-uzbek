@@ -1,16 +1,20 @@
 import { ipcRenderer } from "electron";
-import { questions, questionOrder } from "./04_qmr_variables";
+import { questions, questionOrder } from "./01_cpis_variables";
 import instrument from "../../libraries/instrument";
 import { QuestionObjectType, SaveInstrumentType } from "../../libraries/interfaces";
 import { util, errorHandler } from "../../libraries/validation_helpers";
 import * as DI from "../../interfaces/database";
 
-import * as _flatpickr from 'flatpickr';
-import { FlatpickrFn } from 'flatpickr/dist/types/instance';
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-const flatpickr: FlatpickrFn = _flatpickr as any;
-import { Russian } from "flatpickr/dist/l10n/ru";
-import { UzbekLatin } from "flatpickr/dist/l10n/uz_latn";
+const globalAny: any = global;
+window.require('jquery');
+globalAny.jQuery = window.require('jquery');
+globalAny.$ = window.require('jquery');
+window.require('jquery-ui-dist/jquery-ui');
+// window.require('jquery-ui');
+import "jquery-ui/ui/i18n/datepicker-ru";
+import "jquery-ui/ui/i18n/datepicker-uz";
+
 import { KeyString, KeyStringNumber, regions, districts, settlements } from "../../libraries/administrative";
 
 import * as en from "../../locales/en.json";
@@ -21,6 +25,7 @@ const locales: { [key: string]: typeof en | typeof uz | typeof ru } = {
     'uz': uz,
     'ru': ru
 }
+
 
 const lang = localStorage.getItem("language");
 const translations = locales[lang as keyof typeof locales] as Record<string, string>;
@@ -46,45 +51,41 @@ let institutionCode = '';
 export const instrument4 = {
     init: async () => {
 
-        const lang = localStorage.getItem("language");
+        $.datepicker.setDefaults( $.datepicker.regional[ lang ] );
+        const jQueryDatepickerConfig = {
+            changeMonth: true,
+            changeYear: true,
+            dateFormat: "yy",
+            maxDate: "30/04/2024",
+            yearRange: "c-100:c+10",
+            firstDay: 1,
+            onSelect: function() {
+                util.trigger(this.id, "change");
+            }
+        };
 
-        const flatpickrConfig1: {
-            enableTime: boolean;
-            dateFormat: string;
-            maxDate: string;
-            locale?: typeof Russian | typeof UzbekLatin
-        } = {
-            enableTime: false,
-            dateFormat: "Y",
-            maxDate: "30/04/2024"
-        }
+        [...start_dates, ...end_dates, 'i10', 'af13b'].forEach((el) => {
+            const config = { ...jQueryDatepickerConfig };
 
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        const flatpickrConfig2: {
-            enableTime: boolean;
-            dateFormat: string;
-            maxDate: string;
-            locale?: typeof Russian | typeof UzbekLatin
-        } = {
-            enableTime: false,
-            dateFormat: "m/Y",
-            maxDate: "30/04/2024"
-        }
+            if (el == 'af13b') {
+                config.dateFormat = "mm/yy";
+            }
 
-        if (lang == "uz") {
-            flatpickrConfig1.locale = UzbekLatin;
-            flatpickrConfig2.locale = UzbekLatin;
-        }
-        if (lang == "ru") {
-            flatpickrConfig1.locale = Russian;
-            flatpickrConfig2.locale = Russian;
-        }
+            $("#" + el).datepicker(config);
 
-        [...start_dates, ...end_dates, 'i10'].forEach(item => {
-            flatpickr(util.htmlElement(item), flatpickrConfig1);
+            util.listen(el, "change", () => {
+                errorHandler.removeError(el, translations['invalid_date']);
+                try {
+                    $.datepicker.parseDate(
+                        jQueryDatepickerConfig.dateFormat,
+                        util.htmlElement(el).value
+                    )
+                } catch (error) {
+                    instrument.questions[el].value = '-9';
+                    errorHandler.addError(el, translations['invalid_date']);
+                }
+            });
         });
-
-        flatpickr(util.htmlElement('af13b'), flatpickrConfig2);
 
         ipcRenderer.on("instrumentDataReady", (_event, args) => {
             // console.log(args);
@@ -195,8 +196,6 @@ export const instrument4 = {
                     util.setValue('i4c', "--");
                     util.setValue('i4d', "--");
                     util.setValue('i9', "--");
-                    console.log(insons[institution_code], 'inson');
-
                 }
                 else {
                     const serviciu = { ...services[institution_code] } as KeyStringNumber;

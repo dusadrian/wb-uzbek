@@ -6,11 +6,13 @@
     <title>CRM Uzbek</title>
     <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
     <meta http-equiv="Content-Security-Policy"
-        content="default-src 'self'; img-src http: https: data: ; script-src 'self';" />
+        content="default-src 'self'; img-src 'self' http: https: data: ; script-src 'self';" />
     <meta http-equiv="X-Content-Security-Policy"
-        content="default-src 'self'; img-src http: https: data: ; script-src 'self';" />
+        content="default-src 'self'; img-src http: https: 'self' data: ; script-src 'self';" />
     <link href="../../../dist/main.css" rel="stylesheet">
-    <link rel="stylesheet" href="../../../node_modules/flatpickr/dist/flatpickr.min.css">
+    <link rel="stylesheet" href="../../../node_modules/jquery-ui-dist/jquery-ui.min.css">
+    <link rel="stylesheet" href="../../../node_modules/jquery-ui-dist/jquery-ui.structure.min.css">
+    <link rel="stylesheet" href="../../../node_modules/jquery-ui-dist/jquery-ui.theme.min.css">
 </head>
 
 <body class="relative max-h-screen">
@@ -254,11 +256,11 @@
                     </div>
                     <div class="flex items-center">
                         <input type="radio" id="lk15-4" name="lk15" value="4" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                        <label for="lk15-4" class="ms-2 text-sm text-gray-900">4. Другие сотрудники учреждения</label>
+                        <label for="lk15-4" class="ms-2 text-sm text-gray-900">4. Другой персонал учреждения</label>
                     </div>
                     <div class="flex items-center">
                         <input type="radio" id="lk15-5" name="lk15" value="5" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                        <label for="lk15-5" class="ms-2 text-sm text-gray-900">5. Еще один госслужащий</label>
+                        <label for="lk15-5" class="ms-2 text-sm text-gray-900">5. Другой гос.служащий</label>
                     </div>
                     <div class="flex items-center">
                         <input type="radio" id="lk15-6" name="lk15" value="6" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
@@ -1525,7 +1527,7 @@
                     </div>
                     <div class="flex items-center">
                         <input type="radio" id="ct8a-7" name="ct8a" value="7" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                        <label for="ct8a-7" class="ms-2 text-sm text-gray-900">7. Самозанятая</label>
+                        <label for="ct8a-7" class="ms-2 text-sm text-gray-900">7. Самозанятый</label>
                     </div>
                     <div class="flex items-center">
                         <input type="radio" id="ct8a-8" name="ct8a" value="8" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
@@ -1533,7 +1535,7 @@
                     </div>
                     <div class="flex items-center">
                         <input type="radio" id="ct8a-9" name="ct8a" value="9" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                        <label for="ct8a-9" class="ms-2 text-sm text-gray-900">9. Безработная</label>
+                        <label for="ct8a-9" class="ms-2 text-sm text-gray-900">9. Безработный</label>
                     </div>
                     <div class="flex items-center">
                         <input type="radio" id="ct8a-10" name="ct8a" value="10" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
@@ -1545,11 +1547,11 @@
                     </div>
                     <div class="flex items-center">
                         <input type="radio" id="ct8a-12" name="ct8a" value="12" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                        <label for="ct8a-12" class="ms-2 text-sm text-gray-900">12. Домохозяйка / Забота о домашнем хозяйстве</label>
+                        <label for="ct8a-12" class="ms-2 text-sm text-gray-900">12. Домохозяин / Забота о домашнем хозяйстве</label>
                     </div>
                     <div class="flex items-center">
                         <input type="radio" id="ct8a-13" name="ct8a" value="13" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                        <label for="ct8a-13" class="ms-2 text-sm text-gray-900">13. Пенсионерка</label>
+                        <label for="ct8a-13" class="ms-2 text-sm text-gray-900">13. Пенсионер</label>
                     </div>
                     <div class="flex items-center">
                         <input type="radio" id="ct8a-14" name="ct8a" value="14" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
@@ -1601,7 +1603,7 @@
                     </div>
                     <div class="flex items-center">
                         <input type="radio" id="ct8b-7" name="ct8b" value="7" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                        <label for="ct8b-7" class="ms-2 text-sm text-gray-900">7. Самозанятая</label>
+                        <label for="ct8b-7" class="ms-2 text-sm text-gray-900">7. Самозанятый</label>
                     </div>
                     <div class="flex items-center">
                         <input type="radio" id="ct8b-8" name="ct8b" value="8" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
@@ -1609,7 +1611,7 @@
                     </div>
                     <div class="flex items-center">
                         <input type="radio" id="ct8b-9" name="ct8b" value="9" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                        <label for="ct8b-9" class="ms-2 text-sm text-gray-900">9. Безработная</label>
+                        <label for="ct8b-9" class="ms-2 text-sm text-gray-900">9. Безработный</label>
                     </div>
                     <div class="flex items-center">
                         <input type="radio" id="ct8b-10" name="ct8b" value="10" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
@@ -1621,11 +1623,11 @@
                     </div>
                     <div class="flex items-center">
                         <input type="radio" id="ct8b-12" name="ct8b" value="12" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                        <label for="ct8b-12" class="ms-2 text-sm text-gray-900">12. Домохозяйка / Забота о домашнем хозяйстве</label>
+                        <label for="ct8b-12" class="ms-2 text-sm text-gray-900">12. Домохозяин / Забота о домашнем хозяйстве</label>
                     </div>
                     <div class="flex items-center">
                         <input type="radio" id="ct8b-13" name="ct8b" value="13" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                        <label for="ct8b-13" class="ms-2 text-sm text-gray-900">13. Пенсионерка</label>
+                        <label for="ct8b-13" class="ms-2 text-sm text-gray-900">13. Пенсионер</label>
                     </div>
                     <div class="flex items-center">
                         <input type="radio" id="ct8b-14" name="ct8b" value="14" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
@@ -1858,7 +1860,7 @@
                 </div>
                 <div class="flex gap-4">
                     <input type="checkbox" id="cg0" name="cg0" value="1" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-100 rounded">
-                    <label for="cg0" class="ms-2 text-sm text-gray-900"> Check only if before entering the system, the child was under the care of someone other than the child's mother or father. Otherwise, skip to Section 4." </label>
+                    <label for="cg0" class="ms-2 text-sm text-gray-900"> Отметить, если ребенок до поступления в систему альтернативной опеки был под опекой другого лица, но не его отца или матери. Иначе переходите в Раздел 4. </label>
                 </div>
             </div>
 
@@ -2330,7 +2332,7 @@
             </div>
 
             <div class="grid grid-cols-2 gap-4 items-center mt-10">
-                <div>CG8b. Текущая трудовая занятостьопекуна</div>
+                <div>CG8b. Текущая трудовая занятость опекуна</div>
                 <div class="col-span-1 flex flex-col gap-2">
                     <div class="flex items-center">
                         <input type="radio" id="cg8b-1" name="cg8b" value="1" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
@@ -2771,6 +2773,20 @@
                         <option value="15">15. Детские дома семейного типа</option>
                         <option value="16">16. Патронатная семья</option>
                         <option value="17">17. Опека/ Попечительство</option>
+                        <option value="21">21. I тип - школы-интернаты для глухих детей</option>
+                        <option value="22">22. Тип II - школы-интернаты для слабослышащих и тех, кто впоследствии потеряет слух</option>
+                        <option value="23">23. III тип - специализированные школы-интернаты для слепых детей “Нурли Маскан”</option>
+                        <option value="24">24. IV тип - специализированные школы-интернаты “Нурли Маскан” для слабовидящих и тех, кто впоследствии потеряет зрение</option>
+                        <option value="25">25. V тип - школы-интернаты для детей с тяжелыми нарушениями речи</option>
+                        <option value="26">26. VI тип - школы-интернаты для детей с нарушениями опорно-двигательного аппарата</option>
+                        <option value="27">27. Тип VII - школы-интернаты для детей с задержкой психического развития</option>
+                        <option value="28">28. Тип VIII - поддержка школ-интернатов для детей с задержкой интеллектуального развития</option>
+                        <option value="31">31. многопрофильные специализированные дошкольные образовательные организации</option>
+                        <option value="32">32. специализированные школы для детей с особыми образовательными потребностями</option>
+                        <option value="33">33. Республиканский специализированный колледж для лиц с ограниченными возможностями</option>
+                        <option value="34">34. специализированные  государственные образовательные учреждения санаторного типа</option>
+                        <option value="35">35. Республиканские  учебно-воспитательные учреждения (РУВУ)</option>
+                        <option value="36">36. Центры социальной и правовой помощи несовершеннолетним</option>
                     </select>
                 </div>
             </div>
@@ -2807,6 +2823,10 @@
                     <div class="flex items-center">
                         <input type="radio" id="sa6b-3" name="sa6b" value="3" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="sa6b-3" class="ms-2 text-sm text-gray-900">3. Инспектор профилактики</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input type="radio" id="sa6b-4" name="sa6b" value="4" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <label for="sa6b-4" class="ms-2 text-sm text-gray-900">4. Другое учреждение</label>
                     </div>
                 </div>
             </div>
@@ -2971,7 +2991,7 @@
                     </div>
                     <div class="flex items-center">
                         <input type="radio" id="qhealth1-9" name="qhealth1" value="9" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                        <label for="qhealth1-9" class="ms-2 text-sm text-gray-900">9. Не известно</label>
+                        <label for="qhealth1-9" class="ms-2 text-sm text-gray-900">9. Неизвестно</label>
                     </div>
                 </div>
             </div>
@@ -2988,7 +3008,7 @@
                     </div>
                     <div class="flex items-center">
                         <input type="radio" id="qhealth2-9" name="qhealth2" value="9" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                        <label for="qhealth2-9" class="ms-2 text-sm text-gray-900">9. Не известно</label>
+                        <label for="qhealth2-9" class="ms-2 text-sm text-gray-900">9. Неизвестно</label>
                     </div>
                 </div>
             </div>
@@ -3005,7 +3025,7 @@
                     </div>
                     <div class="flex items-center">
                         <input type="radio" id="qhealth3-9" name="qhealth3" value="9" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                        <label for="qhealth3-9" class="ms-2 text-sm text-gray-900">9. Не известно</label>
+                        <label for="qhealth3-9" class="ms-2 text-sm text-gray-900">9. Неизвестно</label>
                     </div>
                 </div>
             </div>
@@ -3022,7 +3042,7 @@
                     </div>
                     <div class="flex items-center">
                         <input type="radio" id="qhealth4-9" name="qhealth4" value="9" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                        <label for="qhealth4-9" class="ms-2 text-sm text-gray-900">9. Не известно</label>
+                        <label for="qhealth4-9" class="ms-2 text-sm text-gray-900">9. Неизвестно</label>
                     </div>
                 </div>
             </div>
@@ -3039,7 +3059,7 @@
                     </div>
                     <div class="flex items-center">
                         <input type="radio" id="qhealth5-9" name="qhealth5" value="9" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                        <label for="qhealth5-9" class="ms-2 text-sm text-gray-900">9. Не известно</label>
+                        <label for="qhealth5-9" class="ms-2 text-sm text-gray-900">9. Неизвестно</label>
                     </div>
                 </div>
             </div>
@@ -3056,7 +3076,7 @@
                     </div>
                     <div class="flex items-center">
                         <input type="radio" id="qhealth6-9" name="qhealth6" value="9" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                        <label for="qhealth6-9" class="ms-2 text-sm text-gray-900">9. Не известно</label>
+                        <label for="qhealth6-9" class="ms-2 text-sm text-gray-900">9. Неизвестно</label>
                     </div>
                 </div>
             </div>
@@ -3074,11 +3094,15 @@
                     </div>
                     <div class="flex items-center">
                         <input type="radio" id="qhealth7-3" name="qhealth7" value="3" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                        <label for="qhealth7-3" class="ms-2 text-sm text-gray-900">3. Полностью зависит от других</label>
+                        <label for="qhealth7-3" class="ms-2 text-sm text-gray-900">3. Полностью зависим от других по причине возраста</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input type="radio" id="qhealth7-4" name="qhealth7" value="4" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <label for="qhealth7-4" class="ms-2 text-sm text-gray-900">4. Полностью зависим от других по причине инвалидности</label>
                     </div>
                     <div class="flex items-center">
                         <input type="radio" id="qhealth7-9" name="qhealth7" value="9" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                        <label for="qhealth7-9" class="ms-2 text-sm text-gray-900">9. Не известно</label>
+                        <label for="qhealth7-9" class="ms-2 text-sm text-gray-900">9. Неизвестно</label>
                     </div>
                 </div>
             </div>
@@ -3093,6 +3117,10 @@
                     <div class="flex items-center">
                         <input type="radio" id="qhealth8-2" name="qhealth8" value="2" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="qhealth8-2" class="ms-2 text-sm text-gray-900">2. Нет</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input type="radio" id="qhealth8-3" name="qhealth8" value="9" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <label for="qhealth8-3" class="ms-2 text-sm text-gray-900">9. Неизвестно</label>
                     </div>
                 </div>
             </div>
@@ -3294,11 +3322,23 @@
             </div>
 
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
-
-                <div>2b. В каком классе учился ребенок?<small class="mb-1 my-2 block italic text-red-500">ПОСТАВЬТЕ 0 (НОЛЬ) ДЛЯ ПОДГОТОВИТЕЛЬНОЙ ГРУППЫ</small>
-                </div>
+                <div>2b. В каком классе учился ребенок?<small class="mb-1 my-2 block italic text-red-500">ПОСТАВЬТЕ 0 (НОЛЬ) ДЛЯ ПОДГОТОВИТЕЛЬНОЙ ГРУППЫ</small></div>
                 <div>
-                    <input type="text" id="qeduc2b" name="qeduc2b" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
+                    <select id="qeduc2b" name="qeduc2b" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
+                        <option value="-9">--- выбрать ---</option>
+                        <option value="0>0</option>
+                        <option value="1>1</option>
+                        <option value="2>2</option>
+                        <option value="3>3</option>
+                        <option value="4>4</option>
+                        <option value="5>5</option>
+                        <option value="6>6</option>
+                        <option value="7>7</option>
+                        <option value="8>8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                    </select>
                 </div>
             </div>
 
@@ -3315,7 +3355,7 @@
                     </div>
                     <div class="flex items-center">
                         <input type="radio" id="qeduc2c-9" name="qeduc2c" value="9" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                        <label for="qeduc2c-9" class="ms-2 text-sm text-gray-900">9. Не известно</label>
+                        <label for="qeduc2c-9" class="ms-2 text-sm text-gray-900">9. Неизвестно</label>
                     </div>
                 </div>
             </div>
@@ -3333,7 +3373,7 @@
                     </div>
                     <div class="flex items-center">
                         <input type="radio" id="qeduc2d-9" name="qeduc2d" value="9" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                        <label for="qeduc2d-9" class="ms-2 text-sm text-gray-900">9. Не известно</label>
+                        <label for="qeduc2d-9" class="ms-2 text-sm text-gray-900">9. Неизвестно</label>
                     </div>
                 </div>
             </div>
@@ -3351,7 +3391,7 @@
                     </div>
                     <div class="flex items-center">
                         <input type="radio" id="qeduc2e-9" name="qeduc2e" value="9" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                        <label for="qeduc2e-9" class="ms-2 text-sm text-gray-900">9. Не известно</label>
+                        <label for="qeduc2e-9" class="ms-2 text-sm text-gray-900">9. Неизвестно</label>
                     </div>
                 </div>
             </div>
@@ -3401,7 +3441,7 @@
                     </div>
                     <div class="flex items-center">
                         <input type="radio" id="qeduc3-9" name="qeduc3" value="9" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                        <label for="qeduc3-9" class="ms-2 text-sm text-gray-900">9. Не известно</label>
+                        <label for="qeduc3-9" class="ms-2 text-sm text-gray-900">9. Неизвестно</label>
                     </div>
                 </div>
             </div>
@@ -3435,7 +3475,7 @@
                     </div>
                     <div class="flex items-center">
                         <input type="radio" id="qhouse1-9" name="qhouse1" value="9" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                        <label for="qhouse1-9" class="ms-2 text-sm text-gray-900">9. Не известно</label>
+                        <label for="qhouse1-9" class="ms-2 text-sm text-gray-900">9. Неизвестно</label>
                     </div>
                 </div>
             </div>
@@ -3461,7 +3501,7 @@
                     </div>
                     <div class="flex items-center">
                         <input type="radio" id="qhouse2-9" name="qhouse2" value="9" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                        <label for="qhouse2-9" class="ms-2 text-sm text-gray-900">9. Не известно</label>
+                        <label for="qhouse2-9" class="ms-2 text-sm text-gray-900">9. Неизвестно</label>
                     </div>
                 </div>
             </div>
@@ -3479,7 +3519,7 @@
                     </div>
                     <div class="flex items-center">
                         <input type="radio" id="qhouse3-3" name="qhouse3" value="3" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                        <label for="qhouse3-3" class="ms-2 text-sm text-gray-900">3. Не известно</label>
+                        <label for="qhouse3-3" class="ms-2 text-sm text-gray-900">9. Неизвестно</label>
                     </div>
                 </div>
             </div>
@@ -3628,6 +3668,10 @@
                     <div class="flex items-center">
                         <input type="checkbox" id="qfam3_5" name="qfam3_5" value="5" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="qfam3_5" class="ms-2 text-sm text-gray-900">5. Судимостью</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input type="checkbox" id="qfam3_6" name="qfam3_6" value="6" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <label for="qfam3_6" class="ms-2 text-sm text-gray-900">6. Ни один из вышеперечисленных</label>
                     </div>
                     <div class="flex items-center">
                         <input type="checkbox" id="qfam3_9" name="qfam3_9" value="9" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
@@ -3869,7 +3913,7 @@
                 <div class="col-span-1 flex items-center gap-4">
                     <div class="flex items-center">
                         <input type="checkbox" id="qinc2_dk" name="qinc2_dk" value="9" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-100 rounded">
-                        <label for="qinc2_dk" class="ms-2 text-sm text-gray-900">9. Не известно</label>
+                        <label for="qinc2_dk" class="ms-2 text-sm text-gray-900">9. Неизвестно</label>
                     </div>
                     <div class="flex items-center gap-4">
                         <input type="text" id="qinc2_sum" name="qinc2_sum" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
@@ -4085,14 +4129,27 @@
                         <td class="p-1">
                             <select id="sh3_s1b" name="sh3_s1b" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
                                 <option value="-9">--- выбрать ---</option>
-                                <option value="1">1. Дом «Мехрибонлик»</option>
-                                <option value="2">2. Дом-интернат «Мурувват» для детей с инвалидностью</option>
-                                <option value="3">3. Детский дом семейного типа</option>
-                                <option value="4">4. SOS Детские деревни/семьи</option>
-                                <option value="5">5. Детский дом (Дом ребенка)</option>
-                                <option value="6">6. Патронатная семья</option>
-                                <option value="7">7. Опека/попечительство</option>
-                                <option value="8">8. Прочие услуги</option>
+                                <option value="11">11. Дом ребенка</option>
+                                <option value="12">12. детские «дома милосердия» - Мехрибонлик</option>
+                                <option value="13">13. Дома-Интернаты Для Детей С Инвалидностью «Мурувват»</option>
+                                <option value="14">14. SOS Детские деревни</option>
+                                <option value="15">15. Детские дома семейного типа</option>
+                                <option value="16">16. Патронатная семья</option>
+                                <option value="17">17. Опека/ Попечительство</option>
+                                <option value="21">21. I тип - школы-интернаты для глухих детей</option>
+                                <option value="22">22. Тип II - школы-интернаты для слабослышащих и тех, кто впоследствии потеряет слух</option>
+                                <option value="23">23. III тип - специализированные школы-интернаты для слепых детей “Нурли Маскан”</option>
+                                <option value="24">24. IV тип - специализированные школы-интернаты “Нурли Маскан” для слабовидящих и тех, кто впоследствии потеряет зрение</option>
+                                <option value="25">25. V тип - школы-интернаты для детей с тяжелыми нарушениями речи</option>
+                                <option value="26">26. VI тип - школы-интернаты для детей с нарушениями опорно-двигательного аппарата</option>
+                                <option value="27">27. Тип VII - школы-интернаты для детей с задержкой психического развития</option>
+                                <option value="28">28. Тип VIII - поддержка школ-интернатов для детей с задержкой интеллектуального развития</option>
+                                <option value="31">31. многопрофильные специализированные дошкольные образовательные организации</option>
+                                <option value="32">32. специализированные школы для детей с особыми образовательными потребностями</option>
+                                <option value="33">33. Республиканский специализированный колледж для лиц с ограниченными возможностями</option>
+                                <option value="34">34. специализированные  государственные образовательные учреждения санаторного типа</option>
+                                <option value="35">35. Республиканские  учебно-воспитательные учреждения (РУВУ)</option>
+                                <option value="36">36. Центры социальной и правовой помощи несовершеннолетним</option>
                             </select>
                         </td>
                         <td class="p-1">
@@ -4128,14 +4185,27 @@
                         <td class="p-1">
                             <select id="sh3_s2b" name="sh3_s2b" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
                                 <option value="-9">--- выбрать ---</option>
-                                <option value="1">1. Дом «Мехрибонлик»</option>
-                                <option value="2">2. Дом-интернат «Мурувват» для детей с инвалидностью</option>
-                                <option value="3">3. Детский дом семейного типа</option>
-                                <option value="4">4. SOS Детские деревни/семьи</option>
-                                <option value="5">5. Детский дом (Дом ребенка)</option>
-                                <option value="6">6. Патронатная семья</option>
-                                <option value="7">7. Опека/попечительство</option>
-                                <option value="8">8. Прочие услуги</option>
+                                <option value="11">11. Дом ребенка</option>
+                                <option value="12">12. детские «дома милосердия» - Мехрибонлик</option>
+                                <option value="13">13. Дома-Интернаты Для Детей С Инвалидностью «Мурувват»</option>
+                                <option value="14">14. SOS Детские деревни</option>
+                                <option value="15">15. Детские дома семейного типа</option>
+                                <option value="16">16. Патронатная семья</option>
+                                <option value="17">17. Опека/ Попечительство</option>
+                                <option value="21">21. I тип - школы-интернаты для глухих детей</option>
+                                <option value="22">22. Тип II - школы-интернаты для слабослышащих и тех, кто впоследствии потеряет слух</option>
+                                <option value="23">23. III тип - специализированные школы-интернаты для слепых детей “Нурли Маскан”</option>
+                                <option value="24">24. IV тип - специализированные школы-интернаты “Нурли Маскан” для слабовидящих и тех, кто впоследствии потеряет зрение</option>
+                                <option value="25">25. V тип - школы-интернаты для детей с тяжелыми нарушениями речи</option>
+                                <option value="26">26. VI тип - школы-интернаты для детей с нарушениями опорно-двигательного аппарата</option>
+                                <option value="27">27. Тип VII - школы-интернаты для детей с задержкой психического развития</option>
+                                <option value="28">28. Тип VIII - поддержка школ-интернатов для детей с задержкой интеллектуального развития</option>
+                                <option value="31">31. многопрофильные специализированные дошкольные образовательные организации</option>
+                                <option value="32">32. специализированные школы для детей с особыми образовательными потребностями</option>
+                                <option value="33">33. Республиканский специализированный колледж для лиц с ограниченными возможностями</option>
+                                <option value="34">34. специализированные  государственные образовательные учреждения санаторного типа</option>
+                                <option value="35">35. Республиканские  учебно-воспитательные учреждения (РУВУ)</option>
+                                <option value="36">36. Центры социальной и правовой помощи несовершеннолетним</option>
                             </select>
                         </td>
                         <td class="p-1">
@@ -4171,14 +4241,27 @@
                         <td class="p-1">
                             <select id="sh3_s3b" name="sh3_s3b" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
                                 <option value="-9">--- выбрать ---</option>
-                                <option value="1">1. Дом «Мехрибонлик»</option>
-                                <option value="2">2. Дом-интернат «Мурувват» для детей с инвалидностью</option>
-                                <option value="3">3. Детский дом семейного типа</option>
-                                <option value="4">4. SOS Детские деревни/семьи</option>
-                                <option value="5">5. Детский дом (Дом ребенка)</option>
-                                <option value="6">6. Патронатная семья</option>
-                                <option value="7">7. Опека/попечительство</option>
-                                <option value="8">8. Прочие услуги</option>
+                                <option value="11">11. Дом ребенка</option>
+                                <option value="12">12. детские «дома милосердия» - Мехрибонлик</option>
+                                <option value="13">13. Дома-Интернаты Для Детей С Инвалидностью «Мурувват»</option>
+                                <option value="14">14. SOS Детские деревни</option>
+                                <option value="15">15. Детские дома семейного типа</option>
+                                <option value="16">16. Патронатная семья</option>
+                                <option value="17">17. Опека/ Попечительство</option>
+                                <option value="21">21. I тип - школы-интернаты для глухих детей</option>
+                                <option value="22">22. Тип II - школы-интернаты для слабослышащих и тех, кто впоследствии потеряет слух</option>
+                                <option value="23">23. III тип - специализированные школы-интернаты для слепых детей “Нурли Маскан”</option>
+                                <option value="24">24. IV тип - специализированные школы-интернаты “Нурли Маскан” для слабовидящих и тех, кто впоследствии потеряет зрение</option>
+                                <option value="25">25. V тип - школы-интернаты для детей с тяжелыми нарушениями речи</option>
+                                <option value="26">26. VI тип - школы-интернаты для детей с нарушениями опорно-двигательного аппарата</option>
+                                <option value="27">27. Тип VII - школы-интернаты для детей с задержкой психического развития</option>
+                                <option value="28">28. Тип VIII - поддержка школ-интернатов для детей с задержкой интеллектуального развития</option>
+                                <option value="31">31. многопрофильные специализированные дошкольные образовательные организации</option>
+                                <option value="32">32. специализированные школы для детей с особыми образовательными потребностями</option>
+                                <option value="33">33. Республиканский специализированный колледж для лиц с ограниченными возможностями</option>
+                                <option value="34">34. специализированные  государственные образовательные учреждения санаторного типа</option>
+                                <option value="35">35. Республиканские  учебно-воспитательные учреждения (РУВУ)</option>
+                                <option value="36">36. Центры социальной и правовой помощи несовершеннолетним</option>
                             </select>
                         </td>
                         <td class="p-1">
@@ -4214,14 +4297,27 @@
                         <td class="p-1">
                             <select id="sh3_s4b" name="sh3_s4b" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
                                 <option value="-9">--- выбрать ---</option>
-                                <option value="1">1. Дом «Мехрибонлик»</option>
-                                <option value="2">2. Дом-интернат «Мурувват» для детей с инвалидностью</option>
-                                <option value="3">3. Детский дом семейного типа</option>
-                                <option value="4">4. SOS Детские деревни/семьи</option>
-                                <option value="5">5. Детский дом (Дом ребенка)</option>
-                                <option value="6">6. Патронатная семья</option>
-                                <option value="7">7. Опека/попечительство</option>
-                                <option value="8">8. Прочие услуги</option>
+                                <option value="11">11. Дом ребенка</option>
+                                <option value="12">12. детские «дома милосердия» - Мехрибонлик</option>
+                                <option value="13">13. Дома-Интернаты Для Детей С Инвалидностью «Мурувват»</option>
+                                <option value="14">14. SOS Детские деревни</option>
+                                <option value="15">15. Детские дома семейного типа</option>
+                                <option value="16">16. Патронатная семья</option>
+                                <option value="17">17. Опека/ Попечительство</option>
+                                <option value="21">21. I тип - школы-интернаты для глухих детей</option>
+                                <option value="22">22. Тип II - школы-интернаты для слабослышащих и тех, кто впоследствии потеряет слух</option>
+                                <option value="23">23. III тип - специализированные школы-интернаты для слепых детей “Нурли Маскан”</option>
+                                <option value="24">24. IV тип - специализированные школы-интернаты “Нурли Маскан” для слабовидящих и тех, кто впоследствии потеряет зрение</option>
+                                <option value="25">25. V тип - школы-интернаты для детей с тяжелыми нарушениями речи</option>
+                                <option value="26">26. VI тип - школы-интернаты для детей с нарушениями опорно-двигательного аппарата</option>
+                                <option value="27">27. Тип VII - школы-интернаты для детей с задержкой психического развития</option>
+                                <option value="28">28. Тип VIII - поддержка школ-интернатов для детей с задержкой интеллектуального развития</option>
+                                <option value="31">31. многопрофильные специализированные дошкольные образовательные организации</option>
+                                <option value="32">32. специализированные школы для детей с особыми образовательными потребностями</option>
+                                <option value="33">33. Республиканский специализированный колледж для лиц с ограниченными возможностями</option>
+                                <option value="34">34. специализированные  государственные образовательные учреждения санаторного типа</option>
+                                <option value="35">35. Республиканские  учебно-воспитательные учреждения (РУВУ)</option>
+                                <option value="36">36. Центры социальной и правовой помощи несовершеннолетним</option>
                             </select>
                         </td>
                         <td class="p-1">
@@ -4257,14 +4353,27 @@
                         <td class="p-1">
                             <select id="sh3_s5b" name="sh3_s5b" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
                                 <option value="-9">--- выбрать ---</option>
-                                <option value="1">1. Дом «Мехрибонлик»</option>
-                                <option value="2">2. Дом-интернат «Мурувват» для детей с инвалидностью</option>
-                                <option value="3">3. Детский дом семейного типа</option>
-                                <option value="4">4. SOS Детские деревни/семьи</option>
-                                <option value="5">5. Детский дом (Дом ребенка)</option>
-                                <option value="6">6. Патронатная семья</option>
-                                <option value="7">7. Опека/попечительство</option>
-                                <option value="8">8. Прочие услуги</option>
+                                <option value="11">11. Дом ребенка</option>
+                                <option value="12">12. детские «дома милосердия» - Мехрибонлик</option>
+                                <option value="13">13. Дома-Интернаты Для Детей С Инвалидностью «Мурувват»</option>
+                                <option value="14">14. SOS Детские деревни</option>
+                                <option value="15">15. Детские дома семейного типа</option>
+                                <option value="16">16. Патронатная семья</option>
+                                <option value="17">17. Опека/ Попечительство</option>
+                                <option value="21">21. I тип - школы-интернаты для глухих детей</option>
+                                <option value="22">22. Тип II - школы-интернаты для слабослышащих и тех, кто впоследствии потеряет слух</option>
+                                <option value="23">23. III тип - специализированные школы-интернаты для слепых детей “Нурли Маскан”</option>
+                                <option value="24">24. IV тип - специализированные школы-интернаты “Нурли Маскан” для слабовидящих и тех, кто впоследствии потеряет зрение</option>
+                                <option value="25">25. V тип - школы-интернаты для детей с тяжелыми нарушениями речи</option>
+                                <option value="26">26. VI тип - школы-интернаты для детей с нарушениями опорно-двигательного аппарата</option>
+                                <option value="27">27. Тип VII - школы-интернаты для детей с задержкой психического развития</option>
+                                <option value="28">28. Тип VIII - поддержка школ-интернатов для детей с задержкой интеллектуального развития</option>
+                                <option value="31">31. многопрофильные специализированные дошкольные образовательные организации</option>
+                                <option value="32">32. специализированные школы для детей с особыми образовательными потребностями</option>
+                                <option value="33">33. Республиканский специализированный колледж для лиц с ограниченными возможностями</option>
+                                <option value="34">34. специализированные  государственные образовательные учреждения санаторного типа</option>
+                                <option value="35">35. Республиканские  учебно-воспитательные учреждения (РУВУ)</option>
+                                <option value="36">36. Центры социальной и правовой помощи несовершеннолетним</option>
                             </select>
                         </td>
                         <td class="p-1">
@@ -4300,14 +4409,27 @@
                         <td class="p-1">
                             <select id="sh3_s6b" name="sh3_s6b" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
                                 <option value="-9">--- выбрать ---</option>
-                                <option value="1">1. Дом «Мехрибонлик»</option>
-                                <option value="2">2. Дом-интернат «Мурувват» для детей с инвалидностью</option>
-                                <option value="3">3. Детский дом семейного типа</option>
-                                <option value="4">4. SOS Детские деревни/семьи</option>
-                                <option value="5">5. Детский дом (Дом ребенка)</option>
-                                <option value="6">6. Патронатная семья</option>
-                                <option value="7">7. Опека/попечительство</option>
-                                <option value="8">8. Прочие услуги</option>
+                                <option value="11">11. Дом ребенка</option>
+                                <option value="12">12. детские «дома милосердия» - Мехрибонлик</option>
+                                <option value="13">13. Дома-Интернаты Для Детей С Инвалидностью «Мурувват»</option>
+                                <option value="14">14. SOS Детские деревни</option>
+                                <option value="15">15. Детские дома семейного типа</option>
+                                <option value="16">16. Патронатная семья</option>
+                                <option value="17">17. Опека/ Попечительство</option>
+                                <option value="21">21. I тип - школы-интернаты для глухих детей</option>
+                                <option value="22">22. Тип II - школы-интернаты для слабослышащих и тех, кто впоследствии потеряет слух</option>
+                                <option value="23">23. III тип - специализированные школы-интернаты для слепых детей “Нурли Маскан”</option>
+                                <option value="24">24. IV тип - специализированные школы-интернаты “Нурли Маскан” для слабовидящих и тех, кто впоследствии потеряет зрение</option>
+                                <option value="25">25. V тип - школы-интернаты для детей с тяжелыми нарушениями речи</option>
+                                <option value="26">26. VI тип - школы-интернаты для детей с нарушениями опорно-двигательного аппарата</option>
+                                <option value="27">27. Тип VII - школы-интернаты для детей с задержкой психического развития</option>
+                                <option value="28">28. Тип VIII - поддержка школ-интернатов для детей с задержкой интеллектуального развития</option>
+                                <option value="31">31. многопрофильные специализированные дошкольные образовательные организации</option>
+                                <option value="32">32. специализированные школы для детей с особыми образовательными потребностями</option>
+                                <option value="33">33. Республиканский специализированный колледж для лиц с ограниченными возможностями</option>
+                                <option value="34">34. специализированные  государственные образовательные учреждения санаторного типа</option>
+                                <option value="35">35. Республиканские  учебно-воспитательные учреждения (РУВУ)</option>
+                                <option value="36">36. Центры социальной и правовой помощи несовершеннолетним</option>
                             </select>
                         </td>
                         <td class="p-1">
@@ -4343,14 +4465,27 @@
                         <td class="p-1">
                             <select id="sh3_s7b" name="sh3_s7b" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
                                 <option value="-9">--- выбрать ---</option>
-                                <option value="1">1. Дом «Мехрибонлик»</option>
-                                <option value="2">2. Дом-интернат «Мурувват» для детей с инвалидностью</option>
-                                <option value="3">3. Детский дом семейного типа</option>
-                                <option value="4">4. SOS Детские деревни/семьи</option>
-                                <option value="5">5. Детский дом (Дом ребенка)</option>
-                                <option value="6">6. Патронатная семья</option>
-                                <option value="7">7. Опека/попечительство</option>
-                                <option value="8">8. Прочие услуги</option>
+                                <option value="11">11. Дом ребенка</option>
+                                <option value="12">12. детские «дома милосердия» - Мехрибонлик</option>
+                                <option value="13">13. Дома-Интернаты Для Детей С Инвалидностью «Мурувват»</option>
+                                <option value="14">14. SOS Детские деревни</option>
+                                <option value="15">15. Детские дома семейного типа</option>
+                                <option value="16">16. Патронатная семья</option>
+                                <option value="17">17. Опека/ Попечительство</option>
+                                <option value="21">21. I тип - школы-интернаты для глухих детей</option>
+                                <option value="22">22. Тип II - школы-интернаты для слабослышащих и тех, кто впоследствии потеряет слух</option>
+                                <option value="23">23. III тип - специализированные школы-интернаты для слепых детей “Нурли Маскан”</option>
+                                <option value="24">24. IV тип - специализированные школы-интернаты “Нурли Маскан” для слабовидящих и тех, кто впоследствии потеряет зрение</option>
+                                <option value="25">25. V тип - школы-интернаты для детей с тяжелыми нарушениями речи</option>
+                                <option value="26">26. VI тип - школы-интернаты для детей с нарушениями опорно-двигательного аппарата</option>
+                                <option value="27">27. Тип VII - школы-интернаты для детей с задержкой психического развития</option>
+                                <option value="28">28. Тип VIII - поддержка школ-интернатов для детей с задержкой интеллектуального развития</option>
+                                <option value="31">31. многопрофильные специализированные дошкольные образовательные организации</option>
+                                <option value="32">32. специализированные школы для детей с особыми образовательными потребностями</option>
+                                <option value="33">33. Республиканский специализированный колледж для лиц с ограниченными возможностями</option>
+                                <option value="34">34. специализированные  государственные образовательные учреждения санаторного типа</option>
+                                <option value="35">35. Республиканские  учебно-воспитательные учреждения (РУВУ)</option>
+                                <option value="36">36. Центры социальной и правовой помощи несовершеннолетним</option>
                             </select>
                         </td>
                         <td class="p-1">
@@ -4386,14 +4521,27 @@
                         <td class="p-1">
                             <select id="sh3_s8b" name="sh3_s8b" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
                                 <option value="-9">--- выбрать ---</option>
-                                <option value="1">1. Дом «Мехрибонлик»</option>
-                                <option value="2">2. Дом-интернат «Мурувват» для детей с инвалидностью</option>
-                                <option value="3">3. Детский дом семейного типа</option>
-                                <option value="4">4. SOS Детские деревни/семьи</option>
-                                <option value="5">5. Детский дом (Дом ребенка)</option>
-                                <option value="6">6. Патронатная семья</option>
-                                <option value="7">7. Опека/попечительство</option>
-                                <option value="8">8. Прочие услуги</option>
+                                <option value="11">11. Дом ребенка</option>
+                                <option value="12">12. детские «дома милосердия» - Мехрибонлик</option>
+                                <option value="13">13. Дома-Интернаты Для Детей С Инвалидностью «Мурувват»</option>
+                                <option value="14">14. SOS Детские деревни</option>
+                                <option value="15">15. Детские дома семейного типа</option>
+                                <option value="16">16. Патронатная семья</option>
+                                <option value="17">17. Опека/ Попечительство</option>
+                                <option value="21">21. I тип - школы-интернаты для глухих детей</option>
+                                <option value="22">22. Тип II - школы-интернаты для слабослышащих и тех, кто впоследствии потеряет слух</option>
+                                <option value="23">23. III тип - специализированные школы-интернаты для слепых детей “Нурли Маскан”</option>
+                                <option value="24">24. IV тип - специализированные школы-интернаты “Нурли Маскан” для слабовидящих и тех, кто впоследствии потеряет зрение</option>
+                                <option value="25">25. V тип - школы-интернаты для детей с тяжелыми нарушениями речи</option>
+                                <option value="26">26. VI тип - школы-интернаты для детей с нарушениями опорно-двигательного аппарата</option>
+                                <option value="27">27. Тип VII - школы-интернаты для детей с задержкой психического развития</option>
+                                <option value="28">28. Тип VIII - поддержка школ-интернатов для детей с задержкой интеллектуального развития</option>
+                                <option value="31">31. многопрофильные специализированные дошкольные образовательные организации</option>
+                                <option value="32">32. специализированные школы для детей с особыми образовательными потребностями</option>
+                                <option value="33">33. Республиканский специализированный колледж для лиц с ограниченными возможностями</option>
+                                <option value="34">34. специализированные  государственные образовательные учреждения санаторного типа</option>
+                                <option value="35">35. Республиканские  учебно-воспитательные учреждения (РУВУ)</option>
+                                <option value="36">36. Центры социальной и правовой помощи несовершеннолетним</option>
                             </select>
                         </td>
                         <td class="p-1">
@@ -4429,14 +4577,27 @@
                         <td class="p-1">
                             <select id="sh3_s9b" name="sh3_s9b" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
                                 <option value="-9">--- выбрать ---</option>
-                                <option value="1">1. Дом «Мехрибонлик»</option>
-                                <option value="2">2. Дом-интернат «Мурувват» для детей с инвалидностью</option>
-                                <option value="3">3. Детский дом семейного типа</option>
-                                <option value="4">4. SOS Детские деревни/семьи</option>
-                                <option value="5">5. Детский дом (Дом ребенка)</option>
-                                <option value="6">6. Патронатная семья</option>
-                                <option value="7">7. Опека/попечительство</option>
-                                <option value="8">8. Прочие услуги</option>
+                                <option value="11">11. Дом ребенка</option>
+                                <option value="12">12. детские «дома милосердия» - Мехрибонлик</option>
+                                <option value="13">13. Дома-Интернаты Для Детей С Инвалидностью «Мурувват»</option>
+                                <option value="14">14. SOS Детские деревни</option>
+                                <option value="15">15. Детские дома семейного типа</option>
+                                <option value="16">16. Патронатная семья</option>
+                                <option value="17">17. Опека/ Попечительство</option>
+                                <option value="21">21. I тип - школы-интернаты для глухих детей</option>
+                                <option value="22">22. Тип II - школы-интернаты для слабослышащих и тех, кто впоследствии потеряет слух</option>
+                                <option value="23">23. III тип - специализированные школы-интернаты для слепых детей “Нурли Маскан”</option>
+                                <option value="24">24. IV тип - специализированные школы-интернаты “Нурли Маскан” для слабовидящих и тех, кто впоследствии потеряет зрение</option>
+                                <option value="25">25. V тип - школы-интернаты для детей с тяжелыми нарушениями речи</option>
+                                <option value="26">26. VI тип - школы-интернаты для детей с нарушениями опорно-двигательного аппарата</option>
+                                <option value="27">27. Тип VII - школы-интернаты для детей с задержкой психического развития</option>
+                                <option value="28">28. Тип VIII - поддержка школ-интернатов для детей с задержкой интеллектуального развития</option>
+                                <option value="31">31. многопрофильные специализированные дошкольные образовательные организации</option>
+                                <option value="32">32. специализированные школы для детей с особыми образовательными потребностями</option>
+                                <option value="33">33. Республиканский специализированный колледж для лиц с ограниченными возможностями</option>
+                                <option value="34">34. специализированные  государственные образовательные учреждения санаторного типа</option>
+                                <option value="35">35. Республиканские  учебно-воспитательные учреждения (РУВУ)</option>
+                                <option value="36">36. Центры социальной и правовой помощи несовершеннолетним</option>
                             </select>
                         </td>
                         <td class="p-1">
@@ -4472,14 +4633,27 @@
                         <td class="p-1">
                             <select id="sh3_s10b" name="sh3_s10b" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
                                 <option value="-9">--- выбрать ---</option>
-                                <option value="1">1. Дом «Мехрибонлик»</option>
-                                <option value="2">2. Дом-интернат «Мурувват» для детей с инвалидностью</option>
-                                <option value="3">3. Детский дом семейного типа</option>
-                                <option value="4">4. SOS Детские деревни/семьи</option>
-                                <option value="5">5. Детский дом (Дом ребенка)</option>
-                                <option value="6">6. Патронатная семья</option>
-                                <option value="7">7. Опека/попечительство</option>
-                                <option value="8">8. Прочие услуги</option>
+                                <option value="11">11. Дом ребенка</option>
+                                <option value="12">12. детские «дома милосердия» - Мехрибонлик</option>
+                                <option value="13">13. Дома-Интернаты Для Детей С Инвалидностью «Мурувват»</option>
+                                <option value="14">14. SOS Детские деревни</option>
+                                <option value="15">15. Детские дома семейного типа</option>
+                                <option value="16">16. Патронатная семья</option>
+                                <option value="17">17. Опека/ Попечительство</option>
+                                <option value="21">21. I тип - школы-интернаты для глухих детей</option>
+                                <option value="22">22. Тип II - школы-интернаты для слабослышащих и тех, кто впоследствии потеряет слух</option>
+                                <option value="23">23. III тип - специализированные школы-интернаты для слепых детей “Нурли Маскан”</option>
+                                <option value="24">24. IV тип - специализированные школы-интернаты “Нурли Маскан” для слабовидящих и тех, кто впоследствии потеряет зрение</option>
+                                <option value="25">25. V тип - школы-интернаты для детей с тяжелыми нарушениями речи</option>
+                                <option value="26">26. VI тип - школы-интернаты для детей с нарушениями опорно-двигательного аппарата</option>
+                                <option value="27">27. Тип VII - школы-интернаты для детей с задержкой психического развития</option>
+                                <option value="28">28. Тип VIII - поддержка школ-интернатов для детей с задержкой интеллектуального развития</option>
+                                <option value="31">31. многопрофильные специализированные дошкольные образовательные организации</option>
+                                <option value="32">32. специализированные школы для детей с особыми образовательными потребностями</option>
+                                <option value="33">33. Республиканский специализированный колледж для лиц с ограниченными возможностями</option>
+                                <option value="34">34. специализированные  государственные образовательные учреждения санаторного типа</option>
+                                <option value="35">35. Республиканские  учебно-воспитательные учреждения (РУВУ)</option>
+                                <option value="36">36. Центры социальной и правовой помощи несовершеннолетним</option>
                             </select>
                         </td>
                         <td class="p-1">
@@ -4515,14 +4689,27 @@
                         <td class="p-1">
                             <select id="sh3_csb" name="sh3_csb" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
                                 <option value="-9">--- выбрать ---</option>
-                                <option value="1">1. Дом «Мехрибонлик»</option>
-                                <option value="2">2. Дом-интернат «Мурувват» для детей с инвалидностью</option>
-                                <option value="3">3. Детский дом семейного типа</option>
-                                <option value="4">4. SOS Детские деревни/семьи</option>
-                                <option value="5">5. Детский дом (Дом ребенка)</option>
-                                <option value="6">6. Патронатная семья</option>
-                                <option value="7">7. Опека/попечительство</option>
-                                <option value="8">8. Прочие услуги</option>
+                                <option value="11">11. Дом ребенка</option>
+                                <option value="12">12. детские «дома милосердия» - Мехрибонлик</option>
+                                <option value="13">13. Дома-Интернаты Для Детей С Инвалидностью «Мурувват»</option>
+                                <option value="14">14. SOS Детские деревни</option>
+                                <option value="15">15. Детские дома семейного типа</option>
+                                <option value="16">16. Патронатная семья</option>
+                                <option value="17">17. Опека/ Попечительство</option>
+                                <option value="21">21. I тип - школы-интернаты для глухих детей</option>
+                                <option value="22">22. Тип II - школы-интернаты для слабослышащих и тех, кто впоследствии потеряет слух</option>
+                                <option value="23">23. III тип - специализированные школы-интернаты для слепых детей “Нурли Маскан”</option>
+                                <option value="24">24. IV тип - специализированные школы-интернаты “Нурли Маскан” для слабовидящих и тех, кто впоследствии потеряет зрение</option>
+                                <option value="25">25. V тип - школы-интернаты для детей с тяжелыми нарушениями речи</option>
+                                <option value="26">26. VI тип - школы-интернаты для детей с нарушениями опорно-двигательного аппарата</option>
+                                <option value="27">27. Тип VII - школы-интернаты для детей с задержкой психического развития</option>
+                                <option value="28">28. Тип VIII - поддержка школ-интернатов для детей с задержкой интеллектуального развития</option>
+                                <option value="31">31. многопрофильные специализированные дошкольные образовательные организации</option>
+                                <option value="32">32. специализированные школы для детей с особыми образовательными потребностями</option>
+                                <option value="33">33. Республиканский специализированный колледж для лиц с ограниченными возможностями</option>
+                                <option value="34">34. специализированные  государственные образовательные учреждения санаторного типа</option>
+                                <option value="35">35. Республиканские  учебно-воспитательные учреждения (РУВУ)</option>
+                                <option value="36">36. Центры социальной и правовой помощи несовершеннолетним</option>
                             </select>
                         </td>
                         <td class="p-1">
@@ -4984,7 +5171,7 @@
             <small class="my-2 block italic text-red-500">Это касается детей, которые сами являются несовершеннолетними матерями, а не детей - несовершеннолетних матерей.</small>
 
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
-                <div>LK22_9. Ребенок принадлежит к уязвимой группе - брат/сестра с другим ребенком/другими детьми из системы опеки, независимо от того, в какую услугу(-ам) дети принимаются.</div>
+                <div>LK22_9. У ребенка есть брат/сестра в системе альтернативной опеки, невзирая на тип учреждения/услуги</div>
                 <div class="col-span-1 flex items-center gap-4">
                     <div class="flex items-center">
                         <input type="radio" id="lk22_9-1" name="lk22_9" value="1" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
@@ -4998,7 +5185,7 @@
             </div>
 
             <div class="grid grid-cols-2 gap-4 items-center mt-10">
-                <div>LK22_10. Ребенок принадлежит к уязвимой группе - брат/сестра с другим ребенком/другими детьми из той же социальной службы.</div>
+                <div>LK22_10. У ребенка есть брат/сестра помещенный(ая) в то же учреждение или тип услуги</div>
                 <div class="col-span-1 flex items-center gap-4">
                     <div class="flex items-center">
                         <input type="radio" id="lk22_10-1" name="lk22_10" value="1" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
@@ -5033,7 +5220,7 @@
                     </div>
                     <div class="flex items-center">
                         <input type="radio" id="qhealthp1-9" name="qhealthp1" value="9" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                        <label for="qhealthp1-9" class="ms-2 text-sm text-gray-900">9. Не известно</label>
+                        <label for="qhealthp1-9" class="ms-2 text-sm text-gray-900">9. Неизвестно</label>
                     </div>
                 </div>
             </div>
@@ -5065,7 +5252,11 @@
                     </div>
                     <div class="flex items-center">
                         <input type="radio" id="qhealthp3-3" name="qhealthp3" value="3" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                        <label for="qhealthp3-3" class="ms-2 text-sm text-gray-900">3. Полностью зависит от других</label>
+                        <label for="qhealthp3-3" class="ms-2 text-sm text-gray-900">3. Полностью зависим от других по причине возраста</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input type="radio" id="qhealthp3-4" name="qhealthp3" value="4" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <label for="qhealthp3-4" class="ms-2 text-sm text-gray-900">4. Полностью зависим от других по причине инвалидности</label>
                     </div>
                 </div>
             </div>
@@ -5247,8 +5438,22 @@
 
             <div class="grid grid-cols-2 gap-4 items-center mt-10">
                 <div>EDK3. В какой класс?<small class="my-2 block italic text-red-500">ПОСТАВЬТЕ 0 (НОЛЬ) ДЛЯ ПОДГОТОВИТЕЛЬНОЙ ГРУППЫ</small></div>
-                <div class="col-span-1 flex items-center gap-4">
-                    <input type="text" id="edk3" name="edk3" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
+                <div>
+                    <select id="edk3" name="edk3" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
+                        <option value="-9">--- выбрать ---</option>
+                        <option value="0>0</option>
+                        <option value="1>1</option>
+                        <option value="2>2</option>
+                        <option value="3>3</option>
+                        <option value="4>4</option>
+                        <option value="5>5</option>
+                        <option value="6>6</option>
+                        <option value="7>7</option>
+                        <option value="8>8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                    </select>
                 </div>
             </div>
 
@@ -5759,7 +5964,7 @@
                     </div>
                     <div class="flex items-center">
                         <input type="radio" id="qriskp6-9" name="qriskp6" value="9" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                        <label for="qriskp6-9" class="ms-2 text-sm text-gray-900">9. Не известно</label>
+                        <label for="qriskp6-9" class="ms-2 text-sm text-gray-900">9. Неизвестно</label>
                     </div>
                 </div>
             </div>
@@ -5776,7 +5981,7 @@
                     </div>
                     <div class="flex items-center">
                         <input type="radio" id="qriskp7-9" name="qriskp7" value="9" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                        <label for="qriskp7-9" class="ms-2 text-sm text-gray-900">9. Не известно</label>
+                        <label for="qriskp7-9" class="ms-2 text-sm text-gray-900">9. Неизвестно</label>
                     </div>
                 </div>
             </div>
@@ -5793,7 +5998,7 @@
                     </div>
                     <div class="flex items-center">
                         <input type="radio" id="qriskp8-9" name="qriskp8" value="9" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                        <label for="qriskp8-9" class="ms-2 text-sm text-gray-900">9. Не известно</label>
+                        <label for="qriskp8-9" class="ms-2 text-sm text-gray-900">9. Неизвестно</label>
                     </div>
                 </div>
             </div>
@@ -5810,7 +6015,7 @@
                     </div>
                     <div class="flex items-center">
                         <input type="radio" id="qriskp9-9" name="qriskp9" value="9" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                        <label for="qriskp9-9" class="ms-2 text-sm text-gray-900">9. Не известно</label>
+                        <label for="qriskp9-9" class="ms-2 text-sm text-gray-900">9. Неизвестно</label>
                     </div>
                 </div>
             </div>
@@ -5928,11 +6133,11 @@
                     </div>
                     <div class="flex items-center">
                         <input type="radio" id="sq1-2" name="sq1" value="1" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                        <label for="sq1-2" class="ms-2 text-sm text-gray-900">1. Они получили часть необходимых им услуг и вмешательств</label>
+                        <label for="sq1-2" class="ms-2 text-sm text-gray-900">1. Он получили часть необходимых им услуг и вмешательств</label>
                     </div>
                     <div class="flex items-center">
                         <input type="radio" id="sq1-3" name="sq1" value="2" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                        <label for="sq1-3" class="ms-2 text-sm text-gray-900">2. Они получили все необходимые им услуги и вмешательства</label>
+                        <label for="sq1-3" class="ms-2 text-sm text-gray-900">2. Он получили все необходимые им услуги и вмешательства</label>
                     </div>
                 </div>
             </div>
@@ -6258,6 +6463,11 @@
                         <label for="sk11-2" class="ms-2 text-sm text-gray-900">2. Нет</label>
                     </div>
                 </div>
+            </div>
+
+            <div class="grid mt-10">
+                <label for="obs">OBS. Наблюдения</label>
+                <textarea class="form-control" rows="3" id="obs" name="obs"></textarea>
             </div>
 
         </form>

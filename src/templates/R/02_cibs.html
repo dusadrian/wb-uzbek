@@ -6,11 +6,13 @@
     <title>CRM Uzbek</title>
     <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
     <meta http-equiv="Content-Security-Policy"
-        content="default-src 'self'; img-src http: https: data: ; script-src 'self';" />
+        content="default-src 'self'; img-src 'self' http: https: data: ; script-src 'self';" />
     <meta http-equiv="X-Content-Security-Policy"
-        content="default-src 'self'; img-src http: https: data: ; script-src 'self';" />
+        content="default-src 'self'; img-src http: https: 'self' data: ; script-src 'self';" />
     <link href="../../../dist/main.css" rel="stylesheet">
-    <link rel="stylesheet" href="../../../node_modules/flatpickr/dist/flatpickr.min.css">
+    <link rel="stylesheet" href="../../../node_modules/jquery-ui-dist/jquery-ui.min.css">
+    <link rel="stylesheet" href="../../../node_modules/jquery-ui-dist/jquery-ui.structure.min.css">
+    <link rel="stylesheet" href="../../../node_modules/jquery-ui-dist/jquery-ui.theme.min.css">
 </head>
 
 <body class="relative max-h-screen">
@@ -202,7 +204,7 @@
                 </div>
             </div>
 
-            <div class="grid grid-cols-2 items-center gap-4 mt-6">
+            <div class="divclass mt-6">
                 <div>{{T0066}}. {{T0067}}</div>
                 <div>
                     <select id="lk14b" name="lk14b" class="selectclass">
@@ -211,7 +213,7 @@
                 </div>
             </div>
 
-            <div class="grid grid-cols-2 items-center gap-4 mt-6">
+            <div class="divclass mt-6">
                 <div>{{T0069}}. {{T0070}}</div>
                 <div>
                     <select id="lk14c" name="lk14c" class="selectclass">
@@ -219,7 +221,7 @@
                     </select>
                 </div>
             </div>
-            <div class="grid grid-cols-2 items-center gap-4 mt-6">
+            <div class="divclass mt-6">
                 <div>LK14d. {{T1332}}</div>
                 <div>
                     <select id="lk14d" name="lk14d" class="selectclass">
@@ -386,7 +388,7 @@
             </div>
 
             <p class="mt-10">{{T0122}}. {{T0123}}</p>
-            <div class="grid grid-cols-2 items-center gap-4 mt-4">
+            <div class="divclass mt-4">
                 <div>{{T0125}}. {{T0126}}</div>
                 <div>
                     <select id="sa3a" name="sa3a" class="selectclass">
@@ -395,7 +397,7 @@
                 </div>
             </div>
 
-            <div class="grid grid-cols-2 items-center gap-4 mt-6">
+            <div class="divclass mt-6">
                 <div>{{T0128}}. {{T0129}}</div>
                 <div>
                     <select id="sa3b" name="sa3b" class="selectclass">
@@ -404,38 +406,77 @@
                 </div>
             </div>
 
-
-
-
-            <div class="grid grid-cols-2 items-center gap-4 mt-6">
-                <div>SA5a. {{T1327}}</div>
+            <div class="divclass mt-6">
+                <div>SA3c. {{T1332}}</div>
                 <div>
-                    <select id="sa5a" name="sa5a" class="selectclass">
+                    <select id="sa3c" name="sa3c" class="selectclass">
+                        <option value="-9">{{T1337}}</option>
+                    </select>
+                </div>
+            </div>
+
+            <input type="hidden" id="sa3d" name="sa3d" />
+
+            <div class="divclass mt-6">
+                <div>SA5r. {{T0067}}</div>
+                <div>
+                    <select id="sa5r" name="sa5r" class="selectclass">
                         <option value="-9">{{T1337}}</option>
                     </select>
                 </div>
             </div>
 
             <div class="divclass mt-6">
-                <div>SA5b. {{T1329}}</div>
-                <div class="flex gap-4">
-                    <input type="text" id="sa5b" name="sa5b" class="inputclass w-full" />
+                <div>SA5d. {{T0070}}</div>
+                <div>
+                    <select id="sa5d" name="sa5d" class="selectclass">
+                        <option value="-9">{{T1337}}</option>
+                    </select>
                 </div>
             </div>
 
+            <div class="divclass mt-6">
+                <div>SA5i. {{T1327}}</div>
+                <div class="flex gap-4">
+                    <select id="sa5i" name="sa5i" class="selectclass">
+                        <option value="-9">{{T1337}}</option>
+                    </select>
+                </div>
+            </div>
 
             <div class="divclass mt-6">
-                <div>SA5c. {{T1330}}</div>
+                <div>SA5n. {{T1329}}</div>
                 <div>
-                    <select id="sa5c" name="sa5c" class="selectclass">
-                        <option selected value="-9">{{T1337}}</option>
-                        <option value="{{sa5c-1}}">{{T0134}}</option>
-                        <option value="{{sa5c-2}}">{{T0135}}</option>
-                        <option value="{{sa5c-3}}">{{T0136}}</option>
-                        <option value="{{sa5c-4}}">{{T0137}}</option>
-                        <option value="{{sa5c-5}}">{{T0138}}</option>
-                        <option value="{{sa5c-6}}">{{T0139}}</option>
-                        <option value="{{sa5c-7}}">{{T0140}}</option>
+                    <input type="text" id="sa5n" name="sa5n" class="inputclass w-full" />
+                </div>
+            </div>
+
+            <div class="divclass mt-6">
+                <div>SA5t. {{T1330}}</div>
+                <div>
+                    <select id="sa5t" name="sa5t" class="selectclass">
+                        <option value="-9">{{T1337}}</option>
+                        <option value="{{sa5t-1}}">{{T1343}}</option>
+                        <option value="{{sa5t-2}}">{{T1344}}</option>
+                        <option value="{{sa5t-3}}">{{T1345}}</option>
+                        <option value="{{sa5t-4}}">{{T1346}}</option>
+                        <option value="{{sa5t-5}}">{{T1347}}</option>
+                        <option value="{{sa5t-6}}">{{T1348}}</option>
+                        <option value="{{sa5t-7}}">{{T1349}}</option>
+                        <option value="{{sa5t-8}}">{{T1350}}</option>
+                        <option value="{{sa5t-9}}">{{T1351}}</option>
+                        <option value="{{sa5t-10}}">{{T1352}}</option>
+                        <option value="{{sa5t-11}}">{{T1353}}</option>
+                        <option value="{{sa5t-12}}">{{T1354}}</option>
+                        <option value="{{sa5t-13}}">{{T1355}}</option>
+                        <option value="{{sa5t-14}}">{{T1356}}</option>
+                        <option value="{{sa5t-15}}">{{T1357}}</option>
+                        <option value="{{sa5t-16}}">{{T1358}}</option>
+                        <option value="{{sa5t-17}}">{{T1359}}</option>
+                        <option value="{{sa5t-18}}">{{T1360}}</option>
+                        <option value="{{sa5t-19}}">{{T1361}}</option>
+                        <option value="{{sa5t-20}}">{{T1362}}</option>
+                        <option value="{{sa5t-21}}">{{T1363}}</option>
                     </select>
                 </div>
             </div>
@@ -505,10 +546,6 @@
                         <input id="qfam5a-2" type="radio" value="{{qfam5a-2}}" name="qfam5a" class="valueclass">
                         <label for="qfam5a-2" class="labelclass">{{T0162}}</label>
                     </div>
-                    <!-- <div class="centerflex">
-                        <input id="qfam5a-3" type="radio" value="{{qfam5a-3}}" name="qfam5a" class="valueclass">
-                        <label for="qfam5a-3" class="labelclass">{{T0163}}</label>
-                    </div> -->
                 </div>
             </div>
 
@@ -523,10 +560,6 @@
                         <input id="qfam5b-2" type="radio" value="{{qfam5b-2}}" name="qfam5b" class="valueclass">
                         <label for="qfam5b-2" class="labelclass">{{T0166}}</label>
                     </div>
-                    <!-- <div class="centerflex">
-                        <input id="qfam5b-3" type="radio" value="{{qfam5b-3}}" name="qfam5b" class="valueclass">
-                        <label for="qfam5b-3" class="labelclass">{{T0167}}</label>
-                    </div> -->
                 </div>
             </div>
 
@@ -541,10 +574,6 @@
                         <input id="qfam5c-2" type="radio" value="{{qfam5c-2}}" name="qfam5c" class="valueclass">
                         <label for="qfam5c-2" class="labelclass">{{T0170}}</label>
                     </div>
-                    <!-- <div class="centerflex">
-                        <input id="qfam5c-3" type="radio" value="{{qfam5c-3}}" name="qfam5c" class="valueclass">
-                        <label for="qfam5c-3" class="labelclass">{{T0171}}</label>
-                    </div> -->
                 </div>
             </div>
 
@@ -559,10 +588,6 @@
                         <input id="qfam5d-2" type="radio" value="{{qfam5d-2}}" name="qfam5d" class="valueclass">
                         <label for="qfam5d-2" class="labelclass">{{T0174}}</label>
                     </div>
-                    <!-- <div class="centerflex">
-                        <input id="qfam5d-3" type="radio" value="{{qfam5d-3}}" name="qfam5d" class="valueclass">
-                        <label for="qfam5d-3" class="labelclass">{{T0175}}</label>
-                    </div> -->
                 </div>
             </div>
 
@@ -577,10 +602,6 @@
                         <input id="qfam5e-2" type="radio" value="{{qfam5e-2}}" name="qfam5e" class="valueclass">
                         <label for="qfam5e-2" class="labelclass">{{T0178}}</label>
                     </div>
-                    <!-- <div class="centerflex">
-                        <input id="qfam5e-3" type="radio" value="{{qfam5e-3}}" name="qfam5e" class="valueclass">
-                        <label for="qfam5e-3" class="labelclass">{{T0179}}</label>
-                    </div> -->
                 </div>
             </div>
 
@@ -697,7 +718,7 @@
                 </div>
             </div>
 
-            <div class="grid grid-cols-2 items-center gap-4 mt-6">
+            <div class="divclass mt-6">
                 <div>{{T0214}}. {{T0215}}</div>
                 <div>
                     <select id="cm3b" name="cm3b" class="selectclass">
@@ -706,7 +727,7 @@
                 </div>
             </div>
 
-            <div class="grid grid-cols-2 items-center gap-4 mt-6">
+            <div class="divclass mt-6">
                 <div>{{T0217}}. {{T0218}}</div>
                 <div>
                     <select id="cm3c" name="cm3c" class="selectclass">
@@ -714,7 +735,8 @@
                     </select>
                 </div>
             </div>
-            <div class="grid grid-cols-2 items-center gap-4 mt-6">
+
+            <div class="divclass mt-6">
                 <div>CM3d. {{T1332}}</div>
                 <div>
                     <select id="cm3d" name="cm3d" class="selectclass">
@@ -1043,7 +1065,7 @@
 
             <p class="mt-6">{{T0315}}</p>
 
-            <div class="grid grid-cols-2 items-center gap-4 mt-6">
+            <div class="divclass mt-6">
                 <div>{{T0317}}</div>
                 <div>
                     <select id="cm11c" name="cm11c" class="selectclass">
@@ -1052,7 +1074,7 @@
                 </div>
             </div>
 
-            <div class="grid grid-cols-2 items-center gap-4 mt-6">
+            <div class="divclass mt-6">
                 <div>{{T0319}}</div>
                 <div>
                     <select id="cm11d" name="cm11d" class="selectclass">
@@ -1061,7 +1083,7 @@
                 </div>
             </div>
 
-            <div class="grid grid-cols-2 items-center gap-4 mt-6">
+            <div class="divclass mt-6">
                 <div>e. {{T1332}}</div>
                 <div>
                     <select id="cm11e" name="cm11e" class="selectclass">
@@ -1205,7 +1227,7 @@
                 </div>
             </div>
 
-            <div class="grid grid-cols-2 items-center gap-4 mt-6">
+            <div class="divclass mt-6">
                 <div>CT3b. {{T0215}}</div>
                 <div>
                     <select id="ct3b" name="ct3b" class="selectclass">
@@ -1214,7 +1236,7 @@
                 </div>
             </div>
 
-            <div class="grid grid-cols-2 items-center gap-4 mt-6">
+            <div class="divclass mt-6">
                 <div>CT3c. {{T0218}}</div>
                 <div>
                     <select id="ct3c" name="ct3c" class="selectclass">
@@ -1223,7 +1245,7 @@
                 </div>
             </div>
 
-            <div class="grid grid-cols-2 items-center gap-4 mt-6">
+            <div class="divclass mt-6">
                 <div>CT3d. {{T1332}}</div>
                 <div>
                     <select id="ct3d" name="ct3d" class="selectclass">
@@ -1553,7 +1575,7 @@
 
             <p class="mt-6">{{T0451}}</p>
 
-            <div class="grid grid-cols-2 items-center gap-4 mt-6">
+            <div class="divclass mt-6">
                 <div>{{T0453}}</div>
                 <div>
                     <select id="ct11c" name="ct11c" class="selectclass">
@@ -1562,7 +1584,7 @@
                 </div>
             </div>
 
-            <div class="grid grid-cols-2 items-center gap-4 mt-6">
+            <div class="divclass mt-6">
                 <div>{{T0455}}</div>
                 <div>
                     <select id="ct11d" name="ct11d" class="selectclass">
@@ -1571,7 +1593,7 @@
                 </div>
             </div>
 
-            <div class="grid grid-cols-2 items-center gap-4 mt-6">
+            <div class="divclass mt-6">
                 <div>e. {{T1332}}</div>
                 <div>
                     <select id="ct11e" name="ct11e" class="selectclass">
@@ -2032,7 +2054,7 @@
 
             <p class="mt-6">{{T0589}}</p>
 
-            <div class="grid grid-cols-2 items-center gap-4 mt-6">
+            <div class="divclass mt-6">
                 <div>{{T0591}}</div>
                 <div>
                     <select id="cg11c" name="cg11c" class="selectclass">
@@ -2041,7 +2063,7 @@
                 </div>
             </div>
 
-            <div class="grid grid-cols-2 items-center gap-4 mt-6">
+            <div class="divclass mt-6">
                 <div>{{T0593}}</div>
                 <div>
                     <select id="cg11d" name="cg11d" class="selectclass">
@@ -2050,7 +2072,7 @@
                 </div>
             </div>
 
-            <div class="grid grid-cols-2 items-center gap-4 mt-6">
+            <div class="divclass mt-6">
                 <div>e. {{T1332}}</div>
                 <div>
                     <select id="cg11e" name="cg11e" class="selectclass">
@@ -2142,7 +2164,26 @@
             </div>
 
             <small class="smallclass mt-6">{{T0620}}</small>
-            <div class="grid grid-cols-2 items-center gap-4 mt-2">
+
+            <div class="divclass mt-6">
+                <div>1ar. {{T0215}}</div>
+                <div>
+                    <select id="qeduc1ar" name="qeduc1ar" class="selectclass">
+                        <option value="-9">{{T1337}}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="divclass mt-6">
+                <div>1ad. {{T0218}}</div>
+                <div>
+                    <select id="qeduc1ad" name="qeduc1ad" class="selectclass">
+                        <option value="-9">{{T1337}}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="divclass mt-2">
                 <div>{{T0621}}</div>
                 <div>
                     <select id="qeduc1a1" name="qeduc1a1" class="selectclass">
@@ -2224,10 +2265,23 @@
             </div>
 
             <div class="divclass mt-6">
-                <div>{{T0639}}<small class="mb-1 smallclass">{{T0640}}</small>
-                </div>
+                <div>{{T0639}}<small class="mb-1 smallclass">{{T0640}}</small></div>
                 <div>
-                    <input type="text" id="qeduc2b" name="qeduc2b" class="inputclass w-full" />
+                    <select id="qeduc2b" name="qeduc2b" class="selectclass">
+                        <option value="-9">{{T1337}}</option>
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                    </select>
                 </div>
             </div>
 
@@ -3077,11 +3131,23 @@
             </div>
 
             <div class="divclass mt-6">
-                <div>{{T0824}}. {{T0825}}<small class="smallclass">{{T0640}}</small>
-                    <!-- <small class="block italic mt-2">{{T0827}}</small> -->
-                </div>
+                <div>{{T0824}}. {{T0825}}<small class="smallclass">{{T0640}}</small></div>
                 <div>
-                    <input type="text" id="sch2" name="sch2" class="inputclass w-full" />
+                    <select id="sch2" name="sch2" class="selectclass">
+                        <option value="-9">{{T1337}}</option>
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                    </select>
                 </div>
             </div>
 
@@ -5517,6 +5583,11 @@
                         <label for="sq13-2" class="labelclass">{{T1324}}</label>
                     </div>
                 </div>
+            </div>
+
+            <div class="grid mt-10">
+                <label for="obs">{{T1341}}. {{T1342}}</label>
+                <textarea class="form-control" rows="3" id="obs" name="obs"></textarea>
             </div>
         </form>
 

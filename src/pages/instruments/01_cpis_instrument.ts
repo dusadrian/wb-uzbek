@@ -16,7 +16,6 @@ window.require('jquery-ui-dist/jquery-ui');
 import "jquery-ui/ui/i18n/datepicker-ru";
 import "jquery-ui/ui/i18n/datepicker-uz";
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
 import { KeyString, KeyStringNumber, regions, districts, settlements } from "../../libraries/administrative";
 
 import * as en from "../../locales/en.json";
@@ -46,10 +45,10 @@ const sh3_end_dates = [
     'sh3_s1d', 'sh3_s2d', 'sh3_s3d', 'sh3_s4d', 'sh3_s5d', 'sh3_s6d', 'sh3_s7d', 'sh3_s8d', 'sh3_s9d', 'sh3_s10d'
 ];
 
-const regElements = ["reg", "lk14b", "cm3b", "cm10c", "cm11c", "ct3b", "ct10c", "ct11c", "cg10c", "cg11c", "sa3a", "sa5r"];
-const disElements = ["dis", "lk14c", "cm3c", "cm10d", "cm11d", "ct3c", "ct10d", "ct11d", "cg10d", "cg11d", "sa3b", "sa5d"];
-const setElements = ["", "lk14d", "cm3d", "cm10e", "cm11e", "ct3d", "ct10e", "ct11e", "cg10e", "cg11e", "sa3c", "",];
-const typeElements = ["", "lk14e", "cm3e", "cm10f", "cm11f", "ct3e", "ct10f", "ct11f", "cg10f", "cg11f", "sa3d", "",];
+const regElements =  ["reg", "lk14b", "cm3b", "cm10c", "cm11c", "ct3b", "ct10c", "ct11c", "cg10c", "cg11c", "sa3a", "sa5r"];
+const disElements =  ["dis", "lk14c", "cm3c", "cm10d", "cm11d", "ct3c", "ct10d", "ct11d", "cg10d", "cg11d", "sa3b", "sa5d"];
+const setElements =  ["",    "lk14d", "cm3d", "cm10e", "cm11e", "ct3d", "ct10e", "ct11e", "cg10e", "cg11e", "sa3c", ""    ];
+const typeElements = ["",    "lk14e", "cm3e", "cm10f", "cm11f", "ct3e", "ct10f", "ct11f", "cg10f", "cg11f", "sa3d", ""    ];
 
 let regionCode = '';
 let userUUID = '';
@@ -154,43 +153,56 @@ function check_ct1(value: string) {
 }
 
 
-$.datepicker.setDefaults( $.datepicker.regional[ lang ] );
+
 
 export const instrument1 = {
     init: async () => {
 
-        const date_elements = [...general_dates, ...sh3_start_dates, ...sh3_end_dates];
-
-        const jQueryConfig = {
+        $.datepicker.setDefaults( $.datepicker.regional[ lang ] );
+        const jQueryDatepickerConfig = {
             changeMonth: true,
             changeYear: true,
             dateFormat: "dd/mm/yy",
             minDate: "01/01/1990",
             maxDate: "30/04/2024",
             yearRange: "c-100:c+10",
-            firstDay: 1
-        }
+            firstDay: 1,
+            onSelect: function() {
+                util.trigger(this.id, "change");
+            }
+        };
 
+        const date_elements = [...general_dates, ...sh3_start_dates, ...sh3_end_dates];
         date_elements.forEach((el) => {
-            let config;
+            const config = { ...jQueryDatepickerConfig };
             if (el == "data") {
-                config = { ...jQueryConfig, minDate: "01/04/2024" };
+                config.minDate = "01/05/2024";
                 config.maxDate = "31/12/2025";
             } else if (el == "cm3") {
-                config = { ...jQueryConfig, minDate: "01/01/1950" };
+                config.minDate = "01/01/1950";
                 config.maxDate = "31/12/2023";
             } else if (el == "ct3" || el == "cg3b") {
-                config = { ...jQueryConfig, minDate: "01/01/1930" };
+                config.minDate = "01/01/1930";
                 config.maxDate = "31/12/2023";
             } else if (el == "cmgt1a") {
-                config = { ...jQueryConfig, minDate: "01/01/2000" };
+                config.minDate = "01/01/2000";
                 config.dateFormat = "mm/yy";
-            } else {
-                config = { ...jQueryConfig, minDate: "01/01/1990" };
             }
 
-            // flatpickr(element, config);
             $("#" + el).datepicker(config);
+
+            util.listen(el, "change", () => {
+                errorHandler.removeError(el, translations['invalid_date']);
+                try {
+                    $.datepicker.parseDate(
+                        jQueryDatepickerConfig.dateFormat,
+                        util.htmlElement(el).value
+                    )
+                } catch (error) {
+                    instrument.questions[el].value = '-9';
+                    errorHandler.addError(el, translations['invalid_date']);
+                }
+            });
         });
 
 
@@ -916,31 +928,6 @@ util.listen(qfam3, "change", () => {
     }
 });
 
-
-util.listen("edk3", "myChange", () => {
-    const edk3 = util.htmlElement("edk3").value;
-    instrument.questions["edk3"].value = edk3;
-    const message = "EDK3 <= 11";
-    errorHandler.removeError("edk3", message);
-    if (Number(edk3) > 11) {
-        errorHandler.addError("edk3", message);
-        instrument.questions["edk3"].value = "-9";
-    }
-});
-
-
-
-util.listen("qeduc2b", "myChange", () => {
-    const qeduc2b = util.htmlElement("qeduc2b").value;
-    instrument.questions["qeduc2b"].value = qeduc2b;
-
-    const message = "QEDUC2b <= 11"
-    errorHandler.removeError("qeduc2b", message);
-    if (Number(qeduc2b) > 11) {
-        errorHandler.addError("qeduc2b", message);
-        instrument.questions["qeduc2b"].value = "-9";
-    }
-});
 
 util.listen("sh5", "change", () => {
     util.setValue("sh3_csb", "--");

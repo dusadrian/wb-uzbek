@@ -5,12 +5,16 @@ import { QuestionObjectType, SaveInstrumentType } from "../../libraries/interfac
 import { util, errorHandler } from "../../libraries/validation_helpers";
 import * as DI from "../../interfaces/database";
 
-import * as _flatpickr from 'flatpickr';
-import { FlatpickrFn } from 'flatpickr/dist/types/instance';
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-const flatpickr: FlatpickrFn = _flatpickr as any;
-import { Russian } from "flatpickr/dist/l10n/ru";
-import { UzbekLatin } from "flatpickr/dist/l10n/uz_latn";
+const globalAny: any = global;
+window.require('jquery');
+globalAny.jQuery = window.require('jquery');
+globalAny.$ = window.require('jquery');
+window.require('jquery-ui-dist/jquery-ui');
+// window.require('jquery-ui');
+import "jquery-ui/ui/i18n/datepicker-ru";
+import "jquery-ui/ui/i18n/datepicker-uz";
+
 import { KeyString, KeyStringNumber, regions, districts, settlements, settlement_types } from "../../libraries/administrative";
 import * as en from "../../locales/en.json";
 import * as uz from "../../locales/uz.json";
@@ -22,6 +26,7 @@ const locales: { [key: string]: typeof en | typeof uz | typeof ru } = {
 }
 
 const lang = localStorage.getItem("language");
+const translations = locales[lang as keyof typeof locales] as Record<string, string>;
 let services: { [key: string]: DI.Institution };
 let insons: { [key: string]: DI.INSON };
 
@@ -38,31 +43,40 @@ let institutionCode = '';
 export const instrument5 = {
     init: async () => {
 
-        const flatpickrConfig: {
-            enableTime: boolean;
-            dateFormat: string;
-            minDate: string;
-            maxDate: string;
-            locale?: typeof Russian | typeof UzbekLatin
-        } = {
-            enableTime: false,
-            dateFormat: "d/m/Y",
+        $.datepicker.setDefaults( $.datepicker.regional[ lang ] );
+        const jQueryDatepickerConfig = {
+            changeMonth: true,
+            changeYear: true,
+            dateFormat: "dd/mm/yy",
             minDate: "01/01/1990",
-            maxDate: '30/04/2024'
-        }
+            maxDate: "30/04/2024",
+            yearRange: "c-100:c+10",
+            firstDay: 1,
+            onSelect: function() {
+                util.trigger(this.id, "change");
+            }
+        };
 
-        if (lang == "uz") {
-            flatpickrConfig.locale = UzbekLatin;
-        }
+        ["pi3", "pi7"].forEach((el) => {
+            const config = { ...jQueryDatepickerConfig };
 
-        if (lang == "ru") {
-            flatpickrConfig.locale = Russian;
-        }
+            if (el == 'pi3') {
+                config.minDate = "01/01/2023";
+            }
 
-        flatpickr(util.htmlElement('pi3'), flatpickrConfig);
-        flatpickrConfig.minDate = "01/01/2023";
-        flatpickr(util.htmlElement('pi7'), flatpickrConfig);
-
+            $("#" + el).datepicker(config);util.listen(el, "change", () => {
+                errorHandler.removeError(el, translations['invalid_date']);
+                try {
+                    $.datepicker.parseDate(
+                        jQueryDatepickerConfig.dateFormat,
+                        util.htmlElement(el).value
+                    )
+                } catch (error) {
+                    instrument.questions[el].value = '-9';
+                    errorHandler.addError(el, translations['invalid_date']);
+                }
+            });
+        })
 
         ipcRenderer.on("instrumentDataReady", (_event, args) => {
             // console.log(args);

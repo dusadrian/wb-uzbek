@@ -320,7 +320,11 @@ export const util: UtilHelpersInterface = {
         }
 
         for (let i = 0; i < element.length; i++) {
-            util.htmlElement(element[i]).addEventListener(event[i], callback);
+            if (util.htmlElement(element[i]) !== null) {
+                util.htmlElement(element[i]).addEventListener(event[i], callback);
+            } else {
+                console.log("Element not found: " + element[i]);
+            }
         }
     },
 
