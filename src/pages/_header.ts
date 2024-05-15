@@ -40,7 +40,8 @@ export const header = {
                 institutionName= appSession.institutionDetails.name_en;
             }
 
-            (document.getElementById('header_username') as HTMLSpanElement).innerText = (institutionName ? institutionName + ' | ' : '') + appSession.userData.username;
+            (document.getElementById('header_username') as HTMLSpanElement).innerText = (institutionName ? institutionName.substring(0, 100) + '... | ' : '') + appSession.userData.username;
+            (document.getElementById('header_username') as HTMLSpanElement).title = (institutionName ? institutionName + ' | ' : '') + appSession.userData.username;
         }
 
         (document.getElementById('logout_text') as HTMLSpanElement).innerText = i18n.__("logout");

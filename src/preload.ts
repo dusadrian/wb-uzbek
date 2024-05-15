@@ -22,10 +22,11 @@ ipcRenderer.on('appSession', (event, arg) => {
     } else { // fallback to english
         institutionName = arg.institutionDetails.name_en;
     }
-    username = (institutionName ? institutionName + ' | ' : '') + arg.userData.username;
+    username = (institutionName ? institutionName.substring(0, 70) + '... | ' : '') + arg.userData.username;
     const us = document.getElementById('header_username');
     if (us) {
         us.innerText = username;
+        us.title = (institutionName ? institutionName + ' | ' : '') + arg.userData.username;
     }
 });
 
