@@ -1309,7 +1309,7 @@ ipcMain.on('saveInstrument', (_event, args) => {
 ipcMain.on('importData', (_event, _args) => {
     let filesToUpload: string[] = [];
     filesToUpload = dialog.showOpenDialogSync(mainWindow, {
-        title: i18n.__('_chooseFile'),
+        title: i18n.__('main._chooseFile'),
         properties: ['openFile'],
         filters: [
             { name: 'Date', extensions: ['dat'] }
