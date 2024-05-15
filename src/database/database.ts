@@ -57,7 +57,7 @@ export const database = {
             const localUserRole = constant.ROLE_LOCAL;
             const localUserType = constant.CHILD_CARE.concat(constant.SPECIALIZED).join(',');
             const insonUserType = constant.INSON.join(',');
-            
+
             db.all(`SELECT * FROM users WHERE username = '${username}' AND password = '${password}' AND status = false AND ((role_code = ${localUserRole} AND service_type_code IN (${localUserType})) OR service_type_code IN (${insonUserType}))`, (error, result) => {
                 if (error) {
                     console.log(error);
@@ -89,7 +89,17 @@ export const database = {
         });
         return await connection;
     },
-
+    getNextUser: async (userType: string, service_type_code: string, institution_code: string) => {
+        const connection = new Promise<Array<DI.User>>((resolve) => {
+            db.all(`SELECT * FROM users WHERE role_code = '${userType}' AND service_type_code = '${service_type_code}' AND institution_code = '${institution_code}' AND status = false LIMIT 1`, (error, result) => {
+                if (error) {
+                    console.log(error);
+                }
+                resolve(result as DI.User[]);
+            });
+        });
+        return await connection;
+    },
     getUserInstitution: async (institution_code: string, service_type_code: string) => {
         const connection = new Promise<Array<DI.Institution>>((resolve) => {
 
@@ -109,7 +119,7 @@ export const database = {
     },
     getInstitutionDetails: async (code: string, service_type_code: string) => {
         const connection = new Promise<Array<DI.Institution>>((resolve) => {
-            let sql = `SELECT * FROM institutions WHERE code = '${code}'`;            
+            let sql = `SELECT * FROM institutions WHERE code = '${code}'`;
             if (constant.INSON.includes(service_type_code)) {
                 sql = `SELECT * FROM inson WHERE code = '${code}'`;
             }
@@ -200,17 +210,22 @@ export const database = {
         return await connection;
     },
 
-    // TODO -- this does not work anymore
+    // For local coordinators only - enable user
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     addUser: async (user: any) => {
         const connection = new Promise<boolean>((resolve) => {
             console.log('aici');
 
-            db.run(`INSERT INTO users (username, password, institution_code, institution_name, name, patronymics, surname, job_title, profession, phone, email, region_code, role_code, service_type_code) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)`,
-                user.username,
-                user.password,
-                user.institution_code,
-                user.institution_name,
+            db.run(`UPDATE users SET
+                        name = ?,
+                        patronymics = ?,
+                        surname = ?,
+                        job_title = ?,
+                        profession = ?,
+                        phone = ?,
+                        email = ?,
+                        status = true
+                    WHERE id = ? and uuid = ?`,
                 user.name,
                 user.patronymics,
                 user.surname,
@@ -218,9 +233,8 @@ export const database = {
                 user.profession,
                 user.phone,
                 user.email,
-                user.region_code,
-                user.role_code,
-                user.service_type_code,
+                user.id,
+                user.uuid,
                 (error) => {
                     if (error) {
                         console.log(error);

@@ -744,20 +744,38 @@ const localEditUser = (id: string) => {
         });
     });
 }
+// only for local coordinators
 ipcMain.on('addUser', (_event, args) => {
-    console.log(args);
-    // save to DB
-    database.addUser(args).then(() => {
-        // send message
+
+    if (!args.auth_code || args.auth_code === '') {
         dialog.showMessageBox(mainWindow, {
-            type: 'info',
-            message: i18n.__('User added.'),
-        }).then(() => {
-            if (constant.INSON.includes(appSession.userData.service_type_code)) { // go to dashboard
-                goToLocalDashboard();
-            } else if (appSession.userData.role_code === constant.ROLE_LOCAL) { // go to users list
-                localUsers();
-            }
+            type: 'warning',
+            message: i18n.__('Authorization code missing.'),
+        });
+        return;
+    }
+
+    database.checkAuthCode(appSession.userData.institution_code, args.auth_code).then((result) => {
+
+        if (result.length === 0) {
+            dialog.showMessageBox(mainWindow, {
+                type: 'warning',
+                message: i18n.__('Invalid authorization code.'),
+            });
+            return;
+        }
+
+        database.addUser(args.userObj).then(() => {
+            // set auth code as used
+            database.updateAuthCode(appSession.userData.institution_code, args.auth_code).then(() => {
+                // send message
+                dialog.showMessageBox(mainWindow, {
+                    type: 'info',
+                    message: i18n.__('User added.'),
+                }).then(() => {
+                    localUsers();
+                });
+            });
         });
     });
 });
@@ -790,7 +808,11 @@ ipcMain.on('updateUser', (_event, args) => {
                     type: 'info',
                     message: i18n.__('User updated.'),
                 }).then(() => {
-                    localUsers();
+                    if (constant.INSON.includes(appSession.userData.service_type_code)) { // go to dashboard
+                        goToLocalDashboard();
+                    } else if (appSession.userData.role_code === constant.ROLE_LOCAL) { // go to users list
+                        localUsers();
+                    }
                 });
             });
         });
@@ -807,7 +829,7 @@ ipcMain.on('enableUser', (_event, args) => {
     }
 
     database.checkAuthCode(args.institution_code, args.auth_code).then((result) => {
-        
+
         if (result.length === 0) {
             dialog.showMessageBox(mainWindow, {
                 type: 'warning',
@@ -826,6 +848,19 @@ ipcMain.on('enableUser', (_event, args) => {
                 });
             });
         });
+    });
+});
+
+ipcMain.on('getNextUser', (_event, args) => {
+    database.getNextUser(args.userType, args.service_type_code, args.institution_code).then((result) => {
+        if (result.length === 0) {
+            dialog.showMessageBox(mainWindow, {
+                type: 'info',
+                message: i18n.__('No more users.'),
+            });
+        } else {
+            mainWindow.webContents.send("nextUser", result[0]);
+        }
     });
 });
 
