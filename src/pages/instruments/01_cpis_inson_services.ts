@@ -1,6 +1,4 @@
 import { ipcRenderer } from "electron";
-import { showByPermissions } from "../../libraries/showBasedOnPermissions";
-
 
 declare global {
     interface Window {
@@ -11,6 +9,8 @@ declare global {
 const $ = window.require('jquery');
 const dt = window.require('datatables.net-dt');
 dt(window, $);
+
+const appSession = JSON.parse(sessionStorage.getItem('appSession'));
 
 export const cpis_services = {
     init: async () => {
@@ -30,7 +30,15 @@ export const cpis_services = {
                 const div1 = document.createElement('div');
                 // bg-tableRow text-gray-600 px-3 py-1.5 font-medium col-span-2 flex items-center
                 div1.classList.add('bg-tableRow', 'text-gray-600', 'px-3', 'py-1.5', 'font-medium', 'col-span-2', 'flex', 'items-center', 'col-span-2');
-                div1.innerHTML = service.name;
+                
+                let serviceName = service.name_en;
+                if(appSession.language === 'uz'){
+                    serviceName = service.name_uz;
+                } else if(appSession.language === 'ru'){
+                    serviceName = service.name_ru;
+                }
+                
+                div1.innerHTML = serviceName;
                 div.appendChild(div1);
                 
                 const div2 = document.createElement('div');
