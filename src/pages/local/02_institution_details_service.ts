@@ -2,6 +2,7 @@ import { UpdateServiceObjInterface } from './../../interfaces/database/index';
 import { ipcRenderer } from "electron";
 
 const updateObj = {} as UpdateServiceObjInterface;
+const appSession = JSON.parse(sessionStorage.getItem('appSession'));
 
 export const institutionDetails = {
     init: async () => {
@@ -14,7 +15,14 @@ export const institutionDetails = {
             updateObj.leavers = args.leavers;
             updateObj.employees = args.employees;
 
-            (document.getElementById('institution_name') as HTMLDivElement).innerText = args.name;
+            if (appSession.language === 'uz') {
+                (document.getElementById('institution_name') as HTMLDivElement).innerText = args.name_uz;
+            } else if (appSession.language === 'ru') {
+                (document.getElementById('institution_name') as HTMLDivElement).innerText = args.name_ru;
+            } else { // fallback to english
+                (document.getElementById('institution_name') as HTMLDivElement).innerText = args.name_en;
+            }
+
             (document.getElementById('children') as HTMLInputElement).value = args.children;
             (document.getElementById('employees') as HTMLInputElement).value = args.employees;
             (document.getElementById('leavers') as HTMLInputElement).value = args.leavers;

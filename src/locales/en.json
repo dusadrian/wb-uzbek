@@ -121,5 +121,10 @@
 	"t_enable_user": "This user is disabled. Please contact the regional coordinator for an authorization code to enable it.",
 	"t_enable_user_button": "Enable user",
 	"User enabled. Please login.": "User enabled. Please login.",
-	"Authorization code missing.": "Authorization code missing."
+	"Authorization code missing.": "Authorization code missing.",
+	"No more users.": "No more users.",
+	"t_data_collector": "DATA COLLECTOR",
+	"t_hr_specialist": "HR SPECIALIST",
+	"t_admin_specialist": "ADMIN SPECIALIST",
+	"No services available": "No services available"
 }

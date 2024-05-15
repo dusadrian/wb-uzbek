@@ -1,5 +1,18 @@
 import { ipcRenderer } from "electron";
 import * as DI from "../../interfaces/database";
+import * as path from "path";
+import { I18n } from "i18n";
+const i18n = new I18n({
+    locales: ['en', 'uz', 'ru'],
+    directory: path.join(__dirname, '../../locales'),
+    defaultLocale: 'en',
+});
+
+// set language
+const lang = localStorage.getItem('language');
+if (lang) {
+    i18n.setLocale(lang);
+}
 
 const updateObj = {} as DI.UpdateInsonObjInterface;
 let services: DI.Institution[] = [];
@@ -69,7 +82,7 @@ export const institutionDetails = {
                 const p = document.createElement('p');
                 // Set the service name
                 p.classList.add('mt-5', 'mb-2', 'text-center', 'font-bold');
-                p.innerText = 'No services available';
+                p.innerText = i18n.__("No services available");
                 serviceList.appendChild(p);
             }
 

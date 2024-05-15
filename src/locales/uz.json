@@ -48,6 +48,7 @@
 	"t_profession": "Kasb",
 	"t_phone": "Telefon",
 	"t_edit_user": "Foydalanuvchi ko'rinishi",
+	"t_export_user_instruments": "Export user instruments",
 	"t_add_child": "Bolani qo'shish",
 	"t_csr_list": "Muassasa xodimlarining reestri",
 	"t_add_staff": "Xodimni qo'shish",
@@ -113,7 +114,7 @@
 	"main._dataDownloadedError": "Error. No folder selected!",
 	"Some instruments are not allowed to be imported. Please check the file and try again.": "Some instruments are not allowed to be imported. Please check the file and try again.",
 	"t_user_type": "Foydalanuvchi turi",
-	"t_pf": "t_pf",
+	"t_pf": "Patronat oila",
 	"t_auth_code": "Authorization code",
 	"Invalid authorization code.": "Invalid authorization code.",
 	"must_be_earlier": "X dagi sana Y dan oldinroq bo'lishi kerak",
@@ -121,5 +122,10 @@
 	"t_enable_user": "This user is disabled. Please contact the regional coordinator for an authorization code to enable it.",
 	"t_enable_user_button": "Enable user",
 	"User enabled. Please login.": "User enabled. Please login.",
-	"Authorization code missing.": "Authorization code missing."
+	"Authorization code missing.": "Authorization code missing.",
+	"No more users.": "No more users.",
+	"t_data_collector": "DATA COLLECTOR - UZ",
+	"t_hr_specialist": "HR SPECIALIST - UZ",
+	"t_admin_specialist": "ADMIN SPECIALIST - UZ",
+	"No services available": "No services available - UZ" 
 }

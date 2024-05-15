@@ -48,6 +48,7 @@
 	"t_profession": "Профессия",
 	"t_phone": "Телефон",
 	"t_edit_user": "Просмотр пользователя",
+	"t_export_user_instruments": "Export user instruments",
 	"t_add_child": "Добавить ребенка",
 	"t_csr_list": "Реестр персонала учреждения",
 	"t_add_staff": "Добавить сотрудника",
@@ -102,7 +103,7 @@
 	"t_number_to_be_filled": "Всего заполнить",
 	"t_number_filled": "Number filled/started",
 	"t_number_completed": "Завершено",
-	"t_inson_services": "INSON services",
+	"t_inson_services": "INSON services - RU",
 	"af1_instrument_04": "The sum of the areas of the buildings where children are accommodated (AF5a) must be less than or equal to the total area of the institution (AF1).",
 	"main._chooseFolder": "Choose folder",
 	"main._chooseFile": "Choose file",
@@ -113,7 +114,7 @@
 	"main._dataDownloadedError": "Error. No folder selected!",
 	"Some instruments are not allowed to be imported. Please check the file and try again.": "Some instruments are not allowed to be imported. Please check the file and try again.",
 	"t_user_type": "Тип пользователя",
-	"t_pf": "Patronat Family",
+	"t_pf": "Патронатная семья",
 	"t_auth_code": "Authorization code",
 	"Invalid authorization code.": "Invalid authorization code.",
 	"must_be_earlier": "Дата в X должна быть раньше, чем Y",
@@ -121,5 +122,10 @@
 	"t_enable_user": "This user is disabled. Please contact the regional coordinator for an authorization code to enable it.",
 	"t_enable_user_button": "Enable user",
 	"User enabled. Please login.": "User enabled. Please login.",
-	"Authorization code missing.": "Authorization code missing."
+	"Authorization code missing.": "Authorization code missing.",
+	"No more users.": "No more users.",
+	"t_data_collector": "DATA COLLECTOR - RU",
+	"t_hr_specialist": "HR SPECIALIST - RU",
+	"t_admin_specialist": "ADMIN SPECIALIST - RU",
+	"No services available": "No services available - RU"
 }

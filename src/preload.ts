@@ -249,7 +249,7 @@ const index = () => {
 }
 
 const enable_user = () => {
-    
+
     translatePage();
 
     const importFile = async () => {
@@ -666,7 +666,9 @@ const translatePage = () => {
     if (option.length > 0) {
         option.forEach((element: HTMLOptionElement) => {
             element.innerText = i18n.__(element.className);
-            element.value = i18n.__(element.className + '_value');
+            // if (i18n.__(element.className + '_value') != element.className + '_value') {
+            //     element.value = i18n.__(element.className + '_value');
+            // }
         });
     }
     const optionGroup = document.querySelectorAll("optgroup[class^='t_']");
