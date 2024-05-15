@@ -126,5 +126,6 @@
 	"t_data_collector": "DATA COLLECTOR",
 	"t_hr_specialist": "HR SPECIALIST",
 	"t_admin_specialist": "ADMIN SPECIALIST",
-	"No services available": "No services available"
+	"No services available": "No services available",
+	"invalid_date": "Invalid date"
 }

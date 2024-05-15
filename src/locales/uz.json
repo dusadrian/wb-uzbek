@@ -127,5 +127,6 @@
 	"t_data_collector": "DATA COLLECTOR - UZ",
 	"t_hr_specialist": "HR SPECIALIST - UZ",
 	"t_admin_specialist": "ADMIN SPECIALIST - UZ",
-	"No services available": "No services available - UZ" 
+	"No services available": "No services available - UZ",
+	"invalid_date": "Invalid date"
 }

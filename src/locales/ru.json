@@ -127,5 +127,6 @@
 	"t_data_collector": "DATA COLLECTOR - RU",
 	"t_hr_specialist": "HR SPECIALIST - RU",
 	"t_admin_specialist": "ADMIN SPECIALIST - RU",
-	"No services available": "No services available - RU"
+	"No services available": "No services available - RU",
+	"invalid_date": "Invalid date"
 }
