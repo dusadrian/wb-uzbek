@@ -1,5 +1,5 @@
 import { ipcRenderer } from "electron";
-import { questions, questionOrder } from "./06_dsee_variables";
+import { questions, questionsOrder } from "./06_dsee_variables";
 import instrument from "../../libraries/instrument";
 import { SaveInstrumentType } from "../../libraries/interfaces";
 import { util, errorHandler } from "../../libraries/validation_helpers";
@@ -102,7 +102,7 @@ export const instrument6 = {
             }
 
             // set instrument question !!!!!!
-            instrument.setQuestions(questions, questionOrder);
+            instrument.setQuestions(questions, questionsOrder);
             let instrumentID = null;
 
             console.log(args);

@@ -5067,7 +5067,7 @@ export const questions: QuestionObjectType = {
     },
 };
 
-export const questionOrder: Array<string> = [
+export const questionsOrder: Array<string> = [
     'reg', 'dis', 'data', 'omr1', 'omr2', 'omr3', 'omr4', 'omr5', 'omr6', 'omr7', 'omr8a', 'omr8', 'pin', 'lk1a',
     'lk1b', 'lk1c', 'lk2', 'lk3', 'lk13a', 'lk14a_out', 'lk14a_dk', 'lk14b', 'lk14c', 'lk14d', 'lk14e', 'lk12',
     'lk15', 'lk15_other', 'cm1a', 'cm1b', 'cm1c', 'cm1d', 'cm1dw', 'cm1dw_other', 'cm2a', 'cm2b', 'cm2c', 'cm3',

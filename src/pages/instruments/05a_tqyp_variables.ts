@@ -445,7 +445,7 @@ export const questions: QuestionObjectType = {
     },
 };
 
-export const questionOrder: Array<string> = [
+export const questionsOrder: Array<string> = [
     'str1', 'str2', 'str3a', 'str3b', 'str3c', 'str4', 'data', 'omr1', 'omr2', 'omr3', 'omr4', 'omr5', 'omr6',
     'omr7', 'ptr1', 'ptr2a', 'ptr2b', 'ptr2c', 'ptr3', 'ptr4', 'ptr4a', 'ptr5a_dk', 'ptr5b', 'ptr5c', 'ptr5d',
     'ptr5e', 'ptr6', 'ptr7', 'ptr7_other', 'ptr8', 'ptr8_other', 'ptr8a', 'ptr8b', 'ptr8c', 'ptr8e', 'ptr8f',

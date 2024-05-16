@@ -1253,7 +1253,7 @@ export const questions: QuestionObjectType = {
     },
 };
 
-export const questionOrder: Array<string> = [
+export const questionsOrder: Array<string> = [
     'reg', 'dis', 'data', 'q2', 'inst', 'q3', 'q4', 'q5', 'q6', 'pf1a', 'pf1b', 'pf1c', 'pf1d', 'pf2', 'pf3',
     'ig1', 'ig2', 'ig3', 'ig4', 'ig5', 'ig5_age', 'ig6', 'ig7', 'ig8', 'ig8_other', 'pf4a', 'pf4b', 'pf5',
     'fc4_c1a', 'fc4_c1b', 'fc4_c1c', 'fc4_c1d', 'fc4_c1e', 'fc4_c1e_other', 'fc4_c1f', 'fc4_c1g', 'fc4_c2a',

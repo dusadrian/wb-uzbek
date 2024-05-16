@@ -1,5 +1,5 @@
 import { ipcRenderer } from "electron";
-import { questions, questionOrder } from "./03_csr_variables";
+import { questions, questionsOrder } from "./03_csr_variables";
 import instrument from "../../libraries/instrument";
 import { QuestionObjectType, SaveInstrumentType } from "../../libraries/interfaces";
 import { util, errorHandler } from "../../libraries/validation_helpers";
@@ -157,7 +157,7 @@ export const instrument3 = {
 
 
             // set instrument question !!!!!!
-            instrument.setQuestions(questions, questionOrder);
+            instrument.setQuestions(questions, questionsOrder);
             let instrumentID = null;
 
             if (args.questions && args.questions.length > 0) {

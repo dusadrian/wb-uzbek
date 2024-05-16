@@ -1,5 +1,5 @@
 import { ipcRenderer } from "electron";
-import { questions, questionOrder } from "./05a_tqyp_variables";
+import { questions, questionsOrder } from "./05a_tqyp_variables";
 import instrument from "../../libraries/instrument";
 import { QuestionObjectType, SaveInstrumentType } from "../../libraries/interfaces";
 import { util, errorHandler } from "../../libraries/validation_helpers";
@@ -188,7 +188,7 @@ export const instrument5a = {
 
 
             // set instrument question !!!!!!
-            instrument.setQuestions(questions, questionOrder);
+            instrument.setQuestions(questions, questionsOrder);
             let instrumentID = null;
 
             if (args.instrument && args.instrument.length > 0) {

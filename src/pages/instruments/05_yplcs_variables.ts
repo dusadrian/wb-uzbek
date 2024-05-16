@@ -3234,7 +3234,7 @@ export const questions: QuestionObjectType = {
     },
 };
 
-export const questionOrder: Array<string> = [
+export const questionsOrder: Array<string> = [
     'reg', 'dis', 'data', 'omr1', 'omr2', 'omr3', 'omr4', 'omr5', 'omr6', 'omr7', 'omr9', 'pi1', 'pi1a', 'pi1b',
     'pi1c', 'pi2', 'pi3', 'pi3a', 'pi4a_dk', 'pi4b', 'pi4c', 'pi4d', 'pi4e', 'pi5', 'pi6r', 'pi6d', 'pi6',
     'pi6a', 'pi6b', 'pi6c', 'pi7', 'pi8', 'pi9a', 'pi9c', 'pi9d', 'pi9h', 'pi9i', 'pi9e', 'pi9f', 'pi9g', 'pi10',
