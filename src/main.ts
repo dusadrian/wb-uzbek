@@ -129,7 +129,7 @@ ipcMain.on('login', (_event, args) => {
                     });
                 }
             });
-        } else {         
+        } else {
 
             appSession.language = args.language;
             appSession.userData = result[0]; // user data
@@ -152,7 +152,7 @@ ipcMain.on('login', (_event, args) => {
                         })
                     }
                 });
-            } else if(appSession.userData.role_code === constant.ROLE_REGIONAL) {
+            } else if (appSession.userData.role_code === constant.ROLE_REGIONAL) {
                 appSession.institutionDetails = {
                     region_code: appSession.userData.region_code,
                     name_en: appSession.userData.institution_name,
@@ -272,24 +272,33 @@ const goToRegionalDashboard = () => {
 ipcMain.on('getLocalDashStats', (_event, args) => {
     let region = null;
     let typeOfInstitution = null;
+    let institution = null;
     if (args?.region) { region = args.region; }
     if (args?.typeOfInstitution) { typeOfInstitution = args.typeOfInstitution; }
+    if (args?.institution) { institution = args.institution; }
 
-    database.filledInstruments(appSession.userData.role_code, appSession.userData.uuid, appSession.userData.institution_code, region, typeOfInstitution).then((dashStats) => {
+    database.filledInstruments(appSession.userData.role_code, appSession.userData.uuid, appSession.userData.institution_code, region, typeOfInstitution, institution).then((dashStats) => {
         // Dashboard stats for all users
         mainWindow.webContents.send("dashStats", dashStats);
     });
 });
 
 ipcMain.on('getRegionalDashStats', (_event, args) => {
-    let region = null;
-    let typeOfInstitution = null;
+    let region = '';
+    let typeOfInstitution = '';
+    let institution = '';
     if (args?.region) { region = args.region; }
     if (args?.typeOfInstitution) { typeOfInstitution = args.typeOfInstitution; }
+    if (args?.institution) { institution = args.institution; }
 
-    database.filledInstruments(appSession.userData.role_code, appSession.userData.uuid, appSession.userData.institution_code, region, typeOfInstitution).then((dashStats) => {
-        // Dashboard stats for all users
-        mainWindow.webContents.send("dashStats", dashStats);
+    database.filledInstruments(appSession.userData.role_code, appSession.userData.uuid, appSession.userData.institution_code, region, typeOfInstitution, institution).then((dashStats) => {
+        database.getInstrumentsToBeFilledBy(region, institution).then((toBeFilled) => {
+            // Dashboard stats for all users
+            mainWindow.webContents.send("dashStats", {
+                instruments: dashStats,
+                toBeFilled: toBeFilled,
+            });
+        });
     });
 });
 ipcMain.on('getInstitutionByTypeAndRegion', (_event, args) => {

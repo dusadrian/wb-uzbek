@@ -258,7 +258,7 @@ const processDashStats = (args: any,) => {
     if (args.instrument4.length > 0) {
         const totalCompletedObj = args.instrument4.filter((el: StatusInterface) => el.status === 'completed');
         const totalPartialObj = args.instrument4.filter((el: StatusInterface) => el.status === 'partial');
-        const toBefilled = Number(document.getElementById('t1c31').innerText);
+        const toBefilled = Number(document.getElementById('t1c41').innerText);
 
         document.getElementById('t1c42').innerText = totalCompletedObj[0]?.total || 0;
         document.getElementById('t1c43').innerText = totalPartialObj[0]?.total || 0;
@@ -277,8 +277,8 @@ const processDashStats = (args: any,) => {
     if (args.instrument5a.length > 0) {
         const totalCompletedObj = args.instrument5a.filter((el: StatusInterface) => el.status === 'completed');
         const totalPartialObj = args.instrument5a.filter((el: StatusInterface) => el.status === 'partial');
-        const toBefilled = Number(document.getElementById('t1c31').innerText);
-
+        const toBefilled = Number(document.getElementById('t1c51').innerText);
+        
         document.getElementById('t1c52').innerText = totalCompletedObj[0]?.total || 0;
         document.getElementById('t1c53').innerText = totalPartialObj[0]?.total || 0;
 
@@ -296,7 +296,7 @@ const processDashStats = (args: any,) => {
     if (args.instrument5.length > 0) {
         const totalCompletedObj = args.instrument5.filter((el: StatusInterface) => el.status === 'completed');
         const totalPartialObj = args.instrument5.filter((el: StatusInterface) => el.status === 'partial');
-        const toBefilled = Number(document.getElementById('t1c31').innerText);
+        const toBefilled = Number(document.getElementById('t1c61').innerText);
 
         document.getElementById('t1c62').innerText = totalCompletedObj[0]?.total || 0;
         document.getElementById('t1c63').innerText = totalPartialObj[0]?.total || 0;
@@ -315,7 +315,7 @@ const processDashStats = (args: any,) => {
     if (args.instrument6.length > 0) {
         const totalCompletedObj = args.instrument6.filter((el: StatusInterface) => el.status === 'completed');
         const totalPartialObj = args.instrument6.filter((el: StatusInterface) => el.status === 'partial');
-        const toBefilled = Number(document.getElementById('t1c31').innerText);
+        const toBefilled = Number(document.getElementById('t1c71').innerText);
 
         document.getElementById('t1c72').innerText = totalCompletedObj[0]?.total || 0;
         document.getElementById('t1c73').innerText = totalPartialObj[0]?.total || 0;
@@ -334,7 +334,7 @@ const processDashStats = (args: any,) => {
     if (args.instrument7.length > 0) {
         const totalCompletedObj = args.instrument7.filter((el: StatusInterface) => el.status === 'completed');
         const totalPartialObj = args.instrument7.filter((el: StatusInterface) => el.status === 'partial');
-        const toBefilled = Number(document.getElementById('t1c31').innerText);
+        const toBefilled = Number(document.getElementById('t1c81').innerText);
 
         document.getElementById('t1c82').innerText = totalCompletedObj[0]?.total || 0;
         document.getElementById('t1c83').innerText = totalPartialObj[0]?.total || 0;
@@ -353,7 +353,7 @@ const processDashStats = (args: any,) => {
     if (args.instrument8.length > 0) {
         const totalCompletedObj = args.instrument8.filter((el: StatusInterface) => el.status === 'completed');
         const totalPartialObj = args.instrument8.filter((el: StatusInterface) => el.status === 'partial');
-        const toBefilled = Number(document.getElementById('t1c31').innerText);
+        const toBefilled = Number(document.getElementById('t1c91').innerText);
 
         document.getElementById('t1c92').innerText = totalCompletedObj[0]?.total || 0;
         document.getElementById('t1c93').innerText = totalPartialObj[0]?.total || 0;
