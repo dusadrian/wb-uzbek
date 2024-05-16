@@ -312,6 +312,9 @@ export const database = {
             where += `institution_type = '${typeOfInstitution}'`;
         }
 
+        console.log(where);
+        
+
         const i1 = new Promise<DI.StatusInterface[]>((resolve) => {
             db.all(`SELECT status, COUNT(*) AS total FROM instrument_cpis ${where} GROUP BY status`, (error, result) => {
                 if (error) { console.log(error); }
@@ -388,6 +391,28 @@ export const database = {
             instrument8
         };
     },
+    getInstitutionByTypeAndRegion : async (region: string, type: string) => {
+        const connection = new Promise<Array<DI.Institution>>((resolve) => {
+            console.log(region, type);
+            let sql = '';
+            if(type === '10'){
+                sql = `SELECT * FROM institutions WHERE region = '${region}' AND type IN (${constant.CHILD_CARE.join(',')})`
+            } else if(type === '20'){
+                sql = `SELECT * FROM institutions WHERE region = '${region}' AND type IN (${constant.SPECIALIZED.join(',')})`
+            } else {
+                sql = `SELECT * FROM institutions WHERE region = '${region}' AND type IN (${constant.INSON.join(',')})`
+            }
+
+            db.all(sql, (error, result) => {
+                if (error) {
+                    console.log(error);
+                }
+                resolve(result as DI.Institution[]);
+            });
+        });
+        return await connection;
+    },
+    
 
     async getDataForDownload(table: string, role_code: string, user_uuid: string, institution_code: string) {
         const connection = new Promise<DI.DataExportInterface[]>((resolve) => {

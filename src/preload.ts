@@ -22,7 +22,11 @@ ipcRenderer.on('appSession', (event, arg) => {
     } else { // fallback to english
         institutionName = arg.institutionDetails.name_en;
     }
-    username = (institutionName ? institutionName.substring(0, 70) + '... | ' : '') + arg.userData.username;
+
+    let usernameInstitutionName = institutionName;
+    if (institutionName.length > 70) { usernameInstitutionName = usernameInstitutionName.substring(0, 70) + '...'; }
+    username = (usernameInstitutionName ? usernameInstitutionName + ' | ' : '') + arg.userData.username;
+
     const us = document.getElementById('header_username');
     if (us) {
         us.innerText = username;

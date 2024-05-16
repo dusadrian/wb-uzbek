@@ -128,5 +128,8 @@
 	"t_hr_specialist": "HR SPECIALIST - UZ",
 	"t_admin_specialist": "ADMIN SPECIALIST - UZ",
 	"No services available": "No services available - UZ",
-	"invalid_date": "Invalid date"
+	"invalid_date": "Invalid date",
+	"t_childcare_residential_institutions": "Childcare residential institutions",
+	"t_specialized_boarding_schools": "Specialized boarding schools",
+	"t_inson": "INSON"
 }

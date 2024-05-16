@@ -127,10 +127,9 @@ ipcMain.on('login', (_event, args) => {
                     mainWindow.webContents.once("did-finish-load", () => {
                         mainWindow.webContents.send("user", disabled[0]);
                     });
-                    return;
                 }
             });
-        } else {
+        } else {         
 
             appSession.language = args.language;
             appSession.userData = result[0]; // user data
@@ -153,6 +152,14 @@ ipcMain.on('login', (_event, args) => {
                         })
                     }
                 });
+            } else if(appSession.userData.role_code === constant.ROLE_REGIONAL) {
+                appSession.institutionDetails = {
+                    region_code: appSession.userData.region_code,
+                    name_en: appSession.userData.institution_name,
+                    name_uz: appSession.userData.institution_name,
+                    name_ru: appSession.userData.institution_name,
+                };
+                goToRegionalDashboard();
             }
         }
     });
@@ -168,6 +175,9 @@ ipcMain.on("changeWindow", (_event, args) => {
             break;
         case "local/01_dashboard":
             goToLocalDashboard();
+            break;
+        case "regional/01_dashboard":
+            goToRegionalDashboard();
             break;
         case "local/02_institution_details":
             institutionDetails();
@@ -252,6 +262,12 @@ const goToLocalDashboard = () => {
         mainWindow.webContents.send("appSession", appSession);
     });
 }
+const goToRegionalDashboard = () => {
+    mainWindow.loadURL("file://" + path.join(__dirname, "../src/pages/regional/01_dashboard.html"));
+    mainWindow.webContents.once("did-finish-load", () => {
+        mainWindow.webContents.send("appSession", appSession);
+    });
+}
 
 ipcMain.on('getLocalDashStats', (_event, args) => {
     let region = null;
@@ -262,6 +278,23 @@ ipcMain.on('getLocalDashStats', (_event, args) => {
     database.filledInstruments(appSession.userData.role_code, appSession.userData.uuid, appSession.userData.institution_code, region, typeOfInstitution).then((dashStats) => {
         // Dashboard stats for all users
         mainWindow.webContents.send("dashStats", dashStats);
+    });
+});
+
+ipcMain.on('getRegionalDashStats', (_event, args) => {
+    let region = null;
+    let typeOfInstitution = null;
+    if (args?.region) { region = args.region; }
+    if (args?.typeOfInstitution) { typeOfInstitution = args.typeOfInstitution; }
+
+    database.filledInstruments(appSession.userData.role_code, appSession.userData.uuid, appSession.userData.institution_code, region, typeOfInstitution).then((dashStats) => {
+        // Dashboard stats for all users
+        mainWindow.webContents.send("dashStats", dashStats);
+    });
+});
+ipcMain.on('getInstitutionByTypeAndRegion', (_event, args) => {
+    database.getInstitutionByTypeAndRegion(args.region, args.typeOfInstitution).then((result) => {
+        mainWindow.webContents.send("institutions", result);
     });
 });
 

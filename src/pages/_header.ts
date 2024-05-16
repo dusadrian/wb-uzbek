@@ -40,7 +40,11 @@ export const header = {
                 institutionName= appSession.institutionDetails.name_en;
             }
 
-            (document.getElementById('header_username') as HTMLSpanElement).innerText = (institutionName ? institutionName.substring(0, 100) + '... | ' : '') + appSession.userData.username;
+            let usernameInstitutionName = institutionName;
+            if (institutionName.length > 70) { usernameInstitutionName = institutionName.substring(0, 70) + '...'; }
+            const username = (usernameInstitutionName ? usernameInstitutionName + ' | ' : '') + appSession.userData.username;
+            
+            (document.getElementById('header_username') as HTMLSpanElement).innerText = username;
             (document.getElementById('header_username') as HTMLSpanElement).title = (institutionName ? institutionName + ' | ' : '') + appSession.userData.username;
         }
 
