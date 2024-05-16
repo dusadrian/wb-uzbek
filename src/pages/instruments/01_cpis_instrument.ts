@@ -773,7 +773,7 @@ sh3_end_dates.forEach((startel) => {
         if (util.inputsHaveValue([startel, endel])) {
             const enddate = util.standardDate(end.value);
 
-            const message = translations['must_be_earlier'].
+            const message = translations['must_be_later'].
                 replace("X", startel.toUpperCase()).
                 replace("Y", endel.toUpperCase());
 
@@ -840,7 +840,7 @@ util.listen(cmgtsa, "myChange", () => {
         instrument.questions['cmgt1a'].value = cmgt1a;
         instrument.questions['sa1'].value = sa1;
 
-        const message = translations['must_be_earlier'].replace("X", "SA1").replace("Y", "CMGT1A");
+        const message = translations['must_be_later'].replace("X", "SA1").replace("Y", "CMGT1A");
 
         errorHandler.removeError(cmgtsa, message);
 
@@ -891,8 +891,21 @@ const qfam3 = [
     'qfam3_1', 'qfam3_2', 'qfam3_3', 'qfam3_4', 'qfam3_5'
 ]
 
+util.listen("qfam3_6", "change", () => {
+    if (util.htmlElement("qfam3_6").checked) {
+        util.htmlElement("qfam3_9").checked = false;
+        instrument.questions["qfam3_9"].value = "0";
+        qfam3.forEach((el) => {
+            util.htmlElement(el).checked = false;
+            instrument.questions[el].value = "0";
+        })
+    }
+})
+
 util.listen("qfam3_9", "change", () => {
     if (util.htmlElement("qfam3_9").checked) {
+        util.htmlElement("qfam3_6").checked = false;
+        instrument.questions["qfam3_6"].value = "0";
         qfam3.forEach((el) => {
             util.htmlElement(el).checked = false;
             instrument.questions[el].value = "0";
@@ -903,6 +916,8 @@ util.listen("qfam3_9", "change", () => {
 util.listen(qfam3, "change", () => {
     if (util.makeSumFromElements(qfam3) > 0) {
         util.htmlElement("qfam3_9").checked = false;
+        util.htmlElement("qfam3_6").checked = false;
+        instrument.questions["qfam3_6"].value = "0";
         instrument.questions["qfam3_9"].value = "0";
     }
 });
@@ -927,7 +942,7 @@ util.listen(lk3cm3, "myChange", () => {
 
         instrument.questions["cm3"].value = mother;
         instrument.questions["lk3"].value = child;
-        const message = translations['must_be_earlier'].replace("X", "CM3").replace("Y", "LK3");
+        const message = translations['must_be_later'].replace("X", "CM3").replace("Y", "LK3");
         errorHandler.removeError(lk3cm3, message);
 
         if (util.standardDate(mother) >= util.standardDate(child)) {
@@ -947,7 +962,7 @@ util.listen(lk3ct3, "myChange", () => {
         instrument.questions["ct3"].value = father;
         instrument.questions["lk3"].value = child;
 
-        const message = translations['must_be_earlier'].replace("X", "CT3").replace("Y", "LK3");
+        const message = translations['must_be_later'].replace("X", "CT3").replace("Y", "LK3");
         errorHandler.removeError(lk3ct3, message);
 
         if (util.standardDate(father) >= util.standardDate(child)) {
