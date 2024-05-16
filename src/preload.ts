@@ -91,10 +91,21 @@ window.addEventListener("DOMContentLoaded", () => {
         case 'regional/01_dashboard.html':
             regionalDashboard();
             break;
+        case 'regional/02_institution_details_service.html':
+            institutionRDetailsService();
+            break;
+        case 'regional/02_institution_details_inson.html':
+            institutionRDetailsInson();
+            break;
+        case 'regional/02_institutions.html':
+            institutionsR();
+            break;
+        case 'regional/02_insons.html':
+            insonsR();
+            break;
         case 'national/01_dashboard.html':
             nationalDashboard();
             break;
-
         case 'instruments/01_cpis.html':
             CPIS();
             break;
@@ -313,6 +324,60 @@ const institutionDetailsInson = () => {
         return await import("./pages/local/02_institution_details_inson");
     };
     importFile().then(result => result.institutionDetails.init().catch(error => {
+        console.log(error);
+    }));
+};
+// Sevices
+const institutionRDetailsService = () => {
+
+    topMenu('regional/02_institutions');
+
+    translatePage();
+
+    const importFile = async () => {
+        return await import("./pages/regional/02_institution_details_service");
+    };
+    importFile().then(result => result.institutionDetails.init().catch(error => {
+        console.log(error);
+    }));
+};
+// Inson
+const institutionRDetailsInson = () => {
+
+    topMenu('regional/02_insons');
+
+    translatePage();
+
+    const importFile = async () => {
+        return await import("./pages/regional/02_institution_details_inson");
+    };
+    importFile().then(result => result.institutionDetails.init().catch(error => {
+        console.log(error);
+    }));
+};
+const institutionsR = () => {
+
+    topMenu('regional/01_dashboard');
+
+    translatePage();
+
+    const importFile = async () => {
+        return await import("./pages/regional/02_institutions");
+    };
+    importFile().then(result => result.institutions.init().catch(error => {
+        console.log(error);
+    }));
+};
+const insonsR = () => {
+
+    topMenu('regional/01_dashboard');
+
+    translatePage();
+
+    const importFile = async () => {
+        return await import("./pages/regional/02_insons");
+    };
+    importFile().then(result => result.insons.init().catch(error => {
         console.log(error);
     }));
 };

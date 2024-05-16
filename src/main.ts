@@ -182,6 +182,18 @@ ipcMain.on("changeWindow", (_event, args) => {
         case "local/02_institution_details":
             institutionDetails();
             break;
+        case "regional/02_institution_details_service":
+            institutionRDetails(args.code);
+            break;
+        case "regional/02_institution_details_inson":
+            insonRDetails(args.code);
+            break;
+        case "regional/02_institutions":
+            institutionsR();
+            break;
+        case "regional/02_insons":
+            insonsR();
+            break;
         case "local/03_users":
             localUsers();
             break;
@@ -766,6 +778,47 @@ ipcMain.on('updateInson', (_event, args) => {
         });
     });
 });
+
+// Regionals =================
+const institutionsR = () => {
+    const newPage = path.join(__dirname, "../src/pages/regional/02_institutions.html");
+    mainWindow.loadURL("file://" + newPage);
+    mainWindow.webContents.once("did-finish-load", () => {
+        database.getRegionalInstitutions(appSession.userData.region_code).then((result) => {
+            mainWindow.webContents.send("institutions", result);
+        });
+    });
+}
+const insonsR = () => {
+    const newPage = path.join(__dirname, "../src/pages/regional/02_insons.html");
+    mainWindow.loadURL("file://" + newPage);
+    mainWindow.webContents.once("did-finish-load", () => {
+        database.getRegionalInsons(appSession.userData.region_code).then((result) => {
+            mainWindow.webContents.send("insons", result);
+        });
+    });
+}
+const institutionRDetails = (code: string) => {
+    mainWindow.loadURL("file://" + path.join(__dirname, "../src/pages/regional/02_institution_details_service.html"));
+    database.getInstitutionDetails(code, null).then((result) => {
+        mainWindow.webContents.once("did-finish-load", () => {
+            mainWindow.webContents.send("institutionDetails", result[0]);
+        });
+    });
+}
+const insonRDetails = (code: string) => {
+    mainWindow.loadURL("file://" + path.join(__dirname, "../src/pages/regional/02_institution_details_inson.html"));
+    database.getInstitutionDetails(code, constant.INSON[0]).then((institution) => {
+        database.getInsonServices((institution[0] as DI.INSON).services, institution[0].code).then((services) => {       
+            mainWindow.webContents.once("did-finish-load", () => {
+                mainWindow.webContents.send("institutionDetails", {
+                    institution: institution[0],
+                    services: services
+                });
+            });
+        });
+    });
+}
 
 // Users
 const localUsers = () => {

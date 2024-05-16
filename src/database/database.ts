@@ -118,7 +118,7 @@ export const database = {
         return await connection;
     },
     getInstitutionDetails: async (code: string, service_type_code: string) => {
-        const connection = new Promise<Array<DI.Institution>>((resolve) => {
+        const connection = new Promise<Array<DI.Institution | DI.INSON>>((resolve) => {
             let sql = `SELECT * FROM institutions WHERE code = '${code}'`;
             if (constant.INSON.includes(service_type_code)) {
                 sql = `SELECT * FROM inson WHERE code = '${code}'`;
@@ -128,7 +128,7 @@ export const database = {
                 if (error) {
                     console.log(error);
                 }
-                resolve(result as DI.Institution[]);
+                resolve(result as DI.Institution[] | DI.INSON[]);
             });
         });
         return await connection;
@@ -182,6 +182,28 @@ export const database = {
                     console.log(error);
                 }
                 resolve(result as DI.User[]);
+            });
+        });
+        return await connection;
+    },
+    getRegionalInstitutions: async (region: string) => {
+        const connection = new Promise<Array<DI.Institution>>((resolve) => {
+            db.all(`SELECT * FROM institutions WHERE region = '${region}' AND CAST(type AS INTEGER) < 30`, (error, result) => {
+                if (error) {
+                    console.log(error);
+                }
+                resolve(result as DI.Institution[]);
+            });
+        });
+        return await connection;
+    },
+    getRegionalInsons: async (region: string) => {
+        const connection = new Promise<Array<DI.INSON>>((resolve) => {
+            db.all(`SELECT * FROM inson WHERE region = '${region}'`, (error, result) => {
+                if (error) {
+                    console.log(error);
+                }
+                resolve(result as DI.INSON[]);
             });
         });
         return await connection;
