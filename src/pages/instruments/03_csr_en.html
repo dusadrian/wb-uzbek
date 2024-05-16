@@ -35,8 +35,6 @@
             <p class="mb-2">This questionnaire serves as a crucial tool for understanding the organizational structure and individual profiles within each child care institution and boarding school. By collecting comprehensive data, we aim to enhance decision-making, improve staff management, and ensure the well-being of both employees and the children placed into care.</p>
             <p class="mb-2">This questionnaire aims to gather information about each position within the staff structure of the institution. Whether a position is currently occupied or vacant, please complete a separate questionnaire for each position.</p>
 
-
-
             <input type="hidden" id="q1" name="q1" />
 
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
@@ -119,26 +117,15 @@
                     </select>
                 </div>
             </div>
-            <div class="grid grid-cols-2 gap-4 items-center mt-6">
-                <div>I4d. Type of settlement</div>
-                <div>
-                    <select id="i4d" name="i4d" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
-                        <option value="10">Region</option>
-                        <option value="20">District</option>
-                        <option value="21">District-level city</option>
-                        <option value="22">City District</option>
-                        <option value="23">Town</option>
-                        <option value="24">Urban-type settlement</option>
-                        <option value="31">Rural community</option>
-                    </select>
-                </div>
-            </div>
+
+            <input type="hidden" id="i4d" name="i4d" />
+
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
                 <div>I5. Type of institution</div>
                 <div>
                     <select id="i5" name="i5" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
                         <option value="--">--</option>
-                        <option value="11">11. Children's home (Baby home)</option>
+                        <option value="11">11. Baby home</option>
                         <option value="12">12. Mehribonlik house</option>
                         <option value="13">13. Muruvvat house for children with disabilities</option>
                         <option value="14">14. SOS children’s villages</option>
@@ -165,7 +152,7 @@
 
             <div class="grid grid-cols-2 gap-4 items-center mt-10">
                 <div>J2. Name of the department within the institution</div>
-                <div class="grid grid-cols-2 gap-4 items-center4">
+                <div class="col-span-1 flex items-center gap-4">
                     <div class="flex items-center gap-4">
                         <input type="text" id="j2" name="j2" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
                     </div>
@@ -207,7 +194,7 @@
 
             <div class="grid grid-cols-2 gap-4 items-center mt-10">
                 <div>J4. Is there an approved job description available for this position?</div>
-                <div class="grid grid-cols-2 gap-4 items-center4">
+                <div class="col-span-1 flex items-center gap-4">
                     <div class="flex items-center">
                         <input id="j4-1" type="radio" value="1" name="j4" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="j4-1" class="ms-2 text-sm text-gray-900">1. Yes</label>
@@ -231,7 +218,7 @@
                 <div class="col-span-1 flex flex-col gap-2">
                     <div class="flex items-center">
                         <input id="j6-1" type="radio" value="0" name="j6" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                        <label for="j6-1" class="ms-2 text-sm text-gray-900">0. No education</label>
+                        <label for="j6-1" class="ms-2 text-sm text-gray-900">0. None</label>
                     </div>
                     <div class="flex items-center">
                         <input id="j6-2" type="radio" value="1" name="j6" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
@@ -315,7 +302,7 @@
 
             <div class="grid grid-cols-2 gap-4 items-center mt-10">
                 <div>E3. Gender</div>
-                <div class="grid grid-cols-2 gap-4 items-center4">
+                <div class="col-span-1 flex items-center gap-4">
                     <div class="flex items-center">
                         <input id="e3-1" type="radio" value="1" name="e3" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="e3-1" class="ms-2 text-sm text-gray-900">1. Male</label>
@@ -332,7 +319,7 @@
                 <div class="col-span-1 flex flex-col gap-2">
                     <div class="flex items-center">
                         <input id="e4-1" type="radio" value="0" name="e4" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                        <label for="e4-1" class="ms-2 text-sm text-gray-900">0. No education</label>
+                        <label for="e4-1" class="ms-2 text-sm text-gray-900">0. None</label>
                     </div>
                     <div class="flex items-center">
                         <input id="e4-2" type="radio" value="1" name="e4" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
@@ -452,7 +439,7 @@
 
             <div class="grid grid-cols-2 gap-4 items-center mt-10">
                 <div>E10. Is the employee directly involved in working with children?</div>
-                <div class="grid grid-cols-2 gap-4 items-center4">
+                <div class="col-span-1 flex items-center gap-4">
                     <div class="flex items-center">
                         <input id="e10-1" type="radio" value="1" name="e10" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="e10-1" class="ms-2 text-sm text-gray-900">1. Yes</label>
@@ -466,7 +453,7 @@
 
             <div class="grid grid-cols-2 gap-4 items-center mt-10">
                 <div>E11. Does the employee work in night shifts?</div>
-                <div class="grid grid-cols-2 gap-4 items-center4">
+                <div class="col-span-1 flex items-center gap-4">
                     <div class="flex items-center">
                         <input id="e11-1" type="radio" value="1" name="e11" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="e11-1" class="ms-2 text-sm text-gray-900">1. Yes</label>
@@ -480,7 +467,7 @@
 
             <div class="grid grid-cols-2 gap-4 items-center mt-10">
                 <div>E12. Does the employee work during weekends?</div>
-                <div class="grid grid-cols-2 gap-4 items-center4">
+                <div class="col-span-1 flex items-center gap-4">
                     <div class="flex items-center">
                         <input id="e12-1" type="radio" value="1" name="e12" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="e12-1" class="ms-2 text-sm text-gray-900">1. Yes</label>
@@ -494,7 +481,7 @@
 
             <div class="grid grid-cols-2 gap-4 items-center mt-10">
                 <div>E13. Have the employee undergone advanced training courses in their specialization in the last three years?</div>
-                <div class="grid grid-cols-2 gap-4 items-center4">
+                <div class="col-span-1 flex items-center gap-4">
                     <div class="flex items-center">
                         <input id="e13-1" type="radio" value="1" name="e13" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="e13-1" class="ms-2 text-sm text-gray-900">1. Yes</label>
@@ -523,7 +510,7 @@
 
             <div class="grid grid-cols-2 gap-4 items-center mt-10">
                 <div>E16. In the last three years, have there been any complaints against the employees regarding misconducts, bad treatments or abuses against the children placed in the institution?</div>
-                <div class="grid grid-cols-2 gap-4 items-center4">
+                <div class="col-span-1 flex items-center gap-4">
                     <div class="flex items-center">
                         <input id="e16-1" type="radio" value="1" name="e16" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="e16-1" class="ms-2 text-sm text-gray-900">1. Yes</label>
@@ -537,7 +524,7 @@
 
             <div class="grid grid-cols-2 gap-4 items-center mt-10">
                 <div>E17. In the last three years, have the employee been sanctioned for any misconduct, bad treatments or abuse against the children placed in the institution?</div>
-                <div class="grid grid-cols-2 gap-4 items-center4">
+                <div class="col-span-1 flex items-center gap-4">
                     <div class="flex items-center">
                         <input id="e17-1" type="radio" value="1" name="e17" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="e17-1" class="ms-2 text-sm text-gray-900">1. Yes</label>
@@ -551,7 +538,7 @@
 
             <div class="grid grid-cols-2 gap-4 items-center mt-10">
                 <div>E18. Is the staff eligible for retirement within the next three years due to reaching pension age or already being of pension age?</div>
-                <div class="grid grid-cols-2 gap-4 items-center4">
+                <div class="col-span-1 flex items-center gap-4">
                     <div class="flex items-center">
                         <input id="e18-1" type="radio" value="1" name="e18" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="e18-1" class="ms-2 text-sm text-gray-900">1. Yes</label>

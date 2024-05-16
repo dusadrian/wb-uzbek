@@ -6,11 +6,13 @@
     <title>CRM Uzbek</title>
     <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
     <meta http-equiv="Content-Security-Policy"
-        content="default-src 'self'; img-src http: https: data: ; script-src 'self';" />
+        content="default-src 'self'; img-src 'self' http: https: data: ; script-src 'self';" />
     <meta http-equiv="X-Content-Security-Policy"
-        content="default-src 'self'; img-src http: https: data: ; script-src 'self';" />
+        content="default-src 'self'; img-src http: https: 'self' data: ; script-src 'self';" />
     <link href="../../../dist/main.css" rel="stylesheet">
-    <link rel="stylesheet" href="../../../node_modules/flatpickr/dist/flatpickr.min.css">
+    <link rel="stylesheet" href="../../../node_modules/jquery-ui-dist/jquery-ui.min.css">
+    <link rel="stylesheet" href="../../../node_modules/jquery-ui-dist/jquery-ui.structure.min.css">
+    <link rel="stylesheet" href="../../../node_modules/jquery-ui-dist/jquery-ui.theme.min.css">
 </head>
 
 <body class="relative max-h-screen">
@@ -33,12 +35,8 @@
             <p class="mb-2">Этот вопросник служит важнейшим инструментом для понимания организационной структуры и индивидуальных особенностей в каждом детском учреждении и школе-интернате. Собирая исчерпывающие данные, мы стремимся повысить эффективность принятия решений, улучшить управление персоналом и обеспечить благополучие как сотрудников, так и детей, находящихся под опекой.</p>
             <p class="mb-2">Целью данного опросника является сбор информации о каждой должности в штатной структуре учреждения. Независимо от того, занята ли в настоящее время должность или вакантна, пожалуйста, заполните отдельную анкету для каждой должности.</p>
 
-            <div class="grid grid-cols-2 gap-4 items-center mt-12">
-                <div>Q1. Дата заполнения анкеты</div>
-                <div>
-                    <input type="text" id="q1" name="q1" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
-                </div>
-            </div>
+            <input type="hidden" id="q1" name="q1" />
+
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
                 <div>Q2. Имя, отчество и фамилия лица, заполнившего анкету</div>
                 <div>
@@ -119,26 +117,15 @@
                     </select>
                 </div>
             </div>
-            <div class="grid grid-cols-2 gap-4 items-center mt-6">
-                <div>I4d. Тип поселения</div>
-                <div>
-                    <select id="i4d" name="i4d" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
-                        <option value="10">Oбласть</option>
-                        <option value="20">Район</option>
-                        <option value="21">Города областного подчинения</option>
-                        <option value="22">Районы города</option>
-                        <option value="23">Города районного подч</option>
-                        <option value="24">Городские поселки</option>
-                        <option value="31">Сельские сходы граждан</option>
-                    </select>
-                </div>
-            </div>
+
+            <input type="hidden" id="i4d" name="i4d" />
+
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
                 <div>I5. Тип учреждения</div>
                 <div>
                     <select id="i5" name="i5" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
                         <option value="--">--</option>
-                        <option value="11">11. Детский дом (Дом ребенка)</option>
+                        <option value="11">11. Дом ребенка</option>
                         <option value="12">12. Дом Мехрибонлик</option>
                         <option value="13">13. Дом-интернат "Мурувват" для детей с инвалидностью.</option>
                         <option value="14">14. SOS Детские деревни</option>
@@ -165,7 +152,7 @@
 
             <div class="grid grid-cols-2 gap-4 items-center mt-10">
                 <div>J2. Название отдела в учреждении</div>
-                <div class="grid grid-cols-2 gap-4 items-center4">
+                <div class="col-span-1 flex items-center gap-4">
                     <div class="flex items-center gap-4">
                         <input type="text" id="j2" name="j2" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
                     </div>
@@ -207,7 +194,7 @@
 
             <div class="grid grid-cols-2 gap-4 items-center mt-10">
                 <div>J4. Имеется ли утвержденная должностная инструкция для данной должности?</div>
-                <div class="grid grid-cols-2 gap-4 items-center4">
+                <div class="col-span-1 flex items-center gap-4">
                     <div class="flex items-center">
                         <input id="j4-1" type="radio" value="1" name="j4" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="j4-1" class="ms-2 text-sm text-gray-900">1. Да</label>
@@ -231,7 +218,7 @@
                 <div class="col-span-1 flex flex-col gap-2">
                     <div class="flex items-center">
                         <input id="j6-1" type="radio" value="0" name="j6" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                        <label for="j6-1" class="ms-2 text-sm text-gray-900">0. Нет образования</label>
+                        <label for="j6-1" class="ms-2 text-sm text-gray-900">0. Нет</label>
                     </div>
                     <div class="flex items-center">
                         <input id="j6-2" type="radio" value="1" name="j6" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
@@ -315,7 +302,7 @@
 
             <div class="grid grid-cols-2 gap-4 items-center mt-10">
                 <div>Е3. Пол</div>
-                <div class="grid grid-cols-2 gap-4 items-center4">
+                <div class="col-span-1 flex items-center gap-4">
                     <div class="flex items-center">
                         <input id="e3-1" type="radio" value="1" name="e3" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="e3-1" class="ms-2 text-sm text-gray-900">1. Мужской</label>
@@ -332,7 +319,7 @@
                 <div class="col-span-1 flex flex-col gap-2">
                     <div class="flex items-center">
                         <input id="e4-1" type="radio" value="0" name="e4" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                        <label for="e4-1" class="ms-2 text-sm text-gray-900">0. Нет образования</label>
+                        <label for="e4-1" class="ms-2 text-sm text-gray-900">0. Нет</label>
                     </div>
                     <div class="flex items-center">
                         <input id="e4-2" type="radio" value="1" name="e4" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
@@ -444,7 +431,7 @@
                     </div>
                     <div class="flex items-center">
                         <input id="e9-4" type="radio" value="4" name="e9" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                        <label for="e4-4" class="ms-2 text-sm text-gray-900">4. Не применимо</label>
+                        <label for="e4-4" class="ms-2 text-sm text-gray-900">4. Неприменимо</label>
                     </div>
                 </div>
             </div>
@@ -452,7 +439,7 @@
 
             <div class="grid grid-cols-2 gap-4 items-center mt-10">
                 <div>E10. Занимается ли сотрудник непосредственно с детьми?</div>
-                <div class="grid grid-cols-2 gap-4 items-center4">
+                <div class="col-span-1 flex items-center gap-4">
                     <div class="flex items-center">
                         <input id="e10-1" type="radio" value="1" name="e10" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="e10-1" class="ms-2 text-sm text-gray-900">1. Да</label>
@@ -466,7 +453,7 @@
 
             <div class="grid grid-cols-2 gap-4 items-center mt-10">
                 <div>Е11. Работает ли сотрудник в ночную смену?</div>
-                <div class="grid grid-cols-2 gap-4 items-center4">
+                <div class="col-span-1 flex items-center gap-4">
                     <div class="flex items-center">
                         <input id="e11-1" type="radio" value="1" name="e11" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="e11-1" class="ms-2 text-sm text-gray-900">1. Да</label>
@@ -480,7 +467,7 @@
 
             <div class="grid grid-cols-2 gap-4 items-center mt-10">
                 <div>Е12. Работает ли сотрудник в выходные дни?</div>
-                <div class="grid grid-cols-2 gap-4 items-center4">
+                <div class="col-span-1 flex items-center gap-4">
                     <div class="flex items-center">
                         <input id="e12-1" type="radio" value="1" name="e12" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="e12-1" class="ms-2 text-sm text-gray-900">1. Да</label>
@@ -494,7 +481,7 @@
 
             <div class="grid grid-cols-2 gap-4 items-center mt-10">
                 <div>Е13. Проходил ли сотрудник курсы повышения квалификации по своей специализации за последние три года?</div>
-                <div class="grid grid-cols-2 gap-4 items-center4">
+                <div class="col-span-1 flex items-center gap-4">
                     <div class="flex items-center">
                         <input id="e13-1" type="radio" value="1" name="e13" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="e13-1" class="ms-2 text-sm text-gray-900">1. Да</label>
@@ -523,7 +510,7 @@
 
             <div class="grid grid-cols-2 gap-4 items-center mt-10">
                 <div>Е16. Поступали ли за последние три года жалобы на сотрудников по поводу неправомерного поведения, плохого обращения или жестокого обращения с детьми, помещенными в учреждение?</div>
-                <div class="grid grid-cols-2 gap-4 items-center4">
+                <div class="col-span-1 flex items-center gap-4">
                     <div class="flex items-center">
                         <input id="e16-1" type="radio" value="1" name="e16" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="e16-1" class="ms-2 text-sm text-gray-900">1. Да</label>
@@ -537,7 +524,7 @@
 
             <div class="grid grid-cols-2 gap-4 items-center mt-10">
                 <div>Е17. Применялись ли к работнику за последние три года санкции за какое-либо неправомерное поведение, плохое обращение или жестокое обращение с детьми, помещенными в учреждение?</div>
-                <div class="grid grid-cols-2 gap-4 items-center4">
+                <div class="col-span-1 flex items-center gap-4">
                     <div class="flex items-center">
                         <input id="e17-1" type="radio" value="1" name="e17" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="e17-1" class="ms-2 text-sm text-gray-900">1. Да</label>
@@ -551,7 +538,7 @@
 
             <div class="grid grid-cols-2 gap-4 items-center mt-10">
                 <div>Е18. Имеет ли персонал право в течение следующих трех лет выйти на пенсию по возрасту, или является ли сотрудник пенсионного возраста?</div>
-                <div class="grid grid-cols-2 gap-4 items-center4">
+                <div class="col-span-1 flex items-center gap-4">
                     <div class="flex items-center">
                         <input id="e18-1" type="radio" value="1" name="e18" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="e18-1" class="ms-2 text-sm text-gray-900">1. Да</label>

@@ -271,8 +271,6 @@ e2e7.forEach(item => {
         const e7 = util.htmlElement("e7").value;
 
         if (util.inputsHaveValue(e2e7)) {
-            instrument.questions['e2'].value = e2;
-            instrument.questions['e7'].value = e7;
 
             const message = translations['must_be_earlier'].replace("X", "e2").replace("Y", "e7");
 
@@ -280,8 +278,6 @@ e2e7.forEach(item => {
 
             if (util.standardDate(e2) > util.standardDate(e7)) {
                 errorHandler.addError(e2e7, message);
-                instrument.questions['e2'].value = '-9';
-                instrument.questions['e7'].value = '-9';
             }
         }
     })
@@ -292,6 +288,5 @@ util.listen("j5", "myChange", () => {
     errorHandler.removeError("j5", message);
     if (Number(instrument.questions['j5'].value) > 168) {
         errorHandler.addError("j5", message);
-        instrument.questions['j5'].value = '-9';
     }
 });

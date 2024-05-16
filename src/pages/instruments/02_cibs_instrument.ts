@@ -624,8 +624,6 @@ util.listen(lk3sa1, "myChange", () => {
     if (util.inputsHaveValue(lk3sa1)) {
         const lk3 = util.htmlElement("lk3").value;
         const sa1 = util.htmlElement("sa1").value;
-        instrument.questions['lk3'].value = lk3;
-        instrument.questions['sa1'].value = sa1;
 
         const message = translations['must_be_earlier'].replace("X", "LK3").replace("Y", "SA1");
 
@@ -633,8 +631,6 @@ util.listen(lk3sa1, "myChange", () => {
 
         if (util.standardDate(lk3) > util.standardDate(sa1)) {
             errorHandler.addError(lk3sa1, message);
-            instrument.questions['lk3'].value = '-9';
-            instrument.questions['sa1'].value = '-9';
         }
     }
 })

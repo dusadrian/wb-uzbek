@@ -180,7 +180,6 @@ export const instrument1 = {
                         util.htmlElement(el).value
                     )
                 } catch (error) {
-                    instrument.questions[el].value = '-9';
                     errorHandler.addError(el, translations['invalid_date']);
                 }
             });
@@ -660,7 +659,6 @@ util.listen("sh1", "myChange", () => {
     errorHandler.removeError('sh1', message);
 
     if (sh1value > 10) {
-        instrument.questions["sh1"].value = '-9';
         errorHandler.addError('sh1', message);
     }
     else {
@@ -705,10 +703,7 @@ sh3_start_dates.forEach((startel) => {
 
                 if (startdate > enddate) {
                     errorHandler.addError([startel, endel], message);
-                    instrument.questions[startel].value = '-9';
-                    instrument.questions[endel].value = '-9';
                     util.htmlElement(timespent).value = "";
-                    instrument.questions[timespent].value = "-9";
                 }
                 else {
                     instrument.questions[startel].value = start.value;
@@ -786,12 +781,6 @@ sh3_end_dates.forEach((startel) => {
 
             if (startdate > enddate) {
                 errorHandler.addError([startel, endel], message);
-                instrument.questions[startel].value = '-9';
-                instrument.questions[endel].value = '-9';
-            }
-            else {
-                instrument.questions[startel].value = start.value;
-                instrument.questions[endel].value = end.value;
             }
         }
     }
@@ -857,8 +846,6 @@ util.listen(cmgtsa, "myChange", () => {
 
         if (util.standardDate(sa1) > util.standardDate(cmgt1a)) {
             errorHandler.addError(cmgtsa, message);
-            instrument.questions['cmgt1a'].value = '-9';
-            instrument.questions['sa1'].value = '-9';
         }
     }
 })

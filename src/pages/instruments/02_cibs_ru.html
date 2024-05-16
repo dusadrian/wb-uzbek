@@ -2207,11 +2207,11 @@
                         <label for="qeduc2-1" class="ms-2 text-sm text-gray-900">1. Да</label>
                     </div>
                     <div class="flex items-center">
-                        <input id="qeduc2-2" type="radio" value="2" name="qeduc2" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <input id="qeduc2-2" type="radio" value="2" name="qeduc2" disabled class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="qeduc2-2" class="ms-2 text-sm text-gray-900">2. Нет</label>
                     </div>
                     <div class="flex items-center">
-                        <input id="qeduc2-3" type="radio" value="7" name="qeduc2" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <input id="qeduc2-3" type="radio" value="7" name="qeduc2" disabled class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="qeduc2-3" class="ms-2 text-sm text-gray-900">7. Не применимо, ребенок младше 7 лет</label>
                     </div>
                 </div>
@@ -2287,7 +2287,7 @@
                 <div>
                     <select id="qeduc2b" name="qeduc2b" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
                         <option value="-9">--- выбрать ---</option>
-                        <option value="0">0</option>
+NA
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
@@ -2359,7 +2359,7 @@
             </div>
 
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
-                <div>3. Был ли ребенок переведен из другой школы-интерната?</div>
+                <div>4. Был ли ребенок переведен из другой школы-интерната?</div>
                 <div class="flex flex-col gap-2">
                     <div class="flex items-center">
                         <input id="qeduc4-1" type="radio" value="1" name="qeduc4" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
@@ -2377,7 +2377,7 @@
             </div>
 
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
-                <div>3а. По какой причине ребенка перевели из другой школы- интерната?</div>
+                <div>4а. По какой причине ребенка перевели из другой школы- интерната?</div>
                 <div class="flex flex-col gap-2">
                     <div class="flex items-center">
                         <input id="qeduc4a-1" type="radio" value="1" name="qeduc4a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
@@ -3153,7 +3153,7 @@
                 <div>
                     <select id="sch2" name="sch2" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
                         <option value="-9">--- выбрать ---</option>
-                        <option value="0">0</option>
+NA
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
@@ -4270,7 +4270,8 @@
             </div>
 
             <div class="grid grid-cols-2 gap-4 items-center mt-10">
-                <div>LK22_3_9. Просьба уточнить: … </div><div class="col-span-1 flex items-center gap-4">
+                <div>LK22_3_9. Просьба уточнить: … </div>
+                <div class="col-span-1 flex items-center gap-4">
                     <textarea id="lk22_3_9" name="lk22_3_9" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full"></textarea>
                 </div>
             </div>
@@ -4333,6 +4334,20 @@
                 </div>
             </div>
 
+            <div class="grid grid-cols-2 gap-4 items-center mt-6">
+NA
+                <div class="col-span-1 flex items-center gap-4">
+                    <div class="flex items-center">
+                        <input id="lk22_12-1" type="radio" value="1" name="lk22_12" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <label for="lk22_12-1" class="ms-2 text-sm text-gray-900">1. Да</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="lk22_12-2" type="radio" value="0" name="lk22_12" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <label for="lk22_12-2" class="ms-2 text-sm text-gray-900">0. Нет</label>
+                    </div>
+                </div>
+            </div>
+
             <h3 class="mt-10 text-xl font-semibold bg-gray-100 px-2 py-1 text-gray-700">5.3. НЫНЕШНЕЕ СОСТОЯНИЕ ЗДОРОВЬЯ РЕБЕНКА</h3>
 
             <div class="grid grid-cols-2 gap-4 items-center mt-10">
@@ -4349,7 +4364,11 @@
                     </div>
                     <div class="flex items-center">
                         <input id="qhealthp3-3" type="radio" value="3" name="qhealthp3" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                        <label for="qhealthp3-3" class="ms-2 text-sm text-gray-900">3. Полная зависимость от других</label>
+                        <label for="qhealthp3-3" class="ms-2 text-sm text-gray-900">3. Полностью зависим от других по причине возраста</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="qhealthp3-4" type="radio" value="4" name="qhealthp3" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <label for="qhealthp3-4" class="ms-2 text-sm text-gray-900">4. Полностью зависим от других по причине инвалидности</label>
                     </div>
                 </div>
             </div>
@@ -5380,7 +5399,7 @@
             </div>
 
             <div class="grid grid-cols-2 gap-4 mt-10">
-                <div>SK7. Подали ли родители/опекуны заявление о переводе ребенка в общеобразовательную школу?</div>
+                <div>SK12. Подали ли родители/опекуны заявление о переводе ребенка в общеобразовательную школу?</div>
                 <div class="col-span-1 flex items-center gap-4">
                     <div class="flex items-center">
                         <input id="sk12-1" type="radio" value="1" name="sk12" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
@@ -5394,7 +5413,7 @@
             </div>
 
             <div class="grid grid-cols-2 gap-4 mt-10">
-                <div>SK8. Есть ли заключение психолого-медико-педагогической комиссии о переводе ребенка в общеобразовательную школу?</div>
+                <div>SK13. Есть ли заключение психолого-медико-педагогической комиссии о переводе ребенка в общеобразовательную школу?</div>
                 <div class="col-span-1 flex items-center gap-4">
                     <div class="flex items-center">
                         <input id="sk13-1" type="radio" value="1" name="sk13" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
@@ -5408,7 +5427,7 @@
             </div>
 
             <div class="grid grid-cols-2 gap-4 mt-10">
-                <div>SK9. Была ли у ребенка за последние шесть месяцев возможность проводить время в сообществе и общаться с обычными детьми?</div>
+                <div>SK14. Была ли у ребенка за последние шесть месяцев возможность проводить время в сообществе и общаться с обычными детьми?</div>
                 <div class="col-span-1 flex items-center gap-4">
                     <div class="flex items-center">
                         <input id="sk14-1" type="radio" value="1" name="sk14" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">

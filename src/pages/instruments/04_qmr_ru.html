@@ -6,11 +6,13 @@
     <title>CRM Uzbek</title>
     <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
     <meta http-equiv="Content-Security-Policy"
-        content="default-src 'self'; img-src http: https: data: ; script-src 'self';" />
+        content="default-src 'self'; img-src 'self' http: https: data: ; script-src 'self';" />
     <meta http-equiv="X-Content-Security-Policy"
-        content="default-src 'self'; img-src http: https: data: ; script-src 'self';" />
+        content="default-src 'self'; img-src http: https: 'self' data: ; script-src 'self';" />
     <link href="../../../dist/main.css" rel="stylesheet">
-    <link rel="stylesheet" href="../../../node_modules/flatpickr/dist/flatpickr.min.css">
+    <link rel="stylesheet" href="../../../node_modules/jquery-ui-dist/jquery-ui.min.css">
+    <link rel="stylesheet" href="../../../node_modules/jquery-ui-dist/jquery-ui.structure.min.css">
+    <link rel="stylesheet" href="../../../node_modules/jquery-ui-dist/jquery-ui.theme.min.css">
 </head>
 
 <body class="relative max-h-screen">
@@ -132,13 +134,18 @@
                 <div>
                     <select id="i9" name="i9" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
                         <option value="--" selected>--</option>
-                        <option value="11">Дом «Мехрибонлик»</option>
-                        <option value="12">Дом-интернат «Мурувват» для детей с инвалидностью</option>
-                        <option value="13">Детский дом семейного типа</option>
-                        <option value="14">SOS Детские деревни/семьи</option>
-                        <option value="15">Детский дом (Дом ребенка)</option>
-                        <option value="16">Патронатная семья</option>
-                        <option value="17">Опека/попечительство</option>
+                        <option value="11">11. Дом ребенка</option>
+                        <option value="12">12. детские «дома милосердия» - Мехрибонлик</option>
+                        <option value="13">13. Дома-Интернаты Для Детей С Инвалидностью «Мурувват»</option>
+                        <option value="14">14. SOS Детские деревни</option>
+                        <option value="21">21. I тип - школы-интернаты для глухих детей</option>
+                        <option value="22">22. Тип II - школы-интернаты для слабослышащих и тех, кто впоследствии потеряет слух</option>
+                        <option value="23">23. III тип - специализированные школы-интернаты для слепых детей “Нурли Маскан”</option>
+                        <option value="24">24. IV тип - специализированные школы-интернаты “Нурли Маскан” для слабовидящих и тех, кто впоследствии потеряет зрение</option>
+                        <option value="25">25. V тип - школы-интернаты для детей с тяжелыми нарушениями речи</option>
+                        <option value="26">26. VI тип - школы-интернаты для детей с нарушениями опорно-двигательного аппарата</option>
+                        <option value="27">27. Тип VII - школы-интернаты для детей с задержкой психического развития</option>
+                        <option value="28">28. Тип VIII - поддержка школ-интернатов для детей с задержкой интеллектуального развития</option>
                     </select>
                 </div>
             </div>
@@ -301,98 +308,98 @@
             <div class="ml-4">
                 <div class="grid grid-cols-2 gap-4 items-center mt-6">
                     <div class="col-span-1">а. Продовольственный магазин/супермаркет/продуктовый рынок</div>
-                    <div class="grid grid-cols-2 gap-4 items-center4">
+                    <div class="col-span-1 flex items-center gap-4">
                         <input type="text" id="la2a" name="la2a" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
                         <span>км</span>
                     </div>
                 </div>
                 <div class="grid grid-cols-2 gap-4 items-center mt-6">
                     <div class="col-span-1">б. Остановка автобуса/маршрутки</div>
-                    <div class="grid grid-cols-2 gap-4 items-center4">
+                    <div class="col-span-1 flex items-center gap-4">
                         <input type="text" id="la2b" name="la2b" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
                         <span>км</span>
                     </div>
                 </div>
                 <div class="grid grid-cols-2 gap-4 items-center mt-6">
                     <div class="col-span-1">в. Железнодорожный вокзал/остановка</div>
-                    <div class="grid grid-cols-2 gap-4 items-center4">
+                    <div class="col-span-1 flex items-center gap-4">
                         <input type="text" id="la2c" name="la2c" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
                         <span>км</span>
                     </div>
                 </div>
                 <div class="grid grid-cols-2 gap-4 items-center mt-6">
                     <div class="col-span-1">д. Почтовое отделение</div>
-                    <div class="grid grid-cols-2 gap-4 items-center4">
+                    <div class="col-span-1 flex items-center gap-4">
                         <input type="text" id="la2d" name="la2d" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
                         <span>км</span>
                     </div>
                 </div>
                 <div class="grid grid-cols-2 gap-4 items-center mt-6">
                     <div class="col-span-1">е. Банк</div>
-                    <div class="grid grid-cols-2 gap-4 items-center4">
+                    <div class="col-span-1 flex items-center gap-4">
                         <input type="text" id="la2e" name="la2e" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
                         <span>км</span>
                     </div>
                 </div>
                 <div class="grid grid-cols-2 gap-4 items-center mt-6">
                     <div class="col-span-1">ф. Парк</div>
-                    <div class="grid grid-cols-2 gap-4 items-center4">
+                    <div class="col-span-1 flex items-center gap-4">
                         <input type="text" id="la2f" name="la2f" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
                         <span>км</span>
                     </div>
                 </div>
                 <div class="grid grid-cols-2 gap-4 items-center mt-6">
                     <div class="col-span-1">г. Детский сад</div>
-                    <div class="grid grid-cols-2 gap-4 items-center4">
+                    <div class="col-span-1 flex items-center gap-4">
                         <input type="text" id="la2g" name="la2g" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
                         <span>км</span>
                     </div>
                 </div>
                 <div class="grid grid-cols-2 gap-4 items-center mt-6">
                     <div class="col-span-1">h. Школа</div>
-                    <div class="grid grid-cols-2 gap-4 items-center4">
+                    <div class="col-span-1 flex items-center gap-4">
                         <input type="text" id="la2h" name="la2h" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
                         <span>км</span>
                     </div>
                 </div>
                 <div class="grid grid-cols-2 gap-4 items-center mt-6">
                     <div class="col-span-1">я. Полицейский участок</div>
-                    <div class="grid grid-cols-2 gap-4 items-center4">
+                    <div class="col-span-1 flex items-center gap-4">
                         <input type="text" id="la2i" name="la2i" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
                         <span>км</span>
                     </div>
                 </div>
                 <div class="grid grid-cols-2 gap-4 items-center mt-6">
                     <div class="col-span-1">j. Больница</div>
-                    <div class="grid grid-cols-2 gap-4 items-center4">
+                    <div class="col-span-1 flex items-center gap-4">
                         <input type="text" id="la2j" name="la2j" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
                         <span>км</span>
                     </div>
                 </div>
                 <div class="grid grid-cols-2 gap-4 items-center mt-6">
                     <div class="col-span-1">k. Семейная поликлиника</div>
-                    <div class="grid grid-cols-2 gap-4 items-center4">
+                    <div class="col-span-1 flex items-center gap-4">
                         <input type="text" id="la2k" name="la2k" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
                         <span>км</span>
                     </div>
                 </div>
                 <div class="grid grid-cols-2 gap-4 items-center mt-6">
                     <div class="col-span-1">l. Медицинское учреждение, осуществляющее абилитационную/ реабилитационную деятельность</div>
-                    <div class="grid grid-cols-2 gap-4 items-center4">
+                    <div class="col-span-1 flex items-center gap-4">
                         <input type="text" id="la2l" name="la2l" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
                         <span>км</span>
                     </div>
                 </div>
                 <div class="grid grid-cols-2 gap-4 items-center mt-6">
                     <div class="col-span-1">m. Хокимиат</div>
-                    <div class="grid grid-cols-2 gap-4 items-center4">
+                    <div class="col-span-1 flex items-center gap-4">
                         <input type="text" id="la2m" name="la2m" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
                         <span>км</span>
                     </div>
                 </div>
                 <div class="grid grid-cols-2 gap-4 items-center mt-6">
                     <div class="col-span-1">н. Здание cуда</div>
-                    <div class="grid grid-cols-2 gap-4 items-center4">
+                    <div class="col-span-1 flex items-center gap-4">
                         <input type="text" id="la2n" name="la2n" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
                         <span>км</span>
                     </div>
@@ -440,7 +447,7 @@
             <p class="italic uppercase text-gray-400 mt-6">ДЛЯ УЧРЕЖДЕНИЙ В СЕЛЬСКОЙ МЕСТНОСТИ</p>
             <div class="grid grid-cols-2 gap-4 items-center mt-2">
                 <div class="col-span-1">LA5. Как далеко находится учреждение от ближайшего городского поселения?</div>
-                <div class="grid grid-cols-2 gap-4 items-center4">
+                <div class="col-span-1 flex items-center gap-4">
                     <input type="text" id="la5" name="la5" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
                     <span>км</span>
                 </div>
@@ -451,14 +458,14 @@
             <div class="ml-4">
                 <div class="grid grid-cols-2 gap-4 items-center mt-2">
                     <div class="col-span-1">а. Легковые автомобили</div>
-                    <div class="grid grid-cols-2 gap-4 items-center4">
+                    <div class="col-span-1 flex items-center gap-4">
                         <input type="text" id="la6a" name="la6a" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
                         <span>транспортные средства</span>
                     </div>
                 </div>
                 <div class="grid grid-cols-2 gap-4 items-center mt-2">
                     <div class="col-span-1">б. Фургоны, микроавтобусы и другие пассажирские транспортные средства с числом мест более 8</div>
-                    <div class="grid grid-cols-2 gap-4 items-center4">
+                    <div class="col-span-1 flex items-center gap-4">
                         <input type="text" id="la6b" name="la6b" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
                         <span>транспортные средства</span>
                     </div>
@@ -467,7 +474,7 @@
 
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
                 <div class="col-span-1">LA7. Сколько из этих пассажирских транспортных средств приспособлено для людей с ограниченными возможностями передвижения?</div>
-                <div class="grid grid-cols-2 gap-4 items-center4">
+                <div class="col-span-1 flex items-center gap-4">
                     <input type="text" id="la7" name="la7" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
                     <span>транспортные средства</span>
                 </div>
@@ -475,7 +482,7 @@
 
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
                 <div class="col-span-1">LA8. Сколько таких легковых автомобилей используется для перевозки детей, проживающих в учреждении?</div>
-                <div class="grid grid-cols-2 gap-4 items-center4">
+                <div class="col-span-1 flex items-center gap-4">
                     <input type="text" id="la8" name="la8" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
                     <span>транспортные средства</span>
                 </div>
@@ -485,7 +492,7 @@
 
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
                 <div class="col-span-1">AF1. Какова общая площадь земельного участка, на котором расположено учреждение?</div>
-                <div class="grid grid-cols-2 gap-4 items-center4">
+                <div class="col-span-1 flex items-center gap-4">
                     <input type="text" id="af1" name="af1" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
                     <span>кв.м.</span>
                 </div>
@@ -514,13 +521,13 @@
             <div class="ml-4">
                 <div class="grid grid-cols-2 gap-4 items-center mt-2">
                     <div class="col-span-1">а. Количество отдельных зданий, которыми располагает учреждение</div>
-                    <div class="grid grid-cols-2 gap-4 items-center4">
+                    <div class="col-span-1 flex items-center gap-4">
                         <input type="text" id="af4a" name="af4a" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
                     </div>
                 </div>
                 <div class="grid grid-cols-2 gap-4 items-center mt-2">
                     <div class="col-span-1">б. Количество зданий, в которых проживают дети</div>
-                    <div class="grid grid-cols-2 gap-4 items-center4">
+                    <div class="col-span-1 flex items-center gap-4">
                         <input type="text" id="af4b" name="af4b" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
                     </div>
                 </div>
@@ -1051,6 +1058,10 @@
                         <label for="af12_9" class="ms-2 text-sm text-gray-900">Другие, пожалуйста, укажите..</label>
                     </div>
                     <textarea id="af12_9_other" name="af12_9_other" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full"></textarea>
+                    <div class="flex items-center">
+                        <input id="af12_10" type="checkbox" value="1" name="af12_10" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <label for="af12_10" class="ms-2 text-sm text-gray-900">Ни одно из вышеперечисленного</label>
+                    </div>
                 </div>
             </div>
 
@@ -1260,9 +1271,7 @@
                         <td class="p-1">
                             <input type="text" id="ac1h1" name="ac1h1" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5" />
                         </td>
-                        <td class="p-1">
-                            <input type="text" id="ac1h2" name="ac1h2" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5" />
-                        </td>
+                        <td class="p-1"></td>
                     </tr>
                     <tr>
                         <td class="p-1">i. Изоляторы для одиночного пребывания для детей с проблемами в поведении</td>
@@ -1282,6 +1291,15 @@
                             <input type="text" id="ac1j2" name="ac1j2" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5" />
                         </td>
                     </tr>
+                    <!-- <tr>
+                        <td class="p-1"></td>
+                        <td class="p-1">
+                            <input type="text" id="ac1k1" name="ac1k1" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5" />
+                        </td>
+                        <td class="p-1">
+                            <input type="text" id="ac1k2" name="ac1k2" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5" />
+                        </td>
+                    </tr> -->
                 </tbody>
             </table>
 
@@ -1322,8 +1340,8 @@
                         <input type="text" id="ac3_5_other" name="ac3_5_other" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
                     </div>
                     <div class="flex items-center">
-                        <input id="ac3_5" type="checkbox" value="1" name="ac3_6" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                        <label for="ac3_5" class="ms-2 text-sm text-gray-900">Нет конкретных критериев</label>
+                        <input id="ac3_6" type="checkbox" value="1" name="ac3_6" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <label for="ac3_6" class="ms-2 text-sm text-gray-900">Нет конкретных критериев</label>
                     </div>
                 </div>
             </div>
@@ -1415,7 +1433,7 @@
 
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
                 <div class="col-span-1">AC6. Все ли дети, проживающие в учреждении, имеют собственную кровать, не совмещенную с другими детьми?</div>
-                <div class="grid grid-cols-2 gap-4 items-center4">
+                <div class="col-span-1 flex items-center gap-4">
                     <div class="flex items-center">
                         <input id="ac6-1" type="radio" value="1" name="ac6" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="ac6-1" class="ms-2 text-sm text-gray-900">1. Да</label>
@@ -1436,7 +1454,7 @@
 
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
                 <div class="col-span-1">AC7a. Имеет ли каждый ребенок, проживающий в учреждении, не менее двух полотенец для личного пользования?</div>
-                <div class="grid grid-cols-2 gap-4 items-center4">
+                <div class="col-span-1 flex items-center gap-4">
                     <div class="flex items-center">
                         <input id="ac7a-1" type="radio" value="1" name="ac7a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="ac7a-1" class="ms-2 text-sm text-gray-900">1. Да</label>
@@ -1495,7 +1513,7 @@
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
                 <div class="col-span-1">AC9a. Достаточно ли у каждого ребенка, проживающего в учреждении, качественной и подходящей (как по размеру, так и по сезону) одежды для себя?
                 </div>
-                <div class="grid grid-cols-2 gap-4 items-center4">
+                <div class="col-span-1 flex items-center gap-4">
                     <div class="flex items-center">
                         <input id="ac9a-1" type="radio" value="1" name="ac9a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="ac9a-1" class="ms-2 text-sm text-gray-900">1. Да</label>
@@ -1509,7 +1527,7 @@
 
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
                 <div class="col-span-1">AC9b. Обеспечивает ли учреждение одеждой всех, некоторых или никого из детей, проживающих в учреждении?</div>
-                <div class="grid grid-cols-2 gap-4 items-center4">
+                <div class="col-span-1 flex items-center gap-4">
                     <div class="flex items-center">
                         <input id="ac9b-1" type="radio" value="1" name="ac9b" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="ac9b-1" class="ms-2 text-sm text-gray-900">1. Всех</label>
@@ -1563,7 +1581,7 @@
 
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
                 <div class="col-span-1">AC10a. Имеет ли каждый ребенок, проживающий в учреждении, не менее двух пар качественной и подходящей собственной обуви?</div>
-                <div class="grid grid-cols-2 gap-4 items-center4">
+                <div class="col-span-1 flex items-center gap-4">
                     <div class="flex items-center">
                         <input id="ac10a-1" type="radio" value="1" name="ac10a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="ac10a-1" class="ms-2 text-sm text-gray-900">1. Да</label>
@@ -1577,7 +1595,7 @@
 
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
                 <div class="col-span-1">AC10b. Обеспечивает ли учреждение обувью всех, некоторых или ни одного ребенка, проживающего в учреждении?</div>
-                <div class="grid grid-cols-2 gap-4 items-center4">
+                <div class="col-span-1 flex items-center gap-4">
                     <div class="flex items-center">
                         <input id="ac10b-1" type="radio" value="1" name="ac10b" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="ac10b-1" class="ms-2 text-sm text-gray-900">1. Всех</label>
@@ -1632,7 +1650,7 @@
 
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
                 <div class="col-span-1">AC11. Имеют ли дети право голоса при выборе одежды и обуви?</div>
-                <div class="grid grid-cols-2 gap-4 items-center4">
+                <div class="col-span-1 flex items-center gap-4">
                     <div class="flex items-center">
                         <input id="ac11-1" type="radio" value="1" name="ac11" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="ac11-1" class="ms-2 text-sm text-gray-900">1. Да</label>
@@ -1646,7 +1664,7 @@
 
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
                 <div class="col-span-1">AC111. Есть ли в комнате у детей шкафы, тумбочки или другие предметы мебели, где они могут хранить свою одежду и другие личные вещи?</div>
-                <div class="grid grid-cols-2 gap-4 items-center4">
+                <div class="col-span-1 flex items-center gap-4">
                     <div class="flex items-center">
                         <input id="ac111-1" type="radio" value="1" name="ac111" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="ac111-1" class="ms-2 text-sm text-gray-900">1. Да</label>
@@ -1660,7 +1678,7 @@
 
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
                 <div class="col-span-1">AC12a. Есть ли у каждого ребенка, проживающего в учреждении, своя зубная щетка?</div>
-                <div class="grid grid-cols-2 gap-4 items-center4">
+                <div class="col-span-1 flex items-center gap-4">
                     <div class="flex items-center">
                         <input id="ac12a-1" type="radio" value="1" name="ac12a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="ac12a-1" class="ms-2 text-sm text-gray-900">1. Да</label>
@@ -1674,7 +1692,7 @@
 
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
                 <div class="col-span-1">AC12b. Предоставляет ли учреждение зубные щетки всем, некоторым или ни одному из детей, проживающих в учреждении?</div>
-                <div class="grid grid-cols-2 gap-4 items-center4">
+                <div class="col-span-1 flex items-center gap-4">
                     <div class="flex items-center">
                         <input id="ac12b-1" type="radio" value="1" name="ac12b" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="ac12b-1" class="ms-2 text-sm text-gray-900">1. Всем</label>
@@ -1702,7 +1720,7 @@
 
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
                 <div class="col-span-1">AC13. Позволяет ли учреждение ребенку запирать свои вещи и иметь к ним доступ в любое время?</div>
-                <div class="grid grid-cols-2 gap-4 items-center4">
+                <div class="col-span-1 flex items-center gap-4">
                     <div class="flex items-center">
                         <input id="ac13-1" type="radio" value="1" name="ac13" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="ac13-1" class="ms-2 text-sm text-gray-900">1. Да</label>
@@ -1933,7 +1951,7 @@
 
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
                 <div class="col-span-1">СС8. Получают ли оОбычно дети получают дополнительные порции, если просят?</div>
-                <div class="grid grid-cols-2 gap-4 items-center4">
+                <div class="col-span-1 flex items-center gap-4">
                     <div class="flex items-center">
                         <input id="cc8-1" type="radio" value="1" name="cc8" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="cc8-1" class="ms-2 text-sm text-gray-900">1. Да</label>
@@ -1946,7 +1964,7 @@
             </div>
 
             <table class="w-full mt-6" aria-label="Как часто дети получают каждое из следующего …?">
-                <thead>
+                <tbody>
                     <tr class="border-b">
                         <th class="p-2 text-left">СС10. Как часто дети получают каждое из следующего …?</th>
                         <th class="p-2">Ежедневно или почти ежедневно</th>
@@ -1955,8 +1973,6 @@
                         <th class="p-2">Менее часто</th>
                         <th class="p-2">Никогда</th>
                     </tr>
-                </thead>
-                <tbody>
                     <tr>
                         <td>а. Свежие фрукты (например, яблоки, бананы, апельсины, виноград и т.д.)</td>
                         <td class="text-center p-1"><input id="cc10a-1" type="radio" value="1" name="cc10a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
@@ -2139,7 +2155,7 @@
                 <div class="col-span-1 flex flex-col gap-2">
                     <div class="flex flex-col gap-4">
                         <div class="grid grid-cols-2">
-                            <div></div>
+                            <div>а. Выделенные помещения</div>
                             <div class="flex items-center gap-2">
                                 <input type="text" id="rce3a" name="rce3a" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-20" />
                                 пространства
@@ -2159,8 +2175,8 @@
             <p class="mt-6">RCE4. Как бы вы оценили имеющиеся ресурсы для образовательной деятельности в учреждении?</p>
             <small class="italic mt-2">Пожалуйста, используйте следующую шкалу от 1 (очень плохо) до 5 (отлично)</small>
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
-                <div class="col-span-1 ml-4">Помещения достаточны по размеру и количеству для проведения образовательных мероприятий.</div>
-                <div class="grid grid-cols-2 gap-4 items-center4">
+                <div class="col-span-1 ml-4">a. Помещения достаточны по размеру и количеству для проведения образовательных мероприятий.</div>
+                <div class="col-span-1 flex items-center gap-4">
                     <div class="flex items-center">
                         <input id="rce4a-1" type="radio" value="1" name="rce4a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="rce4a-1" class="ms-2 text-sm text-gray-900">1</label>
@@ -2184,8 +2200,8 @@
                 </div>
             </div>
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
-                <div class="col-span-1 ml-4">Помещения хорошо оборудованы и ухожены для проведения образовательных мероприятий.</div>
-                <div class="grid grid-cols-2 gap-4 items-center4">
+                <div class="col-span-1 ml-4">б. Помещения хорошо оборудованы и ухожены для проведения образовательных мероприятий.</div>
+                <div class="col-span-1 flex items-center gap-4">
                     <div class="flex items-center">
                         <input id="rce4b-1" type="radio" value="1" name="rce4b" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="rce4b-1" class="ms-2 text-sm text-gray-900">1</label>
@@ -2209,8 +2225,8 @@
                 </div>
             </div>
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
-                <div class="col-span-1 ml-4">Численность персонала, занимающегося образовательной деятельностью</div>
-                <div class="grid grid-cols-2 gap-4 items-center4">
+                <div class="col-span-1 ml-4">c. Численность персонала, занимающегося образовательной деятельностью</div>
+                <div class="col-span-1 flex items-center gap-4">
                     <div class="flex items-center">
                         <input id="rce4c-1" type="radio" value="1" name="rce4c" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="rce4c-1" class="ms-2 text-sm text-gray-900">1</label>
@@ -2234,8 +2250,8 @@
                 </div>
             </div>
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
-                <div class="col-span-1 ml-4">Квалификация персонала, занимающегося образовательной деятельностью</div>
-                <div class="grid grid-cols-2 gap-4 items-center4">
+                <div class="col-span-1 ml-4">д. Квалификация персонала, занимающегося образовательной деятельностью</div>
+                <div class="col-span-1 flex items-center gap-4">
                     <div class="flex items-center">
                         <input id="rce4d-1" type="radio" value="1" name="rce4d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="rce4d-1" class="ms-2 text-sm text-gray-900">1</label>
@@ -2382,23 +2398,21 @@
             </div>
 
             <table class="w-full mt-6" aria-label="Какие из следующих помещений для специальной деятельности по реабилитации и развитию имеются в учреждении?">
-                <thead>
-                    <tr class="border-b">
-                        <th class="p-2 align-bottom text-left" rowspan="2" scope="col">EDU2. Какие из следующих помещений для специальной деятельности по реабилитации и развитию имеются в учреждении?</th>
-                        <th class="p-2 align-bottom" rowspan="2" scope="col">Да, выделенный</th>
-                        <th class="p-2 align-bottom" rowspan="2" scope="col">Да, общий</th>
-                        <th class="px-4 py-2 align-bottom" rowspan="2" scope="col">Не имеется</th>
-                        <th class=" p-2 align-bottom text-left border-l" scope="col" colspan="5">EDU3. Пожалуйста, оцените доступное существующее пространство и существующие условия для каждого вида деятельности по шкале от 1 (очень плохо) до 5 (отлично)</th>
-                    </tr>
-                    <tr class="border-b">
-                        <th class="p-2 border-l" scope="col">1</th>
-                        <th class="p-2" scope="col">2</th>
-                        <th class="p-2" scope="col">3</th>
-                        <th class="p-2" scope="col">4</th>
-                        <th class="p-2" scope="col">5</th>
-                    </tr>
-                </thead>
                 <tbody>
+                    <tr class="border-b">
+                        <td class="p-2 align-bottom text-left" rowspan="2" scope="col">EDU2. Какие из следующих помещений для специальной деятельности по реабилитации и развитию имеются в учреждении?</td>
+                        <td class="p-2 text-center align-bottom" rowspan="2" scope="col">Да, выделенный</td>
+                        <td class="p-2 text-center align-bottom" rowspan="2" scope="col">Да, общий</td>
+                        <td class="px-4 py-2 align-bottom" rowspan="2" scope="col">Не имеется</td>
+                        <td class="p-2 text-center align-bottom text-left border-l" scope="col" colspan="5">EDU3. Пожалуйста, оцените доступное существующее пространство и существующие условия для каждого вида деятельности по шкале от 1 (очень плохо) до 5 (отлично)</td>
+                    </tr>
+                    <tr class="border-b">
+                        <td class="p-2 text-center border-l" scope="col">1</td>
+                        <td class="p-2 text-center" scope="col">2</td>
+                        <td class="p-2 text-center" scope="col">3</td>
+                        <td class="p-2 text-center" scope="col">4</td>
+                        <td class="p-2 text-center" scope="col">5</td>
+                    </tr>
                     <tr>
                         <td class="p-2">a. Медицинский кабинет</td>
                         <td class="p-2 text-center"><input id="edu2a-1" type="radio" value="1" name="edu2a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
@@ -2651,7 +2665,7 @@
 
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
                 <div class="col-span-1">FT5a. Имеют ли дети доступ к крытым развлекательным объектам в любое время в свободное время?</div>
-                <div class="grid grid-cols-2 gap-4 items-center4">
+                <div class="col-span-1 flex items-center gap-4">
                     <div class="flex items-center">
                         <input id="ft5a-1" type="radio" value="1" name="ft5a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="ft5a-1" class="ms-2 text-sm text-gray-900">1. Да</label>
@@ -2665,7 +2679,7 @@
 
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
                 <div class="col-span-1">FT5b. Имеют ли дети доступ к местам отдыха на свежем воздухе в любое свободное время?</div>
-                <div class="grid grid-cols-2 gap-4 items-center4">
+                <div class="col-span-1 flex items-center gap-4">
                     <div class="flex items-center">
                         <input id="ft5b-1" type="radio" value="1" name="ft5b" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="ft5b-1" class="ms-2 text-sm text-gray-900">1. Да</label>
@@ -2982,6 +2996,11 @@
                     </tr>
                 </tbody>
             </table>
+
+            <div class="grid mt-10">
+                <label for="obs">OBS. Наблюдения</label>
+                <textarea class="form-control" rows="3" id="obs" name="obs"></textarea>
+            </div>
 
 
         </form>

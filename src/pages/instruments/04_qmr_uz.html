@@ -6,11 +6,13 @@
     <title>CRM Uzbek</title>
     <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
     <meta http-equiv="Content-Security-Policy"
-        content="default-src 'self'; img-src http: https: data: ; script-src 'self';" />
+        content="default-src 'self'; img-src 'self' http: https: data: ; script-src 'self';" />
     <meta http-equiv="X-Content-Security-Policy"
-        content="default-src 'self'; img-src http: https: data: ; script-src 'self';" />
+        content="default-src 'self'; img-src http: https: 'self' data: ; script-src 'self';" />
     <link href="../../../dist/main.css" rel="stylesheet">
-    <link rel="stylesheet" href="../../../node_modules/flatpickr/dist/flatpickr.min.css">
+    <link rel="stylesheet" href="../../../node_modules/jquery-ui-dist/jquery-ui.min.css">
+    <link rel="stylesheet" href="../../../node_modules/jquery-ui-dist/jquery-ui.structure.min.css">
+    <link rel="stylesheet" href="../../../node_modules/jquery-ui-dist/jquery-ui.theme.min.css">
 </head>
 
 <body class="relative max-h-screen">
@@ -132,13 +134,18 @@
                 <div>
                     <select id="i9" name="i9" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
                         <option value="--" selected>--</option>
-                        <option value="11">Mehribonlik uyi</option>
-                        <option value="12">"Muruvvat" nogironligi bo'lgan bolalar uchun  internat uyi</option>
-                        <option value="13">Oilaviy bolalar uyi</option>
-                        <option value="14">SOS Bolalar makhallalari/oilalari</option>
-                        <option value="15">Bolalar uyi</option>
-                        <option value="16">Patronat oila</option>
-                        <option value="17">Vasiylik/homiylik</option>
+                        <option value="11">11. Bolalar uyi</option>
+                        <option value="12">12. Mehribonlik uyi</option>
+                        <option value="13">13. “Muruvvat” nogironligi bo’lgan bolalar uchun internat uyi</option>
+                        <option value="14">14. SOS-bolalar qishloqlari / oilalari</option>
+                        <option value="21">21. I tur - kar bolalar uchun internatlar</option>
+                        <option value="22">22. II tur - eshitish qobiliyati zaif va kelgusida eshitish qobiliyatini yo’qotadiganlar uchun internatlar</option>
+                        <option value="23">23. III tur - “Nurli maskan” ko’zi ojiz bolalar uchun ixtisoslashtirilgan maktab-internatlari</option>
+                        <option value="24">24. IV tur - ko’zi ojiz va keyinchalik ko’rish qobiliyatini yo’qotadiganlar uchun “Noorli maskan” ixtisoslashtirilgan maktab-internatlari</option>
+                        <option value="25">25. V tur - og’ir nutq buzilishi bo’lgan bolalar uchun internatlar</option>
+                        <option value="26">26. VI tur - tayanch-harakat apparati nuqsonlari bo’lgan bolalar uchun internatlar</option>
+                        <option value="27">27. VII tur - aqli zaif bolalar maktab-internatlari</option>
+                        <option value="28">28. VIII tur - aqli zaif bolalar maktab-internatlarini qo’llash</option>
                     </select>
                 </div>
             </div>
@@ -301,98 +308,98 @@
             <div class="ml-4">
                 <div class="grid grid-cols-2 gap-4 items-center mt-6">
                     <div class="col-span-1">a. Oziq-ovqat do'koni / supermarket / oziq-ovqat bozori</div>
-                    <div class="grid grid-cols-2 gap-4 items-center4">
+                    <div class="col-span-1 flex items-center gap-4">
                         <input type="text" id="la2a" name="la2a" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
                         <span>km</span>
                     </div>
                 </div>
                 <div class="grid grid-cols-2 gap-4 items-center mt-6">
                     <div class="col-span-1">b. Avtobus / mikroavtobus bekati</div>
-                    <div class="grid grid-cols-2 gap-4 items-center4">
+                    <div class="col-span-1 flex items-center gap-4">
                         <input type="text" id="la2b" name="la2b" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
                         <span>km</span>
                     </div>
                 </div>
                 <div class="grid grid-cols-2 gap-4 items-center mt-6">
                     <div class="col-span-1">c. Poyezd vokzali / bekati</div>
-                    <div class="grid grid-cols-2 gap-4 items-center4">
+                    <div class="col-span-1 flex items-center gap-4">
                         <input type="text" id="la2c" name="la2c" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
                         <span>km</span>
                     </div>
                 </div>
                 <div class="grid grid-cols-2 gap-4 items-center mt-6">
                     <div class="col-span-1">d. Pochta bo'limi</div>
-                    <div class="grid grid-cols-2 gap-4 items-center4">
+                    <div class="col-span-1 flex items-center gap-4">
                         <input type="text" id="la2d" name="la2d" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
                         <span>km</span>
                     </div>
                 </div>
                 <div class="grid grid-cols-2 gap-4 items-center mt-6">
                     <div class="col-span-1">e. Bank</div>
-                    <div class="grid grid-cols-2 gap-4 items-center4">
+                    <div class="col-span-1 flex items-center gap-4">
                         <input type="text" id="la2e" name="la2e" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
                         <span>km</span>
                     </div>
                 </div>
                 <div class="grid grid-cols-2 gap-4 items-center mt-6">
                     <div class="col-span-1">f. Park</div>
-                    <div class="grid grid-cols-2 gap-4 items-center4">
+                    <div class="col-span-1 flex items-center gap-4">
                         <input type="text" id="la2f" name="la2f" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
                         <span>km</span>
                     </div>
                 </div>
                 <div class="grid grid-cols-2 gap-4 items-center mt-6">
                     <div class="col-span-1">g. Bolalar bog'chasi</div>
-                    <div class="grid grid-cols-2 gap-4 items-center4">
+                    <div class="col-span-1 flex items-center gap-4">
                         <input type="text" id="la2g" name="la2g" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
                         <span>km</span>
                     </div>
                 </div>
                 <div class="grid grid-cols-2 gap-4 items-center mt-6">
                     <div class="col-span-1">h. Maktab</div>
-                    <div class="grid grid-cols-2 gap-4 items-center4">
+                    <div class="col-span-1 flex items-center gap-4">
                         <input type="text" id="la2h" name="la2h" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
                         <span>km</span>
                     </div>
                 </div>
                 <div class="grid grid-cols-2 gap-4 items-center mt-6">
                     <div class="col-span-1">i. Politsiya mahkamasi</div>
-                    <div class="grid grid-cols-2 gap-4 items-center4">
+                    <div class="col-span-1 flex items-center gap-4">
                         <input type="text" id="la2i" name="la2i" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
                         <span>km</span>
                     </div>
                 </div>
                 <div class="grid grid-cols-2 gap-4 items-center mt-6">
                     <div class="col-span-1">j. Shifoxona</div>
-                    <div class="grid grid-cols-2 gap-4 items-center4">
+                    <div class="col-span-1 flex items-center gap-4">
                         <input type="text" id="la2j" name="la2j" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
                         <span>km</span>
                     </div>
                 </div>
                 <div class="grid grid-cols-2 gap-4 items-center mt-6">
                     <div class="col-span-1">k. Oilaviy poliklinika</div>
-                    <div class="grid grid-cols-2 gap-4 items-center4">
+                    <div class="col-span-1 flex items-center gap-4">
                         <input type="text" id="la2k" name="la2k" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
                         <span>km</span>
                     </div>
                 </div>
                 <div class="grid grid-cols-2 gap-4 items-center mt-6">
                     <div class="col-span-1">l. Abilitatsiya / reabilitatsiya tadbirlarini ta'minlaydigan sog'liqni saqlash muassasasi</div>
-                    <div class="grid grid-cols-2 gap-4 items-center4">
+                    <div class="col-span-1 flex items-center gap-4">
                         <input type="text" id="la2l" name="la2l" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
                         <span>km</span>
                     </div>
                 </div>
                 <div class="grid grid-cols-2 gap-4 items-center mt-6">
                     <div class="col-span-1">m. Hokimiyat</div>
-                    <div class="grid grid-cols-2 gap-4 items-center4">
+                    <div class="col-span-1 flex items-center gap-4">
                         <input type="text" id="la2m" name="la2m" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
                         <span>km</span>
                     </div>
                 </div>
                 <div class="grid grid-cols-2 gap-4 items-center mt-6">
                     <div class="col-span-1">n. Sud</div>
-                    <div class="grid grid-cols-2 gap-4 items-center4">
+                    <div class="col-span-1 flex items-center gap-4">
                         <input type="text" id="la2n" name="la2n" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
                         <span>km</span>
                     </div>
@@ -440,7 +447,7 @@
             <p class="italic uppercase text-gray-400 mt-6">QISHLOQ JOYLARDAGI MUASSASALAR UCHUN</p>
             <div class="grid grid-cols-2 gap-4 items-center mt-2">
                 <div class="col-span-1">LA5. Muassasa eng yaqin shahar hududidan qancha masofada joylashgan?</div>
-                <div class="grid grid-cols-2 gap-4 items-center4">
+                <div class="col-span-1 flex items-center gap-4">
                     <input type="text" id="la5" name="la5" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
                     <span>km</span>
                 </div>
@@ -451,14 +458,14 @@
             <div class="ml-4">
                 <div class="grid grid-cols-2 gap-4 items-center mt-2">
                     <div class="col-span-1">a. Yengil avtomobillar</div>
-                    <div class="grid grid-cols-2 gap-4 items-center4">
+                    <div class="col-span-1 flex items-center gap-4">
                         <input type="text" id="la6a" name="la6a" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
                         <span>transport vositalari</span>
                     </div>
                 </div>
                 <div class="grid grid-cols-2 gap-4 items-center mt-2">
                     <div class="col-span-1">b. Furgonlar, mikroavtobuslar yoki 8 dan ortiq o'rindiqli boshqa yo'lovchi transport vositalari</div>
-                    <div class="grid grid-cols-2 gap-4 items-center4">
+                    <div class="col-span-1 flex items-center gap-4">
                         <input type="text" id="la6b" name="la6b" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
                         <span>transport vositalari</span>
                     </div>
@@ -467,7 +474,7 @@
 
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
                 <div class="col-span-1">LA7. Ushbu yo'lovchi tashish vositalarining qanchasi harakatlanishi cheklangan shaxslar uchun moslashtirilgan?</div>
-                <div class="grid grid-cols-2 gap-4 items-center4">
+                <div class="col-span-1 flex items-center gap-4">
                     <input type="text" id="la7" name="la7" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
                     <span>transport vositalari</span>
                 </div>
@@ -475,7 +482,7 @@
 
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
                 <div class="col-span-1">LA8. Muassasada yashovchi bolalarni tashish uchun ushbu yo'lovchi transport vositalaridan nechtasi foydalaniladi?</div>
-                <div class="grid grid-cols-2 gap-4 items-center4">
+                <div class="col-span-1 flex items-center gap-4">
                     <input type="text" id="la8" name="la8" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
                     <span>transport vositalari</span>
                 </div>
@@ -485,7 +492,7 @@
 
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
                 <div class="col-span-1">AF1. Muassasa joylashgan yerning umumiy maydoni qancha?</div>
-                <div class="grid grid-cols-2 gap-4 items-center4">
+                <div class="col-span-1 flex items-center gap-4">
                     <input type="text" id="af1" name="af1" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
                     <span>kv.m.</span>
                 </div>
@@ -514,13 +521,13 @@
             <div class="ml-4">
                 <div class="grid grid-cols-2 gap-4 items-center mt-2">
                     <div class="col-span-1">a. Tashkilotda mavjud alohida binolar soni</div>
-                    <div class="grid grid-cols-2 gap-4 items-center4">
+                    <div class="col-span-1 flex items-center gap-4">
                         <input type="text" id="af4a" name="af4a" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
                     </div>
                 </div>
                 <div class="grid grid-cols-2 gap-4 items-center mt-2">
                     <div class="col-span-1">b. Bolalar yashaydigan binolar soni</div>
-                    <div class="grid grid-cols-2 gap-4 items-center4">
+                    <div class="col-span-1 flex items-center gap-4">
                         <input type="text" id="af4b" name="af4b" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
                     </div>
                 </div>
@@ -1051,6 +1058,10 @@
                         <label for="af12_9" class="ms-2 text-sm text-gray-900">Boshqalar, iltimos, aniq ko'rsating..</label>
                     </div>
                     <textarea id="af12_9_other" name="af12_9_other" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full"></textarea>
+                    <div class="flex items-center">
+                        <input id="af12_10" type="checkbox" value="1" name="af12_10" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <label for="af12_10" class="ms-2 text-sm text-gray-900">Yuqoridagilardan hech qaysi biri</label>
+                    </div>
                 </div>
             </div>
 
@@ -1260,9 +1271,7 @@
                         <td class="p-1">
                             <input type="text" id="ac1h1" name="ac1h1" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5" />
                         </td>
-                        <td class="p-1">
-                            <input type="text" id="ac1h2" name="ac1h2" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5" />
-                        </td>
+                        <td class="p-1"></td>
                     </tr>
                     <tr>
                         <td class="p-1">i. Hulqida muammosi bor bolalar uchun yakka tartibda saqlash izolyatsiya xonalari</td>
@@ -1282,6 +1291,15 @@
                             <input type="text" id="ac1j2" name="ac1j2" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5" />
                         </td>
                     </tr>
+                    <!-- <tr>
+                        <td class="p-1"></td>
+                        <td class="p-1">
+                            <input type="text" id="ac1k1" name="ac1k1" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5" />
+                        </td>
+                        <td class="p-1">
+                            <input type="text" id="ac1k2" name="ac1k2" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5" />
+                        </td>
+                    </tr> -->
                 </tbody>
             </table>
 
@@ -1322,8 +1340,8 @@
                         <input type="text" id="ac3_5_other" name="ac3_5_other" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
                     </div>
                     <div class="flex items-center">
-                        <input id="ac3_5" type="checkbox" value="1" name="ac3_6" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                        <label for="ac3_5" class="ms-2 text-sm text-gray-900">Muayyan mezonlar yo'q</label>
+                        <input id="ac3_6" type="checkbox" value="1" name="ac3_6" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <label for="ac3_6" class="ms-2 text-sm text-gray-900">Muayyan mezonlar yo'q</label>
                     </div>
                 </div>
             </div>
@@ -1415,7 +1433,7 @@
 
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
                 <div class="col-span-1">AC6. Muassasada yashovchi barcha bolalar boshqa bolalar bilan birga foydalanmaydigan, o'z yotog'iga egami?</div>
-                <div class="grid grid-cols-2 gap-4 items-center4">
+                <div class="col-span-1 flex items-center gap-4">
                     <div class="flex items-center">
                         <input id="ac6-1" type="radio" value="1" name="ac6" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="ac6-1" class="ms-2 text-sm text-gray-900">1. Ha</label>
@@ -1436,7 +1454,7 @@
 
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
                 <div class="col-span-1">AC7a. Muassasada yashovchi har bir bolaning o'zi uchun kamida ikkita sochiq bormi?</div>
-                <div class="grid grid-cols-2 gap-4 items-center4">
+                <div class="col-span-1 flex items-center gap-4">
                     <div class="flex items-center">
                         <input id="ac7a-1" type="radio" value="1" name="ac7a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="ac7a-1" class="ms-2 text-sm text-gray-900">1. Ha</label>
@@ -1495,7 +1513,7 @@
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
                 <div class="col-span-1">AC9a. Muassasada yashovchi har bir bolaning o'zi uchun yetarlicha sifatli va mos (hajmi va mavsumi bo'yicha) kiyim-kechaklari bormi?
                 </div>
-                <div class="grid grid-cols-2 gap-4 items-center4">
+                <div class="col-span-1 flex items-center gap-4">
                     <div class="flex items-center">
                         <input id="ac9a-1" type="radio" value="1" name="ac9a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="ac9a-1" class="ms-2 text-sm text-gray-900">1. Ha</label>
@@ -1509,7 +1527,7 @@
 
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
                 <div class="col-span-1">AC9b. Muassasada yashovchi bolalarning hammasini, ayrimlarini yoki hech birini kiyim bilan muassasa ta'minlaydimi?</div>
-                <div class="grid grid-cols-2 gap-4 items-center4">
+                <div class="col-span-1 flex items-center gap-4">
                     <div class="flex items-center">
                         <input id="ac9b-1" type="radio" value="1" name="ac9b" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="ac9b-1" class="ms-2 text-sm text-gray-900">1. Hammasini</label>
@@ -1563,7 +1581,7 @@
 
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
                 <div class="col-span-1">AC10a. Muassasada yashovchi har bir bolaning o'zi uchun kamida ikki juft sifatli va loyiq poyabzali bormi?</div>
-                <div class="grid grid-cols-2 gap-4 items-center4">
+                <div class="col-span-1 flex items-center gap-4">
                     <div class="flex items-center">
                         <input id="ac10a-1" type="radio" value="1" name="ac10a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="ac10a-1" class="ms-2 text-sm text-gray-900">1. Ha</label>
@@ -1577,7 +1595,7 @@
 
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
                 <div class="col-span-1">AC10b. Muassasada yashovchi bolalarning hammasini, ayrimlarini yoki hech birini poyabzal bilan muassasa ta'minlaydimi?</div>
-                <div class="grid grid-cols-2 gap-4 items-center4">
+                <div class="col-span-1 flex items-center gap-4">
                     <div class="flex items-center">
                         <input id="ac10b-1" type="radio" value="1" name="ac10b" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="ac10b-1" class="ms-2 text-sm text-gray-900">1. Hammasini</label>
@@ -1632,7 +1650,7 @@
 
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
                 <div class="col-span-1">AC11. Kiyim va poyafzal tanlashda bolalarning fikri inobatga olinadimi?</div>
-                <div class="grid grid-cols-2 gap-4 items-center4">
+                <div class="col-span-1 flex items-center gap-4">
                     <div class="flex items-center">
                         <input id="ac11-1" type="radio" value="1" name="ac11" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="ac11-1" class="ms-2 text-sm text-gray-900">1. Ha</label>
@@ -1646,7 +1664,7 @@
 
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
                 <div class="col-span-1">AC111. Bolalar o'z xonasida o'z kiyimlari va boshqa shaxsiy buyumlarini saqlashlari mumkin bo'lgan shkaflar, g'aladonlar yoki boshqa mebel buyumlari bormi?</div>
-                <div class="grid grid-cols-2 gap-4 items-center4">
+                <div class="col-span-1 flex items-center gap-4">
                     <div class="flex items-center">
                         <input id="ac111-1" type="radio" value="1" name="ac111" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="ac111-1" class="ms-2 text-sm text-gray-900">1. Ha</label>
@@ -1660,7 +1678,7 @@
 
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
                 <div class="col-span-1">AC12a. Muassasada yashovchi har bir bolaning o'z tish cho'tkasi bormi?</div>
-                <div class="grid grid-cols-2 gap-4 items-center4">
+                <div class="col-span-1 flex items-center gap-4">
                     <div class="flex items-center">
                         <input id="ac12a-1" type="radio" value="1" name="ac12a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="ac12a-1" class="ms-2 text-sm text-gray-900">1. Ha</label>
@@ -1674,7 +1692,7 @@
 
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
                 <div class="col-span-1">AC12b. Muassasada yashovchi bolalarning hammasini, ba'zilarini yoki hech birini tish cho'tkalari bilan muassasa ta'minlaydimi?</div>
-                <div class="grid grid-cols-2 gap-4 items-center4">
+                <div class="col-span-1 flex items-center gap-4">
                     <div class="flex items-center">
                         <input id="ac12b-1" type="radio" value="1" name="ac12b" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="ac12b-1" class="ms-2 text-sm text-gray-900">1. Hammasini</label>
@@ -1702,7 +1720,7 @@
 
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
                 <div class="col-span-1">AC13. Muassasa bolaga o'z narsalarini qulflash va xohlagan vaqtda ulardan foydalanishga yo' qo'yadimi?</div>
-                <div class="grid grid-cols-2 gap-4 items-center4">
+                <div class="col-span-1 flex items-center gap-4">
                     <div class="flex items-center">
                         <input id="ac13-1" type="radio" value="1" name="ac13" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="ac13-1" class="ms-2 text-sm text-gray-900">1. Ha</label>
@@ -1933,7 +1951,7 @@
 
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
                 <div class="col-span-1">CC8. Odatda, agar ular so'rasa, bolalarga qo'shimcha porsiyalar beriladimi?</div>
-                <div class="grid grid-cols-2 gap-4 items-center4">
+                <div class="col-span-1 flex items-center gap-4">
                     <div class="flex items-center">
                         <input id="cc8-1" type="radio" value="1" name="cc8" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="cc8-1" class="ms-2 text-sm text-gray-900">1. Ha</label>
@@ -1946,7 +1964,7 @@
             </div>
 
             <table class="w-full mt-6" aria-label="Bolalar quyidagilardan har birini qanchada bir oladilar?">
-                <thead>
+                <tbody>
                     <tr class="border-b">
                         <th class="p-2 text-left">CC10. Bolalar quyidagilardan har birini qanchada bir oladilar?</th>
                         <th class="p-2">Har kuni yoki deyarli har kuni</th>
@@ -1955,8 +1973,6 @@
                         <th class="p-2">Kamroq</th>
                         <th class="p-2">Hechqachon</th>
                     </tr>
-                </thead>
-                <tbody>
                     <tr>
                         <td>a. Yangi mevalar (olma, banan, apelsin, uzum va boshqalar)</td>
                         <td class="text-center p-1"><input id="cc10a-1" type="radio" value="1" name="cc10a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
@@ -2139,7 +2155,7 @@
                 <div class="col-span-1 flex flex-col gap-2">
                     <div class="flex flex-col gap-4">
                         <div class="grid grid-cols-2">
-                            <div></div>
+                            <div>a. Alohida ajratilgan joylar</div>
                             <div class="flex items-center gap-2">
                                 <input type="text" id="rce3a" name="rce3a" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-20" />
                                 bo'shliqlar
@@ -2159,8 +2175,8 @@
             <p class="mt-6">RCE4. Muassasada ta'lim faoliyati uchun mavjud resurslarni qanday baholaysiz?</p>
             <small class="italic mt-2">Iltimos, 1 (juda yomon) dan 5 (a'lo) gacha bo'lgan quyidagi shkaladan foydalaning</small>
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
-                <div class="col-span-1 ml-4">Joylar hajmi va soni bo'yicha ta'lim faoliyati uchun yetarli.</div>
-                <div class="grid grid-cols-2 gap-4 items-center4">
+                <div class="col-span-1 ml-4">a. Joylar hajmi va soni bo'yicha ta'lim faoliyati uchun yetarli.</div>
+                <div class="col-span-1 flex items-center gap-4">
                     <div class="flex items-center">
                         <input id="rce4a-1" type="radio" value="1" name="rce4a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="rce4a-1" class="ms-2 text-sm text-gray-900">1</label>
@@ -2184,8 +2200,8 @@
                 </div>
             </div>
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
-                <div class="col-span-1 ml-4">Joylar ta'lim faoliyati uchun yaxshi jihozlangan va yaxshi ta'mirlangan.</div>
-                <div class="grid grid-cols-2 gap-4 items-center4">
+                <div class="col-span-1 ml-4">b. Joylar ta'lim faoliyati uchun yaxshi jihozlangan va yaxshi ta'mirlangan.</div>
+                <div class="col-span-1 flex items-center gap-4">
                     <div class="flex items-center">
                         <input id="rce4b-1" type="radio" value="1" name="rce4b" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="rce4b-1" class="ms-2 text-sm text-gray-900">1</label>
@@ -2209,8 +2225,8 @@
                 </div>
             </div>
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
-                <div class="col-span-1 ml-4">Ta'lim faoliyati bilan shug'ullanadigan xodimlar soni</div>
-                <div class="grid grid-cols-2 gap-4 items-center4">
+                <div class="col-span-1 ml-4">c. Ta'lim faoliyati bilan shug'ullanadigan xodimlar soni</div>
+                <div class="col-span-1 flex items-center gap-4">
                     <div class="flex items-center">
                         <input id="rce4c-1" type="radio" value="1" name="rce4c" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="rce4c-1" class="ms-2 text-sm text-gray-900">1</label>
@@ -2234,8 +2250,8 @@
                 </div>
             </div>
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
-                <div class="col-span-1 ml-4">Ta'lim faoliyati bilan shug'ullanadigan xodimlarning malakasi</div>
-                <div class="grid grid-cols-2 gap-4 items-center4">
+                <div class="col-span-1 ml-4">d. Ta'lim faoliyati bilan shug'ullanadigan xodimlarning malakasi</div>
+                <div class="col-span-1 flex items-center gap-4">
                     <div class="flex items-center">
                         <input id="rce4d-1" type="radio" value="1" name="rce4d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="rce4d-1" class="ms-2 text-sm text-gray-900">1</label>
@@ -2382,23 +2398,21 @@
             </div>
 
             <table class="w-full mt-6" aria-label="Muassasada muayyan reabilitatsiya va rivojlanish faoliyatlari uchun quyidagi xonalardan qaysi biri mavjud?">
-                <thead>
-                    <tr class="border-b">
-                        <th class="p-2 align-bottom text-left" rowspan="2" scope="col">EDU2. Muassasada muayyan reabilitatsiya va rivojlanish faoliyatlari uchun quyidagi xonalardan qaysi biri mavjud?</th>
-                        <th class="p-2 align-bottom" rowspan="2" scope="col">Ha, alohida ajratilgan</th>
-                        <th class="p-2 align-bottom" rowspan="2" scope="col">Ha, umumiysi</th>
-                        <th class="px-4 py-2 align-bottom" rowspan="2" scope="col">Mavjud emas</th>
-                        <th class=" p-2 align-bottom text-left border-l" scope="col" colspan="5">EDU3. Iltimos, har bir faoliyat uchun mavjud bo'sh joy va mavjud imkoniyatlarni 1 (juda yomon) dan 5 (a'lo) gacha bo'lgan shkalada baholang</th>
-                    </tr>
-                    <tr class="border-b">
-                        <th class="p-2 border-l" scope="col">1</th>
-                        <th class="p-2" scope="col">2</th>
-                        <th class="p-2" scope="col">3</th>
-                        <th class="p-2" scope="col">4</th>
-                        <th class="p-2" scope="col">5</th>
-                    </tr>
-                </thead>
                 <tbody>
+                    <tr class="border-b">
+                        <td class="p-2 align-bottom text-left" rowspan="2" scope="col">EDU2. Muassasada muayyan reabilitatsiya va rivojlanish faoliyatlari uchun quyidagi xonalardan qaysi biri mavjud?</td>
+                        <td class="p-2 text-center align-bottom" rowspan="2" scope="col">Ha, alohida ajratilgan</td>
+                        <td class="p-2 text-center align-bottom" rowspan="2" scope="col">Ha, umumiysi</td>
+                        <td class="px-4 py-2 align-bottom" rowspan="2" scope="col">Mavjud emas</td>
+                        <td class="p-2 text-center align-bottom text-left border-l" scope="col" colspan="5">EDU3. Iltimos, har bir faoliyat uchun mavjud bo'sh joy va mavjud imkoniyatlarni 1 (juda yomon) dan 5 (a'lo) gacha bo'lgan shkalada baholang</td>
+                    </tr>
+                    <tr class="border-b">
+                        <td class="p-2 text-center border-l" scope="col">1</td>
+                        <td class="p-2 text-center" scope="col">2</td>
+                        <td class="p-2 text-center" scope="col">3</td>
+                        <td class="p-2 text-center" scope="col">4</td>
+                        <td class="p-2 text-center" scope="col">5</td>
+                    </tr>
                     <tr>
                         <td class="p-2">a. Tibbiyot xonasi</td>
                         <td class="p-2 text-center"><input id="edu2a-1" type="radio" value="1" name="edu2a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200"></td>
@@ -2651,7 +2665,7 @@
 
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
                 <div class="col-span-1">FT5a. Bolalar bo'sh vaqtlarida xohlagan vaqtda usti yopiq dam olish maskanlaridan foydalanishlari mumkinmi?</div>
-                <div class="grid grid-cols-2 gap-4 items-center4">
+                <div class="col-span-1 flex items-center gap-4">
                     <div class="flex items-center">
                         <input id="ft5a-1" type="radio" value="1" name="ft5a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="ft5a-1" class="ms-2 text-sm text-gray-900">1. Ha</label>
@@ -2665,7 +2679,7 @@
 
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
                 <div class="col-span-1">FT5b. Bolalar bo'sh vaqtlarida xohlagan vaqtda ochiq havodagi dam olish maskanlaridan foydalanishlari mumkinmi?</div>
-                <div class="grid grid-cols-2 gap-4 items-center4">
+                <div class="col-span-1 flex items-center gap-4">
                     <div class="flex items-center">
                         <input id="ft5b-1" type="radio" value="1" name="ft5b" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="ft5b-1" class="ms-2 text-sm text-gray-900">1. Ha</label>
@@ -2982,6 +2996,11 @@
                     </tr>
                 </tbody>
             </table>
+
+            <div class="grid mt-10">
+                <label for="obs">OBS. Kuzatuvlarni</label>
+                <textarea class="form-control" rows="3" id="obs" name="obs"></textarea>
+            </div>
 
 
         </form>
