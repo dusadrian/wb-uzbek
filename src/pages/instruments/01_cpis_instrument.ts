@@ -56,42 +56,23 @@ let institutionType = '';
 let institutionCode = '';
 let serviceCode = ''; // filter by service code INSON
 
-const qeduc2 = util.radioIDs("qeduc2");
 
-function check_sa1a(value: string) {
-    instrument.questions["qeduc2"].readonly = false;
-    qeduc2.forEach((item) => {
-        const elem = util.htmlElement(item);
-        elem.disabled = false;
-        elem.dataset['skip'] = 'false';
-        if (Number(value) > 7 && item == "qeduc2-3") {
-            elem.checked = false;
-        }
-    })
+function check_sa1a(sa1a: number) {
 
-    if (Number(value) >= 3 && Number(value) < 7) {
+    const elem = util.htmlElement("qeduc2-3");
+    if (sa1a < 7) {
+        elem.checked = true;
+        instrument.questions["qeduc2"].value = "7";
 
-        qeduc2.forEach((item) => {
-            const elem = util.htmlElement(item);
-            elem.disabled = true;
-            elem.dataset['skip'] = 'true';
-        })
-        util.htmlElement("qeduc2-3").checked = true;
-
-        instrument.questions["qeduc2"].value = "3";
-        instrument.questions["qeduc2"].readonly = true;
-
-    } else if (Number(value) >= 7) {
-        const elem = util.htmlElement("qeduc2-3");
+    } else {
         elem.checked = false;
-        elem.dataset['skip'] = "true";
-        elem.disabled = true;
 
         if (instrument.questions.qeduc2.value == "7") {
             instrument.questions.qeduc2.value = "-9";
         }
     }
 }
+
 
 const cm1a = util.radioIDs("cm1a");
 const cm1c = util.radioIDs("cm1c");
@@ -273,42 +254,45 @@ export const instrument1 = {
                 })
 
                 util.listen(disElements[x], "change", function () {
+                    const option = document.createElement("option");
+                    option.value = "-9";
+                    option.text = translations['t_choose'];
+
                     if (regElements[x] == "sa5r") {
                         sa5i.innerHTML = "";
+                        sa5i.appendChild(option);
                     }
 
                     if (regElements[x] == "reg") {
                         sh5.innerHTML = "";
+                        sh5.appendChild(option);
                     }
 
                     if (typeElements[x] != "") {
                         util.htmlElement(typeElements[x]).value = "";
+                        util.htmlElement(typeElements[x]).appendChild(option);
                     }
 
                     const selectedDistrict = dis_el.value;
 
                     if (setElements[x] != "") {
+                        const option = document.createElement("option");
+                        option.value = "-9";
+                        option.text = translations['t_choose'];
+                        set_el.innerHTML = "";
+                        set_el.appendChild(option);
+
+
                         if (!instrument.questions[setElements[x]].readonly) {
                             instrument.questions[setElements[x]].skip = false;
-                            util.htmlElement(setElements[x]).disabled = false;
-                            set_el.innerHTML = "";
+                            set_el.disabled = false;
                         }
 
                         if (Number(selectedDistrict) > 0) {
-                            const option = document.createElement("option");
-                            // if (setElements[x] == "sh5s") {
-                            //     option.value = "--";
-                            //     option.text = "--";
-                            // } else {
-                            option.value = "-9";
-                            option.text = translations['t_choose'];
-                            // }
 
-                            set_el.appendChild(option);
                             const set_codes = districts[selectedDistrict].settlements;
 
                             if (set_codes.length > 0) {
-                                set_el.appendChild(option);
 
                                 for (let i = 0; i < set_codes.length; i++) {
                                     const option = document.createElement("option");
@@ -323,7 +307,7 @@ export const instrument1 = {
                                 }
                                 instrument.questions[setElements[x]].skip = true;
                                 instrument.questions[setElements[x]].value = '-7';
-                                util.htmlElement(setElements[x]).disabled = true;
+                                set_el.disabled = true;
                             }
                         }
                     }
@@ -385,7 +369,7 @@ export const instrument1 = {
                     instrument.seteazaValoareElement(item.variable, item.value, index >= 0);
 
                     if (item.variable == "qeduc2") {
-                        check_sa1a(instrument.questions.sa1a.value);
+                        check_sa1a(Number(instrument.questions.sa1a.value));
                     }
 
                     if (item.variable == "cm1c") {
@@ -394,6 +378,14 @@ export const instrument1 = {
 
                     if (item.variable == "ct1c") {
                         check_ct1(instrument.questions.ct1a.value);
+                    }
+
+                    if (item.variable == "dis") {
+                        util.trigger("dis", "change");
+                    }
+
+                    if (item.variable == "sa5d") {
+                        util.trigger("sa5d", "change");
                     }
                 }
             }
@@ -631,7 +623,7 @@ util.listen("sa1", "myChange", () => {
 });
 
 util.listen("sa1a", "myChange", () => {
-    check_sa1a(instrument.questions["sa1a"].value);
+    check_sa1a(Number(instrument.questions.sa1a.value));
 });
 
 

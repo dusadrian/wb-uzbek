@@ -2247,6 +2247,24 @@
                 </div>
             </div>
 
+            <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                <div>2ar. Область</div>
+                <div>
+                    <select id="qeduc2ar" name="qeduc2ar" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
+                        <option value="-9">--- выбрать ---</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                <div>2ad. Район</div>
+                <div>
+                    <select id="qeduc2ad" name="qeduc2ad" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
+                        <option value="-9">--- выбрать ---</option>
+                    </select>
+                </div>
+            </div>
+
             <small class="my-2 block italic text-red-500 mt-6">ЕСЛИ РЕБЕНОК ОБУЧАЛСЯ В СПЕЦИАЛИЗИРОВАННОМ ОБРАЗОВАТЕЛЬНОМ УЧРЕЖДЕНИИ</small>
             <div class="grid grid-cols-2 gap-4 items-center mt-2">
                 <div>2а1. Введите код из реестра последнего учебного заведения, из которого поступил ребенок</div>
@@ -3260,7 +3278,7 @@
 
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
                 <div class="ml-4">4а. Грамотность: способность ребенка читать и писать тексты, такие как рассказы, стихи, письма или сообщения, на своем родном или других языках</div>
-                <div class="flex items-center gap-8">
+                <div class="flex items-center gap-8 ml-4">
                     <div class="flex items-center">
                         <input id="cedu4a-1" type="radio" value="{{cedu4a-1}}" name="cedu4a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="cedu4a-1" class="ms-2 text-sm text-gray-900">1</label>
@@ -3286,7 +3304,7 @@
 
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
                 <div class="ml-4">4б. Счет: способность ребенка понимать и использовать числа, такие как счет, сложение, вычитание, умножение или деление</div>
-                <div class="flex items-center gap-8">
+                <div class="flex items-center gap-8 ml-5">
                     <div class="flex items-center">
                         <input id="cedu4b-1" type="radio" value="{{cedu4b-1}}" name="cedu4b" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="cedu4b-1" class="ms-2 text-sm text-gray-900">1</label>
@@ -3312,7 +3330,7 @@
 
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
                 <div class="ml-4">4в. Рассуждение: способность ребенка мыслить логически и критически, например, делать выводы, умозаключения или сравнения</div>
-                <div class="flex items-center gap-8">
+                <div class="flex items-center gap-8 ml-5">
                     <div class="flex items-center">
                         <input id="cedu4c-1" type="radio" value="{{cedu4c-1}}" name="cedu4c" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="cedu4c-1" class="ms-2 text-sm text-gray-900">1</label>
@@ -3338,7 +3356,7 @@
 
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
                 <div class="ml-4">4д. Решение проблем: способность ребенка находить решения и применять их в  различных задачах, таких как головоломки, игры или проекты</div>
-                <div class="flex items-center gap-8">
+                <div class="flex items-center gap-8 ml-5">
                     <div class="flex items-center">
                         <input id="cedu4d-1" type="radio" value="{{cedu4d-1}}" name="cedu4d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="cedu4d-1" class="ms-2 text-sm text-gray-900">1</label>
@@ -3364,7 +3382,7 @@
 
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
                 <div class="ml-4">4е. Коммуникация: способность ребенка выражать и понимать устные и письменные сообщения, например, разговорная речь, слушание, чтение или письмо, на родном или других языках</div>
-                <div class="flex items-center gap-8">
+                <div class="flex items-center gap-8 ml-5">
                     <div class="flex items-center">
                         <input id="cedu4e-1" type="radio" value="{{cedu4e-1}}" name="cedu4e" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="cedu4e-1" class="ms-2 text-sm text-gray-900">1</label>
@@ -3393,7 +3411,7 @@
 
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
                 <div class="ml-4">5а. Социальные навыки: способность ребенка формировать и поддерживать позитивные отношения со сверстниками, учителями и другими взрослыми, например, делиться, помогать или сотрудничать</div>
-                <div class="flex items-center gap-8">
+                <div class="flex items-center gap-8 ml-5">
                     <div class="flex items-center">
                         <input id="cedu5a-1" type="radio" value="{{cedu5a-1}}" name="cedu5a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="cedu5a-1" class="ms-2 text-sm text-gray-900">1</label>
@@ -3419,7 +3437,7 @@
 
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
                 <div class="ml-4">5б. Эмоциональная осведомленность: способность ребенка распознавать и маркировать свои собственные эмоции и эмоции других, такие как счастье, печаль, гнев или страх</div>
-                <div class="flex items-center gap-8">
+                <div class="flex items-center gap-8 ml-5">
                     <div class="flex items-center">
                         <input id="cedu5b-1" type="radio" value="{{cedu5b-1}}" name="cedu5b" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="cedu5b-1" class="ms-2 text-sm text-gray-900">1</label>
@@ -3445,7 +3463,7 @@
 
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
                 <div class="ml-4">5в. Эмоциональная регуляция: способность ребенка управлять своими эмоциями и эмоциями других людей и справляться с ними, например, успокаиваться, подбадривать или утешать</div>
-                <div class="flex items-center gap-8">
+                <div class="flex items-center gap-8 ml-5">
                     <div class="flex items-center">
                         <input id="cedu5c-1" type="radio" value="{{cedu5c-1}}" name="cedu5c" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="cedu5c-1" class="ms-2 text-sm text-gray-900">1</label>
@@ -3471,7 +3489,7 @@
 
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
                 <div class="ml-4">5д. Эмпатия: способность ребенка понимать и реагировать на чувства и точки зрения других, например, проявлять сострадание, уважение или доброту</div>
-                <div class="flex items-center gap-8">
+                <div class="flex items-center gap-8 ml-5">
                     <div class="flex items-center">
                         <input id="cedu5d-1" type="radio" value="{{cedu5d-1}}" name="cedu5d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="cedu5d-1" class="ms-2 text-sm text-gray-900">1</label>
@@ -3497,7 +3515,7 @@
 
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
                 <div class="ml-4">5е. Самооценка: способность ребенка ценить себя и свои способности, например, быть уверенным в себе, гордится  или быть оптимистичным</div>
-                <div class="flex items-center gap-8">
+                <div class="flex items-center gap-8 ml-5">
                     <div class="flex items-center">
                         <input id="cedu5e-1" type="radio" value="{{cedu5e-1}}" name="cedu5e" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="cedu5e-1" class="ms-2 text-sm text-gray-900">1</label>
@@ -3525,7 +3543,7 @@
 
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
                 <div class="ml-4">6а. Крупная моторика: способность ребенка использовать крупные мышцы для управления движениями тела, такими как бег, прыжки или балансирование</div>
-                <div class="flex items-center gap-8">
+                <div class="flex items-center gap-8 ml-5">
                     <div class="flex items-center">
                         <input id="cedu6a-1" type="radio" value="{{cedu6a-1}}" name="cedu6a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="cedu6a-1" class="ms-2 text-sm text-gray-900">1</label>
@@ -3551,7 +3569,7 @@
 
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
                 <div class="ml-4">6б. Мелкая моторика: способность ребенка использовать мелкие мышцы для координации движений рук и пальцев, например, при письме, рисовании или вырезании</div>
-                <div class="flex items-center gap-8">
+                <div class="flex items-center gap-8 ml-5">
                     <div class="flex items-center">
                         <input id="cedu6b-1" type="radio" value="{{cedu6b-1}}" name="cedu6b" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="cedu6b-1" class="ms-2 text-sm text-gray-900">1</label>
@@ -3577,7 +3595,7 @@
 
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
                 <div class="ml-4">6в. Координация: способность ребенка синхронизировать свои движения со зрением, слухом или осязанием, например, ловля, бросок или пинок</div>
-                <div class="flex items-center gap-8">
+                <div class="flex items-center gap-8 ml-5">
                     <div class="flex items-center">
                         <input id="cedu6c-1" type="radio" value="{{cedu6c-1}}" name="cedu6c" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="cedu6c-1" class="ms-2 text-sm text-gray-900">1</label>
@@ -3603,7 +3621,7 @@
 
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
                 <div class="ml-4">6д. Сила: способность ребенка проявлять силу и сопротивление с помощью мышц, например, поднимать, толкать или тянуть</div>
-                <div class="flex items-center gap-8">
+                <div class="flex items-center gap-8 ml-5">
                     <div class="flex items-center">
                         <input id="cedu6d-1" type="radio" value="{{cedu6d-1}}" name="cedu6d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="cedu6d-1" class="ms-2 text-sm text-gray-900">1</label>
@@ -3629,7 +3647,7 @@
 
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
                 <div class="ml-4">6е. Гибкость: способность ребенка сгибать, растягивать или скручивать суставы и мышцы, например, тянуться, скручивать</div>
-                <div class="flex items-center gap-8">
+                <div class="flex items-center gap-8 ml-5">
                     <div class="flex items-center">
                         <input id="cedu6e-1" type="radio" value="{{cedu6e-1}}" name="cedu6e" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="cedu6e-1" class="ms-2 text-sm text-gray-900">1</label>
@@ -3657,7 +3675,7 @@
 
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
                 <div class="ml-4">7а. Внимание: способность ребенка сосредотачиваться и поддерживать концентрацию на задании или стимуле, например, слушать, смотреть или следовать инструкциям</div>
-                <div class="flex items-center gap-8">
+                <div class="flex items-center gap-8 ml-5">
                     <div class="flex items-center">
                         <input id="cedu7a-1" type="radio" value="{{cedu7a-1}}" name="cedu7a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="cedu7a-1" class="ms-2 text-sm text-gray-900">1</label>
@@ -3683,7 +3701,7 @@
 
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
                 <div class="ml-4">7б. Память: способность ребенка хранить и вспоминать информацию и опыт, например, запоминать имена, факты или события</div>
-                <div class="flex items-center gap-8">
+                <div class="flex items-center gap-8 ml-5">
                     <div class="flex items-center">
                         <input id="cedu7b-1" type="radio" value="{{cedu7b-1}}" name="cedu7b" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="cedu7b-1" class="ms-2 text-sm text-gray-900">1</label>
@@ -3709,7 +3727,7 @@
 
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
                 <div class="ml-4">7в. Воображение: способность ребенка создавать и исследовать мысленные образы и сценарии, например, притворяться, фантазировать или изобретать</div>
-                <div class="flex items-center gap-8">
+                <div class="flex items-center gap-8 ml-5">
                     <div class="flex items-center">
                         <input id="cedu7c-1" type="radio" value="{{cedu7c-1}}" name="cedu7c" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="cedu7c-1" class="ms-2 text-sm text-gray-900">1</label>
@@ -3735,7 +3753,7 @@
 
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
                 <div class="ml-4">7д. Креативность: способность ребенка создавать оригинальные и новые идеи и предметы, такие как рисование, раскрашивание или сочинение</div>
-                <div class="flex items-center gap-8">
+                <div class="flex items-center gap-8 ml-5">
                     <div class="flex items-center">
                         <input id="cedu7d-1" type="radio" value="{{cedu7d-1}}" name="cedu7d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="cedu7d-1" class="ms-2 text-sm text-gray-900">1</label>
@@ -3761,7 +3779,7 @@
 
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
                 <div class="ml-4">7е. Игра: способность ребенка участвовать в спонтанных и добровольных действиях для развлечения и обучения, таких как играть в игры, с игрушками или исполнять роли</div>
-                <div class="flex items-center gap-8">
+                <div class="flex items-center gap-8 ml-5">
                     <div class="flex items-center">
                         <input id="cedu7e-1" type="radio" value="{{cedu7e-1}}" name="cedu7e" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="cedu7e-1" class="ms-2 text-sm text-gray-900">1</label>
@@ -3789,7 +3807,7 @@
 
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
                 <div class="ml-4">8а. Гигиена: способность ребенка поддерживать чистоту и здоровье, например, мыться, расчесываться или ухаживать за собой</div>
-                <div class="flex items-center gap-8">
+                <div class="flex items-center gap-8 ml-5">
                     <div class="flex items-center">
                         <input id="cedu8a-1" type="radio" value="{{cedu8a-1}}" name="cedu8a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="cedu8a-1" class="ms-2 text-sm text-gray-900">1</label>
@@ -3815,7 +3833,7 @@
 
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
                 <div class="ml-4">8б. Питание: способность ребенка выбирать и потреблять здоровую и сбалансированную пищу и напитки, например, есть, пить или готовить</div>
-                <div class="flex items-center gap-8">
+                <div class="flex items-center gap-8 ml-5">
                     <div class="flex items-center">
                         <input id="cedu8b-1" type="radio" value="{{cedu8b-1}}" name="cedu8b" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="cedu8b-1" class="ms-2 text-sm text-gray-900">1</label>
@@ -3841,7 +3859,7 @@
 
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
                 <div class="ml-4">8в. Безопасность: способность ребенка избегать и предотвращать вред и травмы, например, следовать правилам, соблюдать осторожность или обращаться за помощью</div>
-                <div class="flex items-center gap-8">
+                <div class="flex items-center gap-8 ml-5">
                     <div class="flex items-center">
                         <input id="cedu8c-1" type="radio" value="{{cedu8c-1}}" name="cedu8c" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="cedu8c-1" class="ms-2 text-sm text-gray-900">1</label>
@@ -3867,7 +3885,7 @@
 
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
                 <div class="ml-4">8д. Распорядок дня: способность ребенка следовать и выполнять регулярный график действий, таких как пробуждение, поход в школу или выполнение домашнего задания</div>
-                <div class="flex items-center gap-8">
+                <div class="flex items-center gap-8 ml-5">
                     <div class="flex items-center">
                         <input id="cedu8d-1" type="radio" value="{{cedu8d-1}}" name="cedu8d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="cedu8d-1" class="ms-2 text-sm text-gray-900">1</label>
@@ -3893,7 +3911,7 @@
 
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
                 <div class="ml-4">8е. Ответственность: способность ребенка заботиться о своих вещах и окружающей среде, например, одеваться, наводить порядок или выбрасывать отходы</div>
-                <div class="flex items-center gap-8">
+                <div class="flex items-center gap-8 ml-5">
                     <div class="flex items-center">
                         <input id="cedu8e-1" type="radio" value="{{cedu8e-1}}" name="cedu8e" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="cedu8e-1" class="ms-2 text-sm text-gray-900">1</label>
@@ -3921,7 +3939,7 @@
 
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
                 <div class="ml-4">9а. Разнообразие: способность ребенка распознавать и ценить различия и сходства между людьми, такие как национальность , пол или религия</div>
-                <div class="flex items-center gap-8">
+                <div class="flex items-center gap-8 ml-5">
                     <div class="flex items-center">
                         <input id="cedu9a-1" type="radio" value="{{cedu9a-1}}" name="cedu9a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="cedu9a-1" class="ms-2 text-sm text-gray-900">1</label>
@@ -3947,7 +3965,7 @@
 
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
                 <div class="ml-4">9б. Культура: способность ребенка понимать и ценить обычаи и традиции своей и других групп, такие как язык, искусство или музыка</div>
-                <div class="flex items-center gap-8">
+                <div class="flex items-center gap-8 ml-5">
                     <div class="flex items-center">
                         <input id="cedu9b-1" type="radio" value="{{cedu9b-1}}" name="cedu9b" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="cedu9b-1" class="ms-2 text-sm text-gray-900">1</label>
@@ -3973,7 +3991,7 @@
 
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
                 <div class="ml-4">9в. Гражданство: способность ребенка знать и осуществлять свои права и обязанности как гражданина страны, например, следовать правилам, уважать власти или выражать свое мнение</div>
-                <div class="flex items-center gap-8">
+                <div class="flex items-center gap-8 ml-5">
                     <div class="flex items-center">
                         <input id="cedu9c-1" type="radio" value="{{cedu9c-1}}" name="cedu9c" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="cedu9c-1" class="ms-2 text-sm text-gray-900">1</label>
@@ -3999,7 +4017,7 @@
 
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
                 <div class="ml-4">9д. Демократия: способность ребенка участвовать и влиять на решения и политику, которые влияют на его жизнь, например, выдвигать требования, проводить кампании или протестовать</div>
-                <div class="flex items-center gap-8">
+                <div class="flex items-center gap-8 ml-5">
                     <div class="flex items-center">
                         <input id="cedu9d-1" type="radio" value="{{cedu9d-1}}" name="cedu9d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="cedu9d-1" class="ms-2 text-sm text-gray-900">1</label>
@@ -4025,7 +4043,7 @@
 
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
                 <div class="ml-4">9е. Про-социальное поведение: способность ребенка помогать и поддерживать других нуждающихся, например, быть волонтером, давать  пожертвования или быть наставником</div>
-                <div class="flex items-center gap-8">
+                <div class="flex items-center gap-8 ml-5">
                     <div class="flex items-center">
                         <input id="cedu9e-1" type="radio" value="{{cedu9e-1}}" name="cedu9e" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="cedu9e-1" class="ms-2 text-sm text-gray-900">1</label>
@@ -5009,7 +5027,7 @@
             <p>QRISKP: За время пребывания ребенка в системе (с момента его последнего приема до настоящего времени) было ли у ребенка какое-либо из следующих рискованных форм поведения:</p>
             <div class="grid grid-cols-2 gap-4 items-center mt-10">
                 <div class="ml-3">1. Ранняя половая жизнь (начало до 16 лет)</div>
-                <div class="col-span-1 flex items-center gap-4">
+                <div class="col-span-1 flex items-center gap-4 ml-4">
                     <div class="flex items-center">
                         <input id="qriskp1-1" type="radio" value="1" name="qriskp1" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="qriskp1-1" class="ms-2 text-sm text-gray-900">1. Да</label>
@@ -5026,7 +5044,7 @@
             </div>
             <div class="grid grid-cols-2 gap-4 items-center mt-10">
                 <div class="ml-3">3. Употребление алкоголя, табака или наркотиков</div>
-                <div class="col-span-1 flex items-center gap-4">
+                <div class="col-span-1 flex items-center gap-4 ml-4">
                     <div class="flex items-center">
                         <input id="qriskp3-1" type="radio" value="1" name="qriskp3" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="qriskp3-1" class="ms-2 text-sm text-gray-900">1. Да</label>
@@ -5043,7 +5061,7 @@
             </div>
             <div class="grid grid-cols-2 gap-4 items-center mt-10">
                 <div class="ml-3">4. Драки или насилие по отношению к другим детям или молодым людям</div>
-                <div class="col-span-1 flex items-center gap-4">
+                <div class="col-span-1 flex items-center gap-4 ml-4">
                     <div class="flex items-center">
                         <input id="qriskp4-1" type="radio" value="1" name="qriskp4" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="qriskp4-1" class="ms-2 text-sm text-gray-900">1. Да</label>
@@ -5060,7 +5078,7 @@
             </div>
             <div class="grid grid-cols-2 gap-4 items-center mt-10">
                 <div class="ml-3">5. Присоединение к «банде» или к друзьям из группы риска.</div>
-                <div class="col-span-1 flex items-center gap-4">
+                <div class="col-span-1 flex items-center gap-4 ml-4">
                     <div class="flex items-center">
                         <input id="qriskp5-1" type="radio" value="1" name="qriskp5" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="qriskp5-1" class="ms-2 text-sm text-gray-900">1. Да</label>
@@ -5077,7 +5095,7 @@
             </div>
             <div class="grid grid-cols-2 gap-4 items-center mt-10">
                 <div class="ml-3">6. Бегство из службы (опеки)</div>
-                <div class="col-span-1 flex items-center gap-4">
+                <div class="col-span-1 flex items-center gap-4 ml-4">
                     <div class="flex items-center">
                         <input id="qriskp6-1" type="radio" value="1" name="qriskp6" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="qriskp6-1" class="ms-2 text-sm text-gray-900">1. Да</label>
@@ -5094,7 +5112,7 @@
             </div>
             <div class="grid grid-cols-2 gap-4 items-center mt-10">
                 <div class="ml-3">7. Проблемы с полицией</div>
-                <div class="col-span-1 flex items-center gap-4">
+                <div class="col-span-1 flex items-center gap-4 ml-4">
                     <div class="flex items-center">
                         <input id="qriskp7-1" type="radio" value="1" name="qriskp7" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="qriskp7-1" class="ms-2 text-sm text-gray-900">1. Да</label>
@@ -5111,7 +5129,7 @@
             </div>
             <div class="grid grid-cols-2 gap-4 items-center mt-10">
                 <div class="ml-3">8. Работа на улице или попрошайничество</div>
-                <div class="col-span-1 flex items-center gap-4">
+                <div class="col-span-1 flex items-center gap-4 ml-4">
                     <div class="flex items-center">
                         <input id="qriskp8-1" type="radio" value="1" name="qriskp8" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="qriskp8-1" class="ms-2 text-sm text-gray-900">1. Да</label>
@@ -5128,7 +5146,7 @@
             </div>
             <div class="grid grid-cols-2 gap-4 items-center mt-10">
                 <div class="ml-3">9. Нанесение себе увечий</div>
-                <div class="col-span-1 flex items-center gap-4">
+                <div class="col-span-1 flex items-center gap-4 ml-4">
                     <div class="flex items-center">
                         <input id="qriskp9-1" type="radio" value="1" name="qriskp9" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="qriskp9-1" class="ms-2 text-sm text-gray-900">1. Да</label>
@@ -5148,7 +5166,7 @@
 
             <div class="grid grid-cols-2 gap-4 items-center mt-10">
                 <div>CMNT1. Есть ли у ребенка в настоящее время закрепленный специалист, который проводит мониторинг дела ребенка и координирует его/ее деятельность?</div>
-                <div class="col-span-1 flex items-center gap-4">
+                <div class="col-span-1 flex items-center gap-4 ml-4">
                     <div class="flex items-center">
                         <input id="cmnt1-1" type="radio" value="1" name="cmnt1" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="cmnt1-1" class="ms-2 text-sm text-gray-900">1. Да</label>

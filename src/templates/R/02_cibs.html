@@ -2207,11 +2207,11 @@
                         <label for="qeduc2-1" class="labelclass">{{T0624}}</label>
                     </div>
                     <div class="centerflex">
-                        <input id="qeduc2-2" type="radio" value="{{qeduc2-2}}" name="qeduc2" class="valueclass">
+                        <input id="qeduc2-2" type="radio" value="{{qeduc2-2}}" name="qeduc2" disabled class="valueclass">
                         <label for="qeduc2-2" class="labelclass">{{T0625}}</label>
                     </div>
                     <div class="centerflex">
-                        <input id="qeduc2-3" type="radio" value="{{qeduc2-3}}" name="qeduc2" class="valueclass">
+                        <input id="qeduc2-3" type="radio" value="{{qeduc2-3}}" name="qeduc2" disabled class="valueclass">
                         <label for="qeduc2-3" class="labelclass">{{T0626}}</label>
                     </div>
                 </div>
@@ -2247,6 +2247,24 @@
                 </div>
             </div>
 
+            <div class="divclass mt-6">
+                <div>2ar. {{T0215}}</div>
+                <div>
+                    <select id="qeduc2ar" name="qeduc2ar" class="selectclass">
+                        <option value="-9">{{T1337}}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="divclass mt-6">
+                <div>2ad. {{T0218}}</div>
+                <div>
+                    <select id="qeduc2ad" name="qeduc2ad" class="selectclass">
+                        <option value="-9">{{T1337}}</option>
+                    </select>
+                </div>
+            </div>
+
             <small class="smallclass mt-6">{{T0635}}</small>
             <div class="divclass mt-2">
                 <div>{{T0636}}</div>
@@ -2269,7 +2287,7 @@
                 <div>
                     <select id="qeduc2b" name="qeduc2b" class="selectclass">
                         <option value="-9">{{T1337}}</option>
-                        <option value="0">0</option>
+                        <option value="0">{{T1369}}</option>
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
@@ -3135,7 +3153,7 @@
                 <div>
                     <select id="sch2" name="sch2" class="selectclass">
                         <option value="-9">{{T1337}}</option>
-                        <option value="0">0</option>
+                        <option value="0">{{T1369}}</option>
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
@@ -3260,7 +3278,7 @@
 
             <div class="divclass mt-6">
                 <div class="ml-4">{{T0856}}</div>
-                <div class="flex items-center gap-8">
+                <div class="flex items-center gap-8 ml-4">
                     <div class="centerflex">
                         <input id="cedu4a-1" type="radio" value="{{cedu4a-1}}" name="cedu4a" class="valueclass">
                         <label for="cedu4a-1" class="labelclass">1</label>
@@ -3286,7 +3304,7 @@
 
             <div class="divclass mt-6">
                 <div class="ml-4">{{T0857}}</div>
-                <div class="flex items-center gap-8">
+                <div class="flex items-center gap-8 ml-5">
                     <div class="centerflex">
                         <input id="cedu4b-1" type="radio" value="{{cedu4b-1}}" name="cedu4b" class="valueclass">
                         <label for="cedu4b-1" class="labelclass">1</label>
@@ -3312,7 +3330,7 @@
 
             <div class="divclass mt-6">
                 <div class="ml-4">{{T0858}}</div>
-                <div class="flex items-center gap-8">
+                <div class="flex items-center gap-8 ml-5">
                     <div class="centerflex">
                         <input id="cedu4c-1" type="radio" value="{{cedu4c-1}}" name="cedu4c" class="valueclass">
                         <label for="cedu4c-1" class="labelclass">1</label>
@@ -3338,7 +3356,7 @@
 
             <div class="divclass mt-6">
                 <div class="ml-4">{{T0859}}</div>
-                <div class="flex items-center gap-8">
+                <div class="flex items-center gap-8 ml-5">
                     <div class="centerflex">
                         <input id="cedu4d-1" type="radio" value="{{cedu4d-1}}" name="cedu4d" class="valueclass">
                         <label for="cedu4d-1" class="labelclass">1</label>
@@ -3364,7 +3382,7 @@
 
             <div class="divclass mt-6">
                 <div class="ml-4">{{T0860}}</div>
-                <div class="flex items-center gap-8">
+                <div class="flex items-center gap-8 ml-5">
                     <div class="centerflex">
                         <input id="cedu4e-1" type="radio" value="{{cedu4e-1}}" name="cedu4e" class="valueclass">
                         <label for="cedu4e-1" class="labelclass">1</label>
@@ -3393,7 +3411,7 @@
 
             <div class="divclass mt-6">
                 <div class="ml-4">{{T0862}}</div>
-                <div class="flex items-center gap-8">
+                <div class="flex items-center gap-8 ml-5">
                     <div class="centerflex">
                         <input id="cedu5a-1" type="radio" value="{{cedu5a-1}}" name="cedu5a" class="valueclass">
                         <label for="cedu5a-1" class="labelclass">1</label>
@@ -3419,7 +3437,7 @@
 
             <div class="divclass mt-6">
                 <div class="ml-4">{{T0863}}</div>
-                <div class="flex items-center gap-8">
+                <div class="flex items-center gap-8 ml-5">
                     <div class="centerflex">
                         <input id="cedu5b-1" type="radio" value="{{cedu5b-1}}" name="cedu5b" class="valueclass">
                         <label for="cedu5b-1" class="labelclass">1</label>
@@ -3445,7 +3463,7 @@
 
             <div class="divclass mt-6">
                 <div class="ml-4">{{T0864}}</div>
-                <div class="flex items-center gap-8">
+                <div class="flex items-center gap-8 ml-5">
                     <div class="centerflex">
                         <input id="cedu5c-1" type="radio" value="{{cedu5c-1}}" name="cedu5c" class="valueclass">
                         <label for="cedu5c-1" class="labelclass">1</label>
@@ -3471,7 +3489,7 @@
 
             <div class="divclass mt-6">
                 <div class="ml-4">{{T0865}}</div>
-                <div class="flex items-center gap-8">
+                <div class="flex items-center gap-8 ml-5">
                     <div class="centerflex">
                         <input id="cedu5d-1" type="radio" value="{{cedu5d-1}}" name="cedu5d" class="valueclass">
                         <label for="cedu5d-1" class="labelclass">1</label>
@@ -3497,7 +3515,7 @@
 
             <div class="divclass mt-6">
                 <div class="ml-4">{{T0866}}</div>
-                <div class="flex items-center gap-8">
+                <div class="flex items-center gap-8 ml-5">
                     <div class="centerflex">
                         <input id="cedu5e-1" type="radio" value="{{cedu5e-1}}" name="cedu5e" class="valueclass">
                         <label for="cedu5e-1" class="labelclass">1</label>
@@ -3525,7 +3543,7 @@
 
             <div class="divclass mt-6">
                 <div class="ml-4">{{T0868}}</div>
-                <div class="flex items-center gap-8">
+                <div class="flex items-center gap-8 ml-5">
                     <div class="centerflex">
                         <input id="cedu6a-1" type="radio" value="{{cedu6a-1}}" name="cedu6a" class="valueclass">
                         <label for="cedu6a-1" class="labelclass">1</label>
@@ -3551,7 +3569,7 @@
 
             <div class="divclass mt-6">
                 <div class="ml-4">{{T0869}}</div>
-                <div class="flex items-center gap-8">
+                <div class="flex items-center gap-8 ml-5">
                     <div class="centerflex">
                         <input id="cedu6b-1" type="radio" value="{{cedu6b-1}}" name="cedu6b" class="valueclass">
                         <label for="cedu6b-1" class="labelclass">1</label>
@@ -3577,7 +3595,7 @@
 
             <div class="divclass mt-6">
                 <div class="ml-4">{{T0870}}</div>
-                <div class="flex items-center gap-8">
+                <div class="flex items-center gap-8 ml-5">
                     <div class="centerflex">
                         <input id="cedu6c-1" type="radio" value="{{cedu6c-1}}" name="cedu6c" class="valueclass">
                         <label for="cedu6c-1" class="labelclass">1</label>
@@ -3603,7 +3621,7 @@
 
             <div class="divclass mt-6">
                 <div class="ml-4">{{T0871}}</div>
-                <div class="flex items-center gap-8">
+                <div class="flex items-center gap-8 ml-5">
                     <div class="centerflex">
                         <input id="cedu6d-1" type="radio" value="{{cedu6d-1}}" name="cedu6d" class="valueclass">
                         <label for="cedu6d-1" class="labelclass">1</label>
@@ -3629,7 +3647,7 @@
 
             <div class="divclass mt-6">
                 <div class="ml-4">{{T0872}}</div>
-                <div class="flex items-center gap-8">
+                <div class="flex items-center gap-8 ml-5">
                     <div class="centerflex">
                         <input id="cedu6e-1" type="radio" value="{{cedu6e-1}}" name="cedu6e" class="valueclass">
                         <label for="cedu6e-1" class="labelclass">1</label>
@@ -3657,7 +3675,7 @@
 
             <div class="divclass mt-6">
                 <div class="ml-4">{{T0874}}</div>
-                <div class="flex items-center gap-8">
+                <div class="flex items-center gap-8 ml-5">
                     <div class="centerflex">
                         <input id="cedu7a-1" type="radio" value="{{cedu7a-1}}" name="cedu7a" class="valueclass">
                         <label for="cedu7a-1" class="labelclass">1</label>
@@ -3683,7 +3701,7 @@
 
             <div class="divclass mt-6">
                 <div class="ml-4">{{T0875}}</div>
-                <div class="flex items-center gap-8">
+                <div class="flex items-center gap-8 ml-5">
                     <div class="centerflex">
                         <input id="cedu7b-1" type="radio" value="{{cedu7b-1}}" name="cedu7b" class="valueclass">
                         <label for="cedu7b-1" class="labelclass">1</label>
@@ -3709,7 +3727,7 @@
 
             <div class="divclass mt-6">
                 <div class="ml-4">{{T0876}}</div>
-                <div class="flex items-center gap-8">
+                <div class="flex items-center gap-8 ml-5">
                     <div class="centerflex">
                         <input id="cedu7c-1" type="radio" value="{{cedu7c-1}}" name="cedu7c" class="valueclass">
                         <label for="cedu7c-1" class="labelclass">1</label>
@@ -3735,7 +3753,7 @@
 
             <div class="divclass mt-6">
                 <div class="ml-4">{{T0877}}</div>
-                <div class="flex items-center gap-8">
+                <div class="flex items-center gap-8 ml-5">
                     <div class="centerflex">
                         <input id="cedu7d-1" type="radio" value="{{cedu7d-1}}" name="cedu7d" class="valueclass">
                         <label for="cedu7d-1" class="labelclass">1</label>
@@ -3761,7 +3779,7 @@
 
             <div class="divclass mt-6">
                 <div class="ml-4">{{T0878}}</div>
-                <div class="flex items-center gap-8">
+                <div class="flex items-center gap-8 ml-5">
                     <div class="centerflex">
                         <input id="cedu7e-1" type="radio" value="{{cedu7e-1}}" name="cedu7e" class="valueclass">
                         <label for="cedu7e-1" class="labelclass">1</label>
@@ -3789,7 +3807,7 @@
 
             <div class="divclass mt-6">
                 <div class="ml-4">{{T0880}}</div>
-                <div class="flex items-center gap-8">
+                <div class="flex items-center gap-8 ml-5">
                     <div class="centerflex">
                         <input id="cedu8a-1" type="radio" value="{{cedu8a-1}}" name="cedu8a" class="valueclass">
                         <label for="cedu8a-1" class="labelclass">1</label>
@@ -3815,7 +3833,7 @@
 
             <div class="divclass mt-6">
                 <div class="ml-4">{{T0881}}</div>
-                <div class="flex items-center gap-8">
+                <div class="flex items-center gap-8 ml-5">
                     <div class="centerflex">
                         <input id="cedu8b-1" type="radio" value="{{cedu8b-1}}" name="cedu8b" class="valueclass">
                         <label for="cedu8b-1" class="labelclass">1</label>
@@ -3841,7 +3859,7 @@
 
             <div class="divclass mt-6">
                 <div class="ml-4">{{T0882}}</div>
-                <div class="flex items-center gap-8">
+                <div class="flex items-center gap-8 ml-5">
                     <div class="centerflex">
                         <input id="cedu8c-1" type="radio" value="{{cedu8c-1}}" name="cedu8c" class="valueclass">
                         <label for="cedu8c-1" class="labelclass">1</label>
@@ -3867,7 +3885,7 @@
 
             <div class="divclass mt-6">
                 <div class="ml-4">{{T0883}}</div>
-                <div class="flex items-center gap-8">
+                <div class="flex items-center gap-8 ml-5">
                     <div class="centerflex">
                         <input id="cedu8d-1" type="radio" value="{{cedu8d-1}}" name="cedu8d" class="valueclass">
                         <label for="cedu8d-1" class="labelclass">1</label>
@@ -3893,7 +3911,7 @@
 
             <div class="divclass mt-6">
                 <div class="ml-4">{{T0884}}</div>
-                <div class="flex items-center gap-8">
+                <div class="flex items-center gap-8 ml-5">
                     <div class="centerflex">
                         <input id="cedu8e-1" type="radio" value="{{cedu8e-1}}" name="cedu8e" class="valueclass">
                         <label for="cedu8e-1" class="labelclass">1</label>
@@ -3921,7 +3939,7 @@
 
             <div class="divclass mt-6">
                 <div class="ml-4">{{T0886}}</div>
-                <div class="flex items-center gap-8">
+                <div class="flex items-center gap-8 ml-5">
                     <div class="centerflex">
                         <input id="cedu9a-1" type="radio" value="{{cedu9a-1}}" name="cedu9a" class="valueclass">
                         <label for="cedu9a-1" class="labelclass">1</label>
@@ -3947,7 +3965,7 @@
 
             <div class="divclass mt-6">
                 <div class="ml-4">{{T0887}}</div>
-                <div class="flex items-center gap-8">
+                <div class="flex items-center gap-8 ml-5">
                     <div class="centerflex">
                         <input id="cedu9b-1" type="radio" value="{{cedu9b-1}}" name="cedu9b" class="valueclass">
                         <label for="cedu9b-1" class="labelclass">1</label>
@@ -3973,7 +3991,7 @@
 
             <div class="divclass mt-6">
                 <div class="ml-4">{{T0888}}</div>
-                <div class="flex items-center gap-8">
+                <div class="flex items-center gap-8 ml-5">
                     <div class="centerflex">
                         <input id="cedu9c-1" type="radio" value="{{cedu9c-1}}" name="cedu9c" class="valueclass">
                         <label for="cedu9c-1" class="labelclass">1</label>
@@ -3999,7 +4017,7 @@
 
             <div class="divclass mt-6">
                 <div class="ml-4">{{T0889}}</div>
-                <div class="flex items-center gap-8">
+                <div class="flex items-center gap-8 ml-5">
                     <div class="centerflex">
                         <input id="cedu9d-1" type="radio" value="{{cedu9d-1}}" name="cedu9d" class="valueclass">
                         <label for="cedu9d-1" class="labelclass">1</label>
@@ -4025,7 +4043,7 @@
 
             <div class="divclass mt-6">
                 <div class="ml-4">{{T0890}}</div>
-                <div class="flex items-center gap-8">
+                <div class="flex items-center gap-8 ml-5">
                     <div class="centerflex">
                         <input id="cedu9e-1" type="radio" value="{{cedu9e-1}}" name="cedu9e" class="valueclass">
                         <label for="cedu9e-1" class="labelclass">1</label>
@@ -4315,6 +4333,20 @@
                 </div>
             </div>
 
+            <div class="divclass mt-6">
+                <div>{{T1365}}. {{T1366}}</div>
+                <div class="div4class">
+                    <div class="centerflex">
+                        <input id="lk22_12-1" type="radio" value="{{lk22_12-1}}" name="lk22_12" class="valueclass">
+                        <label for="lk22_12-1" class="labelclass">{{T1367}}</label>
+                    </div>
+                    <div class="centerflex">
+                        <input id="lk22_12-2" type="radio" value="{{lk22_12-2}}" name="lk22_12" class="valueclass">
+                        <label for="lk22_12-2" class="labelclass">{{T1368}}</label>
+                    </div>
+                </div>
+            </div>
+
             <h3 class="mt-10 text-xl font-semibold bg-gray-100 px-2 py-1 text-gray-700">{{T0970}}</h3>
 
             <div class="divclass mt-10">
@@ -4332,6 +4364,10 @@
                     <div class="centerflex">
                         <input id="qhealthp3-3" type="radio" value="{{qhealthp3-3}}" name="qhealthp3" class="valueclass">
                         <label for="qhealthp3-3" class="labelclass">{{T0976}}</label>
+                    </div>
+                    <div class="centerflex">
+                        <input id="qhealthp3-4" type="radio" value="{{qhealthp3-4}}" name="qhealthp3" class="valueclass">
+                        <label for="qhealthp3-4" class="labelclass">{{T1370}}</label>
                     </div>
                 </div>
             </div>
@@ -5009,7 +5045,7 @@
             <p>{{T1157}}: {{T1158}}</p>
             <div class="divclass mt-10">
                 <div class="ml-3">{{T1159}}</div>
-                <div class="div4class">
+                <div class="div4class ml-4">
                     <div class="centerflex">
                         <input id="qriskp1-1" type="radio" value="{{qriskp1-1}}" name="qriskp1" class="valueclass">
                         <label for="qriskp1-1" class="labelclass">{{T1160}}</label>
@@ -5026,7 +5062,7 @@
             </div>
             <div class="divclass mt-10">
                 <div class="ml-3">{{T1163}}</div>
-                <div class="div4class">
+                <div class="div4class ml-4">
                     <div class="centerflex">
                         <input id="qriskp3-1" type="radio" value="{{qriskp3-1}}" name="qriskp3" class="valueclass">
                         <label for="qriskp3-1" class="labelclass">{{T1164}}</label>
@@ -5043,7 +5079,7 @@
             </div>
             <div class="divclass mt-10">
                 <div class="ml-3">{{T1167}}</div>
-                <div class="div4class">
+                <div class="div4class ml-4">
                     <div class="centerflex">
                         <input id="qriskp4-1" type="radio" value="{{qriskp4-1}}" name="qriskp4" class="valueclass">
                         <label for="qriskp4-1" class="labelclass">{{T1168}}</label>
@@ -5060,7 +5096,7 @@
             </div>
             <div class="divclass mt-10">
                 <div class="ml-3">{{T1171}}</div>
-                <div class="div4class">
+                <div class="div4class ml-4">
                     <div class="centerflex">
                         <input id="qriskp5-1" type="radio" value="{{qriskp5-1}}" name="qriskp5" class="valueclass">
                         <label for="qriskp5-1" class="labelclass">{{T1172}}</label>
@@ -5077,7 +5113,7 @@
             </div>
             <div class="divclass mt-10">
                 <div class="ml-3">{{T1175}}</div>
-                <div class="div4class">
+                <div class="div4class ml-4">
                     <div class="centerflex">
                         <input id="qriskp6-1" type="radio" value="{{qriskp6-1}}" name="qriskp6" class="valueclass">
                         <label for="qriskp6-1" class="labelclass">{{T1176}}</label>
@@ -5094,7 +5130,7 @@
             </div>
             <div class="divclass mt-10">
                 <div class="ml-3">{{T1179}}</div>
-                <div class="div4class">
+                <div class="div4class ml-4">
                     <div class="centerflex">
                         <input id="qriskp7-1" type="radio" value="{{qriskp7-1}}" name="qriskp7" class="valueclass">
                         <label for="qriskp7-1" class="labelclass">{{T1180}}</label>
@@ -5111,7 +5147,7 @@
             </div>
             <div class="divclass mt-10">
                 <div class="ml-3">{{T1183}}</div>
-                <div class="div4class">
+                <div class="div4class ml-4">
                     <div class="centerflex">
                         <input id="qriskp8-1" type="radio" value="{{qriskp8-1}}" name="qriskp8" class="valueclass">
                         <label for="qriskp8-1" class="labelclass">{{T1184}}</label>
@@ -5128,7 +5164,7 @@
             </div>
             <div class="divclass mt-10">
                 <div class="ml-3">{{T1187}}</div>
-                <div class="div4class">
+                <div class="div4class ml-4">
                     <div class="centerflex">
                         <input id="qriskp9-1" type="radio" value="{{qriskp9-1}}" name="qriskp9" class="valueclass">
                         <label for="qriskp9-1" class="labelclass">{{T1188}}</label>
@@ -5148,7 +5184,7 @@
 
             <div class="divclass mt-10">
                 <div>{{T1192}}. {{T1193}}</div>
-                <div class="div4class">
+                <div class="div4class ml-4">
                     <div class="centerflex">
                         <input id="cmnt1-1" type="radio" value="{{cmnt1-1}}" name="cmnt1" class="valueclass">
                         <label for="cmnt1-1" class="labelclass">{{T1194}}</label>

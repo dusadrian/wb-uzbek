@@ -175,7 +175,6 @@ export const instrument4 = {
                 for (const item of args.questions) {
                     instrument.seteazaValoareElement(item.variable, item.value);
                 }
-
             }
 
             // set default values, IRRESPECTIVE of the instrument
@@ -221,7 +220,12 @@ export const instrument4 = {
                 institutionType = args.userData.service_type_code;
                 institutionCode = args.userData.institution_code;
             }
-
+console.log(instrument);
+const order = instrument.questionsOrder.indexOf('lk2');
+if (order >= 0) {
+    console.log(instrument.questions[order - 1]);
+    console.log(instrument.questionsOrder[order - 1]);
+}
             instrument.start(instrumentID, instrument.trimis, saveChestionar, validateChestionar);
 
         });

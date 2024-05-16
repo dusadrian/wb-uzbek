@@ -21,6 +21,7 @@ import { KeyString, KeyStringNumber, regions, districts, settlements } from "../
 import * as en from "../../locales/en.json";
 import * as uz from "../../locales/uz.json";
 import * as ru from "../../locales/ru.json";
+// import { error } from "jquery";
 const locales: { [key: string]: typeof en | typeof uz | typeof ru } = {
     'en': en,
     'uz': uz,
@@ -184,7 +185,8 @@ export const instrument3 = {
                     util.setValue('i4', insons[institution_code].district);
                     util.setValue('i4a', insons[institution_code].region);
                     util.setValue('i4b', insons[institution_code].district);
-                    util.setValue('i4c', "--");
+                    const settlement = insons[institution_code].settlement;
+                    util.setValue('i4c', settlement ? settlement : "--");
                     util.setValue('i4d', "-7");
                     util.setValue('i5', "--");
                 }
@@ -284,3 +286,12 @@ e2e7.forEach(item => {
         }
     })
 })
+
+util.listen("j5", "myChange", () => {
+    const message = "J5 < 60";
+    errorHandler.removeError("j5", message);
+    if (Number(instrument.questions['j5'].value) > 168) {
+        errorHandler.addError("j5", message);
+        instrument.questions['j5'].value = '-9';
+    }
+});

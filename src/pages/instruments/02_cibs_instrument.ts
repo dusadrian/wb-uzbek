@@ -37,10 +37,10 @@ const general_dates = [
 ];
 
 
-const regElements =  ["reg", "lk14b", "sa3a", "sa5r", "cm3b", "cm11c", "ct11c", "cg11c", "qeduc1ar"];
-const disElements =  ["dis", "lk14c", "sa3b", "sa5d", "cm3c", "cm11d", "ct11d", "cg11d", "qeduc1ad"];
-const setElements =  ["",    "lk14d", "sa3c", "",     "cm3d", "cm11e", "ct11e", "cg11e", ""];
-const typeElements = ["",    "lk14e", "sa3d", "",     "cm3e", "cm11f", "ct11f", "cg11f", ""];
+const regElements =  ["reg", "lk14b", "sa3a", "sa5r", "cm3b", "ct3b", "cm11c", "ct11c", "cg11c", "qeduc1ar", "qeduc2ar"];
+const disElements =  ["dis", "lk14c", "sa3b", "sa5d", "cm3c", "ct3c", "cm11d", "ct11d", "cg11d", "qeduc1ad", "qeduc2ad"];
+const setElements =  ["",    "lk14d", "sa3c", "",     "cm3d", "ct3d", "cm11e", "ct11e", "cg11e", ""        , ""        ];
+const typeElements = ["",    "lk14e", "sa3d", "",     "cm3e", "ct3e", "cm11f", "ct11f", "cg11f", ""        , ""        ];
 
 let regionCode = '';
 let userUUID = '';
@@ -48,36 +48,15 @@ let institutionType = '';
 let institutionCode = '';
 
 
-const qeduc2 = util.radioIDs("qeduc2");
+function check_sa1a(sa1a: number) {
 
-function check_sa1a(value: string) {
-    instrument.questions["qeduc2"].readonly = false;
-    qeduc2.forEach((item) => {
-        const elem = util.htmlElement(item);
-        elem.disabled = false;
-        elem.dataset['skip'] = 'false';
-        if (Number(value) > 7 && item == "qeduc2-3") {
-            elem.checked = false;
-        }
-    })
+    const elem = util.htmlElement("qeduc2-3");
+    if (sa1a < 7) {
+        elem.checked = true;
+        instrument.questions["qeduc2"].value = "7";
 
-    if (Number(value) >= 3 && Number(value) < 7) {
-
-        qeduc2.forEach((item) => {
-            const elem = util.htmlElement(item);
-            elem.disabled = true;
-            elem.dataset['skip'] = 'true';
-        })
-        util.htmlElement("qeduc2-3").checked = true;
-
-        instrument.questions["qeduc2"].value = "3";
-        instrument.questions["qeduc2"].readonly = true;
-
-    } else if (Number(value) >= 7) {
-        const elem = util.htmlElement("qeduc2-3");
+    } else {
         elem.checked = false;
-        elem.dataset['skip'] = "true";
-        elem.disabled = true;
 
         if (instrument.questions.qeduc2.value == "7") {
             instrument.questions.qeduc2.value = "-9";
@@ -145,7 +124,6 @@ export const instrument2 = {
             const institution_code = args.userData.institution_code;
             const inson_user = Object.keys(insons).indexOf(institution_code) >= 0;
 
-            const sa5i = util.htmlElement("sa5i");
             const reg_codes = Object.keys(regions);
             for (let x = 0; x < regElements.length; x++) {
                 const reg_el = util.htmlElement(regElements[x]);
@@ -165,19 +143,39 @@ export const instrument2 = {
 
                 const dis_el = util.htmlElement(disElements[x]);
                 const set_el = util.htmlElement(setElements[x]);
+                const sa5i = util.htmlElement("sa5i");
 
                 util.listen(regElements[x], "change", function () {
+                    const option = document.createElement("option");
+                    option.value = "-9";
+                    option.text = translations['t_choose'];
 
                     if (regElements[x] == "sa5r") {
                         sa5i.innerHTML = "";
+                        sa5i.appendChild(option);
+                        instrument.questions.sa5i.value = "-7";
                     }
 
-                    if (typeElements[x] != "") {
-                        util.htmlElement(typeElements[x]).value = "";
+                    if (regElements[x] == "qeduc1ar") {
+                        util.htmlElement("qeduc1a1").innerHTML = "";
+                        util.htmlElement("qeduc1a1").appendChild(option);
+                        instrument.questions.qeduc1a1.value = "-7";
+                    }
+
+                    if (regElements[x] == "qeduc2ar") {
+                        util.htmlElement("qeduc2a1").innerHTML = "";
+                        util.htmlElement("qeduc2a1").appendChild(option);
+                        instrument.questions.qeduc2a1.value = "-7";
                     }
 
                     if (setElements[x] != "") {
-                        set_el.innerHTML = "";
+                        util.htmlElement(setElements[x]).innerHTML = "";
+                        instrument.questions[setElements[x]].value = "-7";
+                    }
+
+                    if (typeElements[x] != "") {
+                        util.htmlElement(typeElements[x]).innerHTML = "";
+                        instrument.questions[typeElements[x]].value = "-7";
                     }
 
                     const selectedRegion = reg_el.value;
@@ -200,30 +198,38 @@ export const instrument2 = {
                 })
 
                 util.listen(disElements[x], "change", function () {
+                    const option = document.createElement("option");
+                    option.value = "-9";
+                    option.text = translations['t_choose'];
+
                     if (regElements[x] == "sa5r") {
                         sa5i.innerHTML = "";
+                        sa5i.appendChild(option);
+                        instrument.questions.sa5i.value = "-9";
                     }
 
                     if (typeElements[x] != "") {
                         util.htmlElement(typeElements[x]).value = "";
+                        util.htmlElement(typeElements[x]).appendChild(option);
+                        util.htmlElement(typeElements[x]).value = "-9";
                     }
 
                     const selectedDistrict = dis_el.value;
 
                     if (setElements[x] != "") {
+                        const option = document.createElement("option");
+                        option.value = "-9";
+                        option.text = translations['t_choose'];
+
                         instrument.questions[setElements[x]].skip = false;
-                        util.htmlElement(setElements[x]).disabled = false;
+                        set_el.disabled = false;
                         set_el.innerHTML = "";
+                        set_el.appendChild(option);
 
                         if (Number(selectedDistrict) > 0) {
-                            const option = document.createElement("option");
-                            option.value = "-9";
-                            option.text = translations['t_choose'];
-
                             const set_codes = districts[selectedDistrict].settlements;
 
                             if (set_codes.length > 0) {
-                                set_el.appendChild(option);
 
                                 for (let i = 0; i < set_codes.length; i++) {
                                     const option = document.createElement("option");
@@ -231,14 +237,14 @@ export const instrument2 = {
                                     option.text = set_codes[i] + ": " + (settlements[set_codes[i]] as KeyString)[lang];
                                     set_el.appendChild(option);
                                 }
-                            }
-                            else {
+                            } else {
                                 if (typeElements[x] != "") {
                                     util.setValue(typeElements[x], "" + districts[selectedDistrict].type);
                                 }
+
                                 instrument.questions[setElements[x]].skip = true;
                                 instrument.questions[setElements[x]].value = '-7';
-                                util.htmlElement(setElements[x]).disabled = true;
+                                set_el.disabled = true;
                             }
                         }
                     }
@@ -262,7 +268,19 @@ export const instrument2 = {
                     instrument.seteazaValoareElement(item.variable, item.value, index >= 0);
 
                     if (item.variable == "qeduc2") {
-                        check_sa1a(instrument.questions.sa1a.value);
+                        check_sa1a(Number(instrument.questions.sa1a.value));
+                    }
+
+                    if (item.variable == "qeduc1ad") {
+                        if (Number(instrument.questions.qeduc1a.value) > 0 && Number(instrument.questions.qeduc1ad.value) > 0) {
+                            util.trigger("qeduc1ad", "myChange");
+                        }
+                    }
+
+                    if (item.variable == "qeduc2ad") {
+                        if (Number(instrument.questions.qeduc2a.value) > 0 && Number(instrument.questions.qeduc2ad.value) > 0) {
+                            util.trigger("qeduc2ad", "myChange");
+                        }
                     }
                 }
             }
@@ -297,14 +315,6 @@ export const instrument2 = {
                 userUUID = args.userData.uuid;
                 institutionType = args.userData.service_type_code;
                 institutionCode = args.userData.institution_code;
-
-                // if (Object.keys(services).indexOf(institution_code) >= 0) {
-                //     util.setValue("omr10", "-9");
-                //     const type = services[institution_code].type;
-                //     if (["21", "22", "23", "24", "25", "26", "27", "28"].indexOf(type) >= 0) {
-                //         util.setValue("omr10", type);
-                //     }
-                // }
             }
 
             instrument.start(instrumentID, instrument.trimis, saveChestionar, validateChestionar);
@@ -381,8 +391,8 @@ util.listen("sa1", "myChange", () => {
         if (!Number.isNaN(age)) {
             util.setValue("sa1a", age.toString());
         }
-
     }
+
 
     const years = util.diffDates(
         util.standardDate(instrument.questions.sa1.value),
@@ -397,11 +407,11 @@ util.listen("sa1", "myChange", () => {
     )
 
     util.setValue('sa1y', years.toString());
-    util.setValue('sa1m', months.toString());
+    util.setValue('sa1m', (months % 12).toString());
 });
 
 util.listen("sa1a", "myChange", () => {
-    check_sa1a(instrument.questions["sa1a"].value);
+    check_sa1a(Number(instrument.questions.sa1a.value));
 });
 
 
@@ -640,6 +650,30 @@ util.listen("sch2", "myChange", () => {
 });
 
 
+
+const qfam2 = [
+    'qfam2_1', 'qfam2_2', 'qfam2_3', 'qfam2_4', 'qfam2_5',
+    'qfam2_6', 'qfam2_7', 'qfam2_8', 'qfam2_9'
+]
+
+util.listen("qfam2_90", "change", () => {
+    if (util.htmlElement("qfam2_90").checked) {
+        qfam2.forEach((el) => {
+            util.htmlElement(el).checked = false;
+            instrument.questions[el].value = "0";
+        })
+    }
+})
+
+util.listen(qfam2, "change", () => {
+    if (util.makeSumFromElements(qfam2) > 0) {
+        util.htmlElement("qfam2_90").checked = false;
+        instrument.questions["qfam2_90"].value = "0";
+    }
+});
+
+
+
 util.listen("sa5d", "myChange", () => {
     const selectedDistrict = util.htmlElement("sa5d").value;
     const institutie = util.htmlElement("qeduc1a1");
@@ -681,13 +715,13 @@ util.listen("sa5d", "myChange", () => {
 
 const qeduc1a = util.radioIDs("qeduc1a");
 util.listen(qeduc1a, "myChange", () => {
-    if (Number(util.htmlElement("qeduc1ad").value) > 0) {
-        util.trigger("qeduc1ad", "change");
+    if (Number(instrument.questions.qeduc1ad.value) > 0) {
+        util.trigger("qeduc1ad", "myChange");
     }
 })
 
 util.listen("qeduc1ad", "myChange", () => {
-    const qeduc1a = instrument.questions.qeduc1a.value;
+    const qeduc1a = Number(instrument.questions.qeduc1a.value);
     const selectedDistrict = util.htmlElement("qeduc1ad").value;
     const institutie = util.htmlElement("qeduc1a1");
 
@@ -701,26 +735,24 @@ util.listen("qeduc1ad", "myChange", () => {
     const serv = districts[selectedDistrict].services;
     if (serv.length > 0) {
         for (let i = 0; i < serv.length; i++) {
-            if (Number(services[serv[i]].type) < 20) {
-                let service_included = true;
-                if (insons[institutionCode]) {
-                    console.log(insons[institutionCode])
-                    service_included = insons[institutionCode].services.includes(serv[i]);
-                }
+            const type = Number(services[serv[i]].type);
+            let service_included = true;
+            if (insons[institutionCode]) {
+                service_included = insons[institutionCode].services.includes(serv[i]);
+            }
 
-                if (qeduc1a == "2") {
-                    if (services[serv[i]].type != "31") {
-                        service_included = false;
-                    }
+            if (qeduc1a == 2) {
+                if (type != 31) {
+                    service_included = false;
                 }
+            }
 
-                if (service_included) {
-                    const option = document.createElement("option");
-                    option.value = serv[i];
-                    const serviciu = { ...services[serv[i]] } as KeyStringNumber;
-                    option.text = serv[i] + ': ' + serviciu['name_'+ lang];
-                    institutie.appendChild(option);
-                }
+            if (service_included) {
+                const option = document.createElement("option");
+                option.value = serv[i];
+                const serviciu = { ...services[serv[i]] } as KeyStringNumber;
+                option.text = serv[i] + ': ' + serviciu['name_'+ lang];
+                institutie.appendChild(option);
             }
         }
     }
@@ -731,4 +763,90 @@ util.listen("qeduc1ad", "myChange", () => {
     option999.text = '999: ' + translations['not_in_registry'];
     optgroup.appendChild(option999);
     institutie.appendChild(optgroup);
+})
+
+
+const qeduc2a = util.radioIDs("qeduc2a");
+util.listen(qeduc2a, "myChange", () => {
+    if (Number(instrument.questions.qeduc2ad.value) > 0) {
+        util.trigger("qeduc2ad", "myChange");
+    }
+})
+
+util.listen("qeduc2ad", "myChange", () => {
+    const qeduc2a = Number(instrument.questions.qeduc2a.value);
+    const selectedDistrict = util.htmlElement("qeduc2ad").value;
+    const institutie = util.htmlElement("qeduc2a1");
+
+    const option = document.createElement("option");
+    option.value = "-9";
+    option.text = translations['t_choose'];
+
+    institutie.innerHTML = "";
+    institutie.appendChild(option);
+
+    const serv = districts[selectedDistrict].services;
+    if (serv.length > 0) {
+        for (let i = 0; i < serv.length; i++) {
+            const type = Number(services[serv[i]].type);
+            let service_included = true;
+            if (insons[institutionCode]) {
+                service_included = insons[institutionCode].services.includes(serv[i]);
+            }
+
+            if (qeduc2a == 2) {
+                if (type != 32) {
+                    service_included = false;
+                }
+            }
+
+            if (qeduc2a == 3) {
+                if (type < 21 || type > 28) {
+                    service_included = false;
+                }
+            }
+
+            if (qeduc2a == 4) {
+                if (type != 33) {
+                    service_included = false;
+                }
+            }
+
+            if (qeduc2a == 5) {
+                if (type != 34) {
+                    service_included = false;
+                }
+            }
+
+            if (service_included) {
+                const option = document.createElement("option");
+                option.value = serv[i];
+                const serviciu = { ...services[serv[i]] } as KeyStringNumber;
+                option.text = serv[i] + ': ' + serviciu['name_'+ lang];
+                institutie.appendChild(option);
+            }
+        }
+    }
+
+    const optgroup = document.createElement("optgroup");
+    const option999 = document.createElement("option");
+    option999.value = '999';
+    option999.text = '999: ' + translations['not_in_registry'];
+    optgroup.appendChild(option999);
+    institutie.appendChild(optgroup);
+})
+
+util.radioIDs("cmnt2").forEach((item) => {
+    util.listen(item, "change", () => {
+        instrument.questions.cmnt2a2.skip = false;
+        instrument.questions.cmnt2a3.skip = false;
+        util.htmlElement("cmnt2a2").disabled = false;
+        util.htmlElement("cmnt2a3").disabled = false;
+        if (instrument.questions.cmnt2.value == "1") {
+            instrument.questions.cmnt2a2.skip = true;
+            instrument.questions.cmnt2a3.skip = true;
+            util.htmlElement("cmnt2a2").disabled = true;
+            util.htmlElement("cmnt2a3").disabled = true;
+        }
+    })
 })

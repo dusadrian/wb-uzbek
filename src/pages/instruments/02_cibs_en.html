@@ -2247,6 +2247,24 @@
                 </div>
             </div>
 
+            <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                <div>2ar. Region</div>
+                <div>
+                    <select id="qeduc2ar" name="qeduc2ar" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
+                        <option value="-9">--- choose ---</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                <div>2ad. District</div>
+                <div>
+                    <select id="qeduc2ad" name="qeduc2ad" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
+                        <option value="-9">--- choose ---</option>
+                    </select>
+                </div>
+            </div>
+
             <small class="my-2 block italic text-red-500 mt-6">IF CHILD ATTENDED A SPECIALIZED EDUCATION INSTITUTION</small>
             <div class="grid grid-cols-2 gap-4 items-center mt-2">
                 <div>2a1. Please enter the code from the registry of the last educational institution the child came from</div>
@@ -2359,7 +2377,7 @@
             </div>
 
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
-                <div>3a. What was the reason for the child being transferred from another boarding school?</div>
+                <div>4a. What was the reason for the child being transferred from another boarding school?</div>
                 <div class="flex flex-col gap-2">
                     <div class="flex items-center">
                         <input id="qeduc4a-1" type="radio" value="1" name="qeduc4a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
@@ -3260,7 +3278,7 @@
 
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
                 <div class="ml-4">4a. Literacy: The child's ability to read and write texts, such as stories, poems, letters, or reports, in their native or other languages</div>
-                <div class="flex items-center gap-8">
+                <div class="flex items-center gap-8 ml-4">
                     <div class="flex items-center">
                         <input id="cedu4a-1" type="radio" value="{{cedu4a-1}}" name="cedu4a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="cedu4a-1" class="ms-2 text-sm text-gray-900">1</label>
@@ -3286,7 +3304,7 @@
 
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
                 <div class="ml-4">4b. Numeracy: The child's ability to understand and use numbers, such as counting, adding, subtracting, multiplying, or dividing</div>
-                <div class="flex items-center gap-8">
+                <div class="flex items-center gap-8 ml-5">
                     <div class="flex items-center">
                         <input id="cedu4b-1" type="radio" value="{{cedu4b-1}}" name="cedu4b" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="cedu4b-1" class="ms-2 text-sm text-gray-900">1</label>
@@ -3312,7 +3330,7 @@
 
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
                 <div class="ml-4">4c. Reasoning: The child's ability to think logically and critically, such as making inferences, deductions, or comparisons</div>
-                <div class="flex items-center gap-8">
+                <div class="flex items-center gap-8 ml-5">
                     <div class="flex items-center">
                         <input id="cedu4c-1" type="radio" value="{{cedu4c-1}}" name="cedu4c" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="cedu4c-1" class="ms-2 text-sm text-gray-900">1</label>
@@ -3338,7 +3356,7 @@
 
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
                 <div class="ml-4">4d. Problem-solving: The child's ability to find and apply solutions to various challenges or tasks, such as puzzles, games, or projects</div>
-                <div class="flex items-center gap-8">
+                <div class="flex items-center gap-8 ml-5">
                     <div class="flex items-center">
                         <input id="cedu4d-1" type="radio" value="{{cedu4d-1}}" name="cedu4d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="cedu4d-1" class="ms-2 text-sm text-gray-900">1</label>
@@ -3364,7 +3382,7 @@
 
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
                 <div class="ml-4">4e. Communication: The child's ability to express and understand oral and written messages, such as speaking, listening, reading, or writing, in their native or other languages</div>
-                <div class="flex items-center gap-8">
+                <div class="flex items-center gap-8 ml-5">
                     <div class="flex items-center">
                         <input id="cedu4e-1" type="radio" value="{{cedu4e-1}}" name="cedu4e" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="cedu4e-1" class="ms-2 text-sm text-gray-900">1</label>
@@ -3393,7 +3411,7 @@
 
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
                 <div class="ml-4">5a. Social skills: The child's ability to form and maintain positive relationships with peers, teachers, and other adults, such as sharing, helping, or collaborating</div>
-                <div class="flex items-center gap-8">
+                <div class="flex items-center gap-8 ml-5">
                     <div class="flex items-center">
                         <input id="cedu5a-1" type="radio" value="{{cedu5a-1}}" name="cedu5a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="cedu5a-1" class="ms-2 text-sm text-gray-900">1</label>
@@ -3419,7 +3437,7 @@
 
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
                 <div class="ml-4">5b. Emotional awareness: The child's ability to recognize and label their own and others' emotions, such as happiness, sadness, anger, or fear</div>
-                <div class="flex items-center gap-8">
+                <div class="flex items-center gap-8 ml-5">
                     <div class="flex items-center">
                         <input id="cedu5b-1" type="radio" value="{{cedu5b-1}}" name="cedu5b" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="cedu5b-1" class="ms-2 text-sm text-gray-900">1</label>
@@ -3445,7 +3463,7 @@
 
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
                 <div class="ml-4">5c. Emotional regulation: The child's ability to manage and cope with their own and others' emotions, such as calming down, cheering up, or comforting</div>
-                <div class="flex items-center gap-8">
+                <div class="flex items-center gap-8 ml-5">
                     <div class="flex items-center">
                         <input id="cedu5c-1" type="radio" value="{{cedu5c-1}}" name="cedu5c" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="cedu5c-1" class="ms-2 text-sm text-gray-900">1</label>
@@ -3471,7 +3489,7 @@
 
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
                 <div class="ml-4">5d. Empathy: The child's ability to understand and respond to the feelings and perspectives of others, such as showing compassion, respect, or kindness</div>
-                <div class="flex items-center gap-8">
+                <div class="flex items-center gap-8 ml-5">
                     <div class="flex items-center">
                         <input id="cedu5d-1" type="radio" value="{{cedu5d-1}}" name="cedu5d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="cedu5d-1" class="ms-2 text-sm text-gray-900">1</label>
@@ -3497,7 +3515,7 @@
 
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
                 <div class="ml-4">5e. Self-esteem: The child's ability to value and appreciate themselves and their abilities, such as being confident, proud, or optimistic</div>
-                <div class="flex items-center gap-8">
+                <div class="flex items-center gap-8 ml-5">
                     <div class="flex items-center">
                         <input id="cedu5e-1" type="radio" value="{{cedu5e-1}}" name="cedu5e" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="cedu5e-1" class="ms-2 text-sm text-gray-900">1</label>
@@ -3525,7 +3543,7 @@
 
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
                 <div class="ml-4">6a. Gross motor skills: The child's ability to use large muscles to control their body movements, such as running, jumping, or balancing</div>
-                <div class="flex items-center gap-8">
+                <div class="flex items-center gap-8 ml-5">
                     <div class="flex items-center">
                         <input id="cedu6a-1" type="radio" value="{{cedu6a-1}}" name="cedu6a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="cedu6a-1" class="ms-2 text-sm text-gray-900">1</label>
@@ -3551,7 +3569,7 @@
 
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
                 <div class="ml-4">6b. Fine motor skills: The child's ability to use small muscles to coordinate their hand and finger movements, such as writing, drawing, or cutting</div>
-                <div class="flex items-center gap-8">
+                <div class="flex items-center gap-8 ml-5">
                     <div class="flex items-center">
                         <input id="cedu6b-1" type="radio" value="{{cedu6b-1}}" name="cedu6b" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="cedu6b-1" class="ms-2 text-sm text-gray-900">1</label>
@@ -3577,7 +3595,7 @@
 
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
                 <div class="ml-4">6c. Coordination: The child's ability to synchronize their movements with their vision, hearing, or touch, such as catching, throwing, or kicking</div>
-                <div class="flex items-center gap-8">
+                <div class="flex items-center gap-8 ml-5">
                     <div class="flex items-center">
                         <input id="cedu6c-1" type="radio" value="{{cedu6c-1}}" name="cedu6c" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="cedu6c-1" class="ms-2 text-sm text-gray-900">1</label>
@@ -3603,7 +3621,7 @@
 
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
                 <div class="ml-4">6d. Strength: The child's ability to exert force and resistance with their muscles, such as lifting, pushing, or pulling</div>
-                <div class="flex items-center gap-8">
+                <div class="flex items-center gap-8 ml-5">
                     <div class="flex items-center">
                         <input id="cedu6d-1" type="radio" value="{{cedu6d-1}}" name="cedu6d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="cedu6d-1" class="ms-2 text-sm text-gray-900">1</label>
@@ -3629,7 +3647,7 @@
 
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
                 <div class="ml-4">6e. Flexibility: The child's ability to bend, stretch, or twist their joints and muscles, such as reaching, twisting, or curling</div>
-                <div class="flex items-center gap-8">
+                <div class="flex items-center gap-8 ml-5">
                     <div class="flex items-center">
                         <input id="cedu6e-1" type="radio" value="{{cedu6e-1}}" name="cedu6e" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="cedu6e-1" class="ms-2 text-sm text-gray-900">1</label>
@@ -3657,7 +3675,7 @@
 
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
                 <div class="ml-4">7a. Attention: The child's ability to focus and sustain their concentration on a task or stimulus, such as listening, watching, or following instructions</div>
-                <div class="flex items-center gap-8">
+                <div class="flex items-center gap-8 ml-5">
                     <div class="flex items-center">
                         <input id="cedu7a-1" type="radio" value="{{cedu7a-1}}" name="cedu7a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="cedu7a-1" class="ms-2 text-sm text-gray-900">1</label>
@@ -3683,7 +3701,7 @@
 
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
                 <div class="ml-4">7b. Memory: The child's ability to store and recall information and experiences, such as remembering names, facts, or events</div>
-                <div class="flex items-center gap-8">
+                <div class="flex items-center gap-8 ml-5">
                     <div class="flex items-center">
                         <input id="cedu7b-1" type="radio" value="{{cedu7b-1}}" name="cedu7b" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="cedu7b-1" class="ms-2 text-sm text-gray-900">1</label>
@@ -3709,7 +3727,7 @@
 
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
                 <div class="ml-4">7c. Imagination: The child's ability to create and explore mental images and scenarios, such as pretending, fantasizing, or inventing</div>
-                <div class="flex items-center gap-8">
+                <div class="flex items-center gap-8 ml-5">
                     <div class="flex items-center">
                         <input id="cedu7c-1" type="radio" value="{{cedu7c-1}}" name="cedu7c" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="cedu7c-1" class="ms-2 text-sm text-gray-900">1</label>
@@ -3735,7 +3753,7 @@
 
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
                 <div class="ml-4">7d. Creativity: The child's ability to produce original and novel ideas and products, such as drawing, painting, or composing</div>
-                <div class="flex items-center gap-8">
+                <div class="flex items-center gap-8 ml-5">
                     <div class="flex items-center">
                         <input id="cedu7d-1" type="radio" value="{{cedu7d-1}}" name="cedu7d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="cedu7d-1" class="ms-2 text-sm text-gray-900">1</label>
@@ -3761,7 +3779,7 @@
 
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
                 <div class="ml-4">7e. Play: The child's ability to engage in spontaneous and voluntary activities for fun and learning, such as playing games, toys, or roles</div>
-                <div class="flex items-center gap-8">
+                <div class="flex items-center gap-8 ml-5">
                     <div class="flex items-center">
                         <input id="cedu7e-1" type="radio" value="{{cedu7e-1}}" name="cedu7e" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="cedu7e-1" class="ms-2 text-sm text-gray-900">1</label>
@@ -3789,7 +3807,7 @@
 
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
                 <div class="ml-4">8a. Hygiene: The child's ability to maintain their cleanliness and health, such as washing, brushing, or grooming</div>
-                <div class="flex items-center gap-8">
+                <div class="flex items-center gap-8 ml-5">
                     <div class="flex items-center">
                         <input id="cedu8a-1" type="radio" value="{{cedu8a-1}}" name="cedu8a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="cedu8a-1" class="ms-2 text-sm text-gray-900">1</label>
@@ -3815,7 +3833,7 @@
 
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
                 <div class="ml-4">8b. Nutrition: The child's ability to choose and consume healthy and balanced food and drinks, such as eating, drinking, or cooking</div>
-                <div class="flex items-center gap-8">
+                <div class="flex items-center gap-8 ml-5">
                     <div class="flex items-center">
                         <input id="cedu8b-1" type="radio" value="{{cedu8b-1}}" name="cedu8b" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="cedu8b-1" class="ms-2 text-sm text-gray-900">1</label>
@@ -3841,7 +3859,7 @@
 
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
                 <div class="ml-4">8c. Safety: The child's ability to avoid and prevent harm and injury, such as following rules, using caution, or seeking help</div>
-                <div class="flex items-center gap-8">
+                <div class="flex items-center gap-8 ml-5">
                     <div class="flex items-center">
                         <input id="cedu8c-1" type="radio" value="{{cedu8c-1}}" name="cedu8c" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="cedu8c-1" class="ms-2 text-sm text-gray-900">1</label>
@@ -3867,7 +3885,7 @@
 
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
                 <div class="ml-4">8d. Routine: The child's ability to follow and complete a regular schedule of activities, such as waking up, going to school, or doing homework</div>
-                <div class="flex items-center gap-8">
+                <div class="flex items-center gap-8 ml-5">
                     <div class="flex items-center">
                         <input id="cedu8d-1" type="radio" value="{{cedu8d-1}}" name="cedu8d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="cedu8d-1" class="ms-2 text-sm text-gray-900">1</label>
@@ -3893,7 +3911,7 @@
 
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
                 <div class="ml-4">8e. Responsibility: The child's ability to take care of their belongings and environment, such as dressing, tidying, or recycling</div>
-                <div class="flex items-center gap-8">
+                <div class="flex items-center gap-8 ml-5">
                     <div class="flex items-center">
                         <input id="cedu8e-1" type="radio" value="{{cedu8e-1}}" name="cedu8e" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="cedu8e-1" class="ms-2 text-sm text-gray-900">1</label>
@@ -3921,7 +3939,7 @@
 
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
                 <div class="ml-4">9a. Diversity: The child's ability to recognize and value the differences and similarities among people, such as race, gender, or religion</div>
-                <div class="flex items-center gap-8">
+                <div class="flex items-center gap-8 ml-5">
                     <div class="flex items-center">
                         <input id="cedu9a-1" type="radio" value="{{cedu9a-1}}" name="cedu9a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="cedu9a-1" class="ms-2 text-sm text-gray-900">1</label>
@@ -3947,7 +3965,7 @@
 
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
                 <div class="ml-4">9b. Culture: The child's ability to understand and appreciate the customs and traditions of their own and other groups, such as language, art, or music</div>
-                <div class="flex items-center gap-8">
+                <div class="flex items-center gap-8 ml-5">
                     <div class="flex items-center">
                         <input id="cedu9b-1" type="radio" value="{{cedu9b-1}}" name="cedu9b" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="cedu9b-1" class="ms-2 text-sm text-gray-900">1</label>
@@ -3973,7 +3991,7 @@
 
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
                 <div class="ml-4">9c. Citizenship: The child's ability to know and exercise their rights and duties as a member of a nation, such as following rules, respecting authorities, or expressing opinions</div>
-                <div class="flex items-center gap-8">
+                <div class="flex items-center gap-8 ml-5">
                     <div class="flex items-center">
                         <input id="cedu9c-1" type="radio" value="{{cedu9c-1}}" name="cedu9c" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="cedu9c-1" class="ms-2 text-sm text-gray-900">1</label>
@@ -3999,7 +4017,7 @@
 
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
                 <div class="ml-4">9d. Democracy: The child's ability to participate and influence the decisions and policies that affect their lives, such as petitioning, campaigning, or protesting</div>
-                <div class="flex items-center gap-8">
+                <div class="flex items-center gap-8 ml-5">
                     <div class="flex items-center">
                         <input id="cedu9d-1" type="radio" value="{{cedu9d-1}}" name="cedu9d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="cedu9d-1" class="ms-2 text-sm text-gray-900">1</label>
@@ -4025,7 +4043,7 @@
 
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
                 <div class="ml-4">9e. Pro-social behavior: The child's ability to help and support others in need, such as volunteering, donating, or mentoring</div>
-                <div class="flex items-center gap-8">
+                <div class="flex items-center gap-8 ml-5">
                     <div class="flex items-center">
                         <input id="cedu9e-1" type="radio" value="{{cedu9e-1}}" name="cedu9e" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="cedu9e-1" class="ms-2 text-sm text-gray-900">1</label>
@@ -5009,7 +5027,7 @@
             <p>QRISKP: During the child's time into the system (from their last admission until present), has the child had any of the following risk behaviors:</p>
             <div class="grid grid-cols-2 gap-4 items-center mt-10">
                 <div class="ml-3">1. Early sexual activity (initiation before the age of 16)</div>
-                <div class="col-span-1 flex items-center gap-4">
+                <div class="col-span-1 flex items-center gap-4 ml-4">
                     <div class="flex items-center">
                         <input id="qriskp1-1" type="radio" value="1" name="qriskp1" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="qriskp1-1" class="ms-2 text-sm text-gray-900">1. Yes</label>
@@ -5026,7 +5044,7 @@
             </div>
             <div class="grid grid-cols-2 gap-4 items-center mt-10">
                 <div class="ml-3">3. Alcohol, tobacco or drugs consumption</div>
-                <div class="col-span-1 flex items-center gap-4">
+                <div class="col-span-1 flex items-center gap-4 ml-4">
                     <div class="flex items-center">
                         <input id="qriskp3-1" type="radio" value="1" name="qriskp3" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="qriskp3-1" class="ms-2 text-sm text-gray-900">1. Yes</label>
@@ -5043,7 +5061,7 @@
             </div>
             <div class="grid grid-cols-2 gap-4 items-center mt-10">
                 <div class="ml-3">4. Fights or violence with other children or young people</div>
-                <div class="col-span-1 flex items-center gap-4">
+                <div class="col-span-1 flex items-center gap-4 ml-4">
                     <div class="flex items-center">
                         <input id="qriskp4-1" type="radio" value="1" name="qriskp4" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="qriskp4-1" class="ms-2 text-sm text-gray-900">1. Yes</label>
@@ -5060,7 +5078,7 @@
             </div>
             <div class="grid grid-cols-2 gap-4 items-center mt-10">
                 <div class="ml-3">5. Joining a "gang" or a risk-exposed group of friends</div>
-                <div class="col-span-1 flex items-center gap-4">
+                <div class="col-span-1 flex items-center gap-4 ml-4">
                     <div class="flex items-center">
                         <input id="qriskp5-1" type="radio" value="1" name="qriskp5" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="qriskp5-1" class="ms-2 text-sm text-gray-900">1. Yes</label>
@@ -5077,7 +5095,7 @@
             </div>
             <div class="grid grid-cols-2 gap-4 items-center mt-10">
                 <div class="ml-3">6. Running away from the service</div>
-                <div class="col-span-1 flex items-center gap-4">
+                <div class="col-span-1 flex items-center gap-4 ml-4">
                     <div class="flex items-center">
                         <input id="qriskp6-1" type="radio" value="1" name="qriskp6" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="qriskp6-1" class="ms-2 text-sm text-gray-900">1. Yes</label>
@@ -5094,7 +5112,7 @@
             </div>
             <div class="grid grid-cols-2 gap-4 items-center mt-10">
                 <div class="ml-3">7. Problems with the police</div>
-                <div class="col-span-1 flex items-center gap-4">
+                <div class="col-span-1 flex items-center gap-4 ml-4">
                     <div class="flex items-center">
                         <input id="qriskp7-1" type="radio" value="1" name="qriskp7" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="qriskp7-1" class="ms-2 text-sm text-gray-900">1. Yes</label>
@@ -5111,7 +5129,7 @@
             </div>
             <div class="grid grid-cols-2 gap-4 items-center mt-10">
                 <div class="ml-3">8. Street work or begging</div>
-                <div class="col-span-1 flex items-center gap-4">
+                <div class="col-span-1 flex items-center gap-4 ml-4">
                     <div class="flex items-center">
                         <input id="qriskp8-1" type="radio" value="1" name="qriskp8" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="qriskp8-1" class="ms-2 text-sm text-gray-900">1. Yes</label>
@@ -5128,7 +5146,7 @@
             </div>
             <div class="grid grid-cols-2 gap-4 items-center mt-10">
                 <div class="ml-3">9. Self-harm behavior</div>
-                <div class="col-span-1 flex items-center gap-4">
+                <div class="col-span-1 flex items-center gap-4 ml-4">
                     <div class="flex items-center">
                         <input id="qriskp9-1" type="radio" value="1" name="qriskp9" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="qriskp9-1" class="ms-2 text-sm text-gray-900">1. Yes</label>
@@ -5148,7 +5166,7 @@
 
             <div class="grid grid-cols-2 gap-4 items-center mt-10">
                 <div>CMNT1. Does the child currently have an assigned specialist who is responsible of monitoring his/her case and coordinating his/her activities?</div>
-                <div class="col-span-1 flex items-center gap-4">
+                <div class="col-span-1 flex items-center gap-4 ml-4">
                     <div class="flex items-center">
                         <input id="cmnt1-1" type="radio" value="1" name="cmnt1" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="cmnt1-1" class="ms-2 text-sm text-gray-900">1. Yes</label>
