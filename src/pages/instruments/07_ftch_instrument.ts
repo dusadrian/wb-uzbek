@@ -291,7 +291,7 @@ util.listen("ifp2", "myChange", () => {
             "months"
         )
 
-        util.setValue('ifp2am', months.toString());
+        util.setValue('ifp2am', (months % 12).toString());
         util.setValue('ifp2ay', years.toString());
     }
 });
