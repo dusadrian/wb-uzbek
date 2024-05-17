@@ -45,17 +45,22 @@ const sh3_end_dates = [
     'sh3_s1d', 'sh3_s2d', 'sh3_s3d', 'sh3_s4d', 'sh3_s5d', 'sh3_s6d', 'sh3_s7d', 'sh3_s8d', 'sh3_s9d', 'sh3_s10d'
 ];
 
-const regElements =  ["reg", "lk14b", "cm3b", "cm10c", "cm11c", "ct3b", "ct10c", "ct11c", "cg10c", "cg11c", "sa3a", "sa5r"];
-const disElements =  ["dis", "lk14c", "cm3c", "cm10d", "cm11d", "ct3c", "ct10d", "ct11d", "cg10d", "cg11d", "sa3b", "sa5d"];
-const setElements =  ["",    "lk14d", "cm3d", "cm10e", "cm11e", "ct3d", "ct10e", "ct11e", "cg10e", "cg11e", "sa3c", ""    ];
-const typeElements = ["",    "lk14e", "cm3e", "cm10f", "cm11f", "ct3e", "ct10f", "ct11f", "cg10f", "cg11f", "sa3d", ""    ];
+const regElements = ["reg", "lk14b", "cm3b", "cm10c", "cm11c", "ct3b", "ct10c", "ct11c", "cg10c", "cg11c", "sa3a", "sa5r"];
+const disElements = ["dis", "lk14c", "cm3c", "cm10d", "cm11d", "ct3c", "ct10d", "ct11d", "cg10d", "cg11d", "sa3b", "sa5d"];
+const setElements = ["", "lk14d", "cm3d", "cm10e", "cm11e", "ct3d", "ct10e", "ct11e", "cg10e", "cg11e", "sa3c", ""];
+const typeElements = ["", "lk14e", "cm3e", "cm10f", "cm11f", "ct3e", "ct10f", "ct11f", "cg10f", "cg11f", "sa3d", ""];
 
 let regionCode = '';
 let userUUID = '';
 let institutionType = '';
 let institutionCode = '';
 let serviceCode = ''; // filter by service code INSON
-
+let userRole = '';
+let filters: {
+    institutionType: string;
+    institution: string;
+    region: string;
+};
 
 function check_sa1a(sa1a: number) {
 
@@ -139,7 +144,7 @@ function check_ct1(value: string) {
 export const instrument1 = {
     init: async () => {
 
-        $.datepicker.setDefaults( $.datepicker.regional[ lang ] );
+        $.datepicker.setDefaults($.datepicker.regional[lang]);
         const jQueryDatepickerConfig = {
             changeMonth: true,
             changeYear: true,
@@ -148,7 +153,7 @@ export const instrument1 = {
             maxDate: "30/04/2024",
             yearRange: "c-100:c+10",
             firstDay: 1,
-            onSelect: function() {
+            onSelect: function () {
                 util.trigger(this.id, "change");
             }
         };
@@ -185,12 +190,21 @@ export const instrument1 = {
             });
         });
 
+        filters = JSON.parse(sessionStorage.getItem('filters'));
 
         ipcRenderer.on("instrumentDataReady", (_event, args) => {
 
             services = args.services;
             insons = args.insons;
-            const institution_code = args.institution_code ?? args.userData.institution_code;
+            userRole = args.userData.role_code;
+            let institution_code = args.userData.institution_code;
+            if (args.institution_code) {
+                institution_code = args.institution_code;
+            }
+            if (filters && filters.institution) {
+                institution_code = filters.institution;
+            }
+
             serviceCode = institution_code;
             const inson_user = constant.INSON.includes(args.userData.service_type_code);
 
@@ -312,7 +326,7 @@ export const instrument1 = {
                                         util.addOption(
                                             institutie,
                                             serv[i],
-                                            serv[i] + ': ' + serviciu['name_'+ lang]
+                                            serv[i] + ': ' + serviciu['name_' + lang]
                                         );
                                     }
                                 }
@@ -377,8 +391,8 @@ export const instrument1 = {
                 util.setValue("sh5s", "--");
 
                 if (inson_user) {
-                    const inson = { ...insons[args.userData.institution_code]} as KeyStringNumber;
-                    institution_name = "" + inson['name_'+ lang];
+                    const inson = { ...insons[args.userData.institution_code] } as KeyStringNumber;
+                    institution_name = "" + inson['name_' + lang];
                     util.setValue('reg', insons[args.userData.institution_code].region);
                     util.setValue('dis', insons[args.userData.institution_code].district);
                     util.setValue('omr8a', "2");
@@ -390,7 +404,7 @@ export const instrument1 = {
                 }
                 else {
                     const serviciu = { ...services[institution_code] } as KeyStringNumber;
-                    institution_name = '' + serviciu['name_'+ lang];
+                    institution_name = '' + serviciu['name_' + lang];
                     util.setValue('reg', "" + services[institution_code].region);
                     util.setValue('dis', services[institution_code].district);
                     if (services[institution_code].settlement) {
@@ -448,12 +462,14 @@ const validateChestionar = (_questions: QuestionObjectType) => {
 
 const saveChestionar = (obj: SaveInstrumentType): void => {
     obj.table = "cpis";
-    obj.extras = {
-        region_code: regionCode,
-        user_uuid: userUUID,
-        institution_type: institutionType,
-        institution_code: institutionCode,
-        service_code: serviceCode,
+    if (userRole != constant.ROLE_REGIONAL && userRole != constant.ROLE_NATIONAL) {
+        obj.extras = {
+            region_code: regionCode,
+            user_uuid: userUUID,
+            institution_type: institutionType,
+            institution_code: institutionCode,
+            service_code: serviceCode,
+        }
     }
     ipcRenderer.send("saveInstrument", obj);
 }

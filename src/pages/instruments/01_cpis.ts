@@ -23,7 +23,8 @@ export const cpis = {
         institutionCode = sessionStorage.getItem('instrument1_service');
 
         ipcRenderer.send('getChildren', {
-            institution_code: institutionCode
+            institution_code: institutionCode,
+            filters: JSON.parse(sessionStorage.getItem('filters'))
         });
 
         (<HTMLButtonElement>document.getElementById('add_child_cpis')).addEventListener('click', () => {

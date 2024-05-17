@@ -135,5 +135,6 @@
 	"t_inson": "INSON",
 	"t_insons": "INSONS",
 	"No institutions found": "No institutions found",
-	"t_inson_details": "Inson details"
+	"t_inson_details": "Inson details",
+	"Institution instrument not found.": "Institution instrument not found."
 }

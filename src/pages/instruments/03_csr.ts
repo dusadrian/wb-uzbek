@@ -17,7 +17,9 @@ export const csr = {
         // call this to show based on permissions hidden sections
         showByPermissions()
 
-        ipcRenderer.send('getStaff');
+        ipcRenderer.send('getStaff', {
+            filters: JSON.parse(sessionStorage.getItem('filters'))
+        });
 
         (<HTMLButtonElement>document.getElementById('add_staff')).addEventListener('click', () => {
             ipcRenderer.send('changeWindow', {

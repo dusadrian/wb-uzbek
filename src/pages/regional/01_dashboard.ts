@@ -34,6 +34,8 @@ let user: DI.User;
 let serviceType: string = null;
 let regionCode = '';
 let lang = 'en';
+sessionStorage.removeItem('instrument1_service');
+
 export const regionalCoordinator = {
     init: async () => {
 
@@ -86,6 +88,7 @@ export const regionalCoordinator = {
                     }
                 });
             }
+            sessionStorage.removeItem('instrument1_service');
         })
 
         inst.addEventListener('change', () => {
@@ -123,6 +126,108 @@ export const regionalCoordinator = {
                 'name': 'regional/02_insons',
             });
         });
+
+        // INSTRUMENTS
+        const instrument1 = (<HTMLButtonElement>document.getElementById('view_instrument1'));
+        if (instrument1 !== null) {
+            instrument1.addEventListener('click', () => {
+                ipcRenderer.send('changeWindow', {
+                    'name': 'regionalViewInstrument',
+                    'instrument': '1',
+                    'filters': getFilterData(),
+                });
+            });
+        }
+        const instrument2 = (<HTMLButtonElement>document.getElementById('view_instrument2'));
+        if (instrument2 !== null) {
+            instrument2.addEventListener('click', () => {
+                ipcRenderer.send('changeWindow', {
+                    'name': 'regionalViewInstrument',
+                    'instrument': '2',
+                    'filters': getFilterData(),
+                });
+            });
+        }
+        const instrument3 = (<HTMLButtonElement>document.getElementById('view_instrument3'));
+        if (instrument3 !== null) {
+            instrument3.addEventListener('click', () => {
+                ipcRenderer.send('changeWindow', {
+                    'name': 'regionalViewInstrument',
+                    'instrument': '3',
+                    'filters': getFilterData(),
+                });
+            });
+        }
+        const instrument4 = (<HTMLButtonElement>document.getElementById('view_instrument4'));
+        if (instrument4 !== null) {
+            instrument4.addEventListener('click', () => {
+                ipcRenderer.send('changeWindow', {
+                    'name': 'regionalViewInstrument',
+                    'instrument': '4',
+                    'filters': getFilterData(),
+                });
+            });
+        }
+        const instrument5a = (<HTMLButtonElement>document.getElementById('view_instrument5a'));
+        if (instrument5a !== null) {
+            instrument5a.addEventListener('click', () => {
+                ipcRenderer.send('changeWindow', {
+                    'name': 'regionalViewInstrument',
+                    'instrument': '5a',
+                    'filters': getFilterData(),
+                });
+            });
+        }
+        const instrument5 = (<HTMLButtonElement>document.getElementById('view_instrument5'));
+        if (instrument5 !== null) {
+            instrument5.addEventListener('click', () => {
+                ipcRenderer.send('changeWindow', {
+                    'name': 'regionalViewInstrument',
+                    'instrument': '5',
+                    'filters': getFilterData(),
+                });
+            });
+        }
+        const instrument6 = (<HTMLButtonElement>document.getElementById('view_instrument6'));
+        if (instrument6 !== null) {
+            instrument6.addEventListener('click', () => {
+                ipcRenderer.send('changeWindow', {
+                    'name': 'regionalViewInstrument',
+                    'instrument': '6',
+                    'filters': getFilterData(),
+                });
+            });
+        }
+        const instrument7 = (<HTMLButtonElement>document.getElementById('view_instrument7'));
+        if (instrument7 !== null) {
+            instrument7.addEventListener('click', () => {
+                ipcRenderer.send('changeWindow', {
+                    'name': 'regionalViewInstrument',
+                    'instrument': '7',
+                    'filters': getFilterData(),
+                });
+            });
+        }
+        const instrument8 = (<HTMLButtonElement>document.getElementById('view_instrument8'));
+        if (instrument8 !== null) {
+            instrument8.addEventListener('click', () => {
+                ipcRenderer.send('changeWindow', {
+                    'name': 'regionalViewInstrument',
+                    'instrument': '8',
+                    'filters': getFilterData(),
+                });
+            });
+        }
+        const instrument9 = (<HTMLButtonElement>document.getElementById('view_instrument9'));
+        if (instrument9 !== null) {
+            instrument9.addEventListener('click', () => {
+                ipcRenderer.send('changeWindow', {
+                    'name': 'regionalViewInstrument',
+                    'instrument': '9',
+                    'filters': getFilterData(),
+                });
+            });
+        }
     }
 }
 
@@ -132,6 +237,9 @@ const processDashStats = (instruments: instrumentsType, toBeFilled: toBeFilledTy
     let i1total = toBeFilled.instrument1;
     if (serviceType && (serviceType != '10' && serviceType != '91')) {
         i1total = 0;
+        (document.getElementById('view_instrument1') as HTMLButtonElement).disabled = true;
+    } else {
+        (document.getElementById('view_instrument1') as HTMLButtonElement).disabled = false;
     }
     if (instruments.instrument1.length > 0) {
         const totalCompletedObj = instruments.instrument1.filter((el: StatusInterface) => el.status === 'completed');
@@ -154,6 +262,9 @@ const processDashStats = (instruments: instrumentsType, toBeFilled: toBeFilledTy
     let i2total = toBeFilled.instrument2;
     if (serviceType && serviceType != '20') {
         i2total = 0;
+        (document.getElementById('view_instrument2') as HTMLButtonElement).disabled = true;
+    } else {
+        (document.getElementById('view_instrument2') as HTMLButtonElement).disabled = false;
     }
     if (instruments.instrument2.length > 0) {
         const totalCompletedObj = instruments.instrument2.filter((el: StatusInterface) => el.status === 'completed');
@@ -176,6 +287,9 @@ const processDashStats = (instruments: instrumentsType, toBeFilled: toBeFilledTy
     let i3total = toBeFilled.instrument3;
     if (serviceType && (serviceType != '10' && serviceType != '20')) {
         i3total = 0;
+        (document.getElementById('view_instrument3') as HTMLButtonElement).disabled = true;
+    } else {
+        (document.getElementById('view_instrument3') as HTMLButtonElement).disabled = false;
     }
     if (instruments.instrument3.length > 0) {
         const totalCompletedObj = instruments.instrument3.filter((el: StatusInterface) => el.status === 'completed');
@@ -198,6 +312,9 @@ const processDashStats = (instruments: instrumentsType, toBeFilled: toBeFilledTy
     let i4total = toBeFilled.instrument4;
     if (serviceType && (serviceType != '10' && serviceType != '20')) {
         i4total = 0;
+        (document.getElementById('view_instrument4') as HTMLButtonElement).disabled = true;
+    } else {
+        (document.getElementById('view_instrument4') as HTMLButtonElement).disabled = false;
     }
     if (instruments.instrument4.length > 0) {
         const totalCompletedObj = instruments.instrument4.filter((el: StatusInterface) => el.status === 'completed');
@@ -238,6 +355,9 @@ const processDashStats = (instruments: instrumentsType, toBeFilled: toBeFilledTy
     let i5total = toBeFilled.instrument5;
     if (serviceType && serviceType != '91') {
         i5total = 0;
+        (document.getElementById('view_instrument5') as HTMLButtonElement).disabled = true;
+    } else {
+        (document.getElementById('view_instrument5') as HTMLButtonElement).disabled = false;
     }
     if (instruments.instrument5.length > 0) {
         const totalCompletedObj = instruments.instrument5.filter((el: StatusInterface) => el.status === 'completed');
@@ -260,6 +380,9 @@ const processDashStats = (instruments: instrumentsType, toBeFilled: toBeFilledTy
     let i6total = toBeFilled.instrument6;
     if (serviceType && (serviceType != '10' && serviceType != '20')) {
         i6total = 0;
+        (document.getElementById('view_instrument6') as HTMLButtonElement).disabled = true;
+    } else {
+        (document.getElementById('view_instrument6') as HTMLButtonElement).disabled = false;
     }
     if (instruments.instrument6.length > 0) {
         const totalCompletedObj = instruments.instrument6.filter((el: StatusInterface) => el.status === 'completed');
@@ -282,6 +405,9 @@ const processDashStats = (instruments: instrumentsType, toBeFilled: toBeFilledTy
     let i7total = toBeFilled.instrument7;
     if (serviceType && serviceType != '91') {
         i7total = 0;
+        (document.getElementById('view_instrument7') as HTMLButtonElement).disabled = true;
+    } else {
+        (document.getElementById('view_instrument7') as HTMLButtonElement).disabled = false;
     }
     if (instruments.instrument7.length > 0) {
         const totalCompletedObj = instruments.instrument7.filter((el: StatusInterface) => el.status === 'completed');
@@ -304,6 +430,9 @@ const processDashStats = (instruments: instrumentsType, toBeFilled: toBeFilledTy
     let i8total = toBeFilled.instrument8;
     if (serviceType && serviceType != '91') {
         i8total = 0;
+        (document.getElementById('view_instrument8') as HTMLButtonElement).disabled = true;
+    } else {
+        (document.getElementById('view_instrument8') as HTMLButtonElement).disabled = false;
     }
     if (instruments.instrument8.length > 0) {
         const totalCompletedObj = instruments.instrument8.filter((el: StatusInterface) => el.status === 'completed');
@@ -326,6 +455,9 @@ const processDashStats = (instruments: instrumentsType, toBeFilled: toBeFilledTy
     let i9total = toBeFilled.instrument9;
     if (serviceType) {
         i9total = 0;
+        (document.getElementById('view_instrument9') as HTMLButtonElement).disabled = true;
+    } else {
+        (document.getElementById('view_instrument9') as HTMLButtonElement).disabled = false;
     }
     if (instruments.instrument9.length > 0) {
         const totalCompletedObj = instruments.instrument9.filter((el: StatusInterface) => el.status === 'completed');
@@ -343,4 +475,21 @@ const processDashStats = (instruments: instrumentsType, toBeFilled: toBeFilledTy
         document.getElementById('t1c102').innerText = '0';
         document.getElementById('t1c103').innerText = '0%';
     }
+}
+
+const getFilterData = () => {
+    const instType = document.getElementById('institutionType') as HTMLSelectElement;
+    const inst = document.getElementById('institution') as HTMLSelectElement;
+
+    const session = JSON.parse(sessionStorage.getItem('appSession'));
+
+    const filters = {
+        institutionType: instType.options[instType.selectedIndex].value,
+        institution: inst.options[inst.selectedIndex].value,
+        region: session.userData.region_code,
+    }
+    // save to session storage
+    sessionStorage.setItem('filters', JSON.stringify(filters));
+
+    return filters;
 }

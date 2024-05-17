@@ -2,6 +2,7 @@ import * as path from "path";
 import * as DuckDB from "duckdb";
 import * as DI from "../interfaces/database";
 import { save as instrumentSave, get as instrumentGet, getExisting, cpisList, deleteCPIS, cibsList, deleteCIBS, csrList, deleteStaff, ftchList, deleteFTCH, pfqList, deletePFQ, eefList, deleteEEF, yplcsList, deleteYPLCS, tqypList, deleteTQYP } from "./instruments";
+import { cpisListALL, cibsListALL, csrListALL } from "./regional_up";
 import constant from '../libraries/constants'
 
 const duckdbOptions: {
@@ -129,6 +130,28 @@ export const database = {
                     console.log(error);
                 }
                 resolve(result as DI.Institution[] | DI.INSON[]);
+            });
+        });
+        return await connection;
+    },
+    getQMRInstrumentForInstitution: async (institution_code: string, regionCode: string) => {
+        const connection = new Promise<Array<DI.InstrumentInterface>>((resolve) => {
+            db.all(`SELECT * FROM instrument_qmr WHERE institution_code = '${institution_code}' AND region_code = '${regionCode}'`, (error, result) => {
+                if (error) {
+                    console.log(error);
+                }
+                resolve(result as DI.InstrumentInterface[]);
+            });
+        });
+        return await connection;
+    },
+    getDSEEInstrumentForInstitution: async (institution_code: string, regionCode: string) => {
+        const connection = new Promise<Array<DI.InstrumentInterface>>((resolve) => {
+            db.all(`SELECT * FROM instrument_dsee WHERE institution_code = '${institution_code}' AND region_code = '${regionCode}'`, (error, result) => {
+                if (error) {
+                    console.log(error);
+                }
+                resolve(result as DI.InstrumentInterface[]);
             });
         });
         return await connection;
@@ -704,4 +727,7 @@ export const database = {
     deleteYPLCS,
     tqypList,
     deleteTQYP,
+    cpisListALL,
+    cibsListALL,
+    csrListALL,
 }

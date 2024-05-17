@@ -38,3 +38,25 @@ I9. External evaluation form of the childcare institutions and boarding schools 
 `UPDATE instrument_tqyp SET status = 'completed';`
 
 `UPDATE instrument_dsee SET status = 'completed';`
+
+
+
+la adaugare serviciu la INSON, cel mai mare cod pe care il are  + 10
+
+la adaugare
+
+denumire in limba in care s a autentificat
+adresa
+tip automat 15 
+shorttype automat 10
+regiune dupa utilizator
+district -- select cu districtele din regiunea selectata
+settlement -- select cu localitatile din districtul selectat
+settlement_type
+mahala - select
+capacity input
+children input
+leavers	input
+employees 0 nu au angajati
+inson - dupa inson
+ACTIVCODE1	ACTIVCODE2	ACTIVCODE3	ACTIVCODE4	ACTIVCODE5 -- null toate

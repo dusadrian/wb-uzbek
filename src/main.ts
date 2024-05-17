@@ -194,6 +194,9 @@ ipcMain.on("changeWindow", (_event, args) => {
         case "regional/02_insons":
             insonsR();
             break;
+        case "regionalViewInstrument":
+            regionalViewInstrument(args.instrument, args.filters);
+            break;
         case "local/03_users":
             localUsers();
             break;
@@ -319,6 +322,83 @@ ipcMain.on('getInstitutionByTypeAndRegion', (_event, args) => {
     });
 });
 
+const regionalViewInstrument = (instrument: string, filters: { institutionType: string, institution: string }) => {
+
+    if (filters.institutionType === '' && filters.institution === '') {
+        // get list of institutions for instrument 
+        // mainWindow.loadURL("file://" + path.join(__dirname, "../src/pages/regional/03_institutions.html"));
+        // database.getInstitutionsForInstrument(instrument, appSession.userData.region_code).then((result) => {
+        //     mainWindow.webContents.send("institutions", result);
+        // });
+    } else if (filters.institutionType !== '' && filters.institution === '') {
+        console.log('regionalViewInstrument', instrument, filters);
+    } else if (filters.institutionType !== '' && filters.institution !== '') {
+        switch (instrument) {
+            case '1':
+                goToCPISList();
+                break;
+            case '2':
+                goToCIBSList();
+                break;
+            case '3':
+                goToCSRList();
+                break;
+            case '4':
+                goToInstitutionQMR(filters.institution);
+                break;
+            case '5a':
+                goToTQYPList();
+                break;
+            case '5':
+                goToYPLCSList();
+                break;
+            case '6':
+                goToInstitutionDSEE(filters.institution);
+                break;
+            case '7':
+                goToFTCHList();
+                break;
+            case '8':
+                goToPFQList();
+                break;
+            case '9':
+                goToEEFList();
+                break;
+            default:
+                dialog.showMessageBox(mainWindow, {
+                    type: 'error',
+                    message: i18n.__('Instrument error.'),
+                });
+        }
+    }
+
+    console.log('regionalViewInstrument', instrument, filters);
+};
+const goToInstitutionQMR = (institution: string) => {
+    database.getQMRInstrumentForInstitution(institution, appSession.userData.region_code).then((result) => {
+        if (result.length > 0) {
+            goToQMR(result[0].id.toString());
+        } else {
+            dialog.showMessageBox(mainWindow, {
+                type: 'error',
+                message: i18n.__('Institution instrument not found.'),
+            });
+        }
+    });
+}
+const goToInstitutionDSEE = (institution: string) => {
+    database.getDSEEInstrumentForInstitution(institution, appSession.userData.region_code).then((result) => {
+        if (result.length > 0) {
+            goToDSEE(result[0].id.toString());
+        } else {
+            dialog.showMessageBox(mainWindow, {
+                type: 'error',
+                message: i18n.__('Institution instrument not found.'),
+            });
+        }
+    });
+};
+
 // return ID for instruments 4 and 6
 ipcMain.on('getInstrumentsId', () => {
     database.getExisting(db).then((result: { qmr: number | null, dsee: number | null }) => {
@@ -350,9 +430,15 @@ ipcMain.on('goToCPISList', (_event, _args) => {
     mainWindow.loadURL("file://" + path.join(__dirname, "../src/pages/instruments/01_cpis.html"));
 });
 ipcMain.on('getChildren', (_event, args) => {
-    database.cpisList(db, appSession.userData.uuid, appSession.userData.role_code, appSession.userData.institution_code, args.institution_code).then((result) => {
-        mainWindow.webContents.send("children", result);
-    });
+    if (appSession.userData.role_code === constant.ROLE_REGIONAL || appSession.userData.role_code === constant.ROLE_NATIONAL) {
+        database.cpisListALL(db, args.filters.region, args.filters.institution).then((result) => {
+            mainWindow.webContents.send("children", result);
+        });
+    } else {
+        database.cpisList(db, appSession.userData.uuid, appSession.userData.role_code, appSession.userData.institution_code, args.institution_code).then((result) => {
+            mainWindow.webContents.send("children", result);
+        });
+    }
 });
 ipcMain.on('deleteCPIS', (_event, args) => {
     // save to DB
@@ -384,10 +470,16 @@ const goToCIBSList = () => {
     const newPage = path.join(__dirname, "../src/pages/instruments/02_cibs.html");
     mainWindow.loadURL("file://" + newPage);
 };
-ipcMain.on('getChildrenCIBS', () => {
-    database.cibsList(db, appSession.userData.uuid, appSession.userData.role_code, appSession.userData.institution_code).then((result) => {
-        mainWindow.webContents.send("childrenCIBS", result);
-    });
+ipcMain.on('getChildrenCIBS', (_event, args) => {
+    if (appSession.userData.role_code === constant.ROLE_REGIONAL || appSession.userData.role_code === constant.ROLE_NATIONAL) {
+        database.cibsListALL(db, args.filters.region, args.filters.institution).then((result) => {
+            mainWindow.webContents.send("childrenCIBS", result);
+        });
+    } else {
+        database.cibsList(db, appSession.userData.uuid, appSession.userData.role_code, appSession.userData.institution_code).then((result) => {
+            mainWindow.webContents.send("childrenCIBS", result);
+        });
+    }
 });
 ipcMain.on('deleteCIBS', (_event, args) => {
     // save to DB
@@ -412,13 +504,18 @@ ipcMain.on('deleteCIBS', (_event, args) => {
 
 // Instrument 3
 const goToCSRList = () => {
-    const newPage = path.join(__dirname, "../src/pages/instruments/03_csr.html");
-    mainWindow.loadURL("file://" + newPage);
+    mainWindow.loadURL("file://" + path.join(__dirname, "../src/pages/instruments/03_csr.html"));
 };
-ipcMain.on('getStaff', () => {
-    database.csrList(db, appSession.userData.uuid, appSession.userData.role_code, appSession.userData.institution_code).then((result) => {
-        mainWindow.webContents.send("staff", result);
-    });
+ipcMain.on('getStaff', (_event, args) => {
+    if (appSession.userData.role_code === constant.ROLE_REGIONAL || appSession.userData.role_code === constant.ROLE_NATIONAL) {
+        database.csrListALL(db, args.filters.region, args.filters.institution).then((result) => {
+            mainWindow.webContents.send("staff", result);
+        });
+    } else {
+        database.csrList(db, appSession.userData.uuid, appSession.userData.role_code, appSession.userData.institution_code).then((result) => {
+            mainWindow.webContents.send("staff", result);
+        });
+    }
 });
 ipcMain.on('deleteStaff', (_event, args) => {
     // save to DB
@@ -504,7 +601,6 @@ ipcMain.on('deleteTQYP', (_event, args) => {
 });
 
 // Instrument 7
-
 const goToFTCHList = () => {
     if (constant.INSON.includes(appSession.userData.service_type_code)) {
         mainWindow.loadURL("file://" + path.join(__dirname, "../src/pages/instruments/07_ftch_inson_services.html"));
@@ -617,7 +713,6 @@ ipcMain.on('deleteEEF', (_event, args) => {
         }
     });
 });
-
 const goToInstrument = (instrument: string, id: string, institution_code?: string) => {
 
     switch (instrument) {
