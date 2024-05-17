@@ -25,6 +25,8 @@ interface UtilHelpersInterface {
     diffDates: (startDate: Date, endDate: Date, type?:string) => number;
     focus: (element: string) => void;
     blur: (element: string) => void;
+    addOption: (element: string, value: string, text: string) => void;
+    resetSelect: (element: string, value: string, text: string) => void;
     missing: (x: unknown) => boolean;
     exists: (x: unknown) => boolean;
     repString: (value: string, times: number) => string[];
@@ -375,6 +377,16 @@ export const util: UtilHelpersInterface = {
     },
     blur: (element) => {
         util.htmlElement(element).blur();
+    },
+    addOption: (element: string, value: string, text: string) => {
+        const option = document.createElement("option");
+        option.value = value;
+        option.text = text;
+        util.htmlElement(element).appendChild(option);
+    },
+    resetSelect: (element: string, value: string, text: string) => {
+        util.htmlElement(element).innerHTML = "";
+        util.addOption(element, value, text);
     },
 
 
