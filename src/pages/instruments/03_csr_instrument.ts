@@ -91,64 +91,47 @@ export const instrument3 = {
 
             const reg_codes = Object.keys(regions);
             for (let x = 0; x < regElements.length; x++) {
-                const reg_el = util.htmlElement(regElements[x]);
 
-                reg_el.innerHTML = "";
-                const option = document.createElement("option");
-                option.value = "-9";
-                option.text = translations['t_choose'];
-                reg_el.appendChild(option);
-
+                util.resetSelect(regElements[x], "-9", translations['t_choose']);
                 for (let i = 0; i < reg_codes.length; i++) {
-                    const option = document.createElement("option");
-                    option.value = reg_codes[i];
-                    option.text = reg_codes[i] + ": " + (regions[reg_codes[i]] as KeyString)[lang];
-                    reg_el.appendChild(option);
+                    util.addOption(
+                        regElements[x],
+                        reg_codes[i],
+                        reg_codes[i] + ": " + (regions[reg_codes[i]] as KeyString)[lang]
+                    );
                 }
-
-                const dis_el = util.htmlElement(disElements[x]);
-                const set_el = util.htmlElement(setElements[x]);
 
                 util.listen(regElements[x], "change", function () {
 
-                    const selectedRegion = reg_el.value;
+                    const selectedRegion = util.htmlElement(regElements[x]).value;
                     if (Number(selectedRegion) > 0) {
                         const dis_codes = regions[selectedRegion].districts;
 
-                        const option = document.createElement("option");
-                        option.value = "-9";
-                        option.text = translations['t_choose'];
-                        dis_el.innerHTML = "";
-                        dis_el.appendChild(option);
-
+                        util.resetSelect(disElements[x], "-9", translations['t_choose']);
                         for (let i = 0; i < dis_codes.length; i++) {
-                            const option = document.createElement("option");
-                            option.value = dis_codes[i];
-                            option.text = dis_codes[i] + ": " + (districts[dis_codes[i]] as KeyString)[lang];
-                            dis_el.appendChild(option);
+                            util.addOption(
+                                disElements[x],
+                                dis_codes[i],
+                                dis_codes[i] + ": " + (districts[dis_codes[i]] as KeyString)[lang]
+                            );
                         }
                     }
                 })
 
                 util.listen(disElements[x], "change", function () {
-                    set_el.innerHTML = "";
+                    util.resetSelect(setElements[x], "--", "--");
 
-                    const selectedDistrict = dis_el.value;
+                    const selectedDistrict = util.htmlElement(disElements[x]).value;
                     if (Number(selectedDistrict) > 0) {
-                        const option = document.createElement("option");
-                        option.value = "--";
-                        option.text = "--";
-                        set_el.appendChild(option);
 
                         const set_codes = districts[selectedDistrict].settlements;
-
                         if (set_codes.length > 0) {
-
                             for (let i = 0; i < set_codes.length; i++) {
-                                const option = document.createElement("option");
-                                option.value = set_codes[i];
-                                option.text = set_codes[i] + ": " + (settlements[set_codes[i]] as KeyString)[lang];
-                                set_el.appendChild(option);
+                                util.addOption(
+                                    setElements[x],
+                                    set_codes[i],
+                                    set_codes[i] + ": " + (settlements[set_codes[i]] as KeyString)[lang]
+                                );
                             }
                         }
                     }

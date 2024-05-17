@@ -50,12 +50,8 @@
                     </select>
                 </div>
             </div>
-            <div class="grid grid-cols-2 gap-4 items-center mt-6">
-                <div>DATA. Completion date of questionnaire</div>
-                <div>
-                    <input type="text" id="data" name="data" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
-                </div>
-            </div>
+
+            <input type="hidden" id="data" name="data" />
 
             <h2 class="mt-10 mb-4 text-2xl font-bold text-gray-700">1. THE PERSON WHO COMPLETED THE INFORMATION ABOUT THIS YOUNG PERSON</h2>
 
@@ -156,7 +152,7 @@
                         <label for="pi2-1" class="ms-2 text-sm text-gray-900">1. Male</label>
                     </div>
                     <div class="flex items-center">
-                        <input id="pi2-2" type="radio" value="0" name="pi2" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <input id="pi2-2" type="radio" value="2" name="pi2" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="pi2-2" class="ms-2 text-sm text-gray-900">2. Female</label>
                     </div>
                 </div>
@@ -283,54 +279,51 @@
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
                 <div>PI6. Institution</div>
                 <div class="flex gap-4">
-                    <select id="pi6" name="pi6" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
+                    <select id="pi6i" name="pi6i" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
                         <option value="-9">--- choose ---</option>
                     </select>
                 </div>
             </div>
 
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
-                <div>PI6a. Unique institution code</div>
-                <div>
-                    <input type="text" id="pi6a" name="pi6a" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
-                </div>
-            </div>
-
-            <div class="grid grid-cols-2 gap-4 items-center mt-6">
                 <div>PI6b. Institution name</div>
                 <div>
-                    <input type="text" id="pi6b" name="pi6b" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
+                    <input type="text" id="pi6n" name="pi6n" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
                 </div>
             </div>
 
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
                 <div>PI6c. Type of institution</div>
                 <div>
-                    <select id="pi6c" name="pi6c" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
-                        <option selected>--</option>
+                    <select id="pi6t" name="pi6t" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
+                        <option value="-9">--- choose ---</option>
                         <optgroup label="Childcare institutions:">
-                            <option value="11">11. Mehribonlik house</option>
-                            <option value="12">12. Muruvat house for children with disabilities</option>
-                            <option value="13">13. Family-type home</option>
-                            <option value="14">14. SOS Children's Village</option>
+                            <option value="12">12. Mehribonlik house</option>
+                            <option value="13">13. Muruvvat house for children with disabilities</option>
+                            <option value="14">14. SOS children’s villages</option>
+                            <option value="15">15. Family-type children’s home</option>
                         </optgroup>
                         <optgroup label="Boarding schools:">
-                            <option value="21">21. Type I-II for deaf or with hearing impairments children</option>
-                            <option value="22">22. Type III-IV for blind or visually impaired children</option>
-                            <option value="23">23. Type V for children with severe speech impairments</option>
-                            <option value="24">24. Type VI for children with musculoskeletal disorders</option>
-                            <option value="25">25. Type VII for children with children with slow mental development/mental disorders</option>
-                            <option value="26">26. Type VIII for children with intellectual disabilities</option>
+                            <option value="21">21. Type I - boarding schools for deaf children</option>
+                            <option value="22">22. Type II - boarding schools for the hearing-impaired and those who later will lose their hearing</option>
+                            <option value="23">23. Type III - "Noorli Maskan" specialized boarding schools for blind children</option>
+                            <option value="24">24. Type IV - "Noorli Maskan" specialized boarding schools for visually impaired and those who later will lose their vision</option>
+                            <option value="25">25. Type V - boarding schools for children with severe speech disorders</option>
+                            <option value="26">26. Type VI - boarding schools for children with musculoskeletal disorders</option>
+                            <option value="27">27. Type VII - boarding schools for children with mental retardation</option>
+                            <option value="28">28. Type VIII - supporting boarding schools for mentally retarded children</option>
                         </optgroup>
                     </select>
                 </div>
             </div>
+
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
                 <div>PI7. Date when the person left the childcare system (dd/mm/yyyy)</div>
                 <div>
                     <input type="text" id="pi7" name="pi7" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
                 </div>
             </div>
+
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
                 <div>PI8. Total time spent within the child care system<strong class="underline">(in months)</strong></div>
                 <div>
@@ -431,7 +424,7 @@
                 </div>
             </div>
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
-                <div>PI10a. How many children does he/she has?</div>
+                <div>PI10a. How many children does he/she have?</div>
                 <div>
                     <input type="text" id="pi10a" name="pi10a" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
                 </div>
@@ -989,7 +982,7 @@
                 <div>
                     EE12. What was the total income of the young person in the last month?
                 </div>
-                <div class="grid grid-cols-2 gap-4 items-center4">
+                <div class="col-span-1 flex items-center gap-4">
                     <div class="flex items-center">
                         <input id="ee12_dk" type="checkbox" name="ee12_dk" value="9" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-100 rounded">
                         <label for="ee12_dk" class="ms-2 text-sm text-gray-900">9. Not known</label>
@@ -2086,6 +2079,11 @@
                 <div class="flex gap-4">
                     <textarea id="cr10" name="cr10" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full"></textarea>
                 </div>
+            </div>
+
+            <div class="grid mt-10">
+                <label for="obs">OBS. Observations</label>
+                <textarea class="form-control" rows="3" id="obs" name="obs"></textarea>
             </div>
 
 

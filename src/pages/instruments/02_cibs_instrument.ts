@@ -126,116 +126,82 @@ export const instrument2 = {
 
             const reg_codes = Object.keys(regions);
             for (let x = 0; x < regElements.length; x++) {
-                const reg_el = util.htmlElement(regElements[x]);
 
-                reg_el.innerHTML = "";
-                const option = document.createElement("option");
-                option.value = "-9";
-                option.text = translations['t_choose'];
-                reg_el.appendChild(option);
-
+                util.resetSelect(regElements[x], "-9", translations['t_choose']);
                 for (let i = 0; i < reg_codes.length; i++) {
-                    const option = document.createElement("option");
-                    option.value = reg_codes[i];
-                    option.text = reg_codes[i] + ": " + (regions[reg_codes[i]] as KeyString)[lang];
-                    reg_el.appendChild(option);
+                    util.addOption(
+                        regElements[x],
+                        reg_codes[i],
+                        reg_codes[i] + ": " + (regions[reg_codes[i]] as KeyString)[lang]
+                    );
                 }
 
-                const dis_el = util.htmlElement(disElements[x]);
-                const set_el = util.htmlElement(setElements[x]);
-                const sa5i = util.htmlElement("sa5i");
-
                 util.listen(regElements[x], "change", function () {
-                    const option = document.createElement("option");
-                    option.value = "-9";
-                    option.text = translations['t_choose'];
-
                     if (regElements[x] == "sa5r") {
-                        sa5i.innerHTML = "";
-                        sa5i.appendChild(option);
+                        util.resetSelect("sa5i", "-9", translations['t_choose']);
                         instrument.questions.sa5i.value = "-7";
                     }
 
                     if (regElements[x] == "qeduc1ar") {
-                        util.htmlElement("qeduc1a1").innerHTML = "";
-                        util.htmlElement("qeduc1a1").appendChild(option);
-                        instrument.questions.qeduc1a1.value = "-7";
+                        util.resetSelect("qeduc1a1", "-9", translations['t_choose']);
+                        instrument.questions.sa5i.value = "-7";
                     }
 
                     if (regElements[x] == "qeduc2ar") {
-                        util.htmlElement("qeduc2a1").innerHTML = "";
-                        util.htmlElement("qeduc2a1").appendChild(option);
+                        util.resetSelect("qeduc2a1", "-9", translations['t_choose']);
                         instrument.questions.qeduc2a1.value = "-7";
                     }
 
                     if (setElements[x] != "") {
-                        util.htmlElement(setElements[x]).innerHTML = "";
+                        util.resetSelect(setElements[x], "-9", translations['t_choose']);
                         instrument.questions[setElements[x]].value = "-7";
                     }
 
                     if (typeElements[x] != "") {
-                        util.htmlElement(typeElements[x]).innerHTML = "";
+                        util.htmlElement(typeElements[x]).value = "";
                         instrument.questions[typeElements[x]].value = "-7";
                     }
 
-                    const selectedRegion = reg_el.value;
+                    const selectedRegion = util.htmlElement(regElements[x]).value;
                     if (Number(selectedRegion) > 0) {
                         const dis_codes = regions[selectedRegion].districts;
 
-                        const option = document.createElement("option");
-                        option.value = "-9";
-                        option.text = translations['t_choose'];
-                        dis_el.innerHTML = "";
-                        dis_el.appendChild(option);
-
+                        util.resetSelect(disElements[x], "-9", translations['t_choose']);
                         for (let i = 0; i < dis_codes.length; i++) {
-                            const option = document.createElement("option");
-                            option.value = dis_codes[i];
-                            option.text = dis_codes[i] + ": " + (districts[dis_codes[i]] as KeyString)[lang];
-                            dis_el.appendChild(option);
+                            util.addOption(
+                                disElements[x],
+                                dis_codes[i],
+                                dis_codes[i] + ": " + (districts[dis_codes[i]] as KeyString)[lang]
+                            );
                         }
                     }
                 })
 
                 util.listen(disElements[x], "change", function () {
-                    const option = document.createElement("option");
-                    option.value = "-9";
-                    option.text = translations['t_choose'];
-
-                    if (regElements[x] == "sa5r") {
-                        sa5i.innerHTML = "";
-                        sa5i.appendChild(option);
-                        instrument.questions.sa5i.value = "-9";
+                    if (disElements[x] == "sa5d") {
+                        util.resetSelect("sa5i", "-9", translations['t_choose']);
                     }
 
                     if (typeElements[x] != "") {
                         util.htmlElement(typeElements[x]).value = "";
-                        util.htmlElement(typeElements[x]).appendChild(option);
-                        util.htmlElement(typeElements[x]).value = "-9";
                     }
 
-                    const selectedDistrict = dis_el.value;
+                    const selectedDistrict = util.htmlElement(disElements[x]).value;
 
                     if (setElements[x] != "") {
-                        const option = document.createElement("option");
-                        option.value = "-9";
-                        option.text = translations['t_choose'];
 
-                        instrument.questions[setElements[x]].skip = false;
-                        set_el.disabled = false;
-                        set_el.innerHTML = "";
-                        set_el.appendChild(option);
+                        util.resetSelect(setElements[x], "-9", translations['t_choose']);
 
                         if (Number(selectedDistrict) > 0) {
                             const set_codes = districts[selectedDistrict].settlements;
 
                             if (set_codes.length > 0) {
-
                                 for (let i = 0; i < set_codes.length; i++) {
-                                    const option = document.createElement("option");
-                                    option.value = set_codes[i];
-                                    option.text = set_codes[i] + ": " + (settlements[set_codes[i]] as KeyString)[lang];
-                                    set_el.appendChild(option);
+                                    util.addOption(
+                                        setElements[x],
+                                        set_codes[i],
+                                        set_codes[i] + ": " + (settlements[set_codes[i]] as KeyString)[lang]
+                                    );
                                 }
                             } else {
                                 if (typeElements[x] != "") {
@@ -244,7 +210,7 @@ export const instrument2 = {
 
                                 instrument.questions[setElements[x]].skip = true;
                                 instrument.questions[setElements[x]].value = '-7';
-                                set_el.disabled = true;
+                                util.htmlElement(setElements[x]).disabled = true;
                             }
                         }
                     }

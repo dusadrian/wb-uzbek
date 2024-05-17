@@ -194,95 +194,78 @@ export const instrument1 = {
             serviceCode = institution_code;
             const inson_user = constant.INSON.includes(args.userData.service_type_code);
 
-            const sa5i = util.htmlElement("sa5i");
-            const sh5 = util.htmlElement("sh5");
             const reg_codes = Object.keys(regions);
             for (let x = 0; x < regElements.length; x++) {
-                const reg_el = util.htmlElement(regElements[x]);
 
-                reg_el.innerHTML = "";
-                const option = document.createElement("option");
-                option.value = "-9";
-                option.text = translations['t_choose'];
-                reg_el.appendChild(option);
-
+                util.resetSelect(regElements[x], "-9", translations['t_choose']);
                 for (let i = 0; i < reg_codes.length; i++) {
-                    const option = document.createElement("option");
-                    option.value = reg_codes[i];
-                    option.text = reg_codes[i] + ": " + (regions[reg_codes[i]] as KeyString)[lang];
-                    reg_el.appendChild(option);
+                    util.addOption(
+                        regElements[x],
+                        reg_codes[i],
+                        reg_codes[i] + ": " + (regions[reg_codes[i]] as KeyString)[lang]
+                    );
                 }
 
-                const dis_el = util.htmlElement(disElements[x]);
                 const set_el = util.htmlElement(setElements[x]);
 
                 util.listen(regElements[x], "change", function () {
+
                     if (regElements[x] == "sa5r") {
-                        sa5i.innerHTML = "";
+                        util.resetSelect("sa5i", "-9", translations['t_choose']);
+                        instrument.questions.sa5i.value = "-7";
                     }
 
                     if (regElements[x] == "reg") {
-                        sh5.innerHTML = "";
+                        util.resetSelect("sh5", "-9", translations['t_choose']);
+                        instrument.questions.sh5.value = "-7";
+                    }
+
+                    if (setElements[x] != "") {
+                        util.resetSelect(setElements[x], "-9", translations['t_choose']);
+                        instrument.questions[setElements[x]].value = "-7";
                     }
 
                     if (typeElements[x] != "") {
                         util.htmlElement(typeElements[x]).value = "";
+                        instrument.questions[typeElements[x]].value = "-7";
                     }
 
-                    if (setElements[x] != "") {
-                        set_el.innerHTML = "";
-                    }
-
-                    const selectedRegion = reg_el.value;
+                    const selectedRegion = util.htmlElement(regElements[x]).value;
                     if (Number(selectedRegion) > 0) {
                         const dis_codes = regions[selectedRegion].districts;
 
-                        const option = document.createElement("option");
-                        option.value = "-9";
-                        option.text = translations['t_choose'];
-                        dis_el.innerHTML = "";
-                        dis_el.appendChild(option);
-
+                        util.resetSelect(disElements[x], "-9", translations['t_choose']);
                         for (let i = 0; i < dis_codes.length; i++) {
-                            const option = document.createElement("option");
-                            option.value = dis_codes[i];
-                            option.text = dis_codes[i] + ": " + (districts[dis_codes[i]] as KeyString)[lang];
-                            dis_el.appendChild(option);
+                            util.addOption(
+                                disElements[x],
+                                dis_codes[i],
+                                dis_codes[i] + ": " + (districts[dis_codes[i]] as KeyString)[lang]
+                            );
                         }
                     }
-                })
+                });
 
                 util.listen(disElements[x], "change", function () {
-                    const option = document.createElement("option");
-                    option.value = "-9";
-                    option.text = translations['t_choose'];
 
-                    if (regElements[x] == "sa5r") {
-                        sa5i.innerHTML = "";
-                        sa5i.appendChild(option);
+                    if (disElements[x] == "sa5d") {
+                        util.resetSelect("sa5i", "-9", translations['t_choose']);
                     }
 
-                    if (regElements[x] == "reg") {
-                        sh5.innerHTML = "";
-                        sh5.appendChild(option);
+                    if (disElements[x] == "dis") {
+                        util.resetSelect("sh5", "-9", translations['t_choose']);
                     }
 
                     if (typeElements[x] != "") {
                         util.htmlElement(typeElements[x]).value = "";
-                        util.htmlElement(typeElements[x]).appendChild(option);
                     }
 
-                    const selectedDistrict = dis_el.value;
+                    const selectedDistrict = util.htmlElement(disElements[x]).value;
 
                     if (setElements[x] != "") {
-                        const option = document.createElement("option");
-                        option.value = "-9";
-                        option.text = translations['t_choose'];
-                        set_el.innerHTML = "";
-                        set_el.appendChild(option);
 
+                        util.resetSelect(setElements[x], "-9", translations['t_choose']);
 
-                        if (!instrument.questions[setElements[x]].readonly) {
+                        if (!instrument.questions[setElements[x]].readonly) { // TODO mai e nevoie de el?
                             instrument.questions[setElements[x]].skip = false;
                             set_el.disabled = false;
                         }
@@ -292,12 +275,12 @@ export const instrument1 = {
                             const set_codes = districts[selectedDistrict].settlements;
 
                             if (set_codes.length > 0) {
-
                                 for (let i = 0; i < set_codes.length; i++) {
-                                    const option = document.createElement("option");
-                                    option.value = set_codes[i];
-                                    option.text = set_codes[i] + ": " + (settlements[set_codes[i]] as KeyString)[lang];
-                                    set_el.appendChild(option);
+                                    util.addOption(
+                                        setElements[x],
+                                        set_codes[i],
+                                        set_codes[i] + ": " + (settlements[set_codes[i]] as KeyString)[lang]
+                                    );
                                 }
                             }
                             else {
@@ -311,14 +294,9 @@ export const instrument1 = {
                         }
                     }
 
-                    if (["reg", "sa5r"].indexOf(regElements[x]) >= 0) {
-                        const institutie = regElements[x] == "reg" ? "sh5" : "sa5i";
-                        const option = document.createElement("option");
-                        option.value = "-9";
-                        option.text = translations['t_choose'];
-
-                        util.htmlElement(institutie).innerHTML = "";
-                        util.htmlElement(institutie).appendChild(option);
+                    if (["dis", "sa5d"].indexOf(disElements[x]) >= 0) {
+                        const institutie = disElements[x] == "dis" ? "sh5" : "sa5i";
+                        util.resetSelect(institutie, "-9", translations['t_choose']);
 
                         const serv = districts[selectedDistrict].services;
                         if (serv.length > 0) {
@@ -328,12 +306,14 @@ export const instrument1 = {
                                     if (insons[institution_code]) {
                                         service_included = insons[institution_code].services.includes(serv[i]);
                                     }
+
                                     if (service_included) {
-                                        const option = document.createElement("option");
-                                        option.value = serv[i];
                                         const serviciu = { ...services[serv[i]] } as KeyStringNumber;
-                                        option.text = serv[i] + ': ' + serviciu['name_'+ lang];
-                                        util.htmlElement(institutie).appendChild(option);
+                                        util.addOption(
+                                            institutie,
+                                            serv[i],
+                                            serv[i] + ': ' + serviciu['name_'+ lang]
+                                        );
                                     }
                                 }
                             }
@@ -574,7 +554,11 @@ util.listen(lk3cg1, "myChange", () => {
     if (util.inputsHaveValue(lk3cg1)) {
         const startdate = util.standardDate(util.htmlElement("lk3").value);
         const enddate = util.standardDate(util.htmlElement("cg1c").value);
-        const message = "CG1c >= LK3";
+
+        const message = translations['must_be_later'].
+            replace("X", "LK3").
+            replace("Y", "CG1c");
+
         errorHandler.removeError(lk3cg1, message);
         if (startdate > enddate) {
             errorHandler.addError(lk3cg1, message);
@@ -588,7 +572,11 @@ util.listen(cg1cg3, "myChange", () => {
     if (util.inputsHaveValue(cg1cg3)) {
         const startdate = util.standardDate(util.htmlElement("cg3b").value);
         const enddate = util.standardDate(util.htmlElement("cg1c").value);
-        const message = "CG1c >= CG3b";
+
+        const message = translations['must_be_later'].
+            replace("X", "CG3b").
+            replace("Y", "CG1c");
+
         errorHandler.removeError(cg1cg3, message);
         if (startdate > enddate) {
             errorHandler.addError(cg1cg3, message);
@@ -605,9 +593,11 @@ util.listen("sa1", "myChange", () => {
         )
 
         if (!Number.isNaN(age)) {
-            const message = "SA1 must be later than or equal to LK3";
-            errorHandler.removeError("sa1", message);
+            const message = translations['must_be_later'].
+                replace("X", "LK3").
+                replace("Y", "SA1");
 
+            errorHandler.removeError("sa1", message);
             if (age >= 0) {
                 util.setValue("sa1a", age.toString());
             } else if (age < 0) {
@@ -837,8 +827,6 @@ util.listen(cmgtsa, "myChange", () => {
     if (util.inputsHaveValue(cmgtsa)) {
         const cmgt1a = util.htmlElement("cmgt1a").value;
         const sa1 = util.htmlElement("sa1").value;
-        instrument.questions['cmgt1a'].value = cmgt1a;
-        instrument.questions['sa1'].value = sa1;
 
         const message = translations['must_be_later'].replace("X", "SA1").replace("Y", "CMGT1A");
 
@@ -940,15 +928,11 @@ util.listen(lk3cm3, "myChange", () => {
         const mother = util.htmlElement("cm3").value;
         const child = util.htmlElement("lk3").value;
 
-        instrument.questions["cm3"].value = mother;
-        instrument.questions["lk3"].value = child;
         const message = translations['must_be_later'].replace("X", "CM3").replace("Y", "LK3");
-        errorHandler.removeError(lk3cm3, message);
 
+        errorHandler.removeError(lk3cm3, message);
         if (util.standardDate(mother) >= util.standardDate(child)) {
             errorHandler.addError(lk3cm3, message);
-            instrument.questions["cm3"].value = "-9";
-            instrument.questions["lk3"].value = "-9";
         }
     }
 })
@@ -959,16 +943,11 @@ util.listen(lk3ct3, "myChange", () => {
         const father = util.htmlElement("ct3").value;
         const child = util.htmlElement("lk3").value;
 
-        instrument.questions["ct3"].value = father;
-        instrument.questions["lk3"].value = child;
-
         const message = translations['must_be_later'].replace("X", "CT3").replace("Y", "LK3");
-        errorHandler.removeError(lk3ct3, message);
 
+        errorHandler.removeError(lk3ct3, message);
         if (util.standardDate(father) >= util.standardDate(child)) {
             errorHandler.addError(lk3ct3, message);
-            instrument.questions["ct3"].value = "-9";
-            instrument.questions["lk3"].value = "-9";
         }
     }
 })

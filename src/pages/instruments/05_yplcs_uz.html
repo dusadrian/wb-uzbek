@@ -50,12 +50,8 @@
                     </select>
                 </div>
             </div>
-            <div class="grid grid-cols-2 gap-4 items-center mt-6">
-                <div>MAʼLUMOTLAR. Soʻrovnomani toʻldirish sanasi</div>
-                <div>
-                    <input type="text" id="data" name="data" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
-                </div>
-            </div>
+
+            <input type="hidden" id="data" name="data" />
 
             <h2 class="mt-10 mb-4 text-2xl font-bold text-gray-700">1. USHBU YOSH ODAM HAQIDA MAʼLUMOTNI TOʻLDIRGAN MUTAXASSIS</h2>
 
@@ -156,7 +152,7 @@
                         <label for="pi2-1" class="ms-2 text-sm text-gray-900">1. Erkak</label>
                     </div>
                     <div class="flex items-center">
-                        <input id="pi2-2" type="radio" value="0" name="pi2" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <input id="pi2-2" type="radio" value="2" name="pi2" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="pi2-2" class="ms-2 text-sm text-gray-900">2. Ayol</label>
                     </div>
                 </div>
@@ -283,54 +279,51 @@
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
                 <div>PI6. Muassasa</div>
                 <div class="flex gap-4">
-                    <select id="pi6" name="pi6" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
+                    <select id="pi6i" name="pi6i" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
                         <option value="-9">--- tanlang ---</option>
                     </select>
                 </div>
             </div>
 
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
-                <div>PI6a. Muassasa kodi</div>
-                <div>
-                    <input type="text" id="pi6a" name="pi6a" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
-                </div>
-            </div>
-
-            <div class="grid grid-cols-2 gap-4 items-center mt-6">
                 <div>PI6b. Muassasa nomi</div>
                 <div>
-                    <input type="text" id="pi6b" name="pi6b" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
+                    <input type="text" id="pi6n" name="pi6n" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
                 </div>
             </div>
 
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
                 <div>PI6c. Muassasa turi</div>
                 <div>
-                    <select id="pi6c" name="pi6c" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
-                        <option selected>--</option>
+                    <select id="pi6t" name="pi6t" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
+                        <option value="-9">--- tanlang ---</option>
                         <optgroup label="Bolalar muassasalari:">
-                            <option value="11">11. Mehribonlik uyi</option>
-                            <option value="12">12. Nogironligi boʻlgan bolalar uchun Muruvvat internat uyi</option>
-                            <option value="13">13. Oila tipidagi uy</option>
-                            <option value="14">14. SOS Bolalar makhallasi</option>
+                            <option value="12">12. Mehribonlik uyi</option>
+                            <option value="13">13. “Muruvvat” nogironligi bo’lgan bolalar uchun internat uyi</option>
+                            <option value="14">14. SOS-bolalar qishloqlari / oilalari</option>
+                            <option value="15">15. Oila turidagi bolalar uyi</option>
                         </optgroup>
                         <optgroup label="Maktab-internatlar:">
-                            <option value="21">21. Kar yoki eshitish qobiliyati past boʻlgan bolalar uchun I-II toifa</option>
-                            <option value="22">22. Koʻzi koʻr yoki koʻrishi yomon boʻlgan bolalar uchun III-IV toifa</option>
-                            <option value="23">23. Nutqida ogʻir nuqsoni boʻlgan bolalar uchun V turi</option>
-                            <option value="24">24. Mushak-skelet tizimining buzilishi boʻlgan bolalar uchun VI tur</option>
-                            <option value="25">25. Ruhiy rivojlanishi sekinlashgan/ ruhiy kasallilkari boʻlgan bolalar uchun VII tur</option>
-                            <option value="26">26. Intellektual nuqsoni boʻlgan bolalar uchun VIII tur</option>
+                            <option value="21">21. I tur - kar bolalar uchun internatlar</option>
+                            <option value="22">22. II tur - eshitish qobiliyati zaif va kelgusida eshitish qobiliyatini yo’qotadiganlar uchun internatlar</option>
+                            <option value="23">23. III tur - “Nurli maskan” ko’zi ojiz bolalar uchun ixtisoslashtirilgan maktab-internatlari</option>
+                            <option value="24">24. IV tur - ko’zi ojiz va keyinchalik ko’rish qobiliyatini yo’qotadiganlar uchun “Noorli maskan” ixtisoslashtirilgan maktab-internatlari</option>
+                            <option value="25">25. V tur - og’ir nutq buzilishi bo’lgan bolalar uchun internatlar</option>
+                            <option value="26">26. VI tur - tayanch-harakat apparati nuqsonlari bo’lgan bolalar uchun internatlar</option>
+                            <option value="27">27. VII tur - aqli zaif bolalar maktab-internatlari</option>
+                            <option value="28">28. VIII tur - aqli zaif bolalar maktab-internatlarini qo’llash</option>
                         </optgroup>
                     </select>
                 </div>
             </div>
+
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
                 <div>PI7. Yosh odam vasiylik tizimini tark etgan sana (kun / oy / yil)</div>
                 <div>
                     <input type="text" id="pi7" name="pi7" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
                 </div>
             </div>
+
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
                 <div>PI8. Vasiylik qilish tizimida boʻlgan umumiy vaqt<strong class="underline">(oylarda)</strong></div>
                 <div>
@@ -989,7 +982,7 @@
                 <div>
                     EE12. O'tgan oyda yosh odamning umumiy daromadi qancha edi?
                 </div>
-                <div class="grid grid-cols-2 gap-4 items-center4">
+                <div class="col-span-1 flex items-center gap-4">
                     <div class="flex items-center">
                         <input id="ee12_dk" type="checkbox" name="ee12_dk" value="9" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-100 rounded">
                         <label for="ee12_dk" class="ms-2 text-sm text-gray-900">9. Noma'lum</label>
@@ -2086,6 +2079,11 @@
                 <div class="flex gap-4">
                     <textarea id="cr10" name="cr10" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full"></textarea>
                 </div>
+            </div>
+
+            <div class="grid mt-10">
+                <label for="obs">OBS. Kuzatuvlarni</label>
+                <textarea class="form-control" rows="3" id="obs" name="obs"></textarea>
             </div>
 
 

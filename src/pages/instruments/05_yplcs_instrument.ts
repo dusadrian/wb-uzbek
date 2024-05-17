@@ -30,10 +30,10 @@ const translations = locales[lang as keyof typeof locales] as Record<string, str
 let services: { [key: string]: DI.Institution };
 let insons: { [key: string]: DI.INSON };
 
-const regElements = ["reg", "pi4b", "pi6r", "pi9c"];
-const disElements = ["dis", "pi4c", "pi6d", "pi9d"];
-const setElements = ["", "pi4d", "", "pi9h"];
-const typeElements = ["", "pi4e", "", "pi9i"];
+const regElements =  ["reg", "pi4b", "pi6r", "pi9c"];
+const disElements =  ["dis", "pi4c", "pi6d", "pi9d"];
+const setElements =  ["",    "pi4d", "",     "pi9h"];
+const typeElements = ["",    "pi4e", "",     "pi9i"];
 
 let regionCode = '';
 let userUUID = '';
@@ -84,59 +84,49 @@ export const instrument5 = {
             insons = args.insons;
             const institution_code = args.userData.institution_code;
             const inson_user = Object.keys(insons).indexOf(institution_code) >= 0;
-
-            const pi6 = util.htmlElement("pi6");
             const reg_codes = Object.keys(regions);
+
             for (let x = 0; x < regElements.length; x++) {
-                const reg_el = util.htmlElement(regElements[x]);
 
-                reg_el.innerHTML = "";
-                const option = document.createElement("option");
-                option.value = "-9";
-                option.text = locales[lang]['t_choose'];
-                reg_el.appendChild(option);
-
+                util.resetSelect(regElements[x], "-9", translations['t_choose']);
                 for (let i = 0; i < reg_codes.length; i++) {
-                    const option = document.createElement("option");
-                    option.value = reg_codes[i];
-                    option.text = reg_codes[i] + ": " + (regions[reg_codes[i]] as KeyString)[lang];
-                    reg_el.appendChild(option);
+                    util.addOption(
+                        regElements[x],
+                        reg_codes[i],
+                        reg_codes[i] + ": " + (regions[reg_codes[i]] as KeyString)[lang]
+                    );
                 }
 
-                const dis_el = util.htmlElement(disElements[x]);
                 const set_el = util.htmlElement(setElements[x]);
 
                 util.listen(regElements[x], "change", function () {
                     if (regElements[x] == "pi6r") {
-                        pi6.innerHTML = "";
+                        util.resetSelect("pi6i", "-9", translations['t_choose']);
+                        instrument.questions.pi6i.value = "-7";
                     }
 
                     if (setElements[x] != "") {
-                        set_el.innerHTML = "";
+                        util.resetSelect(setElements[x], "-9", translations['t_choose']);
+                        instrument.questions[setElements[x]].value = "-7";
                     }
 
-                    const selectedRegion = reg_el.value;
-
+                    const selectedRegion = util.htmlElement(regElements[x]).value;
                     if (Number(selectedRegion) > 0) {
                         const dis_codes = regions[selectedRegion].districts;
 
-                        const option = document.createElement("option");
-                        option.value = "-9";
-                        option.text = locales[lang]['t_choose'];
-                        dis_el.innerHTML = "";
-                        dis_el.appendChild(option);
-
+                        util.resetSelect(disElements[x], "-9", translations['t_choose']);
                         for (let i = 0; i < dis_codes.length; i++) {
-                            const option = document.createElement("option");
-                            option.value = dis_codes[i];
-                            option.text = dis_codes[i] + ": " + (districts[dis_codes[i]] as KeyString)[lang];
-                            dis_el.appendChild(option);
+                            util.addOption(
+                                disElements[x],
+                                dis_codes[i],
+                                dis_codes[i] + ": " + (districts[dis_codes[i]] as KeyString)[lang]
+                            );
                         }
                     }
                 })
 
                 util.listen(disElements[x], "change", function () {
-                    const selectedDistrict = dis_el.value;
+                    const selectedDistrict = util.htmlElement(disElements[x]).value;
 
                     if (setElements[x] != "") {
                         instrument.questions[setElements[x]].skip = false;
@@ -154,41 +144,34 @@ export const instrument5 = {
                                 set_el.appendChild(option);
 
                                 for (let i = 0; i < set_codes.length; i++) {
-                                    const option = document.createElement("option");
-                                    option.value = set_codes[i];
-                                    option.text = set_codes[i] + ": " + (settlements[set_codes[i]] as KeyString)[lang];
-                                    set_el.appendChild(option);
+                                    util.addOption(
+                                        setElements[x],
+                                        set_codes[i],
+                                        set_codes[i] + ": " + (settlements[set_codes[i]] as KeyString)[lang]
+                                    );
                                 }
                             } else {
-                                const option = document.createElement("option");
-                                option.value = "--";
-                                option.text = "--";
-                                set_el.appendChild(option);
-
+                                util.resetSelect(setElements[x], "--", "--");
                                 instrument.questions[setElements[x]].skip = true;
                                 util.htmlElement(setElements[x]).disabled = true;
-                                util.setValue(setElements[x], "--");
                             }
                         }
                     }
 
                     if (disElements[x] == "pi6d") {
-                        pi6.innerHTML = "";
-                        const option = document.createElement("option");
-                        option.value = "-9";
-                        option.text = locales[lang]['t_choose'];
-                        pi6.appendChild(option);
+                        util.resetSelect("pi6i", "-9", translations['t_choose']);
 
                         const serv = districts[selectedDistrict].services;
                         if (serv.length > 0) {
                             for (let i = 0; i < serv.length; i++) {
                                 const type = Number(services[serv[i]].type);
-                                if (( type >= 12 && type <= 15 ) || type > 20) {
-                                    const option = document.createElement("option");
-                                    option.value = serv[i];
+                                if (( type >= 12 && type <= 15 ) || (type >= 21 && type <= 28)) {
                                     const serviciu = { ...services[serv[i]] } as KeyStringNumber;
-                                    option.text = serv[i] + ': ' + serviciu['name_'+ lang];
-                                    pi6.appendChild(option);
+                                    util.addOption(
+                                        "pi6i",
+                                        serv[i],
+                                        serv[i] + ": " + serviciu['name_'+ lang]
+                                    )
                                 }
                             }
                         }
@@ -198,7 +181,7 @@ export const instrument5 = {
                         option999.value = '999';
                         option999.text = '999: ' + locales[lang]['not_in_registry'];
                         optgroup.appendChild(option999);
-                        pi6.appendChild(optgroup);
+                        util.htmlElement("pi6i").appendChild(optgroup);
                     }
                 })
             }
@@ -317,28 +300,18 @@ for (let i = 0; i < setElements.length; i++) {
     }
 }
 
-// Set service type
-// TODO -- e o problema aici cu selectarea institutiei
-util.listen("pi6", "change", function () {
-    util.setValue("pi6c", "-9");
-    const value = util.htmlElement("pi6").value;
-    const serv_codes = Object.keys(services);
-    if (serv_codes.indexOf(value) >= 0) {
-        const type = services[value].type;
-        if (["11", "12", "13", "14", "21", "22", "23", "24", "25", "26"].indexOf(type) >= 0) {
-            util.setValue("pi6c", type);
+
+const pi10 = ['pi10a', 'pi10b'];
+util.listen(pi10, "change", () => {
+    if (util.inputsHaveValue(pi10)) {
+        const message = 'PI10b <= PI10a';
+        errorHandler.removeError(pi10, message)
+        if (util.getInputDecimalValue('pi10b') > util.getInputDecimalValue('pi10b')) {
+            errorHandler.addError(pi10, message);
         }
     }
 })
 
-const pi10 = ['pi10a', 'pi10b'];
-util.listen(pi10, "change", () => {
-    const message = 'PI10b <= PI10a';
-    errorHandler.removeError(pi10, message)
-    if (util.getInputDecimalValue('pi10b') > util.getInputDecimalValue('pi10b')) {
-        errorHandler.addError(pi10, message);
-    }
-})
 
 const lv = ['lv2_2', 'lv2_3', 'lv2_4', 'lv2_5', 'lv2_6', 'lv2_7', 'lv2_8', 'lv2_9']
 util.listen("lv2_1", "change", () => {
@@ -381,3 +354,34 @@ util.listen("pi8", "myChange", () => {
         errorHandler.addError("pi8", message);
     }
 })
+
+
+
+const cmgtsa = ["pi3", "pi7"];
+util.listen(cmgtsa, "myChange", () => {
+    if (util.inputsHaveValue(cmgtsa)) {
+        const pi7 = util.htmlElement("pi7").value;
+        const pi3 = util.htmlElement("pi3").value;
+
+        const message = translations['must_be_later'].replace("Y", "PI7").replace("X", "PI3");
+
+        errorHandler.removeError(cmgtsa, message);
+
+        if (util.standardDate(pi3) > util.standardDate(pi7)) {
+            errorHandler.addError(cmgtsa, message);
+        }
+    }
+})
+
+
+const pi10ab = ['pi10a', 'pi10b'];
+util.listen(pi10ab, 'change', () => {
+    if (util.inputsHaveValue(pi10ab)) {
+        const message = 'PI10b <= PI10a';
+
+        errorHandler.removeError(pi10ab, message)
+        if (util.getInputDecimalValue('pi10b') > util.getInputDecimalValue('pi10a')) {
+            errorHandler.addError(pi10ab, message);
+        }
+    }
+});
