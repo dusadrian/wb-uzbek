@@ -8,8 +8,7 @@ export const institutionDetails = {
     init: async () => {
 
         ipcRenderer.on('institutionDetails', (_event, args) => {
-            console.log(args);
-
+            
             updateObj.institution_id = args.id
             updateObj.institutionUUID = args.uuid;
             updateObj.children = args.children;
@@ -36,8 +35,7 @@ export const institutionDetails = {
             const employees = (document.getElementById('employees') as HTMLInputElement).value;
             updateObj.employees = employees;
             const leavers = (document.getElementById('leavers') as HTMLInputElement).value;
-            updateObj.leavers = leavers;
-
+            updateObj.leavers = leavers;            
 
             // validate all data
             if (children === '') {
@@ -79,8 +77,9 @@ export const institutionDetails = {
                 document.getElementById('leavers').focus();
                 return;
             }
-
-            ipcRenderer.send('updateService', updateObj);
+            
+            updateObj.type = 'service'; // update service
+            ipcRenderer.send('updateServiceByRegional', updateObj);
 
         });
     }

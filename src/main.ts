@@ -809,7 +809,7 @@ const institutionRDetails = (code: string) => {
 const insonRDetails = (code: string) => {
     mainWindow.loadURL("file://" + path.join(__dirname, "../src/pages/regional/02_institution_details_inson.html"));
     database.getInstitutionDetails(code, constant.INSON[0]).then((institution) => {
-        database.getInsonServices((institution[0] as DI.INSON).services, institution[0].code).then((services) => {       
+        database.getInsonServices((institution[0] as DI.INSON).services, institution[0].code).then((services) => {
             mainWindow.webContents.once("did-finish-load", () => {
                 mainWindow.webContents.send("institutionDetails", {
                     institution: institution[0],
@@ -819,6 +819,28 @@ const insonRDetails = (code: string) => {
         });
     });
 }
+ipcMain.on('updateServiceByRegional', (_event, args) => {
+
+    if (args.type === 'inson') {
+        database.updateInson(args).then(() => {
+            dialog.showMessageBox(mainWindow, {
+                type: 'info',
+                message: i18n.__('Institution details saved.'),
+            }).then(() => {
+                insonsR();
+            });
+        });
+    } else {
+        database.updateService(args).then(() => {
+            dialog.showMessageBox(mainWindow, {
+                type: 'info',
+                message: i18n.__('Institution details saved.'),
+            }).then(() => {
+                institutionsR();
+            });
+        });
+    }
+});
 
 // Users
 const localUsers = () => {

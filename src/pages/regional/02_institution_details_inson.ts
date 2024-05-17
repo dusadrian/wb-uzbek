@@ -47,8 +47,7 @@ export const institutionDetails = {
 
             if (services.length !== 0) {
                 for (const service of services) {
-                    console.log(service);
-
+                    
                     const clone = serviceTemplate.content.cloneNode(true) as HTMLElement;
                     // Set the service name
                     if (appSession.language === 'uz') {
@@ -62,7 +61,8 @@ export const institutionDetails = {
                     const firstElement = clone.querySelector('.firstElement');
                     // label
                     const firstLabel = (firstElement.children[0] as HTMLLabelElement);
-                    firstLabel.textContent = 'Children';
+                    firstLabel.textContent = i18n.__('t_children');
+                    firstLabel.classList.add('t_children');
                     firstLabel.htmlFor = `children_${service.id}`;
                     const firstInput = (firstElement.children[1] as HTMLInputElement);
                     firstInput.id = `children_${service.id}`;
@@ -72,7 +72,7 @@ export const institutionDetails = {
                     const secondElement = clone.querySelector('.secondElement');
                     // label
                     const secondLabel = (secondElement.children[0] as HTMLLabelElement);
-                    secondLabel.textContent = 'Leavers';
+                    secondLabel.textContent = i18n.__('t_leavers');
                     secondLabel.htmlFor = `leavers_${service.id}`;
                     const secondInput = (secondElement.children[1] as HTMLInputElement);
                     secondInput.id = `leavers_${service.id}`;
@@ -130,7 +130,8 @@ export const institutionDetails = {
                 return;
             }
 
-            ipcRenderer.send('updateInson', updateObj);
+            updateObj.type = 'inson'; // update service
+            ipcRenderer.send('updateServiceByRegional', updateObj);
         });
     }
 }

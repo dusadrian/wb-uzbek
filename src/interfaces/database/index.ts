@@ -88,6 +88,7 @@ export interface UpdateInsonObjInterface {
     pf: string;
     children_fth: string;
     leavers_fth: string;
+    type?: string;
 }
 
 export interface UpdateServiceObjInterface {
@@ -97,6 +98,7 @@ export interface UpdateServiceObjInterface {
     children: string;
     employees: string;
     leavers: string;
+    type?: string;
 }
 
 export interface DatabaseInterface {
