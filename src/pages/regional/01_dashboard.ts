@@ -34,7 +34,6 @@ let user: DI.User;
 let serviceType: string = null;
 let regionCode = '';
 let lang = 'en';
-sessionStorage.removeItem('instrument1_service');
 
 export const regionalCoordinator = {
     init: async () => {
@@ -88,7 +87,6 @@ export const regionalCoordinator = {
                     }
                 });
             }
-            sessionStorage.removeItem('instrument1_service');
         })
 
         inst.addEventListener('change', () => {
