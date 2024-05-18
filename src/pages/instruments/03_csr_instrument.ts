@@ -39,11 +39,7 @@ let userUUID = '';
 let institutionType = '';
 let institutionCode = '';
 let userRole = '';
-let filters: {
-    institutionType: string;
-    institution: string;
-    region: string;
-};
+let filters: DI.FiltersInterface;
 
 
 const e2e7 = ["e2", "e7"]; // date elements
@@ -95,8 +91,10 @@ export const instrument3 = {
 
             services = args.services;
             insons = args.insons;
+            
             userRole = args.userData.role_code;
             const institution_code = (filters && filters.institution) ? filters.institution : args.userData.institution_code;
+
             const inson_user = Object.keys(insons).indexOf(institution_code) >= 0;
 
             const reg_codes = Object.keys(regions);

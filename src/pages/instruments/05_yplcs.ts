@@ -17,7 +17,9 @@ export const yplcs = {
         // call this to show based on permissions hidden sections
         showByPermissions()
 
-        ipcRenderer.send('getYPLCS');
+        ipcRenderer.send('getYPLCS', {
+            filters: JSON.parse(sessionStorage.getItem('filters'))
+        });
 
         (<HTMLButtonElement>document.getElementById('add_young_people')).addEventListener('click', () => {
             ipcRenderer.send('changeWindow', {

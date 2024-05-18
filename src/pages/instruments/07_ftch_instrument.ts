@@ -4,6 +4,7 @@ import instrument from "../../libraries/instrument";
 import { QuestionObjectType, SaveInstrumentType } from "../../libraries/interfaces";
 import { util, errorHandler } from "../../libraries/validation_helpers";
 import * as DI from "../../interfaces/database";
+import constant from "../../libraries/constants";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const globalAny: any = global;
@@ -50,11 +51,13 @@ let userUUID = '';
 let institutionType = '';
 let institutionCode = '';
 let serviceCode = ''; // filter by service code INSON
+let userRole = '';
+let filters: DI.FiltersInterface;
 
 export const instrument7 = {
     init: async () => {
 
-        $.datepicker.setDefaults( $.datepicker.regional[ lang ] );
+        $.datepicker.setDefaults($.datepicker.regional[lang]);
         const jQueryDatepickerConfig = {
             changeMonth: true,
             changeYear: true,
@@ -63,7 +66,7 @@ export const instrument7 = {
             maxDate: "30/04/2024",
             yearRange: "c-100:c+10",
             firstDay: 1,
-            onSelect: function() {
+            onSelect: function () {
                 util.trigger(this.id, "change");
             }
         };
@@ -93,13 +96,22 @@ export const instrument7 = {
             });
         });
 
-
+        filters = JSON.parse(sessionStorage.getItem('filters'));
 
         ipcRenderer.on("instrumentDataReady", (_event, args) => {
 
             services = args.services;
             insons = args.insons;
-            const institution_code = args.institution_code ?? args.userData.institution_code;
+            
+            userRole = args.userData.role_code;
+            let institution_code = args.userData.institution_code;
+            if (args.institution_code) {
+                institution_code = args.institution_code;
+            }
+            if (filters && filters.institution) {
+                institution_code = filters.institution;
+            }
+            
             serviceCode = args.institution_code ?? '';
             console.log(args);
 
@@ -251,12 +263,14 @@ const validateChestionar = (_questions: QuestionObjectType) => {
 
 const saveChestionar = (obj: SaveInstrumentType): void => {
     obj.table = "ftch";
-    obj.extras = {
-        region_code: regionCode,
-        user_uuid: userUUID,
-        institution_type: institutionType,
-        institution_code: institutionCode,
-        service_code: serviceCode,
+    if (userRole != constant.ROLE_REGIONAL && userRole != constant.ROLE_NATIONAL) {
+        obj.extras = {
+            region_code: regionCode,
+            user_uuid: userUUID,
+            institution_type: institutionType,
+            institution_code: institutionCode,
+            service_code: serviceCode,
+        }
     }
     ipcRenderer.send("saveInstrument", obj);
 }

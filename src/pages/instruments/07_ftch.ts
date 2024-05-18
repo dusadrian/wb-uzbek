@@ -20,7 +20,8 @@ export const ftch = {
 
         institutionCode = sessionStorage.getItem('instrument7_service');
         ipcRenderer.send('getFTCH', {
-            institution_code: institutionCode
+            institution_code: institutionCode,
+            filters: JSON.parse(sessionStorage.getItem('filters'))
         });
 
         (<HTMLButtonElement>document.getElementById('add_family_type')).addEventListener('click', () => {

@@ -2,7 +2,7 @@ import * as path from "path";
 import * as DuckDB from "duckdb";
 import * as DI from "../interfaces/database";
 import { save as instrumentSave, get as instrumentGet, getExisting, cpisList, deleteCPIS, cibsList, deleteCIBS, csrList, deleteStaff, ftchList, deleteFTCH, pfqList, deletePFQ, eefList, deleteEEF, yplcsList, deleteYPLCS, tqypList, deleteTQYP } from "./instruments";
-import { cpisListALL, cibsListALL, csrListALL } from "./regional_up";
+import { getRegionalInstitutions, getRegionalInsons, cpisListALL, cibsListALL, csrListALL, yplcsListALL, tqypListALL, ftchListALL, pfqListALL, eefListALL } from "./regional_up";
 import constant from '../libraries/constants'
 
 const duckdbOptions: {
@@ -205,28 +205,6 @@ export const database = {
                     console.log(error);
                 }
                 resolve(result as DI.User[]);
-            });
-        });
-        return await connection;
-    },
-    getRegionalInstitutions: async (region: string) => {
-        const connection = new Promise<Array<DI.Institution>>((resolve) => {
-            db.all(`SELECT * FROM institutions WHERE region = '${region}' AND CAST(type AS INTEGER) < 30`, (error, result) => {
-                if (error) {
-                    console.log(error);
-                }
-                resolve(result as DI.Institution[]);
-            });
-        });
-        return await connection;
-    },
-    getRegionalInsons: async (region: string) => {
-        const connection = new Promise<Array<DI.INSON>>((resolve) => {
-            db.all(`SELECT * FROM inson WHERE region = '${region}'`, (error, result) => {
-                if (error) {
-                    console.log(error);
-                }
-                resolve(result as DI.INSON[]);
             });
         });
         return await connection;
@@ -727,7 +705,15 @@ export const database = {
     deleteYPLCS,
     tqypList,
     deleteTQYP,
+    // regional
+    getRegionalInstitutions,
+    getRegionalInsons,
     cpisListALL,
     cibsListALL,
     csrListALL,
+    yplcsListALL,
+    tqypListALL,
+    ftchListALL,
+    pfqListALL,
+    eefListALL,
 }

@@ -1,4 +1,3 @@
-import { stat } from 'original-fs';
 import { showByPermissions } from './../../libraries/showBasedOnPermissions';
 import { ipcRenderer } from "electron";
 declare global {
@@ -18,7 +17,9 @@ export const tqyp = {
         // call this to show based on permissions hidden sections
         showByPermissions()
 
-        ipcRenderer.send('getTQYP');
+        ipcRenderer.send('getTQYP', {
+            filters: JSON.parse(sessionStorage.getItem('filters'))
+        });
 
         (<HTMLButtonElement>document.getElementById('add_young_people_a')).addEventListener('click', () => {
             ipcRenderer.send('changeWindow', {

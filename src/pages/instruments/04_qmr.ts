@@ -4,6 +4,7 @@ import instrument from "../../libraries/instrument";
 import { QuestionObjectType, SaveInstrumentType } from "../../libraries/interfaces";
 import { util, errorHandler } from "../../libraries/validation_helpers";
 import * as DI from "../../interfaces/database";
+import constant from "../../libraries/constants";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const globalAny: any = global;
@@ -47,6 +48,8 @@ let regionCode = '';
 let userUUID = '';
 let institutionType = '';
 let institutionCode = '';
+let userRole = '';
+let filters: DI.FiltersInterface;
 
 
 const ac14a = util.radioIDs("ac14a");
@@ -81,7 +84,7 @@ function check_i9() {
 export const instrument4 = {
     init: async () => {
 
-        $.datepicker.setDefaults( $.datepicker.regional[ lang ] );
+        $.datepicker.setDefaults($.datepicker.regional[lang]);
         const jQueryDatepickerConfig = {
             changeMonth: true,
             changeYear: true,
@@ -89,7 +92,7 @@ export const instrument4 = {
             maxDate: "30/04/2024",
             yearRange: "c-100:c+10",
             firstDay: 1,
-            onSelect: function() {
+            onSelect: function () {
                 util.trigger(this.id, "change");
             }
         };
@@ -127,6 +130,8 @@ export const instrument4 = {
             });
         });
 
+        filters = JSON.parse(sessionStorage.getItem('filters'));
+
         ipcRenderer.on("instrumentDataReady", (_event, args) => {
             // console.log(args);
 
@@ -136,7 +141,10 @@ export const instrument4 = {
 
             services = args.services;
             insons = args.insons;
-            const institution_code = args.userData.institution_code;
+
+            userRole = args.userData.role_code;
+            const institution_code = (filters && filters.institution) ? filters.institution : args.userData.institution_code;
+
             const inson_user = Object.keys(insons).indexOf(institution_code) >= 0;
 
             const reg_codes = Object.keys(regions);
@@ -209,8 +217,8 @@ export const instrument4 = {
                 util.setValue('i2', "" + institution_code);
 
                 if (inson_user) {
-                    const inson = { ...insons[args.userData.institution_code]} as KeyStringNumber;
-                    institution_name = "" + inson['name_'+ lang];
+                    const inson = { ...insons[args.userData.institution_code] } as KeyStringNumber;
+                    institution_name = "" + inson['name_' + lang];
                     util.setValue('i3', "--"); // Alex: inson-urile nu au adresa
                     util.setValue('i4a', "" + insons[institution_code].region);
                     util.setValue('i4b', "" + insons[institution_code].district);
@@ -220,7 +228,7 @@ export const instrument4 = {
                     util.setValue('i9', "--");
                 } else {
                     const serviciu = { ...services[institution_code] } as KeyStringNumber;
-                    institution_name = '' + serviciu['name_'+ lang];
+                    institution_name = '' + serviciu['name_' + lang];
                     util.setValue('i3', services[institution_code].address ? services[institution_code].address : "--");
                     util.setValue('i4a', "" + services[institution_code].region);
                     util.setValue('i4b', "" + services[institution_code].district);
@@ -256,11 +264,13 @@ const validateChestionar = (_questions: QuestionObjectType) => {
 
 const saveChestionar = (obj: SaveInstrumentType): void => {
     obj.table = "qmr";
-    obj.extras = {
-        region_code: regionCode,
-        user_uuid: userUUID,
-        institution_type: institutionType,
-        institution_code: institutionCode,
+    if (userRole != constant.ROLE_REGIONAL && userRole != constant.ROLE_NATIONAL) {
+        obj.extras = {
+            region_code: regionCode,
+            user_uuid: userUUID,
+            institution_type: institutionType,
+            institution_code: institutionCode,
+        }
     }
     ipcRenderer.send("saveInstrument", obj);
 };
@@ -359,8 +369,8 @@ ac1_2.forEach(item => {
     })
 })
 
-const compare =    ['ac1f1', 'ac5f1', 'ac1g1', 'ac1f2', 'ac1g2', 'ac5b1', 'ac5c1', 'ac5e1', 'i13b', 'i13c', 'i13d', 'i13e', 'i13f', 'i13g'];
-const compare_to = ['ac1a1', 'ac5f',  'ac1a1', 'ac1a2', 'ac1a2', 'ac5b',  'ac5c',  'ac5e',  'i13a', 'i13a', 'i13a', 'i13a', 'i13a', 'i13a'];
+const compare = ['ac1f1', 'ac5f1', 'ac1g1', 'ac1f2', 'ac1g2', 'ac5b1', 'ac5c1', 'ac5e1', 'i13b', 'i13c', 'i13d', 'i13e', 'i13f', 'i13g'];
+const compare_to = ['ac1a1', 'ac5f', 'ac1a1', 'ac1a2', 'ac1a2', 'ac5b', 'ac5c', 'ac5e', 'i13a', 'i13a', 'i13a', 'i13a', 'i13a', 'i13a'];
 
 compare.forEach(item1 => {
     const index = compare.indexOf(item1);

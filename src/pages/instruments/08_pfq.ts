@@ -17,7 +17,9 @@ export const pfq = {
         // call this to show based on permissions hidden sections
         showByPermissions();
 
-        ipcRenderer.send('getPFQ');
+        ipcRenderer.send('getPFQ', {
+            filters: JSON.parse(sessionStorage.getItem('filters'))
+        });
 
         (<HTMLButtonElement>document.getElementById('add_patronat_family')).addEventListener('click', () => {
             ipcRenderer.send('changeWindow', {

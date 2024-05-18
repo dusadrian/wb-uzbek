@@ -4,6 +4,7 @@ import instrument from "../../libraries/instrument";
 import { QuestionObjectType, SaveInstrumentType } from "../../libraries/interfaces";
 import { util, errorHandler } from "../../libraries/validation_helpers";
 import * as DI from "../../interfaces/database";
+import constant from "../../libraries/constants";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const globalAny: any = global;
@@ -45,11 +46,13 @@ let regionCode = '';
 let userUUID = '';
 let institutionType = '';
 let institutionCode = '';
+let userRole = '';
+let filters: DI.FiltersInterface;
 
 export const instrument5a = {
     init: async () => {
 
-        $.datepicker.setDefaults( $.datepicker.regional[ lang ] );
+        $.datepicker.setDefaults($.datepicker.regional[lang]);
         const jQueryDatepickerConfig = {
             changeMonth: true,
             changeYear: true,
@@ -58,7 +61,7 @@ export const instrument5a = {
             maxDate: "30/04/2024",
             yearRange: "c-100:c+10",
             firstDay: 1,
-            onSelect: function() {
+            onSelect: function () {
                 util.trigger(this.id, "change");
             }
         };
@@ -178,12 +181,16 @@ export const instrument5a = {
         }
 
 
+        filters = JSON.parse(sessionStorage.getItem('filters'));
 
         ipcRenderer.on("instrumentDataReady", (_event, args) => {
             console.log(args);
             services = args.services;
             insons = args.insons;
-            const institution_code = args.userData.institution_code;
+
+            userRole = args.userData.role_code;
+            const institution_code = (filters && filters.institution) ? filters.institution : args.userData.institution_code;
+
             const inson_user = Object.keys(insons).indexOf(institution_code) >= 0;
 
 
@@ -225,13 +232,13 @@ export const instrument5a = {
                 util.setValue("str3c", "--");
                 util.setValue("str4", "-9");
                 if (inson_user) {
-                    const inson = { ...insons[args.userData.institution_code]} as KeyStringNumber;
-                    institution_name = "" + inson['name_'+ lang];
+                    const inson = { ...insons[args.userData.institution_code] } as KeyStringNumber;
+                    institution_name = "" + inson['name_' + lang];
                     util.setValue("str3a", insons[institution_code].region);
                     util.setValue("str3b", insons[institution_code].district);
                 } else {
                     const serviciu = { ...services[institution_code] } as KeyStringNumber;
-                    institution_name = '' + serviciu['name_'+ lang];
+                    institution_name = '' + serviciu['name_' + lang];
                     util.setValue("str3a", services[institution_code].region);
                     util.setValue("str3b", services[institution_code].district);
                     const type = services[institution_code].type;
@@ -276,11 +283,13 @@ const validateChestionar = (_questions: QuestionObjectType) => {
 
 const saveChestionar = (obj: SaveInstrumentType): void => {
     obj.table = "tqyp";
-    obj.extras = {
-        region_code: regionCode,
-        user_uuid: userUUID,
-        institution_type: institutionType,
-        institution_code: institutionCode,
+    if (userRole != constant.ROLE_REGIONAL && userRole != constant.ROLE_NATIONAL) {
+        obj.extras = {
+            region_code: regionCode,
+            user_uuid: userUUID,
+            institution_type: institutionType,
+            institution_code: institutionCode,
+        }
     }
     ipcRenderer.send("saveInstrument", obj);
 }

@@ -56,11 +56,7 @@ let institutionType = '';
 let institutionCode = '';
 let serviceCode = ''; // filter by service code INSON
 let userRole = '';
-let filters: {
-    institutionType: string;
-    institution: string;
-    region: string;
-};
+let filters: DI.FiltersInterface;
 
 function check_sa1a(sa1a: number) {
 

@@ -4,6 +4,7 @@ import instrument from "../../libraries/instrument";
 import { QuestionObjectType, SaveInstrumentType } from "../../libraries/interfaces";
 import { util, errorHandler } from "../../libraries/validation_helpers";
 import * as DI from "../../interfaces/database";
+import constant from "../../libraries/constants";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const globalAny: any = global;
@@ -34,6 +35,8 @@ let regionCode = '';
 let userUUID = '';
 let institutionType = '';
 let institutionCode = '';
+let userRole = '';
+let filters: DI.FiltersInterface;
 
 const regElements = ["reg", "pf1a"];
 const disElements = ["dis", "pf1b"];
@@ -58,7 +61,7 @@ const date_elements = [...general_dates, ...admission_dates, ...exit_dates];
 export const instrument8 = {
     init: async () => {
 
-        $.datepicker.setDefaults( $.datepicker.regional[ lang ] );
+        $.datepicker.setDefaults($.datepicker.regional[lang]);
         const jQueryDatepickerConfig = {
             changeMonth: true,
             changeYear: true,
@@ -67,7 +70,7 @@ export const instrument8 = {
             maxDate: "30/04/2024",
             yearRange: "c-100:c+10",
             firstDay: 1,
-            onSelect: function() {
+            onSelect: function () {
                 util.trigger(this.id, "change");
             }
         };
@@ -99,12 +102,16 @@ export const instrument8 = {
 
         util.setValue("data", util.customDate());
 
+        filters = JSON.parse(sessionStorage.getItem('filters'));
 
         ipcRenderer.on("instrumentDataReady", (_event, args) => {
 
             services = args.services;
             insons = args.insons;
-            const institution_code = args.userData.institution_code;
+
+            userRole = args.userData.role_code;
+            const institution_code = (filters && filters.institution) ? filters.institution : args.userData.institution_code;
+
             const inson_user = Object.keys(insons).indexOf(institution_code) >= 0;
 
 
@@ -257,11 +264,13 @@ const validateChestionar = (_questions: QuestionObjectType) => {
 
 const saveChestionar = (obj: SaveInstrumentType): void => {
     obj.table = "pfq";
-    obj.extras = {
-        region_code: regionCode,
-        user_uuid: userUUID,
-        institution_type: institutionType,
-        institution_code: institutionCode
+    if (userRole != constant.ROLE_REGIONAL && userRole != constant.ROLE_NATIONAL) {
+        obj.extras = {
+            region_code: regionCode,
+            user_uuid: userUUID,
+            institution_type: institutionType,
+            institution_code: institutionCode
+        }
     }
     ipcRenderer.send("saveInstrument", obj);
 }

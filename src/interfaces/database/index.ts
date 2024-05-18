@@ -141,3 +141,9 @@ export interface InstrumentInterface {
     created_at: string;
     updated_at: string;
 }
+
+export interface FiltersInterface {
+    institutionType: string;
+    institution: string;
+    region: string;
+}

@@ -10,11 +10,6 @@ const $ = window.require('jquery');
 const dt = window.require('datatables.net-dt');
 dt(window, $);
 let institutionCode: string;
-let filters: {
-    institutionType: string;
-    institution: string;
-    region: string;
-};
 
 export const cibs = {
     init: async () => {
@@ -23,11 +18,10 @@ export const cibs = {
         showByPermissions()
 
         institutionCode = sessionStorage.getItem('instrument2_service');
-        filters = JSON.parse(sessionStorage.getItem('filters'));
 
         ipcRenderer.send('getChildrenCIBS', {
             institution_code: institutionCode,
-            filters: filters
+            filters: JSON.parse(sessionStorage.getItem('filters'))
         });
 
         (<HTMLButtonElement>document.getElementById('add_child_cibs')).addEventListener('click', () => {

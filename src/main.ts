@@ -543,10 +543,16 @@ const goToYPLCSList = () => {
     const newPage = path.join(__dirname, "../src/pages/instruments/05_yplcs.html");
     mainWindow.loadURL("file://" + newPage);
 };
-ipcMain.on('getYPLCS', () => {
-    database.yplcsList(db, appSession.userData.uuid, appSession.userData.role_code, appSession.userData.institution_code).then((result) => {
-        mainWindow.webContents.send("yplcs", result);
-    });
+ipcMain.on('getYPLCS', (_event, args) => {
+    if (appSession.userData.role_code === constant.ROLE_REGIONAL || appSession.userData.role_code === constant.ROLE_NATIONAL) {
+        database.yplcsListALL(db, args.filters.region, args.filters.institution).then((result) => {
+            mainWindow.webContents.send("yplcs", result);
+        });
+    } else {
+        database.yplcsList(db, appSession.userData.uuid, appSession.userData.role_code, appSession.userData.institution_code).then((result) => {
+            mainWindow.webContents.send("yplcs", result);
+        });
+    }
 });
 ipcMain.on('deleteYPLCS', (_event, args) => {
     // save to DB
@@ -574,10 +580,16 @@ const goToTQYPList = () => {
     const newPage = path.join(__dirname, "../src/pages/instruments/05a_tqyp.html");
     mainWindow.loadURL("file://" + newPage);
 };
-ipcMain.on('getTQYP', () => {
-    database.tqypList(db, appSession.userData.uuid, appSession.userData.role_code, appSession.userData.institution_code).then((result) => {
-        mainWindow.webContents.send("tqyp", result);
-    });
+ipcMain.on('getTQYP', (_event, args) => {
+    if (appSession.userData.role_code === constant.ROLE_REGIONAL || appSession.userData.role_code === constant.ROLE_NATIONAL) {
+        database.tqypListALL(db, args.filters.region, args.filters.institution).then((result) => {
+            mainWindow.webContents.send("tqyp", result);
+        });
+    } else {
+        database.tqypList(db, appSession.userData.uuid, appSession.userData.role_code, appSession.userData.institution_code).then((result) => {
+            mainWindow.webContents.send("tqyp", result);
+        });
+    }
 });
 ipcMain.on('deleteTQYP', (_event, args) => {
     // save to DB
@@ -623,9 +635,15 @@ ipcMain.on('goToFTCHList', (_event, _args) => {
     mainWindow.loadURL("file://" + path.join(__dirname, "../src/pages/instruments/07_ftch.html"));
 });
 ipcMain.on('getFTCH', (_event, args) => {
-    database.ftchList(db, appSession.userData.uuid, appSession.userData.role_code, appSession.userData.institution_code, args.institution_code).then((result) => {
-        mainWindow.webContents.send("ftch", result);
-    });
+    if (appSession.userData.role_code === constant.ROLE_REGIONAL || appSession.userData.role_code === constant.ROLE_NATIONAL) {
+        database.ftchListALL(db, args.filters.region, args.filters.institution).then((result) => {
+            mainWindow.webContents.send("ftch", result);
+        });
+    } else {
+        database.ftchList(db, appSession.userData.uuid, appSession.userData.role_code, appSession.userData.institution_code, args.institution_code).then((result) => {
+            mainWindow.webContents.send("ftch", result);
+        });
+    }
 });
 ipcMain.on('deleteFTCH', (_event, args) => {
     // save to DB
@@ -657,10 +675,16 @@ const goToPFQList = () => {
     const newPage = path.join(__dirname, "../src/pages/instruments/08_pfq.html");
     mainWindow.loadURL("file://" + newPage);
 };
-ipcMain.on('getPFQ', () => {
-    database.pfqList(db, appSession.userData.uuid, appSession.userData.role_code, appSession.userData.institution_code).then((result) => {
-        mainWindow.webContents.send("pfq", result);
-    });
+ipcMain.on('getPFQ', (_event, args) => {
+    if (appSession.userData.role_code === constant.ROLE_REGIONAL || appSession.userData.role_code === constant.ROLE_NATIONAL) {
+        database.pfqListALL(db, args.filters.region, args.filters.institution).then((result) => {
+            mainWindow.webContents.send("pfq", result);
+        });
+    } else {
+        database.pfqList(db, appSession.userData.uuid, appSession.userData.role_code, appSession.userData.institution_code).then((result) => {
+            mainWindow.webContents.send("pfq", result);
+        });
+    }
 });
 ipcMain.on('deletePFQ', (_event, args) => {
     // save to DB
@@ -688,10 +712,16 @@ const goToEEFList = () => {
     const newPage = path.join(__dirname, "../src/pages/instruments/09_eef.html");
     mainWindow.loadURL("file://" + newPage);
 };
-ipcMain.on('getEEF', () => {
-    database.eefList(db, appSession.userData.uuid, appSession.userData.role_code).then((result) => {
-        mainWindow.webContents.send("eef", result);
-    });
+ipcMain.on('getEEF', (_event, args) => {
+    if (appSession.userData.role_code === constant.ROLE_REGIONAL || appSession.userData.role_code === constant.ROLE_NATIONAL) {
+        database.eefListALL(db, args.filters.region, args.filters.institution).then((result) => {
+            mainWindow.webContents.send("eef", result);
+        });
+    } else {
+        database.eefList(db, appSession.userData.uuid, appSession.userData.role_code).then((result) => {
+            mainWindow.webContents.send("eef", result);
+        });
+    }
 });
 ipcMain.on('deleteEEF', (_event, args) => {
     // save to DB
@@ -879,7 +909,7 @@ const institutionsR = () => {
     const newPage = path.join(__dirname, "../src/pages/regional/02_institutions.html");
     mainWindow.loadURL("file://" + newPage);
     mainWindow.webContents.once("did-finish-load", () => {
-        database.getRegionalInstitutions(appSession.userData.region_code).then((result) => {
+        database.getRegionalInstitutions(db, appSession.userData.region_code).then((result) => {
             mainWindow.webContents.send("institutions", result);
         });
     });
@@ -888,7 +918,7 @@ const insonsR = () => {
     const newPage = path.join(__dirname, "../src/pages/regional/02_insons.html");
     mainWindow.loadURL("file://" + newPage);
     mainWindow.webContents.once("did-finish-load", () => {
-        database.getRegionalInsons(appSession.userData.region_code).then((result) => {
+        database.getRegionalInsons(db, appSession.userData.region_code).then((result) => {
             mainWindow.webContents.send("insons", result);
         });
     });

@@ -4,6 +4,7 @@ import instrument from "../../libraries/instrument";
 import { SaveInstrumentType } from "../../libraries/interfaces";
 import { util, errorHandler } from "../../libraries/validation_helpers";
 import * as DI from "../../interfaces/database";
+import constant from "../../libraries/constants";
 
 import { KeyString, KeyStringNumber, regions, districts, settlements } from "../../libraries/administrative";
 
@@ -24,6 +25,8 @@ let regionCode = '';
 let userUUID = '';
 let institutionType = '';
 let institutionCode = '';
+let userRole = '';
+let filters: DI.FiltersInterface;
 
 const regElements = ["i4a"];
 const disElements = ["i4b"];
@@ -36,11 +39,16 @@ export const instrument6 = {
 
         const lang = localStorage.getItem("language");
 
+        filters = JSON.parse(sessionStorage.getItem('filters'));
+
         ipcRenderer.on("instrumentDataReady", (_event, args) => {
 
             services = args.services;
             insons = args.insons;
-            const institution_code = args.userData.institution_code;
+            
+            userRole = args.userData.role_code;
+            const institution_code = (filters && filters.institution) ? filters.institution : args.userData.institution_code;
+
             const inson_user = Object.keys(insons).indexOf(institution_code) >= 0;
 
 
@@ -127,8 +135,8 @@ export const instrument6 = {
 
                 const settlement = services[institution_code].settlement;
                 if (inson_user) {
-                    const inson = { ...insons[args.userData.institution_code]} as KeyStringNumber;
-                    institution_name = "" + inson['name_'+ lang];
+                    const inson = { ...insons[args.userData.institution_code] } as KeyStringNumber;
+                    institution_name = "" + inson['name_' + lang];
                     util.setValue("i3", "--");
                     util.setValue('i4', "" + insons[institution_code].district);
                     util.setValue('i4a', "" + insons[institution_code].region);
@@ -136,7 +144,7 @@ export const instrument6 = {
                 }
                 else {
                     const serviciu = { ...services[institution_code] } as KeyStringNumber;
-                    institution_name = '' + serviciu['name_'+ lang];
+                    institution_name = '' + serviciu['name_' + lang];
                     util.setValue("i3", services[institution_code].address ? services[institution_code].address : "--");
                     util.setValue('i4', settlement ? "" + settlement : services[institution_code].district);
                     util.setValue('i4a', "" + services[institution_code].region);
@@ -175,11 +183,13 @@ const validateChestionar = () => true;
 
 const saveChestionar = (obj: SaveInstrumentType): void => {
     obj.table = "dsee";
-    obj.extras = {
-        region_code: regionCode,
-        user_uuid: userUUID,
-        institution_type: institutionType,
-        institution_code: institutionCode,
+    if (userRole != constant.ROLE_REGIONAL && userRole != constant.ROLE_NATIONAL) {
+        obj.extras = {
+            region_code: regionCode,
+            user_uuid: userUUID,
+            institution_type: institutionType,
+            institution_code: institutionCode,
+        }
     }
     ipcRenderer.send("saveInstrument", obj);
 }
