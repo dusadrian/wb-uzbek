@@ -58,6 +58,8 @@ export const institutions = {
         });
 
         ipcRenderer.on('institutions', (event, institutions) => {
+            console.log(institutions);
+            
             fillTable(table, institutions);
         });
     }

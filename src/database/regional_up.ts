@@ -1,5 +1,6 @@
 import * as DuckDB from "duckdb";
 import * as DI from "../interfaces/database";
+import constant from "../libraries/constants";
 
 
 export const getRegionalInstitutions = async (db: DuckDB.Database, region: string) => {
@@ -25,6 +26,42 @@ export const getRegionalInsons = async (db: DuckDB.Database, region: string) => 
     return await connection;
 }
 
+export const getInstitutionsByTypeAndRegion = async (db: DuckDB.Database, instrument: string, region: string, type: string) => {
+
+    const connection = new Promise<Array<DI.Institution>>((resolve) => {
+
+        let sql = `SELECT * FROM institutions`;
+
+        let instType = '';
+
+        if (instrument === '1') {
+            if (type === '10') {
+                instType = constant.CHILD_CARE.join("','");
+            } else if (type === '91') {
+                instType = constant.INSON.join("','");
+            } else {
+                instType = constant.CHILD_CARE.concat(constant.INSON).join("','");
+            }
+        }
+        // TODO add rest of instruments
+
+        if (instType) {
+            sql += ` WHERE type IN ('${instType}')`;
+        }
+
+        if (region) {
+            sql += ` AND region = '${region}'`;
+        }
+
+        db.all(sql, (error, result) => {
+            if (error) {
+                console.log(error);
+            }
+            resolve(result as DI.Institution[]);
+        });
+    });
+    return await connection;
+}
 
 // Instrument 1
 export const cpisListALL = async (db: DuckDB.Database, region: string, institution_code: string) => {

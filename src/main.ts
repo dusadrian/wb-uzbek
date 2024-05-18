@@ -322,17 +322,9 @@ ipcMain.on('getInstitutionByTypeAndRegion', (_event, args) => {
     });
 });
 
-const regionalViewInstrument = (instrument: string, filters: { institutionType: string, institution: string }) => {
+const regionalViewInstrument = (instrument: string, filters: DI.FiltersInterface) => {
 
-    if (filters.institutionType === '' && filters.institution === '') {
-        // get list of institutions for instrument 
-        // mainWindow.loadURL("file://" + path.join(__dirname, "../src/pages/regional/03_institutions.html"));
-        // database.getInstitutionsForInstrument(instrument, appSession.userData.region_code).then((result) => {
-        //     mainWindow.webContents.send("institutions", result);
-        // });
-    } else if (filters.institutionType !== '' && filters.institution === '') {
-        console.log('regionalViewInstrument', instrument, filters);
-    } else if (filters.institutionType !== '' && filters.institution !== '') {
+    if (filters.institutionType !== '' && filters.institution !== '') {
         switch (instrument) {
             case '1':
                 goToCPISList();
@@ -370,9 +362,17 @@ const regionalViewInstrument = (instrument: string, filters: { institutionType: 
                     message: i18n.__('Instrument error.'),
                 });
         }
+    } else {
+        mainWindow.loadURL("file://" + path.join(__dirname, "../src/pages/regional/03_instrument_institutions.html"));
+        mainWindow.webContents.once("did-finish-load", () => {
+            database.getInstitutionsByTypeAndRegion(db, instrument, filters.region, filters.institutionType).then((institutions) => {
+                mainWindow.webContents.send("institutions", {
+                    institutions,
+                    filters: filters
+                });
+            });
+        });
     }
-
-    console.log('regionalViewInstrument', instrument, filters);
 };
 const goToInstitutionQMR = (institution: string) => {
     database.getQMRInstrumentForInstitution(institution, appSession.userData.region_code).then((result) => {

@@ -2,7 +2,7 @@ import * as path from "path";
 import * as DuckDB from "duckdb";
 import * as DI from "../interfaces/database";
 import { save as instrumentSave, get as instrumentGet, getExisting, cpisList, deleteCPIS, cibsList, deleteCIBS, csrList, deleteStaff, ftchList, deleteFTCH, pfqList, deletePFQ, eefList, deleteEEF, yplcsList, deleteYPLCS, tqypList, deleteTQYP } from "./instruments";
-import { getRegionalInstitutions, getRegionalInsons, cpisListALL, cibsListALL, csrListALL, yplcsListALL, tqypListALL, ftchListALL, pfqListALL, eefListALL } from "./regional_up";
+import { getRegionalInstitutions, getRegionalInsons, getInstitutionsByTypeAndRegion, cpisListALL, cibsListALL, csrListALL, yplcsListALL, tqypListALL, ftchListALL, pfqListALL, eefListALL } from "./regional_up";
 import constant from '../libraries/constants'
 
 const duckdbOptions: {
@@ -708,6 +708,7 @@ export const database = {
     // regional
     getRegionalInstitutions,
     getRegionalInsons,
+    getInstitutionsByTypeAndRegion,
     cpisListALL,
     cibsListALL,
     csrListALL,
