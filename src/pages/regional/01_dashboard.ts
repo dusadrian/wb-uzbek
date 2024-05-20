@@ -39,18 +39,18 @@ export const regionalCoordinator = {
     init: async () => {
 
         ipcRenderer.on("appSession", (_event, args) => {
+            console.log(args);
+            
             user = args.userData as DI.User;
             lang = args.language;
             regionCode = user.region_code;
+
             ipcRenderer.send('getRegionalDashStats', {
                 region: regionCode
             });
         })
 
         ipcRenderer.on("dashStats", (_event, args) => {
-
-            console.log(args);
-
             processDashStats(args.instruments, args.toBeFilled);
         });
 
@@ -74,10 +74,13 @@ export const regionalCoordinator = {
         const inst = (<HTMLSelectElement>document.getElementById('institution'));
         // fill institution list
         ipcRenderer.on("institutions", (_event, args) => {
+            console.log(args);
+            
             inst.innerHTML = '';
             inst.innerHTML = `<option value="">---</option>`;
             if (args.length > 0) {
                 args.forEach((el: DI.Institution) => {
+
                     if (lang === 'uz') {
                         inst.innerHTML += `<option value="${el.code}">${el.name_uz}</option>`;
                     } else if (lang === 'ru') {
@@ -130,9 +133,9 @@ export const regionalCoordinator = {
         if (instrument1 !== null) {
             instrument1.addEventListener('click', () => {
                 ipcRenderer.send('changeWindow', {
-                    'name': 'regionalViewInstrument',
-                    'instrument': '1',
-                    'filters': getFilterData(),
+                    name: 'regionalViewInstrument',
+                    instrument: '1',
+                    filters: getFilterData(),
                 });
             });
         }
@@ -140,9 +143,9 @@ export const regionalCoordinator = {
         if (instrument2 !== null) {
             instrument2.addEventListener('click', () => {
                 ipcRenderer.send('changeWindow', {
-                    'name': 'regionalViewInstrument',
-                    'instrument': '2',
-                    'filters': getFilterData(),
+                    name: 'regionalViewInstrument',
+                    instrument: '2',
+                    filters: getFilterData(),
                 });
             });
         }
@@ -150,9 +153,9 @@ export const regionalCoordinator = {
         if (instrument3 !== null) {
             instrument3.addEventListener('click', () => {
                 ipcRenderer.send('changeWindow', {
-                    'name': 'regionalViewInstrument',
-                    'instrument': '3',
-                    'filters': getFilterData(),
+                    name: 'regionalViewInstrument',
+                    instrument: '3',
+                    filters: getFilterData(),
                 });
             });
         }
@@ -160,9 +163,9 @@ export const regionalCoordinator = {
         if (instrument4 !== null) {
             instrument4.addEventListener('click', () => {
                 ipcRenderer.send('changeWindow', {
-                    'name': 'regionalViewInstrument',
-                    'instrument': '4',
-                    'filters': getFilterData(),
+                    name: 'regionalViewInstrument',
+                    instrument: '4',
+                    filters: getFilterData(),
                 });
             });
         }
@@ -170,9 +173,9 @@ export const regionalCoordinator = {
         if (instrument5a !== null) {
             instrument5a.addEventListener('click', () => {
                 ipcRenderer.send('changeWindow', {
-                    'name': 'regionalViewInstrument',
-                    'instrument': '5a',
-                    'filters': getFilterData(),
+                    name: 'regionalViewInstrument',
+                    instrument: '5a',
+                    filters: getFilterData(),
                 });
             });
         }
@@ -180,9 +183,9 @@ export const regionalCoordinator = {
         if (instrument5 !== null) {
             instrument5.addEventListener('click', () => {
                 ipcRenderer.send('changeWindow', {
-                    'name': 'regionalViewInstrument',
-                    'instrument': '5',
-                    'filters': getFilterData(),
+                    name: 'regionalViewInstrument',
+                    instrument: '5',
+                    filters: getFilterData(),
                 });
             });
         }
@@ -190,9 +193,9 @@ export const regionalCoordinator = {
         if (instrument6 !== null) {
             instrument6.addEventListener('click', () => {
                 ipcRenderer.send('changeWindow', {
-                    'name': 'regionalViewInstrument',
-                    'instrument': '6',
-                    'filters': getFilterData(),
+                    name: 'regionalViewInstrument',
+                    instrument: '6',
+                    filters: getFilterData(),
                 });
             });
         }
@@ -200,9 +203,9 @@ export const regionalCoordinator = {
         if (instrument7 !== null) {
             instrument7.addEventListener('click', () => {
                 ipcRenderer.send('changeWindow', {
-                    'name': 'regionalViewInstrument',
-                    'instrument': '7',
-                    'filters': getFilterData(),
+                    name: 'regionalViewInstrument',
+                    instrument: '7',
+                    filters: getFilterData(),
                 });
             });
         }
@@ -210,9 +213,9 @@ export const regionalCoordinator = {
         if (instrument8 !== null) {
             instrument8.addEventListener('click', () => {
                 ipcRenderer.send('changeWindow', {
-                    'name': 'regionalViewInstrument',
-                    'instrument': '8',
-                    'filters': getFilterData(),
+                    name: 'regionalViewInstrument',
+                    instrument: '8',
+                    filters: getFilterData(),
                 });
             });
         }
@@ -220,9 +223,9 @@ export const regionalCoordinator = {
         if (instrument9 !== null) {
             instrument9.addEventListener('click', () => {
                 ipcRenderer.send('changeWindow', {
-                    'name': 'regionalViewInstrument',
-                    'instrument': '9',
-                    'filters': getFilterData(),
+                    name: 'regionalViewInstrument',
+                    instrument: '9',
+                    filters: getFilterData(),
                 });
             });
         }
@@ -485,6 +488,7 @@ const getFilterData = () => {
         institutionType: instType.options[instType.selectedIndex].value,
         institution: inst.options[inst.selectedIndex].value,
         region: session.userData.region_code,
+        dashboard: true,
     }
     // save to session storage
     sessionStorage.setItem('filters', JSON.stringify(filters));

@@ -1,3 +1,4 @@
+import { institutionDetails } from './02_institution_details_inson';
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { ipcRenderer } from "electron";
 import * as path from "path";
@@ -19,95 +20,95 @@ declare global {
         require: any;
     }
 }
-const $ = window.require('jquery');
-const dt = window.require('datatables.net-dt');
-dt(window, $);
 
-const boundFunctions = new Map();
-const callbackEdit = () => {
-    document.querySelectorAll('.editButton').forEach(item => {
-        const boundFunctionToRemove = boundFunctions.has(item);
-        if (!boundFunctionToRemove) {
-            const boundFunction = editItem.bind(this, (<HTMLButtonElement>item).dataset.mycode);
-            item.addEventListener('click', boundFunction);
-            boundFunctions.set(item, boundFunction);
-        }
-    });
-}
+const appSession = JSON.parse(sessionStorage.getItem('appSession'));
+let region = '';
+let institutionType = '';
 
 export const institutions = {
     init: async () => {
 
-        const lang = localStorage.getItem('language');
-        let langpath = '';
-        if (lang === 'ru') {
-            langpath = '../../locales/tables_ru.json';
-        } else if (lang === 'uz') {
-            langpath = '../../locales/tables_uz.json';
-        }
+        ipcRenderer.on('institutions', (event, args) => {
+            const serviceList = document.getElementById('service_list') as HTMLDivElement;
+            if (args.institutions.length === 0) {
+                serviceList.innerHTML = '<h1>No institutions available</h1>';
+            }
 
-        const table = $('#institutions_list').DataTable({
-            "language": {
-                "url": langpath
-            },
-            "createdRow": function (row: any) {
-                $(row).addClass('text-left');
-            },
-            columns: [{ width: '90%' }, null],
-            drawCallback: callbackEdit
-        });
-
-        ipcRenderer.on('institutions', (event, institutions) => {
-            console.log(institutions);
+            console.log(args);
             
-            fillTable(table, institutions);
+
+            region = args.filters.region;
+            institutionType = args.filters.institutionType;
+
+
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
+            args.institutions.forEach((service: any) => {
+                const div = document.createElement('div');
+                // grid-cols-7 w-full mt-0.5 px-5 gap-0.5
+                div.classList.add('grid', 'grid-cols-5', 'w-full', 'mt-0.5', 'gap-0.5');
+                const div1 = document.createElement('div');
+                // bg-tableRow text-gray-600 px-3 py-1.5 font-medium col-span-2 flex items-center
+                div1.classList.add('bg-tableRow', 'text-gray-600', 'px-3', 'py-1.5', 'font-medium', 'col-span-2', 'flex', 'items-center', 'col-span-2');
+
+                let serviceName = service.name_en;
+                if (appSession.language === 'uz') {
+                    serviceName = service.name_uz;
+                } else if (appSession.language === 'ru') {
+                    serviceName = service.name_ru;
+                }
+
+                div1.innerHTML = service.code + ' | ' + serviceName;
+                div.appendChild(div1);
+
+                const div2 = document.createElement('div');
+                div2.classList.add('bg-tableRow', 'text-gray-600', 'px-3', 'py-1.5', 'font-medium', 'col-span-1', 'flex', 'items-center', 'justify-center');
+                // TODO Update this based on the selected instrument
+                div2.innerHTML = service.children;
+                div.appendChild(div2);
+
+                const div3 = document.createElement('div');
+                div3.classList.add('bg-tableRow', 'text-gray-600', 'px-3', 'py-1.5', 'font-medium', 'col-span-1', 'flex', 'items-center', 'justify-center');
+                // div3.innerHTML = args.filled[service.code] ?? '-';
+                div.appendChild(div3);
+
+                const div4 = document.createElement('div');
+                div4.classList.add('bg-tableRow', 'text-gray-600', 'px-3', 'py-1.5', 'font-medium', 'col-span-1', 'flex', 'items-center', 'justify-center');
+                const serviceButton = document.createElement('button');
+                // border border-gray-400 px-2 py-0.5 rounded bg-tableHeader/50 hover:bg-tableHeader
+                serviceButton.classList.add('border', 'border-gray-400', 'px-2', 'py-0.5', 'rounded', 'bg-tableHeader/50', 'hover:bg-tableHeader');
+                serviceButton.innerHTML = 'select';
+                serviceButton.classList.add('serviceButton');
+                serviceButton.setAttribute("data-mycode", service.code + '');
+
+                div4.appendChild(serviceButton);
+                div.appendChild(div4);
+
+                serviceList.appendChild(div);
+            });
+            document.querySelectorAll('.serviceButton').forEach(item => {
+                item.addEventListener('click', viewInstruments.bind(this, (<HTMLButtonElement>item).dataset.mycode));
+            });
         });
     }
 }
 
-const fillTable = (table: any, institutions: Array<any>) => {
-    table.clear().draw();
-    institutions.forEach((institution) => {
 
-        const buttonEdit = document.createElement('button');
-        buttonEdit.innerHTML = '<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="pen" class="fill-white w-4 h-4" role="img" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><path fill="currentColor" d="M290.74 93.24l128.02 128.02-277.99 277.99-114.14 12.6C11.35 513.54-1.56 500.62.14 485.34l12.7-114.22 277.9-277.88zm207.2-19.06l-60.11-60.11c-18.75-18.75-49.16-18.75-67.91 0l-56.55 56.55 128.02 128.02 56.55-56.55c18.75-18.76 18.75-49.16 0-67.91z"></path></svg>';
-        //  text-white px-4 py-2 rounded
-        buttonEdit.classList.add('bg-sky-500');
-        buttonEdit.classList.add('text-white');
-        buttonEdit.classList.add('px-2');
-        buttonEdit.classList.add('py-1.5');
-        buttonEdit.classList.add('rounded');
-        buttonEdit.classList.add('editButton');
-        buttonEdit.setAttribute("data-mycode", institution.code + '');
-        buttonEdit.setAttribute("title", i18n.__("t_edit_institution"));
+// View service instruments
+const viewInstruments = function (code: string) {
 
-        const buttons = document.createElement('div');
-        buttons.classList.add('flex');
-        buttons.classList.add('justify-center');
-        buttons.classList.add('gap-2');
-        buttons.appendChild(buttonEdit);
+    const filters = {
+        institutionType,
+        institution: code,
+        region,
+        dashboard: false,
+    };
 
-        let instName = institution.name_en;
-        if (lang === 'uz') {
-            instName = institution.name_uz;
-        } else if (lang === 'ru') {
-            instName = institution.name_ru;
-        }
+    // update filters in session storage
+    sessionStorage.setItem('filters', JSON.stringify(filters));
 
-        table.row.add([
-            institution.code + ' | ' + instName,
-            buttons.outerHTML
-        ]).draw();
-    });
-
-    callbackEdit();
-};
-
-
-// modifica modifica
-const editItem = function (code: string) {
     ipcRenderer.send('changeWindow', {
-        'name': 'regional/02_institution_details_service',
-        'code': code,
+        'name': 'regionalViewInstrument',
+        'instrument': '1',
+        'filters': filters,
     });
 };

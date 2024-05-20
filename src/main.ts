@@ -307,7 +307,7 @@ ipcMain.on('getRegionalDashStats', (_event, args) => {
     if (args?.institution) { institution = args.institution; }
 
     database.filledInstruments(appSession.userData.role_code, appSession.userData.uuid, appSession.userData.institution_code, region, typeOfInstitution, institution).then((dashStats) => {
-        database.getInstrumentsToBeFilledBy(region, institution).then((toBeFilled) => {
+        database.getInstrumentsToBeFilledBy(region, institution, typeOfInstitution).then((toBeFilled) => {
             // Dashboard stats for all users
             mainWindow.webContents.send("dashStats", {
                 instruments: dashStats,
@@ -324,7 +324,7 @@ ipcMain.on('getInstitutionByTypeAndRegion', (_event, args) => {
 
 const regionalViewInstrument = (instrument: string, filters: DI.FiltersInterface) => {
 
-    if (filters.institutionType !== '' && filters.institution !== '') {
+    if ((filters.institutionType !== '' && !filters.dashboard) || filters.institution !== '') {
         switch (instrument) {
             case '1':
                 goToCPISList();
@@ -429,7 +429,7 @@ const goToCPISList = () => {
 ipcMain.on('goToCPISList', (_event, _args) => {
     mainWindow.loadURL("file://" + path.join(__dirname, "../src/pages/instruments/01_cpis.html"));
 });
-ipcMain.on('getChildren', (_event, args) => {
+ipcMain.on('getChildren', (_event, args) => {    
     if (appSession.userData.role_code === constant.ROLE_REGIONAL || appSession.userData.role_code === constant.ROLE_NATIONAL) {
         database.cpisListALL(db, args.filters.region, args.filters.institution).then((result) => {
             mainWindow.webContents.send("children", result);
@@ -1569,7 +1569,6 @@ ipcMain.on('importData', (_event, _args) => {
             if (err) throw err;
 
             const dateDinFisier = JSON.parse(data);
-            console.log(dateDinFisier);
 
             const instrumentsInFile = Object.keys(dateDinFisier);
             const userInstruments = getLisOfInstrumentsToExport(appSession.userData.role_code, appSession.userData.service_type_code);

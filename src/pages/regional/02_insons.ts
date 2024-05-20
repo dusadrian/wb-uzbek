@@ -105,6 +105,8 @@ const fillTable = (table: any, insons: Array<any>) => {
 
 // modifica modifica
 const editItem = function (code: string) {
+    console.log(code);
+    
     ipcRenderer.send('changeWindow', {
         'name': 'regional/02_institution_details_inson',
         'code': code,

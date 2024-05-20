@@ -103,6 +103,9 @@ window.addEventListener("DOMContentLoaded", () => {
         case 'regional/02_insons.html':
             insonsR();
             break;
+        case 'regional/03_instrument_institutions.html':
+            instrumentInstitutionR();
+            break;
         case 'national/01_dashboard.html':
             nationalDashboard();
             break;
@@ -378,6 +381,19 @@ const insonsR = () => {
         return await import("./pages/regional/02_insons");
     };
     importFile().then(result => result.insons.init().catch(error => {
+        console.log(error);
+    }));
+};
+const instrumentInstitutionR = () => {
+    
+    topMenu('regional/01_dashboard');
+
+    translatePage();
+
+    const importFile = async () => {
+        return await import("./pages/regional/03_instrument_institutions");
+    };
+    importFile().then(result => result.institutions.init().catch(error => {
         console.log(error);
     }));
 };

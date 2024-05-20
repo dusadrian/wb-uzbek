@@ -10,4 +10,5 @@ export default Object.freeze({
     CHILD_CARE: ['11', '12', '13', '14'],
     SPECIALIZED: ['21', '22', '23', '24', '25', '26', '27', '28'],
     INSON: ['91'],
+    INSON_SERVICE: ['15'],
 });

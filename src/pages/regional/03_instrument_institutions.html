@@ -1,45 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <head>
-        <meta charset="UTF-8" />
-        <title>CRM Uzbek</title>
-        <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
-        <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src http: https: data: ; script-src 'self'; style-src 'self' 'unsafe-inline'" />
-        <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; img-src http: https: data: ; script-src 'self'; style-src 'self' 'unsafe-inline'" />
-        <link href="../../../dist/main.css" rel="stylesheet">
-        <link rel="stylesheet" type="text/css" href="../../../node_modules/datatables.net-dt/css/dataTables.dataTables.min.css" />
-        <link rel="stylesheet" type="text/css" href="../../../node_modules/datatables.net-responsive-dt/css/responsive.dataTables.min.css" />
-    </head>
+<head>
+    <meta charset="UTF-8" />
+    <title>CRM Uzbek</title>
+    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; img-src http: https: data: ; script-src 'self'; style-src 'self' 'unsafe-inline'" />
+    <meta http-equiv="X-Content-Security-Policy"
+        content="default-src 'self'; img-src http: https: data: ; script-src 'self'; style-src 'self' 'unsafe-inline'" />
+    <link href="../../../dist/main.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css"
+        href="../../../node_modules/datatables.net-dt/css/dataTables.dataTables.min.css" />
+    <link rel="stylesheet" type="text/css"
+        href="../../../node_modules/datatables.net-responsive-dt/css/responsive.dataTables.min.css" />
+</head>
 
-    <body class="relative max-h-screen">
-        <div class="fixed top-0 right-0 left-0 bg-slate-200 h-14 z-50 shadow" id="header">
-        </div>
-        <div class="relative w-full mt-14 pb-10 h-[calc(100vh-6.5rem)] overflow-y-auto">
+<body class="relative max-h-screen">
+    <div class="fixed top-0 right-0 left-0 bg-slate-200 h-14 z-50 shadow" id="header">
+    </div>
+    <div class="relative w-full mt-14 pb-10 h-[calc(100vh-6.5rem)] overflow-y-auto">
 
-            <div class="flex justify-between mt-10 px-5">
-                <h1 class="text-xl">
-                    <span class="t_institutions">Institutions</span>
-                </h1>
+
+        <div class="flex justify-between mt-8 px-5">
+            <h1 class="text-xl">
+                <span class="t_select_service_from_list">loading...</span>
+            </h1>
+            <div>
+                <button class="bg-menuButton text-white px-3 py-1 rounded hidden gap-3 items-center"
+                    id="add_child_cpis">
+                    <svg class="fill-white w-4 h-4" xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                        <path
+                            d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z" />
+                    </svg>
+                    <span class="t_add_child"></span>
+                </button>
             </div>
-
-            <div class="px-6 mt-5">
-                <table id="institutions_list" aria-describedby="institutions" style="width: 100%;" class="stripe hover w-full text-sm text-left rtl:text-right text-gray-500">
-                    <thead class="text-xs text-gray-700 uppercase bg-gray-50">
-                        <tr>
-                            <th scope="col" class="px-6 py-3">
-                                <span class="t_name"></span>
-                            </th>
-                            <th scope="col" class="px-6 py-3">
-                                <span class="t_actions"></span>
-                            </th>
-                        </tr>
-                    </thead>
-                    <tbody id="institutions"></tbody>
-                </table>
-            </div>
-
         </div>
-    </body>
+
+        <div class="px-6 mt-5" id="service_list">
+            <div class="grid grid-cols-5 w-full mt-5 gap-0.5">
+                <div class="bg-tableHeader flex items-center text-white px-3 py-1.5 font-medium col-span-2"></div>
+                <div
+                    class="bg-tableHeader flex justify-center items-center text-center text-white  px-3 py-1.5 font-medium col-span-1">
+                    <span class="t_number_to_be_filled"></span>
+                </div>
+                <div
+                    class="bg-tableHeader flex justify-center items-center text-center text-white  px-3 py-1.5 font-medium col-span-1">
+                    <span class="t_number_filled"></span>
+                </div>
+                <div class="bg-tableHeader flex justify-center items-center text-center text-white  px-3 py-1.5 font-medium col-span-1"
+                    id="collector_dashboard_th2">
+                    <span class="t_actions"></span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
 
 </html>

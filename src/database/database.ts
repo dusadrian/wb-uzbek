@@ -7,7 +7,7 @@ import constant from '../libraries/constants'
 
 const duckdbOptions: {
     access_mode: 'READ_WRITE' | 'READ_ONLY',
-    max_memory?: string
+    max_memory?: string,
 } = {
     'access_mode': 'READ_WRITE',
     'max_memory': '4096MB',
@@ -314,9 +314,6 @@ export const database = {
 
     filledInstruments: async (role_code: string, user_uuid: string, institution_code: string, region?: string, typeOfInstitution?: string, institution?: string) => {
 
-        console.log(role_code, user_uuid, institution_code, region, typeOfInstitution, institution);
-
-
         let where = '';
 
         if (role_code === constant.ROLE_DATA_COLLECTOR || role_code === constant.ROLE_HR_SPECIALIST || role_code === constant.ROLE_ADMIN_SPECIALIST) {
@@ -349,10 +346,10 @@ export const database = {
             where += ` AND institution_code = '${institution}'`;
         }
 
-        console.log(where);
-
         const i1 = new Promise<DI.StatusInterface[]>((resolve) => {
-            db.all(`SELECT status, COUNT(*) AS total FROM instrument_cpis ${where} GROUP BY status`, (error, result) => {
+            const sql = `SELECT status, COUNT(*) AS total FROM instrument_cpis ${where} GROUP BY status`;
+            console.log(sql);            
+            db.all(sql, (error, result) => {
                 if (error) { console.log(error); }
                 resolve(result as DI.StatusInterface[]);
             });
@@ -408,8 +405,10 @@ export const database = {
         });
         const instrument7 = await i7;
         const i8 = new Promise<DI.StatusInterface[]>((resolve) => {
-            db.all(`SELECT status, COUNT(*) AS total FROM instrument_pfq ${where} GROUP BY status`, (error, result) => {
-                if (error) { console.log(error); }
+            const sql = `SELECT status, COUNT(*) AS total FROM instrument_pfq ${where} GROUP BY status`;
+            console.log(sql);
+            db.all(sql, (error, result) => {
+                if (error) { console.log(error, 'Instrument 8 filledInstruments'); }
                 resolve(result as DI.StatusInterface[]);
             });
         });
@@ -437,14 +436,14 @@ export const database = {
     },
     getInstitutionByTypeAndRegion: async (region: string, type: string) => {
         const connection = new Promise<Array<DI.Institution>>((resolve) => {
-            console.log(region, type);
+
             let sql = '';
             if (type === '10') {
                 sql = `SELECT * FROM institutions WHERE region = '${region}' AND type IN (${constant.CHILD_CARE.join(',')})`
             } else if (type === '20') {
                 sql = `SELECT * FROM institutions WHERE region = '${region}' AND type IN (${constant.SPECIALIZED.join(',')})`
             } else {
-                sql = `SELECT * FROM institutions WHERE region = '${region}' AND type IN (${constant.INSON.join(',')})`
+                sql = `SELECT * FROM inson WHERE region = '${region}'`
             }
 
             db.all(sql, (error, result) => {
@@ -456,7 +455,7 @@ export const database = {
         });
         return await connection;
     },
-    getInstrumentsToBeFilledBy: async (region: string, institution: string) => {
+    getInstrumentsToBeFilledBy: async (region: string, institution: string, typeOfInstitution: string) => {
 
         let where = '';
 
@@ -464,13 +463,18 @@ export const database = {
             where += ` AND region = '${region}'`;
         }
 
-        if (region && institution) {
+        if (region && institution && !constant.INSON.includes(typeOfInstitution)) {
             where += ` AND code = '${institution}'`;
         }
 
         const i1 = new Promise<DI.StatusInterface>((resolve) => {
-            // 15 inson services
-            db.all(`SELECT SUM(children) AS total FROM institutions WHERE type IN (${constant.CHILD_CARE.concat(['15']).join(',')}) ${where}`, (error, result) => {
+
+            let localWhere = where;
+            if(institution && constant.INSON.includes(typeOfInstitution)) {
+                localWhere += ` AND inson = '${institution}'`;
+            }
+
+            db.all(`SELECT SUM(children) AS total FROM institutions WHERE type IN (${constant.CHILD_CARE.concat(constant.INSON_SERVICE).join(',')}) ${localWhere}`, (error, result) => {
                 if (error) { console.log(error); }
                 resolve(result[0] as DI.StatusInterface);
             });
@@ -490,6 +494,7 @@ export const database = {
             });
         });
         const instrument3 = await i3;
+
         const i4 = new Promise<DI.StatusInterface>((resolve) => {
             db.all(`SELECT COUNT(*) AS total FROM institutions WHERE type IN (${constant.CHILD_CARE.concat(constant.SPECIALIZED).join(',')}) ${where}`, (error, result) => {
                 if (error) { console.log(error); }
@@ -497,6 +502,7 @@ export const database = {
             });
         });
         const instrument4 = await i4;
+        
         const i5a = new Promise<DI.StatusInterface>((resolve) => {
             db.all(`SELECT SUM(leavers) AS total FROM institutions WHERE leavers IS NOT NULL ${where}`, (error, result) => {
                 if (error) { console.log(error); }

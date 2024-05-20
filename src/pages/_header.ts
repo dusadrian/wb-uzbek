@@ -51,6 +51,8 @@ export const header = {
         (document.getElementById('logout_text') as HTMLSpanElement).innerText = i18n.__("logout");
         const logout = document.getElementById("logout") as HTMLInputElement;
         logout.addEventListener("click", () => {
+            sessionStorage.removeItem('appSession');
+            sessionStorage.removeItem('filters');
             ipcRenderer.send("changeWindow", { name: "index" });
         });
         const back = document.getElementById("back") as HTMLInputElement;

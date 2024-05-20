@@ -146,4 +146,5 @@ export interface FiltersInterface {
     institutionType: string;
     institution: string;
     region: string;
+    dashboard?: boolean;
 }

@@ -38,12 +38,26 @@ export const getInstitutionsByTypeAndRegion = async (db: DuckDB.Database, instru
             if (type === '10') {
                 instType = constant.CHILD_CARE.join("','");
             } else if (type === '91') {
-                instType = constant.INSON.join("','");
+                instType = constant.INSON_SERVICE.join("','");
             } else {
-                instType = constant.CHILD_CARE.concat(constant.INSON).join("','");
+                instType = constant.CHILD_CARE.concat(constant.INSON_SERVICE).join("','");
             }
         }
-        // TODO add rest of instruments
+        if (instrument === '2') {
+            instType = constant.SPECIALIZED.join("','");
+        }
+        if (instrument === '3' || instrument === '4' || instrument === '6' || instrument === '9') {
+            instType = constant.CHILD_CARE.concat(constant.SPECIALIZED).join("','");
+        }
+        if(instrument === '5a') {
+            instType = constant.CHILD_CARE.concat(constant.SPECIALIZED).concat(constant.INSON_SERVICE).join("','");
+        }
+        if(instrument === '5') {
+            instType = constant.INSON_SERVICE.join("','");
+        }
+        if(instrument === '7'|| instrument === '8') {
+            instType = constant.INSON_SERVICE.join("','");
+        }
 
         if (instType) {
             sql += ` WHERE type IN ('${instType}')`;
@@ -52,6 +66,8 @@ export const getInstitutionsByTypeAndRegion = async (db: DuckDB.Database, instru
         if (region) {
             sql += ` AND region = '${region}'`;
         }
+
+        console.log('getInstitutionsByTypeAndRegion', sql);
 
         db.all(sql, (error, result) => {
             if (error) {

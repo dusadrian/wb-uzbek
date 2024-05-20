@@ -105,6 +105,8 @@ CREATE TABLE inson (
 INSERT INTO inson
 SELECT * FROM st_read('INSON.xlsx', layer = 'Sheet1', open_options = ['HEADERS=FORCE']);
 
+// fix services
+UPDATE inson SET services = replace(services, '.', ',');
 
 
 -- Create instrument 1
