@@ -105,7 +105,7 @@
 	"t_number_filled": "Number filled/started",
 	"t_number_completed": "Завершено",
 	"t_inson_services": "List of family-type children's homes",
-	"af1_instrument_04": "The sum of the areas of the buildings where children are accommodated (AF5a) must be less than or equal to the total area of the institution (AF1).",
+	"E0163": "The sum of the areas of the buildings where children are accommodated (AF5a) must be less than or equal to the total area of the institution (AF1).",
 	"main._chooseFolder": "Выбрать папку",
 	"main._chooseFile": "Выбрать файл",
 	"main.success": "Удачно",

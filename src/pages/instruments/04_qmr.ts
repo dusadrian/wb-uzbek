@@ -331,7 +331,7 @@ af5af1.forEach(item => {
             const af5_deschis_af1 = [...af5_deschis, 'af1'];
 
             if (util.inputsHaveValue(af5_deschis_af1)) {
-                const message = translations["af1_instrument_04"]
+                const message = translations["E0163"]
                 errorHandler.removeError(af5_deschis_af1, message)
                 if (util.getInputDecimalValue('af1') < util.makeSumFromElements(af5_deschis)) {
                     errorHandler.addError(af5_deschis_af1, message);
