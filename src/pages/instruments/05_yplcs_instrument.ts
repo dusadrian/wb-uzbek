@@ -16,7 +16,7 @@ window.require('jquery-ui-dist/jquery-ui');
 import "jquery-ui/ui/i18n/datepicker-ru";
 import "jquery-ui/ui/i18n/datepicker-uz";
 
-import { KeyString, KeyStringNumber, regions, districts, settlements, settlement_types } from "../../libraries/administrative";
+import { KeyString, KeyStringNumber, regions, districts, settlements } from "../../libraries/administrative";
 import * as en from "../../locales/en.json";
 import * as uz from "../../locales/uz.json";
 import * as ru from "../../locales/ru.json";
@@ -31,10 +31,10 @@ const translations = locales[lang as keyof typeof locales] as Record<string, str
 let services: { [key: string]: DI.Institution };
 let insons: { [key: string]: DI.INSON };
 
-const regElements = ["reg", "pi4b", "pi6r", "pi9c"];
-const disElements = ["dis", "pi4c", "pi6d", "pi9d"];
-const setElements = ["", "pi4d", "", "pi9h"];
-const typeElements = ["", "pi4e", "", "pi9i"];
+const regElements  = ["reg", "pi4b", "pi6r", "pi9c"];
+const disElements  = ["dis", "pi4c", "pi6d", "pi9d"];
+const setElements  = ["",    "pi4d", "",     "pi9h"];
+const typeElements = ["",   "pi4e", "",      "pi9i"];
 
 let regionCode = '';
 let userUUID = '';
@@ -52,7 +52,7 @@ export const instrument5 = {
             changeMonth: true,
             changeYear: true,
             dateFormat: "dd/mm/yy",
-            minDate: "01/01/1990",
+            minDate: "01/05/2019",
             maxDate: "30/04/2024",
             yearRange: "c-100:c+10",
             firstDay: 1,
@@ -65,7 +65,7 @@ export const instrument5 = {
             const config = { ...jQueryDatepickerConfig };
 
             if (el == 'pi3') {
-                config.minDate = "01/01/2023";
+                config.minDate = "01/01/2001";
             }
 
             $("#" + el).datepicker(config); util.listen(el, "change", () => {
@@ -296,17 +296,12 @@ util.listen("pi3", "myChange", () => {
     }
 });
 
-util.listen("pi4d", "change", () => {
-    const value = util.htmlElement("pi4d").value;
-    util.setValue("pi4e", "" + (settlement_types[settlements[value].type] as KeyString)[lang]);
-})
-
 
 for (let i = 0; i < setElements.length; i++) {
-    if (typeElements[i] != "") {
+    if (setElements[i] != "" && typeElements[i] != "") {
         util.listen(setElements[i], "change", () => {
             const value = util.htmlElement(setElements[i]).value;
-            util.setValue(typeElements[i], "" + settlement_types[settlements[value].type]);
+            util.setValue(typeElements[i], settlements[value].type);
         })
     }
 }
@@ -368,18 +363,18 @@ util.listen("pi8", "myChange", () => {
 
 
 
-const cmgtsa = ["pi3", "pi7"];
-util.listen(cmgtsa, "myChange", () => {
-    if (util.inputsHaveValue(cmgtsa)) {
+const pi3pi7 = ["pi3", "pi7"];
+util.listen(pi3pi7, "myChange", () => {
+    if (util.inputsHaveValue(pi3pi7)) {
         const pi7 = util.htmlElement("pi7").value;
         const pi3 = util.htmlElement("pi3").value;
 
         const message = translations['must_be_later'].replace("Y", "PI7").replace("X", "PI3");
 
-        errorHandler.removeError(cmgtsa, message);
+        errorHandler.removeError(pi3pi7, message);
 
         if (util.standardDate(pi3) > util.standardDate(pi7)) {
-            errorHandler.addError(cmgtsa, message);
+            errorHandler.addError(pi3pi7, message);
         }
     }
 })
@@ -396,3 +391,35 @@ util.listen(pi10ab, 'change', () => {
         }
     }
 });
+
+
+const he5 =["he5_1", "he5_2", "he5_3", "he5_4", "he5_5", "he5_6", "he5_7", "he5_8"];
+util.listen("he5_9", "change", () => {
+    if (util.htmlElement("he5_9").checked) {
+        he5.forEach((el) => {
+            util.htmlElement(el).checked = false;
+            instrument.questions[el].value = "0";
+        })
+    }
+})
+
+util.listen(he5, "change", () => {
+    if (util.makeSumFromElements(he5) > 0) {
+        util.htmlElement("he5_9").checked = false;
+        instrument.questions["he5_9"].value = "0";
+    }
+});
+
+
+const pi9a = util.radioIDs("pi9a");
+util.listen(pi9a, "myChange", () => {
+    instrument.questions.lv9.skip = false;
+    util.htmlElement("lv9").disabled = false;
+    const value = Number(instrument.questions.pi9a.value);
+    if (value >= 1 && value <= 3) {
+        instrument.questions.lv9.skip = true;
+    } else {
+        util.htmlElement("lv9").disabled = true;
+    }
+})
+

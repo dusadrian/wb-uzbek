@@ -127,7 +127,7 @@
             <p class="italic text-red-500">Введите номер свидетельства о рождении/удостоверения личности/номер паспорта человека. Если у человека его нет, введите 0 (ноль).</p>
 
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
-                <div>PI1b. Имя</div>
+                <div>PI1a. Имя</div>
                 <div>
                     <input type="text" id="pi1a" name="pi1a" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
                 </div>
@@ -286,14 +286,14 @@
             </div>
 
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
-                <div>PI6b. Название учреждения</div>
+                <div>PI6n. Название учреждения</div>
                 <div>
                     <input type="text" id="pi6n" name="pi6n" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
                 </div>
             </div>
 
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
-                <div>PI6c. Тип учреждения</div>
+                <div>PI6t. Тип учреждения</div>
                 <div>
                     <select id="pi6t" name="pi6t" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
                         <option value="-9">--- выбрать ---</option>
@@ -325,7 +325,7 @@
             </div>
 
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
-                <div>PI8. Общее время пребывания в системе опеки<strong class="underline">(в месяцах)</strong></div>
+                <div>PI8. Общее время пребывания в системе опеки <strong class="underline">(в месяцах)</strong></div>
                 <div>
                     <input type="text" id="pi8" name="pi8" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
                 </div>
@@ -358,9 +358,9 @@
                 </div>
             </div>
 
-            <p>б. Юридическое место жительства - Город/Деревня:</p>
+            <p>b. Юридическое место жительства - Город/Деревня:</p>
             <div class="grid grid-cols-2 items-center gap-4 mt-6">
-                <div class="ml-4">в. Область:</div>
+                <div class="ml-4">c. Область:</div>
                 <div>
                     <select id="pi9c" name="pi9c" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
                         <option value="-9">--- выбрать ---</option>
@@ -369,7 +369,7 @@
             </div>
 
             <div class="grid grid-cols-2 items-center gap-4 mt-6">
-                <div class="ml-4">д. Район:</div>
+                <div class="ml-4">d. Район:</div>
                 <div>
                     <select id="pi9d" name="pi9d" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
                         <option value="-9">--- выбрать ---</option>
@@ -396,7 +396,7 @@
             </div>
 
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
-                <div class="ml-4">ф. Номер телефона:</div>
+                <div class="ml-4">f. Номер телефона:</div>
                 <div>
                     <input type="text" id="pi9f" name="pi9f" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
                 </div>
@@ -404,7 +404,7 @@
 
             <small class="block italic mt-6">Если живет в учреждении:</small>
             <div class="grid grid-cols-2 gap-4 items-center mt-2">
-                <div>г. Название учреждения</div>
+                <div>g. Название учреждения</div>
                 <div>
                     <input type="text" id="pi9g" name="pi9g" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
                 </div>
@@ -1125,6 +1125,10 @@
                         <label for="he5_8" class="ms-2 text-sm text-gray-900">Другие недостатки, пожалуйста, укажите…</label>
                     </div>
                     <textarea id="he5_8_other" name="he5_8_other" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full"></textarea>
+                    <div class="flex items-center">
+                        <input id="he5_9" type="checkbox" value="1" name="he5_9" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <label for="he5_9" class="ms-2 text-sm text-gray-900">Ни один из вышеперечисленных</label>
+                    </div>
                 </div>
             </div>
 
@@ -1364,7 +1368,7 @@
             </div>
 
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
-                <div class="col-span-1">ТЕПЛО25. Получал ли за последние 12 месяцев человек какую-либо поддержку для приобретения или замены необходимых ему вспомогательных устройств и оборудования?</div>
+                <div class="col-span-1">HEAT25. Получал ли за последние 12 месяцев человек какую-либо поддержку для приобретения или замены необходимых ему вспомогательных устройств и оборудования?</div>
                 <div class="col-span-1 flex gap-4">
                     <div class="flex items-center">
                         <input id="heat25-1" type="radio" value="1" name="heat25" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
