@@ -136,5 +136,12 @@
 	"t_insons": "INSONS",
 	"No institutions found": "No institutions found",
 	"t_inson_details": "Inson details",
-	"Institution instrument not found.": "Institution instrument not found."
+	"Institution instrument not found.": "Institution instrument not found.",
+	"E0170": "BOYS: NEST + NEO = TNET",
+	"E0171": "GIRLS: NEST + NEO = TNET",
+	"E0172": "TOTAL: NEST + NEO = TNET",
+	"E0173": "TNR0 + TNET - NEXT = TNR1",
+	"E0174": "BOYS: EOST + EXTT + TSA1 + TSA2 + TSA3 = NEXT",
+	"E0175": "GIRLS: EOST + EXTT + TSA1 + TSA2 + TSA3 = NEXT",
+	"E0176": "TOTAL: EOST + EXTT + TSA1 + TSA2 + TSA3 = NEXT"
 }
