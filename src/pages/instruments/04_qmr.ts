@@ -81,54 +81,21 @@ function check_i9() {
     }
 }
 
+$.datepicker.setDefaults($.datepicker.regional[lang]);
+const jQueryDatepickerConfig = {
+    changeMonth: true,
+    changeYear: true,
+    dateFormat: "mm/yy",
+    maxDate: "30/04/2024",
+    yearRange: "c-100:c+10",
+    firstDay: 1,
+    onSelect: function () {
+        util.trigger(this.id, "change");
+    }
+};
+
 export const instrument4 = {
     init: async () => {
-
-        $.datepicker.setDefaults($.datepicker.regional[lang]);
-        const jQueryDatepickerConfig = {
-            changeMonth: true,
-            changeYear: true,
-            dateFormat: "yy",
-            maxDate: "30/04/2024",
-            yearRange: "c-100:c+10",
-            firstDay: 1,
-            onSelect: function () {
-                util.trigger(this.id, "change");
-            }
-        };
-
-        [...start_dates, ...end_dates, 'i10', 'af13b'].forEach((el) => {
-            const config = { ...jQueryDatepickerConfig };
-
-            if (el == 'af13b') {
-                config.dateFormat = "mm/yy";
-            }
-
-            $("#" + el).datepicker(config);
-
-            util.listen(el, "change", () => {
-                errorHandler.removeError(el, translations['invalid_date']);
-                const value = util.htmlElement(el).value;
-                if (value.length > 0) {
-                    if (el != 'af13b') {
-                        if (value.length > 4) {
-                            instrument.questions[el].value = '-9';
-                            errorHandler.addError(el, translations['invalid_date']);
-                        }
-                    }
-                } else {
-                    try {
-                        $.datepicker.parseDate(
-                            config.dateFormat,
-                            util.htmlElement(el).value
-                        )
-                    } catch (error) {
-                        instrument.questions[el].value = '-9';
-                        errorHandler.addError(el, translations['invalid_date']);
-                    }
-                }
-            });
-        });
 
         filters = JSON.parse(sessionStorage.getItem('filters'));
 
@@ -278,6 +245,33 @@ const saveChestionar = (obj: SaveInstrumentType): void => {
 // Validari custom
 
 
+util.listen("af13b", "change", () => {
+    errorHandler.removeError("af13b", translations['invalid_date']);
+    try {
+        $.datepicker.parseDate(
+            jQueryDatepickerConfig.dateFormat,
+            util.htmlElement("af13b").value
+        )
+    } catch (error) {
+        errorHandler.addError("af13b", translations['invalid_date']);
+    }
+});
+
+[...start_dates, ...end_dates, "i10"].forEach((item) => {
+    util.listen(item, "change", () => {
+        errorHandler.removeError(item, translations['invalid_date']);
+        const value = util.htmlElement(item).value;
+        if (value.length != 4) {
+            errorHandler.addError(item, translations['invalid_date']);
+        } else {
+            if (Number(value) < 1800 || Number(value) > 2024) {
+                errorHandler.addError(item, translations['invalid_date']);
+            }
+        }
+    });
+});
+
+
 const i13bf = ['i13b', 'i13c', 'i13d', 'i13e', 'i13f'];
 const i13 = [...i13bf, 'i13a'];
 util.listen(i13, 'change', () => {
@@ -318,6 +312,7 @@ const af5_a = [
     'af5_1_a', 'af5_2_a', 'af5_3_a', 'af5_4_a', 'af5_5_a',
     'af5_6_a', 'af5_7_a', 'af5_8_a', 'af5_9_a', 'af5_10_a',
 ];
+
 const af5af1 = [...af5_a, 'af1'];
 af5af1.forEach(item => {
     util.listen(item, 'change', () => {
@@ -538,7 +533,7 @@ rce612.forEach(item => {
         if (util.inputsHaveValue(rce612)) {
             const message = "RCE62 <= RCE61";
             errorHandler.removeError(rce612, message)
-            if (util.getInputDecimalValue('rce62') > util.getInputDecimalValue('rce61')) {
+            if (util.getInputDecimalValue('rce61') > util.getInputDecimalValue('rce62')) {
                 errorHandler.addError(rce612, message);
             }
         }
@@ -562,11 +557,11 @@ const e00ArrayFull = [...e00Array, 'e00'];
 e00ArrayFull.forEach(item => {
     util.listen(item, 'change', () => {
 
-        const e00 = util.htmlElement('e00').value;
+        const e00 = Number(util.htmlElement('e00').value);
 
         if (item == "e00") {
             e00Array.forEach((el) => {
-                if (e00 == "0") {
+                if (e00 == 0) {
                     instrument.questions[el].skip = true;
                     instrument.questions[el].value = "0";
                     util.htmlElement(el).setAttribute("disabled", "true");
@@ -583,9 +578,9 @@ e00ArrayFull.forEach(item => {
         }
 
         if (util.inputsHaveValue(e00ArrayFull)) {
-            errorHandler.removeError(e00Array, '00 = 01 + 02 + 03')
-            if (e00 != util.makeInputSumDecimal(e00Array)) {
-                errorHandler.addError(e00Array, '00 = 01 + 02 + 03')
+            errorHandler.removeError(e00ArrayFull, '00 = 01 + 02 + 03')
+            if (e00 != util.makeSumFromElements(e00Array)) {
+                errorHandler.addError(e00ArrayFull, '00 = 01 + 02 + 03')
             }
         }
     })
@@ -597,11 +592,11 @@ const e01ArrayFull = [...e01Array, 'e01'];
 e01ArrayFull.forEach(item => {
     util.listen(item, 'change', () => {
 
-        const e01 = util.htmlElement('e01').value;
+        const e01 = Number(util.htmlElement('e01').value);
 
         if (item == "e01") {
             e01Array.forEach((el) => {
-                if (e01 == "0") {
+                if (e01 == 0) {
                     instrument.questions[el].skip = true;
                     instrument.questions[el].value = "0";
                     util.htmlElement(el).setAttribute("disabled", "true");
@@ -617,9 +612,9 @@ e01ArrayFull.forEach(item => {
             })
         }
         if (util.inputsHaveValue(e01ArrayFull)) {
-            errorHandler.removeError(e01Array, '01 = 10 + 20')
-            if (e01 != util.makeInputSumDecimal(e01Array)) {
-                errorHandler.addError(e01Array, '01 = 10 + 20')
+            errorHandler.removeError(e01ArrayFull, '01 = 10 + 20')
+            if (e01 != util.makeSumFromElements(e01Array)) {
+                errorHandler.addError(e01ArrayFull, '01 = 10 + 20')
             }
         }
     })
@@ -631,11 +626,11 @@ const e10ArrayFull = [...e10Array, 'e10'];
 e10ArrayFull.forEach(item => {
     util.listen(item, 'change', () => {
 
-        const e10 = util.htmlElement('e10').value;
+        const e10 = Number(util.htmlElement('e10').value);
 
         if (item == "e10") {
             e10Array.forEach((el) => {
-                if (e10 == "0") {
+                if (e10 == 0) {
                     instrument.questions[el].skip = true;
                     instrument.questions[el].value = "0";
                     util.htmlElement(el).setAttribute("disabled", "true");
@@ -652,9 +647,9 @@ e10ArrayFull.forEach(item => {
         }
 
         if (util.inputsHaveValue(e10ArrayFull)) {
-            errorHandler.removeError(e10Array, '10 = 10.1 + ... + 10.5')
-            if (e10 != util.makeInputSumDecimal(e10Array)) {
-                errorHandler.addError(e10Array, '10 = 10.1 + ... + 10.5')
+            errorHandler.removeError(e10ArrayFull, '10 = 10.1 + ... + 10.5')
+            if (e10 != util.makeSumFromElements(e10Array)) {
+                errorHandler.addError(e10ArrayFull, '10 = 10.1 + ... + 10.5')
             }
         }
     })
@@ -666,11 +661,11 @@ const e20ArrayFull = [...e20Array, 'e20'];
 e20ArrayFull.forEach(item => {
     util.listen(item, 'change', () => {
 
-        const e20 = util.htmlElement('e20').value;
+        const e20 = Number(util.htmlElement('e20').value);
 
         if (item == "e20") {
             e20Array.forEach((el) => {
-                if (e20 == "0") {
+                if (e20 == 0) {
                     instrument.questions[el].skip = true;
                     instrument.questions[el].value = "0";
                     util.htmlElement(el).setAttribute("disabled", "true");
@@ -687,9 +682,9 @@ e20ArrayFull.forEach(item => {
         }
 
         if (util.inputsHaveValue(e20ArrayFull)) {
-            errorHandler.removeError(e20Array, '20 = 20.1 + ... + 20.19')
-            if (e20 != util.makeInputSumDecimal(e20Array)) {
-                errorHandler.addError(e20Array, '20 = 20.1 + ... + 20.19')
+            errorHandler.removeError(e20ArrayFull, '20 = 20.1 + ... + 20.19')
+            if (e20 != util.makeSumFromElements(e20Array)) {
+                errorHandler.addError(e20ArrayFull, '20 = 20.1 + ... + 20.19')
             }
         }
     })
@@ -701,11 +696,11 @@ const e02ArrayFull = [...e02Array, 'e02'];
 e02ArrayFull.forEach(item => {
     util.listen(item, 'change', () => {
 
-        const e02 = util.htmlElement('e02').value;
+        const e02 = Number(util.htmlElement('e02').value);
 
         if (item == "e02") {
             e02Array.forEach((el) => {
-                if (e02 == "0") {
+                if (e02 == 0) {
                     instrument.questions[el].skip = true;
                     instrument.questions[el].value = "0";
                     util.htmlElement(el).setAttribute("disabled", "true");
@@ -722,10 +717,9 @@ e02ArrayFull.forEach(item => {
         }
 
         if (util.inputsHaveValue(e02ArrayFull)) {
-            const e02 = util.getInputDecimalValue('e02');
-            errorHandler.removeError(e02Array, '02 = 2.1 + 2.2')
-            if (e02 != parseFloat(util.makeInputSumDecimal(e02Array))) {
-                errorHandler.addError(e02Array, '02 = 2.1 + 2.2')
+            errorHandler.removeError(e02ArrayFull, '02 = 2.1 + 2.2')
+            if (e02 != util.makeSumFromElements(e02Array)) {
+                errorHandler.addError(e02ArrayFull, '02 = 2.1 + 2.2')
             }
         }
     })
@@ -737,11 +731,11 @@ const e21ArrayFull = [...e21Array, 'e2_1'];
 e21ArrayFull.forEach(item => {
     util.listen(item, 'change', () => {
 
-        const e21 = util.htmlElement('e2_1').value;
+        const e21 = Number(util.htmlElement('e2_1').value);
 
         if (item == "e2_1") {
             e21Array.forEach((el) => {
-                if (e21 == "0") {
+                if (e21 == 0) {
                     instrument.questions[el].skip = true;
                     instrument.questions[el].value = "0";
                     util.htmlElement(el).setAttribute("disabled", "true");
@@ -758,9 +752,9 @@ e21ArrayFull.forEach(item => {
         }
 
         if (util.inputsHaveValue(e21ArrayFull)) {
-            errorHandler.removeError(e21Array, '2_1 = 2.1.1 + ... + 2.1.4')
-            if (e21 != util.makeInputSumDecimal(e21Array)) {
-                errorHandler.addError(e21Array, '2_1 = 2.1.1 + ... + 2.1.4')
+            errorHandler.removeError(e21ArrayFull, '2_1 = 2.1.1 + ... + 2.1.4')
+            if (e21 != util.makeSumFromElements(e21Array)) {
+                errorHandler.addError(e21ArrayFull, '2_1 = 2.1.1 + ... + 2.1.4')
             }
         }
     })
@@ -775,8 +769,8 @@ start_dates.forEach((start) => {
     const check = function () {
         if (util.inputsHaveValue([start, end])) {
 
-            const startdate = util.standardDate(util.htmlElement(start).value);
-            const enddate = util.standardDate(util.htmlElement(end).value);
+            const startdate = Number(util.htmlElement(start).value);
+            const enddate = Number(util.htmlElement(end).value);
 
             const message = translations['must_be_earlier'].
                 replace("X", start.toUpperCase()).
