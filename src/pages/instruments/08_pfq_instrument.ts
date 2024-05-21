@@ -136,9 +136,6 @@ export const instrument8 = {
                 const set_el = util.htmlElement(setElements[x]);
 
                 util.listen(regElements[x], "change", function () {
-                    if (typeElements[x] != "") {
-                        util.htmlElement(typeElements[x]).value = "";
-                    }
 
                     if (setElements[x] != "") {
                         set_el.innerHTML = "";
@@ -164,9 +161,6 @@ export const instrument8 = {
                 })
 
                 util.listen(disElements[x], "change", function () {
-                    if (typeElements[x] != "") {
-                        util.htmlElement(typeElements[x]).value = "";
-                    }
                     const selectedDistrict = dis_el.value;
 
                     if (setElements[x] != "") {
@@ -195,7 +189,7 @@ export const instrument8 = {
                             }
                             else {
                                 if (typeElements[x] != "") {
-                                    util.setValue(typeElements[x], "" + districts[selectedDistrict].type);
+                                    util.setValue(typeElements[x], districts[selectedDistrict].type);
                                 }
                                 instrument.questions[setElements[x]].skip = true;
                                 instrument.questions[setElements[x]].value = '-7';
@@ -283,7 +277,9 @@ for (let i = 0; i < setElements.length; i++) {
     if (setElements[i] != "" && typeElements[i] != "") {
         util.listen(setElements[i], "change", () => {
             const value = util.htmlElement(setElements[i]).value;
-            util.setValue(typeElements[i], settlements[value].type);
+            if (value != "--") {
+                util.setValue(typeElements[i], settlements[value].type);
+            }
         })
     }
 }

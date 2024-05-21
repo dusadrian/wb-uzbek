@@ -73,28 +73,29 @@
                     </select>
                 </div>
             </div>
+
+            <input type="hidden" id="str3e" name="str3e" />
+
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
                 <div>STR4. Muassasa turi</div>
                 <div>
-                    <div>
-                        <select id="str4" name="str4" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
-                            <option value="-9">--</option>
-                            <optgroup label="Bolalar muassasalari:">
-                                <option value="11">11. Mehribonlik uyi</option>
-                                <option value="12">12. Nogironligi boʻlgan bolalar uchun Muruvvat internat uyi</option>
-                                <option value="13">13. Oila tipidagi uy</option>
-                                <option value="14">14. SOS Bolalar makhallasi</option>
-                            </optgroup>
-                            <optgroup label="Maktab-internatlar:">
-                                <option value="21">21. Kar yoki eshitish qobiliyati past boʻlgan bolalar uchun I-II toifa</option>
-                                <option value="22">22. Koʻzi koʻr yoki koʻrishi yomon boʻlgan bolalar uchun III-IV toifa</option>
-                                <option value="23">23. Nutqida ogʻir nuqsoni boʻlgan bolalar uchun V turi</option>
-                                <option value="24">24. Mushak-skelet tizimining buzilishi boʻlgan bolalar uchun VI tur</option>
-                                <option value="25">25. Ruhiy rivojlanishi sekinlashgan/ ruhiy kasallilkari boʻlgan bolalar uchun VII tur</option>
-                                <option value="26">26. Intellektual nuqsoni boʻlgan bolalar uchun VIII tur</option>
-                            </optgroup>
-                        </select>
-                    </div>
+                    <select id="str4" name="str4" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
+                        <option value="-9">--</option>
+                        <optgroup label="Bolalar muassasalari:">
+                            <option value="12">12. Mehribonlik uyi</option>
+                            <option value="13">13. “Muruvvat” nogironligi bo’lgan bolalar uchun internat uyi</option>
+                            <option value="14">14. SOS-bolalar qishloqlari / oilalari</option>
+                            <option value="15">15. Oila turidagi bolalar uyi</option>
+                        </optgroup>
+                        <optgroup label="Maktab-internatlar:">
+                            <option value="21">21. I tur - kar bolalar uchun internatlar</option>
+                            <option value="22">22. II tur - eshitish qobiliyati zaif va kelgusida eshitish qobiliyatini yo’qotadiganlar uchun internatlar</option>
+                            <option value="23">23. III tur - “Nurli maskan” ko’zi ojiz bolalar uchun ixtisoslashtirilgan maktab-internatlari</option>
+                            <option value="24">24. IV tur - ko’zi ojiz va keyinchalik ko’rish qobiliyatini yo’qotadiganlar uchun “Noorli maskan” ixtisoslashtirilgan maktab-internatlari</option>
+                            <option value="25">25. V tur - og’ir nutq buzilishi bo’lgan bolalar uchun internatlar</option>
+                            <option value="26">26. VI tur - tayanch-harakat apparati nuqsonlari bo’lgan bolalar uchun internatlar</option>
+                        </optgroup>
+                    </select>
                 </div>
             </div>
 
@@ -189,7 +190,7 @@
                         <label for="ptr3-1" class="ms-2 text-sm text-gray-900">1. Erkak</label>
                     </div>
                     <div class="flex items-center">
-                        <input id="ptr3-2" type="radio" value="0" name="ptr3" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <input id="ptr3-2" type="radio" value="2" name="ptr3" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="ptr3-2" class="ms-2 text-sm text-gray-900">2. Ayol</label>
                     </div>
                 </div>
@@ -395,6 +396,13 @@
             </div>
 
             <p class="mt-10 bg-gray-200 px-2 py-1"><strong>Ushbu yosh shaxsga oid monitoring ishlarini o'tkazishi kerak bo'lgan INSON markazi.</strong></p>
+
+            <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                <div>OBS. Kuzatuvlarni</div>
+                <div class="flex gap-4">
+                    <textarea id="cr10" name="cr10" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full"></textarea>
+                </div>
+            </div>
 
         </form>
 

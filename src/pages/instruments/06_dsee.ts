@@ -45,7 +45,7 @@ export const instrument6 = {
 
             services = args.services;
             insons = args.insons;
-            
+
             userRole = args.userData.role_code;
             const institution_code = (filters && filters.institution) ? filters.institution : args.userData.institution_code;
 
@@ -103,7 +103,7 @@ export const instrument6 = {
                         }
                         else {
                             util.setValue(setElements[x], "--");
-                            util.setValue(typeElements[x], "" + districts[selectedDistrict].type);
+                            util.setValue(typeElements[x], districts[selectedDistrict].type);
                         }
                     }
                 })
@@ -199,7 +199,7 @@ for (let i = 0; i < setElements.length; i++) {
     if (setElements[i] != "" && typeElements[i] != "") {
         util.listen(setElements[i], "change", () => {
             const value = util.htmlElement(setElements[i]).value;
-            if (value != "0") {
+            if (value != "--") {
                 util.setValue(typeElements[i], settlements[value].type);
             }
         })

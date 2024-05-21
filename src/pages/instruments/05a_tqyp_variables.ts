@@ -1,6 +1,7 @@
 import instrument from '../../libraries/instrument';
 import { QuestionObjectType } from '../../libraries/interfaces';
 
+
 export const questions: QuestionObjectType = {
     'str1': {
         name: 'str1',
@@ -10,7 +11,7 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: true,
         order: 0,
-        active: function () { return (true) },
+        active: function() {return(true)},
         skip: false
     },
     'str2': {
@@ -21,7 +22,7 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: true,
         order: 1,
-        active: function () { return (true) },
+        active: function() {return(true)},
         skip: false
     },
     'str3a': {
@@ -32,7 +33,7 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: true,
         order: 2,
-        active: function () { return (true) },
+        active: function() {return(true)},
         skip: false
     },
     'str3b': {
@@ -43,7 +44,7 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: true,
         order: 3,
-        active: function () { return (true) },
+        active: function() {return(true)},
         skip: false
     },
     'str3c': {
@@ -54,18 +55,29 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: true,
         order: 4,
-        active: function () { return (true) },
+        active: function() {return(true)},
+        skip: false
+    },
+    'str3e': {
+        name: 'str3e',
+        type: 'input',
+        value: '-9',
+        disabled: false,
+        hidden: true,
+        readonly: true,
+        order: 5,
+        active: function() {return(true)},
         skip: false
     },
     'str4': {
         name: 'str4',
-        type: 'input',
+        type: 'select',
         value: '-9',
         disabled: false,
         hidden: false,
         readonly: false,
-        order: 5,
-        active: function () { return (true) },
+        order: 6,
+        active: function() {return(true)},
         skip: false
     },
     'data': {
@@ -75,8 +87,8 @@ export const questions: QuestionObjectType = {
         disabled: false,
         hidden: true,
         readonly: true,
-        order: 6,
-        active: function () { return (true) },
+        order: 7,
+        active: function() {return(true)},
         skip: false
     },
     'omr1': {
@@ -86,8 +98,8 @@ export const questions: QuestionObjectType = {
         disabled: false,
         hidden: false,
         readonly: true,
-        order: 7,
-        active: function () { return (true) },
+        order: 8,
+        active: function() {return(true)},
         skip: false
     },
     'omr2': {
@@ -97,8 +109,8 @@ export const questions: QuestionObjectType = {
         disabled: false,
         hidden: false,
         readonly: true,
-        order: 8,
-        active: function () { return (true) },
+        order: 9,
+        active: function() {return(true)},
         skip: false
     },
     'omr3': {
@@ -108,8 +120,8 @@ export const questions: QuestionObjectType = {
         disabled: false,
         hidden: false,
         readonly: true,
-        order: 9,
-        active: function () { return (true) },
+        order: 10,
+        active: function() {return(true)},
         skip: false
     },
     'omr4': {
@@ -119,8 +131,8 @@ export const questions: QuestionObjectType = {
         disabled: false,
         hidden: false,
         readonly: true,
-        order: 10,
-        active: function () { return (true) },
+        order: 11,
+        active: function() {return(true)},
         skip: false
     },
     'omr5': {
@@ -130,8 +142,8 @@ export const questions: QuestionObjectType = {
         disabled: false,
         hidden: false,
         readonly: true,
-        order: 11,
-        active: function () { return (true) },
+        order: 12,
+        active: function() {return(true)},
         skip: false
     },
     'omr6': {
@@ -141,8 +153,8 @@ export const questions: QuestionObjectType = {
         disabled: false,
         hidden: false,
         readonly: true,
-        order: 12,
-        active: function () { return (true) },
+        order: 13,
+        active: function() {return(true)},
         skip: false
     },
     'omr7': {
@@ -152,8 +164,8 @@ export const questions: QuestionObjectType = {
         disabled: false,
         hidden: false,
         readonly: true,
-        order: 13,
-        active: function () { return (true) },
+        order: 14,
+        active: function() {return(true)},
         skip: false
     },
     'ptr1': {
@@ -163,8 +175,8 @@ export const questions: QuestionObjectType = {
         disabled: false,
         hidden: false,
         readonly: false,
-        order: 14,
-        active: function () { return (true) },
+        order: 15,
+        active: function() {return(true)},
         skip: false
     },
     'ptr2a': {
@@ -174,8 +186,8 @@ export const questions: QuestionObjectType = {
         disabled: false,
         hidden: false,
         readonly: false,
-        order: 15,
-        active: function () { return (true) },
+        order: 16,
+        active: function() {return(true)},
         skip: false
     },
     'ptr2b': {
@@ -185,8 +197,8 @@ export const questions: QuestionObjectType = {
         disabled: false,
         hidden: false,
         readonly: false,
-        order: 16,
-        active: function () { return (true) },
+        order: 17,
+        active: function() {return(true)},
         skip: false
     },
     'ptr2c': {
@@ -196,8 +208,8 @@ export const questions: QuestionObjectType = {
         disabled: false,
         hidden: false,
         readonly: false,
-        order: 17,
-        active: function () { return (true) },
+        order: 18,
+        active: function() {return(true)},
         skip: false
     },
     'ptr3': {
@@ -207,8 +219,8 @@ export const questions: QuestionObjectType = {
         disabled: false,
         hidden: false,
         readonly: false,
-        order: 18,
-        active: function () { return (true) },
+        order: 19,
+        active: function() {return(true)},
         skip: false
     },
     'ptr4': {
@@ -218,8 +230,8 @@ export const questions: QuestionObjectType = {
         disabled: false,
         hidden: false,
         readonly: false,
-        order: 19,
-        active: function () { return (true) },
+        order: 20,
+        active: function() {return(true)},
         skip: false
     },
     'ptr4a': {
@@ -229,8 +241,8 @@ export const questions: QuestionObjectType = {
         disabled: false,
         hidden: false,
         readonly: true,
-        order: 20,
-        active: function () { return (true) },
+        order: 21,
+        active: function() {return(true)},
         skip: false
     },
     'ptr5a_dk': {
@@ -240,10 +252,10 @@ export const questions: QuestionObjectType = {
         disabled: false,
         hidden: false,
         readonly: false,
-        order: 21,
-        active: function () { return (true) },
+        order: 22,
+        active: function() {return(true)},
         skip: false,
-        checked: 0
+         checked: 0
     },
     'ptr5b': {
         name: 'ptr5b',
@@ -252,8 +264,8 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 22,
-        active: function () { return (Number(instrument.questions.ptr5a_dk.value) == 0) },
+        order: 23,
+        active: function() {return(Number(instrument.questions.ptr5a_dk.value) == 0)},
         skip: false
     },
     'ptr5c': {
@@ -263,8 +275,8 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 23,
-        active: function () { return (Number(instrument.questions.ptr5b.value) > 0) },
+        order: 24,
+        active: function() {return(Number(instrument.questions.ptr5b.value) > 0)},
         skip: false
     },
     'ptr5d': {
@@ -274,8 +286,8 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 24,
-        active: function () { return (Number(instrument.questions.ptr5c.value) > 0) },
+        order: 25,
+        active: function() {return(Number(instrument.questions.ptr5c.value) > 0)},
         skip: false
     },
     'ptr5e': {
@@ -285,8 +297,8 @@ export const questions: QuestionObjectType = {
         disabled: false,
         hidden: true,
         readonly: true,
-        order: 25,
-        active: function () { return (true) },
+        order: 26,
+        active: function() {return(true)},
         skip: false
     },
     'ptr6': {
@@ -296,8 +308,8 @@ export const questions: QuestionObjectType = {
         disabled: false,
         hidden: false,
         readonly: false,
-        order: 26,
-        active: function () { return (true) },
+        order: 27,
+        active: function() {return(true)},
         skip: false
     },
     'ptr7': {
@@ -307,8 +319,8 @@ export const questions: QuestionObjectType = {
         disabled: false,
         hidden: false,
         readonly: false,
-        order: 27,
-        active: function () { return (true) },
+        order: 28,
+        active: function() {return(true)},
         skip: false
     },
     'ptr7_other': {
@@ -318,8 +330,8 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 28,
-        active: function () { return (Number(instrument.questions.ptr7.value) == 7) },
+        order: 29,
+        active: function() {return(Number(instrument.questions.ptr7.value) == 7)},
         skip: false
     },
     'ptr8': {
@@ -329,8 +341,8 @@ export const questions: QuestionObjectType = {
         disabled: false,
         hidden: false,
         readonly: false,
-        order: 29,
-        active: function () { return (true) },
+        order: 30,
+        active: function() {return(true)},
         skip: false
     },
     'ptr8_other': {
@@ -340,8 +352,8 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 30,
-        active: function () { return (Number(instrument.questions.ptr8.value) == 5) },
+        order: 31,
+        active: function() {return(Number(instrument.questions.ptr8.value) == 5)},
         skip: false
     },
     'ptr8a': {
@@ -351,8 +363,8 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 31,
-        active: function () { return (Number(instrument.questions.ptr8.value) == 2) },
+        order: 32,
+        active: function() {return(Number(instrument.questions.ptr8.value) == 2)},
         skip: false
     },
     'ptr8b': {
@@ -362,19 +374,19 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 32,
-        active: function () { return (Number(instrument.questions.ptr8.value) == 1 || Number(instrument.questions.ptr8.value) == 2) },
+        order: 33,
+        active: function() {return(Number(instrument.questions.ptr8.value) == 1 || Number(instrument.questions.ptr8.value) == 2)},
         skip: false
     },
     'ptr8c': {
         name: 'ptr8c',
-        type: 'input',
+        type: 'number',
         value: '-7',
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 33,
-        active: function () { return (Number(instrument.questions.ptr8.value) == 1 || Number(instrument.questions.ptr8.value) == 2) },
+        order: 34,
+        active: function() {return(Number(instrument.questions.ptr8.value) == 1 || Number(instrument.questions.ptr8.value) == 2)},
         skip: false
     },
     'ptr8e': {
@@ -384,8 +396,8 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 34,
-        active: function () { return (Number(instrument.questions.ptr8.value) == 1 || Number(instrument.questions.ptr8.value) == 2) },
+        order: 35,
+        active: function() {return(Number(instrument.questions.ptr8.value) == 1 || Number(instrument.questions.ptr8.value) == 2)},
         skip: false
     },
     'ptr8f': {
@@ -395,8 +407,8 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 35,
-        active: function () { return (Number(instrument.questions.ptr8e.value) > 0) },
+        order: 36,
+        active: function() {return(Number(instrument.questions.ptr8e.value) > 0)},
         skip: false
     },
     'ptr8g': {
@@ -406,8 +418,8 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 36,
-        active: function () { return (Number(instrument.questions.ptr8f.value) > 0) },
+        order: 37,
+        active: function() {return(Number(instrument.questions.ptr8f.value) > 0)},
         skip: false
     },
     'ptr8h': {
@@ -417,8 +429,8 @@ export const questions: QuestionObjectType = {
         disabled: false,
         hidden: true,
         readonly: true,
-        order: 37,
-        active: function () { return (true) },
+        order: 38,
+        active: function() {return(true)},
         skip: false
     },
     'ptr9': {
@@ -428,8 +440,8 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 38,
-        active: function () { return (Number(instrument.questions.ptr8.value) == 1 || Number(instrument.questions.ptr8.value) == 2 || Number(instrument.questions.ptr8.value) == 5 || Number(instrument.questions.ptr8.value) == 8) },
+        order: 39,
+        active: function() {return(Number(instrument.questions.ptr8.value) == 1 || Number(instrument.questions.ptr8.value) == 2 || Number(instrument.questions.ptr8.value) == 5 || Number(instrument.questions.ptr8.value) == 8)},
         skip: false
     },
     'ptr10': {
@@ -439,58 +451,71 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 39,
-        active: function () { return (Number(instrument.questions.ptr8.value) == 1 || Number(instrument.questions.ptr8.value) == 2 || Number(instrument.questions.ptr8.value) == 5 || Number(instrument.questions.ptr8.value) == 8) },
+        order: 40,
+        active: function() {return(Number(instrument.questions.ptr8.value) == 1 || Number(instrument.questions.ptr8.value) == 2 || Number(instrument.questions.ptr8.value) == 5 || Number(instrument.questions.ptr8.value) == 8)},
         skip: false
+    },
+    'obs': {
+        name: 'obs',
+        type: 'textarea',
+        value: '-9',
+        disabled: false,
+        hidden: false,
+        readonly: false,
+        order: 41,
+        active: function() {return(true)},
+        skip: true
     },
 };
 
 export const questionsOrder: Array<string> = [
-    'str1', 'str2', 'str3a', 'str3b', 'str3c', 'str4', 'data', 'omr1', 'omr2', 'omr3', 'omr4', 'omr5', 'omr6',
-    'omr7', 'ptr1', 'ptr2a', 'ptr2b', 'ptr2c', 'ptr3', 'ptr4', 'ptr4a', 'ptr5a_dk', 'ptr5b', 'ptr5c', 'ptr5d',
-    'ptr5e', 'ptr6', 'ptr7', 'ptr7_other', 'ptr8', 'ptr8_other', 'ptr8a', 'ptr8b', 'ptr8c', 'ptr8e', 'ptr8f',
-    'ptr8g', 'ptr8h', 'ptr9', 'ptr10'
+    'str1', 'str2', 'str3a', 'str3b', 'str3c', 'str3e', 'str4', 'data', 'omr1', 'omr2', 'omr3', 'omr4', 'omr5',
+    'omr6', 'omr7', 'ptr1', 'ptr2a', 'ptr2b', 'ptr2c', 'ptr3', 'ptr4', 'ptr4a', 'ptr5a_dk', 'ptr5b', 'ptr5c',
+    'ptr5d', 'ptr5e', 'ptr6', 'ptr7', 'ptr7_other', 'ptr8', 'ptr8_other', 'ptr8a', 'ptr8b', 'ptr8c', 'ptr8e',
+    'ptr8f', 'ptr8g', 'ptr8h', 'ptr9', 'ptr10', 'obs'
 ];
 
 export const exportHeader: Array<{ id: string; title: string }> = [
-    { 'id': 'str1', 'title': 'STR1' },
-    { 'id': 'str2', 'title': 'STR2' },
-    { 'id': 'str3a', 'title': 'STR3A' },
-    { 'id': 'str3b', 'title': 'STR3B' },
-    { 'id': 'str3c', 'title': 'STR3C' },
-    { 'id': 'str4', 'title': 'STR4' },
-    { 'id': 'data', 'title': 'DATA' },
-    { 'id': 'omr1', 'title': 'OMR1' },
-    { 'id': 'omr2', 'title': 'OMR2' },
-    { 'id': 'omr3', 'title': 'OMR3' },
-    { 'id': 'omr4', 'title': 'OMR4' },
-    { 'id': 'omr5', 'title': 'OMR5' },
-    { 'id': 'omr6', 'title': 'OMR6' },
-    { 'id': 'omr7', 'title': 'OMR7' },
-    { 'id': 'ptr1', 'title': 'PTR1' },
-    { 'id': 'ptr2a', 'title': 'PTR2A' },
-    { 'id': 'ptr2b', 'title': 'PTR2B' },
-    { 'id': 'ptr2c', 'title': 'PTR2C' },
-    { 'id': 'ptr3', 'title': 'PTR3' },
-    { 'id': 'ptr4', 'title': 'PTR4' },
-    { 'id': 'ptr4a', 'title': 'PTR4A' },
-    { 'id': 'ptr5a_dk', 'title': 'PTR5A_DK' },
-    { 'id': 'ptr5b', 'title': 'PTR5B' },
-    { 'id': 'ptr5c', 'title': 'PTR5C' },
-    { 'id': 'ptr5d', 'title': 'PTR5D' },
-    { 'id': 'ptr5e', 'title': 'PTR5E' },
-    { 'id': 'ptr6', 'title': 'PTR6' },
-    { 'id': 'ptr7', 'title': 'PTR7' },
-    { 'id': 'ptr7_other', 'title': 'PTR7_OTHER' },
-    { 'id': 'ptr8', 'title': 'PTR8' },
-    { 'id': 'ptr8_other', 'title': 'PTR8_OTHER' },
-    { 'id': 'ptr8a', 'title': 'PTR8A' },
-    { 'id': 'ptr8b', 'title': 'PTR8B' },
-    { 'id': 'ptr8c', 'title': 'PTR8C' },
-    { 'id': 'ptr8e', 'title': 'PTR8E' },
-    { 'id': 'ptr8f', 'title': 'PTR8F' },
-    { 'id': 'ptr8g', 'title': 'PTR8G' },
-    { 'id': 'ptr8h', 'title': 'PTR8H' },
-    { 'id': 'ptr9', 'title': 'PTR9' },
-    { 'id': 'ptr10', 'title': 'PTR10' },
+    {'id': 'str1', 'title': 'STR1'},
+    {'id': 'str2', 'title': 'STR2'},
+    {'id': 'str3a', 'title': 'STR3A'},
+    {'id': 'str3b', 'title': 'STR3B'},
+    {'id': 'str3c', 'title': 'STR3C'},
+    {'id': 'str3e', 'title': 'STR3E'},
+    {'id': 'str4', 'title': 'STR4'},
+    {'id': 'data', 'title': 'DATA'},
+    {'id': 'omr1', 'title': 'OMR1'},
+    {'id': 'omr2', 'title': 'OMR2'},
+    {'id': 'omr3', 'title': 'OMR3'},
+    {'id': 'omr4', 'title': 'OMR4'},
+    {'id': 'omr5', 'title': 'OMR5'},
+    {'id': 'omr6', 'title': 'OMR6'},
+    {'id': 'omr7', 'title': 'OMR7'},
+    {'id': 'ptr1', 'title': 'PTR1'},
+    {'id': 'ptr2a', 'title': 'PTR2A'},
+    {'id': 'ptr2b', 'title': 'PTR2B'},
+    {'id': 'ptr2c', 'title': 'PTR2C'},
+    {'id': 'ptr3', 'title': 'PTR3'},
+    {'id': 'ptr4', 'title': 'PTR4'},
+    {'id': 'ptr4a', 'title': 'PTR4A'},
+    {'id': 'ptr5a_dk', 'title': 'PTR5A_DK'},
+    {'id': 'ptr5b', 'title': 'PTR5B'},
+    {'id': 'ptr5c', 'title': 'PTR5C'},
+    {'id': 'ptr5d', 'title': 'PTR5D'},
+    {'id': 'ptr5e', 'title': 'PTR5E'},
+    {'id': 'ptr6', 'title': 'PTR6'},
+    {'id': 'ptr7', 'title': 'PTR7'},
+    {'id': 'ptr7_other', 'title': 'PTR7_OTHER'},
+    {'id': 'ptr8', 'title': 'PTR8'},
+    {'id': 'ptr8_other', 'title': 'PTR8_OTHER'},
+    {'id': 'ptr8a', 'title': 'PTR8A'},
+    {'id': 'ptr8b', 'title': 'PTR8B'},
+    {'id': 'ptr8c', 'title': 'PTR8C'},
+    {'id': 'ptr8e', 'title': 'PTR8E'},
+    {'id': 'ptr8f', 'title': 'PTR8F'},
+    {'id': 'ptr8g', 'title': 'PTR8G'},
+    {'id': 'ptr8h', 'title': 'PTR8H'},
+    {'id': 'ptr9', 'title': 'PTR9'},
+    {'id': 'ptr10', 'title': 'PTR10'},
+    {'id': 'obs', 'title': 'OBS'},
 ];

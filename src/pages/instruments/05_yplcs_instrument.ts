@@ -301,7 +301,9 @@ for (let i = 0; i < setElements.length; i++) {
     if (setElements[i] != "" && typeElements[i] != "") {
         util.listen(setElements[i], "change", () => {
             const value = util.htmlElement(setElements[i]).value;
-            util.setValue(typeElements[i], settlements[value].type);
+            if (value != "--") {
+                util.setValue(typeElements[i], settlements[value].type);
+            }
         })
     }
 }
@@ -406,7 +408,7 @@ util.listen("he5_9", "change", () => {
 util.listen(he5, "change", () => {
     if (util.makeSumFromElements(he5) > 0) {
         util.htmlElement("he5_9").checked = false;
-        instrument.questions["he5_9"].value = "0";
+        instrument.questions.he5_9.value = "0";
     }
 });
 

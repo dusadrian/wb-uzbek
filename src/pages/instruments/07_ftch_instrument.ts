@@ -102,7 +102,7 @@ export const instrument7 = {
 
             services = args.services;
             insons = args.insons;
-            
+
             userRole = args.userData.role_code;
             let institution_code = args.userData.institution_code;
             if (args.institution_code) {
@@ -111,7 +111,7 @@ export const instrument7 = {
             if (filters && filters.institution) {
                 institution_code = filters.institution;
             }
-            
+
             serviceCode = args.institution_code ?? '';
             console.log(args);
 
@@ -191,7 +191,7 @@ export const instrument7 = {
                             }
                             else {
                                 if (typeElements[x] != "") {
-                                    util.setValue(typeElements[x], "" + districts[selectedDistrict].type);
+                                    util.setValue(typeElements[x], districts[selectedDistrict].type);
                                 }
                                 instrument.questions[setElements[x]].skip = true;
                                 instrument.questions[setElements[x]].value = '-7';
@@ -284,7 +284,9 @@ for (let i = 0; i < setElements.length; i++) {
     if (setElements[i] != "" && typeElements[i] != "") {
         util.listen(setElements[i], "change", () => {
             const value = util.htmlElement(setElements[i]).value;
-            util.setValue(typeElements[i], settlements[value].type);
+            if (value != "--") {
+                util.setValue(typeElements[i], settlements[value].type);
+            }
         })
     }
 }

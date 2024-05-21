@@ -166,11 +166,6 @@ export const instrument2 = {
                         instrument.questions[setElements[x]].value = "-7";
                     }
 
-                    if (typeElements[x] != "") {
-                        util.htmlElement(typeElements[x]).value = "";
-                        instrument.questions[typeElements[x]].value = "-7";
-                    }
-
                     const selectedRegion = util.htmlElement(regElements[x]).value;
                     if (Number(selectedRegion) > 0) {
                         const dis_codes = regions[selectedRegion].districts;
@@ -189,10 +184,6 @@ export const instrument2 = {
                 util.listen(disElements[x], "change", function () {
                     if (disElements[x] == "sa5d") {
                         util.resetSelect("sa5i", "-9", translations['t_choose']);
-                    }
-
-                    if (typeElements[x] != "") {
-                        util.htmlElement(typeElements[x]).value = "";
                     }
 
                     const selectedDistrict = util.htmlElement(disElements[x]).value;
@@ -214,7 +205,7 @@ export const instrument2 = {
                                 }
                             } else {
                                 if (typeElements[x] != "") {
-                                    util.setValue(typeElements[x], "" + districts[selectedDistrict].type);
+                                    util.setValue(typeElements[x], districts[selectedDistrict].type);
                                 }
 
                                 instrument.questions[setElements[x]].skip = true;
@@ -339,7 +330,9 @@ for (let i = 0; i < setElements.length; i++) {
     if (setElements[i] != "" && typeElements[i] != "") {
         util.listen(setElements[i], "change", () => {
             const value = util.htmlElement(setElements[i]).value;
-            util.setValue(typeElements[i], settlements[value].type);
+            if (value != "--") {
+                util.setValue(typeElements[i], settlements[value].type);
+            }
         })
     }
 }

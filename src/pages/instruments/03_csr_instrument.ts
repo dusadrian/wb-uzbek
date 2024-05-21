@@ -91,7 +91,7 @@ export const instrument3 = {
 
             services = args.services;
             insons = args.insons;
-            
+
             userRole = args.userData.role_code;
             const institution_code = (filters && filters.institution) ? filters.institution : args.userData.institution_code;
 

@@ -37,10 +37,10 @@ let insons: { [key: string]: DI.INSON };
 const general_dates = [
     'ptr4', 'ptr6' // 'data',
 ];
-const regElements = ["str3a", "ptr5b", "ptr8e"];
-const disElements = ["str3b", "ptr5c", "ptr8f"];
-const setElements = ["str3c", "ptr5d", "ptr8g"];
-const typeElements = ["", "ptr5e", "ptr8h"];
+const regElements =  ["str3a", "ptr5b", "ptr8e"];
+const disElements =  ["str3b", "ptr5c", "ptr8f"];
+const setElements =  ["str3c", "ptr5d", "ptr8g"];
+const typeElements = ["str3e", "ptr5e", "ptr8h"];
 
 let regionCode = '';
 let userUUID = '';
@@ -70,7 +70,7 @@ export const instrument5a = {
             const config = { ...jQueryDatepickerConfig };
 
             if (el == 'ptr6') {
-                config.minDate = "01/01/2022";
+                config.minDate = "01/05/2019";
             }
 
             $("#" + el).datepicker(config);
@@ -91,88 +91,72 @@ export const instrument5a = {
 
         const reg_codes = Object.keys(regions);
         for (let x = 0; x < regElements.length; x++) {
-            const reg_el = util.htmlElement(regElements[x]);
 
-            reg_el.innerHTML = "";
-            const option = document.createElement("option");
-            option.value = "-9";
-            option.text = translations['t_choose'];
-            reg_el.appendChild(option);
+            util.resetSelect(regElements[x], "-9", translations['t_choose']);
 
             for (let i = 0; i < reg_codes.length; i++) {
-                const option = document.createElement("option");
-                option.value = reg_codes[i];
-                option.text = reg_codes[i] + ": " + (regions[reg_codes[i]] as KeyString)[lang];
-                reg_el.appendChild(option);
+                util.addOption(
+                    regElements[x],
+                    reg_codes[i],
+                    reg_codes[i] + ": " + (regions[reg_codes[i]] as KeyString)[lang]
+                );
             }
 
-            const dis_el = util.htmlElement(disElements[x]);
             const set_el = util.htmlElement(setElements[x]);
 
             util.listen(regElements[x], "change", function () {
+
                 if (setElements[x] != "") {
-                    set_el.innerHTML = "";
+                    util.resetSelect(setElements[x], "-9", translations['t_choose']);
+                    instrument.questions[setElements[x]].value = "-7";
                 }
-                if (typeElements[x] != "") {
-                    util.htmlElement(typeElements[x]).value = "";
-                }
-                const selectedRegion = reg_el.value;
+
+                const selectedRegion = util.htmlElement(regElements[x]).value;
                 if (Number(selectedRegion) > 0) {
                     const dis_codes = regions[selectedRegion].districts;
 
-                    const option = document.createElement("option");
-                    option.value = "-9";
-                    option.text = translations['t_choose'];
-                    dis_el.innerHTML = "";
-                    dis_el.appendChild(option);
-
+                    util.resetSelect(disElements[x], "-9", translations['t_choose']);
                     for (let i = 0; i < dis_codes.length; i++) {
-                        const option = document.createElement("option");
-                        option.value = dis_codes[i];
-                        option.text = dis_codes[i] + ": " + (districts[dis_codes[i]] as KeyString)[lang];
-                        dis_el.appendChild(option);
+                        util.addOption(
+                            disElements[x],
+                            dis_codes[i],
+                            dis_codes[i] + ": " + (districts[dis_codes[i]] as KeyString)[lang]
+                        );
                     }
                 }
             })
 
             util.listen(disElements[x], "change", function () {
-                if (typeElements[x] != "") {
-                    util.htmlElement(typeElements[x]).value = "";
-                }
-                const selectedDistrict = dis_el.value;
+
+                const selectedDistrict = util.htmlElement(disElements[x]).value;
 
                 if (setElements[x] != "") {
-                    instrument.questions[setElements[x]].skip = false;
-                    util.htmlElement(setElements[x]).disabled = false;
-                    set_el.innerHTML = "";
+                    util.resetSelect(setElements[x], "-9", translations['t_choose']);
+
+                    if (!instrument.questions[setElements[x]].readonly) {
+                        instrument.questions[setElements[x]].skip = false;
+                        set_el.disabled = false;
+                    }
 
                     if (Number(selectedDistrict) > 0) {
                         const set_codes = districts[selectedDistrict].settlements;
-
                         if (set_codes.length > 0) {
-                            const option = document.createElement("option");
-                            option.value = setElements[x] == "str3c" ? "--" : "-9";
-                            option.text = setElements[x] == "str3c" ? "--" : translations['t_choose'];
-                            set_el.appendChild(option);
-
                             for (let i = 0; i < set_codes.length; i++) {
-                                const option = document.createElement("option");
-                                option.value = set_codes[i];
-                                option.text = set_codes[i] + ": " + (settlements[set_codes[i]] as KeyString)[lang];
-                                set_el.appendChild(option);
+                                util.addOption(
+                                    setElements[x],
+                                    set_codes[i],
+                                    set_codes[i] + ": " + (settlements[set_codes[i]] as KeyString)[lang]
+                                );
                             }
                         } else {
                             if (typeElements[x] != "") {
-                                util.setValue(typeElements[x], "" + districts[selectedDistrict].type);
+                                util.setValue(typeElements[x], districts[selectedDistrict].type);
                             }
 
-                            const option = document.createElement("option");
-                            option.value = "--";
-                            option.text = "--";
-                            set_el.appendChild(option);
-
                             instrument.questions[setElements[x]].skip = true;
-                            util.htmlElement(setElements[x]).disabled = true;
+                            set_el.disabled = true;
+
+                            util.resetSelect(setElements[x], "--", "--");
                             util.setValue(setElements[x], "--");
                         }
                     }
@@ -184,7 +168,7 @@ export const instrument5a = {
         filters = JSON.parse(sessionStorage.getItem('filters'));
 
         ipcRenderer.on("instrumentDataReady", (_event, args) => {
-            console.log(args);
+            // console.log(args);
             services = args.services;
             insons = args.insons;
 
@@ -199,7 +183,7 @@ export const instrument5a = {
             let instrumentID = null;
 
             if (args.instrument && args.instrument.length > 0) {
-                console.log(args.instrument);
+                // console.log(args.instrument);
 
                 instrumentID = parseInt(args.instrument[0].id);
 
@@ -229,24 +213,32 @@ export const instrument5a = {
                 institutionCode = args.userData.institution_code;
 
                 util.setValue("str1", institution_code);
-                util.setValue("str3c", "--");
-                util.setValue("str4", "-9");
+                // util.setValue("str3c", "--");
+
                 if (inson_user) {
                     const inson = { ...insons[args.userData.institution_code] } as KeyStringNumber;
                     institution_name = "" + inson['name_' + lang];
                     util.setValue("str3a", insons[institution_code].region);
                     util.setValue("str3b", insons[institution_code].district);
+                    if (insons[institution_code].settlement) {
+                        util.setValue("str3c", insons[institution_code].settlement);
+                    } else {
+                        util.resetSelect("str3c", "--", "--");
+                        util.setValue("str3c", "--");
+                        util.setValue("str3e", districts[insons[institution_code].district].type);
+                    }
                 } else {
                     const serviciu = { ...services[institution_code] } as KeyStringNumber;
                     institution_name = '' + serviciu['name_' + lang];
                     util.setValue("str3a", services[institution_code].region);
                     util.setValue("str3b", services[institution_code].district);
-                    const type = services[institution_code].type;
-                    if (["11", "12", "13", "14", "15", "16", "17"].indexOf(type) >= 0) {
-                        util.setValue("str4", type);
-                    }
+
                     if (services[institution_code].settlement) {
                         util.setValue("str3c", services[institution_code].settlement);
+                    } else {
+                        util.resetSelect("str3c", "--", "--");
+                        util.setValue("str3c", "--");
+                        util.setValue("str3e", districts[services[institution_code].district].type);
                     }
                 }
 
@@ -302,7 +294,9 @@ for (let i = 0; i < setElements.length; i++) {
     if (setElements[i] != "" && typeElements[i] != "") {
         util.listen(setElements[i], "change", () => {
             const value = util.htmlElement(setElements[i]).value;
-            util.setValue(typeElements[i], settlements[value].type);
+            if (value != "--") {
+                util.setValue(typeElements[i], settlements[value].type);
+            }
         })
     }
 }
@@ -316,4 +310,22 @@ util.listen("ptr4", "myChange", () => {
 
         util.setValue("ptr4a", age.toString());
     }
+});
+
+const ptr8 = util.radioIDs("ptr8");
+ptr8.forEach((el) => {
+    util.listen(el, "change", () => {
+        instrument.questions.ptr9.skip = false;
+        instrument.questions.ptr10.skip = false;
+        util.htmlElement("ptr9").disabled = true;
+        util.htmlElement("ptr10").disabled = true;
+
+        const value = util.htmlElement(el).value;
+        if (["1", "2", "5", "8"].indexOf(value) >= 0) {
+            instrument.questions.ptr9.skip = true;
+            instrument.questions.ptr10.skip = true;
+            util.htmlElement("ptr9").disabled = false;
+            util.htmlElement("ptr10").disabled = false;
+        }
+    })
 });

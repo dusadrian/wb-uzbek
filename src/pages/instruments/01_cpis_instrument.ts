@@ -235,11 +235,6 @@ export const instrument1 = {
                         instrument.questions[setElements[x]].value = "-7";
                     }
 
-                    if (typeElements[x] != "") {
-                        util.htmlElement(typeElements[x]).value = "";
-                        instrument.questions[typeElements[x]].value = "-7";
-                    }
-
                     const selectedRegion = util.htmlElement(regElements[x]).value;
                     if (Number(selectedRegion) > 0) {
                         const dis_codes = regions[selectedRegion].districts;
@@ -265,17 +260,13 @@ export const instrument1 = {
                         util.resetSelect("sh5", "-9", translations['t_choose']);
                     }
 
-                    if (typeElements[x] != "") {
-                        util.htmlElement(typeElements[x]).value = "";
-                    }
-
                     const selectedDistrict = util.htmlElement(disElements[x]).value;
 
                     if (setElements[x] != "") {
 
                         util.resetSelect(setElements[x], "-9", translations['t_choose']);
 
-                        if (!instrument.questions[setElements[x]].readonly) { // TODO mai e nevoie de el?
+                        if (!instrument.questions[setElements[x]].readonly) {
                             instrument.questions[setElements[x]].skip = false;
                             set_el.disabled = false;
                         }
@@ -295,7 +286,7 @@ export const instrument1 = {
                             }
                             else {
                                 if (typeElements[x] != "") {
-                                    util.setValue(typeElements[x], "" + districts[selectedDistrict].type);
+                                    util.setValue(typeElements[x], districts[selectedDistrict].type);
                                 }
                                 instrument.questions[setElements[x]].skip = true;
                                 instrument.questions[setElements[x]].value = '-7';
@@ -489,7 +480,9 @@ for (let i = 0; i < setElements.length; i++) {
     if (setElements[i] != "" && typeElements[i] != "") {
         util.listen(setElements[i], "change", () => {
             const value = util.htmlElement(setElements[i]).value;
-            util.setValue(typeElements[i], settlements[value].type);
+            if (value != "--") {
+                util.setValue(typeElements[i], settlements[value].type);
+            }
         })
     }
 }
