@@ -125,11 +125,11 @@ export const get = async (id: string, table: string, db: DuckDB.Database) => {
     return await connection;
 }
 
-export const getExisting = async (db: DuckDB.Database) => {
+export const getExisting = async (db: DuckDB.Database, user_uuid: string) => {
 
     const connection = new Promise<{ qmr: number | null, dsee: number | null }>((resolve) => {
-        const sql = `SELECT (SELECT id FROM instrument_qmr) AS qmr, (SELECT id FROM instrument_dsee) AS dsee;`;
-        db.all(sql, (error, result) => {
+        const sql = `SELECT (SELECT id FROM instrument_qmr WHERE user_uuid = ?) AS qmr, (SELECT id FROM instrument_dsee WHERE user_uuid = ?) AS dsee;`;
+        db.all(sql, user_uuid, user_uuid, (error, result) => {
             if (error) {
                 console.log("===== Error get instrument id =====");
                 console.log(error);
