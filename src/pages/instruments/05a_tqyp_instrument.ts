@@ -57,8 +57,8 @@ export const instrument5a = {
             changeMonth: true,
             changeYear: true,
             dateFormat: "dd/mm/yy",
-            minDate: "01/01/1990",
-            maxDate: "30/04/2024",
+            minDate: "01/01/2001",
+            maxDate: "31/12/2007",
             yearRange: "c-100:c+10",
             firstDay: 1,
             onSelect: function () {
@@ -71,6 +71,7 @@ export const instrument5a = {
 
             if (el == 'ptr6') {
                 config.minDate = "01/05/2019";
+                config.maxDate = "30/04/2024";
             }
 
             $("#" + el).datepicker(config);
@@ -329,3 +330,20 @@ ptr8.forEach((el) => {
         }
     })
 });
+
+
+const ptr46 = ["ptr4", "ptr6"];
+util.listen(ptr46, "myChange", () => {
+    if (util.inputsHaveValue(ptr46)) {
+        const ptr6 = util.htmlElement("ptr6").value;
+        const ptr4 = util.htmlElement("ptr4").value;
+
+        const message = translations['must_be_later'].replace("Y", "PTR6").replace("X", "PTR4");
+
+        errorHandler.removeError(ptr46, message);
+
+        if (util.standardDate(ptr4) > util.standardDate(ptr6)) {
+            errorHandler.addError(ptr46, message);
+        }
+    }
+})

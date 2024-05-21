@@ -66,6 +66,7 @@ export const instrument5 = {
 
             if (el == 'pi3') {
                 config.minDate = "01/01/2001";
+                config.minDate = "31/12/2007";
             }
 
             $("#" + el).datepicker(config); util.listen(el, "change", () => {
