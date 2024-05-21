@@ -73,6 +73,7 @@ export interface INSON {
     activcode3: string;
     activcode4: string;
     activcode5: string;
+    inson?: number; // only for typescript
 }
 
 export interface UpdateInsonObjInterface {
@@ -147,4 +148,6 @@ export interface FiltersInterface {
     institution: string;
     region: string;
     dashboard?: boolean;
+    instrument?: string;
+    service_code?: string;
 }

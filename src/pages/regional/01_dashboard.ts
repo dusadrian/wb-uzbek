@@ -1,8 +1,6 @@
-import { INSON } from './../../interfaces/database/index';
 import { ipcRenderer } from "electron"
 import { StatusInterface } from "../../interfaces/database";
 import * as DI from "../../interfaces/database/index";
-import constant from "../../libraries/constants";
 
 type toBeFilledType = {
     instrument1: number;
@@ -40,7 +38,7 @@ export const regionalCoordinator = {
 
         ipcRenderer.on("appSession", (_event, args) => {
             console.log(args);
-            
+
             user = args.userData as DI.User;
             lang = args.language;
             regionCode = user.region_code;
@@ -58,9 +56,9 @@ export const regionalCoordinator = {
         institutionType.addEventListener('change', () => {
             const value = institutionType.options[institutionType.selectedIndex].value;
             serviceType = value ?? null;
-            ipcRenderer.send('getInstitutionByTypeAndRegion', {
+            ipcRenderer.send('getInstitutionByType', {
                 region: regionCode,
-                typeOfInstitution: value ?? null,
+                typeOfInstitution: value,
             });
             // show data for this type of institution
             ipcRenderer.send('getRegionalDashStats', {
@@ -68,6 +66,9 @@ export const regionalCoordinator = {
                 typeOfInstitution: value,
                 institution: null
             });
+            sessionStorage.removeItem('filters');
+            sessionStorage.removeItem('instrument1_service');
+            sessionStorage.removeItem('instrument7_service');
         });
 
 
@@ -75,18 +76,18 @@ export const regionalCoordinator = {
         // fill institution list
         ipcRenderer.on("institutions", (_event, args) => {
             console.log(args);
-            
+
             inst.innerHTML = '';
             inst.innerHTML = `<option value="">---</option>`;
             if (args.length > 0) {
                 args.forEach((el: DI.Institution) => {
 
                     if (lang === 'uz') {
-                        inst.innerHTML += `<option value="${el.code}">${el.name_uz}</option>`;
+                        inst.innerHTML += `<option value="${el.code}">${el.code} | ${el.name_uz}</option>`;
                     } else if (lang === 'ru') {
-                        inst.innerHTML += `<option value="${el.code}">${el.name_ru}</option>`;
+                        inst.innerHTML += `<option value="${el.code}">${el.code} | ${el.name_ru}</option>`;
                     } else {
-                        inst.innerHTML += `<option value="${el.code}">${el.name_en}</option>`;
+                        inst.innerHTML += `<option value="${el.code}">${el.code} | ${el.name_en}</option>`;
                     }
                 });
             }
@@ -134,8 +135,7 @@ export const regionalCoordinator = {
             instrument1.addEventListener('click', () => {
                 ipcRenderer.send('changeWindow', {
                     name: 'regionalViewInstrument',
-                    instrument: '1',
-                    filters: getFilterData(),
+                    filters: getFilterData('1'),
                 });
             });
         }
@@ -144,8 +144,7 @@ export const regionalCoordinator = {
             instrument2.addEventListener('click', () => {
                 ipcRenderer.send('changeWindow', {
                     name: 'regionalViewInstrument',
-                    instrument: '2',
-                    filters: getFilterData(),
+                    filters: getFilterData('2'),
                 });
             });
         }
@@ -155,7 +154,7 @@ export const regionalCoordinator = {
                 ipcRenderer.send('changeWindow', {
                     name: 'regionalViewInstrument',
                     instrument: '3',
-                    filters: getFilterData(),
+                    filters: getFilterData('3'),
                 });
             });
         }
@@ -164,8 +163,7 @@ export const regionalCoordinator = {
             instrument4.addEventListener('click', () => {
                 ipcRenderer.send('changeWindow', {
                     name: 'regionalViewInstrument',
-                    instrument: '4',
-                    filters: getFilterData(),
+                    filters: getFilterData('4'),
                 });
             });
         }
@@ -175,7 +173,7 @@ export const regionalCoordinator = {
                 ipcRenderer.send('changeWindow', {
                     name: 'regionalViewInstrument',
                     instrument: '5a',
-                    filters: getFilterData(),
+                    filters: getFilterData('5a'),
                 });
             });
         }
@@ -184,8 +182,7 @@ export const regionalCoordinator = {
             instrument5.addEventListener('click', () => {
                 ipcRenderer.send('changeWindow', {
                     name: 'regionalViewInstrument',
-                    instrument: '5',
-                    filters: getFilterData(),
+                    filters: getFilterData('5'),
                 });
             });
         }
@@ -194,8 +191,7 @@ export const regionalCoordinator = {
             instrument6.addEventListener('click', () => {
                 ipcRenderer.send('changeWindow', {
                     name: 'regionalViewInstrument',
-                    instrument: '6',
-                    filters: getFilterData(),
+                    filters: getFilterData('6'),
                 });
             });
         }
@@ -204,8 +200,7 @@ export const regionalCoordinator = {
             instrument7.addEventListener('click', () => {
                 ipcRenderer.send('changeWindow', {
                     name: 'regionalViewInstrument',
-                    instrument: '7',
-                    filters: getFilterData(),
+                    filters: getFilterData('7'),
                 });
             });
         }
@@ -214,8 +209,7 @@ export const regionalCoordinator = {
             instrument8.addEventListener('click', () => {
                 ipcRenderer.send('changeWindow', {
                     name: 'regionalViewInstrument',
-                    instrument: '8',
-                    filters: getFilterData(),
+                    filters: getFilterData('8'),
                 });
             });
         }
@@ -224,8 +218,7 @@ export const regionalCoordinator = {
             instrument9.addEventListener('click', () => {
                 ipcRenderer.send('changeWindow', {
                     name: 'regionalViewInstrument',
-                    instrument: '9',
-                    filters: getFilterData(),
+                    filters: getFilterData('9'),
                 });
             });
         }
@@ -478,17 +471,21 @@ const processDashStats = (instruments: instrumentsType, toBeFilled: toBeFilledTy
     }
 }
 
-const getFilterData = () => {
+const getFilterData = (instrument : string) => {
     const instType = document.getElementById('institutionType') as HTMLSelectElement;
     const inst = document.getElementById('institution') as HTMLSelectElement;
 
     const session = JSON.parse(sessionStorage.getItem('appSession'));
 
+    const selectedType = instType.options[instType.selectedIndex].value;
+    const institution = inst.options[inst.selectedIndex].value;
+
     const filters = {
-        institutionType: instType.options[instType.selectedIndex].value,
-        institution: inst.options[inst.selectedIndex].value,
+        institutionType: selectedType,
+        institution: institution,
         region: session.userData.region_code,
         dashboard: true,
+        instrument: instrument,
     }
     // save to session storage
     sessionStorage.setItem('filters', JSON.stringify(filters));

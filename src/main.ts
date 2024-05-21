@@ -195,7 +195,7 @@ ipcMain.on("changeWindow", (_event, args) => {
             insonsR();
             break;
         case "regionalViewInstrument":
-            regionalViewInstrument(args.instrument, args.filters);
+            regionalViewInstrument(args.filters);
             break;
         case "local/03_users":
             localUsers();
@@ -277,13 +277,6 @@ const goToLocalDashboard = () => {
         mainWindow.webContents.send("appSession", appSession);
     });
 }
-const goToRegionalDashboard = () => {
-    mainWindow.loadURL("file://" + path.join(__dirname, "../src/pages/regional/01_dashboard.html"));
-    mainWindow.webContents.once("did-finish-load", () => {
-        mainWindow.webContents.send("appSession", appSession);
-    });
-}
-
 ipcMain.on('getLocalDashStats', (_event, args) => {
     let region = null;
     let typeOfInstitution = null;
@@ -298,6 +291,12 @@ ipcMain.on('getLocalDashStats', (_event, args) => {
     });
 });
 
+const goToRegionalDashboard = () => {
+    mainWindow.loadURL("file://" + path.join(__dirname, "../src/pages/regional/01_dashboard.html"));
+    mainWindow.webContents.once("did-finish-load", () => {
+        mainWindow.webContents.send("appSession", appSession);
+    });
+}
 ipcMain.on('getRegionalDashStats', (_event, args) => {
     let region = '';
     let typeOfInstitution = '';
@@ -306,8 +305,8 @@ ipcMain.on('getRegionalDashStats', (_event, args) => {
     if (args?.typeOfInstitution) { typeOfInstitution = args.typeOfInstitution; }
     if (args?.institution) { institution = args.institution; }
 
-    database.filledInstruments(appSession.userData.role_code, appSession.userData.uuid, appSession.userData.institution_code, region, typeOfInstitution, institution).then((dashStats) => {
-        database.getInstrumentsToBeFilledBy(region, institution, typeOfInstitution).then((toBeFilled) => {
+    database.filledInstrumentsR(db, region, typeOfInstitution, institution).then((dashStats) => {
+        database.getInstrumentsToBeFilledBy(db, region, institution, typeOfInstitution).then((toBeFilled) => {
             // Dashboard stats for all users
             mainWindow.webContents.send("dashStats", {
                 instruments: dashStats,
@@ -316,64 +315,79 @@ ipcMain.on('getRegionalDashStats', (_event, args) => {
         });
     });
 });
-ipcMain.on('getInstitutionByTypeAndRegion', (_event, args) => {
-    database.getInstitutionByTypeAndRegion(args.region, args.typeOfInstitution).then((result) => {
+// on instrument type change -- get institutions
+ipcMain.on('getInstitutionByType', (_event, args) => {
+    database.getInstitutionByType(args.region, args.typeOfInstitution).then((result) => {
         mainWindow.webContents.send("institutions", result);
     });
 });
 
-const regionalViewInstrument = (instrument: string, filters: DI.FiltersInterface) => {
+const goToListaInstrumente = (instrument: string, institution: string) => {
+    switch (instrument) {
+        case '1':
+            goToCPISList();
+            break;
+        case '2':
+            goToCIBSList();
+            break;
+        case '3':
+            goToCSRList();
+            break;
+        case '4':
+            goToInstitutionQMR(institution);
+            break;
+        case '5a':
+            goToTQYPList();
+            break;
+        case '5':
+            goToYPLCSList();
+            break;
+        case '6':
+            goToInstitutionDSEE(institution);
+            break;
+        case '7':
+            goToFTCHList();
+            break;
+        case '8':
+            goToPFQList();
+            break;
+        case '9':
+            goToEEFList();
+            break;
+        default:
+            dialog.showMessageBox(mainWindow, {
+                type: 'error',
+                message: i18n.__('Instrument error.'),
+            });
+    }
+}
+const regionalViewInstrument = (filters: DI.FiltersInterface) => {
 
-    if ((filters.institutionType !== '' && !filters.dashboard) || filters.institution !== '') {
-        switch (instrument) {
-            case '1':
-                goToCPISList();
-                break;
-            case '2':
-                goToCIBSList();
-                break;
-            case '3':
-                goToCSRList();
-                break;
-            case '4':
-                goToInstitutionQMR(filters.institution);
-                break;
-            case '5a':
-                goToTQYPList();
-                break;
-            case '5':
-                goToYPLCSList();
-                break;
-            case '6':
-                goToInstitutionDSEE(filters.institution);
-                break;
-            case '7':
-                goToFTCHList();
-                break;
-            case '8':
-                goToPFQList();
-                break;
-            case '9':
-                goToEEFList();
-                break;
-            default:
-                dialog.showMessageBox(mainWindow, {
-                    type: 'error',
-                    message: i18n.__('Instrument error.'),
-                });
-        }
-    } else {
-        mainWindow.loadURL("file://" + path.join(__dirname, "../src/pages/regional/03_instrument_institutions.html"));
-        mainWindow.webContents.once("did-finish-load", () => {
-            database.getInstitutionsByTypeAndRegion(db, instrument, filters.region, filters.institutionType).then((institutions) => {
+    if ((filters.institutionType == '10' || filters.institutionType == '20') && filters.institution !== '') {
+        goToListaInstrumente(filters.instrument, filters.institution);
+        return;
+    }
+
+    if (filters.institutionType == '91' && filters.institution !== '' && filters.service_code && filters.service_code !== '') {
+        goToListaInstrumente(filters.instrument, filters.institution);
+        return;
+    }
+
+    mainWindow.loadURL("file://" + path.join(__dirname, "../src/pages/regional/03_instrument_institutions.html"));
+    mainWindow.webContents.once("did-finish-load", () => {
+        database.getInstitutionsByTypeAndRegion(db, filters.instrument, filters.region, filters.institutionType, filters.institution).then((institutions) => {
+            const institutionCodes = institutions.map((i) => { return { code: i.code, inson: i.inson } });
+            database.getFilledInstitutions(db, filters.instrument, institutionCodes, filters.institutionType, filters.region).then((filled) => {
                 mainWindow.webContents.send("institutions", {
                     institutions,
-                    filters: filters
+                    filled: filled
                 });
             });
         });
-    }
+    });
 };
+
+
 const goToInstitutionQMR = (institution: string) => {
     database.getQMRInstrumentForInstitution(institution, appSession.userData.region_code).then((result) => {
         if (result.length > 0) {
@@ -401,7 +415,7 @@ const goToInstitutionDSEE = (institution: string) => {
 
 // return ID for instruments 4 and 6
 ipcMain.on('getInstrumentsId', () => {
-    database.getExisting(db).then((result: { qmr: number | null, dsee: number | null }) => {
+    database.getExisting(db, appSession.userData.uuid).then((result: { qmr: number | null, dsee: number | null }) => {
         mainWindow.webContents.send('existing', result);
     });
 })
@@ -429,9 +443,9 @@ const goToCPISList = () => {
 ipcMain.on('goToCPISList', (_event, _args) => {
     mainWindow.loadURL("file://" + path.join(__dirname, "../src/pages/instruments/01_cpis.html"));
 });
-ipcMain.on('getChildren', (_event, args) => {    
+ipcMain.on('getChildren', (_event, args) => {
     if (appSession.userData.role_code === constant.ROLE_REGIONAL || appSession.userData.role_code === constant.ROLE_NATIONAL) {
-        database.cpisListALL(db, args.filters.region, args.filters.institution).then((result) => {
+        database.cpisListALL(db, args.filters.region, args.filters.institution, args.filters.service_code).then((result) => {
             mainWindow.webContents.send("children", result);
         });
     } else {
@@ -636,7 +650,7 @@ ipcMain.on('goToFTCHList', (_event, _args) => {
 });
 ipcMain.on('getFTCH', (_event, args) => {
     if (appSession.userData.role_code === constant.ROLE_REGIONAL || appSession.userData.role_code === constant.ROLE_NATIONAL) {
-        database.ftchListALL(db, args.filters.region, args.filters.institution).then((result) => {
+        database.ftchListALL(db, args.filters.region, args.filters.institution, args.filters.service_code).then((result) => {
             mainWindow.webContents.send("ftch", result);
         });
     } else {

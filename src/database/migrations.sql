@@ -268,7 +268,7 @@ CREATE TABLE values_yplcs (
 );
 
 
--- Create instrument table QMR
+-- Create instrument 6
 DROP TABLE instrument_dsee;
 DROP SEQUENCE id_instrument_dsee_sequence;
 CREATE SEQUENCE id_instrument_dsee_sequence START 1;
@@ -384,3 +384,37 @@ INSTALL spatial;
 LOAD spatial;
 INSERT INTO auth_codes
 SELECT * FROM st_read('authentication_codes.xlsx', layer = 'auth_codes', open_options = ['HEADERS=FORCE']);
+
+
+-- clear all instruments data
+DELETE FROM instrument_cpis;
+DELETE FROM values_cpis;
+DELETE FROM instrument_cibs;
+DELETE FROM values_cibs;
+DELETE FROM instrument_csr;
+DELETE FROM values_csr;
+DELETE FROM instrument_qmr;
+DELETE FROM values_qmr;
+DELETE FROM instrument_tqyp;
+DELETE FROM values_tqyp;
+DELETE FROM instrument_yplcs;
+DELETE FROM values_yplcs;
+DELETE FROM instrument_dsee;
+DELETE FROM values_dsee;
+DELETE FROM instrument_ftch;
+DELETE FROM values_ftch;
+DELETE FROM instrument_pfq;
+DELETE FROM values_pfq;
+DELETE FROM instrument_eef;
+DELETE FROM values_eef;
+
+UPDATE instrument_cpis SET status = 'completed';
+UPDATE instrument_cibs SET status = 'completed';
+UPDATE instrument_csr SET status = 'completed';
+UPDATE instrument_qmr SET status = 'completed';
+UPDATE instrument_tqyp SET status = 'completed';
+UPDATE instrument_yplcs SET status = 'completed';
+UPDATE instrument_dsee SET status = 'completed';
+UPDATE instrument_ftch SET status = 'completed';
+UPDATE instrument_pfq SET status = 'completed';
+UPDATE instrument_eef SET status = 'completed';
