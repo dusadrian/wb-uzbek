@@ -24,7 +24,7 @@
             <div class="grid grid-cols-12 border">
                 <div class="col-span-1 bg-stone-200 p-2"></div>
                 <div class="col-span-11 p-2">
-                    <h1 class="text-4xl text-gray-700 pl-4 tracking-wide mb-4">Bolalar muassasasi va ixtisoslashtirilgan maktab-internatlarga qabul qilish va ulardan chiqarish bo'yicha umumlashgan ma'lumotlarni yig'ish varaqasi</h1>
+                    <h1 class="text-4xl text-gray-700 pl-4 tracking-wide mb-4">Bolalarga vasiylik qilish muassasalariga va ixtisoslashtirilgan maktab-internatlarga qabul qilish va ulardan chiqarish bo'yicha umumlashgan ma'lumotlarni yig'ish varaqasi</h1>
                 </div>
             </div>
 
@@ -38,12 +38,8 @@
             <p class="mb-2">To'ldirish uchun mas'ul: muassasa rahbari, muvofiqlashtiruvchi yoki ular tomonidan vakolat berilgan shaxs</p>
             <p class="mb-2">Taxminan o'rtacha bajarish vaqti: 40 daqiqa</p>
 
-            <div class="grid grid-cols-2 gap-4 items-center mt-10">
-                <div>Q1. Anketani to'ldirish sanasi</div>
-                <div>
-                    <input type="text" id="q1" name="q1" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
-                </div>
-            </div>
+            <input type="hidden" id="q1" name="q1" />
+
             <div class="grid grid-cols-2 gap-4 items-center mt-4">
                 <div>Q2. Anketani to'ldirgan shaxsning ismi, otasining ismi va familiyasi</div>
                 <div>
@@ -139,9 +135,9 @@
                         <option value="12">"Muruvvat" nogironligi bo'lgan bolalar uchun  internat uyi</option>
                         <option value="13">Oilaviy bolalar uyi</option>
                         <option value="14">SOS Bolalar makhallalari/oilalari</option>
-                        <option value="15">Bolalar uyi</option>
-                        <option value="16">Patronat oila</option>
-                        <option value="17">Vasiylik/homiylik</option>
+                        <option value="21">Bolalar uyi</option>
+                        <option value="22">Patronat oila</option>
+                        <option value="23">Vasiylik/homiylik</option>
                     </select>
                 </div>
             </div>
@@ -825,6 +821,11 @@
                     </tr>
                 </tbody>
             </table>
+
+            <div class="grid mt-10">
+                <label for="obs">OBS. Kuzatuvlarni</label>
+                <textarea class="form-control" rows="3" id="obs" name="obs"></textarea>
+            </div>
 
         </form>
 

@@ -38,12 +38,8 @@
             <p class="mb-2">Responsible for completion: the head of the institutions, coordinator or a person authorized by them</p>
             <p class="mb-2">Approximate average completion time: 40 minutes</p>
 
-            <div class="grid grid-cols-2 gap-4 items-center mt-10">
-                <div>Q1. Completion date of questionnaire</div>
-                <div>
-                    <input type="text" id="q1" name="q1" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
-                </div>
-            </div>
+            <input type="hidden" id="q1" name="q1" />
+
             <div class="grid grid-cols-2 gap-4 items-center mt-4">
                 <div>Q2. Name, patronymics, and surname of the person who filled in the questionnaire</div>
                 <div>
@@ -139,9 +135,9 @@
                         <option value="12">Muruvat house for children with disabilities</option>
                         <option value="13">Family children's home</option>
                         <option value="14">SOS children's villages/families</option>
-                        <option value="15">Children's home (Baby home)</option>
-                        <option value="16">Patronat family</option>
-                        <option value="17">Trusteeship/Guardianship care</option>
+                        <option value="21">Children's home (Baby home)</option>
+                        <option value="22">Patronat family</option>
+                        <option value="23">Trusteeship/Guardianship care</option>
                     </select>
                 </div>
             </div>
@@ -332,7 +328,7 @@
                 </thead>
                 <tbody>
                     <tr class="border-b">
-                        <td class="p-2">NEO1. Entries as transfers from Children's home (Baby home)</td>
+                        <td class="p-2">NEO1. Entries as transfers from Baby home</td>
                         <td class="p-2 text-center">
                             <input type="text" id="neo1_b" name="neo1_b" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block disabled:bg-gray-100 p-2.5 w-24" />
                         </td>
@@ -686,7 +682,7 @@
                         </td>
                     </tr>
                     <tr class="border-b">
-                        <td class="p-2">EXT3. Transfers to Muruvat house for children with disabilities</td>
+                        <td class="p-2">EXT3. Transfers to Muruvvat house for children with disabilities</td>
                         <td class="p-2 text-center">
                             <input type="text" id="ext3_b" name="ext3_b" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 inline-block disabled:bg-gray-100 p-2.5 w-24" />
                         </td>
@@ -825,6 +821,11 @@
                     </tr>
                 </tbody>
             </table>
+
+            <div class="grid mt-10">
+                <label for="obs">OBS. Observations</label>
+                <textarea class="form-control" rows="3" id="obs" name="obs"></textarea>
+            </div>
 
         </form>
 

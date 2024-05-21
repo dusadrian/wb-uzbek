@@ -38,12 +38,8 @@
             <p class="mb-2">{{T0009}}</p>
             <p class="mb-2">{{T0010}}</p>
 
-            <div class="divclass mt-10">
-                <div>{{T0011}}. {{T0012}}</div>
-                <div>
-                    <input type="text" id="q1" name="q1" class="inputclass w-full" />
-                </div>
-            </div>
+            <input type="hidden" id="q1" name="q1" />
+
             <div class="divclass mt-4">
                 <div>{{T0013}}. {{T0014}}</div>
                 <div>
@@ -825,6 +821,11 @@
                     </tr>
                 </tbody>
             </table>
+
+            <div class="grid mt-10">
+                <label for="obs">{{T0197}}. {{T0198}}</label>
+                <textarea class="form-control" rows="3" id="obs" name="obs"></textarea>
+            </div>
 
         </form>
 

@@ -54,56 +54,60 @@ export const instrument6 = {
 
             const reg_codes = Object.keys(regions);
             for (let x = 0; x < regElements.length; x++) {
-                const reg_el = util.htmlElement(regElements[x]);
+                util.resetSelect(regElements[x], "-9", translations['t_choose']);
 
                 for (let i = 0; i < reg_codes.length; i++) {
-                    const option = document.createElement("option");
-                    option.value = reg_codes[i];
-                    option.text = reg_codes[i] + ": " + (regions[reg_codes[i]] as KeyString)[lang];
-                    reg_el.appendChild(option);
+                    util.addOption(
+                        regElements[x],
+                        reg_codes[i],
+                        reg_codes[i] + ": " + (regions[reg_codes[i]] as KeyString)[lang]
+                    );
                 }
-
-                const dis_el = util.htmlElement(disElements[x]);
-                const set_el = util.htmlElement(setElements[x]);
 
                 util.listen(regElements[x], "change", function () {
 
-                    const selectedRegion = reg_el.value;
+                    // if (setElements[x] != "") { // auto-completat deci nu este nevoie
+                    //     util.resetSelect(setElements[x], "-9", translations['t_choose']);
+                    //     instrument.questions[setElements[x]].value = "-7";
+                    // }
+
+                    const selectedRegion = util.htmlElement(regElements[x]).value;
                     if (Number(selectedRegion) > 0) {
                         const dis_codes = regions[selectedRegion].districts;
 
+                        util.resetSelect(disElements[x], "-9", translations['t_choose']);
                         for (let i = 0; i < dis_codes.length; i++) {
-                            const option = document.createElement("option");
-                            option.value = dis_codes[i];
-                            option.text = dis_codes[i] + ": " + (districts[dis_codes[i]] as KeyString)[lang];
-                            dis_el.appendChild(option);
+                            util.addOption(
+                                disElements[x],
+                                dis_codes[i],
+                                dis_codes[i] + ": " + (districts[dis_codes[i]] as KeyString)[lang]
+                            );
                         }
                     }
                 })
 
                 util.listen(disElements[x], "change", function () {
-                    const selectedDistrict = dis_el.value;
+
+                    const selectedDistrict = util.htmlElement(disElements[x]).value;
+                    // util.resetSelect(setElements[x], "-9", translations['t_choose']); // auto-completat deci nu este nevoie
 
                     if (Number(selectedDistrict) > 0) {
-                        const option = document.createElement("option");
-                        option.value = "-9";
-                        option.text = translations['t_choose'];
 
                         const set_codes = districts[selectedDistrict].settlements;
 
                         if (set_codes.length > 0) {
-                            set_el.appendChild(option);
-
                             for (let i = 0; i < set_codes.length; i++) {
-                                const option = document.createElement("option");
-                                option.value = set_codes[i];
-                                option.text = set_codes[i] + ": " + (settlements[set_codes[i]] as KeyString)[lang];
-                                set_el.appendChild(option);
+                                util.addOption(
+                                    setElements[x],
+                                    set_codes[i],
+                                    set_codes[i] + ": " + (settlements[set_codes[i]] as KeyString)[lang]
+                                );
                             }
                         }
                         else {
-                            util.setValue(setElements[x], "--");
                             util.setValue(typeElements[x], districts[selectedDistrict].type);
+                            util.resetSelect(setElements[x], "--", "--");
+                            util.setValue(setElements[x], "--");
                         }
                     }
                 })
@@ -306,7 +310,7 @@ unu_bt.forEach((item) => {
     util.listen(item, 'change', () => {
         if (util.inputsHaveValue(unu_bt)) {
             const tnet_b = util.getInputNumericValue('tnet_b');
-            const message = 'NESTb + NEOb = TNETb';
+            const message = translations["E0170"];
 
             errorHandler.removeError(unu_bt, message)
             if (tnet_b != Number(util.makeInputSumDecimal(unu_b))) {
@@ -324,7 +328,7 @@ unu_gt.forEach((item) => {
     util.listen(item, 'change', () => {
         if (util.inputsHaveValue(unu_gt)) {
             const tnet_g = util.getInputNumericValue('tnet_g');
-            const message = 'NESTg + NEOg = TNETg';
+            const message = translations["E0171"];
 
             errorHandler.removeError(unu_gt, message)
             if (tnet_g != Number(util.makeInputSumDecimal(unu_g))) {
@@ -342,7 +346,7 @@ unu_tt.forEach((item) => {
     util.listen(item, 'change', () => {
         if (util.inputsHaveValue(unu_tt)) {
             const tnet_t = util.getInputNumericValue('tnet_t');
-            const message = 'NEST + NEO = TNET';
+            const message = translations["E0172"];
 
             errorHandler.removeError(unu_tt, message)
             if (tnet_t != Number(util.makeInputSumDecimal(unu_t))) {
@@ -418,8 +422,8 @@ eost_t.forEach((t) => {
 
 
 
-const ext_b = ['ext0_b', 'ext1_b', 'ext2_b', 'ext3_b', 'ext4_b', 'ext5_b', 'ext6_b', 'ext7_b']; // extt_b
-const ext_g = ['ext0_g', 'ext1_g', 'ext2_g', 'ext3_g', 'ext4_g', 'ext5_g', 'ext6_g', 'ext7_g']; // extt_g
+const ext_b =  ['ext0_b', 'ext1_b', 'ext2_b', 'ext3_b', 'ext4_b', 'ext5_b', 'ext6_b', 'ext7_b']; // extt_b
+const ext_g =  ['ext0_g', 'ext1_g', 'ext2_g', 'ext3_g', 'ext4_g', 'ext5_g', 'ext6_g', 'ext7_g']; // extt_g
 const extt_t = ['ext0_t', 'ext1_t', 'ext2_t', 'ext3_t', 'ext4_t', 'ext5_t', 'ext6_t', 'ext7_t']; // extt_t
 
 ext_b.forEach((b) => {
@@ -450,8 +454,8 @@ extt_t.forEach((t) => {
 
 
 
-const tsa_b = ['tsa1_b', 'tsa2_b', 'tsa3_b']; // tsa_b
-const tsa_g = ['tsa1_g', 'tsa2_g', 'tsa3_g']; // tsa_g
+const tsa_b =  ['tsa1_b', 'tsa2_b', 'tsa3_b']; // tsa_b
+const tsa_g =  ['tsa1_g', 'tsa2_g', 'tsa3_g']; // tsa_g
 const tsat_t = ['tsa1_t', 'tsa2_t', 'tsa3_t']; // tsat_t
 
 tsa_b.forEach((b) => {
@@ -488,11 +492,63 @@ final.forEach((item) => {
             const tnet_t = util.getInputNumericValue('tnet_t');
             const next_t = util.getInputNumericValue('next_t');
             const tnr0 = util.getInputNumericValue('tnr0');
-            const message = 'TNR0 + TNET - NEXT = TNR1';
+            const message = translations["E0173"];
 
             errorHandler.removeError(final, message)
             if (tnr1_t != (tnr0 + tnet_t - next_t)) {
                 errorHandler.addError(final, message);
+            }
+        }
+    });
+});
+
+
+// eost_b + extt_b + tsa1_b + tsa2_b + tsa3_b = next_b
+const e0174 = ['eost_b', 'extt_b', 'tsa1_b', 'tsa2_b', 'tsa3_b'];
+const e0174t = [...e0174, 'next_b'];
+e0174t.forEach((item) => {
+    util.listen(item, 'change', () => {
+        if (util.inputsHaveValue(e0174t)) {
+            const next_b = util.getInputNumericValue('next_b');
+            const message = translations["E0174"];
+
+            errorHandler.removeError(e0174t, message)
+            if (next_b != Number(util.makeInputSumDecimal(e0174))) {
+                errorHandler.addError(e0174t, message);
+            }
+        }
+    });
+});
+
+// eost_g + extt_g + tsa1_g + tsa2_g + tsa3_g = next_g
+const e0175 = ['eost_g', 'extt_g', 'tsa1_g', 'tsa2_g', 'tsa3_g'];
+const e0175t = [...e0175, 'next_g'];
+e0175t.forEach((item) => {
+    util.listen(item, 'change', () => {
+        if (util.inputsHaveValue(e0175t)) {
+            const next_g = util.getInputNumericValue('next_g');
+            const message = translations["E0175"];
+
+            errorHandler.removeError(e0175t, message)
+            if (next_g != Number(util.makeInputSumDecimal(e0175))) {
+                errorHandler.addError(e0175t, message);
+            }
+        }
+    });
+});
+
+// eost_t + extt_t + tsa1_t + tsa2_t + tsa3_t = next_t
+const e0176 = ['eost_t', 'extt_t', 'tsa1_t', 'tsa2_t', 'tsa3_t'];
+const e0176t = [...e0176, 'next_t'];
+e0176t.forEach((item) => {
+    util.listen(item, 'change', () => {
+        if (util.inputsHaveValue(e0176t)) {
+            const next_t = util.getInputNumericValue('next_t');
+            const message = translations["E0176"];
+
+            errorHandler.removeError(e0176t, message)
+            if (next_t != Number(util.makeInputSumDecimal(e0176))) {
+                errorHandler.addError(e0176t, message);
             }
         }
     });
