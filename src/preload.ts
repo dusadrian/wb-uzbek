@@ -100,6 +100,9 @@ window.addEventListener("DOMContentLoaded", () => {
         case 'regional/02_add_inson_service.html':
             addInson();
             break;
+        case 'local/02_add_inson_service.html':
+            addInsonLocal();
+            break;
         case 'regional/02_institutions.html':
             institutionsR();
             break;
@@ -394,6 +397,18 @@ const addInson = () => {
     translatePage();
     const importFile = async () => {
         return await import("./pages/regional/02_add_inson_service");
+    };
+    importFile().then(result => result.addInson.init().catch(error => {
+        console.log(error);
+    }));
+};
+const addInsonLocal = () => {
+
+    topMenu('local/01_dashboard');
+    
+    translatePage();
+    const importFile = async () => {
+        return await import("./pages/local/02_add_inson_service");
     };
     importFile().then(result => result.addInson.init().catch(error => {
         console.log(error);

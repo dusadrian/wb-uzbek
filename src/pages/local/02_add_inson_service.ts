@@ -26,6 +26,7 @@ const addObject: DI.AddInsonServiceObjInterface = {
     activcode3: null,
     activcode4: null,
     activcode5: null,
+    auth_code: '',
 }
 
 export const addInson = {
@@ -116,6 +117,8 @@ export const addInson = {
             addObject.capacity = (<HTMLInputElement>document.getElementById('capacity')).value.trim();
             addObject.children = (<HTMLInputElement>document.getElementById('children')).value.trim();
             addObject.leavers = (<HTMLInputElement>document.getElementById('leavers')).value.trim();
+
+            addObject.auth_code = (document.getElementById('auth_code') as HTMLInputElement).value.trim();
 
 
             if(addObject.code === '') {
@@ -225,9 +228,22 @@ export const addInson = {
                 return;
             }
 
+            if (addObject.auth_code === '') {
+                ipcRenderer.send('showDialogMessage', {
+                    type: 'warning',
+                    message: 'Please fill all fields'
+                });
+                // scroll into view auth_code
+                document.getElementById('auth_code').scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'center'
+                });
+                document.getElementById('auth_code').focus();
+                return;
+            }
 
 
-            ipcRenderer.send('saveInsonService', addObject);
+            ipcRenderer.send('saveInsonServiceLocal', addObject);
         })
 
 

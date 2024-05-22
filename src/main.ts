@@ -960,7 +960,6 @@ const insonRDetails = (code: string) => {
     });
 }
 ipcMain.on('updateServiceByRegional', (_event, args) => {
-
     if (args.type === 'inson') {
         database.updateInson(args).then(() => {
             dialog.showMessageBox(mainWindow, {
@@ -982,6 +981,16 @@ ipcMain.on('updateServiceByRegional', (_event, args) => {
     }
 });
 // Add INSON service
+ipcMain.on('addInsonServiceLocal', (_event, args) => {
+    mainWindow.loadURL("file://" + path.join(__dirname, "../src/pages/local/02_add_inson_service.html"));
+    mainWindow.webContents.once("did-finish-load", () => {
+        mainWindow.webContents.send("inson", {
+            code: args.code,
+            name: args.name,
+            region: appSession.userData.region_code,
+        });
+    });
+});
 ipcMain.on('addInsonService', (_event, args) => {
     mainWindow.loadURL("file://" + path.join(__dirname, "../src/pages/regional/02_add_inson_service.html"));
     mainWindow.webContents.once("did-finish-load", () => {
@@ -1008,7 +1017,57 @@ ipcMain.on('saveInsonService', (_event, args: DI.AddInsonServiceObjInterface) =>
                     type: 'info',
                     message: i18n.__('Service added.'),
                 }).then(() => {
-                    insonRDetails(args.code);
+                    insonRDetails(args.inson);
+                });
+            });
+        });
+    });
+});
+ipcMain.on('saveInsonServiceLocal', (_event, args: DI.AddInsonServiceObjInterface) => {
+
+    if (!constant.INSON.includes(appSession.userData.service_type_code)) {
+        dialog.showMessageBox(mainWindow, {
+            type: 'warning',
+            message: i18n.__('Service type error.'),
+        });
+        return;
+    }
+
+    if (!args.auth_code || args.auth_code === '') {
+        dialog.showMessageBox(mainWindow, {
+            type: 'warning',
+            message: i18n.__('Authorization code missing.'),
+        });
+        return;
+    }
+    database.checkAuthCode(appSession.userData.institution_code, args.auth_code).then((result) => {
+
+        if (result.length === 0) {
+            dialog.showMessageBox(mainWindow, {
+                type: 'warning',
+                message: i18n.__('Invalid authorization code.'),
+            });
+            return;
+        }
+
+        database.checkServiceCode(args.code, args.region).then((result) => {
+            if (result.length === 0) {
+                dialog.showMessageBox(mainWindow, {
+                    type: 'warning',
+                    message: i18n.__('The provided service code is wrong.'),
+                });
+                return;
+            }
+            database.addInsonService(args).then(() => {
+                database.updateInsonServiceCodes(args.code).then(() => {
+                    database.updateAuthCode(appSession.userData.institution_code, args.auth_code).then(() => {
+                        dialog.showMessageBox(mainWindow, {
+                            type: 'info',
+                            message: i18n.__('Service added.'),
+                        }).then(() => {
+                            goToLocalDashboard();
+                        });
+                    });
                 });
             });
         });

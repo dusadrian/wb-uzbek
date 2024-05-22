@@ -18,6 +18,8 @@ const updateObj = {} as DI.UpdateInsonObjInterface;
 let services: DI.Institution[] = [];
 
 const appSession = JSON.parse(sessionStorage.getItem('appSession'));
+let insonCode = '';
+let insonName = '';
 
 export const institutionDetails = {
     init: async () => {
@@ -31,12 +33,16 @@ export const institutionDetails = {
             updateObj.institutionUUID = institution.uuid;
             updateObj.children_fth = institution.children_fth;
             updateObj.leavers_fth = institution.leavers_fth;
+            insonCode = institution.code;
             if (appSession.language === 'uz') {
                 (document.getElementById('institution_name') as HTMLDivElement).innerText = institution.name_uz;
+                insonName = institution.name_uz;
             } else if (appSession.language === 'ru') {
                 (document.getElementById('institution_name') as HTMLDivElement).innerText = institution.name_ru;
+                insonName = institution.name_ru;
             } else { // fallback to english
                 (document.getElementById('institution_name') as HTMLDivElement).innerText = institution.name_en;
+                insonName = institution.name_en;
             }
             (document.getElementById('pf') as HTMLInputElement).value = institution.pf;
 
@@ -130,6 +136,20 @@ export const institutionDetails = {
             }
 
             ipcRenderer.send('updateInson', updateObj);
+        });
+
+        (<HTMLButtonElement>document.getElementById('addInsonService')).addEventListener('click', () => {
+            if (insonCode !== '') {
+                ipcRenderer.send('addInsonServiceLocal', {
+                    code: insonCode,
+                    name: insonName
+                });
+            } else {
+                ipcRenderer.send('showDialogMessage', {
+                    type: 'warning',
+                    message: 'Somethig got wrong, please try again later.'
+                });
+            }
         });
     }
 }

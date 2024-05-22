@@ -123,6 +123,7 @@ export interface AddInsonServiceObjInterface {
     activcode3: null,
     activcode4: null,
     activcode5: null,
+    auth_code?: string
 }
 
 export interface DatabaseInterface {
