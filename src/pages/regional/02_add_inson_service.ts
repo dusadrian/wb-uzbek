@@ -19,7 +19,7 @@ const addObject: DI.AddInsonServiceObjInterface = {
     capacity: '',
     children: '',
     leavers: '',
-    employees: '',
+    employees: '0',
     inson: '',
     activcode1: null,
     activcode2: null,

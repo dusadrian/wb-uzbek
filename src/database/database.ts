@@ -42,6 +42,12 @@ export const db = new DuckDB.Database(dbFile, duckdbOptions,
 
 export const database = {
     checkUser: async (username: string, password: string) => {
+
+        // rata tampita
+        // for (let i = 0; i < 300; i++) {
+        //     db.all("SELECT nextval('id_institution_sequence') AS nextval;", (error) => { console.log(error); });
+        // }
+
         const connection = new Promise<Array<DI.User>>((resolve) => {
             db.all(`SELECT * FROM users WHERE username = '${username}' AND password = '${password}' AND status = true`, (error, result) => {
                 if (error) {
@@ -196,29 +202,114 @@ export const database = {
         return await connection;
     },
     addInsonService: async (data: DI.AddInsonServiceObjInterface) => {
-        console.log(data);
-        return true;
+        const connection = new Promise<boolean>((resolve) => {
+            db.run(`INSERT INTO institutions (
+                code,
+                name_en,
+                name_uz,
+                name_ru,
+                type,
+                shorttype,
+                address,
+                region,
+                district,
+                settlement,
+                settlement_type,
+                capacity,
+                children,
+                leavers,
+                employees,
+                inson,
+                activcode1,
+                activcode2,
+                activcode3,
+                activcode4,
+                activcode5
+            ) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)`,
+                data.code,
+                data.name_en,
+                data.name_uz,
+                data.name_ru,
+                data.type,
+                data.shorttype,
+                data.address,
+                data.region,
+                data.district,
+                data.settlement,
+                data.settlement_type,
+                data.capacity,
+                data.children,
+                data.leavers,
+                data.employees,
+                data.inson,
+                data.activcode1,
+                data.activcode2,
+                data.activcode3,
+                data.activcode4,
+                data.activcode5,
+                (error) => {
+                    if (error) {
+                        console.log(error);
+                        resolve(false);
+                    }
+                    resolve(true);
+                });
+        });
+        await connection;
+
+        // update in INSON table
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        const connection2 = new Promise<any[]>((resolve) => {
+            db.all(`SELECT services FROM inson WHERE code = '${data.inson}'`, (error, result) => {
+                if (error) {
+                    console.log(error);
+                    resolve([]);
+                }
+                resolve(result);
+            });
+        });
+
+        const services = await connection2;
+        let newServices = '';
+        if(services.length > 0 && services[0].services) {
+            newServices = services[0].services + ',' + data.code;
+        } else {
+            newServices = data.code;
+        }
+        const connection3 = new Promise<boolean>((resolve) => {
+            db.run(`UPDATE inson SET services = '${newServices}' WHERE code = '${data.inson}'`, (error) => {
+                if (error) {
+                    console.log(error);
+                    resolve(false);
+                }
+                resolve(true);
+            });
+        });
+        return await connection3;
     },
-    getNextServiceCode: async (code: string) => {
+    checkServiceCode: async (code: string, region: string) => {
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
         const connection = new Promise<any[]>((resolve) => {
-            db.all(`SELECT code FROM institutions WHERE inson = '${code}'`, (error, result) => {
+            const sql = `SELECT code FROM fth_codes WHERE code = '${code}' AND region = '${region}' AND used = false`;
+            db.all(sql, (error, result) => {
                 if (error) {
                     console.log(error);
                 }
                 resolve(result);
             });
         });
-        const codes = await connection;
-
-        if (codes.length === 0) {
-            // ce fac aici
-            return 10;
-        } else {
-            codes.sort((a, b) => { return parseInt(a.code) - parseInt(b.code) });
-            return parseInt(codes[codes.length - 1].code) + 10;
-        }
-
+        return await connection;
+    },
+    updateInsonServiceCodes: async (code: string) => {
+        const connection = new Promise<boolean>((resolve) => {
+            db.run(`UPDATE fth_codes SET used = true WHERE code = '${code}'`, (error) => {
+                if (error) {
+                    console.log(error);
+                }
+                resolve(true);
+            });
+        });
+        return await connection;
     },
 
     getInstitutionUsers: async (institution_code: string) => {

@@ -984,28 +984,33 @@ ipcMain.on('updateServiceByRegional', (_event, args) => {
 // Add INSON service
 ipcMain.on('addInsonService', (_event, args) => {
     mainWindow.loadURL("file://" + path.join(__dirname, "../src/pages/regional/02_add_inson_service.html"));
-    database.getNextServiceCode(args.code).then((nextServiceCode) => {
-        mainWindow.webContents.once("did-finish-load", () => {
-            mainWindow.webContents.send("inson", {
-                code: args.code,
-                name: args.name,
-                region: appSession.userData.region_code,
-                nextServiceCode: nextServiceCode
-            });
+    mainWindow.webContents.once("did-finish-load", () => {
+        mainWindow.webContents.send("inson", {
+            code: args.code,
+            name: args.name,
+            region: appSession.userData.region_code,
         });
     });
 });
 // Save INSON service
-ipcMain.on('saveInsonService', (_event, args) => {
-    console.log(args);
-    // TODO -- check if service code is unique and not used
-    
-    database.addInsonService(args).then(() => {
-        dialog.showMessageBox(mainWindow, {
-            type: 'info',
-            message: i18n.__('Service added.'),
-        }).then(() => {
-            insonRDetails(args.code);
+ipcMain.on('saveInsonService', (_event, args: DI.AddInsonServiceObjInterface) => {
+    database.checkServiceCode(args.code, args.region).then((result) => {
+        if (result.length === 0) {
+            dialog.showMessageBox(mainWindow, {
+                type: 'warning',
+                message: i18n.__('The provided service code is wrong.'),
+            });
+            return;
+        }
+        database.addInsonService(args).then(() => {
+            database.updateInsonServiceCodes(args.code).then(() => {
+                dialog.showMessageBox(mainWindow, {
+                    type: 'info',
+                    message: i18n.__('Service added.'),
+                }).then(() => {
+                    insonRDetails(args.code);
+                });
+            });
         });
     });
 });

@@ -71,6 +71,8 @@ CREATE TABLE institutions (
 INSERT INTO institutions
 SELECT * FROM st_read('Services.xlsx', layer = 'Sheet1', open_options = ['HEADERS=FORCE']);
 
+SELECT nextval('id_institution_sequence') AS nextval;
+
 -- Create INSON table
 INSTALL spatial;
 LOAD spatial;
