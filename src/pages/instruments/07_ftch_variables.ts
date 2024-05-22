@@ -621,7 +621,7 @@ export const questions: QuestionObjectType = {
     },
     'fc4_c2d': {
         name: 'fc4_c2d',
-        type: 'select',
+        type: 'radio',
         value: '-7',
         disabled: true,
         hidden: false,
