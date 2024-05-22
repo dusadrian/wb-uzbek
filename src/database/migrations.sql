@@ -386,6 +386,18 @@ INSERT INTO auth_codes
 SELECT * FROM st_read('authentication_codes.xlsx', layer = 'auth_codes', open_options = ['HEADERS=FORCE']);
 
 
+DROP TABLE fth_codes;
+CREATE TABLE fth_codes (
+    region VARCHAR NOT NULL,
+    code VARCHAR NOT NULL,
+    used BOOLEAN DEFAULT FALSE,
+);
+INSTALL spatial;
+LOAD spatial;
+INSERT INTO fth_codes
+SELECT * FROM st_read('fth_codes.xlsx', layer = 'fth_codes', open_options = ['HEADERS=FORCE']);
+
+
 -- clear all instruments data
 DELETE FROM instrument_cpis;
 DELETE FROM values_cpis;
