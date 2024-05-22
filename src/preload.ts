@@ -97,6 +97,9 @@ window.addEventListener("DOMContentLoaded", () => {
         case 'regional/02_institution_details_inson.html':
             institutionRDetailsInson();
             break;
+        case 'regional/02_add_inson_service.html':
+            addInson();
+            break;
         case 'regional/02_institutions.html':
             institutionsR();
             break;
@@ -384,6 +387,19 @@ const insonsR = () => {
         console.log(error);
     }));
 };
+const addInson = () => {
+
+    topMenu('regional/02_insons');
+    
+    translatePage();
+    const importFile = async () => {
+        return await import("./pages/regional/02_add_inson_service");
+    };
+    importFile().then(result => result.addInson.init().catch(error => {
+        console.log(error);
+    }));
+};
+
 const instrumentInstitutionR = () => {
     
     topMenu('regional/01_dashboard');

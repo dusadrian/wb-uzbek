@@ -195,6 +195,31 @@ export const database = {
         });
         return await connection;
     },
+    addInsonService: async (data: DI.AddInsonServiceObjInterface) => {
+        console.log(data);
+        return true;
+    },
+    getNextServiceCode: async (code: string) => {
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        const connection = new Promise<any[]>((resolve) => {
+            db.all(`SELECT code FROM institutions WHERE inson = '${code}'`, (error, result) => {
+                if (error) {
+                    console.log(error);
+                }
+                resolve(result);
+            });
+        });
+        const codes = await connection;
+
+        if (codes.length === 0) {
+            // ce fac aici
+            return 10;
+        } else {
+            codes.sort((a, b) => { return parseInt(a.code) - parseInt(b.code) });
+            return parseInt(codes[codes.length - 1].code) + 10;
+        }
+
+    },
 
     getInstitutionUsers: async (institution_code: string) => {
         const connection = new Promise<Array<DI.User>>((resolve) => {

@@ -101,6 +101,29 @@ export interface UpdateServiceObjInterface {
     leavers: string;
     type?: string;
 }
+export interface AddInsonServiceObjInterface {
+    code: string,
+    name_en: string,
+    name_uz: string,
+    name_ru: string,
+    type: string,
+    shorttype: string,
+    address: string,
+    region: string,
+    district: string,
+    settlement: string,
+    settlement_type: string,
+    capacity: number,
+    children: number,
+    leavers: number,
+    employees: number,
+    inson: string,
+    activcode1: null,
+    activcode2: null,
+    activcode3: null,
+    activcode4: null,
+    activcode5: null,
+}
 
 export interface DatabaseInterface {
     checkUser: (username: string, password: string) => Promise<Array<User>>;

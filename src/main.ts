@@ -19,6 +19,7 @@ if (process.env.NODE_ENV === "development") {
 
 // language
 import { I18n } from "i18n";
+import { data } from "jquery";
 const i18n = new I18n({
     locales: ['en', 'uz', 'ru'],
     directory: path.join(__dirname, '../src/locales'),
@@ -980,6 +981,32 @@ ipcMain.on('updateServiceByRegional', (_event, args) => {
         });
     }
 });
+// Add INSON service
+ipcMain.on('addInsonService', (_event, args) => {
+    mainWindow.loadURL("file://" + path.join(__dirname, "../src/pages/regional/02_add_inson_service.html"));
+    database.getNextServiceCode(args.code).then((nextServiceCode) => {
+        mainWindow.webContents.once("did-finish-load", () => {
+            mainWindow.webContents.send("inson", {
+                code: args.code,
+                name: args.name,
+                region: appSession.userData.region_code,
+                nextServiceCode: nextServiceCode
+            });
+        });
+    });
+});
+// Save INSON service
+ipcMain.on('saveInsonService', (_event, args) => {
+    database.addInsonService(args).then(() => {
+        dialog.showMessageBox(mainWindow, {
+            type: 'info',
+            message: i18n.__('Service added.'),
+        }).then(() => {
+            insonRDetails(args.institution_code);
+        });
+    });
+});
+
 
 // Users
 const localUsers = () => {
