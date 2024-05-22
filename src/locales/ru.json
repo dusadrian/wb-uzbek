@@ -120,6 +120,7 @@
 	"Invalid authorization code.": "Invalid authorization code.",
 	"must_be_earlier": "Дата в X должна быть раньше, чем Y",
 	"must_be_later_or_equal": "Дата в Y должна быть позже или равна дате в X",
+	"must_be_later": "Дата в Y должна быть позже даты в X",
 	"t_select_service_from_list": "Please select a service from the list",
 	"t_enable_user": "This user is disabled. Please contact the regional coordinator for an authorization code to enable it.",
 	"t_enable_user_button": "Enable user",

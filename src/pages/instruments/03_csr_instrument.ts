@@ -272,7 +272,7 @@ e2e7.forEach(item => {
 
         if (util.inputsHaveValue(e2e7)) {
 
-            const message = translations['must_be_earlier'].replace("X", "e2").replace("Y", "e7");
+            const message = translations['must_be_later'].replace("X", "E2").replace("Y", "E7");
 
             errorHandler.removeError(e2e7, message);
 
@@ -284,7 +284,7 @@ e2e7.forEach(item => {
 })
 
 util.listen("j5", "myChange", () => {
-    const message = "J5 < 60";
+    const message = "J5: 0 - 60";
     errorHandler.removeError("j5", message);
     if (Number(instrument.questions['j5'].value) > 168) {
         errorHandler.addError("j5", message);
