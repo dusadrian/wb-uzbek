@@ -216,8 +216,6 @@ export const instrument1 = {
                     );
                 }
 
-                const set_el = util.htmlElement(setElements[x]);
-
                 util.listen(regElements[x], "change", function () {
 
                     if (regElements[x] == "sa5r") {
@@ -268,7 +266,7 @@ export const instrument1 = {
 
                         if (!instrument.questions[setElements[x]].readonly) {
                             instrument.questions[setElements[x]].skip = false;
-                            set_el.disabled = false;
+                            util.htmlElement(setElements[x]).disabled = false;
                         }
 
                         if (Number(selectedDistrict) > 0) {
@@ -283,14 +281,13 @@ export const instrument1 = {
                                         set_codes[i] + ": " + (settlements[set_codes[i]] as KeyString)[lang]
                                     );
                                 }
-                            }
-                            else {
+                            } else {
                                 if (typeElements[x] != "") {
                                     util.setValue(typeElements[x], districts[selectedDistrict].type);
                                 }
                                 instrument.questions[setElements[x]].skip = true;
                                 instrument.questions[setElements[x]].value = '-7';
-                                set_el.disabled = true;
+                                util.htmlElement(setElements[x]).disabled = true;
                             }
                         }
                     }

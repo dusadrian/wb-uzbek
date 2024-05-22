@@ -38,21 +38,21 @@ let institutionCode = '';
 let userRole = '';
 let filters: DI.FiltersInterface;
 
-const regElements = ["reg", "pf1a"];
-const disElements = ["dis", "pf1b"];
-const setElements = ["", "pf1c"];
-const typeElements = ["", "pf1d"];
+const regElements =  ["reg", "pf1a"];
+const disElements =  ["dis", "pf1b"];
+const setElements =  ["",    "pf1c"];
+const typeElements = ["",    "pf1d"];
 
 const general_dates = [
     'ig5' // 'data',
 ]
 
 const admission_dates = [
-    'fc4_c1c', 'fc4_c2c', 'fc4_c3c', 'fc4_c4c', 'fc4_c5c'
+    'fc4_c1c', 'fc4_c2c', 'fc4_c3c', 'fc4_c4c', 'fc4_c5c', 'fc4_c6c', 'fc4_c7c', 'fc4_c8c', 'fc4_c9c', 'fc4_c10c'
 ]
 
 const exit_dates = [
-    'fc4_c1f', 'fc4_c2f', 'fc4_c3f', 'fc4_c4f', 'fc4_c5f'
+    'fc4_c1f', 'fc4_c2f', 'fc4_c3f', 'fc4_c4f', 'fc4_c5f', 'fc4_c6f', 'fc4_c7f', 'fc4_c8f', 'fc4_c9f', 'fc4_c10f'
 ]
 
 const date_elements = [...general_dates, ...admission_dates, ...exit_dates];
@@ -117,77 +117,64 @@ export const instrument8 = {
 
             const reg_codes = Object.keys(regions);
             for (let x = 0; x < regElements.length; x++) {
-                const reg_el = util.htmlElement(regElements[x]);
-
-                reg_el.innerHTML = "";
-                const option = document.createElement("option");
-                option.value = "-9";
-                option.text = translations['t_choose'];
-                reg_el.appendChild(option);
+                util.resetSelect(regElements[x], "-9", translations['t_choose']);
 
                 for (let i = 0; i < reg_codes.length; i++) {
-                    const option = document.createElement("option");
-                    option.value = reg_codes[i];
-                    option.text = reg_codes[i] + ": " + (regions[reg_codes[i]] as KeyString)[lang];
-                    reg_el.appendChild(option);
+                    util.addOption(
+                        regElements[x],
+                        reg_codes[i],
+                        reg_codes[i] + ": " + (regions[reg_codes[i]] as KeyString)[lang]
+                    );
                 }
 
-                const dis_el = util.htmlElement(disElements[x]);
-                const set_el = util.htmlElement(setElements[x]);
-
                 util.listen(regElements[x], "change", function () {
+                    console.log(regElements[x]);
 
                     if (setElements[x] != "") {
-                        set_el.innerHTML = "";
+                        util.resetSelect(setElements[x], "-9", translations['t_choose']);
+                        instrument.questions[setElements[x]].value = "-7";
                     }
 
-                    const selectedRegion = reg_el.value;
+                    const selectedRegion = util.htmlElement(regElements[x]).value;
                     if (Number(selectedRegion) > 0) {
                         const dis_codes = regions[selectedRegion].districts;
 
-                        const option = document.createElement("option");
-                        option.value = "-9";
-                        option.text = translations['t_choose'];
-                        dis_el.innerHTML = "";
-                        dis_el.appendChild(option);
-
+                        util.resetSelect(disElements[x], "-9", translations['t_choose']);
                         for (let i = 0; i < dis_codes.length; i++) {
-                            const option = document.createElement("option");
-                            option.value = dis_codes[i];
-                            option.text = dis_codes[i] + ": " + (districts[dis_codes[i]] as KeyString)[lang];
-                            dis_el.appendChild(option);
+                            util.addOption(
+                                disElements[x],
+                                dis_codes[i],
+                                dis_codes[i] + ": " + (districts[dis_codes[i]] as KeyString)[lang]
+                            );
                         }
                     }
                 })
 
                 util.listen(disElements[x], "change", function () {
-                    const selectedDistrict = dis_el.value;
+                    const selectedDistrict = util.htmlElement(disElements[x]).value;
 
                     if (setElements[x] != "") {
-                        instrument.questions[setElements[x]].skip = false;
-                        util.htmlElement(setElements[x]).disabled = false;
-                        set_el.innerHTML = "";
-                    }
 
-                    if (Number(selectedDistrict) > 0) {
-                        const option = document.createElement("option");
-                        option.value = "-9";
-                        option.text = translations['t_choose'];
+                        util.resetSelect(setElements[x], "-9", translations['t_choose']);
 
-                        if (setElements[x] != "") {
+                        if (!instrument.questions[setElements[x]].readonly) {
+                            instrument.questions[setElements[x]].skip = false;
+                            util.htmlElement(setElements[x]).disabled = false;
+                        }
+
+                        if (Number(selectedDistrict) > 0) {
+
                             const set_codes = districts[selectedDistrict].settlements;
 
                             if (set_codes.length > 0) {
-                                set_el.appendChild(option);
-
                                 for (let i = 0; i < set_codes.length; i++) {
-                                    const option = document.createElement("option");
-                                    option.value = set_codes[i];
-                                    option.text = set_codes[i] + ": " + (settlements[set_codes[i]] as KeyString)[lang];
-                                    set_el.appendChild(option);
+                                    util.addOption(
+                                        setElements[x],
+                                        set_codes[i],
+                                        set_codes[i] + ": " + (settlements[set_codes[i]] as KeyString)[lang]
+                                    );
                                 }
-                            }
-                            else {
+                            } else {
                                 if (typeElements[x] != "") {
                                     util.setValue(typeElements[x], districts[selectedDistrict].type);
                                 }
@@ -197,6 +184,7 @@ export const instrument8 = {
                             }
                         }
                     }
+
                 })
             }
 
@@ -210,9 +198,16 @@ export const instrument8 = {
                 instrumentID = parseInt(args.id);
 
                 for (const item of args.questions) {
-                    instrument.seteazaValoareElement(item.variable, item.value);
-                }
 
+                    const index = [...regElements, ...disElements].indexOf(item.variable)
+                    // regiunea este intotdeauna inaintea districtului
+                    // un event de change pe regiune populeaza districtul, iar un event
+                    // de change pe district populeaza settlement-ul
+                    instrument.seteazaValoareElement(item.variable, item.value);
+                    if (index >= 0) {
+                        util.trigger(item.variable, "change");
+                    }
+                }
             } else {
                 if (args.userData) {
                     if (inson_user) {
@@ -322,8 +317,31 @@ pf.forEach((el) => {
             if (error) {
                 errorHandler.addError(pf, message);
             }
-
-            return error;
         }
     });
 });
+
+
+
+util.listen("ex2", "change", () => {
+    const message = "EX2 <= 10";
+    errorHandler.removeError("ex2", message);
+    if (Number(util.htmlElement("ex2").value) > 10) {
+        errorHandler.addError("ex2", message);
+        setTimeout(() => {
+            util.trigger("ex1-1", "change");
+        }, 100);
+    }
+})
+
+
+util.listen("pf2", "change", () => {
+    const message = "PF2 <= 10";
+    errorHandler.removeError("pf2", message);
+    if (Number(util.htmlElement("pf2").value) > 10) {
+        errorHandler.addError("pf2", message);
+        setTimeout(() => {
+            util.trigger("pf1c", "change");
+        }, 100);
+    }
+})

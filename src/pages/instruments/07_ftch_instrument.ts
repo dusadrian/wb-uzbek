@@ -44,10 +44,10 @@ const admission_dates = [
     'fc4_c1c', 'fc4_c2c', 'fc4_c3c', 'fc4_c4c', 'fc4_c5c', 'fc4_c6c', 'fc4_c7c', 'fc4_c8c', 'fc4_c9c', 'fc4_c10c'
 ]
 
-const regElements = ["reg", "ifp1a"];
-const disElements = ["dis", "ifp1b"];
-const setElements = ["", "ifp1c"];
-const typeElements = ["", "ifp1d"];
+const regElements =  ["reg", "ifp1a"];
+const disElements =  ["dis", "ifp1b"];
+const setElements =  ["",    "ifp1c"];
+const typeElements = ["",    "ifp1d"];
 
 let regionCode = '';
 let userUUID = '';
@@ -133,77 +133,64 @@ export const instrument7 = {
 
             const reg_codes = Object.keys(regions);
             for (let x = 0; x < regElements.length; x++) {
-                const reg_el = util.htmlElement(regElements[x]);
-
-                reg_el.innerHTML = "";
-                const option = document.createElement("option");
-                option.value = "-9";
-                option.text = translations['t_choose'];
-                reg_el.appendChild(option);
+                util.resetSelect(regElements[x], "-9", translations['t_choose']);
 
                 for (let i = 0; i < reg_codes.length; i++) {
-                    const option = document.createElement("option");
-                    option.value = reg_codes[i];
-                    option.text = reg_codes[i] + ": " + (regions[reg_codes[i]] as KeyString)[lang];
-                    reg_el.appendChild(option);
+                    util.addOption(
+                        regElements[x],
+                        reg_codes[i],
+                        reg_codes[i] + ": " + (regions[reg_codes[i]] as KeyString)[lang]
+                    );
                 }
 
-                const dis_el = util.htmlElement(disElements[x]);
-                const set_el = util.htmlElement(setElements[x]);
-
                 util.listen(regElements[x], "change", function () {
+                    console.log(regElements[x]);
 
                     if (setElements[x] != "") {
-                        set_el.innerHTML = "";
+                        util.resetSelect(setElements[x], "-9", translations['t_choose']);
+                        instrument.questions[setElements[x]].value = "-7";
                     }
 
-                    const selectedRegion = reg_el.value;
+                    const selectedRegion = util.htmlElement(regElements[x]).value;
                     if (Number(selectedRegion) > 0) {
                         const dis_codes = regions[selectedRegion].districts;
 
-                        const option = document.createElement("option");
-                        option.value = "-9";
-                        option.text = translations['t_choose'];
-                        dis_el.innerHTML = "";
-                        dis_el.appendChild(option);
-
+                        util.resetSelect(disElements[x], "-9", translations['t_choose']);
                         for (let i = 0; i < dis_codes.length; i++) {
-                            const option = document.createElement("option");
-                            option.value = dis_codes[i];
-                            option.text = dis_codes[i] + ": " + (districts[dis_codes[i]] as KeyString)[lang];
-                            dis_el.appendChild(option);
+                            util.addOption(
+                                disElements[x],
+                                dis_codes[i],
+                                dis_codes[i] + ": " + (districts[dis_codes[i]] as KeyString)[lang]
+                            );
                         }
                     }
                 })
 
                 util.listen(disElements[x], "change", function () {
-                    const selectedDistrict = dis_el.value;
+                    const selectedDistrict = util.htmlElement(disElements[x]).value;
 
                     if (setElements[x] != "") {
-                        instrument.questions[setElements[x]].skip = false;
-                        util.htmlElement(setElements[x]).disabled = false;
-                        set_el.innerHTML = "";
-                    }
 
-                    if (Number(selectedDistrict) > 0) {
-                        const option = document.createElement("option");
-                        option.value = "-9";
-                        option.text = translations['t_choose'];
+                        util.resetSelect(setElements[x], "-9", translations['t_choose']);
 
-                        if (setElements[x] != "") {
+                        if (!instrument.questions[setElements[x]].readonly) {
+                            instrument.questions[setElements[x]].skip = false;
+                            util.htmlElement(setElements[x]).disabled = false;
+                        }
+
+                        if (Number(selectedDistrict) > 0) {
+
                             const set_codes = districts[selectedDistrict].settlements;
 
                             if (set_codes.length > 0) {
-                                set_el.appendChild(option);
-
                                 for (let i = 0; i < set_codes.length; i++) {
-                                    const option = document.createElement("option");
-                                    option.value = set_codes[i];
-                                    option.text = set_codes[i] + ": " + (settlements[set_codes[i]] as KeyString)[lang];
-                                    set_el.appendChild(option);
+                                    util.addOption(
+                                        setElements[x],
+                                        set_codes[i],
+                                        set_codes[i] + ": " + (settlements[set_codes[i]] as KeyString)[lang]
+                                    );
                                 }
-                            }
-                            else {
+                            } else {
                                 if (typeElements[x] != "") {
                                     util.setValue(typeElements[x], districts[selectedDistrict].type);
                                 }
@@ -213,6 +200,7 @@ export const instrument7 = {
                             }
                         }
                     }
+
                 })
             }
 
@@ -229,8 +217,10 @@ export const instrument7 = {
                     // regiunea este intotdeauna inaintea districtului
                     // un event de change pe regiune populeaza districtul, iar un event
                     // de change pe district populeaza settlement-ul
-                    // trigger change event
-                    instrument.seteazaValoareElement(item.variable, item.value, index >= 0);
+                    instrument.seteazaValoareElement(item.variable, item.value);
+                    if (index >= 0) {
+                        util.trigger(item.variable, "change");
+                    }
                 }
             }
 

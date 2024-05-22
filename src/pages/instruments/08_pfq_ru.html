@@ -51,21 +51,18 @@
                     </select>
                 </div>
             </div>
+
+            <input type="hidden" id="data" name="data" />
+
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
-                <div>DATA. Дата заполнения анкеты</div>
-                <div>
-                    <input type="text" id="data" name="data" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
-                </div>
-            </div>
-            <div class="grid grid-cols-2 gap-4 items-center mt-6">
-                <div>Q2: Имя, отчество и фамилия лица, заполнившего анкету</div>
+                <div>Q2. Имя, отчество и фамилия лица, заполнившего анкету</div>
                 <div>
                     <input type="text" id="q2" name="q2" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
                 </div>
             </div>
 
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
-                <div>Название учреждения, в котором работает это лицо</div>
+                <div>INST. Название учреждения, в котором работает это лицо</div>
                 <div>
                     <input type="text" id="inst" name="inst" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
                 </div>
@@ -245,7 +242,7 @@
                     </div>
                     <div class="flex items-center">
                         <input id="ig7-4" type="radio" value="3" name="ig7" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                        <label for="ig7-4" class="ms-2 text-sm text-gray-900">3. Unfinished specialized secondary/vocational education</label>
+                        <label for="ig7-4" class="ms-2 text-sm text-gray-900">3. Незаконченное специальное среднее/профессиональное образование</label>
                     </div>
                     <div class="flex items-center">
                         <input id="ig7-5" type="radio" value="4" name="ig7" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
@@ -362,599 +359,1106 @@
 
             <h2 class="mt-10 mb-4 text-2xl font-bold text-gray-700">3. Дети, помещенные в патронатную семью</h2>
             <p class="mt-6">FC4. Для каждого ребенка, находящегося в настоящее время под опекой данной патронатной семьи, запишите следующую информацию</p>
-            <table class="w-full mt-6" aria-label="For each child currently placed into care in this family-type home, please record the following information">
-                <thead>
-                    <tr class="border-b">
-                        <th class="p-2"></th>
-                        <th class="w-40 p-2">а. Пол</th>
-                        <th class="p-2">b. Возраст</th>
-                        <th class="p-2">c. Дата поступления</th>
-                        <th class="p-2">d. Имеется ли инвалидность?</th>
-                        <th class="w-48 p-2">е. Откуда поступил ребенок?</th>
-                        <th class="p-2">f. Ожидаемая дата выхода</th>
-                        <th class="w-44 p-2">g. В каком учебном заведении сейчас учится ребенок?</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td class="p-2">Ребенок №1</td>
-                        <td class="p-2">
-                            <div class="flex items-center justify-center gap-2">
-                                <div class="flex items-center">
-                                    <input id="fc4_c1a-1" type="radio" value="1" name="fc4_c1a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                                    <label for="fc4_c1a-1" class="ms-2 text-sm text-gray-900">1. M</label>
-                                </div>
-                                <div class="flex items-center">
-                                    <input id="fc4_c1a-2" type="radio" value="2" name="fc4_c1a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                                    <label for="fc4_c1a-2" class="ms-2 text-sm text-gray-900">2. Ж</label>
-                                </div>
-                            </div>
-                        </td>
-                        <td class="p-2">
-                            <input type="text" id="fc4_c1b" name="fc4_c1b" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
-                        </td>
-                        <td class="p-2">
-                            <input type="text" id="fc4_c1c" name="fc4_c1c" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
-                        </td>
-                        <td class="p-2">
-                            <div class="flex items-center gap-2">
-                                <div class="flex items-center">
-                                    <input id="fc4_c1d-1" type="radio" value="1" name="fc4_c1d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                                    <label for="fc4_c1d-1" class="ms-2 text-sm text-gray-900">1. Д</label>
-                                </div>
-                                <div class="flex items-center">
-                                    <input id="fc4_c1d-2" type="radio" value="2" name="fc4_c1d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                                    <label for="fc4_c1d-2" class="ms-2 text-sm text-gray-900">2. Н</label>
-                                </div>
-                            </div>
-                        </td>
-                        <td class="p-2">
-                            <select id="fc4_c1e" name="fc4_c1e" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
-                                <option value="-9">--- выбрать ---</option>
-                                <option value="1">1. Из своей семьи</option>
-                                <option value="2">2. Из детского учреждения</option>
-                                <option value="3">3. Из дома семейного типа</option>
-                                <option value="4">4. Из другой патронатной семьи</option>
-                                <option value="5">5. Другая ситуация, укажите</option>
-                            </select>
-                            <input type="text" id="fc4_c1e_other" name="fc4_c1e_other" class="bg-white border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
-                        </td>
-                        <td class="p-2">
-                            <input type="text" id="fc4_c1f" name="fc4_c1f" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
-                        </td>
-                        <td class="p-2">
-                            <select id="fc4_c1g" name="fc4_c1g" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
-                                <option value="-9">--- выбрать ---</option>
-                                <option value="1">1. В общем образовании</option>
-                                <option value="2">2. В специализированном образовании</option>
-                                <option value="3">3. Инклюзивное образование</option>
-                                <option value="4">4. Домашнее обучение</option>
-                                <option value="5">5. Не учится</option>
-                            </select>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="p-2">Ребенок №2</td>
-                        <td class="p-2">
-                            <div class="flex items-center justify-center gap-2">
-                                <div class="flex items-center">
-                                    <input id="fc4_c2a-1" type="radio" value="1" name="fc4_c2a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                                    <label for="fc4_c2a-1" class="ms-2 text-sm text-gray-900">1. M</label>
-                                </div>
-                                <div class="flex items-center">
-                                    <input id="fc4_c2a-2" type="radio" value="2" name="fc4_c2a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                                    <label for="fc4_c2a-2" class="ms-2 text-sm text-gray-900">2. Ж</label>
-                                </div>
-                            </div>
-                        </td>
-                        <td class="p-2">
-                            <input type="text" id="fc4_c2b" name="fc4_c2b" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
-                        </td>
-                        <td class="p-2">
-                            <input type="text" id="fc4_c2c" name="fc4_c2c" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
-                        </td>
-                        <td class="p-2">
-                            <div class="flex items-center gap-2">
-                                <div class="flex items-center">
-                                    <input id="fc4_c2d-1" type="radio" value="1" name="fc4_c2d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                                    <label for="fc4_c2d-1" class="ms-2 text-sm text-gray-900">1. Д</label>
-                                </div>
-                                <div class="flex items-center">
-                                    <input id="fc4_c2d-2" type="radio" value="2" name="fc4_c2d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                                    <label for="fc4_c2d-2" class="ms-2 text-sm text-gray-900">2. Н</label>
-                                </div>
-                            </div>
-                        </td>
-                        <td class="p-2">
-                            <select id="fc4_c2e" name="fc4_c2e" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
-                                <option value="-9">--- выбрать ---</option>
-                                <option value="1">1. Из своей семьи</option>
-                                <option value="2">2. Из детского учреждения</option>
-                                <option value="3">3. Из дома семейного типа</option>
-                                <option value="4">4. Из другой патронатной семьи</option>
-                                <option value="5">5. Другая ситуация, укажите</option>
-                            </select>
-                            <input type="text" id="fc4_c2e_other" name="fc4_c2e_other" class="bg-white border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
-                        </td>
-                        <td class="p-2">
-                            <input type="text" id="fc4_c2f" name="fc4_c2f" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
-                        </td>
-                        <td class="p-2">
-                            <select id="fc4_c2g" name="fc4_c2g" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
-                                <option value="-9">--- выбрать ---</option>
-                                <option value="1">1. В общем образовании</option>
-                                <option value="2">2. В специализированном образовании</option>
-                                <option value="3">3. Инклюзивное образование</option>
-                                <option value="4">4. Домашнее обучение</option>
-                                <option value="5">5. Не учится</option>
-                            </select>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="p-2">Ребенок №3</td>
-                        <td class="p-2">
-                            <div class="flex items-center justify-center gap-2">
-                                <div class="flex items-center">
-                                    <input id="fc4_c3a-1" type="radio" value="1" name="fc4_c3a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                                    <label for="fc4_c3a-1" class="ms-2 text-sm text-gray-900">1. M</label>
-                                </div>
-                                <div class="flex items-center">
-                                    <input id="fc4_c3a-2" type="radio" value="2" name="fc4_c3a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                                    <label for="fc4_c3a-2" class="ms-2 text-sm text-gray-900">2. Ж</label>
-                                </div>
-                            </div>
-                        </td>
-                        <td class="p-2">
-                            <input type="text" id="fc4_c3b" name="fc4_c3b" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
-                        </td>
-                        <td class="p-2">
-                            <input type="text" id="fc4_c3c" name="fc4_c3c" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
-                        </td>
-                        <td class="p-2">
-                            <div class="flex items-center gap-2">
-                                <div class="flex items-center">
-                                    <input id="fc4_c3d-1" type="radio" value="1" name="fc4_c3d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                                    <label for="fc4_c3d-1" class="ms-2 text-sm text-gray-900">1. Д</label>
-                                </div>
-                                <div class="flex items-center">
-                                    <input id="fc4_c3d-2" type="radio" value="2" name="fc4_c3d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                                    <label for="fc4_c3d-2" class="ms-2 text-sm text-gray-900">2. Н</label>
-                                </div>
-                            </div>
-                        </td>
-                        <td class="p-2">
-                            <select id="fc4_c3e" name="fc4_c3e" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
-                                <option value="-9">--- выбрать ---</option>
-                                <option value="1">1. Из своей семьи</option>
-                                <option value="2">2. Из детского учреждения</option>
-                                <option value="3">3. Из дома семейного типа</option>
-                                <option value="4">4. Из другой патронатной семьи</option>
-                                <option value="5">5. Другая ситуация, укажите</option>
-                            </select>
-                            <input type="text" id="fc4_c3e_other" name="fc4_c3e_other" class="bg-white border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
-                        </td>
-                        <td class="p-2">
-                            <input type="text" id="fc4_c3f" name="fc4_c3f" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
-                        </td>
-                        <td class="p-2">
-                            <select id="fc4_c3g" name="fc4_c3g" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
-                                <option value="-9">--- выбрать ---</option>
-                                <option value="1">1. В общем образовании</option>
-                                <option value="2">2. В специализированном образовании</option>
-                                <option value="3">3. Инклюзивное образование</option>
-                                <option value="4">4. Домашнее обучение</option>
-                                <option value="5">5. Не учится</option>
-                            </select>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="p-2">Ребенок №4</td>
-                        <td class="p-2">
-                            <div class="flex items-center justify-center gap-2">
-                                <div class="flex items-center">
-                                    <input id="fc4_c4a-1" type="radio" value="1" name="fc4_c4a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                                    <label for="fc4_c4a-1" class="ms-2 text-sm text-gray-900">1. M</label>
-                                </div>
-                                <div class="flex items-center">
-                                    <input id="fc4_c4a-2" type="radio" value="2" name="fc4_c4a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                                    <label for="fc4_c4a-2" class="ms-2 text-sm text-gray-900">2. Ж</label>
-                                </div>
-                            </div>
-                        </td>
-                        <td class="p-2">
-                            <input type="text" id="fc4_c4b" name="fc4_c4b" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
-                        </td>
-                        <td class="p-2">
-                            <input type="text" id="fc4_c4c" name="fc4_c4c" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
-                        </td>
-                        <td class="p-2">
-                            <div class="flex items-center gap-2">
-                                <div class="flex items-center">
-                                    <input id="fc4_c4d-1" type="radio" value="1" name="fc4_c4d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                                    <label for="fc4_c4d-1" class="ms-2 text-sm text-gray-900">1. Д</label>
-                                </div>
-                                <div class="flex items-center">
-                                    <input id="fc4_c4d-2" type="radio" value="2" name="fc4_c4d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                                    <label for="fc4_c4d-2" class="ms-2 text-sm text-gray-900">2. Н</label>
-                                </div>
-                            </div>
-                        </td>
-                        <td class="p-2">
-                            <select id="fc4_c4e" name="fc4_c4e" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
-                                <option value="-9">--- выбрать ---</option>
-                                <option value="1">1. Из своей семьи</option>
-                                <option value="2">2. Из детского учреждения</option>
-                                <option value="3">3. Из дома семейного типа</option>
-                                <option value="4">4. Из другой патронатной семьи</option>
-                                <option value="5">5. Другая ситуация, укажите</option>
-                            </select>
-                            <input type="text" id="fc4_c4e_other" name="fc4_c4e_other" class="bg-white border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
-                        </td>
-                        <td class="p-2">
-                            <input type="text" id="fc4_c4f" name="fc4_c4f" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
-                        </td>
-                        <td class="p-2">
-                            <select id="fc4_c4g" name="fc4_c4g" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
-                                <option value="-9">--- выбрать ---</option>
-                                <option value="1">1. В общем образовании</option>
-                                <option value="2">2. В специализированном образовании</option>
-                                <option value="3">3. Инклюзивное образование</option>
-                                <option value="4">4. Домашнее обучение</option>
-                                <option value="5">5. Не учится</option>
-                            </select>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="p-2">Ребенок №5</td>
-                        <td class="p-2">
-                            <div class="flex items-center justify-center gap-2">
-                                <div class="flex items-center">
-                                    <input id="fc4_c5a-1" type="radio" value="1" name="fc4_c5a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                                    <label for="fc4_c5a-1" class="ms-2 text-sm text-gray-900">1. M</label>
-                                </div>
-                                <div class="flex items-center">
-                                    <input id="fc4_c5a-2" type="radio" value="2" name="fc4_c5a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                                    <label for="fc4_c5a-2" class="ms-2 text-sm text-gray-900">2. Ж</label>
-                                </div>
-                            </div>
-                        </td>
-                        <td class="p-2">
-                            <input type="text" id="fc4_c5b" name="fc4_c5b" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
-                        </td>
-                        <td class="p-2">
-                            <input type="text" id="fc4_c5c" name="fc4_c5c" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
-                        </td>
-                        <td class="p-2">
-                            <div class="flex items-center gap-2">
-                                <div class="flex items-center">
-                                    <input id="fc4_c5d-1" type="radio" value="1" name="fc4_c5d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                                    <label for="fc4_c5d-1" class="ms-2 text-sm text-gray-900">1. Д</label>
-                                </div>
-                                <div class="flex items-center">
-                                    <input id="fc4_c5d-2" type="radio" value="2" name="fc4_c5d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                                    <label for="fc4_c5d-2" class="ms-2 text-sm text-gray-900">2. Н</label>
-                                </div>
-                            </div>
-                        </td>
-                        <td class="p-2">
-                            <select id="fc4_c5e" name="fc4_c5e" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
-                                <option value="-9">--- выбрать ---</option>
-                                <option value="1">1. Из своей семьи</option>
-                                <option value="2">2. Из детского учреждения</option>
-                                <option value="3">3. Из дома семейного типа</option>
-                                <option value="4">4. Из другой патронатной семьи</option>
-                                <option value="5">5. Другая ситуация, укажите</option>
-                            </select>
-                            <input type="text" id="fc4_c5e_other" name="fc4_c5e_other" class="bg-white border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
-                        </td>
-                        <td class="p-2">
-                            <input type="text" id="fc4_c5f" name="fc4_c5f" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
-                        </td>
-                        <td class="p-2">
-                            <select id="fc4_c5g" name="fc4_c5g" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
-                                <option value="-9">--- выбрать ---</option>
-                                <option value="1">1. В общем образовании</option>
-                                <option value="2">2. В специализированном образовании</option>
-                                <option value="3">3. Инклюзивное образование</option>
-                                <option value="4">4. Домашнее обучение</option>
-                                <option value="5">5. Не учится</option>
-                            </select>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="p-2">Ребенок №6</td>
-                        <td class="p-2">
-                            <div class="flex items-center justify-center gap-2">
-                                <div class="flex items-center">
-                                    <input id="fc4_c6a-1" type="radio" value="1" name="fc4_c6a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                                    <label for="fc4_c6a-1" class="ms-2 text-sm text-gray-900">1. M</label>
-                                </div>
-                                <div class="flex items-center">
-                                    <input id="fc4_c6a-2" type="radio" value="2" name="fc4_c6a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                                    <label for="fc4_c6a-2" class="ms-2 text-sm text-gray-900">2. Ж</label>
-                                </div>
-                            </div>
-                        </td>
-                        <td class="p-2">
-                            <input type="text" id="fc4_c6b" name="fc4_c6b" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
-                        </td>
-                        <td class="p-2">
-                            <input type="text" id="fc4_c6c" name="fc4_c6c" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
-                        </td>
-                        <td class="p-2">
-                            <div class="flex items-center gap-2">
-                                <div class="flex items-center">
-                                    <input id="fc4_c6d-1" type="radio" value="1" name="fc4_c6d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                                    <label for="fc4_c6d-1" class="ms-2 text-sm text-gray-900">1. Д</label>
-                                </div>
-                                <div class="flex items-center">
-                                    <input id="fc4_c6d-2" type="radio" value="2" name="fc4_c6d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                                    <label for="fc4_c6d-2" class="ms-2 text-sm text-gray-900">2. Н</label>
-                                </div>
-                            </div>
-                        </td>
-                        <td class="p-2">
-                            <select id="fc4_c6e" name="fc4_c6e" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
-                                <option value="-9">--- выбрать ---</option>
-                                <option value="1">1. Из своей семьи</option>
-                                <option value="2">2. Из детского учреждения</option>
-                                <option value="3">3. Из дома семейного типа</option>
-                                <option value="4">4. Из другой патронатной семьи</option>
-                                <option value="5">5. Другая ситуация, укажите</option>
-                            </select>
-                            <input type="text" id="fc4_c6e_other" name="fc4_c6e_other" class="bg-white border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
-                        </td>
-                        <td class="p-2">
-                            <input type="text" id="fc4_c6f" name="fc4_c6f" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
-                        </td>
-                        <td class="p-2">
-                            <select id="fc4_c6g" name="fc4_c6g" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
-                                <option value="-9">--- выбрать ---</option>
-                                <option value="1">1. В общем образовании</option>
-                                <option value="2">2. В специализированном образовании</option>
-                                <option value="3">3. Инклюзивное образование</option>
-                                <option value="4">4. Домашнее обучение</option>
-                                <option value="5">5. Не учится</option>
-                            </select>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="p-2">Ребенок №7</td>
-                        <td class="p-2">
-                            <div class="flex items-center justify-center gap-2">
-                                <div class="flex items-center">
-                                    <input id="fc4_c7a-1" type="radio" value="1" name="fc4_c7a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                                    <label for="fc4_c7a-1" class="ms-2 text-sm text-gray-900">1. M</label>
-                                </div>
-                                <div class="flex items-center">
-                                    <input id="fc4_c7a-2" type="radio" value="2" name="fc4_c7a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                                    <label for="fc4_c7a-2" class="ms-2 text-sm text-gray-900">2. Ж</label>
-                                </div>
-                            </div>
-                        </td>
-                        <td class="p-2">
-                            <input type="text" id="fc4_c7b" name="fc4_c7b" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
-                        </td>
-                        <td class="p-2">
-                            <input type="text" id="fc4_c7c" name="fc4_c7c" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
-                        </td>
-                        <td class="p-2">
-                            <div class="flex items-center gap-2">
-                                <div class="flex items-center">
-                                    <input id="fc4_c7d-1" type="radio" value="1" name="fc4_c7d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                                    <label for="fc4_c7d-1" class="ms-2 text-sm text-gray-900">1. Д</label>
-                                </div>
-                                <div class="flex items-center">
-                                    <input id="fc4_c7d-2" type="radio" value="2" name="fc4_c7d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                                    <label for="fc4_c7d-2" class="ms-2 text-sm text-gray-900">2. Н</label>
-                                </div>
-                            </div>
-                        </td>
-                        <td class="p-2">
-                            <select id="fc4_c7e" name="fc4_c7e" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
-                                <option value="-9">--- выбрать ---</option>
-                                <option value="1">1. Из своей семьи</option>
-                                <option value="2">2. Из детского учреждения</option>
-                                <option value="3">3. Из дома семейного типа</option>
-                                <option value="4">4. Из другой патронатной семьи</option>
-                                <option value="5">5. Другая ситуация, укажите</option>
-                            </select>
-                            <input type="text" id="fc4_c7e_other" name="fc4_c7e_other" class="bg-white border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
-                        </td>
-                        <td class="p-2">
-                            <input type="text" id="fc4_c7f" name="fc4_c7f" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
-                        </td>
-                        <td class="p-2">
-                            <select id="fc4_c7g" name="fc4_c7g" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
-                                <option value="-9">--- выбрать ---</option>
-                                <option value="1">1. В общем образовании</option>
-                                <option value="2">2. В специализированном образовании</option>
-                                <option value="3">3. Инклюзивное образование</option>
-                                <option value="4">4. Домашнее обучение</option>
-                                <option value="5">5. Не учится</option>
-                            </select>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="p-2">Ребенок №8</td>
-                        <td class="p-2">
-                            <div class="flex items-center justify-center gap-2">
-                                <div class="flex items-center">
-                                    <input id="fc4_c8a-1" type="radio" value="1" name="fc4_c8a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                                    <label for="fc4_c8a-1" class="ms-2 text-sm text-gray-900">1. M</label>
-                                </div>
-                                <div class="flex items-center">
-                                    <input id="fc4_c8a-2" type="radio" value="2" name="fc4_c8a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                                    <label for="fc4_c8a-2" class="ms-2 text-sm text-gray-900">2. Ж</label>
-                                </div>
-                            </div>
-                        </td>
-                        <td class="p-2">
-                            <input type="text" id="fc4_c8b" name="fc4_c8b" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
-                        </td>
-                        <td class="p-2">
-                            <input type="text" id="fc4_c8c" name="fc4_c8c" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
-                        </td>
-                        <td class="p-2">
-                            <div class="flex items-center gap-2">
-                                <div class="flex items-center">
-                                    <input id="fc4_c8d-1" type="radio" value="1" name="fc4_c8d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                                    <label for="fc4_c8d-1" class="ms-2 text-sm text-gray-900">1. Д</label>
-                                </div>
-                                <div class="flex items-center">
-                                    <input id="fc4_c8d-2" type="radio" value="2" name="fc4_c8d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                                    <label for="fc4_c8d-2" class="ms-2 text-sm text-gray-900">2. Н</label>
-                                </div>
-                            </div>
-                        </td>
-                        <td class="p-2">
-                            <select id="fc4_c8e" name="fc4_c8e" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
-                                <option value="-9">--- выбрать ---</option>
-                                <option value="1">1. Из своей семьи</option>
-                                <option value="2">2. Из детского учреждения</option>
-                                <option value="3">3. Из дома семейного типа</option>
-                                <option value="4">4. Из другой патронатной семьи</option>
-                                <option value="5">5. Другая ситуация, укажите</option>
-                            </select>
-                            <input type="text" id="fc4_c8e_other" name="fc4_c8e_other" class="bg-white border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
-                        </td>
-                        <td class="p-2">
-                            <input type="text" id="fc4_c8f" name="fc4_c8f" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
-                        </td>
-                        <td class="p-2">
-                            <select id="fc4_c8g" name="fc4_c8g" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
-                                <option value="-9">--- выбрать ---</option>
-                                <option value="1">1. В общем образовании</option>
-                                <option value="2">2. В специализированном образовании</option>
-                                <option value="3">3. Инклюзивное образование</option>
-                                <option value="4">4. Домашнее обучение</option>
-                                <option value="5">5. Не учится</option>
-                            </select>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="p-2">Ребенок №9</td>
-                        <td class="p-2">
-                            <div class="flex items-center justify-center gap-2">
-                                <div class="flex items-center">
-                                    <input id="fc4_c9a-1" type="radio" value="1" name="fc4_c9a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                                    <label for="fc4_c9a-1" class="ms-2 text-sm text-gray-900">1. M</label>
-                                </div>
-                                <div class="flex items-center">
-                                    <input id="fc4_c9a-2" type="radio" value="2" name="fc4_c9a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                                    <label for="fc4_c9a-2" class="ms-2 text-sm text-gray-900">2. Ж</label>
-                                </div>
-                            </div>
-                        </td>
-                        <td class="p-2">
-                            <input type="text" id="fc4_c9b" name="fc4_c9b" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
-                        </td>
-                        <td class="p-2">
-                            <input type="text" id="fc4_c9c" name="fc4_c9c" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
-                        </td>
-                        <td class="p-2">
-                            <div class="flex items-center gap-2">
-                                <div class="flex items-center">
-                                    <input id="fc4_c9d-1" type="radio" value="1" name="fc4_c9d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                                    <label for="fc4_c9d-1" class="ms-2 text-sm text-gray-900">1. Д</label>
-                                </div>
-                                <div class="flex items-center">
-                                    <input id="fc4_c9d-2" type="radio" value="2" name="fc4_c9d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                                    <label for="fc4_c9d-2" class="ms-2 text-sm text-gray-900">2. Н</label>
-                                </div>
-                            </div>
-                        </td>
-                        <td class="p-2">
-                            <select id="fc4_c9e" name="fc4_c9e" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
-                                <option value="-9">--- выбрать ---</option>
-                                <option value="1">1. Из своей семьи</option>
-                                <option value="2">2. Из детского учреждения</option>
-                                <option value="3">3. Из дома семейного типа</option>
-                                <option value="4">4. Из другой патронатной семьи</option>
-                                <option value="5">5. Другая ситуация, укажите</option>
-                            </select>
-                            <input type="text" id="fc4_c9e_other" name="fc4_c9e_other" class="bg-white border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
-                        </td>
-                        <td class="p-2">
-                            <input type="text" id="fc4_c9f" name="fc4_c9f" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
-                        </td>
-                        <td class="p-2">
-                            <select id="fc4_c9g" name="fc4_c9g" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
-                                <option value="-9">--- выбрать ---</option>
-                                <option value="1">1. В общем образовании</option>
-                                <option value="2">2. В специализированном образовании</option>
-                                <option value="3">3. Инклюзивное образование</option>
-                                <option value="4">4. Домашнее обучение</option>
-                                <option value="5">5. Не учится</option>
-                            </select>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="p-2">Ребенок №10</td>
-                        <td class="p-2">
-                            <div class="flex items-center justify-center gap-2">
-                                <div class="flex items-center">
-                                    <input id="fc4_c10a-1" type="radio" value="1" name="fc4_c10a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                                    <label for="fc4_c10a-1" class="ms-2 text-sm text-gray-900">1. M</label>
-                                </div>
-                                <div class="flex items-center">
-                                    <input id="fc4_c10a-2" type="radio" value="2" name="fc4_c10a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                                    <label for="fc4_c10a-2" class="ms-2 text-sm text-gray-900">2. Ж</label>
-                                </div>
-                            </div>
-                        </td>
-                        <td class="p-2">
-                            <input type="text" id="fc4_c10b" name="fc4_c10b" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
-                        </td>
-                        <td class="p-2">
-                            <input type="text" id="fc4_c10c" name="fc4_c10c" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
-                        </td>
-                        <td class="p-2">
-                            <div class="flex items-center gap-2">
-                                <div class="flex items-center">
-                                    <input id="fc4_c10d-1" type="radio" value="1" name="fc4_c10d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                                    <label for="fc4_c10d-1" class="ms-2 text-sm text-gray-900">1. Д</label>
-                                </div>
-                                <div class="flex items-center">
-                                    <input id="fc4_c10d-2" type="radio" value="2" name="fc4_c10d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                                    <label for="fc4_c10d-2" class="ms-2 text-sm text-gray-900">2. Н</label>
-                                </div>
-                            </div>
-                        </td>
-                        <td class="p-2">
-                            <select id="fc4_c10e" name="fc4_c10e" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
-                                <option value="-9">--- выбрать ---</option>
-                                <option value="1">1. Из своей семьи</option>
-                                <option value="2">2. Из детского учреждения</option>
-                                <option value="3">3. Из дома семейного типа</option>
-                                <option value="4">4. Из другой патронатной семьи</option>
-                                <option value="5">5. Другая ситуация, укажите</option>
-                            </select>
-                            <input type="text" id="fc4_c10e_other" name="fc4_c10e_other" class="bg-white border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
-                        </td>
-                        <td class="p-2">
-                            <input type="text" id="fc4_c10f" name="fc4_c10f" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
-                        </td>
-                        <td class="p-2">
-                            <select id="fc4_c10g" name="fc4_c10g" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
-                                <option value="-9">--- выбрать ---</option>
-                                <option value="1">1. В общем образовании</option>
-                                <option value="2">2. В специализированном образовании</option>
-                                <option value="3">3. Инклюзивное образование</option>
-                                <option value="4">4. Домашнее обучение</option>
-                                <option value="5">5. Не учится</option>
-                            </select>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
+
+
+
+
+            <div class="grid grid-cols-2 gap-4 items-center mt-10">
+                <div>Ребенок №1 а. Пол</div>
+                <div class="col-span-1 flex items-center gap-4">
+                    <div class="flex items-center">
+                        <input id="fc4_c1a-1" type="radio" value="1" name="fc4_c1a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <label for="fc4_c1a-1" class="ms-2 text-sm text-gray-900">1. Мужской</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="fc4_c1a-2" type="radio" value="2" name="fc4_c1a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <label for="fc4_c1a-2" class="ms-2 text-sm text-gray-900">2. Женский</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                <div>Ребенок №1 b. Возраст<small class="my-2 block italic text-red-500">УКАЖИТЕ ВОЗРАСТ, ПОЛНЫХ ЛЕТ</small></div>
+                <div>
+                    <input type="text" id="fc4_c1b" name="fc4_c1b" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                <div>Ребенок №1 c. дата оформления патроната</div>
+                <div>
+                    <input type="text" id="fc4_c1c" name="fc4_c1c" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                <div>Ребенок №1 d. Есть ли, какие-либо сложные потребности?</div>
+                <div class="col-span-1 flex items-center gap-4">
+                    <div class="flex items-center">
+                        <input id="fc4_c1d-1" type="radio" value="1" name="fc4_c1d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <label for="fc4_c1d-1" class="ms-2 text-sm text-gray-900">1. Мужской</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="fc4_c1d-2" type="radio" value="2" name="fc4_c1d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <label for="fc4_c1d-2" class="ms-2 text-sm text-gray-900">2. Женский</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4 items-center mt-10">
+                <div>Ребенок №1 cn. Какие потребности?<small class="my-2 block italic text-red-500">Несколько ответов</small></div>
+                <div class="col-span-1 flex flex-col gap-2">
+                    <div class="flex items-center">
+                        <input id="fc4_c1cn1" type="checkbox" value="1" name="fc4_c1cn1" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-100 rounded">
+                        <label for="fc4_c1cn1" class="ms-2 text-sm text-gray-900">1. Инволидность</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="fc4_c1cn2" type="checkbox" value="2" name="fc4_c1cn2" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-100 rounded">
+                        <label for="fc4_c1cn2" class="ms-2 text-sm text-gray-900">2. Особые потребности в образовании</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="fc4_c1cn3" type="checkbox" value="3" name="fc4_c1cn3" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-100 rounded">
+                        <label for="fc4_c1cn3" class="ms-2 text-sm text-gray-900">3. ВИЧ/СПИД</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="fc4_c1cn4" type="checkbox" value="4" name="fc4_c1cn4" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-100 rounded">
+                        <label for="fc4_c1cn4" class="ms-2 text-sm text-gray-900">4. Поведенческие расстройства</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="fc4_c1cn5" type="checkbox" value="5" name="fc4_c1cn5" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-100 rounded">
+                        <label for="fc4_c1cn5" class="ms-2 text-sm text-gray-900">5. Находящийся в конфликте с законом</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="fc4_c1cn6" type="checkbox" value="6" name="fc4_c1cn6" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-100 rounded">
+                        <label for="fc4_c1cn6" class="ms-2 text-sm text-gray-900">6. Другие</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                <div>Ребенок №1 cn. Какие потребности?</div>
+                <div class="col-span-1 flex items-center gap-4">
+                    <select id="fc4_c1e" name="fc4_c1e" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
+                        <option value="-9">--- выбрать ---</option>
+                        <option value="1">1. Из своей семьи</option>
+                        <option value="2">2. Из детского учреждения</option>
+                        <option value="3">3. Из дома семейного типа</option>
+                        <option value="4">4. Из другой патронатной семьи</option>
+                        <option value="5">5. Другая ситуация, укажите</option>
+                    </select>
+                    <input type="text" id="fc4_c1e_other" name="fc4_c1e_other" class="bg-white border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                <div>Ребенок №1 f. Ожидаемая дата выхода</div>
+                <div>
+                    <input type="text" id="fc4_c1f" name="fc4_c1f" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                <div>Ребенок №1 g. В каком учебном заведении сейчас учится ребенок?</div>
+                <div class="col-span-1 flex items-center gap-4">
+                    <select id="fc4_c1g" name="fc4_c1g" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
+                        <option value="-9">--- выбрать ---</option>
+                        <option value="1">1. В общеобразовательном учреждении, без инклюзивных классов/групп</option>
+                        <option value="2">2. В общеобразовательном учреждении с инклюзивными классами/группами</option>
+                        <option value="3">3. В специализированном учебном заведении</option>
+                        <option value="4">4. Домашнее обучение</option>
+                        <option value="5">5. Не учится</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4 items-center mt-10">
+                <div>Ребенок №2 а. Пол</div>
+                <div class="col-span-1 flex items-center gap-4">
+                    <div class="flex items-center">
+                        <input id="fc4_c2a-1" type="radio" value="1" name="fc4_c2a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <label for="fc4_c2a-1" class="ms-2 text-sm text-gray-900">1. Мужской</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="fc4_c2a-2" type="radio" value="2" name="fc4_c2a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <label for="fc4_c2a-2" class="ms-2 text-sm text-gray-900">2. Женский</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                <div>Ребенок №2 b. Возраст<small class="my-2 block italic text-red-500">УКАЖИТЕ ВОЗРАСТ, ПОЛНЫХ ЛЕТ</small></div>
+                <div>
+                    <input type="text" id="fc4_c2b" name="fc4_c2b" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                <div>Ребенок №2 c. дата оформления патроната</div>
+                <div>
+                    <input type="text" id="fc4_c2c" name="fc4_c2c" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                <div>Ребенок №2 d. Есть ли, какие-либо сложные потребности?</div>
+                <div class="col-span-1 flex items-center gap-4">
+                    <div class="flex items-center">
+                        <input id="fc4_c2d-1" type="radio" value="1" name="fc4_c2d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <label for="fc4_c2d-1" class="ms-2 text-sm text-gray-900">1. Мужской</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="fc4_c2d-2" type="radio" value="2" name="fc4_c2d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <label for="fc4_c2d-2" class="ms-2 text-sm text-gray-900">2. Женский</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4 items-center mt-10">
+                <div>Ребенок №2 cn. Какие потребности?<small class="my-2 block italic text-red-500">Несколько ответов</small></div>
+                <div class="col-span-1 flex flex-col gap-2">
+                    <div class="flex items-center">
+                        <input id="fc4_c2cn1" type="checkbox" value="1" name="fc4_c2cn1" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-100 rounded">
+                        <label for="fc4_c2cn1" class="ms-2 text-sm text-gray-900">1. Инволидность</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="fc4_c2cn2" type="checkbox" value="2" name="fc4_c2cn2" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-100 rounded">
+                        <label for="fc4_c2cn2" class="ms-2 text-sm text-gray-900">2. Особые потребности в образовании</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="fc4_c2cn3" type="checkbox" value="3" name="fc4_c2cn3" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-100 rounded">
+                        <label for="fc4_c2cn3" class="ms-2 text-sm text-gray-900">3. ВИЧ/СПИД</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="fc4_c2cn4" type="checkbox" value="4" name="fc4_c2cn4" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-100 rounded">
+                        <label for="fc4_c2cn4" class="ms-2 text-sm text-gray-900">4. Поведенческие расстройства</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="fc4_c2cn5" type="checkbox" value="5" name="fc4_c2cn5" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-100 rounded">
+                        <label for="fc4_c2cn5" class="ms-2 text-sm text-gray-900">5. Находящийся в конфликте с законом</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="fc4_c2cn6" type="checkbox" value="6" name="fc4_c2cn6" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-100 rounded">
+                        <label for="fc4_c2cn6" class="ms-2 text-sm text-gray-900">6. Другие</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                <div>Ребенок №2 cn. Какие потребности?</div>
+                <div class="col-span-1 flex items-center gap-4">
+                    <select id="fc4_c2e" name="fc4_c2e" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
+                        <option value="-9">--- выбрать ---</option>
+                        <option value="1">1. Из своей семьи</option>
+                        <option value="2">2. Из детского учреждения</option>
+                        <option value="3">3. Из дома семейного типа</option>
+                        <option value="4">4. Из другой патронатной семьи</option>
+                        <option value="5">5. Другая ситуация, укажите</option>
+                    </select>
+                    <input type="text" id="fc4_c2e_other" name="fc4_c2e_other" class="bg-white border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                <div>Ребенок №2 f. Ожидаемая дата выхода</div>
+                <div>
+                    <input type="text" id="fc4_c2f" name="fc4_c2f" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                <div>Ребенок №2 g. В каком учебном заведении сейчас учится ребенок?</div>
+                <div class="col-span-1 flex items-center gap-4">
+                    <select id="fc4_c2g" name="fc4_c2g" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
+                        <option value="-9">--- выбрать ---</option>
+                        <option value="1">1. В общеобразовательном учреждении, без инклюзивных классов/групп</option>
+                        <option value="2">2. В общеобразовательном учреждении с инклюзивными классами/группами</option>
+                        <option value="3">3. В специализированном учебном заведении</option>
+                        <option value="4">4. Домашнее обучение</option>
+                        <option value="5">5. Не учится</option>
+                    </select>
+                </div>
+            </div>
+
+
+            <div class="grid grid-cols-2 gap-4 items-center mt-10">
+                <div>Ребенок №3 а. Пол</div>
+                <div class="col-span-1 flex items-center gap-4">
+                    <div class="flex items-center">
+                        <input id="fc4_c3a-1" type="radio" value="1" name="fc4_c3a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <label for="fc4_c3a-1" class="ms-2 text-sm text-gray-900">1. Мужской</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="fc4_c3a-2" type="radio" value="2" name="fc4_c3a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <label for="fc4_c3a-2" class="ms-2 text-sm text-gray-900">2. Женский</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                <div>Ребенок №3 b. Возраст<small class="my-2 block italic text-red-500">УКАЖИТЕ ВОЗРАСТ, ПОЛНЫХ ЛЕТ</small></div>
+                <div>
+                    <input type="text" id="fc4_c3b" name="fc4_c3b" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                <div>Ребенок №3 c. дата оформления патроната</div>
+                <div>
+                    <input type="text" id="fc4_c3c" name="fc4_c3c" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                <div>Ребенок №3 d. Есть ли, какие-либо сложные потребности?</div>
+                <div class="col-span-1 flex items-center gap-4">
+                    <div class="flex items-center">
+                        <input id="fc4_c3d-1" type="radio" value="1" name="fc4_c3d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <label for="fc4_c3d-1" class="ms-2 text-sm text-gray-900">1. Мужской</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="fc4_c3d-2" type="radio" value="2" name="fc4_c3d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <label for="fc4_c3d-2" class="ms-2 text-sm text-gray-900">2. Женский</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4 items-center mt-10">
+                <div>Ребенок №3 cn. Какие потребности?<small class="my-2 block italic text-red-500">Несколько ответов</small></div>
+                <div class="col-span-1 flex flex-col gap-2">
+                    <div class="flex items-center">
+                        <input id="fc4_c3cn1" type="checkbox" value="1" name="fc4_c3cn1" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-100 rounded">
+                        <label for="fc4_c3cn1" class="ms-2 text-sm text-gray-900">1. Инволидность</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="fc4_c3cn2" type="checkbox" value="2" name="fc4_c3cn2" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-100 rounded">
+                        <label for="fc4_c3cn2" class="ms-2 text-sm text-gray-900">2. Особые потребности в образовании</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="fc4_c3cn3" type="checkbox" value="3" name="fc4_c3cn3" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-100 rounded">
+                        <label for="fc4_c3cn3" class="ms-2 text-sm text-gray-900">3. ВИЧ/СПИД</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="fc4_c3cn4" type="checkbox" value="4" name="fc4_c3cn4" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-100 rounded">
+                        <label for="fc4_c3cn4" class="ms-2 text-sm text-gray-900">4. Поведенческие расстройства</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="fc4_c3cn5" type="checkbox" value="5" name="fc4_c3cn5" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-100 rounded">
+                        <label for="fc4_c3cn5" class="ms-2 text-sm text-gray-900">5. Находящийся в конфликте с законом</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="fc4_c3cn6" type="checkbox" value="6" name="fc4_c3cn6" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-100 rounded">
+                        <label for="fc4_c3cn6" class="ms-2 text-sm text-gray-900">6. Другие</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                <div>Ребенок №3 cn. Какие потребности?</div>
+                <div class="col-span-1 flex items-center gap-4">
+                    <select id="fc4_c3e" name="fc4_c3e" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
+                        <option value="-9">--- выбрать ---</option>
+                        <option value="1">1. Из своей семьи</option>
+                        <option value="2">2. Из детского учреждения</option>
+                        <option value="3">3. Из дома семейного типа</option>
+                        <option value="4">4. Из другой патронатной семьи</option>
+                        <option value="5">5. Другая ситуация, укажите</option>
+                    </select>
+                    <input type="text" id="fc4_c3e_other" name="fc4_c3e_other" class="bg-white border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                <div>Ребенок №3 f. Ожидаемая дата выхода</div>
+                <div>
+                    <input type="text" id="fc4_c3f" name="fc4_c3f" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                <div>Ребенок №3 g. В каком учебном заведении сейчас учится ребенок?</div>
+                <div class="col-span-1 flex items-center gap-4">
+                    <select id="fc4_c3g" name="fc4_c3g" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
+                        <option value="-9">--- выбрать ---</option>
+                        <option value="1">1. В общеобразовательном учреждении, без инклюзивных классов/групп</option>
+                        <option value="2">2. В общеобразовательном учреждении с инклюзивными классами/группами</option>
+                        <option value="3">3. В специализированном учебном заведении</option>
+                        <option value="4">4. Домашнее обучение</option>
+                        <option value="5">5. Не учится</option>
+                    </select>
+                </div>
+            </div>
+
+
+
+            <div class="grid grid-cols-2 gap-4 items-center mt-10">
+                <div>Ребенок №4 а. Пол</div>
+                <div class="col-span-1 flex items-center gap-4">
+                    <div class="flex items-center">
+                        <input id="fc4_c4a-1" type="radio" value="1" name="fc4_c4a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <label for="fc4_c4a-1" class="ms-2 text-sm text-gray-900">1. Мужской</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="fc4_c4a-2" type="radio" value="2" name="fc4_c4a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <label for="fc4_c4a-2" class="ms-2 text-sm text-gray-900">2. Женский</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                <div>Ребенок №4 b. Возраст<small class="my-2 block italic text-red-500">УКАЖИТЕ ВОЗРАСТ, ПОЛНЫХ ЛЕТ</small></div>
+                <div>
+                    <input type="text" id="fc4_c4b" name="fc4_c4b" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                <div>Ребенок №4 c. дата оформления патроната</div>
+                <div>
+                    <input type="text" id="fc4_c4c" name="fc4_c4c" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                <div>Ребенок №4 d. Есть ли, какие-либо сложные потребности?</div>
+                <div class="col-span-1 flex items-center gap-4">
+                    <div class="flex items-center">
+                        <input id="fc4_c4d-1" type="radio" value="1" name="fc4_c4d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <label for="fc4_c4d-1" class="ms-2 text-sm text-gray-900">1. Мужской</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="fc4_c4d-2" type="radio" value="2" name="fc4_c4d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <label for="fc4_c4d-2" class="ms-2 text-sm text-gray-900">2. Женский</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4 items-center mt-10">
+                <div>Ребенок №4 cn. Какие потребности?<small class="my-2 block italic text-red-500">Несколько ответов</small></div>
+                <div class="col-span-1 flex flex-col gap-2">
+                    <div class="flex items-center">
+                        <input id="fc4_c4cn1" type="checkbox" value="1" name="fc4_c4cn1" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-100 rounded">
+                        <label for="fc4_c4cn1" class="ms-2 text-sm text-gray-900">1. Инволидность</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="fc4_c4cn2" type="checkbox" value="2" name="fc4_c4cn2" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-100 rounded">
+                        <label for="fc4_c4cn2" class="ms-2 text-sm text-gray-900">2. Особые потребности в образовании</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="fc4_c4cn3" type="checkbox" value="3" name="fc4_c4cn3" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-100 rounded">
+                        <label for="fc4_c4cn3" class="ms-2 text-sm text-gray-900">3. ВИЧ/СПИД</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="fc4_c4cn4" type="checkbox" value="4" name="fc4_c4cn4" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-100 rounded">
+                        <label for="fc4_c4cn4" class="ms-2 text-sm text-gray-900">4. Поведенческие расстройства</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="fc4_c4cn5" type="checkbox" value="5" name="fc4_c4cn5" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-100 rounded">
+                        <label for="fc4_c4cn5" class="ms-2 text-sm text-gray-900">5. Находящийся в конфликте с законом</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="fc4_c4cn6" type="checkbox" value="6" name="fc4_c4cn6" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-100 rounded">
+                        <label for="fc4_c4cn6" class="ms-2 text-sm text-gray-900">6. Другие</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                <div>Ребенок №4 cn. Какие потребности?</div>
+                <div class="col-span-1 flex items-center gap-4">
+                    <select id="fc4_c4e" name="fc4_c4e" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
+                        <option value="-9">--- выбрать ---</option>
+                        <option value="1">1. Из своей семьи</option>
+                        <option value="2">2. Из детского учреждения</option>
+                        <option value="3">3. Из дома семейного типа</option>
+                        <option value="4">4. Из другой патронатной семьи</option>
+                        <option value="5">5. Другая ситуация, укажите</option>
+                    </select>
+                    <input type="text" id="fc4_c4e_other" name="fc4_c4e_other" class="bg-white border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                <div>Ребенок №4 f. Ожидаемая дата выхода</div>
+                <div>
+                    <input type="text" id="fc4_c4f" name="fc4_c4f" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                <div>Ребенок №4 g. В каком учебном заведении сейчас учится ребенок?</div>
+                <div class="col-span-1 flex items-center gap-4">
+                    <select id="fc4_c4g" name="fc4_c4g" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
+                        <option value="-9">--- выбрать ---</option>
+                        <option value="1">1. В общеобразовательном учреждении, без инклюзивных классов/групп</option>
+                        <option value="2">2. В общеобразовательном учреждении с инклюзивными классами/группами</option>
+                        <option value="3">3. В специализированном учебном заведении</option>
+                        <option value="4">4. Домашнее обучение</option>
+                        <option value="5">5. Не учится</option>
+                    </select>
+                </div>
+            </div>
+
+
+            <div class="grid grid-cols-2 gap-4 items-center mt-10">
+                <div>Ребенок №5 а. Пол</div>
+                <div class="col-span-1 flex items-center gap-4">
+                    <div class="flex items-center">
+                        <input id="fc4_c5a-1" type="radio" value="1" name="fc4_c5a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <label for="fc4_c5a-1" class="ms-2 text-sm text-gray-900">1. Мужской</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="fc4_c5a-2" type="radio" value="2" name="fc4_c5a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <label for="fc4_c5a-2" class="ms-2 text-sm text-gray-900">2. Женский</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                <div>Ребенок №5 b. Возраст<small class="my-2 block italic text-red-500">УКАЖИТЕ ВОЗРАСТ, ПОЛНЫХ ЛЕТ</small></div>
+                <div>
+                    <input type="text" id="fc4_c5b" name="fc4_c5b" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                <div>Ребенок №5 c. дата оформления патроната</div>
+                <div>
+                    <input type="text" id="fc4_c5c" name="fc4_c5c" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                <div>Ребенок №5 d. Есть ли, какие-либо сложные потребности?</div>
+                <div class="col-span-1 flex items-center gap-4">
+                    <div class="flex items-center">
+                        <input id="fc4_c5d-1" type="radio" value="1" name="fc4_c5d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <label for="fc4_c5d-1" class="ms-2 text-sm text-gray-900">1. Мужской</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="fc4_c5d-2" type="radio" value="2" name="fc4_c5d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <label for="fc4_c5d-2" class="ms-2 text-sm text-gray-900">2. Женский</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4 items-center mt-10">
+                <div>Ребенок №5 cn. Какие потребности?<small class="my-2 block italic text-red-500">Несколько ответов</small></div>
+                <div class="col-span-1 flex flex-col gap-2">
+                    <div class="flex items-center">
+                        <input id="fc4_c5cn1" type="checkbox" value="1" name="fc4_c5cn1" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-100 rounded">
+                        <label for="fc4_c5cn1" class="ms-2 text-sm text-gray-900">1. Инволидность</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="fc4_c5cn2" type="checkbox" value="2" name="fc4_c5cn2" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-100 rounded">
+                        <label for="fc4_c5cn2" class="ms-2 text-sm text-gray-900">2. Особые потребности в образовании</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="fc4_c5cn3" type="checkbox" value="3" name="fc4_c5cn3" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-100 rounded">
+                        <label for="fc4_c5cn3" class="ms-2 text-sm text-gray-900">3. ВИЧ/СПИД</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="fc4_c5cn4" type="checkbox" value="4" name="fc4_c5cn4" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-100 rounded">
+                        <label for="fc4_c5cn4" class="ms-2 text-sm text-gray-900">4. Поведенческие расстройства</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="fc4_c5cn5" type="checkbox" value="5" name="fc4_c5cn5" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-100 rounded">
+                        <label for="fc4_c5cn5" class="ms-2 text-sm text-gray-900">5. Находящийся в конфликте с законом</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="fc4_c5cn6" type="checkbox" value="6" name="fc4_c5cn6" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-100 rounded">
+                        <label for="fc4_c5cn6" class="ms-2 text-sm text-gray-900">6. Другие</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                <div>Ребенок №5 cn. Какие потребности?</div>
+                <div class="col-span-1 flex items-center gap-4">
+                    <select id="fc4_c5e" name="fc4_c5e" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
+                        <option value="-9">--- выбрать ---</option>
+                        <option value="1">1. Из своей семьи</option>
+                        <option value="2">2. Из детского учреждения</option>
+                        <option value="3">3. Из дома семейного типа</option>
+                        <option value="4">4. Из другой патронатной семьи</option>
+                        <option value="5">5. Другая ситуация, укажите</option>
+                    </select>
+                    <input type="text" id="fc4_c5e_other" name="fc4_c5e_other" class="bg-white border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                <div>Ребенок №5 f. Ожидаемая дата выхода</div>
+                <div>
+                    <input type="text" id="fc4_c5f" name="fc4_c5f" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                <div>Ребенок №5 g. В каком учебном заведении сейчас учится ребенок?</div>
+                <div class="col-span-1 flex items-center gap-4">
+                    <select id="fc4_c5g" name="fc4_c5g" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
+                        <option value="-9">--- выбрать ---</option>
+                        <option value="1">1. В общеобразовательном учреждении, без инклюзивных классов/групп</option>
+                        <option value="2">2. В общеобразовательном учреждении с инклюзивными классами/группами</option>
+                        <option value="3">3. В специализированном учебном заведении</option>
+                        <option value="4">4. Домашнее обучение</option>
+                        <option value="5">5. Не учится</option>
+                    </select>
+                </div>
+            </div>
+
+
+            <div class="grid grid-cols-2 gap-4 items-center mt-10">
+                <div>Ребенок №6 а. Пол</div>
+                <div class="col-span-1 flex items-center gap-4">
+                    <div class="flex items-center">
+                        <input id="fc4_c6a-1" type="radio" value="1" name="fc4_c6a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <label for="fc4_c6a-1" class="ms-2 text-sm text-gray-900">1. Мужской</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="fc4_c6a-2" type="radio" value="2" name="fc4_c6a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <label for="fc4_c6a-2" class="ms-2 text-sm text-gray-900">2. Женский</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                <div>Ребенок №6 b. Возраст<small class="my-2 block italic text-red-500">УКАЖИТЕ ВОЗРАСТ, ПОЛНЫХ ЛЕТ</small></div>
+                <div>
+                    <input type="text" id="fc4_c6b" name="fc4_c6b" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                <div>Ребенок №6 c. дата оформления патроната</div>
+                <div>
+                    <input type="text" id="fc4_c6c" name="fc4_c6c" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                <div>Ребенок №6 d. Есть ли, какие-либо сложные потребности?</div>
+                <div class="col-span-1 flex items-center gap-4">
+                    <div class="flex items-center">
+                        <input id="fc4_c6d-1" type="radio" value="1" name="fc4_c6d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <label for="fc4_c6d-1" class="ms-2 text-sm text-gray-900">1. Мужской</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="fc4_c6d-2" type="radio" value="2" name="fc4_c6d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <label for="fc4_c6d-2" class="ms-2 text-sm text-gray-900">2. Женский</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4 items-center mt-10">
+                <div>Ребенок №6 cn. Какие потребности?<small class="my-2 block italic text-red-500">Несколько ответов</small></div>
+                <div class="col-span-1 flex flex-col gap-2">
+                    <div class="flex items-center">
+                        <input id="fc4_c6cn1" type="checkbox" value="1" name="fc4_c6cn1" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-100 rounded">
+                        <label for="fc4_c6cn1" class="ms-2 text-sm text-gray-900">1. Инволидность</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="fc4_c6cn2" type="checkbox" value="2" name="fc4_c6cn2" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-100 rounded">
+                        <label for="fc4_c6cn2" class="ms-2 text-sm text-gray-900">2. Особые потребности в образовании</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="fc4_c6cn3" type="checkbox" value="3" name="fc4_c6cn3" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-100 rounded">
+                        <label for="fc4_c6cn3" class="ms-2 text-sm text-gray-900">3. ВИЧ/СПИД</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="fc4_c6cn4" type="checkbox" value="4" name="fc4_c6cn4" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-100 rounded">
+                        <label for="fc4_c6cn4" class="ms-2 text-sm text-gray-900">4. Поведенческие расстройства</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="fc4_c6cn5" type="checkbox" value="5" name="fc4_c6cn5" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-100 rounded">
+                        <label for="fc4_c6cn5" class="ms-2 text-sm text-gray-900">5. Находящийся в конфликте с законом</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="fc4_c6cn6" type="checkbox" value="6" name="fc4_c6cn6" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-100 rounded">
+                        <label for="fc4_c6cn6" class="ms-2 text-sm text-gray-900">6. Другие</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                <div>Ребенок №6 cn. Какие потребности?</div>
+                <div class="col-span-1 flex items-center gap-4">
+                    <select id="fc4_c6e" name="fc4_c6e" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
+                        <option value="-9">--- выбрать ---</option>
+                        <option value="1">1. Из своей семьи</option>
+                        <option value="2">2. Из детского учреждения</option>
+                        <option value="3">3. Из дома семейного типа</option>
+                        <option value="4">4. Из другой патронатной семьи</option>
+                        <option value="5">5. Другая ситуация, укажите</option>
+                    </select>
+                    <input type="text" id="fc4_c6e_other" name="fc4_c6e_other" class="bg-white border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                <div>Ребенок №6 f. Ожидаемая дата выхода</div>
+                <div>
+                    <input type="text" id="fc4_c6f" name="fc4_c6f" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                <div>Ребенок №6 g. В каком учебном заведении сейчас учится ребенок?</div>
+                <div class="col-span-1 flex items-center gap-4">
+                    <select id="fc4_c6g" name="fc4_c6g" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
+                        <option value="-9">--- выбрать ---</option>
+                        <option value="1">1. В общеобразовательном учреждении, без инклюзивных классов/групп</option>
+                        <option value="2">2. В общеобразовательном учреждении с инклюзивными классами/группами</option>
+                        <option value="3">3. В специализированном учебном заведении</option>
+                        <option value="4">4. Домашнее обучение</option>
+                        <option value="5">5. Не учится</option>
+                    </select>
+                </div>
+            </div>
+
+
+            <div class="grid grid-cols-2 gap-4 items-center mt-10">
+                <div>Ребенок №7 а. Пол</div>
+                <div class="col-span-1 flex items-center gap-4">
+                    <div class="flex items-center">
+                        <input id="fc4_c7a-1" type="radio" value="1" name="fc4_c7a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <label for="fc4_c7a-1" class="ms-2 text-sm text-gray-900">1. Мужской</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="fc4_c7a-2" type="radio" value="2" name="fc4_c7a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <label for="fc4_c7a-2" class="ms-2 text-sm text-gray-900">2. Женский</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                <div>Ребенок №7 b. Возраст<small class="my-2 block italic text-red-500">УКАЖИТЕ ВОЗРАСТ, ПОЛНЫХ ЛЕТ</small></div>
+                <div>
+                    <input type="text" id="fc4_c7b" name="fc4_c7b" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                <div>Ребенок №7 c. дата оформления патроната</div>
+                <div>
+                    <input type="text" id="fc4_c7c" name="fc4_c7c" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                <div>Ребенок №7 d. Есть ли, какие-либо сложные потребности?</div>
+                <div class="col-span-1 flex items-center gap-4">
+                    <div class="flex items-center">
+                        <input id="fc4_c7d-1" type="radio" value="1" name="fc4_c7d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <label for="fc4_c7d-1" class="ms-2 text-sm text-gray-900">1. Мужской</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="fc4_c7d-2" type="radio" value="2" name="fc4_c7d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <label for="fc4_c7d-2" class="ms-2 text-sm text-gray-900">2. Женский</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4 items-center mt-10">
+                <div>Ребенок №7 cn. Какие потребности?<small class="my-2 block italic text-red-500">Несколько ответов</small></div>
+                <div class="col-span-1 flex flex-col gap-2">
+                    <div class="flex items-center">
+                        <input id="fc4_c7cn1" type="checkbox" value="1" name="fc4_c7cn1" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-100 rounded">
+                        <label for="fc4_c7cn1" class="ms-2 text-sm text-gray-900">1. Инволидность</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="fc4_c7cn2" type="checkbox" value="2" name="fc4_c7cn2" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-100 rounded">
+                        <label for="fc4_c7cn2" class="ms-2 text-sm text-gray-900">2. Особые потребности в образовании</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="fc4_c7cn3" type="checkbox" value="3" name="fc4_c7cn3" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-100 rounded">
+                        <label for="fc4_c7cn3" class="ms-2 text-sm text-gray-900">3. ВИЧ/СПИД</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="fc4_c7cn4" type="checkbox" value="4" name="fc4_c7cn4" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-100 rounded">
+                        <label for="fc4_c7cn4" class="ms-2 text-sm text-gray-900">4. Поведенческие расстройства</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="fc4_c7cn5" type="checkbox" value="5" name="fc4_c7cn5" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-100 rounded">
+                        <label for="fc4_c7cn5" class="ms-2 text-sm text-gray-900">5. Находящийся в конфликте с законом</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="fc4_c7cn6" type="checkbox" value="6" name="fc4_c7cn6" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-100 rounded">
+                        <label for="fc4_c7cn6" class="ms-2 text-sm text-gray-900">6. Другие</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                <div>Ребенок №7 cn. Какие потребности?</div>
+                <div class="col-span-1 flex items-center gap-4">
+                    <select id="fc4_c7e" name="fc4_c7e" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
+                        <option value="-9">--- выбрать ---</option>
+                        <option value="1">1. Из своей семьи</option>
+                        <option value="2">2. Из детского учреждения</option>
+                        <option value="3">3. Из дома семейного типа</option>
+                        <option value="4">4. Из другой патронатной семьи</option>
+                        <option value="5">5. Другая ситуация, укажите</option>
+                    </select>
+                    <input type="text" id="fc4_c7e_other" name="fc4_c7e_other" class="bg-white border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                <div>Ребенок №7 f. Ожидаемая дата выхода</div>
+                <div>
+                    <input type="text" id="fc4_c7f" name="fc4_c7f" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                <div>Ребенок №7 g. В каком учебном заведении сейчас учится ребенок?</div>
+                <div class="col-span-1 flex items-center gap-4">
+                    <select id="fc4_c7g" name="fc4_c7g" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
+                        <option value="-9">--- выбрать ---</option>
+                        <option value="1">1. В общеобразовательном учреждении, без инклюзивных классов/групп</option>
+                        <option value="2">2. В общеобразовательном учреждении с инклюзивными классами/группами</option>
+                        <option value="3">3. В специализированном учебном заведении</option>
+                        <option value="4">4. Домашнее обучение</option>
+                        <option value="5">5. Не учится</option>
+                    </select>
+                </div>
+            </div>
+
+
+            <div class="grid grid-cols-2 gap-4 items-center mt-10">
+                <div>Ребенок №8 а. Пол</div>
+                <div class="col-span-1 flex items-center gap-4">
+                    <div class="flex items-center">
+                        <input id="fc4_c8a-1" type="radio" value="1" name="fc4_c8a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <label for="fc4_c8a-1" class="ms-2 text-sm text-gray-900">1. Мужской</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="fc4_c8a-2" type="radio" value="2" name="fc4_c8a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <label for="fc4_c8a-2" class="ms-2 text-sm text-gray-900">2. Женский</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                <div>Ребенок №8 b. Возраст<small class="my-2 block italic text-red-500">УКАЖИТЕ ВОЗРАСТ, ПОЛНЫХ ЛЕТ</small></div>
+                <div>
+                    <input type="text" id="fc4_c8b" name="fc4_c8b" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                <div>Ребенок №8 c. дата оформления патроната</div>
+                <div>
+                    <input type="text" id="fc4_c8c" name="fc4_c8c" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                <div>Ребенок №8 d. Есть ли, какие-либо сложные потребности?</div>
+                <div class="col-span-1 flex items-center gap-4">
+                    <div class="flex items-center">
+                        <input id="fc4_c8d-1" type="radio" value="1" name="fc4_c8d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <label for="fc4_c8d-1" class="ms-2 text-sm text-gray-900">1. Мужской</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="fc4_c8d-2" type="radio" value="2" name="fc4_c8d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <label for="fc4_c8d-2" class="ms-2 text-sm text-gray-900">2. Женский</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4 items-center mt-10">
+                <div>Ребенок №8 cn. Какие потребности?<small class="my-2 block italic text-red-500">Несколько ответов</small></div>
+                <div class="col-span-1 flex flex-col gap-2">
+                    <div class="flex items-center">
+                        <input id="fc4_c8cn1" type="checkbox" value="1" name="fc4_c8cn1" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-100 rounded">
+                        <label for="fc4_c8cn1" class="ms-2 text-sm text-gray-900">1. Инволидность</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="fc4_c8cn2" type="checkbox" value="2" name="fc4_c8cn2" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-100 rounded">
+                        <label for="fc4_c8cn2" class="ms-2 text-sm text-gray-900">2. Особые потребности в образовании</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="fc4_c8cn3" type="checkbox" value="3" name="fc4_c8cn3" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-100 rounded">
+                        <label for="fc4_c8cn3" class="ms-2 text-sm text-gray-900">3. ВИЧ/СПИД</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="fc4_c8cn4" type="checkbox" value="4" name="fc4_c8cn4" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-100 rounded">
+                        <label for="fc4_c8cn4" class="ms-2 text-sm text-gray-900">4. Поведенческие расстройства</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="fc4_c8cn5" type="checkbox" value="5" name="fc4_c8cn5" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-100 rounded">
+                        <label for="fc4_c8cn5" class="ms-2 text-sm text-gray-900">5. Находящийся в конфликте с законом</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="fc4_c8cn6" type="checkbox" value="6" name="fc4_c8cn6" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-100 rounded">
+                        <label for="fc4_c8cn6" class="ms-2 text-sm text-gray-900">6. Другие</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                <div>Ребенок №8 cn. Какие потребности?</div>
+                <div class="col-span-1 flex items-center gap-4">
+                    <select id="fc4_c8e" name="fc4_c8e" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
+                        <option value="-9">--- выбрать ---</option>
+                        <option value="1">1. Из своей семьи</option>
+                        <option value="2">2. Из детского учреждения</option>
+                        <option value="3">3. Из дома семейного типа</option>
+                        <option value="4">4. Из другой патронатной семьи</option>
+                        <option value="5">5. Другая ситуация, укажите</option>
+                    </select>
+                    <input type="text" id="fc4_c8e_other" name="fc4_c8e_other" class="bg-white border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                <div>Ребенок №8 f. Ожидаемая дата выхода</div>
+                <div>
+                    <input type="text" id="fc4_c8f" name="fc4_c8f" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                <div>Ребенок №8 g. В каком учебном заведении сейчас учится ребенок?</div>
+                <div class="col-span-1 flex items-center gap-4">
+                    <select id="fc4_c8g" name="fc4_c8g" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
+                        <option value="-9">--- выбрать ---</option>
+                        <option value="1">1. В общеобразовательном учреждении, без инклюзивных классов/групп</option>
+                        <option value="2">2. В общеобразовательном учреждении с инклюзивными классами/группами</option>
+                        <option value="3">3. В специализированном учебном заведении</option>
+                        <option value="4">4. Домашнее обучение</option>
+                        <option value="5">5. Не учится</option>
+                    </select>
+                </div>
+            </div>
+
+
+            <div class="grid grid-cols-2 gap-4 items-center mt-10">
+                <div>Ребенок №9 а. Пол</div>
+                <div class="col-span-1 flex items-center gap-4">
+                    <div class="flex items-center">
+                        <input id="fc4_c9a-1" type="radio" value="1" name="fc4_c9a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <label for="fc4_c9a-1" class="ms-2 text-sm text-gray-900">1. Мужской</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="fc4_c9a-2" type="radio" value="2" name="fc4_c9a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <label for="fc4_c9a-2" class="ms-2 text-sm text-gray-900">2. Женский</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                <div>Ребенок №9 b. Возраст<small class="my-2 block italic text-red-500">УКАЖИТЕ ВОЗРАСТ, ПОЛНЫХ ЛЕТ</small></div>
+                <div>
+                    <input type="text" id="fc4_c9b" name="fc4_c9b" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                <div>Ребенок №9 c. дата оформления патроната</div>
+                <div>
+                    <input type="text" id="fc4_c9c" name="fc4_c9c" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                <div>Ребенок №9 d. Есть ли, какие-либо сложные потребности?</div>
+                <div class="col-span-1 flex items-center gap-4">
+                    <div class="flex items-center">
+                        <input id="fc4_c9d-1" type="radio" value="1" name="fc4_c9d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <label for="fc4_c9d-1" class="ms-2 text-sm text-gray-900">1. Мужской</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="fc4_c9d-2" type="radio" value="2" name="fc4_c9d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <label for="fc4_c9d-2" class="ms-2 text-sm text-gray-900">2. Женский</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4 items-center mt-10">
+                <div>Ребенок №9 cn. Какие потребности?<small class="my-2 block italic text-red-500">Несколько ответов</small></div>
+                <div class="col-span-1 flex flex-col gap-2">
+                    <div class="flex items-center">
+                        <input id="fc4_c9cn1" type="checkbox" value="1" name="fc4_c9cn1" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-100 rounded">
+                        <label for="fc4_c9cn1" class="ms-2 text-sm text-gray-900">1. Инволидность</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="fc4_c9cn2" type="checkbox" value="2" name="fc4_c9cn2" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-100 rounded">
+                        <label for="fc4_c9cn2" class="ms-2 text-sm text-gray-900">2. Особые потребности в образовании</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="fc4_c9cn3" type="checkbox" value="3" name="fc4_c9cn3" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-100 rounded">
+                        <label for="fc4_c9cn3" class="ms-2 text-sm text-gray-900">3. ВИЧ/СПИД</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="fc4_c9cn4" type="checkbox" value="4" name="fc4_c9cn4" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-100 rounded">
+                        <label for="fc4_c9cn4" class="ms-2 text-sm text-gray-900">4. Поведенческие расстройства</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="fc4_c9cn5" type="checkbox" value="5" name="fc4_c9cn5" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-100 rounded">
+                        <label for="fc4_c9cn5" class="ms-2 text-sm text-gray-900">5. Находящийся в конфликте с законом</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="fc4_c9cn6" type="checkbox" value="6" name="fc4_c9cn6" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-100 rounded">
+                        <label for="fc4_c9cn6" class="ms-2 text-sm text-gray-900">6. Другие</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                <div>Ребенок №9 cn. Какие потребности?</div>
+                <div class="col-span-1 flex items-center gap-4">
+                    <select id="fc4_c9e" name="fc4_c9e" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
+                        <option value="-9">--- выбрать ---</option>
+                        <option value="1">1. Из своей семьи</option>
+                        <option value="2">2. Из детского учреждения</option>
+                        <option value="3">3. Из дома семейного типа</option>
+                        <option value="4">4. Из другой патронатной семьи</option>
+                        <option value="5">5. Другая ситуация, укажите</option>
+                    </select>
+                    <input type="text" id="fc4_c9e_other" name="fc4_c9e_other" class="bg-white border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                <div>Ребенок №9 f. Ожидаемая дата выхода</div>
+                <div>
+                    <input type="text" id="fc4_c9f" name="fc4_c9f" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                <div>Ребенок №9 g. В каком учебном заведении сейчас учится ребенок?</div>
+                <div class="col-span-1 flex items-center gap-4">
+                    <select id="fc4_c9g" name="fc4_c9g" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
+                        <option value="-9">--- выбрать ---</option>
+                        <option value="1">1. В общеобразовательном учреждении, без инклюзивных классов/групп</option>
+                        <option value="2">2. В общеобразовательном учреждении с инклюзивными классами/группами</option>
+                        <option value="3">3. В специализированном учебном заведении</option>
+                        <option value="4">4. Домашнее обучение</option>
+                        <option value="5">5. Не учится</option>
+                    </select>
+                </div>
+            </div>
+
+
+            <div class="grid grid-cols-2 gap-4 items-center mt-10">
+                <div>Ребенок №10 а. Пол</div>
+                <div class="col-span-1 flex items-center gap-4">
+                    <div class="flex items-center">
+                        <input id="fc4_c10a-1" type="radio" value="1" name="fc4_c10a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <label for="fc4_c10a-1" class="ms-2 text-sm text-gray-900">1. Мужской</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="fc4_c10a-2" type="radio" value="2" name="fc4_c10a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <label for="fc4_c10a-2" class="ms-2 text-sm text-gray-900">2. Женский</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                <div>Ребенок №10 b. Возраст<small class="my-2 block italic text-red-500">УКАЖИТЕ ВОЗРАСТ, ПОЛНЫХ ЛЕТ</small></div>
+                <div>
+                    <input type="text" id="fc4_c10b" name="fc4_c10b" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                <div>Ребенок №10 c. дата оформления патроната</div>
+                <div>
+                    <input type="text" id="fc4_c10c" name="fc4_c10c" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                <div>Ребенок №10 d. Есть ли, какие-либо сложные потребности?</div>
+                <div class="col-span-1 flex items-center gap-4">
+                    <div class="flex items-center">
+                        <input id="fc4_c10d-1" type="radio" value="1" name="fc4_c10d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <label for="fc4_c10d-1" class="ms-2 text-sm text-gray-900">1. Мужской</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="fc4_c10d-2" type="radio" value="2" name="fc4_c10d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <label for="fc4_c10d-2" class="ms-2 text-sm text-gray-900">2. Женский</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4 items-center mt-10">
+                <div>Ребенок №10 cn. Какие потребности?<small class="my-2 block italic text-red-500">Несколько ответов</small></div>
+                <div class="col-span-1 flex flex-col gap-2">
+                    <div class="flex items-center">
+                        <input id="fc4_c10cn1" type="checkbox" value="1" name="fc4_c10cn1" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-100 rounded">
+                        <label for="fc4_c10cn1" class="ms-2 text-sm text-gray-900">1. Инволидность</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="fc4_c10cn2" type="checkbox" value="2" name="fc4_c10cn2" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-100 rounded">
+                        <label for="fc4_c10cn2" class="ms-2 text-sm text-gray-900">2. Особые потребности в образовании</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="fc4_c10cn3" type="checkbox" value="3" name="fc4_c10cn3" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-100 rounded">
+                        <label for="fc4_c10cn3" class="ms-2 text-sm text-gray-900">3. ВИЧ/СПИД</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="fc4_c10cn4" type="checkbox" value="4" name="fc4_c10cn4" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-100 rounded">
+                        <label for="fc4_c10cn4" class="ms-2 text-sm text-gray-900">4. Поведенческие расстройства</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="fc4_c10cn5" type="checkbox" value="5" name="fc4_c10cn5" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-100 rounded">
+                        <label for="fc4_c10cn5" class="ms-2 text-sm text-gray-900">5. Находящийся в конфликте с законом</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="fc4_c10cn6" type="checkbox" value="6" name="fc4_c10cn6" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-100 rounded">
+                        <label for="fc4_c10cn6" class="ms-2 text-sm text-gray-900">6. Другие</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                <div>Ребенок №10 cn. Какие потребности?</div>
+                <div class="col-span-1 flex items-center gap-4">
+                    <select id="fc4_c10e" name="fc4_c10e" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
+                        <option value="-9">--- выбрать ---</option>
+                        <option value="1">1. Из своей семьи</option>
+                        <option value="2">2. Из детского учреждения</option>
+                        <option value="3">3. Из дома семейного типа</option>
+                        <option value="4">4. Из другой патронатной семьи</option>
+                        <option value="5">5. Другая ситуация, укажите</option>
+                    </select>
+                    <input type="text" id="fc4_c10e_other" name="fc4_c10e_other" class="bg-white border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                <div>Ребенок №10 f. Ожидаемая дата выхода</div>
+                <div>
+                    <input type="text" id="fc4_c10f" name="fc4_c10f" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                <div>Ребенок №10 g. В каком учебном заведении сейчас учится ребенок?</div>
+                <div class="col-span-1 flex items-center gap-4">
+                    <select id="fc4_c10g" name="fc4_c10g" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
+                        <option value="-9">--- выбрать ---</option>
+                        <option value="1">1. В общеобразовательном учреждении, без инклюзивных классов/групп</option>
+                        <option value="2">2. В общеобразовательном учреждении с инклюзивными классами/группами</option>
+                        <option value="3">3. В специализированном учебном заведении</option>
+                        <option value="4">4. Домашнее обучение</option>
+                        <option value="5">5. Не учится</option>
+                    </select>
+                </div>
+            </div>
+
 
 
             <h2 class="mt-10 mb-4 text-2xl font-bold text-gray-700">4. ВЫХОДЫ ИЗ ЭТОЙ ПАТРОНАТНОЙ СЕМЬИ В ТЕЧЕНИЕ ОТЧЕТНОГО ГОДА</h2>
 
             <div class="grid grid-cols-2 gap-4 items-center mt-10">
                 <div>EX1. В течение отчетного года кто-нибудь из детей покинет эту патронатную семью?</div>
-                <div class="grid grid-cols-2 gap-4 items-center4">
+                <div class="col-span-1 flex items-center gap-4">
                     <div class="flex items-center">
                         <input id="ex1-1" type="radio" value="1" name="ex1" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="ex1-1" class="ms-2 text-sm text-gray-900">1. Да</label>
@@ -979,7 +1483,7 @@
                     <tr class="border-b">
                         <th class="p-2"></th>
                         <th class="w-40 p-2">а. Пол</th>
-                        <th class="p-2">b. Возраст</th>
+                        <th class="p-2">b. Возраст<br><small class="text-sm italic">УКАЖИТЕ ВОЗРАСТ, ПОЛНЫХ ЛЕТ</small></th>
                         <th class="w-52 p-2">c. Имеется ли инвалидность?</th>
                         <th class="p-2">d. Причина ухода</th>
                     </tr>
@@ -991,11 +1495,11 @@
                             <div class="flex items-center justify-center gap-2">
                                 <div class="flex items-center">
                                     <input id="ex3_c1a-1" type="radio" value="1" name="ex3_c1a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                                    <label for="ex3_c1a-1" class="ms-2 text-sm text-gray-900">1. M</label>
+                                    <label for="ex3_c1a-1" class="ms-2 text-sm text-gray-900">1. Мужской</label>
                                 </div>
                                 <div class="flex items-center">
                                     <input id="ex3_c1a-2" type="radio" value="2" name="ex3_c1a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                                    <label for="ex3_c1a-2" class="ms-2 text-sm text-gray-900">2. Ж</label>
+                                    <label for="ex3_c1a-2" class="ms-2 text-sm text-gray-900">2. Женский</label>
                                 </div>
                             </div>
                         </td>
@@ -1006,11 +1510,11 @@
                             <div class="flex items-center justify-center gap-2">
                                 <div class="flex items-center">
                                     <input id="ex3_c1c-1" type="radio" value="1" name="ex3_c1c" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                                    <label for="ex3_c1c-1" class="ms-2 text-sm text-gray-900">1. Д</label>
+                                    <label for="ex3_c1c-1" class="ms-2 text-sm text-gray-900">1. Да</label>
                                 </div>
                                 <div class="flex items-center">
                                     <input id="ex3_c1c-2" type="radio" value="2" name="ex3_c1c" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                                    <label for="ex3_c1c-2" class="ms-2 text-sm text-gray-900">2. Н</label>
+                                    <label for="ex3_c1c-2" class="ms-2 text-sm text-gray-900">0. Нет</label>
                                 </div>
                             </div>
                         </td>
@@ -1037,11 +1541,11 @@
                             <div class="flex items-center justify-center gap-2">
                                 <div class="flex items-center">
                                     <input id="ex3_c2a-1" type="radio" value="1" name="ex3_c2a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                                    <label for="ex3_c2a-1" class="ms-2 text-sm text-gray-900">1. M</label>
+                                    <label for="ex3_c2a-1" class="ms-2 text-sm text-gray-900">1. Мужской</label>
                                 </div>
                                 <div class="flex items-center">
                                     <input id="ex3_c2a-2" type="radio" value="2" name="ex3_c2a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                                    <label for="ex3_c2a-2" class="ms-2 text-sm text-gray-900">2. Ж</label>
+                                    <label for="ex3_c2a-2" class="ms-2 text-sm text-gray-900">2. Женский</label>
                                 </div>
                             </div>
                         </td>
@@ -1052,11 +1556,11 @@
                             <div class="flex items-center justify-center gap-2">
                                 <div class="flex items-center">
                                     <input id="ex3_c2c-1" type="radio" value="1" name="ex3_c2c" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                                    <label for="ex3_c2c-1" class="ms-2 text-sm text-gray-900">1. Д</label>
+                                    <label for="ex3_c2c-1" class="ms-2 text-sm text-gray-900">1. Да</label>
                                 </div>
                                 <div class="flex items-center">
                                     <input id="ex3_c2c-2" type="radio" value="2" name="ex3_c2c" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                                    <label for="ex3_c2c-2" class="ms-2 text-sm text-gray-900">2. Н</label>
+                                    <label for="ex3_c2c-2" class="ms-2 text-sm text-gray-900">0. Нет</label>
                                 </div>
                             </div>
                         </td>
@@ -1083,11 +1587,11 @@
                             <div class="flex items-center justify-center gap-2">
                                 <div class="flex items-center">
                                     <input id="ex3_c3a-1" type="radio" value="1" name="ex3_c3a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                                    <label for="ex3_c3a-1" class="ms-2 text-sm text-gray-900">1. M</label>
+                                    <label for="ex3_c3a-1" class="ms-2 text-sm text-gray-900">1. Мужской</label>
                                 </div>
                                 <div class="flex items-center">
                                     <input id="ex3_c3a-2" type="radio" value="2" name="ex3_c3a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                                    <label for="ex3_c3a-2" class="ms-2 text-sm text-gray-900">2. Ж</label>
+                                    <label for="ex3_c3a-2" class="ms-2 text-sm text-gray-900">2. Женский</label>
                                 </div>
                             </div>
                         </td>
@@ -1098,11 +1602,11 @@
                             <div class="flex items-center justify-center gap-2">
                                 <div class="flex items-center">
                                     <input id="ex3_c3c-1" type="radio" value="1" name="ex3_c3c" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                                    <label for="ex3_c3c-1" class="ms-2 text-sm text-gray-900">1. Д</label>
+                                    <label for="ex3_c3c-1" class="ms-2 text-sm text-gray-900">1. Да</label>
                                 </div>
                                 <div class="flex items-center">
                                     <input id="ex3_c3c-2" type="radio" value="2" name="ex3_c3c" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                                    <label for="ex3_c3c-2" class="ms-2 text-sm text-gray-900">2. Н</label>
+                                    <label for="ex3_c3c-2" class="ms-2 text-sm text-gray-900">0. Нет</label>
                                 </div>
                             </div>
                         </td>
@@ -1129,11 +1633,11 @@
                             <div class="flex items-center justify-center gap-2">
                                 <div class="flex items-center">
                                     <input id="ex3_c4a-1" type="radio" value="1" name="ex3_c4a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                                    <label for="ex3_c4a-1" class="ms-2 text-sm text-gray-900">1. M</label>
+                                    <label for="ex3_c4a-1" class="ms-2 text-sm text-gray-900">1. Мужской</label>
                                 </div>
                                 <div class="flex items-center">
                                     <input id="ex3_c4a-2" type="radio" value="2" name="ex3_c4a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                                    <label for="ex3_c4a-2" class="ms-2 text-sm text-gray-900">2. Ж</label>
+                                    <label for="ex3_c4a-2" class="ms-2 text-sm text-gray-900">2. Женский</label>
                                 </div>
                             </div>
                         </td>
@@ -1144,11 +1648,11 @@
                             <div class="flex items-center justify-center gap-2">
                                 <div class="flex items-center">
                                     <input id="ex3_c4c-1" type="radio" value="1" name="ex3_c4c" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                                    <label for="ex3_c4c-1" class="ms-2 text-sm text-gray-900">1. Д</label>
+                                    <label for="ex3_c4c-1" class="ms-2 text-sm text-gray-900">1. Да</label>
                                 </div>
                                 <div class="flex items-center">
                                     <input id="ex3_c4c-2" type="radio" value="2" name="ex3_c4c" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                                    <label for="ex3_c4c-2" class="ms-2 text-sm text-gray-900">2. Н</label>
+                                    <label for="ex3_c4c-2" class="ms-2 text-sm text-gray-900">0. Нет</label>
                                 </div>
                             </div>
                         </td>
@@ -1175,11 +1679,11 @@
                             <div class="flex items-center justify-center gap-2">
                                 <div class="flex items-center">
                                     <input id="ex3_c5a-1" type="radio" value="1" name="ex3_c5a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                                    <label for="ex3_c5a-1" class="ms-2 text-sm text-gray-900">1. M</label>
+                                    <label for="ex3_c5a-1" class="ms-2 text-sm text-gray-900">1. Мужской</label>
                                 </div>
                                 <div class="flex items-center">
                                     <input id="ex3_c5a-2" type="radio" value="2" name="ex3_c5a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                                    <label for="ex3_c5a-2" class="ms-2 text-sm text-gray-900">2. Ж</label>
+                                    <label for="ex3_c5a-2" class="ms-2 text-sm text-gray-900">2. Женский</label>
                                 </div>
                             </div>
                         </td>
@@ -1190,11 +1694,11 @@
                             <div class="flex items-center justify-center gap-2">
                                 <div class="flex items-center">
                                     <input id="ex3_c5c-1" type="radio" value="1" name="ex3_c5c" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                                    <label for="ex3_c5c-1" class="ms-2 text-sm text-gray-900">1. Д</label>
+                                    <label for="ex3_c5c-1" class="ms-2 text-sm text-gray-900">1. Да</label>
                                 </div>
                                 <div class="flex items-center">
                                     <input id="ex3_c5c-2" type="radio" value="2" name="ex3_c5c" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                                    <label for="ex3_c5c-2" class="ms-2 text-sm text-gray-900">2. Н</label>
+                                    <label for="ex3_c5c-2" class="ms-2 text-sm text-gray-900">0. Нет</label>
                                 </div>
                             </div>
                         </td>
@@ -1221,11 +1725,11 @@
                             <div class="flex items-center justify-center gap-2">
                                 <div class="flex items-center">
                                     <input id="ex3_c6a-1" type="radio" value="1" name="ex3_c6a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                                    <label for="ex3_c6a-1" class="ms-2 text-sm text-gray-900">1. M</label>
+                                    <label for="ex3_c6a-1" class="ms-2 text-sm text-gray-900">1. Мужской</label>
                                 </div>
                                 <div class="flex items-center">
                                     <input id="ex3_c6a-2" type="radio" value="2" name="ex3_c6a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                                    <label for="ex3_c6a-2" class="ms-2 text-sm text-gray-900">2. Ж</label>
+                                    <label for="ex3_c6a-2" class="ms-2 text-sm text-gray-900">2. Женский</label>
                                 </div>
                             </div>
                         </td>
@@ -1236,11 +1740,11 @@
                             <div class="flex items-center justify-center gap-2">
                                 <div class="flex items-center">
                                     <input id="ex3_c6c-1" type="radio" value="1" name="ex3_c6c" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                                    <label for="ex3_c6c-1" class="ms-2 text-sm text-gray-900">1. Д</label>
+                                    <label for="ex3_c6c-1" class="ms-2 text-sm text-gray-900">1. Да</label>
                                 </div>
                                 <div class="flex items-center">
                                     <input id="ex3_c6c-2" type="radio" value="2" name="ex3_c6c" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                                    <label for="ex3_c6c-2" class="ms-2 text-sm text-gray-900">2. Н</label>
+                                    <label for="ex3_c6c-2" class="ms-2 text-sm text-gray-900">0. Нет</label>
                                 </div>
                             </div>
                         </td>
@@ -1267,11 +1771,11 @@
                             <div class="flex items-center justify-center gap-2">
                                 <div class="flex items-center">
                                     <input id="ex3_c7a-1" type="radio" value="1" name="ex3_c7a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                                    <label for="ex3_c7a-1" class="ms-2 text-sm text-gray-900">1. M</label>
+                                    <label for="ex3_c7a-1" class="ms-2 text-sm text-gray-900">1. Мужской</label>
                                 </div>
                                 <div class="flex items-center">
                                     <input id="ex3_c7a-2" type="radio" value="2" name="ex3_c7a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                                    <label for="ex3_c7a-2" class="ms-2 text-sm text-gray-900">2. Ж</label>
+                                    <label for="ex3_c7a-2" class="ms-2 text-sm text-gray-900">2. Женский</label>
                                 </div>
                             </div>
                         </td>
@@ -1282,11 +1786,11 @@
                             <div class="flex items-center justify-center gap-2">
                                 <div class="flex items-center">
                                     <input id="ex3_c7c-1" type="radio" value="1" name="ex3_c7c" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                                    <label for="ex3_c7c-1" class="ms-2 text-sm text-gray-900">1. Д</label>
+                                    <label for="ex3_c7c-1" class="ms-2 text-sm text-gray-900">1. Да</label>
                                 </div>
                                 <div class="flex items-center">
                                     <input id="ex3_c7c-2" type="radio" value="2" name="ex3_c7c" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                                    <label for="ex3_c7c-2" class="ms-2 text-sm text-gray-900">2. Н</label>
+                                    <label for="ex3_c7c-2" class="ms-2 text-sm text-gray-900">0. Нет</label>
                                 </div>
                             </div>
                         </td>
@@ -1313,11 +1817,11 @@
                             <div class="flex items-center justify-center gap-2">
                                 <div class="flex items-center">
                                     <input id="ex3_c8a-1" type="radio" value="1" name="ex3_c8a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                                    <label for="ex3_c8a-1" class="ms-2 text-sm text-gray-900">1. M</label>
+                                    <label for="ex3_c8a-1" class="ms-2 text-sm text-gray-900">1. Мужской</label>
                                 </div>
                                 <div class="flex items-center">
                                     <input id="ex3_c8a-2" type="radio" value="2" name="ex3_c8a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                                    <label for="ex3_c8a-2" class="ms-2 text-sm text-gray-900">2. Ж</label>
+                                    <label for="ex3_c8a-2" class="ms-2 text-sm text-gray-900">2. Женский</label>
                                 </div>
                             </div>
                         </td>
@@ -1328,11 +1832,11 @@
                             <div class="flex items-center justify-center gap-2">
                                 <div class="flex items-center">
                                     <input id="ex3_c8c-1" type="radio" value="1" name="ex3_c8c" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                                    <label for="ex3_c8c-1" class="ms-2 text-sm text-gray-900">1. Д</label>
+                                    <label for="ex3_c8c-1" class="ms-2 text-sm text-gray-900">1. Да</label>
                                 </div>
                                 <div class="flex items-center">
                                     <input id="ex3_c8c-2" type="radio" value="2" name="ex3_c8c" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                                    <label for="ex3_c8c-2" class="ms-2 text-sm text-gray-900">2. Н</label>
+                                    <label for="ex3_c8c-2" class="ms-2 text-sm text-gray-900">0. Нет</label>
                                 </div>
                             </div>
                         </td>
@@ -1359,11 +1863,11 @@
                             <div class="flex items-center justify-center gap-2">
                                 <div class="flex items-center">
                                     <input id="ex3_c9a-1" type="radio" value="1" name="ex3_c9a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                                    <label for="ex3_c9a-1" class="ms-2 text-sm text-gray-900">1. M</label>
+                                    <label for="ex3_c9a-1" class="ms-2 text-sm text-gray-900">1. Мужской</label>
                                 </div>
                                 <div class="flex items-center">
                                     <input id="ex3_c9a-2" type="radio" value="2" name="ex3_c9a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                                    <label for="ex3_c9a-2" class="ms-2 text-sm text-gray-900">2. Ж</label>
+                                    <label for="ex3_c9a-2" class="ms-2 text-sm text-gray-900">2. Женский</label>
                                 </div>
                             </div>
                         </td>
@@ -1374,11 +1878,11 @@
                             <div class="flex items-center justify-center gap-2">
                                 <div class="flex items-center">
                                     <input id="ex3_c9c-1" type="radio" value="1" name="ex3_c9c" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                                    <label for="ex3_c9c-1" class="ms-2 text-sm text-gray-900">1. Д</label>
+                                    <label for="ex3_c9c-1" class="ms-2 text-sm text-gray-900">1. Да</label>
                                 </div>
                                 <div class="flex items-center">
                                     <input id="ex3_c9c-2" type="radio" value="2" name="ex3_c9c" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                                    <label for="ex3_c9c-2" class="ms-2 text-sm text-gray-900">2. Н</label>
+                                    <label for="ex3_c9c-2" class="ms-2 text-sm text-gray-900">0. Нет</label>
                                 </div>
                             </div>
                         </td>
@@ -1405,11 +1909,11 @@
                             <div class="flex items-center justify-center gap-2">
                                 <div class="flex items-center">
                                     <input id="ex3_c10a-1" type="radio" value="1" name="ex3_c10a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                                    <label for="ex3_c10a-1" class="ms-2 text-sm text-gray-900">1. M</label>
+                                    <label for="ex3_c10a-1" class="ms-2 text-sm text-gray-900">1. Мужской</label>
                                 </div>
                                 <div class="flex items-center">
                                     <input id="ex3_c10a-2" type="radio" value="2" name="ex3_c10a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                                    <label for="ex3_c10a-2" class="ms-2 text-sm text-gray-900">2. Ж</label>
+                                    <label for="ex3_c10a-2" class="ms-2 text-sm text-gray-900">2. Женский</label>
                                 </div>
                             </div>
                         </td>
@@ -1420,11 +1924,11 @@
                             <div class="flex items-center justify-center gap-2">
                                 <div class="flex items-center">
                                     <input id="ex3_c10c-1" type="radio" value="1" name="ex3_c10c" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                                    <label for="ex3_c10c-1" class="ms-2 text-sm text-gray-900">1. Д</label>
+                                    <label for="ex3_c10c-1" class="ms-2 text-sm text-gray-900">1. Да</label>
                                 </div>
                                 <div class="flex items-center">
                                     <input id="ex3_c10c-2" type="radio" value="2" name="ex3_c10c" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                                    <label for="ex3_c10c-2" class="ms-2 text-sm text-gray-900">2. Н</label>
+                                    <label for="ex3_c10c-2" class="ms-2 text-sm text-gray-900">0. Нет</label>
                                 </div>
                             </div>
                         </td>
@@ -1453,7 +1957,7 @@
 
             <div class="grid grid-cols-2 gap-4 items-center mt-10">
                 <div>QS1. Имеется ли в районном/городском отделе защиты детей/органе опеки специалист, назначенный для наблюдения  за выполнением опекуном данной патронатной семьи своих обязанностей?</div>
-                <div class="grid grid-cols-2 gap-4 items-center4">
+                <div class="col-span-1 flex items-center gap-4">
                     <div class="flex items-center">
                         <input id="qs1-1" type="radio" value="1" name="qs1" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="qs1-1" class="ms-2 text-sm text-gray-900">1. Да</label>
@@ -1465,10 +1969,7 @@
                 </div>
             </div>
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
-                <div>
-                    QS1a. Имя, отчество и фамилия специалиста.
-                    <small class="text-sm italic block mt-2">Пожалуйста, обратите внимание на ясность</small>
-                </div>
+                <div>QS1a. Имя, отчество и фамилия специалиста.</div>
                 <div>
                     <input type="text" id="qs1a" name="qs1a" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
                 </div>
@@ -1476,7 +1977,7 @@
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
                 <div>
                     QS2. Сколько раз за последние 12 месяцев к приемным родителям приходил специалист, назначенный для мониторинга за данным патронатным домом, или другое лицо из отдела защиты детей?
-                    <small class="text-sm italic">Заполните 0 (ноль), если MC не наносил визитов.</small>
+                    <small class="text-sm italic">Поставьте 0 если ответственный специалист не посещал семью.</small>
                 </div>
                 <div class="flex items-center gap-4">
                     <input type="text" id="qs2" name="qs2" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
@@ -1486,81 +1987,99 @@
 
             <div class="grid grid-cols-2 gap-4 items-center mt-10">
                 <div>QS3. Привлекались ли приемные родители за последние 12 месяцев по поводу каких-либо жалоб, обращений или обвинений, включая предполагаемые случаи жестокого обращения с детьми, пренебрежения или эксплуатации, независимо от источника?</div>
-                <div class="grid grid-cols-2 gap-4 items-center4">
+                <div class="col-span-1 flex items-center gap-4">
                     <div class="flex items-center">
                         <input id="qs3-1" type="radio" value="1" name="qs3" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="qs3-1" class="ms-2 text-sm text-gray-900">1. Да</label>
                     </div>
                     <div class="flex items-center">
-                        <input id="qs3-2" type="radio" value="2" name="qs3" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <input id="qs3-2" type="radio" value="0" name="qs3" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="qs3-2" class="ms-2 text-sm text-gray-900">0. Нет</label>
                     </div>
                 </div>
             </div>
             <div class="grid grid-cols-2 gap-4 items-center mt-10">
                 <div>QS4. Произошли ли за последние 12 месяцев какие-либо изменения в судимости лиц, проживающих с ребенком, или какое-либо вмешательство полиции в приемную семью?</div>
-                <div class="grid grid-cols-2 gap-4 items-center4">
+                <div class="col-span-1 flex items-center gap-4">
                     <div class="flex items-center">
                         <input id="qs4-1" type="radio" value="1" name="qs4" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="qs4-1" class="ms-2 text-sm text-gray-900">1. Да</label>
                     </div>
                     <div class="flex items-center">
-                        <input id="qs4-2" type="radio" value="2" name="qs4" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <input id="qs4-2" type="radio" value="0" name="qs4" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="qs4-2" class="ms-2 text-sm text-gray-900">0. Нет</label>
                     </div>
                 </div>
             </div>
             <div class="grid grid-cols-2 gap-4 items-center mt-10">
                 <div>QS5. Был ли за последние 12 месяцев какие либо ситуации в семье, после чего семья ставит по сомнение возможность продолжать предоставлять ребенку патронатную опеку?</div>
-                <div class="grid grid-cols-2 gap-4 items-center4">
+                <div class="col-span-1 flex items-center gap-4">
                     <div class="flex items-center">
                         <input id="qs5-1" type="radio" value="1" name="qs5" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="qs5-1" class="ms-2 text-sm text-gray-900">1. Да</label>
                     </div>
                     <div class="flex items-center">
-                        <input id="qs5-2" type="radio" value="2" name="qs5" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <input id="qs5-2" type="radio" value="0" name="qs5" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="qs5-2" class="ms-2 text-sm text-gray-900">0. Нет</label>
                     </div>
                 </div>
             </div>
             <div class="grid grid-cols-2 gap-4 items-center mt-10">
-                <div>QS6. Получала ли патронатная семья какое-либо обучение за последние 3 года?</div>
-                <div class="grid grid-cols-2 gap-4 items-center4">
+                <div>QS6. Проходила ли семья патронат какое-либо обучение за последние три года?</div>
+                <div class="col-span-1 flex items-center gap-4">
                     <div class="flex items-center">
                         <input id="qs6-1" type="radio" value="1" name="qs6" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="qs6-1" class="ms-2 text-sm text-gray-900">1. Да</label>
                     </div>
                     <div class="flex items-center">
-                        <input id="qs6-2" type="radio" value="2" name="qs6" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <input id="qs6-2" type="radio" value="0" name="qs6" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="qs6-2" class="ms-2 text-sm text-gray-900">0. Нет</label>
                     </div>
                 </div>
             </div>
             <div class="grid grid-cols-2 gap-4 items-center mt-10">
                 <div>QS7. Получала ли патронатная семья какую-либо психологическую консультацию за последние 12 месяцев?</div>
-                <div class="grid grid-cols-2 gap-4 items-center4">
+                <div class="col-span-1 flex items-center gap-4">
                     <div class="flex items-center">
                         <input id="qs7-1" type="radio" value="1" name="qs7" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="qs7-1" class="ms-2 text-sm text-gray-900">1. Да</label>
                     </div>
                     <div class="flex items-center">
-                        <input id="qs7-2" type="radio" value="2" name="qs7" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <input id="qs7-2" type="radio" value="0" name="qs7" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="qs7-2" class="ms-2 text-sm text-gray-900">0. Нет</label>
                     </div>
                 </div>
             </div>
             <div class="grid grid-cols-2 gap-4 items-center mt-10">
-                <div>QS8. Участвовала ли патронатная семья в каких-либо группах поддержки приемных семей за последние 12 месяцев?</div>
-                <div class="grid grid-cols-2 gap-4 items-center4">
+                <div>QS8. Участвовала ли патронатная семья в каких-либо группах поддержки приемных семей за последние 12 месяцев?<small class="my-2 block italic text-red-500">Группа поддержки означает сообщество людей, которые объединяются для того, чтобы оказать эмоциональную и практическую помощь друг другу. Обычно такая группа состоит  из опекунов, социальных работников, других специалистов. Основная цель этой группы это -делиться опытом, рекоммендациями и ресурсами в отношении опекунства</small></div>
+                <div class="col-span-1 flex items-center gap-4">
                     <div class="flex items-center">
                         <input id="qs8-1" type="radio" value="1" name="qs8" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="qs8-1" class="ms-2 text-sm text-gray-900">1. Да</label>
                     </div>
                     <div class="flex items-center">
-                        <input id="qs8-2" type="radio" value="2" name="qs8" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <input id="qs8-2" type="radio" value="0" name="qs8" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="qs8-2" class="ms-2 text-sm text-gray-900">0. Нет</label>
                     </div>
                 </div>
+            </div>
+            <div class="grid grid-cols-2 gap-4 items-center mt-10">
+                <div>QS9. Проходила ли семья патронат какое-либо обучение по уходу за детьми со сложными потребностями?</small></div>
+                <div class="col-span-1 flex items-center gap-4">
+                    <div class="flex items-center">
+                        <input id="qs9-1" type="radio" value="1" name="qs9" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <label for="qs9-1" class="ms-2 text-sm text-gray-900">1. Да</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="qs9-2" type="radio" value="0" name="qs9" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <label for="qs9-2" class="ms-2 text-sm text-gray-900">0. Нет</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid mt-10">
+                <label for="obs">OBS. Наблюдения</label>
+                <textarea class="form-control" rows="3" id="obs" name="obs"></textarea>
             </div>
 
         </form>
