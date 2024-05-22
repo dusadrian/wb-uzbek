@@ -60,7 +60,13 @@ export const instrument7 = {
     init: async () => {
 
         $("#fc4_c1d").select2({
-            width: '100%'
+            width: '80%',
+            multiple: true,
+        });
+
+        $('#fc4_c1d').on('select2:select', function() {
+            console.log(util.htmlElement('fc4_c1d').value);
+            util.trigger('fc4_c1d', 'change');
         });
 
         $.datepicker.setDefaults($.datepicker.regional[lang]);
