@@ -4,4 +4,3 @@ declare module 'jquery-ui/ui/i18n/datepicker-ru' {
     export default value;
 }
 
-declare module 'select2'

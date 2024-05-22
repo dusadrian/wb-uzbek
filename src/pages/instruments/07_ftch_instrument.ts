@@ -15,8 +15,7 @@ window.require('jquery-ui-dist/jquery-ui');
 // window.require('jquery-ui');
 import "jquery-ui/ui/i18n/datepicker-ru";
 import "jquery-ui/ui/i18n/datepicker-uz";
-import * as select2 from 'select2';
-select2(window, $);
+
 
 import { KeyString, regions, districts, settlements } from "../../libraries/administrative";
 
@@ -59,11 +58,6 @@ let filters: DI.FiltersInterface;
 
 export const instrument7 = {
     init: async () => {
-
-        $("#fc4_c1d").select2({
-            width: '80%',
-            multiple: true,
-        });
 
         $('#fc4_c1d').on('select2:select', function() {
             console.log(util.htmlElement('fc4_c1d').value);
