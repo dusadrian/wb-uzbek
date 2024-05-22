@@ -6,14 +6,13 @@
     <title>CRM Uzbek</title>
     <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
     <meta http-equiv="Content-Security-Policy"
-        content="default-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' http: https: data: ; script-src 'self';" />
+        content="default-src 'self'; img-src 'self' http: https: data: ; script-src 'self';" />
     <meta http-equiv="X-Content-Security-Policy"
-        content="default-src 'self'; style-src 'self' 'unsafe-inline'; img-src http: https: 'self' data: ; script-src 'self';" />
+        content="default-src 'self'; img-src http: https: 'self' data: ; script-src 'self';" />
     <link href="../../../dist/main.css" rel="stylesheet">
     <link rel="stylesheet" href="../../../node_modules/jquery-ui-dist/jquery-ui.min.css">
     <link rel="stylesheet" href="../../../node_modules/jquery-ui-dist/jquery-ui.structure.min.css">
     <link rel="stylesheet" href="../../../node_modules/jquery-ui-dist/jquery-ui.theme.min.css">
-    <link rel="stylesheet" href="../../../node_modules/select2/dist/css/select2.min.css">
 </head>
 
 <body class="relative max-h-screen">
@@ -589,560 +588,1025 @@
             </div>
 
             <p class="mt-6">FC4. For each child currently placed into care in this family-type home, please record the following information</p>
-            <table class="w-full mt-6" aria-label="For each child currently placed into care in this family-type home, please record the following information">
-                <thead>
-                    <tr class="border-b">
-                        <th class="p-2"></th>
-                        <th class="w-40 p-2">a. Gender</th>
-                        <th class="p-2">b. Age</th>
-                        <th class="p-2">c. Date of admission</th>
-                        <th class="p-2">d. Has any complex needs?</th>
-                        <th class="p-2">e. Where did the child come from?</th>
-                        <th class="w-48 p-2">f. What type of education is the child currently enrolled in?</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td class="p-2">Child #1</td>
-                        <td class="p-2">
-                            <div class="flex items-center justify-center gap-2">
-                                <div class="flex items-center">
-                                    <input id="fc4_c1a-1" type="radio" value="1" name="fc4_c1a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                                    <label for="fc4_c1a-1" class="ms-2 text-sm text-gray-900">1. Male</label>
-                                </div>
-                                <div class="flex items-center">
-                                    <input id="fc4_c1a-2" type="radio" value="2" name="fc4_c1a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                                    <label for="fc4_c1a-2" class="ms-2 text-sm text-gray-900">2. Female</label>
-                                </div>
-                            </div>
-                        </td>
-                        <td class="p-2">
-                            <input type="text" id="fc4_c1b" name="fc4_c1b" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
-                        </td>
-                        <td class="p-2">
-                            <input type="text" id="fc4_c1c" name="fc4_c1c" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
-                        </td>
-                        <td class="p-2">
-                            <select multiple id="fc4_c1d" name="fc4_c1d" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
-                                <option value="0">None</option>
-                                <option value="1">Disability</option>
-                                <option value="2">Special education needs</option>
-                                <option value="3">HIV/AIDS </option>
-                                <option value="4">Behavioral disorders</option>
-                                <option value="5">In conflict with law</option>
-                                <option value="6">Other</option>
-                            </select>
-                        </td>
-                        <td class="p-2">
-                            <select id="fc4_c1e" name="fc4_c1e" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
-                                <option value="-9">--- choose ---</option>
-                                <option value="1">1. From their family</option>
-                                <option value="2">2. From a childcare institution</option>
-                                <option value="3">3. From another family-type home</option>
-                                <option value="4">4. From a patronat family</option>
-                                <option value="5">5. Other situation, please specify</option>
-                            </select>
-                            <input type="text" id="fc4_c1e_other" name="fc4_c1e_other" class="bg-white border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
-                        </td>
-                        <td class="p-2">
-                            <select id="fc4_c1f" name="fc4_c1f" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
-                                <option value="-9">--- choose ---</option>
-                                <option value="1">1. In mainstream education institution, without inclusive classes/groups</option>
-                                <option value="2">2. In mainstream education institution, with inclusive classes/groups</option>
-                                <option value="3">3. In specialized education institution</option>
-                                <option value="4">4. Homeschooling</option>
-                                <option value="5">5. Not enrolled in education</option>
-                            </select>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="p-2">Child #2</td>
-                        <td class="p-2">
-                            <div class="flex items-center justify-center gap-2">
-                                <div class="flex items-center">
-                                    <input id="fc4_c2a-1" type="radio" value="1" name="fc4_c2a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                                    <label for="fc4_c2a-1" class="ms-2 text-sm text-gray-900">1. Male</label>
-                                </div>
-                                <div class="flex items-center">
-                                    <input id="fc4_c2a-2" type="radio" value="2" name="fc4_c2a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                                    <label for="fc4_c2a-2" class="ms-2 text-sm text-gray-900">2. Female</label>
-                                </div>
-                            </div>
-                        </td>
-                        <td class="p-2">
-                            <input type="text" id="fc4_c2b" name="fc4_c2b" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
-                        </td>
-                        <td class="p-2">
-                            <input type="text" id="fc4_c2c" name="fc4_c2c" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
-                        </td>
-                        <td class="p-2">
-                            <div class="flex items-center gap-2">
-                                <div class="flex items-center">
-                                    <input id="fc4_c2d-1" type="radio" value="1" name="fc4_c2d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                                    <label for="fc4_c2d-1" class="ms-2 text-sm text-gray-900">1. Yes</label>
-                                </div>
-                                <div class="flex items-center">
-                                    <input id="fc4_c2d-2" type="radio" value="2" name="fc4_c2d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                                    <label for="fc4_c2d-2" class="ms-2 text-sm text-gray-900">2. No</label>
-                                </div>
-                            </div>
-                        </td>
-                        <td class="p-2">
-                            <select id="fc4_c2e" name="fc4_c2e" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
-                                <option value="-9">--- choose ---</option>
-                                <option value="1">1. From their family</option>
-                                <option value="2">2. From a childcare institution</option>
-                                <option value="3">3. From another family-type home</option>
-                                <option value="4">4. From a patronat family</option>
-                                <option value="5">5. Other situation, please specify</option>
-                            </select>
-                            <input type="text" id="fc4_c2e_other" name="fc4_c2e_other" class="bg-white border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
-                        </td>
-                        <td class="p-2">
-                            <select id="fc4_c2f" name="fc4_c2f" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
-                                <option value="-9">--- choose ---</option>
-                                <option value="1">1. In mainstream education institution, without inclusive classes/groups</option>
-                                <option value="2">2. In mainstream education institution, with inclusive classes/groups</option>
-                                <option value="3">3. In specialized education institution</option>
-                                <option value="4">4. Homeschooling</option>
-                                <option value="5">5. Not enrolled in education</option>
-                            </select>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="p-2">Child #3</td>
-                        <td class="p-2">
-                            <div class="flex items-center justify-center gap-2">
-                                <div class="flex items-center">
-                                    <input id="fc4_c3a-1" type="radio" value="1" name="fc4_c3a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                                    <label for="fc4_c3a-1" class="ms-2 text-sm text-gray-900">1. Male</label>
-                                </div>
-                                <div class="flex items-center">
-                                    <input id="fc4_c3a-2" type="radio" value="2" name="fc4_c3a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                                    <label for="fc4_c3a-2" class="ms-2 text-sm text-gray-900">2. Female</label>
-                                </div>
-                            </div>
-                        </td>
-                        <td class="p-2">
-                            <input type="text" id="fc4_c3b" name="fc4_c3b" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
-                        </td>
-                        <td class="p-2">
-                            <input type="text" id="fc4_c3c" name="fc4_c3c" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
-                        </td>
-                        <td class="p-2">
-                            <div class="flex items-center gap-2">
-                                <div class="flex items-center">
-                                    <input id="fc4_c3d-1" type="radio" value="1" name="fc4_c3d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                                    <label for="fc4_c3d-1" class="ms-2 text-sm text-gray-900">1. Yes</label>
-                                </div>
-                                <div class="flex items-center">
-                                    <input id="fc4_c3d-2" type="radio" value="2" name="fc4_c3d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                                    <label for="fc4_c3d-2" class="ms-2 text-sm text-gray-900">2. No</label>
-                                </div>
-                            </div>
-                        </td>
-                        <td class="p-2">
-                            <select id="fc4_c3e" name="fc4_c3e" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
-                                <option value="-9">--- choose ---</option>
-                                <option value="1">1. From their family</option>
-                                <option value="2">2. From a childcare institution</option>
-                                <option value="3">3. From another family-type home</option>
-                                <option value="4">4. From a patronat family</option>
-                                <option value="5">5. Other situation, please specify</option>
-                            </select>
-                            <input type="text" id="fc4_c3e_other" name="fc4_c3e_other" class="bg-white border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
-                        </td>
-                        <td class="p-2">
-                            <select id="fc4_c3f" name="fc4_c3f" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
-                                <option value="-9">--- choose ---</option>
-                                <option value="1">1. In mainstream education institution, without inclusive classes/groups</option>
-                                <option value="2">2. In mainstream education institution, with inclusive classes/groups</option>
-                                <option value="3">3. In specialized education institution</option>
-                                <option value="4">4. Homeschooling</option>
-                                <option value="5">5. Not enrolled in education</option>
-                            </select>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="p-2">Child #4</td>
-                        <td class="p-2">
-                            <div class="flex items-center justify-center gap-2">
-                                <div class="flex items-center">
-                                    <input id="fc4_c4a-1" type="radio" value="1" name="fc4_c4a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                                    <label for="fc4_c4a-1" class="ms-2 text-sm text-gray-900">1. Male</label>
-                                </div>
-                                <div class="flex items-center">
-                                    <input id="fc4_c4a-2" type="radio" value="2" name="fc4_c4a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                                    <label for="fc4_c4a-2" class="ms-2 text-sm text-gray-900">2. Female</label>
-                                </div>
-                            </div>
-                        </td>
-                        <td class="p-2">
-                            <input type="text" id="fc4_c4b" name="fc4_c4b" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
-                        </td>
-                        <td class="p-2">
-                            <input type="text" id="fc4_c4c" name="fc4_c4c" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
-                        </td>
-                        <td class="p-2">
-                            <div class="flex items-center gap-2">
-                                <div class="flex items-center">
-                                    <input id="fc4_c4d-1" type="radio" value="1" name="fc4_c4d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                                    <label for="fc4_c4d-1" class="ms-2 text-sm text-gray-900">1. Yes</label>
-                                </div>
-                                <div class="flex items-center">
-                                    <input id="fc4_c4d-2" type="radio" value="2" name="fc4_c4d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                                    <label for="fc4_c4d-2" class="ms-2 text-sm text-gray-900">2. No</label>
-                                </div>
-                            </div>
-                        </td>
-                        <td class="p-2">
-                            <select id="fc4_c4e" name="fc4_c4e" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
-                                <option value="-9">--- choose ---</option>
-                                <option value="1">1. From their family</option>
-                                <option value="2">2. From a childcare institution</option>
-                                <option value="3">3. From another family-type home</option>
-                                <option value="4">4. From a patronat family</option>
-                                <option value="5">5. Other situation, please specify</option>
-                            </select>
-                            <input type="text" id="fc4_c4e_other" name="fc4_c4e_other" class="bg-white border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
-                        </td>
-                        <td class="p-2">
-                            <select id="fc4_c4f" name="fc4_c4f" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
-                                <option value="-9">--- choose ---</option>
-                                <option value="1">1. In mainstream education institution, without inclusive classes/groups</option>
-                                <option value="2">2. In mainstream education institution, with inclusive classes/groups</option>
-                                <option value="3">3. In specialized education institution</option>
-                                <option value="4">4. Homeschooling</option>
-                                <option value="5">5. Not enrolled in education</option>
-                            </select>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="p-2">Child #5</td>
-                        <td class="p-2">
-                            <div class="flex items-center justify-center gap-2">
-                                <div class="flex items-center">
-                                    <input id="fc4_c5a-1" type="radio" value="1" name="fc4_c5a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                                    <label for="fc4_c5a-1" class="ms-2 text-sm text-gray-900">1. Male</label>
-                                </div>
-                                <div class="flex items-center">
-                                    <input id="fc4_c5a-2" type="radio" value="2" name="fc4_c5a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                                    <label for="fc4_c5a-2" class="ms-2 text-sm text-gray-900">2. Female</label>
-                                </div>
-                            </div>
-                        </td>
-                        <td class="p-2">
-                            <input type="text" id="fc4_c5b" name="fc4_c5b" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
-                        </td>
-                        <td class="p-2">
-                            <input type="text" id="fc4_c5c" name="fc4_c5c" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
-                        </td>
-                        <td class="p-2">
-                            <div class="flex items-center gap-2">
-                                <div class="flex items-center">
-                                    <input id="fc4_c5d-1" type="radio" value="1" name="fc4_c5d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                                    <label for="fc4_c5d-1" class="ms-2 text-sm text-gray-900">1. Yes</label>
-                                </div>
-                                <div class="flex items-center">
-                                    <input id="fc4_c5d-2" type="radio" value="2" name="fc4_c5d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                                    <label for="fc4_c5d-2" class="ms-2 text-sm text-gray-900">2. No</label>
-                                </div>
-                            </div>
-                        </td>
-                        <td class="p-2">
-                            <select id="fc4_c5e" name="fc4_c5e" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
-                                <option value="-9">--- choose ---</option>
-                                <option value="1">1. From their family</option>
-                                <option value="2">2. From a childcare institution</option>
-                                <option value="3">3. From another family-type home</option>
-                                <option value="4">4. From a patronat family</option>
-                                <option value="5">5. Other situation, please specify</option>
-                            </select>
-                            <input type="text" id="fc4_c5e_other" name="fc4_c5e_other" class="bg-white border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
-                        </td>
-                        <td class="p-2">
-                            <select id="fc4_c5f" name="fc4_c5f" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
-                                <option value="-9">--- choose ---</option>
-                                <option value="1">1. In mainstream education institution, without inclusive classes/groups</option>
-                                <option value="2">2. In mainstream education institution, with inclusive classes/groups</option>
-                                <option value="3">3. In specialized education institution</option>
-                                <option value="4">4. Homeschooling</option>
-                                <option value="5">5. Not enrolled in education</option>
-                            </select>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="p-2">Child #6</td>
-                        <td class="p-2">
-                            <div class="flex items-center justify-center gap-2">
-                                <div class="flex items-center">
-                                    <input id="fc4_c6a-1" type="radio" value="1" name="fc4_c6a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                                    <label for="fc4_c6a-1" class="ms-2 text-sm text-gray-900">1. Male</label>
-                                </div>
-                                <div class="flex items-center">
-                                    <input id="fc4_c6a-2" type="radio" value="2" name="fc4_c6a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                                    <label for="fc4_c6a-2" class="ms-2 text-sm text-gray-900">2. Female</label>
-                                </div>
-                            </div>
-                        </td>
-                        <td class="p-2">
-                            <input type="text" id="fc4_c6b" name="fc4_c6b" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
-                        </td>
-                        <td class="p-2">
-                            <input type="text" id="fc4_c6c" name="fc4_c6c" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
-                        </td>
-                        <td class="p-2">
-                            <div class="flex items-center gap-2">
-                                <div class="flex items-center">
-                                    <input id="fc4_c6d-1" type="radio" value="1" name="fc4_c6d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                                    <label for="fc4_c6d-1" class="ms-2 text-sm text-gray-900">1. Yes</label>
-                                </div>
-                                <div class="flex items-center">
-                                    <input id="fc4_c6d-2" type="radio" value="2" name="fc4_c6d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                                    <label for="fc4_c6d-2" class="ms-2 text-sm text-gray-900">2. No</label>
-                                </div>
-                            </div>
-                        </td>
-                        <td class="p-2">
-                            <select id="fc4_c6e" name="fc4_c6e" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
-                                <option value="-9">--- choose ---</option>
-                                <option value="1">1. From their family</option>
-                                <option value="2">2. From a childcare institution</option>
-                                <option value="3">3. From another family-type home</option>
-                                <option value="4">4. From a patronat family</option>
-                                <option value="5">5. Other situation, please specify</option>
-                            </select>
-                            <input type="text" id="fc4_c6e_other" name="fc4_c6e_other" class="bg-white border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
-                        </td>
-                        <td class="p-2">
-                            <select id="fc4_c6f" name="fc4_c6f" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
-                                <option value="-9">--- choose ---</option>
-                                <option value="1">1. In mainstream education institution, without inclusive classes/groups</option>
-                                <option value="2">2. In mainstream education institution, with inclusive classes/groups</option>
-                                <option value="3">3. In specialized education institution</option>
-                                <option value="4">4. Homeschooling</option>
-                                <option value="5">5. Not enrolled in education</option>
-                            </select>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="p-2">Child #7</td>
-                        <td class="p-2">
-                            <div class="flex items-center justify-center gap-2">
-                                <div class="flex items-center">
-                                    <input id="fc4_c7a-1" type="radio" value="1" name="fc4_c7a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                                    <label for="fc4_c7a-1" class="ms-2 text-sm text-gray-900">1. Male</label>
-                                </div>
-                                <div class="flex items-center">
-                                    <input id="fc4_c7a-2" type="radio" value="2" name="fc4_c7a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                                    <label for="fc4_c7a-2" class="ms-2 text-sm text-gray-900">2. Female</label>
-                                </div>
-                            </div>
-                        </td>
-                        <td class="p-2">
-                            <input type="text" id="fc4_c7b" name="fc4_c7b" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
-                        </td>
-                        <td class="p-2">
-                            <input type="text" id="fc4_c7c" name="fc4_c7c" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
-                        </td>
-                        <td class="p-2">
-                            <div class="flex items-center gap-2">
-                                <div class="flex items-center">
-                                    <input id="fc4_c7d-1" type="radio" value="1" name="fc4_c7d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                                    <label for="fc4_c7d-1" class="ms-2 text-sm text-gray-900">1. Yes</label>
-                                </div>
-                                <div class="flex items-center">
-                                    <input id="fc4_c7d-2" type="radio" value="2" name="fc4_c7d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                                    <label for="fc4_c7d-2" class="ms-2 text-sm text-gray-900">2. No</label>
-                                </div>
-                            </div>
-                        </td>
-                        <td class="p-2">
-                            <select id="fc4_c7e" name="fc4_c7e" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
-                                <option value="-9">--- choose ---</option>
-                                <option value="1">1. From their family</option>
-                                <option value="2">2. From a childcare institution</option>
-                                <option value="3">3. From another family-type home</option>
-                                <option value="4">4. From a patronat family</option>
-                                <option value="5">5. Other situation, please specify</option>
-                            </select>
-                            <input type="text" id="fc4_c7e_other" name="fc4_c7e_other" class="bg-white border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
-                        </td>
-                        <td class="p-2">
-                            <select id="fc4_c7f" name="fc4_c7f" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
-                                <option value="-9">--- choose ---</option>
-                                <option value="1">1. In mainstream education institution, without inclusive classes/groups</option>
-                                <option value="2">2. In mainstream education institution, with inclusive classes/groups</option>
-                                <option value="3">3. In specialized education institution</option>
-                                <option value="4">4. Homeschooling</option>
-                                <option value="5">5. Not enrolled in education</option>
-                            </select>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="p-2">Child #8</td>
-                        <td class="p-2">
-                            <div class="flex items-center justify-center gap-2">
-                                <div class="flex items-center">
-                                    <input id="fc4_c8a-1" type="radio" value="1" name="fc4_c8a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                                    <label for="fc4_c8a-1" class="ms-2 text-sm text-gray-900">1. Male</label>
-                                </div>
-                                <div class="flex items-center">
-                                    <input id="fc4_c8a-2" type="radio" value="2" name="fc4_c8a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                                    <label for="fc4_c8a-2" class="ms-2 text-sm text-gray-900">2. Female</label>
-                                </div>
-                            </div>
-                        </td>
-                        <td class="p-2">
-                            <input type="text" id="fc4_c8b" name="fc4_c8b" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
-                        </td>
-                        <td class="p-2">
-                            <input type="text" id="fc4_c8c" name="fc4_c8c" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
-                        </td>
-                        <td class="p-2">
-                            <div class="flex items-center gap-2">
-                                <div class="flex items-center">
-                                    <input id="fc4_c8d-1" type="radio" value="1" name="fc4_c8d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                                    <label for="fc4_c8d-1" class="ms-2 text-sm text-gray-900">1. Yes</label>
-                                </div>
-                                <div class="flex items-center">
-                                    <input id="fc4_c8d-2" type="radio" value="2" name="fc4_c8d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                                    <label for="fc4_c8d-2" class="ms-2 text-sm text-gray-900">2. No</label>
-                                </div>
-                            </div>
-                        </td>
-                        <td class="p-2">
-                            <select id="fc4_c8e" name="fc4_c8e" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
-                                <option value="-9">--- choose ---</option>
-                                <option value="1">1. From their family</option>
-                                <option value="2">2. From a childcare institution</option>
-                                <option value="3">3. From another family-type home</option>
-                                <option value="4">4. From a patronat family</option>
-                                <option value="5">5. Other situation, please specify</option>
-                            </select>
-                            <input type="text" id="fc4_c8e_other" name="fc4_c8e_other" class="bg-white border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
-                        </td>
-                        <td class="p-2">
-                            <select id="fc4_c8f" name="fc4_c8f" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
-                                <option value="-9">--- choose ---</option>
-                                <option value="1">1. In mainstream education institution, without inclusive classes/groups</option>
-                                <option value="2">2. In mainstream education institution, with inclusive classes/groups</option>
-                                <option value="3">3. In specialized education institution</option>
-                                <option value="4">4. Homeschooling</option>
-                                <option value="5">5. Not enrolled in education</option>
-                            </select>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="p-2">Child #9</td>
-                        <td class="p-2">
-                            <div class="flex items-center justify-center gap-2">
-                                <div class="flex items-center">
-                                    <input id="fc4_c9a-1" type="radio" value="1" name="fc4_c9a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                                    <label for="fc4_c9a-1" class="ms-2 text-sm text-gray-900">1. Male</label>
-                                </div>
-                                <div class="flex items-center">
-                                    <input id="fc4_c9a-2" type="radio" value="2" name="fc4_c9a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                                    <label for="fc4_c9a-2" class="ms-2 text-sm text-gray-900">2. Female</label>
-                                </div>
-                            </div>
-                        </td>
-                        <td class="p-2">
-                            <input type="text" id="fc4_c9b" name="fc4_c9b" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
-                        </td>
-                        <td class="p-2">
-                            <input type="text" id="fc4_c9c" name="fc4_c9c" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
-                        </td>
-                        <td class="p-2">
-                            <div class="flex items-center gap-2">
-                                <div class="flex items-center">
-                                    <input id="fc4_c9d-1" type="radio" value="1" name="fc4_c9d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                                    <label for="fc4_c9d-1" class="ms-2 text-sm text-gray-900">1. Yes</label>
-                                </div>
-                                <div class="flex items-center">
-                                    <input id="fc4_c9d-2" type="radio" value="2" name="fc4_c9d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                                    <label for="fc4_c9d-2" class="ms-2 text-sm text-gray-900">2. No</label>
-                                </div>
-                            </div>
-                        </td>
-                        <td class="p-2">
-                            <select id="fc4_c9e" name="fc4_c9e" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
-                                <option value="-9">--- choose ---</option>
-                                <option value="1">1. From their family</option>
-                                <option value="2">2. From a childcare institution</option>
-                                <option value="3">3. From another family-type home</option>
-                                <option value="4">4. From a patronat family</option>
-                                <option value="5">5. Other situation, please specify</option>
-                            </select>
-                            <input type="text" id="fc4_c9e_other" name="fc4_c9e_other" class="bg-white border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
-                        </td>
-                        <td class="p-2">
-                            <select id="fc4_c9f" name="fc4_c9f" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
-                                <option value="-9">--- choose ---</option>
-                                <option value="1">1. In mainstream education institution, without inclusive classes/groups</option>
-                                <option value="2">2. In mainstream education institution, with inclusive classes/groups</option>
-                                <option value="3">3. In specialized education institution</option>
-                                <option value="4">4. Homeschooling</option>
-                                <option value="5">5. Not enrolled in education</option>
-                            </select>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="p-2">Child #10</td>
-                        <td class="p-2">
-                            <div class="flex items-center justify-center gap-2">
-                                <div class="flex items-center">
-                                    <input id="fc4_c10a-1" type="radio" value="1" name="fc4_c10a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                                    <label for="fc4_c10a-1" class="ms-2 text-sm text-gray-900">1. Male</label>
-                                </div>
-                                <div class="flex items-center">
-                                    <input id="fc4_c10a-2" type="radio" value="2" name="fc4_c10a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                                    <label for="fc4_c10a-2" class="ms-2 text-sm text-gray-900">2. Female</label>
-                                </div>
-                            </div>
-                        </td>
-                        <td class="p-2">
-                            <input type="text" id="fc4_c10b" name="fc4_c10b" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
-                        </td>
-                        <td class="p-2">
-                            <input type="text" id="fc4_c10c" name="fc4_c10c" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
-                        </td>
-                        <td class="p-2">
-                            <div class="flex items-center gap-2">
-                                <div class="flex items-center">
-                                    <input id="fc4_c10d-1" type="radio" value="1" name="fc4_c10d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                                    <label for="fc4_c10d-1" class="ms-2 text-sm text-gray-900">1. Yes</label>
-                                </div>
-                                <div class="flex items-center">
-                                    <input id="fc4_c10d-2" type="radio" value="2" name="fc4_c10d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                                    <label for="fc4_c10d-2" class="ms-2 text-sm text-gray-900">2. No</label>
-                                </div>
-                            </div>
-                        </td>
-                        <td class="p-2">
-                            <select id="fc4_c10e" name="fc4_c10e" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
-                                <option value="-9">--- choose ---</option>
-                                <option value="1">1. From their family</option>
-                                <option value="2">2. From a childcare institution</option>
-                                <option value="3">3. From another family-type home</option>
-                                <option value="4">4. From a patronat family</option>
-                                <option value="5">5. Other situation, please specify</option>
-                            </select>
-                            <input type="text" id="fc4_c10e_other" name="fc4_c10e_other" class="bg-white border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
-                        </td>
-                        <td class="p-2">
-                            <select id="fc4_c10f" name="fc4_c10f" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
-                                <option value="-9">--- choose ---</option>
-                                <option value="1">1. In mainstream education institution, without inclusive classes/groups</option>
-                                <option value="2">2. In mainstream education institution, with inclusive classes/groups</option>
-                                <option value="3">3. In specialized education institution</option>
-                                <option value="4">4. Homeschooling</option>
-                                <option value="5">5. Not enrolled in education</option>
-                            </select>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
+
+            <div class="grid grid-cols-2 gap-4 items-center mt-10">
+                <div>Child #1 a. Gender</div>
+                <div class="col-span-1 flex items-center gap-4">
+                    <div class="flex items-center">
+                        <input id="fc4_c1a-1" type="radio" value="1" name="fc4_c1a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <label for="fc4_c1a-1" class="ms-2 text-sm text-gray-900">1. Male</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="fc4_c1a-2" type="radio" value="2" name="fc4_c1a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <label for="fc4_c1a-2" class="ms-2 text-sm text-gray-900">2. Female</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                <div>Child #1 b. Age<small class="my-2 block italic text-red-500">FILL IN AGE IN COMPLETED YEARS</small></div>
+                <div>
+                    <input type="text" id="fc4_c1b" name="fc4_c1b" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                <div>Child #1 c. Date of admission</div>
+                <div>
+                    <input type="text" id="fc4_c1c" name="fc4_c1c" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                <div>Child #1 d. Has any complex needs?</div>
+                <div class="col-span-1 flex items-center gap-4">
+                    <div class="flex items-center">
+                        <input id="fc4_c1d-1" type="radio" value="1" name="fc4_c1d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <label for="fc4_c1d-1" class="ms-2 text-sm text-gray-900">1. Male</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="fc4_c1d-2" type="radio" value="2" name="fc4_c1d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <label for="fc4_c1d-2" class="ms-2 text-sm text-gray-900">2. Female</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4 items-center mt-10">
+                <div>Child #1 cn. What complex needs?<small class="my-2 block italic text-red-500">Multiple answers</small></div>
+                <div class="col-span-1 flex flex-col gap-2">
+                    <div class="flex items-center">
+                        <input id="fc4_c1cn1" type="checkbox" value="1" name="fc4_c1cn1" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-100 rounded">
+                        <label for="fc4_c1cn1" class="ms-2 text-sm text-gray-900">1. Disability</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="fc4_c1cn2" type="checkbox" value="2" name="fc4_c1cn2" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-100 rounded">
+                        <label for="fc4_c1cn2" class="ms-2 text-sm text-gray-900">2. Special education needs</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="fc4_c1cn3" type="checkbox" value="3" name="fc4_c1cn3" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-100 rounded">
+                        <label for="fc4_c1cn3" class="ms-2 text-sm text-gray-900">3. HIV/AIDS</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="fc4_c1cn4" type="checkbox" value="4" name="fc4_c1cn4" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-100 rounded">
+                        <label for="fc4_c1cn4" class="ms-2 text-sm text-gray-900">4. Behavioral disorders</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="fc4_c1cn5" type="checkbox" value="5" name="fc4_c1cn5" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-100 rounded">
+                        <label for="fc4_c1cn5" class="ms-2 text-sm text-gray-900">5. In conflict with law</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="fc4_c1cn6" type="checkbox" value="6" name="fc4_c1cn6" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-100 rounded">
+                        <label for="fc4_c1cn6" class="ms-2 text-sm text-gray-900">6. Other</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                <div>Child #1 e. Where did the child come from?</div>
+                <div class="col-span-1 flex items-center gap-4">
+                    <select id="fc4_c1e" name="fc4_c1e" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
+                        <option value="-9">--- choose ---</option>
+                        <option value="1">1. From their family</option>
+                        <option value="2">2. From a childcare institution</option>
+                        <option value="3">3. From another family-type home</option>
+                        <option value="4">4. From a patronat family</option>
+                        <option value="5">5. Other situation, please specify</option>
+                    </select>
+                    <input type="text" id="fc4_c1e_other" name="fc4_c1e_other" class="bg-white border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                <div>Child #1 f. What type of education is the child currently enrolled in?</div>
+                <div class="col-span-1 flex items-center gap-4">
+                    <select id="fc4_c1f" name="fc4_c1f" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
+                        <option value="-9">--- choose ---</option>
+                        <option value="1">1. In mainstream education institution, without inclusive classes/groups</option>
+                        <option value="2">2. In mainstream education institution, with inclusive classes/groups</option>
+                        <option value="3">3. In specialized education institution</option>
+                        <option value="4">4. Homeschooling</option>
+                        <option value="5">5. Not enrolled in education</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4 items-center mt-10">
+                <div>Child #2 a. Gender</div>
+                <div class="col-span-1 flex items-center gap-4">
+                    <div class="flex items-center">
+                        <input id="fc4_c2a-1" type="radio" value="1" name="fc4_c2a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <label for="fc4_c2a-1" class="ms-2 text-sm text-gray-900">1. Male</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="fc4_c2a-2" type="radio" value="2" name="fc4_c2a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <label for="fc4_c2a-2" class="ms-2 text-sm text-gray-900">2. Female</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                <div>Child #2 b. Age<small class="my-2 block italic text-red-500">FILL IN AGE IN COMPLETED YEARS</small></div>
+                <div>
+                    <input type="text" id="fc4_c2b" name="fc4_c2b" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                <div>Child #2 c. Date of admission</div>
+                <div>
+                    <input type="text" id="fc4_c2c" name="fc4_c2c" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                <div>Child #2 d. Has any complex needs?</div>
+                <div class="col-span-1 flex items-center gap-4">
+                    <div class="flex items-center">
+                        <input id="fc4_c2d-1" type="radio" value="1" name="fc4_c2d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <label for="fc4_c2d-1" class="ms-2 text-sm text-gray-900">1. Male</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="fc4_c2d-2" type="radio" value="2" name="fc4_c2d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <label for="fc4_c2d-2" class="ms-2 text-sm text-gray-900">2. Female</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4 items-center mt-10">
+                <div>Child #2 cn. What complex needs?<small class="my-2 block italic text-red-500">Multiple answers</small></div>
+                <div class="col-span-1 flex flex-col gap-2">
+                    <div class="flex items-center">
+                        <input id="fc4_c2cn1" type="checkbox" value="1" name="fc4_c2cn1" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-100 rounded">
+                        <label for="fc4_c2cn1" class="ms-2 text-sm text-gray-900">1. Disability</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="fc4_c2cn2" type="checkbox" value="2" name="fc4_c2cn2" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-100 rounded">
+                        <label for="fc4_c2cn2" class="ms-2 text-sm text-gray-900">2. Special education needs</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="fc4_c2cn3" type="checkbox" value="3" name="fc4_c2cn3" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-100 rounded">
+                        <label for="fc4_c2cn3" class="ms-2 text-sm text-gray-900">3. HIV/AIDS</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="fc4_c2cn4" type="checkbox" value="4" name="fc4_c2cn4" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-100 rounded">
+                        <label for="fc4_c2cn4" class="ms-2 text-sm text-gray-900">4. Behavioral disorders</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="fc4_c2cn5" type="checkbox" value="5" name="fc4_c2cn5" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-100 rounded">
+                        <label for="fc4_c2cn5" class="ms-2 text-sm text-gray-900">5. In conflict with law</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="fc4_c2cn6" type="checkbox" value="6" name="fc4_c2cn6" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-100 rounded">
+                        <label for="fc4_c2cn6" class="ms-2 text-sm text-gray-900">6. Other</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                <div>Child #2 e. Where did the child come from?</div>
+                <div class="col-span-1 flex items-center gap-4">
+                    <select id="fc4_c2e" name="fc4_c2e" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
+                        <option value="-9">--- choose ---</option>
+                        <option value="1">1. From their family</option>
+                        <option value="2">2. From a childcare institution</option>
+                        <option value="3">3. From another family-type home</option>
+                        <option value="4">4. From a patronat family</option>
+                        <option value="5">5. Other situation, please specify</option>
+                    </select>
+                    <input type="text" id="fc4_c2e_other" name="fc4_c2e_other" class="bg-white border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                <div>Child #2 f. What type of education is the child currently enrolled in?</div>
+                <div class="col-span-1 flex items-center gap-4">
+                    <select id="fc4_c2f" name="fc4_c2f" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
+                        <option value="-9">--- choose ---</option>
+                        <option value="1">1. In mainstream education institution, without inclusive classes/groups</option>
+                        <option value="2">2. In mainstream education institution, with inclusive classes/groups</option>
+                        <option value="3">3. In specialized education institution</option>
+                        <option value="4">4. Homeschooling</option>
+                        <option value="5">5. Not enrolled in education</option>
+                    </select>
+                </div>
+            </div>
+
+
+            <div class="grid grid-cols-2 gap-4 items-center mt-10">
+                <div>Child #3 a. Gender</div>
+                <div class="col-span-1 flex items-center gap-4">
+                    <div class="flex items-center">
+                        <input id="fc4_c3a-1" type="radio" value="1" name="fc4_c3a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <label for="fc4_c3a-1" class="ms-2 text-sm text-gray-900">1. Male</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="fc4_c3a-2" type="radio" value="2" name="fc4_c3a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <label for="fc4_c3a-2" class="ms-2 text-sm text-gray-900">2. Female</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                <div>Child #3 b. Age<small class="my-2 block italic text-red-500">FILL IN AGE IN COMPLETED YEARS</small></div>
+                <div>
+                    <input type="text" id="fc4_c3b" name="fc4_c3b" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                <div>Child #3 c. Date of admission</div>
+                <div>
+                    <input type="text" id="fc4_c3c" name="fc4_c3c" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                <div>Child #3 d. Has any complex needs?</div>
+                <div class="col-span-1 flex items-center gap-4">
+                    <div class="flex items-center">
+                        <input id="fc4_c3d-1" type="radio" value="1" name="fc4_c3d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <label for="fc4_c3d-1" class="ms-2 text-sm text-gray-900">1. Male</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="fc4_c3d-2" type="radio" value="2" name="fc4_c3d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <label for="fc4_c3d-2" class="ms-2 text-sm text-gray-900">2. Female</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4 items-center mt-10">
+                <div>Child #3 cn. What complex needs?<small class="my-2 block italic text-red-500">Multiple answers</small></div>
+                <div class="col-span-1 flex flex-col gap-2">
+                    <div class="flex items-center">
+                        <input id="fc4_c3cn1" type="checkbox" value="1" name="fc4_c3cn1" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-100 rounded">
+                        <label for="fc4_c3cn1" class="ms-2 text-sm text-gray-900">1. Disability</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="fc4_c3cn2" type="checkbox" value="2" name="fc4_c3cn2" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-100 rounded">
+                        <label for="fc4_c3cn2" class="ms-2 text-sm text-gray-900">2. Special education needs</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="fc4_c3cn3" type="checkbox" value="3" name="fc4_c3cn3" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-100 rounded">
+                        <label for="fc4_c3cn3" class="ms-2 text-sm text-gray-900">3. HIV/AIDS</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="fc4_c3cn4" type="checkbox" value="4" name="fc4_c3cn4" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-100 rounded">
+                        <label for="fc4_c3cn4" class="ms-2 text-sm text-gray-900">4. Behavioral disorders</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="fc4_c3cn5" type="checkbox" value="5" name="fc4_c3cn5" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-100 rounded">
+                        <label for="fc4_c3cn5" class="ms-2 text-sm text-gray-900">5. In conflict with law</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="fc4_c3cn6" type="checkbox" value="6" name="fc4_c3cn6" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-100 rounded">
+                        <label for="fc4_c3cn6" class="ms-2 text-sm text-gray-900">6. Other</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                <div>Child #3 e. Where did the child come from?</div>
+                <div class="col-span-1 flex items-center gap-4">
+                    <select id="fc4_c3e" name="fc4_c3e" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
+                        <option value="-9">--- choose ---</option>
+                        <option value="1">1. From their family</option>
+                        <option value="2">2. From a childcare institution</option>
+                        <option value="3">3. From another family-type home</option>
+                        <option value="4">4. From a patronat family</option>
+                        <option value="5">5. Other situation, please specify</option>
+                    </select>
+                    <input type="text" id="fc4_c3e_other" name="fc4_c3e_other" class="bg-white border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                <div>Child #3 f. What type of education is the child currently enrolled in?</div>
+                <div class="col-span-1 flex items-center gap-4">
+                    <select id="fc4_c3f" name="fc4_c3f" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
+                        <option value="-9">--- choose ---</option>
+                        <option value="1">1. In mainstream education institution, without inclusive classes/groups</option>
+                        <option value="2">2. In mainstream education institution, with inclusive classes/groups</option>
+                        <option value="3">3. In specialized education institution</option>
+                        <option value="4">4. Homeschooling</option>
+                        <option value="5">5. Not enrolled in education</option>
+                    </select>
+                </div>
+            </div>
+
+
+
+            <div class="grid grid-cols-2 gap-4 items-center mt-10">
+                <div>Child #4 a. Gender</div>
+                <div class="col-span-1 flex items-center gap-4">
+                    <div class="flex items-center">
+                        <input id="fc4_c4a-1" type="radio" value="1" name="fc4_c4a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <label for="fc4_c4a-1" class="ms-2 text-sm text-gray-900">1. Male</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="fc4_c4a-2" type="radio" value="2" name="fc4_c4a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <label for="fc4_c4a-2" class="ms-2 text-sm text-gray-900">2. Female</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                <div>Child #4 b. Age<small class="my-2 block italic text-red-500">FILL IN AGE IN COMPLETED YEARS</small></div>
+                <div>
+                    <input type="text" id="fc4_c4b" name="fc4_c4b" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                <div>Child #4 c. Date of admission</div>
+                <div>
+                    <input type="text" id="fc4_c4c" name="fc4_c4c" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                <div>Child #4 d. Has any complex needs?</div>
+                <div class="col-span-1 flex items-center gap-4">
+                    <div class="flex items-center">
+                        <input id="fc4_c4d-1" type="radio" value="1" name="fc4_c4d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <label for="fc4_c4d-1" class="ms-2 text-sm text-gray-900">1. Male</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="fc4_c4d-2" type="radio" value="2" name="fc4_c4d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <label for="fc4_c4d-2" class="ms-2 text-sm text-gray-900">2. Female</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4 items-center mt-10">
+                <div>Child #4 cn. What complex needs?<small class="my-2 block italic text-red-500">Multiple answers</small></div>
+                <div class="col-span-1 flex flex-col gap-2">
+                    <div class="flex items-center">
+                        <input id="fc4_c4cn1" type="checkbox" value="1" name="fc4_c4cn1" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-100 rounded">
+                        <label for="fc4_c4cn1" class="ms-2 text-sm text-gray-900">1. Disability</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="fc4_c4cn2" type="checkbox" value="2" name="fc4_c4cn2" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-100 rounded">
+                        <label for="fc4_c4cn2" class="ms-2 text-sm text-gray-900">2. Special education needs</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="fc4_c4cn3" type="checkbox" value="3" name="fc4_c4cn3" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-100 rounded">
+                        <label for="fc4_c4cn3" class="ms-2 text-sm text-gray-900">3. HIV/AIDS</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="fc4_c4cn4" type="checkbox" value="4" name="fc4_c4cn4" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-100 rounded">
+                        <label for="fc4_c4cn4" class="ms-2 text-sm text-gray-900">4. Behavioral disorders</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="fc4_c4cn5" type="checkbox" value="5" name="fc4_c4cn5" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-100 rounded">
+                        <label for="fc4_c4cn5" class="ms-2 text-sm text-gray-900">5. In conflict with law</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="fc4_c4cn6" type="checkbox" value="6" name="fc4_c4cn6" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-100 rounded">
+                        <label for="fc4_c4cn6" class="ms-2 text-sm text-gray-900">6. Other</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                <div>Child #4 e. Where did the child come from?</div>
+                <div class="col-span-1 flex items-center gap-4">
+                    <select id="fc4_c4e" name="fc4_c4e" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
+                        <option value="-9">--- choose ---</option>
+                        <option value="1">1. From their family</option>
+                        <option value="2">2. From a childcare institution</option>
+                        <option value="3">3. From another family-type home</option>
+                        <option value="4">4. From a patronat family</option>
+                        <option value="5">5. Other situation, please specify</option>
+                    </select>
+                    <input type="text" id="fc4_c4e_other" name="fc4_c4e_other" class="bg-white border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                <div>Child #4 f. What type of education is the child currently enrolled in?</div>
+                <div class="col-span-1 flex items-center gap-4">
+                    <select id="fc4_c4f" name="fc4_c4f" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
+                        <option value="-9">--- choose ---</option>
+                        <option value="1">1. In mainstream education institution, without inclusive classes/groups</option>
+                        <option value="2">2. In mainstream education institution, with inclusive classes/groups</option>
+                        <option value="3">3. In specialized education institution</option>
+                        <option value="4">4. Homeschooling</option>
+                        <option value="5">5. Not enrolled in education</option>
+                    </select>
+                </div>
+            </div>
+
+
+            <div class="grid grid-cols-2 gap-4 items-center mt-10">
+                <div>Child #5 a. Gender</div>
+                <div class="col-span-1 flex items-center gap-4">
+                    <div class="flex items-center">
+                        <input id="fc4_c5a-1" type="radio" value="1" name="fc4_c5a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <label for="fc4_c5a-1" class="ms-2 text-sm text-gray-900">1. Male</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="fc4_c5a-2" type="radio" value="2" name="fc4_c5a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <label for="fc4_c5a-2" class="ms-2 text-sm text-gray-900">2. Female</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                <div>Child #5 b. Age<small class="my-2 block italic text-red-500">FILL IN AGE IN COMPLETED YEARS</small></div>
+                <div>
+                    <input type="text" id="fc4_c5b" name="fc4_c5b" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                <div>Child #5 c. Date of admission</div>
+                <div>
+                    <input type="text" id="fc4_c5c" name="fc4_c5c" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                <div>Child #5 d. Has any complex needs?</div>
+                <div class="col-span-1 flex items-center gap-4">
+                    <div class="flex items-center">
+                        <input id="fc4_c5d-1" type="radio" value="1" name="fc4_c5d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <label for="fc4_c5d-1" class="ms-2 text-sm text-gray-900">1. Male</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="fc4_c5d-2" type="radio" value="2" name="fc4_c5d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <label for="fc4_c5d-2" class="ms-2 text-sm text-gray-900">2. Female</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4 items-center mt-10">
+                <div>Child #5 cn. What complex needs?<small class="my-2 block italic text-red-500">Multiple answers</small></div>
+                <div class="col-span-1 flex flex-col gap-2">
+                    <div class="flex items-center">
+                        <input id="fc4_c5cn1" type="checkbox" value="1" name="fc4_c5cn1" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-100 rounded">
+                        <label for="fc4_c5cn1" class="ms-2 text-sm text-gray-900">1. Disability</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="fc4_c5cn2" type="checkbox" value="2" name="fc4_c5cn2" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-100 rounded">
+                        <label for="fc4_c5cn2" class="ms-2 text-sm text-gray-900">2. Special education needs</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="fc4_c5cn3" type="checkbox" value="3" name="fc4_c5cn3" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-100 rounded">
+                        <label for="fc4_c5cn3" class="ms-2 text-sm text-gray-900">3. HIV/AIDS</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="fc4_c5cn4" type="checkbox" value="4" name="fc4_c5cn4" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-100 rounded">
+                        <label for="fc4_c5cn4" class="ms-2 text-sm text-gray-900">4. Behavioral disorders</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="fc4_c5cn5" type="checkbox" value="5" name="fc4_c5cn5" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-100 rounded">
+                        <label for="fc4_c5cn5" class="ms-2 text-sm text-gray-900">5. In conflict with law</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="fc4_c5cn6" type="checkbox" value="6" name="fc4_c5cn6" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-100 rounded">
+                        <label for="fc4_c5cn6" class="ms-2 text-sm text-gray-900">6. Other</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                <div>Child #5 e. Where did the child come from?</div>
+                <div class="col-span-1 flex items-center gap-4">
+                    <select id="fc4_c5e" name="fc4_c5e" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
+                        <option value="-9">--- choose ---</option>
+                        <option value="1">1. From their family</option>
+                        <option value="2">2. From a childcare institution</option>
+                        <option value="3">3. From another family-type home</option>
+                        <option value="4">4. From a patronat family</option>
+                        <option value="5">5. Other situation, please specify</option>
+                    </select>
+                    <input type="text" id="fc4_c5e_other" name="fc4_c5e_other" class="bg-white border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                <div>Child #5 f. What type of education is the child currently enrolled in?</div>
+                <div class="col-span-1 flex items-center gap-4">
+                    <select id="fc4_c5f" name="fc4_c5f" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
+                        <option value="-9">--- choose ---</option>
+                        <option value="1">1. In mainstream education institution, without inclusive classes/groups</option>
+                        <option value="2">2. In mainstream education institution, with inclusive classes/groups</option>
+                        <option value="3">3. In specialized education institution</option>
+                        <option value="4">4. Homeschooling</option>
+                        <option value="5">5. Not enrolled in education</option>
+                    </select>
+                </div>
+            </div>
+
+
+            <div class="grid grid-cols-2 gap-4 items-center mt-10">
+                <div>Child #6 a. Gender</div>
+                <div class="col-span-1 flex items-center gap-4">
+                    <div class="flex items-center">
+                        <input id="fc4_c6a-1" type="radio" value="1" name="fc4_c6a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <label for="fc4_c6a-1" class="ms-2 text-sm text-gray-900">1. Male</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="fc4_c6a-2" type="radio" value="2" name="fc4_c6a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <label for="fc4_c6a-2" class="ms-2 text-sm text-gray-900">2. Female</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                <div>Child #6 b. Age<small class="my-2 block italic text-red-500">FILL IN AGE IN COMPLETED YEARS</small></div>
+                <div>
+                    <input type="text" id="fc4_c6b" name="fc4_c6b" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                <div>Child #6 c. Date of admission</div>
+                <div>
+                    <input type="text" id="fc4_c6c" name="fc4_c6c" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                <div>Child #6 d. Has any complex needs?</div>
+                <div class="col-span-1 flex items-center gap-4">
+                    <div class="flex items-center">
+                        <input id="fc4_c6d-1" type="radio" value="1" name="fc4_c6d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <label for="fc4_c6d-1" class="ms-2 text-sm text-gray-900">1. Male</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="fc4_c6d-2" type="radio" value="2" name="fc4_c6d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <label for="fc4_c6d-2" class="ms-2 text-sm text-gray-900">2. Female</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4 items-center mt-10">
+                <div>Child #6 cn. What complex needs?<small class="my-2 block italic text-red-500">Multiple answers</small></div>
+                <div class="col-span-1 flex flex-col gap-2">
+                    <div class="flex items-center">
+                        <input id="fc4_c6cn1" type="checkbox" value="1" name="fc4_c6cn1" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-100 rounded">
+                        <label for="fc4_c6cn1" class="ms-2 text-sm text-gray-900">1. Disability</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="fc4_c6cn2" type="checkbox" value="2" name="fc4_c6cn2" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-100 rounded">
+                        <label for="fc4_c6cn2" class="ms-2 text-sm text-gray-900">2. Special education needs</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="fc4_c6cn3" type="checkbox" value="3" name="fc4_c6cn3" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-100 rounded">
+                        <label for="fc4_c6cn3" class="ms-2 text-sm text-gray-900">3. HIV/AIDS</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="fc4_c6cn4" type="checkbox" value="4" name="fc4_c6cn4" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-100 rounded">
+                        <label for="fc4_c6cn4" class="ms-2 text-sm text-gray-900">4. Behavioral disorders</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="fc4_c6cn5" type="checkbox" value="5" name="fc4_c6cn5" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-100 rounded">
+                        <label for="fc4_c6cn5" class="ms-2 text-sm text-gray-900">5. In conflict with law</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="fc4_c6cn6" type="checkbox" value="6" name="fc4_c6cn6" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-100 rounded">
+                        <label for="fc4_c6cn6" class="ms-2 text-sm text-gray-900">6. Other</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                <div>Child #6 e. Where did the child come from?</div>
+                <div class="col-span-1 flex items-center gap-4">
+                    <select id="fc4_c6e" name="fc4_c6e" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
+                        <option value="-9">--- choose ---</option>
+                        <option value="1">1. From their family</option>
+                        <option value="2">2. From a childcare institution</option>
+                        <option value="3">3. From another family-type home</option>
+                        <option value="4">4. From a patronat family</option>
+                        <option value="5">5. Other situation, please specify</option>
+                    </select>
+                    <input type="text" id="fc4_c6e_other" name="fc4_c6e_other" class="bg-white border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                <div>Child #6 f. What type of education is the child currently enrolled in?</div>
+                <div class="col-span-1 flex items-center gap-4">
+                    <select id="fc4_c6f" name="fc4_c6f" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
+                        <option value="-9">--- choose ---</option>
+                        <option value="1">1. In mainstream education institution, without inclusive classes/groups</option>
+                        <option value="2">2. In mainstream education institution, with inclusive classes/groups</option>
+                        <option value="3">3. In specialized education institution</option>
+                        <option value="4">4. Homeschooling</option>
+                        <option value="5">5. Not enrolled in education</option>
+                    </select>
+                </div>
+            </div>
+
+
+            <div class="grid grid-cols-2 gap-4 items-center mt-10">
+                <div>Child #7 a. Gender</div>
+                <div class="col-span-1 flex items-center gap-4">
+                    <div class="flex items-center">
+                        <input id="fc4_c7a-1" type="radio" value="1" name="fc4_c7a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <label for="fc4_c7a-1" class="ms-2 text-sm text-gray-900">1. Male</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="fc4_c7a-2" type="radio" value="2" name="fc4_c7a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <label for="fc4_c7a-2" class="ms-2 text-sm text-gray-900">2. Female</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                <div>Child #7 b. Age<small class="my-2 block italic text-red-500">FILL IN AGE IN COMPLETED YEARS</small></div>
+                <div>
+                    <input type="text" id="fc4_c7b" name="fc4_c7b" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                <div>Child #7 c. Date of admission</div>
+                <div>
+                    <input type="text" id="fc4_c7c" name="fc4_c7c" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                <div>Child #7 d. Has any complex needs?</div>
+                <div class="col-span-1 flex items-center gap-4">
+                    <div class="flex items-center">
+                        <input id="fc4_c7d-1" type="radio" value="1" name="fc4_c7d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <label for="fc4_c7d-1" class="ms-2 text-sm text-gray-900">1. Male</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="fc4_c7d-2" type="radio" value="2" name="fc4_c7d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <label for="fc4_c7d-2" class="ms-2 text-sm text-gray-900">2. Female</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4 items-center mt-10">
+                <div>Child #7 cn. What complex needs?<small class="my-2 block italic text-red-500">Multiple answers</small></div>
+                <div class="col-span-1 flex flex-col gap-2">
+                    <div class="flex items-center">
+                        <input id="fc4_c7cn1" type="checkbox" value="1" name="fc4_c7cn1" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-100 rounded">
+                        <label for="fc4_c7cn1" class="ms-2 text-sm text-gray-900">1. Disability</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="fc4_c7cn2" type="checkbox" value="2" name="fc4_c7cn2" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-100 rounded">
+                        <label for="fc4_c7cn2" class="ms-2 text-sm text-gray-900">2. Special education needs</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="fc4_c7cn3" type="checkbox" value="3" name="fc4_c7cn3" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-100 rounded">
+                        <label for="fc4_c7cn3" class="ms-2 text-sm text-gray-900">3. HIV/AIDS</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="fc4_c7cn4" type="checkbox" value="4" name="fc4_c7cn4" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-100 rounded">
+                        <label for="fc4_c7cn4" class="ms-2 text-sm text-gray-900">4. Behavioral disorders</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="fc4_c7cn5" type="checkbox" value="5" name="fc4_c7cn5" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-100 rounded">
+                        <label for="fc4_c7cn5" class="ms-2 text-sm text-gray-900">5. In conflict with law</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="fc4_c7cn6" type="checkbox" value="6" name="fc4_c7cn6" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-100 rounded">
+                        <label for="fc4_c7cn6" class="ms-2 text-sm text-gray-900">6. Other</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                <div>Child #7 e. Where did the child come from?</div>
+                <div class="col-span-1 flex items-center gap-4">
+                    <select id="fc4_c7e" name="fc4_c7e" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
+                        <option value="-9">--- choose ---</option>
+                        <option value="1">1. From their family</option>
+                        <option value="2">2. From a childcare institution</option>
+                        <option value="3">3. From another family-type home</option>
+                        <option value="4">4. From a patronat family</option>
+                        <option value="5">5. Other situation, please specify</option>
+                    </select>
+                    <input type="text" id="fc4_c7e_other" name="fc4_c7e_other" class="bg-white border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                <div>Child #7 f. What type of education is the child currently enrolled in?</div>
+                <div class="col-span-1 flex items-center gap-4">
+                    <select id="fc4_c7f" name="fc4_c7f" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
+                        <option value="-9">--- choose ---</option>
+                        <option value="1">1. In mainstream education institution, without inclusive classes/groups</option>
+                        <option value="2">2. In mainstream education institution, with inclusive classes/groups</option>
+                        <option value="3">3. In specialized education institution</option>
+                        <option value="4">4. Homeschooling</option>
+                        <option value="5">5. Not enrolled in education</option>
+                    </select>
+                </div>
+            </div>
+
+
+            <div class="grid grid-cols-2 gap-4 items-center mt-10">
+                <div>Child #8 a. Gender</div>
+                <div class="col-span-1 flex items-center gap-4">
+                    <div class="flex items-center">
+                        <input id="fc4_c8a-1" type="radio" value="1" name="fc4_c8a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <label for="fc4_c8a-1" class="ms-2 text-sm text-gray-900">1. Male</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="fc4_c8a-2" type="radio" value="2" name="fc4_c8a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <label for="fc4_c8a-2" class="ms-2 text-sm text-gray-900">2. Female</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                <div>Child #8 b. Age<small class="my-2 block italic text-red-500">FILL IN AGE IN COMPLETED YEARS</small></div>
+                <div>
+                    <input type="text" id="fc4_c8b" name="fc4_c8b" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                <div>Child #8 c. Date of admission</div>
+                <div>
+                    <input type="text" id="fc4_c8c" name="fc4_c8c" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                <div>Child #8 d. Has any complex needs?</div>
+                <div class="col-span-1 flex items-center gap-4">
+                    <div class="flex items-center">
+                        <input id="fc4_c8d-1" type="radio" value="1" name="fc4_c8d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <label for="fc4_c8d-1" class="ms-2 text-sm text-gray-900">1. Male</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="fc4_c8d-2" type="radio" value="2" name="fc4_c8d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <label for="fc4_c8d-2" class="ms-2 text-sm text-gray-900">2. Female</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4 items-center mt-10">
+                <div>Child #8 cn. What complex needs?<small class="my-2 block italic text-red-500">Multiple answers</small></div>
+                <div class="col-span-1 flex flex-col gap-2">
+                    <div class="flex items-center">
+                        <input id="fc4_c8cn1" type="checkbox" value="1" name="fc4_c8cn1" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-100 rounded">
+                        <label for="fc4_c8cn1" class="ms-2 text-sm text-gray-900">1. Disability</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="fc4_c8cn2" type="checkbox" value="2" name="fc4_c8cn2" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-100 rounded">
+                        <label for="fc4_c8cn2" class="ms-2 text-sm text-gray-900">2. Special education needs</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="fc4_c8cn3" type="checkbox" value="3" name="fc4_c8cn3" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-100 rounded">
+                        <label for="fc4_c8cn3" class="ms-2 text-sm text-gray-900">3. HIV/AIDS</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="fc4_c8cn4" type="checkbox" value="4" name="fc4_c8cn4" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-100 rounded">
+                        <label for="fc4_c8cn4" class="ms-2 text-sm text-gray-900">4. Behavioral disorders</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="fc4_c8cn5" type="checkbox" value="5" name="fc4_c8cn5" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-100 rounded">
+                        <label for="fc4_c8cn5" class="ms-2 text-sm text-gray-900">5. In conflict with law</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="fc4_c8cn6" type="checkbox" value="6" name="fc4_c8cn6" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-100 rounded">
+                        <label for="fc4_c8cn6" class="ms-2 text-sm text-gray-900">6. Other</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                <div>Child #8 e. Where did the child come from?</div>
+                <div class="col-span-1 flex items-center gap-4">
+                    <select id="fc4_c8e" name="fc4_c8e" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
+                        <option value="-9">--- choose ---</option>
+                        <option value="1">1. From their family</option>
+                        <option value="2">2. From a childcare institution</option>
+                        <option value="3">3. From another family-type home</option>
+                        <option value="4">4. From a patronat family</option>
+                        <option value="5">5. Other situation, please specify</option>
+                    </select>
+                    <input type="text" id="fc4_c8e_other" name="fc4_c8e_other" class="bg-white border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                <div>Child #8 f. What type of education is the child currently enrolled in?</div>
+                <div class="col-span-1 flex items-center gap-4">
+                    <select id="fc4_c8f" name="fc4_c8f" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
+                        <option value="-9">--- choose ---</option>
+                        <option value="1">1. In mainstream education institution, without inclusive classes/groups</option>
+                        <option value="2">2. In mainstream education institution, with inclusive classes/groups</option>
+                        <option value="3">3. In specialized education institution</option>
+                        <option value="4">4. Homeschooling</option>
+                        <option value="5">5. Not enrolled in education</option>
+                    </select>
+                </div>
+            </div>
+
+
+            <div class="grid grid-cols-2 gap-4 items-center mt-10">
+                <div>Child #9 a. Gender</div>
+                <div class="col-span-1 flex items-center gap-4">
+                    <div class="flex items-center">
+                        <input id="fc4_c9a-1" type="radio" value="1" name="fc4_c9a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <label for="fc4_c9a-1" class="ms-2 text-sm text-gray-900">1. Male</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="fc4_c9a-2" type="radio" value="2" name="fc4_c9a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <label for="fc4_c9a-2" class="ms-2 text-sm text-gray-900">2. Female</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                <div>Child #9 b. Age<small class="my-2 block italic text-red-500">FILL IN AGE IN COMPLETED YEARS</small></div>
+                <div>
+                    <input type="text" id="fc4_c9b" name="fc4_c9b" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                <div>Child #9 c. Date of admission</div>
+                <div>
+                    <input type="text" id="fc4_c9c" name="fc4_c9c" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                <div>Child #9 d. Has any complex needs?</div>
+                <div class="col-span-1 flex items-center gap-4">
+                    <div class="flex items-center">
+                        <input id="fc4_c9d-1" type="radio" value="1" name="fc4_c9d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <label for="fc4_c9d-1" class="ms-2 text-sm text-gray-900">1. Male</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="fc4_c9d-2" type="radio" value="2" name="fc4_c9d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <label for="fc4_c9d-2" class="ms-2 text-sm text-gray-900">2. Female</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4 items-center mt-10">
+                <div>Child #9 cn. What complex needs?<small class="my-2 block italic text-red-500">Multiple answers</small></div>
+                <div class="col-span-1 flex flex-col gap-2">
+                    <div class="flex items-center">
+                        <input id="fc4_c9cn1" type="checkbox" value="1" name="fc4_c9cn1" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-100 rounded">
+                        <label for="fc4_c9cn1" class="ms-2 text-sm text-gray-900">1. Disability</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="fc4_c9cn2" type="checkbox" value="2" name="fc4_c9cn2" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-100 rounded">
+                        <label for="fc4_c9cn2" class="ms-2 text-sm text-gray-900">2. Special education needs</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="fc4_c9cn3" type="checkbox" value="3" name="fc4_c9cn3" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-100 rounded">
+                        <label for="fc4_c9cn3" class="ms-2 text-sm text-gray-900">3. HIV/AIDS</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="fc4_c9cn4" type="checkbox" value="4" name="fc4_c9cn4" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-100 rounded">
+                        <label for="fc4_c9cn4" class="ms-2 text-sm text-gray-900">4. Behavioral disorders</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="fc4_c9cn5" type="checkbox" value="5" name="fc4_c9cn5" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-100 rounded">
+                        <label for="fc4_c9cn5" class="ms-2 text-sm text-gray-900">5. In conflict with law</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="fc4_c9cn6" type="checkbox" value="6" name="fc4_c9cn6" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-100 rounded">
+                        <label for="fc4_c9cn6" class="ms-2 text-sm text-gray-900">6. Other</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                <div>Child #9 e. Where did the child come from?</div>
+                <div class="col-span-1 flex items-center gap-4">
+                    <select id="fc4_c9e" name="fc4_c9e" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
+                        <option value="-9">--- choose ---</option>
+                        <option value="1">1. From their family</option>
+                        <option value="2">2. From a childcare institution</option>
+                        <option value="3">3. From another family-type home</option>
+                        <option value="4">4. From a patronat family</option>
+                        <option value="5">5. Other situation, please specify</option>
+                    </select>
+                    <input type="text" id="fc4_c9e_other" name="fc4_c9e_other" class="bg-white border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                <div>Child #9 f. What type of education is the child currently enrolled in?</div>
+                <div class="col-span-1 flex items-center gap-4">
+                    <select id="fc4_c9f" name="fc4_c9f" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
+                        <option value="-9">--- choose ---</option>
+                        <option value="1">1. In mainstream education institution, without inclusive classes/groups</option>
+                        <option value="2">2. In mainstream education institution, with inclusive classes/groups</option>
+                        <option value="3">3. In specialized education institution</option>
+                        <option value="4">4. Homeschooling</option>
+                        <option value="5">5. Not enrolled in education</option>
+                    </select>
+                </div>
+            </div>
+
+
+            <div class="grid grid-cols-2 gap-4 items-center mt-10">
+                <div>Child #10 a. Gender</div>
+                <div class="col-span-1 flex items-center gap-4">
+                    <div class="flex items-center">
+                        <input id="fc4_c10a-1" type="radio" value="1" name="fc4_c10a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <label for="fc4_c10a-1" class="ms-2 text-sm text-gray-900">1. Male</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="fc4_c10a-2" type="radio" value="2" name="fc4_c10a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <label for="fc4_c10a-2" class="ms-2 text-sm text-gray-900">2. Female</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                <div>Child #10 b. Age<small class="my-2 block italic text-red-500">FILL IN AGE IN COMPLETED YEARS</small></div>
+                <div>
+                    <input type="text" id="fc4_c10b" name="fc4_c10b" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                <div>Child #10 c. Date of admission</div>
+                <div>
+                    <input type="text" id="fc4_c10c" name="fc4_c10c" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                <div>Child #10 d. Has any complex needs?</div>
+                <div class="col-span-1 flex items-center gap-4">
+                    <div class="flex items-center">
+                        <input id="fc4_c10d-1" type="radio" value="1" name="fc4_c10d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <label for="fc4_c10d-1" class="ms-2 text-sm text-gray-900">1. Male</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="fc4_c10d-2" type="radio" value="2" name="fc4_c10d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <label for="fc4_c10d-2" class="ms-2 text-sm text-gray-900">2. Female</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4 items-center mt-10">
+                <div>Child #10 cn. What complex needs?<small class="my-2 block italic text-red-500">Multiple answers</small></div>
+                <div class="col-span-1 flex flex-col gap-2">
+                    <div class="flex items-center">
+                        <input id="fc4_c10cn1" type="checkbox" value="1" name="fc4_c10cn1" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-100 rounded">
+                        <label for="fc4_c10cn1" class="ms-2 text-sm text-gray-900">1. Disability</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="fc4_c10cn2" type="checkbox" value="2" name="fc4_c10cn2" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-100 rounded">
+                        <label for="fc4_c10cn2" class="ms-2 text-sm text-gray-900">2. Special education needs</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="fc4_c10cn3" type="checkbox" value="3" name="fc4_c10cn3" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-100 rounded">
+                        <label for="fc4_c10cn3" class="ms-2 text-sm text-gray-900">3. HIV/AIDS</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="fc4_c10cn4" type="checkbox" value="4" name="fc4_c10cn4" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-100 rounded">
+                        <label for="fc4_c10cn4" class="ms-2 text-sm text-gray-900">4. Behavioral disorders</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="fc4_c10cn5" type="checkbox" value="5" name="fc4_c10cn5" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-100 rounded">
+                        <label for="fc4_c10cn5" class="ms-2 text-sm text-gray-900">5. In conflict with law</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="fc4_c10cn6" type="checkbox" value="6" name="fc4_c10cn6" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-100 rounded">
+                        <label for="fc4_c10cn6" class="ms-2 text-sm text-gray-900">6. Other</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                <div>Child #10 e. Where did the child come from?</div>
+                <div class="col-span-1 flex items-center gap-4">
+                    <select id="fc4_c10e" name="fc4_c10e" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
+                        <option value="-9">--- choose ---</option>
+                        <option value="1">1. From their family</option>
+                        <option value="2">2. From a childcare institution</option>
+                        <option value="3">3. From another family-type home</option>
+                        <option value="4">4. From a patronat family</option>
+                        <option value="5">5. Other situation, please specify</option>
+                    </select>
+                    <input type="text" id="fc4_c10e_other" name="fc4_c10e_other" class="bg-white border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4 items-center mt-6">
+                <div>Child #10 f. What type of education is the child currently enrolled in?</div>
+                <div class="col-span-1 flex items-center gap-4">
+                    <select id="fc4_c10f" name="fc4_c10f" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
+                        <option value="-9">--- choose ---</option>
+                        <option value="1">1. In mainstream education institution, without inclusive classes/groups</option>
+                        <option value="2">2. In mainstream education institution, with inclusive classes/groups</option>
+                        <option value="3">3. In specialized education institution</option>
+                        <option value="4">4. Homeschooling</option>
+                        <option value="5">5. Not enrolled in education</option>
+                    </select>
+                </div>
+            </div>
 
 
             <h2 class="mt-10 mb-4 text-2xl font-bold text-gray-700">4. EXITS FROM THIS FAMILY-TYPE HOME DURING THE REPORTING YEAR</h2>
@@ -1174,7 +1638,7 @@
                     <tr class="border-b">
                         <th class="p-2"></th>
                         <th class="w-40 p-2">a. Gender</th>
-                        <th class="p-2">b. Age</th>
+                        <th class="p-2">b. Age<small class="my-2 block italic text-red-500">FILL IN AGE IN COMPLETED YEARS</small></th>
                         <th class="w-52 p-2">c. Has a disability?</th>
                         <th class="p-2">d. Reason for leaving</th>
                     </tr>
@@ -1704,10 +2168,7 @@
             </div>
 
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
-                <div>
-                    QS3a. The name, patronymics, and surname of the specialist
-                    <small class="block mt-2">Please note in the clear</small>
-                </div>
+                <div>QS3a. The name, patronymics, and surname of the specialist</div>
                 <div>
                     <input type="text" id="qs3a" name="qs3a" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
                 </div>

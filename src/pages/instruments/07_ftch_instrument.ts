@@ -23,6 +23,7 @@ import { KeyString, regions, districts, settlements } from "../../libraries/admi
 import * as en from "../../locales/en.json";
 import * as uz from "../../locales/uz.json";
 import * as ru from "../../locales/ru.json";
+
 const locales: { [key: string]: typeof en | typeof uz | typeof ru } = {
     'en': en,
     'uz': uz,
@@ -40,7 +41,7 @@ const general_dates = [
 ]
 
 const admission_dates = [
-    'fc4_c1c', 'fc4_c2c', 'fc4_c3c', 'fc4_c4c', 'fc4_c5c'
+    'fc4_c1c', 'fc4_c2c', 'fc4_c3c', 'fc4_c4c', 'fc4_c5c', 'fc4_c6c', 'fc4_c7c', 'fc4_c8c', 'fc4_c9c', 'fc4_c10c'
 ]
 
 const regElements = ["reg", "ifp1a"];
@@ -87,6 +88,7 @@ export const instrument7 = {
             const config = { ...jQueryDatepickerConfig };
 
             if (el == 'ifp2') {
+                config.dateFormat = "mm/yy";
                 config.minDate = "01/01/1950";
             } else if (admission_dates.indexOf(el) < 0) {
                 config.minDate = "01/01/1930";
@@ -98,7 +100,7 @@ export const instrument7 = {
                 errorHandler.removeError(el, translations['invalid_date']);
                 try {
                     $.datepicker.parseDate(
-                        jQueryDatepickerConfig.dateFormat,
+                        el == "ifp2" ? "mm/yy" : "dd/mm/yy",
                         util.htmlElement(el).value
                     )
                 } catch (error) {
@@ -222,7 +224,13 @@ export const instrument7 = {
                 instrumentID = parseInt(args.id);
 
                 for (const item of args.questions) {
-                    instrument.seteazaValoareElement(item.variable, item.value);
+
+                    const index = [...regElements, ...disElements].indexOf(item.variable)
+                    // regiunea este intotdeauna inaintea districtului
+                    // un event de change pe regiune populeaza districtul, iar un event
+                    // de change pe district populeaza settlement-ul
+                    // trigger change event
+                    instrument.seteazaValoareElement(item.variable, item.value, index >= 0);
                 }
             }
 
@@ -308,13 +316,13 @@ util.listen("ifp2", "myChange", () => {
     if (instrument.questions.ifp2.value != "-9") {
 
         const years = util.diffDates(
-            util.standardDate(instrument.questions.ifp2.value),
+            util.standardDate("01/" + instrument.questions.ifp2.value),
             new Date("2024-05-01"),
             "years"
         )
 
         const months = util.diffDates(
-            util.standardDate(instrument.questions.ifp2.value),
+            util.standardDate("01/" + instrument.questions.ifp2.value),
             new Date("2024-05-01"),
             "months"
         )
@@ -354,6 +362,31 @@ util.listen("ift4", "myChange", () => {
 });
 
 
+const ifp2t4 = ["ifp2", "ift4"];
+util.listen(ifp2t4, "myChange", () => {
+    if (util.inputsHaveValue(ifp2t4)) {
+        const message = translations["must_be_before"].replace("X", "IFT4").replace("Y", "IFP2");
+
+        errorHandler.removeError(ifp2t4, message);
+        if (util.standardDate(instrument.questions.ift4.value) > util.standardDate("01/" + instrument.questions.ifp2.value)) {
+            errorHandler.addError(ifp2t4, message);
+        }
+    }
+});
+
+const ifp2m4 = ["ifp2", "ifm4"];
+util.listen(ifp2m4, "myChange", () => {
+    if (util.inputsHaveValue(ifp2m4)) {
+        const message = translations["must_be_before"].replace("X", "IFM4").replace("Y", "IFP2");
+
+        errorHandler.removeError(ifp2m4, message);
+        if (util.standardDate(instrument.questions.ifm4.value) > util.standardDate("01/" + instrument.questions.ifp2.value)) {
+            errorHandler.addError(ifp2m4, message);
+        }
+    }
+});
+
+
 
 const ifp4 = ['ifp4a', 'ifp4b'];
 const ifp = [...ifp4, 'ifp5'];
@@ -384,3 +417,29 @@ util.listen(fc, "myChange", () => {
         }
     }
 });
+
+
+
+util.listen("ex2", "change", () => {
+    const message = "EX2 <= 10";
+    errorHandler.removeError("ex2", message);
+    if (Number(util.htmlElement("ex2").value) > 10) {
+        errorHandler.addError("ex2", message);
+        setTimeout(() => {
+            util.trigger("ex1-1", "change");
+        }, 100);
+    }
+})
+
+
+
+util.listen("fc3", "change", () => {
+    const message = "FC3 <= 10";
+    errorHandler.removeError("fc3", message);
+    if (Number(util.htmlElement("fc3").value) > 10) {
+        errorHandler.addError("fc3", message);
+        setTimeout(() => {
+            util.trigger("fc2g-1", "change");
+        }, 100);
+    }
+})
