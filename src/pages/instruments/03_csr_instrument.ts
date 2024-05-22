@@ -155,7 +155,14 @@ export const instrument3 = {
                 instrumentID = parseInt(args.id);
 
                 for (const item of args.questions) {
+                    const index = [...regElements, ...disElements].indexOf(item.variable)
+                    // regiunea este intotdeauna inaintea districtului
+                    // un event de change pe regiune populeaza districtul, iar un event
+                    // de change pe district populeaza settlement-ul
                     instrument.seteazaValoareElement(item.variable, item.value);
+                    if (index >= 0) {
+                        util.trigger(item.variable, "change");
+                    }
                 }
 
             }

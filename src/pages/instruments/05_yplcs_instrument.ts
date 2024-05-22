@@ -372,7 +372,7 @@ util.listen(pi3pi7, "myChange", () => {
         const pi7 = util.htmlElement("pi7").value;
         const pi3 = util.htmlElement("pi3").value;
 
-        const message = translations['must_be_later'].replace("Y", "PI7").replace("X", "PI3");
+        const message = translations['must_be_later_or_equal'].replace("Y", "PI7").replace("X", "PI3");
 
         errorHandler.removeError(pi3pi7, message);
 

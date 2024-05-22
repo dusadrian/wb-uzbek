@@ -119,7 +119,7 @@
 	"t_auth_code": "Authorization code",
 	"Invalid authorization code.": "Invalid authorization code.",
 	"must_be_earlier": "X dagi sana Y dan oldinroq bo'lishi kerak",
-	"must_be_later": "Y-dagi sana X-dagi sanadan keyin yoki unga teng bo'lishi kerak",
+	"must_be_later_or_equal": "Y-dagi sana X-dagi sanadan keyin yoki unga teng bo'lishi kerak",
 	"t_select_service_from_list": "Please select a service from the list",
 	"t_enable_user": "This user is disabled. Please contact the regional coordinator for an authorization code to enable it.",
 	"t_enable_user_button": "Enable user",

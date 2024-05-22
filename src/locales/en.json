@@ -118,7 +118,7 @@
 	"t_auth_code": "Authorization code",
 	"Invalid authorization code.": "Invalid authorization code.",
 	"must_be_earlier": "X must be earlier than Y",
-	"must_be_later": "Y must be later than or equal to X",
+	"must_be_later_or_equal": "Y must be later than or equal to X",
 	"t_select_service_from_list": "Please select a service from the list",
 	"t_enable_user": "This user is disabled. Please contact the regional coordinator for an authorization code to enable it.",
 	"t_enable_user_button": "Enable user",

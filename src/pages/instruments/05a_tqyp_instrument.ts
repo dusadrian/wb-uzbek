@@ -338,7 +338,7 @@ util.listen(ptr46, "myChange", () => {
         const ptr6 = util.htmlElement("ptr6").value;
         const ptr4 = util.htmlElement("ptr4").value;
 
-        const message = translations['must_be_later'].replace("Y", "PTR6").replace("X", "PTR4");
+        const message = translations['must_be_later_or_equal'].replace("Y", "PTR6").replace("X", "PTR4");
 
         errorHandler.removeError(ptr46, message);
 

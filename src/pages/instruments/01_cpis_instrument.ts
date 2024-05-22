@@ -557,7 +557,7 @@ util.listen(lk3cg1, "myChange", () => {
         const startdate = util.standardDate(util.htmlElement("lk3").value);
         const enddate = util.standardDate(util.htmlElement("cg1c").value);
 
-        const message = translations['must_be_later'].
+        const message = translations['must_be_later_or_equal'].
             replace("X", "LK3").
             replace("Y", "CG1c");
 
@@ -575,7 +575,7 @@ util.listen(cg1cg3, "myChange", () => {
         const startdate = util.standardDate(util.htmlElement("cg3b").value);
         const enddate = util.standardDate(util.htmlElement("cg1c").value);
 
-        const message = translations['must_be_later'].
+        const message = translations['must_be_later_or_equal'].
             replace("X", "CG3b").
             replace("Y", "CG1c");
 
@@ -595,7 +595,7 @@ util.listen("sa1", "myChange", () => {
         )
 
         if (!Number.isNaN(age)) {
-            const message = translations['must_be_later'].
+            const message = translations['must_be_later_or_equal'].
                 replace("X", "LK3").
                 replace("Y", "SA1");
 
@@ -765,7 +765,7 @@ sh3_end_dates.forEach((startel) => {
         if (util.inputsHaveValue([startel, endel])) {
             const enddate = util.standardDate(end.value);
 
-            const message = translations['must_be_later'].
+            const message = translations['must_be_later_or_equal'].
                 replace("X", startel.toUpperCase()).
                 replace("Y", endel.toUpperCase());
 
@@ -830,7 +830,7 @@ util.listen(cmgtsa, "myChange", () => {
         const cmgt1a = util.htmlElement("cmgt1a").value;
         const sa1 = util.htmlElement("sa1").value;
 
-        const message = translations['must_be_later'].replace("X", "SA1").replace("Y", "CMGT1A");
+        const message = translations['must_be_later_or_equal'].replace("X", "SA1").replace("Y", "CMGT1A");
 
         errorHandler.removeError(cmgtsa, message);
 
@@ -930,7 +930,7 @@ util.listen(lk3cm3, "myChange", () => {
         const mother = util.htmlElement("cm3").value;
         const child = util.htmlElement("lk3").value;
 
-        const message = translations['must_be_later'].replace("X", "CM3").replace("Y", "LK3");
+        const message = translations['must_be_later_or_equal'].replace("X", "CM3").replace("Y", "LK3");
 
         errorHandler.removeError(lk3cm3, message);
         if (util.standardDate(mother) >= util.standardDate(child)) {
@@ -945,7 +945,7 @@ util.listen(lk3ct3, "myChange", () => {
         const father = util.htmlElement("ct3").value;
         const child = util.htmlElement("lk3").value;
 
-        const message = translations['must_be_later'].replace("X", "CT3").replace("Y", "LK3");
+        const message = translations['must_be_later_or_equal'].replace("X", "CT3").replace("Y", "LK3");
 
         errorHandler.removeError(lk3ct3, message);
         if (util.standardDate(father) >= util.standardDate(child)) {
