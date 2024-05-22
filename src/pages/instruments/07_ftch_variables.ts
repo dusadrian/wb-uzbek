@@ -7,108 +7,99 @@ export const questions: QuestionObjectType = {
         name: 'reg',
         type: 'select',
         value: '-9',
-        disabled: true,
+        disabled: false,
         hidden: false,
         readonly: true,
         order: 0,
         active: function() {return(true)},
-        error: '',
         skip: false
     },
     'dis': {
         name: 'dis',
         type: 'select',
         value: '-9',
-        disabled: true,
+        disabled: false,
         hidden: false,
         readonly: true,
         order: 1,
         active: function() {return(true)},
-        error: '',
         skip: false
     },
     'data': {
         name: 'data',
         type: 'input',
         value: '-9',
-        disabled: true,
+        disabled: false,
         hidden: true,
         readonly: true,
         order: 2,
         active: function() {return(true)},
-        error: '',
         skip: false
     },
     'q2': {
         name: 'q2',
         type: 'input',
         value: '-9',
-        disabled: true,
+        disabled: false,
         hidden: false,
         readonly: true,
         order: 3,
         active: function() {return(true)},
-        error: '',
         skip: false
     },
     'inst': {
         name: 'inst',
         type: 'input',
         value: '-9',
-        disabled: true,
+        disabled: false,
         hidden: false,
         readonly: true,
         order: 4,
         active: function() {return(true)},
-        error: '',
         skip: false
     },
     'q3': {
         name: 'q3',
         type: 'input',
         value: '-9',
-        disabled: true,
+        disabled: false,
         hidden: false,
         readonly: true,
         order: 5,
         active: function() {return(true)},
-        error: '',
         skip: false
     },
     'q4': {
         name: 'q4',
         type: 'input',
         value: '-9',
-        disabled: true,
+        disabled: false,
         hidden: false,
         readonly: true,
         order: 6,
         active: function() {return(true)},
-        error: '',
         skip: false
     },
     'q5': {
         name: 'q5',
         type: 'input',
         value: '-9',
-        disabled: true,
+        disabled: false,
         hidden: false,
         readonly: true,
         order: 7,
         active: function() {return(true)},
-        error: '',
         skip: false
     },
     'q6': {
         name: 'q6',
         type: 'input',
         value: '-9',
-        disabled: true,
+        disabled: false,
         hidden: false,
         readonly: true,
         order: 8,
         active: function() {return(true)},
-        error: '',
         skip: false
     },
     'ifp1a': {
@@ -120,7 +111,6 @@ export const questions: QuestionObjectType = {
         readonly: false,
         order: 9,
         active: function() {return(true)},
-        error: '',
         skip: false
     },
     'ifp1b': {
@@ -132,7 +122,6 @@ export const questions: QuestionObjectType = {
         readonly: false,
         order: 10,
         active: function() {return(Number(instrument.questions.ifp1a.value) > 0)},
-        error: '',
         skip: false
     },
     'ifp1c': {
@@ -144,19 +133,17 @@ export const questions: QuestionObjectType = {
         readonly: false,
         order: 11,
         active: function() {return(Number(instrument.questions.ifp1b.value) > 0)},
-        error: '',
         skip: false
     },
     'ifp1d': {
         name: 'ifp1d',
         type: 'input',
         value: '-9',
-        disabled: true,
+        disabled: false,
         hidden: true,
         readonly: true,
         order: 12,
         active: function() {return(true)},
-        error: '',
         skip: false
     },
     'ifp2': {
@@ -168,31 +155,28 @@ export const questions: QuestionObjectType = {
         readonly: false,
         order: 13,
         active: function() {return(true)},
-        error: '',
         skip: false
     },
     'ifp2ay': {
         name: 'ifp2ay',
         type: 'number',
         value: '-9',
-        disabled: true,
+        disabled: false,
         hidden: false,
         readonly: true,
         order: 14,
         active: function() {return(true)},
-        error: '',
         skip: false
     },
     'ifp2am': {
         name: 'ifp2am',
         type: 'number',
         value: '-9',
-        disabled: true,
+        disabled: false,
         hidden: true,
         readonly: true,
         order: 15,
         active: function() {return(true)},
-        error: '',
         skip: false
     },
     'ifp3': {
@@ -204,7 +188,6 @@ export const questions: QuestionObjectType = {
         readonly: false,
         order: 16,
         active: function() {return(true)},
-        error: '',
         skip: false
     },
     'ifp4': {
@@ -216,7 +199,6 @@ export const questions: QuestionObjectType = {
         readonly: false,
         order: 17,
         active: function() {return(true)},
-        error: '',
         skip: false
     },
     'ifm1': {
@@ -228,7 +210,6 @@ export const questions: QuestionObjectType = {
         readonly: false,
         order: 18,
         active: function() {return(true)},
-        error: '',
         skip: false
     },
     'ifm2': {
@@ -240,7 +221,6 @@ export const questions: QuestionObjectType = {
         readonly: false,
         order: 19,
         active: function() {return(true)},
-        error: '',
         skip: false
     },
     'ifm3': {
@@ -252,7 +232,6 @@ export const questions: QuestionObjectType = {
         readonly: false,
         order: 20,
         active: function() {return(true)},
-        error: '',
         skip: false
     },
     'ifm4': {
@@ -264,19 +243,17 @@ export const questions: QuestionObjectType = {
         readonly: false,
         order: 21,
         active: function() {return(true)},
-        error: '',
         skip: false
     },
     'ifm4_age': {
         name: 'ifm4_age',
         type: 'number',
         value: '-9',
-        disabled: true,
+        disabled: false,
         hidden: false,
         readonly: true,
         order: 22,
         active: function() {return(true)},
-        error: '',
         skip: false
     },
     'ifm5': {
@@ -288,7 +265,6 @@ export const questions: QuestionObjectType = {
         readonly: false,
         order: 23,
         active: function() {return(true)},
-        error: '',
         skip: false
     },
     'ifm6': {
@@ -300,7 +276,6 @@ export const questions: QuestionObjectType = {
         readonly: false,
         order: 24,
         active: function() {return(true)},
-        error: '',
         skip: false
     },
     'ifm6_other': {
@@ -312,7 +287,6 @@ export const questions: QuestionObjectType = {
         readonly: false,
         order: 25,
         active: function() {return(Number(instrument.questions.ifm6.value) == 16)},
-        error: '',
         skip: false
     },
     'ift1': {
@@ -324,7 +298,6 @@ export const questions: QuestionObjectType = {
         readonly: false,
         order: 26,
         active: function() {return(true)},
-        error: '',
         skip: false
     },
     'ift2': {
@@ -336,7 +309,6 @@ export const questions: QuestionObjectType = {
         readonly: false,
         order: 27,
         active: function() {return(true)},
-        error: '',
         skip: false
     },
     'ift3': {
@@ -348,7 +320,6 @@ export const questions: QuestionObjectType = {
         readonly: false,
         order: 28,
         active: function() {return(true)},
-        error: '',
         skip: false
     },
     'ift4': {
@@ -360,19 +331,17 @@ export const questions: QuestionObjectType = {
         readonly: false,
         order: 29,
         active: function() {return(true)},
-        error: '',
         skip: false
     },
     'ift4_age': {
         name: 'ift4_age',
         type: 'number',
         value: '-9',
-        disabled: true,
+        disabled: false,
         hidden: false,
         readonly: true,
         order: 30,
         active: function() {return(true)},
-        error: '',
         skip: false
     },
     'ift5': {
@@ -384,7 +353,6 @@ export const questions: QuestionObjectType = {
         readonly: false,
         order: 31,
         active: function() {return(true)},
-        error: '',
         skip: false
     },
     'ift6': {
@@ -396,7 +364,6 @@ export const questions: QuestionObjectType = {
         readonly: false,
         order: 32,
         active: function() {return(true)},
-        error: '',
         skip: false
     },
     'ift6_other': {
@@ -408,7 +375,6 @@ export const questions: QuestionObjectType = {
         readonly: false,
         order: 33,
         active: function() {return(Number(instrument.questions.ift6.value) == 16)},
-        error: '',
         skip: false
     },
     'ifp4a': {
@@ -420,7 +386,6 @@ export const questions: QuestionObjectType = {
         readonly: false,
         order: 34,
         active: function() {return(true)},
-        error: '',
         skip: false
     },
     'ifp4b': {
@@ -432,7 +397,6 @@ export const questions: QuestionObjectType = {
         readonly: false,
         order: 35,
         active: function() {return(true)},
-        error: '',
         skip: false
     },
     'ifp5': {
@@ -444,7 +408,6 @@ export const questions: QuestionObjectType = {
         readonly: false,
         order: 36,
         active: function() {return(true)},
-        error: '',
         skip: false
     },
     'fc1': {
@@ -456,7 +419,6 @@ export const questions: QuestionObjectType = {
         readonly: false,
         order: 37,
         active: function() {return(true)},
-        error: '',
         skip: false
     },
     'fc2a': {
@@ -468,7 +430,6 @@ export const questions: QuestionObjectType = {
         readonly: false,
         order: 38,
         active: function() {return(Number(instrument.questions.fc1.value) > 0)},
-        error: '',
         skip: false
     },
     'fc2b': {
@@ -480,19 +441,6 @@ export const questions: QuestionObjectType = {
         readonly: false,
         order: 39,
         active: function() {return(Number(instrument.questions.fc1.value) > 0)},
-        error: '',
-        skip: false
-    },
-    'fc2f': {
-        name: 'fc2f',
-        type: 'radio',
-        value: '-7',
-        disabled: true,
-        hidden: false,
-        readonly: false,
-        order: 40,
-        active: function() {return(Number(instrument.questions.fc1.value) > 0)},
-        error: '',
         skip: false
     },
     'fc2c': {
@@ -502,9 +450,8 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 41,
+        order: 40,
         active: function() {return(Number(instrument.questions.fc1.value) > 0)},
-        error: '',
         skip: false
     },
     'fc2d': {
@@ -514,9 +461,8 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 42,
+        order: 41,
         active: function() {return(Number(instrument.questions.fc1.value) > 0)},
-        error: '',
         skip: false
     },
     'fc2e': {
@@ -526,9 +472,30 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
+        order: 42,
+        active: function() {return(Number(instrument.questions.fc1.value) > 0)},
+        skip: false
+    },
+    'fc2f': {
+        name: 'fc2f',
+        type: 'radio',
+        value: '-7',
+        disabled: true,
+        hidden: false,
+        readonly: false,
         order: 43,
         active: function() {return(Number(instrument.questions.fc1.value) > 0)},
-        error: '',
+        skip: false
+    },
+    'fc2g': {
+        name: 'fc2g',
+        type: 'radio',
+        value: '-7',
+        disabled: true,
+        hidden: false,
+        readonly: false,
+        order: 44,
+        active: function() {return(Number(instrument.questions.fc1.value) > 0)},
         skip: false
     },
     'fc3': {
@@ -538,9 +505,8 @@ export const questions: QuestionObjectType = {
         disabled: false,
         hidden: false,
         readonly: false,
-        order: 44,
+        order: 45,
         active: function() {return(true)},
-        error: '',
         skip: false
     },
     'fc4_c1a': {
@@ -550,9 +516,8 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 45,
-        active: function() {return(Number(instrument.questions.fc3.value) > 0)},
-        error: '',
+        order: 46,
+        active: function() {return(Number(instrument.questions.fc3.value) >= 1)},
         skip: false
     },
     'fc4_c1b': {
@@ -562,9 +527,8 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 46,
-        active: function() {return(Number(instrument.questions.fc3.value) > 0)},
-        error: '',
+        order: 47,
+        active: function() {return(Number(instrument.questions.fc3.value) >= 1)},
         skip: false
     },
     'fc4_c1c': {
@@ -574,9 +538,8 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 47,
-        active: function() {return(Number(instrument.questions.fc3.value) > 0)},
-        error: '',
+        order: 48,
+        active: function() {return(Number(instrument.questions.fc3.value) >= 1)},
         skip: false
     },
     'fc4_c1d': {
@@ -586,10 +549,81 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 48,
-        active: function() {return(Number(instrument.questions.fc3.value) > 0)},
-        error: '',
+        order: 49,
+        active: function() {return(Number(instrument.questions.fc3.value) >= 1)},
         skip: false
+    },
+    'fc4_c1cn1': {
+        name: 'fc4_c1cn1',
+        type: 'checkbox',
+        value: '0',
+        disabled: true,
+        hidden: false,
+        readonly: false,
+        order: 50,
+        active: function() {return(Number(instrument.questions.fc3.value) >= 1 && Number(instrument.questions.fc4_c1d.value)==1)},
+        skip: false,
+        checked: 0
+    },
+    'fc4_c1cn2': {
+        name: 'fc4_c1cn2',
+        type: 'checkbox',
+        value: '0',
+        disabled: true,
+        hidden: false,
+        readonly: false,
+        order: 51,
+        active: function() {return(Number(instrument.questions.fc3.value) >= 1 && Number(instrument.questions.fc4_c1d.value)==1)},
+        skip: false,
+        checked: 0
+    },
+    'fc4_c1cn3': {
+        name: 'fc4_c1cn3',
+        type: 'checkbox',
+        value: '0',
+        disabled: true,
+        hidden: false,
+        readonly: false,
+        order: 52,
+        active: function() {return(Number(instrument.questions.fc3.value) >= 1 && Number(instrument.questions.fc4_c1d.value)==1)},
+        skip: false,
+        checked: 0
+    },
+    'fc4_c1cn4': {
+        name: 'fc4_c1cn4',
+        type: 'checkbox',
+        value: '0',
+        disabled: true,
+        hidden: false,
+        readonly: false,
+        order: 53,
+        active: function() {return(Number(instrument.questions.fc3.value) >= 1 && Number(instrument.questions.fc4_c1d.value)==1)},
+        skip: false,
+        checked: 0
+    },
+    'fc4_c1cn5': {
+        name: 'fc4_c1cn5',
+        type: 'checkbox',
+        value: '0',
+        disabled: true,
+        hidden: false,
+        readonly: false,
+        order: 54,
+        active: function() {return(Number(instrument.questions.fc3.value) >= 1 && Number(instrument.questions.fc4_c1d.value)==1)},
+        skip: false,
+        checked: 0
+    },
+    'fc4_c1cn6': {
+        name: 'fc4_c1cn6',
+        type: 'checkbox',
+        value: '0',
+        disabled: true,
+        hidden: false,
+        readonly: false,
+        order: 55,
+        active: function() {return(Number(instrument.questions.fc3.value) >= 1 && Number(instrument.questions.fc4_c1d.value)==1)},
+        skip: false,
+        checked: 0
     },
     'fc4_c1e': {
         name: 'fc4_c1e',
@@ -598,9 +632,8 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 49,
-        active: function() {return(Number(instrument.questions.fc3.value) > 0)},
-        error: '',
+        order: 56,
+        active: function() {return(Number(instrument.questions.fc3.value) >= 1)},
         skip: false
     },
     'fc4_c1e_other': {
@@ -610,9 +643,8 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 50,
-        active: function() {return(Number(instrument.questions.fc3.value) > 0 && Number(instrument.questions.fc4_c1e.value) == 5)},
-        error: '',
+        order: 57,
+        active: function() {return(Number(instrument.questions.fc3.value) >= 1 && Number(instrument.questions.fc4_c1e.value) == 5)},
         skip: false
     },
     'fc4_c1f': {
@@ -622,9 +654,8 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 51,
-        active: function() {return(Number(instrument.questions.fc3.value) > 0)},
-        error: '',
+        order: 58,
+        active: function() {return(Number(instrument.questions.fc3.value) >= 1)},
         skip: false
     },
     'fc4_c2a': {
@@ -634,9 +665,8 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 52,
-        active: function() {return(Number(instrument.questions.fc3.value) > 0)},
-        error: '',
+        order: 59,
+        active: function() {return(Number(instrument.questions.fc3.value) >= 2)},
         skip: false
     },
     'fc4_c2b': {
@@ -646,9 +676,8 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 53,
-        active: function() {return(Number(instrument.questions.fc3.value) > 0)},
-        error: '',
+        order: 60,
+        active: function() {return(Number(instrument.questions.fc3.value) >= 2)},
         skip: false
     },
     'fc4_c2c': {
@@ -658,9 +687,8 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 54,
-        active: function() {return(Number(instrument.questions.fc3.value) > 0)},
-        error: '',
+        order: 61,
+        active: function() {return(Number(instrument.questions.fc3.value) >= 2)},
         skip: false
     },
     'fc4_c2d': {
@@ -670,10 +698,81 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 55,
-        active: function() {return(Number(instrument.questions.fc3.value) > 0)},
-        error: '',
+        order: 62,
+        active: function() {return(Number(instrument.questions.fc3.value) >= 2)},
         skip: false
+    },
+    'fc4_c2cn1': {
+        name: 'fc4_c2cn1',
+        type: 'checkbox',
+        value: '0',
+        disabled: true,
+        hidden: false,
+        readonly: false,
+        order: 63,
+        active: function() {return(Number(instrument.questions.fc3.value) >= 2 && Number(instrument.questions.fc4_c2d.value)==1)},
+        skip: false,
+        checked: 0
+    },
+    'fc4_c2cn2': {
+        name: 'fc4_c2cn2',
+        type: 'checkbox',
+        value: '0',
+        disabled: true,
+        hidden: false,
+        readonly: false,
+        order: 64,
+        active: function() {return(Number(instrument.questions.fc3.value) >= 2 && Number(instrument.questions.fc4_c2d.value)==1)},
+        skip: false,
+        checked: 0
+    },
+    'fc4_c2cn3': {
+        name: 'fc4_c2cn3',
+        type: 'checkbox',
+        value: '0',
+        disabled: true,
+        hidden: false,
+        readonly: false,
+        order: 65,
+        active: function() {return(Number(instrument.questions.fc3.value) >= 2 && Number(instrument.questions.fc4_c2d.value)==1)},
+        skip: false,
+        checked: 0
+    },
+    'fc4_c2cn4': {
+        name: 'fc4_c2cn4',
+        type: 'checkbox',
+        value: '0',
+        disabled: true,
+        hidden: false,
+        readonly: false,
+        order: 66,
+        active: function() {return(Number(instrument.questions.fc3.value) >= 2 && Number(instrument.questions.fc4_c2d.value)==1)},
+        skip: false,
+        checked: 0
+    },
+    'fc4_c2cn5': {
+        name: 'fc4_c2cn5',
+        type: 'checkbox',
+        value: '0',
+        disabled: true,
+        hidden: false,
+        readonly: false,
+        order: 67,
+        active: function() {return(Number(instrument.questions.fc3.value) >= 2 && Number(instrument.questions.fc4_c2d.value)==1)},
+        skip: false,
+        checked: 0
+    },
+    'fc4_c2cn6': {
+        name: 'fc4_c2cn6',
+        type: 'checkbox',
+        value: '0',
+        disabled: true,
+        hidden: false,
+        readonly: false,
+        order: 68,
+        active: function() {return(Number(instrument.questions.fc3.value) >= 2 && Number(instrument.questions.fc4_c2d.value)==1)},
+        skip: false,
+        checked: 0
     },
     'fc4_c2e': {
         name: 'fc4_c2e',
@@ -682,9 +781,8 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 56,
-        active: function() {return(Number(instrument.questions.fc3.value) > 0)},
-        error: '',
+        order: 69,
+        active: function() {return(Number(instrument.questions.fc3.value) >= 2)},
         skip: false
     },
     'fc4_c2e_other': {
@@ -694,9 +792,8 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 57,
-        active: function() {return(Number(instrument.questions.fc3.value) > 0 && Number(instrument.questions.fc4_c2e.value) == 5)},
-        error: '',
+        order: 70,
+        active: function() {return(Number(instrument.questions.fc3.value) >= 2 && Number(instrument.questions.fc4_c2e.value) == 5)},
         skip: false
     },
     'fc4_c2f': {
@@ -706,9 +803,8 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 58,
-        active: function() {return(Number(instrument.questions.fc3.value) > 0)},
-        error: '',
+        order: 71,
+        active: function() {return(Number(instrument.questions.fc3.value) >= 2)},
         skip: false
     },
     'fc4_c3a': {
@@ -718,9 +814,8 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 59,
-        active: function() {return(Number(instrument.questions.fc3.value) > 0)},
-        error: '',
+        order: 72,
+        active: function() {return(Number(instrument.questions.fc3.value) >= 3)},
         skip: false
     },
     'fc4_c3b': {
@@ -730,9 +825,8 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 60,
-        active: function() {return(Number(instrument.questions.fc3.value) > 0)},
-        error: '',
+        order: 73,
+        active: function() {return(Number(instrument.questions.fc3.value) >= 3)},
         skip: false
     },
     'fc4_c3c': {
@@ -742,9 +836,8 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 61,
-        active: function() {return(Number(instrument.questions.fc3.value) > 0)},
-        error: '',
+        order: 74,
+        active: function() {return(Number(instrument.questions.fc3.value) >= 3)},
         skip: false
     },
     'fc4_c3d': {
@@ -754,10 +847,81 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 62,
-        active: function() {return(Number(instrument.questions.fc3.value) > 0)},
-        error: '',
+        order: 75,
+        active: function() {return(Number(instrument.questions.fc3.value) >= 3)},
         skip: false
+    },
+    'fc4_c3cn1': {
+        name: 'fc4_c3cn1',
+        type: 'checkbox',
+        value: '0',
+        disabled: true,
+        hidden: false,
+        readonly: false,
+        order: 76,
+        active: function() {return(Number(instrument.questions.fc3.value) >= 3 && Number(instrument.questions.fc4_c3d.value)==1)},
+        skip: false,
+        checked: 0
+    },
+    'fc4_c3cn2': {
+        name: 'fc4_c3cn2',
+        type: 'checkbox',
+        value: '0',
+        disabled: true,
+        hidden: false,
+        readonly: false,
+        order: 77,
+        active: function() {return(Number(instrument.questions.fc3.value) >= 3 && Number(instrument.questions.fc4_c3d.value)==1)},
+        skip: false,
+        checked: 0
+    },
+    'fc4_c3cn3': {
+        name: 'fc4_c3cn3',
+        type: 'checkbox',
+        value: '0',
+        disabled: true,
+        hidden: false,
+        readonly: false,
+        order: 78,
+        active: function() {return(Number(instrument.questions.fc3.value) >= 3 && Number(instrument.questions.fc4_c3d.value)==1)},
+        skip: false,
+        checked: 0
+    },
+    'fc4_c3cn4': {
+        name: 'fc4_c3cn4',
+        type: 'checkbox',
+        value: '0',
+        disabled: true,
+        hidden: false,
+        readonly: false,
+        order: 79,
+        active: function() {return(Number(instrument.questions.fc3.value) >= 3 && Number(instrument.questions.fc4_c3d.value)==1)},
+        skip: false,
+        checked: 0
+    },
+    'fc4_c3cn5': {
+        name: 'fc4_c3cn5',
+        type: 'checkbox',
+        value: '0',
+        disabled: true,
+        hidden: false,
+        readonly: false,
+        order: 80,
+        active: function() {return(Number(instrument.questions.fc3.value) >= 3 && Number(instrument.questions.fc4_c3d.value)==1)},
+        skip: false,
+        checked: 0
+    },
+    'fc4_c3cn6': {
+        name: 'fc4_c3cn6',
+        type: 'checkbox',
+        value: '0',
+        disabled: true,
+        hidden: false,
+        readonly: false,
+        order: 81,
+        active: function() {return(Number(instrument.questions.fc3.value) >= 3 && Number(instrument.questions.fc4_c3d.value)==1)},
+        skip: false,
+        checked: 0
     },
     'fc4_c3e': {
         name: 'fc4_c3e',
@@ -766,9 +930,8 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 63,
-        active: function() {return(Number(instrument.questions.fc3.value) > 0)},
-        error: '',
+        order: 82,
+        active: function() {return(Number(instrument.questions.fc3.value) >= 3)},
         skip: false
     },
     'fc4_c3e_other': {
@@ -778,9 +941,8 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 64,
-        active: function() {return(Number(instrument.questions.fc3.value) > 0 && Number(instrument.questions.fc4_c3e.value) == 5)},
-        error: '',
+        order: 83,
+        active: function() {return(Number(instrument.questions.fc3.value) >= 3 && Number(instrument.questions.fc4_c3e.value) == 5)},
         skip: false
     },
     'fc4_c3f': {
@@ -790,9 +952,8 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 65,
-        active: function() {return(Number(instrument.questions.fc3.value) > 0)},
-        error: '',
+        order: 84,
+        active: function() {return(Number(instrument.questions.fc3.value) >= 3)},
         skip: false
     },
     'fc4_c4a': {
@@ -802,9 +963,8 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 66,
-        active: function() {return(Number(instrument.questions.fc3.value) > 0)},
-        error: '',
+        order: 85,
+        active: function() {return(Number(instrument.questions.fc3.value) >= 4)},
         skip: false
     },
     'fc4_c4b': {
@@ -814,9 +974,8 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 67,
-        active: function() {return(Number(instrument.questions.fc3.value) > 0)},
-        error: '',
+        order: 86,
+        active: function() {return(Number(instrument.questions.fc3.value) >= 4)},
         skip: false
     },
     'fc4_c4c': {
@@ -826,9 +985,8 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 68,
-        active: function() {return(Number(instrument.questions.fc3.value) > 0)},
-        error: '',
+        order: 87,
+        active: function() {return(Number(instrument.questions.fc3.value) >= 4)},
         skip: false
     },
     'fc4_c4d': {
@@ -838,10 +996,81 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 69,
-        active: function() {return(Number(instrument.questions.fc3.value) > 0)},
-        error: '',
+        order: 88,
+        active: function() {return(Number(instrument.questions.fc3.value) >= 4)},
         skip: false
+    },
+    'fc4_c4cn1': {
+        name: 'fc4_c4cn1',
+        type: 'checkbox',
+        value: '0',
+        disabled: true,
+        hidden: false,
+        readonly: false,
+        order: 89,
+        active: function() {return(Number(instrument.questions.fc3.value) >= 4 && Number(instrument.questions.fc4_c4d.value)==1)},
+        skip: false,
+        checked: 0
+    },
+    'fc4_c4cn2': {
+        name: 'fc4_c4cn2',
+        type: 'checkbox',
+        value: '0',
+        disabled: true,
+        hidden: false,
+        readonly: false,
+        order: 90,
+        active: function() {return(Number(instrument.questions.fc3.value) >= 4 && Number(instrument.questions.fc4_c4d.value)==1)},
+        skip: false,
+        checked: 0
+    },
+    'fc4_c4cn3': {
+        name: 'fc4_c4cn3',
+        type: 'checkbox',
+        value: '0',
+        disabled: true,
+        hidden: false,
+        readonly: false,
+        order: 91,
+        active: function() {return(Number(instrument.questions.fc3.value) >= 4 && Number(instrument.questions.fc4_c4d.value)==1)},
+        skip: false,
+        checked: 0
+    },
+    'fc4_c4cn4': {
+        name: 'fc4_c4cn4',
+        type: 'checkbox',
+        value: '0',
+        disabled: true,
+        hidden: false,
+        readonly: false,
+        order: 92,
+        active: function() {return(Number(instrument.questions.fc3.value) >= 4 && Number(instrument.questions.fc4_c4d.value)==1)},
+        skip: false,
+        checked: 0
+    },
+    'fc4_c4cn5': {
+        name: 'fc4_c4cn5',
+        type: 'checkbox',
+        value: '0',
+        disabled: true,
+        hidden: false,
+        readonly: false,
+        order: 93,
+        active: function() {return(Number(instrument.questions.fc3.value) >= 4 && Number(instrument.questions.fc4_c4d.value)==1)},
+        skip: false,
+        checked: 0
+    },
+    'fc4_c4cn6': {
+        name: 'fc4_c4cn6',
+        type: 'checkbox',
+        value: '0',
+        disabled: true,
+        hidden: false,
+        readonly: false,
+        order: 94,
+        active: function() {return(Number(instrument.questions.fc3.value) >= 4 && Number(instrument.questions.fc4_c4d.value)==1)},
+        skip: false,
+        checked: 0
     },
     'fc4_c4e': {
         name: 'fc4_c4e',
@@ -850,9 +1079,8 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 70,
-        active: function() {return(Number(instrument.questions.fc3.value) > 0)},
-        error: '',
+        order: 95,
+        active: function() {return(Number(instrument.questions.fc3.value) >= 4)},
         skip: false
     },
     'fc4_c4e_other': {
@@ -862,9 +1090,8 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 71,
-        active: function() {return(Number(instrument.questions.fc3.value) > 0 && Number(instrument.questions.fc4_c4e.value) == 5)},
-        error: '',
+        order: 96,
+        active: function() {return(Number(instrument.questions.fc3.value) >= 4 && Number(instrument.questions.fc4_c4e.value) == 5)},
         skip: false
     },
     'fc4_c4f': {
@@ -874,9 +1101,8 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 72,
-        active: function() {return(Number(instrument.questions.fc3.value) > 0)},
-        error: '',
+        order: 97,
+        active: function() {return(Number(instrument.questions.fc3.value) >= 4)},
         skip: false
     },
     'fc4_c5a': {
@@ -886,9 +1112,8 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 73,
-        active: function() {return(Number(instrument.questions.fc3.value) > 0)},
-        error: '',
+        order: 98,
+        active: function() {return(Number(instrument.questions.fc3.value) >= 5)},
         skip: false
     },
     'fc4_c5b': {
@@ -898,9 +1123,8 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 74,
-        active: function() {return(Number(instrument.questions.fc3.value) > 0)},
-        error: '',
+        order: 99,
+        active: function() {return(Number(instrument.questions.fc3.value) >= 5)},
         skip: false
     },
     'fc4_c5c': {
@@ -910,9 +1134,8 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 75,
-        active: function() {return(Number(instrument.questions.fc3.value) > 0)},
-        error: '',
+        order: 100,
+        active: function() {return(Number(instrument.questions.fc3.value) >= 5)},
         skip: false
     },
     'fc4_c5d': {
@@ -922,10 +1145,81 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 76,
-        active: function() {return(Number(instrument.questions.fc3.value) > 0)},
-        error: '',
+        order: 101,
+        active: function() {return(Number(instrument.questions.fc3.value) >= 5)},
         skip: false
+    },
+    'fc4_c5cn1': {
+        name: 'fc4_c5cn1',
+        type: 'checkbox',
+        value: '0',
+        disabled: true,
+        hidden: false,
+        readonly: false,
+        order: 102,
+        active: function() {return(Number(instrument.questions.fc3.value) >= 5 && Number(instrument.questions.fc4_c5d.value)==1)},
+        skip: false,
+        checked: 0
+    },
+    'fc4_c5cn2': {
+        name: 'fc4_c5cn2',
+        type: 'checkbox',
+        value: '0',
+        disabled: true,
+        hidden: false,
+        readonly: false,
+        order: 103,
+        active: function() {return(Number(instrument.questions.fc3.value) >= 5 && Number(instrument.questions.fc4_c5d.value)==1)},
+        skip: false,
+        checked: 0
+    },
+    'fc4_c5cn3': {
+        name: 'fc4_c5cn3',
+        type: 'checkbox',
+        value: '0',
+        disabled: true,
+        hidden: false,
+        readonly: false,
+        order: 104,
+        active: function() {return(Number(instrument.questions.fc3.value) >= 5 && Number(instrument.questions.fc4_c5d.value)==1)},
+        skip: false,
+        checked: 0
+    },
+    'fc4_c5cn4': {
+        name: 'fc4_c5cn4',
+        type: 'checkbox',
+        value: '0',
+        disabled: true,
+        hidden: false,
+        readonly: false,
+        order: 105,
+        active: function() {return(Number(instrument.questions.fc3.value) >= 5 && Number(instrument.questions.fc4_c5d.value)==1)},
+        skip: false,
+        checked: 0
+    },
+    'fc4_c5cn5': {
+        name: 'fc4_c5cn5',
+        type: 'checkbox',
+        value: '0',
+        disabled: true,
+        hidden: false,
+        readonly: false,
+        order: 106,
+        active: function() {return(Number(instrument.questions.fc3.value) >= 5 && Number(instrument.questions.fc4_c5d.value)==1)},
+        skip: false,
+        checked: 0
+    },
+    'fc4_c5cn6': {
+        name: 'fc4_c5cn6',
+        type: 'checkbox',
+        value: '0',
+        disabled: true,
+        hidden: false,
+        readonly: false,
+        order: 107,
+        active: function() {return(Number(instrument.questions.fc3.value) >= 5 && Number(instrument.questions.fc4_c5d.value)==1)},
+        skip: false,
+        checked: 0
     },
     'fc4_c5e': {
         name: 'fc4_c5e',
@@ -934,9 +1228,8 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 77,
-        active: function() {return(Number(instrument.questions.fc3.value) > 0)},
-        error: '',
+        order: 108,
+        active: function() {return(Number(instrument.questions.fc3.value) >= 5)},
         skip: false
     },
     'fc4_c5e_other': {
@@ -946,9 +1239,8 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 78,
-        active: function() {return(Number(instrument.questions.fc3.value) > 0 && Number(instrument.questions.fc4_c5e.value) == 5)},
-        error: '',
+        order: 109,
+        active: function() {return(Number(instrument.questions.fc3.value) >= 5 && Number(instrument.questions.fc4_c5e.value) == 5)},
         skip: false
     },
     'fc4_c5f': {
@@ -958,9 +1250,8 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 79,
-        active: function() {return(Number(instrument.questions.fc3.value) > 0)},
-        error: '',
+        order: 110,
+        active: function() {return(Number(instrument.questions.fc3.value) >= 5)},
         skip: false
     },
     'fc4_c6a': {
@@ -970,9 +1261,8 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 80,
-        active: function() {return(Number(instrument.questions.fc3.value) > 0)},
-        error: '',
+        order: 111,
+        active: function() {return(Number(instrument.questions.fc3.value) >= 6)},
         skip: false
     },
     'fc4_c6b': {
@@ -982,9 +1272,8 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 81,
-        active: function() {return(Number(instrument.questions.fc3.value) > 0)},
-        error: '',
+        order: 112,
+        active: function() {return(Number(instrument.questions.fc3.value) >= 6)},
         skip: false
     },
     'fc4_c6c': {
@@ -994,9 +1283,8 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 82,
-        active: function() {return(Number(instrument.questions.fc3.value) > 0)},
-        error: '',
+        order: 113,
+        active: function() {return(Number(instrument.questions.fc3.value) >= 6)},
         skip: false
     },
     'fc4_c6d': {
@@ -1006,10 +1294,81 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 83,
-        active: function() {return(Number(instrument.questions.fc3.value) > 0)},
-        error: '',
+        order: 114,
+        active: function() {return(Number(instrument.questions.fc3.value) >= 6)},
         skip: false
+    },
+    'fc4_c6cn1': {
+        name: 'fc4_c6cn1',
+        type: 'checkbox',
+        value: '0',
+        disabled: true,
+        hidden: false,
+        readonly: false,
+        order: 115,
+        active: function() {return(Number(instrument.questions.fc3.value) >= 6 && Number(instrument.questions.fc4_c6d.value)==1)},
+        skip: false,
+        checked: 0
+    },
+    'fc4_c6cn2': {
+        name: 'fc4_c6cn2',
+        type: 'checkbox',
+        value: '0',
+        disabled: true,
+        hidden: false,
+        readonly: false,
+        order: 116,
+        active: function() {return(Number(instrument.questions.fc3.value) >= 6 && Number(instrument.questions.fc4_c6d.value)==1)},
+        skip: false,
+        checked: 0
+    },
+    'fc4_c6cn3': {
+        name: 'fc4_c6cn3',
+        type: 'checkbox',
+        value: '0',
+        disabled: true,
+        hidden: false,
+        readonly: false,
+        order: 117,
+        active: function() {return(Number(instrument.questions.fc3.value) >= 6 && Number(instrument.questions.fc4_c6d.value)==1)},
+        skip: false,
+        checked: 0
+    },
+    'fc4_c6cn4': {
+        name: 'fc4_c6cn4',
+        type: 'checkbox',
+        value: '0',
+        disabled: true,
+        hidden: false,
+        readonly: false,
+        order: 118,
+        active: function() {return(Number(instrument.questions.fc3.value) >= 6 && Number(instrument.questions.fc4_c6d.value)==1)},
+        skip: false,
+        checked: 0
+    },
+    'fc4_c6cn5': {
+        name: 'fc4_c6cn5',
+        type: 'checkbox',
+        value: '0',
+        disabled: true,
+        hidden: false,
+        readonly: false,
+        order: 119,
+        active: function() {return(Number(instrument.questions.fc3.value) >= 6 && Number(instrument.questions.fc4_c6d.value)==1)},
+        skip: false,
+        checked: 0
+    },
+    'fc4_c6cn6': {
+        name: 'fc4_c6cn6',
+        type: 'checkbox',
+        value: '0',
+        disabled: true,
+        hidden: false,
+        readonly: false,
+        order: 120,
+        active: function() {return(Number(instrument.questions.fc3.value) >= 6 && Number(instrument.questions.fc4_c6d.value)==1)},
+        skip: false,
+        checked: 0
     },
     'fc4_c6e': {
         name: 'fc4_c6e',
@@ -1018,9 +1377,8 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 84,
-        active: function() {return(Number(instrument.questions.fc3.value) > 0)},
-        error: '',
+        order: 121,
+        active: function() {return(Number(instrument.questions.fc3.value) >= 6)},
         skip: false
     },
     'fc4_c6e_other': {
@@ -1030,9 +1388,8 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 85,
-        active: function() {return(Number(instrument.questions.fc3.value) > 0 && Number(instrument.questions.fc4_c6e.value) == 5)},
-        error: '',
+        order: 122,
+        active: function() {return(Number(instrument.questions.fc3.value) >= 6 && Number(instrument.questions.fc4_c6e.value) == 5)},
         skip: false
     },
     'fc4_c6f': {
@@ -1042,9 +1399,8 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 86,
-        active: function() {return(Number(instrument.questions.fc3.value) > 0)},
-        error: '',
+        order: 123,
+        active: function() {return(Number(instrument.questions.fc3.value) >= 6)},
         skip: false
     },
     'fc4_c7a': {
@@ -1054,9 +1410,8 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 87,
-        active: function() {return(Number(instrument.questions.fc3.value) > 0)},
-        error: '',
+        order: 124,
+        active: function() {return(Number(instrument.questions.fc3.value) >= 7)},
         skip: false
     },
     'fc4_c7b': {
@@ -1066,9 +1421,8 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 88,
-        active: function() {return(Number(instrument.questions.fc3.value) > 0)},
-        error: '',
+        order: 125,
+        active: function() {return(Number(instrument.questions.fc3.value) >= 7)},
         skip: false
     },
     'fc4_c7c': {
@@ -1078,9 +1432,8 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 89,
-        active: function() {return(Number(instrument.questions.fc3.value) > 0)},
-        error: '',
+        order: 126,
+        active: function() {return(Number(instrument.questions.fc3.value) >= 7)},
         skip: false
     },
     'fc4_c7d': {
@@ -1090,10 +1443,81 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 90,
-        active: function() {return(Number(instrument.questions.fc3.value) > 0)},
-        error: '',
+        order: 127,
+        active: function() {return(Number(instrument.questions.fc3.value) >= 7)},
         skip: false
+    },
+    'fc4_c7cn1': {
+        name: 'fc4_c7cn1',
+        type: 'checkbox',
+        value: '0',
+        disabled: true,
+        hidden: false,
+        readonly: false,
+        order: 128,
+        active: function() {return(Number(instrument.questions.fc3.value) >= 7 && Number(instrument.questions.fc4_c7d.value)==1)},
+        skip: false,
+        checked: 0
+    },
+    'fc4_c7cn2': {
+        name: 'fc4_c7cn2',
+        type: 'checkbox',
+        value: '0',
+        disabled: true,
+        hidden: false,
+        readonly: false,
+        order: 129,
+        active: function() {return(Number(instrument.questions.fc3.value) >= 7 && Number(instrument.questions.fc4_c7d.value)==1)},
+        skip: false,
+        checked: 0
+    },
+    'fc4_c7cn3': {
+        name: 'fc4_c7cn3',
+        type: 'checkbox',
+        value: '0',
+        disabled: true,
+        hidden: false,
+        readonly: false,
+        order: 130,
+        active: function() {return(Number(instrument.questions.fc3.value) >= 7 && Number(instrument.questions.fc4_c7d.value)==1)},
+        skip: false,
+        checked: 0
+    },
+    'fc4_c7cn4': {
+        name: 'fc4_c7cn4',
+        type: 'checkbox',
+        value: '0',
+        disabled: true,
+        hidden: false,
+        readonly: false,
+        order: 131,
+        active: function() {return(Number(instrument.questions.fc3.value) >= 7 && Number(instrument.questions.fc4_c7d.value)==1)},
+        skip: false,
+        checked: 0
+    },
+    'fc4_c7cn5': {
+        name: 'fc4_c7cn5',
+        type: 'checkbox',
+        value: '0',
+        disabled: true,
+        hidden: false,
+        readonly: false,
+        order: 132,
+        active: function() {return(Number(instrument.questions.fc3.value) >= 7 && Number(instrument.questions.fc4_c7d.value)==1)},
+        skip: false,
+        checked: 0
+    },
+    'fc4_c7cn6': {
+        name: 'fc4_c7cn6',
+        type: 'checkbox',
+        value: '0',
+        disabled: true,
+        hidden: false,
+        readonly: false,
+        order: 133,
+        active: function() {return(Number(instrument.questions.fc3.value) >= 7 && Number(instrument.questions.fc4_c7d.value)==1)},
+        skip: false,
+        checked: 0
     },
     'fc4_c7e': {
         name: 'fc4_c7e',
@@ -1102,9 +1526,8 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 91,
-        active: function() {return(Number(instrument.questions.fc3.value) > 0)},
-        error: '',
+        order: 134,
+        active: function() {return(Number(instrument.questions.fc3.value) >= 7)},
         skip: false
     },
     'fc4_c7e_other': {
@@ -1114,9 +1537,8 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 92,
-        active: function() {return(Number(instrument.questions.fc3.value) > 0 && Number(instrument.questions.fc4_c7e.value) == 5)},
-        error: '',
+        order: 135,
+        active: function() {return(Number(instrument.questions.fc3.value) >= 7 && Number(instrument.questions.fc4_c7e.value) == 5)},
         skip: false
     },
     'fc4_c7f': {
@@ -1126,9 +1548,8 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 93,
-        active: function() {return(Number(instrument.questions.fc3.value) > 0)},
-        error: '',
+        order: 136,
+        active: function() {return(Number(instrument.questions.fc3.value) >= 7)},
         skip: false
     },
     'fc4_c8a': {
@@ -1138,9 +1559,8 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 94,
-        active: function() {return(Number(instrument.questions.fc3.value) > 0)},
-        error: '',
+        order: 137,
+        active: function() {return(Number(instrument.questions.fc3.value) >= 8)},
         skip: false
     },
     'fc4_c8b': {
@@ -1150,9 +1570,8 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 95,
-        active: function() {return(Number(instrument.questions.fc3.value) > 0)},
-        error: '',
+        order: 138,
+        active: function() {return(Number(instrument.questions.fc3.value) >= 8)},
         skip: false
     },
     'fc4_c8c': {
@@ -1162,9 +1581,8 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 96,
-        active: function() {return(Number(instrument.questions.fc3.value) > 0)},
-        error: '',
+        order: 139,
+        active: function() {return(Number(instrument.questions.fc3.value) >= 8)},
         skip: false
     },
     'fc4_c8d': {
@@ -1174,10 +1592,81 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 97,
-        active: function() {return(Number(instrument.questions.fc3.value) > 0)},
-        error: '',
+        order: 140,
+        active: function() {return(Number(instrument.questions.fc3.value) >= 8)},
         skip: false
+    },
+    'fc4_c8cn1': {
+        name: 'fc4_c8cn1',
+        type: 'checkbox',
+        value: '0',
+        disabled: true,
+        hidden: false,
+        readonly: false,
+        order: 141,
+        active: function() {return(Number(instrument.questions.fc3.value) >= 8 && Number(instrument.questions.fc4_c8d.value)==1)},
+        skip: false,
+        checked: 0
+    },
+    'fc4_c8cn2': {
+        name: 'fc4_c8cn2',
+        type: 'checkbox',
+        value: '0',
+        disabled: true,
+        hidden: false,
+        readonly: false,
+        order: 142,
+        active: function() {return(Number(instrument.questions.fc3.value) >= 8 && Number(instrument.questions.fc4_c8d.value)==1)},
+        skip: false,
+        checked: 0
+    },
+    'fc4_c8cn3': {
+        name: 'fc4_c8cn3',
+        type: 'checkbox',
+        value: '0',
+        disabled: true,
+        hidden: false,
+        readonly: false,
+        order: 143,
+        active: function() {return(Number(instrument.questions.fc3.value) >= 8 && Number(instrument.questions.fc4_c8d.value)==1)},
+        skip: false,
+        checked: 0
+    },
+    'fc4_c8cn4': {
+        name: 'fc4_c8cn4',
+        type: 'checkbox',
+        value: '0',
+        disabled: true,
+        hidden: false,
+        readonly: false,
+        order: 144,
+        active: function() {return(Number(instrument.questions.fc3.value) >= 8 && Number(instrument.questions.fc4_c8d.value)==1)},
+        skip: false,
+        checked: 0
+    },
+    'fc4_c8cn5': {
+        name: 'fc4_c8cn5',
+        type: 'checkbox',
+        value: '0',
+        disabled: true,
+        hidden: false,
+        readonly: false,
+        order: 145,
+        active: function() {return(Number(instrument.questions.fc3.value) >= 8 && Number(instrument.questions.fc4_c8d.value)==1)},
+        skip: false,
+        checked: 0
+    },
+    'fc4_c8cn6': {
+        name: 'fc4_c8cn6',
+        type: 'checkbox',
+        value: '0',
+        disabled: true,
+        hidden: false,
+        readonly: false,
+        order: 146,
+        active: function() {return(Number(instrument.questions.fc3.value) >= 8 && Number(instrument.questions.fc4_c8d.value)==1)},
+        skip: false,
+        checked: 0
     },
     'fc4_c8e': {
         name: 'fc4_c8e',
@@ -1186,9 +1675,8 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 98,
-        active: function() {return(Number(instrument.questions.fc3.value) > 0)},
-        error: '',
+        order: 147,
+        active: function() {return(Number(instrument.questions.fc3.value) >= 8)},
         skip: false
     },
     'fc4_c8e_other': {
@@ -1198,9 +1686,8 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 99,
-        active: function() {return(Number(instrument.questions.fc3.value) > 0 && Number(instrument.questions.fc4_c8e.value) == 5)},
-        error: '',
+        order: 148,
+        active: function() {return(Number(instrument.questions.fc3.value) >= 8 && Number(instrument.questions.fc4_c8e.value) == 5)},
         skip: false
     },
     'fc4_c8f': {
@@ -1210,9 +1697,8 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 100,
-        active: function() {return(Number(instrument.questions.fc3.value) > 0)},
-        error: '',
+        order: 149,
+        active: function() {return(Number(instrument.questions.fc3.value) >= 8)},
         skip: false
     },
     'fc4_c9a': {
@@ -1222,9 +1708,8 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 101,
-        active: function() {return(Number(instrument.questions.fc3.value) > 0)},
-        error: '',
+        order: 150,
+        active: function() {return(Number(instrument.questions.fc3.value) >= 9)},
         skip: false
     },
     'fc4_c9b': {
@@ -1234,9 +1719,8 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 102,
-        active: function() {return(Number(instrument.questions.fc3.value) > 0)},
-        error: '',
+        order: 151,
+        active: function() {return(Number(instrument.questions.fc3.value) >= 9)},
         skip: false
     },
     'fc4_c9c': {
@@ -1246,9 +1730,8 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 103,
-        active: function() {return(Number(instrument.questions.fc3.value) > 0)},
-        error: '',
+        order: 152,
+        active: function() {return(Number(instrument.questions.fc3.value) >= 9)},
         skip: false
     },
     'fc4_c9d': {
@@ -1258,10 +1741,81 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 104,
-        active: function() {return(Number(instrument.questions.fc3.value) > 0)},
-        error: '',
+        order: 153,
+        active: function() {return(Number(instrument.questions.fc3.value) >= 9)},
         skip: false
+    },
+    'fc4_c9cn1': {
+        name: 'fc4_c9cn1',
+        type: 'checkbox',
+        value: '0',
+        disabled: true,
+        hidden: false,
+        readonly: false,
+        order: 154,
+        active: function() {return(Number(instrument.questions.fc3.value) >= 9 && Number(instrument.questions.fc4_c9d.value)==1)},
+        skip: false,
+        checked: 0
+    },
+    'fc4_c9cn2': {
+        name: 'fc4_c9cn2',
+        type: 'checkbox',
+        value: '0',
+        disabled: true,
+        hidden: false,
+        readonly: false,
+        order: 155,
+        active: function() {return(Number(instrument.questions.fc3.value) >= 9 && Number(instrument.questions.fc4_c9d.value)==1)},
+        skip: false,
+        checked: 0
+    },
+    'fc4_c9cn3': {
+        name: 'fc4_c9cn3',
+        type: 'checkbox',
+        value: '0',
+        disabled: true,
+        hidden: false,
+        readonly: false,
+        order: 156,
+        active: function() {return(Number(instrument.questions.fc3.value) >= 9 && Number(instrument.questions.fc4_c9d.value)==1)},
+        skip: false,
+        checked: 0
+    },
+    'fc4_c9cn4': {
+        name: 'fc4_c9cn4',
+        type: 'checkbox',
+        value: '0',
+        disabled: true,
+        hidden: false,
+        readonly: false,
+        order: 157,
+        active: function() {return(Number(instrument.questions.fc3.value) >= 9 && Number(instrument.questions.fc4_c9d.value)==1)},
+        skip: false,
+        checked: 0
+    },
+    'fc4_c9cn5': {
+        name: 'fc4_c9cn5',
+        type: 'checkbox',
+        value: '0',
+        disabled: true,
+        hidden: false,
+        readonly: false,
+        order: 158,
+        active: function() {return(Number(instrument.questions.fc3.value) >= 9 && Number(instrument.questions.fc4_c9d.value)==1)},
+        skip: false,
+        checked: 0
+    },
+    'fc4_c9cn6': {
+        name: 'fc4_c9cn6',
+        type: 'checkbox',
+        value: '0',
+        disabled: true,
+        hidden: false,
+        readonly: false,
+        order: 159,
+        active: function() {return(Number(instrument.questions.fc3.value) >= 9 && Number(instrument.questions.fc4_c9d.value)==1)},
+        skip: false,
+        checked: 0
     },
     'fc4_c9e': {
         name: 'fc4_c9e',
@@ -1270,9 +1824,8 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 105,
-        active: function() {return(Number(instrument.questions.fc3.value) > 0)},
-        error: '',
+        order: 160,
+        active: function() {return(Number(instrument.questions.fc3.value) >= 9)},
         skip: false
     },
     'fc4_c9e_other': {
@@ -1282,9 +1835,8 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 106,
-        active: function() {return(Number(instrument.questions.fc3.value) > 0 && Number(instrument.questions.fc4_c9e.value) == 5)},
-        error: '',
+        order: 161,
+        active: function() {return(Number(instrument.questions.fc3.value) >= 9 && Number(instrument.questions.fc4_c9e.value) == 5)},
         skip: false
     },
     'fc4_c9f': {
@@ -1294,9 +1846,8 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 107,
-        active: function() {return(Number(instrument.questions.fc3.value) > 0)},
-        error: '',
+        order: 162,
+        active: function() {return(Number(instrument.questions.fc3.value) >= 9)},
         skip: false
     },
     'fc4_c10a': {
@@ -1306,9 +1857,8 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 108,
-        active: function() {return(Number(instrument.questions.fc3.value) > 0)},
-        error: '',
+        order: 163,
+        active: function() {return(Number(instrument.questions.fc3.value) == 10)},
         skip: false
     },
     'fc4_c10b': {
@@ -1318,9 +1868,8 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 109,
-        active: function() {return(Number(instrument.questions.fc3.value) > 0)},
-        error: '',
+        order: 164,
+        active: function() {return(Number(instrument.questions.fc3.value) == 10)},
         skip: false
     },
     'fc4_c10c': {
@@ -1330,9 +1879,8 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 110,
-        active: function() {return(Number(instrument.questions.fc3.value) > 0)},
-        error: '',
+        order: 165,
+        active: function() {return(Number(instrument.questions.fc3.value) == 10)},
         skip: false
     },
     'fc4_c10d': {
@@ -1342,10 +1890,81 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 111,
-        active: function() {return(Number(instrument.questions.fc3.value) > 0)},
-        error: '',
+        order: 166,
+        active: function() {return(Number(instrument.questions.fc3.value) == 10)},
         skip: false
+    },
+    'fc4_c10cn1': {
+        name: 'fc4_c10cn1',
+        type: 'checkbox',
+        value: '0',
+        disabled: true,
+        hidden: false,
+        readonly: false,
+        order: 167,
+        active: function() {return(Number(instrument.questions.fc3.value) == 10 && Number(instrument.questions.fc4_c10d.value)==1)},
+        skip: false,
+        checked: 0
+    },
+    'fc4_c10cn2': {
+        name: 'fc4_c10cn2',
+        type: 'checkbox',
+        value: '0',
+        disabled: true,
+        hidden: false,
+        readonly: false,
+        order: 168,
+        active: function() {return(Number(instrument.questions.fc3.value) == 10 && Number(instrument.questions.fc4_c10d.value)==1)},
+        skip: false,
+        checked: 0
+    },
+    'fc4_c10cn3': {
+        name: 'fc4_c10cn3',
+        type: 'checkbox',
+        value: '0',
+        disabled: true,
+        hidden: false,
+        readonly: false,
+        order: 169,
+        active: function() {return(Number(instrument.questions.fc3.value) == 10 && Number(instrument.questions.fc4_c10d.value)==1)},
+        skip: false,
+        checked: 0
+    },
+    'fc4_c10cn4': {
+        name: 'fc4_c10cn4',
+        type: 'checkbox',
+        value: '0',
+        disabled: true,
+        hidden: false,
+        readonly: false,
+        order: 170,
+        active: function() {return(Number(instrument.questions.fc3.value) == 10 && Number(instrument.questions.fc4_c10d.value)==1)},
+        skip: false,
+        checked: 0
+    },
+    'fc4_c10cn5': {
+        name: 'fc4_c10cn5',
+        type: 'checkbox',
+        value: '0',
+        disabled: true,
+        hidden: false,
+        readonly: false,
+        order: 171,
+        active: function() {return(Number(instrument.questions.fc3.value) == 10 && Number(instrument.questions.fc4_c10d.value)==1)},
+        skip: false,
+        checked: 0
+    },
+    'fc4_c10cn6': {
+        name: 'fc4_c10cn6',
+        type: 'checkbox',
+        value: '0',
+        disabled: true,
+        hidden: false,
+        readonly: false,
+        order: 172,
+        active: function() {return(Number(instrument.questions.fc3.value) == 10 && Number(instrument.questions.fc4_c10d.value)==1)},
+        skip: false,
+        checked: 0
     },
     'fc4_c10e': {
         name: 'fc4_c10e',
@@ -1354,9 +1973,8 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 112,
-        active: function() {return(Number(instrument.questions.fc3.value) > 0)},
-        error: '',
+        order: 173,
+        active: function() {return(Number(instrument.questions.fc3.value) == 10)},
         skip: false
     },
     'fc4_c10e_other': {
@@ -1366,9 +1984,8 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 113,
-        active: function() {return(Number(instrument.questions.fc3.value) > 0 && Number(instrument.questions.fc4_c10e.value) == 5)},
-        error: '',
+        order: 174,
+        active: function() {return(Number(instrument.questions.fc3.value) == 10 && Number(instrument.questions.fc4_c10e.value) == 5)},
         skip: false
     },
     'fc4_c10f': {
@@ -1378,9 +1995,8 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 114,
-        active: function() {return(Number(instrument.questions.fc3.value) > 0)},
-        error: '',
+        order: 175,
+        active: function() {return(Number(instrument.questions.fc3.value) == 10)},
         skip: false
     },
     'ex1': {
@@ -1390,9 +2006,8 @@ export const questions: QuestionObjectType = {
         disabled: false,
         hidden: false,
         readonly: false,
-        order: 115,
+        order: 176,
         active: function() {return(true)},
-        error: '',
         skip: false
     },
     'ex2': {
@@ -1402,9 +2017,8 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 116,
+        order: 177,
         active: function() {return(Number(instrument.questions.ex1.value) == 1)},
-        error: '',
         skip: false
     },
     'ex3_c1a': {
@@ -1414,9 +2028,8 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 117,
-        active: function() {return(Number(instrument.questions.ex2.value) > 0)},
-        error: '',
+        order: 178,
+        active: function() {return(Number(instrument.questions.ex2.value) >= 1)},
         skip: false
     },
     'ex3_c1b': {
@@ -1426,9 +2039,8 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 118,
-        active: function() {return(Number(instrument.questions.ex2.value) > 0)},
-        error: '',
+        order: 179,
+        active: function() {return(Number(instrument.questions.ex2.value) >= 1)},
         skip: false
     },
     'ex3_c1c': {
@@ -1438,9 +2050,8 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 119,
-        active: function() {return(Number(instrument.questions.ex2.value) > 0)},
-        error: '',
+        order: 180,
+        active: function() {return(Number(instrument.questions.ex2.value) >= 1)},
         skip: false
     },
     'ex3_c1d': {
@@ -1450,9 +2061,8 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 120,
-        active: function() {return(Number(instrument.questions.ex2.value) > 0)},
-        error: '',
+        order: 181,
+        active: function() {return(Number(instrument.questions.ex2.value) >= 1)},
         skip: false
     },
     'ex3_c1d_other': {
@@ -1462,9 +2072,8 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 121,
-        active: function() {return(Number(instrument.questions.ex2.value) > 0 && Number(instrument.questions.ex3_c1d.value) == 10)},
-        error: '',
+        order: 182,
+        active: function() {return(Number(instrument.questions.ex2.value) >= 1 && Number(instrument.questions.ex3_c1d.value) == 10)},
         skip: false
     },
     'ex3_c2a': {
@@ -1474,9 +2083,8 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 122,
-        active: function() {return(Number(instrument.questions.ex2.value) > 0)},
-        error: '',
+        order: 183,
+        active: function() {return(Number(instrument.questions.ex2.value) >= 2)},
         skip: false
     },
     'ex3_c2b': {
@@ -1486,9 +2094,8 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 123,
-        active: function() {return(Number(instrument.questions.ex2.value) > 0)},
-        error: '',
+        order: 184,
+        active: function() {return(Number(instrument.questions.ex2.value) >= 2)},
         skip: false
     },
     'ex3_c2c': {
@@ -1498,9 +2105,8 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 124,
-        active: function() {return(Number(instrument.questions.ex2.value) > 0)},
-        error: '',
+        order: 185,
+        active: function() {return(Number(instrument.questions.ex2.value) >= 2)},
         skip: false
     },
     'ex3_c2d': {
@@ -1510,9 +2116,8 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 125,
-        active: function() {return(Number(instrument.questions.ex2.value) > 0)},
-        error: '',
+        order: 186,
+        active: function() {return(Number(instrument.questions.ex2.value) >= 2)},
         skip: false
     },
     'ex3_c2d_other': {
@@ -1522,9 +2127,8 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 126,
-        active: function() {return(Number(instrument.questions.ex2.value) > 0 && Number(instrument.questions.ex3_c2d.value) == 10)},
-        error: '',
+        order: 187,
+        active: function() {return(Number(instrument.questions.ex2.value) >= 2 && Number(instrument.questions.ex3_c2d.value) == 10)},
         skip: false
     },
     'ex3_c3a': {
@@ -1534,9 +2138,8 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 127,
-        active: function() {return(Number(instrument.questions.ex2.value) > 0)},
-        error: '',
+        order: 188,
+        active: function() {return(Number(instrument.questions.ex2.value) >= 3)},
         skip: false
     },
     'ex3_c3b': {
@@ -1546,9 +2149,8 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 128,
-        active: function() {return(Number(instrument.questions.ex2.value) > 0)},
-        error: '',
+        order: 189,
+        active: function() {return(Number(instrument.questions.ex2.value) >= 3)},
         skip: false
     },
     'ex3_c3c': {
@@ -1558,9 +2160,8 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 129,
-        active: function() {return(Number(instrument.questions.ex2.value) > 0)},
-        error: '',
+        order: 190,
+        active: function() {return(Number(instrument.questions.ex2.value) >= 3)},
         skip: false
     },
     'ex3_c3d': {
@@ -1570,9 +2171,8 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 130,
-        active: function() {return(Number(instrument.questions.ex2.value) > 0)},
-        error: '',
+        order: 191,
+        active: function() {return(Number(instrument.questions.ex2.value) >= 3)},
         skip: false
     },
     'ex3_c3d_other': {
@@ -1582,9 +2182,8 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 131,
-        active: function() {return(Number(instrument.questions.ex2.value) > 0 && Number(instrument.questions.ex3_c3d.value) == 10)},
-        error: '',
+        order: 192,
+        active: function() {return(Number(instrument.questions.ex2.value) >= 3 && Number(instrument.questions.ex3_c3d.value) == 10)},
         skip: false
     },
     'ex3_c4a': {
@@ -1594,9 +2193,8 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 132,
-        active: function() {return(Number(instrument.questions.ex2.value) > 0)},
-        error: '',
+        order: 193,
+        active: function() {return(Number(instrument.questions.ex2.value) >= 4)},
         skip: false
     },
     'ex3_c4b': {
@@ -1606,9 +2204,8 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 133,
-        active: function() {return(Number(instrument.questions.ex2.value) > 0)},
-        error: '',
+        order: 194,
+        active: function() {return(Number(instrument.questions.ex2.value) >= 4)},
         skip: false
     },
     'ex3_c4c': {
@@ -1618,9 +2215,8 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 134,
-        active: function() {return(Number(instrument.questions.ex2.value) > 0)},
-        error: '',
+        order: 195,
+        active: function() {return(Number(instrument.questions.ex2.value) >= 4)},
         skip: false
     },
     'ex3_c4d': {
@@ -1630,9 +2226,8 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 135,
-        active: function() {return(Number(instrument.questions.ex2.value) > 0)},
-        error: '',
+        order: 196,
+        active: function() {return(Number(instrument.questions.ex2.value) >= 4)},
         skip: false
     },
     'ex3_c4d_other': {
@@ -1642,9 +2237,8 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 136,
-        active: function() {return(Number(instrument.questions.ex2.value) > 0 && Number(instrument.questions.ex3_c4d.value) == 10)},
-        error: '',
+        order: 197,
+        active: function() {return(Number(instrument.questions.ex2.value) >= 4 && Number(instrument.questions.ex3_c4d.value) == 10)},
         skip: false
     },
     'ex3_c5a': {
@@ -1654,9 +2248,8 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 137,
-        active: function() {return(Number(instrument.questions.ex2.value) > 0)},
-        error: '',
+        order: 198,
+        active: function() {return(Number(instrument.questions.ex2.value) >= 5)},
         skip: false
     },
     'ex3_c5b': {
@@ -1666,9 +2259,8 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 138,
-        active: function() {return(Number(instrument.questions.ex2.value) > 0)},
-        error: '',
+        order: 199,
+        active: function() {return(Number(instrument.questions.ex2.value) >= 5)},
         skip: false
     },
     'ex3_c5c': {
@@ -1678,9 +2270,8 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 139,
-        active: function() {return(Number(instrument.questions.ex2.value) > 0)},
-        error: '',
+        order: 200,
+        active: function() {return(Number(instrument.questions.ex2.value) >= 5)},
         skip: false
     },
     'ex3_c5d': {
@@ -1690,9 +2281,8 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 140,
-        active: function() {return(Number(instrument.questions.ex2.value) > 0)},
-        error: '',
+        order: 201,
+        active: function() {return(Number(instrument.questions.ex2.value) >= 5)},
         skip: false
     },
     'ex3_c5d_other': {
@@ -1702,9 +2292,8 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 141,
-        active: function() {return(Number(instrument.questions.ex2.value) > 0 && Number(instrument.questions.ex3_c5d.value) == 10)},
-        error: '',
+        order: 202,
+        active: function() {return(Number(instrument.questions.ex2.value) >= 5 && Number(instrument.questions.ex3_c5d.value) == 10)},
         skip: false
     },
     'ex3_c6a': {
@@ -1714,9 +2303,8 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 142,
-        active: function() {return(Number(instrument.questions.ex2.value) > 0)},
-        error: '',
+        order: 203,
+        active: function() {return(Number(instrument.questions.ex2.value) >= 6)},
         skip: false
     },
     'ex3_c6b': {
@@ -1726,9 +2314,8 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 143,
-        active: function() {return(Number(instrument.questions.ex2.value) > 0)},
-        error: '',
+        order: 204,
+        active: function() {return(Number(instrument.questions.ex2.value) >= 6)},
         skip: false
     },
     'ex3_c6c': {
@@ -1738,9 +2325,8 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 144,
-        active: function() {return(Number(instrument.questions.ex2.value) > 0)},
-        error: '',
+        order: 205,
+        active: function() {return(Number(instrument.questions.ex2.value) >= 6)},
         skip: false
     },
     'ex3_c6d': {
@@ -1750,9 +2336,8 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 145,
-        active: function() {return(Number(instrument.questions.ex2.value) > 0)},
-        error: '',
+        order: 206,
+        active: function() {return(Number(instrument.questions.ex2.value) >= 6)},
         skip: false
     },
     'ex3_c6d_other': {
@@ -1762,9 +2347,8 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 146,
-        active: function() {return(Number(instrument.questions.ex2.value) > 0 && Number(instrument.questions.ex3_c6d.value) == 10)},
-        error: '',
+        order: 207,
+        active: function() {return(Number(instrument.questions.ex2.value) >= 6 && Number(instrument.questions.ex3_c6d.value) == 10)},
         skip: false
     },
     'ex3_c7a': {
@@ -1774,9 +2358,8 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 147,
-        active: function() {return(Number(instrument.questions.ex2.value) > 0)},
-        error: '',
+        order: 208,
+        active: function() {return(Number(instrument.questions.ex2.value) >= 7)},
         skip: false
     },
     'ex3_c7b': {
@@ -1786,9 +2369,8 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 148,
-        active: function() {return(Number(instrument.questions.ex2.value) > 0)},
-        error: '',
+        order: 209,
+        active: function() {return(Number(instrument.questions.ex2.value) >= 7)},
         skip: false
     },
     'ex3_c7c': {
@@ -1798,9 +2380,8 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 149,
-        active: function() {return(Number(instrument.questions.ex2.value) > 0)},
-        error: '',
+        order: 210,
+        active: function() {return(Number(instrument.questions.ex2.value) >= 7)},
         skip: false
     },
     'ex3_c7d': {
@@ -1810,9 +2391,8 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 150,
-        active: function() {return(Number(instrument.questions.ex2.value) > 0)},
-        error: '',
+        order: 211,
+        active: function() {return(Number(instrument.questions.ex2.value) >= 7)},
         skip: false
     },
     'ex3_c7d_other': {
@@ -1822,9 +2402,8 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 151,
-        active: function() {return(Number(instrument.questions.ex2.value) > 0 && Number(instrument.questions.ex3_c7d.value) == 10)},
-        error: '',
+        order: 212,
+        active: function() {return(Number(instrument.questions.ex2.value) >= 7 && Number(instrument.questions.ex3_c7d.value) == 10)},
         skip: false
     },
     'ex3_c8a': {
@@ -1834,9 +2413,8 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 152,
-        active: function() {return(Number(instrument.questions.ex2.value) > 0)},
-        error: '',
+        order: 213,
+        active: function() {return(Number(instrument.questions.ex2.value) >= 8)},
         skip: false
     },
     'ex3_c8b': {
@@ -1846,9 +2424,8 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 153,
-        active: function() {return(Number(instrument.questions.ex2.value) > 0)},
-        error: '',
+        order: 214,
+        active: function() {return(Number(instrument.questions.ex2.value) >= 8)},
         skip: false
     },
     'ex3_c8c': {
@@ -1858,9 +2435,8 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 154,
-        active: function() {return(Number(instrument.questions.ex2.value) > 0)},
-        error: '',
+        order: 215,
+        active: function() {return(Number(instrument.questions.ex2.value) >= 8)},
         skip: false
     },
     'ex3_c8d': {
@@ -1870,9 +2446,8 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 155,
-        active: function() {return(Number(instrument.questions.ex2.value) > 0)},
-        error: '',
+        order: 216,
+        active: function() {return(Number(instrument.questions.ex2.value) >= 8)},
         skip: false
     },
     'ex3_c8d_other': {
@@ -1882,9 +2457,8 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 156,
-        active: function() {return(Number(instrument.questions.ex2.value) > 0 && Number(instrument.questions.ex3_c8d.value) == 10)},
-        error: '',
+        order: 217,
+        active: function() {return(Number(instrument.questions.ex2.value) >= 8 && Number(instrument.questions.ex3_c8d.value) == 10)},
         skip: false
     },
     'ex3_c9a': {
@@ -1894,9 +2468,8 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 157,
-        active: function() {return(Number(instrument.questions.ex2.value) > 0)},
-        error: '',
+        order: 218,
+        active: function() {return(Number(instrument.questions.ex2.value) >= 9)},
         skip: false
     },
     'ex3_c9b': {
@@ -1906,9 +2479,8 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 158,
-        active: function() {return(Number(instrument.questions.ex2.value) > 0)},
-        error: '',
+        order: 219,
+        active: function() {return(Number(instrument.questions.ex2.value) >= 9)},
         skip: false
     },
     'ex3_c9c': {
@@ -1918,9 +2490,8 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 159,
-        active: function() {return(Number(instrument.questions.ex2.value) > 0)},
-        error: '',
+        order: 220,
+        active: function() {return(Number(instrument.questions.ex2.value) >= 9)},
         skip: false
     },
     'ex3_c9d': {
@@ -1930,9 +2501,8 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 160,
-        active: function() {return(Number(instrument.questions.ex2.value) > 0)},
-        error: '',
+        order: 221,
+        active: function() {return(Number(instrument.questions.ex2.value) >= 9)},
         skip: false
     },
     'ex3_c9d_other': {
@@ -1942,9 +2512,8 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 161,
-        active: function() {return(Number(instrument.questions.ex2.value) > 0 && Number(instrument.questions.ex3_c9d.value) == 10)},
-        error: '',
+        order: 222,
+        active: function() {return(Number(instrument.questions.ex2.value) >= 9 && Number(instrument.questions.ex3_c9d.value) == 10)},
         skip: false
     },
     'ex3_c10a': {
@@ -1954,9 +2523,8 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 162,
-        active: function() {return(Number(instrument.questions.ex2.value) > 0)},
-        error: '',
+        order: 223,
+        active: function() {return(Number(instrument.questions.ex2.value) == 10)},
         skip: false
     },
     'ex3_c10b': {
@@ -1966,9 +2534,8 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 163,
-        active: function() {return(Number(instrument.questions.ex2.value) > 0)},
-        error: '',
+        order: 224,
+        active: function() {return(Number(instrument.questions.ex2.value) == 10)},
         skip: false
     },
     'ex3_c10c': {
@@ -1978,9 +2545,8 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 164,
-        active: function() {return(Number(instrument.questions.ex2.value) > 0)},
-        error: '',
+        order: 225,
+        active: function() {return(Number(instrument.questions.ex2.value) == 10)},
         skip: false
     },
     'ex3_c10d': {
@@ -1990,9 +2556,8 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 165,
-        active: function() {return(Number(instrument.questions.ex2.value) > 0)},
-        error: '',
+        order: 226,
+        active: function() {return(Number(instrument.questions.ex2.value) == 10)},
         skip: false
     },
     'ex3_c10d_other': {
@@ -2002,9 +2567,8 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 166,
-        active: function() {return(Number(instrument.questions.ex2.value) > 0 && Number(instrument.questions.ex3_c10d.value) == 10)},
-        error: '',
+        order: 227,
+        active: function() {return(Number(instrument.questions.ex2.value) == 10 && Number(instrument.questions.ex3_c10d.value) == 10)},
         skip: false
     },
     'qs1': {
@@ -2014,9 +2578,8 @@ export const questions: QuestionObjectType = {
         disabled: false,
         hidden: false,
         readonly: false,
-        order: 167,
+        order: 228,
         active: function() {return(true)},
-        error: '',
         skip: false
     },
     'qs2': {
@@ -2026,9 +2589,19 @@ export const questions: QuestionObjectType = {
         disabled: false,
         hidden: false,
         readonly: false,
-        order: 168,
+        order: 229,
         active: function() {return(true)},
-        error: '',
+        skip: false
+    },
+    'qs2cn': {
+        name: 'qs2cn',
+        type: 'radio',
+        value: '-7',
+        disabled: true,
+        hidden: false,
+        readonly: false,
+        order: 230,
+        active: function() {return(Number(instrument.questions.qs2.value) == 1 && (Number(instrument.questions.fc4_c1d.value) == 1 || Number(instrument.questions.fc4_c2d.value) == 1 || Number(instrument.questions.fc4_c3d.value) == 1 || Number(instrument.questions.fc4_c4d.value) == 1 || Number(instrument.questions.fc4_c5d.value) == 1 || Number(instrument.questions.fc4_c6d.value) == 1 || Number(instrument.questions.fc4_c7d.value) == 1 || Number(instrument.questions.fc4_c8d.value) == 1 || Number(instrument.questions.fc4_c9d.value) == 1 || Number(instrument.questions.fc4_c10d.value) == 1))},
         skip: false
     },
     'qs3': {
@@ -2038,9 +2611,8 @@ export const questions: QuestionObjectType = {
         disabled: false,
         hidden: false,
         readonly: false,
-        order: 169,
+        order: 231,
         active: function() {return(true)},
-        error: '',
         skip: false
     },
     'qs3a': {
@@ -2050,9 +2622,8 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 170,
+        order: 232,
         active: function() {return(Number(instrument.questions.qs3.value) == 1)},
-        error: '',
         skip: false
     },
     'qs4': {
@@ -2062,9 +2633,8 @@ export const questions: QuestionObjectType = {
         disabled: false,
         hidden: false,
         readonly: false,
-        order: 171,
+        order: 233,
         active: function() {return(true)},
-        error: '',
         skip: false
     },
     'qs5a': {
@@ -2074,9 +2644,8 @@ export const questions: QuestionObjectType = {
         disabled: false,
         hidden: false,
         readonly: false,
-        order: 172,
+        order: 234,
         active: function() {return(true)},
-        error: '',
         skip: false
     },
     'qs5b': {
@@ -2086,9 +2655,8 @@ export const questions: QuestionObjectType = {
         disabled: false,
         hidden: false,
         readonly: false,
-        order: 173,
+        order: 235,
         active: function() {return(true)},
-        error: '',
         skip: false
     },
     'qs5c': {
@@ -2098,9 +2666,8 @@ export const questions: QuestionObjectType = {
         disabled: false,
         hidden: false,
         readonly: false,
-        order: 174,
+        order: 236,
         active: function() {return(true)},
-        error: '',
         skip: false
     },
     'qs5d': {
@@ -2110,9 +2677,8 @@ export const questions: QuestionObjectType = {
         disabled: false,
         hidden: false,
         readonly: false,
-        order: 175,
+        order: 237,
         active: function() {return(true)},
-        error: '',
         skip: false
     },
     'qs6': {
@@ -2122,10 +2688,20 @@ export const questions: QuestionObjectType = {
         disabled: false,
         hidden: false,
         readonly: false,
-        order: 176,
+        order: 238,
         active: function() {return(true)},
-        error: '',
         skip: false
+    },
+    'obs': {
+        name: 'obs',
+        type: 'textarea',
+        value: '-9',
+        disabled: false,
+        hidden: false,
+        readonly: false,
+        order: 239,
+        active: function() {return(true)},
+        skip: true
     },
 };
 
@@ -2133,22 +2709,29 @@ export const questionsOrder: Array<string> = [
     'reg', 'dis', 'data', 'q2', 'inst', 'q3', 'q4', 'q5', 'q6', 'ifp1a', 'ifp1b', 'ifp1c', 'ifp1d', 'ifp2',
     'ifp2ay', 'ifp2am', 'ifp3', 'ifp4', 'ifm1', 'ifm2', 'ifm3', 'ifm4', 'ifm4_age', 'ifm5', 'ifm6', 'ifm6_other',
     'ift1', 'ift2', 'ift3', 'ift4', 'ift4_age', 'ift5', 'ift6', 'ift6_other', 'ifp4a', 'ifp4b', 'ifp5', 'fc1',
-    'fc2a', 'fc2b', 'fc2f', 'fc2c', 'fc2d', 'fc2e', 'fc3', 'fc4_c1a', 'fc4_c1b', 'fc4_c1c', 'fc4_c1d', 'fc4_c1e',
-    'fc4_c1e_other', 'fc4_c1f', 'fc4_c2a', 'fc4_c2b', 'fc4_c2c', 'fc4_c2d', 'fc4_c2e', 'fc4_c2e_other',
-    'fc4_c2f', 'fc4_c3a', 'fc4_c3b', 'fc4_c3c', 'fc4_c3d', 'fc4_c3e', 'fc4_c3e_other', 'fc4_c3f', 'fc4_c4a',
-    'fc4_c4b', 'fc4_c4c', 'fc4_c4d', 'fc4_c4e', 'fc4_c4e_other', 'fc4_c4f', 'fc4_c5a', 'fc4_c5b', 'fc4_c5c',
-    'fc4_c5d', 'fc4_c5e', 'fc4_c5e_other', 'fc4_c5f', 'fc4_c6a', 'fc4_c6b', 'fc4_c6c', 'fc4_c6d', 'fc4_c6e',
-    'fc4_c6e_other', 'fc4_c6f', 'fc4_c7a', 'fc4_c7b', 'fc4_c7c', 'fc4_c7d', 'fc4_c7e', 'fc4_c7e_other',
-    'fc4_c7f', 'fc4_c8a', 'fc4_c8b', 'fc4_c8c', 'fc4_c8d', 'fc4_c8e', 'fc4_c8e_other', 'fc4_c8f', 'fc4_c9a',
-    'fc4_c9b', 'fc4_c9c', 'fc4_c9d', 'fc4_c9e', 'fc4_c9e_other', 'fc4_c9f', 'fc4_c10a', 'fc4_c10b', 'fc4_c10c',
-    'fc4_c10d', 'fc4_c10e', 'fc4_c10e_other', 'fc4_c10f', 'ex1', 'ex2', 'ex3_c1a', 'ex3_c1b', 'ex3_c1c',
-    'ex3_c1d', 'ex3_c1d_other', 'ex3_c2a', 'ex3_c2b', 'ex3_c2c', 'ex3_c2d', 'ex3_c2d_other', 'ex3_c3a',
-    'ex3_c3b', 'ex3_c3c', 'ex3_c3d', 'ex3_c3d_other', 'ex3_c4a', 'ex3_c4b', 'ex3_c4c', 'ex3_c4d',
-    'ex3_c4d_other', 'ex3_c5a', 'ex3_c5b', 'ex3_c5c', 'ex3_c5d', 'ex3_c5d_other', 'ex3_c6a', 'ex3_c6b',
-    'ex3_c6c', 'ex3_c6d', 'ex3_c6d_other', 'ex3_c7a', 'ex3_c7b', 'ex3_c7c', 'ex3_c7d', 'ex3_c7d_other',
-    'ex3_c8a', 'ex3_c8b', 'ex3_c8c', 'ex3_c8d', 'ex3_c8d_other', 'ex3_c9a', 'ex3_c9b', 'ex3_c9c', 'ex3_c9d',
-    'ex3_c9d_other', 'ex3_c10a', 'ex3_c10b', 'ex3_c10c', 'ex3_c10d', 'ex3_c10d_other', 'qs1', 'qs2', 'qs3',
-    'qs3a', 'qs4', 'qs5a', 'qs5b', 'qs5c', 'qs5d', 'qs6'
+    'fc2a', 'fc2b', 'fc2c', 'fc2d', 'fc2e', 'fc2f', 'fc2g', 'fc3', 'fc4_c1a', 'fc4_c1b', 'fc4_c1c', 'fc4_c1d',
+    'fc4_c1cn1', 'fc4_c1cn2', 'fc4_c1cn3', 'fc4_c1cn4', 'fc4_c1cn5', 'fc4_c1cn6', 'fc4_c1e', 'fc4_c1e_other',
+    'fc4_c1f', 'fc4_c2a', 'fc4_c2b', 'fc4_c2c', 'fc4_c2d', 'fc4_c2cn1', 'fc4_c2cn2', 'fc4_c2cn3', 'fc4_c2cn4',
+    'fc4_c2cn5', 'fc4_c2cn6', 'fc4_c2e', 'fc4_c2e_other', 'fc4_c2f', 'fc4_c3a', 'fc4_c3b', 'fc4_c3c', 'fc4_c3d',
+    'fc4_c3cn1', 'fc4_c3cn2', 'fc4_c3cn3', 'fc4_c3cn4', 'fc4_c3cn5', 'fc4_c3cn6', 'fc4_c3e', 'fc4_c3e_other',
+    'fc4_c3f', 'fc4_c4a', 'fc4_c4b', 'fc4_c4c', 'fc4_c4d', 'fc4_c4cn1', 'fc4_c4cn2', 'fc4_c4cn3', 'fc4_c4cn4',
+    'fc4_c4cn5', 'fc4_c4cn6', 'fc4_c4e', 'fc4_c4e_other', 'fc4_c4f', 'fc4_c5a', 'fc4_c5b', 'fc4_c5c', 'fc4_c5d',
+    'fc4_c5cn1', 'fc4_c5cn2', 'fc4_c5cn3', 'fc4_c5cn4', 'fc4_c5cn5', 'fc4_c5cn6', 'fc4_c5e', 'fc4_c5e_other',
+    'fc4_c5f', 'fc4_c6a', 'fc4_c6b', 'fc4_c6c', 'fc4_c6d', 'fc4_c6cn1', 'fc4_c6cn2', 'fc4_c6cn3', 'fc4_c6cn4',
+    'fc4_c6cn5', 'fc4_c6cn6', 'fc4_c6e', 'fc4_c6e_other', 'fc4_c6f', 'fc4_c7a', 'fc4_c7b', 'fc4_c7c', 'fc4_c7d',
+    'fc4_c7cn1', 'fc4_c7cn2', 'fc4_c7cn3', 'fc4_c7cn4', 'fc4_c7cn5', 'fc4_c7cn6', 'fc4_c7e', 'fc4_c7e_other',
+    'fc4_c7f', 'fc4_c8a', 'fc4_c8b', 'fc4_c8c', 'fc4_c8d', 'fc4_c8cn1', 'fc4_c8cn2', 'fc4_c8cn3', 'fc4_c8cn4',
+    'fc4_c8cn5', 'fc4_c8cn6', 'fc4_c8e', 'fc4_c8e_other', 'fc4_c8f', 'fc4_c9a', 'fc4_c9b', 'fc4_c9c', 'fc4_c9d',
+    'fc4_c9cn1', 'fc4_c9cn2', 'fc4_c9cn3', 'fc4_c9cn4', 'fc4_c9cn5', 'fc4_c9cn6', 'fc4_c9e', 'fc4_c9e_other',
+    'fc4_c9f', 'fc4_c10a', 'fc4_c10b', 'fc4_c10c', 'fc4_c10d', 'fc4_c10cn1', 'fc4_c10cn2', 'fc4_c10cn3',
+    'fc4_c10cn4', 'fc4_c10cn5', 'fc4_c10cn6', 'fc4_c10e', 'fc4_c10e_other', 'fc4_c10f', 'ex1', 'ex2', 'ex3_c1a',
+    'ex3_c1b', 'ex3_c1c', 'ex3_c1d', 'ex3_c1d_other', 'ex3_c2a', 'ex3_c2b', 'ex3_c2c', 'ex3_c2d',
+    'ex3_c2d_other', 'ex3_c3a', 'ex3_c3b', 'ex3_c3c', 'ex3_c3d', 'ex3_c3d_other', 'ex3_c4a', 'ex3_c4b',
+    'ex3_c4c', 'ex3_c4d', 'ex3_c4d_other', 'ex3_c5a', 'ex3_c5b', 'ex3_c5c', 'ex3_c5d', 'ex3_c5d_other',
+    'ex3_c6a', 'ex3_c6b', 'ex3_c6c', 'ex3_c6d', 'ex3_c6d_other', 'ex3_c7a', 'ex3_c7b', 'ex3_c7c', 'ex3_c7d',
+    'ex3_c7d_other', 'ex3_c8a', 'ex3_c8b', 'ex3_c8c', 'ex3_c8d', 'ex3_c8d_other', 'ex3_c9a', 'ex3_c9b',
+    'ex3_c9c', 'ex3_c9d', 'ex3_c9d_other', 'ex3_c10a', 'ex3_c10b', 'ex3_c10c', 'ex3_c10d', 'ex3_c10d_other',
+    'qs1', 'qs2', 'qs2cn', 'qs3', 'qs3a', 'qs4', 'qs5a', 'qs5b', 'qs5c', 'qs5d', 'qs6', 'obs'
 ];
 
 export const exportHeader: Array<{ id: string; title: string }> = [
@@ -2192,15 +2775,22 @@ export const exportHeader: Array<{ id: string; title: string }> = [
     {'id': 'fc1', 'title': 'FC1'},
     {'id': 'fc2a', 'title': 'FC2A'},
     {'id': 'fc2b', 'title': 'FC2B'},
-    {'id': 'fc2f', 'title': 'FC2F'},
     {'id': 'fc2c', 'title': 'FC2C'},
     {'id': 'fc2d', 'title': 'FC2D'},
     {'id': 'fc2e', 'title': 'FC2E'},
+    {'id': 'fc2f', 'title': 'FC2F'},
+    {'id': 'fc2g', 'title': 'FC2G'},
     {'id': 'fc3', 'title': 'FC3'},
     {'id': 'fc4_c1a', 'title': 'FC4_C1A'},
     {'id': 'fc4_c1b', 'title': 'FC4_C1B'},
     {'id': 'fc4_c1c', 'title': 'FC4_C1C'},
     {'id': 'fc4_c1d', 'title': 'FC4_C1D'},
+    {'id': 'fc4_c1cn1', 'title': 'FC4_C1CN1'},
+    {'id': 'fc4_c1cn2', 'title': 'FC4_C1CN2'},
+    {'id': 'fc4_c1cn3', 'title': 'FC4_C1CN3'},
+    {'id': 'fc4_c1cn4', 'title': 'FC4_C1CN4'},
+    {'id': 'fc4_c1cn5', 'title': 'FC4_C1CN5'},
+    {'id': 'fc4_c1cn6', 'title': 'FC4_C1CN6'},
     {'id': 'fc4_c1e', 'title': 'FC4_C1E'},
     {'id': 'fc4_c1e_other', 'title': 'FC4_C1E_OTHER'},
     {'id': 'fc4_c1f', 'title': 'FC4_C1F'},
@@ -2208,6 +2798,12 @@ export const exportHeader: Array<{ id: string; title: string }> = [
     {'id': 'fc4_c2b', 'title': 'FC4_C2B'},
     {'id': 'fc4_c2c', 'title': 'FC4_C2C'},
     {'id': 'fc4_c2d', 'title': 'FC4_C2D'},
+    {'id': 'fc4_c2cn1', 'title': 'FC4_C2CN1'},
+    {'id': 'fc4_c2cn2', 'title': 'FC4_C2CN2'},
+    {'id': 'fc4_c2cn3', 'title': 'FC4_C2CN3'},
+    {'id': 'fc4_c2cn4', 'title': 'FC4_C2CN4'},
+    {'id': 'fc4_c2cn5', 'title': 'FC4_C2CN5'},
+    {'id': 'fc4_c2cn6', 'title': 'FC4_C2CN6'},
     {'id': 'fc4_c2e', 'title': 'FC4_C2E'},
     {'id': 'fc4_c2e_other', 'title': 'FC4_C2E_OTHER'},
     {'id': 'fc4_c2f', 'title': 'FC4_C2F'},
@@ -2215,6 +2811,12 @@ export const exportHeader: Array<{ id: string; title: string }> = [
     {'id': 'fc4_c3b', 'title': 'FC4_C3B'},
     {'id': 'fc4_c3c', 'title': 'FC4_C3C'},
     {'id': 'fc4_c3d', 'title': 'FC4_C3D'},
+    {'id': 'fc4_c3cn1', 'title': 'FC4_C3CN1'},
+    {'id': 'fc4_c3cn2', 'title': 'FC4_C3CN2'},
+    {'id': 'fc4_c3cn3', 'title': 'FC4_C3CN3'},
+    {'id': 'fc4_c3cn4', 'title': 'FC4_C3CN4'},
+    {'id': 'fc4_c3cn5', 'title': 'FC4_C3CN5'},
+    {'id': 'fc4_c3cn6', 'title': 'FC4_C3CN6'},
     {'id': 'fc4_c3e', 'title': 'FC4_C3E'},
     {'id': 'fc4_c3e_other', 'title': 'FC4_C3E_OTHER'},
     {'id': 'fc4_c3f', 'title': 'FC4_C3F'},
@@ -2222,6 +2824,12 @@ export const exportHeader: Array<{ id: string; title: string }> = [
     {'id': 'fc4_c4b', 'title': 'FC4_C4B'},
     {'id': 'fc4_c4c', 'title': 'FC4_C4C'},
     {'id': 'fc4_c4d', 'title': 'FC4_C4D'},
+    {'id': 'fc4_c4cn1', 'title': 'FC4_C4CN1'},
+    {'id': 'fc4_c4cn2', 'title': 'FC4_C4CN2'},
+    {'id': 'fc4_c4cn3', 'title': 'FC4_C4CN3'},
+    {'id': 'fc4_c4cn4', 'title': 'FC4_C4CN4'},
+    {'id': 'fc4_c4cn5', 'title': 'FC4_C4CN5'},
+    {'id': 'fc4_c4cn6', 'title': 'FC4_C4CN6'},
     {'id': 'fc4_c4e', 'title': 'FC4_C4E'},
     {'id': 'fc4_c4e_other', 'title': 'FC4_C4E_OTHER'},
     {'id': 'fc4_c4f', 'title': 'FC4_C4F'},
@@ -2229,6 +2837,12 @@ export const exportHeader: Array<{ id: string; title: string }> = [
     {'id': 'fc4_c5b', 'title': 'FC4_C5B'},
     {'id': 'fc4_c5c', 'title': 'FC4_C5C'},
     {'id': 'fc4_c5d', 'title': 'FC4_C5D'},
+    {'id': 'fc4_c5cn1', 'title': 'FC4_C5CN1'},
+    {'id': 'fc4_c5cn2', 'title': 'FC4_C5CN2'},
+    {'id': 'fc4_c5cn3', 'title': 'FC4_C5CN3'},
+    {'id': 'fc4_c5cn4', 'title': 'FC4_C5CN4'},
+    {'id': 'fc4_c5cn5', 'title': 'FC4_C5CN5'},
+    {'id': 'fc4_c5cn6', 'title': 'FC4_C5CN6'},
     {'id': 'fc4_c5e', 'title': 'FC4_C5E'},
     {'id': 'fc4_c5e_other', 'title': 'FC4_C5E_OTHER'},
     {'id': 'fc4_c5f', 'title': 'FC4_C5F'},
@@ -2236,6 +2850,12 @@ export const exportHeader: Array<{ id: string; title: string }> = [
     {'id': 'fc4_c6b', 'title': 'FC4_C6B'},
     {'id': 'fc4_c6c', 'title': 'FC4_C6C'},
     {'id': 'fc4_c6d', 'title': 'FC4_C6D'},
+    {'id': 'fc4_c6cn1', 'title': 'FC4_C6CN1'},
+    {'id': 'fc4_c6cn2', 'title': 'FC4_C6CN2'},
+    {'id': 'fc4_c6cn3', 'title': 'FC4_C6CN3'},
+    {'id': 'fc4_c6cn4', 'title': 'FC4_C6CN4'},
+    {'id': 'fc4_c6cn5', 'title': 'FC4_C6CN5'},
+    {'id': 'fc4_c6cn6', 'title': 'FC4_C6CN6'},
     {'id': 'fc4_c6e', 'title': 'FC4_C6E'},
     {'id': 'fc4_c6e_other', 'title': 'FC4_C6E_OTHER'},
     {'id': 'fc4_c6f', 'title': 'FC4_C6F'},
@@ -2243,6 +2863,12 @@ export const exportHeader: Array<{ id: string; title: string }> = [
     {'id': 'fc4_c7b', 'title': 'FC4_C7B'},
     {'id': 'fc4_c7c', 'title': 'FC4_C7C'},
     {'id': 'fc4_c7d', 'title': 'FC4_C7D'},
+    {'id': 'fc4_c7cn1', 'title': 'FC4_C7CN1'},
+    {'id': 'fc4_c7cn2', 'title': 'FC4_C7CN2'},
+    {'id': 'fc4_c7cn3', 'title': 'FC4_C7CN3'},
+    {'id': 'fc4_c7cn4', 'title': 'FC4_C7CN4'},
+    {'id': 'fc4_c7cn5', 'title': 'FC4_C7CN5'},
+    {'id': 'fc4_c7cn6', 'title': 'FC4_C7CN6'},
     {'id': 'fc4_c7e', 'title': 'FC4_C7E'},
     {'id': 'fc4_c7e_other', 'title': 'FC4_C7E_OTHER'},
     {'id': 'fc4_c7f', 'title': 'FC4_C7F'},
@@ -2250,6 +2876,12 @@ export const exportHeader: Array<{ id: string; title: string }> = [
     {'id': 'fc4_c8b', 'title': 'FC4_C8B'},
     {'id': 'fc4_c8c', 'title': 'FC4_C8C'},
     {'id': 'fc4_c8d', 'title': 'FC4_C8D'},
+    {'id': 'fc4_c8cn1', 'title': 'FC4_C8CN1'},
+    {'id': 'fc4_c8cn2', 'title': 'FC4_C8CN2'},
+    {'id': 'fc4_c8cn3', 'title': 'FC4_C8CN3'},
+    {'id': 'fc4_c8cn4', 'title': 'FC4_C8CN4'},
+    {'id': 'fc4_c8cn5', 'title': 'FC4_C8CN5'},
+    {'id': 'fc4_c8cn6', 'title': 'FC4_C8CN6'},
     {'id': 'fc4_c8e', 'title': 'FC4_C8E'},
     {'id': 'fc4_c8e_other', 'title': 'FC4_C8E_OTHER'},
     {'id': 'fc4_c8f', 'title': 'FC4_C8F'},
@@ -2257,6 +2889,12 @@ export const exportHeader: Array<{ id: string; title: string }> = [
     {'id': 'fc4_c9b', 'title': 'FC4_C9B'},
     {'id': 'fc4_c9c', 'title': 'FC4_C9C'},
     {'id': 'fc4_c9d', 'title': 'FC4_C9D'},
+    {'id': 'fc4_c9cn1', 'title': 'FC4_C9CN1'},
+    {'id': 'fc4_c9cn2', 'title': 'FC4_C9CN2'},
+    {'id': 'fc4_c9cn3', 'title': 'FC4_C9CN3'},
+    {'id': 'fc4_c9cn4', 'title': 'FC4_C9CN4'},
+    {'id': 'fc4_c9cn5', 'title': 'FC4_C9CN5'},
+    {'id': 'fc4_c9cn6', 'title': 'FC4_C9CN6'},
     {'id': 'fc4_c9e', 'title': 'FC4_C9E'},
     {'id': 'fc4_c9e_other', 'title': 'FC4_C9E_OTHER'},
     {'id': 'fc4_c9f', 'title': 'FC4_C9F'},
@@ -2264,6 +2902,12 @@ export const exportHeader: Array<{ id: string; title: string }> = [
     {'id': 'fc4_c10b', 'title': 'FC4_C10B'},
     {'id': 'fc4_c10c', 'title': 'FC4_C10C'},
     {'id': 'fc4_c10d', 'title': 'FC4_C10D'},
+    {'id': 'fc4_c10cn1', 'title': 'FC4_C10CN1'},
+    {'id': 'fc4_c10cn2', 'title': 'FC4_C10CN2'},
+    {'id': 'fc4_c10cn3', 'title': 'FC4_C10CN3'},
+    {'id': 'fc4_c10cn4', 'title': 'FC4_C10CN4'},
+    {'id': 'fc4_c10cn5', 'title': 'FC4_C10CN5'},
+    {'id': 'fc4_c10cn6', 'title': 'FC4_C10CN6'},
     {'id': 'fc4_c10e', 'title': 'FC4_C10E'},
     {'id': 'fc4_c10e_other', 'title': 'FC4_C10E_OTHER'},
     {'id': 'fc4_c10f', 'title': 'FC4_C10F'},
@@ -2321,6 +2965,7 @@ export const exportHeader: Array<{ id: string; title: string }> = [
     {'id': 'ex3_c10d_other', 'title': 'EX3_C10D_OTHER'},
     {'id': 'qs1', 'title': 'QS1'},
     {'id': 'qs2', 'title': 'QS2'},
+    {'id': 'qs2cn', 'title': 'QS2CN'},
     {'id': 'qs3', 'title': 'QS3'},
     {'id': 'qs3a', 'title': 'QS3A'},
     {'id': 'qs4', 'title': 'QS4'},
@@ -2329,4 +2974,5 @@ export const exportHeader: Array<{ id: string; title: string }> = [
     {'id': 'qs5c', 'title': 'QS5C'},
     {'id': 'qs5d', 'title': 'QS5D'},
     {'id': 'qs6', 'title': 'QS6'},
+    {'id': 'obs', 'title': 'OBS'},
 ];

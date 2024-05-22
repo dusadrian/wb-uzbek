@@ -62,6 +62,7 @@
     "typescript": "^5.3.3"
   },
   "dependencies": {
+    "@types/select2": "^4.0.63",
     "datatables.net": "^2.0.0",
     "datatables.net-dt": "^2.0.0",
     "datatables.net-responsive-dt": "^3.0.0",
@@ -72,6 +73,7 @@
     "jquery-ui": "^1.13.3",
     "jquery-ui-dist": "^1.13.2",
     "lodash": "^4.17.21",
+    "select2": "^4.1.0-rc.0",
     "tippy.js": "^6.3.7",
     "uuid": "^9.0.1"
   },

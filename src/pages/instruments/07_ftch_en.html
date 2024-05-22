@@ -6,13 +6,14 @@
     <title>CRM Uzbek</title>
     <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
     <meta http-equiv="Content-Security-Policy"
-        content="default-src 'self'; img-src 'self' http: https: data: ; script-src 'self';" />
+        content="default-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' http: https: data: ; script-src 'self';" />
     <meta http-equiv="X-Content-Security-Policy"
-        content="default-src 'self'; img-src http: https: 'self' data: ; script-src 'self';" />
+        content="default-src 'self'; style-src 'self' 'unsafe-inline'; img-src http: https: 'self' data: ; script-src 'self';" />
     <link href="../../../dist/main.css" rel="stylesheet">
     <link rel="stylesheet" href="../../../node_modules/jquery-ui-dist/jquery-ui.min.css">
     <link rel="stylesheet" href="../../../node_modules/jquery-ui-dist/jquery-ui.structure.min.css">
     <link rel="stylesheet" href="../../../node_modules/jquery-ui-dist/jquery-ui.theme.min.css">
+    <link rel="stylesheet" href="../../../node_modules/select2/dist/css/select2.min.css">
 </head>
 
 <body class="relative max-h-screen">
@@ -51,21 +52,18 @@
                     </select>
                 </div>
             </div>
+
+            <input type="hidden" id="data" name="data" />
+
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
-                <div>DATA. Completion date of questionnaire</div>
-                <div>
-                    <input type="text" id="data" name="data" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
-                </div>
-            </div>
-            <div class="grid grid-cols-2 gap-4 items-center mt-6">
-                <div>Q2: Name, patronymics, and surname of the person who filled in the questionnaire</div>
+                <div>Q2. Name, patronymics, and surname of the person who filled in the questionnaire</div>
                 <div>
                     <input type="text" id="q2" name="q2" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
                 </div>
             </div>
 
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
-                <div>Name of the institution where the person works</div>
+                <div>INST. Name of the institution where the person works</div>
                 <div>
                     <input type="text" id="inst" name="inst" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
                 </div>
@@ -129,7 +127,7 @@
             <input type="hidden" id="ifp1d" name="ifp1d" />
 
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
-                <div>IFP2. Date of the establishment of the family-type home: Month, Year:</div>
+                <div>IFP2. Date of the establishment of the family-type home:</div>
                 <div>
                     <input type="text" id="ifp2" name="ifp2" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
                 </div>
@@ -159,7 +157,7 @@
 
             <div class="grid grid-cols-2 gap-4 items-center mt-10">
                 <div>IFP4. Do they have a foster parents certificate?</div>
-                <div class="grid grid-cols-2 gap-4 items-center4">
+                <div class="col-span-1 flex items-center gap-4">
                     <div class="flex items-center">
                         <input id="ifp4-1" type="radio" value="1" name="ifp4" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="ifp4-1" class="ms-2 text-sm text-gray-900">1. Yes</label>
@@ -473,7 +471,7 @@
                 </div>
             </div>
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
-                <div>IFP5. How many of these children live in the household?</div>
+                <div>IFP5. Currently, how many of the foster parents' own children (biological and adopted, if the case) live in the household?</div>
                 <div>
                     <input type="text" id="ifp5" name="ifp5" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
                 </div>
@@ -493,79 +491,92 @@
 
             <div class="grid grid-cols-2 gap-4 items-center mt-10">
                 <div class="ml-4">a. children with disabilities?</div>
-                <div class="grid grid-cols-2 gap-4 items-center4">
+                <div class="col-span-1 flex items-center gap-4">
                     <div class="flex items-center">
                         <input id="fc2a-1" type="radio" value="1" name="fc2a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="fc2a-1" class="ms-2 text-sm text-gray-900">1. Yes</label>
                     </div>
                     <div class="flex items-center">
-                        <input id="fc2a-2" type="radio" value="2" name="fc2a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <input id="fc2a-2" type="radio" value="0" name="fc2a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="fc2a-2" class="ms-2 text-sm text-gray-900">0. No</label>
                     </div>
                 </div>
             </div>
             <div class="grid grid-cols-2 gap-4 items-center mt-10">
                 <div class="ml-4">b. children with special education needs?</div>
-                <div class="grid grid-cols-2 gap-4 items-center4">
+                <div class="col-span-1 flex items-center gap-4">
                     <div class="flex items-center">
                         <input id="fc2b-1" type="radio" value="1" name="fc2b" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="fc2b-1" class="ms-2 text-sm text-gray-900">1. Yes</label>
                     </div>
                     <div class="flex items-center">
-                        <input id="fc2b-2" type="radio" value="2" name="fc2b" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <input id="fc2b-2" type="radio" value="0" name="fc2b" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="fc2b-2" class="ms-2 text-sm text-gray-900">0. No</label>
                     </div>
                 </div>
             </div>
             <div class="grid grid-cols-2 gap-4 items-center mt-10">
-                <div class="ml-4">f. children/young people in conflict with the law</div>
-                <div class="grid grid-cols-2 gap-4 items-center4">
+                <div class="ml-4">c. children/young people in conflict with the law</div>
+                <div class="col-span-1 flex items-center gap-4">
                     <div class="flex items-center">
                         <input id="fc2f-1" type="radio" value="1" name="fc2f" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="fc2f-1" class="ms-2 text-sm text-gray-900">1. Yes</label>
                     </div>
                     <div class="flex items-center">
-                        <input id="fc2f-2" type="radio" value="2" name="fc2f" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <input id="fc2f-2" type="radio" value="0" name="fc2f" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="fc2f-2" class="ms-2 text-sm text-gray-900">0. No</label>
                     </div>
                 </div>
             </div>
             <div class="grid grid-cols-2 gap-4 items-center mt-10">
-                <div class="ml-4">c. adolescents (10+ years) with behavioral disorders?</div>
-                <div class="grid grid-cols-2 gap-4 items-center4">
+                <div class="ml-4">d. adolescents (10+ years) with behavioral disorders?</div>
+                <div class="col-span-1 flex items-center gap-4">
                     <div class="flex items-center">
                         <input id="fc2c-1" type="radio" value="1" name="fc2c" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="fc2c-1" class="ms-2 text-sm text-gray-900">1. Yes</label>
                     </div>
                     <div class="flex items-center">
-                        <input id="fc2c-2" type="radio" value="2" name="fc2c" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <input id="fc2c-2" type="radio" value="0" name="fc2c" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="fc2c-2" class="ms-2 text-sm text-gray-900">0. No</label>
                     </div>
                 </div>
             </div>
             <div class="grid grid-cols-2 gap-4 items-center mt-10">
-                <div class="ml-4">d. girls who are underage mothers or pregnant?</div>
-                <div class="grid grid-cols-2 gap-4 items-center4">
+                <div class="ml-4">e. girls who are underage mothers or pregnant?</div>
+                <div class="col-span-1 flex items-center gap-4">
                     <div class="flex items-center">
                         <input id="fc2d-1" type="radio" value="1" name="fc2d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="fc2d-1" class="ms-2 text-sm text-gray-900">1. Yes</label>
                     </div>
                     <div class="flex items-center">
-                        <input id="fc2d-2" type="radio" value="2" name="fc2d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <input id="fc2d-2" type="radio" value="0" name="fc2d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="fc2d-2" class="ms-2 text-sm text-gray-900">0. No</label>
                     </div>
                 </div>
             </div>
             <div class="grid grid-cols-2 gap-4 items-center mt-10">
-                <div class="ml-4">e. group of siblings?</div>
-                <div class="grid grid-cols-2 gap-4 items-center4">
+                <div class="ml-4">f. group of siblings?</div>
+                <div class="col-span-1 flex items-center gap-4">
                     <div class="flex items-center">
                         <input id="fc2e-1" type="radio" value="1" name="fc2e" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="fc2e-1" class="ms-2 text-sm text-gray-900">1. Yes</label>
                     </div>
                     <div class="flex items-center">
-                        <input id="fc2e-2" type="radio" value="2" name="fc2e" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <input id="fc2e-2" type="radio" value="0" name="fc2e" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="fc2e-2" class="ms-2 text-sm text-gray-900">0. No</label>
+                    </div>
+                </div>
+            </div>
+            <div class="grid grid-cols-2 gap-4 items-center mt-10">
+                <div class="ml-4">g. children with HIV/AIDS?</div>
+                <div class="col-span-1 flex items-center gap-4">
+                    <div class="flex items-center">
+                        <input id="fc2g-1" type="radio" value="1" name="fc2g" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <label for="fc2g-1" class="ms-2 text-sm text-gray-900">1. Yes</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="fc2g-2" type="radio" value="0" name="fc2g" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <label for="fc2g-2" class="ms-2 text-sm text-gray-900">0. No</label>
                     </div>
                 </div>
             </div>
@@ -585,7 +596,7 @@
                         <th class="w-40 p-2">a. Gender</th>
                         <th class="p-2">b. Age</th>
                         <th class="p-2">c. Date of admission</th>
-                        <th class="p-2">d. Has a disability?</th>
+                        <th class="p-2">d. Has any complex needs?</th>
                         <th class="p-2">e. Where did the child come from?</th>
                         <th class="w-48 p-2">f. What type of education is the child currently enrolled in?</th>
                     </tr>
@@ -597,11 +608,11 @@
                             <div class="flex items-center justify-center gap-2">
                                 <div class="flex items-center">
                                     <input id="fc4_c1a-1" type="radio" value="1" name="fc4_c1a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                                    <label for="fc4_c1a-1" class="ms-2 text-sm text-gray-900">1.M</label>
+                                    <label for="fc4_c1a-1" class="ms-2 text-sm text-gray-900">1. Male</label>
                                 </div>
                                 <div class="flex items-center">
                                     <input id="fc4_c1a-2" type="radio" value="2" name="fc4_c1a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                                    <label for="fc4_c1a-2" class="ms-2 text-sm text-gray-900">2.F</label>
+                                    <label for="fc4_c1a-2" class="ms-2 text-sm text-gray-900">2. Female</label>
                                 </div>
                             </div>
                         </td>
@@ -612,16 +623,14 @@
                             <input type="text" id="fc4_c1c" name="fc4_c1c" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
                         </td>
                         <td class="p-2">
-                            <div class="flex items-center gap-2">
-                                <div class="flex items-center">
-                                    <input id="fc4_c1d-1" type="radio" value="1" name="fc4_c1d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                                    <label for="fc4_c1d-1" class="ms-2 text-sm text-gray-900">1.Y</label>
-                                </div>
-                                <div class="flex items-center">
-                                    <input id="fc4_c1d-2" type="radio" value="2" name="fc4_c1d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                                    <label for="fc4_c1d-2" class="ms-2 text-sm text-gray-900">2.N</label>
-                                </div>
-                            </div>
+                            <select id="fc4_c1d" name="fc4_c1d" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
+                                <option value="0">None</option>
+                                <option value="1">1. From their family</option>
+                                <option value="2">2. From a childcare institution</option>
+                                <option value="3">3. From another family-type home</option>
+                                <option value="4">4. From a patronat family</option>
+                                <option value="5">5. Other situation, please specify</option>
+                            </select>
                         </td>
                         <td class="p-2">
                             <select id="fc4_c1e" name="fc4_c1e" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
@@ -637,9 +646,9 @@
                         <td class="p-2">
                             <select id="fc4_c1f" name="fc4_c1f" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
                                 <option value="-9">--- choose ---</option>
-                                <option value="1">1. In mainstream education</option>
-                                <option value="2">2. In specialized education</option>
-                                <option value="3">3. Inclusive education</option>
+                                <option value="1">1. In mainstream education institution, without inclusive classes/groups</option>
+                                <option value="2">2. In mainstream education institution, with inclusive classes/groups</option>
+                                <option value="3">3. In specialized education institution</option>
                                 <option value="4">4. Homeschooling</option>
                                 <option value="5">5. Not enrolled in education</option>
                             </select>
@@ -651,11 +660,11 @@
                             <div class="flex items-center justify-center gap-2">
                                 <div class="flex items-center">
                                     <input id="fc4_c2a-1" type="radio" value="1" name="fc4_c2a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                                    <label for="fc4_c2a-1" class="ms-2 text-sm text-gray-900">1.M</label>
+                                    <label for="fc4_c2a-1" class="ms-2 text-sm text-gray-900">1. Male</label>
                                 </div>
                                 <div class="flex items-center">
                                     <input id="fc4_c2a-2" type="radio" value="2" name="fc4_c2a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                                    <label for="fc4_c2a-2" class="ms-2 text-sm text-gray-900">2.F</label>
+                                    <label for="fc4_c2a-2" class="ms-2 text-sm text-gray-900">2. Female</label>
                                 </div>
                             </div>
                         </td>
@@ -669,11 +678,11 @@
                             <div class="flex items-center gap-2">
                                 <div class="flex items-center">
                                     <input id="fc4_c2d-1" type="radio" value="1" name="fc4_c2d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                                    <label for="fc4_c2d-1" class="ms-2 text-sm text-gray-900">1.Y</label>
+                                    <label for="fc4_c2d-1" class="ms-2 text-sm text-gray-900">1. Yes</label>
                                 </div>
                                 <div class="flex items-center">
                                     <input id="fc4_c2d-2" type="radio" value="2" name="fc4_c2d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                                    <label for="fc4_c2d-2" class="ms-2 text-sm text-gray-900">2.N</label>
+                                    <label for="fc4_c2d-2" class="ms-2 text-sm text-gray-900">2. No</label>
                                 </div>
                             </div>
                         </td>
@@ -691,9 +700,9 @@
                         <td class="p-2">
                             <select id="fc4_c2f" name="fc4_c2f" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
                                 <option value="-9">--- choose ---</option>
-                                <option value="1">1. In mainstream education</option>
-                                <option value="2">2. In specialized education</option>
-                                <option value="3">3. Inclusive education</option>
+                                <option value="1">1. In mainstream education institution, without inclusive classes/groups</option>
+                                <option value="2">2. In mainstream education institution, with inclusive classes/groups</option>
+                                <option value="3">3. In specialized education institution</option>
                                 <option value="4">4. Homeschooling</option>
                                 <option value="5">5. Not enrolled in education</option>
                             </select>
@@ -705,11 +714,11 @@
                             <div class="flex items-center justify-center gap-2">
                                 <div class="flex items-center">
                                     <input id="fc4_c3a-1" type="radio" value="1" name="fc4_c3a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                                    <label for="fc4_c3a-1" class="ms-2 text-sm text-gray-900">1.M</label>
+                                    <label for="fc4_c3a-1" class="ms-2 text-sm text-gray-900">1. Male</label>
                                 </div>
                                 <div class="flex items-center">
                                     <input id="fc4_c3a-2" type="radio" value="2" name="fc4_c3a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                                    <label for="fc4_c3a-2" class="ms-2 text-sm text-gray-900">2.F</label>
+                                    <label for="fc4_c3a-2" class="ms-2 text-sm text-gray-900">2. Female</label>
                                 </div>
                             </div>
                         </td>
@@ -723,11 +732,11 @@
                             <div class="flex items-center gap-2">
                                 <div class="flex items-center">
                                     <input id="fc4_c3d-1" type="radio" value="1" name="fc4_c3d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                                    <label for="fc4_c3d-1" class="ms-2 text-sm text-gray-900">1.Y</label>
+                                    <label for="fc4_c3d-1" class="ms-2 text-sm text-gray-900">1. Yes</label>
                                 </div>
                                 <div class="flex items-center">
                                     <input id="fc4_c3d-2" type="radio" value="2" name="fc4_c3d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                                    <label for="fc4_c3d-2" class="ms-2 text-sm text-gray-900">2.N</label>
+                                    <label for="fc4_c3d-2" class="ms-2 text-sm text-gray-900">2. No</label>
                                 </div>
                             </div>
                         </td>
@@ -745,9 +754,9 @@
                         <td class="p-2">
                             <select id="fc4_c3f" name="fc4_c3f" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
                                 <option value="-9">--- choose ---</option>
-                                <option value="1">1. In mainstream education</option>
-                                <option value="2">2. In specialized education</option>
-                                <option value="3">3. Inclusive education</option>
+                                <option value="1">1. In mainstream education institution, without inclusive classes/groups</option>
+                                <option value="2">2. In mainstream education institution, with inclusive classes/groups</option>
+                                <option value="3">3. In specialized education institution</option>
                                 <option value="4">4. Homeschooling</option>
                                 <option value="5">5. Not enrolled in education</option>
                             </select>
@@ -759,11 +768,11 @@
                             <div class="flex items-center justify-center gap-2">
                                 <div class="flex items-center">
                                     <input id="fc4_c4a-1" type="radio" value="1" name="fc4_c4a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                                    <label for="fc4_c4a-1" class="ms-2 text-sm text-gray-900">1.M</label>
+                                    <label for="fc4_c4a-1" class="ms-2 text-sm text-gray-900">1. Male</label>
                                 </div>
                                 <div class="flex items-center">
                                     <input id="fc4_c4a-2" type="radio" value="2" name="fc4_c4a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                                    <label for="fc4_c4a-2" class="ms-2 text-sm text-gray-900">2.F</label>
+                                    <label for="fc4_c4a-2" class="ms-2 text-sm text-gray-900">2. Female</label>
                                 </div>
                             </div>
                         </td>
@@ -777,11 +786,11 @@
                             <div class="flex items-center gap-2">
                                 <div class="flex items-center">
                                     <input id="fc4_c4d-1" type="radio" value="1" name="fc4_c4d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                                    <label for="fc4_c4d-1" class="ms-2 text-sm text-gray-900">1.Y</label>
+                                    <label for="fc4_c4d-1" class="ms-2 text-sm text-gray-900">1. Yes</label>
                                 </div>
                                 <div class="flex items-center">
                                     <input id="fc4_c4d-2" type="radio" value="2" name="fc4_c4d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                                    <label for="fc4_c4d-2" class="ms-2 text-sm text-gray-900">2.N</label>
+                                    <label for="fc4_c4d-2" class="ms-2 text-sm text-gray-900">2. No</label>
                                 </div>
                             </div>
                         </td>
@@ -799,9 +808,9 @@
                         <td class="p-2">
                             <select id="fc4_c4f" name="fc4_c4f" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
                                 <option value="-9">--- choose ---</option>
-                                <option value="1">1. In mainstream education</option>
-                                <option value="2">2. In specialized education</option>
-                                <option value="3">3. Inclusive education</option>
+                                <option value="1">1. In mainstream education institution, without inclusive classes/groups</option>
+                                <option value="2">2. In mainstream education institution, with inclusive classes/groups</option>
+                                <option value="3">3. In specialized education institution</option>
                                 <option value="4">4. Homeschooling</option>
                                 <option value="5">5. Not enrolled in education</option>
                             </select>
@@ -813,11 +822,11 @@
                             <div class="flex items-center justify-center gap-2">
                                 <div class="flex items-center">
                                     <input id="fc4_c5a-1" type="radio" value="1" name="fc4_c5a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                                    <label for="fc4_c5a-1" class="ms-2 text-sm text-gray-900">1.M</label>
+                                    <label for="fc4_c5a-1" class="ms-2 text-sm text-gray-900">1. Male</label>
                                 </div>
                                 <div class="flex items-center">
                                     <input id="fc4_c5a-2" type="radio" value="2" name="fc4_c5a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                                    <label for="fc4_c5a-2" class="ms-2 text-sm text-gray-900">2.F</label>
+                                    <label for="fc4_c5a-2" class="ms-2 text-sm text-gray-900">2. Female</label>
                                 </div>
                             </div>
                         </td>
@@ -831,11 +840,11 @@
                             <div class="flex items-center gap-2">
                                 <div class="flex items-center">
                                     <input id="fc4_c5d-1" type="radio" value="1" name="fc4_c5d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                                    <label for="fc4_c5d-1" class="ms-2 text-sm text-gray-900">1.Y</label>
+                                    <label for="fc4_c5d-1" class="ms-2 text-sm text-gray-900">1. Yes</label>
                                 </div>
                                 <div class="flex items-center">
                                     <input id="fc4_c5d-2" type="radio" value="2" name="fc4_c5d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                                    <label for="fc4_c5d-2" class="ms-2 text-sm text-gray-900">2.N</label>
+                                    <label for="fc4_c5d-2" class="ms-2 text-sm text-gray-900">2. No</label>
                                 </div>
                             </div>
                         </td>
@@ -853,9 +862,9 @@
                         <td class="p-2">
                             <select id="fc4_c5f" name="fc4_c5f" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
                                 <option value="-9">--- choose ---</option>
-                                <option value="1">1. In mainstream education</option>
-                                <option value="2">2. In specialized education</option>
-                                <option value="3">3. Inclusive education</option>
+                                <option value="1">1. In mainstream education institution, without inclusive classes/groups</option>
+                                <option value="2">2. In mainstream education institution, with inclusive classes/groups</option>
+                                <option value="3">3. In specialized education institution</option>
                                 <option value="4">4. Homeschooling</option>
                                 <option value="5">5. Not enrolled in education</option>
                             </select>
@@ -867,11 +876,11 @@
                             <div class="flex items-center justify-center gap-2">
                                 <div class="flex items-center">
                                     <input id="fc4_c6a-1" type="radio" value="1" name="fc4_c6a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                                    <label for="fc4_c6a-1" class="ms-2 text-sm text-gray-900">1.M</label>
+                                    <label for="fc4_c6a-1" class="ms-2 text-sm text-gray-900">1. Male</label>
                                 </div>
                                 <div class="flex items-center">
                                     <input id="fc4_c6a-2" type="radio" value="2" name="fc4_c6a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                                    <label for="fc4_c6a-2" class="ms-2 text-sm text-gray-900">2.F</label>
+                                    <label for="fc4_c6a-2" class="ms-2 text-sm text-gray-900">2. Female</label>
                                 </div>
                             </div>
                         </td>
@@ -885,11 +894,11 @@
                             <div class="flex items-center gap-2">
                                 <div class="flex items-center">
                                     <input id="fc4_c6d-1" type="radio" value="1" name="fc4_c6d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                                    <label for="fc4_c6d-1" class="ms-2 text-sm text-gray-900">1.Y</label>
+                                    <label for="fc4_c6d-1" class="ms-2 text-sm text-gray-900">1. Yes</label>
                                 </div>
                                 <div class="flex items-center">
                                     <input id="fc4_c6d-2" type="radio" value="2" name="fc4_c6d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                                    <label for="fc4_c6d-2" class="ms-2 text-sm text-gray-900">2.N</label>
+                                    <label for="fc4_c6d-2" class="ms-2 text-sm text-gray-900">2. No</label>
                                 </div>
                             </div>
                         </td>
@@ -907,9 +916,9 @@
                         <td class="p-2">
                             <select id="fc4_c6f" name="fc4_c6f" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
                                 <option value="-9">--- choose ---</option>
-                                <option value="1">1. In mainstream education</option>
-                                <option value="2">2. In specialized education</option>
-                                <option value="3">3. Inclusive education</option>
+                                <option value="1">1. In mainstream education institution, without inclusive classes/groups</option>
+                                <option value="2">2. In mainstream education institution, with inclusive classes/groups</option>
+                                <option value="3">3. In specialized education institution</option>
                                 <option value="4">4. Homeschooling</option>
                                 <option value="5">5. Not enrolled in education</option>
                             </select>
@@ -921,11 +930,11 @@
                             <div class="flex items-center justify-center gap-2">
                                 <div class="flex items-center">
                                     <input id="fc4_c7a-1" type="radio" value="1" name="fc4_c7a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                                    <label for="fc4_c7a-1" class="ms-2 text-sm text-gray-900">1.M</label>
+                                    <label for="fc4_c7a-1" class="ms-2 text-sm text-gray-900">1. Male</label>
                                 </div>
                                 <div class="flex items-center">
                                     <input id="fc4_c7a-2" type="radio" value="2" name="fc4_c7a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                                    <label for="fc4_c7a-2" class="ms-2 text-sm text-gray-900">2.F</label>
+                                    <label for="fc4_c7a-2" class="ms-2 text-sm text-gray-900">2. Female</label>
                                 </div>
                             </div>
                         </td>
@@ -939,11 +948,11 @@
                             <div class="flex items-center gap-2">
                                 <div class="flex items-center">
                                     <input id="fc4_c7d-1" type="radio" value="1" name="fc4_c7d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                                    <label for="fc4_c7d-1" class="ms-2 text-sm text-gray-900">1.Y</label>
+                                    <label for="fc4_c7d-1" class="ms-2 text-sm text-gray-900">1. Yes</label>
                                 </div>
                                 <div class="flex items-center">
                                     <input id="fc4_c7d-2" type="radio" value="2" name="fc4_c7d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                                    <label for="fc4_c7d-2" class="ms-2 text-sm text-gray-900">2.N</label>
+                                    <label for="fc4_c7d-2" class="ms-2 text-sm text-gray-900">2. No</label>
                                 </div>
                             </div>
                         </td>
@@ -961,9 +970,9 @@
                         <td class="p-2">
                             <select id="fc4_c7f" name="fc4_c7f" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
                                 <option value="-9">--- choose ---</option>
-                                <option value="1">1. In mainstream education</option>
-                                <option value="2">2. In specialized education</option>
-                                <option value="3">3. Inclusive education</option>
+                                <option value="1">1. In mainstream education institution, without inclusive classes/groups</option>
+                                <option value="2">2. In mainstream education institution, with inclusive classes/groups</option>
+                                <option value="3">3. In specialized education institution</option>
                                 <option value="4">4. Homeschooling</option>
                                 <option value="5">5. Not enrolled in education</option>
                             </select>
@@ -975,11 +984,11 @@
                             <div class="flex items-center justify-center gap-2">
                                 <div class="flex items-center">
                                     <input id="fc4_c8a-1" type="radio" value="1" name="fc4_c8a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                                    <label for="fc4_c8a-1" class="ms-2 text-sm text-gray-900">1.M</label>
+                                    <label for="fc4_c8a-1" class="ms-2 text-sm text-gray-900">1. Male</label>
                                 </div>
                                 <div class="flex items-center">
                                     <input id="fc4_c8a-2" type="radio" value="2" name="fc4_c8a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                                    <label for="fc4_c8a-2" class="ms-2 text-sm text-gray-900">2.F</label>
+                                    <label for="fc4_c8a-2" class="ms-2 text-sm text-gray-900">2. Female</label>
                                 </div>
                             </div>
                         </td>
@@ -993,11 +1002,11 @@
                             <div class="flex items-center gap-2">
                                 <div class="flex items-center">
                                     <input id="fc4_c8d-1" type="radio" value="1" name="fc4_c8d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                                    <label for="fc4_c8d-1" class="ms-2 text-sm text-gray-900">1.Y</label>
+                                    <label for="fc4_c8d-1" class="ms-2 text-sm text-gray-900">1. Yes</label>
                                 </div>
                                 <div class="flex items-center">
                                     <input id="fc4_c8d-2" type="radio" value="2" name="fc4_c8d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                                    <label for="fc4_c8d-2" class="ms-2 text-sm text-gray-900">2.N</label>
+                                    <label for="fc4_c8d-2" class="ms-2 text-sm text-gray-900">2. No</label>
                                 </div>
                             </div>
                         </td>
@@ -1015,9 +1024,9 @@
                         <td class="p-2">
                             <select id="fc4_c8f" name="fc4_c8f" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
                                 <option value="-9">--- choose ---</option>
-                                <option value="1">1. In mainstream education</option>
-                                <option value="2">2. In specialized education</option>
-                                <option value="3">3. Inclusive education</option>
+                                <option value="1">1. In mainstream education institution, without inclusive classes/groups</option>
+                                <option value="2">2. In mainstream education institution, with inclusive classes/groups</option>
+                                <option value="3">3. In specialized education institution</option>
                                 <option value="4">4. Homeschooling</option>
                                 <option value="5">5. Not enrolled in education</option>
                             </select>
@@ -1029,11 +1038,11 @@
                             <div class="flex items-center justify-center gap-2">
                                 <div class="flex items-center">
                                     <input id="fc4_c9a-1" type="radio" value="1" name="fc4_c9a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                                    <label for="fc4_c9a-1" class="ms-2 text-sm text-gray-900">1.M</label>
+                                    <label for="fc4_c9a-1" class="ms-2 text-sm text-gray-900">1. Male</label>
                                 </div>
                                 <div class="flex items-center">
                                     <input id="fc4_c9a-2" type="radio" value="2" name="fc4_c9a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                                    <label for="fc4_c9a-2" class="ms-2 text-sm text-gray-900">2.F</label>
+                                    <label for="fc4_c9a-2" class="ms-2 text-sm text-gray-900">2. Female</label>
                                 </div>
                             </div>
                         </td>
@@ -1047,11 +1056,11 @@
                             <div class="flex items-center gap-2">
                                 <div class="flex items-center">
                                     <input id="fc4_c9d-1" type="radio" value="1" name="fc4_c9d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                                    <label for="fc4_c9d-1" class="ms-2 text-sm text-gray-900">1.Y</label>
+                                    <label for="fc4_c9d-1" class="ms-2 text-sm text-gray-900">1. Yes</label>
                                 </div>
                                 <div class="flex items-center">
                                     <input id="fc4_c9d-2" type="radio" value="2" name="fc4_c9d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                                    <label for="fc4_c9d-2" class="ms-2 text-sm text-gray-900">2.N</label>
+                                    <label for="fc4_c9d-2" class="ms-2 text-sm text-gray-900">2. No</label>
                                 </div>
                             </div>
                         </td>
@@ -1069,9 +1078,9 @@
                         <td class="p-2">
                             <select id="fc4_c9f" name="fc4_c9f" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
                                 <option value="-9">--- choose ---</option>
-                                <option value="1">1. In mainstream education</option>
-                                <option value="2">2. In specialized education</option>
-                                <option value="3">3. Inclusive education</option>
+                                <option value="1">1. In mainstream education institution, without inclusive classes/groups</option>
+                                <option value="2">2. In mainstream education institution, with inclusive classes/groups</option>
+                                <option value="3">3. In specialized education institution</option>
                                 <option value="4">4. Homeschooling</option>
                                 <option value="5">5. Not enrolled in education</option>
                             </select>
@@ -1083,11 +1092,11 @@
                             <div class="flex items-center justify-center gap-2">
                                 <div class="flex items-center">
                                     <input id="fc4_c10a-1" type="radio" value="1" name="fc4_c10a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                                    <label for="fc4_c10a-1" class="ms-2 text-sm text-gray-900">1.M</label>
+                                    <label for="fc4_c10a-1" class="ms-2 text-sm text-gray-900">1. Male</label>
                                 </div>
                                 <div class="flex items-center">
                                     <input id="fc4_c10a-2" type="radio" value="2" name="fc4_c10a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                                    <label for="fc4_c10a-2" class="ms-2 text-sm text-gray-900">2.F</label>
+                                    <label for="fc4_c10a-2" class="ms-2 text-sm text-gray-900">2. Female</label>
                                 </div>
                             </div>
                         </td>
@@ -1101,11 +1110,11 @@
                             <div class="flex items-center gap-2">
                                 <div class="flex items-center">
                                     <input id="fc4_c10d-1" type="radio" value="1" name="fc4_c10d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                                    <label for="fc4_c10d-1" class="ms-2 text-sm text-gray-900">1.Y</label>
+                                    <label for="fc4_c10d-1" class="ms-2 text-sm text-gray-900">1. Yes</label>
                                 </div>
                                 <div class="flex items-center">
                                     <input id="fc4_c10d-2" type="radio" value="2" name="fc4_c10d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                                    <label for="fc4_c10d-2" class="ms-2 text-sm text-gray-900">2.N</label>
+                                    <label for="fc4_c10d-2" class="ms-2 text-sm text-gray-900">2. No</label>
                                 </div>
                             </div>
                         </td>
@@ -1123,9 +1132,9 @@
                         <td class="p-2">
                             <select id="fc4_c10f" name="fc4_c10f" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
                                 <option value="-9">--- choose ---</option>
-                                <option value="1">1. In mainstream education</option>
-                                <option value="2">2. In specialized education</option>
-                                <option value="3">3. Inclusive education</option>
+                                <option value="1">1. In mainstream education institution, without inclusive classes/groups</option>
+                                <option value="2">2. In mainstream education institution, with inclusive classes/groups</option>
+                                <option value="3">3. In specialized education institution</option>
                                 <option value="4">4. Homeschooling</option>
                                 <option value="5">5. Not enrolled in education</option>
                             </select>
@@ -1139,7 +1148,7 @@
 
             <div class="grid grid-cols-2 gap-4 items-center mt-10">
                 <div>EX1. During the reporting year, did any child leave this family-type home?</div>
-                <div class="grid grid-cols-2 gap-4 items-center4">
+                <div class="col-span-1 flex items-center gap-4">
                     <div class="flex items-center">
                         <input id="ex1-1" type="radio" value="1" name="ex1" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="ex1-1" class="ms-2 text-sm text-gray-900">1. Yes</label>
@@ -1176,11 +1185,11 @@
                             <div class="flex items-center justify-center gap-2">
                                 <div class="flex items-center">
                                     <input id="ex3_c1a-1" type="radio" value="1" name="ex3_c1a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                                    <label for="ex3_c1a-1" class="ms-2 text-sm text-gray-900">1.M</label>
+                                    <label for="ex3_c1a-1" class="ms-2 text-sm text-gray-900">1. Male</label>
                                 </div>
                                 <div class="flex items-center">
                                     <input id="ex3_c1a-2" type="radio" value="2" name="ex3_c1a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                                    <label for="ex3_c1a-2" class="ms-2 text-sm text-gray-900">2.F</label>
+                                    <label for="ex3_c1a-2" class="ms-2 text-sm text-gray-900">2. Female</label>
                                 </div>
                             </div>
                         </td>
@@ -1191,11 +1200,11 @@
                             <div class="flex items-center justify-center gap-2">
                                 <div class="flex items-center">
                                     <input id="ex3_c1c-1" type="radio" value="1" name="ex3_c1c" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                                    <label for="ex3_c1c-1" class="ms-2 text-sm text-gray-900">1.Y</label>
+                                    <label for="ex3_c1c-1" class="ms-2 text-sm text-gray-900">1. Yes</label>
                                 </div>
                                 <div class="flex items-center">
                                     <input id="ex3_c1c-2" type="radio" value="2" name="ex3_c1c" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                                    <label for="ex3_c1c-2" class="ms-2 text-sm text-gray-900">2.N</label>
+                                    <label for="ex3_c1c-2" class="ms-2 text-sm text-gray-900">2. No</label>
                                 </div>
                             </div>
                         </td>
@@ -1222,11 +1231,11 @@
                             <div class="flex items-center justify-center gap-2">
                                 <div class="flex items-center">
                                     <input id="ex3_c2a-1" type="radio" value="1" name="ex3_c2a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                                    <label for="ex3_c2a-1" class="ms-2 text-sm text-gray-900">1.M</label>
+                                    <label for="ex3_c2a-1" class="ms-2 text-sm text-gray-900">1. Male</label>
                                 </div>
                                 <div class="flex items-center">
                                     <input id="ex3_c2a-2" type="radio" value="2" name="ex3_c2a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                                    <label for="ex3_c2a-2" class="ms-2 text-sm text-gray-900">2.F</label>
+                                    <label for="ex3_c2a-2" class="ms-2 text-sm text-gray-900">2. Female</label>
                                 </div>
                             </div>
                         </td>
@@ -1237,11 +1246,11 @@
                             <div class="flex items-center justify-center gap-2">
                                 <div class="flex items-center">
                                     <input id="ex3_c2c-1" type="radio" value="1" name="ex3_c2c" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                                    <label for="ex3_c2c-1" class="ms-2 text-sm text-gray-900">1.Y</label>
+                                    <label for="ex3_c2c-1" class="ms-2 text-sm text-gray-900">1. Yes</label>
                                 </div>
                                 <div class="flex items-center">
                                     <input id="ex3_c2c-2" type="radio" value="2" name="ex3_c2c" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                                    <label for="ex3_c2c-2" class="ms-2 text-sm text-gray-900">2.N</label>
+                                    <label for="ex3_c2c-2" class="ms-2 text-sm text-gray-900">2. No</label>
                                 </div>
                             </div>
                         </td>
@@ -1268,11 +1277,11 @@
                             <div class="flex items-center justify-center gap-2">
                                 <div class="flex items-center">
                                     <input id="ex3_c3a-1" type="radio" value="1" name="ex3_c3a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                                    <label for="ex3_c3a-1" class="ms-2 text-sm text-gray-900">1.M</label>
+                                    <label for="ex3_c3a-1" class="ms-2 text-sm text-gray-900">1. Male</label>
                                 </div>
                                 <div class="flex items-center">
                                     <input id="ex3_c3a-2" type="radio" value="2" name="ex3_c3a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                                    <label for="ex3_c3a-2" class="ms-2 text-sm text-gray-900">2.F</label>
+                                    <label for="ex3_c3a-2" class="ms-2 text-sm text-gray-900">2. Female</label>
                                 </div>
                             </div>
                         </td>
@@ -1283,11 +1292,11 @@
                             <div class="flex items-center justify-center gap-2">
                                 <div class="flex items-center">
                                     <input id="ex3_c3c-1" type="radio" value="1" name="ex3_c3c" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                                    <label for="ex3_c3c-1" class="ms-2 text-sm text-gray-900">1.Y</label>
+                                    <label for="ex3_c3c-1" class="ms-2 text-sm text-gray-900">1. Yes</label>
                                 </div>
                                 <div class="flex items-center">
                                     <input id="ex3_c3c-2" type="radio" value="2" name="ex3_c3c" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                                    <label for="ex3_c3c-2" class="ms-2 text-sm text-gray-900">2.N</label>
+                                    <label for="ex3_c3c-2" class="ms-2 text-sm text-gray-900">2. No</label>
                                 </div>
                             </div>
                         </td>
@@ -1314,11 +1323,11 @@
                             <div class="flex items-center justify-center gap-2">
                                 <div class="flex items-center">
                                     <input id="ex3_c4a-1" type="radio" value="1" name="ex3_c4a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                                    <label for="ex3_c4a-1" class="ms-2 text-sm text-gray-900">1.M</label>
+                                    <label for="ex3_c4a-1" class="ms-2 text-sm text-gray-900">1. Male</label>
                                 </div>
                                 <div class="flex items-center">
                                     <input id="ex3_c4a-2" type="radio" value="2" name="ex3_c4a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                                    <label for="ex3_c4a-2" class="ms-2 text-sm text-gray-900">2.F</label>
+                                    <label for="ex3_c4a-2" class="ms-2 text-sm text-gray-900">2. Female</label>
                                 </div>
                             </div>
                         </td>
@@ -1329,11 +1338,11 @@
                             <div class="flex items-center justify-center gap-2">
                                 <div class="flex items-center">
                                     <input id="ex3_c4c-1" type="radio" value="1" name="ex3_c4c" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                                    <label for="ex3_c4c-1" class="ms-2 text-sm text-gray-900">1.Y</label>
+                                    <label for="ex3_c4c-1" class="ms-2 text-sm text-gray-900">1. Yes</label>
                                 </div>
                                 <div class="flex items-center">
                                     <input id="ex3_c4c-2" type="radio" value="2" name="ex3_c4c" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                                    <label for="ex3_c4c-2" class="ms-2 text-sm text-gray-900">2.N</label>
+                                    <label for="ex3_c4c-2" class="ms-2 text-sm text-gray-900">2. No</label>
                                 </div>
                             </div>
                         </td>
@@ -1360,11 +1369,11 @@
                             <div class="flex items-center justify-center gap-2">
                                 <div class="flex items-center">
                                     <input id="ex3_c5a-1" type="radio" value="1" name="ex3_c5a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                                    <label for="ex3_c5a-1" class="ms-2 text-sm text-gray-900">1.M</label>
+                                    <label for="ex3_c5a-1" class="ms-2 text-sm text-gray-900">1. Male</label>
                                 </div>
                                 <div class="flex items-center">
                                     <input id="ex3_c5a-2" type="radio" value="2" name="ex3_c5a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                                    <label for="ex3_c5a-2" class="ms-2 text-sm text-gray-900">2.F</label>
+                                    <label for="ex3_c5a-2" class="ms-2 text-sm text-gray-900">2. Female</label>
                                 </div>
                             </div>
                         </td>
@@ -1375,11 +1384,11 @@
                             <div class="flex items-center justify-center gap-2">
                                 <div class="flex items-center">
                                     <input id="ex3_c5c-1" type="radio" value="1" name="ex3_c5c" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                                    <label for="ex3_c5c-1" class="ms-2 text-sm text-gray-900">1.Y</label>
+                                    <label for="ex3_c5c-1" class="ms-2 text-sm text-gray-900">1. Yes</label>
                                 </div>
                                 <div class="flex items-center">
                                     <input id="ex3_c5c-2" type="radio" value="2" name="ex3_c5c" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                                    <label for="ex3_c5c-2" class="ms-2 text-sm text-gray-900">2.N</label>
+                                    <label for="ex3_c5c-2" class="ms-2 text-sm text-gray-900">2. No</label>
                                 </div>
                             </div>
                         </td>
@@ -1406,11 +1415,11 @@
                             <div class="flex items-center justify-center gap-2">
                                 <div class="flex items-center">
                                     <input id="ex3_c6a-1" type="radio" value="1" name="ex3_c6a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                                    <label for="ex3_c6a-1" class="ms-2 text-sm text-gray-900">1.M</label>
+                                    <label for="ex3_c6a-1" class="ms-2 text-sm text-gray-900">1. Male</label>
                                 </div>
                                 <div class="flex items-center">
                                     <input id="ex3_c6a-2" type="radio" value="2" name="ex3_c6a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                                    <label for="ex3_c6a-2" class="ms-2 text-sm text-gray-900">2.F</label>
+                                    <label for="ex3_c6a-2" class="ms-2 text-sm text-gray-900">2. Female</label>
                                 </div>
                             </div>
                         </td>
@@ -1421,11 +1430,11 @@
                             <div class="flex items-center justify-center gap-2">
                                 <div class="flex items-center">
                                     <input id="ex3_c6c-1" type="radio" value="1" name="ex3_c6c" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                                    <label for="ex3_c6c-1" class="ms-2 text-sm text-gray-900">1.Y</label>
+                                    <label for="ex3_c6c-1" class="ms-2 text-sm text-gray-900">1. Yes</label>
                                 </div>
                                 <div class="flex items-center">
                                     <input id="ex3_c6c-2" type="radio" value="2" name="ex3_c6c" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                                    <label for="ex3_c6c-2" class="ms-2 text-sm text-gray-900">2.N</label>
+                                    <label for="ex3_c6c-2" class="ms-2 text-sm text-gray-900">2. No</label>
                                 </div>
                             </div>
                         </td>
@@ -1452,11 +1461,11 @@
                             <div class="flex items-center justify-center gap-2">
                                 <div class="flex items-center">
                                     <input id="ex3_c7a-1" type="radio" value="1" name="ex3_c7a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                                    <label for="ex3_c7a-1" class="ms-2 text-sm text-gray-900">1.M</label>
+                                    <label for="ex3_c7a-1" class="ms-2 text-sm text-gray-900">1. Male</label>
                                 </div>
                                 <div class="flex items-center">
                                     <input id="ex3_c7a-2" type="radio" value="2" name="ex3_c7a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                                    <label for="ex3_c7a-2" class="ms-2 text-sm text-gray-900">2.F</label>
+                                    <label for="ex3_c7a-2" class="ms-2 text-sm text-gray-900">2. Female</label>
                                 </div>
                             </div>
                         </td>
@@ -1467,11 +1476,11 @@
                             <div class="flex items-center justify-center gap-2">
                                 <div class="flex items-center">
                                     <input id="ex3_c7c-1" type="radio" value="1" name="ex3_c7c" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                                    <label for="ex3_c7c-1" class="ms-2 text-sm text-gray-900">1.Y</label>
+                                    <label for="ex3_c7c-1" class="ms-2 text-sm text-gray-900">1. Yes</label>
                                 </div>
                                 <div class="flex items-center">
                                     <input id="ex3_c7c-2" type="radio" value="2" name="ex3_c7c" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                                    <label for="ex3_c7c-2" class="ms-2 text-sm text-gray-900">2.N</label>
+                                    <label for="ex3_c7c-2" class="ms-2 text-sm text-gray-900">2. No</label>
                                 </div>
                             </div>
                         </td>
@@ -1498,11 +1507,11 @@
                             <div class="flex items-center justify-center gap-2">
                                 <div class="flex items-center">
                                     <input id="ex3_c8a-1" type="radio" value="1" name="ex3_c8a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                                    <label for="ex3_c8a-1" class="ms-2 text-sm text-gray-900">1.M</label>
+                                    <label for="ex3_c8a-1" class="ms-2 text-sm text-gray-900">1. Male</label>
                                 </div>
                                 <div class="flex items-center">
                                     <input id="ex3_c8a-2" type="radio" value="2" name="ex3_c8a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                                    <label for="ex3_c8a-2" class="ms-2 text-sm text-gray-900">2.F</label>
+                                    <label for="ex3_c8a-2" class="ms-2 text-sm text-gray-900">2. Female</label>
                                 </div>
                             </div>
                         </td>
@@ -1513,11 +1522,11 @@
                             <div class="flex items-center justify-center gap-2">
                                 <div class="flex items-center">
                                     <input id="ex3_c8c-1" type="radio" value="1" name="ex3_c8c" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                                    <label for="ex3_c8c-1" class="ms-2 text-sm text-gray-900">1.Y</label>
+                                    <label for="ex3_c8c-1" class="ms-2 text-sm text-gray-900">1. Yes</label>
                                 </div>
                                 <div class="flex items-center">
                                     <input id="ex3_c8c-2" type="radio" value="2" name="ex3_c8c" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                                    <label for="ex3_c8c-2" class="ms-2 text-sm text-gray-900">2.N</label>
+                                    <label for="ex3_c8c-2" class="ms-2 text-sm text-gray-900">2. No</label>
                                 </div>
                             </div>
                         </td>
@@ -1544,11 +1553,11 @@
                             <div class="flex items-center justify-center gap-2">
                                 <div class="flex items-center">
                                     <input id="ex3_c9a-1" type="radio" value="1" name="ex3_c9a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                                    <label for="ex3_c9a-1" class="ms-2 text-sm text-gray-900">1.M</label>
+                                    <label for="ex3_c9a-1" class="ms-2 text-sm text-gray-900">1. Male</label>
                                 </div>
                                 <div class="flex items-center">
                                     <input id="ex3_c9a-2" type="radio" value="2" name="ex3_c9a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                                    <label for="ex3_c9a-2" class="ms-2 text-sm text-gray-900">2.F</label>
+                                    <label for="ex3_c9a-2" class="ms-2 text-sm text-gray-900">2. Female</label>
                                 </div>
                             </div>
                         </td>
@@ -1559,11 +1568,11 @@
                             <div class="flex items-center justify-center gap-2">
                                 <div class="flex items-center">
                                     <input id="ex3_c9c-1" type="radio" value="1" name="ex3_c9c" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                                    <label for="ex3_c9c-1" class="ms-2 text-sm text-gray-900">1.Y</label>
+                                    <label for="ex3_c9c-1" class="ms-2 text-sm text-gray-900">1. Yes</label>
                                 </div>
                                 <div class="flex items-center">
                                     <input id="ex3_c9c-2" type="radio" value="2" name="ex3_c9c" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                                    <label for="ex3_c9c-2" class="ms-2 text-sm text-gray-900">2.N</label>
+                                    <label for="ex3_c9c-2" class="ms-2 text-sm text-gray-900">2. No</label>
                                 </div>
                             </div>
                         </td>
@@ -1590,11 +1599,11 @@
                             <div class="flex items-center justify-center gap-2">
                                 <div class="flex items-center">
                                     <input id="ex3_c10a-1" type="radio" value="1" name="ex3_c10a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                                    <label for="ex3_c10a-1" class="ms-2 text-sm text-gray-900">1.M</label>
+                                    <label for="ex3_c10a-1" class="ms-2 text-sm text-gray-900">1. Male</label>
                                 </div>
                                 <div class="flex items-center">
                                     <input id="ex3_c10a-2" type="radio" value="2" name="ex3_c10a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                                    <label for="ex3_c10a-2" class="ms-2 text-sm text-gray-900">2.F</label>
+                                    <label for="ex3_c10a-2" class="ms-2 text-sm text-gray-900">2. Female</label>
                                 </div>
                             </div>
                         </td>
@@ -1605,11 +1614,11 @@
                             <div class="flex items-center justify-center gap-2">
                                 <div class="flex items-center">
                                     <input id="ex3_c10c-1" type="radio" value="1" name="ex3_c10c" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                                    <label for="ex3_c10c-1" class="ms-2 text-sm text-gray-900">1.Y</label>
+                                    <label for="ex3_c10c-1" class="ms-2 text-sm text-gray-900">1. Yes</label>
                                 </div>
                                 <div class="flex items-center">
                                     <input id="ex3_c10c-2" type="radio" value="2" name="ex3_c10c" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                                    <label for="ex3_c10c-2" class="ms-2 text-sm text-gray-900">2.N</label>
+                                    <label for="ex3_c10c-2" class="ms-2 text-sm text-gray-900">2. No</label>
                                 </div>
                             </div>
                         </td>
@@ -1655,26 +1664,39 @@
             </div>
             <div class="grid grid-cols-2 gap-4 items-center mt-10">
                 <div>QS2. Have the foster parents received any additional training courses since they established the family-type children's home?</div>
-                <div class="grid grid-cols-2 gap-4 items-center4">
+                <div class="col-span-1 flex items-center gap-4">
                     <div class="flex items-center">
                         <input id="qs2-1" type="radio" value="1" name="qs2" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="qs2-1" class="ms-2 text-sm text-gray-900">1. Yes</label>
                     </div>
                     <div class="flex items-center">
-                        <input id="qs2-2" type="radio" value="2" name="qs2" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <input id="qs2-2" type="radio" value="0" name="qs2" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="qs2-2" class="ms-2 text-sm text-gray-900">0. No</label>
                     </div>
                 </div>
             </div>
             <div class="grid grid-cols-2 gap-4 items-center mt-10">
+                <div>QS2cn. Have the foster parents received any training courses focusing on caring for children with complex needs?</div>
+                <div class="col-span-1 flex items-center gap-4">
+                    <div class="flex items-center">
+                        <input id="qs2cn-1" type="radio" value="1" name="qs2cn" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <label for="qs2cn-1" class="ms-2 text-sm text-gray-900">1. Yes</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="qs2cn-2" type="radio" value="0" name="qs2cn" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <label for="qs2cn-2" class="ms-2 text-sm text-gray-900">0. No</label>
+                    </div>
+                </div>
+            </div>
+            <div class="grid grid-cols-2 gap-4 items-center mt-10">
                 <div>QS3. Is there a designated specialist from the district/city child protection department assigned to oversee how foster parents in this family-type home meet their responsibilities?</div>
-                <div class="grid grid-cols-2 gap-4 items-center4">
+                <div class="col-span-1 flex items-center gap-4">
                     <div class="flex items-center">
                         <input id="qs3-1" type="radio" value="1" name="qs3" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="qs3-1" class="ms-2 text-sm text-gray-900">1. Yes</label>
                     </div>
                     <div class="flex items-center">
-                        <input id="qs3-2" type="radio" value="2" name="qs3" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <input id="qs3-2" type="radio" value="0" name="qs3" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="qs3-2" class="ms-2 text-sm text-gray-900">0. No</label>
                     </div>
                 </div>
@@ -1702,68 +1724,73 @@
 
             <div class="grid grid-cols-2 gap-4 items-center mt-10">
                 <div class="ml-4">a.  ... refused to care for a child?</div>
-                <div class="grid grid-cols-2 gap-4 items-center4">
+                <div class="col-span-1 flex items-center gap-4">
                     <div class="flex items-center">
                         <input id="qs5a-1" type="radio" value="1" name="qs5a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="qs5a-1" class="ms-2 text-sm text-gray-900">1. Yes</label>
                     </div>
                     <div class="flex items-center">
-                        <input id="qs5a-2" type="radio" value="2" name="qs5a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <input id="qs5a-2" type="radio" value="0" name="qs5a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="qs5a-2" class="ms-2 text-sm text-gray-900">0. No</label>
                     </div>
                 </div>
             </div>
             <div class="grid grid-cols-2 gap-4 items-center mt-10">
                 <div class="ml-4">b. ... refused to care for children with disabilities (with a certificate of disability), HIV-infected or AIDS patients?</div>
-                <div class="grid grid-cols-2 gap-4 items-center4">
+                <div class="col-span-1 flex items-center gap-4">
                     <div class="flex items-center">
                         <input id="qs5b-1" type="radio" value="1" name="qs5b" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="qs5b-1" class="ms-2 text-sm text-gray-900">1. Yes</label>
                     </div>
                     <div class="flex items-center">
-                        <input id="qs5b-2" type="radio" value="2" name="qs5b" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <input id="qs5b-2" type="radio" value="0" name="qs5b" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="qs5b-2" class="ms-2 text-sm text-gray-900">0. No</label>
                     </div>
                 </div>
             </div>
             <div class="grid grid-cols-2 gap-4 items-center mt-10">
                 <div class="ml-4">c. ... refused to care for adolescent children (10+ years) with behavioral disorders?</div>
-                <div class="grid grid-cols-2 gap-4 items-center4">
+                <div class="col-span-1 flex items-center gap-4">
                     <div class="flex items-center">
                         <input id="qs5c-1" type="radio" value="1" name="qs5c" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="qs5c-1" class="ms-2 text-sm text-gray-900">1. Yes</label>
                     </div>
                     <div class="flex items-center">
-                        <input id="qs5c-2" type="radio" value="2" name="qs5c" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <input id="qs5c-2" type="radio" value="0" name="qs5c" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="qs5c-2" class="ms-2 text-sm text-gray-900">0. No</label>
                     </div>
                 </div>
             </div>
             <div class="grid grid-cols-2 gap-4 items-center mt-10">
                 <div class="ml-4">d. ... were subject to a disciplinary investigation or received a disciplinary sanction?</div>
-                <div class="grid grid-cols-2 gap-4 items-center4">
+                <div class="col-span-1 flex items-center gap-4">
                     <div class="flex items-center">
                         <input id="qs5d-1" type="radio" value="1" name="qs5d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="qs5d-1" class="ms-2 text-sm text-gray-900">1. Yes</label>
                     </div>
                     <div class="flex items-center">
-                        <input id="qs5d-2" type="radio" value="2" name="qs5d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <input id="qs5d-2" type="radio" value="0" name="qs5d" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="qs5d-2" class="ms-2 text-sm text-gray-900">0. No</label>
                     </div>
                 </div>
             </div>
             <div class="grid grid-cols-2 gap-4 items-center mt-10">
-                <div>QS4. Over the past 12 months, have the foster parents been involved in any complaints, petitions, or accusations, including suspected cases of child abuse, neglect, or exploitation, regardless of the source?</div>
-                <div class="grid grid-cols-2 gap-4 items-center4">
+                <div>QS6. Over the past 12 months, have the foster parents been involved in any complaints, petitions, or accusations, including suspected cases of child abuse, neglect, or exploitation, regardless of the source?</div>
+                <div class="col-span-1 flex items-center gap-4">
                     <div class="flex items-center">
                         <input id="qs6-1" type="radio" value="1" name="qs6" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="qs6-1" class="ms-2 text-sm text-gray-900">1. Yes</label>
                     </div>
                     <div class="flex items-center">
-                        <input id="qs6-2" type="radio" value="2" name="qs6" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
+                        <input id="qs6-2" type="radio" value="0" name="qs6" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
                         <label for="qs6-2" class="ms-2 text-sm text-gray-900">0. No</label>
                     </div>
                 </div>
+            </div>
+
+            <div class="grid mt-10">
+                <label for="obs">OBS. Observations</label>
+                <textarea class="form-control" rows="3" id="obs" name="obs"></textarea>
             </div>
 
         </form>

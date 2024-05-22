@@ -57,6 +57,10 @@ let filters: DI.FiltersInterface;
 export const instrument7 = {
     init: async () => {
 
+        $("#fc4_c1d").select2({
+            width: '100%'
+        });
+
         $.datepicker.setDefaults($.datepicker.regional[lang]);
         const jQueryDatepickerConfig = {
             changeMonth: true,
