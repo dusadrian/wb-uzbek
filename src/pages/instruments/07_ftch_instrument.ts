@@ -418,9 +418,39 @@ util.listen("ex2", "change", () => {
 
 
 util.listen("fc3", "change", () => {
+    const value = Number(util.htmlElement("fc3").value);
+    const elements = ["a", "b", "c", "d", "cn", "e", "f"];
+
+    if (value > 0 && value <= 10) {
+        util.htmlElement("fc4text").classList.remove("hidden");
+    } else if (!util.htmlElement("fc4text").classList.contains("hidden")) {
+        util.htmlElement("fc4text").classList.add("hidden");
+    }
+
+    for (let i = 0; i < 10; i++) {
+        for (let e = 0; e < elements.length; e++) {
+            const classlist = util.htmlElement("c" + (i + 1) + elements[e]).classList;
+            if (i < value) {
+                classlist.remove("hidden");
+            } else if (!classlist.contains("hidden")) {
+                classlist.add("hidden");
+            }
+        }
+    }
+
     const message = "FC3 <= 10";
+
     errorHandler.removeError("fc3", message);
-    if (Number(util.htmlElement("fc3").value) > 10) {
+    if (value > 10) {
+        for (let i = 0; i < 10; i++) {
+            for (let e = 0; e < elements.length; e++) {
+                const classlist = util.htmlElement("c" + (i + 1) + elements[e]).classList;
+                if (!classlist.contains("hidden")) {
+                    classlist.add("hidden");
+                }
+            }
+        }
+
         errorHandler.addError("fc3", message);
         setTimeout(() => {
             util.trigger("fc2g-1", "change");
