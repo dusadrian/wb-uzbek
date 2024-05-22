@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { ipcRenderer } from "electron";
 import * as DI from "../../interfaces/database";
-import { KeyString, KeyStringNumber, regions, districts, settlements } from "../../libraries/administrative";
+import { regions, districts, settlements } from "../../libraries/administrative";
 
 const lang = localStorage.getItem("language");
 const addObject: DI.AddInsonServiceObjInterface = {
@@ -16,10 +16,10 @@ const addObject: DI.AddInsonServiceObjInterface = {
     district: '',
     settlement: '',
     settlement_type: '',
-    capacity: 0,
-    children: 0,
-    leavers: 0,
-    employees: 0,
+    capacity: '',
+    children: '',
+    leavers: '',
+    employees: '',
     inson: '',
     activcode1: null,
     activcode2: null,
@@ -33,7 +33,6 @@ export const addInson = {
 
         // set inson code
         ipcRenderer.on('inson', (_event, args) => {
-            console.log(args);
             addObject.inson = args.code;
             addObject.region = args.region;
 
@@ -55,24 +54,22 @@ export const addInson = {
             }
 
             // const settlement = document.getElementById('settlement');
-
             // const set_codes = districts[selectedDistrict].settlements;
 
 
-
-
-
             // add settlements
-            const settlement = document.getElementById('settlement');
+            const settlement = document.getElementById('settlement') as HTMLSelectElement;
             district.addEventListener('change', () => {
-                if (district.options[district.selectedIndex].value === '') {
+                addObject.district = district.options[district.selectedIndex].value;
+                
+                if (addObject.district != '') {
                     settlement.innerHTML = '';
                     const option = document.createElement('option');
                     option.value = '';
                     option.innerText = '---';
                     settlement.appendChild(option);
                     const settlement_codes = districts[addObject.district].settlements;
-                    for (const set of settlement_codes) {
+                    for (const set of settlement_codes) {                        
                         const option = document.createElement('option');
                         option.value = set;
                         option.innerText = settlements[set][lang as 'en' | 'uz' | 'ru'];
@@ -88,12 +85,9 @@ export const addInson = {
                 }
             });
 
-
             settlement.addEventListener('change', () => {
-                settlement.innerHTML = '';
-                const option = document.createElement('option');
-                option.value = '';
-
+                addObject.settlement = settlement.options[settlement.selectedIndex].value;
+                addObject.settlement_type = settlements[addObject.settlement].type;
             });
         });
 
@@ -102,6 +96,8 @@ export const addInson = {
 
         // save data
         document.getElementById('saveForm').addEventListener('click', async () => {
+            
+            addObject.code = (<HTMLSelectElement>document.getElementById('code')).value;
 
             // saved based on current user language
             if (lang === 'uz') {
@@ -116,12 +112,120 @@ export const addInson = {
             addObject.district = (<HTMLSelectElement>document.getElementById('district')).value;
             addObject.settlement = (<HTMLSelectElement>document.getElementById('settlement')).value;
 
-            addObject.settlement_type = (<HTMLInputElement>document.getElementById('settlement_type')).value;
 
-            addObject.capacity = parseInt((<HTMLInputElement>document.getElementById('capacity')).value);
-            addObject.children = parseInt((<HTMLInputElement>document.getElementById('children')).value);
-            addObject.leavers = parseInt((<HTMLInputElement>document.getElementById('leavers')).value);
-            addObject.employees = parseInt((<HTMLInputElement>document.getElementById('employees')).value);
+            addObject.capacity = (<HTMLInputElement>document.getElementById('capacity')).value;
+            addObject.children = (<HTMLInputElement>document.getElementById('children')).value;
+            addObject.leavers = (<HTMLInputElement>document.getElementById('leavers')).value;
+
+
+            if(addObject.code === '') {
+                ipcRenderer.send('showDialogMessage', {
+                    type: 'warning',
+                    message: 'Please fill all fields'
+                });
+                // scroll into view auth_code
+                document.getElementById('code').scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'center'
+                });
+                document.getElementById('code').focus();
+                return;
+            }
+
+            if(addObject.name_en === '' && addObject.name_uz === '' && addObject.name_ru === '') {
+                ipcRenderer.send('showDialogMessage', {
+                    type: 'warning',
+                    message: 'Please fill all fields'
+                });
+                // scroll into view auth_code
+                document.getElementById('name').scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'center'
+                });
+                document.getElementById('name').focus();
+                return;
+            }
+
+            if(addObject.address === '') {
+                ipcRenderer.send('showDialogMessage', {
+                    type: 'warning',
+                    message: 'Please fill all fields'
+                });
+                // scroll into view auth_code
+                document.getElementById('address').scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'center'
+                });
+                document.getElementById('address').focus();
+                return;
+            }
+            if(addObject.district === '') {
+                ipcRenderer.send('showDialogMessage', {
+                    type: 'warning',
+                    message: 'Please fill all fields'
+                });
+                // scroll into view auth_code
+                document.getElementById('district').scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'center'
+                });
+                document.getElementById('district').focus();
+                return;
+            }
+            if(addObject.settlement === '') {
+                ipcRenderer.send('showDialogMessage', {
+                    type: 'warning',
+                    message: 'Please fill all fields'
+                });
+                // scroll into view auth_code
+                document.getElementById('settlement').scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'center'
+                });
+                document.getElementById('settlement').focus();
+                return;
+            }
+            if(addObject.capacity == '') {
+                ipcRenderer.send('showDialogMessage', {
+                    type: 'warning',
+                    message: 'Please fill all fields'
+                });
+                // scroll into view auth_code
+                document.getElementById('capacity').scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'center'
+                });
+                document.getElementById('capacity').focus();
+                return;
+            }
+            if(addObject.children === '') {
+                ipcRenderer.send('showDialogMessage', {
+                    type: 'warning',
+                    message: 'Please fill all fields'
+                });
+                // scroll into view auth_code
+                document.getElementById('children').scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'center'
+                });
+                document.getElementById('children').focus();
+                return;
+            }
+            if(addObject.leavers === '') {
+                ipcRenderer.send('showDialogMessage', {
+                    type: 'warning',
+                    message: 'Please fill all fields'
+                });
+                // scroll into view auth_code
+                document.getElementById('leavers').scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'center'
+                });
+                document.getElementById('leavers').focus();
+                return;
+            }
+
+
 
             ipcRenderer.send('saveInsonService', addObject);
         })

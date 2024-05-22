@@ -997,12 +997,15 @@ ipcMain.on('addInsonService', (_event, args) => {
 });
 // Save INSON service
 ipcMain.on('saveInsonService', (_event, args) => {
+    console.log(args);
+    // TODO -- check if service code is unique and not used
+    
     database.addInsonService(args).then(() => {
         dialog.showMessageBox(mainWindow, {
             type: 'info',
             message: i18n.__('Service added.'),
         }).then(() => {
-            insonRDetails(args.institution_code);
+            insonRDetails(args.code);
         });
     });
 });

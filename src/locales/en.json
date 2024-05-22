@@ -153,5 +153,7 @@
 	"t_capacity": "Capacity",
 	"t_service_code": "Service code",
 	"t_service_code_text": "The service cod must be obtain from the regional coordinator",
-	"t_service_code block": "t_service_code block"
+	"t_service_code block": "t_service_code block",
+	"Service added.": "Service added.",
+	"Somethig got wrong, please try again later.": "Somethig got wrong, please try again later."
 }
