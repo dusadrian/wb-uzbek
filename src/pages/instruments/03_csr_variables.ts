@@ -189,7 +189,7 @@ export const questions: QuestionObjectType = {
         order: 16,
         active: function() {return(true)},
         skip: false,
-         checked: 0
+        checked: 0
     },
     'j2': {
         name: 'j2',

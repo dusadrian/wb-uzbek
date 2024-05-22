@@ -255,7 +255,7 @@ export const questions: QuestionObjectType = {
         order: 22,
         active: function() {return(true)},
         skip: false,
-         checked: 0
+        checked: 0
     },
     'ptr5b': {
         name: 'ptr5b',

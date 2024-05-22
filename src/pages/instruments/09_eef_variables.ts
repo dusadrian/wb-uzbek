@@ -1,4 +1,4 @@
-// import instrument from '../../libraries/instrument';
+import instrument from '../../libraries/instrument';
 import { QuestionObjectType } from '../../libraries/interfaces';
 
 
@@ -1411,6 +1411,17 @@ export const questions: QuestionObjectType = {
         active: function() {return(true)},
         skip: false
     },
+    'obs': {
+        name: 'obs',
+        type: 'textarea',
+        value: '-9',
+        disabled: false,
+        hidden: false,
+        readonly: false,
+        order: 128,
+        active: function() {return(true)},
+        skip: true
+    },
 };
 
 export const questionsOrder: Array<string> = [
@@ -1423,7 +1434,7 @@ export const questionsOrder: Array<string> = [
     'e37_n', 'e38', 'e38_n', 'e39', 'e39_n', 'e40', 'e40_n', 'e41', 'e41_n', 'e42', 'e42_n', 'e43', 'e43_n',
     'e44', 'e44_n', 'e45', 'e45_n', 'e46', 'e46_n', 'e47', 'e47_n', 'e48', 'e48_n', 'e49', 'e49_n', 'e50',
     'e50_n', 'e51', 'e51_n', 'e52', 'e52_n', 'e53', 'e53_n', 'e54', 'e54_n', 'e55', 'e55_n', 'e56', 'e56_n',
-    'e57', 'e57_n', 'e58', 'e58_n', 'e59', 'e59_n'
+    'e57', 'e57_n', 'e58', 'e58_n', 'e59', 'e59_n', 'obs'
 ];
 
 export const exportHeader: Array<{ id: string; title: string }> = [
@@ -1555,4 +1566,5 @@ export const exportHeader: Array<{ id: string; title: string }> = [
     {'id': 'e58_n', 'title': 'E58_N'},
     {'id': 'e59', 'title': 'E59'},
     {'id': 'e59_n', 'title': 'E59_N'},
+    {'id': 'obs', 'title': 'OBS'},
 ];

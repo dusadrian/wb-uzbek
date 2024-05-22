@@ -417,6 +417,8 @@
 
             <input type="hidden" id="sa3d" name="sa3d" />
 
+            <p class="mt-10">SA5. В какое учреждение был помещен ребенок до поступления в эту школу?</p>
+
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
                 <div>SA5r. Область</div>
                 <div>
@@ -456,27 +458,33 @@
                 <div>
                     <select id="sa5t" name="sa5t" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
                         <option value="-9">--- выбрать ---</option>
-                        <option value="11">11. Дом ребенка</option>
-                        <option value="12">12. детские «дома милосердия» - Мехрибонлик</option>
-                        <option value="13">13. Дома-Интернаты Для Детей С Инвалидностью «Мурувват»</option>
-                        <option value="14">14. SOS Детские деревни</option>
-                        <option value="15">15. Детские дома семейного типа</option>
-                        <option value="16">16. Патронатная семья</option>
-                        <option value="17">17. Опека/ Попечительство</option>
-                        <option value="21">21. I тип - школы-интернаты для глухих детей</option>
-                        <option value="22">22. Тип II - школы-интернаты для слабослышащих и тех, кто впоследствии потеряет слух</option>
-                        <option value="23">23. III тип - специализированные школы-интернаты для слепых детей “Нурли Маскан”</option>
-                        <option value="24">24. IV тип - специализированные школы-интернаты “Нурли Маскан” для слабовидящих и тех, кто впоследствии потеряет зрение</option>
-                        <option value="25">25. V тип - школы-интернаты для детей с тяжелыми нарушениями речи</option>
-                        <option value="26">26. VI тип - школы-интернаты для детей с нарушениями опорно-двигательного аппарата</option>
-                        <option value="27">27. Тип VII - школы-интернаты для детей с задержкой психического развития</option>
-                        <option value="28">28. Тип VIII - поддержка школ-интернатов для детей с задержкой интеллектуального развития</option>
-                        <option value="31">31. многопрофильные специализированные дошкольные образовательные организации</option>
-                        <option value="32">32. специализированные школы для детей с особыми образовательными потребностями</option>
-                        <option value="33">33. Республиканский специализированный колледж для лиц с ограниченными возможностями</option>
-                        <option value="34">34. специализированные  государственные образовательные учреждения санаторного типа</option>
-                        <option value="35">35. Республиканские  учебно-воспитательные учреждения (РУВУ)</option>
-                        <option value="36">36. Центры социальной и правовой помощи несовершеннолетним</option>
+                        <optgroup label="Интернатные учреждения по уходу за детьми">
+                            <option value="11">11. Дом ребенка</option>
+                            <option value="12">12. детские «дома милосердия» - Мехрибонлик</option>
+                            <option value="13">13. Дома-Интернаты Для Детей С Инвалидностью «Мурувват»</option>
+                            <option value="14">14. SOS Детские деревни</option>
+                            <option value="15">15. Детские дома семейного типа</option>
+                            <option value="16">16. Патронатная семья</option>
+                            <option value="17">17. Опека/ Попечительство</option>
+                        </optgroup>
+                        <optgroup label="Специализированные школы-интернаты">
+                            <option value="21">21. I тип - школы-интернаты для глухих детей</option>
+                            <option value="22">22. Тип II - школы-интернаты для слабослышащих и тех, кто впоследствии потеряет слух</option>
+                            <option value="23">23. III тип - специализированные школы-интернаты для слепых детей “Нурли Маскан”</option>
+                            <option value="24">24. IV тип - специализированные школы-интернаты “Нурли Маскан” для слабовидящих и тех, кто впоследствии потеряет зрение</option>
+                            <option value="25">25. V тип - школы-интернаты для детей с тяжелыми нарушениями речи</option>
+                            <option value="26">26. VI тип - школы-интернаты для детей с нарушениями опорно-двигательного аппарата</option>
+                            <option value="27">27. Тип VII - школы-интернаты для детей с задержкой психического развития</option>
+                            <option value="28">28. Тип VIII - поддержка школ-интернатов для детей с задержкой интеллектуального развития</option>
+                        </optgroup>
+                        <optgroup label="Другие учреждения">
+                            <option value="31">31. многопрофильные специализированные дошкольные образовательные организации</option>
+                            <option value="32">32. специализированные школы для детей с особыми образовательными потребностями</option>
+                            <option value="33">33. Республиканский специализированный колледж для лиц с ограниченными возможностями</option>
+                            <option value="34">34. специализированные  государственные образовательные учреждения санаторного типа</option>
+                            <option value="35">35. Республиканские  учебно-воспитательные учреждения (РУВУ)</option>
+                            <option value="36">36. Центры социальной и правовой помощи несовершеннолетним</option>
+                        </optgroup>
                     </select>
                 </div>
             </div>
@@ -873,19 +881,19 @@
                     </div>
                     <div class="flex items-center">
                         <input id="cm7b-4" type="radio" value="3" name="cm7b" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                        <label for="cm7b-4" class="ms-2 text-sm text-gray-900">4. Среднее специальное/профессиональное образование</label>
+                        <label for="cm7b-4" class="ms-2 text-sm text-gray-900">3. Незаконченное среднее специальное образование</label>
                     </div>
                     <div class="flex items-center">
                         <input id="cm7b-5" type="radio" value="4" name="cm7b" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                        <label for="cm7b-5" class="ms-2 text-sm text-gray-900">3. Незаконченное среднее специальное образование</label>
+                        <label for="cm7b-5" class="ms-2 text-sm text-gray-900">4. Среднее специальное/профессиональное образование</label>
                     </div>
                     <div class="flex items-center">
                         <input id="cm7b-6" type="radio" value="5" name="cm7b" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                        <label for="cm7b-6" class="ms-2 text-sm text-gray-900">6. Высшее образование</label>
+                        <label for="cm7b-6" class="ms-2 text-sm text-gray-900">5. Незаконченное высшее образование</label>
                     </div>
                     <div class="flex items-center">
                         <input id="cm7b-7" type="radio" value="6" name="cm7b" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                        <label for="cm7b-7" class="ms-2 text-sm text-gray-900">5. Незаконченное высшее образование</label>
+                        <label for="cm7b-7" class="ms-2 text-sm text-gray-900">6. Высшее образование</label>
                     </div>
                     <div class="flex items-center">
                         <input id="cm7b-9" type="radio" value="9" name="cm7b" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
@@ -1218,7 +1226,7 @@
                 <div>CT3a. Место рождения</div>
                 <div class="flex items-center">
                     <input type="checkbox" id="ct3a_out" name="ct3a_out" value="{{ct3a_out-1}}" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-100 rounded">
-                    <label for="ct3a_out" class="ms-2 text-sm text-gray-900">8. Мать рождена в другой стране</label>
+                    <label for="ct3a_out" class="ms-2 text-sm text-gray-900">8.Отец рожден в другой стране</label>
                 </div>
                 <div></div>
                 <div class="flex items-center">
@@ -1384,19 +1392,19 @@
                     </div>
                     <div class="flex items-center">
                         <input id="ct7b-4" type="radio" value="3" name="ct7b" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                        <label for="ct7b-4" class="ms-2 text-sm text-gray-900">4. Среднее специальное/профессиональное образование</label>
+                        <label for="ct7b-4" class="ms-2 text-sm text-gray-900">3. Незаконченное специальное образование</label>
                     </div>
                     <div class="flex items-center">
                         <input id="ct7b-5" type="radio" value="4" name="ct7b" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                        <label for="ct7b-5" class="ms-2 text-sm text-gray-900">3. Незаконченное специальное образование</label>
+                        <label for="ct7b-5" class="ms-2 text-sm text-gray-900">4. Среднее специальное/профессиональное образование</label>
                     </div>
                     <div class="flex items-center">
                         <input id="ct7b-6" type="radio" value="5" name="ct7b" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                        <label for="ct7b-6" class="ms-2 text-sm text-gray-900">6. Высшее образование</label>
+                        <label for="ct7b-6" class="ms-2 text-sm text-gray-900">5. Незаконченное высшее образование</label>
                     </div>
                     <div class="flex items-center">
                         <input id="ct7b-7" type="radio" value="6" name="ct7b" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                        <label for="ct7b-7" class="ms-2 text-sm text-gray-900">5. Незаконченное высшее образование</label>
+                        <label for="ct7b-7" class="ms-2 text-sm text-gray-900">6. Высшее образование</label>
                     </div>
                     <div class="flex items-center">
                         <input id="ct7b-9" type="radio" value="9" name="ct7b" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
@@ -1866,19 +1874,19 @@
                     </div>
                     <div class="flex items-center">
                         <input id="cg7b-4" type="radio" value="3" name="cg7b" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                        <label for="cg7b-4" class="ms-2 text-sm text-gray-900">4. Среднее специальное/профессиональное образование</label>
+                        <label for="cg7b-4" class="ms-2 text-sm text-gray-900">3. Незаконченное среднее специальное образование</label>
                     </div>
                     <div class="flex items-center">
                         <input id="cg7b-5" type="radio" value="4" name="cg7b" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                        <label for="cg7b-5" class="ms-2 text-sm text-gray-900">3. Незаконченное среднее специальное образование</label>
+                        <label for="cg7b-5" class="ms-2 text-sm text-gray-900">4. Среднее специальное/профессиональное образование</label>
                     </div>
                     <div class="flex items-center">
                         <input id="cg7b-6" type="radio" value="5" name="cg7b" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                        <label for="cg7b-6" class="ms-2 text-sm text-gray-900">6. Высшее образование</label>
+                        <label for="cg7b-6" class="ms-2 text-sm text-gray-900">5. Незаконченное высшее образование</label>
                     </div>
                     <div class="flex items-center">
                         <input id="cg7b-7" type="radio" value="6" name="cg7b" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                        <label for="cg7b-7" class="ms-2 text-sm text-gray-900">5. Незаконченное высшее образование</label>
+                        <label for="cg7b-7" class="ms-2 text-sm text-gray-900">6. Высшее образование</label>
                     </div>
                     <div class="flex items-center">
                         <input id="cg7b-9" type="radio" value="9" name="cg7b" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
@@ -2283,11 +2291,11 @@
             </div>
 
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
-                <div>2б. В каком классе учился ребенок?<small class="mb-1 my-2 block italic text-red-500">ПОСТАВЬТЕ 0 ( НОЛЬ) ДЛЯ ПОДГОТОВИТЕЛЬНОЙ ГРУППЫ</small></div>
+                <div>2б. В каком классе учился ребенок?</div>
                 <div>
                     <select id="qeduc2b" name="qeduc2b" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
                         <option value="-9">--- выбрать ---</option>
-NA
+                        <option value="0">0. Подготовительный класс</option>
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
@@ -3149,11 +3157,11 @@ NA
             </div>
 
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
-                <div>SCH2. В каком классе сейчас учится ребенок?<small class="my-2 block italic text-red-500">ПОСТАВЬТЕ 0 ( НОЛЬ) ДЛЯ ПОДГОТОВИТЕЛЬНОЙ ГРУППЫ</small></div>
+                <div>SCH2. В каком классе сейчас учится ребенок?</div>
                 <div>
                     <select id="sch2" name="sch2" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
                         <option value="-9">--- выбрать ---</option>
-NA
+                        <option value="0">0. Подготовительный класс</option>
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
@@ -4335,7 +4343,7 @@ NA
             </div>
 
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
-NA
+                <div>LK22_12. Есть ли у ребенка ВИЧ/СПИД?</div>
                 <div class="col-span-1 flex items-center gap-4">
                     <div class="flex items-center">
                         <input id="lk22_12-1" type="radio" value="1" name="lk22_12" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">

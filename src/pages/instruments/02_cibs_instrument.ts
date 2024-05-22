@@ -182,9 +182,6 @@ export const instrument2 = {
                 })
 
                 util.listen(disElements[x], "change", function () {
-                    if (disElements[x] == "sa5d") {
-                        util.resetSelect("sa5i", "-9", translations['t_choose']);
-                    }
 
                     const selectedDistrict = util.htmlElement(disElements[x]).value;
 
@@ -213,6 +210,39 @@ export const instrument2 = {
                                 util.htmlElement(setElements[x]).disabled = true;
                             }
                         }
+                    }
+
+                    if (disElements[x] == "sa5d") {
+                        const institutie = "sa5i";
+                        util.resetSelect(institutie, "-9", translations['t_choose']);
+
+                        const serv = districts[selectedDistrict].services;
+                        if (serv.length > 0) {
+                            for (let i = 0; i < serv.length; i++) {
+                                if (Number(services[serv[i]].type) < 20) {
+                                    let service_included = true;
+                                    if (insons[institution_code]) {
+                                        service_included = insons[institution_code].services.includes(serv[i]);
+                                    }
+
+                                    if (service_included) {
+                                        const serviciu = { ...services[serv[i]] } as KeyStringNumber;
+                                        util.addOption(
+                                            institutie,
+                                            serv[i],
+                                            serv[i] + ': ' + serviciu['name_' + lang]
+                                        );
+                                    }
+                                }
+                            }
+                        }
+
+                        const optgroup = document.createElement("optgroup");
+                        const option999 = document.createElement("option");
+                        option999.value = '999';
+                        option999.text = '999: ' + translations['not_in_registry'];
+                        optgroup.appendChild(option999);
+                        util.htmlElement(institutie).appendChild(optgroup);
                     }
                 })
             }
@@ -352,32 +382,23 @@ util.listen("lk3", "myChange", () => {
 
 
 util.listen("sa1", "myChange", () => {
+    const sa1 = util.standardDate(instrument.questions.sa1.value);
+    const years = util.diffDates(sa1, new Date("2024-05-01"), "years")
+    const months = util.diffDates(sa1, new Date("2024-05-01"), "months")
+
+    util.setValue('sa1y', years.toString());
+    util.setValue('sa1m', (months % 12).toString());
+
     if (util.inputsHaveValue(["sa1", "lk3"])) {
         const age = util.diffDates(
             util.standardDate(instrument.questions.lk3.value),
-            util.standardDate(instrument.questions.sa1.value)
+            sa1
         )
 
         if (!Number.isNaN(age)) {
             util.setValue("sa1a", age.toString());
         }
     }
-
-
-    const years = util.diffDates(
-        util.standardDate(instrument.questions.sa1.value),
-        new Date("2024-05-01"),
-        "years"
-    )
-
-    const months = util.diffDates(
-        util.standardDate(instrument.questions.sa1.value),
-        new Date("2024-05-01"),
-        "months"
-    )
-
-    util.setValue('sa1y', years.toString());
-    util.setValue('sa1m', (months % 12).toString());
 });
 
 util.listen("sa1a", "myChange", () => {
@@ -595,7 +616,7 @@ util.listen(lk3sa1, "myChange", () => {
         const lk3 = util.htmlElement("lk3").value;
         const sa1 = util.htmlElement("sa1").value;
 
-        const message = translations['must_be_earlier'].replace("X", "LK3").replace("Y", "SA1");
+        const message = translations['must_be_later_or_equal'].replace("X", "LK3").replace("Y", "SA1");
 
         errorHandler.removeError(lk3sa1, message);
 

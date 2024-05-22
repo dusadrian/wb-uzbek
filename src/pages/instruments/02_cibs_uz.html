@@ -417,6 +417,8 @@
 
             <input type="hidden" id="sa3d" name="sa3d" />
 
+            <p class="mt-10">SA5. Ushbu maktabga qabul qilinishidan oldin bola qaysi turdagi muassasaga joylashtirilgan edi?</p>
+
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
                 <div>SA5r. Viloyat</div>
                 <div>
@@ -456,27 +458,33 @@
                 <div>
                     <select id="sa5t" name="sa5t" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
                         <option value="-9">--- tanlang ---</option>
-                        <option value="11">11. Bolalar uyi</option>
-                        <option value="12">12. Mehribonlik uyi</option>
-                        <option value="13">13. “Muruvvat” nogironligi bo’lgan bolalar uchun internat uyi</option>
-                        <option value="14">14. SOS-bolalar qishloqlari / oilalari</option>
-                        <option value="15">15. Oila turidagi bolalar uyi</option>
-                        <option value="16">16. Patronat oila</option>
-                        <option value="17">17. Vasiylik/homiylik</option>
-                        <option value="21">21. I tur - kar bolalar uchun internatlar</option>
-                        <option value="22">22. II tur - eshitish qobiliyati zaif va kelgusida eshitish qobiliyatini yo’qotadiganlar uchun internatlar</option>
-                        <option value="23">23. III tur - “Nurli maskan” ko’zi ojiz bolalar uchun ixtisoslashtirilgan maktab-internatlari</option>
-                        <option value="24">24. IV tur - ko’zi ojiz va keyinchalik ko’rish qobiliyatini yo’qotadiganlar uchun “Noorli maskan” ixtisoslashtirilgan maktab-internatlari</option>
-                        <option value="25">25. V tur - og’ir nutq buzilishi bo’lgan bolalar uchun internatlar</option>
-                        <option value="26">26. VI tur - tayanch-harakat apparati nuqsonlari bo’lgan bolalar uchun internatlar</option>
-                        <option value="27">27. VII tur - aqli zaif bolalar maktab-internatlari</option>
-                        <option value="28">28. VIII tur - aqli zaif bolalar maktab-internatlarini qo’llash</option>
-                        <option value="31">31. Ko'p tarmoqli ixtisoslashtirilgan maktabgacha ta'lim tashkilotlari</option>
-                        <option value="32">32. Maxsus ta'lim ehtiyojlariga ega bolalar uchun ixtisoslashtirilgan maktablar</option>
-                        <option value="33">33. Imkoniyatlari cheklangan shaxslar uchun ixtisoslashtirilgan respublika kasb-hunar kolleji</option>
-                        <option value="34">34. Sanatoriy turidagi ixtisoslashtirilgan davlat ta'lim muassasalari</option>
-                        <option value="35">35. Respublika ta'lim-tarbiya muassasalari (RTTM)</option>
-                        <option value="36">36. Voyaga yetmaganlar uchun ijtimoiy va huquqiy yordam markazlari</option>
+                        <optgroup label="Bolalarga vasiylik qilish internat muassasalari">
+                            <option value="11">11. Bolalar uyi</option>
+                            <option value="12">12. Mehribonlik uyi</option>
+                            <option value="13">13. “Muruvvat” nogironligi bo’lgan bolalar uchun internat uyi</option>
+                            <option value="14">14. SOS-bolalar qishloqlari / oilalari</option>
+                            <option value="15">15. Oila turidagi bolalar uyi</option>
+                            <option value="16">16. Patronat oila</option>
+                            <option value="17">17. Vasiylik/homiylik</option>
+                        </optgroup>
+                        <optgroup label="Ixtisoslashtirilgan maktab-internatlar">
+                            <option value="21">21. I tur - kar bolalar uchun internatlar</option>
+                            <option value="22">22. II tur - eshitish qobiliyati zaif va kelgusida eshitish qobiliyatini yo’qotadiganlar uchun internatlar</option>
+                            <option value="23">23. III tur - “Nurli maskan” ko’zi ojiz bolalar uchun ixtisoslashtirilgan maktab-internatlari</option>
+                            <option value="24">24. IV tur - ko’zi ojiz va keyinchalik ko’rish qobiliyatini yo’qotadiganlar uchun “Noorli maskan” ixtisoslashtirilgan maktab-internatlari</option>
+                            <option value="25">25. V tur - og’ir nutq buzilishi bo’lgan bolalar uchun internatlar</option>
+                            <option value="26">26. VI tur - tayanch-harakat apparati nuqsonlari bo’lgan bolalar uchun internatlar</option>
+                            <option value="27">27. VII tur - aqli zaif bolalar maktab-internatlari</option>
+                            <option value="28">28. VIII tur - aqli zaif bolalar maktab-internatlarini qo’llash</option>
+                        </optgroup>
+                        <optgroup label="Boshqa muassasalar">
+                            <option value="31">31. Ko'p tarmoqli ixtisoslashtirilgan maktabgacha ta'lim tashkilotlari</option>
+                            <option value="32">32. Maxsus ta'lim ehtiyojlariga ega bolalar uchun ixtisoslashtirilgan maktablar</option>
+                            <option value="33">33. Imkoniyatlari cheklangan shaxslar uchun ixtisoslashtirilgan respublika kasb-hunar kolleji</option>
+                            <option value="34">34. Sanatoriy turidagi ixtisoslashtirilgan davlat ta'lim muassasalari</option>
+                            <option value="35">35. Respublika ta'lim-tarbiya muassasalari (RTTM)</option>
+                            <option value="36">36. Voyaga yetmaganlar uchun ijtimoiy va huquqiy yordam markazlari</option>
+                        </optgroup>
                     </select>
                 </div>
             </div>
@@ -873,19 +881,19 @@
                     </div>
                     <div class="flex items-center">
                         <input id="cm7b-4" type="radio" value="3" name="cm7b" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                        <label for="cm7b-4" class="ms-2 text-sm text-gray-900">4. O'rta maxsus/kasb-hunar ta'limi</label>
+                        <label for="cm7b-4" class="ms-2 text-sm text-gray-900">3. Tugallanmagan o'rta maxsus ta'limi</label>
                     </div>
                     <div class="flex items-center">
                         <input id="cm7b-5" type="radio" value="4" name="cm7b" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                        <label for="cm7b-5" class="ms-2 text-sm text-gray-900">3. Tugallanmagan o'rta maxsus ta'limi</label>
+                        <label for="cm7b-5" class="ms-2 text-sm text-gray-900">4. O'rta maxsus/kasb-hunar ta'limi</label>
                     </div>
                     <div class="flex items-center">
                         <input id="cm7b-6" type="radio" value="5" name="cm7b" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                        <label for="cm7b-6" class="ms-2 text-sm text-gray-900">6. Oliy ma'lumotli</label>
+                        <label for="cm7b-6" class="ms-2 text-sm text-gray-900">5. Tugallanmagan oliy ma'lumot</label>
                     </div>
                     <div class="flex items-center">
                         <input id="cm7b-7" type="radio" value="6" name="cm7b" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                        <label for="cm7b-7" class="ms-2 text-sm text-gray-900">5. Tugallanmagan oliy ma'lumot</label>
+                        <label for="cm7b-7" class="ms-2 text-sm text-gray-900">6. Oliy ma'lumotli</label>
                     </div>
                     <div class="flex items-center">
                         <input id="cm7b-9" type="radio" value="9" name="cm7b" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
@@ -1218,7 +1226,7 @@
                 <div>CT3a. Tug'ilgan joyi</div>
                 <div class="flex items-center">
                     <input type="checkbox" id="ct3a_out" name="ct3a_out" value="{{ct3a_out-1}}" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-100 rounded">
-                    <label for="ct3a_out" class="ms-2 text-sm text-gray-900">8. Ona boshqa mamlakatda tug'ilgan</label>
+                    <label for="ct3a_out" class="ms-2 text-sm text-gray-900">8.Ota boshqa mamlakatda tug'ilgan</label>
                 </div>
                 <div></div>
                 <div class="flex items-center">
@@ -1384,19 +1392,19 @@
                     </div>
                     <div class="flex items-center">
                         <input id="ct7b-4" type="radio" value="3" name="ct7b" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                        <label for="ct7b-4" class="ms-2 text-sm text-gray-900">4. O'rta maxsus/kasb-hunar ta'limi</label>
+                        <label for="ct7b-4" class="ms-2 text-sm text-gray-900">3. Tugallanmagan o'rta maxsus</label>
                     </div>
                     <div class="flex items-center">
                         <input id="ct7b-5" type="radio" value="4" name="ct7b" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                        <label for="ct7b-5" class="ms-2 text-sm text-gray-900">3. Tugallanmagan o'rta maxsus</label>
+                        <label for="ct7b-5" class="ms-2 text-sm text-gray-900">4. O'rta maxsus/kasb-hunar ta'limi</label>
                     </div>
                     <div class="flex items-center">
                         <input id="ct7b-6" type="radio" value="5" name="ct7b" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                        <label for="ct7b-6" class="ms-2 text-sm text-gray-900">6. Oliy ma'lumotli</label>
+                        <label for="ct7b-6" class="ms-2 text-sm text-gray-900">5. Tugallanmagan oliy ma'lumot</label>
                     </div>
                     <div class="flex items-center">
                         <input id="ct7b-7" type="radio" value="6" name="ct7b" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                        <label for="ct7b-7" class="ms-2 text-sm text-gray-900">5. Tugallanmagan oliy ma'lumot</label>
+                        <label for="ct7b-7" class="ms-2 text-sm text-gray-900">6. Oliy ma'lumotli</label>
                     </div>
                     <div class="flex items-center">
                         <input id="ct7b-9" type="radio" value="9" name="ct7b" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
@@ -1866,19 +1874,19 @@ NA
                     </div>
                     <div class="flex items-center">
                         <input id="cg7b-4" type="radio" value="3" name="cg7b" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                        <label for="cg7b-4" class="ms-2 text-sm text-gray-900">4. O'rta maxsus/kasb-hunar ta'limi</label>
+                        <label for="cg7b-4" class="ms-2 text-sm text-gray-900">3. Tugallanmagan o'rta maxsus ta'limi</label>
                     </div>
                     <div class="flex items-center">
                         <input id="cg7b-5" type="radio" value="4" name="cg7b" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                        <label for="cg7b-5" class="ms-2 text-sm text-gray-900">3. Tugallanmagan o'rta maxsus ta'limi</label>
+                        <label for="cg7b-5" class="ms-2 text-sm text-gray-900">4. O'rta maxsus/kasb-hunar ta'limi</label>
                     </div>
                     <div class="flex items-center">
                         <input id="cg7b-6" type="radio" value="5" name="cg7b" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                        <label for="cg7b-6" class="ms-2 text-sm text-gray-900">6. Oliy ma'lumotli</label>
+                        <label for="cg7b-6" class="ms-2 text-sm text-gray-900">5. Tugallanmagan oliy ma'lumot</label>
                     </div>
                     <div class="flex items-center">
                         <input id="cg7b-7" type="radio" value="6" name="cg7b" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                        <label for="cg7b-7" class="ms-2 text-sm text-gray-900">5. Tugallanmagan oliy ma'lumot</label>
+                        <label for="cg7b-7" class="ms-2 text-sm text-gray-900">6. Oliy ma'lumotli</label>
                     </div>
                     <div class="flex items-center">
                         <input id="cg7b-9" type="radio" value="9" name="cg7b" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
@@ -2283,11 +2291,11 @@ NA
             </div>
 
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
-                <div>2b. Bola qaysi sinfda o'qigan edi?<small class="mb-1 my-2 block italic text-red-500">TAYYORLOV GURUHI UCHUN 0 ( NOL) QO'YING</small></div>
+                <div>2b. Bola qaysi sinfda o'qigan edi?</div>
                 <div>
                     <select id="qeduc2b" name="qeduc2b" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
                         <option value="-9">--- tanlang ---</option>
-NA
+                        <option value="0">0. Tayyorlov sinfi</option>
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
@@ -3149,11 +3157,11 @@ NA
             </div>
 
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
-                <div>SCH2. Hozirda bola qaysi sinfda o'qiydi?<small class="my-2 block italic text-red-500">TAYYORLOV GURUHI UCHUN 0 ( NOL) QO'YING</small></div>
+                <div>SCH2. Hozirda bola qaysi sinfda o'qiydi?</div>
                 <div>
                     <select id="sch2" name="sch2" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
                         <option value="-9">--- tanlang ---</option>
-NA
+                        <option value="0">0. Tayyorlov sinfi</option>
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
@@ -4335,7 +4343,7 @@ NA
             </div>
 
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
-NA
+                <div>LK22_12. Bola OIV/OITS bilan kasalmi?</div>
                 <div class="col-span-1 flex items-center gap-4">
                     <div class="flex items-center">
                         <input id="lk22_12-1" type="radio" value="1" name="lk22_12" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">

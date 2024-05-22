@@ -233,7 +233,7 @@ export const questions: QuestionObjectType = {
         order: 20,
         active: function() {return(true)},
         skip: false,
-         checked: 0
+        checked: 0
     },
     'lk14a_dk': {
         name: 'lk14a_dk',
@@ -245,7 +245,7 @@ export const questions: QuestionObjectType = {
         order: 21,
         active: function() {return(true)},
         skip: false,
-         checked: 0
+        checked: 0
     },
     'lk14b': {
         name: 'lk14b',
@@ -356,7 +356,7 @@ export const questions: QuestionObjectType = {
         order: 31,
         active: function() {return(Number(instrument.questions.qfam1.value) == 1 || Number(instrument.questions.qfam1.value) == 2 || Number(instrument.questions.qfam1.value) == 3)},
         skip: false,
-         checked: 0
+        checked: 0
     },
     'qfam2_2': {
         name: 'qfam2_2',
@@ -368,7 +368,7 @@ export const questions: QuestionObjectType = {
         order: 32,
         active: function() {return(Number(instrument.questions.qfam1.value) == 1 || Number(instrument.questions.qfam1.value) == 2 || Number(instrument.questions.qfam1.value) == 3)},
         skip: false,
-         checked: 0
+        checked: 0
     },
     'qfam2_3': {
         name: 'qfam2_3',
@@ -380,7 +380,7 @@ export const questions: QuestionObjectType = {
         order: 33,
         active: function() {return(Number(instrument.questions.qfam1.value) == 1 || Number(instrument.questions.qfam1.value) == 2 || Number(instrument.questions.qfam1.value) == 3)},
         skip: false,
-         checked: 0
+        checked: 0
     },
     'qfam2_4': {
         name: 'qfam2_4',
@@ -392,7 +392,7 @@ export const questions: QuestionObjectType = {
         order: 34,
         active: function() {return(Number(instrument.questions.qfam1.value) == 1 || Number(instrument.questions.qfam1.value) == 2 || Number(instrument.questions.qfam1.value) == 3)},
         skip: false,
-         checked: 0
+        checked: 0
     },
     'qfam2_5': {
         name: 'qfam2_5',
@@ -404,7 +404,7 @@ export const questions: QuestionObjectType = {
         order: 35,
         active: function() {return(Number(instrument.questions.qfam1.value) == 1 || Number(instrument.questions.qfam1.value) == 2 || Number(instrument.questions.qfam1.value) == 3)},
         skip: false,
-         checked: 0
+        checked: 0
     },
     'qfam2_6': {
         name: 'qfam2_6',
@@ -416,7 +416,7 @@ export const questions: QuestionObjectType = {
         order: 36,
         active: function() {return(Number(instrument.questions.qfam1.value) == 1 || Number(instrument.questions.qfam1.value) == 2 || Number(instrument.questions.qfam1.value) == 3)},
         skip: false,
-         checked: 0
+        checked: 0
     },
     'qfam2_7': {
         name: 'qfam2_7',
@@ -428,7 +428,7 @@ export const questions: QuestionObjectType = {
         order: 37,
         active: function() {return(Number(instrument.questions.qfam1.value) == 1 || Number(instrument.questions.qfam1.value) == 2 || Number(instrument.questions.qfam1.value) == 3)},
         skip: false,
-         checked: 0
+        checked: 0
     },
     'qfam2_8': {
         name: 'qfam2_8',
@@ -440,7 +440,7 @@ export const questions: QuestionObjectType = {
         order: 38,
         active: function() {return(Number(instrument.questions.qfam1.value) == 1 || Number(instrument.questions.qfam1.value) == 2 || Number(instrument.questions.qfam1.value) == 3)},
         skip: false,
-         checked: 0
+        checked: 0
     },
     'qfam2_9': {
         name: 'qfam2_9',
@@ -452,7 +452,7 @@ export const questions: QuestionObjectType = {
         order: 39,
         active: function() {return(Number(instrument.questions.qfam1.value) == 1 || Number(instrument.questions.qfam1.value) == 2 || Number(instrument.questions.qfam1.value) == 3)},
         skip: false,
-         checked: 0
+        checked: 0
     },
     'qfam2_90': {
         name: 'qfam2_90',
@@ -464,7 +464,7 @@ export const questions: QuestionObjectType = {
         order: 40,
         active: function() {return(Number(instrument.questions.qfam1.value) == 1 || Number(instrument.questions.qfam1.value) == 2 || Number(instrument.questions.qfam1.value) == 3)},
         skip: false,
-         checked: 0
+        checked: 0
     },
     'qfam4': {
         name: 'qfam4',
@@ -586,7 +586,7 @@ export const questions: QuestionObjectType = {
         order: 51,
         active: function() {return(Number(instrument.questions.qfam1.value) == 7)},
         skip: false,
-         checked: 0
+        checked: 0
     },
     'sa4_2': {
         name: 'sa4_2',
@@ -598,7 +598,7 @@ export const questions: QuestionObjectType = {
         order: 52,
         active: function() {return(Number(instrument.questions.qfam1.value) == 7)},
         skip: false,
-         checked: 0
+        checked: 0
     },
     'sa4_3': {
         name: 'sa4_3',
@@ -610,7 +610,7 @@ export const questions: QuestionObjectType = {
         order: 53,
         active: function() {return(Number(instrument.questions.qfam1.value) == 7)},
         skip: false,
-         checked: 0
+        checked: 0
     },
     'sa4_4': {
         name: 'sa4_4',
@@ -622,7 +622,7 @@ export const questions: QuestionObjectType = {
         order: 54,
         active: function() {return(Number(instrument.questions.qfam1.value) == 7)},
         skip: false,
-         checked: 0
+        checked: 0
     },
     'sa4_5': {
         name: 'sa4_5',
@@ -634,7 +634,7 @@ export const questions: QuestionObjectType = {
         order: 55,
         active: function() {return(Number(instrument.questions.qfam1.value) == 7)},
         skip: false,
-         checked: 0
+        checked: 0
     },
     'sa4_6': {
         name: 'sa4_6',
@@ -646,7 +646,7 @@ export const questions: QuestionObjectType = {
         order: 56,
         active: function() {return(Number(instrument.questions.qfam1.value) == 7)},
         skip: false,
-         checked: 0
+        checked: 0
     },
     'sa4_7': {
         name: 'sa4_7',
@@ -658,7 +658,7 @@ export const questions: QuestionObjectType = {
         order: 57,
         active: function() {return(Number(instrument.questions.qfam1.value) == 7)},
         skip: false,
-         checked: 0
+        checked: 0
     },
     'sa4_8': {
         name: 'sa4_8',
@@ -670,7 +670,7 @@ export const questions: QuestionObjectType = {
         order: 58,
         active: function() {return(Number(instrument.questions.qfam1.value) == 7)},
         skip: false,
-         checked: 0
+        checked: 0
     },
     'sa4_9': {
         name: 'sa4_9',
@@ -682,7 +682,7 @@ export const questions: QuestionObjectType = {
         order: 59,
         active: function() {return(Number(instrument.questions.qfam1.value) == 7)},
         skip: false,
-         checked: 0
+        checked: 0
     },
     'sa4_10': {
         name: 'sa4_10',
@@ -694,7 +694,7 @@ export const questions: QuestionObjectType = {
         order: 60,
         active: function() {return(Number(instrument.questions.qfam1.value) == 7)},
         skip: false,
-         checked: 0
+        checked: 0
     },
     'sa4_10_other': {
         name: 'sa4_10_other',
@@ -860,7 +860,7 @@ export const questions: QuestionObjectType = {
         order: 75,
         active: function() {return(Number(instrument.questions.cm1c.value) ==  2)},
         skip: false,
-         checked: 0
+        checked: 0
     },
     'cm3a_dk': {
         name: 'cm3a_dk',
@@ -872,7 +872,7 @@ export const questions: QuestionObjectType = {
         order: 76,
         active: function() {return(Number(instrument.questions.cm1c.value) ==  2)},
         skip: false,
-         checked: 0
+        checked: 0
     },
     'cm3b': {
         name: 'cm3b',
@@ -1214,7 +1214,7 @@ export const questions: QuestionObjectType = {
         order: 107,
         active: function() {return(Number(instrument.questions.ct1c.value) ==  2 || Number(instrument.questions.ct1c.value) ==  4)},
         skip: false,
-         checked: 0
+        checked: 0
     },
     'ct3a_dk': {
         name: 'ct3a_dk',
@@ -1226,7 +1226,7 @@ export const questions: QuestionObjectType = {
         order: 108,
         active: function() {return(Number(instrument.questions.ct1c.value) ==  2 || Number(instrument.questions.ct1c.value) ==  4)},
         skip: false,
-         checked: 0
+        checked: 0
     },
     'ct3b': {
         name: 'ct3b',
@@ -1480,7 +1480,7 @@ export const questions: QuestionObjectType = {
         order: 131,
         active: function() {return(true)},
         skip: false,
-         checked: 0
+        checked: 0
     },
     'cg1a': {
         name: 'cg1a',
@@ -1781,7 +1781,7 @@ export const questions: QuestionObjectType = {
     },
     'sa1y': {
         name: 'sa1y',
-        type: 'number',
+        type: 'input',
         value: '-9',
         disabled: false,
         hidden: true,
@@ -1792,7 +1792,7 @@ export const questions: QuestionObjectType = {
     },
     'sa1m': {
         name: 'sa1m',
-        type: 'number',
+        type: 'input',
         value: '-9',
         disabled: false,
         hidden: true,
@@ -2064,7 +2064,7 @@ export const questions: QuestionObjectType = {
         order: 184,
         active: function() {return(true)},
         skip: false,
-         checked: 0
+        checked: 0
     },
     'prehealth5a2': {
         name: 'prehealth5a2',
@@ -2076,7 +2076,7 @@ export const questions: QuestionObjectType = {
         order: 185,
         active: function() {return(true)},
         skip: false,
-         checked: 0
+        checked: 0
     },
     'prehealth5a3': {
         name: 'prehealth5a3',
@@ -2088,7 +2088,7 @@ export const questions: QuestionObjectType = {
         order: 186,
         active: function() {return(true)},
         skip: false,
-         checked: 0
+        checked: 0
     },
     'prehealth5a4': {
         name: 'prehealth5a4',
@@ -2100,7 +2100,7 @@ export const questions: QuestionObjectType = {
         order: 187,
         active: function() {return(true)},
         skip: false,
-         checked: 0
+        checked: 0
     },
     'prehealth5a5': {
         name: 'prehealth5a5',
@@ -2112,7 +2112,7 @@ export const questions: QuestionObjectType = {
         order: 188,
         active: function() {return(true)},
         skip: false,
-         checked: 0
+        checked: 0
     },
     'prehealth5a6': {
         name: 'prehealth5a6',
@@ -2124,7 +2124,7 @@ export const questions: QuestionObjectType = {
         order: 189,
         active: function() {return(true)},
         skip: false,
-         checked: 0
+        checked: 0
     },
     'prehealth5a7': {
         name: 'prehealth5a7',
@@ -2136,7 +2136,7 @@ export const questions: QuestionObjectType = {
         order: 190,
         active: function() {return(true)},
         skip: false,
-         checked: 0
+        checked: 0
     },
     'prehealth5a8': {
         name: 'prehealth5a8',
@@ -2148,7 +2148,7 @@ export const questions: QuestionObjectType = {
         order: 191,
         active: function() {return(true)},
         skip: false,
-         checked: 0
+        checked: 0
     },
     'prehealth5a9': {
         name: 'prehealth5a9',
@@ -2160,7 +2160,7 @@ export const questions: QuestionObjectType = {
         order: 192,
         active: function() {return(true)},
         skip: false,
-         checked: 0
+        checked: 0
     },
     'prehealth5a9_other': {
         name: 'prehealth5a9_other',
@@ -2183,7 +2183,7 @@ export const questions: QuestionObjectType = {
         order: 194,
         active: function() {return(true)},
         skip: false,
-         checked: 0
+        checked: 0
     },
     'prehealth5b': {
         name: 'prehealth5b',
@@ -2349,7 +2349,7 @@ export const questions: QuestionObjectType = {
         order: 209,
         active: function() {return(true)},
         skip: false,
-         checked: 0
+        checked: 0
     },
     'predif7_other': {
         name: 'predif7_other',
@@ -2394,7 +2394,7 @@ export const questions: QuestionObjectType = {
         order: 213,
         active: function() {return(Number(instrument.questions.preduc6a.value) == 1)},
         skip: false,
-         checked: 0
+        checked: 0
     },
     'preduc6b2': {
         name: 'preduc6b2',
@@ -2406,7 +2406,7 @@ export const questions: QuestionObjectType = {
         order: 214,
         active: function() {return(Number(instrument.questions.preduc6a.value) == 1)},
         skip: false,
-         checked: 0
+        checked: 0
     },
     'preduc6b3': {
         name: 'preduc6b3',
@@ -2418,7 +2418,7 @@ export const questions: QuestionObjectType = {
         order: 215,
         active: function() {return(Number(instrument.questions.preduc6a.value) == 1)},
         skip: false,
-         checked: 0
+        checked: 0
     },
     'preduc6b4': {
         name: 'preduc6b4',
@@ -2430,7 +2430,7 @@ export const questions: QuestionObjectType = {
         order: 216,
         active: function() {return(Number(instrument.questions.preduc6a.value) == 1)},
         skip: false,
-         checked: 0
+        checked: 0
     },
     'preduc6b5': {
         name: 'preduc6b5',
@@ -2442,7 +2442,7 @@ export const questions: QuestionObjectType = {
         order: 217,
         active: function() {return(Number(instrument.questions.preduc6a.value) == 1)},
         skip: false,
-         checked: 0
+        checked: 0
     },
     'preduc6b6': {
         name: 'preduc6b6',
@@ -2454,7 +2454,7 @@ export const questions: QuestionObjectType = {
         order: 218,
         active: function() {return(Number(instrument.questions.preduc6a.value) == 1)},
         skip: false,
-         checked: 0
+        checked: 0
     },
     'preduc6b7': {
         name: 'preduc6b7',
@@ -2466,7 +2466,7 @@ export const questions: QuestionObjectType = {
         order: 219,
         active: function() {return(Number(instrument.questions.preduc6a.value) == 1)},
         skip: false,
-         checked: 0
+        checked: 0
     },
     'preduc6b8': {
         name: 'preduc6b8',
@@ -2478,7 +2478,7 @@ export const questions: QuestionObjectType = {
         order: 220,
         active: function() {return(Number(instrument.questions.preduc6a.value) == 1)},
         skip: false,
-         checked: 0
+        checked: 0
     },
     'preduc6b9': {
         name: 'preduc6b9',
@@ -2490,7 +2490,7 @@ export const questions: QuestionObjectType = {
         order: 221,
         active: function() {return(Number(instrument.questions.preduc6a.value) == 1)},
         skip: false,
-         checked: 0
+        checked: 0
     },
     'preduc6b10': {
         name: 'preduc6b10',
@@ -2502,7 +2502,7 @@ export const questions: QuestionObjectType = {
         order: 222,
         active: function() {return(Number(instrument.questions.preduc6a.value) == 1)},
         skip: false,
-         checked: 0
+        checked: 0
     },
     'preduc6b11': {
         name: 'preduc6b11',
@@ -2514,7 +2514,7 @@ export const questions: QuestionObjectType = {
         order: 223,
         active: function() {return(Number(instrument.questions.preduc6a.value) == 1)},
         skip: false,
-         checked: 0
+        checked: 0
     },
     'preduc6b11_other': {
         name: 'preduc6b11_other',
@@ -2548,7 +2548,7 @@ export const questions: QuestionObjectType = {
         order: 226,
         active: function() {return(Number(instrument.questions.preduc6a.value) == 1 && Number(instrument.questions.preduc6b7.value) == 1 && Number(instrument.questions.preduc6c.value) == 1)},
         skip: false,
-         checked: 0
+        checked: 0
     },
     'preduc6d2': {
         name: 'preduc6d2',
@@ -2560,7 +2560,7 @@ export const questions: QuestionObjectType = {
         order: 227,
         active: function() {return(Number(instrument.questions.preduc6a.value) == 1 && Number(instrument.questions.preduc6b7.value) == 1 && Number(instrument.questions.preduc6c.value) == 1)},
         skip: false,
-         checked: 0
+        checked: 0
     },
     'preduc6d3': {
         name: 'preduc6d3',
@@ -2572,7 +2572,7 @@ export const questions: QuestionObjectType = {
         order: 228,
         active: function() {return(Number(instrument.questions.preduc6a.value) == 1 && Number(instrument.questions.preduc6b7.value) == 1 && Number(instrument.questions.preduc6c.value) == 1)},
         skip: false,
-         checked: 0
+        checked: 0
     },
     'preduc6d4': {
         name: 'preduc6d4',
@@ -2584,7 +2584,7 @@ export const questions: QuestionObjectType = {
         order: 229,
         active: function() {return(Number(instrument.questions.preduc6a.value) == 1 && Number(instrument.questions.preduc6b7.value) == 1 && Number(instrument.questions.preduc6c.value) == 1)},
         skip: false,
-         checked: 0
+        checked: 0
     },
     'preduc6d4_other': {
         name: 'preduc6d4_other',
@@ -3069,7 +3069,7 @@ export const questions: QuestionObjectType = {
         order: 273,
         active: function() {return(Number(instrument.questions.lk22_1.value) == 1)},
         skip: false,
-         checked: 0
+        checked: 0
     },
     'lk22_2_2': {
         name: 'lk22_2_2',
@@ -3081,7 +3081,7 @@ export const questions: QuestionObjectType = {
         order: 274,
         active: function() {return(Number(instrument.questions.lk22_1.value) == 1)},
         skip: false,
-         checked: 0
+        checked: 0
     },
     'lk22_2_3': {
         name: 'lk22_2_3',
@@ -3093,7 +3093,7 @@ export const questions: QuestionObjectType = {
         order: 275,
         active: function() {return(Number(instrument.questions.lk22_1.value) == 1)},
         skip: false,
-         checked: 0
+        checked: 0
     },
     'lk22_2_4': {
         name: 'lk22_2_4',
@@ -3105,7 +3105,7 @@ export const questions: QuestionObjectType = {
         order: 276,
         active: function() {return(Number(instrument.questions.lk22_1.value) == 1)},
         skip: false,
-         checked: 0
+        checked: 0
     },
     'lk22_2_5': {
         name: 'lk22_2_5',
@@ -3117,7 +3117,7 @@ export const questions: QuestionObjectType = {
         order: 277,
         active: function() {return(Number(instrument.questions.lk22_1.value) == 1)},
         skip: false,
-         checked: 0
+        checked: 0
     },
     'lk22_2_5_other': {
         name: 'lk22_2_5_other',
@@ -3349,7 +3349,7 @@ export const questions: QuestionObjectType = {
         order: 298,
         active: function() {return(Number(instrument.questions.med1.value) == 1 && Number(instrument.questions.med2.value) == 1)},
         skip: false,
-         checked: 0
+        checked: 0
     },
     'med3_2': {
         name: 'med3_2',
@@ -3361,7 +3361,7 @@ export const questions: QuestionObjectType = {
         order: 299,
         active: function() {return(Number(instrument.questions.med1.value) == 1 && Number(instrument.questions.med2.value) == 1)},
         skip: false,
-         checked: 0
+        checked: 0
     },
     'med3_3': {
         name: 'med3_3',
@@ -3373,7 +3373,7 @@ export const questions: QuestionObjectType = {
         order: 300,
         active: function() {return(Number(instrument.questions.med1.value) == 1 && Number(instrument.questions.med2.value) == 1)},
         skip: false,
-         checked: 0
+        checked: 0
     },
     'med3_4': {
         name: 'med3_4',
@@ -3385,7 +3385,7 @@ export const questions: QuestionObjectType = {
         order: 301,
         active: function() {return(Number(instrument.questions.med1.value) == 1 && Number(instrument.questions.med2.value) == 1)},
         skip: false,
-         checked: 0
+        checked: 0
     },
     'med3_4_other': {
         name: 'med3_4_other',
@@ -3474,7 +3474,7 @@ export const questions: QuestionObjectType = {
         order: 309,
         active: function() {return(true)},
         skip: false,
-         checked: 0
+        checked: 0
     },
     'todif7_other': {
         name: 'todif7_other',

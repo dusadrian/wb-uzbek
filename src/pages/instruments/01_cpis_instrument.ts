@@ -45,10 +45,10 @@ const sh3_end_dates = [
     'sh3_s1d', 'sh3_s2d', 'sh3_s3d', 'sh3_s4d', 'sh3_s5d', 'sh3_s6d', 'sh3_s7d', 'sh3_s8d', 'sh3_s9d', 'sh3_s10d'
 ];
 
-const regElements = ["reg", "lk14b", "cm3b", "cm10c", "cm11c", "ct3b", "ct10c", "ct11c", "cg10c", "cg11c", "sa3a", "sa5r"];
-const disElements = ["dis", "lk14c", "cm3c", "cm10d", "cm11d", "ct3c", "ct10d", "ct11d", "cg10d", "cg11d", "sa3b", "sa5d"];
-const setElements = ["", "lk14d", "cm3d", "cm10e", "cm11e", "ct3d", "ct10e", "ct11e", "cg10e", "cg11e", "sa3c", ""];
-const typeElements = ["", "lk14e", "cm3e", "cm10f", "cm11f", "ct3e", "ct10f", "ct11f", "cg10f", "cg11f", "sa3d", ""];
+const regElements =  ["reg", "lk14b", "cm3b", "cm10c", "cm11c", "ct3b", "ct10c", "ct11c", "cg10c", "cg11c", "sa3a", "sa5r"];
+const disElements =  ["dis", "lk14c", "cm3c", "cm10d", "cm11d", "ct3c", "ct10d", "ct11d", "cg10d", "cg11d", "sa3b", "sa5d"];
+const setElements =  ["",    "lk14d", "cm3d", "cm10e", "cm11e", "ct3d", "ct10e", "ct11e", "cg10e", "cg11e", "sa3c", ""];
+const typeElements = ["",    "lk14e", "cm3e", "cm10f", "cm11f", "ct3e", "ct10f", "ct11f", "cg10f", "cg11f", "sa3d", ""];
 
 let regionCode = '';
 let userUUID = '';
@@ -249,14 +249,6 @@ export const instrument1 = {
                 });
 
                 util.listen(disElements[x], "change", function () {
-
-                    if (disElements[x] == "sa5d") {
-                        util.resetSelect("sa5i", "-9", translations['t_choose']);
-                    }
-
-                    if (disElements[x] == "dis") {
-                        util.resetSelect("sh5", "-9", translations['t_choose']);
-                    }
 
                     const selectedDistrict = util.htmlElement(disElements[x]).value;
 

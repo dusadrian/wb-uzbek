@@ -417,6 +417,8 @@
 
             <input type="hidden" id="sa3d" name="sa3d" />
 
+            <p class="mt-10">SA5. In what type of institution was the child placed into before being admitted to this school?</p>
+
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
                 <div>SA5r. Region</div>
                 <div>
@@ -456,27 +458,33 @@
                 <div>
                     <select id="sa5t" name="sa5t" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
                         <option value="-9">--- choose ---</option>
-                        <option value="11">11. Baby home</option>
-                        <option value="12">12. Mehribonlik house</option>
-                        <option value="13">13. Muruvvat house for children with disabilities</option>
-                        <option value="14">14. SOS children’s villages</option>
-                        <option value="15">15. Family-type children’s home</option>
-                        <option value="16">16. Patronat family</option>
-                        <option value="17">17. Trusteeship/Guardianship care</option>
-                        <option value="21">21. Type I - boarding schools for deaf children</option>
-                        <option value="22">22. Type II - boarding schools for the hearing-impaired and those who later will lose their hearing</option>
-                        <option value="23">23. Type III - "Noorli Maskan" specialized boarding schools for blind children</option>
-                        <option value="24">24. Type IV - "Noorli Maskan" specialized boarding schools for visually impaired and those who later will lose their vision</option>
-                        <option value="25">25. Type V - boarding schools for children with severe speech disorders</option>
-                        <option value="26">26. Type VI - boarding schools for children with musculoskeletal disorders</option>
-                        <option value="27">27. Type VII - boarding schools for children with mental retardation</option>
-                        <option value="28">28. Type VIII - supporting boarding schools for mentally retarded children</option>
-                        <option value="31">31. Multidisciplinary specialized preschool educational organizations</option>
-                        <option value="32">32. Specialized schools for children with special educational needs</option>
-                        <option value="33">33. Republican Specialized College for Persons with Disabilities</option>
-                        <option value="34">34. Specialized state educational institutions of sanatorium type</option>
-                        <option value="35">35. Republican educational institutions</option>
-                        <option value="36">36. Social and legal support centers</option>
+                        <optgroup label="Childcare residential services">
+                            <option value="11">11. Baby home</option>
+                            <option value="12">12. Mehribonlik house</option>
+                            <option value="13">13. Muruvvat house for children with disabilities</option>
+                            <option value="14">14. SOS children’s villages</option>
+                            <option value="15">15. Family-type children’s home</option>
+                            <option value="16">16. Patronat family</option>
+                            <option value="17">17. Trusteeship/Guardianship care</option>
+                        </optgroup>
+                        <optgroup label="Specialized boarding schools">
+                            <option value="21">21. Type I - boarding schools for deaf children</option>
+                            <option value="22">22. Type II - boarding schools for the hearing-impaired and those who later will lose their hearing</option>
+                            <option value="23">23. Type III - "Noorli Maskan" specialized boarding schools for blind children</option>
+                            <option value="24">24. Type IV - "Noorli Maskan" specialized boarding schools for visually impaired and those who later will lose their vision</option>
+                            <option value="25">25. Type V - boarding schools for children with severe speech disorders</option>
+                            <option value="26">26. Type VI - boarding schools for children with musculoskeletal disorders</option>
+                            <option value="27">27. Type VII - boarding schools for children with mental retardation</option>
+                            <option value="28">28. Type VIII - supporting boarding schools for mentally retarded children</option>
+                        </optgroup>
+                        <optgroup label="Other institutions">
+                            <option value="31">31. Multidisciplinary specialized preschool educational organizations</option>
+                            <option value="32">32. Specialized schools for children with special educational needs</option>
+                            <option value="33">33. Republican Specialized College for Persons with Disabilities</option>
+                            <option value="34">34. Specialized state educational institutions of sanatorium type</option>
+                            <option value="35">35. Republican educational institutions</option>
+                            <option value="36">36. Social and legal support centers</option>
+                        </optgroup>
                     </select>
                 </div>
             </div>
@@ -873,19 +881,19 @@
                     </div>
                     <div class="flex items-center">
                         <input id="cm7b-4" type="radio" value="3" name="cm7b" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                        <label for="cm7b-4" class="ms-2 text-sm text-gray-900">4. Specialized secondary/vocational education</label>
+                        <label for="cm7b-4" class="ms-2 text-sm text-gray-900">3. Unfinished specialized secondary/vocational education</label>
                     </div>
                     <div class="flex items-center">
                         <input id="cm7b-5" type="radio" value="4" name="cm7b" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                        <label for="cm7b-5" class="ms-2 text-sm text-gray-900">3. Unfinished specialized secondary/vocational education</label>
+                        <label for="cm7b-5" class="ms-2 text-sm text-gray-900">4. Specialized secondary/vocational education</label>
                     </div>
                     <div class="flex items-center">
                         <input id="cm7b-6" type="radio" value="5" name="cm7b" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                        <label for="cm7b-6" class="ms-2 text-sm text-gray-900">6. Higher education</label>
+                        <label for="cm7b-6" class="ms-2 text-sm text-gray-900">5. Unfinished higher education</label>
                     </div>
                     <div class="flex items-center">
                         <input id="cm7b-7" type="radio" value="6" name="cm7b" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                        <label for="cm7b-7" class="ms-2 text-sm text-gray-900">5. Unfinished higher education</label>
+                        <label for="cm7b-7" class="ms-2 text-sm text-gray-900">6. Higher education</label>
                     </div>
                     <div class="flex items-center">
                         <input id="cm7b-9" type="radio" value="9" name="cm7b" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
@@ -1218,7 +1226,7 @@
                 <div>CT3a. Place of birth</div>
                 <div class="flex items-center">
                     <input type="checkbox" id="ct3a_out" name="ct3a_out" value="{{ct3a_out-1}}" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-100 rounded">
-                    <label for="ct3a_out" class="ms-2 text-sm text-gray-900">8. Mother was born outside of the country</label>
+                    <label for="ct3a_out" class="ms-2 text-sm text-gray-900">8. Father was born outside of the country</label>
                 </div>
                 <div></div>
                 <div class="flex items-center">
@@ -1384,19 +1392,19 @@
                     </div>
                     <div class="flex items-center">
                         <input id="ct7b-4" type="radio" value="3" name="ct7b" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                        <label for="ct7b-4" class="ms-2 text-sm text-gray-900">4. Specialized secondary/vocational education</label>
+                        <label for="ct7b-4" class="ms-2 text-sm text-gray-900">3. Unfinished specialized secondary/vocational education</label>
                     </div>
                     <div class="flex items-center">
                         <input id="ct7b-5" type="radio" value="4" name="ct7b" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                        <label for="ct7b-5" class="ms-2 text-sm text-gray-900">3. Unfinished specialized secondary/vocational education</label>
+                        <label for="ct7b-5" class="ms-2 text-sm text-gray-900">4. Specialized secondary/vocational education</label>
                     </div>
                     <div class="flex items-center">
                         <input id="ct7b-6" type="radio" value="5" name="ct7b" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                        <label for="ct7b-6" class="ms-2 text-sm text-gray-900">6. Higher education</label>
+                        <label for="ct7b-6" class="ms-2 text-sm text-gray-900">5. Unfinished higher education</label>
                     </div>
                     <div class="flex items-center">
                         <input id="ct7b-7" type="radio" value="6" name="ct7b" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                        <label for="ct7b-7" class="ms-2 text-sm text-gray-900">5. Unfinished higher education</label>
+                        <label for="ct7b-7" class="ms-2 text-sm text-gray-900">6. Higher education</label>
                     </div>
                     <div class="flex items-center">
                         <input id="ct7b-9" type="radio" value="9" name="ct7b" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
@@ -1866,19 +1874,19 @@
                     </div>
                     <div class="flex items-center">
                         <input id="cg7b-4" type="radio" value="3" name="cg7b" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                        <label for="cg7b-4" class="ms-2 text-sm text-gray-900">4. Specialized secondary/vocational education</label>
+                        <label for="cg7b-4" class="ms-2 text-sm text-gray-900">3. Unfinished specialized secondary</label>
                     </div>
                     <div class="flex items-center">
                         <input id="cg7b-5" type="radio" value="4" name="cg7b" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                        <label for="cg7b-5" class="ms-2 text-sm text-gray-900">3. Unfinished specialized secondary</label>
+                        <label for="cg7b-5" class="ms-2 text-sm text-gray-900">4. Specialized secondary/vocational education</label>
                     </div>
                     <div class="flex items-center">
                         <input id="cg7b-6" type="radio" value="5" name="cg7b" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                        <label for="cg7b-6" class="ms-2 text-sm text-gray-900">6. Higher education</label>
+                        <label for="cg7b-6" class="ms-2 text-sm text-gray-900">5. Unfinished higher education</label>
                     </div>
                     <div class="flex items-center">
                         <input id="cg7b-7" type="radio" value="6" name="cg7b" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
-                        <label for="cg7b-7" class="ms-2 text-sm text-gray-900">5. Unfinished higher education</label>
+                        <label for="cg7b-7" class="ms-2 text-sm text-gray-900">6. Higher education</label>
                     </div>
                     <div class="flex items-center">
                         <input id="cg7b-9" type="radio" value="9" name="cg7b" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
@@ -2283,7 +2291,7 @@
             </div>
 
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
-                <div>2b. What grade was the child in?<small class="mb-1 my-2 block italic text-red-500">FILL IN 0 (ZERO) FOR PREPARATORY CLASS</small></div>
+                <div>2b. What grade was the child in?</div>
                 <div>
                     <select id="qeduc2b" name="qeduc2b" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
                         <option value="-9">--- choose ---</option>
@@ -3149,7 +3157,7 @@
             </div>
 
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
-                <div>SCH2. Currently, in which grade is the child?<small class="my-2 block italic text-red-500">FILL IN 0 (ZERO) FOR PREPARATORY CLASS</small></div>
+                <div>SCH2. Currently, in which grade is the child?</div>
                 <div>
                     <select id="sch2" name="sch2" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
                         <option value="-9">--- choose ---</option>
