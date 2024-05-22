@@ -109,7 +109,7 @@ export const instrument8 = {
             services = args.services;
             insons = args.insons;
 
-            userRole = args.userData.role_code;
+
             const institution_code = (filters && filters.institution) ? filters.institution : args.userData.institution_code;
 
             const inson_user = Object.keys(insons).indexOf(institution_code) >= 0;
@@ -205,6 +205,8 @@ export const instrument8 = {
             let instrumentID = null;
 
             if (args.questions && args.questions.length > 0) {
+                console.log(args);
+
                 instrumentID = parseInt(args.id);
 
                 for (const item of args.questions) {
@@ -229,11 +231,15 @@ export const instrument8 = {
                     util.setValue('q4', args.userData.profession ? args.userData.profession : "--");
                     util.setValue('q5', args.userData.phone ? args.userData.phone : "--");
                     util.setValue('q6', args.userData.email ? args.userData.email : "--");
-                    regionCode = args.userData.region_code;
-                    userUUID = args.userData.uuid;
-                    institutionType = args.userData.service_type_code;
-                    institutionCode = args.userData.institution_code;
+
                 }
+            }
+            if (args.userData) {
+                userRole = args.userData.role_code;
+                regionCode = args.userData.region_code;
+                userUUID = args.userData.uuid;
+                institutionType = args.userData.service_type_code;
+                institutionCode = args.userData.institution_code;
             }
             instrument.start(instrumentID, instrument.trimis, saveChestionar, validateChestionar);
         });
@@ -266,6 +272,7 @@ const saveChestionar = (obj: SaveInstrumentType): void => {
             institution_code: institutionCode
         }
     }
+
     ipcRenderer.send("saveInstrument", obj);
 }
 
