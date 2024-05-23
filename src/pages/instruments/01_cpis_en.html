@@ -1852,7 +1852,6 @@
 
             <!-- CAREGIVER -->
             <h3 class="text-xl mt-10 mb-2 font-semibold bg-gray-100 px-2 py-1 text-gray-700">3.3. THE PERSON WHO WAS TAKING CARE OF THE CHILD</h3>
-            <small class="my-2 block italic text-red-500">This section is to be filled in only if before entering the system, the child was under the care of someone other than the child's mother or father. Otherwise, skip to Section 4.</small>
 
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
                 <div>
@@ -2766,27 +2765,33 @@
                 <div>
                     <select id="sa5t" name="sa5t" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
                         <option value="-9">--- choose ---</option>
-                        <option value="11">11. Baby home</option>
-                        <option value="12">12. Mehribonlik house</option>
-                        <option value="13">13. Muruvvat house for children with disabilities</option>
-                        <option value="14">14. SOS children’s villages</option>
-                        <option value="15">15. Family-type children’s home</option>
-                        <option value="16">16. Patronat family</option>
-                        <option value="17">17. Trusteeship/Guardianship care</option>
-                        <option value="21">21. Type I - boarding schools for deaf children</option>
-                        <option value="22">22. Type II - boarding schools for the hearing-impaired and those who later will lose their hearing</option>
-                        <option value="23">23. Type III - "Noorli Maskan" specialized boarding schools for blind children</option>
-                        <option value="24">24. Type IV - "Noorli Maskan" specialized boarding schools for visually impaired and those who later will lose their vision</option>
-                        <option value="25">25. Type V - boarding schools for children with severe speech disorders</option>
-                        <option value="26">26. Type VI - boarding schools for children with musculoskeletal disorders</option>
-                        <option value="27">27. Type VII - boarding schools for children with mental retardation</option>
-                        <option value="28">28. Type VIII - supporting boarding schools for mentally retarded children</option>
-                        <option value="31">31. Multidisciplinary specialized preschool educational organizations</option>
-                        <option value="32">32. Specialized schools for children with special educational needs</option>
-                        <option value="33">33. Republican Specialized College for Persons with Disabilities</option>
-                        <option value="34">34. Specialized state educational institutions of sanatorium type</option>
-                        <option value="35">35. Republican educational institutions</option>
-                        <option value="36">36. Social and legal support centers</option>
+                        <optgroup label="Childcare residential services:">
+                            <option value="11">11. Baby home</option>
+                            <option value="12">12. Mehribonlik house</option>
+                            <option value="13">13. Muruvvat house for children with disabilities</option>
+                            <option value="14">14. SOS children’s villages</option>
+                            <option value="15">15. Family-type children’s home</option>
+                            <option value="16">16. Patronat family</option>
+                            <option value="17">17. Trusteeship/Guardianship care</option>
+                        </optgroup>
+                        <optgroup label="Specialized boarding schools:">
+                            <option value="21">21. Type I - boarding schools for deaf children</option>
+                            <option value="22">22. Type II - boarding schools for the hearing-impaired and those who later will lose their hearing</option>
+                            <option value="23">23. Type III - "Noorli Maskan" specialized boarding schools for blind children</option>
+                            <option value="24">24. Type IV - "Noorli Maskan" specialized boarding schools for visually impaired and those who later will lose their vision</option>
+                            <option value="25">25. Type V - boarding schools for children with severe speech disorders</option>
+                            <option value="26">26. Type VI - boarding schools for children with musculoskeletal disorders</option>
+                            <option value="27">27. Type VII - boarding schools for children with mental retardation</option>
+                            <option value="28">28. Type VIII - supporting boarding schools for mentally retarded children</option>
+                        </optgroup>
+                        <optgroup label="Other institutions:">
+                            <option value="31">31. Multidisciplinary specialized preschool educational organizations</option>
+                            <option value="32">32. Specialized schools for children with special educational needs</option>
+                            <option value="33">33. Republican Specialized College for Persons with Disabilities</option>
+                            <option value="34">34. Specialized state educational institutions of sanatorium type</option>
+                            <option value="35">35. Republican educational institutions</option>
+                            <option value="36">36. Social and legal support centers</option>
+                        </optgroup>
                     </select>
                 </div>
             </div>
@@ -5389,7 +5394,7 @@
             <h2 class="mt-10 mb-4 text-2xl font-bold text-gray-700">10. THE CHILD'S CURRENT EDUCATION</h2>
 
             <div class="grid grid-cols-2 gap-4 items-center mt-10">
-                <div class="ml-3">EDK0. Is the child enrolled in preschool/school?<small class="my-2 block italic text-red-500">Check 1. Yes also for homeschooled children.</small></div>
+                <div>EDK0. Is the child enrolled in preschool/school?<small class="my-2 block italic text-red-500">Check 1. Yes also for homeschooled children.</small></div>
                 <div class="col-span-1 flex items-center gap-4">
                     <div class="flex items-center">
                         <input type="radio" id="edk0-1" name="edk0" value="1" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
@@ -5403,7 +5408,7 @@
             </div>
 
             <div class="grid grid-cols-2 gap-4 items-center mt-10">
-                <div class="ml-3">EDK1. What type of education is the child admitted in?</div>
+                <div>EDK1. What type of education is the child admitted in?</div>
                 <div class="col-span-1 flex flex-col gap-2">
                     <div class="flex items-center">
                         <input type="radio" id="edk1-1" name="edk1" value="1" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">
@@ -5425,7 +5430,7 @@
             </div>
 
             <div class="grid grid-cols-2 gap-4 items-center mt-10">
-                <div class="ml-3">EDK2. In what educational cycle is the child enrolled?</div>
+                <div>EDK2. In what educational cycle is the child enrolled?</div>
                 <div class="col-span-1 flex flex-col gap-2">
                     <div class="flex items-center">
                         <input type="radio" id="edk2-0" name="edk2" value="0" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200">

@@ -425,7 +425,7 @@ util.listen("fc3", "change", () => {
         }
     }
 
-    const message = "FC3 <= 10";
+    const message = translations['Value_up_to_ten'];
 
     errorHandler.removeError("fc3", message);
     if (value > 10) {
@@ -471,7 +471,7 @@ util.listen("ex2", "change", () => {
         }
     }
 
-    const message = "EX2 <= 10";
+    const message = translations['Value_up_to_ten'];
 
     errorHandler.removeError("ex2", message);
     if (value > 10) {

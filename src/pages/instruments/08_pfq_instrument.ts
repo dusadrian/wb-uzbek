@@ -345,7 +345,8 @@ util.listen("pf2", "change", () => {
         }
     }
 
-    const message = "PF2 <= 10";
+    const message = translations['Value_up_to_ten'];
+
     errorHandler.removeError("pf2", message);
     if (value > 10) {
         for (let i = 0; i < 10; i++) {
@@ -389,7 +390,7 @@ util.listen("ex2", "change", () => {
         }
     }
 
-    const message = "EX2 <= 10";
+    const message = translations['Value_up_to_ten'];
 
     errorHandler.removeError("ex2", message);
     if (value > 10) {

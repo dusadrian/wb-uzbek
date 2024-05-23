@@ -194,8 +194,10 @@ export const instrument5a = {
                     // regiunea este intotdeauna inaintea districtului
                     // un event de change pe regiune populeaza districtul, iar un event
                     // de change pe district populeaza settlement-ul
-                    // trigger change event
-                    instrument.seteazaValoareElement(item.variable, item.value, index >= 0);
+                    instrument.seteazaValoareElement(item.variable, item.value);
+                    if (index >= 0) {
+                        util.trigger(item.variable, "change");
+                    }
                 }
             }
 

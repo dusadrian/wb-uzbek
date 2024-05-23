@@ -45,6 +45,36 @@ const sh3_end_dates = [
     'sh3_s1d', 'sh3_s2d', 'sh3_s3d', 'sh3_s4d', 'sh3_s5d', 'sh3_s6d', 'sh3_s7d', 'sh3_s8d', 'sh3_s9d', 'sh3_s10d'
 ];
 
+
+// variabile cu reguli de validare
+const lk22_2 = ['lk22_2_1', 'lk22_2_2', 'lk22_2_3', 'lk22_2_4', 'lk22_2_5'];
+const lk3cg1 = ["lk3", "cg1c"];
+const cg1cg3 = ["cg3b", "cg1c"];
+const qhouse4Array = ['qhouse4a', 'qhouse4b'];
+const qhouse4ArrayFull = [...qhouse4Array, 'qhouse4'];
+const ewm1 = util.radioIDs("ewm1");
+const ewm2 = util.radioIDs("ewm2");
+const ewm3 = util.radioIDs("ewm3");
+const ewm4 = util.radioIDs("ewm4");
+const cmgtsa = ["cmgt1a", "sa1"];
+const sk3 = ["sk3_1", "sk3_2"];
+const qfam2 = [
+    'qfam2_1', 'qfam2_2', 'qfam2_3', 'qfam2_4', 'qfam2_5',
+    'qfam2_6', 'qfam2_7', 'qfam2_8', 'qfam2_9'
+];
+const qfam3 = [
+    'qfam3_1', 'qfam3_2', 'qfam3_3', 'qfam3_4', 'qfam3_5'
+];
+const lk3cm3 = ["lk3", "cm3"];
+const lk3ct3 = ["lk3", "ct3"];
+
+
+// const validate = [
+//     "sa5i", "sa1a", "sh1", "qfam2_90", "qfam3_6", "qfam3_9", "sh5",
+//     "lk14a_out", "lk14a_dk", "cm3a_out", "cm3a_dk", "ct3a_out", "ct3a_dk"
+// ]
+
+
 const regElements =  ["reg", "lk14b", "cm3b", "cm10c", "cm11c", "ct3b", "ct10c", "ct11c", "cg10c", "cg11c", "sa3a", "sa5r"];
 const disElements =  ["dis", "lk14c", "cm3c", "cm10d", "cm11d", "ct3c", "ct10d", "ct11d", "cg10d", "cg11d", "sa3b", "sa5d"];
 const setElements =  ["",    "lk14d", "cm3d", "cm10e", "cm11e", "ct3d", "ct10e", "ct11e", "cg10e", "cg11e", "sa3c", ""];
@@ -57,6 +87,7 @@ let institutionCode = '';
 let serviceCode = ''; // filter by service code INSON
 let userRole = '';
 let filters: DI.FiltersInterface;
+
 
 function check_sa1a(sa1a: number) {
 
@@ -86,7 +117,7 @@ function check_cm1(value: string) {
         elem.dataset['skip'] = 'false';
     })
 
-    if (Number(value) == 1 || Number(value) == 2) {
+    if (Number(value) == 2) {
         const elem = util.htmlElement("cm1c-1");
         elem.checked = false;
         elem.disabled = true;
@@ -116,24 +147,45 @@ function check_ct1(value: string) {
         elem.dataset['skip'] = 'false';
     })
 
-    if (value == "2" || value == "4") {
-        const elem = util.htmlElement("ct1c-1");
-        elem.checked = false;
-        elem.disabled = true;
-        elem.dataset['skip'] = 'true';
-    } else if (instrument.questions["ct1a"].value == "3") {
+    const ct1c1 = util.htmlElement("ct1c-1");
+    const ct1c4 = util.htmlElement("ct1c-4");
+
+    if (value == "2") {
+        ct1c1.checked = false;
+        ct1c1.disabled = true;
+        ct1c1.dataset['skip'] = 'true';
+        ct1c4.checked = false;
+        ct1c4.disabled = true;
+        ct1c4.dataset['skip'] = 'true';
+    } else if (value == "3") {
         ct1c.forEach((item) => {
             const elem = util.htmlElement(item);
             elem.disabled = true;
             elem.dataset['skip'] = 'true';
         })
-        util.htmlElement("ct1c-3").checked = true;
 
+        util.htmlElement("ct1c-3").checked = true;
         instrument.questions["ct1c"].value = "3";
         instrument.questions["ct1c"].readonly = true;
+    } else if (value == "4") {
+        ct1c1.checked = false;
+        ct1c1.disabled = true;
+        ct1c1.dataset['skip'] = 'true';
     }
 }
 
+const jQueryDatepickerConfig = {
+    changeMonth: true,
+    changeYear: true,
+    dateFormat: "dd/mm/yy",
+    minDate: "01/01/1990",
+    maxDate: "30/04/2024",
+    yearRange: "c-100:c+100",
+    firstDay: 1,
+    onSelect: function () {
+        util.trigger(this.id, "change");
+    }
+};
 
 
 
@@ -141,18 +193,6 @@ export const instrument1 = {
     init: async () => {
 
         $.datepicker.setDefaults($.datepicker.regional[lang]);
-        const jQueryDatepickerConfig = {
-            changeMonth: true,
-            changeYear: true,
-            dateFormat: "dd/mm/yy",
-            minDate: "01/01/1990",
-            maxDate: "30/04/2024",
-            yearRange: "c-100:c+10",
-            firstDay: 1,
-            onSelect: function () {
-                util.trigger(this.id, "change");
-            }
-        };
 
         const date_elements = [...general_dates, ...sh3_start_dates, ...sh3_end_dates];
         date_elements.forEach((el) => {
@@ -182,6 +222,7 @@ export const instrument1 = {
                     )
                 } catch (error) {
                     errorHandler.addError(el, translations['invalid_date']);
+                    instrument.questions[el].value = "-9";
                 }
             });
         });
@@ -330,12 +371,16 @@ export const instrument1 = {
 
                 for (const item of args.questions) {
 
+                    // TODO: poate ca nu ar fi o idee rea sa adaug aici TOATE
+                    // variabilele care au reguli de validare
                     const index = [...regElements, ...disElements].indexOf(item.variable)
                     // regiunea este intotdeauna inaintea districtului
                     // un event de change pe regiune populeaza districtul, iar un event
                     // de change pe district populeaza settlement-ul
-                    // trigger change event
-                    instrument.seteazaValoareElement(item.variable, item.value, index >= 0);
+                    instrument.seteazaValoareElement(item.variable, item.value);
+                    if (index >= 0) {
+                        util.trigger(item.variable, "change");
+                    }
 
                     if (item.variable == "qeduc2") {
                         check_sa1a(Number(instrument.questions.sa1a.value));
@@ -415,7 +460,7 @@ export const instrument1 = {
     }
 }
 
-const lk22_2 = ['lk22_2_1', 'lk22_2_2', 'lk22_2_3', 'lk22_2_4', 'lk22_2_5'];
+
 
 const validateChestionar = (_questions: QuestionObjectType) => {
 
@@ -543,7 +588,7 @@ util.listen("lk3", "myChange", () => {
     }
 });
 
-const lk3cg1 = ["lk3", "cg1c"];
+
 util.listen(lk3cg1, "myChange", () => {
     if (util.inputsHaveValue(lk3cg1)) {
         const startdate = util.standardDate(util.htmlElement("lk3").value);
@@ -561,13 +606,12 @@ util.listen(lk3cg1, "myChange", () => {
 })
 
 
-const cg1cg3 = ["cg3b", "cg1c"];
 util.listen(cg1cg3, "myChange", () => {
     if (util.inputsHaveValue(cg1cg3)) {
         const startdate = util.standardDate(util.htmlElement("cg3b").value);
         const enddate = util.standardDate(util.htmlElement("cg1c").value);
 
-        const message = translations['must_be_later_or_equal'].
+        const message = translations['must_be_earlier'].
             replace("X", "CG3b").
             replace("Y", "CG1c");
 
@@ -601,9 +645,39 @@ util.listen("sa1", "myChange", () => {
                     errorHandler.addError("sa1", message);
                 }
             }
+
         }
     }
+
+    const sa1 = util.htmlElement("sa1").value;
+    const sh1 = Number(util.htmlElement("sh1").value);
+    if (sh1 > 0) {
+        let good = true;
+        try {
+            $.datepicker.parseDate(
+                jQueryDatepickerConfig.dateFormat,
+                sa1
+            )
+        } catch (error) {
+            good = false;
+        }
+
+        if (good) {
+            util.htmlElement("sh3_s1a").value = util.htmlElement("sa1").value;
+            instrument.questions.sh3_s1a.value = util.htmlElement("sa1").value;
+        } else {
+            util.htmlElement("sh3_s1a").value = ""
+            instrument.questions.sh3_s1a.value = "-7";
+        }
+
+        util.trigger("sh3_s1a", "change");
+    } else {
+        util.trigger("sh3_csa", "change");
+    }
+
+    util.trigger("sa1a", "change");
 });
+
 
 util.listen("sa1a", "myChange", () => {
     check_sa1a(Number(instrument.questions.sa1a.value));
@@ -623,8 +697,6 @@ util.listen("sa1a", "myChange", () => {
 
 
 //qhouse4 = qhouse4a + qhouse4b
-const qhouse4Array = ['qhouse4a', 'qhouse4b'];
-const qhouse4ArrayFull = [...qhouse4Array, 'qhouse4'];
 util.listen(qhouse4ArrayFull, "change", () => {
     if (util.inputsHaveValue(qhouse4ArrayFull)) {
         const qhouse4 = util.getInputNumericValue('qhouse4');
@@ -635,6 +707,7 @@ util.listen(qhouse4ArrayFull, "change", () => {
         }
     }
 });
+
 
 util.listen("sh1", "myChange", () => {
     const sh1value = util.getInputDecimalValue('sh1');
@@ -650,13 +723,14 @@ util.listen("sh1", "myChange", () => {
         if (sh1value == 0) {
             util.setValue("sh3_csa", util.htmlElement("sa1").value);
             util.htmlElement("sh3_s1a").value = "";
+            instrument.questions.sh3_s1a.value = "-7";
         } else {
             util.setValue("sh3_s1a", util.htmlElement("sa1").value);
             if (util.htmlElement("sa1").value == util.htmlElement("sh3_csa").value) {
                 util.htmlElement("sh3_csa").value = "";
                 util.htmlElement("sh3_csf").value = "";
                 instrument.questions.sh3_csa.value = "-9";
-                instrument.questions.sh3_csf.value = "-9";
+                instrument.questions.sh3_csf.value = "-7"; // camp auto
             }
         }
     }
@@ -728,8 +802,10 @@ sh3_start_dates.forEach((startel) => {
                 "months"
             ).toString();
 
-            util.htmlElement("sh3_csf").value = monthdiff;
-            instrument.questions.sh3_csf.value = monthdiff;
+            if (monthdiff != "NaN") {
+                util.htmlElement("sh3_csf").value = monthdiff;
+                instrument.questions.sh3_csf.value = monthdiff;
+            }
 
             let totalmonths = 0;
             [...sh3_start_dates].forEach((item) => {
@@ -742,19 +818,22 @@ sh3_start_dates.forEach((startel) => {
             util.setValue("sh4", totalmonths.toString());
         });
     }
-
 });
+
 
 sh3_end_dates.forEach((startel) => {
     const index = sh3_end_dates.indexOf(startel);
     const start = util.htmlElement(startel);
 
-    const endel = sh3_start_dates[index + 1];
-    const end = util.htmlElement(endel);
-
     const check = function () {
-        const startdate = util.standardDate(start.value);
+        const sh1 = Number(util.htmlElement("sh1").value);
+        let endel = sh3_start_dates[index + 1];
+        if (index + 1 == sh1) {
+            endel = "sh3_csa";
+        }
+        const end = util.htmlElement(endel);
         if (util.inputsHaveValue([startel, endel])) {
+            const startdate = util.standardDate(start.value);
             const enddate = util.standardDate(end.value);
 
             const message = translations['must_be_later_or_equal'].
@@ -770,40 +849,28 @@ sh3_end_dates.forEach((startel) => {
     }
 
     util.listen(startel, "myChange", check);
-    util.listen(endel, "myChange", check);
-
-
+    util.listen(sh3_start_dates[index + 1], "myChange", check);
 });
 
+util.listen("sh3_csa", "myChange", () => {
+    const sh1 = Number(util.htmlElement("sh1").value);
+    const startel = sh3_end_dates[sh1 - 1];
+    const endel = "sh3_csa";
+    if (sh1 > 0 && util.inputsHaveValue([startel, endel])) {
+        const startdate = util.standardDate(util.htmlElement(startel).value);
+        const enddate = util.standardDate((util.htmlElement(endel).value));
 
-const ewm = ['ewm1', 'ewm2', 'ewm3', 'ewm4'];
-ewm.forEach((el) => {
-    document.querySelectorAll('input[name="' + el + '"]').forEach((elem) => {
-        elem.addEventListener("myChange", function () {
-            let suma = 0;
-            ewm.forEach((item) => {
-                const valoare = Number(instrument.questions[item].value);
-                if (valoare > 0) {
-                    suma += valoare;
-                }
-            });
+        const message = translations['must_be_later_or_equal'].
+            replace("X", startel.toUpperCase()).
+            replace("Y", endel.toUpperCase());
 
-            const ewm5_0 = util.htmlElement("ewm5-0");
-            const ewm5_1 = util.htmlElement("ewm5-1");
+        errorHandler.removeError([startel, endel], message);
 
-            if (suma > 0) {
-                ewm5_1.checked = true;
-                ewm5_0.checked = false;
-            }
-            else {
-                ewm5_1.checked = false;
-                ewm5_0.checked = true;
-            }
-
-            instrument.questions["ewm5"].value = Number(suma > 0).toString();
-        });
-    });
-});
+        if (startdate > enddate) {
+            errorHandler.addError([startel, endel], message);
+        }
+    }
+})
 
 
 util.listen("cmgt1a", "myChange", () => {
@@ -816,7 +883,7 @@ util.listen("cmgt1a", "myChange", () => {
     util.setValue("cmgt1b", months.toString());
 })
 
-const cmgtsa = ["cmgt1a", "sa1"];
+
 util.listen(cmgtsa, "myChange", () => {
     if (util.inputsHaveValue(cmgtsa)) {
         const cmgt1a = util.htmlElement("cmgt1a").value;
@@ -833,7 +900,6 @@ util.listen(cmgtsa, "myChange", () => {
 })
 
 
-const sk3 = ["sk3_1", "sk3_2"]
 util.listen(sk3, "change", () => {
     if (util.inputsHaveValue(sk3)) {
         const suma = Number(util.makeInputSumDecimal(sk3));
@@ -847,11 +913,6 @@ util.listen(sk3, "change", () => {
 });
 
 
-const qfam2 = [
-    'qfam2_1', 'qfam2_2', 'qfam2_3', 'qfam2_4', 'qfam2_5',
-    'qfam2_6', 'qfam2_7', 'qfam2_8', 'qfam2_9'
-]
-
 util.listen("qfam2_90", "change", () => {
     if (util.htmlElement("qfam2_90").checked) {
         qfam2.forEach((el) => {
@@ -861,6 +922,7 @@ util.listen("qfam2_90", "change", () => {
     }
 })
 
+
 util.listen(qfam2, "change", () => {
     if (util.makeSumFromElements(qfam2) > 0) {
         util.htmlElement("qfam2_90").checked = false;
@@ -868,10 +930,6 @@ util.listen(qfam2, "change", () => {
     }
 });
 
-
-const qfam3 = [
-    'qfam3_1', 'qfam3_2', 'qfam3_3', 'qfam3_4', 'qfam3_5'
-]
 
 util.listen("qfam3_6", "change", () => {
     if (util.htmlElement("qfam3_6").checked) {
@@ -916,7 +974,6 @@ util.listen("sh5", "change", () => {
     }
 })
 
-const lk3cm3 = ["lk3", "cm3"];
 util.listen(lk3cm3, "myChange", () => {
     if (util.inputsHaveValue(lk3cm3)) {
         const mother = util.htmlElement("cm3").value;
@@ -931,7 +988,6 @@ util.listen(lk3cm3, "myChange", () => {
     }
 })
 
-const lk3ct3 = ["lk3", "ct3"];
 util.listen(lk3ct3, "myChange", () => {
     if (util.inputsHaveValue(lk3ct3)) {
         const father = util.htmlElement("ct3").value;
@@ -988,18 +1044,15 @@ util.listen("ct3a_dk", "myChange", () => {
     }
 });
 
-const ewm1 = util.radioIDs("ewm1");
-const ewm2 = util.radioIDs("ewm2");
-const ewm3 = util.radioIDs("ewm3");
-const ewm4 = util.radioIDs("ewm4");
 
 
 
 util.listen([...ewm1, ...ewm2, ...ewm3, ...ewm4], "myChange", () => {
     let suma = 0;
     ["ewm1", "ewm2", "ewm3", "ewm4"].forEach((item) => {
-        if (Number(instrument.questions[item].value) > 0) {
-            suma += Number(instrument.questions[item].value);
+        const value = Number(instrument.questions[item].value);
+        if (value > 0) {
+            suma += value;
         }
     });
     const ewm5_0 = util.htmlElement("ewm5-0");
@@ -1015,4 +1068,4 @@ util.listen([...ewm1, ...ewm2, ...ewm3, ...ewm4], "myChange", () => {
     }
 
     instrument.questions["ewm5"].value = Number(suma > 0).toString();
-})
+});

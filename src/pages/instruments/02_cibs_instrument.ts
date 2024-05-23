@@ -125,7 +125,7 @@ export const instrument2 = {
         filters = JSON.parse(sessionStorage.getItem('filters'));
 
         ipcRenderer.on("instrumentDataReady", (_event, args) => {
-            console.log(args);
+            // console.log(args);
             services = args.services;
             insons = args.insons;
 
@@ -260,8 +260,10 @@ export const instrument2 = {
                     // regiunea este intotdeauna inaintea districtului
                     // un event de change pe regiune populeaza districtul, iar un event
                     // de change pe district populeaza settlement-ul
-                    // trigger change event
-                    instrument.seteazaValoareElement(item.variable, item.value, index >= 0);
+                    instrument.seteazaValoareElement(item.variable, item.value);
+                    if (index >= 0) {
+                        util.trigger(item.variable, "change");
+                    }
 
                     if (item.variable == "qeduc2") {
                         check_sa1a(Number(instrument.questions.sa1a.value));
