@@ -34,7 +34,7 @@ let insons: { [key: string]: DI.INSON };
 const regElements  = ["reg", "pi4b", "pi6r", "pi9c"];
 const disElements  = ["dis", "pi4c", "pi6d", "pi9d"];
 const setElements  = ["",    "pi4d", "",     "pi9h"];
-const typeElements = ["",   "pi4e", "",      "pi9i"];
+const typeElements = ["",    "pi4e", "",     "pi9i"];
 
 let regionCode = '';
 let userUUID = '';
@@ -66,7 +66,7 @@ export const instrument5 = {
 
             if (el == 'pi3') {
                 config.minDate = "01/01/2001";
-                config.minDate = "31/12/2007";
+                config.maxDate = "31/12/2007";
             }
 
             $("#" + el).datepicker(config); util.listen(el, "change", () => {
@@ -86,7 +86,7 @@ export const instrument5 = {
         filters = JSON.parse(sessionStorage.getItem('filters'));
 
         ipcRenderer.on("instrumentDataReady", (_event, args) => {
-            // console.log(args);
+            console.log(args);
             services = args.services;
             insons = args.insons;
 
@@ -138,60 +138,60 @@ export const instrument5 = {
                 util.listen(disElements[x], "change", function () {
                     const selectedDistrict = util.htmlElement(disElements[x]).value;
 
-                    if (setElements[x] != "") {
-                        instrument.questions[setElements[x]].skip = false;
-                        util.htmlElement(setElements[x]).disabled = false;
-                        set_el.innerHTML = "";
+                    if (Number(selectedDistrict) > 0) {
+                        if (setElements[x] != "") {
+                            instrument.questions[setElements[x]].skip = false;
+                            util.htmlElement(setElements[x]).disabled = false;
+                            set_el.innerHTML = "";
 
-                        if (Number(selectedDistrict) > 0) {
 
-                            const set_codes = districts[selectedDistrict].settlements;
+                                const set_codes = districts[selectedDistrict].settlements;
 
-                            if (set_codes.length > 0) {
-                                const option = document.createElement("option");
-                                option.value = "-9";
-                                option.text = locales[lang]['t_choose'];
-                                set_el.appendChild(option);
+                                if (set_codes.length > 0) {
+                                    const option = document.createElement("option");
+                                    option.value = "-9";
+                                    option.text = locales[lang]['t_choose'];
+                                    set_el.appendChild(option);
 
-                                for (let i = 0; i < set_codes.length; i++) {
-                                    util.addOption(
-                                        setElements[x],
-                                        set_codes[i],
-                                        set_codes[i] + ": " + (settlements[set_codes[i]] as KeyString)[lang]
-                                    );
+                                    for (let i = 0; i < set_codes.length; i++) {
+                                        util.addOption(
+                                            setElements[x],
+                                            set_codes[i],
+                                            set_codes[i] + ": " + (settlements[set_codes[i]] as KeyString)[lang]
+                                        );
+                                    }
+                                } else {
+                                    util.resetSelect(setElements[x], "--", "--");
+                                    instrument.questions[setElements[x]].skip = true;
+                                    util.htmlElement(setElements[x]).disabled = true;
                                 }
-                            } else {
-                                util.resetSelect(setElements[x], "--", "--");
-                                instrument.questions[setElements[x]].skip = true;
-                                util.htmlElement(setElements[x]).disabled = true;
-                            }
-                        }
-                    }
-
-                    if (disElements[x] == "pi6d") {
-                        util.resetSelect("pi6i", "-9", translations['t_choose']);
-
-                        const serv = districts[selectedDistrict].services;
-                        if (serv.length > 0) {
-                            for (let i = 0; i < serv.length; i++) {
-                                const type = Number(services[serv[i]].type);
-                                if ((type >= 12 && type <= 15) || (type >= 21 && type <= 28)) {
-                                    const serviciu = { ...services[serv[i]] } as KeyStringNumber;
-                                    util.addOption(
-                                        "pi6i",
-                                        serv[i],
-                                        serv[i] + ": " + serviciu['name_' + lang]
-                                    )
-                                }
-                            }
                         }
 
-                        const optgroup = document.createElement("optgroup");
-                        const option999 = document.createElement("option");
-                        option999.value = '999';
-                        option999.text = '999: ' + locales[lang]['not_in_registry'];
-                        optgroup.appendChild(option999);
-                        util.htmlElement("pi6i").appendChild(optgroup);
+                        if (disElements[x] == "pi6d") {
+                            util.resetSelect("pi6i", "-9", translations['t_choose']);
+
+                            const serv = districts[selectedDistrict].services;
+                            if (serv.length > 0) {
+                                for (let i = 0; i < serv.length; i++) {
+                                    const type = Number(services[serv[i]].type);
+                                    if ((type >= 12 && type <= 15) || (type >= 21 && type <= 28)) {
+                                        const serviciu = { ...services[serv[i]] } as KeyStringNumber;
+                                        util.addOption(
+                                            "pi6i",
+                                            serv[i],
+                                            serv[i] + ": " + serviciu['name_' + lang]
+                                        )
+                                    }
+                                }
+                            }
+
+                            const optgroup = document.createElement("optgroup");
+                            const option999 = document.createElement("option");
+                            option999.value = '999';
+                            option999.text = '999: ' + locales[lang]['not_in_registry'];
+                            optgroup.appendChild(option999);
+                            util.htmlElement("pi6i").appendChild(optgroup);
+                        }
                     }
                 })
             }
@@ -385,19 +385,6 @@ util.listen(pi3pi7, "myChange", () => {
 })
 
 
-const pi10ab = ['pi10a', 'pi10b'];
-util.listen(pi10ab, 'change', () => {
-    if (util.inputsHaveValue(pi10ab)) {
-        const message = 'PI10b <= PI10a';
-
-        errorHandler.removeError(pi10ab, message)
-        if (util.getInputDecimalValue('pi10b') > util.getInputDecimalValue('pi10a')) {
-            errorHandler.addError(pi10ab, message);
-        }
-    }
-});
-
-
 const he5 =["he5_1", "he5_2", "he5_3", "he5_4", "he5_5", "he5_6", "he5_7", "he5_8"];
 util.listen("he5_9", "change", () => {
     if (util.htmlElement("he5_9").checked) {
@@ -419,12 +406,8 @@ util.listen(he5, "change", () => {
 const pi9a = util.radioIDs("pi9a");
 util.listen(pi9a, "myChange", () => {
     instrument.questions.lv9.skip = false;
-    util.htmlElement("lv9").disabled = false;
     const value = Number(instrument.questions.pi9a.value);
     if (value >= 1 && value <= 3) {
         instrument.questions.lv9.skip = true;
-    } else {
-        util.htmlElement("lv9").disabled = true;
     }
 })
-

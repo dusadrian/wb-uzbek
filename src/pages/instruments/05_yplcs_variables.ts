@@ -2736,7 +2736,7 @@ export const questions: QuestionObjectType = {
     },
     'sc1_9_other': {
         name: 'sc1_9_other',
-        type: 'textarea/ input',
+        type: 'textarea',
         value: '-7',
         disabled: true,
         hidden: false,
