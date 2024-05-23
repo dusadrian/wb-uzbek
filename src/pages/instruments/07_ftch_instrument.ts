@@ -404,19 +404,6 @@ util.listen(fc, "myChange", () => {
 
 
 
-util.listen("ex2", "change", () => {
-    const message = "EX2 <= 10";
-    errorHandler.removeError("ex2", message);
-    if (Number(util.htmlElement("ex2").value) > 10) {
-        errorHandler.addError("ex2", message);
-        setTimeout(() => {
-            util.trigger("ex1-1", "change");
-        }, 100);
-    }
-})
-
-
-
 util.listen("fc3", "change", () => {
     const value = Number(util.htmlElement("fc3").value);
     const elements = ["a", "b", "c", "d", "cn", "e", "f"];
@@ -457,3 +444,41 @@ util.listen("fc3", "change", () => {
         }, 100);
     }
 })
+
+
+
+util.listen("ex2", "change", () => {
+    const value = Number(util.htmlElement("ex2").value);
+    const elements = ["a", "b", "c", "d", "cn", "e", "f"];
+
+    for (let i = 0; i < 10; i++) {
+        for (let e = 0; e < elements.length; e++) {
+            const classlist = util.htmlElement("c" + (i + 1) + "row").classList;
+            if (i < value) {
+                classlist.remove("hidden");
+            } else if (!classlist.contains("hidden")) {
+                classlist.add("hidden");
+            }
+        }
+    }
+
+    const message = "EX2 <= 10";
+
+    errorHandler.removeError("ex2", message);
+    if (value > 10) {
+        for (let i = 0; i < 10; i++) {
+            for (let e = 0; e < elements.length; e++) {
+                const classlist = util.htmlElement("c" + (i + 1) + "row").classList;
+                if (!classlist.contains("hidden")) {
+                    classlist.add("hidden");
+                }
+            }
+        }
+
+        errorHandler.addError("ex2", message);
+        setTimeout(() => {
+            util.trigger("ex1-1", "change");
+        }, 100);
+    }
+})
+
