@@ -323,13 +323,14 @@ pf.forEach((el) => {
 
 
 util.listen("pf2", "change", () => {
-    console.log("pf2 change");
     const value = Number(util.htmlElement("pf2").value);
     const elements = ["a", "b", "c", "d", "cn", "e", "f", "g"];
 
     if (value > 0 && value <= 10) {
+        util.htmlElement("fc4header").classList.remove("hidden");
         util.htmlElement("fc4text").classList.remove("hidden");
-    } else if (!util.htmlElement("fc4text").classList.contains("hidden")) {
+    } else if (!util.htmlElement("fc4header").classList.contains("hidden")) {
+        util.htmlElement("fc4header").classList.add("hidden");
         util.htmlElement("fc4text").classList.add("hidden");
     }
 
