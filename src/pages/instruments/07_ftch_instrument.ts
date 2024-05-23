@@ -451,6 +451,15 @@ util.listen("ex2", "change", () => {
     const value = Number(util.htmlElement("ex2").value);
     const elements = ["a", "b", "c", "d", "cn", "e", "f"];
 
+    const ex3 = util.htmlElement("ex3text").classList;
+    if (value > 0 && value <= 10) {
+        ex3.remove("hidden");
+        util.htmlElement("ex3table").classList.remove("hidden");
+    } else if (!ex3.contains("hidden")) {
+        ex3.add("hidden");
+        util.htmlElement("ex3table").classList.add("hidden");
+    }
+
     for (let i = 0; i < 10; i++) {
         for (let e = 0; e < elements.length; e++) {
             const classlist = util.htmlElement("c" + (i + 1) + "row").classList;
