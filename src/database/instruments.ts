@@ -125,11 +125,22 @@ export const get = async (id: string, table: string, db: DuckDB.Database) => {
     return await connection;
 }
 
-export const getExisting = async (db: DuckDB.Database, user_uuid: string) => {
+export const getExisting = async (db: DuckDB.Database, user_uuid: string, role_code: string, institution_code: string) => {
 
     const connection = new Promise<{ qmr: number | null, dsee: number | null }>((resolve) => {
-        const sql = `SELECT (SELECT id FROM instrument_qmr WHERE user_uuid = ?) AS qmr, (SELECT id FROM instrument_dsee WHERE user_uuid = ?) AS dsee;`;
-        db.all(sql, user_uuid, user_uuid, (error, result) => {
+
+        let sql;
+        if (role_code === constant.ROLE_ADMIN_SPECIALIST) {
+            sql = `SELECT (SELECT id FROM instrument_qmr WHERE user_uuid = '${user_uuid}') AS qmr, (SELECT id FROM instrument_dsee WHERE user_uuid = '${user_uuid}') AS dsee;`;
+        } else if (role_code === constant.ROLE_LOCAL) {
+            sql = `SELECT (SELECT id FROM instrument_qmr WHERE institution_code = '${institution_code}') AS qmr, (SELECT id FROM instrument_dsee WHERE institution_code = '${institution_code}') AS dsee;`;
+        } else {
+            // maby never here
+            console.log("It should never be here!");
+            sql = `SELECT (SELECT id FROM instrument_qmr) AS qmr, (SELECT id FROM instrument_dsee) AS dsee;`;
+        }
+
+        db.all(sql, (error, result) => {
             if (error) {
                 console.log("===== Error get instrument id =====");
                 console.log(error);
@@ -368,7 +379,7 @@ export const pfqList = async (db: DuckDB.Database, user_uuid: string, role_code:
         } else if (role_code === constant.ROLE_LOCAL) {
             sql += " WHERE c.institution_code = '" + institution_code + "'";
         }
-        
+
         sql += ` GROUP BY c.id, c.uuid, c.status;`;
 
         db.all(sql, (error, result) => {

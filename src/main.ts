@@ -1,5 +1,5 @@
 process.env.NODE_ENV = "development";
-process.env.DEBBUG_BUTTON = "false";
+process.env.DEBBUG_BUTTON = "true";
 // Set env mode
 // process.env.NODE_ENV = 'production';
 // process.env.DEBBUG_BUTTON = 'false';
@@ -416,7 +416,7 @@ const goToInstitutionDSEE = (institution: string) => {
 
 // return ID for instruments 4 and 6
 ipcMain.on('getInstrumentsId', () => {
-    database.getExisting(db, appSession.userData.uuid).then((result: { qmr: number | null, dsee: number | null }) => {
+    database.getExisting(db, appSession.userData.uuid, appSession.userData.role_code, appSession.userData.institution_code).then((result: { qmr: number | null, dsee: number | null }) => {
         mainWindow.webContents.send('existing', result);
     });
 })
