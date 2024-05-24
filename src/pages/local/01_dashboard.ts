@@ -374,6 +374,8 @@ const processDashStats = (args: any,) => {
 export const local = {
     init: async () => {
 
+        sessionStorage.setItem('topMenuPath', 'local');
+
         // On app session
         ipcRenderer.on('appSession', (event, arg) => {
             const userData = arg.userData;

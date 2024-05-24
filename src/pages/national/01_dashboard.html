@@ -1,324 +1,378 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <head>
-        <meta charset="UTF-8" />
-        <title>CRM Uzbek</title>
-        <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
-        <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'" />
-        <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self'" />
-        <link href="../../../dist/main.css" rel="stylesheet">
-    </head>
+<head>
+    <meta charset="UTF-8" />
+    <title>CRM Uzbek</title>
+    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; img-src 'self' http: https: data: ; script-src 'self';" />
+    <meta http-equiv="X-Content-Security-Policy"
+        content="default-src 'self'; img-src http: https: 'self' data: ; script-src 'self';" />
+    <link href="../../../dist/main.css" rel="stylesheet">
+</head>
 
-    <body class="relative">
-        <div class="absolute top-0 right-0 left-0 bg-slate-200 h-10 z-50" id="header"></div>
-        <div class="relative w-full pt-10 min-h-screen">
+<body class="relative">
+    <div class="fixed top-0 right-0 left-0 bg-slate-200 h-14 z-50 shadow" id="header"></div>
+    <div class="relative w-full mt-14 pb-1 h-[calc(100vh-9.3rem)] overflow-y-auto">
 
-            <div class="grid grid-cols-2 mt-10 px-4">
-
-                <div class="flex items-center gap-4">
-                    <div id="t_filter_by">Filter by:</div>
-                    <select id="region"
-                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-50 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-                        <option selected>Select a region</option>
-                        <option value="US">United States</option>
-                        <option value="CA">Canada</option>
-                        <option value="FR">France</option>
-                        <option value="DE">Germany</option>
-                    </select>
-                    <select id="service"
-                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-50 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-                        <option selected>Select a type of service</option>
-                        <option value="US">United States</option>
-                        <option value="CA">Canada</option>
-                        <option value="FR">France</option>
-                        <option value="DE">Germany</option>
-                    </select>
-                </div>
-                <div class="flex gap-10">
-
-                    <button class="bg-gray-200 hover:bg-gray-300 px-4 py-2 rounded flex items-center justify-center gap-4 w-28">
-                        <span class="t_export"></span>
-                        <svg class="h-5 fill-green-700" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
-                            <!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
-                            <path
-                                  d="M48 448V64c0-8.8 7.2-16 16-16H224v80c0 17.7 14.3 32 32 32h80V448c0 8.8-7.2 16-16 16H64c-8.8 0-16-7.2-16-16zM64 0C28.7 0 0 28.7 0 64V448c0 35.3 28.7 64 64 64H320c35.3 0 64-28.7 64-64V154.5c0-17-6.7-33.3-18.7-45.3L274.7 18.7C262.7 6.7 246.5 0 229.5 0H64zm90.9 233.3c-8.1-10.5-23.2-12.3-33.7-4.2s-12.3 23.2-4.2 33.7L161.6 320l-44.5 57.3c-8.1 10.5-6.3 25.5 4.2 33.7s25.5 6.3 33.7-4.2L192 359.1l37.1 47.6c8.1 10.5 23.2 12.3 33.7 4.2s12.3-23.2 4.2-33.7L222.4 320l44.5-57.3c8.1-10.5 6.3-25.5-4.2-33.7s-25.5-6.3-33.7 4.2L192 280.9l-37.1-47.6z" />
-                        </svg>
-                    </button>
-                </div>
+        <h1 class="px-5 text-xl flex items-center mt-5">
+            <span class="t_regionalCoordinator_level_view_regionalCoordinators">Regional coordinator</span>
+        </h1>
+        <div class="flex gap-10 mt-5 px-5">
+            <div class="flex gap-4 items-center">
+                <label for="region" class="t_region">Region</label>
+                <select id="region"
+                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-52 p-2.5">
+                    <option selected value="">---</option>
+                </select>
             </div>
-
-
-            <div class="grid grid-cols-7 w-full mt-10 px-5 gap-0.5">
-                <div class="bg-tableHeader flex items-center text-white px-3 py-1.5 font-medium col-span-2"></div>
-                <div class="bg-tableHeader flex justify-center items-center text-center text-white  px-3 py-1.5 font-medium">
-                    <span class="t_number_to_be_filled"></span>
-                </div>
-                <div class="bg-tableHeader flex justify-center items-center text-center text-white  px-3 py-1.5 font-medium">
-                    <span class="t_number_completed"></span>
-                </div>
-                <div class="bg-tableHeader flex justify-center items-center text-center text-white  px-3 py-1.5 font-medium">
-                    <span class="t_in_progress"></span>
-                </div>
-                <div class="bg-tableHeader flex justify-center items-center text-center text-white  px-3 py-1.5 font-medium" id="collector_dashboard_th6">
-                    <span class="t_completion_rate"></span>
-                </div>
-                <div class="bg-tableHeader flex justify-center items-center text-center text-white  px-3 py-1.5 font-medium" id="collector_dashboard_th2">
-                    <span class="t_actions"></span>
-                </div>
-
-                <!-- Instrument 1 -->
-                <div class="bg-tableRow text-gray-600 px-3 py-1.5 font-medium col-span-2 flex items-center">
-                    <span class="t_instrument1"></span>
-                </div>
-                <div class="bg-tableRow text-gray-600 text-center px-3 py-1.5 font-medium  flex items-center justify-center">
-                    <span id="t1c11"></span>
-                </div>
-                <div class="bg-tableRow text-gray-600 text-center px-3 py-1.5 font-medium  flex items-center justify-center">
-                    <span id="t1c12"></span>
-                </div>
-                <div class="bg-tableRow text-gray-600 text-center px-3 py-1.5 font-medium  flex items-center justify-center">
-                    <span id="t1c13"></span>
-                </div>
-                <div class="bg-tableRow text-gray-600 text-center px-3 py-1.5 font-medium  flex items-center justify-center">
-                    <span id="t1c14"></span>
-                </div>
-                <div class="bg-tableRow text-gray-600 text-center px-3 py-1.5 font-medium flex justify-center items-center">
-                    <button class="border border-gray-400 px-2 py-0.5 rounded bg-tableHeader/50 hover:bg-tableHeader" id="view_instrument1">
-                        <span class="t_view"></span>
-                    </button>
-                </div>
-
-                <!-- Instrument 2 -->
-                <div class="bg-tableRowHover text-gray-600 px-3 py-1.5 font-medium col-span-2 flex items-center">
-                    <span class="t_instrument2"></span>
-                </div>
-                <div class="bg-tableRowHover text-gray-600 text-center px-3 py-1.5 font-medium  flex items-center justify-center">
-                    <span id="t1c21"></span>
-                </div>
-                <div class="bg-tableRowHover text-gray-600 text-center px-3 py-1.5 font-medium  flex items-center justify-center">
-                    <span id="t1c22"></span>
-                </div>
-                <div class="bg-tableRowHover text-gray-600 text-center px-3 py-1.5 font-medium  flex items-center justify-center">
-                    <span id="t1c23"></span>
-                </div>
-                <div class="bg-tableRowHover text-gray-600 text-center px-3 py-1.5 font-medium  flex items-center justify-center">
-                    <span id="t1c24"></span>
-                </div>
-                <div class="bg-tableRowHover text-gray-600 text-center px-3 py-1.5 font-medium flex justify-center items-center">
-                    <button class="border border-gray-400 px-2 py-0.5 rounded bg-tableHeader/50 hover:bg-tableHeader" id="view_instrument2">
-                        <span class="t_view"></span>
-                    </button>
-                </div>
-
-                <!-- instrument 3 -->
-                <div class="bg-tableRow text-gray-600 px-3 py-1.5 font-medium col-span-2 flex items-center">
-                    <span class="t_instrument3"></span>
-                </div>
-                <div class="bg-tableRow text-gray-600 text-center px-3 py-1.5 font-medium  flex items-center justify-center">
-                    <span id="t1c31"></span>
-                </div>
-                <div class="bg-tableRow text-gray-600 text-center px-3 py-1.5 font-medium  flex items-center justify-center">
-                    <span id="t1c32"></span>
-                </div>
-                <div class="bg-tableRow text-gray-600 text-center px-3 py-1.5 font-medium  flex items-center justify-center">
-                    <span id="t1c33"></span>
-                </div>
-                <div class="bg-tableRow text-gray-600 text-center px-3 py-1.5 font-medium  flex items-center justify-center">
-                    <span id="t1c34"></span>
-                </div>
-                <div class="bg-tableRow text-gray-600 text-center px-3 py-1.5 font-medium flex justify-center items-center">
-                    <button class="border border-gray-400 px-2 py-0.5 rounded bg-tableHeader/50 hover:bg-tableHeader" id="view_instrument3">
-                        <span class="t_view"></span>
-                    </button>
-                </div>
-
-                <!-- instrument 4 -->
-                <div class="bg-tableRowHover text-gray-600 px-3 py-1.5 font-medium col-span-2 flex items-center">
-                    <span class="t_instrument4"></span>
-                </div>
-                <div class="bg-tableRowHover text-gray-600 text-center px-3 py-1.5 font-medium  flex items-center justify-center">
-                    <span id="t1c41"></span>
-                </div>
-                <div class="bg-tableRowHover text-gray-600 text-center px-3 py-1.5 font-medium  flex items-center justify-center">
-                    <span id="t1c42"></span>
-                </div>
-                <div class="bg-tableRowHover text-gray-600 text-center px-3 py-1.5 font-medium  flex items-center justify-center">
-                    <span id="t1c43"></span>
-                </div>
-                <div class="bg-tableRowHover text-gray-600 text-center px-3 py-1.5 font-medium  flex items-center justify-center">
-                    <span id="t1c44"></span>
-                </div>
-                <div class="bg-tableRowHover text-gray-600 text-center px-3 py-1.5 font-medium flex justify-center items-center">
-                    <button class="border border-gray-400 px-2 py-0.5 rounded bg-tableHeader/50 hover:bg-tableHeader" id="view_instrument4">
-                        <span class="t_view"></span>
-                    </button>
-                </div>
-
-                <!-- instrument 5a -->
-                <div class="bg-tableRow text-gray-600 px-3 py-1.5 font-medium col-span-2 flex items-center">
-                    <span class="t_instrument5A"></span>
-                </div>
-                <div class="bg-tableRow text-gray-600 text-center px-3 py-1.5 font-medium  flex items-center justify-center">
-                    <span id="t1c51"></span>
-                </div>
-                <div class="bg-tableRow text-gray-600 text-center px-3 py-1.5 font-medium  flex items-center justify-center">
-                    <span id="t1c52"></span>
-                </div>
-                <div class="bg-tableRow text-gray-600 text-center px-3 py-1.5 font-medium  flex items-center justify-center">
-                    <span id="t1c53"></span>
-                </div>
-                <div class="bg-tableRow text-gray-600 text-center px-3 py-1.5 font-medium  flex items-center justify-center">
-                    <span id="t1c54"></span>
-                </div>
-                <div class="bg-tableRow text-gray-600 text-center px-3 py-1.5 font-medium flex justify-center items-center">
-                    <button class="border border-gray-400 px-2 py-0.5 rounded bg-tableHeader/50 hover:bg-tableHeader" id="view_instrument5a">
-                        <span class="t_view"></span>
-                    </button>
-                </div>
-
-                <!-- instrument 5 -->
-                <div class="bg-tableRowHover text-gray-600 px-3 py-1.5 font-medium col-span-2 flex items-center">
-                    <span class="t_instrument5"></span>
-                </div>
-                <div class="bg-tableRowHover text-gray-600 text-center px-3 py-1.5 font-medium  flex items-center justify-center">
-                    <span id="t1c61"></span>
-                </div>
-                <div class="bg-tableRowHover text-gray-600 text-center px-3 py-1.5 font-medium  flex items-center justify-center">
-                    <span id="t1c62"></span>
-                </div>
-                <div class="bg-tableRowHover text-gray-600 text-center px-3 py-1.5 font-medium  flex items-center justify-center">
-                    <span id="t1c63"></span>
-                </div>
-                <div class="bg-tableRowHover text-gray-600 text-center px-3 py-1.5 font-medium  flex items-center justify-center">
-                    <span id="t1c64"></span>
-                </div>
-                <div class="bg-tableRowHover text-gray-600 text-center px-3 py-1.5 font-medium flex justify-center items-center">
-                    <button class="border border-gray-400 px-2 py-0.5 rounded bg-tableHeader/50 hover:bg-tableHeader" id="view_instrument5">
-                        <span class="t_view"></span>
-                    </button>
-                </div>
-
-                <!-- instrument 6 -->
-                <div class="bg-tableRow text-gray-600 px-3 py-1.5 font-medium col-span-2 flex items-center">
-                    <span class="t_instrument6"></span>
-                </div>
-                <div class="bg-tableRow text-gray-600 text-center px-3 py-1.5 font-medium  flex items-center justify-center">
-                    <span id="t1c71"></span>
-                </div>
-                <div class="bg-tableRow text-gray-600 text-center px-3 py-1.5 font-medium  flex items-center justify-center">
-                    <span id="t1c72"></span>
-                </div>
-                <div class="bg-tableRow text-gray-600 text-center px-3 py-1.5 font-medium  flex items-center justify-center">
-                    <span id="t1c73"></span>
-                </div>
-                <div class="bg-tableRow text-gray-600 text-center px-3 py-1.5 font-medium  flex items-center justify-center">
-                    <span id="t1c74"></span>
-                </div>
-                <div class="bg-tableRow text-gray-600 text-center px-3 py-1.5 font-medium flex justify-center items-center">
-                    <button class="border border-gray-400 px-2 py-0.5 rounded bg-tableHeader/50 hover:bg-tableHeader" id="view_instrument6">
-                        <span class="t_view"></span>
-                    </button>
-                </div>
-
-                <!-- instrument 7 -->
-                <div class="bg-tableRow text-gray-600 px-3 py-1.5 font-medium col-span-2 flex items-center">
-                    <span class="t_instrument7"></span>
-                </div>
-                <div class="bg-tableRow text-gray-600 text-center px-3 py-1.5 font-medium  flex items-center justify-center">
-                    <span id="t1c81"></span>
-                </div>
-                <div class="bg-tableRow text-gray-600 text-center px-3 py-1.5 font-medium  flex items-center justify-center">
-                    <span id="t1c82"></span>
-                </div>
-                <div class="bg-tableRow text-gray-600 text-center px-3 py-1.5 font-medium  flex items-center justify-center">
-                    <span id="t1c83"></span>
-                </div>
-                <div class="bg-tableRow text-gray-600 text-center px-3 py-1.5 font-medium  flex items-center justify-center">
-                    <span id="t1c84"></span>
-                </div>
-                <div class="bg-tableRow text-gray-600 text-center px-3 py-1.5 font-medium flex justify-center items-center">
-                    <button class="border border-gray-400 px-2 py-0.5 rounded bg-tableHeader/50 hover:bg-tableHeader" id="view_instrument7">
-                        <span class="t_view"></span>
-                    </button>
-                </div>
-
-                <!-- instrument 8 -->
-                <div class="bg-tableRow text-gray-600 px-3 py-1.5 font-medium col-span-2 flex items-center">
-                    <span class="t_instrument8"></span>
-                </div>
-                <div class="bg-tableRow text-gray-600 text-center px-3 py-1.5 font-medium  flex items-center justify-center">
-                    <span id="t1c91"></span>
-                </div>
-                <div class="bg-tableRow text-gray-600 text-center px-3 py-1.5 font-medium  flex items-center justify-center">
-                    <span id="t1c92"></span>
-                </div>
-                <div class="bg-tableRow text-gray-600 text-center px-3 py-1.5 font-medium  flex items-center justify-center">
-                    <span id="t1c93"></span>
-                </div>
-                <div class="bg-tableRow text-gray-600 text-center px-3 py-1.5 font-medium  flex items-center justify-center">
-                    <span id="t1c94"></span>
-                </div>
-                <div class="bg-tableRow text-gray-600 text-center px-3 py-1.5 font-medium flex justify-center items-center">
-                    <button class="border border-gray-400 px-2 py-0.5 rounded bg-tableHeader/50 hover:bg-tableHeader" id="view_instrument8">
-                        <span class="t_view"></span>
-                    </button>
-                </div>
-
-                <!-- instrument 9 -->
-                <div class="bg-tableRow text-gray-600 px-3 py-1.5 font-medium col-span-2 flex items-center">
-                    <span class="t_instrument9"></span>
-                </div>
-                <div class="bg-tableRow text-gray-600 text-center px-3 py-1.5 font-medium  flex items-center justify-center">
-                    <span id="t1c101"></span>
-                </div>
-                <div class="bg-tableRow text-gray-600 text-center px-3 py-1.5 font-medium  flex items-center justify-center">
-                    <span id="t1c102"></span>
-                </div>
-                <div class="bg-tableRow text-gray-600 text-center px-3 py-1.5 font-medium  flex items-center justify-center">
-                    <span id="t1c103"></span>
-                </div>
-                <div class="bg-tableRow text-gray-600 text-center px-3 py-1.5 font-medium  flex items-center justify-center">
-                    <span id="t1c104"></span>
-                </div>
-                <div class="bg-tableRow text-gray-600 text-center px-3 py-1.5 font-medium flex justify-center items-center">
-                    <button class="border border-gray-400 px-2 py-0.5 rounded bg-tableHeader/50 hover:bg-tableHeader" id="view_instrument9">
-                        <span class="t_view"></span>
-                    </button>
-                </div>
-
+            <div class="flex gap-4 items-center">
+                <label for="institutionType" class="t_institution_type">Type of institution</label>
+                <select id="institutionType"
+                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-52 p-2.5">
+                    <option selected value="">---</option>
+                    <option value="10" class="t_childcare_residential_institutions"></option>
+                    <option value="20" class="t_specialized_boarding_schools"></option>
+                    <option value="91" class="t_inson"></option>
+                </select>
             </div>
-
-
-
-            <div class="flex gap-10 mt-10 px-4">
-                <button class="bg-gray-200 hover:bg-gray-300 px-4 py-6 rounded w-60 flex items-center justify-center gap-4">
-                    <svg class="h-8 fill-slate-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
-                        <!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
-                        <path
-                              d="M64 0C28.7 0 0 28.7 0 64V448c0 35.3 28.7 64 64 64H320c35.3 0 64-28.7 64-64V160H256c-17.7 0-32-14.3-32-32V0H64zM256 0V128H384L256 0zM216 408c0 13.3-10.7 24-24 24s-24-10.7-24-24V305.9l-31 31c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l72-72c9.4-9.4 24.6-9.4 33.9 0l72 72c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-31-31V408z" />
-                    </svg>
-                    <span class="t_import"></span>
-                </button>
-                <button class="bg-gray-200 hover:bg-gray-300 px-4 py-6 rounded flex items-center justify-center gap-4 w-60">
-                    <svg class="h-8 fill-green-700" xmlns="http://www.w3.org/2000/svg"
-                         viewBox="0 0 384 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
-                        <path
-                              d="M64 0C28.7 0 0 28.7 0 64V448c0 35.3 28.7 64 64 64H320c35.3 0 64-28.7 64-64V160H256c-17.7 0-32-14.3-32-32V0H64zM256 0V128H384L256 0zM216 232V334.1l31-31c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9l-72 72c-9.4 9.4-24.6 9.4-33.9 0l-72-72c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l31 31V232c0-13.3 10.7-24 24-24s24 10.7 24 24z" />
-                    </svg>
-                    <span class="t_export_data"></span>
-                </button>
-                <button class="bg-gray-200 hover:bg-gray-300 px-4 py-6 rounded flex items-center justify-center gap-4 w-60">
-                    <svg class="h-8 fill-orange-700" xmlns="http://www.w3.org/2000/svg"
-                         viewBox="0 0 384 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
-                        <path
-                              d="M64 0C28.7 0 0 28.7 0 64V448c0 35.3 28.7 64 64 64H320c35.3 0 64-28.7 64-64V160H256c-17.7 0-32-14.3-32-32V0H64zM256 0V128H384L256 0zM80 64h64c8.8 0 16 7.2 16 16s-7.2 16-16 16H80c-8.8 0-16-7.2-16-16s7.2-16 16-16zm0 64h64c8.8 0 16 7.2 16 16s-7.2 16-16 16H80c-8.8 0-16-7.2-16-16s7.2-16 16-16zm16 96H288c17.7 0 32 14.3 32 32v64c0 17.7-14.3 32-32 32H96c-17.7 0-32-14.3-32-32V256c0-17.7 14.3-32 32-32zm0 32v64H288V256H96zM240 416h64c8.8 0 16 7.2 16 16s-7.2 16-16 16H240c-8.8 0-16-7.2-16-16s7.2-16 16-16z" />
-                    </svg>
-                    <span class="t_reports"></span>
-                </button>
+            <div class="flex gap-4 items-center">
+                <label for="institution" class="t_institution">Institution</label>
+                <select id="institution"
+                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-52 p-2.5">
+                    <option selected value="">---</option>
+                </select>
             </div>
-
         </div>
-    </body>
+
+
+        <div class="grid grid-cols-7 w-full mt-5 px-5 gap-0.5">
+            <div class="bg-tableHeader flex items-center text-white px-3 py-1.5 font-medium col-span-3"></div>
+            <div
+                class="bg-tableHeader flex justify-center items-center text-center text-white  px-3 py-1.5 font-medium">
+                <span class="t_number_to_be_filled"></span>
+            </div>
+            <div
+                class="bg-tableHeader flex justify-center items-center text-center text-white  px-3 py-1.5 font-medium">
+                <span class="t_number_completed"></span>
+            </div>
+            <div class="bg-tableHeader flex justify-center items-center text-center text-white  px-3 py-1.5 font-medium"
+                id="collector_dashboard_th6">
+                <span class="t_completion_rate"></span>
+            </div>
+            <div class="bg-tableHeader flex justify-center items-center text-center text-white  px-3 py-1.5 font-medium"
+                id="collector_dashboard_th2">
+                <span class="t_actions"></span>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-7 w-full mt-0.5 px-5 gap-0.5" id="instrument1">
+            <!-- Instrument 1 -->
+            <div class="bg-tableRow text-gray-600 px-3 py-1.5 font-medium col-span-3 flex items-center">
+                <span class="t_instrument1"></span>
+            </div>
+            <div
+                class="bg-tableRow text-gray-600 text-center px-3 py-1.5 font-medium col-span-1 flex items-center justify-center">
+                <span id="t1c11"></span>
+            </div>
+            <div
+                class="bg-tableRow text-gray-600 text-center px-3 py-1.5 font-medium col-span-1 flex items-center justify-center">
+                <span id="t1c12"></span>
+            </div>
+            <div
+                class="bg-tableRow text-gray-600 text-center px-3 py-1.5 font-medium col-span-1 flex items-center justify-center">
+                <span id="t1c13"></span>
+            </div>
+            <div
+                class="bg-tableRow text-gray-600 text-center px-3 py-1.5 font-medium col-span-1 flex justify-center items-center">
+                <button
+                    class="border border-gray-400 px-2 py-0.5 rounded bg-tableHeader/50 hover:bg-tableHeader disabled:bg-gray-400"
+                    id="view_instrument1">
+                    <span class="t_view"></span>
+                </button>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-7 w-full mt-0.5 px-5 gap-0.5" id="instrument2">
+            <!-- Instrument 2 -->
+            <div class="bg-tableRowHover text-gray-600 px-3 py-1.5 font-medium col-span-3 flex items-center">
+                <span class="t_instrument2"></span>
+            </div>
+            <div
+                class="bg-tableRowHover text-gray-600 text-center px-3 py-1.5 font-medium  flex items-center justify-center">
+                <span id="t1c21"></span>
+            </div>
+            <div
+                class="bg-tableRowHover text-gray-600 text-center px-3 py-1.5 font-medium  flex items-center justify-center">
+                <span id="t1c22"></span>
+            </div>
+            <div
+                class="bg-tableRowHover text-gray-600 text-center px-3 py-1.5 font-medium  flex items-center justify-center">
+                <span id="t1c23"></span>
+            </div>
+            <div
+                class="bg-tableRowHover text-gray-600 text-center px-3 py-1.5 font-medium flex justify-center items-center">
+                <button
+                    class="border border-gray-400 px-2 py-0.5 rounded bg-tableHeader/50 hover:bg-tableHeader disabled:bg-gray-400"
+                    id="view_instrument2">
+                    <span class="t_view"></span>
+                </button>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-7 w-full mt-0.5 px-5 gap-0.5" id="instrument3">
+            <!-- instrument 3 -->
+            <div class="bg-tableRow text-gray-600 px-3 py-1.5 font-medium col-span-3 flex items-center">
+                <span class="t_instrument3"></span>
+            </div>
+            <div
+                class="bg-tableRow text-gray-600 text-center px-3 py-1.5 font-medium  flex items-center justify-center">
+                <span id="t1c31"></span>
+            </div>
+            <div
+                class="bg-tableRow text-gray-600 text-center px-3 py-1.5 font-medium  flex items-center justify-center">
+                <span id="t1c32"></span>
+            </div>
+            <div
+                class="bg-tableRow text-gray-600 text-center px-3 py-1.5 font-medium  flex items-center justify-center">
+                <span id="t1c33"></span>
+            </div>
+            <div class="bg-tableRow text-gray-600 text-center px-3 py-1.5 font-medium flex justify-center items-center">
+                <button
+                    class="border border-gray-400 px-2 py-0.5 rounded bg-tableHeader/50 hover:bg-tableHeader disabled:bg-gray-400"
+                    id="view_instrument3">
+                    <span class="t_view"></span>
+                </button>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-7 w-full mt-0.5 px-5 gap-0.5" id="instrument4">
+            <!-- instrument 4 -->
+            <div class="bg-tableRowHover text-gray-600 px-3 py-1.5 font-medium col-span-3 flex items-center">
+                <span class="t_instrument4"></span>
+            </div>
+            <div
+                class="bg-tableRowHover text-gray-600 text-center px-3 py-1.5 font-medium  flex items-center justify-center">
+                <span id="t1c41"></span>
+            </div>
+            <div
+                class="bg-tableRowHover text-gray-600 text-center px-3 py-1.5 font-medium  flex items-center justify-center">
+                <span id="t1c42"></span>
+            </div>
+            <div
+                class="bg-tableRowHover text-gray-600 text-center px-3 py-1.5 font-medium  flex items-center justify-center">
+                <span id="t1c43"></span>
+            </div>
+            <div
+                class="bg-tableRowHover text-gray-600 text-center px-3 py-1.5 font-medium flex justify-center items-center">
+                <button
+                    class="border border-gray-400 px-2 py-0.5 rounded bg-tableHeader/50 hover:bg-tableHeader disabled:bg-gray-400"
+                    id="view_instrument4">
+                    <span class="t_view"></span>
+                </button>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-7 w-full mt-0.5 px-5 gap-0.5" id="instrument5a">
+            <!-- instrument 5a -->
+            <div class="bg-tableRow text-gray-600 px-3 py-1.5 font-medium col-span-3 flex items-center">
+                <span class="t_instrument5A"></span>
+            </div>
+            <div
+                class="bg-tableRow text-gray-600 text-center px-3 py-1.5 font-medium  flex items-center justify-center">
+                <span id="t1c51"></span>
+            </div>
+            <div
+                class="bg-tableRow text-gray-600 text-center px-3 py-1.5 font-medium  flex items-center justify-center">
+                <span id="t1c52"></span>
+            </div>
+            <div
+                class="bg-tableRow text-gray-600 text-center px-3 py-1.5 font-medium  flex items-center justify-center">
+                <span id="t1c53"></span>
+            </div>
+            <div class="bg-tableRow text-gray-600 text-center px-3 py-1.5 font-medium flex justify-center items-center">
+                <button
+                    class="border border-gray-400 px-2 py-0.5 rounded bg-tableHeader/50 hover:bg-tableHeader disabled:bg-gray-400"
+                    id="view_instrument5a">
+                    <span class="t_view"></span>
+                </button>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-7 w-full mt-0.5 px-5 gap-0.5" id="instrument5">
+            <!-- instrument 5 -->
+            <div class="bg-tableRowHover text-gray-600 px-3 py-1.5 font-medium col-span-3 flex items-center">
+                <span class="t_instrument5"></span>
+            </div>
+            <div
+                class="bg-tableRowHover text-gray-600 text-center px-3 py-1.5 font-medium  flex items-center justify-center">
+                <span id="t1c61"></span>
+            </div>
+            <div
+                class="bg-tableRowHover text-gray-600 text-center px-3 py-1.5 font-medium  flex items-center justify-center">
+                <span id="t1c62"></span>
+            </div>
+            <div
+                class="bg-tableRowHover text-gray-600 text-center px-3 py-1.5 font-medium  flex items-center justify-center">
+                <span id="t1c63"></span>
+            </div>
+            <div
+                class="bg-tableRowHover text-gray-600 text-center px-3 py-1.5 font-medium flex justify-center items-center">
+                <button
+                    class="border border-gray-400 px-2 py-0.5 rounded bg-tableHeader/50 hover:bg-tableHeader disabled:bg-gray-400"
+                    id="view_instrument5">
+                    <span class="t_view"></span>
+                </button>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-7 w-full mt-0.5 px-5 gap-0.5" id="instrument6">
+            <!-- instrument 6 -->
+            <div class="bg-tableRow text-gray-600 px-3 py-1.5 font-medium col-span-3 flex items-center">
+                <span class="t_instrument6"></span>
+            </div>
+            <div
+                class="bg-tableRow text-gray-600 text-center px-3 py-1.5 font-medium  flex items-center justify-center">
+                <span id="t1c71"></span>
+            </div>
+            <div
+                class="bg-tableRow text-gray-600 text-center px-3 py-1.5 font-medium  flex items-center justify-center">
+                <span id="t1c72"></span>
+            </div>
+            <div
+                class="bg-tableRow text-gray-600 text-center px-3 py-1.5 font-medium  flex items-center justify-center">
+                <span id="t1c73"></span>
+            </div>
+            <div class="bg-tableRow text-gray-600 text-center px-3 py-1.5 font-medium flex justify-center items-center">
+                <button
+                    class="border border-gray-400 px-2 py-0.5 rounded bg-tableHeader/50 hover:bg-tableHeader disabled:bg-gray-400"
+                    id="view_instrument6">
+                    <span class="t_view"></span>
+                </button>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-7 w-full mt-0.5 px-5 gap-0.5" id="instrument7">
+            <!-- instrument 7 -->
+            <div class="bg-tableRow text-gray-600 px-3 py-1.5 font-medium col-span-3 flex items-center">
+                <span class="t_instrument7"></span>
+            </div>
+            <div
+                class="bg-tableRow text-gray-600 text-center px-3 py-1.5 font-medium  flex items-center justify-center">
+                <span id="t1c81"></span>
+            </div>
+            <div
+                class="bg-tableRow text-gray-600 text-center px-3 py-1.5 font-medium  flex items-center justify-center">
+                <span id="t1c82"></span>
+            </div>
+            <div
+                class="bg-tableRow text-gray-600 text-center px-3 py-1.5 font-medium  flex items-center justify-center">
+                <span id="t1c83"></span>
+            </div>
+            <div class="bg-tableRow text-gray-600 text-center px-3 py-1.5 font-medium flex justify-center items-center">
+                <button
+                    class="border border-gray-400 px-2 py-0.5 rounded bg-tableHeader/50 hover:bg-tableHeader disabled:bg-gray-400"
+                    id="view_instrument7">
+                    <span class="t_view"></span>
+                </button>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-7 w-full mt-0.5 px-5 gap-0.5" id="instrument8">
+            <!-- instrument 8 -->
+            <div class="bg-tableRow text-gray-600 px-3 py-1.5 font-medium col-span-3 flex items-center">
+                <span class="t_instrument8"></span>
+            </div>
+            <div
+                class="bg-tableRow text-gray-600 text-center px-3 py-1.5 font-medium  flex items-center justify-center">
+                <span id="t1c91"></span>
+            </div>
+            <div
+                class="bg-tableRow text-gray-600 text-center px-3 py-1.5 font-medium  flex items-center justify-center">
+                <span id="t1c92"></span>
+            </div>
+            <div
+                class="bg-tableRow text-gray-600 text-center px-3 py-1.5 font-medium  flex items-center justify-center">
+                <span id="t1c93"></span>
+            </div>
+            <div class="bg-tableRow text-gray-600 text-center px-3 py-1.5 font-medium flex justify-center items-center">
+                <button
+                    class="border border-gray-400 px-2 py-0.5 rounded bg-tableHeader/50 hover:bg-tableHeader disabled:bg-gray-400"
+                    id="view_instrument8">
+                    <span class="t_view"></span>
+                </button>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-7 w-full mt-0.5 px-5 gap-0.5" id="instrument9">
+            <!-- instrument 9 -->
+            <div class="bg-tableRow text-gray-600 px-3 py-1.5 font-medium col-span-3 flex items-center">
+                <span class="t_instrument9"></span>
+            </div>
+            <div
+                class="bg-tableRow text-gray-600 text-center px-3 py-1.5 font-medium  flex items-center justify-center">
+                <span id="t1c101"></span>
+            </div>
+            <div
+                class="bg-tableRow text-gray-600 text-center px-3 py-1.5 font-medium  flex items-center justify-center">
+                <span id="t1c102"></span>
+            </div>
+            <div
+                class="bg-tableRow text-gray-600 text-center px-3 py-1.5 font-medium  flex items-center justify-center">
+                <span id="t1c103"></span>
+            </div>
+            <div class="bg-tableRow text-gray-600 text-center px-3 py-1.5 font-medium flex justify-center items-center">
+                <button
+                    class="border border-gray-400 px-2 py-0.5 rounded bg-tableHeader/50 hover:bg-tableHeader disabled:bg-gray-400"
+                    id="view_instrument9">
+                    <span class="t_view"></span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="flex gap-10 px-4 py-4 border-t border-gray-100">
+            <button class="bg-gray-200 hover:bg-gray-300 px-4 py-3 rounded w-44 flex items-center justify-center gap-4"
+                id="importData">
+                <svg class="h-8 fill-slate-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+                    <!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                    <path
+                        d="M64 0C28.7 0 0 28.7 0 64V448c0 35.3 28.7 64 64 64H320c35.3 0 64-28.7 64-64V160H256c-17.7 0-32-14.3-32-32V0H64zM256 0V128H384L256 0zM216 408c0 13.3-10.7 24-24 24s-24-10.7-24-24V305.9l-31 31c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l72-72c9.4-9.4 24.6-9.4 33.9 0l72 72c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-31-31V408z" />
+                </svg>
+                <span class="t_import"></span>
+            </button>
+            <button class="bg-gray-200 hover:bg-gray-300 px-4 py-3 rounded flex items-center justify-center gap-4 w-72"
+                id="exportData">
+                <svg class="h-8 fill-green-700" xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 384 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                    <path
+                        d="M64 0C28.7 0 0 28.7 0 64V448c0 35.3 28.7 64 64 64H320c35.3 0 64-28.7 64-64V160H256c-17.7 0-32-14.3-32-32V0H64zM256 0V128H384L256 0zM216 232V334.1l31-31c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9l-72 72c-9.4 9.4-24.6 9.4-33.9 0l-72-72c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l31 31V232c0-13.3 10.7-24 24-24s24 10.7 24 24z" />
+                </svg>
+                <span class="t_export_data"></span>
+            </button>
+            <button id="institutions"
+                class="bg-gray-200 hover:bg-gray-300 px-4 py-3 rounded flex items-center justify-center gap-4 w-44">
+                <svg class="h-8 fill-slate-500" xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                    <path
+                        d="M243.4 2.6l-224 96c-14 6-21.8 21-18.7 35.8S16.8 160 32 160v8c0 13.3 10.7 24 24 24H456c13.3 0 24-10.7 24-24v-8c15.2 0 28.3-10.7 31.3-25.6s-4.8-29.9-18.7-35.8l-224-96c-8-3.4-17.2-3.4-25.2 0zM128 224H64V420.3c-.6 .3-1.2 .7-1.8 1.1l-48 32c-11.7 7.8-17 22.4-12.9 35.9S17.9 512 32 512H480c14.1 0 26.5-9.2 30.6-22.7s-1.1-28.1-12.9-35.9l-48-32c-.6-.4-1.2-.7-1.8-1.1V224H384V416H344V224H280V416H232V224H168V416H128V224zM256 64a32 32 0 1 1 0 64 32 32 0 1 1 0-64z" />
+                </svg>
+
+                <span class="t_institutions"></span>
+            </button>
+            <button id="insons"
+                class="bg-gray-200 hover:bg-gray-300 px-4 py-3 rounded flex items-center justify-center gap-4 w-44">
+                <svg class="h-8 fill-slate-500" xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                    <path
+                        d="M243.4 2.6l-224 96c-14 6-21.8 21-18.7 35.8S16.8 160 32 160v8c0 13.3 10.7 24 24 24H456c13.3 0 24-10.7 24-24v-8c15.2 0 28.3-10.7 31.3-25.6s-4.8-29.9-18.7-35.8l-224-96c-8-3.4-17.2-3.4-25.2 0zM128 224H64V420.3c-.6 .3-1.2 .7-1.8 1.1l-48 32c-11.7 7.8-17 22.4-12.9 35.9S17.9 512 32 512H480c14.1 0 26.5-9.2 30.6-22.7s-1.1-28.1-12.9-35.9l-48-32c-.6-.4-1.2-.7-1.8-1.1V224H384V416H344V224H280V416H232V224H168V416H128V224zM256 64a32 32 0 1 1 0 64 32 32 0 1 1 0-64z" />
+                </svg>
+
+                <span class="t_inson"></span>
+            </button>
+        </div>
+    </footer>
+</body>
 
 </html>

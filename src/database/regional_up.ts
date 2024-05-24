@@ -5,7 +5,13 @@ import constant from "../libraries/constants";
 
 export const getRegionalInstitutions = async (db: DuckDB.Database, region: string) => {
     const connection = new Promise<Array<DI.Institution>>((resolve) => {
-        db.all(`SELECT * FROM institutions WHERE region = '${region}' AND CAST(type AS INTEGER) < 30`, (error, result) => {
+
+        let sql = `SELECT * FROM institutions WHERE CAST(type AS INTEGER) < 30`;
+        if(region) {
+            sql += ` AND region = '${region}'`;
+        }
+
+        db.all(sql, (error, result) => {
             if (error) {
                 console.log(error);
             }
@@ -16,7 +22,13 @@ export const getRegionalInstitutions = async (db: DuckDB.Database, region: strin
 }
 export const getRegionalInsons = async (db: DuckDB.Database, region: string) => {
     const connection = new Promise<Array<DI.INSON>>((resolve) => {
-        db.all(`SELECT * FROM inson WHERE region = '${region}'`, (error, result) => {
+
+        let sql = `SELECT * FROM inson`;
+        if(region) {
+            sql += ` WHERE region = '${region}'`;
+        }
+
+        db.all(sql, (error, result) => {
             if (error) {
                 console.log(error);
             }
@@ -56,6 +68,9 @@ export const filledInstrumentsR = async (db: DuckDB.Database, region?: string, t
     if (region && typeOfInstitution && institution) {
         where += ` AND institution_code = '${institution}'`;
     }
+
+    console.log('filledInstrumentsR', where);
+    
 
     const i1 = new Promise<DI.StatusInterface[]>((resolve) => {
         const sql = `SELECT status, COUNT(*) AS total FROM instrument_cpis ${where} GROUP BY status`;

@@ -53,10 +53,6 @@ export const addInson = {
                 district.appendChild(option);
             }
 
-            // const settlement = document.getElementById('settlement');
-            // const set_codes = districts[selectedDistrict].settlements;
-
-
             // add settlements
             const settlement = document.getElementById('settlement') as HTMLSelectElement;
             district.addEventListener('change', () => {

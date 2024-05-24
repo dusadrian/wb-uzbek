@@ -70,6 +70,7 @@ window.addEventListener("DOMContentLoaded", () => {
         case 'enable_user.html':
             enable_user();
             break;
+        // LOCAL ---------------------
         case 'local/01_dashboard.html':
             localDashboard();
             break;
@@ -88,33 +89,36 @@ window.addEventListener("DOMContentLoaded", () => {
         case 'local/05_edit_user.html':
             localEditUser();
             break;
+        case 'local/02_add_inson_service.html':
+            addInsonLocal();
+            break;
+        // REGIONAL ---------------------
         case 'regional/01_dashboard.html':
             regionalDashboard();
             break;
         case 'regional/02_institution_details_service.html':
-            institutionRDetailsService();
+            regionalInstitutionDetailsService();
             break;
         case 'regional/02_institution_details_inson.html':
-            institutionRDetailsInson();
+            regionalInstitutionDetailsInson();
             break;
         case 'regional/02_add_inson_service.html':
-            addInson();
-            break;
-        case 'local/02_add_inson_service.html':
-            addInsonLocal();
+            regionalAddInson();
             break;
         case 'regional/02_institutions.html':
-            institutionsR();
+            regionalInstitutions();
             break;
         case 'regional/02_insons.html':
-            insonsR();
+            regionalInsons();
             break;
         case 'regional/03_instrument_institutions.html':
-            instrumentInstitutionR();
+            regionalInstrumentInstitution();
             break;
+        // NATIONAL ---------------------
         case 'national/01_dashboard.html':
             nationalDashboard();
             break;
+        // INSTRUMENTS ---------------------
         case 'instruments/01_cpis.html':
             CPIS();
             break;
@@ -293,6 +297,7 @@ const topMenu = (backPage: string) => {
     });
 }
 
+// LOCAL ---------------------
 const localDashboard = () => {
 
     topMenu('index');
@@ -307,105 +312,10 @@ const localDashboard = () => {
         console.log(error);
     }));
 };
-// INSTITUTION DETAILS
-// Sevices
-const institutionDetailsService = () => {
-
-    topMenu('local/01_dashboard');
-
-    translatePage();
-
-    const importFile = async () => {
-        return await import("./pages/local/02_institution_details_service");
-    };
-    importFile().then(result => result.institutionDetails.init().catch(error => {
-        console.log(error);
-    }));
-};
-// Inson
-const institutionDetailsInson = () => {
-
-    topMenu('local/01_dashboard');
-
-    translatePage();
-
-    const importFile = async () => {
-        return await import("./pages/local/02_institution_details_inson");
-    };
-    importFile().then(result => result.institutionDetails.init().catch(error => {
-        console.log(error);
-    }));
-};
-// Sevices
-const institutionRDetailsService = () => {
-
-    topMenu('regional/02_institutions');
-
-    translatePage();
-
-    const importFile = async () => {
-        return await import("./pages/regional/02_institution_details_service");
-    };
-    importFile().then(result => result.institutionDetails.init().catch(error => {
-        console.log(error);
-    }));
-};
-// Inson
-const institutionRDetailsInson = () => {
-
-    topMenu('regional/02_insons');
-
-    translatePage();
-
-    const importFile = async () => {
-        return await import("./pages/regional/02_institution_details_inson");
-    };
-    importFile().then(result => result.institutionDetails.init().catch(error => {
-        console.log(error);
-    }));
-};
-const institutionsR = () => {
-
-    topMenu('regional/01_dashboard');
-
-    translatePage();
-
-    const importFile = async () => {
-        return await import("./pages/regional/02_institutions");
-    };
-    importFile().then(result => result.institutions.init().catch(error => {
-        console.log(error);
-    }));
-};
-const insonsR = () => {
-
-    topMenu('regional/01_dashboard');
-
-    translatePage();
-
-    const importFile = async () => {
-        return await import("./pages/regional/02_insons");
-    };
-    importFile().then(result => result.insons.init().catch(error => {
-        console.log(error);
-    }));
-};
-const addInson = () => {
-
-    topMenu('regional/02_insons');
-    
-    translatePage();
-    const importFile = async () => {
-        return await import("./pages/regional/02_add_inson_service");
-    };
-    importFile().then(result => result.addInson.init().catch(error => {
-        console.log(error);
-    }));
-};
 const addInsonLocal = () => {
 
     topMenu('local/01_dashboard');
-    
+
     translatePage();
     const importFile = async () => {
         return await import("./pages/local/02_add_inson_service");
@@ -414,21 +324,7 @@ const addInsonLocal = () => {
         console.log(error);
     }));
 };
-
-const instrumentInstitutionR = () => {
-    
-    topMenu('regional/01_dashboard');
-
-    translatePage();
-
-    const importFile = async () => {
-        return await import("./pages/regional/03_instrument_institutions");
-    };
-    importFile().then(result => result.institutions.init().catch(error => {
-        console.log(error);
-    }));
-};
-
+// Users
 const localUsers = () => {
 
     topMenu('local/01_dashboard');
@@ -473,11 +369,123 @@ const localEditUser = () => {
         console.log(error);
     }));
 };
+// Sevices
+const institutionDetailsService = () => {
 
+    topMenu('local/01_dashboard');
+
+    translatePage();
+
+    const importFile = async () => {
+        return await import("./pages/local/02_institution_details_service");
+    };
+    importFile().then(result => result.institutionDetails.init().catch(error => {
+        console.log(error);
+    }));
+};
+// Inson
+const institutionDetailsInson = () => {
+
+    topMenu('local/01_dashboard');
+
+    translatePage();
+
+    const importFile = async () => {
+        return await import("./pages/local/02_institution_details_inson");
+    };
+    importFile().then(result => result.institutionDetails.init().catch(error => {
+        console.log(error);
+    }));
+};
+
+// REGIONAL ---------------------
+// Sevices
+const regionalInstitutionDetailsService = () => {
+
+    topMenu('regional/02_institutions');
+
+    translatePage();
+
+    const importFile = async () => {
+        return await import("./pages/regional/02_institution_details_service");
+    };
+    importFile().then(result => result.institutionDetails.init().catch(error => {
+        console.log(error);
+    }));
+};
+// Inson
+const regionalInstitutionDetailsInson = () => {
+
+    topMenu('regional/02_insons');
+
+    translatePage();
+
+    const importFile = async () => {
+        return await import("./pages/regional/02_institution_details_inson");
+    };
+    importFile().then(result => result.institutionDetails.init().catch(error => {
+        console.log(error);
+    }));
+};
+const regionalInstitutions = () => {
+
+    const topMenuPath = sessionStorage.getItem('topMenuPath');
+    topMenu(topMenuPath + '/01_dashboard');
+
+    translatePage();
+
+    const importFile = async () => {
+        return await import("./pages/regional/02_institutions");
+    };
+    importFile().then(result => result.institutions.init().catch(error => {
+        console.log(error);
+    }));
+};
+const regionalInsons = () => {
+
+    const topMenuPath = sessionStorage.getItem('topMenuPath');
+    topMenu(topMenuPath + '/01_dashboard');
+
+    translatePage();
+
+    const importFile = async () => {
+        return await import("./pages/regional/02_insons");
+    };
+    importFile().then(result => result.insons.init().catch(error => {
+        console.log(error);
+    }));
+};
+const regionalAddInson = () => {
+
+    const topMenuPath = sessionStorage.getItem('topMenuPath');
+    topMenu(topMenuPath + '/02_insons');
+
+    translatePage();
+    const importFile = async () => {
+        return await import("./pages/regional/02_add_inson_service");
+    };
+    importFile().then(result => result.addInson.init().catch(error => {
+        console.log(error);
+    }));
+};
+
+const regionalInstrumentInstitution = () => {
+
+    const topMenuPath = sessionStorage.getItem('topMenuPath');
+    topMenu(topMenuPath + '/01_dashboard');
+
+    translatePage();
+
+    const importFile = async () => {
+        return await import("./pages/regional/03_instrument_institutions");
+    };
+    importFile().then(result => result.institutions.init().catch(error => {
+        console.log(error);
+    }));
+};
 const regionalDashboard = () => {
 
     topMenu('index');
-
     translatePage();
     const importFile = async () => {
         return await import("./pages/regional/01_dashboard");
@@ -489,7 +497,6 @@ const regionalDashboard = () => {
 const nationalDashboard = () => {
 
     topMenu('index');
-
     translatePage();
     const importFile = async () => {
         return await import("./pages/national/01_dashboard");

@@ -19,7 +19,6 @@ if (process.env.NODE_ENV === "development") {
 
 // language
 import { I18n } from "i18n";
-import { data } from "jquery";
 const i18n = new I18n({
     locales: ['en', 'uz', 'ru'],
     directory: path.join(__dirname, '../src/locales'),
@@ -133,6 +132,8 @@ ipcMain.on('login', (_event, args) => {
         } else {
 
             appSession.language = args.language;
+            i18n.setLocale(args.language);
+            
             appSession.userData = result[0]; // user data
             if (
                 appSession.userData.role_code === constant.ROLE_LOCAL ||
@@ -161,6 +162,14 @@ ipcMain.on('login', (_event, args) => {
                     name_ru: appSession.userData.institution_name,
                 };
                 goToRegionalDashboard();
+            } else if (appSession.userData.role_code === constant.ROLE_NATIONAL) {
+                appSession.institutionDetails = {
+                    region_code: appSession.userData.region_code,
+                    name_en: appSession.userData.institution_name,
+                    name_uz: appSession.userData.institution_name,
+                    name_ru: appSession.userData.institution_name,
+                };
+                goToNationalDashboard();
             }
         }
     });
@@ -190,13 +199,16 @@ ipcMain.on("changeWindow", (_event, args) => {
             insonRDetails(args.code);
             break;
         case "regional/02_institutions":
-            institutionsR();
+            institutionsR(args.regionCode);
             break;
         case "regional/02_insons":
-            insonsR();
+            insonsR(args.regionCode);
             break;
         case "regionalViewInstrument":
             regionalViewInstrument(args.filters);
+            break;
+        case "national/01_dashboard":
+            goToNationalDashboard();
             break;
         case "local/03_users":
             localUsers();
@@ -236,6 +248,7 @@ ipcMain.on("changeWindow", (_event, args) => {
             break;
         default:
             mainWindow.loadURL("file://" + newPage);
+            console.log('Hit default action: ', args.name);
     }
 });
 
@@ -292,6 +305,12 @@ ipcMain.on('getLocalDashStats', (_event, args) => {
     });
 });
 
+const goToNationalDashboard = () => {
+    mainWindow.loadURL("file://" + path.join(__dirname, "../src/pages/national/01_dashboard.html"));
+    mainWindow.webContents.once("did-finish-load", () => {
+        mainWindow.webContents.send("appSession", appSession);
+    });
+}
 const goToRegionalDashboard = () => {
     mainWindow.loadURL("file://" + path.join(__dirname, "../src/pages/regional/01_dashboard.html"));
     mainWindow.webContents.once("did-finish-load", () => {
@@ -920,20 +939,32 @@ ipcMain.on('updateInson', (_event, args) => {
 });
 
 // Regionals =================
-const institutionsR = () => {
+const institutionsR = (code?: string) => {
     const newPage = path.join(__dirname, "../src/pages/regional/02_institutions.html");
     mainWindow.loadURL("file://" + newPage);
     mainWindow.webContents.once("did-finish-load", () => {
-        database.getRegionalInstitutions(db, appSession.userData.region_code).then((result) => {
+        let regionCode = '';
+        if (appSession.userData.role_code !== constant.ROLE_NATIONAL) {
+            regionCode = appSession.userData.region_code;
+        } else if (code != '') {
+            regionCode = code;
+        }
+        database.getRegionalInstitutions(db, regionCode).then((result) => {
             mainWindow.webContents.send("institutions", result);
         });
     });
 }
-const insonsR = () => {
+const insonsR = (code?: string) => {
     const newPage = path.join(__dirname, "../src/pages/regional/02_insons.html");
     mainWindow.loadURL("file://" + newPage);
     mainWindow.webContents.once("did-finish-load", () => {
-        database.getRegionalInsons(db, appSession.userData.region_code).then((result) => {
+        let regionCode = '';
+        if (appSession.userData.role_code !== constant.ROLE_NATIONAL) {
+            regionCode = appSession.userData.region_code;
+        } else if (code != '') {
+            regionCode = code;
+        }
+        database.getRegionalInsons(db, regionCode).then((result) => {
             mainWindow.webContents.send("insons", result);
         });
     });

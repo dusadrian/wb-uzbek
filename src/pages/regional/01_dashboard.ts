@@ -36,6 +36,8 @@ let lang = 'en';
 export const regionalCoordinator = {
     init: async () => {
 
+        sessionStorage.setItem('topMenuPath', 'regional');
+
         ipcRenderer.on("appSession", (_event, args) => {
             console.log(args);
 
