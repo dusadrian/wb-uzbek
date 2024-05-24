@@ -28,10 +28,68 @@ let institutionCode = '';
 let userRole = '';
 let filters: DI.FiltersInterface;
 
-const regElements = ["i4a"];
-const disElements = ["i4b"];
-const setElements = ["i4c"];
+const regElements =  ["i4a"];
+const disElements =  ["i4b"];
+const setElements =  ["i4c"];
 const typeElements = ["i4d"];
+
+const net1_b = ['net1a_b', 'net1b_b', 'net1c_b', 'net1d_b', 'net1e_b']; // tnet_b
+const net1_g = ['net1a_g', 'net1b_g', 'net1c_g', 'net1d_g', 'net1e_g']; // tnet_g
+const net1_t = ['net1a_t', 'net1b_t', 'net1c_t', 'net1d_t', 'net1e_t']; // tnet_t
+
+const nes_b = ['nes1_b', 'nes2_b', 'nes3_b']; // nest_b
+const nes_g = ['nes1_g', 'nes2_g', 'nes3_g']; // nest_g
+const nes_t = ['nes1_t', 'nes2_t', 'nes3_t']; // nest_t
+
+const neo_b = ['neo1_b', 'neo2_b', 'neo3_b', 'neo4_b', 'neo5_b', 'neo6_b', 'neo7_b', 'neo8_b']; // neo_b
+const neo_g = ['neo1_g', 'neo2_g', 'neo3_g', 'neo4_g', 'neo5_g', 'neo6_g', 'neo7_g', 'neo8_g']; // neo_g
+const neo_t = ['neo1_t', 'neo2_t', 'neo3_t', 'neo4_t', 'neo5_t', 'neo6_t', 'neo7_t', 'neo8_t']; // neo_t
+
+const unu_b = ['nest_b', 'neo_b'];
+const unu_bt = [...unu_b, 'tnet_b'];
+
+const unu_g = ['nest_g', 'neo_g'];
+const unu_gt = [...unu_g, 'tnet_g'];
+
+const unu_t = ['nest_t', 'neo_t'];
+const unu_tt = [...unu_t, 'tnet_t'];
+
+const nex1_b = ['nex1a_b', 'nex1b_b', 'nex1c_b', 'nex1d_b', 'nex1e_b', 'nex1f_b']; // next_b
+const nex1_g = ['nex1a_g', 'nex1b_g', 'nex1c_g', 'nex1d_g', 'nex1e_g', 'nex1f_g']; // next_g
+const nex1_t = ['nex1a_t', 'nex1b_t', 'nex1c_t', 'nex1d_t', 'nex1e_t', 'nex1f_t']; // next_t
+
+const eos_b = ['eos1_b', 'eos2_b', 'eos3_b', 'eos4_b']; // eos_b
+const eos_g = ['eos1_g', 'eos2_g', 'eos3_g', 'eos4_g']; // eos_g
+const eost_t = ['eos1_t', 'eos2_t', 'eos3_t', 'eos4_t']; // eost_t
+
+const ext_b =  ['ext0_b', 'ext1_b', 'ext2_b', 'ext3_b', 'ext4_b', 'ext5_b', 'ext6_b', 'ext7_b']; // extt_b
+const ext_g =  ['ext0_g', 'ext1_g', 'ext2_g', 'ext3_g', 'ext4_g', 'ext5_g', 'ext6_g', 'ext7_g']; // extt_g
+const extt_t = ['ext0_t', 'ext1_t', 'ext2_t', 'ext3_t', 'ext4_t', 'ext5_t', 'ext6_t', 'ext7_t']; // extt_t
+
+const tsa_b =  ['tsa1_b', 'tsa2_b', 'tsa3_b']; // tsa_b
+const tsa_g =  ['tsa1_g', 'tsa2_g', 'tsa3_g']; // tsa_g
+const tsat_t = ['tsa1_t', 'tsa2_t', 'tsa3_t']; // tsat_t
+
+const tnr = ['tnr1_b', 'tnr1_g'];
+
+const final = ['tnr0', 'tnet_t', 'next_t', 'tnr1_t'];
+
+const e0174 = ['eost_b', 'extt_b', 'tsa1_b', 'tsa2_b', 'tsa3_b'];
+const e0174t = [...e0174, 'next_b'];
+
+const e0175 = ['eost_g', 'extt_g', 'tsa1_g', 'tsa2_g', 'tsa3_g'];
+const e0175t = [...e0175, 'next_g'];
+
+const e0176 = ['eost_t', 'extt_t', 'tsa1_t', 'tsa2_t', 'tsa3_t'];
+const e0176t = [...e0176, 'next_t'];
+
+const validate = [
+    ...net1_b, ...net1_g, ...net1_t, ...nes_b, ...nes_g, ...nes_t, ...neo_b,
+    ...neo_g, ...neo_t, ...unu_b, ...unu_bt, ...unu_g, ...unu_gt, ...unu_t,
+    ...unu_tt, ...nex1_b, ...nex1_g, ...nex1_t, ...eos_b, ...eos_g, ...eost_t,
+    ...ext_b, ...ext_g, ...extt_t, ...tsa_b, ...tsa_g, ...tsat_t, ...tnr,
+    ...final, ...e0174, ...e0174t, ...e0175, ...e0175t, ...e0176, ...e0176t
+]
 
 
 export const instrument6 = {
@@ -88,8 +146,8 @@ export const instrument6 = {
 
                 util.listen(disElements[x], "change", function () {
 
+                    util.resetSelect(setElements[x], "--", "--"); // auto-completat
                     const selectedDistrict = util.htmlElement(disElements[x]).value;
-                    // util.resetSelect(setElements[x], "-9", translations['t_choose']); // auto-completat deci nu este nevoie
 
                     if (Number(selectedDistrict) > 0) {
 
@@ -123,7 +181,14 @@ export const instrument6 = {
                 instrumentID = parseInt(args.id);
 
                 for (const item of args.questions) {
+                    const index = [...regElements, ...disElements, ...validate].indexOf(item.variable)
+                    // regiunea este intotdeauna inaintea districtului
+                    // un event de change pe regiune populeaza districtul, iar un event
+                    // de change pe district populeaza settlement-ul
                     instrument.seteazaValoareElement(item.variable, item.value);
+                    if (index >= 0) {
+                        util.trigger(item.variable, "change");
+                    }
                 }
 
             }
@@ -137,22 +202,27 @@ export const instrument6 = {
                 let institution_name = "--";
                 util.setValue("i2", institution_code);
 
-                const settlement = services[institution_code].settlement;
+                let settlement = services[institution_code].settlement;
                 if (inson_user) {
                     const inson = { ...insons[args.userData.institution_code] } as KeyStringNumber;
+                    settlement = insons[institution_code].settlement;
                     institution_name = "" + inson['name_' + lang];
                     util.setValue("i3", "--");
-                    util.setValue('i4', "" + insons[institution_code].district);
                     util.setValue('i4a', "" + insons[institution_code].region);
                     util.setValue('i4b', "" + insons[institution_code].district);
+                    if (!settlement) {
+                        util.setValue("i4d", districts[insons[institution_code].district].type);
+                    }
                 }
                 else {
                     const serviciu = { ...services[institution_code] } as KeyStringNumber;
                     institution_name = '' + serviciu['name_' + lang];
                     util.setValue("i3", services[institution_code].address ? services[institution_code].address : "--");
-                    util.setValue('i4', settlement ? "" + settlement : services[institution_code].district);
                     util.setValue('i4a', "" + services[institution_code].region);
                     util.setValue('i4b', "" + services[institution_code].district);
+                    if (!settlement) {
+                        util.setValue("i4d", districts[services[institution_code].district].type);
+                    }
                 }
 
                 util.setValue("i1", institution_name);
@@ -210,10 +280,6 @@ for (let i = 0; i < setElements.length; i++) {
     }
 }
 
-const net1_b = ['net1a_b', 'net1b_b', 'net1c_b', 'net1d_b', 'net1e_b']; // tnet_b
-const net1_g = ['net1a_g', 'net1b_g', 'net1c_g', 'net1d_g', 'net1e_g']; // tnet_g
-const net1_t = ['net1a_t', 'net1b_t', 'net1c_t', 'net1d_t', 'net1e_t']; // tnet_t
-
 net1_b.forEach((b) => {
     util.listen(b, 'change', () => {
         const index = net1_b.indexOf(b);
@@ -239,10 +305,6 @@ net1_t.forEach((t) => {
         util.setValue('tnet_t', util.makeSumFromElements(net1_t).toString());
     });
 });
-
-const nes_b = ['nes1_b', 'nes2_b', 'nes3_b']; // nest_b
-const nes_g = ['nes1_g', 'nes2_g', 'nes3_g']; // nest_g
-const nes_t = ['nes1_t', 'nes2_t', 'nes3_t']; // nest_t
 
 nes_b.forEach((b) => {
     util.listen(b, 'change', () => {
@@ -270,10 +332,6 @@ nes_t.forEach((t) => {
     });
 });
 
-
-const neo_b = ['neo1_b', 'neo2_b', 'neo3_b', 'neo4_b', 'neo5_b', 'neo6_b', 'neo7_b', 'neo8_b']; // neo_b
-const neo_g = ['neo1_g', 'neo2_g', 'neo3_g', 'neo4_g', 'neo5_g', 'neo6_g', 'neo7_g', 'neo8_g']; // neo_g
-const neo_t = ['neo1_t', 'neo2_t', 'neo3_t', 'neo4_t', 'neo5_t', 'neo6_t', 'neo7_t', 'neo8_t']; // neo_t
 
 neo_b.forEach((b) => {
     util.listen(b, 'change', () => {
@@ -303,9 +361,6 @@ neo_t.forEach((t) => {
 
 
 // nest_b + neo_b = tnet_b
-
-const unu_b = ['nest_b', 'neo_b'];
-const unu_bt = [...unu_b, 'tnet_b'];
 unu_bt.forEach((item) => {
     util.listen(item, 'change', () => {
         if (util.inputsHaveValue(unu_bt)) {
@@ -321,9 +376,6 @@ unu_bt.forEach((item) => {
 });
 
 // nest_g + neo_g = tnet_g
-
-const unu_g = ['nest_g', 'neo_g'];
-const unu_gt = [...unu_g, 'tnet_g'];
 unu_gt.forEach((item) => {
     util.listen(item, 'change', () => {
         if (util.inputsHaveValue(unu_gt)) {
@@ -339,9 +391,6 @@ unu_gt.forEach((item) => {
 });
 
 // nest_t + neo_t = tnet_t
-
-const unu_t = ['nest_t', 'neo_t'];
-const unu_tt = [...unu_t, 'tnet_t'];
 unu_tt.forEach((item) => {
     util.listen(item, 'change', () => {
         if (util.inputsHaveValue(unu_tt)) {
@@ -356,11 +405,6 @@ unu_tt.forEach((item) => {
     });
 });
 
-
-
-const nex1_b = ['nex1a_b', 'nex1b_b', 'nex1c_b', 'nex1d_b', 'nex1e_b', 'nex1f_b']; // next_b
-const nex1_g = ['nex1a_g', 'nex1b_g', 'nex1c_g', 'nex1d_g', 'nex1e_g', 'nex1f_g']; // next_g
-const nex1_t = ['nex1a_t', 'nex1b_t', 'nex1c_t', 'nex1d_t', 'nex1e_t', 'nex1f_t']; // next_t
 
 nex1_b.forEach((b) => {
     util.listen(b, 'change', () => {
@@ -388,12 +432,6 @@ nex1_t.forEach((t) => {
     });
 });
 
-
-
-const eos_b = ['eos1_b', 'eos2_b', 'eos3_b', 'eos4_b']; // eos_b
-const eos_g = ['eos1_g', 'eos2_g', 'eos3_g', 'eos4_g']; // eos_g
-const eost_t = ['eos1_t', 'eos2_t', 'eos3_t', 'eos4_t']; // eost_t
-
 eos_b.forEach((b) => {
     util.listen(b, 'change', () => {
         const index = eos_b.indexOf(b);
@@ -419,12 +457,6 @@ eost_t.forEach((t) => {
         util.setValue('eost_t', util.makeSumFromElements(eost_t).toString());
     });
 });
-
-
-
-const ext_b =  ['ext0_b', 'ext1_b', 'ext2_b', 'ext3_b', 'ext4_b', 'ext5_b', 'ext6_b', 'ext7_b']; // extt_b
-const ext_g =  ['ext0_g', 'ext1_g', 'ext2_g', 'ext3_g', 'ext4_g', 'ext5_g', 'ext6_g', 'ext7_g']; // extt_g
-const extt_t = ['ext0_t', 'ext1_t', 'ext2_t', 'ext3_t', 'ext4_t', 'ext5_t', 'ext6_t', 'ext7_t']; // extt_t
 
 ext_b.forEach((b) => {
     util.listen(b, 'change', () => {
@@ -452,12 +484,6 @@ extt_t.forEach((t) => {
     });
 });
 
-
-
-const tsa_b =  ['tsa1_b', 'tsa2_b', 'tsa3_b']; // tsa_b
-const tsa_g =  ['tsa1_g', 'tsa2_g', 'tsa3_g']; // tsa_g
-const tsat_t = ['tsa1_t', 'tsa2_t', 'tsa3_t']; // tsat_t
-
 tsa_b.forEach((b) => {
     util.listen(b, 'change', () => {
         const index = tsa_b.indexOf(b);
@@ -476,14 +502,11 @@ tsa_g.forEach((g) => {
     });
 });
 
-const tnr = ['tnr1_b', 'tnr1_g'];
 tnr.forEach((item) => {
     util.listen(item, 'change', () => {
         util.setValue('tnr1_t', util.makeSumFromElements(tnr).toString());
     });
 });
-
-const final = ['tnr0', 'tnet_t', 'next_t', 'tnr1_t'];
 
 final.forEach((item) => {
     util.listen(item, 'change', () => {
@@ -504,8 +527,6 @@ final.forEach((item) => {
 
 
 // eost_b + extt_b + tsa1_b + tsa2_b + tsa3_b = next_b
-const e0174 = ['eost_b', 'extt_b', 'tsa1_b', 'tsa2_b', 'tsa3_b'];
-const e0174t = [...e0174, 'next_b'];
 e0174t.forEach((item) => {
     util.listen(item, 'change', () => {
         if (util.inputsHaveValue(e0174t)) {
@@ -521,8 +542,6 @@ e0174t.forEach((item) => {
 });
 
 // eost_g + extt_g + tsa1_g + tsa2_g + tsa3_g = next_g
-const e0175 = ['eost_g', 'extt_g', 'tsa1_g', 'tsa2_g', 'tsa3_g'];
-const e0175t = [...e0175, 'next_g'];
 e0175t.forEach((item) => {
     util.listen(item, 'change', () => {
         if (util.inputsHaveValue(e0175t)) {
@@ -538,8 +557,6 @@ e0175t.forEach((item) => {
 });
 
 // eost_t + extt_t + tsa1_t + tsa2_t + tsa3_t = next_t
-const e0176 = ['eost_t', 'extt_t', 'tsa1_t', 'tsa2_t', 'tsa3_t'];
-const e0176t = [...e0176, 'next_t'];
 e0176t.forEach((item) => {
     util.listen(item, 'change', () => {
         if (util.inputsHaveValue(e0176t)) {

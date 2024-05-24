@@ -286,7 +286,7 @@ e2e7.forEach(item => {
 util.listen("j5", "myChange", () => {
     const message = "J5: 0 - 60";
     errorHandler.removeError("j5", message);
-    if (Number(instrument.questions['j5'].value) > 168) {
+    if (Number(instrument.questions['j5'].value) > 60) {
         errorHandler.addError("j5", message);
     }
 });

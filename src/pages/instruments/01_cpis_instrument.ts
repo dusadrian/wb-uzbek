@@ -209,6 +209,7 @@ export const instrument1 = {
             } else if (el == "cmgt1a") {
                 config.minDate = "01/01/2000";
                 config.dateFormat = "mm/yy";
+                console.log(el, config)
             }
 
             $("#" + el).datepicker(config);
