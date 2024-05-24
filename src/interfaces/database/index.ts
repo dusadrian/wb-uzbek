@@ -148,6 +148,44 @@ export interface DataExportInterface {
     variable: string;
     value: string;
 }
+export interface InstitutionDataExportInterface {
+    id: string;
+    uuid: string;
+    code: string;
+    name_en: string;
+    name_uz: string;
+    name_ru: string;
+    type: string;
+    shorttype: string;
+    address: string;
+    region: string;
+    district: string;
+    settlement: string;
+    settlement_type: string;
+    capacity: string;
+    children: string;
+    leavers: string;
+    employees: string;
+    inson: string;
+    changed: string;
+}
+export interface InsonDataExportInterface {
+    id: string;
+    uuid: string;
+    code: string;
+    name_en: string;
+    name_uz: string;
+    name_ru: string;
+    region: string;
+    district: string;
+    settlement: string;
+    pf: string;
+    fth: string;
+    children_fth: string;
+    leavers_fth: string;
+    services: string;
+    changed: string;
+}
 
 export interface AuthCode {
     institution_code: string;

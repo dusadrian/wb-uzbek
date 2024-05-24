@@ -60,6 +60,7 @@ CREATE TABLE institutions (
     leavers INTEGER,
     employees INTEGER,
     inson INTEGER,
+    changed BOOLEAN DEFAULT FALSE,
     activcode1 VARCHAR,
     activcode2 VARCHAR,
     activcode3 VARCHAR,
@@ -72,6 +73,8 @@ INSERT INTO institutions
 SELECT * FROM st_read('Services.xlsx', layer = 'Sheet1', open_options = ['HEADERS=FORCE']);
 
 SELECT nextval('id_institution_sequence') AS nextval;
+
+ALTER TABLE institutions ADD COLUMN changed BOOLEAN DEFAULT FALSE;
 
 -- Create INSON table
 INSTALL spatial;
@@ -96,6 +99,7 @@ CREATE TABLE inson (
     children_fth INTEGER NOT NULL,
     leavers_fth INTEGER NOT NULL,
     services VARCHAR,
+    changed BOOLEAN DEFAULT FALSE,
     activcode1 VARCHAR,
     activcode2 VARCHAR,
     activcode3 VARCHAR,
@@ -109,7 +113,7 @@ SELECT * FROM st_read('INSON.xlsx', layer = 'Sheet1', open_options = ['HEADERS=F
 
 // fix services
 UPDATE inson SET services = replace(services, '.', ',');
-
+ALTER TABLE inson ADD COLUMN changed BOOLEAN DEFAULT FALSE;
 
 -- Create instrument 1
 DROP TABLE instrument_cpis;

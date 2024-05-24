@@ -133,7 +133,7 @@ ipcMain.on('login', (_event, args) => {
 
             appSession.language = args.language;
             i18n.setLocale(args.language);
-            
+
             appSession.userData = result[0]; // user data
             if (
                 appSession.userData.role_code === constant.ROLE_LOCAL ||
@@ -1804,26 +1804,23 @@ ipcMain.on('exportData', function exportData(_event, args) {
     if (folderPath !== void 0) {
 
         // mainWindow.webContents.send("startLoader");
-        // TODO -- add user code
         const currenDate = new Date();
         const cale = folderPath[0] + '/' + appSession.userData.username + '_' + currenDate.getFullYear() + '-' + (currenDate.getMonth() + 1) + '-' + currenDate.getDate();
         const instruments = getLisOfInstrumentsToExport(args.userRoleCode, args.userServiceTypeCode);
 
         asyncForArray(instruments, downloadUserInstruments, appSession.userData.role_code, appSession.userData.uuid, appSession.userData.institution_code).then(processedData => {
-            fs.writeFile(cale, JSON.stringify(processedData), (err) => {
-                if (err) throw err;
-
-                // clear data after use
-                processedData = null;
-
-                crypt.encryptFile(cale);
-
-                dialog.showMessageBox(mainWindow, {
-                    type: 'info',
-                    title: i18n.__('main.success'),
-                    message: i18n.__('main._dataDownloaded')
+            console.log(processedData);
+            
+            if (appSession.userData.role_code == constant.ROLE_LOCAL || appSession.userData.role_code == constant.ROLE_REGIONAL || appSession.userData.role_code == constant.ROLE_NATIONAL) {
+                database.getInstitutionDataForDownload().then((result) => {
+                    if (processedData) {
+                        processedData.institutions = result;
+                    }
+                    writeFileTodisk(processedData, cale);
                 });
-            });
+            } else {
+                writeFileTodisk(processedData, cale);
+            }
         });
     } else {
         // mainWindow.webContents.send("clearLoader");
@@ -1834,6 +1831,22 @@ ipcMain.on('exportData', function exportData(_event, args) {
         });
     }
 });
+const writeFileTodisk = (data: {[key:string]: string}, cale: string,) => {
+    fs.writeFile(cale, JSON.stringify(data), (err) => {
+        if (err) throw err;
+
+        // crypt.encryptFile(cale);
+
+        // clear data after use
+        data = null;
+
+        dialog.showMessageBox(mainWindow, {
+            type: 'info',
+            title: i18n.__('main.success'),
+            message: i18n.__('main._dataDownloaded')
+        });
+    });
+}
 // Export user instruments
 ipcMain.on('exportUserData', function exportUserData(_event, args) {
 

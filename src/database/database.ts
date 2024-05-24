@@ -4,6 +4,7 @@ import * as DI from "../interfaces/database";
 import { save as instrumentSave, get as instrumentGet, getExisting, cpisList, deleteCPIS, cibsList, deleteCIBS, csrList, deleteStaff, ftchList, deleteFTCH, pfqList, deletePFQ, eefList, deleteEEF, yplcsList, deleteYPLCS, tqypList, deleteTQYP } from "./instruments";
 import { filledInstrumentsR, getInstrumentsToBeFilledBy, getFilledInstitutions, getRegionalInstitutions, getRegionalInsons, getInstitutionsByTypeAndRegion, cpisListALL, cibsListALL, csrListALL, yplcsListALL, tqypListALL, ftchListALL, pfqListALL, eefListALL } from "./regional_up";
 import constant from '../libraries/constants'
+import { get } from "lodash";
 
 const duckdbOptions: {
     access_mode: 'READ_WRITE' | 'READ_ONLY',
@@ -584,8 +585,10 @@ export const database = {
             } else if (role_code === constant.ROLE_LOCAL) {
                 where += ` AND institution_code = '${institution_code}'`;
             }
-
-            db.all(`SELECT * FROM instrument_${table} LEFT JOIN values_${table} ON values_${table}.instrument_id = instrument_${table}.id WHERE status = 'completed' ${where}`, (error, result) => {
+            const sql = `SELECT * FROM instrument_${table} LEFT JOIN values_${table} ON values_${table}.instrument_id = instrument_${table}.id WHERE status = 'completed' ${where}`;
+            console.log(sql);
+            
+            db.all(sql, (error, result) => {
                 if (error) {
                     console.log("===== Error getDataForDownload =====");
                     console.log(error);
@@ -594,6 +597,32 @@ export const database = {
             });
         });
         return await connection;
+    },
+    getInstitutionDataForDownload: async () => {
+        const connection = new Promise<DI.DataExportInterface[]>((resolve) => {
+            db.all(`SELECT * FROM institutions WHERE changed = true`, (error, result) => {
+                if (error) {
+                    console.log("===== Error getInstitutionDataForDownload =====");
+                    console.log(error);
+                }
+                resolve(result as DI.DataExportInterface[]);
+            });
+        });
+        const institution = await connection;
+        const connection2 = new Promise<DI.DataExportInterface[]>((resolve) => {
+            db.all(`SELECT * FROM inson WHERE changed = true`, (error, result) => {
+                if (error) {
+                    console.log("===== Error getInstitutionDataForDownload =====");
+                    console.log(error);
+                }
+                resolve(result as DI.DataExportInterface[]);
+            });
+        });
+        const inson = await connection2;
+        return {
+            institution,
+            inson
+        };
     },
 
     getInstrumentIdFromUUId: async (table: string, uuid: string) => {
