@@ -15,6 +15,7 @@ interface UtilHelpersInterface {
     getInputDecimalValue: (el: string) => number;
     inputHasValue: (el: string) => boolean;
     inputsHaveValue: (array: string[]) => boolean;
+    anyInputHasValue: (array: string[]) => boolean;
     radioIDs: (name: string) => string[];
     htmlElement: (element: string) => HTMLInputElement;
     setValue: (element: string | string[], value: string) => void;
@@ -256,7 +257,7 @@ export const util: UtilHelpersInterface = {
         return 0;
     },
     inputHasValue: (el: string) => {
-        const input = (document.getElementById(el) as HTMLInputElement);
+        const input = util.htmlElement(el);
         if (input.value != '') {
             return true;
         }
@@ -266,7 +267,7 @@ export const util: UtilHelpersInterface = {
 
         const response: boolean[] = [];
         array.forEach(el => {
-            const input = (document.getElementById(el) as HTMLInputElement);
+            const input = util.htmlElement(el);
             if (input.value != '') {
                 response.push(true);
             } else {
@@ -274,6 +275,16 @@ export const util: UtilHelpersInterface = {
             }
         });
         return response.every(item => item === true);
+    },
+    anyInputHasValue: (array: string[]) => {
+        let response: boolean = false;
+        array.forEach(el => {
+            const input = util.htmlElement(el);
+            if (input.value != '') {
+                response = true;
+            }
+        });
+        return response;
     },
 
     radioIDs: (name) => {
