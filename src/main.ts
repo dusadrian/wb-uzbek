@@ -1715,11 +1715,11 @@ ipcMain.on('importData', (_event, _args) => {
 
             // check if we have errors
             for (const instrument of instrumentsInFile) {
-                if (!userInstruments.includes(instrument)) {
+                if (!userInstruments.includes(instrument) && instrument !== 'institutions') {
                     error = true; // there are instruments not belonging to the user
                 }
 
-                if (dateDinFisier[instrument]) { // there is data
+                if (dateDinFisier[instrument] && instrument !== 'institutions') { // there is data
                     for (const itemUUID in dateDinFisier[instrument].data) {
                         const item = dateDinFisier[instrument].data[itemUUID];
                         const instrumentID = await database.getInstrumentIdFromUUId(instrument, itemUUID);
@@ -1737,7 +1737,19 @@ ipcMain.on('importData', (_event, _args) => {
                         };
                         await database.instrumentSave(dataToImport, db);
                     }
+                } else if (instrument === 'institutions') {
+                    if (dateDinFisier[instrument]['institution'].length > 0) {
+                        for (const inst of dateDinFisier[instrument]['institution']) {
+                            await database.updateImportedInstitution(inst);
+                        }
+                    }
+                    if (dateDinFisier[instrument]['inson'].length > 0) {
+                        for (const inson of dateDinFisier[instrument]['inson']) {
+                            await database.updateImportedInson(inson);
+                        }
+                    }
                 }
+
             }
 
             if (error) {
@@ -1746,8 +1758,21 @@ ipcMain.on('importData', (_event, _args) => {
                     title: i18n.__('Error'),
                     message: i18n.__('Some instruments are not allowed to be imported. Please check the file and try again.')
                 });
+            } else {
+                dialog.showMessageBox(mainWindow, {
+                    type: 'info',
+                    title: i18n.__('Info'),
+                    message: i18n.__('Import finished.')
+                }).then(() => {
+                    if (appSession.userData.role_code === constant.ROLE_REGIONAL) {
+                        goToRegionalDashboard();
+                    } else if (appSession.userData.role_code === constant.ROLE_NATIONAL) {
+                        goToNationalDashboard();
+                    } else {
+                        goToLocalDashboard();
+                    }
+                });
             }
-            goToLocalDashboard();
         });
 
         fs.unlinkSync(decryptedFile);
@@ -1809,8 +1834,6 @@ ipcMain.on('exportData', function exportData(_event, args) {
         const instruments = getLisOfInstrumentsToExport(args.userRoleCode, args.userServiceTypeCode);
 
         asyncForArray(instruments, downloadUserInstruments, appSession.userData.role_code, appSession.userData.uuid, appSession.userData.institution_code).then(processedData => {
-            console.log(processedData);
-            
             if (appSession.userData.role_code == constant.ROLE_LOCAL || appSession.userData.role_code == constant.ROLE_REGIONAL || appSession.userData.role_code == constant.ROLE_NATIONAL) {
                 database.getInstitutionDataForDownload().then((result) => {
                     if (processedData) {
@@ -1831,11 +1854,11 @@ ipcMain.on('exportData', function exportData(_event, args) {
         });
     }
 });
-const writeFileTodisk = (data: {[key:string]: string}, cale: string,) => {
+const writeFileTodisk = (data: { [key: string]: string }, cale: string,) => {
     fs.writeFile(cale, JSON.stringify(data), (err) => {
         if (err) throw err;
 
-        // crypt.encryptFile(cale);
+        crypt.encryptFile(cale);
 
         // clear data after use
         data = null;

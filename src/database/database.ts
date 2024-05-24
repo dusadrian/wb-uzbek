@@ -465,7 +465,6 @@ export const database = {
 
         const i1 = new Promise<DI.StatusInterface[]>((resolve) => {
             const sql = `SELECT status, COUNT(*) AS total FROM instrument_cpis ${where} GROUP BY status`;
-            console.log(sql);
             db.all(sql, (error, result) => {
                 if (error) { console.log(error); }
                 resolve(result as DI.StatusInterface[]);
@@ -523,7 +522,6 @@ export const database = {
         const instrument7 = await i7;
         const i8 = new Promise<DI.StatusInterface[]>((resolve) => {
             const sql = `SELECT status, COUNT(*) AS total FROM instrument_pfq ${where} GROUP BY status`;
-            console.log(sql);
             db.all(sql, (error, result) => {
                 if (error) { console.log(error, 'Instrument 8 filledInstruments'); }
                 resolve(result as DI.StatusInterface[]);
@@ -586,7 +584,6 @@ export const database = {
                 where += ` AND institution_code = '${institution_code}'`;
             }
             const sql = `SELECT * FROM instrument_${table} LEFT JOIN values_${table} ON values_${table}.instrument_id = instrument_${table}.id WHERE status = 'completed' ${where}`;
-            console.log(sql);
             
             db.all(sql, (error, result) => {
                 if (error) {
@@ -623,6 +620,58 @@ export const database = {
             institution,
             inson
         };
+    },
+    updateImportedInstitution: async (data: DI.InstitutionDataExportInterface) => {
+        const connection = new Promise<boolean>((resolve) => {
+            db.run(`UPDATE institutions SET
+                name_en = '${data.name_en}',
+                name_uz = '${data.name_uz}',
+                name_ru = '${data.name_ru}',
+                type = '${data.type}',
+                shorttype = '${data.shorttype}',
+                address = '${data.address}',
+                region = '${data.region}',
+                district = '${data.district}',
+                settlement = '${data.settlement}',
+                settlement_type = '${data.settlement_type}',
+                capacity = '${data.capacity}',
+                children = '${data.children}',
+                leavers = '${data.leavers}',
+                employees = '${data.employees}',
+                inson = ${data.inson ?? null},
+                changed = true
+                WHERE uuid = '${data.uuid}'`, (error) => {
+                if (error) {
+                    console.log(error);
+                }
+                resolve(true);
+            });
+        });
+        return await connection;
+    },
+    updateImportedInson: async (data: DI.InsonDataExportInterface) => {
+        const connection = new Promise<boolean>((resolve) => {
+            db.run(`UPDATE inson SET
+                name_en = '${data.name_en}',
+                name_uz = '${data.name_uz}',
+                name_ru = '${data.name_ru}',
+                region = '${data.region}',
+                district = '${data.district}',
+                settlement = '${data.settlement}',
+                pf = '${data.pf}',
+                fth = '${data.fth}',
+                children_fth = '${data.children_fth}',
+                leavers_fth = '${data.leavers_fth}',
+                services = '${data.services}',
+                changed = true
+                WHERE uuid = '${data.uuid}'`, (error) => {
+                if (error) {
+                    console.log(error);
+                }
+                resolve(true);
+            });
+        });
+        return await connection;
     },
 
     getInstrumentIdFromUUId: async (table: string, uuid: string) => {

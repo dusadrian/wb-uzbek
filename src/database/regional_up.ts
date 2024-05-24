@@ -371,7 +371,7 @@ export const getFilledInstitutions = async (db: DuckDB.Database, instrument: str
                     sql += ` AND region_code = '${region}'`;
                 }
 
-                console.log('getFilledInstitutions', sql);
+                // console.log('getFilledInstitutions', sql);
 
                 db.all(sql, (error, result) => {
                     if (error) { console.log(error); }

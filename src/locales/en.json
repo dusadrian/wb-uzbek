@@ -158,5 +158,7 @@
 	"Service added.": "Service added.",
 	"Somethig got wrong, please try again later.": "Somethig got wrong, please try again later.",
 	"Service code already in use.": "Service code already in use.",
-	"The provided service code is wrong.": "The provided service code is wrong."
+	"The provided service code is wrong.": "The provided service code is wrong.",
+	"Info": "Info",
+	"Import finished.": "Import finished."
 }
