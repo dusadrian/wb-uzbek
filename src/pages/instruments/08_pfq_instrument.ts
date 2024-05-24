@@ -57,6 +57,8 @@ const exit_dates = [
 
 const date_elements = [...general_dates, ...admission_dates, ...exit_dates];
 
+const validate = ["pf2", "ex2"];
+
 
 export const instrument8 = {
     init: async () => {
@@ -198,12 +200,12 @@ export const instrument8 = {
                 instrumentID = parseInt(args.id);
 
                 for (const item of args.questions) {
+                    instrument.seteazaValoareElement(item.variable, item.value);
 
-                    const index = [...regElements, ...disElements].indexOf(item.variable)
+                    const index = [...regElements, ...disElements, ...validate].indexOf(item.variable)
                     // regiunea este intotdeauna inaintea districtului
                     // un event de change pe regiune populeaza districtul, iar un event
                     // de change pe district populeaza settlement-ul
-                    instrument.seteazaValoareElement(item.variable, item.value);
                     if (index >= 0) {
                         util.trigger(item.variable, "change");
                     }

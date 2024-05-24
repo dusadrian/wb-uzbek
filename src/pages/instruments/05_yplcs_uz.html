@@ -180,7 +180,7 @@
                 </div>
             </div>
 
-            <div class="grid grid-cols-2 items-center gap-4 mt-6">
+            <div class="grid grid-cols-2 gap-4 items-center">
                 <div>PI4b. Viloyat</div>
                 <div>
                     <select id="pi4b" name="pi4b" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
@@ -189,7 +189,7 @@
                 </div>
             </div>
 
-            <div class="grid grid-cols-2 items-center gap-4 mt-6">
+            <div class="grid grid-cols-2 gap-4 items-center">
                 <div>PI4c. Tuman</div>
                 <div>
                     <select id="pi4c" name="pi4c" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
@@ -197,7 +197,7 @@
                     </select>
                 </div>
             </div>
-            <div class="grid grid-cols-2 items-center gap-4 mt-6">
+            <div class="grid grid-cols-2 gap-4 items-center">
                 <div>PI4d. Aholi punkti</div>
                 <div>
                     <select id="pi4d" name="pi4d" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
@@ -209,56 +209,28 @@
 
             <input type="hidden" id="pi4e" name="pi4e" />
 
-
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
-                <div class="col-span-1">PI5. Yosh odamning etnik kelib chiqishi (millati)</div>
-                <div class="col-span-1 flex flex-col gap-2">
-                    <div class="flex items-center">
-                        <input id="pi5-1" type="radio" value="1" name="pi5" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200" />
-                        <label for="pi5-1" class="ms-2 text-sm text-gray-900">1. Oʻzbek</label>
-                    </div>
-                    <div class="flex items-center">
-                        <input id="pi5-2" type="radio" value="2" name="pi5" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200" />
-                        <label for="pi5-2" class="ms-2 text-sm text-gray-900">2. Rus</label>
-                    </div>
-                    <div class="flex items-center">
-                        <input id="pi5-3" type="radio" value="3" name="pi5" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200" />
-                        <label for="pi5-3" class="ms-2 text-sm text-gray-900">3. Qozoq</label>
-                    </div>
-                    <div class="flex items-center">
-                        <input id="pi5-4" type="radio" value="4" name="pi5" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200" />
-                        <label for="pi5-4" class="ms-2 text-sm text-gray-900">4. Tojik</label>
-                    </div>
-                    <div class="flex items-center">
-                        <input id="pi5-5" type="radio" value="5" name="pi5" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200" />
-                        <label for="pi5-5" class="ms-2 text-sm text-gray-900">5. Tatar</label>
-                    </div>
-                    <div class="flex items-center">
-                        <input id="pi5-6" type="radio" value="6" name="pi5" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200" />
-                        <label for="pi5-6" class="ms-2 text-sm text-gray-900">6. Qoraqalpoq</label>
-                    </div>
-                    <div class="flex items-center">
-                        <input id="pi5-7" type="radio" value="7" name="pi5" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200" />
-                        <label for="pi5-7" class="ms-2 text-sm text-gray-900">7. Qirgʻiz</label>
-                    </div>
-                    <div class="flex items-center">
-                        <input id="pi5-8" type="radio" value="8" name="pi5" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200" />
-                        <label for="pi5-8" class="ms-2 text-sm text-gray-900">8. Koreys</label>
-                    </div>
-                    <div class="flex items-center">
-                        <input id="pi5-9" type="radio" value="9" name="pi5" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200" />
-                        <label for="pi5-9" class="ms-2 text-sm text-gray-900">9. Boshqa</label>
-                    </div>
-                    <div class="flex items-center">
-                        <input id="pi5-10" type="radio" value="0" name="pi5" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200" />
-                        <label for="pi5-20" class="ms-2 text-sm text-gray-900">0. Oshkor qilinmagan / nomaʼlum</label>
-                    </div>
+                <div>PI5. Yosh odamning etnik kelib chiqishi (millati)</div>
+                <div>
+                    <select id="lk12" name="lk12" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
+                        <option value="-9">--- tanlang ---</option>
+                        <option value="{{lk12-1}}">1. Oʻzbek/option>
+                        <option value="{{lk12-2}}">2. Rus/option>
+                        <option value="{{lk12-3}}">3. Qozoq/option>
+                        <option value="{{lk12-4}}">4. Tojik/option>
+                        <option value="{{lk12-5}}">5. Tatar/option>
+                        <option value="{{lk12-6}}">6. Qoraqalpoq/option>
+                        <option value="{{lk12-7}}">7. Qirgʻiz/option>
+                        <option value="{{lk12-8}}">8. Koreys/option>
+                        <option value="{{lk12-9}}">9. Boshqa/option>
+                        <option value="{{lk12-10}}">0. Oshkor qilinmagan / nomaʼlum/option>
+                    </select>
                 </div>
             </div>
 
             <p class="mt-6"><br>Tegishli reyestrga koʻra, bolalarga vasiylik turining tizimidan chiqishdan oldin yosh odam yashagan oxirgi muassasining</b></p>
 
-            <div class="grid grid-cols-2 items-center gap-4 mt-6">
+            <div class="grid grid-cols-2 gap-4 items-center">
                 <div>PI6r. Viloyat</div>
                 <div>
                     <select id="pi6r" name="pi6r" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
@@ -267,7 +239,7 @@
                 </div>
             </div>
 
-            <div class="grid grid-cols-2 items-center gap-4 mt-6">
+            <div class="grid grid-cols-2 gap-4 items-center">
                 <div>PI6d. Tuman</div>
                 <div>
                     <select id="pi6d" name="pi6d" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
@@ -347,19 +319,11 @@
                         <input id="pi10a-3" type="radio" value="3" name="pi9a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200" />
                         <label for="pi10-3" class="ms-2 text-sm text-gray-900">3. Kattalar uchun muassasada / internatda</label>
                     </div>
-                    <div class="flex items-center">
-                        <input id="pi10a-4" type="radio" value="4" name="pi9a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200" />
-                        <label for="pi10-4" class="ms-2 text-sm text-gray-900">4. Chet elda</label>
-                    </div>
-                    <div class="flex items-center">
-                        <input id="pi10a-5" type="radio" value="5" name="pi9a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200" />
-                        <label for="pi10-5" class="ms-2 text-sm text-gray-900">5. Nomaʼlum</label>
-                    </div>
                 </div>
             </div>
 
             <p>b. Qonuniy yashash joyi-shahar / qishloq:</p>
-            <div class="grid grid-cols-2 items-center gap-4 mt-6">
+            <div class="grid grid-cols-2 gap-4 items-center">
                 <div class="ml-4">c. Viloyat:</div>
                 <div>
                     <select id="pi9c" name="pi9c" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
@@ -368,7 +332,7 @@
                 </div>
             </div>
 
-            <div class="grid grid-cols-2 items-center gap-4 mt-6">
+            <div class="grid grid-cols-2 gap-4 items-center">
                 <div class="ml-4">d. Tuman:</div>
                 <div>
                     <select id="pi9d" name="pi9d" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
@@ -376,7 +340,7 @@
                     </select>
                 </div>
             </div>
-            <div class="grid grid-cols-2 items-center gap-4 mt-6">
+            <div class="grid grid-cols-2 gap-4 items-center">
                 <div class="ml-4">h. Aholi punkti</div>
                 <div>
                     <select id="pi9h" name="pi9h" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
@@ -494,7 +458,9 @@
                     </div>
                 </div>
             </div>
+
             <p class="mt-6">SAVOLLAR LV1-LV6 SAVOLLAR FAQAT YOSH ODAM HAMJAMIYATDA YASHASA, QOʻLLANILADI (PI9DA 1 YOKI 2 KODI). AGAR KATTALARNI PARVARISH CHILISH MUASSASASIDA YASHASA LV7 GA OʻTING</p>
+
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
                 <div class="col-span-1">LV1. Hozirda yosh odam qayerda yashaydi?</div>
                 <div class="col-span-1 flex flex-col gap-2">

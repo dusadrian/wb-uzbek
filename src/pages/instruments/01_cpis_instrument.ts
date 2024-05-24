@@ -46,6 +46,12 @@ const sh3_end_dates = [
 ];
 
 
+const regElements =  ["reg", "lk14b", "cm3b", "cm10c", "cm11c", "ct3b", "ct10c", "ct11c", "cg10c", "cg11c", "sa3a", "sa5r"];
+const disElements =  ["dis", "lk14c", "cm3c", "cm10d", "cm11d", "ct3c", "ct10d", "ct11d", "cg10d", "cg11d", "sa3b", "sa5d"];
+const setElements =  ["",    "lk14d", "cm3d", "cm10e", "cm11e", "ct3d", "ct10e", "ct11e", "cg10e", "cg11e", "sa3c", ""];
+const typeElements = ["",    "lk14e", "cm3e", "cm10f", "cm11f", "ct3e", "ct10f", "ct11f", "cg10f", "cg11f", "sa3d", ""];
+
+
 // variabile cu reguli de validare
 const lk22_2 = ['lk22_2_1', 'lk22_2_2', 'lk22_2_3', 'lk22_2_4', 'lk22_2_5'];
 const lk3cg1 = ["lk3", "cg1c"];
@@ -68,17 +74,21 @@ const qfam3 = [
 const lk3cm3 = ["lk3", "cm3"];
 const lk3ct3 = ["lk3", "ct3"];
 
+const cm1a = util.radioIDs("cm1a");
+const cm1c = util.radioIDs("cm1c");
+const ct1a = util.radioIDs("ct1a");
+const ct1c = util.radioIDs("ct1c");
 
-// const validate = [
-//     "sa5i", "sa1a", "sh1", "qfam2_90", "qfam3_6", "qfam3_9", "sh5",
-//     "lk14a_out", "lk14a_dk", "cm3a_out", "cm3a_dk", "ct3a_out", "ct3a_dk"
-// ]
 
 
-const regElements =  ["reg", "lk14b", "cm3b", "cm10c", "cm11c", "ct3b", "ct10c", "ct11c", "cg10c", "cg11c", "sa3a", "sa5r"];
-const disElements =  ["dis", "lk14c", "cm3c", "cm10d", "cm11d", "ct3c", "ct10d", "ct11d", "cg10d", "cg11d", "sa3b", "sa5d"];
-const setElements =  ["",    "lk14d", "cm3d", "cm10e", "cm11e", "ct3d", "ct10e", "ct11e", "cg10e", "cg11e", "sa3c", ""];
-const typeElements = ["",    "lk14e", "cm3e", "cm10f", "cm11f", "ct3e", "ct10f", "ct11f", "cg10f", "cg11f", "sa3d", ""];
+const validate = [
+    ...regElements, ...disElements, ...sh3_start_dates, ...sh3_end_dates,
+    ...lk22_2, ...lk3cg1, ...cg1cg3, ...qhouse4ArrayFull, ...ewm1, ...ewm2, ...ewm3, ...ewm4,
+    ...cmgtsa, ...sk3, ...qfam2, ...qfam3, ...lk3cm3, ...lk3ct3, ...cm1a, ...cm1c,
+    ...ct1a, ...ct1c,
+    "sa5i", "sa1a", "sh1", "qfam2_90", "qfam3_6", "qfam3_9", "sh5",
+    "lk14a_out", "lk14a_dk", "cm3a_out", "cm3a_dk", "ct3a_out", "ct3a_dk"
+]
 
 let regionCode = '';
 let userUUID = '';
@@ -105,9 +115,6 @@ function check_sa1a(sa1a: number) {
     }
 }
 
-
-const cm1a = util.radioIDs("cm1a");
-const cm1c = util.radioIDs("cm1c");
 
 function check_cm1(value: string) {
     instrument.questions["cm1c"].readonly = false;
@@ -136,11 +143,7 @@ function check_cm1(value: string) {
 }
 
 
-const ct1a = util.radioIDs("ct1a");
-const ct1c = util.radioIDs("ct1c");
-
 function check_ct1(value: string) {
-    instrument.questions["ct1c"].readonly = false;
     ct1c.forEach((item) => {
         const elem = util.htmlElement(item);
         elem.disabled = false;
@@ -154,19 +157,22 @@ function check_ct1(value: string) {
         ct1c1.checked = false;
         ct1c1.disabled = true;
         ct1c1.dataset['skip'] = 'true';
+
         ct1c4.checked = false;
         ct1c4.disabled = true;
         ct1c4.dataset['skip'] = 'true';
+
     } else if (value == "3") {
         ct1c.forEach((item) => {
             const elem = util.htmlElement(item);
+            elem.checked = false;
             elem.disabled = true;
             elem.dataset['skip'] = 'true';
         })
 
         util.htmlElement("ct1c-3").checked = true;
         instrument.questions["ct1c"].value = "3";
-        instrument.questions["ct1c"].readonly = true;
+
     } else if (value == "4") {
         ct1c1.checked = false;
         ct1c1.disabled = true;
@@ -174,6 +180,7 @@ function check_ct1(value: string) {
     }
 }
 
+$.datepicker.setDefaults($.datepicker.regional[lang]);
 const jQueryDatepickerConfig = {
     changeMonth: true,
     changeYear: true,
@@ -188,11 +195,9 @@ const jQueryDatepickerConfig = {
 };
 
 
-
 export const instrument1 = {
     init: async () => {
 
-        $.datepicker.setDefaults($.datepicker.regional[lang]);
 
         const date_elements = [...general_dates, ...sh3_start_dates, ...sh3_end_dates];
         date_elements.forEach((el) => {
@@ -208,8 +213,6 @@ export const instrument1 = {
                 config.maxDate = "31/12/2023";
             } else if (el == "cmgt1a") {
                 config.minDate = "01/01/2000";
-                config.dateFormat = "mm/yy";
-                console.log(el, config)
             }
 
             $("#" + el).datepicker(config);
@@ -330,34 +333,37 @@ export const instrument1 = {
                         const institutie = disElements[x] == "dis" ? "sh5" : "sa5i";
                         util.resetSelect(institutie, "-9", translations['t_choose']);
 
-                        const serv = districts[selectedDistrict].services;
-                        if (serv.length > 0) {
-                            for (let i = 0; i < serv.length; i++) {
-                                if (Number(services[serv[i]].type) < 20) {
-                                    let service_included = true;
-                                    if (insons[institution_code]) {
-                                        service_included = insons[institution_code].services.includes(serv[i]);
-                                    }
+                        if (Number(selectedDistrict) > 0) {
 
-                                    if (service_included) {
-                                        const serviciu = { ...services[serv[i]] } as KeyStringNumber;
-                                        util.addOption(
-                                            institutie,
-                                            serv[i],
-                                            serv[i] + ': ' + serviciu['name_' + lang]
-                                        );
+                            const serv = districts[selectedDistrict].services;
+                            if (serv.length > 0) {
+                                for (let i = 0; i < serv.length; i++) {
+                                    if (Number(services[serv[i]].type) < 20) {
+                                        let service_included = true;
+                                        if (insons[institution_code]) {
+                                            service_included = insons[institution_code].services.includes(serv[i]);
+                                        }
+
+                                        if (service_included) {
+                                            const serviciu = { ...services[serv[i]] } as KeyStringNumber;
+                                            util.addOption(
+                                                institutie,
+                                                serv[i],
+                                                serv[i] + ': ' + serviciu['name_' + lang]
+                                            );
+                                        }
                                     }
                                 }
                             }
-                        }
 
-                        if (institutie == "sa5i") {
-                            const optgroup = document.createElement("optgroup");
-                            const option999 = document.createElement("option");
-                            option999.value = '999';
-                            option999.text = '999: ' + translations['not_in_registry'];
-                            optgroup.appendChild(option999);
-                            util.htmlElement(institutie).appendChild(optgroup);
+                            if (institutie == "sa5i") {
+                                const optgroup = document.createElement("optgroup");
+                                const option999 = document.createElement("option");
+                                option999.value = '999';
+                                option999.text = '999: ' + translations['not_in_registry'];
+                                optgroup.appendChild(option999);
+                                util.htmlElement(institutie).appendChild(optgroup);
+                            }
                         }
                     }
                 })
@@ -371,15 +377,12 @@ export const instrument1 = {
                 instrumentID = parseInt(args.id);
 
                 for (const item of args.questions) {
+                    instrument.seteazaValoareElement(item.variable, item.value);
 
-                    // TODO: poate ca nu ar fi o idee rea sa adaug aici TOATE
-                    // variabilele care au reguli de validare
-                    const index = [...regElements, ...disElements].indexOf(item.variable)
                     // regiunea este intotdeauna inaintea districtului
                     // un event de change pe regiune populeaza districtul, iar un event
                     // de change pe district populeaza settlement-ul
-                    instrument.seteazaValoareElement(item.variable, item.value);
-                    if (index >= 0) {
+                    if (validate.indexOf(item.variable) >= 0) {
                         util.trigger(item.variable, "change");
                     }
 
@@ -393,14 +396,6 @@ export const instrument1 = {
 
                     if (item.variable == "ct1c") {
                         check_ct1(instrument.questions.ct1a.value);
-                    }
-
-                    if (item.variable == "dis") {
-                        util.trigger("dis", "change");
-                    }
-
-                    if (item.variable == "sa5d") {
-                        util.trigger("sa5d", "change");
                     }
                 }
             }
@@ -625,10 +620,25 @@ util.listen(cg1cg3, "myChange", () => {
 
 
 util.listen("sa1", "myChange", () => {
-    if (instrument.questions.lk3.value != "-9" && instrument.questions.sa1.value != "-9") {
+
+    const lk3 = util.htmlElement("lk3").value;
+    const sh1 = Number(util.htmlElement("sh1").value);
+
+    const sa1 = util.htmlElement("sa1").value;
+    let good = true;
+    try {
+        $.datepicker.parseDate(
+            jQueryDatepickerConfig.dateFormat,
+            sa1
+        )
+    } catch (error) {
+        good = false;
+    }
+
+    if (good && lk3 != "-9" && sa1 != "-9") {
         const age = util.diffDates(
-            util.standardDate(instrument.questions.lk3.value),
-            util.standardDate(instrument.questions.sa1.value)
+            util.standardDate(lk3),
+            util.standardDate(sa1)
         )
 
         if (!Number.isNaN(age)) {
@@ -646,26 +656,13 @@ util.listen("sa1", "myChange", () => {
                     errorHandler.addError("sa1", message);
                 }
             }
-
         }
     }
 
-    const sa1 = util.htmlElement("sa1").value;
-    const sh1 = Number(util.htmlElement("sh1").value);
     if (sh1 > 0) {
-        let good = true;
-        try {
-            $.datepicker.parseDate(
-                jQueryDatepickerConfig.dateFormat,
-                sa1
-            )
-        } catch (error) {
-            good = false;
-        }
-
         if (good) {
-            util.htmlElement("sh3_s1a").value = util.htmlElement("sa1").value;
-            instrument.questions.sh3_s1a.value = util.htmlElement("sa1").value;
+            util.htmlElement("sh3_s1a").value = sa1;
+            instrument.questions.sh3_s1a.value = sa1;
         } else {
             util.htmlElement("sh3_s1a").value = ""
             instrument.questions.sh3_s1a.value = "-7";
@@ -876,7 +873,7 @@ util.listen("sh3_csa", "myChange", () => {
 
 util.listen("cmgt1a", "myChange", () => {
     const months = util.diffDates(
-        util.standardDate("01/" + instrument.questions.cmgt1a.value),
+        util.standardDate(instrument.questions.cmgt1a.value),
         new Date("2024-05-01"),
         "months"
     )

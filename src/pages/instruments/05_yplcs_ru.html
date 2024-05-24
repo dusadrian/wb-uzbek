@@ -180,7 +180,7 @@
                 </div>
             </div>
 
-            <div class="grid grid-cols-2 items-center gap-4 mt-6">
+            <div class="grid grid-cols-2 gap-4 items-center">
                 <div>PI4b. Область</div>
                 <div>
                     <select id="pi4b" name="pi4b" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
@@ -189,7 +189,7 @@
                 </div>
             </div>
 
-            <div class="grid grid-cols-2 items-center gap-4 mt-6">
+            <div class="grid grid-cols-2 gap-4 items-center">
                 <div>PI4c. Район</div>
                 <div>
                     <select id="pi4c" name="pi4c" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
@@ -197,7 +197,7 @@
                     </select>
                 </div>
             </div>
-            <div class="grid grid-cols-2 items-center gap-4 mt-6">
+            <div class="grid grid-cols-2 gap-4 items-center">
                 <div>PI4d. Населённый пункт</div>
                 <div>
                     <select id="pi4d" name="pi4d" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
@@ -209,56 +209,28 @@
 
             <input type="hidden" id="pi4e" name="pi4e" />
 
-
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
-                <div class="col-span-1">PI5. Этническая принадлежность (национальность) ребенка</div>
-                <div class="col-span-1 flex flex-col gap-2">
-                    <div class="flex items-center">
-                        <input id="pi5-1" type="radio" value="1" name="pi5" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200" />
-                        <label for="pi5-1" class="ms-2 text-sm text-gray-900">1. Узбек/чка</label>
-                    </div>
-                    <div class="flex items-center">
-                        <input id="pi5-2" type="radio" value="2" name="pi5" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200" />
-                        <label for="pi5-2" class="ms-2 text-sm text-gray-900">2. Русский/ая</label>
-                    </div>
-                    <div class="flex items-center">
-                        <input id="pi5-3" type="radio" value="3" name="pi5" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200" />
-                        <label for="pi5-3" class="ms-2 text-sm text-gray-900">3. Казах/шка</label>
-                    </div>
-                    <div class="flex items-center">
-                        <input id="pi5-4" type="radio" value="4" name="pi5" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200" />
-                        <label for="pi5-4" class="ms-2 text-sm text-gray-900">4. Таджик/чка</label>
-                    </div>
-                    <div class="flex items-center">
-                        <input id="pi5-5" type="radio" value="5" name="pi5" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200" />
-                        <label for="pi5-5" class="ms-2 text-sm text-gray-900">5. Татарин/ка</label>
-                    </div>
-                    <div class="flex items-center">
-                        <input id="pi5-6" type="radio" value="6" name="pi5" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200" />
-                        <label for="pi5-6" class="ms-2 text-sm text-gray-900">6. Каракалпак/чка</label>
-                    </div>
-                    <div class="flex items-center">
-                        <input id="pi5-7" type="radio" value="7" name="pi5" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200" />
-                        <label for="pi5-7" class="ms-2 text-sm text-gray-900">7. Кыргыз/ка</label>
-                    </div>
-                    <div class="flex items-center">
-                        <input id="pi5-8" type="radio" value="8" name="pi5" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200" />
-                        <label for="pi5-8" class="ms-2 text-sm text-gray-900">8. Кореец/еянка</label>
-                    </div>
-                    <div class="flex items-center">
-                        <input id="pi5-9" type="radio" value="9" name="pi5" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200" />
-                        <label for="pi5-9" class="ms-2 text-sm text-gray-900">9. Другое</label>
-                    </div>
-                    <div class="flex items-center">
-                        <input id="pi5-10" type="radio" value="0" name="pi5" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200" />
-                        <label for="pi5-20" class="ms-2 text-sm text-gray-900">0. Не заявлено/неизвестно</label>
-                    </div>
+                <div>PI5. Этническая принадлежность (национальность) ребенка</div>
+                <div>
+                    <select id="lk12" name="lk12" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
+                        <option value="-9">--- выбрать ---</option>
+                        <option value="{{lk12-1}}">1. Узбек/чка/option>
+                        <option value="{{lk12-2}}">2. Русский/ая/option>
+                        <option value="{{lk12-3}}">3. Казах/шка/option>
+                        <option value="{{lk12-4}}">4. Таджик/чка/option>
+                        <option value="{{lk12-5}}">5. Татарин/ка/option>
+                        <option value="{{lk12-6}}">6. Каракалпак/чка/option>
+                        <option value="{{lk12-7}}">7. Кыргыз/ка/option>
+                        <option value="{{lk12-8}}">8. Кореец/еянка/option>
+                        <option value="{{lk12-9}}">9. Другое/option>
+                        <option value="{{lk12-10}}">0. Не заявлено/неизвестно/option>
+                    </select>
                 </div>
             </div>
 
             <p class="mt-6"><br>Последнее заведение где находился молодой человек до выхода из системы опеки, согласно соответствующему Реестру</b></p>
 
-            <div class="grid grid-cols-2 items-center gap-4 mt-6">
+            <div class="grid grid-cols-2 gap-4 items-center">
                 <div>PI6r. Область</div>
                 <div>
                     <select id="pi6r" name="pi6r" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
@@ -267,7 +239,7 @@
                 </div>
             </div>
 
-            <div class="grid grid-cols-2 items-center gap-4 mt-6">
+            <div class="grid grid-cols-2 gap-4 items-center">
                 <div>PI6d. Район</div>
                 <div>
                     <select id="pi6d" name="pi6d" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
@@ -347,19 +319,11 @@
                         <input id="pi10a-3" type="radio" value="3" name="pi9a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200" />
                         <label for="pi10-3" class="ms-2 text-sm text-gray-900">3. В учреждении/интернате для взрослых</label>
                     </div>
-                    <div class="flex items-center">
-                        <input id="pi10a-4" type="radio" value="4" name="pi9a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200" />
-                        <label for="pi10-4" class="ms-2 text-sm text-gray-900">4. За границей</label>
-                    </div>
-                    <div class="flex items-center">
-                        <input id="pi10a-5" type="radio" value="5" name="pi9a" class="w-4 h-4 text-blue-600 border-gray-400 focus:ring-blue-500 disabled:bg-gray-200" />
-                        <label for="pi10-5" class="ms-2 text-sm text-gray-900">5. Не известно</label>
-                    </div>
                 </div>
             </div>
 
             <p>b. Юридическое место жительства - Город/Деревня:</p>
-            <div class="grid grid-cols-2 items-center gap-4 mt-6">
+            <div class="grid grid-cols-2 gap-4 items-center">
                 <div class="ml-4">c. Область:</div>
                 <div>
                     <select id="pi9c" name="pi9c" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
@@ -368,7 +332,7 @@
                 </div>
             </div>
 
-            <div class="grid grid-cols-2 items-center gap-4 mt-6">
+            <div class="grid grid-cols-2 gap-4 items-center">
                 <div class="ml-4">d. Район:</div>
                 <div>
                     <select id="pi9d" name="pi9d" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
@@ -376,7 +340,7 @@
                     </select>
                 </div>
             </div>
-            <div class="grid grid-cols-2 items-center gap-4 mt-6">
+            <div class="grid grid-cols-2 gap-4 items-center">
                 <div class="ml-4">h. Населённый пункт</div>
                 <div>
                     <select id="pi9h" name="pi9h" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
@@ -494,7 +458,9 @@
                     </div>
                 </div>
             </div>
+
             <p class="mt-6">ВОПРОСЫ LV1-LV6 ПРИМЕНЯЮТСЯ ТОЛЬКО ЕСЛИ МОЛОДОЙ ЧЕЛОВЕК ПРОЖИВАЕТ В СООБЩЕСТВЕ (КОД 1 ИЛИ 2 В PI9). ЕСЛИ В УЧРЕЖДЕНИЯХ ПО УХОДУ ЗА ВЗРОСЛЫМИ, ПОЖАЛУЙСТА, ПЕРЕХОДИТЕ К LV7</p>
+
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
                 <div class="col-span-1">LV1. Где в настоящее время живет человек?</div>
                 <div class="col-span-1 flex flex-col gap-2">

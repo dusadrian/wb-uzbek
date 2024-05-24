@@ -259,7 +259,7 @@ export const questions: QuestionObjectType = {
     },
     'pi5': {
         name: 'pi5',
-        type: 'radio',
+        type: 'select',
         value: '-9',
         disabled: false,
         hidden: false,

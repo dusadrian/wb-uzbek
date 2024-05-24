@@ -36,6 +36,19 @@ const disElements  = ["dis", "pi4c", "pi6d", "pi9d"];
 const setElements  = ["",    "pi4d", "",     "pi9h"];
 const typeElements = ["",    "pi4e", "",     "pi9i"];
 
+const pi10 = ['pi10a', 'pi10b'];
+const lv = ['lv2_2', 'lv2_3', 'lv2_4', 'lv2_5', 'lv2_6', 'lv2_7', 'lv2_8', 'lv2_9']
+const ls = ["ls2_1", "ls2_2", "ls2_3", "ls2_4", "ls2_5", "ls2_6", "ls2_7", "ls2_8", "ls2_9", "ls2_10"];
+const pi3pi7 = ["pi3", "pi7"];
+const he5 = ["he5_1", "he5_2", "he5_3", "he5_4", "he5_5", "he5_6", "he5_7", "he5_8"];
+const pi9a = util.radioIDs("pi9a");
+
+
+const validate = [
+    ...regElements, ...disElements, ...pi10, ...lv, "lv2_1", ...ls, "ls2_11",
+    "pi8", ...pi3pi7, ...he5, "he5_9", ...pi9a
+]
+
 let regionCode = '';
 let userUUID = '';
 let institutionType = '';
@@ -138,37 +151,43 @@ export const instrument5 = {
                 util.listen(disElements[x], "change", function () {
                     const selectedDistrict = util.htmlElement(disElements[x]).value;
 
-                    if (Number(selectedDistrict) > 0) {
-                        if (setElements[x] != "") {
+                    if (setElements[x] != "") {
+
+                        util.resetSelect(setElements[x], "-9", translations['t_choose']);
+
+                        if (!instrument.questions[setElements[x]].readonly) {
                             instrument.questions[setElements[x]].skip = false;
                             util.htmlElement(setElements[x]).disabled = false;
-                            set_el.innerHTML = "";
-
-
-                                const set_codes = districts[selectedDistrict].settlements;
-
-                                if (set_codes.length > 0) {
-                                    const option = document.createElement("option");
-                                    option.value = "-9";
-                                    option.text = locales[lang]['t_choose'];
-                                    set_el.appendChild(option);
-
-                                    for (let i = 0; i < set_codes.length; i++) {
-                                        util.addOption(
-                                            setElements[x],
-                                            set_codes[i],
-                                            set_codes[i] + ": " + (settlements[set_codes[i]] as KeyString)[lang]
-                                        );
-                                    }
-                                } else {
-                                    util.resetSelect(setElements[x], "--", "--");
-                                    instrument.questions[setElements[x]].skip = true;
-                                    util.htmlElement(setElements[x]).disabled = true;
-                                }
                         }
 
-                        if (disElements[x] == "pi6d") {
-                            util.resetSelect("pi6i", "-9", translations['t_choose']);
+                        if (Number(selectedDistrict) > 0) {
+                            const set_codes = districts[selectedDistrict].settlements;
+
+                            if (set_codes.length > 0) {
+                                const option = document.createElement("option");
+                                option.value = "-9";
+                                option.text = locales[lang]['t_choose'];
+                                set_el.appendChild(option);
+
+                                for (let i = 0; i < set_codes.length; i++) {
+                                    util.addOption(
+                                        setElements[x],
+                                        set_codes[i],
+                                        set_codes[i] + ": " + (settlements[set_codes[i]] as KeyString)[lang]
+                                    );
+                                }
+                            } else {
+                                util.resetSelect(setElements[x], "--", "--");
+                                instrument.questions[setElements[x]].skip = true;
+                                util.htmlElement(setElements[x]).disabled = true;
+                            }
+                        }
+                    }
+
+                    if (disElements[x] == "pi6d") {
+                        util.resetSelect("pi6i", "-9", translations['t_choose']);
+
+                        if (Number(selectedDistrict) > 0) {
 
                             const serv = districts[selectedDistrict].services;
                             if (serv.length > 0) {
@@ -204,13 +223,12 @@ export const instrument5 = {
                 instrumentID = parseInt(args.id);
 
                 for (const item of args.questions) {
+                    instrument.seteazaValoareElement(item.variable, item.value);
 
-                    const index = [...regElements, ...disElements].indexOf(item.variable);
                     // regiunea este intotdeauna inaintea districtului
                     // un event de change pe regiune populeaza districtul, iar un event
                     // de change pe district populeaza settlement-ul
-                    instrument.seteazaValoareElement(item.variable, item.value);
-                    if (index >= 0) {
+                    if (validate.indexOf(item.variable) >= 0) {
                         util.trigger(item.variable, "change");
                     }
                 }
@@ -312,7 +330,6 @@ for (let i = 0; i < setElements.length; i++) {
 }
 
 
-const pi10 = ['pi10a', 'pi10b'];
 util.listen(pi10, "change", () => {
     if (util.inputsHaveValue(pi10)) {
         const message = 'PI10b <= PI10a';
@@ -324,7 +341,6 @@ util.listen(pi10, "change", () => {
 })
 
 
-const lv = ['lv2_2', 'lv2_3', 'lv2_4', 'lv2_5', 'lv2_6', 'lv2_7', 'lv2_8', 'lv2_9']
 util.listen("lv2_1", "change", () => {
     if (util.htmlElement("lv2_1").checked) {
         lv.forEach((el) => {
@@ -341,7 +357,6 @@ util.listen(lv, "change", () => {
     }
 });
 
-const ls = ["ls2_1", "ls2_2", "ls2_3", "ls2_4", "ls2_5", "ls2_6", "ls2_7", "ls2_8", "ls2_9", "ls2_10"];
 util.listen("ls2_11", "change", () => {
     if (util.htmlElement("ls2_11").checked) {
         ls.forEach((el) => {
@@ -368,7 +383,6 @@ util.listen("pi8", "myChange", () => {
 
 
 
-const pi3pi7 = ["pi3", "pi7"];
 util.listen(pi3pi7, "myChange", () => {
     if (util.inputsHaveValue(pi3pi7)) {
         const pi7 = util.htmlElement("pi7").value;
@@ -385,7 +399,6 @@ util.listen(pi3pi7, "myChange", () => {
 })
 
 
-const he5 =["he5_1", "he5_2", "he5_3", "he5_4", "he5_5", "he5_6", "he5_7", "he5_8"];
 util.listen("he5_9", "change", () => {
     if (util.htmlElement("he5_9").checked) {
         he5.forEach((el) => {
@@ -403,7 +416,6 @@ util.listen(he5, "change", () => {
 });
 
 
-const pi9a = util.radioIDs("pi9a");
 util.listen(pi9a, "myChange", () => {
     instrument.questions.lv9.skip = false;
     const value = Number(instrument.questions.pi9a.value);

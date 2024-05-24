@@ -33,6 +33,7 @@ const translations = locales[lang as keyof typeof locales] as Record<string, str
 let services: { [key: string]: DI.Institution };
 let insons: { [key: string]: DI.INSON };
 
+const general_dates = ["af13b"];
 
 const start_dates = [
     'af5_1_d', 'af5_2_d', 'af5_3_d', 'af5_4_d', 'af5_5_d',
@@ -43,6 +44,68 @@ const end_dates = [
     'af5_1_e', 'af5_2_e', 'af5_3_e', 'af5_4_e', 'af5_5_e',
     'af5_6_e', 'af5_7_e', 'af5_8_e', 'af5_9_e', 'af5_10_e'
 ];
+const i13bf = ['i13b', 'i13c', 'i13d', 'i13e', 'i13f'];
+const i13 = [...i13bf, 'i13a'];
+const la6 = ['la6a', 'la6b'];
+const la6la7 = [...la6, 'la7'];
+const la6la8 = [...la6, 'la8'];
+const af5_a = [
+    'af5_1_a', 'af5_2_a', 'af5_3_a', 'af5_4_a', 'af5_5_a',
+    'af5_6_a', 'af5_7_a', 'af5_8_a', 'af5_9_a', 'af5_10_a',
+];
+const af5af1 = [...af5_a, 'af1'];
+const ac1be1 = ['ac1b1', 'ac1c1', 'ac1d1', 'ac1e1'];
+const ac1_1 = [...ac1be1, 'ac1a1'];
+const ac1be2 = ['ac1b2', 'ac1c2', 'ac1d2', 'ac1e2'];
+const ac1_2 = [...ac1be2, 'ac1a2'];
+const compare = ['ac1f1', 'ac5f1', 'ac1g1', 'ac1f2', 'ac1g2', 'ac5b1', 'ac5c1', 'ac5e1', 'i13b', 'i13c', 'i13d', 'i13e', 'i13f', 'i13g'];
+const compare_to = ['ac1a1', 'ac5f', 'ac1a1', 'ac1a2', 'ac1a2', 'ac5b', 'ac5c', 'ac5e', 'i13a', 'i13a', 'i13a', 'i13a', 'i13a', 'i13a'];
+const cc5i12a = ['cc5', 'i12a'];
+const cc5i13a = ['cc5', 'i13a'];
+const de2a = ['de2a', 'de2b', 'de2c', 'de2d', 'de2e'];
+const de2a_i13a = [...de2a, 'i13a'];
+const rce1i12a = ['rce1', 'i12a'];
+const rce1ab = ['rce1a', 'rce1b'];
+const rce1 = [...rce1ab, 'rce1'];
+const af5_c = [
+    'af5_1_c', 'af5_2_c', 'af5_3_c', 'af5_4_c', 'af5_5_c',
+    'af5_6_c', 'af5_7_c', 'af5_8_c', 'af5_9_c', 'af5_10_c',
+];
+const af5edu5 = [...af5_c, 'edu5'];
+const ft7i12a = ['ft7', 'i12a'];
+const ft7i12ai9 = [...ft7i12a, 'i9'];
+const ft7i13a = ['ft7', 'i13a'];
+const ft2af1 = ['ft2', 'af1'];
+const af4ab = ['af4a', 'af4b'];
+const rce612 = ['rce61', 'rce62'];
+const e00Array = ['e01', 'e02', 'e03'];
+const e00ArrayFull = [...e00Array, 'e00'];
+const e01Array = ['e10', 'e20'];
+const e01ArrayFull = [...e01Array, 'e01'];
+const e10Array = ['e10_1', 'e10_2', 'e10_3', 'e10_4', 'e10_5'];
+const e10ArrayFull = [...e10Array, 'e10'];
+const e20Array = [
+    'e20_1', 'e20_2', 'e20_3', 'e20_4', 'e20_5', 'e20_6', 'e20_7', 'e20_8', 'e20_9',
+    'e20_10', 'e20_11', 'e20_12', 'e20_13', 'e20_14', 'e20_15', 'e20_16', 'e20_17',
+    'e20_18', 'e20_19'
+];
+const e20ArrayFull = [...e20Array, 'e20'];
+const e02Array = ['e2_1', 'e2_2'];
+const e02ArrayFull = [...e02Array, 'e02'];
+const e21Array = ['e2_1_1', 'e2_1_2', 'e2_1_3', 'e2_1_4'];
+const e21ArrayFull = [...e21Array, 'e2_1'];
+const rooms = ["ac1a1", "ac1b1", "ac1c1", "ac1d1", "ac1e1", "ac1f1", "ac1g1"];
+const areas = ["ac1a2", "ac1b2", "ac1c2", "ac1d2", "ac1e2", "ac1f2", "ac1g2"];
+const rce = ["rce61", "rce62"];
+const ac14a = util.radioIDs("ac14a");
+
+const validate = [...general_dates, ...start_dates, ...end_dates, ...i13,
+    ...la6, "la7", "la8", "af4b", ...af5af1, ...ac1_1, ...ac1_2, ...compare,
+    "cc5", "i12a", "i13a", ...de2a_i13a, ...rce1i12a, ...rce1, ...af5edu5,
+    ...ft7i12ai9, "i13a", ...ft2af1, ...af4ab, ...rce612, ...e00ArrayFull,
+    ...e01ArrayFull, ...e10ArrayFull, e20ArrayFull, ...e02ArrayFull,
+    ...e21ArrayFull, ...rooms, "i9", ...rce
+];
 
 let regionCode = '';
 let userUUID = '';
@@ -52,7 +115,6 @@ let userRole = '';
 let filters: DI.FiltersInterface;
 
 
-const ac14a = util.radioIDs("ac14a");
 function check_i9() {
     if (util.htmlElement("i9").value != "--") {
         ac14a.forEach((item) => {
@@ -85,7 +147,7 @@ $.datepicker.setDefaults($.datepicker.regional[lang]);
 const jQueryDatepickerConfig = {
     changeMonth: true,
     changeYear: true,
-    dateFormat: "mm/yy",
+    dateFormat: "dd/mm/yy",
     maxDate: "30/04/2024",
     yearRange: "c-100:c+10",
     firstDay: 1,
@@ -96,6 +158,25 @@ const jQueryDatepickerConfig = {
 
 export const instrument4 = {
     init: async () => {
+
+        general_dates.forEach((el) => {
+            const config = { ...jQueryDatepickerConfig };
+
+            $("#" + el).datepicker(config);
+
+            util.listen(el, "change", () => {
+                errorHandler.removeError(el, translations['invalid_date']);
+                try {
+                    $.datepicker.parseDate(
+                        jQueryDatepickerConfig.dateFormat,
+                        util.htmlElement(el).value
+                    )
+                } catch (error) {
+                    errorHandler.addError(el, translations['invalid_date']);
+                    instrument.questions[el].value = "-9";
+                }
+            });
+        });
 
         filters = JSON.parse(sessionStorage.getItem('filters'));
 
@@ -171,6 +252,11 @@ export const instrument4 = {
 
                 for (const item of args.questions) {
                     instrument.seteazaValoareElement(item.variable, item.value);
+
+                    const index = [...validate].indexOf(item.variable)
+                    if (index >= 0) {
+                        util.trigger(item.variable, "change");
+                    }
                 }
             }
 
@@ -272,8 +358,6 @@ util.listen("af13b", "change", () => {
 });
 
 
-const i13bf = ['i13b', 'i13c', 'i13d', 'i13e', 'i13f'];
-const i13 = [...i13bf, 'i13a'];
 util.listen(i13, 'change', () => {
     if (util.inputsHaveValue(i13)) {
         const eroare = 'a >= b + c + d + e + f';
@@ -284,8 +368,6 @@ util.listen(i13, 'change', () => {
     }
 })
 
-const la6 = ['la6a', 'la6b'];
-const la6la7 = [...la6, 'la7'];
 util.listen(la6la7, 'change', () => {
     if (util.inputsHaveValue(la6la7)) {
         const eroare = 'LA7 <= LA6 (a. + b.)';
@@ -297,7 +379,7 @@ util.listen(la6la7, 'change', () => {
 });
 
 
-const la6la8 = [...la6, 'la8'];
+
 util.listen(la6la8, 'change', () => {
     if (util.inputsHaveValue(la6la8)) {
         const eroare = 'LA8 <= LA6 (a. + b.)';
@@ -308,12 +390,6 @@ util.listen(la6la8, 'change', () => {
     }
 })
 
-const af5_a = [
-    'af5_1_a', 'af5_2_a', 'af5_3_a', 'af5_4_a', 'af5_5_a',
-    'af5_6_a', 'af5_7_a', 'af5_8_a', 'af5_9_a', 'af5_10_a',
-];
-
-const af5af1 = [...af5_a, 'af1'];
 af5af1.forEach(item => {
     util.listen(item, 'change', () => {
         const af4b = Number(instrument.questions.af4b.value);
@@ -336,8 +412,7 @@ af5af1.forEach(item => {
     })
 })
 
-const ac1be1 = ['ac1b1', 'ac1c1', 'ac1d1', 'ac1e1'];
-const ac1_1 = [...ac1be1, 'ac1a1'];
+
 ac1_1.forEach(item => {
     util.listen(item, 'change', () => {
         if (util.inputsHaveValue(ac1_1)) {
@@ -350,8 +425,6 @@ ac1_1.forEach(item => {
     })
 })
 
-const ac1be2 = ['ac1b2', 'ac1c2', 'ac1d2', 'ac1e2'];
-const ac1_2 = [...ac1be2, 'ac1a2'];
 ac1_2.forEach(item => {
     util.listen(item, 'change', () => {
         if (util.inputsHaveValue(ac1_2)) {
@@ -364,8 +437,6 @@ ac1_2.forEach(item => {
     })
 })
 
-const compare = ['ac1f1', 'ac5f1', 'ac1g1', 'ac1f2', 'ac1g2', 'ac5b1', 'ac5c1', 'ac5e1', 'i13b', 'i13c', 'i13d', 'i13e', 'i13f', 'i13g'];
-const compare_to = ['ac1a1', 'ac5f', 'ac1a1', 'ac1a2', 'ac1a2', 'ac5b', 'ac5c', 'ac5e', 'i13a', 'i13a', 'i13a', 'i13a', 'i13a', 'i13a'];
 
 compare.forEach(item1 => {
     const index = compare.indexOf(item1);
@@ -385,7 +456,6 @@ compare.forEach(item1 => {
 });
 
 
-const cc5i12a = ['cc5', 'i12a'];
 cc5i12a.forEach(item => {
     util.listen(item, 'myChange', () => {
         const i9 = Number(instrument.questions.i9.value);
@@ -398,7 +468,6 @@ cc5i12a.forEach(item => {
     })
 })
 
-const cc5i13a = ['cc5', 'i13a'];
 cc5i13a.forEach(item => {
     util.listen(item, 'change', () => {
         const i9 = Number(instrument.questions.i9.value);
@@ -411,8 +480,6 @@ cc5i13a.forEach(item => {
     })
 })
 
-const de2a = ['de2a', 'de2b', 'de2c', 'de2d', 'de2e'];
-const de2a_i13a = [...de2a, 'i13a'];
 de2a_i13a.forEach(item => {
     util.listen(item, 'change', () => {
         if (util.inputsHaveValue(de2a_i13a)) {
@@ -424,7 +491,6 @@ de2a_i13a.forEach(item => {
     })
 })
 
-const rce1i12a = ['rce1', 'i12a'];
 rce1i12a.forEach(item => {
     util.listen(item, 'change', () => {
         if (util.inputsHaveValue(rce1i12a)) {
@@ -436,8 +502,6 @@ rce1i12a.forEach(item => {
     })
 })
 
-const rce1ab = ['rce1a', 'rce1b'];
-const rce1 = [...rce1ab, 'rce1'];
 util.listen(rce1, 'change', () => {
     if (util.inputsHaveValue(rce1)) {
         errorHandler.removeError(rce1, 'RCE1 = RCE1a + RCE1b')
@@ -448,11 +512,6 @@ util.listen(rce1, 'change', () => {
 })
 
 
-const af5_c = [
-    'af5_1_c', 'af5_2_c', 'af5_3_c', 'af5_4_c', 'af5_5_c',
-    'af5_6_c', 'af5_7_c', 'af5_8_c', 'af5_9_c', 'af5_10_c',
-];
-const af5edu5 = [...af5_c, 'edu5'];
 af5edu5.forEach(item => {
     util.listen(item, 'change', () => {
         const af4b = Number(instrument.questions.af4b.value);
@@ -476,10 +535,9 @@ af5edu5.forEach(item => {
 })
 
 
-const ft7i12a = ['ft7', 'i12a'];
-[...ft7i12a, 'i9'].forEach(item => {
+ft7i12ai9.forEach(item => {
     util.listen(item, 'change', () => {
-        if (util.inputsHaveValue([...ft7i12a, 'i9'])) {
+        if (util.inputsHaveValue(ft7i12ai9)) {
             if (util.getInputDecimalValue('i9') < 20) {
                 errorHandler.removeError(ft7i12a, 'FT7 <= I12a')
                 if (util.getInputDecimalValue('ft7') > util.getInputDecimalValue('i12a')) {
@@ -490,7 +548,7 @@ const ft7i12a = ['ft7', 'i12a'];
     })
 })
 
-const ft7i13a = ['ft7', 'i13a'];
+
 ft7i13a.forEach(item => {
     util.listen(item, 'change', () => {
         if (util.inputsHaveValue(ft7i13a)) {
@@ -502,7 +560,7 @@ ft7i13a.forEach(item => {
     })
 })
 
-const ft2af1 = ['ft2', 'af1'];
+
 ft2af1.forEach(item => {
     util.listen(item, 'change', () => {
         if (util.inputsHaveValue(ft2af1)) {
@@ -514,20 +572,58 @@ ft2af1.forEach(item => {
     })
 })
 
-const af4ab = ['af4a', 'af4b'];
 af4ab.forEach(item => {
-    util.listen(item, 'change', () => {
+    util.listen(item, 'myChange', () => {
         if (util.inputsHaveValue(af4ab)) {
             const message = "AF4b <= AF4a";
             errorHandler.removeError(af4ab, message)
             if (util.getInputDecimalValue('af4b') > util.getInputDecimalValue('af4a')) {
                 errorHandler.addError(af4ab, message);
             }
+
+        }
+
+        if (item == "af4b") {
+            const value = Number(instrument.questions.af4b.value);
+            const message = translations["Value_up_to_ten"]
+            errorHandler.removeError("af4b", message);
+            if (value > 10) {
+                errorHandler.addError("af4b", message);
+
+                for (let i = 0; i < 10; i++) {
+                    const classlist = util.htmlElement("af5row" + (i + 1)).classList;
+                    if (!classlist.contains("hidden")) {
+                        classlist.add("hidden");
+                    }
+                }
+            }
+
+            if (value > 0 && value <= 10) {
+                util.htmlElement("af5text").classList.remove("hidden");
+                util.htmlElement("af5table").classList.remove("hidden");
+                util.htmlElement("af5note1").classList.remove("hidden");
+                util.htmlElement("af5note2").classList.remove("hidden");
+                util.htmlElement("af5note3").classList.remove("hidden");
+            } else if (!util.htmlElement("af5text").classList.contains("hidden")) {
+                util.htmlElement("af5text").classList.add("hidden");
+                util.htmlElement("af5table").classList.add("hidden");
+                util.htmlElement("af5note1").classList.add("hidden");
+                util.htmlElement("af5note2").classList.add("hidden");
+                util.htmlElement("af5note3").classList.add("hidden");
+            }
+
+            for (let i = 0; i < 10; i++) {
+                const classlist = util.htmlElement("af5row" + (i + 1)).classList;
+                if (i < value) {
+                    classlist.remove("hidden");
+                } else if (!classlist.contains("hidden")) {
+                    classlist.add("hidden");
+                }
+            }
         }
     })
 })
 
-const rce612 = ['rce61', 'rce62'];
 rce612.forEach(item => {
     util.listen(item, 'change', () => {
         if (util.inputsHaveValue(rce612)) {
@@ -552,8 +648,6 @@ util.listen("rce8", 'change', () => {
 
 
 //E00 = E01 + E02 + E03
-const e00Array = ['e01', 'e02', 'e03'];
-const e00ArrayFull = [...e00Array, 'e00'];
 e00ArrayFull.forEach(item => {
     util.listen(item, 'change', () => {
 
@@ -587,8 +681,6 @@ e00ArrayFull.forEach(item => {
 });
 
 //E01 = E10 + E20
-const e01Array = ['e10', 'e20'];
-const e01ArrayFull = [...e01Array, 'e01'];
 e01ArrayFull.forEach(item => {
     util.listen(item, 'change', () => {
 
@@ -621,8 +713,6 @@ e01ArrayFull.forEach(item => {
 });
 
 //E10 = E10_1 + ... + E10_5
-const e10Array = ['e10_1', 'e10_2', 'e10_3', 'e10_4', 'e10_5'];
-const e10ArrayFull = [...e10Array, 'e10'];
 e10ArrayFull.forEach(item => {
     util.listen(item, 'change', () => {
 
@@ -656,8 +746,6 @@ e10ArrayFull.forEach(item => {
 });
 
 // E20 = E20_1 + ... + E20_19
-const e20Array = ['e20_1', 'e20_2', 'e20_3', 'e20_4', 'e20_5', 'e20_6', 'e20_7', 'e20_8', 'e20_9', 'e20_10', 'e20_11', 'e20_12', 'e20_13', 'e20_14', 'e20_15', 'e20_16', 'e20_17', 'e20_18', 'e20_19'];
-const e20ArrayFull = [...e20Array, 'e20'];
 e20ArrayFull.forEach(item => {
     util.listen(item, 'change', () => {
 
@@ -691,8 +779,6 @@ e20ArrayFull.forEach(item => {
 });
 
 //E02 = E2_1 + E2_2
-const e02Array = ['e2_1', 'e2_2'];
-const e02ArrayFull = [...e02Array, 'e02'];
 e02ArrayFull.forEach(item => {
     util.listen(item, 'change', () => {
 
@@ -726,8 +812,6 @@ e02ArrayFull.forEach(item => {
 });
 
 //E2_1 = E2_1_1 + ... + E2_1_4
-const e21Array = ['e2_1_1', 'e2_1_2', 'e2_1_3', 'e2_1_4'];
-const e21ArrayFull = [...e21Array, 'e2_1'];
 e21ArrayFull.forEach(item => {
     util.listen(item, 'change', () => {
 
@@ -789,8 +873,6 @@ start_dates.forEach((start) => {
 });
 
 
-const rooms = ["ac1a1", "ac1b1", "ac1c1", "ac1d1", "ac1e1", "ac1f1", "ac1g1"];
-const areas = ["ac1a2", "ac1b2", "ac1c2", "ac1d2", "ac1e2", "ac1f2", "ac1g2"];
 
 rooms.forEach((room) => {
     util.listen(room, "change", () => {
@@ -816,12 +898,11 @@ rooms.forEach((room) => {
 
 util.listen("i9", "change", check_i9);
 
-const rce = ["rce61", "rce62"];
 util.listen(rce, "myChange", () => {
     if (util.inputsHaveValue(rce)) {
         const message = "RCE6max >= RCE6min";
         errorHandler.removeError(rce, message)
-        if (util.getInputDecimalValue('rce61') > util.getInputDecimalValue('rce62')) {
+        if (util.getInputDecimalValue('rce62') > util.getInputDecimalValue('rce61')) {
             errorHandler.addError(rce, message);
         }
     }

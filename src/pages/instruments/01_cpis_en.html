@@ -225,6 +225,7 @@
                 <div>LK12. Child's ethnicity (nationality)</div>
                 <div>
                     <select id="lk12" name="lk12" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
+                        <option value="-9">--- choose ---</option>
                         <option value="1">1. Uzbek</option>
                         <option value="2">2. Russian</option>
                         <option value="3">3. Kazakh</option>
@@ -453,6 +454,7 @@
                 <div>CM4. Mother's ethnicity (nationality)</div>
                 <div>
                     <select id="cm4" name="cm4" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
+                        <option value="-9">--- choose ---</option>
                         <option value="1">1. Uzbek</option>
                         <option value="2">2. Russian</option>
                         <option value="3">3. Kazakh</option>
@@ -1248,6 +1250,7 @@
                 <div>CT4. Father's ethnicity (nationality)</div>
                 <div>
                     <select id="ct4" name="ct4" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
+                        <option value="-9">--- choose ---</option>
                         <option value="1">1. Uzbek</option>
                         <option value="2">2. Russian</option>
                         <option value="3">3. Kazakh</option>
@@ -1979,6 +1982,7 @@
                 <div>CG4. Caregiver's ethnicity (nationality)</div>
                 <div>
                     <select id="cg4" name="cg4" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
+                        <option value="-9">--- choose ---</option>
                         <option value="1">1. Uzbek</option>
                         <option value="2">2. Russian</option>
                         <option value="3">3. Kazakh</option>
@@ -4134,27 +4138,33 @@
                         <td class="p-1">
                             <select id="sh3_s1b" name="sh3_s1b" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
                                 <option value="-9">--- choose ---</option>
-                                <option value="11">11. Baby home</option>
-                                <option value="12">12. Mehribonlik house</option>
-                                <option value="13">13. Muruvvat house for children with disabilities</option>
-                                <option value="14">14. SOS children’s villages</option>
-                                <option value="15">15. Family-type children’s home</option>
-                                <option value="16">16. Patronat family</option>
-                                <option value="17">17. Trusteeship/Guardianship care</option>
-                                <option value="21">21. Type I - boarding schools for deaf children</option>
-                                <option value="22">22. Type II - boarding schools for the hearing-impaired and those who later will lose their hearing</option>
-                                <option value="23">23. Type III - "Noorli Maskan" specialized boarding schools for blind children</option>
-                                <option value="24">24. Type IV - "Noorli Maskan" specialized boarding schools for visually impaired and those who later will lose their vision</option>
-                                <option value="25">25. Type V - boarding schools for children with severe speech disorders</option>
-                                <option value="26">26. Type VI - boarding schools for children with musculoskeletal disorders</option>
-                                <option value="27">27. Type VII - boarding schools for children with mental retardation</option>
-                                <option value="28">28. Type VIII - supporting boarding schools for mentally retarded children</option>
-                                <option value="31">31. Multidisciplinary specialized preschool educational organizations</option>
-                                <option value="32">32. Specialized schools for children with special educational needs</option>
-                                <option value="33">33. Republican Specialized College for Persons with Disabilities</option>
-                                <option value="34">34. Specialized state educational institutions of sanatorium type</option>
-                                <option value="35">35. Republican educational institutions</option>
-                                <option value="36">36. Social and legal support centers</option>
+                                <optgroup label="Childcare residential services">
+                                    <option value="11">11. Baby home</option>
+                                    <option value="12">12. Mehribonlik house</option>
+                                    <option value="13">13. Muruvvat house for children with disabilities</option>
+                                    <option value="14">14. SOS children’s villages</option>
+                                    <option value="15">15. Family-type children’s home</option>
+                                    <option value="16">16. Patronat family</option>
+                                    <option value="17">17. Trusteeship/Guardianship care</option>
+                                </optgroup>
+                                <optgroup label="Specialized boarding schools">
+                                    <option value="21">21. Type I - boarding schools for deaf children</option>
+                                    <option value="22">22. Type II - boarding schools for the hearing-impaired and those who later will lose their hearing</option>
+                                    <option value="23">23. Type III - "Noorli Maskan" specialized boarding schools for blind children</option>
+                                    <option value="24">24. Type IV - "Noorli Maskan" specialized boarding schools for visually impaired and those who later will lose their vision</option>
+                                    <option value="25">25. Type V - boarding schools for children with severe speech disorders</option>
+                                    <option value="26">26. Type VI - boarding schools for children with musculoskeletal disorders</option>
+                                    <option value="27">27. Type VII - boarding schools for children with mental retardation</option>
+                                    <option value="28">28. Type VIII - supporting boarding schools for mentally retarded children</option>
+                                </optgroup>
+                                <optgroup label="Other institutions">
+                                    <option value="31">31. Multidisciplinary specialized preschool educational organizations</option>
+                                    <option value="32">32. Specialized schools for children with special educational needs</option>
+                                    <option value="33">33. Republican Specialized College for Persons with Disabilities</option>
+                                    <option value="34">34. Specialized state educational institutions of sanatorium type</option>
+                                    <option value="35">35. Republican educational institutions</option>
+                                    <option value="36">36. Social and legal support centers</option>
+                                </optgroup>
                             </select>
                         </td>
                         <td class="p-1">
@@ -4190,27 +4200,33 @@
                         <td class="p-1">
                             <select id="sh3_s2b" name="sh3_s2b" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
                                 <option value="-9">--- choose ---</option>
-                                <option value="11">11. Baby home</option>
-                                <option value="12">12. Mehribonlik house</option>
-                                <option value="13">13. Muruvvat house for children with disabilities</option>
-                                <option value="14">14. SOS children’s villages</option>
-                                <option value="15">15. Family-type children’s home</option>
-                                <option value="16">16. Patronat family</option>
-                                <option value="17">17. Trusteeship/Guardianship care</option>
-                                <option value="21">21. Type I - boarding schools for deaf children</option>
-                                <option value="22">22. Type II - boarding schools for the hearing-impaired and those who later will lose their hearing</option>
-                                <option value="23">23. Type III - "Noorli Maskan" specialized boarding schools for blind children</option>
-                                <option value="24">24. Type IV - "Noorli Maskan" specialized boarding schools for visually impaired and those who later will lose their vision</option>
-                                <option value="25">25. Type V - boarding schools for children with severe speech disorders</option>
-                                <option value="26">26. Type VI - boarding schools for children with musculoskeletal disorders</option>
-                                <option value="27">27. Type VII - boarding schools for children with mental retardation</option>
-                                <option value="28">28. Type VIII - supporting boarding schools for mentally retarded children</option>
-                                <option value="31">31. Multidisciplinary specialized preschool educational organizations</option>
-                                <option value="32">32. Specialized schools for children with special educational needs</option>
-                                <option value="33">33. Republican Specialized College for Persons with Disabilities</option>
-                                <option value="34">34. Specialized state educational institutions of sanatorium type</option>
-                                <option value="35">35. Republican educational institutions</option>
-                                <option value="36">36. Social and legal support centers</option>
+                                <optgroup label="Childcare residential services">
+                                    <option value="11">11. Baby home</option>
+                                    <option value="12">12. Mehribonlik house</option>
+                                    <option value="13">13. Muruvvat house for children with disabilities</option>
+                                    <option value="14">14. SOS children’s villages</option>
+                                    <option value="15">15. Family-type children’s home</option>
+                                    <option value="16">16. Patronat family</option>
+                                    <option value="17">17. Trusteeship/Guardianship care</option>
+                                </optgroup>
+                                <optgroup label="Specialized boarding schools">
+                                    <option value="21">21. Type I - boarding schools for deaf children</option>
+                                    <option value="22">22. Type II - boarding schools for the hearing-impaired and those who later will lose their hearing</option>
+                                    <option value="23">23. Type III - "Noorli Maskan" specialized boarding schools for blind children</option>
+                                    <option value="24">24. Type IV - "Noorli Maskan" specialized boarding schools for visually impaired and those who later will lose their vision</option>
+                                    <option value="25">25. Type V - boarding schools for children with severe speech disorders</option>
+                                    <option value="26">26. Type VI - boarding schools for children with musculoskeletal disorders</option>
+                                    <option value="27">27. Type VII - boarding schools for children with mental retardation</option>
+                                    <option value="28">28. Type VIII - supporting boarding schools for mentally retarded children</option>
+                                </optgroup>
+                                <optgroup label="Other institutions">
+                                    <option value="31">31. Multidisciplinary specialized preschool educational organizations</option>
+                                    <option value="32">32. Specialized schools for children with special educational needs</option>
+                                    <option value="33">33. Republican Specialized College for Persons with Disabilities</option>
+                                    <option value="34">34. Specialized state educational institutions of sanatorium type</option>
+                                    <option value="35">35. Republican educational institutions</option>
+                                    <option value="36">36. Social and legal support centers</option>
+                                </optgroup>
                             </select>
                         </td>
                         <td class="p-1">
@@ -4246,27 +4262,33 @@
                         <td class="p-1">
                             <select id="sh3_s3b" name="sh3_s3b" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
                                 <option value="-9">--- choose ---</option>
-                                <option value="11">11. Baby home</option>
-                                <option value="12">12. Mehribonlik house</option>
-                                <option value="13">13. Muruvvat house for children with disabilities</option>
-                                <option value="14">14. SOS children’s villages</option>
-                                <option value="15">15. Family-type children’s home</option>
-                                <option value="16">16. Patronat family</option>
-                                <option value="17">17. Trusteeship/Guardianship care</option>
-                                <option value="21">21. Type I - boarding schools for deaf children</option>
-                                <option value="22">22. Type II - boarding schools for the hearing-impaired and those who later will lose their hearing</option>
-                                <option value="23">23. Type III - "Noorli Maskan" specialized boarding schools for blind children</option>
-                                <option value="24">24. Type IV - "Noorli Maskan" specialized boarding schools for visually impaired and those who later will lose their vision</option>
-                                <option value="25">25. Type V - boarding schools for children with severe speech disorders</option>
-                                <option value="26">26. Type VI - boarding schools for children with musculoskeletal disorders</option>
-                                <option value="27">27. Type VII - boarding schools for children with mental retardation</option>
-                                <option value="28">28. Type VIII - supporting boarding schools for mentally retarded children</option>
-                                <option value="31">31. Multidisciplinary specialized preschool educational organizations</option>
-                                <option value="32">32. Specialized schools for children with special educational needs</option>
-                                <option value="33">33. Republican Specialized College for Persons with Disabilities</option>
-                                <option value="34">34. Specialized state educational institutions of sanatorium type</option>
-                                <option value="35">35. Republican educational institutions</option>
-                                <option value="36">36. Social and legal support centers</option>
+                                <optgroup label="Childcare residential services">
+                                    <option value="11">11. Baby home</option>
+                                    <option value="12">12. Mehribonlik house</option>
+                                    <option value="13">13. Muruvvat house for children with disabilities</option>
+                                    <option value="14">14. SOS children’s villages</option>
+                                    <option value="15">15. Family-type children’s home</option>
+                                    <option value="16">16. Patronat family</option>
+                                    <option value="17">17. Trusteeship/Guardianship care</option>
+                                </optgroup>
+                                <optgroup label="Specialized boarding schools">
+                                    <option value="21">21. Type I - boarding schools for deaf children</option>
+                                    <option value="22">22. Type II - boarding schools for the hearing-impaired and those who later will lose their hearing</option>
+                                    <option value="23">23. Type III - "Noorli Maskan" specialized boarding schools for blind children</option>
+                                    <option value="24">24. Type IV - "Noorli Maskan" specialized boarding schools for visually impaired and those who later will lose their vision</option>
+                                    <option value="25">25. Type V - boarding schools for children with severe speech disorders</option>
+                                    <option value="26">26. Type VI - boarding schools for children with musculoskeletal disorders</option>
+                                    <option value="27">27. Type VII - boarding schools for children with mental retardation</option>
+                                    <option value="28">28. Type VIII - supporting boarding schools for mentally retarded children</option>
+                                </optgroup>
+                                <optgroup label="Other institutions">
+                                    <option value="31">31. Multidisciplinary specialized preschool educational organizations</option>
+                                    <option value="32">32. Specialized schools for children with special educational needs</option>
+                                    <option value="33">33. Republican Specialized College for Persons with Disabilities</option>
+                                    <option value="34">34. Specialized state educational institutions of sanatorium type</option>
+                                    <option value="35">35. Republican educational institutions</option>
+                                    <option value="36">36. Social and legal support centers</option>
+                                </optgroup>
                             </select>
                         </td>
                         <td class="p-1">
@@ -4302,27 +4324,33 @@
                         <td class="p-1">
                             <select id="sh3_s4b" name="sh3_s4b" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
                                 <option value="-9">--- choose ---</option>
-                                <option value="11">11. Baby home</option>
-                                <option value="12">12. Mehribonlik house</option>
-                                <option value="13">13. Muruvvat house for children with disabilities</option>
-                                <option value="14">14. SOS children’s villages</option>
-                                <option value="15">15. Family-type children’s home</option>
-                                <option value="16">16. Patronat family</option>
-                                <option value="17">17. Trusteeship/Guardianship care</option>
-                                <option value="21">21. Type I - boarding schools for deaf children</option>
-                                <option value="22">22. Type II - boarding schools for the hearing-impaired and those who later will lose their hearing</option>
-                                <option value="23">23. Type III - "Noorli Maskan" specialized boarding schools for blind children</option>
-                                <option value="24">24. Type IV - "Noorli Maskan" specialized boarding schools for visually impaired and those who later will lose their vision</option>
-                                <option value="25">25. Type V - boarding schools for children with severe speech disorders</option>
-                                <option value="26">26. Type VI - boarding schools for children with musculoskeletal disorders</option>
-                                <option value="27">27. Type VII - boarding schools for children with mental retardation</option>
-                                <option value="28">28. Type VIII - supporting boarding schools for mentally retarded children</option>
-                                <option value="31">31. Multidisciplinary specialized preschool educational organizations</option>
-                                <option value="32">32. Specialized schools for children with special educational needs</option>
-                                <option value="33">33. Republican Specialized College for Persons with Disabilities</option>
-                                <option value="34">34. Specialized state educational institutions of sanatorium type</option>
-                                <option value="35">35. Republican educational institutions</option>
-                                <option value="36">36. Social and legal support centers</option>
+                                <optgroup label="Childcare residential services">
+                                    <option value="11">11. Baby home</option>
+                                    <option value="12">12. Mehribonlik house</option>
+                                    <option value="13">13. Muruvvat house for children with disabilities</option>
+                                    <option value="14">14. SOS children’s villages</option>
+                                    <option value="15">15. Family-type children’s home</option>
+                                    <option value="16">16. Patronat family</option>
+                                    <option value="17">17. Trusteeship/Guardianship care</option>
+                                </optgroup>
+                                <optgroup label="Specialized boarding schools">
+                                    <option value="21">21. Type I - boarding schools for deaf children</option>
+                                    <option value="22">22. Type II - boarding schools for the hearing-impaired and those who later will lose their hearing</option>
+                                    <option value="23">23. Type III - "Noorli Maskan" specialized boarding schools for blind children</option>
+                                    <option value="24">24. Type IV - "Noorli Maskan" specialized boarding schools for visually impaired and those who later will lose their vision</option>
+                                    <option value="25">25. Type V - boarding schools for children with severe speech disorders</option>
+                                    <option value="26">26. Type VI - boarding schools for children with musculoskeletal disorders</option>
+                                    <option value="27">27. Type VII - boarding schools for children with mental retardation</option>
+                                    <option value="28">28. Type VIII - supporting boarding schools for mentally retarded children</option>
+                                </optgroup>
+                                <optgroup label="Other institutions">
+                                    <option value="31">31. Multidisciplinary specialized preschool educational organizations</option>
+                                    <option value="32">32. Specialized schools for children with special educational needs</option>
+                                    <option value="33">33. Republican Specialized College for Persons with Disabilities</option>
+                                    <option value="34">34. Specialized state educational institutions of sanatorium type</option>
+                                    <option value="35">35. Republican educational institutions</option>
+                                    <option value="36">36. Social and legal support centers</option>
+                                </optgroup>
                             </select>
                         </td>
                         <td class="p-1">
@@ -4358,27 +4386,33 @@
                         <td class="p-1">
                             <select id="sh3_s5b" name="sh3_s5b" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
                                 <option value="-9">--- choose ---</option>
-                                <option value="11">11. Baby home</option>
-                                <option value="12">12. Mehribonlik house</option>
-                                <option value="13">13. Muruvvat house for children with disabilities</option>
-                                <option value="14">14. SOS children’s villages</option>
-                                <option value="15">15. Family-type children’s home</option>
-                                <option value="16">16. Patronat family</option>
-                                <option value="17">17. Trusteeship/Guardianship care</option>
-                                <option value="21">21. Type I - boarding schools for deaf children</option>
-                                <option value="22">22. Type II - boarding schools for the hearing-impaired and those who later will lose their hearing</option>
-                                <option value="23">23. Type III - "Noorli Maskan" specialized boarding schools for blind children</option>
-                                <option value="24">24. Type IV - "Noorli Maskan" specialized boarding schools for visually impaired and those who later will lose their vision</option>
-                                <option value="25">25. Type V - boarding schools for children with severe speech disorders</option>
-                                <option value="26">26. Type VI - boarding schools for children with musculoskeletal disorders</option>
-                                <option value="27">27. Type VII - boarding schools for children with mental retardation</option>
-                                <option value="28">28. Type VIII - supporting boarding schools for mentally retarded children</option>
-                                <option value="31">31. Multidisciplinary specialized preschool educational organizations</option>
-                                <option value="32">32. Specialized schools for children with special educational needs</option>
-                                <option value="33">33. Republican Specialized College for Persons with Disabilities</option>
-                                <option value="34">34. Specialized state educational institutions of sanatorium type</option>
-                                <option value="35">35. Republican educational institutions</option>
-                                <option value="36">36. Social and legal support centers</option>
+                                <optgroup label="Childcare residential services">
+                                    <option value="11">11. Baby home</option>
+                                    <option value="12">12. Mehribonlik house</option>
+                                    <option value="13">13. Muruvvat house for children with disabilities</option>
+                                    <option value="14">14. SOS children’s villages</option>
+                                    <option value="15">15. Family-type children’s home</option>
+                                    <option value="16">16. Patronat family</option>
+                                    <option value="17">17. Trusteeship/Guardianship care</option>
+                                </optgroup>
+                                <optgroup label="Specialized boarding schools">
+                                    <option value="21">21. Type I - boarding schools for deaf children</option>
+                                    <option value="22">22. Type II - boarding schools for the hearing-impaired and those who later will lose their hearing</option>
+                                    <option value="23">23. Type III - "Noorli Maskan" specialized boarding schools for blind children</option>
+                                    <option value="24">24. Type IV - "Noorli Maskan" specialized boarding schools for visually impaired and those who later will lose their vision</option>
+                                    <option value="25">25. Type V - boarding schools for children with severe speech disorders</option>
+                                    <option value="26">26. Type VI - boarding schools for children with musculoskeletal disorders</option>
+                                    <option value="27">27. Type VII - boarding schools for children with mental retardation</option>
+                                    <option value="28">28. Type VIII - supporting boarding schools for mentally retarded children</option>
+                                </optgroup>
+                                <optgroup label="Other institutions">
+                                    <option value="31">31. Multidisciplinary specialized preschool educational organizations</option>
+                                    <option value="32">32. Specialized schools for children with special educational needs</option>
+                                    <option value="33">33. Republican Specialized College for Persons with Disabilities</option>
+                                    <option value="34">34. Specialized state educational institutions of sanatorium type</option>
+                                    <option value="35">35. Republican educational institutions</option>
+                                    <option value="36">36. Social and legal support centers</option>
+                                </optgroup>
                             </select>
                         </td>
                         <td class="p-1">
@@ -4414,27 +4448,33 @@
                         <td class="p-1">
                             <select id="sh3_s6b" name="sh3_s6b" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
                                 <option value="-9">--- choose ---</option>
-                                <option value="11">11. Baby home</option>
-                                <option value="12">12. Mehribonlik house</option>
-                                <option value="13">13. Muruvvat house for children with disabilities</option>
-                                <option value="14">14. SOS children’s villages</option>
-                                <option value="15">15. Family-type children’s home</option>
-                                <option value="16">16. Patronat family</option>
-                                <option value="17">17. Trusteeship/Guardianship care</option>
-                                <option value="21">21. Type I - boarding schools for deaf children</option>
-                                <option value="22">22. Type II - boarding schools for the hearing-impaired and those who later will lose their hearing</option>
-                                <option value="23">23. Type III - "Noorli Maskan" specialized boarding schools for blind children</option>
-                                <option value="24">24. Type IV - "Noorli Maskan" specialized boarding schools for visually impaired and those who later will lose their vision</option>
-                                <option value="25">25. Type V - boarding schools for children with severe speech disorders</option>
-                                <option value="26">26. Type VI - boarding schools for children with musculoskeletal disorders</option>
-                                <option value="27">27. Type VII - boarding schools for children with mental retardation</option>
-                                <option value="28">28. Type VIII - supporting boarding schools for mentally retarded children</option>
-                                <option value="31">31. Multidisciplinary specialized preschool educational organizations</option>
-                                <option value="32">32. Specialized schools for children with special educational needs</option>
-                                <option value="33">33. Republican Specialized College for Persons with Disabilities</option>
-                                <option value="34">34. Specialized state educational institutions of sanatorium type</option>
-                                <option value="35">35. Republican educational institutions</option>
-                                <option value="36">36. Social and legal support centers</option>
+                                <optgroup label="Childcare residential services">
+                                    <option value="11">11. Baby home</option>
+                                    <option value="12">12. Mehribonlik house</option>
+                                    <option value="13">13. Muruvvat house for children with disabilities</option>
+                                    <option value="14">14. SOS children’s villages</option>
+                                    <option value="15">15. Family-type children’s home</option>
+                                    <option value="16">16. Patronat family</option>
+                                    <option value="17">17. Trusteeship/Guardianship care</option>
+                                </optgroup>
+                                <optgroup label="Specialized boarding schools">
+                                    <option value="21">21. Type I - boarding schools for deaf children</option>
+                                    <option value="22">22. Type II - boarding schools for the hearing-impaired and those who later will lose their hearing</option>
+                                    <option value="23">23. Type III - "Noorli Maskan" specialized boarding schools for blind children</option>
+                                    <option value="24">24. Type IV - "Noorli Maskan" specialized boarding schools for visually impaired and those who later will lose their vision</option>
+                                    <option value="25">25. Type V - boarding schools for children with severe speech disorders</option>
+                                    <option value="26">26. Type VI - boarding schools for children with musculoskeletal disorders</option>
+                                    <option value="27">27. Type VII - boarding schools for children with mental retardation</option>
+                                    <option value="28">28. Type VIII - supporting boarding schools for mentally retarded children</option>
+                                </optgroup>
+                                <optgroup label="Other institutions">
+                                    <option value="31">31. Multidisciplinary specialized preschool educational organizations</option>
+                                    <option value="32">32. Specialized schools for children with special educational needs</option>
+                                    <option value="33">33. Republican Specialized College for Persons with Disabilities</option>
+                                    <option value="34">34. Specialized state educational institutions of sanatorium type</option>
+                                    <option value="35">35. Republican educational institutions</option>
+                                    <option value="36">36. Social and legal support centers</option>
+                                </optgroup>
                             </select>
                         </td>
                         <td class="p-1">
@@ -4470,27 +4510,33 @@
                         <td class="p-1">
                             <select id="sh3_s7b" name="sh3_s7b" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
                                 <option value="-9">--- choose ---</option>
-                                <option value="11">11. Baby home</option>
-                                <option value="12">12. Mehribonlik house</option>
-                                <option value="13">13. Muruvvat house for children with disabilities</option>
-                                <option value="14">14. SOS children’s villages</option>
-                                <option value="15">15. Family-type children’s home</option>
-                                <option value="16">16. Patronat family</option>
-                                <option value="17">17. Trusteeship/Guardianship care</option>
-                                <option value="21">21. Type I - boarding schools for deaf children</option>
-                                <option value="22">22. Type II - boarding schools for the hearing-impaired and those who later will lose their hearing</option>
-                                <option value="23">23. Type III - "Noorli Maskan" specialized boarding schools for blind children</option>
-                                <option value="24">24. Type IV - "Noorli Maskan" specialized boarding schools for visually impaired and those who later will lose their vision</option>
-                                <option value="25">25. Type V - boarding schools for children with severe speech disorders</option>
-                                <option value="26">26. Type VI - boarding schools for children with musculoskeletal disorders</option>
-                                <option value="27">27. Type VII - boarding schools for children with mental retardation</option>
-                                <option value="28">28. Type VIII - supporting boarding schools for mentally retarded children</option>
-                                <option value="31">31. Multidisciplinary specialized preschool educational organizations</option>
-                                <option value="32">32. Specialized schools for children with special educational needs</option>
-                                <option value="33">33. Republican Specialized College for Persons with Disabilities</option>
-                                <option value="34">34. Specialized state educational institutions of sanatorium type</option>
-                                <option value="35">35. Republican educational institutions</option>
-                                <option value="36">36. Social and legal support centers</option>
+                                <optgroup label="Childcare residential services">
+                                    <option value="11">11. Baby home</option>
+                                    <option value="12">12. Mehribonlik house</option>
+                                    <option value="13">13. Muruvvat house for children with disabilities</option>
+                                    <option value="14">14. SOS children’s villages</option>
+                                    <option value="15">15. Family-type children’s home</option>
+                                    <option value="16">16. Patronat family</option>
+                                    <option value="17">17. Trusteeship/Guardianship care</option>
+                                </optgroup>
+                                <optgroup label="Specialized boarding schools">
+                                    <option value="21">21. Type I - boarding schools for deaf children</option>
+                                    <option value="22">22. Type II - boarding schools for the hearing-impaired and those who later will lose their hearing</option>
+                                    <option value="23">23. Type III - "Noorli Maskan" specialized boarding schools for blind children</option>
+                                    <option value="24">24. Type IV - "Noorli Maskan" specialized boarding schools for visually impaired and those who later will lose their vision</option>
+                                    <option value="25">25. Type V - boarding schools for children with severe speech disorders</option>
+                                    <option value="26">26. Type VI - boarding schools for children with musculoskeletal disorders</option>
+                                    <option value="27">27. Type VII - boarding schools for children with mental retardation</option>
+                                    <option value="28">28. Type VIII - supporting boarding schools for mentally retarded children</option>
+                                </optgroup>
+                                <optgroup label="Other institutions">
+                                    <option value="31">31. Multidisciplinary specialized preschool educational organizations</option>
+                                    <option value="32">32. Specialized schools for children with special educational needs</option>
+                                    <option value="33">33. Republican Specialized College for Persons with Disabilities</option>
+                                    <option value="34">34. Specialized state educational institutions of sanatorium type</option>
+                                    <option value="35">35. Republican educational institutions</option>
+                                    <option value="36">36. Social and legal support centers</option>
+                                </optgroup>
                             </select>
                         </td>
                         <td class="p-1">
@@ -4526,27 +4572,33 @@
                         <td class="p-1">
                             <select id="sh3_s8b" name="sh3_s8b" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
                                 <option value="-9">--- choose ---</option>
-                                <option value="11">11. Baby home</option>
-                                <option value="12">12. Mehribonlik house</option>
-                                <option value="13">13. Muruvvat house for children with disabilities</option>
-                                <option value="14">14. SOS children’s villages</option>
-                                <option value="15">15. Family-type children’s home</option>
-                                <option value="16">16. Patronat family</option>
-                                <option value="17">17. Trusteeship/Guardianship care</option>
-                                <option value="21">21. Type I - boarding schools for deaf children</option>
-                                <option value="22">22. Type II - boarding schools for the hearing-impaired and those who later will lose their hearing</option>
-                                <option value="23">23. Type III - "Noorli Maskan" specialized boarding schools for blind children</option>
-                                <option value="24">24. Type IV - "Noorli Maskan" specialized boarding schools for visually impaired and those who later will lose their vision</option>
-                                <option value="25">25. Type V - boarding schools for children with severe speech disorders</option>
-                                <option value="26">26. Type VI - boarding schools for children with musculoskeletal disorders</option>
-                                <option value="27">27. Type VII - boarding schools for children with mental retardation</option>
-                                <option value="28">28. Type VIII - supporting boarding schools for mentally retarded children</option>
-                                <option value="31">31. Multidisciplinary specialized preschool educational organizations</option>
-                                <option value="32">32. Specialized schools for children with special educational needs</option>
-                                <option value="33">33. Republican Specialized College for Persons with Disabilities</option>
-                                <option value="34">34. Specialized state educational institutions of sanatorium type</option>
-                                <option value="35">35. Republican educational institutions</option>
-                                <option value="36">36. Social and legal support centers</option>
+                                <optgroup label="Childcare residential services">
+                                    <option value="11">11. Baby home</option>
+                                    <option value="12">12. Mehribonlik house</option>
+                                    <option value="13">13. Muruvvat house for children with disabilities</option>
+                                    <option value="14">14. SOS children’s villages</option>
+                                    <option value="15">15. Family-type children’s home</option>
+                                    <option value="16">16. Patronat family</option>
+                                    <option value="17">17. Trusteeship/Guardianship care</option>
+                                </optgroup>
+                                <optgroup label="Specialized boarding schools">
+                                    <option value="21">21. Type I - boarding schools for deaf children</option>
+                                    <option value="22">22. Type II - boarding schools for the hearing-impaired and those who later will lose their hearing</option>
+                                    <option value="23">23. Type III - "Noorli Maskan" specialized boarding schools for blind children</option>
+                                    <option value="24">24. Type IV - "Noorli Maskan" specialized boarding schools for visually impaired and those who later will lose their vision</option>
+                                    <option value="25">25. Type V - boarding schools for children with severe speech disorders</option>
+                                    <option value="26">26. Type VI - boarding schools for children with musculoskeletal disorders</option>
+                                    <option value="27">27. Type VII - boarding schools for children with mental retardation</option>
+                                    <option value="28">28. Type VIII - supporting boarding schools for mentally retarded children</option>
+                                </optgroup>
+                                <optgroup label="Other institutions">
+                                    <option value="31">31. Multidisciplinary specialized preschool educational organizations</option>
+                                    <option value="32">32. Specialized schools for children with special educational needs</option>
+                                    <option value="33">33. Republican Specialized College for Persons with Disabilities</option>
+                                    <option value="34">34. Specialized state educational institutions of sanatorium type</option>
+                                    <option value="35">35. Republican educational institutions</option>
+                                    <option value="36">36. Social and legal support centers</option>
+                                </optgroup>
                             </select>
                         </td>
                         <td class="p-1">
@@ -4582,27 +4634,33 @@
                         <td class="p-1">
                             <select id="sh3_s9b" name="sh3_s9b" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
                                 <option value="-9">--- choose ---</option>
-                                <option value="11">11. Baby home</option>
-                                <option value="12">12. Mehribonlik house</option>
-                                <option value="13">13. Muruvvat house for children with disabilities</option>
-                                <option value="14">14. SOS children’s villages</option>
-                                <option value="15">15. Family-type children’s home</option>
-                                <option value="16">16. Patronat family</option>
-                                <option value="17">17. Trusteeship/Guardianship care</option>
-                                <option value="21">21. Type I - boarding schools for deaf children</option>
-                                <option value="22">22. Type II - boarding schools for the hearing-impaired and those who later will lose their hearing</option>
-                                <option value="23">23. Type III - "Noorli Maskan" specialized boarding schools for blind children</option>
-                                <option value="24">24. Type IV - "Noorli Maskan" specialized boarding schools for visually impaired and those who later will lose their vision</option>
-                                <option value="25">25. Type V - boarding schools for children with severe speech disorders</option>
-                                <option value="26">26. Type VI - boarding schools for children with musculoskeletal disorders</option>
-                                <option value="27">27. Type VII - boarding schools for children with mental retardation</option>
-                                <option value="28">28. Type VIII - supporting boarding schools for mentally retarded children</option>
-                                <option value="31">31. Multidisciplinary specialized preschool educational organizations</option>
-                                <option value="32">32. Specialized schools for children with special educational needs</option>
-                                <option value="33">33. Republican Specialized College for Persons with Disabilities</option>
-                                <option value="34">34. Specialized state educational institutions of sanatorium type</option>
-                                <option value="35">35. Republican educational institutions</option>
-                                <option value="36">36. Social and legal support centers</option>
+                                <optgroup label="Childcare residential services">
+                                    <option value="11">11. Baby home</option>
+                                    <option value="12">12. Mehribonlik house</option>
+                                    <option value="13">13. Muruvvat house for children with disabilities</option>
+                                    <option value="14">14. SOS children’s villages</option>
+                                    <option value="15">15. Family-type children’s home</option>
+                                    <option value="16">16. Patronat family</option>
+                                    <option value="17">17. Trusteeship/Guardianship care</option>
+                                </optgroup>
+                                <optgroup label="Specialized boarding schools">
+                                    <option value="21">21. Type I - boarding schools for deaf children</option>
+                                    <option value="22">22. Type II - boarding schools for the hearing-impaired and those who later will lose their hearing</option>
+                                    <option value="23">23. Type III - "Noorli Maskan" specialized boarding schools for blind children</option>
+                                    <option value="24">24. Type IV - "Noorli Maskan" specialized boarding schools for visually impaired and those who later will lose their vision</option>
+                                    <option value="25">25. Type V - boarding schools for children with severe speech disorders</option>
+                                    <option value="26">26. Type VI - boarding schools for children with musculoskeletal disorders</option>
+                                    <option value="27">27. Type VII - boarding schools for children with mental retardation</option>
+                                    <option value="28">28. Type VIII - supporting boarding schools for mentally retarded children</option>
+                                </optgroup>
+                                <optgroup label="Other institutions">
+                                    <option value="31">31. Multidisciplinary specialized preschool educational organizations</option>
+                                    <option value="32">32. Specialized schools for children with special educational needs</option>
+                                    <option value="33">33. Republican Specialized College for Persons with Disabilities</option>
+                                    <option value="34">34. Specialized state educational institutions of sanatorium type</option>
+                                    <option value="35">35. Republican educational institutions</option>
+                                    <option value="36">36. Social and legal support centers</option>
+                                </optgroup>
                             </select>
                         </td>
                         <td class="p-1">
@@ -4638,27 +4696,33 @@
                         <td class="p-1">
                             <select id="sh3_s10b" name="sh3_s10b" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
                                 <option value="-9">--- choose ---</option>
-                                <option value="11">11. Baby home</option>
-                                <option value="12">12. Mehribonlik house</option>
-                                <option value="13">13. Muruvvat house for children with disabilities</option>
-                                <option value="14">14. SOS children’s villages</option>
-                                <option value="15">15. Family-type children’s home</option>
-                                <option value="16">16. Patronat family</option>
-                                <option value="17">17. Trusteeship/Guardianship care</option>
-                                <option value="21">21. Type I - boarding schools for deaf children</option>
-                                <option value="22">22. Type II - boarding schools for the hearing-impaired and those who later will lose their hearing</option>
-                                <option value="23">23. Type III - "Noorli Maskan" specialized boarding schools for blind children</option>
-                                <option value="24">24. Type IV - "Noorli Maskan" specialized boarding schools for visually impaired and those who later will lose their vision</option>
-                                <option value="25">25. Type V - boarding schools for children with severe speech disorders</option>
-                                <option value="26">26. Type VI - boarding schools for children with musculoskeletal disorders</option>
-                                <option value="27">27. Type VII - boarding schools for children with mental retardation</option>
-                                <option value="28">28. Type VIII - supporting boarding schools for mentally retarded children</option>
-                                <option value="31">31. Multidisciplinary specialized preschool educational organizations</option>
-                                <option value="32">32. Specialized schools for children with special educational needs</option>
-                                <option value="33">33. Republican Specialized College for Persons with Disabilities</option>
-                                <option value="34">34. Specialized state educational institutions of sanatorium type</option>
-                                <option value="35">35. Republican educational institutions</option>
-                                <option value="36">36. Social and legal support centers</option>
+                                <optgroup label="Childcare residential services">
+                                    <option value="11">11. Baby home</option>
+                                    <option value="12">12. Mehribonlik house</option>
+                                    <option value="13">13. Muruvvat house for children with disabilities</option>
+                                    <option value="14">14. SOS children’s villages</option>
+                                    <option value="15">15. Family-type children’s home</option>
+                                    <option value="16">16. Patronat family</option>
+                                    <option value="17">17. Trusteeship/Guardianship care</option>
+                                </optgroup>
+                                <optgroup label="Specialized boarding schools">
+                                    <option value="21">21. Type I - boarding schools for deaf children</option>
+                                    <option value="22">22. Type II - boarding schools for the hearing-impaired and those who later will lose their hearing</option>
+                                    <option value="23">23. Type III - "Noorli Maskan" specialized boarding schools for blind children</option>
+                                    <option value="24">24. Type IV - "Noorli Maskan" specialized boarding schools for visually impaired and those who later will lose their vision</option>
+                                    <option value="25">25. Type V - boarding schools for children with severe speech disorders</option>
+                                    <option value="26">26. Type VI - boarding schools for children with musculoskeletal disorders</option>
+                                    <option value="27">27. Type VII - boarding schools for children with mental retardation</option>
+                                    <option value="28">28. Type VIII - supporting boarding schools for mentally retarded children</option>
+                                </optgroup>
+                                <optgroup label="Other institutions">
+                                    <option value="31">31. Multidisciplinary specialized preschool educational organizations</option>
+                                    <option value="32">32. Specialized schools for children with special educational needs</option>
+                                    <option value="33">33. Republican Specialized College for Persons with Disabilities</option>
+                                    <option value="34">34. Specialized state educational institutions of sanatorium type</option>
+                                    <option value="35">35. Republican educational institutions</option>
+                                    <option value="36">36. Social and legal support centers</option>
+                                </optgroup>
                             </select>
                         </td>
                         <td class="p-1">
@@ -4694,27 +4758,33 @@
                         <td class="p-1">
                             <select id="sh3_csb" name="sh3_csb" class="border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
                                 <option value="-9">--- choose ---</option>
-                                <option value="11">11. Baby home</option>
-                                <option value="12">12. Mehribonlik house</option>
-                                <option value="13">13. Muruvvat house for children with disabilities</option>
-                                <option value="14">14. SOS children’s villages</option>
-                                <option value="15">15. Family-type children’s home</option>
-                                <option value="16">16. Patronat family</option>
-                                <option value="17">17. Trusteeship/Guardianship care</option>
-                                <option value="21">21. Type I - boarding schools for deaf children</option>
-                                <option value="22">22. Type II - boarding schools for the hearing-impaired and those who later will lose their hearing</option>
-                                <option value="23">23. Type III - "Noorli Maskan" specialized boarding schools for blind children</option>
-                                <option value="24">24. Type IV - "Noorli Maskan" specialized boarding schools for visually impaired and those who later will lose their vision</option>
-                                <option value="25">25. Type V - boarding schools for children with severe speech disorders</option>
-                                <option value="26">26. Type VI - boarding schools for children with musculoskeletal disorders</option>
-                                <option value="27">27. Type VII - boarding schools for children with mental retardation</option>
-                                <option value="28">28. Type VIII - supporting boarding schools for mentally retarded children</option>
-                                <option value="31">31. Multidisciplinary specialized preschool educational organizations</option>
-                                <option value="32">32. Specialized schools for children with special educational needs</option>
-                                <option value="33">33. Republican Specialized College for Persons with Disabilities</option>
-                                <option value="34">34. Specialized state educational institutions of sanatorium type</option>
-                                <option value="35">35. Republican educational institutions</option>
-                                <option value="36">36. Social and legal support centers</option>
+                                <optgroup label="Childcare residential services">
+                                    <option value="11">11. Baby home</option>
+                                    <option value="12">12. Mehribonlik house</option>
+                                    <option value="13">13. Muruvvat house for children with disabilities</option>
+                                    <option value="14">14. SOS children’s villages</option>
+                                    <option value="15">15. Family-type children’s home</option>
+                                    <option value="16">16. Patronat family</option>
+                                    <option value="17">17. Trusteeship/Guardianship care</option>
+                                </optgroup>
+                                <optgroup label="Specialized boarding schools">
+                                    <option value="21">21. Type I - boarding schools for deaf children</option>
+                                    <option value="22">22. Type II - boarding schools for the hearing-impaired and those who later will lose their hearing</option>
+                                    <option value="23">23. Type III - "Noorli Maskan" specialized boarding schools for blind children</option>
+                                    <option value="24">24. Type IV - "Noorli Maskan" specialized boarding schools for visually impaired and those who later will lose their vision</option>
+                                    <option value="25">25. Type V - boarding schools for children with severe speech disorders</option>
+                                    <option value="26">26. Type VI - boarding schools for children with musculoskeletal disorders</option>
+                                    <option value="27">27. Type VII - boarding schools for children with mental retardation</option>
+                                    <option value="28">28. Type VIII - supporting boarding schools for mentally retarded children</option>
+                                </optgroup>
+                                <optgroup label="Other institutions">
+                                    <option value="31">31. Multidisciplinary specialized preschool educational organizations</option>
+                                    <option value="32">32. Specialized schools for children with special educational needs</option>
+                                    <option value="33">33. Republican Specialized College for Persons with Disabilities</option>
+                                    <option value="34">34. Specialized state educational institutions of sanatorium type</option>
+                                    <option value="35">35. Republican educational institutions</option>
+                                    <option value="36">36. Social and legal support centers</option>
+                                </optgroup>
                             </select>
                         </td>
                         <td class="p-1">

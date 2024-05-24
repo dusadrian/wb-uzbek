@@ -39,12 +39,8 @@
             <p class="mb-2">{{T0010}}</p>
             <p class="mb-2">{{T0011}}</p>
 
-            <div class="divclass mt-12">
-                <div>{{T0012}}. {{T0013}}</div>
-                <div>
-                    <input type="text" id="q1" name="q1" class="inputclass w-full" />
-                </div>
-            </div>
+            <input type="hidden" id="q1" name="q1" />
+
             <div class="divclass mt-6">
                 <div>{{T0014}}. {{T0015}}</div>
                 <div>
@@ -526,8 +522,9 @@
                     </div>
                 </div>
             </div>
-            <p class="mt-6">{{T0176}}. {{T0177}}</p>
-            <table class="w-full mt-2" aria-label="{{T0176}}. {{T0177}}">
+
+            <p id="af5text" class="hidden mt-6">{{T0176}}. {{T0177}}</p>
+            <table id="af5table" class=" hidden w-full mt-2" aria-label="{{T0176}}. {{T0177}}">
                 <thead>
                     <tr>
                         <th></th>
@@ -540,7 +537,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
+                    <tr id="af5row1" class="hidden">
                         <td class="py-1 px-2">1</td>
                         <td class="p-1">
                             <input type="text" id="af5_1_a" name="af5_1_a" class="inputclass w-full" />
@@ -566,7 +563,7 @@
                             </select>
                         </td>
                     </tr>
-                    <tr>
+                    <tr id="af5row2" class="hidden">
                         <td class="py-1 px-2">2</td>
                         <td class="p-1">
                             <input type="text" id="af5_2_a" name="af5_2_a" class="inputclass w-full" />
@@ -592,7 +589,7 @@
                             </select>
                         </td>
                     </tr>
-                    <tr>
+                    <tr id="af5row3" class="hidden">
                         <td class="py-1 px-2">3</td>
                         <td class="p-1">
                             <input type="text" id="af5_3_a" name="af5_3_a" class="inputclass w-full" />
@@ -618,7 +615,7 @@
                             </select>
                         </td>
                     </tr>
-                    <tr>
+                    <tr id="af5row4" class="hidden">
                         <td class="py-1 px-2">4</td>
                         <td class="p-1">
                             <input type="text" id="af5_4_a" name="af5_4_a" class="inputclass w-full" />
@@ -644,7 +641,7 @@
                             </select>
                         </td>
                     </tr>
-                    <tr>
+                    <tr id="af5row5" class="hidden">
                         <td class="py-1 px-2">5</td>
                         <td class="p-1">
                             <input type="text" id="af5_5_a" name="af5_5_a" class="inputclass w-full" />
@@ -670,7 +667,7 @@
                             </select>
                         </td>
                     </tr>
-                    <tr>
+                    <tr id="af5row6" class="hidden">
                         <td class="py-1 px-2">6</td>
                         <td class="p-1">
                             <input type="text" id="af5_6_a" name="af5_6_a" class="inputclass w-full" />
@@ -696,7 +693,7 @@
                             </select>
                         </td>
                     </tr>
-                    <tr>
+                    <tr id="af5row7" class="hidden">
                         <td class="py-1 px-2">7</td>
                         <td class="p-1">
                             <input type="text" id="af5_7_a" name="af5_7_a" class="inputclass w-full" />
@@ -722,7 +719,7 @@
                             </select>
                         </td>
                     </tr>
-                    <tr>
+                    <tr id="af5row8" class="hidden">
                         <td class="py-1 px-2">8</td>
                         <td class="p-1">
                             <input type="text" id="af5_8_a" name="af5_8_a" class="inputclass w-full" />
@@ -748,7 +745,7 @@
                             </select>
                         </td>
                     </tr>
-                    <tr>
+                    <tr id="af5row9" class="hidden">
                         <td class="py-1 px-2">9</td>
                         <td class="p-1">
                             <input type="text" id="af5_9_a" name="af5_9_a" class="inputclass w-full" />
@@ -774,7 +771,7 @@
                             </select>
                         </td>
                     </tr>
-                    <tr>
+                    <tr id="af5row10" class="hidden">
                         <td class="py-1 px-2">10</td>
                         <td class="p-1">
                             <input type="text" id="af5_10_a" name="af5_10_a" class="inputclass w-full" />
@@ -803,10 +800,10 @@
                 </tbody>
             </table>
 
-            <p class="bg-stone-100 p-2 mt-2 italic text-gray-600">{{T0184}}</p>
+            <p id="af5note1" class="hidden bg-stone-100 p-2 mt-2 italic text-gray-600">{{T0184}}</p>
+            <p id="af5note2" class="hidden bg-stone-100 p-2 mt-2 text-gray-600">{{T0189}}</p>
 
-            <p class="bg-stone-100 p-2 mt-2 text-gray-600">{{T0189}}</p>
-            <div class="bg-stone-100 p-2 mt-2 text-gray-600">
+            <div id="af5note3" class="hidden bg-stone-100 p-2 mt-2 text-gray-600">
                 <ul class="list-disc pl-4">
                     <li>{{T0190}}</li>
                     <li>{{T0191}}</li>
@@ -1175,18 +1172,14 @@
                     </tr>
                     <tr>
                         <td>
-                            <div class="ml-2">
-                                {{T0282}}
-                            </div>
+                            <div class="ml-2">{{T0282}}</div>
                         </td>
                         <td></td>
                         <td></td>
                     </tr>
                     <tr>
                         <td class="p-1">
-                            <div class="ml-4">
-                                {{T0283}}
-                            </div>
+                            <div class="ml-4">{{T0283}}</div>
                         </td>
                         <td class="p-1">
                             <input type="text" id="ac1b1" name="ac1b1" class="inputclass" />
@@ -1197,9 +1190,7 @@
                     </tr>
                     <tr>
                         <td class="p-1">
-                            <div class="ml-4">
-                                {{T0284}}
-                            </div>
+                            <div class="ml-4">{{T0284}}</div>
                         </td>
                         <td class="p-1">
                             <input type="text" id="ac1c1" name="ac1c1" class="inputclass" />
@@ -1210,9 +1201,7 @@
                     </tr>
                     <tr>
                         <td class="p-1">
-                            <div class="ml-4">
-                                {{T0285}}
-                            </div>
+                            <div class="ml-4">{{T0285}}</div>
                         </td>
                         <td class="p-1">
                             <input type="text" id="ac1d1" name="ac1d1" class="inputclass" />
@@ -1223,9 +1212,7 @@
                     </tr>
                     <tr>
                         <td class="p-1">
-                            <div class="ml-4">
-                                {{T0286}}
-                            </div>
+                            <div class="ml-4">{{T0286}}</div>
                         </td>
                         <td class="p-1">
                             <input type="text" id="ac1e1" name="ac1e1" class="inputclass" />
@@ -1236,9 +1223,7 @@
                     </tr>
                     <tr>
                         <td class="p-1">
-                            <div class="ml-4">
-                                {{T0287}}
-                            </div>
+                            <div class="ml-4">{{T0287}}</div>
                         </td>
                         <td class="p-1">
                             <input type="text" id="ac1f1" name="ac1f1" class="inputclass" />
@@ -1249,9 +1234,7 @@
                     </tr>
                     <tr>
                         <td class="p-1">
-                            <div class="ml-4">
-                                {{T0288}}
-                            </div>
+                            <div class="ml-4">{{T0288}}</div>
                         </td>
                         <td class="p-1">
                             <input type="text" id="ac1g1" name="ac1g1" class="inputclass" />
@@ -1285,15 +1268,15 @@
                             <input type="text" id="ac1j2" name="ac1j2" class="inputclass" />
                         </td>
                     </tr>
-                    <!-- <tr>
-                        <td class="p-1"></td>
+                    <tr>
+                        <td class="p-1">{{T0764}}</td>
                         <td class="p-1">
                             <input type="text" id="ac1k1" name="ac1k1" class="inputclass" />
                         </td>
                         <td class="p-1">
                             <input type="text" id="ac1k2" name="ac1k2" class="inputclass" />
                         </td>
-                    </tr> -->
+                    </tr>
                 </tbody>
             </table>
 
@@ -2338,7 +2321,7 @@
 
             <table class="w-full mt-6" aria-label="{{T0586}}">
                 <tbody>
-                    <trb">
+                    <tr>
                         <td class="p-2 align-bottom text-left" rowspan="3" scope="col">{{T0585}}. {{T0586}}</td>
                         <td class="p-2 text-center align-bottom" rowspan="3" scope="col">{{T0587}}</td>
                         <td class="p-2 text-center align-bottom" rowspan="3" scope="col">{{T0588}}</td>
@@ -2933,7 +2916,7 @@
                             <input type="text" id="e2_2" name="e2_2" class="inputclass w-full" />
                         </td>
                     </tr>
-                    <tr class="text-black font-bold">
+                    <tr class="bg-lime-200 text-black font-bold">
                         <td class="text-left p-2">{{T0736}}</td>
                         <td class="text-left p-2">{{T0737}}</td>
                         <td class="text-center p-2">

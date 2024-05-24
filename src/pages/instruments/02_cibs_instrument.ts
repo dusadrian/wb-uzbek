@@ -100,8 +100,6 @@ export const instrument2 = {
             } else if (el == "ct3" || el == "cg3b") {
                 config.minDate = "01/01/1930";
                 config.maxDate = "31/12/2023";
-            } else if (el == "cmgt1a") {
-                config.dateFormat = "mm/yy";
             } else if (el == "lk3") {
                 config.minDate = "01/01/1990";
             }
@@ -216,33 +214,35 @@ export const instrument2 = {
                         const institutie = "sa5i";
                         util.resetSelect(institutie, "-9", translations['t_choose']);
 
-                        const serv = districts[selectedDistrict].services;
-                        if (serv.length > 0) {
-                            for (let i = 0; i < serv.length; i++) {
-                                if (Number(services[serv[i]].type) < 20) {
-                                    let service_included = true;
-                                    if (insons[institution_code]) {
-                                        service_included = insons[institution_code].services.includes(serv[i]);
-                                    }
+                        if (Number(selectedDistrict) > 0) {
+                            const serv = districts[selectedDistrict].services;
+                            if (serv.length > 0) {
+                                for (let i = 0; i < serv.length; i++) {
+                                    if (Number(services[serv[i]].type) < 20) {
+                                        let service_included = true;
+                                        if (insons[institution_code]) {
+                                            service_included = insons[institution_code].services.includes(serv[i]);
+                                        }
 
-                                    if (service_included) {
-                                        const serviciu = { ...services[serv[i]] } as KeyStringNumber;
-                                        util.addOption(
-                                            institutie,
-                                            serv[i],
-                                            serv[i] + ': ' + serviciu['name_' + lang]
-                                        );
+                                        if (service_included) {
+                                            const serviciu = { ...services[serv[i]] } as KeyStringNumber;
+                                            util.addOption(
+                                                institutie,
+                                                serv[i],
+                                                serv[i] + ': ' + serviciu['name_' + lang]
+                                            );
+                                        }
                                     }
                                 }
                             }
-                        }
 
-                        const optgroup = document.createElement("optgroup");
-                        const option999 = document.createElement("option");
-                        option999.value = '999';
-                        option999.text = '999: ' + translations['not_in_registry'];
-                        optgroup.appendChild(option999);
-                        util.htmlElement(institutie).appendChild(optgroup);
+                            const optgroup = document.createElement("optgroup");
+                            const option999 = document.createElement("option");
+                            option999.value = '999';
+                            option999.text = '999: ' + translations['not_in_registry'];
+                            optgroup.appendChild(option999);
+                            util.htmlElement(institutie).appendChild(optgroup);
+                        }
                     }
                 })
             }

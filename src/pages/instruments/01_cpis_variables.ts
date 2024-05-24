@@ -4026,7 +4026,7 @@ export const questions: QuestionObjectType = {
         type: 'radio',
         value: '-7',
         disabled: true,
-        hidden: true,
+        hidden: false,
         readonly: true,
         order: 361,
         active: function() {return(Number(instrument.questions.lk22_1.value) == 1)},

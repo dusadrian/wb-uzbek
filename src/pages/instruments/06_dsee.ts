@@ -91,6 +91,13 @@ const validate = [
     ...final, ...e0174, ...e0174t, ...e0175, ...e0175t, ...e0176, ...e0176t
 ]
 
+const totals = [
+    "tnet_b", "tnet_g", "tnet_t", "nest_b", "nest_g", "nest_t",
+    "neo_b", "neo_g", "neo_t", "next_b", "next_g", "next_t",
+    "ext0_b", "ext0_g", "ext0_t", "extt_b", "extt_g", "extt_t",
+    "tnr1_b", "tnr1_g", "tnr1_t"
+]
+
 
 export const instrument6 = {
     init: async () => {
@@ -185,7 +192,10 @@ export const instrument6 = {
                     // regiunea este intotdeauna inaintea districtului
                     // un event de change pe regiune populeaza districtul, iar un event
                     // de change pe district populeaza settlement-ul
-                    instrument.seteazaValoareElement(item.variable, item.value);
+                    if (totals.indexOf(item.variable) < 0) {
+                        instrument.seteazaValoareElement(item.variable, item.value);
+                    }
+
                     if (index >= 0) {
                         util.trigger(item.variable, "change");
                     }
@@ -285,8 +295,12 @@ net1_b.forEach((b) => {
         const index = net1_b.indexOf(b);
         const g = net1_g[index];
         const t = net1_t[index];
-        util.setValue(t, util.makeSumFromElements([b, g]).toString());
-        util.setValue('tnet_b', util.makeSumFromElements(net1_b).toString());
+        if (util.anyInputHasValue([b, g])) {
+            util.setValue(t, util.makeSumFromElements([b, g]).toString());
+        }
+        if (util.inputsHaveValue(net1_b)) {
+            util.setValue('tnet_b', util.makeSumFromElements(net1_b).toString());
+        }
     });
 });
 
@@ -295,14 +309,20 @@ net1_g.forEach((g) => {
         const index = net1_g.indexOf(g);
         const b = net1_b[index];
         const t = net1_t[index];
-        util.setValue(t, util.makeSumFromElements([b, g]).toString());
-        util.setValue('tnet_g', util.makeSumFromElements(net1_g).toString());
+        if (util.anyInputHasValue([b, g])) {
+            util.setValue(t, util.makeSumFromElements([b, g]).toString());
+        }
+        if (util.inputsHaveValue(net1_g)) {
+            util.setValue('tnet_g', util.makeSumFromElements(net1_g).toString());
+        }
     });
 });
 
 net1_t.forEach((t) => {
     util.listen(t, 'change', () => {
-        util.setValue('tnet_t', util.makeSumFromElements(net1_t).toString());
+        if (util.inputsHaveValue(net1_t)) {
+            util.setValue('tnet_t', util.makeSumFromElements(net1_t).toString());
+        }
     });
 });
 
@@ -311,8 +331,12 @@ nes_b.forEach((b) => {
         const index = nes_b.indexOf(b);
         const g = nes_g[index];
         const t = nes_t[index];
-        util.setValue(t, util.makeSumFromElements([b, g]).toString());
-        util.setValue('nest_b', util.makeSumFromElements(nes_b).toString());
+        if (util.anyInputHasValue([b, g])) {
+            util.setValue(t, util.makeSumFromElements([b, g]).toString());
+        }
+        if (util.inputsHaveValue(nes_b)) {
+            util.setValue('nest_b', util.makeSumFromElements(nes_b).toString());
+        }
     });
 });
 
@@ -321,14 +345,20 @@ nes_g.forEach((g) => {
         const index = nes_g.indexOf(g);
         const b = nes_b[index];
         const t = nes_t[index];
-        util.setValue(t, util.makeSumFromElements([b, g]).toString());
-        util.setValue('nest_g', util.makeSumFromElements(nes_g).toString());
+        if (util.anyInputHasValue([b, g])) {
+            util.setValue(t, util.makeSumFromElements([b, g]).toString());
+        }
+        if (util.inputsHaveValue(nes_g)) {
+            util.setValue('nest_g', util.makeSumFromElements(nes_g).toString());
+        }
     });
 });
 
 nes_t.forEach((t) => {
     document.getElementById(t).addEventListener('change', () => {
-        util.setValue('nest_t', util.makeSumFromElements(nes_t).toString());
+        if (util.inputsHaveValue(nes_t)) {
+            util.setValue('nest_t', util.makeSumFromElements(nes_t).toString());
+        }
     });
 });
 
@@ -338,8 +368,12 @@ neo_b.forEach((b) => {
         const index = neo_b.indexOf(b);
         const g = neo_g[index];
         const t = neo_t[index];
-        util.setValue(t, util.makeSumFromElements([b, g]).toString());
-        util.setValue('neo_b', util.makeSumFromElements(neo_b).toString());
+        if (util.anyInputHasValue([b, g])) {
+            util.setValue(t, util.makeSumFromElements([b, g]).toString());
+        }
+        if (util.inputsHaveValue(neo_b)) {
+            util.setValue('neo_b', util.makeSumFromElements(neo_b).toString());
+        }
     });
 });
 
@@ -348,14 +382,20 @@ neo_g.forEach((g) => {
         const index = neo_g.indexOf(g);
         const b = neo_b[index];
         const t = neo_t[index];
-        util.setValue(t, util.makeSumFromElements([b, g]).toString());
-        util.setValue('neo_g', util.makeSumFromElements(neo_g).toString());
+        if (util.anyInputHasValue([b, g])) {
+            util.setValue(t, util.makeSumFromElements([b, g]).toString());
+        }
+        if (util.inputsHaveValue(neo_g)) {
+            util.setValue('neo_g', util.makeSumFromElements(neo_g).toString());
+        }
     });
 });
 
 neo_t.forEach((t) => {
     util.listen(t, 'change', () => {
-        util.setValue('neo_t', util.makeSumFromElements(neo_t).toString());
+        if (util.inputsHaveValue(neo_t)) {
+            util.setValue('neo_t', util.makeSumFromElements(neo_t).toString());
+        }
     });
 });
 
@@ -411,8 +451,12 @@ nex1_b.forEach((b) => {
         const index = nex1_b.indexOf(b);
         const g = nex1_g[index];
         const t = nex1_t[index];
-        util.setValue(t, util.makeSumFromElements([b, g]).toString());
-        util.setValue('next_b', util.makeSumFromElements(nex1_b).toString());
+        if (util.anyInputHasValue([b, g])) {
+            util.setValue(t, util.makeSumFromElements([b, g]).toString());
+        }
+        if (util.inputsHaveValue(nex1_b)) {
+            util.setValue('next_b', util.makeSumFromElements(nex1_b).toString());
+        }
     });
 });
 
@@ -421,14 +465,20 @@ nex1_g.forEach((g) => {
         const index = nex1_g.indexOf(g);
         const b = nex1_b[index];
         const t = nex1_t[index];
-        util.setValue(t, util.makeSumFromElements([b, g]).toString());
-        util.setValue('next_g', util.makeSumFromElements(nex1_g).toString());
+        if (util.anyInputHasValue([b, g])) {
+            util.setValue(t, util.makeSumFromElements([b, g]).toString());
+        }
+        if (util.inputsHaveValue(nex1_g)) {
+            util.setValue('next_g', util.makeSumFromElements(nex1_g).toString());
+        }
     });
 });
 
 nex1_t.forEach((t) => {
     util.listen(t, 'change', () => {
-        util.setValue('next_t', util.makeSumFromElements(nex1_t).toString());
+        if (util.inputsHaveValue(nex1_t)) {
+            util.setValue('next_t', util.makeSumFromElements(nex1_t).toString());
+        }
     });
 });
 
@@ -437,8 +487,12 @@ eos_b.forEach((b) => {
         const index = eos_b.indexOf(b);
         const g = eos_g[index];
         const t = eost_t[index];
-        util.setValue(t, util.makeSumFromElements([b, g]).toString());
-        util.setValue('eost_b', util.makeSumFromElements(eos_b).toString());
+        if (util.anyInputHasValue([b, g])) {
+            util.setValue(t, util.makeSumFromElements([b, g]).toString());
+        }
+        if (util.inputsHaveValue(eos_b)) {
+            util.setValue('eost_b', util.makeSumFromElements(eos_b).toString());
+        }
     });
 });
 
@@ -447,14 +501,20 @@ eos_g.forEach((g) => {
         const index = eos_g.indexOf(g);
         const b = eos_b[index];
         const t = eost_t[index];
-        util.setValue(t, util.makeSumFromElements([b, g]).toString());
-        util.setValue('eost_g', util.makeSumFromElements(eos_g).toString());
+        if (util.anyInputHasValue([b, g])) {
+            util.setValue(t, util.makeSumFromElements([b, g]).toString());
+        }
+        if (util.inputsHaveValue(eos_g)) {
+            util.setValue('eost_g', util.makeSumFromElements(eos_g).toString());
+        }
     });
 });
 
 eost_t.forEach((t) => {
     util.listen(t, 'change', () => {
-        util.setValue('eost_t', util.makeSumFromElements(eost_t).toString());
+        if (util.inputsHaveValue(eost_t)) {
+            util.setValue('eost_t', util.makeSumFromElements(eost_t).toString());
+        }
     });
 });
 
@@ -463,8 +523,12 @@ ext_b.forEach((b) => {
         const index = ext_b.indexOf(b);
         const g = ext_g[index];
         const t = extt_t[index];
-        util.setValue(t, util.makeSumFromElements([b, g]).toString());
-        util.setValue('extt_b', util.makeSumFromElements(ext_b).toString());
+        if (util.anyInputHasValue([b, g])) {
+            util.setValue(t, util.makeSumFromElements([b, g]).toString());
+        }
+        if (util.inputsHaveValue(ext_b)) {
+            util.setValue('extt_b', util.makeSumFromElements(ext_b).toString());
+        }
     });
 });
 
@@ -473,14 +537,20 @@ ext_g.forEach((g) => {
         const index = ext_g.indexOf(g);
         const b = ext_b[index];
         const t = extt_t[index];
-        util.setValue(t, util.makeSumFromElements([b, g]).toString());
-        util.setValue('extt_g', util.makeSumFromElements(ext_g).toString());
+        if (util.anyInputHasValue([b, g])) {
+            util.setValue(t, util.makeSumFromElements([b, g]).toString());
+        }
+        if (util.inputsHaveValue(ext_g)) {
+            util.setValue('extt_g', util.makeSumFromElements(ext_g).toString());
+        }
     });
 });
 
 extt_t.forEach((t) => {
     util.listen(t, 'change', () => {
-        util.setValue('extt_t', util.makeSumFromElements(extt_t).toString());
+        if (util.inputsHaveValue(extt_t)) {
+            util.setValue('extt_t', util.makeSumFromElements(extt_t).toString());
+        }
     });
 });
 
@@ -489,7 +559,9 @@ tsa_b.forEach((b) => {
         const index = tsa_b.indexOf(b);
         const g = tsa_g[index];
         const t = tsat_t[index];
-        util.setValue(t, util.makeSumFromElements([b, g]).toString());
+        if (util.anyInputHasValue([b, g])) {
+            util.setValue(t, util.makeSumFromElements([b, g]).toString());
+        }
     });
 });
 
@@ -498,7 +570,9 @@ tsa_g.forEach((g) => {
         const index = tsa_g.indexOf(g);
         const b = tsa_b[index];
         const t = tsat_t[index];
-        util.setValue(t, util.makeSumFromElements([b, g]).toString());
+        if (util.anyInputHasValue([b, g])) {
+            util.setValue(t, util.makeSumFromElements([b, g]).toString());
+        }
     });
 });
 

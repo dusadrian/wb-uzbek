@@ -48,6 +48,13 @@ const disElements =  ["dis", "ifp1b"];
 const setElements =  ["",    "ifp1c"];
 const typeElements = ["",    "ifp1d"];
 
+const ifp4 = ['ifp4a', 'ifp4b'];
+const ifp = [...ifp4, 'ifp5'];
+const fc = ['fc1', 'fc3'];
+
+
+const validate = [...general_dates, ...ifp, ...fc, "ex2"];
+
 let regionCode = '';
 let userUUID = '';
 let institutionType = '';
@@ -82,7 +89,6 @@ export const instrument7 = {
             const config = { ...jQueryDatepickerConfig };
 
             if (el == 'ifp2') {
-                config.dateFormat = "mm/yy";
                 config.minDate = "01/01/1950";
             } else if (admission_dates.indexOf(el) < 0) {
                 config.minDate = "01/01/1930";
@@ -94,7 +100,7 @@ export const instrument7 = {
                 errorHandler.removeError(el, translations['invalid_date']);
                 try {
                     $.datepicker.parseDate(
-                        el == "ifp2" ? "mm/yy" : "dd/mm/yy",
+                        "dd/mm/yy",
                         util.htmlElement(el).value
                     )
                 } catch (error) {
@@ -206,8 +212,7 @@ export const instrument7 = {
                 instrumentID = parseInt(args.id);
 
                 for (const item of args.questions) {
-
-                    const index = [...regElements, ...disElements].indexOf(item.variable)
+                    const index = [...regElements, ...disElements, ...validate].indexOf(item.variable)
                     // regiunea este intotdeauna inaintea districtului
                     // un event de change pe regiune populeaza districtul, iar un event
                     // de change pe district populeaza settlement-ul
@@ -300,13 +305,13 @@ util.listen("ifp2", "myChange", () => {
     if (instrument.questions.ifp2.value != "-9") {
 
         const years = util.diffDates(
-            util.standardDate("01/" + instrument.questions.ifp2.value),
+            util.standardDate(instrument.questions.ifp2.value),
             new Date("2024-05-01"),
             "years"
         )
 
         const months = util.diffDates(
-            util.standardDate("01/" + instrument.questions.ifp2.value),
+            util.standardDate(instrument.questions.ifp2.value),
             new Date("2024-05-01"),
             "months"
         )
@@ -352,7 +357,7 @@ util.listen(ifp2t4, "myChange", () => {
         const message = translations["must_be_before"].replace("X", "IFT4").replace("Y", "IFP2");
 
         errorHandler.removeError(ifp2t4, message);
-        if (util.standardDate(instrument.questions.ift4.value) > util.standardDate("01/" + instrument.questions.ifp2.value)) {
+        if (util.standardDate(instrument.questions.ift4.value) > util.standardDate(instrument.questions.ifp2.value)) {
             errorHandler.addError(ifp2t4, message);
         }
     }
@@ -364,16 +369,13 @@ util.listen(ifp2m4, "myChange", () => {
         const message = translations["must_be_before"].replace("X", "IFM4").replace("Y", "IFP2");
 
         errorHandler.removeError(ifp2m4, message);
-        if (util.standardDate(instrument.questions.ifm4.value) > util.standardDate("01/" + instrument.questions.ifp2.value)) {
+        if (util.standardDate(instrument.questions.ifm4.value) > util.standardDate(instrument.questions.ifp2.value)) {
             errorHandler.addError(ifp2m4, message);
         }
     }
 });
 
 
-
-const ifp4 = ['ifp4a', 'ifp4b'];
-const ifp = [...ifp4, 'ifp5'];
 
 util.listen(ifp, "myChange", () => {
     if (util.inputsHaveValue(ifp)) {
@@ -390,7 +392,6 @@ util.listen(ifp, "myChange", () => {
 });
 
 
-const fc = ['fc1', 'fc3'];
 util.listen(fc, "myChange", () => {
     if (util.inputsHaveValue(fc)) {
         const message = "FC3 <= FC1";

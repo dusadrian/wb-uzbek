@@ -69,6 +69,11 @@ export const instrument5a = {
         general_dates.forEach((el) => {
             const config = { ...jQueryDatepickerConfig };
 
+            // if (el == 'ptr4') { // default anyway in jQueryDatepickerConfig
+            //     config.minDate = "01/01/2001";
+            //     config.maxDate = "31/12/2007";
+            // }
+
             if (el == 'ptr6') {
                 config.minDate = "01/05/2019";
                 config.maxDate = "30/04/2024";

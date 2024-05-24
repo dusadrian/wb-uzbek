@@ -39,12 +39,8 @@
             <p class="mb-2">Responsible for completion: the head of the institutions, coordinator or a person authorized by them</p>
             <p class="mb-2">Approximate average completion time: 90 minutes</p>
 
-            <div class="grid grid-cols-2 gap-4 items-center mt-12">
-                <div>Q1. Completion date of questionnaire</div>
-                <div>
-                    <input type="text" id="q1" name="q1" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
-                </div>
-            </div>
+            <input type="hidden" id="q1" name="q1" />
+
             <div class="grid grid-cols-2 gap-4 items-center mt-6">
                 <div>Q2. Name, patronymics, and surname of the person who filled in the questionnaire</div>
                 <div>
@@ -526,8 +522,9 @@
                     </div>
                 </div>
             </div>
-            <p class="mt-6">AF5. For each of the building where children are accommodated, please fill in the information in the table below</p>
-            <table class="w-full mt-2" aria-label="AF5. For each of the building where children are accommodated, please fill in the information in the table below">
+
+            <p id="af5text" class="hidden mt-6">AF5. For each of the building where children are accommodated, please fill in the information in the table below</p>
+            <table id="af5table" class=" hidden w-full mt-2" aria-label="AF5. For each of the building where children are accommodated, please fill in the information in the table below">
                 <thead>
                     <tr>
                         <th></th>
@@ -540,7 +537,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
+                    <tr id="af5row1" class="hidden">
                         <td class="py-1 px-2">1</td>
                         <td class="p-1">
                             <input type="text" id="af5_1_a" name="af5_1_a" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
@@ -566,7 +563,7 @@
                             </select>
                         </td>
                     </tr>
-                    <tr>
+                    <tr id="af5row2" class="hidden">
                         <td class="py-1 px-2">2</td>
                         <td class="p-1">
                             <input type="text" id="af5_2_a" name="af5_2_a" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
@@ -592,7 +589,7 @@
                             </select>
                         </td>
                     </tr>
-                    <tr>
+                    <tr id="af5row3" class="hidden">
                         <td class="py-1 px-2">3</td>
                         <td class="p-1">
                             <input type="text" id="af5_3_a" name="af5_3_a" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
@@ -618,7 +615,7 @@
                             </select>
                         </td>
                     </tr>
-                    <tr>
+                    <tr id="af5row4" class="hidden">
                         <td class="py-1 px-2">4</td>
                         <td class="p-1">
                             <input type="text" id="af5_4_a" name="af5_4_a" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
@@ -644,7 +641,7 @@
                             </select>
                         </td>
                     </tr>
-                    <tr>
+                    <tr id="af5row5" class="hidden">
                         <td class="py-1 px-2">5</td>
                         <td class="p-1">
                             <input type="text" id="af5_5_a" name="af5_5_a" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
@@ -670,7 +667,7 @@
                             </select>
                         </td>
                     </tr>
-                    <tr>
+                    <tr id="af5row6" class="hidden">
                         <td class="py-1 px-2">6</td>
                         <td class="p-1">
                             <input type="text" id="af5_6_a" name="af5_6_a" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
@@ -696,7 +693,7 @@
                             </select>
                         </td>
                     </tr>
-                    <tr>
+                    <tr id="af5row7" class="hidden">
                         <td class="py-1 px-2">7</td>
                         <td class="p-1">
                             <input type="text" id="af5_7_a" name="af5_7_a" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
@@ -722,7 +719,7 @@
                             </select>
                         </td>
                     </tr>
-                    <tr>
+                    <tr id="af5row8" class="hidden">
                         <td class="py-1 px-2">8</td>
                         <td class="p-1">
                             <input type="text" id="af5_8_a" name="af5_8_a" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
@@ -748,7 +745,7 @@
                             </select>
                         </td>
                     </tr>
-                    <tr>
+                    <tr id="af5row9" class="hidden">
                         <td class="py-1 px-2">9</td>
                         <td class="p-1">
                             <input type="text" id="af5_9_a" name="af5_9_a" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
@@ -774,7 +771,7 @@
                             </select>
                         </td>
                     </tr>
-                    <tr>
+                    <tr id="af5row10" class="hidden">
                         <td class="py-1 px-2">10</td>
                         <td class="p-1">
                             <input type="text" id="af5_10_a" name="af5_10_a" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
@@ -803,10 +800,10 @@
                 </tbody>
             </table>
 
-            <p class="bg-stone-100 p-2 mt-2 italic text-gray-600">* Please describe the number of floors or storeys that the building has using a combination of letters and numbers, such as B for basement, G for ground floor, F for upper floors, R for recessed floors, M for mezzanine (intermediate floor between ground floor and first floor) and A for attic. For example, a building that has a basement, ground floor and two upper floors has the height category B+G+2F.</p>
+            <p id="af5note1" class="hidden bg-stone-100 p-2 mt-2 italic text-gray-600">* Please describe the number of floors or storeys that the building has using a combination of letters and numbers, such as B for basement, G for ground floor, F for upper floors, R for recessed floors, M for mezzanine (intermediate floor between ground floor and first floor) and A for attic. For example, a building that has a basement, ground floor and two upper floors has the height category B+G+2F.</p>
+            <p id="af5note2" class="hidden bg-stone-100 p-2 mt-2 text-gray-600">Accessibility standards that should be taken into consideration:</p>
 
-            <p class="bg-stone-100 p-2 mt-2 text-gray-600">Accessibility standards that should be taken into consideration:</p>
-            <div class="bg-stone-100 p-2 mt-2 text-gray-600">
+            <div id="af5note3" class="hidden bg-stone-100 p-2 mt-2 text-gray-600">
                 <ul class="list-disc pl-4">
                     <li>Barrier-Free Design: The building should be designed to accommodate individuals with various physical abilities. This includes features such as ramps, elevators, wide doorways, and accessible bathrooms.</li>
                     <li>Wheelchair Accessibility: All areas of the building, including common spaces, bedrooms, and outdoor areas, should be easily navigable by individuals using wheelchairs.</li>
@@ -1175,18 +1172,14 @@
                     </tr>
                     <tr>
                         <td>
-                            <div class="ml-2">
-                                Of which, sleeping quarters…
-                            </div>
+                            <div class="ml-2">Of which, sleeping quarters…</div>
                         </td>
                         <td></td>
                         <td></td>
                     </tr>
                     <tr>
                         <td class="p-1">
-                            <div class="ml-4">
-                                b. … With one bed
-                            </div>
+                            <div class="ml-4">b. … With one bed</div>
                         </td>
                         <td class="p-1">
                             <input type="text" id="ac1b1" name="ac1b1" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5" />
@@ -1197,9 +1190,7 @@
                     </tr>
                     <tr>
                         <td class="p-1">
-                            <div class="ml-4">
-                                c. … With two beds
-                            </div>
+                            <div class="ml-4">c. … With two beds</div>
                         </td>
                         <td class="p-1">
                             <input type="text" id="ac1c1" name="ac1c1" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5" />
@@ -1210,9 +1201,7 @@
                     </tr>
                     <tr>
                         <td class="p-1">
-                            <div class="ml-4">
-                                d. … With three beds
-                            </div>
+                            <div class="ml-4">d. … With three beds</div>
                         </td>
                         <td class="p-1">
                             <input type="text" id="ac1d1" name="ac1d1" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5" />
@@ -1223,9 +1212,7 @@
                     </tr>
                     <tr>
                         <td class="p-1">
-                            <div class="ml-4">
-                                e. … With four or more beds
-                            </div>
+                            <div class="ml-4">e. … With four or more beds</div>
                         </td>
                         <td class="p-1">
                             <input type="text" id="ac1e1" name="ac1e1" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5" />
@@ -1236,9 +1223,7 @@
                     </tr>
                     <tr>
                         <td class="p-1">
-                            <div class="ml-4">
-                                f. … With adaptations for those in wheelchairs
-                            </div>
+                            <div class="ml-4">f. … With adaptations for those in wheelchairs</div>
                         </td>
                         <td class="p-1">
                             <input type="text" id="ac1f1" name="ac1f1" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5" />
@@ -1249,9 +1234,7 @@
                     </tr>
                     <tr>
                         <td class="p-1">
-                            <div class="ml-4">
-                                g. … With private toilet and bathroom/shower
-                            </div>
+                            <div class="ml-4">g. … With private toilet and bathroom/shower</div>
                         </td>
                         <td class="p-1">
                             <input type="text" id="ac1g1" name="ac1g1" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5" />
@@ -1285,15 +1268,15 @@
                             <input type="text" id="ac1j2" name="ac1j2" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5" />
                         </td>
                     </tr>
-                    <!-- <tr>
-                        <td class="p-1"></td>
+                    <tr>
+                        <td class="p-1">k. Isolation rooms used for both medical reasons and the confinement of children with behavioral problems</td>
                         <td class="p-1">
                             <input type="text" id="ac1k1" name="ac1k1" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5" />
                         </td>
                         <td class="p-1">
                             <input type="text" id="ac1k2" name="ac1k2" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5" />
                         </td>
-                    </tr> -->
+                    </tr>
                 </tbody>
             </table>
 
@@ -2338,7 +2321,7 @@
 
             <table class="w-full mt-6" aria-label="Which of the following spaces for specific rehabilitation and development activities are there in the institution?">
                 <tbody>
-                    <trb">
+                    <tr>
                         <td class="p-2 align-bottom text-left" rowspan="3" scope="col">EDU2. Which of the following spaces for specific rehabilitation and development activities are there in the institution?</td>
                         <td class="p-2 text-center align-bottom" rowspan="3" scope="col">Yes, dedicated</td>
                         <td class="p-2 text-center align-bottom" rowspan="3" scope="col">Yes, shared</td>
@@ -2933,7 +2916,7 @@
                             <input type="text" id="e2_2" name="e2_2" class="bg-white border border-gray-400 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full" />
                         </td>
                     </tr>
-                    <tr class="text-black font-bold">
+                    <tr class="bg-lime-200 text-black font-bold">
                         <td class="text-left p-2">03</td>
                         <td class="text-left p-2">Other expenditures (damage compensations, regulatory fines and penalties, etc.)</td>
                         <td class="text-center p-2">
