@@ -167,7 +167,7 @@ export const database = {
     updateService: async (data: DI.UpdateServiceObjInterface) => {
         const connection = new Promise<boolean>((resolve) => {
 
-            db.run(`UPDATE institutions SET children = '${data.children}', leavers = '${data.leavers}', employees = '${data.employees}' WHERE id = '${data.institution_id}' AND uuid = '${data.institutionUUID}';`, (error) => {
+            db.run(`UPDATE institutions SET children = '${data.children}', leavers = '${data.leavers}', employees = '${data.employees}', changed = true WHERE id = '${data.institution_id}' AND uuid = '${data.institutionUUID}';`, (error) => {
                 if (error) {
                     console.log(error);
                 }
@@ -181,7 +181,7 @@ export const database = {
         if (data.services.length > 0) {
             for (const service of data.services) {
                 const connection = new Promise<boolean>((resolve) => {
-                    db.run(`UPDATE institutions SET children = '${service.children}', leavers = '${service.leavers}' WHERE id = '${service.id}' AND uuid = '${service.uuid}'`, (error) => {
+                    db.run(`UPDATE institutions SET children = '${service.children}', leavers = '${service.leavers}', changed = true WHERE id = '${service.id}' AND uuid = '${service.uuid}'`, (error) => {
                         if (error) {
                             console.log(error);
                         }
@@ -193,7 +193,7 @@ export const database = {
         }
 
         const connection = new Promise<boolean>((resolve) => {
-            db.run(`UPDATE inson SET pf = '${data.pf}', children_fth = '${data.children_fth}', leavers_fth = '${data.leavers_fth}' WHERE id = '${data.institution_id}' AND uuid = '${data.institutionUUID}'`, (error) => {
+            db.run(`UPDATE inson SET pf = '${data.pf}', children_fth = '${data.children_fth}', leavers_fth = '${data.leavers_fth}', changed = true WHERE id = '${data.institution_id}' AND uuid = '${data.institutionUUID}'`, (error) => {
                 if (error) {
                     console.log(error);
                 }
@@ -221,6 +221,7 @@ export const database = {
                 leavers,
                 employees,
                 inson,
+                changed,
                 activcode1,
                 activcode2,
                 activcode3,
@@ -243,6 +244,7 @@ export const database = {
                 data.leavers,
                 data.employees,
                 data.inson,
+                true,
                 data.activcode1,
                 data.activcode2,
                 data.activcode3,
@@ -278,7 +280,7 @@ export const database = {
             newServices = data.code;
         }
         const connection3 = new Promise<boolean>((resolve) => {
-            db.run(`UPDATE inson SET services = '${newServices}' WHERE code = '${data.inson}'`, (error) => {
+            db.run(`UPDATE inson SET services = '${newServices}', changed = true WHERE code = '${data.inson}'`, (error) => {
                 if (error) {
                     console.log(error);
                     resolve(false);
