@@ -74,16 +74,20 @@ const tnr = ['tnr1_b', 'tnr1_g'];
 
 const final = ['tnr0', 'tnet_t', 'next_t', 'tnr1_t'];
 
-const e0174 = ['eost_b', 'extt_b', 'tsa1_b', 'tsa2_b', 'tsa3_b'];
+const e0174 = ['eost_b', 'extt_b', ...tsa_b];
 const e0174t = [...e0174, 'next_b'];
 
-const e0175 = ['eost_g', 'extt_g', 'tsa1_g', 'tsa2_g', 'tsa3_g'];
+const e0175 = ['eost_g', 'extt_g', ...tsa_g];
 const e0175t = [...e0175, 'next_g'];
 
-const e0176 = ['eost_t', 'extt_t', 'tsa1_t', 'tsa2_t', 'tsa3_t'];
+const e0176 = ['eost_t', 'extt_t', ...tsat_t];
 const e0176t = [...e0176, 'next_t'];
 
+// regiunea este intotdeauna inaintea districtului
+// un event de change pe regiune populeaza districtul, iar un event
+// de change pe district populeaza settlement-ul
 const validate = [
+    ...regElements, ...disElements,
     ...net1_b, ...net1_g, ...net1_t, ...nes_b, ...nes_g, ...nes_t, ...neo_b,
     ...neo_g, ...neo_t, ...unu_b, ...unu_bt, ...unu_g, ...unu_gt, ...unu_t,
     ...unu_tt, ...nex1_b, ...nex1_g, ...nex1_t, ...eos_b, ...eos_g, ...eost_t,
@@ -94,6 +98,7 @@ const validate = [
 const totals = [
     "tnet_b", "tnet_g", "tnet_t", "nest_b", "nest_g", "nest_t",
     "neo_b", "neo_g", "neo_t", "next_b", "next_g", "next_t",
+    "eost_b", "eost_g", "eost_t",
     "ext0_b", "ext0_g", "ext0_t", "extt_b", "extt_g", "extt_t",
     "tnr1_b", "tnr1_g", "tnr1_t"
 ]
@@ -188,19 +193,18 @@ export const instrument6 = {
                 instrumentID = parseInt(args.id);
 
                 for (const item of args.questions) {
-                    const index = [...regElements, ...disElements, ...validate].indexOf(item.variable)
-                    // regiunea este intotdeauna inaintea districtului
-                    // un event de change pe regiune populeaza districtul, iar un event
-                    // de change pe district populeaza settlement-ul
                     if (totals.indexOf(item.variable) < 0) {
                         instrument.seteazaValoareElement(item.variable, item.value);
                     }
 
-                    if (index >= 0) {
+                    if (validate.indexOf(item.variable) >= 0) {
                         util.trigger(item.variable, "change");
                     }
-                }
 
+                    if (["tsa1_b", "tsa1_g"].indexOf(item.variable) >= 0) {
+                        console.log(item.variable, item.value);
+                    }
+                }
             }
 
             // set default values, IRRESPECTIVE of the instrument
@@ -295,11 +299,19 @@ net1_b.forEach((b) => {
         const index = net1_b.indexOf(b);
         const g = net1_g[index];
         const t = net1_t[index];
+
         if (util.anyInputHasValue([b, g])) {
             util.setValue(t, util.makeSumFromElements([b, g]).toString());
+        } else {
+            util.setValue(t, "");
+            instrument.questions[t].value = "-7";
         }
-        if (util.inputsHaveValue(net1_b)) {
+
+        if (util.anyInputHasValue(net1_b)) {
             util.setValue('tnet_b', util.makeSumFromElements(net1_b).toString());
+        } else {
+            util.setValue('tnet_b', "");
+            instrument.questions['tnet_b'].value = "-7";
         }
     });
 });
@@ -309,19 +321,30 @@ net1_g.forEach((g) => {
         const index = net1_g.indexOf(g);
         const b = net1_b[index];
         const t = net1_t[index];
+
         if (util.anyInputHasValue([b, g])) {
             util.setValue(t, util.makeSumFromElements([b, g]).toString());
+        } else {
+            util.setValue(t, "");
+            instrument.questions[t].value = "-7";
         }
-        if (util.inputsHaveValue(net1_g)) {
+
+        if (util.anyInputHasValue(net1_g)) {
             util.setValue('tnet_g', util.makeSumFromElements(net1_g).toString());
+        } else {
+            util.setValue('tnet_g', "");
+            instrument.questions['tnet_g'].value = "-7";
         }
     });
 });
 
 net1_t.forEach((t) => {
     util.listen(t, 'change', () => {
-        if (util.inputsHaveValue(net1_t)) {
+        if (util.anyInputHasValue(net1_t)) {
             util.setValue('tnet_t', util.makeSumFromElements(net1_t).toString());
+        } else {
+            util.setValue('tnet_t', "");
+            instrument.questions['tnet_t'].value = "-7";
         }
     });
 });
@@ -331,11 +354,19 @@ nes_b.forEach((b) => {
         const index = nes_b.indexOf(b);
         const g = nes_g[index];
         const t = nes_t[index];
+
         if (util.anyInputHasValue([b, g])) {
             util.setValue(t, util.makeSumFromElements([b, g]).toString());
+        } else {
+            util.setValue(t, "");
+            instrument.questions[t].value = "-7";
         }
-        if (util.inputsHaveValue(nes_b)) {
+
+        if (util.anyInputHasValue(nes_b)) {
             util.setValue('nest_b', util.makeSumFromElements(nes_b).toString());
+        } else {
+            util.setValue('nest_b', "");
+            instrument.questions['nest_b'].value = "-7";
         }
     });
 });
@@ -345,19 +376,30 @@ nes_g.forEach((g) => {
         const index = nes_g.indexOf(g);
         const b = nes_b[index];
         const t = nes_t[index];
+
         if (util.anyInputHasValue([b, g])) {
             util.setValue(t, util.makeSumFromElements([b, g]).toString());
+        } else {
+            util.setValue(t, "");
+            instrument.questions[t].value = "-7";
         }
-        if (util.inputsHaveValue(nes_g)) {
+
+        if (util.anyInputHasValue(nes_g)) {
             util.setValue('nest_g', util.makeSumFromElements(nes_g).toString());
+        } else {
+            util.setValue('nest_g', "");
+            instrument.questions['nest_g'].value = "-7";
         }
     });
 });
 
 nes_t.forEach((t) => {
     document.getElementById(t).addEventListener('change', () => {
-        if (util.inputsHaveValue(nes_t)) {
+        if (util.anyInputHasValue(nes_t)) {
             util.setValue('nest_t', util.makeSumFromElements(nes_t).toString());
+        } else {
+            util.setValue('nest_t', "");
+            instrument.questions['nest_t'].value = "-7";
         }
     });
 });
@@ -368,11 +410,19 @@ neo_b.forEach((b) => {
         const index = neo_b.indexOf(b);
         const g = neo_g[index];
         const t = neo_t[index];
+
         if (util.anyInputHasValue([b, g])) {
             util.setValue(t, util.makeSumFromElements([b, g]).toString());
+        } else {
+            util.setValue(t, "");
+            instrument.questions[t].value = "-7";
         }
-        if (util.inputsHaveValue(neo_b)) {
+
+        if (util.anyInputHasValue(neo_b)) {
             util.setValue('neo_b', util.makeSumFromElements(neo_b).toString());
+        } else {
+            util.setValue('neo_b', "");
+            instrument.questions['neo_b'].value = "-7";
         }
     });
 });
@@ -382,19 +432,30 @@ neo_g.forEach((g) => {
         const index = neo_g.indexOf(g);
         const b = neo_b[index];
         const t = neo_t[index];
+
         if (util.anyInputHasValue([b, g])) {
             util.setValue(t, util.makeSumFromElements([b, g]).toString());
+        } else {
+            util.setValue(t, "");
+            instrument.questions[t].value = "-7";
         }
-        if (util.inputsHaveValue(neo_g)) {
+
+        if (util.anyInputHasValue(neo_g)) {
             util.setValue('neo_g', util.makeSumFromElements(neo_g).toString());
+        } else {
+            util.setValue('neo_g', "");
+            instrument.questions['neo_g'].value = "-7";
         }
     });
 });
 
 neo_t.forEach((t) => {
     util.listen(t, 'change', () => {
-        if (util.inputsHaveValue(neo_t)) {
+        if (util.anyInputHasValue(neo_t)) {
             util.setValue('neo_t', util.makeSumFromElements(neo_t).toString());
+        } else {
+            util.setValue('neo_t', "");
+            instrument.questions['neo_t'].value = "-7";
         }
     });
 });
@@ -403,7 +464,11 @@ neo_t.forEach((t) => {
 // nest_b + neo_b = tnet_b
 unu_bt.forEach((item) => {
     util.listen(item, 'change', () => {
-        if (util.inputsHaveValue(unu_bt)) {
+        if (
+            util.inputsHaveValue(net1_b) &&
+            util.inputsHaveValue(nes_b) &&
+            util.inputsHaveValue(neo_b)
+        ) {
             const tnet_b = util.getInputNumericValue('tnet_b');
             const message = translations["E0170"];
 
@@ -418,7 +483,11 @@ unu_bt.forEach((item) => {
 // nest_g + neo_g = tnet_g
 unu_gt.forEach((item) => {
     util.listen(item, 'change', () => {
-        if (util.inputsHaveValue(unu_gt)) {
+        if (
+            util.inputsHaveValue(net1_g) &&
+            util.inputsHaveValue(nes_g) &&
+            util.inputsHaveValue(neo_g)
+        ) {
             const tnet_g = util.getInputNumericValue('tnet_g');
             const message = translations["E0171"];
 
@@ -433,7 +502,11 @@ unu_gt.forEach((item) => {
 // nest_t + neo_t = tnet_t
 unu_tt.forEach((item) => {
     util.listen(item, 'change', () => {
-        if (util.inputsHaveValue(unu_tt)) {
+        if (
+            util.inputsHaveValue(net1_t) &&
+            util.inputsHaveValue(nes_t) &&
+            util.inputsHaveValue(neo_t)
+        ) {
             const tnet_t = util.getInputNumericValue('tnet_t');
             const message = translations["E0172"];
 
@@ -451,11 +524,19 @@ nex1_b.forEach((b) => {
         const index = nex1_b.indexOf(b);
         const g = nex1_g[index];
         const t = nex1_t[index];
+
         if (util.anyInputHasValue([b, g])) {
             util.setValue(t, util.makeSumFromElements([b, g]).toString());
+        } else {
+            util.setValue(t, "");
+            instrument.questions[t].value = "-7";
         }
-        if (util.inputsHaveValue(nex1_b)) {
+
+        if (util.anyInputHasValue(nex1_b)) {
             util.setValue('next_b', util.makeSumFromElements(nex1_b).toString());
+        } else {
+            util.setValue('next_b', "");
+            instrument.questions['next_b'].value = "-7";
         }
     });
 });
@@ -465,19 +546,30 @@ nex1_g.forEach((g) => {
         const index = nex1_g.indexOf(g);
         const b = nex1_b[index];
         const t = nex1_t[index];
+
         if (util.anyInputHasValue([b, g])) {
             util.setValue(t, util.makeSumFromElements([b, g]).toString());
+        } else {
+            util.setValue(t, "");
+            instrument.questions[t].value = "-7";
         }
-        if (util.inputsHaveValue(nex1_g)) {
+
+        if (util.anyInputHasValue(nex1_g)) {
             util.setValue('next_g', util.makeSumFromElements(nex1_g).toString());
+        } else {
+            util.setValue('next_g', "");
+            instrument.questions['next_g'].value = "-7";
         }
     });
 });
 
 nex1_t.forEach((t) => {
     util.listen(t, 'change', () => {
-        if (util.inputsHaveValue(nex1_t)) {
+        if (util.anyInputHasValue(nex1_t)) {
             util.setValue('next_t', util.makeSumFromElements(nex1_t).toString());
+        } else {
+            util.setValue('next_t', "");
+            instrument.questions['next_t'].value = "-7";
         }
     });
 });
@@ -487,11 +579,19 @@ eos_b.forEach((b) => {
         const index = eos_b.indexOf(b);
         const g = eos_g[index];
         const t = eost_t[index];
+
         if (util.anyInputHasValue([b, g])) {
             util.setValue(t, util.makeSumFromElements([b, g]).toString());
+        } else {
+            util.setValue(t, "");
+            instrument.questions[t].value = "-7";
         }
-        if (util.inputsHaveValue(eos_b)) {
+
+        if (util.anyInputHasValue(eos_b)) {
             util.setValue('eost_b', util.makeSumFromElements(eos_b).toString());
+        } else {
+            util.setValue('eost_b', "");
+            instrument.questions['eost_b'].value = "-7";
         }
     });
 });
@@ -501,19 +601,40 @@ eos_g.forEach((g) => {
         const index = eos_g.indexOf(g);
         const b = eos_b[index];
         const t = eost_t[index];
+
         if (util.anyInputHasValue([b, g])) {
             util.setValue(t, util.makeSumFromElements([b, g]).toString());
+        } else {
+            util.setValue(t, "");
+            instrument.questions[t].value = "-7";
         }
-        if (util.inputsHaveValue(eos_g)) {
+
+        if (util.anyInputHasValue(eos_g)) {
             util.setValue('eost_g', util.makeSumFromElements(eos_g).toString());
+        } else {
+            util.setValue('eost_g', "");
+            instrument.questions['eost_g'].value = "-7";
         }
     });
 });
 
 eost_t.forEach((t) => {
     util.listen(t, 'change', () => {
-        if (util.inputsHaveValue(eost_t)) {
+        const i9 = Number(instrument.questions.i9.value);
+        const blocked = i9 > 0 && (i9 < 21 || i9 > 28);
+        if (blocked) {
+            util.htmlElement("eos4_t").value = "0";
+        }
+
+        if (util.anyInputHasValue(eost_t)) {
             util.setValue('eost_t', util.makeSumFromElements(eost_t).toString());
+        } else {
+            util.setValue('eost_t', "");
+            instrument.questions['eost_t'].value = "-7";
+        }
+
+        if (blocked) {
+            util.htmlElement("eos4_t").value = "";
         }
     });
 });
@@ -523,11 +644,19 @@ ext_b.forEach((b) => {
         const index = ext_b.indexOf(b);
         const g = ext_g[index];
         const t = extt_t[index];
+
         if (util.anyInputHasValue([b, g])) {
             util.setValue(t, util.makeSumFromElements([b, g]).toString());
+        } else {
+            util.setValue(t, "");
+            instrument.questions[t].value = "-7";
         }
-        if (util.inputsHaveValue(ext_b)) {
+
+        if (util.anyInputHasValue(ext_b)) {
             util.setValue('extt_b', util.makeSumFromElements(ext_b).toString());
+        } else {
+            util.setValue('extt_b', "");
+            instrument.questions['extt_b'].value = "-7";
         }
     });
 });
@@ -537,19 +666,30 @@ ext_g.forEach((g) => {
         const index = ext_g.indexOf(g);
         const b = ext_b[index];
         const t = extt_t[index];
+
         if (util.anyInputHasValue([b, g])) {
             util.setValue(t, util.makeSumFromElements([b, g]).toString());
+        } else {
+            util.setValue(t, "");
+            instrument.questions[t].value = "-7";
         }
-        if (util.inputsHaveValue(ext_g)) {
+
+        if (util.anyInputHasValue(ext_g)) {
             util.setValue('extt_g', util.makeSumFromElements(ext_g).toString());
+        } else {
+            util.setValue('extt_g', "");
+            instrument.questions['extt_g'].value = "-7";
         }
     });
 });
 
 extt_t.forEach((t) => {
     util.listen(t, 'change', () => {
-        if (util.inputsHaveValue(extt_t)) {
+        if (util.anyInputHasValue(extt_t)) {
             util.setValue('extt_t', util.makeSumFromElements(extt_t).toString());
+        } else {
+            util.setValue('extt_t', "");
+            instrument.questions['extt_t'].value = "-7";
         }
     });
 });
@@ -559,9 +699,14 @@ tsa_b.forEach((b) => {
         const index = tsa_b.indexOf(b);
         const g = tsa_g[index];
         const t = tsat_t[index];
+
         if (util.anyInputHasValue([b, g])) {
             util.setValue(t, util.makeSumFromElements([b, g]).toString());
+        } else {
+            util.setValue(t, "");
+            instrument.questions[t].value = "-7";
         }
+
     });
 });
 
@@ -570,15 +715,27 @@ tsa_g.forEach((g) => {
         const index = tsa_g.indexOf(g);
         const b = tsa_b[index];
         const t = tsat_t[index];
+
         if (util.anyInputHasValue([b, g])) {
+            console.log(b, g, t, util.makeSumFromElements([b, g]));
+            console.log(instrument.questions[b].value, instrument.questions[g].value)
             util.setValue(t, util.makeSumFromElements([b, g]).toString());
+        } else {
+            util.setValue(t, "");
+            instrument.questions[t].value = "-7";
         }
+
     });
 });
 
 tnr.forEach((item) => {
     util.listen(item, 'change', () => {
-        util.setValue('tnr1_t', util.makeSumFromElements(tnr).toString());
+        if (util.anyInputHasValue(tnr)) {
+            util.setValue('tnr1_t', util.makeSumFromElements(tnr).toString());
+        } else {
+            util.setValue('tnr1_t', "");
+            instrument.questions['tnr1_t'].value = "-7";
+        }
     });
 });
 
@@ -603,11 +760,22 @@ final.forEach((item) => {
 // eost_b + extt_b + tsa1_b + tsa2_b + tsa3_b = next_b
 e0174t.forEach((item) => {
     util.listen(item, 'change', () => {
-        if (util.inputsHaveValue(e0174t)) {
-            const next_b = util.getInputNumericValue('next_b');
-            const message = translations["E0174"];
+        const eos = [...eos_b];
+        const i9 = Number(instrument.questions.i9.value);
+        const blocked = i9 > 0 && (i9 < 21 || i9 > 28);
+        if (blocked) {
+            eos.splice(3, 1);
+        }
 
-            errorHandler.removeError(e0174t, message)
+        const message = translations["E0174"];
+        errorHandler.removeError(e0174t, message)
+
+        if (
+            util.inputsHaveValue(eos) &&
+            util.inputsHaveValue(ext_b) &&
+            util.inputsHaveValue(tsa_b)
+        ) {
+            const next_b = util.getInputNumericValue('next_b');
             if (next_b != Number(util.makeInputSumDecimal(e0174))) {
                 errorHandler.addError(e0174t, message);
             }
@@ -618,11 +786,23 @@ e0174t.forEach((item) => {
 // eost_g + extt_g + tsa1_g + tsa2_g + tsa3_g = next_g
 e0175t.forEach((item) => {
     util.listen(item, 'change', () => {
-        if (util.inputsHaveValue(e0175t)) {
-            const next_g = util.getInputNumericValue('next_g');
-            const message = translations["E0175"];
+        const eos = [...eos_g];
+        const i9 = Number(instrument.questions.i9.value);
+        const blocked = i9 > 0 && (i9 < 21 || i9 > 28);
+        if (blocked) {
+            eos.splice(3, 1);
+        }
 
-            errorHandler.removeError(e0175t, message)
+        const message = translations["E0175"];
+        errorHandler.removeError(e0175t, message)
+
+        if (
+            util.inputsHaveValue(eos) &&
+            util.inputsHaveValue(ext_g) &&
+            util.inputsHaveValue(tsa_g)
+        ) {
+            const next_g = util.getInputNumericValue('next_g');
+
             if (next_g != Number(util.makeInputSumDecimal(e0175))) {
                 errorHandler.addError(e0175t, message);
             }
@@ -633,9 +813,21 @@ e0175t.forEach((item) => {
 // eost_t + extt_t + tsa1_t + tsa2_t + tsa3_t = next_t
 e0176t.forEach((item) => {
     util.listen(item, 'change', () => {
-        if (util.inputsHaveValue(e0176t)) {
-            const next_t = util.getInputNumericValue('next_t');
-            const message = translations["E0176"];
+        const eos = [...eost_t];
+        const i9 = Number(instrument.questions.i9.value);
+        const blocked = i9 > 0 && (i9 < 21 || i9 > 28);
+        if (blocked) {
+            eos.splice(3, 1);
+        }
+
+        const next_t = util.getInputNumericValue('next_t');
+        const message = translations["E0176"];
+
+        if (
+            util.inputsHaveValue(eos) &&
+            util.inputsHaveValue(extt_t) &&
+            util.inputsHaveValue(tsat_t)
+        ) {
 
             errorHandler.removeError(e0176t, message)
             if (next_t != Number(util.makeInputSumDecimal(e0176))) {
