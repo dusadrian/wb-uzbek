@@ -668,45 +668,45 @@ util.listen(qfam2, "change", () => {
 
 
 
-util.listen("sa5d", "myChange", () => {
-    const selectedDistrict = util.htmlElement("sa5d").value;
-    const institutie = util.htmlElement("qeduc1a1");
+// util.listen("sa5d", "myChange", () => {
+//     const selectedDistrict = util.htmlElement("sa5d").value;
+//     const institutie = util.htmlElement("qeduc1a1");
 
-    util.resetSelect("qeduc1a1", "-9", translations['t_choose']);
+//     util.resetSelect("qeduc1a1", "-9", translations['t_choose']);
 
-    const serv: string[] = [];
-    for (let i = 0; i < servicesCodes.length; i++) {
-        if (services[servicesCodes[i]].district == selectedDistrict) {
-            serv.push(services[servicesCodes[i]].code);
-        }
-    }
+//     const serv: string[] = [];
+//     for (let i = 0; i < servicesCodes.length; i++) {
+//         if (services[servicesCodes[i]].district == selectedDistrict) {
+//             serv.push(services[servicesCodes[i]].code);
+//         }
+//     }
 
-    if (serv.length > 0) {
-        for (let i = 0; i < serv.length; i++) {
-            if (Number(services[serv[i]].type) < 20) {
-                let service_included = true;
-                if (insons[institutionCode]) {
-                    service_included = insons[institutionCode].services.includes(serv[i]);
-                }
+//     if (serv.length > 0) {
+//         for (let i = 0; i < serv.length; i++) {
+//             if (Number(services[serv[i]].type) < 20) {
+//                 let service_included = true;
+//                 if (insons[institutionCode]) {
+//                     service_included = insons[institutionCode].services.includes(serv[i]);
+//                 }
 
-                if (service_included) {
-                    const option = document.createElement("option");
-                    option.value = serv[i];
-                    const serviciu = { ...services[serv[i]] } as KeyStringNumber;
-                    option.text = serv[i] + ': ' + serviciu['name_' + lang];
-                    institutie.appendChild(option);
-                }
-            }
-        }
-    }
+//                 if (service_included) {
+//                     const option = document.createElement("option");
+//                     option.value = serv[i];
+//                     const serviciu = { ...services[serv[i]] } as KeyStringNumber;
+//                     option.text = serv[i] + ': ' + serviciu['name_' + lang];
+//                     institutie.appendChild(option);
+//                 }
+//             }
+//         }
+//     }
 
-    const optgroup = document.createElement("optgroup");
-    const option999 = document.createElement("option");
-    option999.value = '999';
-    option999.text = '999: ' + translations['not_in_registry'];
-    optgroup.appendChild(option999);
-    institutie.appendChild(optgroup);
-})
+//     const optgroup = document.createElement("optgroup");
+//     const option999 = document.createElement("option");
+//     option999.value = '999';
+//     option999.text = '999: ' + translations['not_in_registry'];
+//     optgroup.appendChild(option999);
+//     institutie.appendChild(optgroup);
+// })
 
 const qeduc1a = util.radioIDs("qeduc1a");
 util.listen(qeduc1a, "myChange", () => {
@@ -731,16 +731,10 @@ util.listen("qeduc1ad", "myChange", () => {
     if (serv.length > 0) {
         for (let i = 0; i < serv.length; i++) {
             const type = Number(services[serv[i]].type);
-            console.log(i + 1, type)
             let service_included = true;
-            if (insons[institutionCode]) {
-                service_included = insons[institutionCode].services.includes(serv[i]);
-            }
 
-            if (qeduc1a == 2) {
-                if (type != 31) {
-                    service_included = false;
-                }
+            if (qeduc1a == 2 && type != 31) {
+                service_included = false;
             }
 
             if (service_included) {
@@ -787,32 +781,21 @@ util.listen("qeduc2ad", "myChange", () => {
         for (let i = 0; i < serv.length; i++) {
             const type = Number(services[serv[i]].type);
             let service_included = true;
-            if (insons[institutionCode]) {
-                service_included = insons[institutionCode].services.includes(serv[i]);
+
+            if (qeduc2a == 2 && type != 32) {
+                service_included = false;
             }
 
-            if (qeduc2a == 2) {
-                if (type != 32) {
-                    service_included = false;
-                }
+            if (qeduc2a == 3 && (type < 21 || type > 28)) {
+                service_included = false;
             }
 
-            if (qeduc2a == 3) {
-                if (type < 21 || type > 28) {
-                    service_included = false;
-                }
+            if (qeduc2a == 4 && type != 33) {
+                service_included = false;
             }
 
-            if (qeduc2a == 4) {
-                if (type != 33) {
-                    service_included = false;
-                }
-            }
-
-            if (qeduc2a == 5) {
-                if (type != 34) {
-                    service_included = false;
-                }
+            if (qeduc2a == 5 && type != 34) {
+                service_included = false;
             }
 
             if (service_included) {
