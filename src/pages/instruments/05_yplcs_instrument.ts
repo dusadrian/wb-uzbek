@@ -29,6 +29,7 @@ const locales: { [key: string]: typeof en | typeof uz | typeof ru } = {
 const lang = localStorage.getItem("language");
 const translations = locales[lang as keyof typeof locales] as Record<string, string>;
 let services: { [key: string]: DI.Institution };
+let servicesCodes: string[] = [];
 let insons: { [key: string]: DI.INSON };
 
 const regElements  = ["reg", "pi4b", "pi6r", "pi9c"];
@@ -101,6 +102,7 @@ export const instrument5 = {
         ipcRenderer.on("instrumentDataReady", (_event, args) => {
             console.log(args);
             services = args.services;
+            servicesCodes = Object.keys(services);
             insons = args.insons;
 
             userRole = args.userData.role_code;
@@ -125,12 +127,10 @@ export const instrument5 = {
                 util.listen(regElements[x], "change", function () {
                     if (regElements[x] == "pi6r") {
                         util.resetSelect("pi6i", "-9", translations['t_choose']);
-                        instrument.questions.pi6i.value = "-7";
                     }
 
                     if (setElements[x] != "") {
                         util.resetSelect(setElements[x], "-9", translations['t_choose']);
-                        instrument.questions[setElements[x]].value = "-7";
                     }
 
                     const selectedRegion = util.htmlElement(regElements[x]).value;
@@ -138,6 +138,7 @@ export const instrument5 = {
                         const dis_codes = regions[selectedRegion].districts;
 
                         util.resetSelect(disElements[x], "-9", translations['t_choose']);
+                        instrument.questions[disElements[x]].value = "-9";
                         for (let i = 0; i < dis_codes.length; i++) {
                             util.addOption(
                                 disElements[x],
@@ -189,7 +190,13 @@ export const instrument5 = {
 
                         if (Number(selectedDistrict) > 0) {
 
-                            const serv = districts[selectedDistrict].services;
+                            const serv: string[] = [];
+                            for (let i = 0; i < servicesCodes.length; i++) {
+                                if (services[servicesCodes[i]].district == selectedDistrict) {
+                                    serv.push(services[servicesCodes[i]].code);
+                                }
+                            }
+
                             if (serv.length > 0) {
                                 for (let i = 0; i < serv.length; i++) {
                                     const type = Number(services[serv[i]].type);

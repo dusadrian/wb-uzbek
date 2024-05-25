@@ -253,8 +253,7 @@ export const instrument4 = {
                 for (const item of args.questions) {
                     instrument.seteazaValoareElement(item.variable, item.value);
 
-                    const index = [...validate].indexOf(item.variable)
-                    if (index >= 0) {
+                    if (validate.indexOf(item.variable) >= 0) {
                         util.trigger(item.variable, "change");
                     }
                 }

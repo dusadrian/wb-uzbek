@@ -30,6 +30,7 @@ const locales: { [key: string]: typeof en | typeof uz | typeof ru } = {
 const lang = localStorage.getItem("language");
 const translations = locales[lang as keyof typeof locales] as Record<string, string>;
 let services: { [key: string]: DI.Institution };
+let servicesCodes: string[] = [];
 let insons: { [key: string]: DI.INSON };
 
 const general_dates = [
@@ -80,7 +81,9 @@ const ct1a = util.radioIDs("ct1a");
 const ct1c = util.radioIDs("ct1c");
 
 
-
+// regiunea este intotdeauna inaintea districtului
+// un event de change pe regiune populeaza districtul, iar un event
+// de change pe district populeaza settlement-ul
 const validate = [
     ...regElements, ...disElements, ...sh3_start_dates, ...sh3_end_dates,
     ...lk22_2, ...lk3cg1, ...cg1cg3, ...qhouse4ArrayFull, ...ewm1, ...ewm2, ...ewm3, ...ewm4,
@@ -236,6 +239,7 @@ export const instrument1 = {
         ipcRenderer.on("instrumentDataReady", (_event, args) => {
 
             services = args.services;
+            servicesCodes = Object.keys(services);
             insons = args.insons;
             userRole = args.userData.role_code;
             let institution_code = args.userData.institution_code;
@@ -265,17 +269,14 @@ export const instrument1 = {
 
                     if (regElements[x] == "sa5r") {
                         util.resetSelect("sa5i", "-9", translations['t_choose']);
-                        instrument.questions.sa5i.value = "-7";
                     }
 
                     if (regElements[x] == "reg") {
                         util.resetSelect("sh5", "-9", translations['t_choose']);
-                        instrument.questions.sh5.value = "-7";
                     }
 
                     if (setElements[x] != "") {
                         util.resetSelect(setElements[x], "-9", translations['t_choose']);
-                        instrument.questions[setElements[x]].value = "-7";
                     }
 
                     const selectedRegion = util.htmlElement(regElements[x]).value;
@@ -335,7 +336,13 @@ export const instrument1 = {
 
                         if (Number(selectedDistrict) > 0) {
 
-                            const serv = districts[selectedDistrict].services;
+                            const serv: string[] = [];
+                            for (let i = 0; i < servicesCodes.length; i++) {
+                                if (services[servicesCodes[i]].district == selectedDistrict) {
+                                    serv.push(services[servicesCodes[i]].code);
+                                }
+                            }
+
                             if (serv.length > 0) {
                                 for (let i = 0; i < serv.length; i++) {
                                     if (Number(services[serv[i]].type) < 20) {
@@ -379,9 +386,6 @@ export const instrument1 = {
                 for (const item of args.questions) {
                     instrument.seteazaValoareElement(item.variable, item.value);
 
-                    // regiunea este intotdeauna inaintea districtului
-                    // un event de change pe regiune populeaza districtul, iar un event
-                    // de change pe district populeaza settlement-ul
                     if (validate.indexOf(item.variable) >= 0) {
                         util.trigger(item.variable, "change");
                     }

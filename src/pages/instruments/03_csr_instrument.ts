@@ -44,6 +44,16 @@ let filters: DI.FiltersInterface;
 
 const e2e7 = ["e2", "e7"]; // date elements
 
+const regElements = ["i4a"];
+const disElements = ["i4b"];
+const setElements = ["i4c"];
+
+// regiunea este intotdeauna inaintea districtului
+// un event de change pe regiune populeaza districtul, iar un event
+// de change pe district populeaza settlement-ul
+const validate = [...regElements, ...disElements];
+
+
 export const instrument3 = {
     init: async () => {
 
@@ -83,10 +93,6 @@ export const instrument3 = {
 
         ipcRenderer.on("instrumentDataReady", (_event, args) => {
             // console.log(args);
-
-            const regElements = ["i4a"];
-            const disElements = ["i4b"];
-            const setElements = ["i4c"];
 
 
             services = args.services;
@@ -155,16 +161,12 @@ export const instrument3 = {
                 instrumentID = parseInt(args.id);
 
                 for (const item of args.questions) {
-                    const index = [...regElements, ...disElements].indexOf(item.variable)
-                    // regiunea este intotdeauna inaintea districtului
-                    // un event de change pe regiune populeaza districtul, iar un event
-                    // de change pe district populeaza settlement-ul
                     instrument.seteazaValoareElement(item.variable, item.value);
-                    if (index >= 0) {
+
+                    if (validate.indexOf(item.variable) >= 0) {
                         util.trigger(item.variable, "change");
                     }
                 }
-
             }
 
             // set default values, IRRESPECTIVE of the instrument

@@ -30,6 +30,7 @@ const locales: { [key: string]: typeof en | typeof uz | typeof ru } = {
 const lang = localStorage.getItem("language");
 const translations = locales[lang as keyof typeof locales] as Record<string, string>;
 let services: { [key: string]: DI.Institution };
+let servicesCodes: string[] = [];
 let insons: { [key: string]: DI.INSON };
 // let regionCode = '';
 
@@ -42,6 +43,11 @@ const regElements = ["reg", "lk14b", "sa3a", "sa5r", "cm3b", "ct3b", "cm11c", "c
 const disElements = ["dis", "lk14c", "sa3b", "sa5d", "cm3c", "ct3c", "cm11d", "ct11d", "cg11d", "qeduc1ad", "qeduc2ad"];
 const setElements = ["", "lk14d", "sa3c", "", "cm3d", "ct3d", "cm11e", "ct11e", "cg11e", "", ""];
 const typeElements = ["", "lk14e", "sa3d", "", "cm3e", "ct3e", "cm11f", "ct11f", "cg11f", "", ""];
+
+// regiunea este intotdeauna inaintea districtului
+// un event de change pe regiune populeaza districtul, iar un event
+// de change pe district populeaza settlement-ul
+const validate = [...regElements, ...disElements];
 
 let regionCode = '';
 let userUUID = '';
@@ -125,6 +131,7 @@ export const instrument2 = {
         ipcRenderer.on("instrumentDataReady", (_event, args) => {
             // console.log(args);
             services = args.services;
+            servicesCodes = Object.keys(services);
             insons = args.insons;
 
             userRole = args.userData.role_code;
@@ -146,22 +153,18 @@ export const instrument2 = {
                 util.listen(regElements[x], "change", function () {
                     if (regElements[x] == "sa5r") {
                         util.resetSelect("sa5i", "-9", translations['t_choose']);
-                        instrument.questions.sa5i.value = "-7";
                     }
 
                     if (regElements[x] == "qeduc1ar") {
                         util.resetSelect("qeduc1a1", "-9", translations['t_choose']);
-                        instrument.questions.sa5i.value = "-7";
                     }
 
                     if (regElements[x] == "qeduc2ar") {
                         util.resetSelect("qeduc2a1", "-9", translations['t_choose']);
-                        instrument.questions.qeduc2a1.value = "-7";
                     }
 
                     if (setElements[x] != "") {
                         util.resetSelect(setElements[x], "-9", translations['t_choose']);
-                        instrument.questions[setElements[x]].value = "-7";
                     }
 
                     const selectedRegion = util.htmlElement(regElements[x]).value;
@@ -215,7 +218,13 @@ export const instrument2 = {
                         util.resetSelect(institutie, "-9", translations['t_choose']);
 
                         if (Number(selectedDistrict) > 0) {
-                            const serv = districts[selectedDistrict].services;
+                            const serv: string[] = [];
+                            for (let i = 0; i < servicesCodes.length; i++) {
+                                if (services[servicesCodes[i]].district == selectedDistrict) {
+                                    serv.push(services[servicesCodes[i]].code);
+                                }
+                            }
+
                             if (serv.length > 0) {
                                 for (let i = 0; i < serv.length; i++) {
                                     if (Number(services[serv[i]].type) < 20) {
@@ -255,13 +264,9 @@ export const instrument2 = {
                 instrumentID = parseInt(args.id);
 
                 for (const item of args.questions) {
-
-                    const index = [...regElements, ...disElements].indexOf(item.variable)
-                    // regiunea este intotdeauna inaintea districtului
-                    // un event de change pe regiune populeaza districtul, iar un event
-                    // de change pe district populeaza settlement-ul
                     instrument.seteazaValoareElement(item.variable, item.value);
-                    if (index >= 0) {
+
+                    if (validate.indexOf(item.variable) >= 0) {
                         util.trigger(item.variable, "change");
                     }
 
@@ -667,14 +672,15 @@ util.listen("sa5d", "myChange", () => {
     const selectedDistrict = util.htmlElement("sa5d").value;
     const institutie = util.htmlElement("qeduc1a1");
 
-    const option = document.createElement("option");
-    option.value = "-9";
-    option.text = translations['t_choose'];
+    util.resetSelect("qeduc1a1", "-9", translations['t_choose']);
 
-    institutie.innerHTML = "";
-    institutie.appendChild(option);
+    const serv: string[] = [];
+    for (let i = 0; i < servicesCodes.length; i++) {
+        if (services[servicesCodes[i]].district == selectedDistrict) {
+            serv.push(services[servicesCodes[i]].code);
+        }
+    }
 
-    const serv = districts[selectedDistrict].services;
     if (serv.length > 0) {
         for (let i = 0; i < serv.length; i++) {
             if (Number(services[serv[i]].type) < 20) {
@@ -712,19 +718,20 @@ util.listen(qeduc1a, "myChange", () => {
 util.listen("qeduc1ad", "myChange", () => {
     const qeduc1a = Number(instrument.questions.qeduc1a.value);
     const selectedDistrict = util.htmlElement("qeduc1ad").value;
-    const institutie = util.htmlElement("qeduc1a1");
 
-    const option = document.createElement("option");
-    option.value = "-9";
-    option.text = translations['t_choose'];
+    util.resetSelect("qeduc1a1", "-9", translations['t_choose']);
 
-    institutie.innerHTML = "";
-    institutie.appendChild(option);
+    const serv: string[] = [];
+    for (let i = 0; i < servicesCodes.length; i++) {
+        if (services[servicesCodes[i]].district == selectedDistrict) {
+            serv.push(services[servicesCodes[i]].code);
+        }
+    }
 
-    const serv = districts[selectedDistrict].services;
     if (serv.length > 0) {
         for (let i = 0; i < serv.length; i++) {
             const type = Number(services[serv[i]].type);
+            console.log(i + 1, type)
             let service_included = true;
             if (insons[institutionCode]) {
                 service_included = insons[institutionCode].services.includes(serv[i]);
@@ -737,11 +744,12 @@ util.listen("qeduc1ad", "myChange", () => {
             }
 
             if (service_included) {
-                const option = document.createElement("option");
-                option.value = serv[i];
                 const serviciu = { ...services[serv[i]] } as KeyStringNumber;
-                option.text = serv[i] + ': ' + serviciu['name_' + lang];
-                institutie.appendChild(option);
+                util.addOption(
+                    "qeduc1a1",
+                    serv[i],
+                    serv[i] + ': ' + serviciu['name_' + lang]
+                );
             }
         }
     }
@@ -751,7 +759,7 @@ util.listen("qeduc1ad", "myChange", () => {
     option999.value = '999';
     option999.text = '999: ' + translations['not_in_registry'];
     optgroup.appendChild(option999);
-    institutie.appendChild(optgroup);
+    util.htmlElement("qeduc1a1").appendChild(optgroup);
 })
 
 
@@ -765,16 +773,16 @@ util.listen(qeduc2a, "myChange", () => {
 util.listen("qeduc2ad", "myChange", () => {
     const qeduc2a = Number(instrument.questions.qeduc2a.value);
     const selectedDistrict = util.htmlElement("qeduc2ad").value;
-    const institutie = util.htmlElement("qeduc2a1");
 
-    const option = document.createElement("option");
-    option.value = "-9";
-    option.text = translations['t_choose'];
+    util.resetSelect("qeduc2a1", "-9", translations['t_choose']);
 
-    institutie.innerHTML = "";
-    institutie.appendChild(option);
+    const serv: string[] = [];
+    for (let i = 0; i < servicesCodes.length; i++) {
+        if (services[servicesCodes[i]].district == selectedDistrict) {
+            serv.push(services[servicesCodes[i]].code);
+        }
+    }
 
-    const serv = districts[selectedDistrict].services;
     if (serv.length > 0) {
         for (let i = 0; i < serv.length; i++) {
             const type = Number(services[serv[i]].type);
@@ -808,11 +816,12 @@ util.listen("qeduc2ad", "myChange", () => {
             }
 
             if (service_included) {
-                const option = document.createElement("option");
-                option.value = serv[i];
                 const serviciu = { ...services[serv[i]] } as KeyStringNumber;
-                option.text = serv[i] + ': ' + serviciu['name_' + lang];
-                institutie.appendChild(option);
+                util.addOption(
+                    "qeduc2a1",
+                    serv[i],
+                    serv[i] + ': ' + serviciu['name_' + lang]
+                );
             }
         }
     }
@@ -822,7 +831,7 @@ util.listen("qeduc2ad", "myChange", () => {
     option999.value = '999';
     option999.text = '999: ' + translations['not_in_registry'];
     optgroup.appendChild(option999);
-    institutie.appendChild(optgroup);
+    util.htmlElement("qeduc2a1").appendChild(optgroup);
 })
 
 util.radioIDs("cmnt2").forEach((item) => {
