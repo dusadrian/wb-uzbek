@@ -896,7 +896,7 @@ util.listen("i9", "change", check_i9);
 
 util.listen(rce, "myChange", () => {
     if (util.inputsHaveValue(rce)) {
-        const message = "RCE6max >= RCE6min";
+        const message = "RCE62 >= RCE61";
         errorHandler.removeError(rce, message)
         if (util.getInputDecimalValue('rce61') > util.getInputDecimalValue('rce62')) {
             errorHandler.addError(rce, message);
