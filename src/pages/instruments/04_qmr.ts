@@ -77,7 +77,6 @@ const ft7i12ai9 = [...ft7i12a, 'i9'];
 const ft7i13a = ['ft7', 'i13a'];
 const ft2af1 = ['ft2', 'af1'];
 const af4ab = ['af4a', 'af4b'];
-const rce612 = ['rce61', 'rce62'];
 const e00Array = ['e01', 'e02', 'e03'];
 const e00ArrayFull = [...e00Array, 'e00'];
 const e01Array = ['e10', 'e20'];
@@ -96,7 +95,7 @@ const e21Array = ['e2_1_1', 'e2_1_2', 'e2_1_3', 'e2_1_4'];
 const e21ArrayFull = [...e21Array, 'e2_1'];
 const rooms = ["ac1a1", "ac1b1", "ac1c1", "ac1d1", "ac1e1", "ac1f1", "ac1g1"];
 const areas = ["ac1a2", "ac1b2", "ac1c2", "ac1d2", "ac1e2", "ac1f2", "ac1g2"];
-const rce = ["rce61", "rce62"];
+const rce6 = ["rce61", "rce62"];
 const ac14a = util.radioIDs("ac14a");
 
 const validate = [...general_dates, ...start_dates, ...end_dates, ...i13,
@@ -104,7 +103,7 @@ const validate = [...general_dates, ...start_dates, ...end_dates, ...i13,
     "cc5", "i12a", "i13a", ...de2a_i13a, ...rce1i12a, ...rce1, ...af5edu5,
     ...ft7i12ai9, "i13a", ...ft2af1, ...af4ab, ...e00ArrayFull,
     ...e01ArrayFull, ...e10ArrayFull, e20ArrayFull, ...e02ArrayFull,
-    ...e21ArrayFull, ...rooms, "i9", ...rce
+    ...e21ArrayFull, ...rooms, "i9", ...rce6
 ];
 
 let regionCode = '';
@@ -894,12 +893,12 @@ rooms.forEach((room) => {
 
 util.listen("i9", "change", check_i9);
 
-util.listen(rce, "myChange", () => {
-    if (util.inputsHaveValue(rce)) {
+util.listen(rce6, "myChange", () => {
+    if (util.inputsHaveValue(rce6)) {
         const message = "RCE62 >= RCE61";
-        errorHandler.removeError(rce, message)
+        errorHandler.removeError(rce6, message)
         if (util.getInputDecimalValue('rce61') > util.getInputDecimalValue('rce62')) {
-            errorHandler.addError(rce, message);
+            errorHandler.addError(rce6, message);
         }
     }
 });

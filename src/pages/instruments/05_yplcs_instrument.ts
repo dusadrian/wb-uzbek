@@ -122,8 +122,6 @@ export const instrument5 = {
                     );
                 }
 
-                const set_el = util.htmlElement(setElements[x]);
-
                 util.listen(regElements[x], "change", function () {
                     if (regElements[x] == "pi6r") {
                         util.resetSelect("pi6i", "-9", translations['t_choose']);
@@ -165,10 +163,6 @@ export const instrument5 = {
                             const set_codes = districts[selectedDistrict].settlements;
 
                             if (set_codes.length > 0) {
-                                const option = document.createElement("option");
-                                option.value = "-9";
-                                option.text = locales[lang]['t_choose'];
-                                set_el.appendChild(option);
 
                                 for (let i = 0; i < set_codes.length; i++) {
                                     util.addOption(
@@ -190,22 +184,16 @@ export const instrument5 = {
 
                         if (Number(selectedDistrict) > 0) {
 
-                            const serv: string[] = [];
                             for (let i = 0; i < servicesCodes.length; i++) {
-                                if (services[servicesCodes[i]].district == selectedDistrict) {
-                                    serv.push(services[servicesCodes[i]].code);
-                                }
-                            }
-
-                            if (serv.length > 0) {
-                                for (let i = 0; i < serv.length; i++) {
-                                    const type = Number(services[serv[i]].type);
+                                const code = servicesCodes[i];
+                                if (services[code].district == selectedDistrict) {
+                                    const type = Number(services[code].type);
                                     if ((type >= 12 && type <= 15) || (type >= 21 && type <= 28)) {
-                                        const serviciu = { ...services[serv[i]] } as KeyStringNumber;
+                                        const serviciu = { ...services[code] } as KeyStringNumber;
                                         util.addOption(
                                             "pi6i",
-                                            serv[i],
-                                            serv[i] + ": " + serviciu['name_' + lang]
+                                            code,
+                                            code + ": " + serviciu['name_' + lang]
                                         )
                                     }
                                 }
@@ -424,9 +412,11 @@ util.listen(he5, "change", () => {
 
 
 util.listen(pi9a, "myChange", () => {
+    console.log(instrument.questions.lv9.skip)
     instrument.questions.lv9.skip = false;
     const value = Number(instrument.questions.pi9a.value);
     if (value >= 1 && value <= 3) {
         instrument.questions.lv9.skip = true;
     }
+    console.log(instrument.questions.lv9.skip)
 })

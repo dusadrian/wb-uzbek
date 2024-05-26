@@ -100,8 +100,8 @@ const totals = [
     "tnet_b", "tnet_g", "tnet_t", "nest_b", "nest_g", "nest_t",
     "neo_b", "neo_g", "neo_t", "next_b", "next_g", "next_t",
     "eost_b", "eost_g", "eost_t",
-    "ext0_b", "ext0_g", "ext0_t", "extt_b", "extt_g", "extt_t",
-    "tnr1_b", "tnr1_g", "tnr1_t"
+    "extt_b", "extt_g", "extt_t",
+    "tnr1_t"
 ]
 
 
@@ -201,10 +201,6 @@ export const instrument6 = {
 
                     if (validate.indexOf(item.variable) >= 0) {
                         util.trigger(item.variable, "change");
-                    }
-
-                    if (["tsa1_b", "tsa1_g"].indexOf(item.variable) >= 0) {
-                        console.log(item.variable, item.value);
                     }
                 }
             }
@@ -718,8 +714,6 @@ tsa_g.forEach((g) => {
         const t = tsat_t[index];
 
         if (util.anyInputHasValue([b, g])) {
-            console.log(b, g, t, util.makeSumFromElements([b, g]));
-            console.log(instrument.questions[b].value, instrument.questions[g].value)
             util.setValue(t, util.makeSumFromElements([b, g]).toString());
         } else {
             util.setValue(t, "");
@@ -740,21 +734,33 @@ tnr.forEach((item) => {
     });
 });
 
-final.forEach((item) => {
-    util.listen(item, 'change', () => {
-        if (util.inputsHaveValue(final)) {
-            const tnr1_t = util.getInputNumericValue('tnr1_t');
-            const tnet_t = util.getInputNumericValue('tnet_t');
-            const next_t = util.getInputNumericValue('next_t');
-            const tnr0 = util.getInputNumericValue('tnr0');
-            const message = translations["E0173"];
+util.listen(final, 'change', () => {
+    const tnr0 = util.getInputNumericValue('tnr0');
+    const tnet_t = util.getInputNumericValue('tnet_t');
+    const next_t = util.getInputNumericValue('next_t');
+    const tnr1_t = util.getInputNumericValue('tnr1_t');
 
-            errorHandler.removeError(final, message)
-            if (tnr1_t != (tnr0 + tnet_t - next_t)) {
-                errorHandler.addError(final, message);
-            }
+    if (util.inputsHaveValue(['tnr0', "tnr1_t"])) {
+        let message = "TNR0 XY= TNR1";
+
+        if (tnet_t > 0) {
+            message = message.replace("X", "+ TNET ");
+        } else {
+            message = message.replace("X", "");
         }
-    });
+
+        if (next_t > 0) {
+            message = message.replace("Y", "- NEXT ");
+        } else {
+            message = message.replace("Y", "");
+        }
+
+        errorHandler.removeError(final, message)
+
+        if (tnr1_t != (tnr0 + tnet_t - next_t)) {
+            errorHandler.addError(final, message);
+        }
+    }
 });
 
 

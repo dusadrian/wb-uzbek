@@ -1612,34 +1612,34 @@ export const questions: QuestionObjectType = {
     'tnr1_b': {
         name: 'tnr1_b',
         type: 'number',
-        value: '-7',
-        disabled: true,
+        value: '-9',
+        disabled: false,
         hidden: false,
         readonly: false,
         order: 146,
-        active: function() {return(Number(instrument.questions.nex1.value) == 1)},
+        active: function() {return(true)},
         skip: false
     },
     'tnr1_g': {
         name: 'tnr1_g',
         type: 'number',
-        value: '-7',
-        disabled: true,
+        value: '-9',
+        disabled: false,
         hidden: false,
         readonly: false,
         order: 147,
-        active: function() {return(Number(instrument.questions.nex1.value) == 1)},
+        active: function() {return(true)},
         skip: false
     },
     'tnr1_t': {
         name: 'tnr1_t',
         type: 'number',
-        value: '-7',
-        disabled: true,
+        value: '-9',
+        disabled: false,
         hidden: false,
         readonly: false,
         order: 148,
-        active: function() {return(Number(instrument.questions.nex1.value) == 1)},
+        active: function() {return(true)},
         skip: false
     },
     'obs': {

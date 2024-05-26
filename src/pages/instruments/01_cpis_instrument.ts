@@ -336,28 +336,22 @@ export const instrument1 = {
 
                         if (Number(selectedDistrict) > 0) {
 
-                            const serv: string[] = [];
                             for (let i = 0; i < servicesCodes.length; i++) {
-                                if (services[servicesCodes[i]].district == selectedDistrict) {
-                                    serv.push(services[servicesCodes[i]].code);
-                                }
-                            }
-
-                            if (serv.length > 0) {
-                                for (let i = 0; i < serv.length; i++) {
-                                    if (Number(services[serv[i]].type) < 20) {
+                                const code = servicesCodes[i];
+                                if (services[code].district == selectedDistrict) {
+                                    if (Number(services[code].type) < 20) {
                                         let service_included = true;
                                         if (insons[institution_code]) {
-                                            service_included = insons[institution_code].services.includes(serv[i]);
+                                            service_included = insons[institution_code].services.includes(code);
                                         }
 
                                         if (service_included) {
-                                            const serviciu = { ...services[serv[i]] } as KeyStringNumber;
+                                            const serviciu = { ...services[code] } as KeyStringNumber;
                                             util.addOption(
                                                 institutie,
-                                                serv[i],
-                                                serv[i] + ': ' + serviciu['name_' + lang]
-                                            );
+                                                code,
+                                                code + ": " + serviciu['name_' + lang]
+                                            )
                                         }
                                     }
                                 }

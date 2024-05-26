@@ -792,13 +792,13 @@ export const questions: QuestionObjectType = {
     'lv9': {
         name: 'lv9',
         type: 'textarea',
-        value: '-7',
-        disabled: true,
+        value: '-9',
+        disabled: false,
         hidden: false,
         readonly: false,
         order: 70,
-        active: function() {return(Number(instrument.questions.pi9a.value) == 1 || Number(instrument.questions.pi9a.value) == 2 || Number(instrument.questions.pi9a.value) == 3)},
-        skip: false
+        active: function() {return(true)},
+        skip: true
     },
     'ee1': {
         name: 'ee1',
