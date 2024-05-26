@@ -19,6 +19,7 @@ const locales: { [key: string]: typeof en | typeof uz | typeof ru } = {
 const lang = localStorage.getItem("language");
 const translations = locales[lang as keyof typeof locales] as Record<string, string>;
 let services: { [key: string]: DI.Institution };
+let servicesCodes: string[] = [];
 let insons: { [key: string]: DI.INSON };
 
 let regionCode = '';
@@ -114,6 +115,7 @@ export const instrument6 = {
         ipcRenderer.on("instrumentDataReady", (_event, args) => {
 
             services = args.services;
+            servicesCodes = Object.keys(services);
             insons = args.insons;
 
             userRole = args.userData.role_code;
@@ -252,12 +254,11 @@ export const instrument6 = {
                 institutionType = args.userData.service_type_code;
                 institutionCode = args.userData.institution_code;
 
-                const serv_codes = Object.keys(services);
-                if (serv_codes.indexOf(institution_code) >= 0) {
-                    util.setValue("i9", "--");
+                util.setValue("i9", "--");
+                if (servicesCodes.indexOf(institution_code) >= 0) {
                     const type = services[args.userData.institution_code].type;
-                    if (["11", "12", "13", "14", "15", "16", "17"].indexOf(type) >= 0) {
-                        util.setValue("i9", type);
+                    if (util.selectValues("i9").indexOf(type) >= 0) {
+                        util.setValue("i9", services[args.userData.institution_code].type);
                     }
                 }
             }

@@ -220,6 +220,10 @@ export const instrument7 = {
                     if (index >= 0) {
                         util.trigger(item.variable, "change");
                     }
+
+                    if (["fc3", "ex2"]. indexOf(item.variable) >= 0) {
+                        util.trigger(item.variable, "myChange");
+                    }
                 }
             }
 
@@ -405,7 +409,7 @@ util.listen(fc, "myChange", () => {
 
 
 
-util.listen("fc3", "change", () => {
+util.listen("fc3", "myChange", () => {
     const value = Number(util.htmlElement("fc3").value);
     const elements = ["a", "b", "c", "d", "cn", "e", "f"];
 
@@ -448,7 +452,7 @@ util.listen("fc3", "change", () => {
 
 
 
-util.listen("ex2", "change", () => {
+util.listen("ex2", "myChange", () => {
     const value = Number(util.htmlElement("ex2").value);
     const elements = ["a", "b", "c", "d", "cn", "e", "f"];
 

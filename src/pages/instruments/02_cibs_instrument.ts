@@ -244,14 +244,14 @@ export const instrument2 = {
                                     }
                                 }
                             }
-
-                            const optgroup = document.createElement("optgroup");
-                            const option999 = document.createElement("option");
-                            option999.value = '999';
-                            option999.text = '999: ' + translations['not_in_registry'];
-                            optgroup.appendChild(option999);
-                            util.htmlElement(institutie).appendChild(optgroup);
                         }
+
+                        const optgroup = document.createElement("optgroup");
+                        const option999 = document.createElement("option");
+                        option999.value = '999';
+                        option999.text = '999: ' + translations['not_in_registry'];
+                        optgroup.appendChild(option999);
+                        util.htmlElement(institutie).appendChild(optgroup);
                     }
                 })
             }
@@ -413,20 +413,6 @@ util.listen("sa1a", "myChange", () => {
 });
 
 
-// util.listen("sa5a", "change", function () {
-//     util.setValue("sa5c", "-9");
-//     const value = util.htmlElement("sa5a").value;
-//     const serv_codes = Object.keys(services);
-//     if (serv_codes.indexOf(value) >= 0) {
-//         const type = services[value].type;
-//         // console.log(type, services[value].name);
-//         if (["11", "12", "13", "14", "15"].indexOf(type) >= 0) {
-//             util.setValue("sa5c", type);
-//         }
-//     }
-// })
-
-
 const qfam = [
     'qfam2_1', 'qfam2_2', 'qfam2_3', 'qfam2_4', 'qfam2_5',
     'qfam2_6', 'qfam2_7', 'qfam2_8', 'qfam2_9'
@@ -475,36 +461,25 @@ util.listen(prehealth, "change", () => {
 
 function check_lk22_2(): boolean {
     const lk22_2_1 = util.htmlElement("lk22_2_1");
-    const lk22_2_7_1 = util.htmlElement("lk22_2_7-1");
-    const lk22_2_7_0 = util.htmlElement("lk22_2_7-0");
-
-    let suma = 0;
+    let suma = "0";
     for (let i = 0; i < lk22_2.length; i++) {
         if (util.htmlElement(lk22_2[i]).checked) {
-            suma++;
+            suma = "1";
         }
     }
 
     const message = translations['At_least_one_disability'];
     errorHandler.removeError(lk22_2, message);
 
-    if (suma == 0) {
+    if (suma == "0") {
         errorHandler.addError(lk22_2, message);
         lk22_2_1.scrollIntoView({ behavior: "smooth", block: "center", inline: "nearest" });
     }
     else {
-        if (suma > 1) {
-            lk22_2_7_1.checked = true;
-            lk22_2_7_0.checked = false;
-        } else {
-            lk22_2_7_1.checked = false;
-            lk22_2_7_0.checked = true;
-        }
-
-        instrument.questions["lk22_2_7"].value = Number(suma > 1).toString();
+        util.setValue("lk22_2_7", suma);
     }
 
-    return (suma > 0);
+    return (suma == "1");
 }
 
 util.listen(lk22_2, "myChange", check_lk22_2);
@@ -524,8 +499,6 @@ util.listen(sk3, "myChange", () => {
 
         if (Number(util.makeInputSumDecimal(sk3)) == 0) {
             errorHandler.addError(sk3, message);
-            instrument.questions["sk3_1"].value = "-9";
-            instrument.questions["sk3_2"].value = "-9";
         }
     }
 });
@@ -546,8 +519,6 @@ util.listen(lk3cm3, "myChange", () => {
 
         if (util.standardDate(mother) >= util.standardDate(child)) {
             errorHandler.addError(lk3cm3, message);
-            instrument.questions["cm3"].value = "-9";
-            instrument.questions["lk3"].value = "-9";
         }
     }
 })
@@ -567,8 +538,28 @@ util.listen(lk3ct3, "myChange", () => {
 
         if (util.standardDate(father) >= util.standardDate(child)) {
             errorHandler.addError(lk3ct3, message);
-            instrument.questions["ct3"].value = "-9";
-            instrument.questions["lk3"].value = "-9";
+        }
+    }
+})
+
+
+
+
+
+const lk3cg3b = ["lk3", "cg3b"];
+util.listen(lk3cg3b, "myChange", () => {
+    if (util.inputsHaveValue(lk3cg3b)) {
+        const mother = util.htmlElement("cg3b").value;
+        const child = util.htmlElement("lk3").value;
+
+        instrument.questions["cg3b"].value = mother;
+        instrument.questions["lk3"].value = child;
+
+        const message = translations['must_be_earlier'].replace("X", "CG3b").replace("Y", "LK3");
+        errorHandler.removeError(lk3cg3b, message);
+
+        if (util.standardDate(mother) >= util.standardDate(child)) {
+            errorHandler.addError(lk3cg3b, message);
         }
     }
 })
@@ -818,16 +809,12 @@ util.listen("qeduc2ad", "myChange", () => {
 })
 
 util.radioIDs("cmnt2").forEach((item) => {
-    util.listen(item, "change", () => {
+    util.listen(item, "myChange", () => {
         instrument.questions.cmnt2a2.skip = false;
         instrument.questions.cmnt2a3.skip = false;
-        util.htmlElement("cmnt2a2").disabled = false;
-        util.htmlElement("cmnt2a3").disabled = false;
         if (instrument.questions.cmnt2.value == "1") {
             instrument.questions.cmnt2a2.skip = true;
             instrument.questions.cmnt2a3.skip = true;
-            util.htmlElement("cmnt2a2").disabled = true;
-            util.htmlElement("cmnt2a3").disabled = true;
         }
     })
 })

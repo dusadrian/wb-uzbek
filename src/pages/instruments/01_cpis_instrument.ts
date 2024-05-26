@@ -362,15 +362,15 @@ export const instrument1 = {
                                     }
                                 }
                             }
+                        }
 
-                            if (institutie == "sa5i") {
-                                const optgroup = document.createElement("optgroup");
-                                const option999 = document.createElement("option");
-                                option999.value = '999';
-                                option999.text = '999: ' + translations['not_in_registry'];
-                                optgroup.appendChild(option999);
-                                util.htmlElement(institutie).appendChild(optgroup);
-                            }
+                        if (institutie == "sa5i") {
+                            const optgroup = document.createElement("optgroup");
+                            const option999 = document.createElement("option");
+                            option999.value = '999';
+                            option999.text = '999: ' + translations['not_in_registry'];
+                            optgroup.appendChild(option999);
+                            util.htmlElement(institutie).appendChild(optgroup);
                         }
                     }
                 })
@@ -498,14 +498,16 @@ const saveChestionar = (obj: SaveInstrumentType): void => {
 
 // Set service type
 util.listen("sa5i", "change", function () {
-    util.setValue("sa5t", "-9");
-    const value = util.htmlElement("sa5i").value;
-    const serv_codes = Object.keys(services);
-    if (serv_codes.indexOf(value) >= 0) {
-        const type = services[value].type;
-        if (["11", "12", "13", "14", "15", "16", "17"].indexOf(type) >= 0) {
+    const service = util.htmlElement("sa5i").value;
+
+    // check for 999 not in registry
+    if (servicesCodes.indexOf(service) >= 0) {
+        const type = services[service].type;
+        // In principiu ar trebui sa pun acest if, insa sa5i contine
+        // TOATE tipurile deci este irelevant
+        // if (util.selectValues("sa5t").indexOf(type) >= 0) {
             util.setValue("sa5t", type);
-        }
+        // }
     }
 })
 
@@ -524,37 +526,25 @@ for (let i = 0; i < setElements.length; i++) {
 
 function check_lk22_2(): boolean {
     const lk22_2_1 = util.htmlElement("lk22_2_1");
-    const lk22_2_7_1 = util.htmlElement("lk22_2_7-1");
-    const lk22_2_7_0 = util.htmlElement("lk22_2_7-0");
-
-
-    let suma = 0;
+    let suma = "0";
     for (let i = 0; i < lk22_2.length; i++) {
         if (util.htmlElement(lk22_2[i]).checked) {
-            suma++;
+            suma = "1";
         }
     }
 
     const message = translations['At_least_one_disability'];
     errorHandler.removeError(lk22_2, message);
 
-    if (suma == 0) {
+    if (suma == "0") {
         errorHandler.addError(lk22_2, message);
         lk22_2_1.scrollIntoView({ behavior: "smooth", block: "center", inline: "nearest" });
     }
     else {
-        if (suma > 1) {
-            lk22_2_7_1.checked = true;
-            lk22_2_7_0.checked = false;
-        } else {
-            lk22_2_7_1.checked = false;
-            lk22_2_7_0.checked = true;
-        }
-
-        instrument.questions["lk22_2_7"].value = Number(suma > 1).toString();
+        util.setValue("lk22_2_7", suma);
     }
 
-    return (suma > 0);
+    return (suma == "1");
 }
 
 util.listen(lk22_2, "myChange", check_lk22_2);
@@ -966,11 +956,17 @@ util.listen(qfam3, "change", () => {
 
 
 util.listen("sh5", "change", () => {
+    const sh3_csb_values = util.selectValues("sh3_csb");
+    // sh3_csb este camp de tip auto, deci nu se poate -9 Choose
+    if (sh3_csb_values.indexOf("--") < 0) {
+        util.addOption("sh3_csb", "--", "--");
+    }
+
     util.setValue("sh3_csb", "--");
     const value = util.htmlElement("sh5").value;
-    if (Number(value) > 0) {
+    if (servicesCodes.indexOf(value) >= 0) {
         const type = services[value].type;
-        if (["11", "12", "13", "14", "15", "16", "17"].indexOf(type) >= 0) {
+        if (util.selectValues("sh3_csb").indexOf(type) >= 0) {
             util.setValue("sh3_csb", type);
         }
     }

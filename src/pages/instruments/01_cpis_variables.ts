@@ -3810,12 +3810,12 @@ export const questions: QuestionObjectType = {
     'sh5': {
         name: 'sh5',
         type: 'select',
-        value: '-7',
-        disabled: true,
+        value: '-9',
+        disabled: false,
         hidden: false,
-        readonly: false,
+        readonly: true,
         order: 342,
-        active: function() {return(Number(instrument.questions.omr8.value) > 1)},
+        active: function() {return(true)},
         skip: false
     },
     'sh5s': {
@@ -4023,10 +4023,10 @@ export const questions: QuestionObjectType = {
     },
     'lk22_2_7': {
         name: 'lk22_2_7',
-        type: 'radio',
+        type: 'input',
         value: '-7',
         disabled: true,
-        hidden: false,
+        hidden: true,
         readonly: true,
         order: 361,
         active: function() {return(Number(instrument.questions.lk22_1.value) == 1)},
@@ -4194,7 +4194,7 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 376,
-        active: function() {return(Number(instrument.questions.lk13a.value) >= 10)},
+        active: function() {return(Number(instrument.questions.lk13a.value) >= 10 && Number(instrument.questions.lk2.value) == 2)},
         skip: false
     },
     'lk22_9': {

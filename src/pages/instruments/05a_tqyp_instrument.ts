@@ -322,18 +322,14 @@ util.listen("ptr4", "myChange", () => {
 
 const ptr8 = util.radioIDs("ptr8");
 ptr8.forEach((el) => {
-    util.listen(el, "change", () => {
+    util.listen(el, "myChange", () => {
         instrument.questions.ptr9.skip = false;
         instrument.questions.ptr10.skip = false;
-        util.htmlElement("ptr9").disabled = true;
-        util.htmlElement("ptr10").disabled = true;
 
         const value = util.htmlElement(el).value;
         if (["1", "2", "5", "8"].indexOf(value) >= 0) {
             instrument.questions.ptr9.skip = true;
             instrument.questions.ptr10.skip = true;
-            util.htmlElement("ptr9").disabled = false;
-            util.htmlElement("ptr10").disabled = false;
         }
     })
 });

@@ -3132,10 +3132,10 @@ export const questions: QuestionObjectType = {
     },
     'lk22_2_7': {
         name: 'lk22_2_7',
-        type: 'radio',
+        type: 'input',
         value: '-7',
         disabled: true,
-        hidden: false,
+        hidden: true,
         readonly: true,
         order: 279,
         active: function() {return(Number(instrument.questions.lk22_1.value) == 1)},

@@ -30,6 +30,7 @@ const locales: { [key: string]: typeof en | typeof uz | typeof ru } = {
 const lang = localStorage.getItem("language");
 const translations = locales[lang as keyof typeof locales] as Record<string, string>;
 let services: { [key: string]: DI.Institution };
+let serviceCodes: string[];
 let insons: { [key: string]: DI.INSON };
 
 let regionCode = '';
@@ -81,6 +82,7 @@ export const instrument9 = {
             const setElements = ["i4c"];
 
             services = args.services;
+            serviceCodes = Object.keys(services);
             insons = args.insons;
 
             userRole = args.userData.role_code;
@@ -183,11 +185,10 @@ export const instrument9 = {
                         util.setValue('i4d', "" + services[institution_code].settlement_type);
                     }
 
-                    const serv_codes = Object.keys(services);
-                    if (serv_codes.indexOf(institution_code) >= 0) {
-                        util.setValue("i9", "--");
-                        const type = services[args.userData.institution_code].type;
-                        if (["11", "12", "13", "14", "15", "16", "17"].indexOf(type) >= 0) {
+                    util.setValue("i9", "--");
+                    if (serviceCodes.indexOf(institution_code) >= 0) {
+                        const type = services[institution_code].type;
+                        if (util.selectValues("i9").indexOf(type) >= 0) {
                             util.setValue("i9", type);
                         }
                     }

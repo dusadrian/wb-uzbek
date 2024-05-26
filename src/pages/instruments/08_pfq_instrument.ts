@@ -209,6 +209,10 @@ export const instrument8 = {
                     if (index >= 0) {
                         util.trigger(item.variable, "change");
                     }
+
+                    if (["pf2", "ex2"]. indexOf(item.variable) >= 0) {
+                        util.trigger(item.variable, "myChange");
+                    }
                 }
             } else {
                 if (args.userData) {
@@ -324,7 +328,7 @@ pf.forEach((el) => {
 });
 
 
-util.listen("pf2", "change", () => {
+util.listen("pf2", "myChange", () => {
     const value = Number(util.htmlElement("pf2").value);
     const elements = ["a", "b", "c", "d", "cn", "e", "f", "g"];
 
@@ -368,7 +372,7 @@ util.listen("pf2", "change", () => {
 
 
 
-util.listen("ex2", "change", () => {
+util.listen("ex2", "myChange", () => {
     const value = Number(util.htmlElement("ex2").value);
     const elements = ["a", "b", "c", "d", "cn", "e", "f", "g"];
 

@@ -100,7 +100,7 @@ const rce = ["rce61", "rce62"];
 const ac14a = util.radioIDs("ac14a");
 
 const validate = [...general_dates, ...start_dates, ...end_dates, ...i13,
-    ...la6, "la7", "la8", "af4b", ...af5af1, ...ac1_1, ...ac1_2, ...compare,
+    ...la6, "la7", "la8", ...af5af1, ...ac1_1, ...ac1_2, ...compare,
     "cc5", "i12a", "i13a", ...de2a_i13a, ...rce1i12a, ...rce1, ...af5edu5,
     ...ft7i12ai9, "i13a", ...ft2af1, ...af4ab, ...rce612, ...e00ArrayFull,
     ...e01ArrayFull, ...e10ArrayFull, e20ArrayFull, ...e02ArrayFull,
@@ -166,14 +166,17 @@ export const instrument4 = {
 
             util.listen(el, "change", () => {
                 errorHandler.removeError(el, translations['invalid_date']);
+
                 try {
                     $.datepicker.parseDate(
                         jQueryDatepickerConfig.dateFormat,
                         util.htmlElement(el).value
                     )
                 } catch (error) {
-                    errorHandler.addError(el, translations['invalid_date']);
-                    instrument.questions[el].value = "-9";
+                    if (util.htmlElement(el).value != "") {
+                        errorHandler.addError(el, translations['invalid_date']);
+                        instrument.questions[el].value = "-9";
+                    }
                 }
             });
         });
@@ -255,6 +258,10 @@ export const instrument4 = {
 
                     if (validate.indexOf(item.variable) >= 0) {
                         util.trigger(item.variable, "change");
+                    }
+
+                    if (item.variable == "af4b") {
+                        util.trigger(item.variable, "myChange");
                     }
                 }
             }
@@ -346,11 +353,13 @@ util.listen("af13b", "change", () => {
     util.listen(item, "change", () => {
         errorHandler.removeError(item, translations['invalid_date']);
         const value = util.htmlElement(item).value;
-        if (value.length != 4) {
-            errorHandler.addError(item, translations['invalid_date']);
-        } else {
-            if (Number(value) < 1800 || Number(value) > 2024) {
+        if (value != "") {
+            if (value.length != 4) {
                 errorHandler.addError(item, translations['invalid_date']);
+            } else {
+                if (Number(value) < 1800 || Number(value) > 2024) {
+                    errorHandler.addError(item, translations['invalid_date']);
+                }
             }
         }
     });
@@ -510,28 +519,28 @@ util.listen(rce1, 'change', () => {
     }
 })
 
+// comentat in 26 mai, issue de la Simona
+// af5edu5.forEach(item => {
+//     util.listen(item, 'change', () => {
+//         const af4b = Number(instrument.questions.af4b.value);
+//         if (af4b > 0) {
+//             const af5_deschis = new Array<string>(af4b);
+//             for (let i = 0; i < af4b; i++) {
+//                 af5_deschis[i] = 'af5_' + (i + 1) + '_c';
+//             }
 
-af5edu5.forEach(item => {
-    util.listen(item, 'change', () => {
-        const af4b = Number(instrument.questions.af4b.value);
-        if (af4b > 0) {
-            const af5_deschis = new Array<string>(af4b);
-            for (let i = 0; i < af4b; i++) {
-                af5_deschis[i] = 'af5_' + (i + 1) + '_c';
-            }
+//             const af5_deschis_edu5 = [...af5_deschis, 'edu5'];
 
-            const af5_deschis_edu5 = [...af5_deschis, 'edu5'];
-
-            if (util.inputsHaveValue(af5_deschis_edu5)) {
-                // console.log(111);
-                errorHandler.removeError(af5_deschis_edu5, 'EDU5 <= AF5 (c.)')
-                if (util.getInputDecimalValue('edu5') > util.makeSumFromElements(af5_deschis)) {
-                    errorHandler.addError(af5_deschis_edu5, 'EDU5 <= AF5 (c.)');
-                }
-            }
-        }
-    })
-})
+//             if (util.inputsHaveValue(af5_deschis_edu5)) {
+//                 // console.log(111);
+//                 errorHandler.removeError(af5_deschis_edu5, 'EDU5 <= AF5 (c.)')
+//                 if (util.getInputDecimalValue('edu5') > util.makeSumFromElements(af5_deschis)) {
+//                     errorHandler.addError(af5_deschis_edu5, 'EDU5 <= AF5 (c.)');
+//                 }
+//             }
+//         }
+//     })
+// })
 
 
 ft7i12ai9.forEach(item => {

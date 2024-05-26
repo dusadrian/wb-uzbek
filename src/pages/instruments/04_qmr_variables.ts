@@ -2805,7 +2805,7 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 251,
-        active: function() {return(Number(instrument.questions.i9.value) == 11 || Number(instrument.questions.i9.value) == 12 || Number(instrument.questions.i9.value) == 13 || Number(instrument.questions.i9.value) == 14)},
+        active: function() {return(Number(instrument.questions.i9.value) >= 11 && Number(instrument.questions.i9.value) <= 14)},
         skip: false
     },
     'rce1a': {
@@ -2816,7 +2816,7 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 252,
-        active: function() {return(Number(instrument.questions.rce1.value) > 0 && (Number(instrument.questions.i9.value) == 11 || Number(instrument.questions.i9.value) == 12 || Number(instrument.questions.i9.value) == 13 || Number(instrument.questions.i9.value) == 14))},
+        active: function() {return(Number(instrument.questions.rce1.value) > 0 && Number(instrument.questions.i9.value) >= 11 && Number(instrument.questions.i9.value) <= 14)},
         skip: false
     },
     'rce1b': {
@@ -2827,18 +2827,18 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 253,
-        active: function() {return(Number(instrument.questions.rce1.value) > 0 && (Number(instrument.questions.i9.value) == 11 || Number(instrument.questions.i9.value) == 12 || Number(instrument.questions.i9.value) == 13 || Number(instrument.questions.i9.value) == 14))},
+        active: function() {return(Number(instrument.questions.rce1.value) > 0 && Number(instrument.questions.i9.value) >= 11 && Number(instrument.questions.i9.value) <= 14)},
         skip: false
     },
     'rce2_1': {
         name: 'rce2_1',
         type: 'checkbox',
         value: '0',
-        disabled: false,
+        disabled: true,
         hidden: false,
         readonly: false,
         order: 254,
-        active: function() {return(true)},
+        active: function() {return(Number(instrument.questions.i9.value) >= 11 && Number(instrument.questions.i9.value) <= 14)},
         skip: false,
         checked: 0
     },
@@ -2846,11 +2846,11 @@ export const questions: QuestionObjectType = {
         name: 'rce2_2',
         type: 'checkbox',
         value: '0',
-        disabled: false,
+        disabled: true,
         hidden: false,
         readonly: false,
         order: 255,
-        active: function() {return(true)},
+        active: function() {return(Number(instrument.questions.i9.value) >= 11 && Number(instrument.questions.i9.value) <= 14)},
         skip: false,
         checked: 0
     },
@@ -2858,11 +2858,11 @@ export const questions: QuestionObjectType = {
         name: 'rce2_3',
         type: 'checkbox',
         value: '0',
-        disabled: false,
+        disabled: true,
         hidden: false,
         readonly: false,
         order: 256,
-        active: function() {return(true)},
+        active: function() {return(Number(instrument.questions.i9.value) >= 11 && Number(instrument.questions.i9.value) <= 14)},
         skip: false,
         checked: 0
     },
@@ -2874,7 +2874,7 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 257,
-        active: function() {return(Number(instrument.questions.rce2_1.value) == 0 && Number(instrument.questions.rce2_2.value) == 0 && Number(instrument.questions.rce2_3.value) == 0)},
+        active: function() {return(Number(instrument.questions.i9.value) >= 11 && Number(instrument.questions.i9.value) <= 14 && (Number(instrument.questions.rce2_1.value) == 0 && Number(instrument.questions.rce2_2.value) == 0 && Number(instrument.questions.rce2_3.value) == 0))},
         skip: false,
         checked: 0
     },
@@ -2886,7 +2886,7 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 258,
-        active: function() {return(Number(instrument.questions.rce2_1.value) == 1 || Number(instrument.questions.rce2_2.value) == 1 || Number(instrument.questions.rce2_3.value) == 1)},
+        active: function() {return(Number(instrument.questions.i9.value) >= 11 && Number(instrument.questions.i9.value) <= 14 && (Number(instrument.questions.rce2_1.value) == 1 || Number(instrument.questions.rce2_2.value) == 1 || Number(instrument.questions.rce2_3.value) == 1))},
         skip: false
     },
     'rce3b': {
@@ -2897,7 +2897,7 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 259,
-        active: function() {return(Number(instrument.questions.rce2_1.value) == 1 || Number(instrument.questions.rce2_2.value) == 1 || Number(instrument.questions.rce2_3.value) == 1)},
+        active: function() {return(Number(instrument.questions.i9.value) >= 11 && Number(instrument.questions.i9.value) <= 14 && (Number(instrument.questions.rce2_1.value) == 1 || Number(instrument.questions.rce2_2.value) == 1 || Number(instrument.questions.rce2_3.value) == 1))},
         skip: false
     },
     'rce4a': {
@@ -2908,7 +2908,7 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 260,
-        active: function() {return(Number(instrument.questions.rce2_1.value) == 1 || Number(instrument.questions.rce2_2.value) == 1 || Number(instrument.questions.rce2_3.value) == 1)},
+        active: function() {return(Number(instrument.questions.i9.value) >= 11 && Number(instrument.questions.i9.value) <= 14 && (Number(instrument.questions.rce2_1.value) == 1 || Number(instrument.questions.rce2_2.value) == 1 || Number(instrument.questions.rce2_3.value) == 1))},
         skip: false
     },
     'rce4b': {
@@ -2919,7 +2919,7 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 261,
-        active: function() {return(Number(instrument.questions.rce2_1.value) == 1 || Number(instrument.questions.rce2_2.value) == 1 || Number(instrument.questions.rce2_3.value) == 1)},
+        active: function() {return(Number(instrument.questions.i9.value) >= 11 && Number(instrument.questions.i9.value) <= 14 && (Number(instrument.questions.rce2_1.value) == 1 || Number(instrument.questions.rce2_2.value) == 1 || Number(instrument.questions.rce2_3.value) == 1))},
         skip: false
     },
     'rce4c': {
@@ -2930,7 +2930,7 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 262,
-        active: function() {return(Number(instrument.questions.rce2_1.value) == 1 || Number(instrument.questions.rce2_2.value) == 1 || Number(instrument.questions.rce2_3.value) == 1)},
+        active: function() {return(Number(instrument.questions.i9.value) >= 11 && Number(instrument.questions.i9.value) <= 14 && (Number(instrument.questions.rce2_1.value) == 1 || Number(instrument.questions.rce2_2.value) == 1 || Number(instrument.questions.rce2_3.value) == 1))},
         skip: false
     },
     'rce4d': {
@@ -2941,7 +2941,7 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 263,
-        active: function() {return(Number(instrument.questions.rce2_1.value) == 1 || Number(instrument.questions.rce2_2.value) == 1 || Number(instrument.questions.rce2_3.value) == 1)},
+        active: function() {return(Number(instrument.questions.i9.value) >= 11 && Number(instrument.questions.i9.value) <= 14 && (Number(instrument.questions.rce2_1.value) == 1 || Number(instrument.questions.rce2_2.value) == 1 || Number(instrument.questions.rce2_3.value) == 1))},
         skip: false
     },
     'rce5_1': {
@@ -2952,7 +2952,7 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 264,
-        active: function() {return(Number(instrument.questions.rce2_1.value) == 1 || Number(instrument.questions.rce2_2.value) == 1 || Number(instrument.questions.rce2_3.value) == 1)},
+        active: function() {return(Number(instrument.questions.i9.value) >= 11 && Number(instrument.questions.i9.value) <= 14 && (Number(instrument.questions.rce2_1.value) == 1 || Number(instrument.questions.rce2_2.value) == 1 || Number(instrument.questions.rce2_3.value) == 1))},
         skip: false,
         checked: 0
     },
@@ -2964,7 +2964,7 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 265,
-        active: function() {return(Number(instrument.questions.rce2_1.value) == 1 || Number(instrument.questions.rce2_2.value) == 1 || Number(instrument.questions.rce2_3.value) == 1)},
+        active: function() {return(Number(instrument.questions.i9.value) >= 11 && Number(instrument.questions.i9.value) <= 14 && (Number(instrument.questions.rce2_1.value) == 1 || Number(instrument.questions.rce2_2.value) == 1 || Number(instrument.questions.rce2_3.value) == 1))},
         skip: false,
         checked: 0
     },
@@ -2976,7 +2976,7 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 266,
-        active: function() {return(Number(instrument.questions.rce2_1.value) == 1 || Number(instrument.questions.rce2_2.value) == 1 || Number(instrument.questions.rce2_3.value) == 1)},
+        active: function() {return(Number(instrument.questions.i9.value) >= 11 && Number(instrument.questions.i9.value) <= 14 && (Number(instrument.questions.rce2_1.value) == 1 || Number(instrument.questions.rce2_2.value) == 1 || Number(instrument.questions.rce2_3.value) == 1))},
         skip: false,
         checked: 0
     },
@@ -2988,7 +2988,7 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 267,
-        active: function() {return(Number(instrument.questions.rce2_1.value) == 1 || Number(instrument.questions.rce2_2.value) == 1 || Number(instrument.questions.rce2_3.value) == 1)},
+        active: function() {return(Number(instrument.questions.i9.value) >= 11 && Number(instrument.questions.i9.value) <= 14 && (Number(instrument.questions.rce2_1.value) == 1 || Number(instrument.questions.rce2_2.value) == 1 || Number(instrument.questions.rce2_3.value) == 1))},
         skip: false,
         checked: 0
     },
@@ -3000,7 +3000,7 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 268,
-        active: function() {return(Number(instrument.questions.rce2_1.value) == 1 || Number(instrument.questions.rce2_2.value) == 1 || Number(instrument.questions.rce2_3.value) == 1)},
+        active: function() {return(Number(instrument.questions.i9.value) >= 11 && Number(instrument.questions.i9.value) <= 14 && (Number(instrument.questions.rce2_1.value) == 1 || Number(instrument.questions.rce2_2.value) == 1 || Number(instrument.questions.rce2_3.value) == 1))},
         skip: false,
         checked: 0
     },
@@ -3012,7 +3012,7 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 269,
-        active: function() {return(Number(instrument.questions.rce2_1.value) == 1 || Number(instrument.questions.rce2_2.value) == 1 || Number(instrument.questions.rce2_3.value) == 1)},
+        active: function() {return(Number(instrument.questions.i9.value) >= 11 && Number(instrument.questions.i9.value) <= 14 && (Number(instrument.questions.rce2_1.value) == 1 || Number(instrument.questions.rce2_2.value) == 1 || Number(instrument.questions.rce2_3.value) == 1))},
         skip: false,
         checked: 0
     },
@@ -3024,7 +3024,7 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 270,
-        active: function() {return(Number(instrument.questions.rce5_6.value) == 1 && (Number(instrument.questions.rce2_1.value) == 1 || Number(instrument.questions.rce2_2.value) == 1 || Number(instrument.questions.rce2_3.value) == 1))},
+        active: function() {return(Number(instrument.questions.rce5_6.value) == 1 && (Number(instrument.questions.rce2_1.value) == 1 || Number(instrument.questions.rce2_2.value) == 1 || Number(instrument.questions.rce2_3.value) == 1) && Number(instrument.questions.i9.value) >= 11 && Number(instrument.questions.i9.value) <= 14)},
         skip: false
     },
     'rce61': {
@@ -3035,7 +3035,7 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 271,
-        active: function() {return(Number(instrument.questions.rce2_1.value) == 1 || Number(instrument.questions.rce2_2.value) == 1 || Number(instrument.questions.rce2_3.value) == 1)},
+        active: function() {return(Number(instrument.questions.i9.value) >= 11 && Number(instrument.questions.i9.value) <= 14 && (Number(instrument.questions.rce2_1.value) == 1 || Number(instrument.questions.rce2_2.value) == 1 || Number(instrument.questions.rce2_3.value) == 1))},
         skip: false
     },
     'rce62': {
@@ -3046,7 +3046,7 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 272,
-        active: function() {return(Number(instrument.questions.rce2_1.value) == 1 || Number(instrument.questions.rce2_2.value) == 1 || Number(instrument.questions.rce2_3.value) == 1)},
+        active: function() {return(Number(instrument.questions.i9.value) >= 11 && Number(instrument.questions.i9.value) <= 14 && (Number(instrument.questions.rce2_1.value) == 1 || Number(instrument.questions.rce2_2.value) == 1 || Number(instrument.questions.rce2_3.value) == 1))},
         skip: false
     },
     'rce7': {
@@ -3057,7 +3057,7 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 273,
-        active: function() {return(Number(instrument.questions.rce2_1.value) == 1 || Number(instrument.questions.rce2_2.value) == 1 || Number(instrument.questions.rce2_3.value) == 1)},
+        active: function() {return(Number(instrument.questions.i9.value) >= 11 && Number(instrument.questions.i9.value) <= 14 && (Number(instrument.questions.rce2_1.value) == 1 || Number(instrument.questions.rce2_2.value) == 1 || Number(instrument.questions.rce2_3.value) == 1))},
         skip: false
     },
     'rce7_0_another': {
@@ -3068,7 +3068,7 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 274,
-        active: function() {return(Number(instrument.questions.rce7.value) == 0 && (Number(instrument.questions.rce2_1.value) == 1 || Number(instrument.questions.rce2_2.value) == 1 || Number(instrument.questions.rce2_3.value) == 1))},
+        active: function() {return(Number(instrument.questions.rce7.value) == 0 && (Number(instrument.questions.rce2_1.value) == 1 || Number(instrument.questions.rce2_2.value) == 1 || Number(instrument.questions.rce2_3.value) == 1) && Number(instrument.questions.i9.value) >= 11 && Number(instrument.questions.i9.value) <= 14)},
         skip: false
     },
     'rce8': {
@@ -3079,7 +3079,7 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: false,
         order: 275,
-        active: function() {return(Number(instrument.questions.rce2_1.value) == 1 || Number(instrument.questions.rce2_2.value) == 1 || Number(instrument.questions.rce2_3.value) == 1)},
+        active: function() {return(Number(instrument.questions.i9.value) >= 11 && Number(instrument.questions.i9.value) <= 14 && (Number(instrument.questions.rce2_1.value) == 1 || Number(instrument.questions.rce2_2.value) == 1 || Number(instrument.questions.rce2_3.value) == 1))},
         skip: false
     },
     'edu1_1': {
