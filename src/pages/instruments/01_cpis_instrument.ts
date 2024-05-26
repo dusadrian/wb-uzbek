@@ -430,7 +430,6 @@ export const instrument1 = {
                 }
 
                 util.setValue("omr8", institution_name);
-                instrument.questions.omr8.value = institution_name;
                 util.setValue('omr1', args.userData.name ? args.userData.name : "--");
                 util.setValue('omr2', args.userData.patronymics ? args.userData.patronymics : "--");
                 util.setValue('omr3', args.userData.surname ? args.userData.surname : "--");

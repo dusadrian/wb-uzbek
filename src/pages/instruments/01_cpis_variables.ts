@@ -132,7 +132,7 @@ export const questions: QuestionObjectType = {
         hidden: false,
         readonly: true,
         order: 11,
-        active: function() {return(Number(instrument.questions.omr8a.value) > 1)},
+        active: function() {return(true)},
         skip: false
     },
     'pin': {
