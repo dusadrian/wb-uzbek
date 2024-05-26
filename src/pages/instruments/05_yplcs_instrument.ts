@@ -328,8 +328,12 @@ for (let i = 0; i < setElements.length; i++) {
 util.listen(pi10, "change", () => {
     if (util.inputsHaveValue(pi10)) {
         const message = 'PI10b <= PI10a';
-        errorHandler.removeError(pi10, message)
-        if (util.getInputDecimalValue('pi10b') > util.getInputDecimalValue('pi10b')) {
+        errorHandler.removeError(pi10, message);
+
+        const pi10a = util.htmlElement("pi10a").value;
+        const pi10b = util.htmlElement("pi10b").value;
+
+        if (Number(pi10b) > Number(pi10a) {
             errorHandler.addError(pi10, message);
         }
     }

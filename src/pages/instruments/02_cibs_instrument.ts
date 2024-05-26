@@ -459,25 +459,24 @@ util.listen(prehealth, "change", () => {
 
 function check_lk22_2(): boolean {
     const lk22_2_1 = util.htmlElement("lk22_2_1");
-    let suma = "0";
+    let suma = 0;
     for (let i = 0; i < lk22_2.length; i++) {
         if (util.htmlElement(lk22_2[i]).checked) {
-            suma = "1";
+            suma += 1;
         }
     }
 
     const message = translations['At_least_one_disability'];
     errorHandler.removeError(lk22_2, message);
 
-    if (suma == "0") {
+    if (suma == 0) {
         errorHandler.addError(lk22_2, message);
         lk22_2_1.scrollIntoView({ behavior: "smooth", block: "center", inline: "nearest" });
-    }
-    else {
-        util.setValue("lk22_2_7", suma);
+    } else {
+        util.setValue("lk22_2_7", suma > 1 ? "1" : "0");
     }
 
-    return (suma == "1");
+    return (suma > 0);
 }
 
 util.listen(lk22_2, "myChange", check_lk22_2);

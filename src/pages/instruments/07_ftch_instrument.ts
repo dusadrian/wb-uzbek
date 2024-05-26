@@ -399,7 +399,7 @@ util.listen(ifp, "myChange", () => {
 util.listen(fc, "myChange", () => {
     if (util.inputsHaveValue(fc)) {
         const message = "FC3 <= FC1";
-        const error = util.getInputDecimalValue('fc3') > util.getInputDecimalValue('fc1');
+        const error = Number(util.htmlElement('fc3').value) > Number(util.htmlElement('fc1').value);
         errorHandler.removeError(fc, message);
         if (error) {
             errorHandler.addError(fc, message);

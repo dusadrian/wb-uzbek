@@ -369,7 +369,7 @@ util.listen(i13, 'change', () => {
     if (util.inputsHaveValue(i13)) {
         const eroare = 'a >= b + c + d + e + f';
         errorHandler.removeError(i13, eroare)
-        if (util.getInputDecimalValue('i13a') < util.makeSumFromElements(i13bf)) {
+        if (Number(util.htmlElement('i13a').value) < util.makeSumFromElements(i13bf)) {
             errorHandler.addError(i13, eroare);
         }
     }
@@ -379,7 +379,7 @@ util.listen(la6la7, 'change', () => {
     if (util.inputsHaveValue(la6la7)) {
         const eroare = 'LA7 <= LA6 (a. + b.)';
         errorHandler.removeError(la6la7, eroare)
-        if (util.getInputDecimalValue('la7') > util.makeSumFromElements(la6)) {
+        if (Number(util.htmlElement('la7').value) > util.makeSumFromElements(la6)) {
             errorHandler.addError(la6la7, eroare);
         }
     }
@@ -391,7 +391,7 @@ util.listen(la6la8, 'change', () => {
     if (util.inputsHaveValue(la6la8)) {
         const eroare = 'LA8 <= LA6 (a. + b.)';
         errorHandler.removeError(la6la8, eroare)
-        if (util.getInputDecimalValue('la8') > util.makeSumFromElements(la6)) {
+        if (Number(util.htmlElement('la8').value) > util.makeSumFromElements(la6)) {
             errorHandler.addError(la6la8, eroare);
         }
     }
@@ -411,7 +411,7 @@ af5af1.forEach(item => {
             if (util.inputsHaveValue(af5_deschis_af1)) {
                 const message = translations["E0163"]
                 errorHandler.removeError(af5_deschis_af1, message)
-                if (util.getInputDecimalValue('af1') < util.makeSumFromElements(af5_deschis)) {
+                if (Number(util.htmlElement('af1').value) < util.makeSumFromElements(af5_deschis)) {
                     errorHandler.addError(af5_deschis_af1, message);
                 }
             }
@@ -425,7 +425,7 @@ ac1_1.forEach(item => {
         if (util.inputsHaveValue(ac1_1)) {
             const message = 'AC1a1 = AC1b1 + ... + AC1e1';
             errorHandler.removeError(ac1_1, message)
-            if (util.makeSumFromElements(ac1be1) != util.getInputDecimalValue('ac1a1')) {
+            if (util.makeSumFromElements(ac1be1) != Number(util.htmlElement('ac1a1').value)) {
                 errorHandler.addError(ac1_1, message);
             }
         }
@@ -437,7 +437,7 @@ ac1_2.forEach(item => {
         if (util.inputsHaveValue(ac1_2)) {
             const message = 'AC1a2 = AC1b2 + ... + AC1e2';
             errorHandler.removeError(ac1_2, message)
-            if (util.makeSumFromElements(ac1be2) != util.getInputDecimalValue('ac1a2')) {
+            if (util.makeSumFromElements(ac1be2) != Number(util.htmlElement('ac1a2').value)) {
                 errorHandler.addError(ac1_2, message);
             }
         }
@@ -452,7 +452,7 @@ compare.forEach(item1 => {
     function check() {
         if (util.inputsHaveValue([item, item1])) {
             errorHandler.removeError([item, item1], (item + ' >= ' + item1).toUpperCase());
-            if (util.getInputDecimalValue(item) < util.getInputDecimalValue(item1)) {
+            if (Number(util.htmlElement(item).value) < Number(util.htmlElement(item1).value)) {
                 errorHandler.addError([item, item1], (item + ' >= ' + item1).toUpperCase());
             }
         }
@@ -468,7 +468,7 @@ cc5i12a.forEach(item => {
         const i9 = Number(instrument.questions.i9.value);
         if (util.inputsHaveValue(cc5i12a) && i9 >= 11 && i9 <= 14) {
             errorHandler.removeError(cc5i12a, 'CC5 <= I12a')
-            if (util.getInputDecimalValue('cc5') > util.getInputDecimalValue('i12a')) {
+            if (Number(util.htmlElement('cc5').value) > Number(util.htmlElement('i12a').value)) {
                 errorHandler.addError(cc5i12a, 'CC5 <= I12a');
             }
         }
@@ -480,7 +480,7 @@ cc5i13a.forEach(item => {
         const i9 = Number(instrument.questions.i9.value);
         if (util.inputsHaveValue(cc5i13a) && i9 >= 21 && i9 <= 28) {
             errorHandler.removeError(cc5i13a, 'CC5 <= I13a')
-            if (util.getInputDecimalValue('cc5') > util.getInputDecimalValue('i13a')) {
+            if (Number(util.htmlElement('cc5').value) > Number(util.htmlElement('i13a').value)) {
                 errorHandler.addError(cc5i13a, 'CC5 <= I13a');
             }
         }
@@ -491,7 +491,7 @@ de2a_i13a.forEach(item => {
     util.listen(item, 'change', () => {
         if (util.inputsHaveValue(de2a_i13a)) {
             errorHandler.removeError(de2a_i13a, 'I13a >= DE2a + DE2b + DE2c + DE2d + DE2e')
-            if (util.makeSumFromElements(de2a) > util.getInputDecimalValue('i13a')) {
+            if (util.makeSumFromElements(de2a) > Number(util.htmlElement('i13a').value)) {
                 errorHandler.addError(de2a_i13a, 'I13a >= DE2a + DE2b + DE2c + DE2d + DE2e');
             }
         }
@@ -502,7 +502,7 @@ rce1i12a.forEach(item => {
     util.listen(item, 'change', () => {
         if (util.inputsHaveValue(rce1i12a)) {
             errorHandler.removeError(rce1i12a, 'RCE1 <= I12a')
-            if (util.getInputDecimalValue('rce1') > util.getInputDecimalValue('i12a')) {
+            if (Number(util.htmlElement('rce1').value) > Number(util.htmlElement('i12a').value)) {
                 errorHandler.addError(rce1i12a, 'RCE1 <= I12a');
             }
         }
@@ -512,7 +512,7 @@ rce1i12a.forEach(item => {
 util.listen(rce1, 'change', () => {
     if (util.inputsHaveValue(rce1)) {
         errorHandler.removeError(rce1, 'RCE1 = RCE1a + RCE1b')
-        if (util.getInputDecimalValue('rce1') != util.makeSumFromElements(rce1ab)) {
+        if (Number(util.htmlElement('rce1').value) != util.makeSumFromElements(rce1ab)) {
             errorHandler.addError(rce1, 'RCE1 = RCE1a + RCE1b');
         }
     }
@@ -533,7 +533,7 @@ util.listen(rce1, 'change', () => {
 //             if (util.inputsHaveValue(af5_deschis_edu5)) {
 //                 // console.log(111);
 //                 errorHandler.removeError(af5_deschis_edu5, 'EDU5 <= AF5 (c.)')
-//                 if (util.getInputDecimalValue('edu5') > util.makeSumFromElements(af5_deschis)) {
+//                 if (Number(util.htmlElement('edu5').value) > util.makeSumFromElements(af5_deschis)) {
 //                     errorHandler.addError(af5_deschis_edu5, 'EDU5 <= AF5 (c.)');
 //                 }
 //             }
@@ -545,9 +545,9 @@ util.listen(rce1, 'change', () => {
 ft7i12ai9.forEach(item => {
     util.listen(item, 'change', () => {
         if (util.inputsHaveValue(ft7i12ai9)) {
-            if (util.getInputDecimalValue('i9') < 20) {
+            if (Number(util.htmlElement('i9').value) < 20) {
                 errorHandler.removeError(ft7i12a, 'FT7 <= I12a')
-                if (util.getInputDecimalValue('ft7') > util.getInputDecimalValue('i12a')) {
+                if (Number(util.htmlElement('ft7').value) > Number(util.htmlElement('i12a').value)) {
                     errorHandler.addError(ft7i12a, 'FT7 <= I12a');
                 }
             }
@@ -560,7 +560,7 @@ ft7i13a.forEach(item => {
     util.listen(item, 'change', () => {
         if (util.inputsHaveValue(ft7i13a)) {
             errorHandler.removeError(ft7i13a, 'FT7 <= I13a')
-            if (util.getInputDecimalValue('ft7') > util.getInputDecimalValue('i13a')) {
+            if (Number(util.htmlElement('ft7').value) > Number(util.htmlElement('i13a').value)) {
                 errorHandler.addError(ft7i13a, 'FT7 <= I13a');
             }
         }
@@ -572,7 +572,7 @@ ft2af1.forEach(item => {
     util.listen(item, 'change', () => {
         if (util.inputsHaveValue(ft2af1)) {
             errorHandler.removeError(ft2af1, 'FT2 < AF1')
-            if (util.getInputDecimalValue('ft2') > util.getInputDecimalValue('af1')) {
+            if (Number(util.htmlElement('ft2').value) > Number(util.htmlElement('af1').value)) {
                 errorHandler.addError(ft2af1, 'FT2 < AF1');
             }
         }
@@ -584,7 +584,7 @@ af4ab.forEach(item => {
         if (util.inputsHaveValue(af4ab)) {
             const message = "AF4b <= AF4a";
             errorHandler.removeError(af4ab, message)
-            if (util.getInputDecimalValue('af4b') > util.getInputDecimalValue('af4a')) {
+            if (Number(util.htmlElement('af4b').value) > Number(util.htmlElement('af4a').value)) {
                 errorHandler.addError(af4ab, message);
             }
 
@@ -634,7 +634,7 @@ af4ab.forEach(item => {
 util.listen("rce8", 'change', () => {
     const message = "RCE8 <= 60";
     errorHandler.removeError("rce8", message)
-    if (util.getInputDecimalValue('rce8') > 60) {
+    if (Number(util.htmlElement('rce8').value) > 60) {
         errorHandler.addError("rce8", message);
     }
 })
@@ -897,7 +897,7 @@ util.listen(rce6, "myChange", () => {
     if (util.inputsHaveValue(rce6)) {
         const message = "RCE62 >= RCE61";
         errorHandler.removeError(rce6, message)
-        if (util.getInputDecimalValue('rce61') > util.getInputDecimalValue('rce62')) {
+        if (Number(util.htmlElement('rce61').value) > Number(util.htmlElement('rce62').value)) {
             errorHandler.addError(rce6, message);
         }
     }
