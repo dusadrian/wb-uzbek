@@ -102,7 +102,7 @@ const ac14a = util.radioIDs("ac14a");
 const validate = [...general_dates, ...start_dates, ...end_dates, ...i13,
     ...la6, "la7", "la8", ...af5af1, ...ac1_1, ...ac1_2, ...compare,
     "cc5", "i12a", "i13a", ...de2a_i13a, ...rce1i12a, ...rce1, ...af5edu5,
-    ...ft7i12ai9, "i13a", ...ft2af1, ...af4ab, ...rce612, ...e00ArrayFull,
+    ...ft7i12ai9, "i13a", ...ft2af1, ...af4ab, ...e00ArrayFull,
     ...e01ArrayFull, ...e10ArrayFull, e20ArrayFull, ...e02ArrayFull,
     ...e21ArrayFull, ...rooms, "i9", ...rce
 ];
@@ -632,18 +632,6 @@ af4ab.forEach(item => {
     })
 })
 
-rce612.forEach(item => {
-    util.listen(item, 'change', () => {
-        if (util.inputsHaveValue(rce612)) {
-            const message = "RCE62 <= RCE61";
-            errorHandler.removeError(rce612, message)
-            if (util.getInputDecimalValue('rce61') > util.getInputDecimalValue('rce62')) {
-                errorHandler.addError(rce612, message);
-            }
-        }
-    })
-})
-
 util.listen("rce8", 'change', () => {
     const message = "RCE8 <= 60";
     errorHandler.removeError("rce8", message)
@@ -910,7 +898,7 @@ util.listen(rce, "myChange", () => {
     if (util.inputsHaveValue(rce)) {
         const message = "RCE6max >= RCE6min";
         errorHandler.removeError(rce, message)
-        if (util.getInputDecimalValue('rce62') > util.getInputDecimalValue('rce61')) {
+        if (util.getInputDecimalValue('rce61') > util.getInputDecimalValue('rce62')) {
             errorHandler.addError(rce, message);
         }
     }
