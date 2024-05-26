@@ -333,7 +333,7 @@ util.listen(pi10, "change", () => {
         const pi10a = util.htmlElement("pi10a").value;
         const pi10b = util.htmlElement("pi10b").value;
 
-        if (Number(pi10b) > Number(pi10a) {
+        if (Number(pi10b) > Number(pi10a)) {
             errorHandler.addError(pi10, message);
         }
     }
