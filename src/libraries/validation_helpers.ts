@@ -28,6 +28,7 @@ interface UtilHelpersInterface {
     blur: (element: string) => void;
     addOption: (element: string, value: string, text: string) => void;
     resetSelect: (element: string, value: string, text: string) => void;
+    selectValues: (element: string) => string[];
     missing: (x: unknown) => boolean;
     exists: (x: unknown) => boolean;
     repString: (value: string, times: number) => string[];
@@ -398,6 +399,10 @@ export const util: UtilHelpersInterface = {
     resetSelect: (element: string, value: string, text: string) => {
         util.htmlElement(element).innerHTML = "";
         util.addOption(element, value, text);
+    },
+    selectValues: (element: string) => {
+        const item = document.getElementById(element) as HTMLSelectElement;
+        return Array.from(item.options).map((el) => el.value);
     },
 
 
