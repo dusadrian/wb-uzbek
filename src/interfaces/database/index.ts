@@ -141,6 +141,7 @@ export interface DataExportInterface {
     user_uuid: string;
     region_code: string;
     institution_type: string;
+    institution_code: string;
     status: string;
     created_at: string;
     updated_at: string;
