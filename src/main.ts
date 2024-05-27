@@ -1709,6 +1709,9 @@ ipcMain.on('importData', (_event, _args) => {
 
             const dateDinFisier = JSON.parse(data);
 
+            // console.log(dateDinFisier);
+            // return;
+
             const instrumentsInFile = Object.keys(dateDinFisier);
             const userInstruments = getLisOfInstrumentsToExport(appSession.userData.role_code, appSession.userData.service_type_code);
             let error = false
@@ -1732,7 +1735,9 @@ ipcMain.on('importData', (_event, _args) => {
                             'extras': {
                                 region_code: item.region_code,
                                 institution_type: item.institution_type,
-                                uuid: itemUUID
+                                uuid: itemUUID,
+                                user_uuid: item.user_uuid,
+                                institution_code: item.institution_code,
                             }
                         };
                         await database.instrumentSave(dataToImport, db);
@@ -1954,6 +1959,7 @@ function prepareDataForDownload(data: DI.DataExportInterface[]) {
                 'region_code': element.region_code,
                 'institution_type': element.institution_type,
                 'user_uuid': element.user_uuid,
+                'institution_code': element.institution_code,
                 'created_at': element.created_at,
                 'updated_at': element.updated_at,
             };
