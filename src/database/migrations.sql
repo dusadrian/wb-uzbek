@@ -396,6 +396,7 @@ DROP TABLE fth_codes;
 CREATE TABLE fth_codes (
     region VARCHAR NOT NULL,
     code VARCHAR NOT NULL,
+    uuid UUID,
     used BOOLEAN DEFAULT FALSE,
 );
 INSTALL spatial;

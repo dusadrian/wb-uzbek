@@ -102,6 +102,7 @@ export interface UpdateServiceObjInterface {
     type?: string;
 }
 export interface AddInsonServiceObjInterface {
+    uuid: string,
     code: string,
     name_en: string,
     name_uz: string,

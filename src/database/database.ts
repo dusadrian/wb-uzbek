@@ -203,8 +203,10 @@ export const database = {
         return await connection;
     },
     addInsonService: async (data: DI.AddInsonServiceObjInterface) => {
+
         const connection = new Promise<boolean>((resolve) => {
             db.run(`INSERT INTO institutions (
+                uuid,
                 code,
                 name_en,
                 name_uz,
@@ -227,7 +229,8 @@ export const database = {
                 activcode3,
                 activcode4,
                 activcode5
-            ) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)`,
+            ) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)`,
+                data.uuid,
                 data.code,
                 data.name_en,
                 data.name_uz,
@@ -263,7 +266,7 @@ export const database = {
         // update in INSON table
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
         const connection2 = new Promise<any[]>((resolve) => {
-            db.all(`SELECT services FROM inson WHERE code = '${data.inson}'`, (error, result) => {
+            db.all(`SELECT * FROM inson WHERE code = '${data.inson}'`, (error, result) => {
                 if (error) {
                     console.log(error);
                     resolve([]);
@@ -274,13 +277,19 @@ export const database = {
 
         const services = await connection2;
         let newServices = '';
-        if(services.length > 0 && services[0].services) {
+        let newChildrenFth = '';
+        let newLeaversFth = '';
+        if (services.length > 0 && services[0].services) {
             newServices = services[0].services + ',' + data.code;
+            newChildrenFth = services[0].children_fth + data.children;
+            newLeaversFth = services[0].leavers_fth + data.leavers;
         } else {
             newServices = data.code;
+            newChildrenFth = data.children;
+            newLeaversFth = data.leavers;
         }
         const connection3 = new Promise<boolean>((resolve) => {
-            db.run(`UPDATE inson SET services = '${newServices}', changed = true WHERE code = '${data.inson}'`, (error) => {
+            db.run(`UPDATE inson SET services = '${newServices}', children_fth ='${newChildrenFth}', leavers_fth = '${newLeaversFth}', changed = true WHERE code = '${data.inson}'`, (error) => {
                 if (error) {
                     console.log(error);
                     resolve(false);
@@ -293,7 +302,7 @@ export const database = {
     checkServiceCode: async (code: string, region: string) => {
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
         const connection = new Promise<any[]>((resolve) => {
-            const sql = `SELECT code FROM fth_codes WHERE code = '${code}' AND region = '${region}' AND used = false`;
+            const sql = `SELECT uuid FROM fth_codes WHERE code = '${code}' AND region = '${region}' AND used = false`;
             db.all(sql, (error, result) => {
                 if (error) {
                     console.log(error);
@@ -586,7 +595,7 @@ export const database = {
                 where += ` AND institution_code = '${institution_code}'`;
             }
             const sql = `SELECT * FROM instrument_${table} LEFT JOIN values_${table} ON values_${table}.instrument_id = instrument_${table}.id WHERE status = 'completed' ${where}`;
-            
+
             db.all(sql, (error, result) => {
                 if (error) {
                     console.log("===== Error getDataForDownload =====");
@@ -624,32 +633,99 @@ export const database = {
         };
     },
     updateImportedInstitution: async (data: DI.InstitutionDataExportInterface) => {
-        const connection = new Promise<boolean>((resolve) => {
-            db.run(`UPDATE institutions SET
-                name_en = '${data.name_en}',
-                name_uz = '${data.name_uz}',
-                name_ru = '${data.name_ru}',
+
+        const searchUUID = new Promise<boolean>((resolve) => {
+            db.all(`SELECT * FROM institutions WHERE uuid = '${data.uuid}'`, (error, result) => {
+                if (error) {
+                    console.log(error);
+                }
+                resolve(result.length > 0);
+            });
+        });
+
+        const exists = await searchUUID;
+
+        if (exists) {
+            const connection = new Promise<boolean>((resolve) => {
+                const sql = `UPDATE institutions SET
+                name_en = '${data.name_en.replace(/'/g, "''")}',
+                name_uz = '${data.name_uz.replace(/'/g, "''")}',
+                name_ru = '${data.name_ru.replace(/'/g, "''")}',
                 type = '${data.type}',
                 shorttype = '${data.shorttype}',
-                address = '${data.address}',
+                address = '${data.address.replace(/'/g, "''")}',
                 region = '${data.region}',
                 district = '${data.district}',
                 settlement = '${data.settlement}',
                 settlement_type = '${data.settlement_type}',
-                capacity = '${data.capacity}',
-                children = '${data.children}',
-                leavers = '${data.leavers}',
-                employees = '${data.employees}',
+                capacity = ${data.capacity ?? 0},
+                children = ${data.children ?? 0},
+                leavers = ${data.leavers ?? 0},
+                employees = ${data.employees ?? 0},
                 inson = ${data.inson ?? null},
                 changed = true
-                WHERE uuid = '${data.uuid}'`, (error) => {
-                if (error) {
-                    console.log(error);
-                }
-                resolve(true);
+                WHERE uuid = '${data.uuid}'`;                
+                db.run(sql,
+                    (error) => {
+                        if (error) {
+                            console.log("UPDATE institutions SET");
+                            console.log(error);
+                        }
+                        resolve(true);
+                    });
             });
-        });
-        return await connection;
+            return await connection;
+        } else {
+            const connection = new Promise<boolean>((resolve) => {
+                db.run(`INSERT INTO institutions (
+                uuid,
+                code,
+                name_en,
+                name_uz,
+                name_ru,
+                type,
+                shorttype,
+                address,
+                region,
+                district,
+                settlement,
+                settlement_type,
+                capacity,
+                children,
+                leavers,
+                employees,
+                inson,
+                changed
+            ) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)`,
+                    data.uuid,
+                    data.code,
+                    data.name_en,
+                    data.name_uz,
+                    data.name_ru,
+                    data.type,
+                    data.shorttype,
+                    data.address,
+                    data.region,
+                    data.district,
+                    data.settlement,
+                    data.settlement_type,
+                    data.capacity,
+                    data.children,
+                    data.leavers,
+                    data.employees,
+                    data.inson,
+                    true,
+                    (error) => {
+                        if (error) {
+                            console.log("INSERT INTO institutions");
+                            console.log(error);
+                            resolve(false);
+                        }
+                        resolve(true);
+                    });
+            });
+            return await connection;
+        }
     },
     updateImportedInson: async (data: DI.InsonDataExportInterface) => {
         const connection = new Promise<boolean>((resolve) => {

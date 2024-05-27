@@ -5,6 +5,7 @@ import { regions, districts, settlements } from "../../libraries/administrative"
 
 const lang = localStorage.getItem("language");
 const addObject: DI.AddInsonServiceObjInterface = {
+    uuid: '',
     code: '',
     name_en: '',
     name_uz: '',
@@ -57,7 +58,7 @@ export const addInson = {
             const settlement = document.getElementById('settlement') as HTMLSelectElement;
             district.addEventListener('change', () => {
                 addObject.district = district.options[district.selectedIndex].value;
-                
+
                 if (addObject.district != '') {
                     settlement.innerHTML = '';
                     const option = document.createElement('option');
@@ -65,7 +66,7 @@ export const addInson = {
                     option.innerText = '---';
                     settlement.appendChild(option);
                     const settlement_codes = districts[addObject.district].settlements;
-                    for (const set of settlement_codes) {                        
+                    for (const set of settlement_codes) {
                         const option = document.createElement('option');
                         option.value = set;
                         option.innerText = settlements[set][lang as 'en' | 'uz' | 'ru'];
@@ -92,17 +93,12 @@ export const addInson = {
 
         // save data
         document.getElementById('saveForm').addEventListener('click', async () => {
-            
+
             addObject.code = (<HTMLSelectElement>document.getElementById('code')).value.trim();
 
-            // saved based on current user language
-            if (lang === 'uz') {
-                addObject.name_uz = (<HTMLInputElement>document.getElementById('name')).value.trim();
-            } else if (lang === 'ru') {
-                addObject.name_ru = (<HTMLInputElement>document.getElementById('name')).value.trim();
-            } else {
-                addObject.name_en = (<HTMLInputElement>document.getElementById('name')).value.trim();
-            }
+            addObject.name_uz = (<HTMLInputElement>document.getElementById('name')).value.trim();
+            addObject.name_ru = (<HTMLInputElement>document.getElementById('name')).value.trim();
+            addObject.name_en = (<HTMLInputElement>document.getElementById('name')).value.trim();
 
             addObject.address = (<HTMLSelectElement>document.getElementById('address')).value.trim();
             addObject.district = (<HTMLSelectElement>document.getElementById('district')).value.trim();
@@ -114,7 +110,7 @@ export const addInson = {
             addObject.leavers = (<HTMLInputElement>document.getElementById('leavers')).value.trim();
 
 
-            if(addObject.code === '') {
+            if (addObject.code === '') {
                 ipcRenderer.send('showDialogMessage', {
                     type: 'warning',
                     message: 'Please fill all fields'
@@ -128,7 +124,7 @@ export const addInson = {
                 return;
             }
 
-            if(addObject.name_en === '' && addObject.name_uz === '' && addObject.name_ru === '') {
+            if (addObject.name_en === '' && addObject.name_uz === '' && addObject.name_ru === '') {
                 ipcRenderer.send('showDialogMessage', {
                     type: 'warning',
                     message: 'Please fill all fields'
@@ -142,7 +138,7 @@ export const addInson = {
                 return;
             }
 
-            if(addObject.address === '') {
+            if (addObject.address === '') {
                 ipcRenderer.send('showDialogMessage', {
                     type: 'warning',
                     message: 'Please fill all fields'
@@ -155,7 +151,7 @@ export const addInson = {
                 document.getElementById('address').focus();
                 return;
             }
-            if(addObject.district === '') {
+            if (addObject.district === '') {
                 ipcRenderer.send('showDialogMessage', {
                     type: 'warning',
                     message: 'Please fill all fields'
@@ -168,7 +164,7 @@ export const addInson = {
                 document.getElementById('district').focus();
                 return;
             }
-            if(addObject.settlement === '') {
+            if (addObject.settlement === '') {
                 ipcRenderer.send('showDialogMessage', {
                     type: 'warning',
                     message: 'Please fill all fields'
@@ -181,7 +177,7 @@ export const addInson = {
                 document.getElementById('settlement').focus();
                 return;
             }
-            if(addObject.capacity == '') {
+            if (addObject.capacity == '') {
                 ipcRenderer.send('showDialogMessage', {
                     type: 'warning',
                     message: 'Please fill all fields'
@@ -194,7 +190,7 @@ export const addInson = {
                 document.getElementById('capacity').focus();
                 return;
             }
-            if(addObject.children === '') {
+            if (addObject.children === '') {
                 ipcRenderer.send('showDialogMessage', {
                     type: 'warning',
                     message: 'Please fill all fields'
@@ -207,7 +203,7 @@ export const addInson = {
                 document.getElementById('children').focus();
                 return;
             }
-            if(addObject.leavers === '') {
+            if (addObject.leavers === '') {
                 ipcRenderer.send('showDialogMessage', {
                     type: 'warning',
                     message: 'Please fill all fields'

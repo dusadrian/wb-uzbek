@@ -69,7 +69,7 @@ export const filledInstrumentsR = async (db: DuckDB.Database, region?: string, t
         where += ` AND institution_code = '${institution}'`;
     }
 
-    console.log('filledInstrumentsR', where);
+    // console.log('filledInstrumentsR', where);
     
 
     const i1 = new Promise<DI.StatusInterface[]>((resolve) => {

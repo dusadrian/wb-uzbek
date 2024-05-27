@@ -1042,6 +1042,7 @@ ipcMain.on('saveInsonService', (_event, args: DI.AddInsonServiceObjInterface) =>
             });
             return;
         }
+        args.uuid =result[0].uuid;
         database.addInsonService(args).then(() => {
             database.updateInsonServiceCodes(args.code).then(() => {
                 dialog.showMessageBox(mainWindow, {
@@ -1089,6 +1090,7 @@ ipcMain.on('saveInsonServiceLocal', (_event, args: DI.AddInsonServiceObjInterfac
                 });
                 return;
             }
+            args.uuid =result[0].uuid;
             database.addInsonService(args).then(() => {
                 database.updateInsonServiceCodes(args.code).then(() => {
                     database.updateAuthCode(appSession.userData.institution_code, args.auth_code).then(() => {
@@ -1708,10 +1710,6 @@ ipcMain.on('importData', (_event, _args) => {
             if (err) throw err;
 
             const dateDinFisier = JSON.parse(data);
-
-            // console.log(dateDinFisier);
-            // return;
-
             const instrumentsInFile = Object.keys(dateDinFisier);
             const userInstruments = getLisOfInstrumentsToExport(appSession.userData.role_code, appSession.userData.service_type_code);
             let error = false
@@ -1839,7 +1837,7 @@ ipcMain.on('exportData', function exportData(_event, args) {
         const instruments = getLisOfInstrumentsToExport(args.userRoleCode, args.userServiceTypeCode);
 
         asyncForArray(instruments, downloadUserInstruments, appSession.userData.role_code, appSession.userData.uuid, appSession.userData.institution_code).then(processedData => {
-            if (appSession.userData.role_code == constant.ROLE_LOCAL || appSession.userData.role_code == constant.ROLE_REGIONAL || appSession.userData.role_code == constant.ROLE_NATIONAL) {
+            if (appSession.userData.role_code == constant.ROLE_LOCAL || (constant.INSON.includes(appSession.userData.service_type_code)) || appSession.userData.role_code == constant.ROLE_REGIONAL || appSession.userData.role_code == constant.ROLE_NATIONAL) {
                 database.getInstitutionDataForDownload().then((result) => {
                     if (processedData) {
                         processedData.institutions = result;
