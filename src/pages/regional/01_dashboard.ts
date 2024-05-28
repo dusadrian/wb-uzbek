@@ -224,6 +224,18 @@ export const regionalCoordinator = {
                 });
             });
         }
+
+        ipcRenderer.on("startLoader", () => {
+            document.body.classList.add("stop-scrolling");
+            document.getElementById("loader").classList.remove("hidden");
+            document.getElementById("cover").classList.remove("hidden");
+        });
+        
+        ipcRenderer.on("clearLoader", () => {
+            document.body.classList.remove("stop-scrolling");
+            document.getElementById("loader").classList.add("hidden");
+            document.getElementById("cover").classList.add("hidden");
+        });
     }
 }
 

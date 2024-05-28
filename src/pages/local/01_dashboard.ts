@@ -278,7 +278,7 @@ const processDashStats = (args: any,) => {
         const totalCompletedObj = args.instrument5a.filter((el: StatusInterface) => el.status === 'completed');
         const totalPartialObj = args.instrument5a.filter((el: StatusInterface) => el.status === 'partial');
         const toBefilled = Number(document.getElementById('t1c51').innerText);
-        
+
         document.getElementById('t1c52').innerText = totalCompletedObj[0]?.total || 0;
         document.getElementById('t1c53').innerText = totalPartialObj[0]?.total || 0;
 
@@ -386,7 +386,7 @@ export const local = {
                 processDashStats(args);
             })
 
-            if(constant.INSON.includes(userData.service_type_code)){
+            if (constant.INSON.includes(userData.service_type_code)) {
                 const insonUser = document.getElementById('inson_user') as HTMLButtonElement;
                 insonUser.classList.remove('hidden');
                 insonUser.classList.add('flex');
@@ -433,6 +433,18 @@ export const local = {
         ipcRenderer.on("existing", (_event, args) => {
             document.getElementById('view_instrument4').dataset.id = args.qmr;
             document.getElementById('view_instrument6').dataset.id = args.dsee;
+        });
+
+        ipcRenderer.on("startLoader", () => {
+            document.body.classList.add("stop-scrolling");
+            document.getElementById("loader").classList.remove("hidden");
+            document.getElementById("cover").classList.remove("hidden");
+        });
+
+        ipcRenderer.on("clearLoader", () => {
+            document.body.classList.remove("stop-scrolling");
+            document.getElementById("loader").classList.add("hidden");
+            document.getElementById("cover").classList.add("hidden");
         });
     }
 }

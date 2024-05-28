@@ -48,6 +48,7 @@
 	"t_profession": "Profession",
 	"t_phone": "Phone",
 	"t_edit_user": "Edit user",
+	"t_export_user_instruments": "Export user instruments",
 	"t_add_child": "Add child",
 	"t_csr_list": "Staff Registry List",
 	"t_add_staff": "Add staff",
@@ -150,7 +151,6 @@
 	"t_address": "Address",
 	"t_district": "District",
 	"t_settlement": "Settlement",
-	"t_mahala": "Mahala",
 	"t_capacity": "Capacity",
 	"t_service_code": "Service code",
 	"t_service_code_text": "The service cod must be obtain from the regional coordinator",
@@ -160,5 +160,6 @@
 	"Service code already in use.": "Service code already in use.",
 	"The provided service code is wrong.": "The provided service code is wrong.",
 	"Info": "Info",
-	"Import finished.": "Import finished."
+	"Import finished.": "Import finished.",
+	"t_working": "Working..."
 }

@@ -1042,7 +1042,7 @@ ipcMain.on('saveInsonService', (_event, args: DI.AddInsonServiceObjInterface) =>
             });
             return;
         }
-        args.uuid =result[0].uuid;
+        args.uuid = result[0].uuid;
         database.addInsonService(args).then(() => {
             database.updateInsonServiceCodes(args.code).then(() => {
                 dialog.showMessageBox(mainWindow, {
@@ -1090,7 +1090,7 @@ ipcMain.on('saveInsonServiceLocal', (_event, args: DI.AddInsonServiceObjInterfac
                 });
                 return;
             }
-            args.uuid =result[0].uuid;
+            args.uuid = result[0].uuid;
             database.addInsonService(args).then(() => {
                 database.updateInsonServiceCodes(args.code).then(() => {
                     database.updateAuthCode(appSession.userData.institution_code, args.auth_code).then(() => {
@@ -1702,6 +1702,8 @@ ipcMain.on('importData', (_event, _args) => {
     if (filesToUpload === void 0 || filesToUpload.length === 0) {
         return;
     }
+    mainWindow.webContents.send('startLoader');
+
     crypt.decryptFile(filesToUpload[0]).then(() => {
         const decryptedFile = filesToUpload[0].slice(0, -4) + '.json';
 
@@ -1767,6 +1769,7 @@ ipcMain.on('importData', (_event, _args) => {
                     title: i18n.__('Info'),
                     message: i18n.__('Import finished.')
                 }).then(() => {
+                    mainWindow.webContents.send("clearLoader");
                     if (appSession.userData.role_code === constant.ROLE_REGIONAL) {
                         goToRegionalDashboard();
                     } else if (appSession.userData.role_code === constant.ROLE_NATIONAL) {
@@ -1831,7 +1834,7 @@ ipcMain.on('exportData', function exportData(_event, args) {
 
     if (folderPath !== void 0) {
 
-        // mainWindow.webContents.send("startLoader");
+        mainWindow.webContents.send('startLoader');
         const currenDate = new Date();
         const cale = folderPath[0] + '/' + appSession.userData.username + '_' + currenDate.getFullYear() + '-' + (currenDate.getMonth() + 1) + '-' + currenDate.getDate();
         const instruments = getLisOfInstrumentsToExport(args.userRoleCode, args.userServiceTypeCode);
@@ -1870,6 +1873,8 @@ const writeFileTodisk = (data: { [key: string]: string }, cale: string,) => {
             type: 'info',
             title: i18n.__('main.success'),
             message: i18n.__('main._dataDownloaded')
+        }).then(() => {
+            mainWindow.webContents.send("clearLoader");
         });
     });
 }
