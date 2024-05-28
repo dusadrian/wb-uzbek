@@ -149,17 +149,16 @@
 	"t_add_service": "Add service",
 	"t_add_inson_service": "Adding family-type home",
 	"t_address": "Address",
-	"t_district": "District",
+	"t_district": "Район",
 	"t_settlement": "Settlement",
 	"t_capacity": "Capacity",
 	"t_service_code": "Service code",
 	"t_service_code_text": "The service cod must be obtain from the regional coordinator",
-	"t_service_code block": "t_service_code block",
 	"Service added.": "Service added.",
 	"Somethig got wrong, please try again later.": "Somethig got wrong, please try again later.",
 	"Service code already in use.": "Service code already in use.",
 	"The provided service code is wrong.": "The provided service code is wrong.",
 	"Info": "Info",
 	"Import finished.": "Import finished.",
-	"t_working": "Working..."
+	"t_working": "In progress. Please wait!"
 }
