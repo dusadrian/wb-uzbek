@@ -10,6 +10,26 @@ const $ = window.require('jquery');
 const dt = window.require('datatables.net-dt');
 dt(window, $);
 
+const boundFunctionsEdit = new Map();
+const boundFunctionsDelete = new Map();
+const callbackEditDelete = () => {
+    document.querySelectorAll('.editButton').forEach(item => {
+        const boundFunctionToRemove = boundFunctionsEdit.has(item);
+        if (!boundFunctionToRemove) {
+            const boundFunction = editItem.bind(this, (<HTMLButtonElement>item).dataset.myid);
+            item.addEventListener('click', boundFunction);
+            boundFunctionsEdit.set(item, boundFunction);
+        }
+    });
+    document.querySelectorAll('.deleteButton').forEach(item => {
+        const boundFunctionToRemove = boundFunctionsDelete.has(item);
+        if (!boundFunctionToRemove) {
+            const boundFunction = deleteItem.bind(this, (<HTMLButtonElement>item).dataset.myid);
+            item.addEventListener('click', boundFunction);
+            boundFunctionsDelete.set(item, boundFunction);
+        }
+    });
+}
 
 export const yplcs = {
     init: async () => {
@@ -43,7 +63,8 @@ export const yplcs = {
             "createdRow": function (row: any) {
                 // $(row).addClass('text-center');
                 $(row).addClass('align-middle');
-            }
+            },
+            drawCallback: callbackEditDelete,
         });
 
         ipcRenderer.on('yplcs', (event, yplcs) => {
@@ -107,12 +128,8 @@ const fillTable = (table: any, yplcs: Array<any>) => {
         ]).draw();
 
     });
-    document.querySelectorAll('.editButton').forEach(item => {
-        item.addEventListener('click', editItem.bind(this, (<HTMLButtonElement>item).dataset.myid));
-    });
-    document.querySelectorAll('.deleteButton').forEach(item => {
-        item.addEventListener('click', deleteItem.bind(this, (<HTMLButtonElement>item).dataset.myid));
-    });
+
+    callbackEditDelete();
 };
 
 
