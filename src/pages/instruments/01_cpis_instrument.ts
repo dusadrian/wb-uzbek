@@ -280,12 +280,10 @@ export const instrument1 = {
                     }
 
                     if (item.variable == "cm1c") {
-                        console.log(instrument.questions.cm1a.value)
                         check_cm1(instrument.questions.cm1a.value);
                     }
 
                     if (item.variable == "ct1c") {
-                        console.log(instrument.questions.ct1a.value)
                         check_ct1(instrument.questions.ct1a.value);
                     }
                 }
@@ -334,7 +332,7 @@ export const instrument1 = {
                 regionCode = args.userData.region_code;
                 userUUID = args.userData.uuid;
                 institutionType = args.userData.service_type_code;
-                institutionCode = args.userData.institution_code;
+                institutionCode = args.userData.institution_code;              
 
                 // util.setValue("sh5", institution_code);
                 // util.setValue("sh5a", institution_name);
@@ -370,7 +368,6 @@ const validateChestionar = (_questions: QuestionObjectType) => {
 };
 
 const saveChestionar = (obj: SaveInstrumentType): void => {
-
     obj.table = "cpis";
     if (userRole != constant.ROLE_REGIONAL && userRole != constant.ROLE_NATIONAL) {
         obj.extras = {

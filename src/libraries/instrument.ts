@@ -325,12 +325,14 @@ const instrument: InstrumentObjectType = {
 			return response;
 		}
 		elements.forEach(function (item: HTMLInputElement) {
-			if (!item.dataset.skip || item.dataset.skip !== 'true') {
+			if (!item.dataset.skip || item.dataset.skip !== 'true') {				
 				if (item.checked === true) {
 					response = item.value;
 					item.dispatchEvent(new Event("afterChange"));
 				}
 				item.disabled = val;
+			} else {
+				response = instrument.questions[group].value; // keep the value if is skip
 			}
 		});
 		if (val) {
@@ -497,6 +499,7 @@ const instrument: InstrumentObjectType = {
 				// aici detectez ca are eroare cu .error insa nu mai intra in if() pentru ca .disabled este 1, nu != 1
 				if ((question.value === "" || Number(question.value) == -9) && !question.hidden) {
 					console.log(question.name);
+					console.log(instrument.questions[question.name]);
 
 					if (question.type == "radio") {
 						const rEl = <HTMLInputElement>document.getElementsByName(question.name)[0].parentNode.parentNode;
