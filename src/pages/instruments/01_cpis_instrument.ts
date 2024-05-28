@@ -252,15 +252,15 @@ export const instrument1 = {
             insons = args.insons;
             userRole = args.userData.role_code;
             institution_code = args.userData.institution_code;
-            // if (args.institution_code) {
-            //     institution_code = args.institution_code;
-            // }
 
+
+            if (args.institution_code) {
+                serviceCode = args.institution_code;
+            }
             if (filters && filters.institution) {
-                institution_code = filters.institution;
+                serviceCode = filters.institution;
             }
 
-            serviceCode = institution_code;
             const inson_user = constant.INSON.includes(args.userData.service_type_code);
 
             // set instrument question !!!!!!
@@ -308,7 +308,7 @@ export const instrument1 = {
                     if (insons[institution_code].settlement) {
                         util.setValue("sh5s", insons[institution_code].settlement);
                     }
-                    util.setValue("sh5", institution_code);
+                    util.setValue("sh5", serviceCode);
                 }
                 else {
                     const serviciu = { ...services[institution_code] } as KeyStringNumber;
@@ -320,6 +320,7 @@ export const instrument1 = {
                     }
                     util.setValue("sh5", institution_code);
                     util.setValue('omr8a', "1");
+                    serviceCode = institution_code;
                 }
 
                 util.setValue("omr8", institution_name);
@@ -333,7 +334,7 @@ export const instrument1 = {
                 regionCode = args.userData.region_code;
                 userUUID = args.userData.uuid;
                 institutionType = args.userData.service_type_code;
-                institutionCode = args.userData.institution_code;
+                institutionCode = args.userData.institution_code;              
 
                 // util.setValue("sh5", institution_code);
                 // util.setValue("sh5a", institution_name);
@@ -379,6 +380,8 @@ const saveChestionar = (obj: SaveInstrumentType): void => {
             service_code: serviceCode,
         }
     }
+    console.log(obj);
+    // return;
     ipcRenderer.send("saveInstrument", obj);
 }
 
