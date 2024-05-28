@@ -380,8 +380,6 @@ const saveChestionar = (obj: SaveInstrumentType): void => {
             service_code: serviceCode,
         }
     }
-    console.log(obj);
-    // return;
     ipcRenderer.send("saveInstrument", obj);
 }
 
