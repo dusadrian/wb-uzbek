@@ -1727,19 +1727,31 @@ ipcMain.on('importData', (_event, _args) => {
                         const item = dateDinFisier[instrument].data[itemUUID];
                         const instrumentID = await database.getInstrumentIdFromUUId(instrument, itemUUID);
 
+                        type extras = {
+                            uuid: string,
+                            region_code: string,
+                            institution_type: string,
+                            institution_code: string,
+                            user_uuid: string,
+                            service_code?: string
+                        }
+
                         const dataToImport = {
                             'instrument_id': instrumentID.length > 0 ? Number(instrumentID[0]?.id) : null,
                             'table': instrument,
                             'status': 'completed',
                             'questions': item.questions,
                             'extras': {
+                                uuid: itemUUID,
                                 region_code: item.region_code,
                                 institution_type: item.institution_type,
-                                uuid: itemUUID,
-                                user_uuid: item.user_uuid,
                                 institution_code: item.institution_code,
-                            }
+                                user_uuid: item.user_uuid,
+                            } as extras
                         };
+                        if(item.service_code) { // add service code if exists - for instrument 1 & 7
+                            dataToImport.extras.service_code = item.service_code;
+                        }
                         await database.instrumentSave(dataToImport, db);
                     }
                 } else if (instrument === 'institutions') {
@@ -1961,8 +1973,9 @@ function prepareDataForDownload(data: DI.DataExportInterface[]) {
                 'uuid': element.uuid,
                 'region_code': element.region_code,
                 'institution_type': element.institution_type,
-                'user_uuid': element.user_uuid,
                 'institution_code': element.institution_code,
+                'service_code': element.service_code ?? null,
+                'user_uuid': element.user_uuid,
                 'created_at': element.created_at,
                 'updated_at': element.updated_at,
             };

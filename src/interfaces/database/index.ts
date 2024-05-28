@@ -143,6 +143,7 @@ export interface DataExportInterface {
     region_code: string;
     institution_type: string;
     institution_code: string;
+    service_code: string;
     status: string;
     created_at: string;
     updated_at: string;
