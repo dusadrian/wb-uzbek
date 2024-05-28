@@ -252,9 +252,9 @@ export const instrument1 = {
             insons = args.insons;
             userRole = args.userData.role_code;
             institution_code = args.userData.institution_code;
-            if (args.institution_code) {
-                institution_code = args.institution_code;
-            }
+            // if (args.institution_code) {
+            //     institution_code = args.institution_code;
+            // }
 
             if (filters && filters.institution) {
                 institution_code = filters.institution;
