@@ -102,8 +102,8 @@ export const questions: QuestionObjectType = {
         active: function() {return(true)},
         skip: false
     },
-    'ifp1a': {
-        name: 'ifp1a',
+    'ifp1b': {
+        name: 'ifp1b',
         type: 'select',
         value: '-9',
         disabled: false,
@@ -113,17 +113,6 @@ export const questions: QuestionObjectType = {
         active: function() {return(true)},
         skip: false
     },
-    'ifp1b': {
-        name: 'ifp1b',
-        type: 'select',
-        value: '-7',
-        disabled: true,
-        hidden: false,
-        readonly: false,
-        order: 10,
-        active: function() {return(Number(instrument.questions.ifp1a.value) > 0)},
-        skip: false
-    },
     'ifp1c': {
         name: 'ifp1c',
         type: 'select',
@@ -131,8 +120,19 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 11,
+        order: 10,
         active: function() {return(Number(instrument.questions.ifp1b.value) > 0)},
+        skip: false
+    },
+    'ifp1m': {
+        name: 'ifp1m',
+        type: 'select',
+        value: '-7',
+        disabled: true,
+        hidden: false,
+        readonly: false,
+        order: 11,
+        active: function() {return(Number(instrument.questions.ifp1c.value) > 0)},
         skip: false
     },
     'ifp1d': {
@@ -2706,7 +2706,7 @@ export const questions: QuestionObjectType = {
 };
 
 export const questionsOrder: Array<string> = [
-    'reg', 'dis', 'data', 'q2', 'inst', 'q3', 'q4', 'q5', 'q6', 'ifp1a', 'ifp1b', 'ifp1c', 'ifp1d', 'ifp2',
+    'reg', 'dis', 'data', 'q2', 'inst', 'q3', 'q4', 'q5', 'q6', 'ifp1b', 'ifp1c', 'ifp1m', 'ifp1d', 'ifp2',
     'ifp2ay', 'ifp2am', 'ifp3', 'ifp4', 'ifm1', 'ifm2', 'ifm3', 'ifm4', 'ifm4_age', 'ifm5', 'ifm6', 'ifm6_other',
     'ift1', 'ift2', 'ift3', 'ift4', 'ift4_age', 'ift5', 'ift6', 'ift6_other', 'ifp4a', 'ifp4b', 'ifp5', 'fc1',
     'fc2a', 'fc2b', 'fc2c', 'fc2d', 'fc2e', 'fc2f', 'fc2g', 'fc3', 'fc4_c1a', 'fc4_c1b', 'fc4_c1c', 'fc4_c1d',
@@ -2744,9 +2744,9 @@ export const exportHeader: Array<{ id: string; title: string }> = [
     {'id': 'q4', 'title': 'Q4'},
     {'id': 'q5', 'title': 'Q5'},
     {'id': 'q6', 'title': 'Q6'},
-    {'id': 'ifp1a', 'title': 'IFP1A'},
     {'id': 'ifp1b', 'title': 'IFP1B'},
     {'id': 'ifp1c', 'title': 'IFP1C'},
+    {'id': 'ifp1m', 'title': 'IFP1M'},
     {'id': 'ifp1d', 'title': 'IFP1D'},
     {'id': 'ifp2', 'title': 'IFP2'},
     {'id': 'ifp2ay', 'title': 'IFP2AY'},

@@ -161,6 +161,10 @@ export const instrument2 = {
                         util.trigger(item.variable, "change");
                     }
 
+                    if (item.variable == "cmnt2") {
+                        util.trigger("cmnt2-1", "myChange");
+                    }
+
                     if (item.variable == "qeduc2") {
                         check_sa1a(Number(instrument.questions.sa1a.value));
                     }
@@ -221,6 +225,8 @@ export const instrument2 = {
 const lk22_2 = ['lk22_2_1', 'lk22_2_2', 'lk22_2_3', 'lk22_2_4', 'lk22_2_5'];
 
 const validateChestionar = (_questions: QuestionObjectType) => {
+
+    util.trigger("cmnt2-1", "myChange");
 
     if (_questions.pin.value == '-9' || _questions.lk1a.value == '-9' || _questions.lk1b.value == '-9' || _questions.lk1c.value == '-9') {
         ipcRenderer.send("showDialogMessage", { type: "error", message: "The following fields are mandatory: PIN, LK1a, LK1b, LK1c!" });

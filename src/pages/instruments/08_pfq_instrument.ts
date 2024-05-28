@@ -38,7 +38,7 @@ let institutionCode = '';
 let userRole = '';
 let filters: DI.FiltersInterface;
 
-const regElements =  ["reg", "pf1a"];
+const regElements =  ["reg", ""    ];
 const disElements =  ["dis", "pf1b"];
 const setElements =  ["",    "pf1c"];
 const mahElements =  ["",    "pf1m"];
@@ -208,42 +208,55 @@ const saveChestionar = (obj: SaveInstrumentType): void => {
 
 const reg_codes = Object.keys(regions);
 for (let x = 0; x < regElements.length; x++) {
-    util.resetSelect(regElements[x], "-9", translations['t_choose']);
+    if (regElements[x] != "") {
+        util.resetSelect(regElements[x], "-9", translations['t_choose']);
 
-    for (let i = 0; i < reg_codes.length; i++) {
-        util.addOption(
-            regElements[x],
-            reg_codes[i],
-            reg_codes[i] + ": " + (regions[reg_codes[i]] as KeyString)[lang]
-        );
-    }
+        for (let i = 0; i < reg_codes.length; i++) {
+            util.addOption(
+                regElements[x],
+                reg_codes[i],
+                reg_codes[i] + ": " + (regions[reg_codes[i]] as KeyString)[lang]
+            );
+        }
 
-    util.listen(regElements[x], "change", function () {
-        const selectedRegion = util.htmlElement(regElements[x]).value;
+        util.listen(regElements[x], "change", function () {
+            const selectedRegion = util.htmlElement(regElements[x]).value;
 
-        if (Number(selectedRegion) > 0) {
-            const dis_codes = regions[selectedRegion].districts;
+            if (Number(selectedRegion) > 0) {
+                const dis_codes = regions[selectedRegion].districts;
 
-            util.resetSelect(disElements[x], "-9", translations['t_choose']);
-            for (let i = 0; i < dis_codes.length; i++) {
-                util.addOption(
-                    disElements[x],
-                    dis_codes[i],
-                    dis_codes[i] + ": " + (districts[dis_codes[i]] as KeyString)[lang]
-                );
+                util.resetSelect(disElements[x], "-9", translations['t_choose']);
+                for (let i = 0; i < dis_codes.length; i++) {
+                    util.addOption(
+                        disElements[x],
+                        dis_codes[i],
+                        dis_codes[i] + ": " + (districts[dis_codes[i]] as KeyString)[lang]
+                    );
+                }
+
+                if (regElements[x] == "reg") {
+                    util.resetSelect("pf1b", "-9", translations['t_choose']);
+                    for (let i = 0; i < dis_codes.length; i++) {
+                        util.addOption(
+                            "pf1b",
+                            dis_codes[i],
+                            dis_codes[i] + ": " + (districts[dis_codes[i]] as KeyString)[lang]
+                        );
+                    }
+                }
             }
-        }
 
-        if (setElements[x] != "") {
-            util.resetSelect(setElements[x], "-9", translations['t_choose']);
-            instrument.questions[setElements[x]].value = "-7";
-        }
+            if (setElements[x] != "") {
+                util.resetSelect(setElements[x], "-9", translations['t_choose']);
+                instrument.questions[setElements[x]].value = "-7";
+            }
 
-        if (mahElements[x] != "") {
-            util.resetSelect(mahElements[x], "-9", translations['t_choose']);
-            instrument.questions[mahElements[x]].value = "-7";
-        }
-    })
+            if (mahElements[x] != "") {
+                util.resetSelect(mahElements[x], "-9", translations['t_choose']);
+                instrument.questions[mahElements[x]].value = "-7";
+            }
+        })
+    }
 
     util.listen(disElements[x], "change", function () {
         const selectedDistrict = util.htmlElement(disElements[x]).value;

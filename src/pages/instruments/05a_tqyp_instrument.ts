@@ -130,6 +130,10 @@ export const instrument5a = {
                     if (validate.indexOf(item.variable) >= 0) {
                         util.trigger(item.variable, "change");
                     }
+
+                    if (item.variable == "ptr8") {
+                        util.trigger("ptr8-1", "myChange");
+                    }
                 }
             }
 
