@@ -122,16 +122,13 @@ export const instrument7 = {
             insons = args.insons;
 
             userRole = args.userData.role_code;
-            let institution_code = args.userData.institution_code;
-            if (args.institution_code) {
-                institution_code = args.institution_code;
-            }
-            if (filters && filters.institution) {
-                institution_code = filters.institution;
-            }
+            const institution_code = (filters && filters.institution) ? filters.institution : args.userData.institution_code;
 
-            serviceCode = args.institution_code ?? '';
-            console.log(args);
+            if (args.institution_code) {
+                serviceCode = args.institution_code;
+            } else if(filters && filters.service_code) {
+                serviceCode = filters.service_code;
+            }
 
             const inson_user = Object.keys(insons).indexOf(institution_code) >= 0;
 

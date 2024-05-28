@@ -251,14 +251,12 @@ export const instrument1 = {
             servicesCodes = Object.keys(services);
             insons = args.insons;
             userRole = args.userData.role_code;
-            institution_code = args.userData.institution_code;
-
+            institution_code = (filters && filters.institution) ? filters.institution : args.userData.institution_code;
 
             if (args.institution_code) {
                 serviceCode = args.institution_code;
-            }
-            if (filters && filters.institution) {
-                serviceCode = filters.institution;
+            } else if(filters && filters.service_code) {
+                serviceCode = filters.service_code;
             }
 
             const inson_user = constant.INSON.includes(args.userData.service_type_code);
