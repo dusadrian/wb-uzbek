@@ -16,7 +16,7 @@ window.require('jquery-ui-dist/jquery-ui');
 import "jquery-ui/ui/i18n/datepicker-ru";
 import "jquery-ui/ui/i18n/datepicker-uz";
 
-import { KeyString, KeyStringNumber, regions, districts, settlements } from "../../libraries/administrative";
+import { KeyString, KeyStringNumber, regions, districts, settlements, mahallas } from "../../libraries/administrative";
 
 import * as en from "../../locales/en.json";
 import * as uz from "../../locales/uz.json";
@@ -188,6 +188,7 @@ export const instrument4 = {
             const regElements = ["i4a"];
             const disElements = ["i4b"];
             const setElements = ["i4c"];
+            const mahElements = ["i4m"];
 
             services = args.services;
             insons = args.insons;
@@ -243,6 +244,26 @@ export const instrument4 = {
                         }
                     }
                 })
+
+                if (setElements[x] != "") {
+                    util.listen(setElements[x], "change", () => {
+                        util.resetSelect(mahElements[x], "--", "--");
+
+                        const selectedSettlement = util.htmlElement(setElements[x]).value;
+                        if (Number(selectedSettlement) > 0 && mahElements[x] != "") {
+                            const mah_codes = settlements[selectedSettlement].mahallas;
+                            if (mah_codes.length > 0) {
+                                for (let i = 0; i < mah_codes.length; i++) {
+                                    util.addOption(
+                                        mahElements[x],
+                                        mah_codes[i],
+                                        mah_codes[i] + ": " + mahallas[mah_codes[i]]
+                                    );
+                                }
+                            }
+                        }
+                    })
+                }
             }
 
             // set instrument question !!!!!!

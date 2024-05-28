@@ -16,7 +16,7 @@ window.require('jquery-ui-dist/jquery-ui');
 import "jquery-ui/ui/i18n/datepicker-ru";
 import "jquery-ui/ui/i18n/datepicker-uz";
 
-import { KeyString, KeyStringNumber, regions, districts, settlements } from "../../libraries/administrative";
+import { KeyString, KeyStringNumber, regions, districts, settlements, mahallas } from "../../libraries/administrative";
 import * as en from "../../locales/en.json";
 import * as uz from "../../locales/uz.json";
 import * as ru from "../../locales/ru.json";
@@ -35,7 +35,15 @@ let insons: { [key: string]: DI.INSON };
 const regElements  = ["reg", "pi4b", "pi6r", "pi9c"];
 const disElements  = ["dis", "pi4c", "pi6d", "pi9d"];
 const setElements  = ["",    "pi4d", "",     "pi9h"];
+const mahElements  = ["",    "pi4m", "",     "pi9m"];
 const typeElements = ["",    "pi4e", "",     "pi9i"];
+
+const nonemptysets: string[] = [];
+for (let i = 0; i < setElements.length; i++) {
+    if (setElements[i] != "") {
+        nonemptysets.push(setElements[i]);
+    }
+}
 
 const pi10 = ['pi10a', 'pi10b'];
 const lv = ['lv2_2', 'lv2_3', 'lv2_4', 'lv2_5', 'lv2_6', 'lv2_7', 'lv2_8', 'lv2_9']
@@ -46,7 +54,8 @@ const pi9a = util.radioIDs("pi9a");
 
 
 const validate = [
-    ...regElements, ...disElements, ...pi10, ...lv, "lv2_1", ...ls, "ls2_11",
+    ...regElements, ...disElements, ...nonemptysets,
+    ...pi10, ...lv, "lv2_1", ...ls, "ls2_11",
     "pi8", ...pi3pi7, ...he5, "he5_9", ...pi9a
 ]
 
@@ -109,106 +118,7 @@ export const instrument5 = {
             const institution_code = (filters && filters.institution) ? filters.institution : args.userData.institution_code;
 
             const inson_user = Object.keys(insons).indexOf(institution_code) >= 0;
-            const reg_codes = Object.keys(regions);
 
-            for (let x = 0; x < regElements.length; x++) {
-
-                util.resetSelect(regElements[x], "-9", translations['t_choose']);
-                for (let i = 0; i < reg_codes.length; i++) {
-                    util.addOption(
-                        regElements[x],
-                        reg_codes[i],
-                        reg_codes[i] + ": " + (regions[reg_codes[i]] as KeyString)[lang]
-                    );
-                }
-
-                util.listen(regElements[x], "change", function () {
-                    if (regElements[x] == "pi6r") {
-                        util.resetSelect("pi6i", "-9", translations['t_choose']);
-                    }
-
-                    if (setElements[x] != "") {
-                        util.resetSelect(setElements[x], "-9", translations['t_choose']);
-                    }
-
-                    const selectedRegion = util.htmlElement(regElements[x]).value;
-                    if (Number(selectedRegion) > 0) {
-                        const dis_codes = regions[selectedRegion].districts;
-
-                        util.resetSelect(disElements[x], "-9", translations['t_choose']);
-                        instrument.questions[disElements[x]].value = "-9";
-                        for (let i = 0; i < dis_codes.length; i++) {
-                            util.addOption(
-                                disElements[x],
-                                dis_codes[i],
-                                dis_codes[i] + ": " + (districts[dis_codes[i]] as KeyString)[lang]
-                            );
-                        }
-                    }
-                })
-
-                util.listen(disElements[x], "change", function () {
-                    const selectedDistrict = util.htmlElement(disElements[x]).value;
-
-                    if (setElements[x] != "") {
-
-                        util.resetSelect(setElements[x], "-9", translations['t_choose']);
-
-                        if (!instrument.questions[setElements[x]].readonly) {
-                            instrument.questions[setElements[x]].skip = false;
-                            util.htmlElement(setElements[x]).disabled = false;
-                        }
-
-                        if (Number(selectedDistrict) > 0) {
-                            const set_codes = districts[selectedDistrict].settlements;
-
-                            if (set_codes.length > 0) {
-
-                                for (let i = 0; i < set_codes.length; i++) {
-                                    util.addOption(
-                                        setElements[x],
-                                        set_codes[i],
-                                        set_codes[i] + ": " + (settlements[set_codes[i]] as KeyString)[lang]
-                                    );
-                                }
-                            } else {
-                                util.resetSelect(setElements[x], "--", "--");
-                                instrument.questions[setElements[x]].skip = true;
-                                util.htmlElement(setElements[x]).disabled = true;
-                            }
-                        }
-                    }
-
-                    if (disElements[x] == "pi6d") {
-                        util.resetSelect("pi6i", "-9", translations['t_choose']);
-
-                        if (Number(selectedDistrict) > 0) {
-
-                            for (let i = 0; i < servicesCodes.length; i++) {
-                                const code = servicesCodes[i];
-                                if (services[code].district == selectedDistrict) {
-                                    const type = Number(services[code].type);
-                                    if ((type >= 12 && type <= 15) || (type >= 21 && type <= 28)) {
-                                        const serviciu = { ...services[code] } as KeyStringNumber;
-                                        util.addOption(
-                                            "pi6i",
-                                            code,
-                                            code + ": " + serviciu['name_' + lang]
-                                        )
-                                    }
-                                }
-                            }
-
-                            const optgroup = document.createElement("optgroup");
-                            const option999 = document.createElement("option");
-                            option999.value = '999';
-                            option999.text = '999: ' + locales[lang]['not_in_registry'];
-                            optgroup.appendChild(option999);
-                            util.htmlElement("pi6i").appendChild(optgroup);
-                        }
-                    }
-                })
-            }
 
             // set instrument question !!!!!!
             instrument.setQuestions(questions, questionsOrder);
@@ -301,6 +211,150 @@ const saveChestionar = (obj: SaveInstrumentType): void => {
 
 // validari custom
 
+const reg_codes = Object.keys(regions);
+for (let x = 0; x < regElements.length; x++) {
+
+    util.resetSelect(regElements[x], "-9", translations['t_choose']);
+    for (let i = 0; i < reg_codes.length; i++) {
+        util.addOption(
+            regElements[x],
+            reg_codes[i],
+            reg_codes[i] + ": " + (regions[reg_codes[i]] as KeyString)[lang]
+        );
+    }
+
+    util.listen(regElements[x], "change", function () {
+        const selectedRegion = util.htmlElement(regElements[x]).value;
+        if (Number(selectedRegion) > 0) {
+            const dis_codes = regions[selectedRegion].districts;
+
+            util.resetSelect(disElements[x], "-9", translations['t_choose']);
+            instrument.questions[disElements[x]].value = "-9";
+
+            for (let i = 0; i < dis_codes.length; i++) {
+                util.addOption(
+                    disElements[x],
+                    dis_codes[i],
+                    dis_codes[i] + ": " + (districts[dis_codes[i]] as KeyString)[lang]
+                );
+            }
+        }
+
+        if (regElements[x] == "pi6r") {
+            util.resetSelect("pi6i", "-9", translations['t_choose']);
+        }
+
+        if (setElements[x] != "") {
+            util.resetSelect(setElements[x], "-9", translations['t_choose']);
+            instrument.questions[setElements[x]].value = "-7";
+        }
+
+        if (mahElements[x] != "") {
+            util.resetSelect(mahElements[x], "-9", translations['t_choose']);
+            instrument.questions[mahElements[x]].value = "-7";
+        }
+    })
+
+    util.listen(disElements[x], "change", function () {
+        const selectedDistrict = util.htmlElement(disElements[x]).value;
+
+        if (setElements[x] != "") {
+            util.resetSelect(setElements[x], "-9", translations['t_choose']);
+            instrument.questions[setElements[x]].value = "-9";
+
+            if (!instrument.questions[setElements[x]].readonly) {
+                instrument.questions[setElements[x]].skip = false;
+                util.htmlElement(setElements[x]).disabled = false;
+            }
+
+            if (Number(selectedDistrict) > 0) {
+                const set_codes = districts[selectedDistrict].settlements;
+
+                if (set_codes.length > 0) {
+
+                    for (let i = 0; i < set_codes.length; i++) {
+                        util.addOption(
+                            setElements[x],
+                            set_codes[i],
+                            set_codes[i] + ": " + (settlements[set_codes[i]] as KeyString)[lang]
+                        );
+                    }
+                } else {
+                    util.resetSelect(setElements[x], "--", "--");
+                    instrument.questions[setElements[x]].skip = true;
+                    util.htmlElement(setElements[x]).disabled = true;
+                }
+            }
+        }
+
+        if (mahElements[x] != "") {
+            util.resetSelect(mahElements[x], "-9", translations['t_choose']);
+            instrument.questions[mahElements[x]].value = "-7";
+        }
+
+        if (disElements[x] == "pi6d") {
+            util.resetSelect("pi6i", "-9", translations['t_choose']);
+
+            if (Number(selectedDistrict) > 0) {
+
+                for (let i = 0; i < servicesCodes.length; i++) {
+                    const code = servicesCodes[i];
+                    if (services[code].district == selectedDistrict) {
+                        const type = Number(services[code].type);
+                        if ((type >= 12 && type <= 15) || (type >= 21 && type <= 28)) {
+                            const serviciu = { ...services[code] } as KeyStringNumber;
+                            util.addOption(
+                                "pi6i",
+                                code,
+                                code + ": " + serviciu['name_' + lang]
+                            )
+                        }
+                    }
+                }
+
+                const optgroup = document.createElement("optgroup");
+                const option999 = document.createElement("option");
+                option999.value = '999';
+                option999.text = '999: ' + locales[lang]['not_in_registry'];
+                optgroup.appendChild(option999);
+                util.htmlElement("pi6i").appendChild(optgroup);
+            }
+        }
+    })
+
+    if (setElements[x] != "") {
+        util.listen(setElements[x], "change", () => {
+            const selectedSettlement = util.htmlElement(setElements[x]).value;
+
+            if (Number(selectedSettlement) > 0 && typeElements[x] != "") {
+                // settlement type
+                util.setValue(typeElements[x], settlements[selectedSettlement].type);
+            }
+
+            if (mahElements[x] != "") {
+                util.resetSelect(mahElements[x], "-9", translations['t_choose']);
+                instrument.questions[mahElements[x]].value = "-9";
+
+                if (Number(selectedSettlement) > 0) {
+                    const mah_codes = settlements[selectedSettlement].mahallas;
+
+                    if (mah_codes.length > 0) {
+                        for (let i = 0; i < mah_codes.length; i++) {
+                            util.addOption(
+                                mahElements[x],
+                                mah_codes[i],
+                                mah_codes[i] + ": " + mahallas[mah_codes[i]]
+                            );
+                        }
+                    }
+                }
+            }
+        })
+    }
+}
+
+
+
 util.listen("pi3", "myChange", () => {
     if (instrument.questions.pi3.value != "-9") {
         const age = util.diffDates(
@@ -311,18 +365,6 @@ util.listen("pi3", "myChange", () => {
         util.setValue("pi3a", age.toString());
     }
 });
-
-
-for (let i = 0; i < setElements.length; i++) {
-    if (setElements[i] != "" && typeElements[i] != "") {
-        util.listen(setElements[i], "change", () => {
-            const value = util.htmlElement(setElements[i]).value;
-            if (value != "--") {
-                util.setValue(typeElements[i], settlements[value].type);
-            }
-        })
-    }
-}
 
 
 util.listen(pi10, "change", () => {

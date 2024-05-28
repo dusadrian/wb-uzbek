@@ -16,7 +16,7 @@ window.require('jquery-ui-dist/jquery-ui');
 import "jquery-ui/ui/i18n/datepicker-ru";
 import "jquery-ui/ui/i18n/datepicker-uz";
 
-import { KeyString, KeyStringNumber, regions, districts, settlements } from "../../libraries/administrative";
+import { KeyString, KeyStringNumber, regions, districts, settlements, mahallas } from "../../libraries/administrative";
 
 import * as en from "../../locales/en.json";
 import * as uz from "../../locales/uz.json";
@@ -39,21 +39,30 @@ const general_dates = [
 ];
 
 
-const regElements = ["reg", "lk14b", "sa3a", "sa5r", "cm3b", "ct3b", "cm11c", "ct11c", "cg11c", "qeduc1ar", "qeduc2ar"];
-const disElements = ["dis", "lk14c", "sa3b", "sa5d", "cm3c", "ct3c", "cm11d", "ct11d", "cg11d", "qeduc1ad", "qeduc2ad"];
-const setElements = ["", "lk14d", "sa3c", "", "cm3d", "ct3d", "cm11e", "ct11e", "cg11e", "", ""];
-const typeElements = ["", "lk14e", "sa3d", "", "cm3e", "ct3e", "cm11f", "ct11f", "cg11f", "", ""];
+const regElements =  ["reg", "lk14b", "sa3a", "sa5r", "cm3b", "cm11c", "ct3b", "ct11c", "cg11c", "qeduc1ar", "qeduc2ar"];
+const disElements =  ["dis", "lk14c", "sa3b", "sa5d", "cm3c", "cm11d", "ct3c", "ct11d", "cg11d", "qeduc1ad", "qeduc2ad"];
+const setElements =  ["",    "lk14d", "sa3c", "",     "cm3d", "cm11e", "ct3d", "ct11e", "cg11e", "",         ""        ];
+const mahElements =  ["",    "lk14m", "sa3m", "",     "cm3m", "cm11m", "ct3m", "ct11m", "cg11m", "",         ""        ];
+const typeElements = ["",    "lk14e", "sa3d", "",     "cm3e", "cm11f", "ct3e", "ct11f", "cg11f", "",         ""        ];
+
+const nonemptysets: string[] = [];
+for (let i = 0; i < setElements.length; i++) {
+    if (setElements[i] != "") {
+        nonemptysets.push(setElements[i]);
+    }
+}
 
 // regiunea este intotdeauna inaintea districtului
 // un event de change pe regiune populeaza districtul, iar un event
 // de change pe district populeaza settlement-ul
-const validate = [...regElements, ...disElements];
+const validate = [...regElements, ...disElements, ...nonemptysets];
 
 let regionCode = '';
 let userUUID = '';
 let userRole = '';
 let institutionType = '';
 let institutionCode = '';
+let institution_code = '';
 let filters: {
     institutionType: string;
     institution: string;
@@ -135,124 +144,8 @@ export const instrument2 = {
             insons = args.insons;
 
             userRole = args.userData.role_code;
-            const institution_code = (filters && filters.institution) ? filters.institution : args.userData.institution_code;
+            institution_code = (filters && filters.institution) ? filters.institution : args.userData.institution_code;
             const inson_user = Object.keys(insons).indexOf(institution_code) >= 0;
-
-            const reg_codes = Object.keys(regions);
-            for (let x = 0; x < regElements.length; x++) {
-
-                util.resetSelect(regElements[x], "-9", translations['t_choose']);
-                for (let i = 0; i < reg_codes.length; i++) {
-                    util.addOption(
-                        regElements[x],
-                        reg_codes[i],
-                        reg_codes[i] + ": " + (regions[reg_codes[i]] as KeyString)[lang]
-                    );
-                }
-
-                util.listen(regElements[x], "change", function () {
-                    if (regElements[x] == "sa5r") {
-                        util.resetSelect("sa5i", "-9", translations['t_choose']);
-                    }
-
-                    if (regElements[x] == "qeduc1ar") {
-                        util.resetSelect("qeduc1a1", "-9", translations['t_choose']);
-                    }
-
-                    if (regElements[x] == "qeduc2ar") {
-                        util.resetSelect("qeduc2a1", "-9", translations['t_choose']);
-                    }
-
-                    if (setElements[x] != "") {
-                        util.resetSelect(setElements[x], "-9", translations['t_choose']);
-                    }
-
-                    const selectedRegion = util.htmlElement(regElements[x]).value;
-                    if (Number(selectedRegion) > 0) {
-                        const dis_codes = regions[selectedRegion].districts;
-
-                        util.resetSelect(disElements[x], "-9", translations['t_choose']);
-                        for (let i = 0; i < dis_codes.length; i++) {
-                            util.addOption(
-                                disElements[x],
-                                dis_codes[i],
-                                dis_codes[i] + ": " + (districts[dis_codes[i]] as KeyString)[lang]
-                            );
-                        }
-                    }
-                })
-
-                util.listen(disElements[x], "change", function () {
-
-                    const selectedDistrict = util.htmlElement(disElements[x]).value;
-
-                    if (setElements[x] != "") {
-
-                        util.resetSelect(setElements[x], "-9", translations['t_choose']);
-
-                        if (Number(selectedDistrict) > 0) {
-                            const set_codes = districts[selectedDistrict].settlements;
-
-                            if (set_codes.length > 0) {
-                                for (let i = 0; i < set_codes.length; i++) {
-                                    util.addOption(
-                                        setElements[x],
-                                        set_codes[i],
-                                        set_codes[i] + ": " + (settlements[set_codes[i]] as KeyString)[lang]
-                                    );
-                                }
-                            } else {
-                                if (typeElements[x] != "") {
-                                    util.setValue(typeElements[x], districts[selectedDistrict].type);
-                                }
-
-                                instrument.questions[setElements[x]].skip = true;
-                                instrument.questions[setElements[x]].value = '-7';
-                                util.htmlElement(setElements[x]).disabled = true;
-                            }
-                        }
-                    }
-
-                    if (disElements[x] == "sa5d") {
-                        const institutie = "sa5i";
-                        util.resetSelect(institutie, "-9", translations['t_choose']);
-
-                        if (Number(selectedDistrict) > 0) {
-
-                            if (Number(selectedDistrict) > 0) {
-
-                                for (let i = 0; i < servicesCodes.length; i++) {
-                                    const code = servicesCodes[i];
-                                    if (services[code].district == selectedDistrict) {
-                                        if (Number(services[code].type) < 20) {
-                                            let service_included = true;
-                                            if (insons[institution_code]) {
-                                                service_included = insons[institution_code].services.includes(code);
-                                            }
-
-                                            if (service_included) {
-                                                const serviciu = { ...services[code] } as KeyStringNumber;
-                                                util.addOption(
-                                                    institutie,
-                                                    code,
-                                                    code + ": " + serviciu['name_' + lang]
-                                                )
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-
-                        const optgroup = document.createElement("optgroup");
-                        const option999 = document.createElement("option");
-                        option999.value = '999';
-                        option999.text = '999: ' + translations['not_in_registry'];
-                        optgroup.appendChild(option999);
-                        util.htmlElement(institutie).appendChild(optgroup);
-                    }
-                })
-            }
 
             // set instrument question !!!!!!
             instrument.setQuestions(questions, questionsOrder);
@@ -359,14 +252,157 @@ const saveChestionar = (obj: SaveInstrumentType): void => {
     ipcRenderer.send("saveInstrument", obj);
 }
 
+const reg_codes = Object.keys(regions);
+for (let x = 0; x < regElements.length; x++) {
 
-// settlement type
-for (let i = 0; i < setElements.length; i++) {
-    if (setElements[i] != "" && typeElements[i] != "") {
-        util.listen(setElements[i], "change", () => {
-            const value = util.htmlElement(setElements[i]).value;
-            if (value != "--") {
-                util.setValue(typeElements[i], settlements[value].type);
+    util.resetSelect(regElements[x], "-9", translations['t_choose']);
+    for (let i = 0; i < reg_codes.length; i++) {
+        util.addOption(
+            regElements[x],
+            reg_codes[i],
+            reg_codes[i] + ": " + (regions[reg_codes[i]] as KeyString)[lang]
+        );
+    }
+
+    util.listen(regElements[x], "change", function () {
+        util.resetSelect(disElements[x], "-9", translations['t_choose']);
+
+        const selectedRegion = util.htmlElement(regElements[x]).value;
+        if (Number(selectedRegion) > 0) {
+            const dis_codes = regions[selectedRegion].districts;
+
+            for (let i = 0; i < dis_codes.length; i++) {
+                util.addOption(
+                    disElements[x],
+                    dis_codes[i],
+                    dis_codes[i] + ": " + (districts[dis_codes[i]] as KeyString)[lang]
+                );
+            }
+        }
+
+        if (regElements[x] == "sa5r") {
+            util.resetSelect("sa5i", "-9", translations['t_choose']);
+        }
+
+        if (regElements[x] == "qeduc1ar") {
+            util.resetSelect("qeduc1a1", "-9", translations['t_choose']);
+        }
+
+        if (regElements[x] == "qeduc2ar") {
+            util.resetSelect("qeduc2a1", "-9", translations['t_choose']);
+        }
+
+        if (setElements[x] != "") {
+            util.resetSelect(setElements[x], "-9", translations['t_choose']);
+            instrument.questions[setElements[x]].value = "-7";
+        }
+
+        if (mahElements[x] != "") {
+            util.resetSelect(mahElements[x], "-9", translations['t_choose']);
+            instrument.questions[mahElements[x]].value = "-7";
+        }
+    })
+
+    util.listen(disElements[x], "change", function () {
+
+        const selectedDistrict = util.htmlElement(disElements[x]).value;
+
+        if (setElements[x] != "") {
+            util.resetSelect(setElements[x], "-9", translations['t_choose']);
+            instrument.questions[setElements[x]].value = "-9";
+
+            if (Number(selectedDistrict) > 0) {
+                const set_codes = districts[selectedDistrict].settlements;
+
+                if (set_codes.length > 0) {
+                    for (let i = 0; i < set_codes.length; i++) {
+                        util.addOption(
+                            setElements[x],
+                            set_codes[i],
+                            set_codes[i] + ": " + (settlements[set_codes[i]] as KeyString)[lang]
+                        );
+                    }
+                } else {
+                    if (typeElements[x] != "") {
+                        util.setValue(typeElements[x], districts[selectedDistrict].type);
+                    }
+
+                    instrument.questions[setElements[x]].skip = true;
+                    instrument.questions[setElements[x]].value = '-7';
+                    util.htmlElement(setElements[x]).disabled = true;
+                }
+            }
+        }
+
+        if (mahElements[x] != "") {
+            util.resetSelect(mahElements[x], "-9", translations['t_choose']);
+            instrument.questions[mahElements[x]].value = "-7";
+        }
+
+        if (disElements[x] == "sa5d") {
+            const institutie = "sa5i";
+            util.resetSelect(institutie, "-9", translations['t_choose']);
+
+            if (Number(selectedDistrict) > 0) {
+
+                for (let i = 0; i < servicesCodes.length; i++) {
+                    const code = servicesCodes[i];
+                    if (services[code].district == selectedDistrict) {
+                        if (Number(services[code].type) < 20) {
+                            let service_included = true;
+                            if (insons[institution_code]) {
+                                service_included = insons[institution_code].services.includes(code);
+                            }
+
+                            if (service_included) {
+                                const serviciu = { ...services[code] } as KeyStringNumber;
+                                util.addOption(
+                                    institutie,
+                                    code,
+                                    code + ": " + serviciu['name_' + lang]
+                                )
+                            }
+                        }
+                    }
+                }
+            }
+
+            const optgroup = document.createElement("optgroup");
+            const option999 = document.createElement("option");
+            option999.value = '999';
+            option999.text = '999: ' + translations['not_in_registry'];
+            optgroup.appendChild(option999);
+            util.htmlElement(institutie).appendChild(optgroup);
+        }
+    })
+
+
+    if (setElements[x] != "") {
+        util.listen(setElements[x], "change", () => {
+            const selectedSettlement = util.htmlElement(setElements[x]).value;
+
+            if (Number(selectedSettlement) > 0 && typeElements[x] != "") {
+                // settlement type
+                util.setValue(typeElements[x], settlements[selectedSettlement].type);
+            }
+
+            if (mahElements[x] != "") {
+                util.resetSelect(mahElements[x], "-9", translations['t_choose']);
+                instrument.questions[mahElements[x]].value = "-9";
+
+                if (Number(selectedSettlement) > 0) {
+                    const mah_codes = settlements[selectedSettlement].mahallas;
+
+                    if (mah_codes.length > 0) {
+                        for (let i = 0; i < mah_codes.length; i++) {
+                            util.addOption(
+                                mahElements[x],
+                                mah_codes[i],
+                                mah_codes[i] + ": " + mahallas[mah_codes[i]]
+                            );
+                        }
+                    }
+                }
             }
         })
     }
@@ -473,7 +509,9 @@ function check_lk22_2(): boolean {
         errorHandler.addError(lk22_2, message);
         lk22_2_1.scrollIntoView({ behavior: "smooth", block: "center", inline: "nearest" });
     } else {
-        util.setValue("lk22_2_7", suma > 1 ? "1" : "0");
+        const value = suma > 1 ? "1" : "0"
+        util.setValue("lk22_2_7", value);
+        instrument.questions["lk22_2_7"].value = value;
     }
 
     return (suma > 0);
