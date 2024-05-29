@@ -141,7 +141,7 @@ export const questions: QuestionObjectType = {
         value: '-9',
         disabled: false,
         hidden: false,
-        readonly: true,
+        readonly: false,
         order: 12,
         active: function() {return(true)},
         skip: false
