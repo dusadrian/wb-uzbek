@@ -146,33 +146,23 @@ export const instrument5a = {
                     let institution_name = "--";
 
                     util.setValue("str1", institution_code);
-                    // util.setValue("str3c", "--");
 
                     if (inson_user) {
                         const inson = { ...insons[args.userData.institution_code] } as KeyStringNumber;
                         institution_name = "" + inson['name_' + lang];
-                        util.setValue("str3a", insons[institution_code].region);
-                        util.setValue("str3b", insons[institution_code].district);
-                        if (insons[institution_code].settlement) {
-                            util.setValue("str3c", insons[institution_code].settlement);
-                        } else {
-                            util.resetSelect("str3c", "--", "--");
-                            util.setValue("str3c", "--");
-                            util.setValue("str3e", districts[insons[institution_code].district].type);
-                        }
+                        util.setValue("str3a", inson['region'].toString());
+                        util.setValue("str3b", inson['district'].toString());
+                        util.setValue("str3c", "--");
+                        util.setValue("str3e", "31"); // district type
                     } else {
                         const serviciu = { ...services[institution_code] } as KeyStringNumber;
                         institution_name = '' + serviciu['name_' + lang];
-                        util.setValue("str3a", services[institution_code].region);
-                        util.setValue("str3b", services[institution_code].district);
+                        util.setValue("str3a", serviciu['region'].toString());
+                        util.setValue("str3b", serviciu['district'].toString());
 
-                        if (services[institution_code].settlement) {
-                            util.setValue("str3c", services[institution_code].settlement);
-                        } else {
-                            util.resetSelect("str3c", "--", "--");
-                            util.setValue("str3c", "--");
-                            util.setValue("str3e", districts[services[institution_code].district].type);
-                        }
+                        const settlement = serviciu['settlement'].toString();
+                        util.setValue("str3c", settlement);
+                        util.setValue("str3e", settlements[settlement].type);
                     }
 
                     util.setValue("str2", institution_name);
@@ -313,6 +303,7 @@ for (let x = 0; x < regElements.length; x++) {
 
     if (setElements[x] != "") {
         util.listen(setElements[x], "change", () => {
+            console.log(setElements[x]);
             const selectedSettlement = util.htmlElement(setElements[x]).value;
 
             if (Number(selectedSettlement) > 0 && typeElements[x] != "") {

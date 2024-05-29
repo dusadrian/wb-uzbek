@@ -182,26 +182,31 @@ export const instrument3 = {
                     if (inson_user) {
                         const inson = { ...insons[args.userData.institution_code] } as KeyStringNumber;
                         institution_name = "" + inson['name_' + lang];
-                        util.setValue('i3', "--");
-                        util.setValue('i4', insons[institution_code].district);
-                        util.setValue('i4a', insons[institution_code].region);
-                        util.setValue('i4b', insons[institution_code].district);
-                        const settlement = insons[institution_code].settlement;
-                        util.setValue('i4c', settlement ? settlement : "--");
-                        util.setValue('i4d', "-7");
+                        util.setValue('i3', "--"); // address
+                        util.setValue("i4", inson['district'].toString());
+                        util.setValue("i4a", inson['region'].toString());
+                        util.setValue("i4b", inson['district'].toString());
+                        util.setValue('i4c', "--"); // settlement
+                        util.setValue('i4d', "31"); // district type
                         util.setValue('i5', "--");
                     }
                     else {
                         const serviciu = { ...services[institution_code] } as KeyStringNumber;
                         institution_name = '' + serviciu['name_' + lang];
-                        util.setValue('i3', services[institution_code].address ? services[institution_code].address : "--");
-                        util.setValue('i4a', services[institution_code].region);
-                        util.setValue('i4b', services[institution_code].district);
-                        const settlement = services[institution_code].settlement;
-                        util.setValue('i4', settlement ? settlement : services[institution_code].district);
-                        util.setValue('i4c', settlement ? settlement : "--");
-                        util.setValue('i4d', "" + services[institution_code].settlement_type);
-                        util.setValue('i5', services[institution_code].type ? services[institution_code].type : "--");
+                        util.setValue('i3', serviciu['address'] ? serviciu['address'].toString() : "--");
+                        util.setValue("i4a", serviciu['region'].toString());
+                        util.setValue("i4b", serviciu['district'].toString());
+
+                        const settlement = serviciu['settlement'].toString();
+                        util.setValue('i4', settlement);
+                        util.setValue('i4c', settlement);
+                        util.setValue('i4d', settlements[settlement].type);
+
+                        const type = serviciu['type'].toString();
+                        util.setValue(
+                            'i5',
+                            util.selectValues("i5").indexOf(type) >= 0 ? type : "--"
+                        );
                     }
 
                     util.setValue('i1', institution_name ? institution_name : "--");

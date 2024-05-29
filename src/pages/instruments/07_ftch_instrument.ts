@@ -159,12 +159,12 @@ export const instrument7 = {
             if (args.userData) {
                 if (!args.questions) {
                     if (inson_user) {
-                        util.setValue('reg', "" + insons[institution_code].region);
-                        util.setValue('dis', "" + insons[institution_code].district);
+                        util.setValue('reg', insons[institution_code].region);
+                        util.setValue('dis', insons[institution_code].district);
                     }
                     else {
-                        util.setValue('reg', "" + services[institution_code].region);
-                        util.setValue('dis', "" + services[institution_code].district);
+                        util.setValue('reg', services[institution_code].region);
+                        util.setValue('dis', services[institution_code].district);
                     }
 
                     util.setValue('q2', args.userData.name + " " + args.userData.patronymics + " " + args.userData.surname);

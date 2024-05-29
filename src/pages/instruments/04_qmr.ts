@@ -299,24 +299,24 @@ export const instrument4 = {
                         const inson = { ...insons[args.userData.institution_code] } as KeyStringNumber;
                         institution_name = "" + inson['name_' + lang];
                         util.setValue('i3', "--"); // Alex: inson-urile nu au adresa
-                        util.setValue('i4a', "" + insons[institution_code].region);
-                        util.setValue('i4b', "" + insons[institution_code].district);
-                        const settlement = insons[institution_code].settlement;
-                        util.setValue('i4c', settlement ? settlement : "--");
-                        util.setValue('i4d', "--");
+                        util.setValue("i4a", inson['region'].toString());
+                        util.setValue("i4b", inson['district'].toString());
+                        util.setValue('i4c', "--");
+                        util.setValue('i4d', "31"); // district type
                         util.setValue('i9', "--");
                     } else {
                         const serviciu = { ...services[institution_code] } as KeyStringNumber;
-                        institution_name = '' + serviciu['name_' + lang];
-                        util.setValue('i3', services[institution_code].address ? services[institution_code].address : "--");
-                        util.setValue('i4a', "" + services[institution_code].region);
-                        util.setValue('i4b', "" + services[institution_code].district);
+                        institution_name = serviciu['name_' + lang].toString();
+                        util.setValue('i3', serviciu['address'] ? serviciu['address'].toString() : "--");
+                        util.setValue("i4a", serviciu['region'].toString());
+                        util.setValue("i4b", serviciu['district'].toString());
 
-                        const settlement = services[institution_code].settlement;
-                        util.setValue('i4c', settlement ? settlement : "--");
-                        util.setValue('i4d', "" + services[institution_code].settlement_type);
-                        util.setValue('i9', services[institution_code].type ? services[institution_code].type : "--");
+                        const settlement = serviciu['settlement'].toString();
+                        util.setValue('i4c', settlement);
+                        util.setValue('i4d', settlements[settlement].type);
+                        util.setValue('i9', serviciu['type'] ? serviciu['type'].toString() : "--");
                     }
+
                     util.setValue('i1', institution_name);
 
                     util.setValue('q2', args.userData.name + " " + args.userData.patronymics + " " + args.userData.surname);

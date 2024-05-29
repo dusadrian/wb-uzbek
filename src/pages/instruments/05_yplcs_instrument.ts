@@ -149,14 +149,14 @@ export const instrument5 = {
 
                     if (inson_user) {
                         const inson = { ...insons[args.userData.institution_code] } as KeyStringNumber;
-                        institution_name = "" + inson['name_' + lang];
-                        util.setValue("reg", insons[institution_code].region);
-                        util.setValue("dis", insons[institution_code].district);
+                        institution_name = inson['name_' + lang].toString();
+                        util.setValue("reg", inson['region'].toString());
+                        util.setValue("dis", inson['district'].toString());
                     } else {
                         const serviciu = { ...services[institution_code] } as KeyStringNumber;
-                        institution_name = "" + serviciu['name_' + lang];
-                        util.setValue("reg", services[institution_code].region);
-                        util.setValue("dis", services[institution_code].district);
+                        institution_name = serviciu['name_' + lang].toString();
+                        util.setValue("reg", serviciu['region'].toString());
+                        util.setValue("dis", serviciu['district'].toString());
                     }
 
                     util.setValue("omr9", institution_name);

@@ -146,12 +146,12 @@ export const instrument8 = {
                 // set default values, if new instrument
                 if (!args.questions) {
                     if (inson_user) {
-                        util.setValue('reg', "" + insons[institution_code].region);
-                        util.setValue('dis', "" + insons[institution_code].district);
+                        util.setValue('reg', insons[institution_code].region);
+                        util.setValue('dis', insons[institution_code].district);
                     }
                     else {
-                        util.setValue('reg', "" + services[institution_code].region);
-                        util.setValue('dis', "" + services[institution_code].district);
+                        util.setValue('reg', services[institution_code].region);
+                        util.setValue('dis', services[institution_code].district);
                     }
 
                     // set default values for user

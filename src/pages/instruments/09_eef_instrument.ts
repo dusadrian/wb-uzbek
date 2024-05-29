@@ -30,7 +30,6 @@ const locales: { [key: string]: typeof en | typeof uz | typeof ru } = {
 const lang = localStorage.getItem("language");
 const translations = locales[lang as keyof typeof locales] as Record<string, string>;
 let services: { [key: string]: DI.Institution };
-let serviceCodes: string[];
 let insons: { [key: string]: DI.INSON };
 
 let regionCode = '';
@@ -82,7 +81,6 @@ export const instrument9 = {
             const setElements = ["i4c"];
 
             services = args.services;
-            serviceCodes = Object.keys(services);
             insons = args.insons;
 
             userRole = args.userData.role_code;
@@ -177,23 +175,21 @@ export const instrument9 = {
                         util.setValue('i4a', insons[institution_code].region);
                         util.setValue('i4b', insons[institution_code].district);
                         util.setValue('i4c', "--");
-                        util.setValue('i4d', "--");
+                        util.setValue('i4d', "31"); // district type
                     }
                     else {
                         util.setValue('i4a', services[institution_code].region);
                         util.setValue('i4b', services[institution_code].district);
                         const settlement = services[institution_code].settlement;
-                        util.setValue('i4c', settlement ? "" + settlement : "--");
-                        util.setValue('i4d', "" + services[institution_code].settlement_type);
+                        util.setValue('i4c', settlement);
+                        util.setValue('i4d', settlements[settlement].type);
                     }
 
-                    util.setValue("i9", "--");
-                    if (serviceCodes.indexOf(institution_code) >= 0) {
-                        const type = services[institution_code].type;
-                        if (util.selectValues("i9").indexOf(type) >= 0) {
-                            util.setValue("i9", type);
-                        }
-                    }
+                    const type = services[institution_code].type;
+                    util.setValue(
+                        'i9',
+                        util.selectValues("i9").indexOf(type) >= 0 ? type : "--"
+                    );
 
                     // set default values for user
                     util.setValue('q2', args.userData.name + " " + args.userData.patronymics + " " + args.userData.surname);

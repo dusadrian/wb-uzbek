@@ -295,29 +295,23 @@ export const instrument1 = {
                 // set default values, if new instrument
                 if (!args.questions) {
                     let institution_name = "--";
-                    util.setValue("sh5s", "--");
 
                     if (inson_user) {
                         const inson = { ...insons[args.userData.institution_code] } as KeyStringNumber;
                         institution_name = "" + inson['name_' + lang];
-                        util.setValue('reg', insons[args.userData.institution_code].region);
-                        util.setValue('dis', insons[args.userData.institution_code].district);
-                        util.setValue('omr8a', "2");
-
-                        if (insons[institution_code].settlement) {
-                            util.setValue("sh5s", insons[institution_code].settlement);
-                        }
+                        util.setValue("reg", inson['region'].toString());
+                        util.setValue("dis", inson['district'].toString());
                         util.setValue("sh5", serviceCode);
+                        util.setValue("sh5s", "--");
+                        util.setValue('omr8a', "2");
                     }
                     else {
                         const serviciu = { ...services[institution_code] } as KeyStringNumber;
                         institution_name = '' + serviciu['name_' + lang];
-                        util.setValue('reg', "" + services[institution_code].region);
-                        util.setValue('dis', services[institution_code].district);
-                        if (services[institution_code].settlement) {
-                            util.setValue("sh5s", services[institution_code].settlement);
-                        }
+                        util.setValue("reg", serviciu['region'].toString());
+                        util.setValue("dis", serviciu['district'].toString());
                         util.setValue("sh5", institution_code);
+                        util.setValue("sh5s", serviciu['settlement'].toString());
                         util.setValue('omr8a', "1");
                         serviceCode = institution_code;
                     }
@@ -455,6 +449,8 @@ for (let x = 0; x < regElements.length; x++) {
                         );
                     }
                 } else {
+                    // redundant, acum toate districtele au settlements, chiar daca sunt
+                    // unele cu 000 in coada
                     if (typeElements[x] != "") {
                         util.setValue(typeElements[x], districts[selectedDistrict].type);
                     }
