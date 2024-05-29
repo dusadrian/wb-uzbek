@@ -140,8 +140,11 @@ export const instrument8 = {
                         util.trigger(item.variable, "myChange");
                     }
                 }
-            } else {
-                if (args.userData) {
+            }
+
+            if (args.userData) {
+                // set default values, if new instrument
+                if (!args.questions) {
                     if (inson_user) {
                         util.setValue('reg', "" + insons[institution_code].region);
                         util.setValue('dis', "" + insons[institution_code].district);
@@ -158,16 +161,15 @@ export const instrument8 = {
                     util.setValue('q4', args.userData.profession ? args.userData.profession : "--");
                     util.setValue('q5', args.userData.phone ? args.userData.phone : "--");
                     util.setValue('q6', args.userData.email ? args.userData.email : "--");
-
                 }
-            }
-            if (args.userData) {
+
                 userRole = args.userData.role_code;
                 regionCode = args.userData.region_code;
                 userUUID = args.userData.uuid;
                 institutionType = args.userData.service_type_code;
                 institutionCode = args.userData.institution_code;
             }
+
             instrument.start(instrumentID, instrument.trimis, saveChestionar, validateChestionar);
         });
     }

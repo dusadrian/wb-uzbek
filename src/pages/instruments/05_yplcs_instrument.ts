@@ -139,35 +139,37 @@ export const instrument5 = {
                 }
             }
 
-            // set default values, IRRESPECTIVE of the instrument
-
             // two digit day & month
             util.setValue("data", util.customDate());
 
             if (args.userData) {
-                let institution_name = "--";
+                // set default values, if new instrument
+                if (!args.questions) {
+                    let institution_name = "--";
 
-                if (inson_user) {
-                    const inson = { ...insons[args.userData.institution_code] } as KeyStringNumber;
-                    institution_name = "" + inson['name_' + lang];
-                    util.setValue("reg", insons[institution_code].region);
-                    util.setValue("dis", insons[institution_code].district);
-                } else {
-                    const serviciu = { ...services[institution_code] } as KeyStringNumber;
-                    institution_name = "" + serviciu['name_' + lang];
-                    util.setValue("reg", services[institution_code].region);
-                    util.setValue("dis", services[institution_code].district);
+                    if (inson_user) {
+                        const inson = { ...insons[args.userData.institution_code] } as KeyStringNumber;
+                        institution_name = "" + inson['name_' + lang];
+                        util.setValue("reg", insons[institution_code].region);
+                        util.setValue("dis", insons[institution_code].district);
+                    } else {
+                        const serviciu = { ...services[institution_code] } as KeyStringNumber;
+                        institution_name = "" + serviciu['name_' + lang];
+                        util.setValue("reg", services[institution_code].region);
+                        util.setValue("dis", services[institution_code].district);
+                    }
+
+                    util.setValue("omr9", institution_name);
+                    // set default values for user
+                    util.setValue("omr1", args.userData.name ? args.userData.name : "--");
+                    util.setValue("omr2", args.userData.patronymics ? args.userData.patronymics : "--");
+                    util.setValue("omr3", args.userData.surname ? args.userData.surname : "--");
+                    util.setValue("omr4", args.userData.job_title ? args.userData.job_title : "--");
+                    util.setValue("omr5", args.userData.profession ? args.userData.profession : "--");
+                    util.setValue("omr6", args.userData.phone ? args.userData.phone : "--");
+                    util.setValue("omr7", args.userData.email ? args.userData.email : "--");
                 }
 
-                util.setValue("omr9", institution_name);
-                // set default values for user
-                util.setValue("omr1", args.userData.name ? args.userData.name : "--");
-                util.setValue("omr2", args.userData.patronymics ? args.userData.patronymics : "--");
-                util.setValue("omr3", args.userData.surname ? args.userData.surname : "--");
-                util.setValue("omr4", args.userData.job_title ? args.userData.job_title : "--");
-                util.setValue("omr5", args.userData.profession ? args.userData.profession : "--");
-                util.setValue("omr6", args.userData.phone ? args.userData.phone : "--");
-                util.setValue("omr7", args.userData.email ? args.userData.email : "--");
                 regionCode = args.userData.region_code;
                 userUUID = args.userData.uuid;
                 institutionType = args.userData.service_type_code;

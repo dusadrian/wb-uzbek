@@ -3106,6 +3106,7 @@ export const settlements: Code_Names = {
         "en": "Bo'ston",
         "uz": "Bo‘ston",
         "ru": "Бустон",
+        "type": "43",
         "mahallas": [
             "3202552001",
             "3202552002",
@@ -3117,6 +3118,7 @@ export const settlements: Code_Names = {
         "en": "Dalvarzin",
         "uz": "Dalvarzin",
         "ru": "Далварзин",
+        "type": "43",
         "mahallas": [
             "3202554001",
             "3202554002",
@@ -3127,6 +3129,7 @@ export const settlements: Code_Names = {
         "en": "Jalabek",
         "uz": "Jalabek",
         "ru": "Жалабек",
+        "type": "43",
         "mahallas": [
             "3202556001",
             "3202556002",
@@ -3138,6 +3141,7 @@ export const settlements: Code_Names = {
         "en": "Ijtimoiyat",
         "uz": "Ijtimoiyat",
         "ru": "Ижтимоият",
+        "type": "43",
         "mahallas": [
             "3202558001"
         ]
@@ -3146,6 +3150,7 @@ export const settlements: Code_Names = {
         "en": "Kumakay",
         "uz": "Kumakay",
         "ru": "Кумакай",
+        "type": "43",
         "mahallas": [
             "3202562001",
             "3202562002"
@@ -3155,6 +3160,7 @@ export const settlements: Code_Names = {
         "en": "Qo'shtepa",
         "uz": "Qo‘shtepa",
         "ru": "Куштепа",
+        "type": "43",
         "mahallas": [
             "3202564001",
             "3202564002"
@@ -3164,6 +3170,7 @@ export const settlements: Code_Names = {
         "en": "Madaniy mehnat",
         "uz": "Madaniy mehnat",
         "ru": "Маданий мехнат",
+        "type": "43",
         "mahallas": [
             "3202566001",
             "3202566002",
@@ -3175,6 +3182,7 @@ export const settlements: Code_Names = {
         "en": "Markaz",
         "uz": "Markaz",
         "ru": "Марказ",
+        "type": "43",
         "mahallas": [
             "3202568001",
             "3202568002",
@@ -3185,6 +3193,7 @@ export const settlements: Code_Names = {
         "en": "Maslahat",
         "uz": "Maslahat",
         "ru": "Маслахат",
+        "type": "43",
         "mahallas": [
             "3202572001",
             "3202572002",
@@ -3195,6 +3204,7 @@ export const settlements: Code_Names = {
         "en": "Namuna",
         "uz": "Namuna",
         "ru": "Намуна",
+        "type": "43",
         "mahallas": [
             "3202574001",
             "3202574002",
@@ -3205,6 +3215,7 @@ export const settlements: Code_Names = {
         "en": "Xondibog'i",
         "uz": "Xondibog‘i",
         "ru": "Хондибоги",
+        "type": "43",
         "mahallas": [
             "3202576001"
         ]
@@ -3213,6 +3224,7 @@ export const settlements: Code_Names = {
         "en": "Village citizen assembly of Oltinko'l district",
         "uz": "Oltinko‘l tumanining qishloq mahallalari",
         "ru": "Сельские сходы граждан Алтынкульского района",
+        "type": "44",
         "mahallas": [
             "3202800001",
             "3202800002",
@@ -3249,6 +3261,7 @@ export const settlements: Code_Names = {
         "en": "Kuyganyor",
         "uz": "Kuyganyor",
         "ru": "Куйган - яр",
+        "type": "43",
         "mahallas": [
             "3203551001",
             "3203551002",
@@ -3260,6 +3273,7 @@ export const settlements: Code_Names = {
         "en": "Ayrilish",
         "uz": "Ayrilish",
         "ru": "Айрилиш",
+        "type": "43",
         "mahallas": [
             "3203553001"
         ]
@@ -3268,6 +3282,7 @@ export const settlements: Code_Names = {
         "en": "Butaqora",
         "uz": "Butaqora",
         "ru": "Бутакора",
+        "type": "43",
         "mahallas": [
             "3203555001",
             "3203555002",
@@ -3279,6 +3294,7 @@ export const settlements: Code_Names = {
         "en": "Guliston",
         "uz": "Guliston",
         "ru": "Гулистон",
+        "type": "43",
         "mahallas": [
             "3203557001",
             "3203557002",
@@ -3289,6 +3305,7 @@ export const settlements: Code_Names = {
         "en": "Gumbaz",
         "uz": "Gumbaz",
         "ru": "Гумбаз",
+        "type": "43",
         "mahallas": [
             "3203559001",
             "3203559002",
@@ -3302,6 +3319,7 @@ export const settlements: Code_Names = {
         "en": "Zavroq",
         "uz": "Zavroq",
         "ru": "Заврок",
+        "type": "43",
         "mahallas": [
             "3203561001",
             "3203561002",
@@ -3313,6 +3331,7 @@ export const settlements: Code_Names = {
         "en": "Qoraqalpoq",
         "uz": "Qoraqalpoq",
         "ru": "Каракалпак",
+        "type": "43",
         "mahallas": [
             "3203563001",
             "3203563002"
@@ -3322,6 +3341,7 @@ export const settlements: Code_Names = {
         "en": "Kunji",
         "uz": "Kunji",
         "ru": "Кунжи",
+        "type": "43",
         "mahallas": [
             "3203567001",
             "3203567002",
@@ -3333,6 +3353,7 @@ export const settlements: Code_Names = {
         "en": "Qo'shariq",
         "uz": "Qo‘shariq",
         "ru": "Кушарик",
+        "type": "43",
         "mahallas": [
             "3203569001",
             "3203569002"
@@ -3342,6 +3363,7 @@ export const settlements: Code_Names = {
         "en": "Namuna",
         "uz": "Namuna",
         "ru": "Намуна",
+        "type": "43",
         "mahallas": [
             "3203571001",
             "3203571002"
@@ -3351,6 +3373,7 @@ export const settlements: Code_Names = {
         "en": "Og'ullik",
         "uz": "Og‘ullik",
         "ru": "Огуллик",
+        "type": "43",
         "mahallas": [
             "3203573001",
             "3203573002",
@@ -3364,6 +3387,7 @@ export const settlements: Code_Names = {
         "en": "Oq-yor",
         "uz": "Oq-yor",
         "ru": "Ок-ер",
+        "type": "43",
         "mahallas": [
             "3203575001",
             "3203575002"
@@ -3373,6 +3397,7 @@ export const settlements: Code_Names = {
         "en": "Rovvot",
         "uz": "Rovvot",
         "ru": "Роввот",
+        "type": "43",
         "mahallas": [
             "3203577001",
             "3203577002"
@@ -3382,6 +3407,7 @@ export const settlements: Code_Names = {
         "en": "Xartum",
         "uz": "Xartum",
         "ru": "Хартум",
+        "type": "43",
         "mahallas": [
             "3203579001",
             "3203579002",
@@ -3395,6 +3421,7 @@ export const settlements: Code_Names = {
         "en": "Chilon",
         "uz": "Chilon",
         "ru": "Чилон",
+        "type": "43",
         "mahallas": [
             "3203581001",
             "3203581002"
@@ -3404,6 +3431,7 @@ export const settlements: Code_Names = {
         "en": "Chumbog'ich",
         "uz": "Chumbog‘ich",
         "ru": "Чумбогич",
+        "type": "43",
         "mahallas": [
             "3203583001",
             "3203583002",
@@ -3415,6 +3443,7 @@ export const settlements: Code_Names = {
         "en": "Ekin tikin",
         "uz": "Ekin tikin",
         "ru": "Экин-тикин",
+        "type": "43",
         "mahallas": [
             "3203585001",
             "3203585002",
@@ -3425,6 +3454,7 @@ export const settlements: Code_Names = {
         "en": "Yangiobod",
         "uz": "Yangiobod",
         "ru": "Янгиабад",
+        "type": "43",
         "mahallas": [
             "3203587001",
             "3203587002"
@@ -3434,6 +3464,7 @@ export const settlements: Code_Names = {
         "en": "Gulobod",
         "uz": "Gulobod",
         "ru": "Гулобод",
+        "type": "43",
         "mahallas": [
             "3203589001",
             "3203589002"
@@ -3443,6 +3474,7 @@ export const settlements: Code_Names = {
         "en": "Village citizen assembly of Andijon district",
         "uz": "Andijon tumanining qishloq mahallalari",
         "ru": "Сельские сходы граждан Андижанского района",
+        "type": "44",
         "mahallas": [
             "3203800001",
             "3203800002",
@@ -3468,6 +3500,7 @@ export const settlements: Code_Names = {
         "en": "Baliqchi",
         "uz": "Baliqchi",
         "ru": "Баликчи",
+        "type": "43",
         "mahallas": [
             "3206551001",
             "3206551002",
@@ -3481,6 +3514,7 @@ export const settlements: Code_Names = {
         "en": "Xo'jaobod",
         "uz": "Xo‘jaobod",
         "ru": "Хужаабад",
+        "type": "43",
         "mahallas": [
             "3206554001",
             "3206554002",
@@ -3491,6 +3525,7 @@ export const settlements: Code_Names = {
         "en": "Chinobod markaz",
         "uz": "Chinobod markaz",
         "ru": "Чинобод марказ",
+        "type": "43",
         "mahallas": [
             "3206558001",
             "3206558002",
@@ -3502,6 +3537,7 @@ export const settlements: Code_Names = {
         "en": "Village citizen assembly of Baliqchi district",
         "uz": "Baliqchi tumanining qishloq mahallalari",
         "ru": "Сельские сходы граждан Балыкчинского района",
+        "type": "44",
         "mahallas": [
             "3206800001",
             "3206800002",
@@ -3562,6 +3598,7 @@ export const settlements: Code_Names = {
         "en": "Bo'z",
         "uz": "Bo‘z",
         "ru": "Боз",
+        "type": "43",
         "mahallas": [
             "3209551001",
             "3209551002",
@@ -3577,6 +3614,7 @@ export const settlements: Code_Names = {
         "en": "M.Jalolov nomli",
         "uz": "M.Jalolov nomli",
         "ru": "М.Жалолов",
+        "type": "43",
         "mahallas": [
             "3209555001"
         ]
@@ -3585,6 +3623,7 @@ export const settlements: Code_Names = {
         "en": "Xoldevonbek",
         "uz": "Xoldevonbek",
         "ru": "Холдевонбек",
+        "type": "43",
         "mahallas": [
             "3209559001"
         ]
@@ -3593,6 +3632,7 @@ export const settlements: Code_Names = {
         "en": "Village citizen assembly of Bo'ston district",
         "uz": "Bo‘ston tumanining qishloq mahallalari",
         "ru": "Сельские сходы граждан Бустонского района",
+        "type": "44",
         "mahallas": [
             "3209800001",
             "3209800002",
@@ -3615,6 +3655,7 @@ export const settlements: Code_Names = {
         "en": "Buloqboshi",
         "uz": "Buloqboshi",
         "ru": "Булокбоши",
+        "type": "43",
         "mahallas": [
             "3210551001",
             "3210551002",
@@ -3628,6 +3669,7 @@ export const settlements: Code_Names = {
         "en": "Andijon",
         "uz": "Andijon",
         "ru": "Андижан",
+        "type": "43",
         "mahallas": [
             "3210554001",
             "3210554002",
@@ -3639,6 +3681,7 @@ export const settlements: Code_Names = {
         "en": "Uchtepa",
         "uz": "Uchtepa",
         "ru": "Учтепа",
+        "type": "43",
         "mahallas": [
             "3210561001",
             "3210561002",
@@ -3649,6 +3692,7 @@ export const settlements: Code_Names = {
         "en": "Shirmonbuloq",
         "uz": "Shirmonbuloq",
         "ru": "Ширмонбулок",
+        "type": "43",
         "mahallas": [
             "3210564001",
             "3210564002",
@@ -3659,6 +3703,7 @@ export const settlements: Code_Names = {
         "en": "Village citizen assembly of Buloqboshi district",
         "uz": "Buloqboshi tumanining qishloq mahallalari",
         "ru": "Сельские сходы граждан Булакбашинского района",
+        "type": "44",
         "mahallas": [
             "3210800001",
             "3210800002",
@@ -3687,6 +3732,7 @@ export const settlements: Code_Names = {
         "en": "Jalaquduq",
         "uz": "Jalaquduq",
         "ru": "Жалакудук",
+        "type": "42",
         "mahallas": [
             "3211501001",
             "3211501002",
@@ -3704,6 +3750,7 @@ export const settlements: Code_Names = {
         "en": "Janubiy olamushuk",
         "uz": "Janubiy olamushuk",
         "ru": "Южный Аламышик",
+        "type": "43",
         "mahallas": [
             "3211554001",
             "3211554002",
@@ -3714,6 +3761,7 @@ export const settlements: Code_Names = {
         "en": "Beshtol",
         "uz": "Beshtol",
         "ru": "Бештол",
+        "type": "43",
         "mahallas": [
             "3211556001",
             "3211556002"
@@ -3723,6 +3771,7 @@ export const settlements: Code_Names = {
         "en": "Yorqishloq",
         "uz": "Yorqishloq",
         "ru": "Еркишлок",
+        "type": "43",
         "mahallas": [
             "3211558001",
             "3211558002",
@@ -3733,6 +3782,7 @@ export const settlements: Code_Names = {
         "en": "Jalaquduq",
         "uz": "Jalaquduq",
         "ru": "Жалакудук",
+        "type": "43",
         "mahallas": [
             "3211562001",
             "3211562002"
@@ -3742,6 +3792,7 @@ export const settlements: Code_Names = {
         "en": "Ko'kalam",
         "uz": "Ko‘kalam",
         "ru": "Кукалам",
+        "type": "43",
         "mahallas": [
             "3211564001"
         ]
@@ -3750,6 +3801,7 @@ export const settlements: Code_Names = {
         "en": "Qo'shtepa",
         "uz": "Qo‘shtepa",
         "ru": "Куштепа",
+        "type": "43",
         "mahallas": [
             "3211566001",
             "3211566002"
@@ -3759,6 +3811,7 @@ export const settlements: Code_Names = {
         "en": "Oyim",
         "uz": "Oyim",
         "ru": "Ойим",
+        "type": "43",
         "mahallas": [
             "3211568001",
             "3211568002",
@@ -3769,6 +3822,7 @@ export const settlements: Code_Names = {
         "en": "Village citizen assembly of Jalaquduq district",
         "uz": "Jalaquduq tumanining qishloq mahallalari",
         "ru": "Сельские сходы граждан Жалакудукского района",
+        "type": "44",
         "mahallas": [
             "3211800001",
             "3211800002",
@@ -3813,6 +3867,7 @@ export const settlements: Code_Names = {
         "en": "Paytug",
         "uz": "Paytug",
         "ru": "Пайтуг",
+        "type": "42",
         "mahallas": [
             "3214501001",
             "3214501002",
@@ -3830,6 +3885,7 @@ export const settlements: Code_Names = {
         "en": "Gurkirov",
         "uz": "Gurkirov",
         "ru": "Гуркиров",
+        "type": "43",
         "mahallas": [
             "3214553001",
             "3214553002"
@@ -3839,6 +3895,7 @@ export const settlements: Code_Names = {
         "en": "Maygir",
         "uz": "Maygir",
         "ru": "Майгир",
+        "type": "43",
         "mahallas": [
             "3214556001"
         ]
@@ -3847,6 +3904,7 @@ export const settlements: Code_Names = {
         "en": "To'rtko'l",
         "uz": "To‘rtko‘l",
         "ru": "Турткул",
+        "type": "43",
         "mahallas": [
             "3214559001",
             "3214559002",
@@ -3857,6 +3915,7 @@ export const settlements: Code_Names = {
         "en": "Uzun ko'cha",
         "uz": "Uzun ko‘cha",
         "ru": "Узун куча",
+        "type": "43",
         "mahallas": [
             "3214563001"
         ]
@@ -3865,6 +3924,7 @@ export const settlements: Code_Names = {
         "en": "Village citizen assembly of Izboskan district",
         "uz": "Izboskan tumanining qishloq mahallalari",
         "ru": "Сельские сходы граждан Избасканского района",
+        "type": "44",
         "mahallas": [
             "3214800001",
             "3214800002",
@@ -3918,6 +3978,7 @@ export const settlements: Code_Names = {
         "en": "Oq oltin",
         "uz": "Oq oltin",
         "ru": "Ок-олтин",
+        "type": "43",
         "mahallas": [
             "3217551001",
             "3217551002",
@@ -3928,6 +3989,7 @@ export const settlements: Code_Names = {
         "en": "Village citizen assembly of Ulug'nor district",
         "uz": "Ulug‘nor tumanining qishloq mahallalari",
         "ru": "Сельские сходы граждан Улугноpского района",
+        "type": "44",
         "mahallas": [
             "3217800001",
             "3217800002",
@@ -3956,6 +4018,7 @@ export const settlements: Code_Names = {
         "en": "Qo'rg'ontepa",
         "uz": "Qo‘rg‘ontepa",
         "ru": "Кургантепа",
+        "type": "42",
         "mahallas": [
             "3220501001",
             "3220501002",
@@ -3979,6 +4042,7 @@ export const settlements: Code_Names = {
         "en": "Qorasuv",
         "uz": "Qorasuv",
         "ru": "Карасу",
+        "type": "42",
         "mahallas": [
             "3220505001",
             "3220505002",
@@ -3996,6 +4060,7 @@ export const settlements: Code_Names = {
         "en": "Sultonobod",
         "uz": "Sultonobod",
         "ru": "Султонабад",
+        "type": "43",
         "mahallas": [
             "3220553001",
             "3220553002"
@@ -4005,6 +4070,7 @@ export const settlements: Code_Names = {
         "en": "Village citizen assembly of Qo'rg'ontepa district",
         "uz": "Qo‘rg‘ontepa tumanining qishloq mahallalari",
         "ru": "Сельские сходы граждан Кургантепинского района",
+        "type": "44",
         "mahallas": [
             "3220800001",
             "3220800002",
@@ -4058,6 +4124,7 @@ export const settlements: Code_Names = {
         "en": "Asaka",
         "uz": "Asaka",
         "ru": "Асака",
+        "type": "42",
         "mahallas": [
             "3224501001",
             "3224501002",
@@ -4084,6 +4151,7 @@ export const settlements: Code_Names = {
         "en": "Kujgan",
         "uz": "Kujgan",
         "ru": "Кужган",
+        "type": "43",
         "mahallas": [
             "3224552001",
             "3224552002"
@@ -4093,6 +4161,7 @@ export const settlements: Code_Names = {
         "en": "Navkan",
         "uz": "Navkan",
         "ru": "Навкан",
+        "type": "43",
         "mahallas": [
             "3224554001"
         ]
@@ -4101,6 +4170,7 @@ export const settlements: Code_Names = {
         "en": "Oqbo'yra",
         "uz": "Oqbo‘yra",
         "ru": "Окбуйра",
+        "type": "43",
         "mahallas": [
             "3224556001",
             "3224556002"
@@ -4110,6 +4180,7 @@ export const settlements: Code_Names = {
         "en": "T.Aliyev",
         "uz": "T.Aliyev",
         "ru": "Т.Алиев",
+        "type": "43",
         "mahallas": [
             "3224558001"
         ]
@@ -4118,6 +4189,7 @@ export const settlements: Code_Names = {
         "en": "Village citizen assembly of Asaka district",
         "uz": "Asaka tumanining qishloq mahallalari",
         "ru": "Сельские сходы граждан Асакинского района",
+        "type": "44",
         "mahallas": [
             "3224800001",
             "3224800002",
@@ -4177,6 +4249,7 @@ export const settlements: Code_Names = {
         "en": "Marxamat",
         "uz": "Marxamat",
         "ru": "Мархамат",
+        "type": "42",
         "mahallas": [
             "3227501001",
             "3227501002",
@@ -4190,6 +4263,7 @@ export const settlements: Code_Names = {
         "en": "Polvontosh",
         "uz": "Polvontosh",
         "ru": "Палванташ",
+        "type": "43",
         "mahallas": [
             "3227554001",
             "3227554002"
@@ -4199,6 +4273,7 @@ export const settlements: Code_Names = {
         "en": "Boboxuroson",
         "uz": "Boboxuroson",
         "ru": "Бобохуросон",
+        "type": "43",
         "mahallas": [
             "3227557001",
             "3227557002",
@@ -4210,6 +4285,7 @@ export const settlements: Code_Names = {
         "en": "Qorabog'ish",
         "uz": "Qorabog‘ish",
         "ru": "Корабогиш",
+        "type": "43",
         "mahallas": [
             "3227561001",
             "3227561002",
@@ -4220,6 +4296,7 @@ export const settlements: Code_Names = {
         "en": "Qoraqo'rg'on",
         "uz": "Qoraqo‘rg‘on",
         "ru": "Коракургон",
+        "type": "43",
         "mahallas": [
             "3227564001",
             "3227564002",
@@ -4231,6 +4308,7 @@ export const settlements: Code_Names = {
         "en": "Ko'tarma",
         "uz": "Ko‘tarma",
         "ru": "Кутарма",
+        "type": "43",
         "mahallas": [
             "3227567001"
         ]
@@ -4239,6 +4317,7 @@ export const settlements: Code_Names = {
         "en": "Marxamat",
         "uz": "Marxamat",
         "ru": "Мархамат",
+        "type": "43",
         "mahallas": [
             "3227571001",
             "3227571002",
@@ -4250,6 +4329,7 @@ export const settlements: Code_Names = {
         "en": "Rovot",
         "uz": "Rovot",
         "ru": "Ровот",
+        "type": "43",
         "mahallas": [
             "3227574001",
             "3227574002",
@@ -4261,6 +4341,7 @@ export const settlements: Code_Names = {
         "en": "O'qchi",
         "uz": "O‘qchi",
         "ru": "Укчи",
+        "type": "43",
         "mahallas": [
             "3227577001"
         ]
@@ -4269,6 +4350,7 @@ export const settlements: Code_Names = {
         "en": "Xakka",
         "uz": "Xakka",
         "ru": "Хакка",
+        "type": "43",
         "mahallas": [
             "3227581001",
             "3227581002",
@@ -4279,6 +4361,7 @@ export const settlements: Code_Names = {
         "en": "Xo'jaariq",
         "uz": "Xo‘jaariq",
         "ru": "Хужаарик",
+        "type": "43",
         "mahallas": [
             "3227584001",
             "3227584002",
@@ -4289,6 +4372,7 @@ export const settlements: Code_Names = {
         "en": "Village citizen assembly of Marxamat district",
         "uz": "Marxamat tumanining qishloq mahallalari",
         "ru": "Сельские сходы граждан Мархаматского района",
+        "type": "44",
         "mahallas": [
             "3227800001",
             "3227800002",
@@ -4309,6 +4393,7 @@ export const settlements: Code_Names = {
         "en": "Shaxrixon",
         "uz": "Shaxrixon",
         "ru": "Шахрихан",
+        "type": "42",
         "mahallas": [
             "3230501001",
             "3230501002",
@@ -4336,6 +4421,7 @@ export const settlements: Code_Names = {
         "en": "Vaxim",
         "uz": "Vaxim",
         "ru": "Вахим",
+        "type": "43",
         "mahallas": [
             "3230552001"
         ]
@@ -4344,6 +4430,7 @@ export const settlements: Code_Names = {
         "en": "Cho'ja",
         "uz": "Cho‘ja",
         "ru": "Чужа",
+        "type": "43",
         "mahallas": [
             "3230554001"
         ]
@@ -4352,6 +4439,7 @@ export const settlements: Code_Names = {
         "en": "Segaza kum",
         "uz": "Segaza kum",
         "ru": "Сегаза кум",
+        "type": "43",
         "mahallas": [
             "3230556001"
         ]
@@ -4360,6 +4448,7 @@ export const settlements: Code_Names = {
         "en": "Village citizen assembly of Shaxrixon district",
         "uz": "Shaxrixon tumanining qishloq mahallalari",
         "ru": "Сельские сходы граждан Шахриханского района",
+        "type": "44",
         "mahallas": [
             "3230800001",
             "3230800002",
@@ -4423,6 +4512,7 @@ export const settlements: Code_Names = {
         "en": "Paxtaobod",
         "uz": "Paxtaobod",
         "ru": "Пахтаабад",
+        "type": "42",
         "mahallas": [
             "3232501001",
             "3232501002",
@@ -4441,6 +4531,7 @@ export const settlements: Code_Names = {
         "en": "Do'stlik",
         "uz": "Do‘stlik",
         "ru": "Дустлик",
+        "type": "43",
         "mahallas": [
             "3232556001"
         ]
@@ -4449,6 +4540,7 @@ export const settlements: Code_Names = {
         "en": "Izboskan",
         "uz": "Izboskan",
         "ru": "Избоскан",
+        "type": "43",
         "mahallas": [
             "3232559001",
             "3232559002",
@@ -4462,6 +4554,7 @@ export const settlements: Code_Names = {
         "en": "Pushmon",
         "uz": "Pushmon",
         "ru": "Пушмон",
+        "type": "43",
         "mahallas": [
             "3232563001",
             "3232563002",
@@ -4476,6 +4569,7 @@ export const settlements: Code_Names = {
         "en": "Village citizen assembly of Paxtaobod district",
         "uz": "Paxtaobod tumanining qishloq mahallalari",
         "ru": "Сельские сходы граждан Пахтаабадского района",
+        "type": "44",
         "mahallas": [
             "3232800001",
             "3232800002",
@@ -4525,6 +4619,7 @@ export const settlements: Code_Names = {
         "en": "Xo'jaobod",
         "uz": "Xo‘jaobod",
         "ru": "Ходжаабад",
+        "type": "42",
         "mahallas": [
             "3236501001",
             "3236501002",
@@ -4540,6 +4635,7 @@ export const settlements: Code_Names = {
         "en": "Guliston",
         "uz": "Guliston",
         "ru": "Гулистон",
+        "type": "43",
         "mahallas": [
             "3236552001"
         ]
@@ -4548,6 +4644,7 @@ export const settlements: Code_Names = {
         "en": "Dilkushod",
         "uz": "Dilkushod",
         "ru": "Дилкушод",
+        "type": "43",
         "mahallas": [
             "3236554001"
         ]
@@ -4556,6 +4653,7 @@ export const settlements: Code_Names = {
         "en": "Ko'tarma",
         "uz": "Ko‘tarma",
         "ru": "Кутарма",
+        "type": "43",
         "mahallas": [
             "3236558001"
         ]
@@ -4564,6 +4662,7 @@ export const settlements: Code_Names = {
         "en": "Manak",
         "uz": "Manak",
         "ru": "Манак",
+        "type": "43",
         "mahallas": [
             "3236562001"
         ]
@@ -4572,6 +4671,7 @@ export const settlements: Code_Names = {
         "en": "Xidirsha",
         "uz": "Xidirsha",
         "ru": "Хидирша",
+        "type": "43",
         "mahallas": [
             "3236564001",
             "3236564002",
@@ -4582,6 +4682,7 @@ export const settlements: Code_Names = {
         "en": "Village citizen assembly of Xo'jaobod district",
         "uz": "Xo‘jaobod tumanining qishloq mahallalari",
         "ru": "Сельские сходы граждан Ходжаабадского района",
+        "type": "44",
         "mahallas": [
             "3236800001",
             "3236800002",
@@ -4610,9 +4711,10 @@ export const settlements: Code_Names = {
         ]
     },
     "1703401000": {
-        "en": "--",
-        "uz": "--",
-        "ru": "--",
+        "en": "-",
+        "uz": "-",
+        "ru": "-",
+        "type": "32",
         "mahallas": [
             "3401000001",
             "3401000002",
@@ -4711,9 +4813,10 @@ export const settlements: Code_Names = {
         ]
     },
     "1703408000": {
-        "en": "--",
-        "uz": "--",
-        "ru": "--",
+        "en": "-",
+        "uz": "-",
+        "ru": "-",
+        "type": "32",
         "mahallas": [
             "3408000001",
             "3408000002",
@@ -4734,6 +4837,7 @@ export const settlements: Code_Names = {
         "en": "Xonobod",
         "uz": "Xonobod",
         "ru": "Ханабад",
+        "type": "43",
         "mahallas": [
             "3408553001",
             "3408553002"
@@ -4743,6 +4847,7 @@ export const settlements: Code_Names = {
         "en": "Olot",
         "uz": "Olot",
         "ru": "Алат",
+        "type": "42",
         "mahallas": [
             "6204501001",
             "6204501002",
@@ -4756,6 +4861,7 @@ export const settlements: Code_Names = {
         "en": "Ganchi Chandir",
         "uz": "Ganchi Chandir",
         "ru": "Ганчи Чандир",
+        "type": "43",
         "mahallas": [
             "6204552001"
         ]
@@ -4764,6 +4870,7 @@ export const settlements: Code_Names = {
         "en": "Kesakli",
         "uz": "Kesakli",
         "ru": "Кесакли",
+        "type": "43",
         "mahallas": [
             "6204553001"
         ]
@@ -4772,6 +4879,7 @@ export const settlements: Code_Names = {
         "en": "Qirtay",
         "uz": "Qirtay",
         "ru": "Киртай",
+        "type": "43",
         "mahallas": [
             "6204554001"
         ]
@@ -4780,6 +4888,7 @@ export const settlements: Code_Names = {
         "en": "Sola qorovul",
         "uz": "Sola qorovul",
         "ru": "Сола коровул",
+        "type": "43",
         "mahallas": [
             "6204555001"
         ]
@@ -4788,6 +4897,7 @@ export const settlements: Code_Names = {
         "en": "Jayxunobod",
         "uz": "Jayxunobod",
         "ru": "Жайхунобод",
+        "type": "43",
         "mahallas": [
             "6204557001"
         ]
@@ -4796,6 +4906,7 @@ export const settlements: Code_Names = {
         "en": "O'zbekiston",
         "uz": "O‘zbekiston",
         "ru": "Узбекистан",
+        "type": "43",
         "mahallas": [
             "6204558001"
         ]
@@ -4804,6 +4915,7 @@ export const settlements: Code_Names = {
         "en": "Chovdur",
         "uz": "Chovdur",
         "ru": "Човдур",
+        "type": "43",
         "mahallas": [
             "6204559001"
         ]
@@ -4812,6 +4924,7 @@ export const settlements: Code_Names = {
         "en": "Bo'ribek Chandir",
         "uz": "Bo‘ribek Chandir",
         "ru": "Бурибек Чандир",
+        "type": "43",
         "mahallas": [
             "6204561001"
         ]
@@ -4820,6 +4933,7 @@ export const settlements: Code_Names = {
         "en": "Village citizen assembly of Olot district",
         "uz": "Olot tumanining qishloq mahallalari",
         "ru": "Сельские сходы граждан Алатского района",
+        "type": "44",
         "mahallas": [
             "6204800001",
             "6204800002",
@@ -4851,6 +4965,7 @@ export const settlements: Code_Names = {
         "en": "Gala Osiyo",
         "uz": "Gala Osiyo",
         "ru": "Галлаасия",
+        "type": "42",
         "mahallas": [
             "6207501001",
             "6207501002",
@@ -4863,6 +4978,7 @@ export const settlements: Code_Names = {
         "en": "Dexcha",
         "uz": "Dexcha",
         "ru": "Дехча",
+        "type": "43",
         "mahallas": [
             "6207553001"
         ]
@@ -4871,6 +4987,7 @@ export const settlements: Code_Names = {
         "en": "Podshoyi",
         "uz": "Podshoyi",
         "ru": "Подшойи",
+        "type": "43",
         "mahallas": [
             "6207554001"
         ]
@@ -4879,6 +4996,7 @@ export const settlements: Code_Names = {
         "en": "Rabotak",
         "uz": "Rabotak",
         "ru": "Работак",
+        "type": "43",
         "mahallas": [
             "6207555001"
         ]
@@ -4887,6 +5005,7 @@ export const settlements: Code_Names = {
         "en": "O'rta Novmetan",
         "uz": "O‘rta Novmetan",
         "ru": "Урта Новметан",
+        "type": "43",
         "mahallas": [
             "6207557001"
         ]
@@ -4895,6 +5014,7 @@ export const settlements: Code_Names = {
         "en": "Xumini bolo",
         "uz": "Xumini bolo",
         "ru": "Хумини боло",
+        "type": "43",
         "mahallas": [
             "6207558001"
         ]
@@ -4903,6 +5023,7 @@ export const settlements: Code_Names = {
         "en": "Arabxona",
         "uz": "Arabxona",
         "ru": "Арабхона",
+        "type": "43",
         "mahallas": [
             "6207561001"
         ]
@@ -4911,6 +5032,7 @@ export const settlements: Code_Names = {
         "en": "Village citizen assembly of Buxoro district",
         "uz": "Buxoro tumanining qishloq mahallalari",
         "ru": "Сельские сходы граждан Бухарского района",
+        "type": "44",
         "mahallas": [
             "6207800001",
             "6207800002",
@@ -4943,6 +5065,7 @@ export const settlements: Code_Names = {
         "en": "Vobkent",
         "uz": "Vobkent",
         "ru": "Вабкент",
+        "type": "42",
         "mahallas": [
             "6212501001",
             "6212501002",
@@ -4958,6 +5081,7 @@ export const settlements: Code_Names = {
         "en": "Navbahor",
         "uz": "Navbahor",
         "ru": "Навбахор",
+        "type": "43",
         "mahallas": [
             "6212554001"
         ]
@@ -4966,6 +5090,7 @@ export const settlements: Code_Names = {
         "en": "Shirin",
         "uz": "Shirin",
         "ru": "Ширин",
+        "type": "43",
         "mahallas": [
             "6212556001"
         ]
@@ -4974,6 +5099,7 @@ export const settlements: Code_Names = {
         "en": "Kosari",
         "uz": "Kosari",
         "ru": "Косари",
+        "type": "43",
         "mahallas": [
             "6212558001"
         ]
@@ -4982,6 +5108,7 @@ export const settlements: Code_Names = {
         "en": "Village citizen assembly of Vobkent district",
         "uz": "Vobkent tumanining qishloq mahallalari",
         "ru": "Сельские сходы граждан Вабкентского района",
+        "type": "44",
         "mahallas": [
             "6212800001",
             "6212800002",
@@ -5022,6 +5149,7 @@ export const settlements: Code_Names = {
         "en": "G'ijduvon",
         "uz": "G‘ijduvon",
         "ru": "Гиждуван",
+        "type": "42",
         "mahallas": [
             "6215501001",
             "6215501002",
@@ -5043,6 +5171,7 @@ export const settlements: Code_Names = {
         "en": "Abadi",
         "uz": "Abadi",
         "ru": "Абади",
+        "type": "43",
         "mahallas": [
             "6215556001"
         ]
@@ -5051,6 +5180,7 @@ export const settlements: Code_Names = {
         "en": "Beshtuvo",
         "uz": "Beshtuvo",
         "ru": "Бештуво",
+        "type": "43",
         "mahallas": [
             "6215559001"
         ]
@@ -5059,6 +5189,7 @@ export const settlements: Code_Names = {
         "en": "Gajdumak",
         "uz": "Gajdumak",
         "ru": "Гаждумак",
+        "type": "43",
         "mahallas": [
             "6215561001"
         ]
@@ -5067,6 +5198,7 @@ export const settlements: Code_Names = {
         "en": "Jovgari",
         "uz": "Jovgari",
         "ru": "Джовгари",
+        "type": "43",
         "mahallas": [
             "6215562001"
         ]
@@ -5075,6 +5207,7 @@ export const settlements: Code_Names = {
         "en": "Ko'lijabbor",
         "uz": "Ko‘lijabbor",
         "ru": "Кулижаббор",
+        "type": "43",
         "mahallas": [
             "6215563001"
         ]
@@ -5083,6 +5216,7 @@ export const settlements: Code_Names = {
         "en": "Mazragan",
         "uz": "Mazragan",
         "ru": "Мазраган",
+        "type": "43",
         "mahallas": [
             "6215564001"
         ]
@@ -5091,6 +5225,7 @@ export const settlements: Code_Names = {
         "en": "Yuqori Rostgo'y",
         "uz": "Yuqori Rostgo‘y",
         "ru": "Юкори Ростгуй",
+        "type": "43",
         "mahallas": [
             "6215565001"
         ]
@@ -5099,6 +5234,7 @@ export const settlements: Code_Names = {
         "en": "O'zanon",
         "uz": "O‘zanon",
         "ru": "Узанон",
+        "type": "43",
         "mahallas": [
             "6215566001"
         ]
@@ -5107,6 +5243,7 @@ export const settlements: Code_Names = {
         "en": "Xatcha",
         "uz": "Xatcha",
         "ru": "Хатча",
+        "type": "43",
         "mahallas": [
             "6215568001"
         ]
@@ -5115,6 +5252,7 @@ export const settlements: Code_Names = {
         "en": "Chag'dari",
         "uz": "Chag‘dari",
         "ru": "Чагдари",
+        "type": "43",
         "mahallas": [
             "6215569001"
         ]
@@ -5123,6 +5261,7 @@ export const settlements: Code_Names = {
         "en": "Dodarak",
         "uz": "Dodarak",
         "ru": "Додарак",
+        "type": "43",
         "mahallas": [
             "6215574001"
         ]
@@ -5131,6 +5270,7 @@ export const settlements: Code_Names = {
         "en": "Yuqori Qumoq",
         "uz": "Yuqori Qumoq",
         "ru": "Юкори Кумок",
+        "type": "43",
         "mahallas": [
             "6215578001"
         ]
@@ -5139,6 +5279,7 @@ export const settlements: Code_Names = {
         "en": "Village citizen assembly of G'ijduvon district",
         "uz": "G‘ijduvon tumanining qishloq mahallalari",
         "ru": "Сельские сходы граждан Гиждуванского района",
+        "type": "44",
         "mahallas": [
             "6215800001",
             "6215800002",
@@ -5195,6 +5336,7 @@ export const settlements: Code_Names = {
         "en": "Sarayonobod",
         "uz": "Sarayonobod",
         "ru": "Сараенобод",
+        "type": "43",
         "mahallas": [
             "6219557001"
         ]
@@ -5203,6 +5345,7 @@ export const settlements: Code_Names = {
         "en": "Tutikunda",
         "uz": "Tutikunda",
         "ru": "Тутикунда",
+        "type": "43",
         "mahallas": [
             "6219559001"
         ]
@@ -5211,6 +5354,7 @@ export const settlements: Code_Names = {
         "en": "Village citizen assembly of Kogon district",
         "uz": "Kogon tumanining qishloq mahallalari",
         "ru": "Сельские сходы граждан Каганского района",
+        "type": "44",
         "mahallas": [
             "6219800001",
             "6219800002",
@@ -5239,6 +5383,7 @@ export const settlements: Code_Names = {
         "en": "Qorako'l",
         "uz": "Qorako‘l",
         "ru": "Каракуль",
+        "type": "42",
         "mahallas": [
             "6230501001",
             "6230501002",
@@ -5254,6 +5399,7 @@ export const settlements: Code_Names = {
         "en": "Bandboshi",
         "uz": "Bandboshi",
         "ru": "Бандбоши",
+        "type": "43",
         "mahallas": [
             "6230552001"
         ]
@@ -5262,6 +5408,7 @@ export const settlements: Code_Names = {
         "en": "Darg'abog'i",
         "uz": "Darg‘abog‘i",
         "ru": "Даргабоги",
+        "type": "43",
         "mahallas": [
             "6230553001"
         ]
@@ -5270,6 +5417,7 @@ export const settlements: Code_Names = {
         "en": "Jig'achi",
         "uz": "Jig‘achi",
         "ru": "Джигачи",
+        "type": "43",
         "mahallas": [
             "6230554001"
         ]
@@ -5278,6 +5426,7 @@ export const settlements: Code_Names = {
         "en": "Qorahoji",
         "uz": "Qorahoji",
         "ru": "Корахожи",
+        "type": "43",
         "mahallas": [
             "6230555001"
         ]
@@ -5286,6 +5435,7 @@ export const settlements: Code_Names = {
         "en": "Quvvacha",
         "uz": "Quvvacha",
         "ru": "Куввача",
+        "type": "43",
         "mahallas": [
             "6230556001"
         ]
@@ -5294,6 +5444,7 @@ export const settlements: Code_Names = {
         "en": "Mirzaqal'a",
         "uz": "Mirzaqal’a",
         "ru": "Мирзакалъа",
+        "type": "43",
         "mahallas": [
             "6230557001"
         ]
@@ -5302,6 +5453,7 @@ export const settlements: Code_Names = {
         "en": "Sayyod",
         "uz": "Sayyod",
         "ru": "Сайед",
+        "type": "43",
         "mahallas": [
             "6230558001"
         ]
@@ -5310,6 +5462,7 @@ export const settlements: Code_Names = {
         "en": "Solur",
         "uz": "Solur",
         "ru": "Солур",
+        "type": "43",
         "mahallas": [
             "6230559001"
         ]
@@ -5318,6 +5471,7 @@ export const settlements: Code_Names = {
         "en": "Chandirobod",
         "uz": "Chandirobod",
         "ru": "Чандирабад",
+        "type": "43",
         "mahallas": [
             "6230561001"
         ]
@@ -5326,6 +5480,7 @@ export const settlements: Code_Names = {
         "en": "Sho'rabot",
         "uz": "Sho‘rabot",
         "ru": "Шуррабад",
+        "type": "43",
         "mahallas": [
             "6230562001"
         ]
@@ -5334,6 +5489,7 @@ export const settlements: Code_Names = {
         "en": "Yakka A'lam",
         "uz": "Yakka A’lam",
         "ru": "Якка Аълам",
+        "type": "43",
         "mahallas": [
             "6230563001"
         ]
@@ -5342,6 +5498,7 @@ export const settlements: Code_Names = {
         "en": "Yangiqal'a",
         "uz": "Yangiqal’a",
         "ru": "Янгикалъа",
+        "type": "43",
         "mahallas": [
             "6230564001"
         ]
@@ -5350,6 +5507,7 @@ export const settlements: Code_Names = {
         "en": "Village citizen assembly of Qorako'l district",
         "uz": "Qorako‘l tumanining qishloq mahallalari",
         "ru": "Сельские сходы граждан Каракульского района",
+        "type": "44",
         "mahallas": [
             "6230800001",
             "6230800002",
@@ -5387,6 +5545,7 @@ export const settlements: Code_Names = {
         "en": "Qorovulbozor",
         "uz": "Qorovulbozor",
         "ru": "Караулбазар",
+        "type": "42",
         "mahallas": [
             "6232501001",
             "6232501002",
@@ -5397,6 +5556,7 @@ export const settlements: Code_Names = {
         "en": "Village citizen assembly of Qorovulbozor district",
         "uz": "Qorovulbozor tumanining qishloq mahallalari",
         "ru": "Сельские сходы граждан Караулбазарского района",
+        "type": "44",
         "mahallas": [
             "6232800001",
             "6232800002",
@@ -5408,6 +5568,7 @@ export const settlements: Code_Names = {
         "en": "Yangibozor",
         "uz": "Yangibozor",
         "ru": "Янгибозор",
+        "type": "43",
         "mahallas": [
             "6240551001",
             "6240551002",
@@ -5418,6 +5579,7 @@ export const settlements: Code_Names = {
         "en": "Peshku",
         "uz": "Peshku",
         "ru": "Пешку",
+        "type": "43",
         "mahallas": [
             "6240553001"
         ]
@@ -5426,6 +5588,7 @@ export const settlements: Code_Names = {
         "en": "Shavgon",
         "uz": "Shavgon",
         "ru": "Шавгон",
+        "type": "43",
         "mahallas": [
             "6240555001"
         ]
@@ -5434,6 +5597,7 @@ export const settlements: Code_Names = {
         "en": "Mahallai-Mirishkor",
         "uz": "Mahallai-Mirishkor",
         "ru": "Махаллаи-Миришкор",
+        "type": "43",
         "mahallas": [
             "6240557001"
         ]
@@ -5442,6 +5606,7 @@ export const settlements: Code_Names = {
         "en": "Village citizen assembly of Peshku district",
         "uz": "Peshku tumanining qishloq mahallalari",
         "ru": "Сельские сходы граждан Пешкунского района",
+        "type": "44",
         "mahallas": [
             "6240800001",
             "6240800002",
@@ -5480,6 +5645,7 @@ export const settlements: Code_Names = {
         "en": "Romitan",
         "uz": "Romitan",
         "ru": "Ромитан",
+        "type": "42",
         "mahallas": [
             "6242501001",
             "6242501002",
@@ -5493,6 +5659,7 @@ export const settlements: Code_Names = {
         "en": "Gazli",
         "uz": "Gazli",
         "ru": "Газли",
+        "type": "42",
         "mahallas": [
             "6242505001",
             "6242505002"
@@ -5502,6 +5669,7 @@ export const settlements: Code_Names = {
         "en": "Qoqishtuvon",
         "uz": "Qoqishtuvon",
         "ru": "Кокиштувон",
+        "type": "43",
         "mahallas": [
             "6242552001"
         ]
@@ -5510,6 +5678,7 @@ export const settlements: Code_Names = {
         "en": "Xosa",
         "uz": "Xosa",
         "ru": "Хоса",
+        "type": "43",
         "mahallas": [
             "6242554001"
         ]
@@ -5518,6 +5687,7 @@ export const settlements: Code_Names = {
         "en": "Yuqori G'azberon",
         "uz": "Yuqori G‘azberon",
         "ru": "Юкори Газберон",
+        "type": "43",
         "mahallas": [
             "6242556001"
         ]
@@ -5526,6 +5696,7 @@ export const settlements: Code_Names = {
         "en": "Village citizen assembly of Romitan district",
         "uz": "Romitan tumanining qishloq mahallalari",
         "ru": "Сельские сходы граждан Ромитанского района",
+        "type": "44",
         "mahallas": [
             "6242800001",
             "6242800002",
@@ -5567,6 +5738,7 @@ export const settlements: Code_Names = {
         "en": "Jondor",
         "uz": "Jondor",
         "ru": "Жондор",
+        "type": "43",
         "mahallas": [
             "6246551001",
             "6246551002",
@@ -5578,6 +5750,7 @@ export const settlements: Code_Names = {
         "en": "Paxlavon",
         "uz": "Paxlavon",
         "ru": "Пахлавон",
+        "type": "43",
         "mahallas": [
             "6246552001"
         ]
@@ -5586,6 +5759,7 @@ export const settlements: Code_Names = {
         "en": "Dalmun",
         "uz": "Dalmun",
         "ru": "Далмун",
+        "type": "43",
         "mahallas": [
             "6246553001"
         ]
@@ -5594,6 +5768,7 @@ export const settlements: Code_Names = {
         "en": "Ko'liyon",
         "uz": "Ko‘liyon",
         "ru": "Кулиен",
+        "type": "43",
         "mahallas": [
             "6246554001"
         ]
@@ -5602,6 +5777,7 @@ export const settlements: Code_Names = {
         "en": "Samonchuq",
         "uz": "Samonchuq",
         "ru": "Самончук",
+        "type": "43",
         "mahallas": [
             "6246555001"
         ]
@@ -5610,6 +5786,7 @@ export const settlements: Code_Names = {
         "en": "Tobagar",
         "uz": "Tobagar",
         "ru": "Тобагар",
+        "type": "43",
         "mahallas": [
             "6246556001"
         ]
@@ -5618,6 +5795,7 @@ export const settlements: Code_Names = {
         "en": "Ushot",
         "uz": "Ushot",
         "ru": "Ушот",
+        "type": "43",
         "mahallas": [
             "6246557001"
         ]
@@ -5626,6 +5804,7 @@ export const settlements: Code_Names = {
         "en": "Xazorman",
         "uz": "Xazorman",
         "ru": "Хазорман",
+        "type": "43",
         "mahallas": [
             "6246558001"
         ]
@@ -5634,6 +5813,7 @@ export const settlements: Code_Names = {
         "en": "Chorzona",
         "uz": "Chorzona",
         "ru": "Чорзона",
+        "type": "43",
         "mahallas": [
             "6246559001"
         ]
@@ -5642,6 +5822,7 @@ export const settlements: Code_Names = {
         "en": "Village citizen assembly of Jondor district",
         "uz": "Jondor tumanining qishloq mahallalari",
         "ru": "Сельские сходы граждан Жондоpского района",
+        "type": "44",
         "mahallas": [
             "6246800001",
             "6246800002",
@@ -5689,6 +5870,7 @@ export const settlements: Code_Names = {
         "en": "Shofirkon",
         "uz": "Shofirkon",
         "ru": "Шафиркан",
+        "type": "42",
         "mahallas": [
             "6258501001",
             "6258501002",
@@ -5701,6 +5883,7 @@ export const settlements: Code_Names = {
         "en": "Jo'yrabot",
         "uz": "Jo‘yrabot",
         "ru": "Жуйрабад",
+        "type": "43",
         "mahallas": [
             "6258552001"
         ]
@@ -5709,6 +5892,7 @@ export const settlements: Code_Names = {
         "en": "Iskogare",
         "uz": "Iskogare",
         "ru": "Искогаре",
+        "type": "43",
         "mahallas": [
             "6258553001"
         ]
@@ -5717,6 +5901,7 @@ export const settlements: Code_Names = {
         "en": "Quyi Chuqurak",
         "uz": "Quyi Chuqurak",
         "ru": "Куйи Чукурак",
+        "type": "43",
         "mahallas": [
             "6258554001"
         ]
@@ -5725,6 +5910,7 @@ export const settlements: Code_Names = {
         "en": "Mirzoqul",
         "uz": "Mirzoqul",
         "ru": "Мирзокул",
+        "type": "43",
         "mahallas": [
             "6258555001"
         ]
@@ -5733,6 +5919,7 @@ export const settlements: Code_Names = {
         "en": "Talisafed",
         "uz": "Talisafed",
         "ru": "Талисафед",
+        "type": "43",
         "mahallas": [
             "6258556001"
         ]
@@ -5741,6 +5928,7 @@ export const settlements: Code_Names = {
         "en": "Undare",
         "uz": "Undare",
         "ru": "Ундаре",
+        "type": "43",
         "mahallas": [
             "6258557001"
         ]
@@ -5749,6 +5937,7 @@ export const settlements: Code_Names = {
         "en": "Chandir",
         "uz": "Chandir",
         "ru": "Чандир",
+        "type": "43",
         "mahallas": [
             "6258558001"
         ]
@@ -5757,6 +5946,7 @@ export const settlements: Code_Names = {
         "en": "G'ulomte",
         "uz": "G‘ulomte",
         "ru": "Гуломте",
+        "type": "43",
         "mahallas": [
             "6258561001"
         ]
@@ -5765,6 +5955,7 @@ export const settlements: Code_Names = {
         "en": "Village citizen assembly of Shofirkon district",
         "uz": "Shofirkon tumanining qishloq mahallalari",
         "ru": "Сельские сходы граждан Шафирканского района",
+        "type": "44",
         "mahallas": [
             "6258800001",
             "6258800002",
@@ -5806,9 +5997,10 @@ export const settlements: Code_Names = {
         ]
     },
     "1706401000": {
-        "en": "--",
-        "uz": "--",
-        "ru": "--",
+        "en": "-",
+        "uz": "-",
+        "ru": "-",
+        "type": "32",
         "mahallas": [
             "6401000001",
             "6401000002",
@@ -5879,15 +6071,17 @@ export const settlements: Code_Names = {
         "en": "Village citizen assembly of Buxoro",
         "uz": "Buxoro shahar hokimiyatiga qarashli qishloq mahallalari",
         "ru": "Сельские сходы гр-н, подч. Бухарскому горхокимияту",
+        "type": "44",
         "mahallas": [
             "6401800001",
             "6401800002"
         ]
     },
     "1706403000": {
-        "en": "--",
-        "uz": "--",
-        "ru": "--",
+        "en": "-",
+        "uz": "-",
+        "ru": "-",
+        "type": "32",
         "mahallas": [
             "6403000001",
             "6403000002",
@@ -5917,6 +6111,7 @@ export const settlements: Code_Names = {
         "en": "G'oliblar",
         "uz": "G‘oliblar",
         "ru": "Голиблар",
+        "type": "43",
         "mahallas": [
             "8201551001",
             "8201551002",
@@ -5928,6 +6123,7 @@ export const settlements: Code_Names = {
         "en": "Village citizen assembly of Arnasoy district",
         "uz": "Arnasoy tumanining qishloq mahallalari",
         "ru": "Сельские сходы граждан Арнасайского района",
+        "type": "44",
         "mahallas": [
             "8201800001",
             "8201800002",
@@ -5944,6 +6140,7 @@ export const settlements: Code_Names = {
         "en": "O'smat",
         "uz": "O‘smat",
         "ru": "Усмат",
+        "type": "43",
         "mahallas": [
             "8204551001"
         ]
@@ -5952,6 +6149,7 @@ export const settlements: Code_Names = {
         "en": "Novqa",
         "uz": "Novqa",
         "ru": "Новка",
+        "type": "43",
         "mahallas": [
             "8204554001"
         ]
@@ -5960,6 +6158,7 @@ export const settlements: Code_Names = {
         "en": "Alamli",
         "uz": "Alamli",
         "ru": "Аламли",
+        "type": "43",
         "mahallas": [
             "8204555001"
         ]
@@ -5968,6 +6167,7 @@ export const settlements: Code_Names = {
         "en": "Village citizen assembly of Baxmal district",
         "uz": "Baxmal tumanining qishloq mahallalari",
         "ru": "Сельские сходы граждан Бахмальского района",
+        "type": "44",
         "mahallas": [
             "8204800001",
             "8204800002",
@@ -6005,6 +6205,7 @@ export const settlements: Code_Names = {
         "en": "G'allaorol",
         "uz": "G‘allaorol",
         "ru": "Галляарал",
+        "type": "42",
         "mahallas": [
             "8209501001",
             "8209501002",
@@ -6018,6 +6219,7 @@ export const settlements: Code_Names = {
         "en": "Lalmikor",
         "uz": "Lalmikor",
         "ru": "Лалмикор",
+        "type": "43",
         "mahallas": [
             "8209559001",
             "8209559002"
@@ -6027,6 +6229,7 @@ export const settlements: Code_Names = {
         "en": "Chuvilloq",
         "uz": "Chuvilloq",
         "ru": "Чувиллок",
+        "type": "43",
         "mahallas": [
             "8209567001"
         ]
@@ -6035,6 +6238,7 @@ export const settlements: Code_Names = {
         "en": "Abdukarim",
         "uz": "Abdukarim",
         "ru": "Абдукарим",
+        "type": "43",
         "mahallas": [
             "8209565001"
         ]
@@ -6043,6 +6247,7 @@ export const settlements: Code_Names = {
         "en": "Marjonbuloq",
         "uz": "Marjonbuloq",
         "ru": "Марджанбулак",
+        "type": "43",
         "mahallas": [
             "8209557001"
         ]
@@ -6051,6 +6256,7 @@ export const settlements: Code_Names = {
         "en": "Qangliobod",
         "uz": "Qangliobod",
         "ru": "Канглиобод",
+        "type": "43",
         "mahallas": [
             "8209561001",
             "8209561002"
@@ -6060,6 +6266,7 @@ export const settlements: Code_Names = {
         "en": "Qo'ytosh",
         "uz": "Qo‘ytosh",
         "ru": "Кайташ",
+        "type": "43",
         "mahallas": [
             "8209554001"
         ]
@@ -6068,6 +6275,7 @@ export const settlements: Code_Names = {
         "en": "Village citizen assembly of G'allaorol district",
         "uz": "G‘allaorol tumanining qishloq mahallalari",
         "ru": "Сельские сходы граждан Галляаральского района",
+        "type": "44",
         "mahallas": [
             "8209800001",
             "8209800002",
@@ -6096,6 +6304,7 @@ export const settlements: Code_Names = {
         "en": "Uch-tepa",
         "uz": "Uch-tepa",
         "ru": "Уч-тепа",
+        "type": "43",
         "mahallas": [
             "8212551001",
             "8212551002"
@@ -6105,6 +6314,7 @@ export const settlements: Code_Names = {
         "en": "Gandumtosh",
         "uz": "Gandumtosh",
         "ru": "Гандумтош",
+        "type": "43",
         "mahallas": [
             "8212552001"
         ]
@@ -6113,6 +6323,7 @@ export const settlements: Code_Names = {
         "en": "Qorayantoq",
         "uz": "Qorayantoq",
         "ru": "Караянтак",
+        "type": "43",
         "mahallas": [
             "8212553001",
             "8212553002"
@@ -6122,6 +6333,7 @@ export const settlements: Code_Names = {
         "en": "Qang'li",
         "uz": "Qang‘li",
         "ru": "Кангли",
+        "type": "43",
         "mahallas": [
             "8212554001"
         ]
@@ -6130,6 +6342,7 @@ export const settlements: Code_Names = {
         "en": "Toqchiliq",
         "uz": "Toqchiliq",
         "ru": "Токчилик",
+        "type": "43",
         "mahallas": [
             "8212555001",
             "8212555002",
@@ -6140,6 +6353,7 @@ export const settlements: Code_Names = {
         "en": "Mulkanlik",
         "uz": "Mulkanlik",
         "ru": "Мулканлик",
+        "type": "43",
         "mahallas": [
             "8212557001",
             "8212557002",
@@ -6150,6 +6364,7 @@ export const settlements: Code_Names = {
         "en": "Jizzaxlik",
         "uz": "Jizzaxlik",
         "ru": "Жиззахлик",
+        "type": "43",
         "mahallas": [
             "8212559001",
             "8212559002",
@@ -6161,6 +6376,7 @@ export const settlements: Code_Names = {
         "en": "Village citizen assembly of Sharof Rashidov district",
         "uz": "Sharof Rashidov tumanining qishloq mahallalari",
         "ru": "Сельские сходы граждан Шароф Рашидовского района",
+        "type": "44",
         "mahallas": [
             "8212800001",
             "8212800002",
@@ -6200,6 +6416,7 @@ export const settlements: Code_Names = {
         "en": "Do'stlik",
         "uz": "Do‘stlik",
         "ru": "Дустлик",
+        "type": "42",
         "mahallas": [
             "8215501001",
             "8215501002",
@@ -6212,6 +6429,7 @@ export const settlements: Code_Names = {
         "en": "Village citizen assembly of Do'stlik district",
         "uz": "Do‘stlik tumanining qishloq mahallalari",
         "ru": "Сельские сходы граждан Дустликского района",
+        "type": "44",
         "mahallas": [
             "8215800001",
             "8215800002",
@@ -6226,6 +6444,7 @@ export const settlements: Code_Names = {
         "en": "Dashtobod",
         "uz": "Dashtobod",
         "ru": "Даштобод",
+        "type": "42",
         "mahallas": [
             "8218503001",
             "8218503002",
@@ -6241,6 +6460,7 @@ export const settlements: Code_Names = {
         "en": "Zomin",
         "uz": "Zomin",
         "ru": "Заамин",
+        "type": "43",
         "mahallas": [
             "8218551001",
             "8218551002",
@@ -6258,6 +6478,7 @@ export const settlements: Code_Names = {
         "en": "Pshag'or",
         "uz": "Pshag‘or",
         "ru": "Пшагор",
+        "type": "43",
         "mahallas": [
             "8218557001"
         ]
@@ -6266,6 +6487,7 @@ export const settlements: Code_Names = {
         "en": "Village citizen assembly of Zomin district",
         "uz": "Zomin tumanining qishloq mahallalari",
         "ru": "Сельские сходы граждан Зааминского района",
+        "type": "44",
         "mahallas": [
             "8218800001",
             "8218800002",
@@ -6293,6 +6515,7 @@ export const settlements: Code_Names = {
         "en": "Zarbdor",
         "uz": "Zarbdor",
         "ru": "Зарбдар",
+        "type": "43",
         "mahallas": [
             "8220551001",
             "8220551002",
@@ -6305,6 +6528,7 @@ export const settlements: Code_Names = {
         "en": "Bo'ston",
         "uz": "Bo‘ston",
         "ru": "Бустан",
+        "type": "43",
         "mahallas": [
             "8220553001",
             "8220553002",
@@ -6316,6 +6540,7 @@ export const settlements: Code_Names = {
         "en": "Fayzobod",
         "uz": "Fayzobod",
         "ru": "Файзобод",
+        "type": "43",
         "mahallas": [
             "8220555001",
             "8220555002",
@@ -6326,6 +6551,7 @@ export const settlements: Code_Names = {
         "en": "Sharq yulduzi",
         "uz": "Sharq yulduzi",
         "ru": "Шарк Юлдузи",
+        "type": "43",
         "mahallas": [
             "8220557001",
             "8220557002",
@@ -6336,6 +6562,7 @@ export const settlements: Code_Names = {
         "en": "Village citizen assembly of Zarbdor district",
         "uz": "Zarbdor tumanining qishloq mahallalari",
         "ru": "Сельские сходы граждан Зарбдарского района",
+        "type": "44",
         "mahallas": [
             "8220800001",
             "8220800002",
@@ -6352,6 +6579,7 @@ export const settlements: Code_Names = {
         "en": "Gagarin",
         "uz": "Gagarin",
         "ru": "Гагарин",
+        "type": "42",
         "mahallas": [
             "8223501001",
             "8223501002",
@@ -6363,6 +6591,7 @@ export const settlements: Code_Names = {
         "en": "Mirzadala",
         "uz": "Mirzadala",
         "ru": "Мирзадала",
+        "type": "43",
         "mahallas": [
             "8223555001"
         ]
@@ -6371,6 +6600,7 @@ export const settlements: Code_Names = {
         "en": "Paxtazor",
         "uz": "Paxtazor",
         "ru": "Пахтазор",
+        "type": "43",
         "mahallas": [
             "8223553001"
         ]
@@ -6379,6 +6609,7 @@ export const settlements: Code_Names = {
         "en": "Village citizen assembly of Mirzacho'l district",
         "uz": "Mirzacho‘l tumanining qishloq mahallalari",
         "ru": "Сельские сходы граждан Мирзачульского района",
+        "type": "44",
         "mahallas": [
             "8223800001",
             "8223800002",
@@ -6392,6 +6623,7 @@ export const settlements: Code_Names = {
         "en": "Zafarobod",
         "uz": "Zafarobod",
         "ru": "Зафарабад",
+        "type": "43",
         "mahallas": [
             "8225551001",
             "8225551002"
@@ -6401,6 +6633,7 @@ export const settlements: Code_Names = {
         "en": "Village citizen assembly of Zafarobod district",
         "uz": "Zafarobod tumanining qishloq mahallalari",
         "ru": "Сельские сходы граждан Зафарабадского района",
+        "type": "44",
         "mahallas": [
             "8225800001",
             "8225800002",
@@ -6416,6 +6649,7 @@ export const settlements: Code_Names = {
         "en": "Paxtakor",
         "uz": "Paxtakor",
         "ru": "Пахтакор",
+        "type": "42",
         "mahallas": [
             "8228501001",
             "8228501002",
@@ -6430,6 +6664,7 @@ export const settlements: Code_Names = {
         "en": "Village citizen assembly of Paxtakor district",
         "uz": "Paxtakor tumanining qishloq mahallalari",
         "ru": "Сельские сходы граждан Пахтакорского района",
+        "type": "44",
         "mahallas": [
             "8228800001",
             "8228800002",
@@ -6445,6 +6680,7 @@ export const settlements: Code_Names = {
         "en": "Bog'don",
         "uz": "Bog‘don",
         "ru": "Богдон",
+        "type": "43",
         "mahallas": [
             "8235551001",
             "8235551002",
@@ -6455,6 +6691,7 @@ export const settlements: Code_Names = {
         "en": "Uchquloch",
         "uz": "Uchquloch",
         "ru": "Учкулач",
+        "type": "43",
         "mahallas": [
             "8235560001",
             "8235560002"
@@ -6464,6 +6701,7 @@ export const settlements: Code_Names = {
         "en": "Village citizen assembly of Forish district",
         "uz": "Forish tumanining qishloq mahallalari",
         "ru": "Сельские сходы граждан Фаришского района",
+        "type": "44",
         "mahallas": [
             "8235800001",
             "8235800002",
@@ -6491,6 +6729,7 @@ export const settlements: Code_Names = {
         "en": "Village citizen assembly of Yangiobod district",
         "uz": "Yangiobod tumanining qishloq mahallalari",
         "ru": "Сельские сходы граждан Янгиободского района",
+        "type": "44",
         "mahallas": [
             "8237800001",
             "8237800002",
@@ -6503,9 +6742,10 @@ export const settlements: Code_Names = {
         ]
     },
     "1708401000": {
-        "en": "--",
-        "uz": "--",
-        "ru": "--",
+        "en": "-",
+        "uz": "-",
+        "ru": "-",
+        "type": "32",
         "mahallas": [
             "8401000001",
             "8401000002",
@@ -6547,6 +6787,7 @@ export const settlements: Code_Names = {
         "en": "G'uzor",
         "uz": "G‘uzor",
         "ru": "Гузар",
+        "type": "42",
         "mahallas": [
             "10207501001",
             "10207501002",
@@ -6564,6 +6805,7 @@ export const settlements: Code_Names = {
         "en": "Sherali",
         "uz": "Sherali",
         "ru": "Шерали",
+        "type": "43",
         "mahallas": [
             "10207558001",
             "10207558002",
@@ -6574,6 +6816,7 @@ export const settlements: Code_Names = {
         "en": "Jarariq",
         "uz": "Jarariq",
         "ru": "Жарарик",
+        "type": "43",
         "mahallas": [
             "10207552001"
         ]
@@ -6582,6 +6825,7 @@ export const settlements: Code_Names = {
         "en": "Yangikent",
         "uz": "Yangikent",
         "ru": "Янгикент",
+        "type": "43",
         "mahallas": [
             "10207556001"
         ]
@@ -6590,6 +6834,7 @@ export const settlements: Code_Names = {
         "en": "Mash'al",
         "uz": "Mash’al",
         "ru": "Машъал",
+        "type": "43",
         "mahallas": [
             "10207562001"
         ]
@@ -6598,6 +6843,7 @@ export const settlements: Code_Names = {
         "en": "Village citizen assembly of G'uzor district",
         "uz": "G‘uzor tumanining qishloq mahallalari",
         "ru": "Сельские сходы граждан Гузарского района",
+        "type": "44",
         "mahallas": [
             "10207800001",
             "10207800002",
@@ -6640,6 +6886,7 @@ export const settlements: Code_Names = {
         "en": "Karashina",
         "uz": "Karashina",
         "ru": "Корашина",
+        "type": "43",
         "mahallas": [
             "10212551001",
             "10212551002",
@@ -6652,6 +6899,7 @@ export const settlements: Code_Names = {
         "en": "Dehqonobod",
         "uz": "Dehqonobod",
         "ru": "Дехканабад",
+        "type": "43",
         "mahallas": [
             "10212553001",
             "10212553002",
@@ -6663,6 +6911,7 @@ export const settlements: Code_Names = {
         "en": "Beshbuloq",
         "uz": "Beshbuloq",
         "ru": "Бешбулок",
+        "type": "43",
         "mahallas": [
             "10212558001",
             "10212558002"
@@ -6672,6 +6921,7 @@ export const settlements: Code_Names = {
         "en": "Village citizen assembly of Dehqonobod district",
         "uz": "Dehqonobod tumanining qishloq mahallalari",
         "ru": "Сельские сходы граждан Дехканабадского района",
+        "type": "44",
         "mahallas": [
             "10212800001",
             "10212800002",
@@ -6722,6 +6972,7 @@ export const settlements: Code_Names = {
         "en": "Qamashi",
         "uz": "Qamashi",
         "ru": "Камаши",
+        "type": "42",
         "mahallas": [
             "10220501001",
             "10220501002",
@@ -6739,6 +6990,7 @@ export const settlements: Code_Names = {
         "en": "Balandchayla",
         "uz": "Balandchayla",
         "ru": "Баландчайла",
+        "type": "43",
         "mahallas": [
             "10220552001",
             "10220552002",
@@ -6750,6 +7002,7 @@ export const settlements: Code_Names = {
         "en": "Qoratepa",
         "uz": "Qoratepa",
         "ru": "Коратепа",
+        "type": "43",
         "mahallas": [
             "10220554001",
             "10220554002",
@@ -6760,6 +7013,7 @@ export const settlements: Code_Names = {
         "en": "Qiziltepa",
         "uz": "Qiziltepa",
         "ru": "Кызилтепа",
+        "type": "43",
         "mahallas": [
             "10220556001",
             "10220556002",
@@ -6773,6 +7027,7 @@ export const settlements: Code_Names = {
         "en": "Sarbozor",
         "uz": "Sarbozor",
         "ru": "Сарбозор",
+        "type": "43",
         "mahallas": [
             "10220558001",
             "10220558002",
@@ -6783,6 +7038,7 @@ export const settlements: Code_Names = {
         "en": "Badahshon",
         "uz": "Badahshon",
         "ru": "Бадахшон",
+        "type": "43",
         "mahallas": [
             "10220562001",
             "10220562002"
@@ -6792,6 +7048,7 @@ export const settlements: Code_Names = {
         "en": "Village citizen assembly of Qamashi district",
         "uz": "Qamashi tumanining qishloq mahallalari",
         "ru": "Сельские сходы граждан Камашинского района",
+        "type": "44",
         "mahallas": [
             "10220800001",
             "10220800002",
@@ -6831,6 +7088,7 @@ export const settlements: Code_Names = {
         "en": "Beshkent",
         "uz": "Beshkent",
         "ru": "Бешкент",
+        "type": "42",
         "mahallas": [
             "10224501001",
             "10224501002",
@@ -6845,6 +7103,7 @@ export const settlements: Code_Names = {
         "en": "Fayzobod",
         "uz": "Fayzobod",
         "ru": "Файзиабад",
+        "type": "43",
         "mahallas": [
             "10224553001"
         ]
@@ -6853,6 +7112,7 @@ export const settlements: Code_Names = {
         "en": "Saroy",
         "uz": "Saroy",
         "ru": "Сарай",
+        "type": "43",
         "mahallas": [
             "10224556001"
         ]
@@ -6861,6 +7121,7 @@ export const settlements: Code_Names = {
         "en": "G'ubdin",
         "uz": "G‘ubdin",
         "ru": "Губдин",
+        "type": "43",
         "mahallas": [
             "10224559001"
         ]
@@ -6869,6 +7130,7 @@ export const settlements: Code_Names = {
         "en": "Lag'mon",
         "uz": "Lag‘mon",
         "ru": "Лагмон",
+        "type": "43",
         "mahallas": [
             "10224563001"
         ]
@@ -6877,6 +7139,7 @@ export const settlements: Code_Names = {
         "en": "Kuchkak",
         "uz": "Kuchkak",
         "ru": "Кучкак",
+        "type": "43",
         "mahallas": [
             "10224566001"
         ]
@@ -6885,6 +7148,7 @@ export const settlements: Code_Names = {
         "en": "Xonobod",
         "uz": "Xonobod",
         "ru": "Хонабад",
+        "type": "43",
         "mahallas": [
             "10224569001",
             "10224569002",
@@ -6892,9 +7156,10 @@ export const settlements: Code_Names = {
         ]
     },
     "1710224551": {
-        "en": "--",
-        "uz": "--",
-        "ru": "--",
+        "en": "-",
+        "uz": "-",
+        "ru": "-",
+        "type": "43",
         "mahallas": [
             "10224551001",
             "10224551002"
@@ -6904,6 +7169,7 @@ export const settlements: Code_Names = {
         "en": "Shilvi",
         "uz": "Shilvi",
         "ru": "Шилви",
+        "type": "43",
         "mahallas": [
             "10224573001"
         ]
@@ -6912,6 +7178,7 @@ export const settlements: Code_Names = {
         "en": "Qovchin",
         "uz": "Qovchin",
         "ru": "Ковчин",
+        "type": "43",
         "mahallas": [
             "10224576001"
         ]
@@ -6920,6 +7187,7 @@ export const settlements: Code_Names = {
         "en": "Nuqrabod",
         "uz": "Nuqrabod",
         "ru": "Нукрабад",
+        "type": "43",
         "mahallas": [
             "10224579001"
         ]
@@ -6928,6 +7196,7 @@ export const settlements: Code_Names = {
         "en": "Yertepa",
         "uz": "Yertepa",
         "ru": "Ертепа",
+        "type": "43",
         "mahallas": [
             "10224583001"
         ]
@@ -6936,6 +7205,7 @@ export const settlements: Code_Names = {
         "en": "Navro'z",
         "uz": "Navro‘z",
         "ru": "Навруз",
+        "type": "43",
         "mahallas": [
             "10224586001"
         ]
@@ -6944,6 +7214,7 @@ export const settlements: Code_Names = {
         "en": "Jumabozor",
         "uz": "Jumabozor",
         "ru": "Жумабозор",
+        "type": "43",
         "mahallas": [
             "10224589001"
         ]
@@ -6952,6 +7223,7 @@ export const settlements: Code_Names = {
         "en": "Mustaqillik",
         "uz": "Mustaqillik",
         "ru": "Мустакиллик",
+        "type": "43",
         "mahallas": [
             "10224593001"
         ]
@@ -6960,6 +7232,7 @@ export const settlements: Code_Names = {
         "en": "Mirmiron",
         "uz": "Mirmiron",
         "ru": "Мирмирон",
+        "type": "43",
         "mahallas": [
             "10224596001",
             "10224596002"
@@ -6969,6 +7242,7 @@ export const settlements: Code_Names = {
         "en": "Yangi xayot",
         "uz": "Yangi xayot",
         "ru": "Янгихает",
+        "type": "43",
         "mahallas": [
             "10224599001"
         ]
@@ -6977,6 +7251,7 @@ export const settlements: Code_Names = {
         "en": "Village citizen assembly of Qarshi district",
         "uz": "Qarshi tumanining qishloq mahallalari",
         "ru": "Сельские сходы граждан Каршинского района",
+        "type": "44",
         "mahallas": [
             "10224800001",
             "10224800002",
@@ -7015,6 +7290,7 @@ export const settlements: Code_Names = {
         "en": "Koson",
         "uz": "Koson",
         "ru": "Касан",
+        "type": "42",
         "mahallas": [
             "10229501001",
             "10229501002",
@@ -7044,6 +7320,7 @@ export const settlements: Code_Names = {
         "en": "Boyg'undi",
         "uz": "Boyg‘undi",
         "ru": "Бойгунди",
+        "type": "43",
         "mahallas": [
             "10229552001"
         ]
@@ -7052,6 +7329,7 @@ export const settlements: Code_Names = {
         "en": "Boyterak",
         "uz": "Boyterak",
         "ru": "Бойтерак",
+        "type": "43",
         "mahallas": [
             "10229554001"
         ]
@@ -7060,6 +7338,7 @@ export const settlements: Code_Names = {
         "en": "Guvalak",
         "uz": "Guvalak",
         "ru": "Гувалак",
+        "type": "43",
         "mahallas": [
             "10229556001"
         ]
@@ -7068,6 +7347,7 @@ export const settlements: Code_Names = {
         "en": "Istiqlol",
         "uz": "Istiqlol",
         "ru": "Истиклол",
+        "type": "43",
         "mahallas": [
             "10229558001"
         ]
@@ -7076,6 +7356,7 @@ export const settlements: Code_Names = {
         "en": "Qo'yi Obron",
         "uz": "Qo‘yi Obron",
         "ru": "Куйи Оброн",
+        "type": "43",
         "mahallas": [
             "10229560001"
         ]
@@ -7084,6 +7365,7 @@ export const settlements: Code_Names = {
         "en": "Mudin",
         "uz": "Mudin",
         "ru": "Мудин",
+        "type": "43",
         "mahallas": [
             "10229562001",
             "10229562002"
@@ -7093,6 +7375,7 @@ export const settlements: Code_Names = {
         "en": "Oqtepa",
         "uz": "Oqtepa",
         "ru": "Октепа",
+        "type": "43",
         "mahallas": [
             "10229564001"
         ]
@@ -7101,6 +7384,7 @@ export const settlements: Code_Names = {
         "en": "Obod",
         "uz": "Obod",
         "ru": "Абад",
+        "type": "43",
         "mahallas": [
             "10229566001"
         ]
@@ -7109,6 +7393,7 @@ export const settlements: Code_Names = {
         "en": "Pudina",
         "uz": "Pudina",
         "ru": "Пудина",
+        "type": "43",
         "mahallas": [
             "10229568001"
         ]
@@ -7117,6 +7402,7 @@ export const settlements: Code_Names = {
         "en": "Po'lati",
         "uz": "Po‘lati",
         "ru": "Пулоти",
+        "type": "43",
         "mahallas": [
             "10229570001",
             "10229570002"
@@ -7126,6 +7412,7 @@ export const settlements: Code_Names = {
         "en": "Rahimso'fi",
         "uz": "Rahimso‘fi",
         "ru": "Рахимсуфи",
+        "type": "43",
         "mahallas": [
             "10229572001"
         ]
@@ -7134,6 +7421,7 @@ export const settlements: Code_Names = {
         "en": "Surhon",
         "uz": "Surhon",
         "ru": "Сурхон",
+        "type": "43",
         "mahallas": [
             "10229574001"
         ]
@@ -7142,6 +7430,7 @@ export const settlements: Code_Names = {
         "en": "To'lg'a",
         "uz": "To‘lg‘a",
         "ru": "Тулга",
+        "type": "43",
         "mahallas": [
             "10229576001"
         ]
@@ -7150,6 +7439,7 @@ export const settlements: Code_Names = {
         "en": "Esaboy",
         "uz": "Esaboy",
         "ru": "Эсабой",
+        "type": "43",
         "mahallas": [
             "10229578001"
         ]
@@ -7158,6 +7448,7 @@ export const settlements: Code_Names = {
         "en": "Village citizen assembly of Koson district",
         "uz": "Koson tumanining qishloq mahallalari",
         "ru": "Сельские сходы граждан Касанского района",
+        "type": "44",
         "mahallas": [
             "10229800001",
             "10229800002",
@@ -7202,6 +7493,7 @@ export const settlements: Code_Names = {
         "en": "Kitob",
         "uz": "Kitob",
         "ru": "Китаб",
+        "type": "42",
         "mahallas": [
             "10232501001",
             "10232501002",
@@ -7220,6 +7512,7 @@ export const settlements: Code_Names = {
         "en": "Alaqo'yliq",
         "uz": "Alaqo‘yliq",
         "ru": "Алакуйлик",
+        "type": "43",
         "mahallas": [
             "10232553001"
         ]
@@ -7228,6 +7521,7 @@ export const settlements: Code_Names = {
         "en": "Bektemir",
         "uz": "Bektemir",
         "ru": "Бектемир",
+        "type": "43",
         "mahallas": [
             "10232556001"
         ]
@@ -7236,6 +7530,7 @@ export const settlements: Code_Names = {
         "en": "Rus qishloq",
         "uz": "Rus qishloq",
         "ru": "Рус",
+        "type": "43",
         "mahallas": [
             "10232559001"
         ]
@@ -7244,6 +7539,7 @@ export const settlements: Code_Names = {
         "en": "Baxtdarvozasi",
         "uz": "Baxtdarvozasi",
         "ru": "Бахтдарвозаси",
+        "type": "43",
         "mahallas": [
             "10232563001"
         ]
@@ -7252,6 +7548,7 @@ export const settlements: Code_Names = {
         "en": "Beshterak",
         "uz": "Beshterak",
         "ru": "Бештерак",
+        "type": "43",
         "mahallas": [
             "10232566001"
         ]
@@ -7260,6 +7557,7 @@ export const settlements: Code_Names = {
         "en": "Varganza",
         "uz": "Varganza",
         "ru": "Варганза",
+        "type": "43",
         "mahallas": [
             "10232569001"
         ]
@@ -7268,6 +7566,7 @@ export const settlements: Code_Names = {
         "en": "Obikanda",
         "uz": "Obikanda",
         "ru": "Обиканда",
+        "type": "43",
         "mahallas": [
             "10232573001"
         ]
@@ -7276,6 +7575,7 @@ export const settlements: Code_Names = {
         "en": "Panji",
         "uz": "Panji",
         "ru": "Панжи",
+        "type": "43",
         "mahallas": [
             "10232576001"
         ]
@@ -7284,6 +7584,7 @@ export const settlements: Code_Names = {
         "en": "Sariosiyo",
         "uz": "Sariosiyo",
         "ru": "Сариосие",
+        "type": "43",
         "mahallas": [
             "10232579001"
         ]
@@ -7292,6 +7593,7 @@ export const settlements: Code_Names = {
         "en": "Sevaz",
         "uz": "Sevaz",
         "ru": "Севаз",
+        "type": "43",
         "mahallas": [
             "10232583001"
         ]
@@ -7300,6 +7602,7 @@ export const settlements: Code_Names = {
         "en": "Xoji",
         "uz": "Xoji",
         "ru": "Хожи",
+        "type": "43",
         "mahallas": [
             "10232586001"
         ]
@@ -7308,6 +7611,7 @@ export const settlements: Code_Names = {
         "en": "Yakkatut",
         "uz": "Yakkatut",
         "ru": "Яккатут",
+        "type": "43",
         "mahallas": [
             "10232589001"
         ]
@@ -7316,6 +7620,7 @@ export const settlements: Code_Names = {
         "en": "Yangiobod",
         "uz": "Yangiobod",
         "ru": "Янгиабад",
+        "type": "43",
         "mahallas": [
             "10232593001"
         ]
@@ -7324,6 +7629,7 @@ export const settlements: Code_Names = {
         "en": "Village citizen assembly of Kitob district",
         "uz": "Kitob tumanining qishloq mahallalari",
         "ru": "Сельские сходы граждан Китабского района",
+        "type": "44",
         "mahallas": [
             "10232800001",
             "10232800002",
@@ -7366,6 +7672,7 @@ export const settlements: Code_Names = {
         "en": "Yangi Mirishkor",
         "uz": "Yangi Mirishkor",
         "ru": "Янги Миришкор",
+        "type": "43",
         "mahallas": [
             "10233551001",
             "10233551002"
@@ -7375,6 +7682,7 @@ export const settlements: Code_Names = {
         "en": "Jeynov",
         "uz": "Jeynov",
         "ru": "Жейнов",
+        "type": "43",
         "mahallas": [
             "10233555001",
             "10233555002",
@@ -7388,6 +7696,7 @@ export const settlements: Code_Names = {
         "en": "Pomuq",
         "uz": "Pomuq",
         "ru": "Помук",
+        "type": "43",
         "mahallas": [
             "10233558001",
             "10233558002",
@@ -7400,6 +7709,7 @@ export const settlements: Code_Names = {
         "en": "Village citizen assembly of Mirishkor district",
         "uz": "Mirishkor tumanining qishloq mahallalari",
         "ru": "Сельские сходы граждан Миришкорского района",
+        "type": "44",
         "mahallas": [
             "10233800001",
             "10233800002",
@@ -7434,6 +7744,7 @@ export const settlements: Code_Names = {
         "en": "Muborak",
         "uz": "Muborak",
         "ru": "Мубаpек",
+        "type": "42",
         "mahallas": [
             "10234501001",
             "10234501002",
@@ -7451,6 +7762,7 @@ export const settlements: Code_Names = {
         "en": "Qarliq",
         "uz": "Qarliq",
         "ru": "Карлик",
+        "type": "43",
         "mahallas": [
             "10234552001",
             "10234552002",
@@ -7463,6 +7775,7 @@ export const settlements: Code_Names = {
         "en": "Baxt",
         "uz": "Baxt",
         "ru": "Бахт",
+        "type": "43",
         "mahallas": [
             "10234554001"
         ]
@@ -7471,6 +7784,7 @@ export const settlements: Code_Names = {
         "en": "Qoraqum",
         "uz": "Qoraqum",
         "ru": "Каракум",
+        "type": "43",
         "mahallas": [
             "10234556001",
             "10234556002"
@@ -7480,6 +7794,7 @@ export const settlements: Code_Names = {
         "en": "Diyonat",
         "uz": "Diyonat",
         "ru": "Диёнат",
+        "type": "43",
         "mahallas": [
             "10234558001",
             "10234558002"
@@ -7489,6 +7804,7 @@ export const settlements: Code_Names = {
         "en": "Shayx",
         "uz": "Shayx",
         "ru": "Шайх",
+        "type": "43",
         "mahallas": [
             "10234562001"
         ]
@@ -7497,6 +7813,7 @@ export const settlements: Code_Names = {
         "en": "Village citizen assembly of Muborak district",
         "uz": "Muborak tumanining qishloq mahallalari",
         "ru": "Сельские сходы граждан Мубарекского района",
+        "type": "44",
         "mahallas": [
             "10234800001",
             "10234800002",
@@ -7508,6 +7825,7 @@ export const settlements: Code_Names = {
         "en": "Yangi Nishon",
         "uz": "Yangi Nishon",
         "ru": "Янги-Нишан",
+        "type": "42",
         "mahallas": [
             "10235501001",
             "10235501002",
@@ -7519,6 +7837,7 @@ export const settlements: Code_Names = {
         "en": "Talimarjon",
         "uz": "Talimarjon",
         "ru": "Талимарджан",
+        "type": "42",
         "mahallas": [
             "10235505001",
             "10235505002",
@@ -7530,6 +7849,7 @@ export const settlements: Code_Names = {
         "en": "Nuriston",
         "uz": "Nuriston",
         "ru": "Нуристон",
+        "type": "43",
         "mahallas": [
             "10235553001",
             "10235553002",
@@ -7540,6 +7860,7 @@ export const settlements: Code_Names = {
         "en": "Nishon",
         "uz": "Nishon",
         "ru": "Нишон",
+        "type": "43",
         "mahallas": [
             "10235555001",
             "10235555002",
@@ -7550,6 +7871,7 @@ export const settlements: Code_Names = {
         "en": "Oq oltin",
         "uz": "Oq oltin",
         "ru": "Ак алтин",
+        "type": "43",
         "mahallas": [
             "10235559001"
         ]
@@ -7558,6 +7880,7 @@ export const settlements: Code_Names = {
         "en": "Sardoba",
         "uz": "Sardoba",
         "ru": "Сардоба",
+        "type": "43",
         "mahallas": [
             "10235561001"
         ]
@@ -7566,6 +7889,7 @@ export const settlements: Code_Names = {
         "en": "Oydin",
         "uz": "Oydin",
         "ru": "Ойдин",
+        "type": "43",
         "mahallas": [
             "10235567001"
         ]
@@ -7574,6 +7898,7 @@ export const settlements: Code_Names = {
         "en": "Paxtaobod",
         "uz": "Paxtaobod",
         "ru": "Пахтаабад",
+        "type": "43",
         "mahallas": [
             "10235571001"
         ]
@@ -7582,6 +7907,7 @@ export const settlements: Code_Names = {
         "en": "Village citizen assembly of Nishon district",
         "uz": "Nishon tumanining qishloq mahallalari",
         "ru": "Сельские сходы граждан Нишанского района",
+        "type": "44",
         "mahallas": [
             "10235800001",
             "10235800002",
@@ -7607,6 +7933,7 @@ export const settlements: Code_Names = {
         "en": "Mug'lon",
         "uz": "Mug‘lon",
         "ru": "Муглон",
+        "type": "43",
         "mahallas": [
             "10237551001",
             "10237551002"
@@ -7616,6 +7943,7 @@ export const settlements: Code_Names = {
         "en": "Denov",
         "uz": "Denov",
         "ru": "Денов",
+        "type": "43",
         "mahallas": [
             "10237554001",
             "10237554002"
@@ -7625,6 +7953,7 @@ export const settlements: Code_Names = {
         "en": "Kasbi",
         "uz": "Kasbi",
         "ru": "Касби",
+        "type": "43",
         "mahallas": [
             "10237556001"
         ]
@@ -7633,6 +7962,7 @@ export const settlements: Code_Names = {
         "en": "Do'stlik",
         "uz": "Do‘stlik",
         "ru": "Дустлик",
+        "type": "43",
         "mahallas": [
             "10237558001"
         ]
@@ -7641,6 +7971,7 @@ export const settlements: Code_Names = {
         "en": "Yangi qishloq",
         "uz": "Yangi qishloq",
         "ru": "Янги кишлок",
+        "type": "43",
         "mahallas": [
             "10237562001"
         ]
@@ -7649,6 +7980,7 @@ export const settlements: Code_Names = {
         "en": "Xo'jakasbi",
         "uz": "Xo‘jakasbi",
         "ru": "Хужа Касби",
+        "type": "43",
         "mahallas": [
             "10237564001"
         ]
@@ -7657,6 +7989,7 @@ export const settlements: Code_Names = {
         "en": "Fazli",
         "uz": "Fazli",
         "ru": "Фазли",
+        "type": "43",
         "mahallas": [
             "10237566001",
             "10237566002",
@@ -7667,6 +8000,7 @@ export const settlements: Code_Names = {
         "en": "Maymanoq",
         "uz": "Maymanoq",
         "ru": "Майманок",
+        "type": "43",
         "mahallas": [
             "10237568001",
             "10237568002",
@@ -7678,6 +8012,7 @@ export const settlements: Code_Names = {
         "en": "Qatag'an",
         "uz": "Qatag‘an",
         "ru": "Катаган",
+        "type": "43",
         "mahallas": [
             "10237572001"
         ]
@@ -7686,6 +8021,7 @@ export const settlements: Code_Names = {
         "en": "Village citizen assembly of Kasbi district",
         "uz": "Kasbi tumanining qishloq mahallalari",
         "ru": "Сельские сходы граждан Касбинского района",
+        "type": "44",
         "mahallas": [
             "10237800001",
             "10237800002",
@@ -7719,6 +8055,7 @@ export const settlements: Code_Names = {
         "en": "Yettitom",
         "uz": "Yettitom",
         "ru": "Еттитом",
+        "type": "43",
         "mahallas": [
             "10240551001"
         ]
@@ -7727,6 +8064,7 @@ export const settlements: Code_Names = {
         "en": "Chiyal",
         "uz": "Chiyal",
         "ru": "Чиял",
+        "type": "43",
         "mahallas": [
             "10240568001",
             "10240568002"
@@ -7736,6 +8074,7 @@ export const settlements: Code_Names = {
         "en": "Kokdala",
         "uz": "Ko‘kdala",
         "ru": "Кукдала",
+        "type": "43",
         "mahallas": [
             "10240572001"
         ]
@@ -7744,6 +8083,7 @@ export const settlements: Code_Names = {
         "en": "Ayritom",
         "uz": "Ayritom",
         "ru": "Айритом",
+        "type": "43",
         "mahallas": [
             "10240575001"
         ]
@@ -7752,6 +8092,7 @@ export const settlements: Code_Names = {
         "en": "Village citizen assembly of Kokdala district",
         "uz": "Ko‘kdala tumanining qishloq mahallalari",
         "ru": "Сельские сходы граждан Кокдалинского района",
+        "type": "44",
         "mahallas": [
             "10240800001",
             "10240800002",
@@ -7791,6 +8132,7 @@ export const settlements: Code_Names = {
         "en": "Chiroqchi",
         "uz": "Chiroqchi",
         "ru": "Чиракчи",
+        "type": "42",
         "mahallas": [
             "10242501001",
             "10242501002",
@@ -7805,6 +8147,7 @@ export const settlements: Code_Names = {
         "en": "Jar",
         "uz": "Jar",
         "ru": "Джар",
+        "type": "43",
         "mahallas": [
             "10242553001",
             "10242553002",
@@ -7816,6 +8159,7 @@ export const settlements: Code_Names = {
         "en": "O'ymovut",
         "uz": "O‘ymovut",
         "ru": "Уймовут",
+        "type": "43",
         "mahallas": [
             "10242556001",
             "10242556002"
@@ -7825,6 +8169,7 @@ export const settlements: Code_Names = {
         "en": "Dam",
         "uz": "Dam",
         "ru": "Дам",
+        "type": "43",
         "mahallas": [
             "10242559001",
             "10242559002"
@@ -7834,6 +8179,7 @@ export const settlements: Code_Names = {
         "en": "Pakandi",
         "uz": "Pakandi",
         "ru": "Паканди",
+        "type": "43",
         "mahallas": [
             "10242563001",
             "10242563002"
@@ -7843,6 +8189,7 @@ export const settlements: Code_Names = {
         "en": "Paxtaobod",
         "uz": "Paxtaobod",
         "ru": "Пахтаобод",
+        "type": "43",
         "mahallas": [
             "10242566001",
             "10242566002",
@@ -7853,6 +8200,7 @@ export const settlements: Code_Names = {
         "en": "Village citizen assembly of Chiroqchi district",
         "uz": "Chiroqchi tumanining qishloq mahallalari",
         "ru": "Сельские сходы граждан Чиракчинского района",
+        "type": "44",
         "mahallas": [
             "10242800001",
             "10242800002",
@@ -7899,6 +8247,7 @@ export const settlements: Code_Names = {
         "en": "Miraki",
         "uz": "Miraki",
         "ru": "Мираки",
+        "type": "43",
         "mahallas": [
             "10245553001",
             "10245553002"
@@ -7908,6 +8257,7 @@ export const settlements: Code_Names = {
         "en": "Qumqishloq",
         "uz": "Qumqishloq",
         "ru": "Кумкишлок",
+        "type": "43",
         "mahallas": [
             "10245555001"
         ]
@@ -7916,6 +8266,7 @@ export const settlements: Code_Names = {
         "en": "O'rtaqo'rg'on",
         "uz": "O‘rtaqo‘rg‘on",
         "ru": "Уртакургон",
+        "type": "43",
         "mahallas": [
             "10245557001"
         ]
@@ -7924,6 +8275,7 @@ export const settlements: Code_Names = {
         "en": "Chorshanbe",
         "uz": "Chorshanbe",
         "ru": "Чоршанбе",
+        "type": "43",
         "mahallas": [
             "10245561001"
         ]
@@ -7932,6 +8284,7 @@ export const settlements: Code_Names = {
         "en": "Temirchi",
         "uz": "Temirchi",
         "ru": "Темирчи",
+        "type": "43",
         "mahallas": [
             "10245563001"
         ]
@@ -7940,6 +8293,7 @@ export const settlements: Code_Names = {
         "en": "Yangiqishloq",
         "uz": "Yangiqishloq",
         "ru": "Янгикишлок",
+        "type": "43",
         "mahallas": [
             "10245565001",
             "10245565002"
@@ -7949,6 +8303,7 @@ export const settlements: Code_Names = {
         "en": "Qutchi",
         "uz": "Qutchi",
         "ru": "Кутчи",
+        "type": "43",
         "mahallas": [
             "10245567001",
             "10245567002"
@@ -7958,6 +8313,7 @@ export const settlements: Code_Names = {
         "en": "Shamaton",
         "uz": "Shamaton",
         "ru": "Шаматон",
+        "type": "43",
         "mahallas": [
             "10245569001"
         ]
@@ -7966,6 +8322,7 @@ export const settlements: Code_Names = {
         "en": "Qo'shqanot",
         "uz": "Qo‘shqanot",
         "ru": "Кушканот",
+        "type": "43",
         "mahallas": [
             "10245573001"
         ]
@@ -7974,6 +8331,7 @@ export const settlements: Code_Names = {
         "en": "Anday",
         "uz": "Anday",
         "ru": "Андай",
+        "type": "43",
         "mahallas": [
             "10245575001"
         ]
@@ -7982,6 +8340,7 @@ export const settlements: Code_Names = {
         "en": "Xo'jaxuroson",
         "uz": "Xo‘jaxuroson",
         "ru": "Хужахуросон",
+        "type": "43",
         "mahallas": [
             "10245583001"
         ]
@@ -7990,6 +8349,7 @@ export const settlements: Code_Names = {
         "en": "Keldihayot",
         "uz": "Keldihayot",
         "ru": "Келдихает",
+        "type": "43",
         "mahallas": [
             "10245585001",
             "10245585002"
@@ -7999,6 +8359,7 @@ export const settlements: Code_Names = {
         "en": "Village citizen assembly of Shahrisabz district",
         "uz": "Shahrisabz tumanining qishloq mahallalari",
         "ru": "Сельские сходы граждан Шахрисабзского района",
+        "type": "44",
         "mahallas": [
             "10245800001",
             "10245800002",
@@ -8047,6 +8408,7 @@ export const settlements: Code_Names = {
         "en": "Yakkabog'",
         "uz": "Yakkabog‘",
         "ru": "Яккабаг",
+        "type": "42",
         "mahallas": [
             "10250501001",
             "10250501002",
@@ -8065,6 +8427,7 @@ export const settlements: Code_Names = {
         "en": "Eski Yakkabog'",
         "uz": "Eski Yakkabog‘",
         "ru": "Эски Яккабаг",
+        "type": "43",
         "mahallas": [
             "10250555001",
             "10250555002",
@@ -8076,6 +8439,7 @@ export const settlements: Code_Names = {
         "en": "Alaqarg'a",
         "uz": "Alaqarg‘a",
         "ru": "Алакарга",
+        "type": "43",
         "mahallas": [
             "10250557001"
         ]
@@ -8084,6 +8448,7 @@ export const settlements: Code_Names = {
         "en": "Alako'ylak",
         "uz": "Alako‘ylak",
         "ru": "Алакуйлак",
+        "type": "43",
         "mahallas": [
             "10250558001"
         ]
@@ -8092,6 +8457,7 @@ export const settlements: Code_Names = {
         "en": "Jarqirg'iz",
         "uz": "Jarqirg‘iz",
         "ru": "Жаркиргиз",
+        "type": "43",
         "mahallas": [
             "10250559001"
         ]
@@ -8100,6 +8466,7 @@ export const settlements: Code_Names = {
         "en": "Qayrag'och",
         "uz": "Qayrag‘och",
         "ru": "Кайрагач",
+        "type": "43",
         "mahallas": [
             "10250561001"
         ]
@@ -8108,6 +8475,7 @@ export const settlements: Code_Names = {
         "en": "Qatag'on",
         "uz": "Qatag‘on",
         "ru": "Катагон",
+        "type": "43",
         "mahallas": [
             "10250563001",
             "10250563002"
@@ -8117,6 +8485,7 @@ export const settlements: Code_Names = {
         "en": "Kattabog'",
         "uz": "Kattabog‘",
         "ru": "Каттабог",
+        "type": "43",
         "mahallas": [
             "10250565001"
         ]
@@ -8125,6 +8494,7 @@ export const settlements: Code_Names = {
         "en": "Madaniyat",
         "uz": "Madaniyat",
         "ru": "Маданият",
+        "type": "43",
         "mahallas": [
             "10250567001"
         ]
@@ -8133,6 +8503,7 @@ export const settlements: Code_Names = {
         "en": "Mevazor",
         "uz": "Mevazor",
         "ru": "Мевазор",
+        "type": "43",
         "mahallas": [
             "10250569001"
         ]
@@ -8141,6 +8512,7 @@ export const settlements: Code_Names = {
         "en": "Samoq",
         "uz": "Samoq",
         "ru": "Самок",
+        "type": "43",
         "mahallas": [
             "10250571001"
         ]
@@ -8149,6 +8521,7 @@ export const settlements: Code_Names = {
         "en": "Turon",
         "uz": "Turon",
         "ru": "Турон",
+        "type": "43",
         "mahallas": [
             "10250573001"
         ]
@@ -8157,6 +8530,7 @@ export const settlements: Code_Names = {
         "en": "O'z",
         "uz": "O‘z",
         "ru": "Уз",
+        "type": "43",
         "mahallas": [
             "10250575001"
         ]
@@ -8165,6 +8539,7 @@ export const settlements: Code_Names = {
         "en": "Edilbek",
         "uz": "Edilbek",
         "ru": "Эдилбек",
+        "type": "43",
         "mahallas": [
             "10250579001"
         ]
@@ -8173,6 +8548,7 @@ export const settlements: Code_Names = {
         "en": "Village citizen assembly of Yakkabog' district",
         "uz": "Yakkabog‘ tumanining qishloq mahallalari",
         "ru": "Сельские сходы граждан Яккабагского района",
+        "type": "44",
         "mahallas": [
             "10250800001",
             "10250800002",
@@ -8211,9 +8587,10 @@ export const settlements: Code_Names = {
         ]
     },
     "1710401000": {
-        "en": "--",
-        "uz": "--",
-        "ru": "--",
+        "en": "-",
+        "uz": "-",
+        "ru": "-",
+        "type": "32",
         "mahallas": [
             "10401000001",
             "10401000002",
@@ -8283,15 +8660,17 @@ export const settlements: Code_Names = {
         "en": "Qashqadaryo",
         "uz": "Qashqadaryo",
         "ru": "Кашкадарья",
+        "type": "43",
         "mahallas": [
             "10401555001",
             "10401555002"
         ]
     },
     "1710405000": {
-        "en": "--",
-        "uz": "--",
-        "ru": "--",
+        "en": "-",
+        "uz": "-",
+        "ru": "-",
+        "type": "32",
         "mahallas": [
             "10405000001",
             "10405000002",
@@ -8339,6 +8718,7 @@ export const settlements: Code_Names = {
         "en": "Konimex",
         "uz": "Konimex",
         "ru": "Канимех",
+        "type": "43",
         "mahallas": [
             "12211551001",
             "12211551002",
@@ -8349,6 +8729,7 @@ export const settlements: Code_Names = {
         "en": "Mamiqchi",
         "uz": "Mamiqchi",
         "ru": "Мамикчи",
+        "type": "43",
         "mahallas": [
             "12211554001"
         ]
@@ -8357,6 +8738,7 @@ export const settlements: Code_Names = {
         "en": "Sho'rtepa",
         "uz": "Sho‘rtepa",
         "ru": "Шуртепа",
+        "type": "43",
         "mahallas": [
             "12211556001"
         ]
@@ -8365,6 +8747,7 @@ export const settlements: Code_Names = {
         "en": "Zafarobod",
         "uz": "Zafarobod",
         "ru": "Зафарабад",
+        "type": "43",
         "mahallas": [
             "12211558001",
             "12211558002"
@@ -8374,6 +8757,7 @@ export const settlements: Code_Names = {
         "en": "Village citizen assembly of Konimex district",
         "uz": "Konimex tumanining qishloq mahallalari",
         "ru": "Сельские сходы граждан Канимехского района",
+        "type": "44",
         "mahallas": [
             "12211800001",
             "12211800002",
@@ -8389,6 +8773,7 @@ export const settlements: Code_Names = {
         "en": "Qiziltepa",
         "uz": "Qiziltepa",
         "ru": "Кызылтепа",
+        "type": "42",
         "mahallas": [
             "12216501001",
             "12216501002",
@@ -8402,6 +8787,7 @@ export const settlements: Code_Names = {
         "en": "Husbuddin",
         "uz": "Husbuddin",
         "ru": "Хусбуддин",
+        "type": "43",
         "mahallas": [
             "12216552001"
         ]
@@ -8410,6 +8796,7 @@ export const settlements: Code_Names = {
         "en": "Qalayn-Azizon",
         "uz": "Qalayn-Azizon",
         "ru": "Калъайи Азизон",
+        "type": "43",
         "mahallas": [
             "12216554001"
         ]
@@ -8418,6 +8805,7 @@ export const settlements: Code_Names = {
         "en": "Baland G'ardiyon",
         "uz": "Baland G‘ardiyon",
         "ru": "Баланд гардиен",
+        "type": "43",
         "mahallas": [
             "12216556001"
         ]
@@ -8426,6 +8814,7 @@ export const settlements: Code_Names = {
         "en": "G'oyibon",
         "uz": "G‘oyibon",
         "ru": "Гойибон",
+        "type": "43",
         "mahallas": [
             "12216558001",
             "12216558002"
@@ -8435,6 +8824,7 @@ export const settlements: Code_Names = {
         "en": "Oq soch",
         "uz": "Oq soch",
         "ru": "Оксоч",
+        "type": "43",
         "mahallas": [
             "12216560001"
         ]
@@ -8443,6 +8833,7 @@ export const settlements: Code_Names = {
         "en": "Vang'ozi",
         "uz": "Vang‘ozi",
         "ru": "Вангози",
+        "type": "43",
         "mahallas": [
             "12216562001"
         ]
@@ -8451,6 +8842,7 @@ export const settlements: Code_Names = {
         "en": "Oqmachit",
         "uz": "Oqmachit",
         "ru": "Окмачит",
+        "type": "43",
         "mahallas": [
             "12216564001"
         ]
@@ -8459,6 +8851,7 @@ export const settlements: Code_Names = {
         "en": "Zarmetan",
         "uz": "Zarmetan",
         "ru": "Зарметан",
+        "type": "43",
         "mahallas": [
             "12216566001"
         ]
@@ -8467,6 +8860,7 @@ export const settlements: Code_Names = {
         "en": "G'amxo'r",
         "uz": "G‘amxo‘r",
         "ru": "Гамхур",
+        "type": "43",
         "mahallas": [
             "12216568001",
             "12216568002"
@@ -8476,6 +8870,7 @@ export const settlements: Code_Names = {
         "en": "Uzilishkent",
         "uz": "Uzilishkent",
         "ru": "Узилишкент",
+        "type": "43",
         "mahallas": [
             "12216572001"
         ]
@@ -8484,6 +8879,7 @@ export const settlements: Code_Names = {
         "en": "O'rtaqo'rg'on",
         "uz": "O‘rtaqo‘rg‘on",
         "ru": "Уртакургон",
+        "type": "43",
         "mahallas": [
             "12216574001"
         ]
@@ -8492,6 +8888,7 @@ export const settlements: Code_Names = {
         "en": "Xo'jaqo'rg'on",
         "uz": "Xo‘jaqo‘rg‘on",
         "ru": "Хужакургон",
+        "type": "43",
         "mahallas": [
             "12216576001"
         ]
@@ -8500,6 +8897,7 @@ export const settlements: Code_Names = {
         "en": "Village citizen assembly of Qiziltepa district",
         "uz": "Qiziltepa tumanining qishloq mahallalari",
         "ru": "Сельские сходы граждан Кызылтепинского района",
+        "type": "44",
         "mahallas": [
             "12216800001",
             "12216800002",
@@ -8540,6 +8938,7 @@ export const settlements: Code_Names = {
         "en": "Kalkonota",
         "uz": "Kalkonota",
         "ru": "Калконота",
+        "type": "43",
         "mahallas": [
             "12230552001",
             "12230552002"
@@ -8549,6 +8948,7 @@ export const settlements: Code_Names = {
         "en": "Saroy",
         "uz": "Saroy",
         "ru": "Сарой",
+        "type": "43",
         "mahallas": [
             "12230553001"
         ]
@@ -8557,6 +8957,7 @@ export const settlements: Code_Names = {
         "en": "Quyi Beshrabot",
         "uz": "Quyi Beshrabot",
         "ru": "Куйи Бешработ",
+        "type": "43",
         "mahallas": [
             "12230555001",
             "12230555002"
@@ -8566,6 +8967,7 @@ export const settlements: Code_Names = {
         "en": "Keskanterak",
         "uz": "Keskanterak",
         "ru": "Кескантерак",
+        "type": "43",
         "mahallas": [
             "12230557001",
             "12230557002"
@@ -8575,6 +8977,7 @@ export const settlements: Code_Names = {
         "en": "Ijant",
         "uz": "Ijant",
         "ru": "Ижант",
+        "type": "43",
         "mahallas": [
             "12230559001"
         ]
@@ -8583,6 +8986,7 @@ export const settlements: Code_Names = {
         "en": "Village citizen assembly of Navbahor district",
         "uz": "Navbahor tumanining qishloq mahallalari",
         "ru": "Сельские сходы граждан Навбахорского района",
+        "type": "44",
         "mahallas": [
             "12230800001",
             "12230800002",
@@ -8623,6 +9027,7 @@ export const settlements: Code_Names = {
         "en": "Karmana",
         "uz": "Karmana",
         "ru": "Кармана",
+        "type": "43",
         "mahallas": [
             "12234551001",
             "12234551002",
@@ -8639,6 +9044,7 @@ export const settlements: Code_Names = {
         "en": "Malikrabot",
         "uz": "Malikrabot",
         "ru": "Маликработ",
+        "type": "43",
         "mahallas": [
             "12234557001",
             "12234557002",
@@ -8649,6 +9055,7 @@ export const settlements: Code_Names = {
         "en": "Paxtaobod",
         "uz": "Paxtaobod",
         "ru": "Пахтаабад",
+        "type": "43",
         "mahallas": [
             "12234559001"
         ]
@@ -8657,6 +9064,7 @@ export const settlements: Code_Names = {
         "en": "Podkoron",
         "uz": "Podkoron",
         "ru": "Подкорон",
+        "type": "43",
         "mahallas": [
             "12234561001"
         ]
@@ -8665,6 +9073,7 @@ export const settlements: Code_Names = {
         "en": "Kamolot",
         "uz": "Kamolot",
         "ru": "Камолот",
+        "type": "43",
         "mahallas": [
             "12234563001"
         ]
@@ -8673,6 +9082,7 @@ export const settlements: Code_Names = {
         "en": "Village citizen assembly of Karmana district",
         "uz": "Karmana tumanining qishloq mahallalari",
         "ru": "Сельские сходы граждан Карманинского района",
+        "type": "44",
         "mahallas": [
             "12234800001",
             "12234800002",
@@ -8708,6 +9118,7 @@ export const settlements: Code_Names = {
         "en": "Nurota",
         "uz": "Nurota",
         "ru": "Нурата",
+        "type": "42",
         "mahallas": [
             "12238501001",
             "12238501002",
@@ -8729,6 +9140,7 @@ export const settlements: Code_Names = {
         "en": "Qizilcha",
         "uz": "Qizilcha",
         "ru": "Кизилча",
+        "type": "43",
         "mahallas": [
             "12238555001",
             "12238555002"
@@ -8738,6 +9150,7 @@ export const settlements: Code_Names = {
         "en": "Temurqovuq",
         "uz": "Temurqovuq",
         "ru": "Темирковук",
+        "type": "43",
         "mahallas": [
             "12238557001"
         ]
@@ -8746,6 +9159,7 @@ export const settlements: Code_Names = {
         "en": "Chuya",
         "uz": "Chuya",
         "ru": "Чуя",
+        "type": "43",
         "mahallas": [
             "12238558001"
         ]
@@ -8754,6 +9168,7 @@ export const settlements: Code_Names = {
         "en": "Yangibino",
         "uz": "Yangibino",
         "ru": "Янгибино",
+        "type": "43",
         "mahallas": [
             "12238559001"
         ]
@@ -8762,6 +9177,7 @@ export const settlements: Code_Names = {
         "en": "Village citizen assembly of Nurota district",
         "uz": "Nurota tumanining qishloq mahallalari",
         "ru": "Сельские сходы граждан Нуратинского района",
+        "type": "44",
         "mahallas": [
             "12238800001",
             "12238800002",
@@ -8781,6 +9197,7 @@ export const settlements: Code_Names = {
         "en": "Uchquduq",
         "uz": "Uchquduq",
         "ru": "Учкудук",
+        "type": "42",
         "mahallas": [
             "12248501001",
             "12248501002",
@@ -8794,6 +9211,7 @@ export const settlements: Code_Names = {
         "en": "Village citizen assembly of Uchquduq district",
         "uz": "Uchquduq tumanining qishloq mahallalari",
         "ru": "Сельские сходы граждан Учкудукского района",
+        "type": "44",
         "mahallas": [
             "12248800001",
             "12248800002",
@@ -8809,6 +9227,7 @@ export const settlements: Code_Names = {
         "en": "Yangirabod",
         "uz": "Yangirabod",
         "ru": "Янгиpабод",
+        "type": "42",
         "mahallas": [
             "12251501001",
             "12251501002",
@@ -8825,6 +9244,7 @@ export const settlements: Code_Names = {
         "en": "Langar",
         "uz": "Langar",
         "ru": "Лянгар",
+        "type": "43",
         "mahallas": [
             "12251558001"
         ]
@@ -8833,6 +9253,7 @@ export const settlements: Code_Names = {
         "en": "Jaloyir",
         "uz": "Jaloyir",
         "ru": "Джалойир",
+        "type": "43",
         "mahallas": [
             "12251562001"
         ]
@@ -8841,6 +9262,7 @@ export const settlements: Code_Names = {
         "en": "Qo'shchinor",
         "uz": "Qo‘shchinor",
         "ru": "Кушчинор",
+        "type": "43",
         "mahallas": [
             "12251564001"
         ]
@@ -8849,6 +9271,7 @@ export const settlements: Code_Names = {
         "en": "Polvontepa",
         "uz": "Polvontepa",
         "ru": "Полвонтепа",
+        "type": "43",
         "mahallas": [
             "12251566001"
         ]
@@ -8857,6 +9280,7 @@ export const settlements: Code_Names = {
         "en": "Qo'rg'on",
         "uz": "Qo‘rg‘on",
         "ru": "Кургон",
+        "type": "43",
         "mahallas": [
             "12251568001"
         ]
@@ -8865,6 +9289,7 @@ export const settlements: Code_Names = {
         "en": "Tasmachi",
         "uz": "Tasmachi",
         "ru": "Тасмачи",
+        "type": "43",
         "mahallas": [
             "12251570001"
         ]
@@ -8873,6 +9298,7 @@ export const settlements: Code_Names = {
         "en": "Bog'ishamol",
         "uz": "Bog‘ishamol",
         "ru": "Богишамол",
+        "type": "43",
         "mahallas": [
             "12251573001"
         ]
@@ -8881,6 +9307,7 @@ export const settlements: Code_Names = {
         "en": "G'alabek",
         "uz": "G‘alabek",
         "ru": "Галабек",
+        "type": "43",
         "mahallas": [
             "12251575001"
         ]
@@ -8889,6 +9316,7 @@ export const settlements: Code_Names = {
         "en": "Paxtakor",
         "uz": "Paxtakor",
         "ru": "Пахтакор",
+        "type": "43",
         "mahallas": [
             "12251577001"
         ]
@@ -8897,6 +9325,7 @@ export const settlements: Code_Names = {
         "en": "Turkman",
         "uz": "Turkman",
         "ru": "Туркман",
+        "type": "43",
         "mahallas": [
             "12251579001"
         ]
@@ -8905,6 +9334,7 @@ export const settlements: Code_Names = {
         "en": "Yangi qurilish",
         "uz": "Yangi qurilish",
         "ru": "Янги курилиш",
+        "type": "43",
         "mahallas": [
             "12251581001"
         ]
@@ -8913,6 +9343,7 @@ export const settlements: Code_Names = {
         "en": "Village citizen assembly of Xatirchi district",
         "uz": "Xatirchi tumanining qishloq mahallalari",
         "ru": "Сельские сходы граждан Хатырчинского района",
+        "type": "44",
         "mahallas": [
             "12251800001",
             "12251800002",
@@ -8970,6 +9401,7 @@ export const settlements: Code_Names = {
         "en": "Village citizen assembly of Tomdi district",
         "uz": "Tomdi tumanining qishloq mahallalari",
         "ru": "Сельские сходы граждан Тамдынского района",
+        "type": "44",
         "mahallas": [
             "12244800001",
             "12244800002",
@@ -8982,9 +9414,10 @@ export const settlements: Code_Names = {
         ]
     },
     "1712401000": {
-        "en": "--",
-        "uz": "--",
-        "ru": "--",
+        "en": "-",
+        "uz": "-",
+        "ru": "-",
+        "type": "32",
         "mahallas": [
             "12401000001",
             "12401000002",
@@ -9027,14 +9460,16 @@ export const settlements: Code_Names = {
         "en": "Tinchlik",
         "uz": "Tinchlik",
         "ru": "Тинчлик",
+        "type": "43",
         "mahallas": [
             "12401564001"
         ]
     },
     "1712408000": {
-        "en": "--",
-        "uz": "--",
-        "ru": "--",
+        "en": "-",
+        "uz": "-",
+        "ru": "-",
+        "type": "32",
         "mahallas": [
             "12408000001",
             "12408000002",
@@ -9056,14 +9491,16 @@ export const settlements: Code_Names = {
         "en": "Muruntau",
         "uz": "Muruntau",
         "ru": "Мурунтау",
+        "type": "43",
         "mahallas": [
             "12408556001"
         ]
     },
     "1712412000": {
-        "en": "--",
-        "uz": "--",
-        "ru": "--",
+        "en": "-",
+        "uz": "-",
+        "ru": "-",
+        "type": "32",
         "mahallas": [
             "12412000001",
             "12412000002",
@@ -9075,6 +9512,7 @@ export const settlements: Code_Names = {
         "en": "Jo'masho'y",
         "uz": "Jo‘masho‘y",
         "ru": "Джумашуй",
+        "type": "43",
         "mahallas": [
             "14204551001",
             "14204551002",
@@ -9086,6 +9524,7 @@ export const settlements: Code_Names = {
         "en": "Go'rtepa",
         "uz": "Go‘rtepa",
         "ru": "Гуртепа",
+        "type": "43",
         "mahallas": [
             "14204552001"
         ]
@@ -9094,6 +9533,7 @@ export const settlements: Code_Names = {
         "en": "Dovduq",
         "uz": "Dovduq",
         "ru": "Довдук",
+        "type": "43",
         "mahallas": [
             "14204553001",
             "14204553002",
@@ -9104,6 +9544,7 @@ export const settlements: Code_Names = {
         "en": "O'zgarish",
         "uz": "O‘zgarish",
         "ru": "Узгариш",
+        "type": "43",
         "mahallas": [
             "14204555001"
         ]
@@ -9112,6 +9553,7 @@ export const settlements: Code_Names = {
         "en": "Mehnatobod",
         "uz": "Mehnatobod",
         "ru": "Мехнатабад",
+        "type": "43",
         "mahallas": [
             "14204556001"
         ]
@@ -9120,6 +9562,7 @@ export const settlements: Code_Names = {
         "en": "Madyarovul",
         "uz": "Madyarovul",
         "ru": "Мадяровул",
+        "type": "43",
         "mahallas": [
             "14204557001"
         ]
@@ -9128,6 +9571,7 @@ export const settlements: Code_Names = {
         "en": "Kugolikul",
         "uz": "Kugolikul",
         "ru": "Куголикул",
+        "type": "43",
         "mahallas": [
             "14204559001"
         ]
@@ -9136,6 +9580,7 @@ export const settlements: Code_Names = {
         "en": "Village citizen assembly of Mingbuloq district",
         "uz": "Mingbuloq tumanining qishloq mahallalari",
         "ru": "Сельские сходы граждан Мингбулакского района",
+        "type": "44",
         "mahallas": [
             "14204800001",
             "14204800002",
@@ -9171,6 +9616,7 @@ export const settlements: Code_Names = {
         "en": "Kosonsoy",
         "uz": "Kosonsoy",
         "ru": "Касансай",
+        "type": "42",
         "mahallas": [
             "14207501001",
             "14207501002",
@@ -9194,6 +9640,7 @@ export const settlements: Code_Names = {
         "en": "Bog'ishamol",
         "uz": "Bog‘ishamol",
         "ru": "Богишамол",
+        "type": "43",
         "mahallas": [
             "14207552001"
         ]
@@ -9202,6 +9649,7 @@ export const settlements: Code_Names = {
         "en": "Istiqlol",
         "uz": "Istiqlol",
         "ru": "Истиклол",
+        "type": "43",
         "mahallas": [
             "14207554001",
             "14207554002"
@@ -9211,6 +9659,7 @@ export const settlements: Code_Names = {
         "en": "Koson",
         "uz": "Koson",
         "ru": "Косон",
+        "type": "43",
         "mahallas": [
             "14207556001",
             "14207556002",
@@ -9222,6 +9671,7 @@ export const settlements: Code_Names = {
         "en": "Ququmboy",
         "uz": "Ququmboy",
         "ru": "Кукумбой",
+        "type": "43",
         "mahallas": [
             "14207558001",
             "14207558002",
@@ -9232,6 +9682,7 @@ export const settlements: Code_Names = {
         "en": "Ozod",
         "uz": "Ozod",
         "ru": "Озод",
+        "type": "43",
         "mahallas": [
             "14207561001"
         ]
@@ -9240,6 +9691,7 @@ export const settlements: Code_Names = {
         "en": "Tergachi",
         "uz": "Tergachi",
         "ru": "Тергачи",
+        "type": "43",
         "mahallas": [
             "14207562001",
             "14207562002"
@@ -9249,6 +9701,7 @@ export const settlements: Code_Names = {
         "en": "Chindavul",
         "uz": "Chindavul",
         "ru": "Чиндовул",
+        "type": "43",
         "mahallas": [
             "14207564001"
         ]
@@ -9257,6 +9710,7 @@ export const settlements: Code_Names = {
         "en": "Chust ko'cha",
         "uz": "Chust ko‘cha",
         "ru": "Чуст куча",
+        "type": "43",
         "mahallas": [
             "14207566001",
             "14207566002"
@@ -9266,6 +9720,7 @@ export const settlements: Code_Names = {
         "en": "Yangiyo'l",
         "uz": "Yangiyo‘l",
         "ru": "Янгийул",
+        "type": "43",
         "mahallas": [
             "14207568001"
         ]
@@ -9274,6 +9729,7 @@ export const settlements: Code_Names = {
         "en": "Yangi shahar",
         "uz": "Yangi shahar",
         "ru": "Янгишахар",
+        "type": "43",
         "mahallas": [
             "14207569001",
             "14207569002"
@@ -9283,6 +9739,7 @@ export const settlements: Code_Names = {
         "en": "Village citizen assembly of Kosonsoy district",
         "uz": "Kosonsoy tumanining qishloq mahallalari",
         "ru": "Сельские сходы граждан Касансайского района",
+        "type": "44",
         "mahallas": [
             "14207800001",
             "14207800002",
@@ -9314,6 +9771,7 @@ export const settlements: Code_Names = {
         "en": "Toshbuloq",
         "uz": "Toshbuloq",
         "ru": "Ташбулак",
+        "type": "43",
         "mahallas": [
             "14212551001",
             "14212551002",
@@ -9326,6 +9784,7 @@ export const settlements: Code_Names = {
         "en": "Navbahor",
         "uz": "Navbahor",
         "ru": "Навбахор",
+        "type": "43",
         "mahallas": [
             "14212553001",
             "14212553002",
@@ -9337,6 +9796,7 @@ export const settlements: Code_Names = {
         "en": "Qumqo'rg'on",
         "uz": "Qumqo‘rg‘on",
         "ru": "Кумкургон",
+        "type": "43",
         "mahallas": [
             "14212561001",
             "14212561002"
@@ -9346,6 +9806,7 @@ export const settlements: Code_Names = {
         "en": "Sho'rqo'rg'on",
         "uz": "Sho‘rqo‘rg‘on",
         "ru": "Шуркургон",
+        "type": "43",
         "mahallas": [
             "14212563001",
             "14212563002",
@@ -9356,6 +9817,7 @@ export const settlements: Code_Names = {
         "en": "Mirishkor",
         "uz": "Mirishkor",
         "ru": "Миришкор",
+        "type": "43",
         "mahallas": [
             "14212565001",
             "14212565002"
@@ -9365,6 +9827,7 @@ export const settlements: Code_Names = {
         "en": "Village citizen assembly of Namangan district",
         "uz": "Namangan tumanining qishloq mahallalari",
         "ru": "Сельские сходы граждан Наманганского района",
+        "type": "44",
         "mahallas": [
             "14212800001",
             "14212800002",
@@ -9409,6 +9872,7 @@ export const settlements: Code_Names = {
         "en": "Xaqqulobod",
         "uz": "Xaqqulobod",
         "ru": "Хаккулабад",
+        "type": "42",
         "mahallas": [
             "14216501001",
             "14216501002",
@@ -9430,6 +9894,7 @@ export const settlements: Code_Names = {
         "en": "Qorateri",
         "uz": "Qorateri",
         "ru": "Коратери",
+        "type": "43",
         "mahallas": [
             "14216552001"
         ]
@@ -9438,6 +9903,7 @@ export const settlements: Code_Names = {
         "en": "Marg'uzar",
         "uz": "Marg‘uzar",
         "ru": "Маргузар",
+        "type": "43",
         "mahallas": [
             "14216554001"
         ]
@@ -9446,6 +9912,7 @@ export const settlements: Code_Names = {
         "en": "Norinkapa",
         "uz": "Norinkapa",
         "ru": "Норинкапа",
+        "type": "43",
         "mahallas": [
             "14216556001"
         ]
@@ -9454,6 +9921,7 @@ export const settlements: Code_Names = {
         "en": "Pastki cho'ja",
         "uz": "Pastki cho‘ja",
         "ru": "Пастки Чужа",
+        "type": "43",
         "mahallas": [
             "14216558001"
         ]
@@ -9462,6 +9930,7 @@ export const settlements: Code_Names = {
         "en": "Uchtepa",
         "uz": "Uchtepa",
         "ru": "Учтепа",
+        "type": "43",
         "mahallas": [
             "14216561001"
         ]
@@ -9470,6 +9939,7 @@ export const settlements: Code_Names = {
         "en": "Xo'jaobod",
         "uz": "Xo‘jaobod",
         "ru": "Хужаабад",
+        "type": "43",
         "mahallas": [
             "14216562001"
         ]
@@ -9478,6 +9948,7 @@ export const settlements: Code_Names = {
         "en": "Chambil",
         "uz": "Chambil",
         "ru": "Чамбил",
+        "type": "43",
         "mahallas": [
             "14216564001"
         ]
@@ -9486,6 +9957,7 @@ export const settlements: Code_Names = {
         "en": "Sho'ra",
         "uz": "Sho‘ra",
         "ru": "Шуро",
+        "type": "43",
         "mahallas": [
             "14216566001"
         ]
@@ -9494,6 +9966,7 @@ export const settlements: Code_Names = {
         "en": "Village citizen assembly of Norin district",
         "uz": "Norin tumanining qishloq mahallalari",
         "ru": "Сельские сходы граждан Нарынского района",
+        "type": "44",
         "mahallas": [
             "14216800001",
             "14216800002",
@@ -9536,6 +10009,7 @@ export const settlements: Code_Names = {
         "en": "Pop",
         "uz": "Pop",
         "ru": "Пап",
+        "type": "42",
         "mahallas": [
             "14219501001",
             "14219501002",
@@ -9556,6 +10030,7 @@ export const settlements: Code_Names = {
         "en": "Oltinkon",
         "uz": "Oltinkon",
         "ru": "Алтынкан",
+        "type": "43",
         "mahallas": [
             "14219554001",
             "14219554002"
@@ -9565,6 +10040,7 @@ export const settlements: Code_Names = {
         "en": "Navbahor",
         "uz": "Navbahor",
         "ru": "Навбахор",
+        "type": "43",
         "mahallas": [
             "14219555001"
         ]
@@ -9573,6 +10049,7 @@ export const settlements: Code_Names = {
         "en": "Uyg'ursoy",
         "uz": "Uyg‘ursoy",
         "ru": "Уйгурсай",
+        "type": "43",
         "mahallas": [
             "14219557001"
         ]
@@ -9581,6 +10058,7 @@ export const settlements: Code_Names = {
         "en": "Xalqobod",
         "uz": "Xalqobod",
         "ru": "Халкабад",
+        "type": "43",
         "mahallas": [
             "14219560001",
             "14219560002",
@@ -9592,6 +10070,7 @@ export const settlements: Code_Names = {
         "en": "Chorkesar",
         "uz": "Chorkesar",
         "ru": "Чаркесар",
+        "type": "43",
         "mahallas": [
             "14219565001"
         ]
@@ -9600,6 +10079,7 @@ export const settlements: Code_Names = {
         "en": "Uyg'ur",
         "uz": "Uyg‘ur",
         "ru": "Уйгур",
+        "type": "43",
         "mahallas": [
             "14219567001"
         ]
@@ -9608,6 +10088,7 @@ export const settlements: Code_Names = {
         "en": "Yangi Xo'jaobod",
         "uz": "Yangi Xo‘jaobod",
         "ru": "Янги Хужаабад",
+        "type": "43",
         "mahallas": [
             "14219569001"
         ]
@@ -9616,6 +10097,7 @@ export const settlements: Code_Names = {
         "en": "Sang",
         "uz": "Sang",
         "ru": "Санг",
+        "type": "43",
         "mahallas": [
             "14219571001",
             "14219571002",
@@ -9628,6 +10110,7 @@ export const settlements: Code_Names = {
         "en": "G'urumsaroy",
         "uz": "G‘urumsaroy",
         "ru": "Гурумсарай",
+        "type": "43",
         "mahallas": [
             "14219573001",
             "14219573002",
@@ -9638,6 +10121,7 @@ export const settlements: Code_Names = {
         "en": "Qandig'on",
         "uz": "Qandig‘on",
         "ru": "Кандигон",
+        "type": "43",
         "mahallas": [
             "14219575001",
             "14219575002"
@@ -9647,6 +10131,7 @@ export const settlements: Code_Names = {
         "en": "Pungon",
         "uz": "Pungon",
         "ru": "Пунгон",
+        "type": "43",
         "mahallas": [
             "14219576001",
             "14219576002"
@@ -9656,6 +10141,7 @@ export const settlements: Code_Names = {
         "en": "Chodak",
         "uz": "Chodak",
         "ru": "Чодак",
+        "type": "43",
         "mahallas": [
             "14219578001",
             "14219578002",
@@ -9668,6 +10154,7 @@ export const settlements: Code_Names = {
         "en": "Madaniyat",
         "uz": "Madaniyat",
         "ru": "Маданият",
+        "type": "43",
         "mahallas": [
             "14219581001"
         ]
@@ -9676,6 +10163,7 @@ export const settlements: Code_Names = {
         "en": "Qurg'onobod",
         "uz": "Qurg‘onobod",
         "ru": "Кургонобод",
+        "type": "43",
         "mahallas": [
             "14219583001"
         ]
@@ -9684,6 +10172,7 @@ export const settlements: Code_Names = {
         "en": "Chorkesar-2",
         "uz": "Chorkesar-2",
         "ru": "Чаркесар-2",
+        "type": "43",
         "mahallas": [
             "14219585001"
         ]
@@ -9692,6 +10181,7 @@ export const settlements: Code_Names = {
         "en": "Village citizen assembly of Pop district",
         "uz": "Pop tumanining qishloq mahallalari",
         "ru": "Сельские сходы граждан Папского района",
+        "type": "44",
         "mahallas": [
             "14219800001",
             "14219800002",
@@ -9732,6 +10222,7 @@ export const settlements: Code_Names = {
         "en": "To'raqo'rg'on",
         "uz": "To‘raqo‘rg‘on",
         "ru": "Туракурган",
+        "type": "42",
         "mahallas": [
             "14224501001",
             "14224501002",
@@ -9745,6 +10236,7 @@ export const settlements: Code_Names = {
         "en": "Oqtosh",
         "uz": "Oqtosh",
         "ru": "Акташ",
+        "type": "43",
         "mahallas": [
             "14224554001",
             "14224554002",
@@ -9755,6 +10247,7 @@ export const settlements: Code_Names = {
         "en": "Yettikon",
         "uz": "Yettikon",
         "ru": "Еттикан",
+        "type": "43",
         "mahallas": [
             "14224556001",
             "14224556002",
@@ -9766,6 +10259,7 @@ export const settlements: Code_Names = {
         "en": "Yandama",
         "uz": "Yandama",
         "ru": "Яндама",
+        "type": "43",
         "mahallas": [
             "14224558001",
             "14224558002"
@@ -9775,6 +10269,7 @@ export const settlements: Code_Names = {
         "en": "Axsi",
         "uz": "Axsi",
         "ru": "Ахси",
+        "type": "43",
         "mahallas": [
             "14224561001"
         ]
@@ -9783,6 +10278,7 @@ export const settlements: Code_Names = {
         "en": "Kalvak",
         "uz": "Kalvak",
         "ru": "Колвак",
+        "type": "43",
         "mahallas": [
             "14224563001"
         ]
@@ -9791,6 +10287,7 @@ export const settlements: Code_Names = {
         "en": "Mozorko'xna",
         "uz": "Mozorko‘xna",
         "ru": "Мизаркухна",
+        "type": "43",
         "mahallas": [
             "14224565001",
             "14224565002"
@@ -9800,6 +10297,7 @@ export const settlements: Code_Names = {
         "en": "Buramatut",
         "uz": "Buramatut",
         "ru": "Бураматут",
+        "type": "43",
         "mahallas": [
             "14224567001",
             "14224567002",
@@ -9810,6 +10308,7 @@ export const settlements: Code_Names = {
         "en": "Shaxand",
         "uz": "Shaxand",
         "ru": "Шахант",
+        "type": "43",
         "mahallas": [
             "14224569001",
             "14224569002",
@@ -9823,6 +10322,7 @@ export const settlements: Code_Names = {
         "en": "Olchin",
         "uz": "Olchin",
         "ru": "Олчин",
+        "type": "43",
         "mahallas": [
             "14224571001",
             "14224571002"
@@ -9832,6 +10332,7 @@ export const settlements: Code_Names = {
         "en": "Saroy",
         "uz": "Saroy",
         "ru": "Сарой",
+        "type": "43",
         "mahallas": [
             "14224575001",
             "14224575002",
@@ -9842,6 +10343,7 @@ export const settlements: Code_Names = {
         "en": "Katagon",
         "uz": "Katagon",
         "ru": "Катагон",
+        "type": "43",
         "mahallas": [
             "14224577001"
         ]
@@ -9850,6 +10352,7 @@ export const settlements: Code_Names = {
         "en": "Kichikqurama",
         "uz": "Kichikqurama",
         "ru": "Кичиккурама",
+        "type": "43",
         "mahallas": [
             "14224579001",
             "14224579002"
@@ -9859,6 +10362,7 @@ export const settlements: Code_Names = {
         "en": "Namdon",
         "uz": "Namdon",
         "ru": "Намдон",
+        "type": "43",
         "mahallas": [
             "14224581001"
         ]
@@ -9867,6 +10371,7 @@ export const settlements: Code_Names = {
         "en": "Village citizen assembly of To'raqo'rg'on district",
         "uz": "To‘raqo‘rg‘on tumanining qishloq mahallalari",
         "ru": "Сельские сходы граждан Туракурганского района",
+        "type": "44",
         "mahallas": [
             "14224800001",
             "14224800002",
@@ -9904,6 +10409,7 @@ export const settlements: Code_Names = {
         "en": "Uychi",
         "uz": "Uychi",
         "ru": "Уйчи",
+        "type": "43",
         "mahallas": [
             "14229551001",
             "14229551002",
@@ -9916,6 +10422,7 @@ export const settlements: Code_Names = {
         "en": "O'nxayat",
         "uz": "O‘nxayat",
         "ru": "Унхаят",
+        "type": "43",
         "mahallas": [
             "14229555001",
             "14229555002",
@@ -9927,6 +10434,7 @@ export const settlements: Code_Names = {
         "en": "Birlashgan",
         "uz": "Birlashgan",
         "ru": "Бирлашган",
+        "type": "43",
         "mahallas": [
             "14229557001",
             "14229557002"
@@ -9936,6 +10444,7 @@ export const settlements: Code_Names = {
         "en": "Fayziobod",
         "uz": "Fayziobod",
         "ru": "Файзиобод",
+        "type": "43",
         "mahallas": [
             "14229559001"
         ]
@@ -9944,6 +10453,7 @@ export const settlements: Code_Names = {
         "en": "Churtuk",
         "uz": "Churtuk",
         "ru": "Чуртук",
+        "type": "43",
         "mahallas": [
             "14229561001"
         ]
@@ -9952,6 +10462,7 @@ export const settlements: Code_Names = {
         "en": "Axsi",
         "uz": "Axsi",
         "ru": "Ахси",
+        "type": "43",
         "mahallas": [
             "14229563001",
             "14229563002"
@@ -9961,6 +10472,7 @@ export const settlements: Code_Names = {
         "en": "Jiydakapa",
         "uz": "Jiydakapa",
         "ru": "Джийдакапа",
+        "type": "43",
         "mahallas": [
             "14229565001"
         ]
@@ -9969,6 +10481,7 @@ export const settlements: Code_Names = {
         "en": "Kichik toshloq",
         "uz": "Kichik toshloq",
         "ru": "Кичик тошлок",
+        "type": "43",
         "mahallas": [
             "14229567001",
             "14229567002"
@@ -9978,6 +10491,7 @@ export const settlements: Code_Names = {
         "en": "Mashad",
         "uz": "Mashad",
         "ru": "Машад",
+        "type": "43",
         "mahallas": [
             "14229569001"
         ]
@@ -9986,6 +10500,7 @@ export const settlements: Code_Names = {
         "en": "Soku",
         "uz": "Soku",
         "ru": "Соку",
+        "type": "43",
         "mahallas": [
             "14229573001",
             "14229573002"
@@ -9995,6 +10510,7 @@ export const settlements: Code_Names = {
         "en": "Boyog'on",
         "uz": "Boyog‘on",
         "ru": "Буеган",
+        "type": "43",
         "mahallas": [
             "14229575001"
         ]
@@ -10003,6 +10519,7 @@ export const settlements: Code_Names = {
         "en": "G'ayrat",
         "uz": "G‘ayrat",
         "ru": "Гайрат",
+        "type": "43",
         "mahallas": [
             "14229577001"
         ]
@@ -10011,6 +10528,7 @@ export const settlements: Code_Names = {
         "en": "Ziyokor",
         "uz": "Ziyokor",
         "ru": "Зиекор",
+        "type": "43",
         "mahallas": [
             "14229579001"
         ]
@@ -10019,6 +10537,7 @@ export const settlements: Code_Names = {
         "en": "Village citizen assembly of Uychi district",
         "uz": "Uychi tumanining qishloq mahallalari",
         "ru": "Сельские сходы граждан Уйчинского района",
+        "type": "44",
         "mahallas": [
             "14229800001",
             "14229800002",
@@ -10058,6 +10577,7 @@ export const settlements: Code_Names = {
         "en": "Uchqo'rg'on",
         "uz": "Uchqo‘rg‘on",
         "ru": "Учкуpган",
+        "type": "42",
         "mahallas": [
             "14234501001",
             "14234501002",
@@ -10078,6 +10598,7 @@ export const settlements: Code_Names = {
         "en": "Qayqi",
         "uz": "Qayqi",
         "ru": "Кайки",
+        "type": "43",
         "mahallas": [
             "14234552001",
             "14234552002",
@@ -10092,6 +10613,7 @@ export const settlements: Code_Names = {
         "en": "Qo'g'ay",
         "uz": "Qo‘g‘ay",
         "ru": "Кугай",
+        "type": "43",
         "mahallas": [
             "14234554001",
             "14234554002",
@@ -10102,6 +10624,7 @@ export const settlements: Code_Names = {
         "en": "Uchyog'och",
         "uz": "Uchyog‘och",
         "ru": "Учагач",
+        "type": "43",
         "mahallas": [
             "14234556001",
             "14234556002"
@@ -10111,6 +10634,7 @@ export const settlements: Code_Names = {
         "en": "Yangiobod",
         "uz": "Yangiobod",
         "ru": "Янгиабад",
+        "type": "43",
         "mahallas": [
             "14234558001"
         ]
@@ -10119,6 +10643,7 @@ export const settlements: Code_Names = {
         "en": "Village citizen assembly of Uchqo'rg'on district",
         "uz": "Uchqo‘rg‘on tumanining qishloq mahallalari",
         "ru": "Сельские сходы граждан Учкурганского района",
+        "type": "44",
         "mahallas": [
             "14234800001",
             "14234800002",
@@ -10164,6 +10689,7 @@ export const settlements: Code_Names = {
         "en": "Chortoq",
         "uz": "Chortoq",
         "ru": "Чаpтак",
+        "type": "42",
         "mahallas": [
             "14236501001",
             "14236501002",
@@ -10188,6 +10714,7 @@ export const settlements: Code_Names = {
         "en": "Muchum",
         "uz": "Muchum",
         "ru": "Мучум",
+        "type": "43",
         "mahallas": [
             "14236552001",
             "14236552002",
@@ -10198,6 +10725,7 @@ export const settlements: Code_Names = {
         "en": "Koroskon",
         "uz": "Koroskon",
         "ru": "Караскан",
+        "type": "43",
         "mahallas": [
             "14236554001",
             "14236554002",
@@ -10211,6 +10739,7 @@ export const settlements: Code_Names = {
         "en": "Ko'shan",
         "uz": "Ko‘shan",
         "ru": "Кушан",
+        "type": "43",
         "mahallas": [
             "14236556001",
             "14236556002"
@@ -10220,6 +10749,7 @@ export const settlements: Code_Names = {
         "en": "Ayqiron",
         "uz": "Ayqiron",
         "ru": "Айкирон",
+        "type": "43",
         "mahallas": [
             "14236558001",
             "14236558002",
@@ -10231,6 +10761,7 @@ export const settlements: Code_Names = {
         "en": "Alixon",
         "uz": "Alixon",
         "ru": "Алихон",
+        "type": "43",
         "mahallas": [
             "14236560001"
         ]
@@ -10239,6 +10770,7 @@ export const settlements: Code_Names = {
         "en": "Pastki Peshqo'rg'on",
         "uz": "Pastki Peshqo‘rg‘on",
         "ru": "Пастки Пешкургон",
+        "type": "43",
         "mahallas": [
             "14236562001"
         ]
@@ -10247,6 +10779,7 @@ export const settlements: Code_Names = {
         "en": "Yuqori Peshqo'rg'on",
         "uz": "Yuqori Peshqo‘rg‘on",
         "ru": "Юкори Пешкургон",
+        "type": "43",
         "mahallas": [
             "14236564001"
         ]
@@ -10255,6 +10788,7 @@ export const settlements: Code_Names = {
         "en": "Ora ariq",
         "uz": "Ora ariq",
         "ru": "Ораарык",
+        "type": "43",
         "mahallas": [
             "14236566001"
         ]
@@ -10263,6 +10797,7 @@ export const settlements: Code_Names = {
         "en": "Baliqli ko'l",
         "uz": "Baliqli ko‘l",
         "ru": "Баликкул",
+        "type": "43",
         "mahallas": [
             "14236568001"
         ]
@@ -10271,6 +10806,7 @@ export const settlements: Code_Names = {
         "en": "Xazratishox",
         "uz": "Xazratishox",
         "ru": "Хазратишох",
+        "type": "43",
         "mahallas": [
             "14236572001"
         ]
@@ -10279,6 +10815,7 @@ export const settlements: Code_Names = {
         "en": "Village citizen assembly of Chortoq district",
         "uz": "Chortoq tumanining qishloq mahallalari",
         "ru": "Сельские сходы граждан Чартакского района",
+        "type": "44",
         "mahallas": [
             "14236800001",
             "14236800002",
@@ -10305,6 +10842,7 @@ export const settlements: Code_Names = {
         "en": "Chust",
         "uz": "Chust",
         "ru": "Чуст",
+        "type": "42",
         "mahallas": [
             "14237501001",
             "14237501002",
@@ -10332,6 +10870,7 @@ export const settlements: Code_Names = {
         "en": "Olmos",
         "uz": "Olmos",
         "ru": "Олмос",
+        "type": "43",
         "mahallas": [
             "14237552001",
             "14237552002",
@@ -10347,6 +10886,7 @@ export const settlements: Code_Names = {
         "en": "Axcha",
         "uz": "Axcha",
         "ru": "Ахча",
+        "type": "43",
         "mahallas": [
             "14237554001",
             "14237554002",
@@ -10357,6 +10897,7 @@ export const settlements: Code_Names = {
         "en": "Sarimsoqtepa",
         "uz": "Sarimsoqtepa",
         "ru": "Саримсоктепа",
+        "type": "43",
         "mahallas": [
             "14237556001"
         ]
@@ -10365,6 +10906,7 @@ export const settlements: Code_Names = {
         "en": "Varzik",
         "uz": "Varzik",
         "ru": "Варзик",
+        "type": "43",
         "mahallas": [
             "14237558001",
             "14237558002",
@@ -10377,6 +10919,7 @@ export const settlements: Code_Names = {
         "en": "Qoraqo'rg'on",
         "uz": "Qoraqo‘rg‘on",
         "ru": "Коракургон",
+        "type": "43",
         "mahallas": [
             "14237560001"
         ]
@@ -10385,6 +10928,7 @@ export const settlements: Code_Names = {
         "en": "G'ova",
         "uz": "G‘ova",
         "ru": "Гова",
+        "type": "43",
         "mahallas": [
             "14237562001",
             "14237562002",
@@ -10396,6 +10940,7 @@ export const settlements: Code_Names = {
         "en": "Karkidon",
         "uz": "Karkidon",
         "ru": "Каркидон",
+        "type": "43",
         "mahallas": [
             "14237564001",
             "14237564002",
@@ -10407,6 +10952,7 @@ export const settlements: Code_Names = {
         "en": "Karnon",
         "uz": "Karnon",
         "ru": "Карнон",
+        "type": "43",
         "mahallas": [
             "14237566001",
             "14237566002",
@@ -10417,6 +10963,7 @@ export const settlements: Code_Names = {
         "en": "Yorqishloq",
         "uz": "Yorqishloq",
         "ru": "Еркишлок",
+        "type": "43",
         "mahallas": [
             "14237568001"
         ]
@@ -10425,6 +10972,7 @@ export const settlements: Code_Names = {
         "en": "Shoyon",
         "uz": "Shoyon",
         "ru": "Шаен",
+        "type": "43",
         "mahallas": [
             "14237570001"
         ]
@@ -10433,6 +10981,7 @@ export const settlements: Code_Names = {
         "en": "Xisorak",
         "uz": "Xisorak",
         "ru": "Хисорак",
+        "type": "43",
         "mahallas": [
             "14237572001"
         ]
@@ -10441,6 +10990,7 @@ export const settlements: Code_Names = {
         "en": "Village citizen assembly of Chust district",
         "uz": "Chust tumanining qishloq mahallalari",
         "ru": "Сельские сходы граждан Чустского района",
+        "type": "44",
         "mahallas": [
             "14237800001",
             "14237800002",
@@ -10468,6 +11018,7 @@ export const settlements: Code_Names = {
         "en": "Yangiqo'rg'on",
         "uz": "Yangiqo‘rg‘on",
         "ru": "Янгикурган",
+        "type": "43",
         "mahallas": [
             "14242551001",
             "14242551002",
@@ -10483,6 +11034,7 @@ export const settlements: Code_Names = {
         "en": "Bekobod",
         "uz": "Bekobod",
         "ru": "Бекобод",
+        "type": "43",
         "mahallas": [
             "14242553001",
             "14242553002",
@@ -10493,6 +11045,7 @@ export const settlements: Code_Names = {
         "en": "G'ovazon",
         "uz": "G‘ovazon",
         "ru": "Говазон",
+        "type": "43",
         "mahallas": [
             "14242555001",
             "14242555002",
@@ -10503,6 +11056,7 @@ export const settlements: Code_Names = {
         "en": "Zarkent",
         "uz": "Zarkent",
         "ru": "Заркент",
+        "type": "43",
         "mahallas": [
             "14242557001"
         ]
@@ -10511,6 +11065,7 @@ export const settlements: Code_Names = {
         "en": "Iskavot",
         "uz": "Iskavot",
         "ru": "Искавот",
+        "type": "43",
         "mahallas": [
             "14242559001",
             "14242559002",
@@ -10522,6 +11077,7 @@ export const settlements: Code_Names = {
         "en": "Kalisho",
         "uz": "Kalisho",
         "ru": "Калишох",
+        "type": "43",
         "mahallas": [
             "14242561001",
             "14242561002"
@@ -10531,6 +11087,7 @@ export const settlements: Code_Names = {
         "en": "Qizil qiyoq",
         "uz": "Qizil qiyoq",
         "ru": "Кизилкиек",
+        "type": "43",
         "mahallas": [
             "14242563001"
         ]
@@ -10539,6 +11096,7 @@ export const settlements: Code_Names = {
         "en": "Qorayong'oq",
         "uz": "Qorayong‘oq",
         "ru": "Кораенгок",
+        "type": "43",
         "mahallas": [
             "14242565001",
             "14242565002",
@@ -10549,6 +11107,7 @@ export const settlements: Code_Names = {
         "en": "Qorapolvon",
         "uz": "Qorapolvon",
         "ru": "Кораполвон",
+        "type": "43",
         "mahallas": [
             "14242567001"
         ]
@@ -10557,6 +11116,7 @@ export const settlements: Code_Names = {
         "en": "Qorachasho'rkent",
         "uz": "Qorachasho‘rkent",
         "ru": "Корачашуркент",
+        "type": "43",
         "mahallas": [
             "14242569001",
             "14242569002",
@@ -10569,6 +11129,7 @@ export const settlements: Code_Names = {
         "en": "Ko'kyor",
         "uz": "Ko‘kyor",
         "ru": "Кукер",
+        "type": "43",
         "mahallas": [
             "14242571001"
         ]
@@ -10577,6 +11138,7 @@ export const settlements: Code_Names = {
         "en": "Navkent",
         "uz": "Navkent",
         "ru": "Навкент",
+        "type": "43",
         "mahallas": [
             "14242573001",
             "14242573002"
@@ -10586,6 +11148,7 @@ export const settlements: Code_Names = {
         "en": "Nanay",
         "uz": "Nanay",
         "ru": "Нанай",
+        "type": "43",
         "mahallas": [
             "14242575001",
             "14242575002",
@@ -10597,6 +11160,7 @@ export const settlements: Code_Names = {
         "en": "Poromon",
         "uz": "Poromon",
         "ru": "Парамон",
+        "type": "43",
         "mahallas": [
             "14242577001"
         ]
@@ -10605,6 +11169,7 @@ export const settlements: Code_Names = {
         "en": "Rovot",
         "uz": "Rovot",
         "ru": "Ровут",
+        "type": "43",
         "mahallas": [
             "14242579001"
         ]
@@ -10613,6 +11178,7 @@ export const settlements: Code_Names = {
         "en": "Sangiston",
         "uz": "Sangiston",
         "ru": "Сангистон",
+        "type": "43",
         "mahallas": [
             "14242581001"
         ]
@@ -10621,6 +11187,7 @@ export const settlements: Code_Names = {
         "en": "Salmon",
         "uz": "Salmon",
         "ru": "Солман",
+        "type": "43",
         "mahallas": [
             "14242583001"
         ]
@@ -10629,6 +11196,7 @@ export const settlements: Code_Names = {
         "en": "Xo'jasho'rkent",
         "uz": "Xo‘jasho‘rkent",
         "ru": "Хужашуркент",
+        "type": "43",
         "mahallas": [
             "14242585001",
             "14242585002",
@@ -10639,6 +11207,7 @@ export const settlements: Code_Names = {
         "en": "Yumaloqtepa",
         "uz": "Yumaloqtepa",
         "ru": "Юмалок тепа",
+        "type": "43",
         "mahallas": [
             "14242587001"
         ]
@@ -10647,6 +11216,7 @@ export const settlements: Code_Names = {
         "en": "Village citizen assembly of Yangiqo'rg'on district",
         "uz": "Yangiqo‘rg‘on tumanining qishloq mahallalari",
         "ru": "Сельские сходы граждан Янгикурганского района",
+        "type": "44",
         "mahallas": [
             "14242800001",
             "14242800002",
@@ -10676,9 +11246,10 @@ export const settlements: Code_Names = {
         ]
     },
     "1714401000": {
-        "en": "--",
-        "uz": "--",
-        "ru": "--",
+        "en": "-",
+        "uz": "-",
+        "ru": "-",
+        "type": "32",
         "mahallas": [
             "14401000001",
             "14401000002",
@@ -10748,6 +11319,7 @@ export const settlements: Code_Names = {
         "en": "Davlatobod tumani",
         "uz": "Davlatobod tumani",
         "ru": "Давлатободский район",
+        "type": "32",
         "mahallas": [
             "14401365001",
             "14401365002",
@@ -10783,6 +11355,7 @@ export const settlements: Code_Names = {
         "en": "Yangi Namangan tumani",
         "uz": "Yangi Namangan tumani",
         "ru": "Янги Наманганский район",
+        "type": "32",
         "mahallas": [
             "14401367001",
             "14401367002",
@@ -10815,6 +11388,7 @@ export const settlements: Code_Names = {
         "en": "Loyish",
         "uz": "Loyish",
         "ru": "Лаиш",
+        "type": "43",
         "mahallas": [
             "18203551001",
             "18203551002",
@@ -10825,6 +11399,7 @@ export const settlements: Code_Names = {
         "en": "Dahbed",
         "uz": "Dahbed",
         "ru": "Дахбед",
+        "type": "43",
         "mahallas": [
             "18203555001",
             "18203555002",
@@ -10835,6 +11410,7 @@ export const settlements: Code_Names = {
         "en": "Avazali",
         "uz": "Avazali",
         "ru": "Авазали",
+        "type": "43",
         "mahallas": [
             "18203557001"
         ]
@@ -10843,6 +11419,7 @@ export const settlements: Code_Names = {
         "en": "Bolta",
         "uz": "Bolta",
         "ru": "Болта",
+        "type": "43",
         "mahallas": [
             "18203559001"
         ]
@@ -10851,6 +11428,7 @@ export const settlements: Code_Names = {
         "en": "Qirqdarxon",
         "uz": "Qirqdarxon",
         "ru": "Киркдархон",
+        "type": "43",
         "mahallas": [
             "18203561001"
         ]
@@ -10859,6 +11437,7 @@ export const settlements: Code_Names = {
         "en": "Kumushkent",
         "uz": "Kumushkent",
         "ru": "Кумушкент",
+        "type": "43",
         "mahallas": [
             "18203563001"
         ]
@@ -10867,6 +11446,7 @@ export const settlements: Code_Names = {
         "en": "Oytamg'ali",
         "uz": "Oytamg‘ali",
         "ru": "Ойтамгали",
+        "type": "43",
         "mahallas": [
             "18203565001"
         ]
@@ -10875,6 +11455,7 @@ export const settlements: Code_Names = {
         "en": "Oqdaryo",
         "uz": "Oqdaryo",
         "ru": "Окдаре",
+        "type": "43",
         "mahallas": [
             "18203567001"
         ]
@@ -10883,6 +11464,7 @@ export const settlements: Code_Names = {
         "en": "Yangiqo'rg'on",
         "uz": "Yangiqo‘rg‘on",
         "ru": "Янгикургон",
+        "type": "43",
         "mahallas": [
             "18203569001"
         ]
@@ -10891,6 +11473,7 @@ export const settlements: Code_Names = {
         "en": "Yangiobod",
         "uz": "Yangiobod",
         "ru": "Янгиабад",
+        "type": "43",
         "mahallas": [
             "18203571001"
         ]
@@ -10899,6 +11482,7 @@ export const settlements: Code_Names = {
         "en": "Village citizen assembly of Oqdaryo district",
         "uz": "Oqdaryo tumanining qishloq mahallalari",
         "ru": "Сельские сходы граждан Акдарьинского района",
+        "type": "44",
         "mahallas": [
             "18203800001",
             "18203800002",
@@ -10927,6 +11511,7 @@ export const settlements: Code_Names = {
         "en": "Bulung'ur",
         "uz": "Bulung‘ur",
         "ru": "Булунгур",
+        "type": "42",
         "mahallas": [
             "18206501001",
             "18206501002",
@@ -10944,6 +11529,7 @@ export const settlements: Code_Names = {
         "en": "Kildon",
         "uz": "Kildon",
         "ru": "Килдон",
+        "type": "43",
         "mahallas": [
             "18206553001"
         ]
@@ -10952,6 +11538,7 @@ export const settlements: Code_Names = {
         "en": "Soxibkor",
         "uz": "Soxibkor",
         "ru": "Сохибкор",
+        "type": "43",
         "mahallas": [
             "18206556001"
         ]
@@ -10960,6 +11547,7 @@ export const settlements: Code_Names = {
         "en": "Bog'bon",
         "uz": "Bog‘bon",
         "ru": "Богбон",
+        "type": "43",
         "mahallas": [
             "18206559001"
         ]
@@ -10968,6 +11556,7 @@ export const settlements: Code_Names = {
         "en": "Village citizen assembly of Bulung'ur district",
         "uz": "Bulung‘ur tumanining qishloq mahallalari",
         "ru": "Сельские сходы граждан Булунгурского района",
+        "type": "44",
         "mahallas": [
             "18206800001",
             "18206800002",
@@ -11017,6 +11606,7 @@ export const settlements: Code_Names = {
         "en": "Jomboy",
         "uz": "Jomboy",
         "ru": "Джамбай",
+        "type": "42",
         "mahallas": [
             "18209501001",
             "18209501002",
@@ -11030,6 +11620,7 @@ export const settlements: Code_Names = {
         "en": "Dehqonobod",
         "uz": "Dehqonobod",
         "ru": "Дехконабад",
+        "type": "43",
         "mahallas": [
             "18209554001"
         ]
@@ -11038,6 +11629,7 @@ export const settlements: Code_Names = {
         "en": "Eski Jomboy",
         "uz": "Eski Jomboy",
         "ru": "Эски Джомбой",
+        "type": "43",
         "mahallas": [
             "18209558001"
         ]
@@ -11046,6 +11638,7 @@ export const settlements: Code_Names = {
         "en": "Xo'ja",
         "uz": "Xo‘ja",
         "ru": "Хужа",
+        "type": "43",
         "mahallas": [
             "18209564001"
         ]
@@ -11054,6 +11647,7 @@ export const settlements: Code_Names = {
         "en": "G'azira",
         "uz": "G‘azira",
         "ru": "Газира",
+        "type": "43",
         "mahallas": [
             "18209568001"
         ]
@@ -11062,6 +11656,7 @@ export const settlements: Code_Names = {
         "en": "Kattaqishloq",
         "uz": "Kattaqishloq",
         "ru": "Катта кишлак",
+        "type": "43",
         "mahallas": [
             "18209574001"
         ]
@@ -11070,6 +11665,7 @@ export const settlements: Code_Names = {
         "en": "Village citizen assembly of Jomboy district",
         "uz": "Jomboy tumanining qishloq mahallalari",
         "ru": "Сельские сходы граждан Джамбайского района",
+        "type": "44",
         "mahallas": [
             "18209800001",
             "18209800002",
@@ -11104,6 +11700,7 @@ export const settlements: Code_Names = {
         "en": "Ishtixon",
         "uz": "Ishtixon",
         "ru": "Иштыхан",
+        "type": "42",
         "mahallas": [
             "18212501001",
             "18212501002",
@@ -11116,6 +11713,7 @@ export const settlements: Code_Names = {
         "en": "Mitan",
         "uz": "Mitan",
         "ru": "Митан",
+        "type": "43",
         "mahallas": [
             "18212555001",
             "18212555002",
@@ -11126,6 +11724,7 @@ export const settlements: Code_Names = {
         "en": "Azamat",
         "uz": "Azamat",
         "ru": "Азамат",
+        "type": "43",
         "mahallas": [
             "18212557001"
         ]
@@ -11134,6 +11733,7 @@ export const settlements: Code_Names = {
         "en": "Damariq",
         "uz": "Damariq",
         "ru": "Дамарик",
+        "type": "43",
         "mahallas": [
             "18212559001"
         ]
@@ -11142,6 +11742,7 @@ export const settlements: Code_Names = {
         "en": "Bahrin",
         "uz": "Bahrin",
         "ru": "Бахрин",
+        "type": "43",
         "mahallas": [
             "18212561001"
         ]
@@ -11150,6 +11751,7 @@ export const settlements: Code_Names = {
         "en": "Qirqyigit",
         "uz": "Qirqyigit",
         "ru": "Киркйигит",
+        "type": "43",
         "mahallas": [
             "18212563001"
         ]
@@ -11158,6 +11760,7 @@ export const settlements: Code_Names = {
         "en": "Odil",
         "uz": "Odil",
         "ru": "Одил",
+        "type": "43",
         "mahallas": [
             "18212565001"
         ]
@@ -11166,6 +11769,7 @@ export const settlements: Code_Names = {
         "en": "Sug'ot",
         "uz": "Sug‘ot",
         "ru": "Сугот",
+        "type": "43",
         "mahallas": [
             "18212567001"
         ]
@@ -11174,6 +11778,7 @@ export const settlements: Code_Names = {
         "en": "Xalqobod",
         "uz": "Xalqobod",
         "ru": "Халкабад",
+        "type": "43",
         "mahallas": [
             "18212569001"
         ]
@@ -11182,6 +11787,7 @@ export const settlements: Code_Names = {
         "en": "Shayxislom",
         "uz": "Shayxislom",
         "ru": "Шайхислом",
+        "type": "43",
         "mahallas": [
             "18212571001"
         ]
@@ -11190,6 +11796,7 @@ export const settlements: Code_Names = {
         "en": "Sheyxlar",
         "uz": "Sheyxlar",
         "ru": "Шейхлар",
+        "type": "43",
         "mahallas": [
             "18212573001"
         ]
@@ -11198,6 +11805,7 @@ export const settlements: Code_Names = {
         "en": "Yangikent",
         "uz": "Yangikent",
         "ru": "Янгикент",
+        "type": "43",
         "mahallas": [
             "18212575001"
         ]
@@ -11206,6 +11814,7 @@ export const settlements: Code_Names = {
         "en": "Yangirabot",
         "uz": "Yangirabot",
         "ru": "Янгиработ",
+        "type": "43",
         "mahallas": [
             "18212577001"
         ]
@@ -11214,6 +11823,7 @@ export const settlements: Code_Names = {
         "en": "Village citizen assembly of Ishtixon district",
         "uz": "Ishtixon tumanining qishloq mahallalari",
         "ru": "Сельские сходы граждан Иштыханского района",
+        "type": "44",
         "mahallas": [
             "18212800001",
             "18212800002",
@@ -11264,6 +11874,7 @@ export const settlements: Code_Names = {
         "en": "Payshanba",
         "uz": "Payshanba",
         "ru": "Пайшанба",
+        "type": "43",
         "mahallas": [
             "18215551001",
             "18215551002",
@@ -11277,6 +11888,7 @@ export const settlements: Code_Names = {
         "en": "Suv xovuzi",
         "uz": "Suv xovuzi",
         "ru": "Сув ховузи",
+        "type": "43",
         "mahallas": [
             "18215554001",
             "18215554002"
@@ -11286,6 +11898,7 @@ export const settlements: Code_Names = {
         "en": "Mundiyon",
         "uz": "Mundiyon",
         "ru": "Мундиен",
+        "type": "43",
         "mahallas": [
             "18215558001"
         ]
@@ -11294,6 +11907,7 @@ export const settlements: Code_Names = {
         "en": "Polvontepa",
         "uz": "Polvontepa",
         "ru": "Полвонтепа",
+        "type": "43",
         "mahallas": [
             "18215564001"
         ]
@@ -11302,6 +11916,7 @@ export const settlements: Code_Names = {
         "en": "Qoradaryo",
         "uz": "Qoradaryo",
         "ru": "Карадарья",
+        "type": "43",
         "mahallas": [
             "18215568001"
         ]
@@ -11310,6 +11925,7 @@ export const settlements: Code_Names = {
         "en": "Vayrat",
         "uz": "Vayrat",
         "ru": "Войрот",
+        "type": "43",
         "mahallas": [
             "18215574001"
         ]
@@ -11318,6 +11934,7 @@ export const settlements: Code_Names = {
         "en": "Yangiqo'rg'oncha",
         "uz": "Yangiqo‘rg‘oncha",
         "ru": "Янгикургонча",
+        "type": "43",
         "mahallas": [
             "18215578001"
         ]
@@ -11326,6 +11943,7 @@ export const settlements: Code_Names = {
         "en": "Kattaming",
         "uz": "Kattaming",
         "ru": "Каттаминг",
+        "type": "43",
         "mahallas": [
             "18215584001"
         ]
@@ -11334,6 +11952,7 @@ export const settlements: Code_Names = {
         "en": "Village citizen assembly of Kattaqo'rg'on district",
         "uz": "Kattaqo‘rg‘on tumanining qishloq mahallalari",
         "ru": "Сельские сходы граждан Каттакурганского района",
+        "type": "44",
         "mahallas": [
             "18215800001",
             "18215800002",
@@ -11396,6 +12015,7 @@ export const settlements: Code_Names = {
         "en": "Qo'shrabot",
         "uz": "Qo‘shrabot",
         "ru": "Кушрабад",
+        "type": "43",
         "mahallas": [
             "18216551001",
             "18216551002",
@@ -11407,6 +12027,7 @@ export const settlements: Code_Names = {
         "en": "Zarkent",
         "uz": "Zarkent",
         "ru": "Заркент",
+        "type": "43",
         "mahallas": [
             "18216555001",
             "18216555002"
@@ -11416,6 +12037,7 @@ export const settlements: Code_Names = {
         "en": "Village citizen assembly of Qo'shrabot district",
         "uz": "Qo‘shrabot tumanining qishloq mahallalari",
         "ru": "Сельские сходы граждан Кошрабадского района",
+        "type": "44",
         "mahallas": [
             "18216800001",
             "18216800002",
@@ -11462,6 +12084,7 @@ export const settlements: Code_Names = {
         "en": "Oqtosh",
         "uz": "Oqtosh",
         "ru": "Акташ",
+        "type": "42",
         "mahallas": [
             "18218501001",
             "18218501002",
@@ -11483,6 +12106,7 @@ export const settlements: Code_Names = {
         "en": "Mirbozor",
         "uz": "Mirbozor",
         "ru": "Мирбазар",
+        "type": "43",
         "mahallas": [
             "18218554001",
             "18218554002"
@@ -11492,6 +12116,7 @@ export const settlements: Code_Names = {
         "en": "Guliston",
         "uz": "Guliston",
         "ru": "Гулистон",
+        "type": "43",
         "mahallas": [
             "18218558001"
         ]
@@ -11500,6 +12125,7 @@ export const settlements: Code_Names = {
         "en": "Qo'yi Charxin",
         "uz": "Qo‘yi Charxin",
         "ru": "Куйи Чархин",
+        "type": "43",
         "mahallas": [
             "18218564001"
         ]
@@ -11508,6 +12134,7 @@ export const settlements: Code_Names = {
         "en": "Village citizen assembly of Narpay district",
         "uz": "Narpay tumanining qishloq mahallalari",
         "ru": "Сельские сходы граждан Нарпайского района",
+        "type": "44",
         "mahallas": [
             "18218800001",
             "18218800002",
@@ -11554,6 +12181,7 @@ export const settlements: Code_Names = {
         "en": "Payariq",
         "uz": "Payariq",
         "ru": "Пайаpык",
+        "type": "42",
         "mahallas": [
             "18224501001",
             "18224501002",
@@ -11565,6 +12193,7 @@ export const settlements: Code_Names = {
         "en": "Chelak",
         "uz": "Chelak",
         "ru": "Челек",
+        "type": "42",
         "mahallas": [
             "18224502001",
             "18224502002",
@@ -11579,6 +12208,7 @@ export const settlements: Code_Names = {
         "en": "Tomoyrat",
         "uz": "Tomoyrat",
         "ru": "Томойрот",
+        "type": "43",
         "mahallas": [
             "18224552001"
         ]
@@ -11587,6 +12217,7 @@ export const settlements: Code_Names = {
         "en": "Qorasuv",
         "uz": "Qorasuv",
         "ru": "Карасув",
+        "type": "43",
         "mahallas": [
             "18224554001"
         ]
@@ -11595,6 +12226,7 @@ export const settlements: Code_Names = {
         "en": "Ko'ksaroy",
         "uz": "Ko‘ksaroy",
         "ru": "Куксарой",
+        "type": "43",
         "mahallas": [
             "18224556001"
         ]
@@ -11603,6 +12235,7 @@ export const settlements: Code_Names = {
         "en": "G'ujumsoy",
         "uz": "G‘ujumsoy",
         "ru": "Гужумсой",
+        "type": "43",
         "mahallas": [
             "18224558001"
         ]
@@ -11611,6 +12244,7 @@ export const settlements: Code_Names = {
         "en": "Xo'ja Ismoil",
         "uz": "Xo‘ja Ismoil",
         "ru": "Хужа Исмоил",
+        "type": "43",
         "mahallas": [
             "18224562001"
         ]
@@ -11619,6 +12253,7 @@ export const settlements: Code_Names = {
         "en": "Tupolos",
         "uz": "Tupolos",
         "ru": "Туполос",
+        "type": "43",
         "mahallas": [
             "18224564001"
         ]
@@ -11627,6 +12262,7 @@ export const settlements: Code_Names = {
         "en": "Oqqo'rg'on",
         "uz": "Oqqo‘rg‘on",
         "ru": "Оккургон",
+        "type": "43",
         "mahallas": [
             "18224566001",
             "18224566002"
@@ -11636,6 +12272,7 @@ export const settlements: Code_Names = {
         "en": "Do'stlarobod",
         "uz": "Do‘stlarobod",
         "ru": "Дустларабад",
+        "type": "43",
         "mahallas": [
             "18224568001"
         ]
@@ -11644,6 +12281,7 @@ export const settlements: Code_Names = {
         "en": "Do'stlik",
         "uz": "Do‘stlik",
         "ru": "Дустлик",
+        "type": "43",
         "mahallas": [
             "18224572001"
         ]
@@ -11652,6 +12290,7 @@ export const settlements: Code_Names = {
         "en": "Village citizen assembly of Payariq district",
         "uz": "Payariq tumanining qishloq mahallalari",
         "ru": "Сельские сходы граждан Пайарыкского района",
+        "type": "44",
         "mahallas": [
             "18224800001",
             "18224800002",
@@ -11703,6 +12342,7 @@ export const settlements: Code_Names = {
         "en": "Juma",
         "uz": "Juma",
         "ru": "Джума",
+        "type": "42",
         "mahallas": [
             "18227501001",
             "18227501002",
@@ -11720,6 +12360,7 @@ export const settlements: Code_Names = {
         "en": "Charxin",
         "uz": "Charxin",
         "ru": "Чархин",
+        "type": "43",
         "mahallas": [
             "18227558001",
             "18227558002",
@@ -11732,6 +12373,7 @@ export const settlements: Code_Names = {
         "en": "Chortut",
         "uz": "Chortut",
         "ru": "Чортут",
+        "type": "43",
         "mahallas": [
             "18227562001"
         ]
@@ -11740,6 +12382,7 @@ export const settlements: Code_Names = {
         "en": "O'rta Charxin",
         "uz": "O‘rta Charxin",
         "ru": "Урта Чархин",
+        "type": "43",
         "mahallas": [
             "18227564001"
         ]
@@ -11748,6 +12391,7 @@ export const settlements: Code_Names = {
         "en": "Balhiyon",
         "uz": "Balhiyon",
         "ru": "Балхиен",
+        "type": "43",
         "mahallas": [
             "18227566001"
         ]
@@ -11756,6 +12400,7 @@ export const settlements: Code_Names = {
         "en": "Go'zalkent",
         "uz": "Go‘zalkent",
         "ru": "Гузалкент",
+        "type": "43",
         "mahallas": [
             "18227568001"
         ]
@@ -11764,6 +12409,7 @@ export const settlements: Code_Names = {
         "en": "Nayman",
         "uz": "Nayman",
         "ru": "Найман",
+        "type": "43",
         "mahallas": [
             "18227572001"
         ]
@@ -11772,6 +12418,7 @@ export const settlements: Code_Names = {
         "en": "Jag'alboyli",
         "uz": "Jag‘alboyli",
         "ru": "Джагалбойли",
+        "type": "43",
         "mahallas": [
             "18227574001"
         ]
@@ -11780,6 +12427,7 @@ export const settlements: Code_Names = {
         "en": "Mehnat",
         "uz": "Mehnat",
         "ru": "Мехнат",
+        "type": "43",
         "mahallas": [
             "18227576001"
         ]
@@ -11788,6 +12436,7 @@ export const settlements: Code_Names = {
         "en": "Hindiboyi",
         "uz": "Hindiboyi",
         "ru": "Хиндибойи",
+        "type": "43",
         "mahallas": [
             "18227578001"
         ]
@@ -11796,6 +12445,7 @@ export const settlements: Code_Names = {
         "en": "Agron",
         "uz": "Agron",
         "ru": "Агрон",
+        "type": "43",
         "mahallas": [
             "18227582001"
         ]
@@ -11804,6 +12454,7 @@ export const settlements: Code_Names = {
         "en": "Iskandari",
         "uz": "Iskandari",
         "ru": "Искандари",
+        "type": "43",
         "mahallas": [
             "18227584001"
         ]
@@ -11812,6 +12463,7 @@ export const settlements: Code_Names = {
         "en": "Saribosh",
         "uz": "Saribosh",
         "ru": "Сарибош",
+        "type": "43",
         "mahallas": [
             "18227586001"
         ]
@@ -11820,6 +12472,7 @@ export const settlements: Code_Names = {
         "en": "Village citizen assembly of Pastdarg'om district",
         "uz": "Pastdarg‘om tumanining qishloq mahallalari",
         "ru": "Сельские сходы граждан Пастдаргомского района",
+        "type": "44",
         "mahallas": [
             "18227800001",
             "18227800002",
@@ -11908,6 +12561,7 @@ export const settlements: Code_Names = {
         "en": "Ziyovuddin",
         "uz": "Ziyovuddin",
         "ru": "Зиатдин",
+        "type": "43",
         "mahallas": [
             "18230551001",
             "18230551002",
@@ -11920,6 +12574,7 @@ export const settlements: Code_Names = {
         "en": "Qodirist",
         "uz": "Qodirist",
         "ru": "Кадирист",
+        "type": "43",
         "mahallas": [
             "18230553001"
         ]
@@ -11928,6 +12583,7 @@ export const settlements: Code_Names = {
         "en": "Past Burkut",
         "uz": "Past Burkut",
         "ru": "Паст Буркут",
+        "type": "43",
         "mahallas": [
             "18230555001"
         ]
@@ -11936,6 +12592,7 @@ export const settlements: Code_Names = {
         "en": "Suluvqo'rg'on",
         "uz": "Suluvqo‘rg‘on",
         "ru": "Сулувкургон",
+        "type": "43",
         "mahallas": [
             "18230559001"
         ]
@@ -11944,6 +12601,7 @@ export const settlements: Code_Names = {
         "en": "Urgich",
         "uz": "Urgich",
         "ru": "Ургич",
+        "type": "43",
         "mahallas": [
             "18230561001"
         ]
@@ -11952,6 +12610,7 @@ export const settlements: Code_Names = {
         "en": "Xumor",
         "uz": "Xumor",
         "ru": "Хумор",
+        "type": "43",
         "mahallas": [
             "18230563001"
         ]
@@ -11960,6 +12619,7 @@ export const settlements: Code_Names = {
         "en": "Village citizen assembly of Paxtachi district",
         "uz": "Paxtachi tumanining qishloq mahallalari",
         "ru": "Сельские сходы граждан Пахтачийского района",
+        "type": "44",
         "mahallas": [
             "18230800001",
             "18230800002",
@@ -12016,6 +12676,7 @@ export const settlements: Code_Names = {
         "en": "Gulobod",
         "uz": "Gulobod",
         "ru": "Гулабад",
+        "type": "43",
         "mahallas": [
             "18233551001",
             "18233551002"
@@ -12025,6 +12686,7 @@ export const settlements: Code_Names = {
         "en": "Xo'ja Ahrori Vali",
         "uz": "Xo‘ja Ahrori Vali",
         "ru": "Хужа Ахрори Вали",
+        "type": "43",
         "mahallas": [
             "18233555001",
             "18233555002",
@@ -12035,6 +12697,7 @@ export const settlements: Code_Names = {
         "en": "Village citizen assembly of Samarqand district",
         "uz": "Samarqand tumanining qishloq mahallalari",
         "ru": "Сельские сходы граждан Самаркандского района",
+        "type": "44",
         "mahallas": [
             "18233800001",
             "18233800002",
@@ -12111,6 +12774,7 @@ export const settlements: Code_Names = {
         "en": "Nurobod",
         "uz": "Nurobod",
         "ru": "Нурабад",
+        "type": "42",
         "mahallas": [
             "18235501001",
             "18235501002",
@@ -12121,6 +12785,7 @@ export const settlements: Code_Names = {
         "en": "Nurbuloq",
         "uz": "Nurbuloq",
         "ru": "Нурбулок",
+        "type": "43",
         "mahallas": [
             "18235556001"
         ]
@@ -12129,6 +12794,7 @@ export const settlements: Code_Names = {
         "en": "Village citizen assembly of Nurobod district",
         "uz": "Nurobod tumanining qishloq mahallalari",
         "ru": "Сельские сходы граждан Нурабадского района",
+        "type": "44",
         "mahallas": [
             "18235800001",
             "18235800002",
@@ -12171,6 +12837,7 @@ export const settlements: Code_Names = {
         "en": "Urgut",
         "uz": "Urgut",
         "ru": "Ургут",
+        "type": "42",
         "mahallas": [
             "18236501001",
             "18236501002",
@@ -12202,6 +12869,7 @@ export const settlements: Code_Names = {
         "en": "Jartepa",
         "uz": "Jartepa",
         "ru": "Джартепа",
+        "type": "43",
         "mahallas": [
             "18236553001",
             "18236553002",
@@ -12214,6 +12882,7 @@ export const settlements: Code_Names = {
         "en": "Kamangaron",
         "uz": "Kamangaron",
         "ru": "Камангарон",
+        "type": "43",
         "mahallas": [
             "18236556001",
             "18236556002",
@@ -12225,6 +12894,7 @@ export const settlements: Code_Names = {
         "en": "G'o's",
         "uz": "G‘o‘s",
         "ru": "Гус",
+        "type": "43",
         "mahallas": [
             "18236559001",
             "18236559002",
@@ -12238,6 +12908,7 @@ export const settlements: Code_Names = {
         "en": "Pochvon",
         "uz": "Pochvon",
         "ru": "Почвон",
+        "type": "43",
         "mahallas": [
             "18236563001"
         ]
@@ -12246,6 +12917,7 @@ export const settlements: Code_Names = {
         "en": "Ispanza",
         "uz": "Ispanza",
         "ru": "Испанза",
+        "type": "43",
         "mahallas": [
             "18236566001",
             "18236566002",
@@ -12258,6 +12930,7 @@ export const settlements: Code_Names = {
         "en": "Uramas",
         "uz": "Uramas",
         "ru": "Урамас",
+        "type": "43",
         "mahallas": [
             "18236569001"
         ]
@@ -12266,6 +12939,7 @@ export const settlements: Code_Names = {
         "en": "Kenagas",
         "uz": "Kenagas",
         "ru": "Кенагас",
+        "type": "43",
         "mahallas": [
             "18236573001",
             "18236573002",
@@ -12276,6 +12950,7 @@ export const settlements: Code_Names = {
         "en": "Village citizen assembly of Urgut district",
         "uz": "Urgut tumanining qishloq mahallalari",
         "ru": "Сельские сходы граждан Ургутского района",
+        "type": "44",
         "mahallas": [
             "18236800001",
             "18236800002",
@@ -12354,6 +13029,7 @@ export const settlements: Code_Names = {
         "en": "Toyloq",
         "uz": "Toyloq",
         "ru": "Тайлок",
+        "type": "43",
         "mahallas": [
             "18238551001",
             "18238551002",
@@ -12365,6 +13041,7 @@ export const settlements: Code_Names = {
         "en": "Adas",
         "uz": "Adas",
         "ru": "Адас",
+        "type": "43",
         "mahallas": [
             "18238554001"
         ]
@@ -12373,6 +13050,7 @@ export const settlements: Code_Names = {
         "en": "Bog'izag'on",
         "uz": "Bog‘izag‘on",
         "ru": "Богизагон",
+        "type": "43",
         "mahallas": [
             "18238558001"
         ]
@@ -12381,6 +13059,7 @@ export const settlements: Code_Names = {
         "en": "Village citizen assembly of Tayloq district",
         "uz": "Tayloq tumanining qishloq mahallalari",
         "ru": "Сельские сходы граждан Тайлякского района",
+        "type": "44",
         "mahallas": [
             "18238800001",
             "18238800002",
@@ -12429,9 +13108,10 @@ export const settlements: Code_Names = {
         ]
     },
     "1718401000": {
-        "en": "--",
-        "uz": "--",
-        "ru": "--",
+        "en": "-",
+        "uz": "-",
+        "ru": "-",
+        "type": "32",
         "mahallas": [
             "18401000001",
             "18401000002",
@@ -12641,6 +13321,7 @@ export const settlements: Code_Names = {
         "en": "Kimyogarlar",
         "uz": "Kimyogarlar",
         "ru": "Кимегаpлаp",
+        "type": "43",
         "mahallas": [
             "18401554001",
             "18401554002",
@@ -12654,6 +13335,7 @@ export const settlements: Code_Names = {
         "en": "Farxod",
         "uz": "Farxod",
         "ru": "Фархад",
+        "type": "43",
         "mahallas": [
             "18401556001",
             "18401556002",
@@ -12664,6 +13346,7 @@ export const settlements: Code_Names = {
         "en": "Xishrav",
         "uz": "Xishrav",
         "ru": "Хишрау",
+        "type": "43",
         "mahallas": [
             "18401558001",
             "18401558002",
@@ -12672,9 +13355,10 @@ export const settlements: Code_Names = {
         ]
     },
     "1718406000": {
-        "en": "--",
-        "uz": "--",
-        "ru": "--",
+        "en": "-",
+        "uz": "-",
+        "ru": "-",
+        "type": "32",
         "mahallas": [
             "18406000001",
             "18406000002",
@@ -12713,6 +13397,7 @@ export const settlements: Code_Names = {
         "en": "Ingichka",
         "uz": "Ingichka",
         "ru": "Ингичка",
+        "type": "43",
         "mahallas": [
             "18406554001",
             "18406554002",
@@ -12725,6 +13410,7 @@ export const settlements: Code_Names = {
         "en": "Qorliq",
         "uz": "Qorliq",
         "ru": "Корлик",
+        "type": "43",
         "mahallas": [
             "22201551001"
         ]
@@ -12733,6 +13419,7 @@ export const settlements: Code_Names = {
         "en": "Botosh",
         "uz": "Botosh",
         "ru": "Ботош",
+        "type": "43",
         "mahallas": [
             "22201553001",
             "22201553002",
@@ -12743,6 +13430,7 @@ export const settlements: Code_Names = {
         "en": "Jobu",
         "uz": "Jobu",
         "ru": "Джобу",
+        "type": "43",
         "mahallas": [
             "22201555001",
             "22201555002"
@@ -12752,6 +13440,7 @@ export const settlements: Code_Names = {
         "en": "Ipoq",
         "uz": "Ipoq",
         "ru": "Ипок",
+        "type": "43",
         "mahallas": [
             "22201557001"
         ]
@@ -12760,6 +13449,7 @@ export const settlements: Code_Names = {
         "en": "Qurama",
         "uz": "Qurama",
         "ru": "Курама",
+        "type": "43",
         "mahallas": [
             "22201559001",
             "22201559002",
@@ -12772,6 +13462,7 @@ export const settlements: Code_Names = {
         "en": "Bo'ston",
         "uz": "Bo‘ston",
         "ru": "Бустон",
+        "type": "43",
         "mahallas": [
             "22201561001"
         ]
@@ -12780,6 +13471,7 @@ export const settlements: Code_Names = {
         "en": "Mormin",
         "uz": "Mormin",
         "ru": "Мармин",
+        "type": "43",
         "mahallas": [
             "22201563001"
         ]
@@ -12788,6 +13480,7 @@ export const settlements: Code_Names = {
         "en": "Xayrandara",
         "uz": "Xayrandara",
         "ru": "Хайрандора",
+        "type": "43",
         "mahallas": [
             "22201565001"
         ]
@@ -12796,6 +13489,7 @@ export const settlements: Code_Names = {
         "en": "Xo'jasoat",
         "uz": "Xo‘jasoat",
         "ru": "Хужасоат",
+        "type": "43",
         "mahallas": [
             "22201567001",
             "22201567002",
@@ -12806,6 +13500,7 @@ export const settlements: Code_Names = {
         "en": "Chep",
         "uz": "Chep",
         "ru": "Чен",
+        "type": "43",
         "mahallas": [
             "22201569001"
         ]
@@ -12814,6 +13509,7 @@ export const settlements: Code_Names = {
         "en": "Shakarqamish",
         "uz": "Shakarqamish",
         "ru": "Шакаркамиш",
+        "type": "43",
         "mahallas": [
             "22201571001"
         ]
@@ -12822,6 +13518,7 @@ export const settlements: Code_Names = {
         "en": "Ekraz",
         "uz": "Ekraz",
         "ru": "Экраз",
+        "type": "43",
         "mahallas": [
             "22201573001"
         ]
@@ -12830,6 +13527,7 @@ export const settlements: Code_Names = {
         "en": "Yangiqurilish",
         "uz": "Yangiqurilish",
         "ru": "Янгикурилиш",
+        "type": "43",
         "mahallas": [
             "22201575001"
         ]
@@ -12838,6 +13536,7 @@ export const settlements: Code_Names = {
         "en": "Gulobod",
         "uz": "Gulobod",
         "ru": "Гулобод",
+        "type": "43",
         "mahallas": [
             "22201577001",
             "22201577002"
@@ -12847,6 +13546,7 @@ export const settlements: Code_Names = {
         "en": "Village citizen assembly of Oltinsoy district",
         "uz": "Oltinsoy tumanining qishloq mahallalari",
         "ru": "Сельские сходы граждан Алтынсайского района",
+        "type": "44",
         "mahallas": [
             "22201800001",
             "22201800002",
@@ -12884,6 +13584,7 @@ export const settlements: Code_Names = {
         "en": "Angor ( mavjud)",
         "uz": "Angor ( mavjud)",
         "ru": "Ангор",
+        "type": "43",
         "mahallas": [
             "22202551001",
             "22202551002",
@@ -12895,6 +13596,7 @@ export const settlements: Code_Names = {
         "en": "Tallimaron",
         "uz": "Tallimaron",
         "ru": "Таллимарон",
+        "type": "43",
         "mahallas": [
             "22202553001"
         ]
@@ -12903,6 +13605,7 @@ export const settlements: Code_Names = {
         "en": "Xomkon",
         "uz": "Xomkon",
         "ru": "Хамкан",
+        "type": "43",
         "mahallas": [
             "22202556001"
         ]
@@ -12911,6 +13614,7 @@ export const settlements: Code_Names = {
         "en": "Qorasuv",
         "uz": "Qorasuv",
         "ru": "Карасу",
+        "type": "43",
         "mahallas": [
             "22202559001",
             "22202559002"
@@ -12920,6 +13624,7 @@ export const settlements: Code_Names = {
         "en": "Yangiobod",
         "uz": "Yangiobod",
         "ru": "Янгиабад",
+        "type": "43",
         "mahallas": [
             "22202561001"
         ]
@@ -12928,6 +13633,7 @@ export const settlements: Code_Names = {
         "en": "Talloshqon",
         "uz": "Talloshqon",
         "ru": "Таллошкан",
+        "type": "43",
         "mahallas": [
             "22202563001"
         ]
@@ -12936,6 +13642,7 @@ export const settlements: Code_Names = {
         "en": "Gilambob",
         "uz": "Gilambob",
         "ru": "Гиламбоб",
+        "type": "43",
         "mahallas": [
             "22202566001"
         ]
@@ -12944,6 +13651,7 @@ export const settlements: Code_Names = {
         "en": "Zartepa",
         "uz": "Zartepa",
         "ru": "Зартепа",
+        "type": "43",
         "mahallas": [
             "22202569001"
         ]
@@ -12952,6 +13660,7 @@ export const settlements: Code_Names = {
         "en": "Yangi turmush",
         "uz": "Yangi turmush",
         "ru": "Янги турмуш",
+        "type": "43",
         "mahallas": [
             "22202571001"
         ]
@@ -12960,6 +13669,7 @@ export const settlements: Code_Names = {
         "en": "Angor ( yangi)",
         "uz": "Angor ( yangi)",
         "ru": "Ангор",
+        "type": "43",
         "mahallas": [
             "22202573001"
         ]
@@ -12968,6 +13678,7 @@ export const settlements: Code_Names = {
         "en": "Kayran",
         "uz": "Kayran",
         "ru": "Кайран",
+        "type": "43",
         "mahallas": [
             "22202576001"
         ]
@@ -12976,6 +13687,7 @@ export const settlements: Code_Names = {
         "en": "Novshahar",
         "uz": "Novshahar",
         "ru": "Новшахар",
+        "type": "43",
         "mahallas": [
             "22202579001"
         ]
@@ -12984,6 +13696,7 @@ export const settlements: Code_Names = {
         "en": "Village citizen assembly of Angor district",
         "uz": "Angor tumanining qishloq mahallalari",
         "ru": "Сельские сходы граждан Ангорского района",
+        "type": "44",
         "mahallas": [
             "22202800001",
             "22202800002",
@@ -13011,6 +13724,7 @@ export const settlements: Code_Names = {
         "en": "Bandixon",
         "uz": "Bandixon",
         "ru": "Бандихон",
+        "type": "43",
         "mahallas": [
             "22203551001",
             "22203551002"
@@ -13020,6 +13734,7 @@ export const settlements: Code_Names = {
         "en": "Village citizen assembly of Bandixon district",
         "uz": "Bandixon tumanining qishloq mahallalari",
         "ru": "Сельские сходы граждан Бандихонского района",
+        "type": "44",
         "mahallas": [
             "22203800001",
             "22203800002",
@@ -13047,6 +13762,7 @@ export const settlements: Code_Names = {
         "en": "Boysun",
         "uz": "Boysun",
         "ru": "Байсун",
+        "type": "42",
         "mahallas": [
             "22204501001",
             "22204501002",
@@ -13064,6 +13780,7 @@ export const settlements: Code_Names = {
         "en": "Kofrun",
         "uz": "Kofrun",
         "ru": "Кофрун",
+        "type": "43",
         "mahallas": [
             "22204552001"
         ]
@@ -13072,6 +13789,7 @@ export const settlements: Code_Names = {
         "en": "Pasurxi",
         "uz": "Pasurxi",
         "ru": "Пасурхи",
+        "type": "43",
         "mahallas": [
             "22204556001"
         ]
@@ -13080,6 +13798,7 @@ export const settlements: Code_Names = {
         "en": "Qorabo'yin",
         "uz": "Qorabo‘yin",
         "ru": "Корабуйин",
+        "type": "43",
         "mahallas": [
             "22204558001",
             "22204558002"
@@ -13089,6 +13808,7 @@ export const settlements: Code_Names = {
         "en": "Rabot",
         "uz": "Rabot",
         "ru": "Рабат",
+        "type": "43",
         "mahallas": [
             "22204562001"
         ]
@@ -13097,6 +13817,7 @@ export const settlements: Code_Names = {
         "en": "Village citizen assembly of Boysun district",
         "uz": "Boysun tumanining qishloq mahallalari",
         "ru": "Сельские сходы граждан Байсунского района",
+        "type": "44",
         "mahallas": [
             "22204800001",
             "22204800002",
@@ -13128,6 +13849,7 @@ export const settlements: Code_Names = {
         "en": "Xalqobod",
         "uz": "Xalqobod",
         "ru": "Халкабад",
+        "type": "43",
         "mahallas": [
             "22207551001",
             "22207551002"
@@ -13137,6 +13859,7 @@ export const settlements: Code_Names = {
         "en": "Baxt",
         "uz": "Baxt",
         "ru": "Бахт",
+        "type": "43",
         "mahallas": [
             "22207553001"
         ]
@@ -13145,6 +13868,7 @@ export const settlements: Code_Names = {
         "en": "Baynalmilal",
         "uz": "Baynalmilal",
         "ru": "Байналмилал",
+        "type": "43",
         "mahallas": [
             "22207555001"
         ]
@@ -13153,6 +13877,7 @@ export const settlements: Code_Names = {
         "en": "Guliston",
         "uz": "Guliston",
         "ru": "Гулистан",
+        "type": "43",
         "mahallas": [
             "22207557001"
         ]
@@ -13161,6 +13886,7 @@ export const settlements: Code_Names = {
         "en": "Iftixor",
         "uz": "Iftixor",
         "ru": "Ифтихор",
+        "type": "43",
         "mahallas": [
             "22207559001",
             "22207559002"
@@ -13170,6 +13896,7 @@ export const settlements: Code_Names = {
         "en": "Qozoyoqli",
         "uz": "Qozoyoqli",
         "ru": "Казоекли",
+        "type": "43",
         "mahallas": [
             "22207561001"
         ]
@@ -13178,6 +13905,7 @@ export const settlements: Code_Names = {
         "en": "Oq oltin",
         "uz": "Oq oltin",
         "ru": "Ак алтин",
+        "type": "43",
         "mahallas": [
             "22207563001"
         ]
@@ -13186,6 +13914,7 @@ export const settlements: Code_Names = {
         "en": "Taskent",
         "uz": "Taskent",
         "ru": "Таскент",
+        "type": "43",
         "mahallas": [
             "22207565001",
             "22207565002"
@@ -13195,6 +13924,7 @@ export const settlements: Code_Names = {
         "en": "Ozod Vatan",
         "uz": "Ozod Vatan",
         "ru": "Озод Ватан",
+        "type": "43",
         "mahallas": [
             "22207567001",
             "22207567002",
@@ -13206,6 +13936,7 @@ export const settlements: Code_Names = {
         "en": "Chegarachi",
         "uz": "Chegarachi",
         "ru": "Чегарачи",
+        "type": "43",
         "mahallas": [
             "22207569001"
         ]
@@ -13214,6 +13945,7 @@ export const settlements: Code_Names = {
         "en": "Village citizen assembly of Muzrabot district",
         "uz": "Muzrabot tumanining qishloq mahallalari",
         "ru": "Сельские сходы граждан Музpабадского района",
+        "type": "44",
         "mahallas": [
             "22207800001",
             "22207800002",
@@ -13242,6 +13974,7 @@ export const settlements: Code_Names = {
         "en": "Denov",
         "uz": "Denov",
         "ru": "Денау",
+        "type": "42",
         "mahallas": [
             "22210501001",
             "22210501002",
@@ -13267,6 +14000,7 @@ export const settlements: Code_Names = {
         "en": "Do'stlik",
         "uz": "Do‘stlik",
         "ru": "Дустлик",
+        "type": "43",
         "mahallas": [
             "22210554001"
         ]
@@ -13275,6 +14009,7 @@ export const settlements: Code_Names = {
         "en": "Yurchi",
         "uz": "Yurchi",
         "ru": "Юрчи",
+        "type": "43",
         "mahallas": [
             "22210556001"
         ]
@@ -13283,6 +14018,7 @@ export const settlements: Code_Names = {
         "en": "Qiziljar",
         "uz": "Qiziljar",
         "ru": "Кизилжар",
+        "type": "43",
         "mahallas": [
             "22210558001"
         ]
@@ -13291,6 +14027,7 @@ export const settlements: Code_Names = {
         "en": "Xolchayon",
         "uz": "Xolchayon",
         "ru": "Холчаен",
+        "type": "43",
         "mahallas": [
             "22210562001"
         ]
@@ -13299,6 +14036,7 @@ export const settlements: Code_Names = {
         "en": "Xitoyan",
         "uz": "Xitoyan",
         "ru": "Китоян",
+        "type": "43",
         "mahallas": [
             "22210564001"
         ]
@@ -13307,6 +14045,7 @@ export const settlements: Code_Names = {
         "en": "Paxtakurash",
         "uz": "Paxtakurash",
         "ru": "Пахтакураш",
+        "type": "43",
         "mahallas": [
             "22210566001"
         ]
@@ -13315,6 +14054,7 @@ export const settlements: Code_Names = {
         "en": "Namozgoh",
         "uz": "Namozgoh",
         "ru": "Намазгах",
+        "type": "43",
         "mahallas": [
             "22210568001"
         ]
@@ -13323,6 +14063,7 @@ export const settlements: Code_Names = {
         "en": "Jamatak",
         "uz": "Jamatak",
         "ru": "Джаматак",
+        "type": "43",
         "mahallas": [
             "22210572001"
         ]
@@ -13331,6 +14072,7 @@ export const settlements: Code_Names = {
         "en": "Yangi Hazorbog'",
         "uz": "Yangi Hazorbog‘",
         "ru": "Янги Хазарбаг",
+        "type": "43",
         "mahallas": [
             "22210574001"
         ]
@@ -13339,6 +14081,7 @@ export const settlements: Code_Names = {
         "en": "Dahana",
         "uz": "Dahana",
         "ru": "Дахана",
+        "type": "43",
         "mahallas": [
             "22210578001",
             "22210578002"
@@ -13348,6 +14091,7 @@ export const settlements: Code_Names = {
         "en": "Yangiobod",
         "uz": "Yangiobod",
         "ru": "Янгиабад",
+        "type": "43",
         "mahallas": [
             "22210582001"
         ]
@@ -13356,6 +14100,7 @@ export const settlements: Code_Names = {
         "en": "Village citizen assembly of Denov district",
         "uz": "Denov tumanining qishloq mahallalari",
         "ru": "Сельские сходы граждан Денауского района",
+        "type": "44",
         "mahallas": [
             "22210800001",
             "22210800002",
@@ -13431,6 +14176,7 @@ export const settlements: Code_Names = {
         "en": "Jarqo'rg'on",
         "uz": "Jarqo‘rg‘on",
         "ru": "Джаркурган",
+        "type": "42",
         "mahallas": [
             "22212501001",
             "22212501002",
@@ -13446,6 +14192,7 @@ export const settlements: Code_Names = {
         "en": "Kakaydi",
         "uz": "Kakaydi",
         "ru": "Какайды",
+        "type": "43",
         "mahallas": [
             "22212554001",
             "22212554002",
@@ -13456,6 +14203,7 @@ export const settlements: Code_Names = {
         "en": "Minor",
         "uz": "Minor",
         "ru": "Минор",
+        "type": "43",
         "mahallas": [
             "22212558001"
         ]
@@ -13464,6 +14212,7 @@ export const settlements: Code_Names = {
         "en": "Qoraqursoq",
         "uz": "Qoraqursoq",
         "ru": "Каракурсак",
+        "type": "43",
         "mahallas": [
             "22212564001"
         ]
@@ -13472,6 +14221,7 @@ export const settlements: Code_Names = {
         "en": "Markaziy Surxon",
         "uz": "Markaziy Surxon",
         "ru": "Марказий Сурхан",
+        "type": "43",
         "mahallas": [
             "22212568001"
         ]
@@ -13480,6 +14230,7 @@ export const settlements: Code_Names = {
         "en": "Kafrun",
         "uz": "Kafrun",
         "ru": "Кофрун",
+        "type": "43",
         "mahallas": [
             "22212574001"
         ]
@@ -13488,6 +14239,7 @@ export const settlements: Code_Names = {
         "en": "Village citizen assembly of Jarqo'rg'on district",
         "uz": "Jarqo‘rg‘on tumanining qishloq mahallalari",
         "ru": "Сельские сходы граждан Джаркурганского района",
+        "type": "44",
         "mahallas": [
             "22212800001",
             "22212800002",
@@ -13546,6 +14298,7 @@ export const settlements: Code_Names = {
         "en": "Qumqo'rg'on",
         "uz": "Qumqo‘rg‘on",
         "ru": "Кумкурган",
+        "type": "42",
         "mahallas": [
             "22214501001",
             "22214501002",
@@ -13558,6 +14311,7 @@ export const settlements: Code_Names = {
         "en": "Hurriyat",
         "uz": "Hurriyat",
         "ru": "Хуppият",
+        "type": "43",
         "mahallas": [
             "22214570001"
         ]
@@ -13566,6 +14320,7 @@ export const settlements: Code_Names = {
         "en": "Elbayon",
         "uz": "Elbayon",
         "ru": "Элбаен",
+        "type": "43",
         "mahallas": [
             "22214572001"
         ]
@@ -13574,6 +14329,7 @@ export const settlements: Code_Names = {
         "en": "Elobod",
         "uz": "Elobod",
         "ru": "Элобод",
+        "type": "43",
         "mahallas": [
             "22214574001"
         ]
@@ -13582,6 +14338,7 @@ export const settlements: Code_Names = {
         "en": "Azlarsoy",
         "uz": "Azlarsoy",
         "ru": "Азларсай",
+        "type": "43",
         "mahallas": [
             "22214576001"
         ]
@@ -13590,6 +14347,7 @@ export const settlements: Code_Names = {
         "en": "Bog'ora",
         "uz": "Bog‘ora",
         "ru": "Богара",
+        "type": "43",
         "mahallas": [
             "22214578001"
         ]
@@ -13598,6 +14356,7 @@ export const settlements: Code_Names = {
         "en": "Oqsoy",
         "uz": "Oqsoy",
         "ru": "Аксай",
+        "type": "43",
         "mahallas": [
             "22214582001"
         ]
@@ -13606,6 +14365,7 @@ export const settlements: Code_Names = {
         "en": "Jiydali",
         "uz": "Jiydali",
         "ru": "Джийдали",
+        "type": "43",
         "mahallas": [
             "22214584001"
         ]
@@ -13614,6 +14374,7 @@ export const settlements: Code_Names = {
         "en": "Navbahor",
         "uz": "Navbahor",
         "ru": "Навбахор",
+        "type": "43",
         "mahallas": [
             "22214586001"
         ]
@@ -13622,6 +14383,7 @@ export const settlements: Code_Names = {
         "en": "Qarsoqli",
         "uz": "Qarsoqli",
         "ru": "Карсакли",
+        "type": "43",
         "mahallas": [
             "22214588001"
         ]
@@ -13630,6 +14392,7 @@ export const settlements: Code_Names = {
         "en": "Yangiyer",
         "uz": "Yangiyer",
         "ru": "Янгиер",
+        "type": "43",
         "mahallas": [
             "22214592001"
         ]
@@ -13638,6 +14401,7 @@ export const settlements: Code_Names = {
         "en": "Jaloir",
         "uz": "Jaloir",
         "ru": "Джалойир",
+        "type": "43",
         "mahallas": [
             "22214594001"
         ]
@@ -13646,6 +14410,7 @@ export const settlements: Code_Names = {
         "en": "Village citizen assembly of Qumqo'rg'on district",
         "uz": "Qumqo‘rg‘on tumanining qishloq mahallalari",
         "ru": "Сельские сходы граждан Кумкурганского района",
+        "type": "44",
         "mahallas": [
             "22214800001",
             "22214800002",
@@ -13698,6 +14463,7 @@ export const settlements: Code_Names = {
         "en": "Sariq",
         "uz": "Sariq",
         "ru": "Сарик",
+        "type": "43",
         "mahallas": [
             "22215551001",
             "22215551002",
@@ -13710,6 +14476,7 @@ export const settlements: Code_Names = {
         "en": "Kunchiqish",
         "uz": "Kunchiqish",
         "ru": "Кунчикиш",
+        "type": "43",
         "mahallas": [
             "22215553001"
         ]
@@ -13718,6 +14485,7 @@ export const settlements: Code_Names = {
         "en": "Yangi hayot",
         "uz": "Yangi hayot",
         "ru": "Янги хает",
+        "type": "43",
         "mahallas": [
             "22215556001"
         ]
@@ -13726,6 +14494,7 @@ export const settlements: Code_Names = {
         "en": "Karmaki",
         "uz": "Karmaki",
         "ru": "Кармаки",
+        "type": "43",
         "mahallas": [
             "22215559001"
         ]
@@ -13734,6 +14503,7 @@ export const settlements: Code_Names = {
         "en": "Istara",
         "uz": "Istara",
         "ru": "Истара",
+        "type": "43",
         "mahallas": [
             "22215563001"
         ]
@@ -13742,6 +14512,7 @@ export const settlements: Code_Names = {
         "en": "Village citizen assembly of Qiziriq district",
         "uz": "Qiziriq tumanining qishloq mahallalari",
         "ru": "Сельские сходы граждан Кизирикского района",
+        "type": "44",
         "mahallas": [
             "22215800001",
             "22215800002",
@@ -13771,6 +14542,7 @@ export const settlements: Code_Names = {
         "en": "Sharg'un",
         "uz": "Sharg‘un",
         "ru": "Шаргунь",
+        "type": "42",
         "mahallas": [
             "22217505001",
             "22217505002",
@@ -13783,6 +14555,7 @@ export const settlements: Code_Names = {
         "en": "Sariosiyo",
         "uz": "Sariosiyo",
         "ru": "Сариасия",
+        "type": "43",
         "mahallas": [
             "22217551001",
             "22217551002",
@@ -13795,6 +14568,7 @@ export const settlements: Code_Names = {
         "en": "Yangihayot",
         "uz": "Yangihayot",
         "ru": "Янгихает",
+        "type": "43",
         "mahallas": [
             "22217554001"
         ]
@@ -13803,6 +14577,7 @@ export const settlements: Code_Names = {
         "en": "Tortuli",
         "uz": "Tortuli",
         "ru": "Тартули",
+        "type": "43",
         "mahallas": [
             "22217558001"
         ]
@@ -13811,6 +14586,7 @@ export const settlements: Code_Names = {
         "en": "Bo'yropo'sht",
         "uz": "Bo‘yropo‘sht",
         "ru": "Буйрапушт",
+        "type": "43",
         "mahallas": [
             "22217564001"
         ]
@@ -13819,6 +14595,7 @@ export const settlements: Code_Names = {
         "en": "Village citizen assembly of Sariosiyo district",
         "uz": "Sariosiyo tumanining qishloq mahallalari",
         "ru": "Сельские сходы граждан Сариасийского района",
+        "type": "44",
         "mahallas": [
             "22217800001",
             "22217800002",
@@ -13874,6 +14651,7 @@ export const settlements: Code_Names = {
         "en": "Uchqizil",
         "uz": "Uchqizil",
         "ru": "Учкизил",
+        "type": "43",
         "mahallas": [
             "22220551001"
         ]
@@ -13882,6 +14660,7 @@ export const settlements: Code_Names = {
         "en": "Limonchi",
         "uz": "Limonchi",
         "ru": "Лимончи",
+        "type": "43",
         "mahallas": [
             "22220553001",
             "22220553002",
@@ -13892,6 +14671,7 @@ export const settlements: Code_Names = {
         "en": "Tajribakor",
         "uz": "Tajribakor",
         "ru": "Тажрибакор",
+        "type": "43",
         "mahallas": [
             "22220555001"
         ]
@@ -13900,6 +14680,7 @@ export const settlements: Code_Names = {
         "en": "At-Termiziy",
         "uz": "At-Termiziy",
         "ru": "Ат-Термизий",
+        "type": "43",
         "mahallas": [
             "22220559001",
             "22220559002"
@@ -13909,6 +14690,7 @@ export const settlements: Code_Names = {
         "en": "Mustaqillik",
         "uz": "Mustaqillik",
         "ru": "Мустакиллик",
+        "type": "43",
         "mahallas": [
             "22220561001"
         ]
@@ -13917,6 +14699,7 @@ export const settlements: Code_Names = {
         "en": "Chegarachi",
         "uz": "Chegarachi",
         "ru": "Чегарачи",
+        "type": "43",
         "mahallas": [
             "22220565001",
             "22220565002"
@@ -13926,6 +14709,7 @@ export const settlements: Code_Names = {
         "en": "Qizilboy",
         "uz": "Qizilboy",
         "ru": "Кизилбай",
+        "type": "43",
         "mahallas": [
             "22220567001"
         ]
@@ -13934,6 +14718,7 @@ export const settlements: Code_Names = {
         "en": "Village citizen assembly of Termiz district",
         "uz": "Termiz tumanining qishloq mahallalari",
         "ru": "Сельские сходы граждан Термезского района",
+        "type": "44",
         "mahallas": [
             "22220800001",
             "22220800002",
@@ -13960,6 +14745,7 @@ export const settlements: Code_Names = {
         "en": "Uzun",
         "uz": "Uzun",
         "ru": "Узун",
+        "type": "43",
         "mahallas": [
             "22221551001",
             "22221551002",
@@ -13972,6 +14758,7 @@ export const settlements: Code_Names = {
         "en": "Chinor",
         "uz": "Chinor",
         "ru": "Чинар",
+        "type": "43",
         "mahallas": [
             "22221553001"
         ]
@@ -13980,6 +14767,7 @@ export const settlements: Code_Names = {
         "en": "Ulanqul",
         "uz": "Ulanqul",
         "ru": "Уланкул",
+        "type": "43",
         "mahallas": [
             "22221556001"
         ]
@@ -13988,6 +14776,7 @@ export const settlements: Code_Names = {
         "en": "Qarashiq",
         "uz": "Qarashiq",
         "ru": "Карашик",
+        "type": "43",
         "mahallas": [
             "22221559001"
         ]
@@ -13996,6 +14785,7 @@ export const settlements: Code_Names = {
         "en": "Yangi kuch",
         "uz": "Yangi kuch",
         "ru": "Янги куч",
+        "type": "43",
         "mahallas": [
             "22221563001"
         ]
@@ -14004,6 +14794,7 @@ export const settlements: Code_Names = {
         "en": "Jonchekka",
         "uz": "Jonchekka",
         "ru": "Джанчекка",
+        "type": "43",
         "mahallas": [
             "22221566001"
         ]
@@ -14012,6 +14803,7 @@ export const settlements: Code_Names = {
         "en": "Malandiyon",
         "uz": "Malandiyon",
         "ru": "Маландиян",
+        "type": "43",
         "mahallas": [
             "22221569001"
         ]
@@ -14020,6 +14812,7 @@ export const settlements: Code_Names = {
         "en": "Mehnat",
         "uz": "Mehnat",
         "ru": "Мехнат",
+        "type": "43",
         "mahallas": [
             "22221573001"
         ]
@@ -14028,6 +14821,7 @@ export const settlements: Code_Names = {
         "en": "Yangi ro'zg'or",
         "uz": "Yangi ro‘zg‘or",
         "ru": "Янги рузгор",
+        "type": "43",
         "mahallas": [
             "22221576001",
             "22221576002"
@@ -14037,6 +14831,7 @@ export const settlements: Code_Names = {
         "en": "Village citizen assembly of Uzun district",
         "uz": "Uzun tumanining qishloq mahallalari",
         "ru": "Сельские сходы граждан Узунского района",
+        "type": "44",
         "mahallas": [
             "22221800001",
             "22221800002",
@@ -14081,6 +14876,7 @@ export const settlements: Code_Names = {
         "en": "Sherobod",
         "uz": "Sherobod",
         "ru": "Шерабад",
+        "type": "42",
         "mahallas": [
             "22223501001",
             "22223501002",
@@ -14096,6 +14892,7 @@ export const settlements: Code_Names = {
         "en": "Zarabog'",
         "uz": "Zarabog‘",
         "ru": "Зарабаг",
+        "type": "43",
         "mahallas": [
             "22223552001"
         ]
@@ -14104,6 +14901,7 @@ export const settlements: Code_Names = {
         "en": "Kilkon",
         "uz": "Kilkon",
         "ru": "Килкон",
+        "type": "43",
         "mahallas": [
             "22223554001"
         ]
@@ -14112,6 +14910,7 @@ export const settlements: Code_Names = {
         "en": "Navbog'",
         "uz": "Navbog‘",
         "ru": "Навбаг",
+        "type": "43",
         "mahallas": [
             "22223556001"
         ]
@@ -14120,6 +14919,7 @@ export const settlements: Code_Names = {
         "en": "Paxtaobod",
         "uz": "Paxtaobod",
         "ru": "Пахтаабад",
+        "type": "43",
         "mahallas": [
             "22223558001"
         ]
@@ -14128,6 +14928,7 @@ export const settlements: Code_Names = {
         "en": "Sariqamish",
         "uz": "Sariqamish",
         "ru": "Сарикамиш",
+        "type": "43",
         "mahallas": [
             "22223562001"
         ]
@@ -14136,6 +14937,7 @@ export const settlements: Code_Names = {
         "en": "Cho'yinchi",
         "uz": "Cho‘yinchi",
         "ru": "Чуйинчи",
+        "type": "43",
         "mahallas": [
             "22223564001"
         ]
@@ -14144,6 +14946,7 @@ export const settlements: Code_Names = {
         "en": "Yangiariq",
         "uz": "Yangiariq",
         "ru": "Янги арик",
+        "type": "43",
         "mahallas": [
             "22223566001"
         ]
@@ -14152,6 +14955,7 @@ export const settlements: Code_Names = {
         "en": "Village citizen assembly of Sherobod district",
         "uz": "Sherobod tumanining qishloq mahallalari",
         "ru": "Сельские сходы граждан Шерабадского района",
+        "type": "44",
         "mahallas": [
             "22223800001",
             "22223800002",
@@ -14192,6 +14996,7 @@ export const settlements: Code_Names = {
         "en": "Sho'rchi",
         "uz": "Sho‘rchi",
         "ru": "Шурчи",
+        "type": "42",
         "mahallas": [
             "22226501001",
             "22226501002",
@@ -14207,6 +15012,7 @@ export const settlements: Code_Names = {
         "en": "Elbayon",
         "uz": "Elbayon",
         "ru": "Элбаен",
+        "type": "43",
         "mahallas": [
             "22226554001"
         ]
@@ -14215,6 +15021,7 @@ export const settlements: Code_Names = {
         "en": "To'la",
         "uz": "To‘la",
         "ru": "Тула",
+        "type": "43",
         "mahallas": [
             "22226558001"
         ]
@@ -14223,6 +15030,7 @@ export const settlements: Code_Names = {
         "en": "Yalti",
         "uz": "Yalti",
         "ru": "Ялти",
+        "type": "43",
         "mahallas": [
             "22226562001"
         ]
@@ -14231,6 +15039,7 @@ export const settlements: Code_Names = {
         "en": "Xushchekka",
         "uz": "Xushchekka",
         "ru": "Хушчека",
+        "type": "43",
         "mahallas": [
             "22226564001"
         ]
@@ -14239,6 +15048,7 @@ export const settlements: Code_Names = {
         "en": "Qo'shtegirmon",
         "uz": "Qo‘shtegirmon",
         "ru": "Куштегирмон",
+        "type": "43",
         "mahallas": [
             "22226566001"
         ]
@@ -14247,6 +15057,7 @@ export const settlements: Code_Names = {
         "en": "Kattasovur",
         "uz": "Kattasovur",
         "ru": "Катта совур",
+        "type": "43",
         "mahallas": [
             "22226568001"
         ]
@@ -14255,6 +15066,7 @@ export const settlements: Code_Names = {
         "en": "G'armaqo'rg'on",
         "uz": "G‘armaqo‘rg‘on",
         "ru": "Гармакурган",
+        "type": "43",
         "mahallas": [
             "22226574001"
         ]
@@ -14263,6 +15075,7 @@ export const settlements: Code_Names = {
         "en": "Jarqishloq",
         "uz": "Jarqishloq",
         "ru": "Джаркишлок",
+        "type": "43",
         "mahallas": [
             "22226576001"
         ]
@@ -14271,6 +15084,7 @@ export const settlements: Code_Names = {
         "en": "Joyilma",
         "uz": "Joyilma",
         "ru": "Джайилма",
+        "type": "43",
         "mahallas": [
             "22226578001"
         ]
@@ -14279,6 +15093,7 @@ export const settlements: Code_Names = {
         "en": "Village citizen assembly of Sho'rchi district",
         "uz": "Sho‘rchi tumanining qishloq mahallalari",
         "ru": "Сельские сходы граждан Шурчинского района",
+        "type": "44",
         "mahallas": [
             "22226800001",
             "22226800002",
@@ -14319,9 +15134,10 @@ export const settlements: Code_Names = {
         ]
     },
     "1722401000": {
-        "en": "--",
-        "uz": "--",
-        "ru": "--",
+        "en": "-",
+        "uz": "-",
+        "ru": "-",
+        "type": "32",
         "mahallas": [
             "22401000001",
             "22401000002",
@@ -14366,6 +15182,7 @@ export const settlements: Code_Names = {
         "en": "Sardoba",
         "uz": "Sardoba",
         "ru": "Сардоба",
+        "type": "43",
         "mahallas": [
             "24206551001",
             "24206551002",
@@ -14378,6 +15195,7 @@ export const settlements: Code_Names = {
         "en": "Farg'ona",
         "uz": "Farg‘ona",
         "ru": "Фергана",
+        "type": "43",
         "mahallas": [
             "24206552001",
             "24206552002",
@@ -14389,6 +15207,7 @@ export const settlements: Code_Names = {
         "en": "Andijon",
         "uz": "Andijon",
         "ru": "Андижон",
+        "type": "43",
         "mahallas": [
             "24206554001"
         ]
@@ -14397,6 +15216,7 @@ export const settlements: Code_Names = {
         "en": "Village citizen assembly of Oqoltin district",
         "uz": "Oqoltin tumanining qishloq mahallalari",
         "ru": "Сельские сходы граждан Акалтынского pайона",
+        "type": "44",
         "mahallas": [
             "24206800001",
             "24206800002",
@@ -14407,6 +15227,7 @@ export const settlements: Code_Names = {
         "en": "Boyovut",
         "uz": "Boyovut",
         "ru": "Баяут",
+        "type": "43",
         "mahallas": [
             "24212551001",
             "24212551002",
@@ -14422,6 +15243,7 @@ export const settlements: Code_Names = {
         "en": "Markaz",
         "uz": "Markaz",
         "ru": "Марказ",
+        "type": "43",
         "mahallas": [
             "24212552001",
             "24212552002"
@@ -14431,6 +15253,7 @@ export const settlements: Code_Names = {
         "en": "Bekat",
         "uz": "Bekat",
         "ru": "Бекат",
+        "type": "43",
         "mahallas": [
             "24212553001"
         ]
@@ -14439,6 +15262,7 @@ export const settlements: Code_Names = {
         "en": "Do'stlik",
         "uz": "Do‘stlik",
         "ru": "Дустлик",
+        "type": "43",
         "mahallas": [
             "24212554001"
         ]
@@ -14447,6 +15271,7 @@ export const settlements: Code_Names = {
         "en": "Village citizen assembly of Boyovut district",
         "uz": "Boyovut tumanining qishloq mahallalari",
         "ru": "Сельские сходы граждан Баяутского района",
+        "type": "44",
         "mahallas": [
             "24212800001",
             "24212800002",
@@ -14481,6 +15306,7 @@ export const settlements: Code_Names = {
         "en": "Sayxun",
         "uz": "Sayxun",
         "ru": "Сайхун",
+        "type": "43",
         "mahallas": [
             "24216551001",
             "24216551002"
@@ -14490,6 +15316,7 @@ export const settlements: Code_Names = {
         "en": "Sohil",
         "uz": "Sohil",
         "ru": "Сохил",
+        "type": "43",
         "mahallas": [
             "24216553001"
         ]
@@ -14498,6 +15325,7 @@ export const settlements: Code_Names = {
         "en": "Sho'ro'zak",
         "uz": "Sho‘ro‘zak",
         "ru": "Шурузак",
+        "type": "43",
         "mahallas": [
             "24216555001"
         ]
@@ -14506,6 +15334,7 @@ export const settlements: Code_Names = {
         "en": "Paxtakon",
         "uz": "Paxtakon",
         "ru": "Пахтакон",
+        "type": "43",
         "mahallas": [
             "24216557001"
         ]
@@ -14514,6 +15343,7 @@ export const settlements: Code_Names = {
         "en": "Village citizen assembly of Sayxunobod district",
         "uz": "Sayxunobod tumanining qishloq mahallalari",
         "ru": "Сельские сходы граждан Сайхунабадского района",
+        "type": "44",
         "mahallas": [
             "24216800001",
             "24216800002",
@@ -14535,6 +15365,7 @@ export const settlements: Code_Names = {
         "en": "Dehqonobod",
         "uz": "Dehqonobod",
         "ru": "Дехканабад",
+        "type": "43",
         "mahallas": [
             "24220551001",
             "24220551002",
@@ -14546,6 +15377,7 @@ export const settlements: Code_Names = {
         "en": "Hulkar",
         "uz": "Hulkar",
         "ru": "Хулкар",
+        "type": "43",
         "mahallas": [
             "24220552001"
         ]
@@ -14554,6 +15386,7 @@ export const settlements: Code_Names = {
         "en": "Xalqako'l",
         "uz": "Xalqako‘l",
         "ru": "Халкакул",
+        "type": "43",
         "mahallas": [
             "24220556001",
             "24220556002"
@@ -14563,6 +15396,7 @@ export const settlements: Code_Names = {
         "en": "Village citizen assembly of Guliston district",
         "uz": "Guliston tumanining qishloq mahallalari",
         "ru": "Сельские сходы граждан Гулистанского района",
+        "type": "44",
         "mahallas": [
             "24220800001",
             "24220800002",
@@ -14589,6 +15423,7 @@ export const settlements: Code_Names = {
         "en": "Paxtaobod",
         "uz": "Paxtaobod",
         "ru": "Пахтаабад",
+        "type": "43",
         "mahallas": [
             "24226551001",
             "24226551002",
@@ -14600,6 +15435,7 @@ export const settlements: Code_Names = {
         "en": "Village citizen assembly of Sardoba district",
         "uz": "Sardoba tumanining qishloq mahallalari",
         "ru": "Сельские сходы граждан Сардобского района",
+        "type": "44",
         "mahallas": [
             "24226800001",
             "24226800002",
@@ -14618,6 +15454,7 @@ export const settlements: Code_Names = {
         "en": "Navro'z",
         "uz": "Navro‘z",
         "ru": "Навруз",
+        "type": "43",
         "mahallas": [
             "24228551001"
         ]
@@ -14626,6 +15463,7 @@ export const settlements: Code_Names = {
         "en": "Oqoltin",
         "uz": "Oqoltin",
         "ru": "Акалтин",
+        "type": "43",
         "mahallas": [
             "24228552001"
         ]
@@ -14634,6 +15472,7 @@ export const settlements: Code_Names = {
         "en": "Village citizen assembly of Mirzaobod district",
         "uz": "Mirzaobod tumanining qishloq mahallalari",
         "ru": "Сельские сходы граждан Мирзаабадского района",
+        "type": "44",
         "mahallas": [
             "24228800001",
             "24228800002",
@@ -14657,6 +15496,7 @@ export const settlements: Code_Names = {
         "en": "Sirdaryo",
         "uz": "Sirdaryo",
         "ru": "Сыpдаpья",
+        "type": "42",
         "mahallas": [
             "24231501001",
             "24231501002",
@@ -14672,6 +15512,7 @@ export const settlements: Code_Names = {
         "en": "Baxt",
         "uz": "Baxt",
         "ru": "Бахт",
+        "type": "42",
         "mahallas": [
             "24231503001",
             "24231503002",
@@ -14683,6 +15524,7 @@ export const settlements: Code_Names = {
         "en": "Quyosh",
         "uz": "Quyosh",
         "ru": "Куеш",
+        "type": "43",
         "mahallas": [
             "24231552001"
         ]
@@ -14691,6 +15533,7 @@ export const settlements: Code_Names = {
         "en": "Malik",
         "uz": "Malik",
         "ru": "Малек",
+        "type": "43",
         "mahallas": [
             "24231553001"
         ]
@@ -14699,6 +15542,7 @@ export const settlements: Code_Names = {
         "en": "Ziyokor",
         "uz": "Ziyokor",
         "ru": "Зиекор",
+        "type": "43",
         "mahallas": [
             "24231554001"
         ]
@@ -14707,6 +15551,7 @@ export const settlements: Code_Names = {
         "en": "J.Mamanov",
         "uz": "J.Mamanov",
         "ru": "Дж.Маманов",
+        "type": "43",
         "mahallas": [
             "24231555001"
         ]
@@ -14715,6 +15560,7 @@ export const settlements: Code_Names = {
         "en": "Village citizen assembly of Sirdaryo district",
         "uz": "Sirdaryo tumanining qishloq mahallalari",
         "ru": "Сельские сходы граждан Сырдарьинского района",
+        "type": "44",
         "mahallas": [
             "24231800001",
             "24231800002",
@@ -14744,6 +15590,7 @@ export const settlements: Code_Names = {
         "en": "Xovos",
         "uz": "Xovos",
         "ru": "Хавас",
+        "type": "43",
         "mahallas": [
             "24235551001",
             "24235551002",
@@ -14759,6 +15606,7 @@ export const settlements: Code_Names = {
         "en": "Gulbahor",
         "uz": "Gulbahor",
         "ru": "Гулбахор",
+        "type": "43",
         "mahallas": [
             "24235553001"
         ]
@@ -14767,6 +15615,7 @@ export const settlements: Code_Names = {
         "en": "Village citizen assembly of Xovos district",
         "uz": "Xovos tumanining qishloq mahallalari",
         "ru": "Сельские сходы граждан Хавасского района",
+        "type": "44",
         "mahallas": [
             "24235800001",
             "24235800002",
@@ -14790,9 +15639,10 @@ export const settlements: Code_Names = {
         ]
     },
     "1724401000": {
-        "en": "--",
-        "uz": "--",
-        "ru": "--",
+        "en": "-",
+        "uz": "-",
+        "ru": "-",
+        "type": "32",
         "mahallas": [
             "24401000001",
             "24401000002",
@@ -14818,6 +15668,7 @@ export const settlements: Code_Names = {
         "en": "Village citizen assembly of Guliston",
         "uz": "Guliston shahar hokimiyatiga qarashli qishloq mahallalari",
         "ru": "Сельские сходы гр-н, подч. Гулистанскому горхок-ту",
+        "type": "44",
         "mahallas": [
             "24401800001",
             "24401800002",
@@ -14828,9 +15679,10 @@ export const settlements: Code_Names = {
         ]
     },
     "1724410000": {
-        "en": "--",
-        "uz": "--",
-        "ru": "--",
+        "en": "-",
+        "uz": "-",
+        "ru": "-",
+        "type": "32",
         "mahallas": [
             "24410000001",
             "24410000002",
@@ -14842,9 +15694,10 @@ export const settlements: Code_Names = {
         ]
     },
     "1724413000": {
-        "en": "--",
-        "uz": "--",
-        "ru": "--",
+        "en": "-",
+        "uz": "-",
+        "ru": "-",
+        "type": "32",
         "mahallas": [
             "24413000001",
             "24413000002",
@@ -14861,9 +15714,10 @@ export const settlements: Code_Names = {
         ]
     },
     "1726262000": {
-        "en": "--",
-        "uz": "--",
-        "ru": "--",
+        "en": "-",
+        "uz": "-",
+        "ru": "-",
+        "type": "33",
         "mahallas": [
             "26262000001",
             "26262000002",
@@ -14928,9 +15782,10 @@ export const settlements: Code_Names = {
         ]
     },
     "1726264000": {
-        "en": "--",
-        "uz": "--",
-        "ru": "--",
+        "en": "-",
+        "uz": "-",
+        "ru": "-",
+        "type": "33",
         "mahallas": [
             "26264000001",
             "26264000002",
@@ -14953,9 +15808,10 @@ export const settlements: Code_Names = {
         ]
     },
     "1726266000": {
-        "en": "--",
-        "uz": "--",
-        "ru": "--",
+        "en": "-",
+        "uz": "-",
+        "ru": "-",
+        "type": "33",
         "mahallas": [
             "26266000001",
             "26266000002",
@@ -15024,9 +15880,10 @@ export const settlements: Code_Names = {
         ]
     },
     "1726269000": {
-        "en": "--",
-        "uz": "--",
-        "ru": "--",
+        "en": "-",
+        "uz": "-",
+        "ru": "-",
+        "type": "33",
         "mahallas": [
             "26269000001",
             "26269000002",
@@ -15103,14 +15960,16 @@ export const settlements: Code_Names = {
         "en": "Ulug'bek",
         "uz": "Ulug‘bek",
         "ru": "Улугбек",
+        "type": "43",
         "mahallas": [
             "26269558001"
         ]
     },
     "1726273000": {
-        "en": "--",
-        "uz": "--",
-        "ru": "--",
+        "en": "-",
+        "uz": "-",
+        "ru": "-",
+        "type": "33",
         "mahallas": [
             "26273000001",
             "26273000002",
@@ -15154,9 +16013,10 @@ export const settlements: Code_Names = {
         ]
     },
     "1726277000": {
-        "en": "--",
-        "uz": "--",
-        "ru": "--",
+        "en": "-",
+        "uz": "-",
+        "ru": "-",
+        "type": "33",
         "mahallas": [
             "26277000001",
             "26277000002",
@@ -15212,9 +16072,10 @@ export const settlements: Code_Names = {
         ]
     },
     "1726280000": {
-        "en": "--",
-        "uz": "--",
-        "ru": "--",
+        "en": "-",
+        "uz": "-",
+        "ru": "-",
+        "type": "33",
         "mahallas": [
             "26280000001",
             "26280000002",
@@ -15283,9 +16144,10 @@ export const settlements: Code_Names = {
         ]
     },
     "1726283000": {
-        "en": "--",
-        "uz": "--",
-        "ru": "--",
+        "en": "-",
+        "uz": "-",
+        "ru": "-",
+        "type": "33",
         "mahallas": [
             "26283000001",
             "26283000002",
@@ -15336,9 +16198,10 @@ export const settlements: Code_Names = {
         ]
     },
     "1726287000": {
-        "en": "--",
-        "uz": "--",
-        "ru": "--",
+        "en": "-",
+        "uz": "-",
+        "ru": "-",
+        "type": "33",
         "mahallas": [
             "26287000001",
             "26287000002",
@@ -15364,9 +16227,10 @@ export const settlements: Code_Names = {
         ]
     },
     "1726290000": {
-        "en": "--",
-        "uz": "--",
-        "ru": "--",
+        "en": "-",
+        "uz": "-",
+        "ru": "-",
+        "type": "33",
         "mahallas": [
             "26290000001",
             "26290000002",
@@ -15438,9 +16302,10 @@ export const settlements: Code_Names = {
         ]
     },
     "1726292000": {
-        "en": "--",
-        "uz": "--",
-        "ru": "--",
+        "en": "-",
+        "uz": "-",
+        "ru": "-",
+        "type": "33",
         "mahallas": [
             "26292000001",
             "26292000002",
@@ -15475,9 +16340,10 @@ export const settlements: Code_Names = {
         ]
     },
     "1726294000": {
-        "en": "--",
-        "uz": "--",
-        "ru": "--",
+        "en": "-",
+        "uz": "-",
+        "ru": "-",
+        "type": "33",
         "mahallas": [
             "26294000001",
             "26294000002",
@@ -15540,6 +16406,7 @@ export const settlements: Code_Names = {
         "en": "Oqqo'rg'on",
         "uz": "Oqqo‘rg‘on",
         "ru": "Аккурган",
+        "type": "42",
         "mahallas": [
             "27206501001",
             "27206501002",
@@ -15552,6 +16419,7 @@ export const settlements: Code_Names = {
         "en": "Olimkent",
         "uz": "Olimkent",
         "ru": "Алимкент",
+        "type": "43",
         "mahallas": [
             "27206554001",
             "27206554002"
@@ -15561,6 +16429,7 @@ export const settlements: Code_Names = {
         "en": "Hamzaobod",
         "uz": "Hamzaobod",
         "ru": "Хамзаабад",
+        "type": "43",
         "mahallas": [
             "27206558001"
         ]
@@ -15569,6 +16438,7 @@ export const settlements: Code_Names = {
         "en": "Village citizen assembly of Oqqo'rg'on district",
         "uz": "Oqqo‘rg‘on tumanining qishloq mahallalari",
         "ru": "Сельские сходы граждан Аккурганского района",
+        "type": "44",
         "mahallas": [
             "27206800001",
             "27206800002",
@@ -15597,6 +16467,7 @@ export const settlements: Code_Names = {
         "en": "Yon-ariq",
         "uz": "Yon-ariq",
         "ru": "Ен-арик",
+        "type": "43",
         "mahallas": [
             "27212552001"
         ]
@@ -15605,6 +16476,7 @@ export const settlements: Code_Names = {
         "en": "Qora Xitoy",
         "uz": "Qora Xitoy",
         "ru": "Каракитай",
+        "type": "43",
         "mahallas": [
             "27212554001",
             "27212554002"
@@ -15614,6 +16486,7 @@ export const settlements: Code_Names = {
         "en": "Telov",
         "uz": "Telov",
         "ru": "Телов",
+        "type": "43",
         "mahallas": [
             "27212556001"
         ]
@@ -15622,15 +16495,17 @@ export const settlements: Code_Names = {
         "en": "Eyvalek",
         "uz": "Eyvalek",
         "ru": "Эйвалек",
+        "type": "43",
         "mahallas": [
             "27212558001",
             "27212558002"
         ]
     },
     "1727212560": {
-        "en": "--",
-        "uz": "--",
-        "ru": "--",
+        "en": "-",
+        "uz": "-",
+        "ru": "-",
+        "type": "43",
         "mahallas": [
             "27212560001"
         ]
@@ -15639,6 +16514,7 @@ export const settlements: Code_Names = {
         "en": "Village citizen assembly of Ohangaron district",
         "uz": "Ohangaron tumanining qishloq mahallalari",
         "ru": "Сельские сходы граждан Ахангаранского района",
+        "type": "44",
         "mahallas": [
             "27212800001",
             "27212800002",
@@ -15673,6 +16549,7 @@ export const settlements: Code_Names = {
         "en": "Zafar",
         "uz": "Zafar",
         "ru": "Зафар",
+        "type": "43",
         "mahallas": [
             "27220551001",
             "27220551002",
@@ -15683,6 +16560,7 @@ export const settlements: Code_Names = {
         "en": "Bobur",
         "uz": "Bobur",
         "ru": "Бобур",
+        "type": "43",
         "mahallas": [
             "27220553001",
             "27220553002"
@@ -15692,6 +16570,7 @@ export const settlements: Code_Names = {
         "en": "Ko'rkam",
         "uz": "Ko‘rkam",
         "ru": "Куркам",
+        "type": "43",
         "mahallas": [
             "27220557001"
         ]
@@ -15700,6 +16579,7 @@ export const settlements: Code_Names = {
         "en": "Xos",
         "uz": "Xos",
         "ru": "Хос",
+        "type": "43",
         "mahallas": [
             "27220559001",
             "27220559002"
@@ -15709,6 +16589,7 @@ export const settlements: Code_Names = {
         "en": "Gulzor",
         "uz": "Gulzor",
         "ru": "Гулзор",
+        "type": "43",
         "mahallas": [
             "27220561001",
             "27220561002",
@@ -15720,6 +16601,7 @@ export const settlements: Code_Names = {
         "en": "Village citizen assembly of Bekobod district",
         "uz": "Bekobod tumanining qishloq mahallalari",
         "ru": "Сельские сходы граждан Бекабадского района",
+        "type": "44",
         "mahallas": [
             "27220800001",
             "27220800002",
@@ -15766,6 +16648,7 @@ export const settlements: Code_Names = {
         "en": "G'azalkent",
         "uz": "G‘azalkent",
         "ru": "Газалкент",
+        "type": "42",
         "mahallas": [
             "27224501001",
             "27224501002",
@@ -15779,6 +16662,7 @@ export const settlements: Code_Names = {
         "en": "Iskandar",
         "uz": "Iskandar",
         "ru": "Искандар",
+        "type": "43",
         "mahallas": [
             "27224554001",
             "27224554002",
@@ -15790,6 +16674,7 @@ export const settlements: Code_Names = {
         "en": "Chorvoq",
         "uz": "Chorvoq",
         "ru": "Чарвак",
+        "type": "43",
         "mahallas": [
             "27224558001",
             "27224558002",
@@ -15800,6 +16685,7 @@ export const settlements: Code_Names = {
         "en": "Burchmullo",
         "uz": "Burchmullo",
         "ru": "Бурчмулло",
+        "type": "43",
         "mahallas": [
             "27224560001",
             "27224560002"
@@ -15809,6 +16695,7 @@ export const settlements: Code_Names = {
         "en": "Pargos",
         "uz": "Pargos",
         "ru": "Паргос",
+        "type": "43",
         "mahallas": [
             "27224562001"
         ]
@@ -15817,6 +16704,7 @@ export const settlements: Code_Names = {
         "en": "Sari qanli",
         "uz": "Sari qanli",
         "ru": "Сари Канли",
+        "type": "43",
         "mahallas": [
             "27224564001",
             "27224564002"
@@ -15826,6 +16714,7 @@ export const settlements: Code_Names = {
         "en": "Sobir Raximov",
         "uz": "Sobir Raximov",
         "ru": "Собир Рахимов",
+        "type": "43",
         "mahallas": [
             "27224566001"
         ]
@@ -15834,6 +16723,7 @@ export const settlements: Code_Names = {
         "en": "Soyliq",
         "uz": "Soyliq",
         "ru": "Сойлик",
+        "type": "43",
         "mahallas": [
             "27224568001",
             "27224568002"
@@ -15843,6 +16733,7 @@ export const settlements: Code_Names = {
         "en": "Talpin",
         "uz": "Talpin",
         "ru": "Талпин",
+        "type": "43",
         "mahallas": [
             "27224572001"
         ]
@@ -15851,6 +16742,7 @@ export const settlements: Code_Names = {
         "en": "Tulabe",
         "uz": "Tulabe",
         "ru": "Тулабе",
+        "type": "43",
         "mahallas": [
             "27224574001",
             "27224574002"
@@ -15860,6 +16752,7 @@ export const settlements: Code_Names = {
         "en": "Uyenqulsoy",
         "uz": "Uyenqulsoy",
         "ru": "Уенкулсай",
+        "type": "43",
         "mahallas": [
             "27224576001"
         ]
@@ -15868,6 +16761,7 @@ export const settlements: Code_Names = {
         "en": "Xumsan",
         "uz": "Xumsan",
         "ru": "Хумсон",
+        "type": "43",
         "mahallas": [
             "27224578001",
             "27224578002"
@@ -15877,6 +16771,7 @@ export const settlements: Code_Names = {
         "en": "Ho'ja",
         "uz": "Ho‘ja",
         "ru": "Хужа",
+        "type": "43",
         "mahallas": [
             "27224582001"
         ]
@@ -15885,6 +16780,7 @@ export const settlements: Code_Names = {
         "en": "Xo'jakent",
         "uz": "Xo‘jakent",
         "ru": "Хужакент",
+        "type": "43",
         "mahallas": [
             "27224584001"
         ]
@@ -15893,6 +16789,7 @@ export const settlements: Code_Names = {
         "en": "Chinor",
         "uz": "Chinor",
         "ru": "Чинор",
+        "type": "43",
         "mahallas": [
             "27224586001",
             "27224586002"
@@ -15902,6 +16799,7 @@ export const settlements: Code_Names = {
         "en": "Qoronqul",
         "uz": "Qoronqul",
         "ru": "Коронкул",
+        "type": "43",
         "mahallas": [
             "27224588001"
         ]
@@ -15910,6 +16808,7 @@ export const settlements: Code_Names = {
         "en": "Qurbonov nomli",
         "uz": "Qurbonov nomli",
         "ru": "Курбонов",
+        "type": "43",
         "mahallas": [
             "27224592001"
         ]
@@ -15918,6 +16817,7 @@ export const settlements: Code_Names = {
         "en": "Qo'shqo'rg'on",
         "uz": "Qo‘shqo‘rg‘on",
         "ru": "Кушкурган",
+        "type": "43",
         "mahallas": [
             "27224594001"
         ]
@@ -15926,6 +16826,7 @@ export const settlements: Code_Names = {
         "en": "Village citizen assembly of Bo'stonliq district",
         "uz": "Bo‘stonliq tumanining qishloq mahallalari",
         "ru": "Сельские сходы граждан Бостанлыкского района",
+        "type": "44",
         "mahallas": [
             "27224800001",
             "27224800002",
@@ -15958,6 +16859,7 @@ export const settlements: Code_Names = {
         "en": "Bo'ka",
         "uz": "Bo‘ka",
         "ru": "Бука",
+        "type": "42",
         "mahallas": [
             "27228501001",
             "27228501002",
@@ -15973,6 +16875,7 @@ export const settlements: Code_Names = {
         "en": "Village citizen assembly of Bo'ka district",
         "uz": "Bo‘ka tumanining qishloq mahallalari",
         "ru": "Сельские сходы граждан Букинского района",
+        "type": "44",
         "mahallas": [
             "27228800001",
             "27228800002",
@@ -16016,6 +16919,7 @@ export const settlements: Code_Names = {
         "en": "Do'stobod",
         "uz": "Do‘stobod",
         "ru": "Дустобод",
+        "type": "42",
         "mahallas": [
             "27233501001",
             "27233501002",
@@ -16028,6 +16932,7 @@ export const settlements: Code_Names = {
         "en": "Qo'rg'oncha",
         "uz": "Qo‘rg‘oncha",
         "ru": "Курганча",
+        "type": "43",
         "mahallas": [
             "27233552001",
             "27233552002"
@@ -16037,6 +16942,7 @@ export const settlements: Code_Names = {
         "en": "Paxtazor",
         "uz": "Paxtazor",
         "ru": "Пахтазор",
+        "type": "43",
         "mahallas": [
             "27233554001"
         ]
@@ -16045,6 +16951,7 @@ export const settlements: Code_Names = {
         "en": "Village citizen assembly of Quyichirchiq district",
         "uz": "Quyichirchiq tumanining qishloq mahallalari",
         "ru": "Сельские сходы граждан Куйичирчикского района",
+        "type": "44",
         "mahallas": [
             "27233800001",
             "27233800002",
@@ -16081,6 +16988,7 @@ export const settlements: Code_Names = {
         "en": "Eshonguzar",
         "uz": "Eshonguzar",
         "ru": "Эшангузар",
+        "type": "43",
         "mahallas": [
             "27237552001",
             "27237552002",
@@ -16094,6 +17002,7 @@ export const settlements: Code_Names = {
         "en": "O'rtaovul",
         "uz": "O‘rtaovul",
         "ru": "Уртааул",
+        "type": "43",
         "mahallas": [
             "27237558001",
             "27237558002",
@@ -16109,6 +17018,7 @@ export const settlements: Code_Names = {
         "en": "Erkin",
         "uz": "Erkin",
         "ru": "Эркин",
+        "type": "43",
         "mahallas": [
             "27237564001",
             "27237564002"
@@ -16118,6 +17028,7 @@ export const settlements: Code_Names = {
         "en": "Quyoshli",
         "uz": "Quyoshli",
         "ru": "Куешли",
+        "type": "43",
         "mahallas": [
             "27237566001",
             "27237566002"
@@ -16127,6 +17038,7 @@ export const settlements: Code_Names = {
         "en": "Daliguzar",
         "uz": "Daliguzar",
         "ru": "Далигузар",
+        "type": "43",
         "mahallas": [
             "27237568001",
             "27237568002",
@@ -16137,6 +17049,7 @@ export const settlements: Code_Names = {
         "en": "Tarnov",
         "uz": "Tarnov",
         "ru": "Тарнов",
+        "type": "43",
         "mahallas": [
             "27237572001"
         ]
@@ -16145,6 +17058,7 @@ export const settlements: Code_Names = {
         "en": "Zangiota",
         "uz": "Zangiota",
         "ru": "Зангиата",
+        "type": "43",
         "mahallas": [
             "27237574001",
             "27237574002"
@@ -16154,6 +17068,7 @@ export const settlements: Code_Names = {
         "en": "Nazarbek",
         "uz": "Nazarbek",
         "ru": "Назарбек",
+        "type": "43",
         "mahallas": [
             "27237576001",
             "27237576002",
@@ -16164,6 +17079,7 @@ export const settlements: Code_Names = {
         "en": "Axmad Yassaviy",
         "uz": "Axmad Yassaviy",
         "ru": "Ахмад Яссавий",
+        "type": "43",
         "mahallas": [
             "27237578001",
             "27237578002"
@@ -16173,6 +17089,7 @@ export const settlements: Code_Names = {
         "en": "Ulug'bek",
         "uz": "Ulug‘bek",
         "ru": "Улугбек",
+        "type": "43",
         "mahallas": [
             "27237582001",
             "27237582002",
@@ -16183,6 +17100,7 @@ export const settlements: Code_Names = {
         "en": "Village citizen assembly of Zangiota district",
         "uz": "Zangiota tumanining qishloq mahallalari",
         "ru": "Сельские сходы граждан Зангиатинского района",
+        "type": "44",
         "mahallas": [
             "27237800001",
             "27237800002",
@@ -16231,6 +17149,7 @@ export const settlements: Code_Names = {
         "en": "Yangibozor",
         "uz": "Yangibozor",
         "ru": "Янгибазар",
+        "type": "43",
         "mahallas": [
             "27239551001",
             "27239551002",
@@ -16244,6 +17163,7 @@ export const settlements: Code_Names = {
         "en": "Mirobod",
         "uz": "Mirobod",
         "ru": "Мирабад",
+        "type": "43",
         "mahallas": [
             "27239553001"
         ]
@@ -16252,6 +17172,7 @@ export const settlements: Code_Names = {
         "en": "Xitoy Tepa",
         "uz": "Xitoy Tepa",
         "ru": "Китай тепа",
+        "type": "43",
         "mahallas": [
             "27239555001"
         ]
@@ -16260,6 +17181,7 @@ export const settlements: Code_Names = {
         "en": "Village citizen assembly of Yuqorichirchiq district",
         "uz": "Yuqorichirchiq tumanining qishloq mahallalari",
         "ru": "Сельские сходы граждан Юкоричирчикского района",
+        "type": "44",
         "mahallas": [
             "27239800001",
             "27239800002",
@@ -16309,6 +17231,7 @@ export const settlements: Code_Names = {
         "en": "Qibray",
         "uz": "Qibray",
         "ru": "Кибрай",
+        "type": "43",
         "mahallas": [
             "27248551001",
             "27248551002",
@@ -16323,6 +17246,7 @@ export const settlements: Code_Names = {
         "en": "Salar",
         "uz": "Salar",
         "ru": "Салар",
+        "type": "43",
         "mahallas": [
             "27248556001",
             "27248556002",
@@ -16342,6 +17266,7 @@ export const settlements: Code_Names = {
         "en": "Taraqqiyot",
         "uz": "Taraqqiyot",
         "ru": "Тараккиет",
+        "type": "43",
         "mahallas": [
             "27248559001"
         ]
@@ -16350,6 +17275,7 @@ export const settlements: Code_Names = {
         "en": "Do'rmon",
         "uz": "Do‘rmon",
         "ru": "Дурмон",
+        "type": "43",
         "mahallas": [
             "27248565001"
         ]
@@ -16358,6 +17284,7 @@ export const settlements: Code_Names = {
         "en": "Yoshlik",
         "uz": "Yoshlik",
         "ru": "Ешлик",
+        "type": "43",
         "mahallas": [
             "27248567001"
         ]
@@ -16366,6 +17293,7 @@ export const settlements: Code_Names = {
         "en": "Ko'prik boshi",
         "uz": "Ko‘prik boshi",
         "ru": "Куприк боши",
+        "type": "43",
         "mahallas": [
             "27248569001"
         ]
@@ -16374,6 +17302,7 @@ export const settlements: Code_Names = {
         "en": "Madaniyat",
         "uz": "Madaniyat",
         "ru": "Маданият",
+        "type": "43",
         "mahallas": [
             "27248571001"
         ]
@@ -16382,6 +17311,7 @@ export const settlements: Code_Names = {
         "en": "Mustaqillik",
         "uz": "Mustaqillik",
         "ru": "Мустакиллик",
+        "type": "43",
         "mahallas": [
             "27248573001"
         ]
@@ -16390,6 +17320,7 @@ export const settlements: Code_Names = {
         "en": "Nurafshon",
         "uz": "Nurafshon",
         "ru": "Нурафшон",
+        "type": "43",
         "mahallas": [
             "27248575001"
         ]
@@ -16398,6 +17329,7 @@ export const settlements: Code_Names = {
         "en": "Uymaut",
         "uz": "Uymaut",
         "ru": "Уймамут",
+        "type": "43",
         "mahallas": [
             "27248577001"
         ]
@@ -16406,6 +17338,7 @@ export const settlements: Code_Names = {
         "en": "Unqo'rg'on-1",
         "uz": "Unqo‘rg‘on-1",
         "ru": "Ункургон-1",
+        "type": "43",
         "mahallas": [
             "27248579001"
         ]
@@ -16414,6 +17347,7 @@ export const settlements: Code_Names = {
         "en": "O'tkir",
         "uz": "O‘tkir",
         "ru": "Уткир",
+        "type": "43",
         "mahallas": [
             "27248581001"
         ]
@@ -16422,6 +17356,7 @@ export const settlements: Code_Names = {
         "en": "X.Amirov",
         "uz": "X.Amirov",
         "ru": "Х.Амиров",
+        "type": "43",
         "mahallas": [
             "27248583001"
         ]
@@ -16430,6 +17365,7 @@ export const settlements: Code_Names = {
         "en": "Village citizen assembly of Qibray district",
         "uz": "Qibray tumanining qishloq mahallalari",
         "ru": "Сельские сходы граждан Кибрайского района",
+        "type": "44",
         "mahallas": [
             "27248800001",
             "27248800002",
@@ -16475,6 +17411,7 @@ export const settlements: Code_Names = {
         "en": "Parkent",
         "uz": "Parkent",
         "ru": "Паркент",
+        "type": "42",
         "mahallas": [
             "27249501001",
             "27249501002",
@@ -16501,6 +17438,7 @@ export const settlements: Code_Names = {
         "en": "Quyosh",
         "uz": "Quyosh",
         "ru": "Куеш",
+        "type": "43",
         "mahallas": [
             "27249553001"
         ]
@@ -16509,6 +17447,7 @@ export const settlements: Code_Names = {
         "en": "Qo'rg'ontepa",
         "uz": "Qo‘rg‘ontepa",
         "ru": "Кургантепа",
+        "type": "43",
         "mahallas": [
             "27249555001",
             "27249555002"
@@ -16518,14 +17457,16 @@ export const settlements: Code_Names = {
         "en": "Chinorli",
         "uz": "Chinorli",
         "ru": "Чинорли",
+        "type": "43",
         "mahallas": [
             "27249557001"
         ]
     },
     "1727249559": {
-        "en": "--",
-        "uz": "--",
-        "ru": "--",
+        "en": "-",
+        "uz": "-",
+        "ru": "-",
+        "type": "43",
         "mahallas": [
             "27249559001",
             "27249559002",
@@ -16537,6 +17478,7 @@ export const settlements: Code_Names = {
         "en": "Village citizen assembly of Parkent district",
         "uz": "Parkent tumanining qishloq mahallalari",
         "ru": "Сельские сходы граждан Паркентского района",
+        "type": "44",
         "mahallas": [
             "27249800001",
             "27249800002",
@@ -16579,6 +17521,7 @@ export const settlements: Code_Names = {
         "en": "Pskent",
         "uz": "Pskent",
         "ru": "Пскент",
+        "type": "42",
         "mahallas": [
             "27250501001",
             "27250501002",
@@ -16595,6 +17538,7 @@ export const settlements: Code_Names = {
         "en": "Muratali",
         "uz": "Muratali",
         "ru": "Муротали",
+        "type": "43",
         "mahallas": [
             "27250554001"
         ]
@@ -16603,6 +17547,7 @@ export const settlements: Code_Names = {
         "en": "Said",
         "uz": "Said",
         "ru": "Саид",
+        "type": "43",
         "mahallas": [
             "27250558001",
             "27250558002"
@@ -16612,6 +17557,7 @@ export const settlements: Code_Names = {
         "en": "Village citizen assembly of Pskent district",
         "uz": "Pskent tumanining qishloq mahallalari",
         "ru": "Сельские сходы граждан Пскентского района",
+        "type": "44",
         "mahallas": [
             "27250800001",
             "27250800002",
@@ -16636,6 +17582,7 @@ export const settlements: Code_Names = {
         "en": "Tuyabo'g'iz",
         "uz": "Tuyabo‘g‘iz",
         "ru": "Туябугуз",
+        "type": "43",
         "mahallas": [
             "27253555001",
             "27253555002"
@@ -16645,6 +17592,7 @@ export const settlements: Code_Names = {
         "en": "Kuchluk",
         "uz": "Kuchluk",
         "ru": "Кучлик",
+        "type": "43",
         "mahallas": [
             "27253561001"
         ]
@@ -16653,6 +17601,7 @@ export const settlements: Code_Names = {
         "en": "Qorasuv",
         "uz": "Qorasuv",
         "ru": "Корасув",
+        "type": "43",
         "mahallas": [
             "27253565001"
         ]
@@ -16661,6 +17610,7 @@ export const settlements: Code_Names = {
         "en": "Sholikor",
         "uz": "Sholikor",
         "ru": "Шоликор",
+        "type": "43",
         "mahallas": [
             "27253569001"
         ]
@@ -16669,6 +17619,7 @@ export const settlements: Code_Names = {
         "en": "Village citizen assembly of O'rtachirchiq district",
         "uz": "O‘rtachirchiq tumanining qishloq mahallalari",
         "ru": "Сельские сходы граждан Уртачирчикского района",
+        "type": "44",
         "mahallas": [
             "27253800001",
             "27253800002",
@@ -16728,6 +17679,7 @@ export const settlements: Code_Names = {
         "en": "Chinoz",
         "uz": "Chinoz",
         "ru": "Чиназ",
+        "type": "42",
         "mahallas": [
             "27256501001",
             "27256501002",
@@ -16748,6 +17700,7 @@ export const settlements: Code_Names = {
         "en": "Olmazor",
         "uz": "Olmazor",
         "ru": "Алмазар",
+        "type": "43",
         "mahallas": [
             "27256553001",
             "27256553002",
@@ -16760,6 +17713,7 @@ export const settlements: Code_Names = {
         "en": "Yangi Chinoz",
         "uz": "Yangi Chinoz",
         "ru": "Янги Чиназ",
+        "type": "43",
         "mahallas": [
             "27256555001",
             "27256555002"
@@ -16769,6 +17723,7 @@ export const settlements: Code_Names = {
         "en": "Gulzorobod",
         "uz": "Gulzorobod",
         "ru": "Гулзорабад",
+        "type": "43",
         "mahallas": [
             "27256557001"
         ]
@@ -16777,6 +17732,7 @@ export const settlements: Code_Names = {
         "en": "Do'stlik",
         "uz": "Do‘stlik",
         "ru": "Дустлик",
+        "type": "43",
         "mahallas": [
             "27256559001"
         ]
@@ -16785,6 +17741,7 @@ export const settlements: Code_Names = {
         "en": "Paxta",
         "uz": "Paxta",
         "ru": "Пахта",
+        "type": "43",
         "mahallas": [
             "27256561001"
         ]
@@ -16793,6 +17750,7 @@ export const settlements: Code_Names = {
         "en": "A.Temur",
         "uz": "A.Temur",
         "ru": "А.Темур",
+        "type": "43",
         "mahallas": [
             "27256563001",
             "27256563002"
@@ -16802,6 +17760,7 @@ export const settlements: Code_Names = {
         "en": "Birlik",
         "uz": "Birlik",
         "ru": "Бирлик",
+        "type": "43",
         "mahallas": [
             "27256565001"
         ]
@@ -16810,6 +17769,7 @@ export const settlements: Code_Names = {
         "en": "Chorvador",
         "uz": "Chorvador",
         "ru": "Чорвадор",
+        "type": "43",
         "mahallas": [
             "27256567001",
             "27256567002"
@@ -16819,6 +17779,7 @@ export const settlements: Code_Names = {
         "en": "Kir",
         "uz": "Kir",
         "ru": "Кир",
+        "type": "43",
         "mahallas": [
             "27256569001",
             "27256569002"
@@ -16828,6 +17789,7 @@ export const settlements: Code_Names = {
         "en": "Village citizen assembly of Chinoz district",
         "uz": "Chinoz tumanining qishloq mahallalari",
         "ru": "Сельские сходы граждан Чиназского района",
+        "type": "44",
         "mahallas": [
             "27256800001",
             "27256800002",
@@ -16860,6 +17822,7 @@ export const settlements: Code_Names = {
         "en": "Gulbahor",
         "uz": "Gulbahor",
         "ru": "Гульбахор",
+        "type": "43",
         "mahallas": [
             "27259553001",
             "27259553002",
@@ -16872,6 +17835,7 @@ export const settlements: Code_Names = {
         "en": "Bozsu",
         "uz": "Bozsu",
         "ru": "Бозсу",
+        "type": "43",
         "mahallas": [
             "27259555001",
             "27259555002"
@@ -16881,6 +17845,7 @@ export const settlements: Code_Names = {
         "en": "Kirsadoq",
         "uz": "Kirsadoq",
         "ru": "Кирсадок",
+        "type": "43",
         "mahallas": [
             "27259559001"
         ]
@@ -16889,6 +17854,7 @@ export const settlements: Code_Names = {
         "en": "Qovunchi",
         "uz": "Qovunchi",
         "ru": "Ковунчи",
+        "type": "43",
         "mahallas": [
             "27259563001",
             "27259563002",
@@ -16899,6 +17865,7 @@ export const settlements: Code_Names = {
         "en": "Village citizen assembly of Yangiyo'l district",
         "uz": "Yangiyo‘l tumanining qishloq mahallalari",
         "ru": "Сельские сходы граждан Янгиюльского района",
+        "type": "44",
         "mahallas": [
             "27259800001",
             "27259800002",
@@ -16959,6 +17926,7 @@ export const settlements: Code_Names = {
         "en": "Keles",
         "uz": "Keles",
         "ru": "Келес",
+        "type": "42",
         "mahallas": [
             "27265501001",
             "27265501002",
@@ -16978,6 +17946,7 @@ export const settlements: Code_Names = {
         "en": "Z.Jalilov",
         "uz": "Z.Jalilov",
         "ru": "З.Жалилов",
+        "type": "43",
         "mahallas": [
             "27265553001"
         ]
@@ -16986,6 +17955,7 @@ export const settlements: Code_Names = {
         "en": "Ko'k saroy",
         "uz": "Ko‘k saroy",
         "ru": "Куксарай",
+        "type": "43",
         "mahallas": [
             "27265555001",
             "27265555002"
@@ -16995,6 +17965,7 @@ export const settlements: Code_Names = {
         "en": "Qashqarlik",
         "uz": "Qashqarlik",
         "ru": "Кашкарлик",
+        "type": "43",
         "mahallas": [
             "27265573001",
             "27265573002",
@@ -17016,6 +17987,7 @@ export const settlements: Code_Names = {
         "en": "Village citizen assembly of Toshkent district",
         "uz": "Toshkent tumanining qishloq mahallalari",
         "ru": "Сельские сходы граждан Ташкентского района",
+        "type": "44",
         "mahallas": [
             "27265800001",
             "27265800002",
@@ -17061,9 +18033,10 @@ export const settlements: Code_Names = {
         ]
     },
     "1727401000": {
-        "en": "--",
-        "uz": "--",
-        "ru": "--",
+        "en": "-",
+        "uz": "-",
+        "ru": "-",
+        "type": "32",
         "mahallas": [
             "27401000001",
             "27401000002",
@@ -17090,9 +18063,10 @@ export const settlements: Code_Names = {
         ]
     },
     "1727404000": {
-        "en": "--",
-        "uz": "--",
-        "ru": "--",
+        "en": "-",
+        "uz": "-",
+        "ru": "-",
+        "type": "32",
         "mahallas": [
             "27404000001",
             "27404000002",
@@ -17150,9 +18124,10 @@ export const settlements: Code_Names = {
         ]
     },
     "1727407000": {
-        "en": "--",
-        "uz": "--",
-        "ru": "--",
+        "en": "-",
+        "uz": "-",
+        "ru": "-",
+        "type": "32",
         "mahallas": [
             "27407000001",
             "27407000002",
@@ -17202,6 +18177,7 @@ export const settlements: Code_Names = {
         "en": "Yangiobod",
         "uz": "Yangiobod",
         "ru": "Янгиабад",
+        "type": "32",
         "mahallas": [
             "27407505001",
             "27407505002",
@@ -17210,9 +18186,10 @@ export const settlements: Code_Names = {
         ]
     },
     "1727413000": {
-        "en": "--",
-        "uz": "--",
-        "ru": "--",
+        "en": "-",
+        "uz": "-",
+        "ru": "-",
+        "type": "32",
         "mahallas": [
             "27413000001",
             "27413000002",
@@ -17252,9 +18229,10 @@ export const settlements: Code_Names = {
         ]
     },
     "1727415000": {
-        "en": "--",
-        "uz": "--",
-        "ru": "--",
+        "en": "-",
+        "uz": "-",
+        "ru": "-",
+        "type": "32",
         "mahallas": [
             "27415000001",
             "27415000002",
@@ -17281,9 +18259,10 @@ export const settlements: Code_Names = {
         ]
     },
     "1727419000": {
-        "en": "--",
-        "uz": "--",
-        "ru": "--",
+        "en": "-",
+        "uz": "-",
+        "ru": "-",
+        "type": "32",
         "mahallas": [
             "27419000001",
             "27419000002",
@@ -17332,9 +18311,10 @@ export const settlements: Code_Names = {
         ]
     },
     "1727424000": {
-        "en": "--",
-        "uz": "--",
-        "ru": "--",
+        "en": "-",
+        "uz": "-",
+        "ru": "-",
+        "type": "32",
         "mahallas": [
             "27424000001",
             "27424000002",
@@ -17364,6 +18344,7 @@ export const settlements: Code_Names = {
         "en": "Tinchlik",
         "uz": "Tinchlik",
         "ru": "Тинчлик",
+        "type": "42",
         "mahallas": [
             "30203508001",
             "30203508002",
@@ -17378,6 +18359,7 @@ export const settlements: Code_Names = {
         "en": "Oltiariq",
         "uz": "Oltiariq",
         "ru": "Алтыарык",
+        "type": "43",
         "mahallas": [
             "30203551001",
             "30203551002",
@@ -17390,6 +18372,7 @@ export const settlements: Code_Names = {
         "en": "Chinor",
         "uz": "Chinor",
         "ru": "Чинор",
+        "type": "43",
         "mahallas": [
             "30203552001",
             "30203552002",
@@ -17404,6 +18387,7 @@ export const settlements: Code_Names = {
         "en": "Azimobod",
         "uz": "Azimobod",
         "ru": "Азимабад",
+        "type": "43",
         "mahallas": [
             "30203554001"
         ]
@@ -17412,6 +18396,7 @@ export const settlements: Code_Names = {
         "en": "Bo'rbaliq",
         "uz": "Bo‘rbaliq",
         "ru": "Бурбалик",
+        "type": "43",
         "mahallas": [
             "30203556001",
             "30203556002",
@@ -17422,6 +18407,7 @@ export const settlements: Code_Names = {
         "en": "Djurek",
         "uz": "Djurek",
         "ru": "Джурек",
+        "type": "43",
         "mahallas": [
             "30203558001",
             "30203558002",
@@ -17432,6 +18418,7 @@ export const settlements: Code_Names = {
         "en": "Zilxa",
         "uz": "Zilxa",
         "ru": "Зилха",
+        "type": "43",
         "mahallas": [
             "30203562001",
             "30203562002"
@@ -17441,6 +18428,7 @@ export const settlements: Code_Names = {
         "en": "Katput",
         "uz": "Katput",
         "ru": "Катпут",
+        "type": "43",
         "mahallas": [
             "30203564001",
             "30203564002",
@@ -17451,6 +18439,7 @@ export const settlements: Code_Names = {
         "en": "Oqbo'yra",
         "uz": "Oqbo‘yra",
         "ru": "Окбуйра",
+        "type": "43",
         "mahallas": [
             "30203566001",
             "30203566002"
@@ -17460,6 +18449,7 @@ export const settlements: Code_Names = {
         "en": "Povulg'on",
         "uz": "Povulg‘on",
         "ru": "Повулган",
+        "type": "43",
         "mahallas": [
             "30203568001",
             "30203568002",
@@ -17470,6 +18460,7 @@ export const settlements: Code_Names = {
         "en": "Poloson",
         "uz": "Poloson",
         "ru": "Паласан",
+        "type": "43",
         "mahallas": [
             "30203570001",
             "30203570002",
@@ -17484,6 +18475,7 @@ export const settlements: Code_Names = {
         "en": "Chordara",
         "uz": "Chordara",
         "ru": "Чордара",
+        "type": "43",
         "mahallas": [
             "30203572001"
         ]
@@ -17492,6 +18484,7 @@ export const settlements: Code_Names = {
         "en": "Eskiarab",
         "uz": "Eskiarab",
         "ru": "Эскиараб",
+        "type": "43",
         "mahallas": [
             "30203574001"
         ]
@@ -17500,6 +18493,7 @@ export const settlements: Code_Names = {
         "en": "Yangiarab",
         "uz": "Yangiarab",
         "ru": "Янгиараб",
+        "type": "43",
         "mahallas": [
             "30203576001",
             "30203576002"
@@ -17509,6 +18503,7 @@ export const settlements: Code_Names = {
         "en": "Yangiqo'rg'on",
         "uz": "Yangiqo‘rg‘on",
         "ru": "Янгикурган",
+        "type": "43",
         "mahallas": [
             "30203578001",
             "30203578002"
@@ -17518,6 +18513,7 @@ export const settlements: Code_Names = {
         "en": "Village citizen assembly of Oltiariq district",
         "uz": "Yangiyo‘l tumanining qishloq mahallalari",
         "ru": "Сельские сходы граждан Алтыарыкского района",
+        "type": "44",
         "mahallas": [
             "30203800001",
             "30203800002",
@@ -17548,6 +18544,7 @@ export const settlements: Code_Names = {
         "en": "Boltako'l",
         "uz": "Boltako‘l",
         "ru": "Болтакул",
+        "type": "43",
         "mahallas": [
             "30206553001"
         ]
@@ -17556,6 +18553,7 @@ export const settlements: Code_Names = {
         "en": "Gishtmon",
         "uz": "Gishtmon",
         "ru": "Гиштмон",
+        "type": "43",
         "mahallas": [
             "30206555001"
         ]
@@ -17564,6 +18562,7 @@ export const settlements: Code_Names = {
         "en": "Do'rmon",
         "uz": "Do‘rmon",
         "ru": "Дурмон",
+        "type": "43",
         "mahallas": [
             "30206557001"
         ]
@@ -17572,6 +18571,7 @@ export const settlements: Code_Names = {
         "en": "Katta Beshkapa",
         "uz": "Katta Beshkapa",
         "ru": "Катта бешкапа",
+        "type": "43",
         "mahallas": [
             "30206559001"
         ]
@@ -17580,6 +18580,7 @@ export const settlements: Code_Names = {
         "en": "Qizil ariq",
         "uz": "Qizil ariq",
         "ru": "Кизиларик",
+        "type": "43",
         "mahallas": [
             "30206561001"
         ]
@@ -17588,6 +18589,7 @@ export const settlements: Code_Names = {
         "en": "Qorajiyda",
         "uz": "Qorajiyda",
         "ru": "Каражийда",
+        "type": "43",
         "mahallas": [
             "30206563001",
             "30206563002"
@@ -17597,6 +18599,7 @@ export const settlements: Code_Names = {
         "en": "Qorakaltak",
         "uz": "Qorakaltak",
         "ru": "Каракалтак",
+        "type": "43",
         "mahallas": [
             "30206565001"
         ]
@@ -17605,6 +18608,7 @@ export const settlements: Code_Names = {
         "en": "Qumtepa",
         "uz": "Qumtepa",
         "ru": "Кумтепа",
+        "type": "43",
         "mahallas": [
             "30206567001"
         ]
@@ -17613,6 +18617,7 @@ export const settlements: Code_Names = {
         "en": "Quyi Oqtepa",
         "uz": "Quyi Oqtepa",
         "ru": "Куйи Октепа",
+        "type": "43",
         "mahallas": [
             "30206569001"
         ]
@@ -17621,6 +18626,7 @@ export const settlements: Code_Names = {
         "en": "Sarmozor",
         "uz": "Sarmozor",
         "ru": "Сармозор",
+        "type": "43",
         "mahallas": [
             "30206571001"
         ]
@@ -17629,6 +18635,7 @@ export const settlements: Code_Names = {
         "en": "Xotinariq",
         "uz": "Xotinariq",
         "ru": "Хотинарык",
+        "type": "43",
         "mahallas": [
             "30206573001"
         ]
@@ -17637,6 +18644,7 @@ export const settlements: Code_Names = {
         "en": "Shahartepa",
         "uz": "Shahartepa",
         "ru": "Шахартепа",
+        "type": "43",
         "mahallas": [
             "30206575001"
         ]
@@ -17645,6 +18653,7 @@ export const settlements: Code_Names = {
         "en": "Eshonguzar",
         "uz": "Eshonguzar",
         "ru": "Эшонгузар",
+        "type": "43",
         "mahallas": [
             "30206577001"
         ]
@@ -17653,6 +18662,7 @@ export const settlements: Code_Names = {
         "en": "Yangiariq",
         "uz": "Yangiariq",
         "ru": "Янгиарык",
+        "type": "43",
         "mahallas": [
             "30206579001"
         ]
@@ -17661,6 +18671,7 @@ export const settlements: Code_Names = {
         "en": "Village citizen assembly of Qo'shtepa district",
         "uz": "Qo‘shtepa tumanining qishloq mahallalari",
         "ru": "Сельские сходы граждан Куштеринского района",
+        "type": "44",
         "mahallas": [
             "30206800001",
             "30206800002",
@@ -17704,6 +18715,7 @@ export const settlements: Code_Names = {
         "en": "Bog'dod",
         "uz": "Bog‘dod",
         "ru": "Багдад",
+        "type": "43",
         "mahallas": [
             "30209551001",
             "30209551002",
@@ -17715,6 +18727,7 @@ export const settlements: Code_Names = {
         "en": "Amirobod",
         "uz": "Amirobod",
         "ru": "Амиробод",
+        "type": "43",
         "mahallas": [
             "30209553001"
         ]
@@ -17723,6 +18736,7 @@ export const settlements: Code_Names = {
         "en": "Maylavoy",
         "uz": "Maylavoy",
         "ru": "Майлавой",
+        "type": "43",
         "mahallas": [
             "30209555001"
         ]
@@ -17731,6 +18745,7 @@ export const settlements: Code_Names = {
         "en": "Oltin vodiy",
         "uz": "Oltin vodiy",
         "ru": "Олтин водий",
+        "type": "43",
         "mahallas": [
             "30209557001"
         ]
@@ -17739,6 +18754,7 @@ export const settlements: Code_Names = {
         "en": "Bog'ishamol",
         "uz": "Bog‘ishamol",
         "ru": "Богишамол",
+        "type": "43",
         "mahallas": [
             "30209559001"
         ]
@@ -17747,6 +18763,7 @@ export const settlements: Code_Names = {
         "en": "Bordon",
         "uz": "Bordon",
         "ru": "Бордон",
+        "type": "43",
         "mahallas": [
             "30209561001"
         ]
@@ -17755,6 +18772,7 @@ export const settlements: Code_Names = {
         "en": "Do'rmoncha",
         "uz": "Do‘rmoncha",
         "ru": "Дурманча",
+        "type": "43",
         "mahallas": [
             "30209563001"
         ]
@@ -17763,6 +18781,7 @@ export const settlements: Code_Names = {
         "en": "Irgali",
         "uz": "Irgali",
         "ru": "Иргали",
+        "type": "43",
         "mahallas": [
             "30209565001"
         ]
@@ -17771,6 +18790,7 @@ export const settlements: Code_Names = {
         "en": "Qaroqchitol",
         "uz": "Qaroqchitol",
         "ru": "Каракчитол",
+        "type": "43",
         "mahallas": [
             "30209567001"
         ]
@@ -17779,6 +18799,7 @@ export const settlements: Code_Names = {
         "en": "Kaxat",
         "uz": "Kaxat",
         "ru": "Кахат",
+        "type": "43",
         "mahallas": [
             "30209569001"
         ]
@@ -17787,6 +18808,7 @@ export const settlements: Code_Names = {
         "en": "Qirqboldi",
         "uz": "Qirqboldi",
         "ru": "Киркболды",
+        "type": "43",
         "mahallas": [
             "30209571001"
         ]
@@ -17795,6 +18817,7 @@ export const settlements: Code_Names = {
         "en": "Konizar",
         "uz": "Konizar",
         "ru": "Конизар",
+        "type": "43",
         "mahallas": [
             "30209573001"
         ]
@@ -17803,6 +18826,7 @@ export const settlements: Code_Names = {
         "en": "Qo'shtegirmon",
         "uz": "Qo‘shtegirmon",
         "ru": "Куштегирмон",
+        "type": "43",
         "mahallas": [
             "30209575001",
             "30209575002"
@@ -17812,6 +18836,7 @@ export const settlements: Code_Names = {
         "en": "Matqulobod",
         "uz": "Matqulobod",
         "ru": "Маткулабад",
+        "type": "43",
         "mahallas": [
             "30209577001"
         ]
@@ -17820,6 +18845,7 @@ export const settlements: Code_Names = {
         "en": "Mirzaobod",
         "uz": "Mirzaobod",
         "ru": "Мирзаабад",
+        "type": "43",
         "mahallas": [
             "30209579001",
             "30209579002"
@@ -17829,6 +18855,7 @@ export const settlements: Code_Names = {
         "en": "Samandarak",
         "uz": "Samandarak",
         "ru": "Самандарак",
+        "type": "43",
         "mahallas": [
             "30209581001"
         ]
@@ -17837,6 +18864,7 @@ export const settlements: Code_Names = {
         "en": "Samarqand",
         "uz": "Samarqand",
         "ru": "Самарканд",
+        "type": "43",
         "mahallas": [
             "30209583001",
             "30209583002"
@@ -17846,6 +18874,7 @@ export const settlements: Code_Names = {
         "en": "O'ltarma",
         "uz": "O‘ltarma",
         "ru": "Ултарма",
+        "type": "43",
         "mahallas": [
             "30209585001"
         ]
@@ -17854,6 +18883,7 @@ export const settlements: Code_Names = {
         "en": "Chekmirzaobod",
         "uz": "Chekmirzaobod",
         "ru": "Чекмирзаабад",
+        "type": "43",
         "mahallas": [
             "30209589001"
         ]
@@ -17862,6 +18892,7 @@ export const settlements: Code_Names = {
         "en": "Churindi",
         "uz": "Churindi",
         "ru": "Чуринди",
+        "type": "43",
         "mahallas": [
             "30209591001",
             "30209591002"
@@ -17871,6 +18902,7 @@ export const settlements: Code_Names = {
         "en": "Village citizen assembly of Bog'dod district",
         "uz": "Bog‘dod tumanining qishloq mahallalari",
         "ru": "Сельские сходы граждан Багдадского района",
+        "type": "44",
         "mahallas": [
             "30209800001",
             "30209800002",
@@ -17910,6 +18942,7 @@ export const settlements: Code_Names = {
         "en": "Ibrat",
         "uz": "Ibrat",
         "ru": "Ибрат",
+        "type": "43",
         "mahallas": [
             "30212551001"
         ]
@@ -17918,6 +18951,7 @@ export const settlements: Code_Names = {
         "en": "Yuqori Bachqir",
         "uz": "Yuqori Bachqir",
         "ru": "Юкори Бачкир",
+        "type": "43",
         "mahallas": [
             "30212553001"
         ]
@@ -17926,6 +18960,7 @@ export const settlements: Code_Names = {
         "en": "Buvayda",
         "uz": "Buvayda",
         "ru": "Бувайда",
+        "type": "43",
         "mahallas": [
             "30212559001"
         ]
@@ -17934,6 +18969,7 @@ export const settlements: Code_Names = {
         "en": "Zarbuloq",
         "uz": "Zarbuloq",
         "ru": "Зарбулок",
+        "type": "43",
         "mahallas": [
             "30212561001"
         ]
@@ -17942,6 +18978,7 @@ export const settlements: Code_Names = {
         "en": "Qum",
         "uz": "Qum",
         "ru": "Кум",
+        "type": "43",
         "mahallas": [
             "30212563001"
         ]
@@ -17950,6 +18987,7 @@ export const settlements: Code_Names = {
         "en": "Yuqori Nayman",
         "uz": "Yuqori Nayman",
         "ru": "Юкори Найман",
+        "type": "43",
         "mahallas": [
             "30212565001"
         ]
@@ -17958,6 +18996,7 @@ export const settlements: Code_Names = {
         "en": "Oqqo'rg'on",
         "uz": "Oqqo‘rg‘on",
         "ru": "Аккурган",
+        "type": "43",
         "mahallas": [
             "30212567001"
         ]
@@ -17966,6 +19005,7 @@ export const settlements: Code_Names = {
         "en": "Quyi Urganji",
         "uz": "Quyi Urganji",
         "ru": "Куйи Урганжи",
+        "type": "43",
         "mahallas": [
             "30212569001"
         ]
@@ -17974,6 +19014,7 @@ export const settlements: Code_Names = {
         "en": "Village citizen assembly of Buvayda district",
         "uz": "Buvayda tumanining qishloq mahallalari",
         "ru": "Сельские сходы граждан Бувайдинского района",
+        "type": "44",
         "mahallas": [
             "30212800001",
             "30212800002",
@@ -18028,6 +19069,7 @@ export const settlements: Code_Names = {
         "en": "Beshariq",
         "uz": "Beshariq",
         "ru": "Бешарык",
+        "type": "42",
         "mahallas": [
             "30215501001",
             "30215501002",
@@ -18045,6 +19087,7 @@ export const settlements: Code_Names = {
         "en": "Nafosat",
         "uz": "Nafosat",
         "ru": "Нафосат",
+        "type": "43",
         "mahallas": [
             "30215553001"
         ]
@@ -18053,6 +19096,7 @@ export const settlements: Code_Names = {
         "en": "Zarqaynar",
         "uz": "Zarqaynar",
         "ru": "Заркайнар",
+        "type": "43",
         "mahallas": [
             "30215556001",
             "30215556002"
@@ -18062,6 +19106,7 @@ export const settlements: Code_Names = {
         "en": "Kapayangi",
         "uz": "Kapayangi",
         "ru": "Капаянги",
+        "type": "43",
         "mahallas": [
             "30215559001"
         ]
@@ -18070,6 +19115,7 @@ export const settlements: Code_Names = {
         "en": "Qumqishloq",
         "uz": "Qumqishloq",
         "ru": "Кумкишлак",
+        "type": "43",
         "mahallas": [
             "30215563001"
         ]
@@ -18078,6 +19124,7 @@ export const settlements: Code_Names = {
         "en": "Oqtovuq",
         "uz": "Oqtovuq",
         "ru": "Актовук",
+        "type": "43",
         "mahallas": [
             "30215566001"
         ]
@@ -18086,6 +19133,7 @@ export const settlements: Code_Names = {
         "en": "Rapqon",
         "uz": "Rapqon",
         "ru": "Рапкан",
+        "type": "43",
         "mahallas": [
             "30215569001"
         ]
@@ -18094,6 +19142,7 @@ export const settlements: Code_Names = {
         "en": "Tovul",
         "uz": "Tovul",
         "ru": "Товул",
+        "type": "43",
         "mahallas": [
             "30215573001"
         ]
@@ -18102,6 +19151,7 @@ export const settlements: Code_Names = {
         "en": "Uzun",
         "uz": "Uzun",
         "ru": "Узун",
+        "type": "43",
         "mahallas": [
             "30215576001"
         ]
@@ -18110,6 +19160,7 @@ export const settlements: Code_Names = {
         "en": "Chimboy",
         "uz": "Chimboy",
         "ru": "Чимбай",
+        "type": "43",
         "mahallas": [
             "30215579001"
         ]
@@ -18118,6 +19169,7 @@ export const settlements: Code_Names = {
         "en": "Manguobod",
         "uz": "Manguobod",
         "ru": "Мангуобод",
+        "type": "43",
         "mahallas": [
             "30215583001",
             "30215583002"
@@ -18127,6 +19179,7 @@ export const settlements: Code_Names = {
         "en": "Village citizen assembly of Beshariq district",
         "uz": "Beshariq tumanining qishloq mahallalari",
         "ru": "Сельские сходы граждан Бешарыкского района",
+        "type": "44",
         "mahallas": [
             "30215800001",
             "30215800002",
@@ -18174,6 +19227,7 @@ export const settlements: Code_Names = {
         "en": "Quva",
         "uz": "Quva",
         "ru": "Кува",
+        "type": "42",
         "mahallas": [
             "30218501001",
             "30218501002",
@@ -18193,6 +19247,7 @@ export const settlements: Code_Names = {
         "en": "Sanoatchilar",
         "uz": "Sanoatchilar",
         "ru": "Саноатчилар",
+        "type": "43",
         "mahallas": [
             "30218552001"
         ]
@@ -18201,6 +19256,7 @@ export const settlements: Code_Names = {
         "en": "Guliston",
         "uz": "Guliston",
         "ru": "Гулистон",
+        "type": "43",
         "mahallas": [
             "30218553001"
         ]
@@ -18209,6 +19265,7 @@ export const settlements: Code_Names = {
         "en": "Damariq",
         "uz": "Damariq",
         "ru": "Дамарик",
+        "type": "43",
         "mahallas": [
             "30218554001",
             "30218554002"
@@ -18218,6 +19275,7 @@ export const settlements: Code_Names = {
         "en": "Jalayer",
         "uz": "Jalayer",
         "ru": "Джалаер",
+        "type": "43",
         "mahallas": [
             "30218555001"
         ]
@@ -18226,6 +19284,7 @@ export const settlements: Code_Names = {
         "en": "Qayirma",
         "uz": "Qayirma",
         "ru": "Кайирма",
+        "type": "43",
         "mahallas": [
             "30218556001"
         ]
@@ -18234,6 +19293,7 @@ export const settlements: Code_Names = {
         "en": "Qaqir",
         "uz": "Qaqir",
         "ru": "Какир",
+        "type": "43",
         "mahallas": [
             "30218557001"
         ]
@@ -18242,6 +19302,7 @@ export const settlements: Code_Names = {
         "en": "Qandabuloq",
         "uz": "Qandabuloq",
         "ru": "Кандабулок",
+        "type": "43",
         "mahallas": [
             "30218558001"
         ]
@@ -18250,6 +19311,7 @@ export const settlements: Code_Names = {
         "en": "Qorashox",
         "uz": "Qorashox",
         "ru": "Карашох",
+        "type": "43",
         "mahallas": [
             "30218559001"
         ]
@@ -18258,6 +19320,7 @@ export const settlements: Code_Names = {
         "en": "Mustaqillik",
         "uz": "Mustaqillik",
         "ru": "Мустакиллик",
+        "type": "43",
         "mahallas": [
             "30218561001"
         ]
@@ -18266,6 +19329,7 @@ export const settlements: Code_Names = {
         "en": "Oltinariq",
         "uz": "Oltinariq",
         "ru": "Олтинарик",
+        "type": "43",
         "mahallas": [
             "30218562001"
         ]
@@ -18274,6 +19338,7 @@ export const settlements: Code_Names = {
         "en": "Pastki Xo'ja Xasan",
         "uz": "Pastki Xo‘ja Xasan",
         "ru": "Пастки Хужа Хасан",
+        "type": "43",
         "mahallas": [
             "30218563001"
         ]
@@ -18282,6 +19347,7 @@ export const settlements: Code_Names = {
         "en": "Tolmozor",
         "uz": "Tolmozor",
         "ru": "Толмазор",
+        "type": "43",
         "mahallas": [
             "30218564001"
         ]
@@ -18290,6 +19356,7 @@ export const settlements: Code_Names = {
         "en": "Turk",
         "uz": "Turk",
         "ru": "Турк",
+        "type": "43",
         "mahallas": [
             "30218565001"
         ]
@@ -18298,6 +19365,7 @@ export const settlements: Code_Names = {
         "en": "O'zbek",
         "uz": "O‘zbek",
         "ru": "Узбек",
+        "type": "43",
         "mahallas": [
             "30218567001"
         ]
@@ -18306,6 +19374,7 @@ export const settlements: Code_Names = {
         "en": "Yuziya",
         "uz": "Yuziya",
         "ru": "Юзия",
+        "type": "43",
         "mahallas": [
             "30218569001"
         ]
@@ -18314,6 +19383,7 @@ export const settlements: Code_Names = {
         "en": "Village citizen assembly of Quva district",
         "uz": "Quva tumanining qishloq mahallalari",
         "ru": "Сельские сходы граждан Кувинского района",
+        "type": "44",
         "mahallas": [
             "30218800001",
             "30218800002",
@@ -18358,6 +19428,7 @@ export const settlements: Code_Names = {
         "en": "Uchko'prik",
         "uz": "Uchko‘prik",
         "ru": "Учкуприк",
+        "type": "43",
         "mahallas": [
             "30221551001"
         ]
@@ -18366,6 +19437,7 @@ export const settlements: Code_Names = {
         "en": "Begobod",
         "uz": "Begobod",
         "ru": "Бегабад",
+        "type": "43",
         "mahallas": [
             "30221553001"
         ]
@@ -18374,6 +19446,7 @@ export const settlements: Code_Names = {
         "en": "G'ijdan",
         "uz": "G‘ijdan",
         "ru": "Гиждан",
+        "type": "43",
         "mahallas": [
             "30221555001"
         ]
@@ -18382,6 +19455,7 @@ export const settlements: Code_Names = {
         "en": "Katta Qashqar",
         "uz": "Katta Qashqar",
         "ru": "Катта кашкар",
+        "type": "43",
         "mahallas": [
             "30221557001"
         ]
@@ -18390,6 +19464,7 @@ export const settlements: Code_Names = {
         "en": "Qumariqobod",
         "uz": "Qumariqobod",
         "ru": "Кумарикобод",
+        "type": "43",
         "mahallas": [
             "30221559001"
         ]
@@ -18398,6 +19473,7 @@ export const settlements: Code_Names = {
         "en": "Bog'ibo'ston",
         "uz": "Bog‘ibo‘ston",
         "ru": "Богибустон",
+        "type": "43",
         "mahallas": [
             "30221561001",
             "30221561002"
@@ -18407,6 +19483,7 @@ export const settlements: Code_Names = {
         "en": "Mirzaxo'ja",
         "uz": "Mirzaxo‘ja",
         "ru": "Мирзахужа",
+        "type": "43",
         "mahallas": [
             "30221563001"
         ]
@@ -18415,6 +19492,7 @@ export const settlements: Code_Names = {
         "en": "Palaxon",
         "uz": "Palaxon",
         "ru": "Палахон",
+        "type": "43",
         "mahallas": [
             "30221565001"
         ]
@@ -18423,6 +19501,7 @@ export const settlements: Code_Names = {
         "en": "Sobirjon",
         "uz": "Sobirjon",
         "ru": "Собиржан",
+        "type": "43",
         "mahallas": [
             "30221567001"
         ]
@@ -18431,6 +19510,7 @@ export const settlements: Code_Names = {
         "en": "Turg'oq",
         "uz": "Turg‘oq",
         "ru": "Тургок",
+        "type": "43",
         "mahallas": [
             "30221569001"
         ]
@@ -18439,6 +19519,7 @@ export const settlements: Code_Names = {
         "en": "Yangiqishloq",
         "uz": "Yangiqishloq",
         "ru": "Янгикишлок",
+        "type": "43",
         "mahallas": [
             "30221571001"
         ]
@@ -18447,6 +19528,7 @@ export const settlements: Code_Names = {
         "en": "Village citizen assembly of Uchko'prik district",
         "uz": "Uchko‘prik tumanining qishloq mahallalari",
         "ru": "Сельские сходы граждан Учкуприкского района",
+        "type": "44",
         "mahallas": [
             "30221800001",
             "30221800002",
@@ -18495,6 +19577,7 @@ export const settlements: Code_Names = {
         "en": "Rishton",
         "uz": "Rishton",
         "ru": "Риштан",
+        "type": "42",
         "mahallas": [
             "30224501001",
             "30224501002",
@@ -18523,6 +19606,7 @@ export const settlements: Code_Names = {
         "en": "Avazboy",
         "uz": "Avazboy",
         "ru": "Авазбай",
+        "type": "43",
         "mahallas": [
             "30224552001",
             "30224552002"
@@ -18532,6 +19616,7 @@ export const settlements: Code_Names = {
         "en": "Beshkapa",
         "uz": "Beshkapa",
         "ru": "Бешкапа",
+        "type": "43",
         "mahallas": [
             "30224554001"
         ]
@@ -18540,6 +19625,7 @@ export const settlements: Code_Names = {
         "en": "Bujay",
         "uz": "Bujay",
         "ru": "Бужай",
+        "type": "43",
         "mahallas": [
             "30224556001",
             "30224556002"
@@ -18549,6 +19635,7 @@ export const settlements: Code_Names = {
         "en": "Bo'ston",
         "uz": "Bo‘ston",
         "ru": "Бустан",
+        "type": "43",
         "mahallas": [
             "30224558001"
         ]
@@ -18557,6 +19644,7 @@ export const settlements: Code_Names = {
         "en": "Do'tir",
         "uz": "Do‘tir",
         "ru": "Дутир",
+        "type": "43",
         "mahallas": [
             "30224562001",
             "30224562002"
@@ -18566,6 +19654,7 @@ export const settlements: Code_Names = {
         "en": "Saxovat",
         "uz": "Saxovat",
         "ru": "Саховат",
+        "type": "43",
         "mahallas": [
             "30224564001"
         ]
@@ -18574,6 +19663,7 @@ export const settlements: Code_Names = {
         "en": "Zoxidon",
         "uz": "Zoxidon",
         "ru": "Зохидан",
+        "type": "43",
         "mahallas": [
             "30224566001",
             "30224566002",
@@ -18584,6 +19674,7 @@ export const settlements: Code_Names = {
         "en": "Qayrag'och",
         "uz": "Qayrag‘och",
         "ru": "Кайрагач",
+        "type": "43",
         "mahallas": [
             "30224568001",
             "30224568002"
@@ -18593,6 +19684,7 @@ export const settlements: Code_Names = {
         "en": "Oq-yer",
         "uz": "Oq-yer",
         "ru": "Ак-ер",
+        "type": "43",
         "mahallas": [
             "30224572001"
         ]
@@ -18601,6 +19693,7 @@ export const settlements: Code_Names = {
         "en": "Pandigon",
         "uz": "Pandigon",
         "ru": "Пандиган",
+        "type": "43",
         "mahallas": [
             "30224574001"
         ]
@@ -18609,6 +19702,7 @@ export const settlements: Code_Names = {
         "en": "To'da",
         "uz": "To‘da",
         "ru": "Туда",
+        "type": "43",
         "mahallas": [
             "30224576001",
             "30224576002"
@@ -18618,6 +19712,7 @@ export const settlements: Code_Names = {
         "en": "O'yrat",
         "uz": "O‘yrat",
         "ru": "Уйрат",
+        "type": "43",
         "mahallas": [
             "30224578001"
         ]
@@ -18626,6 +19721,7 @@ export const settlements: Code_Names = {
         "en": "Xurramobod",
         "uz": "Xurramobod",
         "ru": "Хуррамабад",
+        "type": "43",
         "mahallas": [
             "30224582001"
         ]
@@ -18634,6 +19730,7 @@ export const settlements: Code_Names = {
         "en": "Village citizen assembly of Rishton district",
         "uz": "Rishton tumanining qishloq mahallalari",
         "ru": "Сельские сходы граждан Риштанского района",
+        "type": "44",
         "mahallas": [
             "30224800001",
             "30224800002",
@@ -18671,6 +19768,7 @@ export const settlements: Code_Names = {
         "en": "Ravon",
         "uz": "Ravon",
         "ru": "Равон",
+        "type": "43",
         "mahallas": [
             "30226551001",
             "30226551002"
@@ -18680,6 +19778,7 @@ export const settlements: Code_Names = {
         "en": "Qal'a",
         "uz": "Qal’a",
         "ru": "Калъа",
+        "type": "43",
         "mahallas": [
             "30226554001"
         ]
@@ -18688,6 +19787,7 @@ export const settlements: Code_Names = {
         "en": "Sarikanda",
         "uz": "Sarikanda",
         "ru": "Сариканда",
+        "type": "43",
         "mahallas": [
             "30226557001",
             "30226557002",
@@ -18698,6 +19798,7 @@ export const settlements: Code_Names = {
         "en": "So'x",
         "uz": "So‘x",
         "ru": "Сох",
+        "type": "43",
         "mahallas": [
             "30226561001",
             "30226561002",
@@ -18708,6 +19809,7 @@ export const settlements: Code_Names = {
         "en": "Tul",
         "uz": "Tul",
         "ru": "Тул",
+        "type": "43",
         "mahallas": [
             "30226564001",
             "30226564002"
@@ -18717,6 +19819,7 @@ export const settlements: Code_Names = {
         "en": "Hushyor",
         "uz": "Hushyor",
         "ru": "Хушер",
+        "type": "43",
         "mahallas": [
             "30226567001",
             "30226567002",
@@ -18727,6 +19830,7 @@ export const settlements: Code_Names = {
         "en": "Tarovatli",
         "uz": "Tarovatli",
         "ru": "Тароватли",
+        "type": "43",
         "mahallas": [
             "30226571001",
             "30226571002"
@@ -18736,6 +19840,7 @@ export const settlements: Code_Names = {
         "en": "Village citizen assembly of So'x district",
         "uz": "So‘x tumanining qishloq mahallalari",
         "ru": "Сельские сходы граждан Сохского района",
+        "type": "44",
         "mahallas": [
             "30226800001",
             "30226800002",
@@ -18754,6 +19859,7 @@ export const settlements: Code_Names = {
         "en": "Toshloq",
         "uz": "Toshloq",
         "ru": "Ташлак",
+        "type": "43",
         "mahallas": [
             "30227551001",
             "30227551002",
@@ -18766,6 +19872,7 @@ export const settlements: Code_Names = {
         "en": "Arabmozor",
         "uz": "Arabmozor",
         "ru": "Арабмозор",
+        "type": "43",
         "mahallas": [
             "30227553001"
         ]
@@ -18774,6 +19881,7 @@ export const settlements: Code_Names = {
         "en": "Axshak",
         "uz": "Axshak",
         "ru": "Ахшак",
+        "type": "43",
         "mahallas": [
             "30227555001"
         ]
@@ -18782,6 +19890,7 @@ export const settlements: Code_Names = {
         "en": "Varzak",
         "uz": "Varzak",
         "ru": "Варзак",
+        "type": "43",
         "mahallas": [
             "30227557001"
         ]
@@ -18790,6 +19899,7 @@ export const settlements: Code_Names = {
         "en": "Zarkent",
         "uz": "Zarkent",
         "ru": "Заркент",
+        "type": "43",
         "mahallas": [
             "30227559001"
         ]
@@ -18798,6 +19908,7 @@ export const settlements: Code_Names = {
         "en": "Qumariq",
         "uz": "Qumariq",
         "ru": "Кумарик",
+        "type": "43",
         "mahallas": [
             "30227561001"
         ]
@@ -18806,6 +19917,7 @@ export const settlements: Code_Names = {
         "en": "Quyi Nayman",
         "uz": "Quyi Nayman",
         "ru": "Куйи Найман",
+        "type": "43",
         "mahallas": [
             "30227563001"
         ]
@@ -18814,6 +19926,7 @@ export const settlements: Code_Names = {
         "en": "Sadda",
         "uz": "Sadda",
         "ru": "Садда",
+        "type": "43",
         "mahallas": [
             "30227565001"
         ]
@@ -18822,6 +19935,7 @@ export const settlements: Code_Names = {
         "en": "Turvat",
         "uz": "Turvat",
         "ru": "Турват",
+        "type": "43",
         "mahallas": [
             "30227567001"
         ]
@@ -18830,6 +19944,7 @@ export const settlements: Code_Names = {
         "en": "Yakkatut",
         "uz": "Yakkatut",
         "ru": "Яккатут",
+        "type": "43",
         "mahallas": [
             "30227569001"
         ]
@@ -18838,6 +19953,7 @@ export const settlements: Code_Names = {
         "en": "Village citizen assembly of Toshloq district",
         "uz": "Toshloq tumanining qishloq mahallalari",
         "ru": "Сельские сходы граждан Ташлакского района",
+        "type": "44",
         "mahallas": [
             "30227800001",
             "30227800002",
@@ -18882,6 +19998,7 @@ export const settlements: Code_Names = {
         "en": "Yaypan",
         "uz": "Yaypan",
         "ru": "Яйпан",
+        "type": "42",
         "mahallas": [
             "30230501001",
             "30230501002",
@@ -18898,6 +20015,7 @@ export const settlements: Code_Names = {
         "en": "Sho'rsuv",
         "uz": "Sho‘rsuv",
         "ru": "Шорсу",
+        "type": "43",
         "mahallas": [
             "30230556001"
         ]
@@ -18906,6 +20024,7 @@ export const settlements: Code_Names = {
         "en": "Avg'on",
         "uz": "Avg‘on",
         "ru": "Авгон",
+        "type": "43",
         "mahallas": [
             "30230558001"
         ]
@@ -18914,6 +20033,7 @@ export const settlements: Code_Names = {
         "en": "Dahana Qaqir",
         "uz": "Dahana Qaqir",
         "ru": "Дахана какир",
+        "type": "43",
         "mahallas": [
             "30230562001"
         ]
@@ -18922,6 +20042,7 @@ export const settlements: Code_Names = {
         "en": "Islom",
         "uz": "Islom",
         "ru": "Ислам",
+        "type": "43",
         "mahallas": [
             "30230564001"
         ]
@@ -18930,6 +20051,7 @@ export const settlements: Code_Names = {
         "en": "Katta Tagob",
         "uz": "Katta Tagob",
         "ru": "Катта Тагаб",
+        "type": "43",
         "mahallas": [
             "30230566001"
         ]
@@ -18938,6 +20060,7 @@ export const settlements: Code_Names = {
         "en": "Qizil Qaqir",
         "uz": "Qizil Qaqir",
         "ru": "Кизил какир",
+        "type": "43",
         "mahallas": [
             "30230568001"
         ]
@@ -18946,6 +20069,7 @@ export const settlements: Code_Names = {
         "en": "Kichik Tagob",
         "uz": "Kichik Tagob",
         "ru": "Кичик Тагаб",
+        "type": "43",
         "mahallas": [
             "30230570001"
         ]
@@ -18954,6 +20078,7 @@ export const settlements: Code_Names = {
         "en": "Sardoba",
         "uz": "Sardoba",
         "ru": "Сардоба",
+        "type": "43",
         "mahallas": [
             "30230572001"
         ]
@@ -18962,6 +20087,7 @@ export const settlements: Code_Names = {
         "en": "Kudash",
         "uz": "Kudash",
         "ru": "Кудаш",
+        "type": "43",
         "mahallas": [
             "30230574001",
             "30230574002"
@@ -18971,6 +20097,7 @@ export const settlements: Code_Names = {
         "en": "Kul elash",
         "uz": "Kul elash",
         "ru": "Кул элаш",
+        "type": "43",
         "mahallas": [
             "30230576001"
         ]
@@ -18979,6 +20106,7 @@ export const settlements: Code_Names = {
         "en": "Qumbosti",
         "uz": "Qumbosti",
         "ru": "Кумбосди",
+        "type": "43",
         "mahallas": [
             "30230578001"
         ]
@@ -18987,6 +20115,7 @@ export const settlements: Code_Names = {
         "en": "Qo'shqo'noq",
         "uz": "Qo‘shqo‘noq",
         "ru": "Кушкунак",
+        "type": "43",
         "mahallas": [
             "30230580001"
         ]
@@ -18995,6 +20124,7 @@ export const settlements: Code_Names = {
         "en": "Qo'rg'oncha",
         "uz": "Qo‘rg‘oncha",
         "ru": "Курганча",
+        "type": "43",
         "mahallas": [
             "30230582001"
         ]
@@ -19003,6 +20133,7 @@ export const settlements: Code_Names = {
         "en": "Nursux",
         "uz": "Nursux",
         "ru": "Нурсух",
+        "type": "43",
         "mahallas": [
             "30230584001"
         ]
@@ -19011,6 +20142,7 @@ export const settlements: Code_Names = {
         "en": "Ovchi",
         "uz": "Ovchi",
         "ru": "Овчи",
+        "type": "43",
         "mahallas": [
             "30230586001"
         ]
@@ -19019,6 +20151,7 @@ export const settlements: Code_Names = {
         "en": "Oyimcha Qaqir",
         "uz": "Oyimcha Qaqir",
         "ru": "Айимча какир",
+        "type": "43",
         "mahallas": [
             "30230588001"
         ]
@@ -19027,6 +20160,7 @@ export const settlements: Code_Names = {
         "en": "Oqmachit",
         "uz": "Oqmachit",
         "ru": "Акмачит",
+        "type": "43",
         "mahallas": [
             "30230590001"
         ]
@@ -19035,6 +20169,7 @@ export const settlements: Code_Names = {
         "en": "Oxta Tagob",
         "uz": "Oxta Tagob",
         "ru": "Ахта Тагаб",
+        "type": "43",
         "mahallas": [
             "30230592001"
         ]
@@ -19043,6 +20178,7 @@ export const settlements: Code_Names = {
         "en": "O'qchi Dasht",
         "uz": "O‘qchi Dasht",
         "ru": "Укчи Дашт",
+        "type": "43",
         "mahallas": [
             "30230594001"
         ]
@@ -19051,6 +20187,7 @@ export const settlements: Code_Names = {
         "en": "O'qchi Rajabgardi",
         "uz": "O‘qchi Rajabgardi",
         "ru": "Укчи Ражабгарди",
+        "type": "43",
         "mahallas": [
             "30230596001"
         ]
@@ -19059,6 +20196,7 @@ export const settlements: Code_Names = {
         "en": "Iftixor",
         "uz": "Iftixor",
         "ru": "Ифтихор",
+        "type": "43",
         "mahallas": [
             "30230598001"
         ]
@@ -19067,6 +20205,7 @@ export const settlements: Code_Names = {
         "en": "Village citizen assembly of O'zbekiston district",
         "uz": "O‘zbekiston tumanining qishloq mahallalari",
         "ru": "Сельские сходы граждан Узбекистанского района",
+        "type": "44",
         "mahallas": [
             "30230800001",
             "30230800002",
@@ -19122,6 +20261,7 @@ export const settlements: Code_Names = {
         "en": "Chimyon ( mavjud)",
         "uz": "Chimyon ( mavjud)",
         "ru": "Чимион",
+        "type": "43",
         "mahallas": [
             "30233555001"
         ]
@@ -19130,6 +20270,7 @@ export const settlements: Code_Names = {
         "en": "Avval",
         "uz": "Avval",
         "ru": "Аввал",
+        "type": "43",
         "mahallas": [
             "30233557001",
             "30233557002"
@@ -19139,6 +20280,7 @@ export const settlements: Code_Names = {
         "en": "Archa",
         "uz": "Archa",
         "ru": "Арча",
+        "type": "43",
         "mahallas": [
             "30233559001",
             "30233559002"
@@ -19148,6 +20290,7 @@ export const settlements: Code_Names = {
         "en": "Vodil",
         "uz": "Vodil",
         "ru": "Водил",
+        "type": "43",
         "mahallas": [
             "30233561001",
             "30233561002",
@@ -19162,6 +20305,7 @@ export const settlements: Code_Names = {
         "en": "Yuqori Vodil",
         "uz": "Yuqori Vodil",
         "ru": "Юкори Водил",
+        "type": "43",
         "mahallas": [
             "30233563001",
             "30233563002",
@@ -19172,6 +20316,7 @@ export const settlements: Code_Names = {
         "en": "Damko'l",
         "uz": "Damko‘l",
         "ru": "Дамкул",
+        "type": "43",
         "mahallas": [
             "30233565001",
             "30233565002"
@@ -19181,6 +20326,7 @@ export const settlements: Code_Names = {
         "en": "Yoshlarobod",
         "uz": "Yoshlarobod",
         "ru": "Ешларабад",
+        "type": "43",
         "mahallas": [
             "30233567001",
             "30233567002"
@@ -19190,6 +20336,7 @@ export const settlements: Code_Names = {
         "en": "Qo'rg'ontepa",
         "uz": "Qo‘rg‘ontepa",
         "ru": "Кургонтепа",
+        "type": "43",
         "mahallas": [
             "30233569001",
             "30233569002",
@@ -19200,6 +20347,7 @@ export const settlements: Code_Names = {
         "en": "Langar",
         "uz": "Langar",
         "ru": "Лангар",
+        "type": "43",
         "mahallas": [
             "30233571001",
             "30233571002",
@@ -19210,6 +20358,7 @@ export const settlements: Code_Names = {
         "en": "Log'on",
         "uz": "Log‘on",
         "ru": "Лаган",
+        "type": "43",
         "mahallas": [
             "30233573001",
             "30233573002"
@@ -19219,6 +20368,7 @@ export const settlements: Code_Names = {
         "en": "Mindon",
         "uz": "Mindon",
         "ru": "Миндон",
+        "type": "43",
         "mahallas": [
             "30233575001",
             "30233575002",
@@ -19230,6 +20380,7 @@ export const settlements: Code_Names = {
         "en": "Novkent",
         "uz": "Novkent",
         "ru": "Новкент",
+        "type": "43",
         "mahallas": [
             "30233577001",
             "30233577002"
@@ -19239,6 +20390,7 @@ export const settlements: Code_Names = {
         "en": "Yuqori Oqtepa",
         "uz": "Yuqori Oqtepa",
         "ru": "Юкори Октепа",
+        "type": "43",
         "mahallas": [
             "30233579001"
         ]
@@ -19247,6 +20399,7 @@ export const settlements: Code_Names = {
         "en": "Parvoz",
         "uz": "Parvoz",
         "ru": "Парвоз",
+        "type": "43",
         "mahallas": [
             "30233581001",
             "30233581002"
@@ -19256,6 +20409,7 @@ export const settlements: Code_Names = {
         "en": "Yuqori Soybo'yi",
         "uz": "Yuqori Soybo‘yi",
         "ru": "Юкори Сойбуйи",
+        "type": "43",
         "mahallas": [
             "30233583001",
             "30233583002"
@@ -19265,6 +20419,7 @@ export const settlements: Code_Names = {
         "en": "Bahor",
         "uz": "Bahor",
         "ru": "Бахор",
+        "type": "43",
         "mahallas": [
             "30233585001",
             "30233585002"
@@ -19274,6 +20429,7 @@ export const settlements: Code_Names = {
         "en": "Xonqiz",
         "uz": "Xonqiz",
         "ru": "Хонкиз",
+        "type": "43",
         "mahallas": [
             "30233587001",
             "30233587002",
@@ -19285,6 +20441,7 @@ export const settlements: Code_Names = {
         "en": "Xo'roba",
         "uz": "Xo‘roba",
         "ru": "Хуроба",
+        "type": "43",
         "mahallas": [
             "30233589001"
         ]
@@ -19293,6 +20450,7 @@ export const settlements: Code_Names = {
         "en": "Neftchilar",
         "uz": "Neftchilar",
         "ru": "Нефтчилар",
+        "type": "43",
         "mahallas": [
             "30233591001",
             "30233591002"
@@ -19302,6 +20460,7 @@ export const settlements: Code_Names = {
         "en": "Shoximardonobod",
         "uz": "Shoximardonobod",
         "ru": "Шохимардонабад",
+        "type": "43",
         "mahallas": [
             "30233593001",
             "30233593002"
@@ -19311,6 +20470,7 @@ export const settlements: Code_Names = {
         "en": "Yuqori Mindon",
         "uz": "Yuqori Mindon",
         "ru": "Юкори миндан",
+        "type": "43",
         "mahallas": [
             "30233595001"
         ]
@@ -19319,6 +20479,7 @@ export const settlements: Code_Names = {
         "en": "Village citizen assembly of Farg'ona district",
         "uz": "Farg‘ona tumanining qishloq mahallalari",
         "ru": "Сельские сходы граждан Ферганского района",
+        "type": "44",
         "mahallas": [
             "30233800001",
             "30233800002",
@@ -19352,6 +20513,7 @@ export const settlements: Code_Names = {
         "en": "Dang'ara",
         "uz": "Dang‘ara",
         "ru": "Дангара",
+        "type": "43",
         "mahallas": [
             "30236551001",
             "30236551002",
@@ -19362,6 +20524,7 @@ export const settlements: Code_Names = {
         "en": "Doimobod",
         "uz": "Doimobod",
         "ru": "Доимабад",
+        "type": "43",
         "mahallas": [
             "30236554001"
         ]
@@ -19370,6 +20533,7 @@ export const settlements: Code_Names = {
         "en": "Katta Ganjiravon",
         "uz": "Katta Ganjiravon",
         "ru": "Катта ганжиравон",
+        "type": "43",
         "mahallas": [
             "30236557001"
         ]
@@ -19378,6 +20542,7 @@ export const settlements: Code_Names = {
         "en": "Katta Turk",
         "uz": "Katta Turk",
         "ru": "Катта турк",
+        "type": "43",
         "mahallas": [
             "30236561001"
         ]
@@ -19386,6 +20551,7 @@ export const settlements: Code_Names = {
         "en": "Qum Qiyali",
         "uz": "Qum Qiyali",
         "ru": "Кум кияли",
+        "type": "43",
         "mahallas": [
             "30236564001"
         ]
@@ -19394,6 +20560,7 @@ export const settlements: Code_Names = {
         "en": "Toptiqsaroy",
         "uz": "Toptiqsaroy",
         "ru": "Топтиксарай",
+        "type": "43",
         "mahallas": [
             "30236567001"
         ]
@@ -19402,6 +20569,7 @@ export const settlements: Code_Names = {
         "en": "Tumor",
         "uz": "Tumor",
         "ru": "Тумор",
+        "type": "43",
         "mahallas": [
             "30236571001"
         ]
@@ -19410,6 +20578,7 @@ export const settlements: Code_Names = {
         "en": "Yuqori Urganji",
         "uz": "Yuqori Urganji",
         "ru": "Юкори Урганжи",
+        "type": "43",
         "mahallas": [
             "30236574001"
         ]
@@ -19418,6 +20587,7 @@ export const settlements: Code_Names = {
         "en": "Yangi zamon",
         "uz": "Yangi zamon",
         "ru": "Янги замон",
+        "type": "43",
         "mahallas": [
             "30236577001"
         ]
@@ -19426,6 +20596,7 @@ export const settlements: Code_Names = {
         "en": "Village citizen assembly of Dang'ara district",
         "uz": "Dang‘ara tumanining qishloq mahallalari",
         "ru": "Сельские сходы граждан Дангаринского района",
+        "type": "44",
         "mahallas": [
             "30236800001",
             "30236800002",
@@ -19471,6 +20642,7 @@ export const settlements: Code_Names = {
         "en": "Navbahor",
         "uz": "Navbahor",
         "ru": "Навбахор",
+        "type": "43",
         "mahallas": [
             "30238551001",
             "30238551002"
@@ -19480,6 +20652,7 @@ export const settlements: Code_Names = {
         "en": "Kaldo'shan",
         "uz": "Kaldo‘shan",
         "ru": "Калдушан",
+        "type": "43",
         "mahallas": [
             "30238553001"
         ]
@@ -19488,6 +20661,7 @@ export const settlements: Code_Names = {
         "en": "Qo'qonboy",
         "uz": "Qo‘qonboy",
         "ru": "Куконбай",
+        "type": "43",
         "mahallas": [
             "30238555001"
         ]
@@ -19496,6 +20670,7 @@ export const settlements: Code_Names = {
         "en": "Tomosha",
         "uz": "Tomosha",
         "ru": "Томоша",
+        "type": "43",
         "mahallas": [
             "30238557001"
         ]
@@ -19504,6 +20679,7 @@ export const settlements: Code_Names = {
         "en": "Chek chuvaldak",
         "uz": "Chek chuvaldak",
         "ru": "Чек чувалдак",
+        "type": "43",
         "mahallas": [
             "30238559001"
         ]
@@ -19512,6 +20688,7 @@ export const settlements: Code_Names = {
         "en": "Shoyinbek",
         "uz": "Shoyinbek",
         "ru": "Шойинбек",
+        "type": "43",
         "mahallas": [
             "30238561001"
         ]
@@ -19520,6 +20697,7 @@ export const settlements: Code_Names = {
         "en": "Eski",
         "uz": "Eski",
         "ru": "Эски",
+        "type": "43",
         "mahallas": [
             "30238563001"
         ]
@@ -19528,6 +20706,7 @@ export const settlements: Code_Names = {
         "en": "Eshon",
         "uz": "Eshon",
         "ru": "Эшон",
+        "type": "43",
         "mahallas": [
             "30238565001"
         ]
@@ -19536,6 +20715,7 @@ export const settlements: Code_Names = {
         "en": "Village citizen assembly of Furqat district",
         "uz": "Furqat tumanining qishloq mahallalari",
         "ru": "Сельские сходы граждан Фуркатского района",
+        "type": "44",
         "mahallas": [
             "30238800001",
             "30238800002",
@@ -19568,6 +20748,7 @@ export const settlements: Code_Names = {
         "en": "Yozyovon",
         "uz": "Yozyovon",
         "ru": "Язъяван",
+        "type": "43",
         "mahallas": [
             "30242551001",
             "30242551002",
@@ -19579,6 +20760,7 @@ export const settlements: Code_Names = {
         "en": "Yozyovon chek",
         "uz": "Yozyovon chek",
         "ru": "Езевон чек",
+        "type": "43",
         "mahallas": [
             "30242554001"
         ]
@@ -19587,6 +20769,7 @@ export const settlements: Code_Names = {
         "en": "Yo'ldoshobod",
         "uz": "Yo‘ldoshobod",
         "ru": "Йулдошабад",
+        "type": "43",
         "mahallas": [
             "30242557001",
             "30242557002"
@@ -19596,6 +20779,7 @@ export const settlements: Code_Names = {
         "en": "Qorasoqol",
         "uz": "Qorasoqol",
         "ru": "Карасакал",
+        "type": "43",
         "mahallas": [
             "30242561001"
         ]
@@ -19604,6 +20788,7 @@ export const settlements: Code_Names = {
         "en": "Qoratepa",
         "uz": "Qoratepa",
         "ru": "Коратепа",
+        "type": "43",
         "mahallas": [
             "30242564001",
             "30242564002",
@@ -19615,6 +20800,7 @@ export const settlements: Code_Names = {
         "en": "Kelajak",
         "uz": "Kelajak",
         "ru": "Келажак",
+        "type": "43",
         "mahallas": [
             "30242567001"
         ]
@@ -19623,6 +20809,7 @@ export const settlements: Code_Names = {
         "en": "Quyi Soybo'yi",
         "uz": "Quyi Soybo‘yi",
         "ru": "Куйи Сойбуйи",
+        "type": "43",
         "mahallas": [
             "30242571001",
             "30242571002"
@@ -19632,6 +20819,7 @@ export const settlements: Code_Names = {
         "en": "Toshxovuz",
         "uz": "Toshxovuz",
         "ru": "Тошховуз",
+        "type": "43",
         "mahallas": [
             "30242574001"
         ]
@@ -19640,6 +20828,7 @@ export const settlements: Code_Names = {
         "en": "Xonobod",
         "uz": "Xonobod",
         "ru": "Хонабад",
+        "type": "43",
         "mahallas": [
             "30242577001"
         ]
@@ -19648,6 +20837,7 @@ export const settlements: Code_Names = {
         "en": "Village citizen assembly of Yozyovon district",
         "uz": "Yozyovon tumanining qishloq mahallalari",
         "ru": "Сельские сходы граждан Язъяванского района",
+        "type": "44",
         "mahallas": [
             "30242800001",
             "30242800002",
@@ -19668,9 +20858,10 @@ export const settlements: Code_Names = {
         ]
     },
     "1730401000": {
-        "en": "--",
-        "uz": "--",
-        "ru": "--",
+        "en": "-",
+        "uz": "-",
+        "ru": "-",
+        "type": "32",
         "mahallas": [
             "30401000001",
             "30401000002",
@@ -19745,9 +20936,10 @@ export const settlements: Code_Names = {
         ]
     },
     "1730405000": {
-        "en": "--",
-        "uz": "--",
-        "ru": "--",
+        "en": "-",
+        "uz": "-",
+        "ru": "-",
+        "type": "32",
         "mahallas": [
             "30405000001",
             "30405000002",
@@ -19821,15 +21013,17 @@ export const settlements: Code_Names = {
         "en": "Muqimiy",
         "uz": "Muqimiy",
         "ru": "Мукими",
+        "type": "32",
         "mahallas": [
             "30405555001",
             "30405555002"
         ]
     },
     "1730408000": {
-        "en": "--",
-        "uz": "--",
-        "ru": "--",
+        "en": "-",
+        "uz": "-",
+        "ru": "-",
+        "type": "32",
         "mahallas": [
             "30408000001",
             "30408000002",
@@ -19853,6 +21047,7 @@ export const settlements: Code_Names = {
         "en": "Do'stlik",
         "uz": "Do‘stlik",
         "ru": "Дустлик",
+        "type": "32",
         "mahallas": [
             "30408555001"
         ]
@@ -19861,6 +21056,7 @@ export const settlements: Code_Names = {
         "en": "Village citizen assembly of Quvasoy",
         "uz": "Quvasoy shahar xokimligiga qarashli qishloq mahallalari",
         "ru": "Сельские сходы гр-н, подч. Кувасайскому горхок-ту",
+        "type": "44",
         "mahallas": [
             "30408800001",
             "30408800002",
@@ -19879,9 +21075,10 @@ export const settlements: Code_Names = {
         ]
     },
     "1730412000": {
-        "en": "--",
-        "uz": "--",
-        "ru": "--",
+        "en": "-",
+        "uz": "-",
+        "ru": "-",
+        "type": "32",
         "mahallas": [
             "30412000001",
             "30412000002",
@@ -19938,6 +21135,7 @@ export const settlements: Code_Names = {
         "en": "Yangi Marg'ilon",
         "uz": "Yangi Marg‘ilon",
         "ru": "Янги Маpгилан",
+        "type": "32",
         "mahallas": [
             "30412557001",
             "30412557002",
@@ -19952,6 +21150,7 @@ export const settlements: Code_Names = {
         "en": "Bog'ot",
         "uz": "Bog‘ot",
         "ru": "Багат",
+        "type": "43",
         "mahallas": [
             "33204551001",
             "33204551002",
@@ -19962,6 +21161,7 @@ export const settlements: Code_Names = {
         "en": "Nurafshon",
         "uz": "Nurafshon",
         "ru": "Нурафшон",
+        "type": "43",
         "mahallas": [
             "33204553001"
         ]
@@ -19970,6 +21170,7 @@ export const settlements: Code_Names = {
         "en": "Oltinqum",
         "uz": "Oltinqum",
         "ru": "Олтинкум",
+        "type": "43",
         "mahallas": [
             "33204555001"
         ]
@@ -19978,6 +21179,7 @@ export const settlements: Code_Names = {
         "en": "Uzumzor",
         "uz": "Uzumzor",
         "ru": "Узумзор",
+        "type": "43",
         "mahallas": [
             "33204557001"
         ]
@@ -19986,6 +21188,7 @@ export const settlements: Code_Names = {
         "en": "Yangiqadam",
         "uz": "Yangiqadam",
         "ru": "Янгикадам",
+        "type": "43",
         "mahallas": [
             "33204559001"
         ]
@@ -19994,6 +21197,7 @@ export const settlements: Code_Names = {
         "en": "Village citizen assembly of Bog'ot district",
         "uz": "Bog‘ot tumanining qishloq mahallalari",
         "ru": "Сельские сходы граждан Багатского района",
+        "type": "44",
         "mahallas": [
             "33204800001",
             "33204800002",
@@ -20037,6 +21241,7 @@ export const settlements: Code_Names = {
         "en": "Gurlan",
         "uz": "Gurlan",
         "ru": "Гурлен",
+        "type": "43",
         "mahallas": [
             "33208551001",
             "33208551002",
@@ -20056,6 +21261,7 @@ export const settlements: Code_Names = {
         "en": "Chakkalar",
         "uz": "Chakkalar",
         "ru": "Чаккалар",
+        "type": "43",
         "mahallas": [
             "33208554001"
         ]
@@ -20064,6 +21270,7 @@ export const settlements: Code_Names = {
         "en": "Bo'zqal'a",
         "uz": "Bo‘zqal’a",
         "ru": "Бузкалъа",
+        "type": "43",
         "mahallas": [
             "33208557001",
             "33208557002"
@@ -20073,6 +21280,7 @@ export const settlements: Code_Names = {
         "en": "Nurzamin",
         "uz": "Nurzamin",
         "ru": "Нурзамин",
+        "type": "43",
         "mahallas": [
             "33208561001"
         ]
@@ -20081,6 +21289,7 @@ export const settlements: Code_Names = {
         "en": "Nukus yop",
         "uz": "Nukus yop",
         "ru": "Нукус еп",
+        "type": "43",
         "mahallas": [
             "33208564001"
         ]
@@ -20089,6 +21298,7 @@ export const settlements: Code_Names = {
         "en": "Markaziy Guliston",
         "uz": "Markaziy Guliston",
         "ru": "Марказий Гулистан",
+        "type": "43",
         "mahallas": [
             "33208567001",
             "33208567002"
@@ -20098,6 +21308,7 @@ export const settlements: Code_Names = {
         "en": "Do'simbiy",
         "uz": "Do‘simbiy",
         "ru": "Дусимбий",
+        "type": "43",
         "mahallas": [
             "33208571001"
         ]
@@ -20106,6 +21317,7 @@ export const settlements: Code_Names = {
         "en": "Taxtako'pir",
         "uz": "Taxtako‘pir",
         "ru": "Тахтакупир",
+        "type": "43",
         "mahallas": [
             "33208574001"
         ]
@@ -20114,6 +21326,7 @@ export const settlements: Code_Names = {
         "en": "Yormish",
         "uz": "Yormish",
         "ru": "Ермиш",
+        "type": "43",
         "mahallas": [
             "33208577001"
         ]
@@ -20122,6 +21335,7 @@ export const settlements: Code_Names = {
         "en": "Village citizen assembly of Gurlan district",
         "uz": "Gurlan tumanining qishloq mahallalari",
         "ru": "Сельские сходы граждан Гурленского района",
+        "type": "44",
         "mahallas": [
             "33208800001",
             "33208800002",
@@ -20157,6 +21371,7 @@ export const settlements: Code_Names = {
         "en": "Qo'shko'pir",
         "uz": "Qo‘shko‘pir",
         "ru": "Кошкупыр",
+        "type": "43",
         "mahallas": [
             "33212551001",
             "33212551002",
@@ -20170,6 +21385,7 @@ export const settlements: Code_Names = {
         "en": "Qoromon",
         "uz": "Qoromon",
         "ru": "Караман",
+        "type": "43",
         "mahallas": [
             "33212553001"
         ]
@@ -20178,6 +21394,7 @@ export const settlements: Code_Names = {
         "en": "O'rta qishloq",
         "uz": "O‘rta qishloq",
         "ru": "Урта кишлак",
+        "type": "43",
         "mahallas": [
             "33212555001"
         ]
@@ -20186,6 +21403,7 @@ export const settlements: Code_Names = {
         "en": "Xonbod",
         "uz": "Xonbod",
         "ru": "Хонабад",
+        "type": "43",
         "mahallas": [
             "33212557001"
         ]
@@ -20194,6 +21412,7 @@ export const settlements: Code_Names = {
         "en": "Shixmashhad",
         "uz": "Shixmashhad",
         "ru": "Шихмашхад",
+        "type": "43",
         "mahallas": [
             "33212559001",
             "33212559002",
@@ -20204,6 +21423,7 @@ export const settlements: Code_Names = {
         "en": "Sherobod",
         "uz": "Sherobod",
         "ru": "Шерабад",
+        "type": "43",
         "mahallas": [
             "33212561001"
         ]
@@ -20212,6 +21432,7 @@ export const settlements: Code_Names = {
         "en": "Village citizen assembly of Qo'shko'pir district",
         "uz": "Qo‘shko‘pir tumanining qishloq mahallalari",
         "ru": "Сельские сходы граждан Кошкупырского района",
+        "type": "44",
         "mahallas": [
             "33212800001",
             "33212800002",
@@ -20256,6 +21477,7 @@ export const settlements: Code_Names = {
         "en": "Cholish",
         "uz": "Cholish",
         "ru": "Чалыш",
+        "type": "43",
         "mahallas": [
             "33217554001",
             "33217554002"
@@ -20265,6 +21487,7 @@ export const settlements: Code_Names = {
         "en": "Oq oltin",
         "uz": "Oq oltin",
         "ru": "Ак алтин",
+        "type": "43",
         "mahallas": [
             "33217558001"
         ]
@@ -20273,6 +21496,7 @@ export const settlements: Code_Names = {
         "en": "Chandir",
         "uz": "Chandir",
         "ru": "Чондир",
+        "type": "43",
         "mahallas": [
             "33217562001",
             "33217562002",
@@ -20283,6 +21507,7 @@ export const settlements: Code_Names = {
         "en": "Ko'palik",
         "uz": "Ko‘palik",
         "ru": "Купалик",
+        "type": "43",
         "mahallas": [
             "33217566001",
             "33217566002"
@@ -20292,6 +21517,7 @@ export const settlements: Code_Names = {
         "en": "Gardonlar",
         "uz": "Gardonlar",
         "ru": "Гардонлар",
+        "type": "43",
         "mahallas": [
             "33217572001",
             "33217572002"
@@ -20301,6 +21527,7 @@ export const settlements: Code_Names = {
         "en": "Village citizen assembly of Urganch district",
         "uz": "Urganch tumanining qishloq mahallalari",
         "ru": "Сельские сходы граждан Ургенчского района",
+        "type": "44",
         "mahallas": [
             "33217800001",
             "33217800002",
@@ -20358,6 +21585,7 @@ export const settlements: Code_Names = {
         "en": "Xazorasp",
         "uz": "Xazorasp",
         "ru": "Хазарасп",
+        "type": "43",
         "mahallas": [
             "33220551001",
             "33220551002",
@@ -20371,6 +21599,7 @@ export const settlements: Code_Names = {
         "en": "Oq yop",
         "uz": "Oq yop",
         "ru": "Ак еп",
+        "type": "43",
         "mahallas": [
             "33220553001"
         ]
@@ -20379,6 +21608,7 @@ export const settlements: Code_Names = {
         "en": "Oyok ovvo",
         "uz": "Oyok ovvo",
         "ru": "Аек-авва",
+        "type": "43",
         "mahallas": [
             "33220555001"
         ]
@@ -20387,6 +21617,7 @@ export const settlements: Code_Names = {
         "en": "Village citizen assembly of Xazorasp district",
         "uz": "Xazorasp tumanining qishloq mahallalari",
         "ru": "Сельские сходы граждан Хазараспского района",
+        "type": "44",
         "mahallas": [
             "33220800001",
             "33220800002",
@@ -20433,6 +21664,7 @@ export const settlements: Code_Names = {
         "en": "Pitnak",
         "uz": "Pitnak",
         "ru": "Питнак",
+        "type": "42",
         "mahallas": [
             "33221501001",
             "33221501002",
@@ -20445,6 +21677,7 @@ export const settlements: Code_Names = {
         "en": "Village citizen assembly of Tuproqqal'a district",
         "uz": "Tuproqqal’a tumanining qishloq mahallalari",
         "ru": "Сельские сходы граждан Тупроккалинского района",
+        "type": "44",
         "mahallas": [
             "33221800001",
             "33221800002",
@@ -20465,6 +21698,7 @@ export const settlements: Code_Names = {
         "en": "Xonqa",
         "uz": "Xonqa",
         "ru": "Ханка",
+        "type": "43",
         "mahallas": [
             "33223551001",
             "33223551002",
@@ -20487,6 +21721,7 @@ export const settlements: Code_Names = {
         "en": "Istiqlol",
         "uz": "Istiqlol",
         "ru": "Истиклол",
+        "type": "43",
         "mahallas": [
             "33223553001"
         ]
@@ -20495,6 +21730,7 @@ export const settlements: Code_Names = {
         "en": "Madaniy yer",
         "uz": "Madaniy yer",
         "ru": "Маданий ер",
+        "type": "43",
         "mahallas": [
             "33223555001"
         ]
@@ -20503,6 +21739,7 @@ export const settlements: Code_Names = {
         "en": "Birlashgan",
         "uz": "Birlashgan",
         "ru": "Бирлашган",
+        "type": "43",
         "mahallas": [
             "33223557001"
         ]
@@ -20511,6 +21748,7 @@ export const settlements: Code_Names = {
         "en": "Yosh kuch",
         "uz": "Yosh kuch",
         "ru": "Еш куч",
+        "type": "43",
         "mahallas": [
             "33223559001"
         ]
@@ -20519,6 +21757,7 @@ export const settlements: Code_Names = {
         "en": "Village citizen assembly of Xonqa district",
         "uz": "Xonqa tumanining qishloq mahallalari",
         "ru": "Сельские сходы граждан Ханкинского района",
+        "type": "44",
         "mahallas": [
             "33223800001",
             "33223800002",
@@ -20551,6 +21790,7 @@ export const settlements: Code_Names = {
         "en": "Gullanbog'",
         "uz": "Gullanbog‘",
         "ru": "Гулланбаг",
+        "type": "43",
         "mahallas": [
             "33226552001"
         ]
@@ -20559,6 +21799,7 @@ export const settlements: Code_Names = {
         "en": "Parchanxos",
         "uz": "Parchanxos",
         "ru": "Парчанхас",
+        "type": "43",
         "mahallas": [
             "33226554001"
         ]
@@ -20567,6 +21808,7 @@ export const settlements: Code_Names = {
         "en": "Iftixor",
         "uz": "Iftixor",
         "ru": "Ифтихор",
+        "type": "43",
         "mahallas": [
             "33226562001"
         ]
@@ -20575,6 +21817,7 @@ export const settlements: Code_Names = {
         "en": "Sho'r-Qal'a",
         "uz": "Sho‘r-Qal’a",
         "ru": "Шуркалъа",
+        "type": "43",
         "mahallas": [
             "33226564001"
         ]
@@ -20583,6 +21826,7 @@ export const settlements: Code_Names = {
         "en": "Yuqori qo'm",
         "uz": "Yuqori qo‘m",
         "ru": "Юкориком",
+        "type": "43",
         "mahallas": [
             "33226566001"
         ]
@@ -20591,6 +21835,7 @@ export const settlements: Code_Names = {
         "en": "Hamkor",
         "uz": "Hamkor",
         "ru": "Хамкор",
+        "type": "43",
         "mahallas": [
             "33226568001"
         ]
@@ -20599,6 +21844,7 @@ export const settlements: Code_Names = {
         "en": "Village citizen assembly of Xiva district",
         "uz": "Xiva tumanining qishloq mahallalari",
         "ru": "Сельские сходы граждан Хивинского района",
+        "type": "44",
         "mahallas": [
             "33226800001",
             "33226800002",
@@ -20634,6 +21880,7 @@ export const settlements: Code_Names = {
         "en": "Shovot",
         "uz": "Shovot",
         "ru": "Шават",
+        "type": "43",
         "mahallas": [
             "33230551001",
             "33230551002",
@@ -20649,6 +21896,7 @@ export const settlements: Code_Names = {
         "en": "Bo'yrochi",
         "uz": "Bo‘yrochi",
         "ru": "Буйрачи",
+        "type": "43",
         "mahallas": [
             "33230554001"
         ]
@@ -20657,6 +21905,7 @@ export const settlements: Code_Names = {
         "en": "Ipakchi",
         "uz": "Ipakchi",
         "ru": "Ипакчи",
+        "type": "43",
         "mahallas": [
             "33230557001"
         ]
@@ -20665,6 +21914,7 @@ export const settlements: Code_Names = {
         "en": "Kangli",
         "uz": "Kangli",
         "ru": "Кангли",
+        "type": "43",
         "mahallas": [
             "33230561001",
             "33230561002"
@@ -20674,6 +21924,7 @@ export const settlements: Code_Names = {
         "en": "Qat-qal'a",
         "uz": "Qat-qal’a",
         "ru": "Кат-калъа",
+        "type": "43",
         "mahallas": [
             "33230564001",
             "33230564002"
@@ -20683,6 +21934,7 @@ export const settlements: Code_Names = {
         "en": "Monoq",
         "uz": "Monoq",
         "ru": "Монак",
+        "type": "43",
         "mahallas": [
             "33230567001"
         ]
@@ -20691,6 +21943,7 @@ export const settlements: Code_Names = {
         "en": "Chig'atoy",
         "uz": "Chig‘atoy",
         "ru": "Чигатай",
+        "type": "43",
         "mahallas": [
             "33230571001"
         ]
@@ -20699,6 +21952,7 @@ export const settlements: Code_Names = {
         "en": "Village citizen assembly of Shovot district",
         "uz": "Shovot tumanining qishloq mahallalari",
         "ru": "Сельские сходы граждан Шаватского района",
+        "type": "44",
         "mahallas": [
             "33230800001",
             "33230800002",
@@ -20745,6 +21999,7 @@ export const settlements: Code_Names = {
         "en": "Yangiariq",
         "uz": "Yangiariq",
         "ru": "Янгиарык",
+        "type": "43",
         "mahallas": [
             "33233551001",
             "33233551002",
@@ -20756,6 +22011,7 @@ export const settlements: Code_Names = {
         "en": "Gulbog'",
         "uz": "Gulbog‘",
         "ru": "Гулбог",
+        "type": "43",
         "mahallas": [
             "33233553001"
         ]
@@ -20764,6 +22020,7 @@ export const settlements: Code_Names = {
         "en": "Soburzon",
         "uz": "Soburzon",
         "ru": "Собурзан",
+        "type": "43",
         "mahallas": [
             "33233555001"
         ]
@@ -20772,6 +22029,7 @@ export const settlements: Code_Names = {
         "en": "Suvgan",
         "uz": "Suvgan",
         "ru": "Сувган",
+        "type": "43",
         "mahallas": [
             "33233557001"
         ]
@@ -20780,6 +22038,7 @@ export const settlements: Code_Names = {
         "en": "Tagan",
         "uz": "Tagan",
         "ru": "Таган",
+        "type": "43",
         "mahallas": [
             "33233561001"
         ]
@@ -20788,6 +22047,7 @@ export const settlements: Code_Names = {
         "en": "Qo'shloq",
         "uz": "Qo‘shloq",
         "ru": "Кушлок",
+        "type": "43",
         "mahallas": [
             "33233563001"
         ]
@@ -20796,6 +22056,7 @@ export const settlements: Code_Names = {
         "en": "Village citizen assembly of Yangiariq district",
         "uz": "Yangiariq tumanining qishloq mahallalari",
         "ru": "Сельские сходы граждан Янгиарыкского района",
+        "type": "44",
         "mahallas": [
             "33233800001",
             "33233800002",
@@ -20833,6 +22094,7 @@ export const settlements: Code_Names = {
         "en": "Yangibozor",
         "uz": "Yangibozor",
         "ru": "Янгибазар",
+        "type": "43",
         "mahallas": [
             "33236551001",
             "33236551002",
@@ -20843,6 +22105,7 @@ export const settlements: Code_Names = {
         "en": "Yangi yop",
         "uz": "Yangi yop",
         "ru": "Янги-еп",
+        "type": "43",
         "mahallas": [
             "33236554001",
             "33236554002"
@@ -20852,6 +22115,7 @@ export const settlements: Code_Names = {
         "en": "Mangitlar",
         "uz": "Mangitlar",
         "ru": "Мангитлар",
+        "type": "43",
         "mahallas": [
             "33236558001"
         ]
@@ -20860,6 +22124,7 @@ export const settlements: Code_Names = {
         "en": "Village citizen assembly of Yangibozor district",
         "uz": "Yangibozor tumanining qishloq mahallalari",
         "ru": "Сельские сходы граждан Янгибазарского района",
+        "type": "44",
         "mahallas": [
             "33236800001",
             "33236800002",
@@ -20888,9 +22153,10 @@ export const settlements: Code_Names = {
         ]
     },
     "1733401000": {
-        "en": "--",
-        "uz": "--",
-        "ru": "--",
+        "en": "-",
+        "uz": "-",
+        "ru": "-",
+        "type": "32",
         "mahallas": [
             "33401000001",
             "33401000002",
@@ -20933,9 +22199,10 @@ export const settlements: Code_Names = {
         ]
     },
     "1733406000": {
-        "en": "--",
-        "uz": "--",
-        "ru": "--",
+        "en": "-",
+        "uz": "-",
+        "ru": "-",
+        "type": "32",
         "mahallas": [
             "33406000001",
             "33406000002",
@@ -20964,6 +22231,7 @@ export const settlements: Code_Names = {
         "en": "Mang'it",
         "uz": "Mang‘it",
         "ru": "Мангит",
+        "type": "42",
         "mahallas": [
             "35204501001",
             "35204501002",
@@ -20983,6 +22251,7 @@ export const settlements: Code_Names = {
         "en": "Jumurtov",
         "uz": "Jumurtov",
         "ru": "Джумуртау",
+        "type": "43",
         "mahallas": [
             "35204554001"
         ]
@@ -20991,6 +22260,7 @@ export const settlements: Code_Names = {
         "en": "Kipshak",
         "uz": "Kipshak",
         "ru": "Кипчок",
+        "type": "43",
         "mahallas": [
             "35204555001"
         ]
@@ -20999,6 +22269,7 @@ export const settlements: Code_Names = {
         "en": "Village citizen assembly of Amudaryo district",
         "uz": "Amudaryo tumanining qishloq mahallalari",
         "ru": "Сельские сходы граждан Амударьинского района",
+        "type": "44",
         "mahallas": [
             "35204800001",
             "35204800002",
@@ -21041,6 +22312,7 @@ export const settlements: Code_Names = {
         "en": "Beruniy",
         "uz": "Beruniy",
         "ru": "Беруни",
+        "type": "42",
         "mahallas": [
             "35207501001",
             "35207501002",
@@ -21066,6 +22338,7 @@ export const settlements: Code_Names = {
         "en": "Bulish",
         "uz": "Bulish",
         "ru": "Булиш",
+        "type": "43",
         "mahallas": [
             "35207552001"
         ]
@@ -21074,6 +22347,7 @@ export const settlements: Code_Names = {
         "en": "Village citizen assembly of Beruniy district",
         "uz": "Beruniy tumanining qishloq mahallalari",
         "ru": "Сельские сходы граждан Берунийского района",
+        "type": "44",
         "mahallas": [
             "35207800001",
             "35207800002",
@@ -21102,6 +22376,7 @@ export const settlements: Code_Names = {
         "en": "Bo'zatov",
         "uz": "Bo‘zatov",
         "ru": "Бозатау",
+        "type": "43",
         "mahallas": [
             "35209551001"
         ]
@@ -21110,6 +22385,7 @@ export const settlements: Code_Names = {
         "en": "Village citizen assembly of Bo'zatov district",
         "uz": "Bo‘zatov tumanining qishloq mahallalari",
         "ru": "Сельские сходы граждан Бозатауского района",
+        "type": "44",
         "mahallas": [
             "35209800001",
             "35209800002",
@@ -21121,6 +22397,7 @@ export const settlements: Code_Names = {
         "en": "Qorao'zak",
         "uz": "Qorao‘zak",
         "ru": "Караузяк",
+        "type": "43",
         "mahallas": [
             "35211551001",
             "35211551002",
@@ -21133,6 +22410,7 @@ export const settlements: Code_Names = {
         "en": "Village citizen assembly of Qorao'zak district",
         "uz": "Qorao‘zak tumanining qishloq mahallalari",
         "ru": "Сельские сходы граждан Караузякского района",
+        "type": "44",
         "mahallas": [
             "35211800001",
             "35211800002",
@@ -21148,6 +22426,7 @@ export const settlements: Code_Names = {
         "en": "Xalqobod",
         "uz": "Xalqobod",
         "ru": "Халкабад",
+        "type": "42",
         "mahallas": [
             "35212505001",
             "35212505002",
@@ -21159,6 +22438,7 @@ export const settlements: Code_Names = {
         "en": "Kegeyli",
         "uz": "Kegeyli",
         "ru": "Кегейли",
+        "type": "43",
         "mahallas": [
             "35212551001",
             "35212551002",
@@ -21170,6 +22450,7 @@ export const settlements: Code_Names = {
         "en": "Village citizen assembly of Kegeyli district",
         "uz": "Kegeyli tumanining qishloq mahallalari",
         "ru": "Сельские сходы граждан Кегейлийского района",
+        "type": "44",
         "mahallas": [
             "35212800001",
             "35212800002",
@@ -21185,6 +22466,7 @@ export const settlements: Code_Names = {
         "en": "Qo'ng'irot",
         "uz": "Qo‘ng‘irot",
         "ru": "Кунград",
+        "type": "42",
         "mahallas": [
             "35215501001",
             "35215501002",
@@ -21206,6 +22488,7 @@ export const settlements: Code_Names = {
         "en": "Jasliq",
         "uz": "Jasliq",
         "ru": "Жаслык",
+        "type": "43",
         "mahallas": [
             "35215552001"
         ]
@@ -21214,6 +22497,7 @@ export const settlements: Code_Names = {
         "en": "Qaraqalpaqstan",
         "uz": "Qaraqalpaqstan",
         "ru": "Каракалпакстан",
+        "type": "43",
         "mahallas": [
             "35215554001"
         ]
@@ -21222,6 +22506,7 @@ export const settlements: Code_Names = {
         "en": "Qiriqqiz",
         "uz": "Qiriqqiz",
         "ru": "Кырыккыз",
+        "type": "43",
         "mahallas": [
             "35215560001"
         ]
@@ -21230,6 +22515,7 @@ export const settlements: Code_Names = {
         "en": "Oltinko'l",
         "uz": "Oltinko‘l",
         "ru": "Алтынкуль",
+        "type": "43",
         "mahallas": [
             "35215562001",
             "35215562002",
@@ -21245,6 +22531,7 @@ export const settlements: Code_Names = {
         "en": "Yelabad",
         "uz": "Yelabad",
         "ru": "Елабад",
+        "type": "43",
         "mahallas": [
             "35215567001"
         ]
@@ -21253,6 +22540,7 @@ export const settlements: Code_Names = {
         "en": "Village citizen assembly of Qo'ng'irot district",
         "uz": "Qo‘ng‘irot tumanining qishloq mahallalari",
         "ru": "Сельские сходы граждан Кунградского района",
+        "type": "44",
         "mahallas": [
             "35215800001",
             "35215800002",
@@ -21273,6 +22561,7 @@ export const settlements: Code_Names = {
         "en": "Qanliko'l",
         "uz": "Qanliko‘l",
         "ru": "Канлыкуль",
+        "type": "43",
         "mahallas": [
             "35218551001",
             "35218551002",
@@ -21283,6 +22572,7 @@ export const settlements: Code_Names = {
         "en": "Village citizen assembly of Qanliko'l district",
         "uz": "Qanliko‘l tumanining qishloq mahallalari",
         "ru": "Сельские сходы граждан Канлыкульского района",
+        "type": "44",
         "mahallas": [
             "35218800001",
             "35218800002",
@@ -21298,6 +22588,7 @@ export const settlements: Code_Names = {
         "en": "Mo'ynoq",
         "uz": "Mo‘ynoq",
         "ru": "Муйнак",
+        "type": "42",
         "mahallas": [
             "35222501001",
             "35222501002",
@@ -21310,6 +22601,7 @@ export const settlements: Code_Names = {
         "en": "Village citizen assembly of Mo'ynoq district",
         "uz": "Mo‘ynoq tumanining qishloq mahallalari",
         "ru": "Сельские сходы граждан Муйнакского района",
+        "type": "44",
         "mahallas": [
             "35222800001",
             "35222800002",
@@ -21324,6 +22616,7 @@ export const settlements: Code_Names = {
         "en": "Oqmang'it",
         "uz": "Oqmang‘it",
         "ru": "Акмангит",
+        "type": "43",
         "mahallas": [
             "35225551001",
             "35225551002"
@@ -21333,6 +22626,7 @@ export const settlements: Code_Names = {
         "en": "Village citizen assembly of Nukus district",
         "uz": "Nukus tumanining qishloq mahallalari",
         "ru": "Сельские сходы граждан Нукусского района",
+        "type": "44",
         "mahallas": [
             "35225800001",
             "35225800002",
@@ -21351,6 +22645,7 @@ export const settlements: Code_Names = {
         "en": "Taxiatosh",
         "uz": "Taxiatosh",
         "ru": "Тахиаташ",
+        "type": "42",
         "mahallas": [
             "35228501001",
             "35228501002",
@@ -21368,6 +22663,7 @@ export const settlements: Code_Names = {
         "en": "Village citizen assembly of Taxiatosh district",
         "uz": "Taxiatosh tumanining qishloq mahallalari",
         "ru": "Сельские сходы граждан Тахиаташского района",
+        "type": "44",
         "mahallas": [
             "35228800001",
             "35228800002",
@@ -21379,6 +22675,7 @@ export const settlements: Code_Names = {
         "en": "Taxtako'pir",
         "uz": "Taxtako‘pir",
         "ru": "Тахтакупыр",
+        "type": "43",
         "mahallas": [
             "35230551001",
             "35230551002",
@@ -21390,6 +22687,7 @@ export const settlements: Code_Names = {
         "en": "Village citizen assembly of Taxtako'pir district",
         "uz": "Taxtako‘pir tumanining qishloq mahallalari",
         "ru": "Сельские сходы граждан Тахтакупырского района",
+        "type": "44",
         "mahallas": [
             "35230800001",
             "35230800002",
@@ -21410,6 +22708,7 @@ export const settlements: Code_Names = {
         "en": "To'rtko'l",
         "uz": "To‘rtko‘l",
         "ru": "Турткуль",
+        "type": "42",
         "mahallas": [
             "35233501001",
             "35233501002",
@@ -21437,6 +22736,7 @@ export const settlements: Code_Names = {
         "en": "Village citizen assembly of To'rtko'l district",
         "uz": "To‘rtko‘l tumanining qishloq mahallalari",
         "ru": "Сельские сходы граждан Турткульского района",
+        "type": "44",
         "mahallas": [
             "35233800001",
             "35233800002",
@@ -21473,6 +22773,7 @@ export const settlements: Code_Names = {
         "en": "Xo'jayli",
         "uz": "Xo‘jayli",
         "ru": "Ходжейли",
+        "type": "42",
         "mahallas": [
             "35236501001",
             "35236501002",
@@ -21498,6 +22799,7 @@ export const settlements: Code_Names = {
         "en": "Vodnik",
         "uz": "Vodnik",
         "ru": "Водник",
+        "type": "42",
         "mahallas": [
             "35236553001"
         ]
@@ -21506,6 +22808,7 @@ export const settlements: Code_Names = {
         "en": "Village citizen assembly of Xo'jayli district",
         "uz": "Xo‘jayli tumanining qishloq mahallalari",
         "ru": "Сельские сходы граждан Ходжейлийского района",
+        "type": "44",
         "mahallas": [
             "35236800001",
             "35236800002",
@@ -21522,6 +22825,7 @@ export const settlements: Code_Names = {
         "en": "Chimboy",
         "uz": "Chimboy",
         "ru": "Чимбай",
+        "type": "42",
         "mahallas": [
             "35240501001",
             "35240501002",
@@ -21541,6 +22845,7 @@ export const settlements: Code_Names = {
         "en": "Village citizen assembly of Chimboy district",
         "uz": "Chimboy tumanining qishloq mahallalari",
         "ru": "Сельские сходы граждан Чимбайского района",
+        "type": "44",
         "mahallas": [
             "35240800001",
             "35240800002",
@@ -21558,6 +22863,7 @@ export const settlements: Code_Names = {
         "en": "Shumanay",
         "uz": "Shumanay",
         "ru": "Шуманай",
+        "type": "42",
         "mahallas": [
             "35243501001",
             "35243501002",
@@ -21569,6 +22875,7 @@ export const settlements: Code_Names = {
         "en": "Village citizen assembly of Shumanay district",
         "uz": "Shumanay tumanining qishloq mahallalari",
         "ru": "Сельские сходы граждан Шуманайского района",
+        "type": "44",
         "mahallas": [
             "35243800001",
             "35243800002",
@@ -21585,6 +22892,7 @@ export const settlements: Code_Names = {
         "en": "Bo'ston",
         "uz": "Bo‘ston",
         "ru": "Бустан",
+        "type": "42",
         "mahallas": [
             "35250501001",
             "35250501002",
@@ -21600,6 +22908,7 @@ export const settlements: Code_Names = {
         "en": "Saxtiyon",
         "uz": "Saxtiyon",
         "ru": "Сахтиен",
+        "type": "43",
         "mahallas": [
             "35250555001"
         ]
@@ -21608,6 +22917,7 @@ export const settlements: Code_Names = {
         "en": "Village citizen assembly of Ellikkala district",
         "uz": "Ellikkala tumanining qishloq mahallalari",
         "ru": "Сельские сходы граждан Элликкалинского района",
+        "type": "44",
         "mahallas": [
             "35250800001",
             "35250800002",
@@ -21643,9 +22953,10 @@ export const settlements: Code_Names = {
         ]
     },
     "1735401000": {
-        "en": "--",
-        "uz": "--",
-        "ru": "--",
+        "en": "-",
+        "uz": "-",
+        "ru": "-",
+        "type": "32",
         "mahallas": [
             "35401000001",
             "35401000002",
@@ -21723,6 +23034,7 @@ export const settlements: Code_Names = {
         "en": "Karatau",
         "uz": "Karatau",
         "ru": "Каратау",
+        "type": "43",
         "mahallas": [
             "35401554064"
         ]

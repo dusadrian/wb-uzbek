@@ -166,9 +166,11 @@ export const instrument9 = {
                 for (const item of args.questions) {
                     instrument.seteazaValoareElement(item.variable, item.value);
                 }
+            }
 
-            } else {
-                if (args.userData) {
+            if (args.userData) {
+                // set default values, if new instrument
+                if (!args.questions) {
                     util.setValue('i2', institution_code);
 
                     if (inson_user) {
@@ -195,12 +197,14 @@ export const instrument9 = {
 
                     // set default values for user
                     util.setValue('q2', args.userData.name + " " + args.userData.patronymics + " " + args.userData.surname);
-                    regionCode = args.userData.region_code;
-                    userUUID = args.userData.uuid;
-                    institutionType = args.userData.service_type_code;
-                    institutionCode = args.userData.institution_code;
                 }
+
+                regionCode = args.userData.region_code;
+                userUUID = args.userData.uuid;
+                institutionType = args.userData.service_type_code;
+                institutionCode = args.userData.institution_code;
             }
+
             instrument.start(instrumentID, instrument.trimis, saveChestionar, validateChestionar);
         });
     }

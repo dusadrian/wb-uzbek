@@ -132,7 +132,6 @@ export const instrument7 = {
 
             const inson_user = Object.keys(insons).indexOf(institution_code) >= 0;
 
-
             // set instrument question !!!!!!
             instrument.setQuestions(questions, questionsOrder);
             let instrumentID = null;
@@ -158,21 +157,24 @@ export const instrument7 = {
             // two digit day & month
             util.setValue("data", util.customDate());
             if (args.userData) {
-                if (inson_user) {
-                    util.setValue('reg', "" + insons[institution_code].region);
-                    util.setValue('dis', "" + insons[institution_code].district);
-                }
-                else {
-                    util.setValue('reg', "" + services[institution_code].region);
-                    util.setValue('dis', "" + services[institution_code].district);
+                if (!args.questions) {
+                    if (inson_user) {
+                        util.setValue('reg', "" + insons[institution_code].region);
+                        util.setValue('dis', "" + insons[institution_code].district);
+                    }
+                    else {
+                        util.setValue('reg', "" + services[institution_code].region);
+                        util.setValue('dis', "" + services[institution_code].district);
+                    }
+
+                    util.setValue('q2', args.userData.name + " " + args.userData.patronymics + " " + args.userData.surname);
+                    util.setValue('q3', args.userData.job_title ? args.userData.job_title : "--");
+                    util.setValue('q4', args.userData.profession ? args.userData.profession : "--");
+                    util.setValue('inst', args.userData.institution_name ? args.userData.institution_name : "--");
+                    util.setValue('q5', args.userData.phone ? args.userData.phone : "--");
+                    util.setValue('q6', args.userData.email ? args.userData.email : "--");
                 }
 
-                util.setValue('q2', args.userData.name + " " + args.userData.patronymics + " " + args.userData.surname);
-                util.setValue('q3', args.userData.job_title ? args.userData.job_title : "--");
-                util.setValue('q4', args.userData.profession ? args.userData.profession : "--");
-                util.setValue('inst', args.userData.institution_name ? args.userData.institution_name : "--");
-                util.setValue('q5', args.userData.phone ? args.userData.phone : "--");
-                util.setValue('q6', args.userData.email ? args.userData.email : "--");
                 regionCode = args.userData.region_code;
                 userUUID = args.userData.uuid;
                 institutionType = args.userData.service_type_code;
@@ -232,11 +234,10 @@ for (let x = 0; x < regElements.length; x++) {
         }
 
         util.listen(regElements[x], "change", function () {
-
             const selectedRegion = util.htmlElement(regElements[x]).value;
+
             if (Number(selectedRegion) > 0) {
                 const dis_codes = regions[selectedRegion].districts;
-
                 util.resetSelect(disElements[x], "-9", translations['t_choose']);
                 for (let i = 0; i < dis_codes.length; i++) {
                     util.addOption(

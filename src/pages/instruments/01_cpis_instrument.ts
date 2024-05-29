@@ -291,52 +291,51 @@ export const instrument1 = {
 
             util.setValue("data", util.customDate());
 
-            // set default values for user, IRRESPECTIVE of the instrument
             if (args.userData) {
-                let institution_name = "--";
-                util.setValue("sh5s", "--");
+                // set default values, if new instrument
+                if (!args.questions) {
+                    let institution_name = "--";
+                    util.setValue("sh5s", "--");
 
-                if (inson_user) {
-                    const inson = { ...insons[args.userData.institution_code] } as KeyStringNumber;
-                    institution_name = "" + inson['name_' + lang];
-                    util.setValue('reg', insons[args.userData.institution_code].region);
-                    util.setValue('dis', insons[args.userData.institution_code].district);
-                    util.setValue('omr8a', "2");
+                    if (inson_user) {
+                        const inson = { ...insons[args.userData.institution_code] } as KeyStringNumber;
+                        institution_name = "" + inson['name_' + lang];
+                        util.setValue('reg', insons[args.userData.institution_code].region);
+                        util.setValue('dis', insons[args.userData.institution_code].district);
+                        util.setValue('omr8a', "2");
 
-                    if (insons[institution_code].settlement) {
-                        util.setValue("sh5s", insons[institution_code].settlement);
+                        if (insons[institution_code].settlement) {
+                            util.setValue("sh5s", insons[institution_code].settlement);
+                        }
+                        util.setValue("sh5", serviceCode);
                     }
-                    util.setValue("sh5", serviceCode);
-                }
-                else {
-                    const serviciu = { ...services[institution_code] } as KeyStringNumber;
-                    institution_name = '' + serviciu['name_' + lang];
-                    util.setValue('reg', "" + services[institution_code].region);
-                    util.setValue('dis', services[institution_code].district);
-                    if (services[institution_code].settlement) {
-                        util.setValue("sh5s", services[institution_code].settlement);
+                    else {
+                        const serviciu = { ...services[institution_code] } as KeyStringNumber;
+                        institution_name = '' + serviciu['name_' + lang];
+                        util.setValue('reg', "" + services[institution_code].region);
+                        util.setValue('dis', services[institution_code].district);
+                        if (services[institution_code].settlement) {
+                            util.setValue("sh5s", services[institution_code].settlement);
+                        }
+                        util.setValue("sh5", institution_code);
+                        util.setValue('omr8a', "1");
+                        serviceCode = institution_code;
                     }
-                    util.setValue("sh5", institution_code);
-                    util.setValue('omr8a', "1");
-                    serviceCode = institution_code;
+
+                    util.setValue("omr8", institution_name);
+                    util.setValue('omr1', args.userData.name ? args.userData.name : "--");
+                    util.setValue('omr2', args.userData.patronymics ? args.userData.patronymics : "--");
+                    util.setValue('omr3', args.userData.surname ? args.userData.surname : "--");
+                    util.setValue('omr4', args.userData.job_title ? args.userData.job_title : "--");
+                    util.setValue('omr5', args.userData.profession ? args.userData.profession : "--");
+                    util.setValue('omr6', args.userData.phone ? args.userData.phone : "--");
+                    util.setValue('omr7', args.userData.email ? args.userData.email : "--");
                 }
 
-                util.setValue("omr8", institution_name);
-                util.setValue('omr1', args.userData.name ? args.userData.name : "--");
-                util.setValue('omr2', args.userData.patronymics ? args.userData.patronymics : "--");
-                util.setValue('omr3', args.userData.surname ? args.userData.surname : "--");
-                util.setValue('omr4', args.userData.job_title ? args.userData.job_title : "--");
-                util.setValue('omr5', args.userData.profession ? args.userData.profession : "--");
-                util.setValue('omr6', args.userData.phone ? args.userData.phone : "--");
-                util.setValue('omr7', args.userData.email ? args.userData.email : "--");
                 regionCode = args.userData.region_code;
                 userUUID = args.userData.uuid;
                 institutionType = args.userData.service_type_code;
-                institutionCode = args.userData.institution_code;              
-
-                // util.setValue("sh5", institution_code);
-                // util.setValue("sh5a", institution_name);
-                // util.setValue("sh5b", location);
+                institutionCode = args.userData.institution_code;
             }
 
             instrument.start(instrumentID, instrument.trimis, saveChestionar, validateChestionar);
