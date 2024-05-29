@@ -33,14 +33,9 @@ SELECT * FROM st_read('utilizatori.xlsx', layer = 'utilizatori', open_options = 
 
 -- Create institutions table
 
-INSTALL spatial;
-LOAD spatial;
-
 DROP TABLE institutions;
 DROP SEQUENCE id_institution_sequence;
-
 CREATE SEQUENCE id_institution_sequence START 1;
-
 CREATE TABLE institutions (
     id INTEGER DEFAULT nextval('id_institution_sequence'),
     uuid UUID DEFAULT uuid(),
@@ -61,14 +56,11 @@ CREATE TABLE institutions (
     employees INTEGER,
     inson INTEGER,
     changed BOOLEAN DEFAULT FALSE,
-    activcode1 VARCHAR,
-    activcode2 VARCHAR,
-    activcode3 VARCHAR,
-    activcode4 VARCHAR,
-    activcode5 VARCHAR,
     PRIMARY KEY (id)
 );
 
+INSTALL spatial;
+LOAD spatial;
 INSERT INTO institutions
 SELECT * FROM st_read('Services.xlsx', layer = 'Sheet1', open_options = ['HEADERS=FORCE']);
 
@@ -405,6 +397,17 @@ INSERT INTO fth_codes
 SELECT * FROM st_read('fth_codes.xlsx', layer = 'fth_codes', open_options = ['HEADERS=FORCE']);
 
 
+UPDATE instrument_cpis SET status = 'completed';
+UPDATE instrument_cibs SET status = 'completed';
+UPDATE instrument_csr SET status = 'completed';
+UPDATE instrument_qmr SET status = 'completed';
+UPDATE instrument_tqyp SET status = 'completed';
+UPDATE instrument_yplcs SET status = 'completed';
+UPDATE instrument_dsee SET status = 'completed';
+UPDATE instrument_ftch SET status = 'completed';
+UPDATE instrument_pfq SET status = 'completed';
+UPDATE instrument_eef SET status = 'completed';
+
 -- clear all instruments data
 DELETE FROM instrument_cpis;
 DELETE FROM values_cpis;
@@ -427,13 +430,5 @@ DELETE FROM values_pfq;
 DELETE FROM instrument_eef;
 DELETE FROM values_eef;
 
-UPDATE instrument_cpis SET status = 'completed';
-UPDATE instrument_cibs SET status = 'completed';
-UPDATE instrument_csr SET status = 'completed';
-UPDATE instrument_qmr SET status = 'completed';
-UPDATE instrument_tqyp SET status = 'completed';
-UPDATE instrument_yplcs SET status = 'completed';
-UPDATE instrument_dsee SET status = 'completed';
-UPDATE instrument_ftch SET status = 'completed';
-UPDATE instrument_pfq SET status = 'completed';
-UPDATE instrument_eef SET status = 'completed';
+UPDATE fth_codes SET used = FALSE;
+UPDATE auth_codes SET used = FALSE;
