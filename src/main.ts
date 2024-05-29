@@ -10,12 +10,12 @@ import { db, database } from "./database/database";
 import * as DI from "./interfaces/database";
 import * as fs from 'fs';
 import { crypt } from './libraries/crypt';
-import build_templates from "./libraries/build_templates";
+// import build_templates from "./libraries/build_templates";
 import constant from "./libraries/constants";
 
-if (process.env.NODE_ENV === "development") {
-    build_templates();
-}
+// if (process.env.NODE_ENV === "development") {
+//     build_templates();
+// }
 
 // language
 import { I18n } from "i18n";

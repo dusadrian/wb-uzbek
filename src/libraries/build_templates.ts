@@ -1,8 +1,8 @@
 
-// translate pages
-import { Eta } from "eta"
-import { writeFileSync } from "original-fs";
-import * as path from "path";
+// // translate pages
+// import { Eta } from "eta"
+// import { writeFileSync } from "original-fs";
+// import * as path from "path";
 
 // Instrument 1
 // import * as one_en from "../templates/1_UZ_ChildDI_Children_in_the_child_care_system_en.json";
@@ -57,18 +57,18 @@ import * as path from "path";
 
 export default function build_templates() {
 
-    const etaObj = new Eta({ views: path.join(__dirname, "../../src/templates") })
+    // const etaObj = new Eta({ views: path.join(__dirname, "../../src/templates") })
 
     // Instrument 1
     // writeFileSync(path.join(__dirname, "../../src/templates/1_UZ_ChildDI_Children_in_the_child_care_system_en.html"), etaObj.render("1_UZ_ChildDI_Children_in_the_child_care_system.eta", one_en))
     // writeFileSync(path.join(__dirname, "../../src/templates/1_UZ_ChildDI_Children_in_the_child_care_system_ru.html"), etaObj.render("1_UZ_ChildDI_Children_in_the_child_care_system.eta", one_ru))
     // writeFileSync(path.join(__dirname, "../../src/templates/1_UZ_ChildDI_Children_in_the_child_care_system_uz.html"), etaObj.render("1_UZ_ChildDI_Children_in_the_child_care_system.eta", one_uz))
-    
+
     // Instrument 2
     // writeFileSync(path.join(__dirname, "../../src/templates/2_UZ_ChildDI_Children_in_boarding_schools_en.html"), etaObj.render("2_UZ_ChildDI_Children_in_boarding_schools.eta", one_en))
     // writeFileSync(path.join(__dirname, "../../src/templates/2_UZ_ChildDI_Children_in_boarding_schools_ru.html"), etaObj.render("2_UZ_ChildDI_Children_in_boarding_schools.eta", one_ru))
     // writeFileSync(path.join(__dirname, "../../src/templates/2_UZ_ChildDI_Children_in_boarding_schools_uz.html"), etaObj.render("2_UZ_ChildDI_Children_in_boarding_schools.eta", one_uz))
-    
+
     // Instrument 3
     // writeFileSync(path.join(__dirname, "../../src/templates/3_UZ_ChildDI_Staff_Registry_en.html"), etaObj.render("3_UZ_ChildDI_Staff_Registry.eta", one_en))
     // writeFileSync(path.join(__dirname, "../../src/templates/3_UZ_ChildDI_Staff_Registry_ru.html"), etaObj.render("3_UZ_ChildDI_Staff_Registry.eta", one_ru))
@@ -83,7 +83,7 @@ export default function build_templates() {
     // writeFileSync(path.join(__dirname, "../../src/templates/5_UZ_ChildDI_Youth_Leaving_Care_en.html"), etaObj.render("5_UZ_ChildDI_Youth_Leaving_Care.eta", one_en))
     // writeFileSync(path.join(__dirname, "../../src/templates/5_UZ_ChildDI_Youth_Leaving_Care_ru.html"), etaObj.render("5_UZ_ChildDI_Youth_Leaving_Care.eta", one_ru))
     // writeFileSync(path.join(__dirname, "../../src/templates/5_UZ_ChildDI_Youth_Leaving_Care_uz.html"), etaObj.render("5_UZ_ChildDI_Youth_Leaving_Care.eta", one_uz))
-    
+
     // Instrument 5a
     // writeFileSync(path.join(__dirname, "../../src/templates/5A_UZ_ChildDI_Trace_Questionnaire_en.html"), etaObj.render("5A_UZ_ChildDI_Trace_Questionnaire.eta", one_en))
     // writeFileSync(path.join(__dirname, "../../src/templates/5A_UZ_ChildDI_Trace_Questionnaire_ru.html"), etaObj.render("5A_UZ_ChildDI_Trace_Questionnaire.eta", one_ru))
@@ -103,7 +103,7 @@ export default function build_templates() {
     // writeFileSync(path.join(__dirname, "../../src/templates/8_UZ_ChildDI_Patronat_Family_en.html"), etaObj.render("8_UZ_ChildDI_Patronat_Family.eta", one_en))
     // writeFileSync(path.join(__dirname, "../../src/templates/8_UZ_ChildDI_Patronat_Family_ru.html"), etaObj.render("8_UZ_ChildDI_Patronat_Family.eta", one_ru))
     // writeFileSync(path.join(__dirname, "../../src/templates/8_UZ_ChildDI_Patronat_Family_uz.html"), etaObj.render("8_UZ_ChildDI_Patronat_Family.eta", one_uz))
-    
+
     // Instrument 9
     // writeFileSync(path.join(__dirname, "../../src/templates/9_UZ_ChildDI_External_Evaluation_Form_en.html"), etaObj.render("9_UZ_ChildDI_External_Evaluation_Form.eta", one_en))
     // writeFileSync(path.join(__dirname, "../../src/templates/9_UZ_ChildDI_External_Evaluation_Form_ru.html"), etaObj.render("9_UZ_ChildDI_External_Evaluation_Form.eta", one_ru))

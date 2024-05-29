@@ -344,11 +344,14 @@ export const regions: Code_Names = {
     }
 }
 
+
+
 export const districts: Code_Names = {
     "1703202": {
         "en": "Oltinko'l district",
         "uz": "Oltinko‘l tumani",
         "ru": "Алтынкульский район",
+        "type": "31",
         "settlements": [
             "1703202552",
             "1703202554",
@@ -368,6 +371,7 @@ export const districts: Code_Names = {
         "en": "Andijon district",
         "uz": "Andijon tumani",
         "ru": "Андижанский район",
+        "type": "31",
         "settlements": [
             "1703203551",
             "1703203553",
@@ -395,6 +399,7 @@ export const districts: Code_Names = {
         "en": "Baliqchi district",
         "uz": "Baliqchi tumani",
         "ru": "Балыкчинский район",
+        "type": "31",
         "settlements": [
             "1703206551",
             "1703206554",
@@ -406,6 +411,7 @@ export const districts: Code_Names = {
         "en": "Bo'ston district",
         "uz": "Bo‘ston tumani",
         "ru": "Бустонский район",
+        "type": "31",
         "settlements": [
             "1703209551",
             "1703209555",
@@ -417,6 +423,7 @@ export const districts: Code_Names = {
         "en": "Buloqboshi district",
         "uz": "Buloqboshi tumani",
         "ru": "Булакбашинский район",
+        "type": "31",
         "settlements": [
             "1703210551",
             "1703210554",
@@ -429,6 +436,7 @@ export const districts: Code_Names = {
         "en": "Jalaquduq district",
         "uz": "Jalaquduq tumani",
         "ru": "Жалакудукский район",
+        "type": "31",
         "settlements": [
             "1703211501",
             "1703211554",
@@ -445,6 +453,7 @@ export const districts: Code_Names = {
         "en": "Izboskan district",
         "uz": "Izboskan tumani",
         "ru": "Избасканский район",
+        "type": "31",
         "settlements": [
             "1703214501",
             "1703214553",
@@ -458,6 +467,7 @@ export const districts: Code_Names = {
         "en": "Ulug'nor district",
         "uz": "Ulug‘nor tumani",
         "ru": "Улугноpский район",
+        "type": "31",
         "settlements": [
             "1703217551",
             "1703217800"
@@ -467,6 +477,7 @@ export const districts: Code_Names = {
         "en": "Qo'rg'ontepa district",
         "uz": "Qo‘rg‘ontepa tumani",
         "ru": "Кургантепинский район",
+        "type": "31",
         "settlements": [
             "1703220501",
             "1703220505",
@@ -478,6 +489,7 @@ export const districts: Code_Names = {
         "en": "Asaka district",
         "uz": "Asaka tumani",
         "ru": "Асакинский район",
+        "type": "31",
         "settlements": [
             "1703224501",
             "1703224552",
@@ -491,6 +503,7 @@ export const districts: Code_Names = {
         "en": "Marxamat district",
         "uz": "Marxamat tumani",
         "ru": "Мархаматский район",
+        "type": "31",
         "settlements": [
             "1703227501",
             "1703227554",
@@ -510,6 +523,7 @@ export const districts: Code_Names = {
         "en": "Shaxrixon district",
         "uz": "Shaxrixon tumani",
         "ru": "Шахриханский район",
+        "type": "31",
         "settlements": [
             "1703230501",
             "1703230552",
@@ -522,6 +536,7 @@ export const districts: Code_Names = {
         "en": "Paxtaobod district",
         "uz": "Paxtaobod tumani",
         "ru": "Пахтаабадский район",
+        "type": "31",
         "settlements": [
             "1703232501",
             "1703232556",
@@ -534,6 +549,7 @@ export const districts: Code_Names = {
         "en": "Xo'jaobod district",
         "uz": "Xo‘jaobod tumani",
         "ru": "Ходжаабадский район",
+        "type": "31",
         "settlements": [
             "1703236501",
             "1703236552",
@@ -548,6 +564,7 @@ export const districts: Code_Names = {
         "en": "Andijon",
         "uz": "Andijon",
         "ru": "Андижан",
+        "type": "31",
         "settlements": [
             "1703401000"
         ]
@@ -556,6 +573,7 @@ export const districts: Code_Names = {
         "en": "Xonobod",
         "uz": "Xonobod",
         "ru": "Ханабад",
+        "type": "31",
         "settlements": [
             "1703408000",
             "1703408553"
@@ -565,6 +583,7 @@ export const districts: Code_Names = {
         "en": "Olot district",
         "uz": "Olot tumani",
         "ru": "Алатский район",
+        "type": "31",
         "settlements": [
             "1706204501",
             "1706204552",
@@ -582,6 +601,7 @@ export const districts: Code_Names = {
         "en": "Buxoro district",
         "uz": "Buxoro tumani",
         "ru": "Бухарский район",
+        "type": "31",
         "settlements": [
             "1706207501",
             "1706207553",
@@ -597,6 +617,7 @@ export const districts: Code_Names = {
         "en": "Vobkent district",
         "uz": "Vobkent tumani",
         "ru": "Вабкентский район",
+        "type": "31",
         "settlements": [
             "1706212501",
             "1706212554",
@@ -609,6 +630,7 @@ export const districts: Code_Names = {
         "en": "G'ijduvon district",
         "uz": "G‘ijduvon tumani",
         "ru": "Гиждуванский район",
+        "type": "31",
         "settlements": [
             "1706215501",
             "1706215556",
@@ -630,6 +652,7 @@ export const districts: Code_Names = {
         "en": "Kogon district",
         "uz": "Kogon tumani",
         "ru": "Каганский район",
+        "type": "31",
         "settlements": [
             "1706219557",
             "1706219559",
@@ -640,6 +663,7 @@ export const districts: Code_Names = {
         "en": "Qorako'l district",
         "uz": "Qorako‘l tumani",
         "ru": "Каракульский район",
+        "type": "31",
         "settlements": [
             "1706230501",
             "1706230552",
@@ -661,6 +685,7 @@ export const districts: Code_Names = {
         "en": "Qorovulbozor district",
         "uz": "Qorovulbozor tumani",
         "ru": "Караулбазарский район",
+        "type": "31",
         "settlements": [
             "1706232501",
             "1706232800"
@@ -670,6 +695,7 @@ export const districts: Code_Names = {
         "en": "Peshku district",
         "uz": "Peshku tumani",
         "ru": "Пешкунский район",
+        "type": "31",
         "settlements": [
             "1706240551",
             "1706240553",
@@ -682,6 +708,7 @@ export const districts: Code_Names = {
         "en": "Romitan district",
         "uz": "Romitan tumani",
         "ru": "Ромитанский район",
+        "type": "31",
         "settlements": [
             "1706242501",
             "1706242505",
@@ -695,6 +722,7 @@ export const districts: Code_Names = {
         "en": "Jondor district",
         "uz": "Jondor tumani",
         "ru": "Жондоpский район",
+        "type": "31",
         "settlements": [
             "1706246551",
             "1706246552",
@@ -712,6 +740,7 @@ export const districts: Code_Names = {
         "en": "Shofirkon district",
         "uz": "Shofirkon tumani",
         "ru": "Шафирканский район",
+        "type": "31",
         "settlements": [
             "1706258501",
             "1706258552",
@@ -729,6 +758,7 @@ export const districts: Code_Names = {
         "en": "Buxoro",
         "uz": "Buxoro",
         "ru": "Бухара",
+        "type": "31",
         "settlements": [
             "1706401000",
             "1706401800"
@@ -738,6 +768,7 @@ export const districts: Code_Names = {
         "en": "Kogon",
         "uz": "Kogon",
         "ru": "Каган",
+        "type": "31",
         "settlements": [
             "1706403000"
         ]
@@ -746,6 +777,7 @@ export const districts: Code_Names = {
         "en": "Arnasoy district",
         "uz": "Arnasoy tumani",
         "ru": "Арнасайский район",
+        "type": "31",
         "settlements": [
             "1708201551",
             "1708201800"
@@ -755,6 +787,7 @@ export const districts: Code_Names = {
         "en": "Baxmal district",
         "uz": "Baxmal tumani",
         "ru": "Бахмальский район",
+        "type": "31",
         "settlements": [
             "1708204551",
             "1708204554",
@@ -766,6 +799,7 @@ export const districts: Code_Names = {
         "en": "G'allaorol district",
         "uz": "G‘allaorol tumani",
         "ru": "Галляаральский район",
+        "type": "31",
         "settlements": [
             "1708209501",
             "1708209559",
@@ -781,6 +815,7 @@ export const districts: Code_Names = {
         "en": "Sharof Rashidov district",
         "uz": "Sharof Rashidov tumani",
         "ru": "Шароф Рашидовский район",
+        "type": "31",
         "settlements": [
             "1708212551",
             "1708212552",
@@ -796,6 +831,7 @@ export const districts: Code_Names = {
         "en": "Do'stlik district",
         "uz": "Do‘stlik tumani",
         "ru": "Дустликский район",
+        "type": "31",
         "settlements": [
             "1708215501",
             "1708215800"
@@ -805,6 +841,7 @@ export const districts: Code_Names = {
         "en": "Zomin district",
         "uz": "Zomin tumani",
         "ru": "Зааминский район",
+        "type": "31",
         "settlements": [
             "1708218503",
             "1708218551",
@@ -816,6 +853,7 @@ export const districts: Code_Names = {
         "en": "Zarbdor district",
         "uz": "Zarbdor tumani",
         "ru": "Зарбдарский район",
+        "type": "31",
         "settlements": [
             "1708220551",
             "1708220553",
@@ -828,6 +866,7 @@ export const districts: Code_Names = {
         "en": "Mirzacho'l district",
         "uz": "Mirzacho‘l tumani",
         "ru": "Мирзачульский район",
+        "type": "31",
         "settlements": [
             "1708223501",
             "1708223555",
@@ -839,6 +878,7 @@ export const districts: Code_Names = {
         "en": "Zafarobod district",
         "uz": "Zafarobod tumani",
         "ru": "Зафарабадский район",
+        "type": "31",
         "settlements": [
             "1708225551",
             "1708225800"
@@ -848,6 +888,7 @@ export const districts: Code_Names = {
         "en": "Paxtakor district",
         "uz": "Paxtakor tumani",
         "ru": "Пахтакорский район",
+        "type": "31",
         "settlements": [
             "1708228501",
             "1708228800"
@@ -857,6 +898,7 @@ export const districts: Code_Names = {
         "en": "Forish district",
         "uz": "Forish tumani",
         "ru": "Фаришский район",
+        "type": "31",
         "settlements": [
             "1708235551",
             "1708235560",
@@ -867,6 +909,7 @@ export const districts: Code_Names = {
         "en": "Yangiobod district",
         "uz": "Yangiobod tumani",
         "ru": "Янгиободский район",
+        "type": "31",
         "settlements": [
             "1708237800"
         ]
@@ -875,6 +918,7 @@ export const districts: Code_Names = {
         "en": "Jizzax",
         "uz": "Jizzax",
         "ru": "Джизак",
+        "type": "31",
         "settlements": [
             "1708401000"
         ]
@@ -883,6 +927,7 @@ export const districts: Code_Names = {
         "en": "G'uzor district",
         "uz": "G‘uzor tumani",
         "ru": "Гузарский район",
+        "type": "31",
         "settlements": [
             "1710207501",
             "1710207558",
@@ -896,6 +941,7 @@ export const districts: Code_Names = {
         "en": "Dehqonobod district",
         "uz": "Dehqonobod tumani",
         "ru": "Дехканабадский район",
+        "type": "31",
         "settlements": [
             "1710212551",
             "1710212553",
@@ -907,6 +953,7 @@ export const districts: Code_Names = {
         "en": "Qamashi district",
         "uz": "Qamashi tumani",
         "ru": "Камашинский район",
+        "type": "31",
         "settlements": [
             "1710220501",
             "1710220552",
@@ -921,6 +968,7 @@ export const districts: Code_Names = {
         "en": "Qarshi district",
         "uz": "Qarshi tumani",
         "ru": "Каршинский район",
+        "type": "31",
         "settlements": [
             "1710224501",
             "1710224553",
@@ -946,6 +994,7 @@ export const districts: Code_Names = {
         "en": "Koson district",
         "uz": "Koson tumani",
         "ru": "Касанский район",
+        "type": "31",
         "settlements": [
             "1710229501",
             "1710229552",
@@ -969,6 +1018,7 @@ export const districts: Code_Names = {
         "en": "Kitob district",
         "uz": "Kitob tumani",
         "ru": "Китабский район",
+        "type": "31",
         "settlements": [
             "1710232501",
             "1710232553",
@@ -991,6 +1041,7 @@ export const districts: Code_Names = {
         "en": "Mirishkor district",
         "uz": "Mirishkor tumani",
         "ru": "Миришкорский район",
+        "type": "31",
         "settlements": [
             "1710233551",
             "1710233555",
@@ -1002,6 +1053,7 @@ export const districts: Code_Names = {
         "en": "Muborak district",
         "uz": "Muborak tumani",
         "ru": "Мубарекский район",
+        "type": "31",
         "settlements": [
             "1710234501",
             "1710234552",
@@ -1016,6 +1068,7 @@ export const districts: Code_Names = {
         "en": "Nishon district",
         "uz": "Nishon tumani",
         "ru": "Нишанский район",
+        "type": "31",
         "settlements": [
             "1710235501",
             "1710235505",
@@ -1032,6 +1085,7 @@ export const districts: Code_Names = {
         "en": "Kasbi district",
         "uz": "Kasbi tumani",
         "ru": "Касбинский район",
+        "type": "31",
         "settlements": [
             "1710237551",
             "1710237554",
@@ -1049,6 +1103,7 @@ export const districts: Code_Names = {
         "en": "Kokdala district",
         "uz": "Ko‘kdala tumani",
         "ru": "Кукдала район",
+        "type": "31",
         "settlements": [
             "1710240551",
             "1710240568",
@@ -1061,6 +1116,7 @@ export const districts: Code_Names = {
         "en": "Chiroqchi district",
         "uz": "Chiroqchi tumani",
         "ru": "Чиракчинский район",
+        "type": "31",
         "settlements": [
             "1710242501",
             "1710242553",
@@ -1075,6 +1131,7 @@ export const districts: Code_Names = {
         "en": "Shahrisabz district",
         "uz": "Shahrisabz tumani",
         "ru": "Шахрисабзский район",
+        "type": "31",
         "settlements": [
             "1710245553",
             "1710245555",
@@ -1095,6 +1152,7 @@ export const districts: Code_Names = {
         "en": "Yakkabog' district",
         "uz": "Yakkabog‘ tumani",
         "ru": "Яккабагский район",
+        "type": "31",
         "settlements": [
             "1710250501",
             "1710250555",
@@ -1117,6 +1175,7 @@ export const districts: Code_Names = {
         "en": "Qarshi",
         "uz": "Qarshi",
         "ru": "Карши",
+        "type": "31",
         "settlements": [
             "1710401000",
             "1710401555"
@@ -1126,6 +1185,7 @@ export const districts: Code_Names = {
         "en": "Shahrisabz",
         "uz": "Shahrisabz",
         "ru": "Шахрисабз",
+        "type": "31",
         "settlements": [
             "1710405000"
         ]
@@ -1134,6 +1194,7 @@ export const districts: Code_Names = {
         "en": "Konimex district",
         "uz": "Konimex tumani",
         "ru": "Канимехский район",
+        "type": "31",
         "settlements": [
             "1712211551",
             "1712211554",
@@ -1146,6 +1207,7 @@ export const districts: Code_Names = {
         "en": "Qiziltepa district",
         "uz": "Qiziltepa tumani",
         "ru": "Кызылтепинский район",
+        "type": "31",
         "settlements": [
             "1712216501",
             "1712216552",
@@ -1167,6 +1229,7 @@ export const districts: Code_Names = {
         "en": "Navbahor district",
         "uz": "Navbahor tumani",
         "ru": "Навбахорский район",
+        "type": "31",
         "settlements": [
             "1712230552",
             "1712230553",
@@ -1180,6 +1243,7 @@ export const districts: Code_Names = {
         "en": "Karmana district",
         "uz": "Karmana tumani",
         "ru": "Карманинский район",
+        "type": "31",
         "settlements": [
             "1712234551",
             "1712234557",
@@ -1193,6 +1257,7 @@ export const districts: Code_Names = {
         "en": "Nurota district",
         "uz": "Nurota tumani",
         "ru": "Нуратинский район",
+        "type": "31",
         "settlements": [
             "1712238501",
             "1712238555",
@@ -1206,6 +1271,7 @@ export const districts: Code_Names = {
         "en": "Uchquduq district",
         "uz": "Uchquduq tumani",
         "ru": "Учкудукский район",
+        "type": "31",
         "settlements": [
             "1712248501",
             "1712248800"
@@ -1215,6 +1281,7 @@ export const districts: Code_Names = {
         "en": "Xatirchi district",
         "uz": "Xatirchi tumani",
         "ru": "Хатырчинский район",
+        "type": "31",
         "settlements": [
             "1712251501",
             "1712251558",
@@ -1235,6 +1302,7 @@ export const districts: Code_Names = {
         "en": "Tomdi district",
         "uz": "Tomdi tumani",
         "ru": "Тамдынский район",
+        "type": "31",
         "settlements": [
             "1712244800"
         ]
@@ -1243,6 +1311,7 @@ export const districts: Code_Names = {
         "en": "Navoiy",
         "uz": "Navoiy",
         "ru": "Навои",
+        "type": "31",
         "settlements": [
             "1712401000",
             "1712401564"
@@ -1252,6 +1321,7 @@ export const districts: Code_Names = {
         "en": "Zarafshon",
         "uz": "Zarafshon",
         "ru": "Заpафшан",
+        "type": "31",
         "settlements": [
             "1712408000",
             "1712408556"
@@ -1261,6 +1331,7 @@ export const districts: Code_Names = {
         "en": "G'ozg'on",
         "uz": "G‘ozg‘on",
         "ru": "Газган",
+        "type": "31",
         "settlements": [
             "1712412000"
         ]
@@ -1269,6 +1340,7 @@ export const districts: Code_Names = {
         "en": "Mingbuloq district",
         "uz": "Mingbuloq tumani",
         "ru": "Мингбулакский pайон",
+        "type": "31",
         "settlements": [
             "1714204551",
             "1714204552",
@@ -1284,6 +1356,7 @@ export const districts: Code_Names = {
         "en": "Kosonsoy district",
         "uz": "Kosonsoy tumani",
         "ru": "Касансайский район",
+        "type": "31",
         "settlements": [
             "1714207501",
             "1714207552",
@@ -1303,6 +1376,7 @@ export const districts: Code_Names = {
         "en": "Namangan district",
         "uz": "Namangan tumani",
         "ru": "Наманганский район",
+        "type": "31",
         "settlements": [
             "1714212551",
             "1714212553",
@@ -1316,6 +1390,7 @@ export const districts: Code_Names = {
         "en": "Norin district",
         "uz": "Norin tumani",
         "ru": "Нарынский район",
+        "type": "31",
         "settlements": [
             "1714216501",
             "1714216552",
@@ -1333,6 +1408,7 @@ export const districts: Code_Names = {
         "en": "Pop district",
         "uz": "Pop tumani",
         "ru": "Папский район",
+        "type": "31",
         "settlements": [
             "1714219501",
             "1714219554",
@@ -1357,6 +1433,7 @@ export const districts: Code_Names = {
         "en": "To'raqo'rg'on district",
         "uz": "To‘raqo‘rg‘on tumani",
         "ru": "Туракурганский район",
+        "type": "31",
         "settlements": [
             "1714224501",
             "1714224554",
@@ -1379,6 +1456,7 @@ export const districts: Code_Names = {
         "en": "Uychi district",
         "uz": "Uychi tumani",
         "ru": "Уйчинский район",
+        "type": "31",
         "settlements": [
             "1714229551",
             "1714229555",
@@ -1400,6 +1478,7 @@ export const districts: Code_Names = {
         "en": "Uchqo'rg'on district",
         "uz": "Uchqo‘rg‘on tumani",
         "ru": "Учкурганский район",
+        "type": "31",
         "settlements": [
             "1714234501",
             "1714234552",
@@ -1413,6 +1492,7 @@ export const districts: Code_Names = {
         "en": "Chortoq district",
         "uz": "Chortoq tumani",
         "ru": "Чартакский район",
+        "type": "31",
         "settlements": [
             "1714236501",
             "1714236552",
@@ -1432,6 +1512,7 @@ export const districts: Code_Names = {
         "en": "Chust district",
         "uz": "Chust tumani",
         "ru": "Чустский район",
+        "type": "31",
         "settlements": [
             "1714237501",
             "1714237552",
@@ -1452,6 +1533,7 @@ export const districts: Code_Names = {
         "en": "Yangiqo'rg'on district",
         "uz": "Yangiqo‘rg‘on tumani",
         "ru": "Янгикурганский район",
+        "type": "31",
         "settlements": [
             "1714242551",
             "1714242553",
@@ -1479,6 +1561,7 @@ export const districts: Code_Names = {
         "en": "Namangan",
         "uz": "Namangan",
         "ru": "Наманган",
+        "type": "31",
         "settlements": [
             "1714401000",
             "1714401365",
@@ -1489,6 +1572,7 @@ export const districts: Code_Names = {
         "en": "Oqdaryo district",
         "uz": "Oqdaryo tumani",
         "ru": "Акдарьинский район",
+        "type": "31",
         "settlements": [
             "1718203551",
             "1718203555",
@@ -1507,6 +1591,7 @@ export const districts: Code_Names = {
         "en": "Bulung'ur district",
         "uz": "Bulung‘ur tumani",
         "ru": "Булунгурский район",
+        "type": "31",
         "settlements": [
             "1718206501",
             "1718206553",
@@ -1519,6 +1604,7 @@ export const districts: Code_Names = {
         "en": "Jomboy district",
         "uz": "Jomboy tumani",
         "ru": "Джамбайский район",
+        "type": "31",
         "settlements": [
             "1718209501",
             "1718209554",
@@ -1533,6 +1619,7 @@ export const districts: Code_Names = {
         "en": "Ishtixon district",
         "uz": "Ishtixon tumani",
         "ru": "Иштыханский район",
+        "type": "31",
         "settlements": [
             "1718212501",
             "1718212555",
@@ -1554,6 +1641,7 @@ export const districts: Code_Names = {
         "en": "Kattaqo'rg'on district",
         "uz": "Kattaqo‘rg‘on tumani",
         "ru": "Каттакурганский район",
+        "type": "31",
         "settlements": [
             "1718215551",
             "1718215554",
@@ -1570,6 +1658,7 @@ export const districts: Code_Names = {
         "en": "Qo'shrabot district",
         "uz": "Qo‘shrabot tumani",
         "ru": "Кошрабадский район",
+        "type": "31",
         "settlements": [
             "1718216551",
             "1718216555",
@@ -1580,6 +1669,7 @@ export const districts: Code_Names = {
         "en": "Narpay district",
         "uz": "Narpay tumani",
         "ru": "Нарпайский район",
+        "type": "31",
         "settlements": [
             "1718218501",
             "1718218554",
@@ -1592,6 +1682,7 @@ export const districts: Code_Names = {
         "en": "Payariq district",
         "uz": "Payariq tumani",
         "ru": "Пайарыкский район",
+        "type": "31",
         "settlements": [
             "1718224501",
             "1718224502",
@@ -1611,6 +1702,7 @@ export const districts: Code_Names = {
         "en": "Pastdarg'om district",
         "uz": "Pastdarg‘om tumani",
         "ru": "Пастдаргомский район",
+        "type": "31",
         "settlements": [
             "1718227501",
             "1718227558",
@@ -1632,6 +1724,7 @@ export const districts: Code_Names = {
         "en": "Paxtachi district",
         "uz": "Paxtachi tumani",
         "ru": "Пахтачийский район",
+        "type": "31",
         "settlements": [
             "1718230551",
             "1718230553",
@@ -1646,6 +1739,7 @@ export const districts: Code_Names = {
         "en": "Samarqand district",
         "uz": "Samarqand tumani",
         "ru": "Самаркандский район",
+        "type": "31",
         "settlements": [
             "1718233551",
             "1718233555",
@@ -1656,6 +1750,7 @@ export const districts: Code_Names = {
         "en": "Nurobod district",
         "uz": "Nurobod tumani",
         "ru": "Нурабадский район",
+        "type": "31",
         "settlements": [
             "1718235501",
             "1718235556",
@@ -1666,6 +1761,7 @@ export const districts: Code_Names = {
         "en": "Urgut district",
         "uz": "Urgut tumani",
         "ru": "Ургутский район",
+        "type": "31",
         "settlements": [
             "1718236501",
             "1718236553",
@@ -1682,6 +1778,7 @@ export const districts: Code_Names = {
         "en": "Tayloq district",
         "uz": "Tayloq tumani",
         "ru": "Тайлякский район",
+        "type": "31",
         "settlements": [
             "1718238551",
             "1718238554",
@@ -1693,6 +1790,7 @@ export const districts: Code_Names = {
         "en": "Samarqand",
         "uz": "Samarqand",
         "ru": "Самарканд",
+        "type": "31",
         "settlements": [
             "1718401000",
             "1718401554",
@@ -1704,6 +1802,7 @@ export const districts: Code_Names = {
         "en": "Kattaqo'rg'on",
         "uz": "Kattaqo‘rg‘on",
         "ru": "Каттакурган",
+        "type": "31",
         "settlements": [
             "1718406000",
             "1718406554"
@@ -1713,6 +1812,7 @@ export const districts: Code_Names = {
         "en": "Oltinsoy district",
         "uz": "Oltinsoy tumani",
         "ru": "Алтынсайский район",
+        "type": "31",
         "settlements": [
             "1722201551",
             "1722201553",
@@ -1735,6 +1835,7 @@ export const districts: Code_Names = {
         "en": "Angor district",
         "uz": "Angor tumani",
         "ru": "Ангорский район",
+        "type": "31",
         "settlements": [
             "1722202551",
             "1722202553",
@@ -1755,6 +1856,7 @@ export const districts: Code_Names = {
         "en": "Bandixon district",
         "uz": "Bandixon tumani",
         "ru": "Бандихонский район",
+        "type": "31",
         "settlements": [
             "1722203551",
             "1722203800"
@@ -1764,6 +1866,7 @@ export const districts: Code_Names = {
         "en": "Boysun district",
         "uz": "Boysun tumani",
         "ru": "Байсунский район",
+        "type": "31",
         "settlements": [
             "1722204501",
             "1722204552",
@@ -1777,6 +1880,7 @@ export const districts: Code_Names = {
         "en": "Muzrabot district",
         "uz": "Muzrabot tumani",
         "ru": "Музрабадский район",
+        "type": "31",
         "settlements": [
             "1722207551",
             "1722207553",
@@ -1795,6 +1899,7 @@ export const districts: Code_Names = {
         "en": "Denov district",
         "uz": "Denov tumani",
         "ru": "Денауский район",
+        "type": "31",
         "settlements": [
             "1722210501",
             "1722210554",
@@ -1815,6 +1920,7 @@ export const districts: Code_Names = {
         "en": "Jarqo'rg'on district",
         "uz": "Jarqo‘rg‘on tumani",
         "ru": "Джаркурганский район",
+        "type": "31",
         "settlements": [
             "1722212501",
             "1722212554",
@@ -1829,6 +1935,7 @@ export const districts: Code_Names = {
         "en": "Qumqo'rg'on district",
         "uz": "Qumqo‘rg‘on tumani",
         "ru": "Кумкурганский район",
+        "type": "31",
         "settlements": [
             "1722214501",
             "1722214570",
@@ -1849,6 +1956,7 @@ export const districts: Code_Names = {
         "en": "Qiziriq district",
         "uz": "Qiziriq tumani",
         "ru": "Кизирикский район",
+        "type": "31",
         "settlements": [
             "1722215551",
             "1722215553",
@@ -1862,6 +1970,7 @@ export const districts: Code_Names = {
         "en": "Sariosiyo district",
         "uz": "Sariosiyo tumani",
         "ru": "Сариасийский район",
+        "type": "31",
         "settlements": [
             "1722217505",
             "1722217551",
@@ -1875,6 +1984,7 @@ export const districts: Code_Names = {
         "en": "Termiz district",
         "uz": "Termiz tumani",
         "ru": "Термезский район",
+        "type": "31",
         "settlements": [
             "1722220551",
             "1722220553",
@@ -1890,6 +2000,7 @@ export const districts: Code_Names = {
         "en": "Uzun district",
         "uz": "Uzun tumani",
         "ru": "Узунский район",
+        "type": "31",
         "settlements": [
             "1722221551",
             "1722221553",
@@ -1907,6 +2018,7 @@ export const districts: Code_Names = {
         "en": "Sherobod district",
         "uz": "Sherobod tumani",
         "ru": "Шерабадский район",
+        "type": "31",
         "settlements": [
             "1722223501",
             "1722223552",
@@ -1923,6 +2035,7 @@ export const districts: Code_Names = {
         "en": "Sho'rchi district",
         "uz": "Sho‘rchi tumani",
         "ru": "Шурчинский район",
+        "type": "31",
         "settlements": [
             "1722226501",
             "1722226554",
@@ -1941,6 +2054,7 @@ export const districts: Code_Names = {
         "en": "Termiz",
         "uz": "Termiz",
         "ru": "Термез",
+        "type": "31",
         "settlements": [
             "1722401000"
         ]
@@ -1949,6 +2063,7 @@ export const districts: Code_Names = {
         "en": "Oqoltin district",
         "uz": "Oqoltin tumani",
         "ru": "Акалтынский район",
+        "type": "31",
         "settlements": [
             "1724206551",
             "1724206552",
@@ -1960,6 +2075,7 @@ export const districts: Code_Names = {
         "en": "Boyovut district",
         "uz": "Boyovut tumani",
         "ru": "Баяутский район",
+        "type": "31",
         "settlements": [
             "1724212551",
             "1724212552",
@@ -1972,6 +2088,7 @@ export const districts: Code_Names = {
         "en": "Sayxunobod district",
         "uz": "Sayxunobod tumani",
         "ru": "Сайхунабадский район",
+        "type": "31",
         "settlements": [
             "1724216551",
             "1724216553",
@@ -1984,6 +2101,7 @@ export const districts: Code_Names = {
         "en": "Guliston district",
         "uz": "Guliston tumani",
         "ru": "Гулистанский район",
+        "type": "31",
         "settlements": [
             "1724220551",
             "1724220552",
@@ -1995,6 +2113,7 @@ export const districts: Code_Names = {
         "en": "Sardoba district",
         "uz": "Sardoba tumani",
         "ru": "Сардобский район",
+        "type": "31",
         "settlements": [
             "1724226551",
             "1724226800"
@@ -2004,6 +2123,7 @@ export const districts: Code_Names = {
         "en": "Mirzaobod district",
         "uz": "Mirzaobod tumani",
         "ru": "Мирзаабадский район",
+        "type": "31",
         "settlements": [
             "1724228551",
             "1724228552",
@@ -2014,6 +2134,7 @@ export const districts: Code_Names = {
         "en": "Sirdaryo district",
         "uz": "Sirdaryo tumani",
         "ru": "Сырдарьинский район",
+        "type": "31",
         "settlements": [
             "1724231501",
             "1724231503",
@@ -2028,6 +2149,7 @@ export const districts: Code_Names = {
         "en": "Xovos district",
         "uz": "Xovos tumani",
         "ru": "Хавасский район",
+        "type": "31",
         "settlements": [
             "1724235551",
             "1724235553",
@@ -2038,6 +2160,7 @@ export const districts: Code_Names = {
         "en": "Guliston",
         "uz": "Guliston",
         "ru": "Гулистан",
+        "type": "31",
         "settlements": [
             "1724401000",
             "1724401800"
@@ -2047,6 +2170,7 @@ export const districts: Code_Names = {
         "en": "Shirin",
         "uz": "Shirin",
         "ru": "Шиpин",
+        "type": "31",
         "settlements": [
             "1724410000"
         ]
@@ -2055,6 +2179,7 @@ export const districts: Code_Names = {
         "en": "Yangiyer",
         "uz": "Yangiyer",
         "ru": "Янгиеp",
+        "type": "31",
         "settlements": [
             "1724413000"
         ]
@@ -2063,6 +2188,7 @@ export const districts: Code_Names = {
         "en": "Uchtepa district",
         "uz": "Uchtepa tumani",
         "ru": "Учтепинский район",
+        "type": "31",
         "settlements": [
             "1726262000"
         ]
@@ -2071,6 +2197,7 @@ export const districts: Code_Names = {
         "en": "Bektemir district",
         "uz": "Bektemir tumani",
         "ru": "Бектемирский район",
+        "type": "31",
         "settlements": [
             "1726264000"
         ]
@@ -2079,6 +2206,7 @@ export const districts: Code_Names = {
         "en": "Yunusobod district",
         "uz": "Yunusobod tumani",
         "ru": "Юнусабадский район",
+        "type": "31",
         "settlements": [
             "1726266000"
         ]
@@ -2087,6 +2215,7 @@ export const districts: Code_Names = {
         "en": "Mirzo Ulug'bek district",
         "uz": "Mirzo Ulug‘bek tumani",
         "ru": "Мирзо-Улугбекский район",
+        "type": "31",
         "settlements": [
             "1726269000",
             "1726269558"
@@ -2096,6 +2225,7 @@ export const districts: Code_Names = {
         "en": "Mirobod district",
         "uz": "Mirobod tumani",
         "ru": "Мирабадский район",
+        "type": "31",
         "settlements": [
             "1726273000"
         ]
@@ -2104,6 +2234,7 @@ export const districts: Code_Names = {
         "en": "Shayxontoxur district",
         "uz": "Shayxontoxur tumani",
         "ru": "Шайхантахурский район",
+        "type": "31",
         "settlements": [
             "1726277000"
         ]
@@ -2112,6 +2243,7 @@ export const districts: Code_Names = {
         "en": "Olmazor district",
         "uz": "Olmazor tumani",
         "ru": "Алмазарский район",
+        "type": "31",
         "settlements": [
             "1726280000"
         ]
@@ -2120,6 +2252,7 @@ export const districts: Code_Names = {
         "en": "Sirg'ali district",
         "uz": "Sirg‘ali tumani",
         "ru": "Сергелийский район",
+        "type": "31",
         "settlements": [
             "1726283000"
         ]
@@ -2128,6 +2261,7 @@ export const districts: Code_Names = {
         "en": "Yakkasaroy district",
         "uz": "Yakkasaroy tumani",
         "ru": "Яккасарайский район",
+        "type": "31",
         "settlements": [
             "1726287000"
         ]
@@ -2136,6 +2270,7 @@ export const districts: Code_Names = {
         "en": "Yashnobod district",
         "uz": "Yashnobod tumani",
         "ru": "Яшнободский район",
+        "type": "31",
         "settlements": [
             "1726290000"
         ]
@@ -2144,6 +2279,7 @@ export const districts: Code_Names = {
         "en": "Yangihayot district",
         "uz": "Yangihayot tumani",
         "ru": "Янгихаётский район",
+        "type": "31",
         "settlements": [
             "1726292000"
         ]
@@ -2152,6 +2288,7 @@ export const districts: Code_Names = {
         "en": "Chilonzor district",
         "uz": "Chilonzor tumani",
         "ru": "Чиланзарский район",
+        "type": "31",
         "settlements": [
             "1726294000"
         ]
@@ -2160,6 +2297,7 @@ export const districts: Code_Names = {
         "en": "Oqqo'rg'on district",
         "uz": "Oqqo‘rg‘on tumani",
         "ru": "Аккурганский район",
+        "type": "31",
         "settlements": [
             "1727206501",
             "1727206554",
@@ -2171,6 +2309,7 @@ export const districts: Code_Names = {
         "en": "Ohangaron district",
         "uz": "Ohangaron tumani",
         "ru": "Ахангаранский район",
+        "type": "31",
         "settlements": [
             "1727212552",
             "1727212554",
@@ -2184,6 +2323,7 @@ export const districts: Code_Names = {
         "en": "Bekobod district",
         "uz": "Bekobod tumani",
         "ru": "Бекабадский район",
+        "type": "31",
         "settlements": [
             "1727220551",
             "1727220553",
@@ -2197,6 +2337,7 @@ export const districts: Code_Names = {
         "en": "Bo'stonliq district",
         "uz": "Bo‘stonliq tumani",
         "ru": "Бостанлыкский район",
+        "type": "31",
         "settlements": [
             "1727224501",
             "1727224554",
@@ -2223,6 +2364,7 @@ export const districts: Code_Names = {
         "en": "Bo'ka district",
         "uz": "Bo‘ka tumani",
         "ru": "Букинский район",
+        "type": "31",
         "settlements": [
             "1727228501",
             "1727228800"
@@ -2232,6 +2374,7 @@ export const districts: Code_Names = {
         "en": "Quyichirchiq district",
         "uz": "Quyichirchiq tumani",
         "ru": "Куйичирчикский район",
+        "type": "31",
         "settlements": [
             "1727233501",
             "1727233552",
@@ -2243,6 +2386,7 @@ export const districts: Code_Names = {
         "en": "Zangiota district",
         "uz": "Zangiota tumani",
         "ru": "Зангиатинский район",
+        "type": "31",
         "settlements": [
             "1727237552",
             "1727237558",
@@ -2261,6 +2405,7 @@ export const districts: Code_Names = {
         "en": "Yuqorichirchiq district",
         "uz": "Yuqorichirchiq tumani",
         "ru": "Юкоричирчикский район",
+        "type": "31",
         "settlements": [
             "1727239551",
             "1727239553",
@@ -2272,6 +2417,7 @@ export const districts: Code_Names = {
         "en": "Qibray district",
         "uz": "Qibray tumani",
         "ru": "Кибрайский район",
+        "type": "31",
         "settlements": [
             "1727248551",
             "1727248556",
@@ -2293,6 +2439,7 @@ export const districts: Code_Names = {
         "en": "Parkent district",
         "uz": "Parkent tumani",
         "ru": "Паркентский район",
+        "type": "31",
         "settlements": [
             "1727249501",
             "1727249553",
@@ -2306,6 +2453,7 @@ export const districts: Code_Names = {
         "en": "Pskent district",
         "uz": "Pskent tumani",
         "ru": "Пскентский район",
+        "type": "31",
         "settlements": [
             "1727250501",
             "1727250554",
@@ -2317,6 +2465,7 @@ export const districts: Code_Names = {
         "en": "O'rtachirchiq district",
         "uz": "O‘rtachirchiq tumani",
         "ru": "Уртачирчикский район",
+        "type": "31",
         "settlements": [
             "1727253555",
             "1727253561",
@@ -2329,6 +2478,7 @@ export const districts: Code_Names = {
         "en": "Chinoz district",
         "uz": "Chinoz tumani",
         "ru": "Чиназский район",
+        "type": "31",
         "settlements": [
             "1727256501",
             "1727256553",
@@ -2347,6 +2497,7 @@ export const districts: Code_Names = {
         "en": "Yangiyo'l district",
         "uz": "Yangiyo‘l tumani",
         "ru": "Янгиюльский район",
+        "type": "31",
         "settlements": [
             "1727259553",
             "1727259555",
@@ -2359,6 +2510,7 @@ export const districts: Code_Names = {
         "en": "Toshkent district",
         "uz": "Toshkent tumani",
         "ru": "Ташкентский район",
+        "type": "31",
         "settlements": [
             "1727265501",
             "1727265553",
@@ -2371,6 +2523,7 @@ export const districts: Code_Names = {
         "en": "Nurafshon",
         "uz": "Nurafshon",
         "ru": "Нурафшон",
+        "type": "31",
         "settlements": [
             "1727401000"
         ]
@@ -2379,6 +2532,7 @@ export const districts: Code_Names = {
         "en": "Olmaliq",
         "uz": "Olmaliq",
         "ru": "Алмалык",
+        "type": "31",
         "settlements": [
             "1727404000"
         ]
@@ -2387,6 +2541,7 @@ export const districts: Code_Names = {
         "en": "Angren",
         "uz": "Angren",
         "ru": "Ангрен",
+        "type": "31",
         "settlements": [
             "1727407000",
             "1727407505"
@@ -2396,6 +2551,7 @@ export const districts: Code_Names = {
         "en": "Bekobod",
         "uz": "Bekobod",
         "ru": "Бекабад",
+        "type": "31",
         "settlements": [
             "1727413000"
         ]
@@ -2404,6 +2560,7 @@ export const districts: Code_Names = {
         "en": "Ohangaron",
         "uz": "Ohangaron",
         "ru": "Ахангаран",
+        "type": "31",
         "settlements": [
             "1727415000"
         ]
@@ -2412,6 +2569,7 @@ export const districts: Code_Names = {
         "en": "Chirchiq",
         "uz": "Chirchiq",
         "ru": "Чиpчик",
+        "type": "31",
         "settlements": [
             "1727419000"
         ]
@@ -2420,6 +2578,7 @@ export const districts: Code_Names = {
         "en": "Yangiyo'l",
         "uz": "Yangiyo‘l",
         "ru": "Янгиюль",
+        "type": "31",
         "settlements": [
             "1727424000"
         ]
@@ -2428,6 +2587,7 @@ export const districts: Code_Names = {
         "en": "Oltiariq district",
         "uz": "Oltiariq tumani",
         "ru": "Алтыарыкский район",
+        "type": "31",
         "settlements": [
             "1730203508",
             "1730203551",
@@ -2451,6 +2611,7 @@ export const districts: Code_Names = {
         "en": "Qo'shtepa district",
         "uz": "Qo‘shtepa tumani",
         "ru": "Куштепинский район",
+        "type": "31",
         "settlements": [
             "1730206553",
             "1730206555",
@@ -2473,6 +2634,7 @@ export const districts: Code_Names = {
         "en": "Bog'dod district",
         "uz": "Bog‘dod tumani",
         "ru": "Багдадский район",
+        "type": "31",
         "settlements": [
             "1730209551",
             "1730209553",
@@ -2501,6 +2663,7 @@ export const districts: Code_Names = {
         "en": "Buvayda district",
         "uz": "Buvayda tumani",
         "ru": "Бувайдинский район",
+        "type": "31",
         "settlements": [
             "1730212551",
             "1730212553",
@@ -2517,6 +2680,7 @@ export const districts: Code_Names = {
         "en": "Beshariq district",
         "uz": "Beshariq tumani",
         "ru": "Бешарыкский район",
+        "type": "31",
         "settlements": [
             "1730215501",
             "1730215553",
@@ -2536,6 +2700,7 @@ export const districts: Code_Names = {
         "en": "Quva district",
         "uz": "Quva tumani",
         "ru": "Кувинский район",
+        "type": "31",
         "settlements": [
             "1730218501",
             "1730218552",
@@ -2560,6 +2725,7 @@ export const districts: Code_Names = {
         "en": "Uchko'prik district",
         "uz": "Uchko‘prik tumani",
         "ru": "Учкуприкский район",
+        "type": "31",
         "settlements": [
             "1730221551",
             "1730221553",
@@ -2579,6 +2745,7 @@ export const districts: Code_Names = {
         "en": "Rishton district",
         "uz": "Rishton tumani",
         "ru": "Риштанский район",
+        "type": "31",
         "settlements": [
             "1730224501",
             "1730224552",
@@ -2601,6 +2768,7 @@ export const districts: Code_Names = {
         "en": "So'x district",
         "uz": "So‘x tumani",
         "ru": "Сохский район",
+        "type": "31",
         "settlements": [
             "1730226551",
             "1730226554",
@@ -2616,6 +2784,7 @@ export const districts: Code_Names = {
         "en": "Toshloq district",
         "uz": "Toshloq tumani",
         "ru": "Ташлакский район",
+        "type": "31",
         "settlements": [
             "1730227551",
             "1730227553",
@@ -2634,6 +2803,7 @@ export const districts: Code_Names = {
         "en": "O'zbekiston district",
         "uz": "O‘zbekiston tumani",
         "ru": "Узбекистанский район",
+        "type": "31",
         "settlements": [
             "1730230501",
             "1730230556",
@@ -2664,6 +2834,7 @@ export const districts: Code_Names = {
         "en": "Farg'ona district",
         "uz": "Farg‘ona tumani",
         "ru": "Ферганский район",
+        "type": "31",
         "settlements": [
             "1730233555",
             "1730233557",
@@ -2693,6 +2864,7 @@ export const districts: Code_Names = {
         "en": "Dang'ara district",
         "uz": "Dang‘ara tumani",
         "ru": "Дангаринский район",
+        "type": "31",
         "settlements": [
             "1730236551",
             "1730236554",
@@ -2710,6 +2882,7 @@ export const districts: Code_Names = {
         "en": "Furqat district",
         "uz": "Furqat tumani",
         "ru": "Фуркатский район",
+        "type": "31",
         "settlements": [
             "1730238551",
             "1730238553",
@@ -2726,6 +2899,7 @@ export const districts: Code_Names = {
         "en": "Yozyovon district",
         "uz": "Yozyovon tumani",
         "ru": "Язъяванский район",
+        "type": "31",
         "settlements": [
             "1730242551",
             "1730242554",
@@ -2743,6 +2917,7 @@ export const districts: Code_Names = {
         "en": "Farg'ona",
         "uz": "Farg‘ona",
         "ru": "Фергана",
+        "type": "31",
         "settlements": [
             "1730401000"
         ]
@@ -2751,6 +2926,7 @@ export const districts: Code_Names = {
         "en": "Qo'qon",
         "uz": "Qo‘qon",
         "ru": "Коканд",
+        "type": "31",
         "settlements": [
             "1730405000",
             "1730405555"
@@ -2760,6 +2936,7 @@ export const districts: Code_Names = {
         "en": "Quvasoy",
         "uz": "Quvasoy",
         "ru": "Кувасай",
+        "type": "31",
         "settlements": [
             "1730408000",
             "1730408555",
@@ -2770,6 +2947,7 @@ export const districts: Code_Names = {
         "en": "Marg'ilon",
         "uz": "Marg‘ilon",
         "ru": "Маpгилан",
+        "type": "31",
         "settlements": [
             "1730412000",
             "1730412557"
@@ -2779,6 +2957,7 @@ export const districts: Code_Names = {
         "en": "Bog'ot district",
         "uz": "Bog‘ot tumani",
         "ru": "Багатский район",
+        "type": "31",
         "settlements": [
             "1733204551",
             "1733204553",
@@ -2792,6 +2971,7 @@ export const districts: Code_Names = {
         "en": "Gurlan district",
         "uz": "Gurlan tumani",
         "ru": "Гурленский район",
+        "type": "31",
         "settlements": [
             "1733208551",
             "1733208554",
@@ -2809,6 +2989,7 @@ export const districts: Code_Names = {
         "en": "Qo'shko'pir district",
         "uz": "Qo‘shko‘pir tumani",
         "ru": "Кошкупырский район",
+        "type": "31",
         "settlements": [
             "1733212551",
             "1733212553",
@@ -2823,6 +3004,7 @@ export const districts: Code_Names = {
         "en": "Urganch district",
         "uz": "Urganch tumani",
         "ru": "Ургенчский район",
+        "type": "31",
         "settlements": [
             "1733217554",
             "1733217558",
@@ -2836,6 +3018,7 @@ export const districts: Code_Names = {
         "en": "Xazorasp district",
         "uz": "Xazorasp tumani",
         "ru": "Хазараспский район",
+        "type": "31",
         "settlements": [
             "1733220551",
             "1733220553",
@@ -2847,6 +3030,7 @@ export const districts: Code_Names = {
         "en": "Tuproqqal'a district",
         "uz": "Tuproqqal’a tumani",
         "ru": "Тупроккалинский район",
+        "type": "31",
         "settlements": [
             "1733221501",
             "1733221800"
@@ -2856,6 +3040,7 @@ export const districts: Code_Names = {
         "en": "Xonqa district",
         "uz": "Xonqa tumani",
         "ru": "Ханкинский район",
+        "type": "31",
         "settlements": [
             "1733223551",
             "1733223553",
@@ -2869,6 +3054,7 @@ export const districts: Code_Names = {
         "en": "Xiva district",
         "uz": "Xiva tumani",
         "ru": "Хивинский район",
+        "type": "31",
         "settlements": [
             "1733226552",
             "1733226554",
@@ -2883,6 +3069,7 @@ export const districts: Code_Names = {
         "en": "Shovot district",
         "uz": "Shovot tumani",
         "ru": "Шаватский район",
+        "type": "31",
         "settlements": [
             "1733230551",
             "1733230554",
@@ -2898,6 +3085,7 @@ export const districts: Code_Names = {
         "en": "Yangiariq district",
         "uz": "Yangiariq tumani",
         "ru": "Янгиарыкский район",
+        "type": "31",
         "settlements": [
             "1733233551",
             "1733233553",
@@ -2912,6 +3100,7 @@ export const districts: Code_Names = {
         "en": "Yangibozor district",
         "uz": "Yangibozor tumani",
         "ru": "Янгибазарский район",
+        "type": "31",
         "settlements": [
             "1733236551",
             "1733236554",
@@ -2923,6 +3112,7 @@ export const districts: Code_Names = {
         "en": "Urganch",
         "uz": "Urganch",
         "ru": "Ургенч",
+        "type": "31",
         "settlements": [
             "1733401000"
         ]
@@ -2931,6 +3121,7 @@ export const districts: Code_Names = {
         "en": "Xiva",
         "uz": "Xiva",
         "ru": "Хива",
+        "type": "31",
         "settlements": [
             "1733406000"
         ]
@@ -2939,6 +3130,7 @@ export const districts: Code_Names = {
         "en": "Amudaryo district",
         "uz": "Amudaryo tumani",
         "ru": "Амударьинский район",
+        "type": "31",
         "settlements": [
             "1735204501",
             "1735204554",
@@ -2950,6 +3142,7 @@ export const districts: Code_Names = {
         "en": "Beruniy district",
         "uz": "Beruniy tumani",
         "ru": "Берунийский район",
+        "type": "31",
         "settlements": [
             "1735207501",
             "1735207552",
@@ -2960,6 +3153,7 @@ export const districts: Code_Names = {
         "en": "Bo'zatov district",
         "uz": "Bo‘zatov tumani",
         "ru": "Бозатауский район",
+        "type": "31",
         "settlements": [
             "1735209551",
             "1735209800"
@@ -2969,6 +3163,7 @@ export const districts: Code_Names = {
         "en": "Qorao'zak district",
         "uz": "Qorao‘zak tumani",
         "ru": "Караузякский район",
+        "type": "31",
         "settlements": [
             "1735211551",
             "1735211800"
@@ -2978,6 +3173,7 @@ export const districts: Code_Names = {
         "en": "Kegeyli district",
         "uz": "Kegeyli tumani",
         "ru": "Кегейлийский район",
+        "type": "31",
         "settlements": [
             "1735212505",
             "1735212551",
@@ -2988,6 +3184,7 @@ export const districts: Code_Names = {
         "en": "Qo'ng'irot district",
         "uz": "Qo‘ng‘irot tumani",
         "ru": "Кунградский район",
+        "type": "31",
         "settlements": [
             "1735215501",
             "1735215552",
@@ -3002,6 +3199,7 @@ export const districts: Code_Names = {
         "en": "Qanliko'l district",
         "uz": "Qanliko‘l tumani",
         "ru": "Канлыкульский район",
+        "type": "31",
         "settlements": [
             "1735218551",
             "1735218800"
@@ -3011,6 +3209,7 @@ export const districts: Code_Names = {
         "en": "Mo'ynoq district",
         "uz": "Mo‘ynoq tumani",
         "ru": "Муйнакский район",
+        "type": "31",
         "settlements": [
             "1735222501",
             "1735222800"
@@ -3020,6 +3219,7 @@ export const districts: Code_Names = {
         "en": "Nukus district",
         "uz": "Nukus tumani",
         "ru": "Нукусский район",
+        "type": "31",
         "settlements": [
             "1735225551",
             "1735225800"
@@ -3029,6 +3229,7 @@ export const districts: Code_Names = {
         "en": "Taxiatosh district",
         "uz": "Taxiatosh tumani",
         "ru": "Тахиаташский район",
+        "type": "31",
         "settlements": [
             "1735228501",
             "1735228800"
@@ -3038,6 +3239,7 @@ export const districts: Code_Names = {
         "en": "Taxtako'pir district",
         "uz": "Taxtako‘pir tumani",
         "ru": "Тахтакупырский район",
+        "type": "31",
         "settlements": [
             "1735230551",
             "1735230800"
@@ -3047,6 +3249,7 @@ export const districts: Code_Names = {
         "en": "To'rtko'l district",
         "uz": "To‘rtko‘l tumani",
         "ru": "Турткульский район",
+        "type": "31",
         "settlements": [
             "1735233501",
             "1735233800"
@@ -3056,6 +3259,7 @@ export const districts: Code_Names = {
         "en": "Xo'jayli district",
         "uz": "Xo‘jayli tumani",
         "ru": "Ходжейлийский район",
+        "type": "31",
         "settlements": [
             "1735236501",
             "1735236553",
@@ -3066,6 +3270,7 @@ export const districts: Code_Names = {
         "en": "Chimboy district",
         "uz": "Chimboy tumani",
         "ru": "Чимбайский район",
+        "type": "31",
         "settlements": [
             "1735240501",
             "1735240800"
@@ -3075,6 +3280,7 @@ export const districts: Code_Names = {
         "en": "Shumanay district",
         "uz": "Shumanay tumani",
         "ru": "Шуманайский район",
+        "type": "31",
         "settlements": [
             "1735243501",
             "1735243800"
@@ -3084,6 +3290,7 @@ export const districts: Code_Names = {
         "en": "Ellikkala district",
         "uz": "Ellikkala tumani",
         "ru": "Элликкалинский район",
+        "type": "31",
         "settlements": [
             "1735250501",
             "1735250555",
@@ -3094,6 +3301,7 @@ export const districts: Code_Names = {
         "en": "Nukus",
         "uz": "Nukus",
         "ru": "Нукус",
+        "type": "31",
         "settlements": [
             "1735401000",
             "1735401554"
