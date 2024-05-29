@@ -85,18 +85,12 @@ CREATE TABLE inson (
     name_ru VARCHAR NOT NULL,
     region VARCHAR NOT NULL,
     district VARCHAR NOT NULL,
-    settlement VARCHAR,
     pf INTEGER NOT NULL,
     fth INTEGER NOT NULL,
     children_fth INTEGER NOT NULL,
     leavers_fth INTEGER NOT NULL,
     services VARCHAR,
     changed BOOLEAN DEFAULT FALSE,
-    activcode1 VARCHAR,
-    activcode2 VARCHAR,
-    activcode3 VARCHAR,
-    activcode4 VARCHAR,
-    activcode5 VARCHAR,
     PRIMARY KEY (id)
 );
 
