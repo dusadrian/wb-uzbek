@@ -145,21 +145,21 @@ export const instrument5 = {
             if (args.userData) {
                 // set default values, if new instrument
                 if (!args.questions) {
-                    let institution_name = "--";
+                    let institution_name;
 
                     if (inson_user) {
-                        const inson = util.keystring(insons[args.userData.institution_code]);
-                        institution_name = inson['name_' + lang];
+                        const inson = insons[args.userData.institution_code];
+                        institution_name = inson['name_' + lang as keyof DI.INSON];
                         util.setValue("reg", inson.region);
                         util.setValue("dis", inson.district);
                     } else {
-                        const serviciu = util.keystring(services[institution_code]);
-                        institution_name = serviciu['name_' + lang];
+                        const serviciu = services[institution_code];
+                        institution_name = serviciu['name_' + lang as keyof DI.Institution];
                         util.setValue("reg", serviciu.region);
                         util.setValue("dis", serviciu.district);
                     }
 
-                    util.setValue("omr9", institution_name);
+                    util.setValue("omr9", institution_name ? institution_name : "--");
                     // set default values for user
                     util.setValue("omr1", args.userData.name ? args.userData.name : "--");
                     util.setValue("omr2", args.userData.patronymics ? args.userData.patronymics : "--");
@@ -295,7 +295,8 @@ for (let x = 0; x < regElements.length; x++) {
         }
 
         if (disElements[x] == "pi6d") {
-            util.resetSelect("pi6i", "-9", translations['t_choose']);
+            const institutie = "pi6i";
+            util.resetSelect(institutie, "-9", translations['t_choose']);
 
             if (Number(selectedDistrict) > 0) {
 
@@ -304,11 +305,11 @@ for (let x = 0; x < regElements.length; x++) {
                     if (services[code].district == selectedDistrict) {
                         const type = Number(services[code].type);
                         if ((type >= 12 && type <= 15) || (type >= 21 && type <= 28)) {
-                            const serviciu = util.keystring(services[code]);
+                            const name = 'name_' + lang as keyof DI.Institution;
                             util.addOption(
-                                "pi6i",
+                                institutie,
                                 code,
-                                code + ": " + serviciu['name_' + lang]
+                                code + ": " + services[code][name]
                             )
                         }
                     }
@@ -319,7 +320,7 @@ for (let x = 0; x < regElements.length; x++) {
                 option999.value = '999';
                 option999.text = '999: ' + locales[lang]['not_in_registry'];
                 optgroup.appendChild(option999);
-                util.htmlElement("pi6i").appendChild(optgroup);
+                util.htmlElement(institutie).appendChild(optgroup);
             }
         }
     })

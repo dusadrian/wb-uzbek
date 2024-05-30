@@ -57,6 +57,7 @@ const typeElements = ["",    "lk14e", "cm3e", "cm10f", "cm11f", "ct3e", "ct10f",
 const lk22_2 = ['lk22_2_1', 'lk22_2_2', 'lk22_2_3', 'lk22_2_4', 'lk22_2_5'];
 const lk3cg1 = ["lk3", "cg1c"];
 const cg1cg3 = ["cg3b", "cg1c"];
+const cg3blk3 = ["cg3b", "lk3"];
 const qhouse4Array = ['qhouse4a', 'qhouse4b'];
 const qhouse4ArrayFull = [...qhouse4Array, 'qhouse4'];
 const ewm1 = util.radioIDs("ewm1");
@@ -294,11 +295,11 @@ export const instrument1 = {
             if (args.userData) {
                 // set default values, if new instrument
                 if (!args.questions) {
-                    let institution_name = "--";
+                    let institution_name;
 
                     if (inson_user) {
-                        const inson = util.keystring(insons[args.userData.institution_code]);
-                        institution_name = inson['name_' + lang];
+                        const inson = insons[args.userData.institution_code];
+                        institution_name = inson['name_' + lang as keyof DI.INSON];
                         util.setValue("reg", inson.region);
                         util.setValue("dis", inson.district);
                         util.setValue("sh5", serviceCode);
@@ -306,8 +307,8 @@ export const instrument1 = {
                         util.setValue('omr8a', "2");
                     }
                     else {
-                        const serviciu = util.keystring(services[institution_code]);
-                        institution_name = serviciu['name_' + lang];
+                        const serviciu = services[institution_code];
+                        institution_name = serviciu['name_' + lang as keyof DI.Institution];
                         util.setValue("reg", serviciu.region);
                         util.setValue("dis", serviciu.district);
                         util.setValue("sh5", institution_code);
@@ -316,7 +317,7 @@ export const instrument1 = {
                         serviceCode = institution_code;
                     }
 
-                    util.setValue("omr8", institution_name);
+                    util.setValue("omr8", institution_name ? institution_name : "--");
                     util.setValue('omr1', args.userData.name ? args.userData.name : "--");
                     util.setValue('omr2', args.userData.patronymics ? args.userData.patronymics : "--");
                     util.setValue('omr3', args.userData.surname ? args.userData.surname : "--");
@@ -474,21 +475,12 @@ for (let x = 0; x < regElements.length; x++) {
                 for (let i = 0; i < servicesCodes.length; i++) {
                     const code = servicesCodes[i];
                     if (services[code].district == selectedDistrict) {
-                        if (Number(services[code].type) < 20) { // Only childcare residential services
-                            let service_included = true;
-                            if (insons[institution_code]) {
-                                service_included = insons[institution_code].services.includes(code);
-                            }
-
-                            if (service_included) {
-                                const serviciu = util.keystring(services[code]);
-                                util.addOption(
-                                    institutie,
-                                    code,
-                                    code + ": " + serviciu['name_' + lang]
-                                )
-                            }
-                        }
+                        const name = 'name_' + lang as keyof DI.Institution;
+                        util.addOption(
+                            institutie,
+                            code,
+                            code + ": " + services[code][name]
+                        )
                     }
                 }
             }
@@ -638,6 +630,23 @@ util.listen(cg1cg3, "myChange", () => {
         errorHandler.removeError(cg1cg3, message);
         if (startdate > enddate) {
             errorHandler.addError(cg1cg3, message);
+        }
+    }
+});
+
+
+util.listen(cg3blk3, "myChange", () => {
+    if (util.inputsHaveValue(cg3blk3)) {
+        const startdate = util.standardDate(util.htmlElement("cg3b").value);
+        const enddate = util.standardDate(util.htmlElement("lk3").value);
+
+        const message = translations['must_be_earlier'].
+            replace("X", "CG3b").
+            replace("Y", "LK3");
+
+        errorHandler.removeError(cg3blk3, message);
+        if (startdate > enddate) {
+            errorHandler.addError(cg3blk3, message);
         }
     }
 });

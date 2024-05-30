@@ -211,12 +211,11 @@ export const instrument6 = {
             if (args.userData) {
                 // set default values, if new instrument
                 if (!args.questions) {
-                    let institution_name = "--";
-                    util.setValue("i2", institution_code);
+                    let institution_name;
 
                     if (inson_user) {
-                        const inson = util.keystring(insons[args.userData.institution_code]);
-                        institution_name = inson['name_' + lang];
+                        const inson = insons[args.userData.institution_code];
+                        institution_name = inson['name_' + lang as keyof DI.INSON];
                         util.setValue("i3", "--"); // address
                         util.setValue("i4a", inson.region);
                         util.setValue("i4b", inson.district);
@@ -224,8 +223,8 @@ export const instrument6 = {
                         util.setValue('i4d', "31"); // district type
                     }
                     else {
-                        const serviciu = util.keystring(services[institution_code]);
-                        institution_name = serviciu['name_' + lang];
+                        const serviciu = services[institution_code];
+                        institution_name = serviciu['name_' + lang as keyof DI.Institution];
                         util.setValue('i3', serviciu.address ? serviciu.address : "--");
                         util.setValue("i4a", serviciu.region);
                         util.setValue("i4b", serviciu.district);
@@ -234,8 +233,8 @@ export const instrument6 = {
                         util.setValue('i4d', settlements[serviciu.settlement].type);
                     }
 
-                    util.setValue("i1", institution_name);
-                    // set default values for user
+                    util.setValue("i1", institution_name ? institution_name : "--");
+                    util.setValue("i2", institution_code);
                     util.setValue('q2', args.userData.name + " " + args.userData.patronymics + " " + args.userData.surname);
                     util.setValue('q3', args.userData.job_title ? args.userData.job_title : "--");
                     util.setValue('q4', args.userData.profession ? args.userData.profession : "--");

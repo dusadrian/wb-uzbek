@@ -98,7 +98,14 @@ const areas = ["ac1a2", "ac1b2", "ac1c2", "ac1d2", "ac1e2", "ac1f2", "ac1g2"];
 const rce6 = ["rce61", "rce62"];
 const ac14a = util.radioIDs("ac14a");
 
-const validate = [...general_dates, ...start_dates, ...end_dates, ...i13,
+const regElements = ["i4a"];
+const disElements = ["i4b"];
+const setElements = ["i4c"];
+const mahElements = ["i4m"];
+
+const validate = [
+    ...regElements, ...disElements, ...setElements,
+    ...general_dates, ...start_dates, ...end_dates, ...i13,
     ...la6, "la7", "la8", ...af5af1, ...ac1_1, ...ac1_2, ...compare,
     "cc5", "i12a", "i13a", ...de2a_i13a, ...rce1i12a, ...rce1, ...af5edu5,
     ...ft7i12ai9, "i13a", ...ft2af1, ...af4ab, ...e00ArrayFull,
@@ -185,11 +192,6 @@ export const instrument4 = {
         ipcRenderer.on("instrumentDataReady", (_event, args) => {
             // console.log(args);
 
-            const regElements = ["i4a"];
-            const disElements = ["i4b"];
-            const setElements = ["i4c"];
-            const mahElements = ["i4m"];
-
             services = args.services;
             insons = args.insons;
 
@@ -247,7 +249,7 @@ export const instrument4 = {
 
                 if (setElements[x] != "") {
                     util.listen(setElements[x], "change", () => {
-                        util.resetSelect(mahElements[x], "--", "--");
+                        util.resetSelect(mahElements[x], "-9", translations['t_choose']);
 
                         const selectedSettlement = util.htmlElement(setElements[x]).value;
                         if (Number(selectedSettlement) > 0 && mahElements[x] != "") {
@@ -292,12 +294,12 @@ export const instrument4 = {
             if (args.userData) {
                 // set default values, if new instrument
                 if (!args.questions) {
-                    let institution_name = "--";
+                    let institution_name;
                     util.setValue('i2', institution_code);
 
                     if (inson_user) {
-                        const inson = util.keystring(insons[args.userData.institution_code]);
-                        institution_name = inson['name_' + lang];
+                        const inson = insons[args.userData.institution_code];
+                        institution_name = inson['name_' + lang as keyof DI.INSON];
                         util.setValue('i3', "--"); // inson-urile nu au adresa
                         util.setValue("i4a", inson.region);
                         util.setValue("i4b", inson.district);
@@ -305,8 +307,8 @@ export const instrument4 = {
                         util.setValue('i4d', "31"); // district type
                         util.setValue('i9', "--");
                     } else {
-                        const serviciu = util.keystring(services[institution_code]);
-                        institution_name = serviciu['name_' + lang];
+                        const serviciu = services[institution_code];
+                        institution_name = serviciu['name_' + lang as keyof DI.Institution];
                         util.setValue('i3', serviciu.address ? serviciu.address : "--");
                         util.setValue("i4a", serviciu.region);
                         util.setValue("i4b", serviciu.district);
@@ -316,7 +318,7 @@ export const instrument4 = {
                         util.setValue('i9', serviciu.type ? serviciu.type : "--");
                     }
 
-                    util.setValue('i1', institution_name);
+                    util.setValue('i1', institution_name ? institution_name : "--");
 
                     util.setValue('q2', args.userData.name + " " + args.userData.patronymics + " " + args.userData.surname);
                     util.setValue('q3', args.userData.job_title ? args.userData.job_title : "--");

@@ -188,20 +188,20 @@ export const instrument2 = {
             if (args.userData) {
                 // set default values, if new instrument
                 if (!args.questions) {
-                    let institution_name = "--";
+                    let institution_name;
                     if (inson_user) {
-                        const inson = util.keystring(insons[args.userData.institution_code]);
-                        institution_name = inson['name_' + lang];
+                        const inson = insons[args.userData.institution_code];
+                        institution_name = inson['name_' + lang as keyof DI.INSON];
                         util.setValue("reg", inson.region);
                         util.setValue("dis", inson.district);
                     }
                     else {
-                        const serviciu = util.keystring(services[institution_code]);
-                        institution_name = serviciu['name_' + lang];
+                        const serviciu = services[institution_code];
+                        institution_name = serviciu['name_' + lang as keyof DI.Institution];
                         util.setValue("reg", serviciu.region);
                         util.setValue("dis", serviciu.district);
                     }
-                    util.setValue("omr8", institution_name);
+                    util.setValue("omr8", institution_name ? institution_name : "--");
                     util.setValue("omr9", institution_code);
 
                     util.setValue('omr1', args.userData.name ? args.userData.name : "--");
@@ -354,25 +354,15 @@ for (let x = 0; x < regElements.length; x++) {
             util.resetSelect(institutie, "-9", translations['t_choose']);
 
             if (Number(selectedDistrict) > 0) {
-
                 for (let i = 0; i < servicesCodes.length; i++) {
                     const code = servicesCodes[i];
                     if (services[code].district == selectedDistrict) {
-                        if (Number(services[code].type) < 20) {
-                            let service_included = true;
-                            if (insons[institution_code]) {
-                                service_included = insons[institution_code].services.includes(code);
-                            }
-
-                            if (service_included) {
-                                const serviciu = util.keystring(services[code]);
-                                util.addOption(
-                                    institutie,
-                                    code,
-                                    code + ": " + serviciu['name_' + lang]
-                                )
-                            }
-                        }
+                        const name = 'name_' + lang as keyof DI.Institution;
+                        util.addOption(
+                            institutie,
+                            code,
+                            code + ": " + services[code][name]
+                        )
                     }
                 }
             }
@@ -728,8 +718,8 @@ util.listen(qfam2, "change", () => {
 //                 if (service_included) {
 //                     const option = document.createElement("option");
 //                     option.value = serv[i];
-//                     const serviciu = util.keystring(services[code]);
-//                     option.text = serv[i] + ': ' + serviciu['name_' + lang];
+//                     const name = 'name_' + lang as keyof DI.Institution;
+//                     option.text = serv[i] + ': ' + services[serv[i]][name];
 //                     institutie.appendChild(option);
 //                 }
 //             }
@@ -774,11 +764,11 @@ util.listen("qeduc1ad", "myChange", () => {
             }
 
             if (service_included) {
-                const serviciu = util.keystring(services[serv[i]]);
+                const name = 'name_' + lang as keyof DI.Institution;
                 util.addOption(
                     "qeduc1a1",
                     serv[i],
-                    serv[i] + ': ' + serviciu['name_' + lang]
+                    serv[i] + ': ' + services[serv[i]][name]
                 );
             }
         }
@@ -835,11 +825,11 @@ util.listen("qeduc2ad", "myChange", () => {
             }
 
             if (service_included) {
-                const serviciu = util.keystring(services[serv[i]]);
+                const name = 'name_' + lang as keyof DI.Institution;
                 util.addOption(
                     "qeduc2a1",
                     serv[i],
-                    serv[i] + ': ' + serviciu['name_' + lang]
+                    serv[i] + ': ' + services[serv[i]][name]
                 );
             }
         }

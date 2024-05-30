@@ -143,20 +143,20 @@ export const instrument5a = {
             if (args.userData) {
                 // set default values, if new instrument
                 if (!args.questions) {
-                    let institution_name = "--";
+                    let institution_name;
 
                     util.setValue("str1", institution_code);
 
                     if (inson_user) {
-                        const inson = util.keystring(insons[args.userData.institution_code]);
-                        institution_name = "" + inson['name_' + lang];
+                        const inson = insons[args.userData.institution_code];
+                        institution_name = inson['name_' + lang as keyof DI.INSON];
                         util.setValue("str3a", inson.region);
                         util.setValue("str3b", inson.district);
                         util.setValue("str3c", "--");
                         util.setValue("str3e", "31"); // district type
                     } else {
-                        const serviciu = util.keystring(services[institution_code]);
-                        institution_name = '' + serviciu['name_' + lang];
+                        const serviciu = services[institution_code];
+                        institution_name = serviciu['name_' + lang as keyof DI.Institution];
                         util.setValue("str3a", serviciu.region);
                         util.setValue("str3b", serviciu.district);
 
@@ -164,7 +164,7 @@ export const instrument5a = {
                         util.setValue("str3e", settlements[serviciu.settlement].type);
                     }
 
-                    util.setValue("str2", institution_name);
+                    util.setValue("str2", institution_name ? institution_name : "--");
                     util.setValue("omr1", args.userData.name ? args.userData.name : "--");
                     util.setValue("omr2", args.userData.patronymics ? args.userData.patronymics : "--");
                     util.setValue("omr3", args.userData.surname ? args.userData.surname : "--");

@@ -176,12 +176,12 @@ export const instrument3 = {
             if (args.userData) {
                 // set default values, if new instrument
                 if (!args.questions) {
-                    let institution_name = "";
+                    let institution_name;
                     util.setValue('i2', "" + institution_code);
 
                     if (inson_user) {
-                        const inson = util.keystring(insons[args.userData.institution_code]);
-                        institution_name = "" + inson['name_' + lang];
+                        const inson = insons[args.userData.institution_code];
+                        institution_name = inson['name_' + lang as keyof DI.INSON];
                         util.setValue('i3', "--"); // address
                         util.setValue("i4", inson.district);
                         util.setValue("i4a", inson.region);
@@ -191,8 +191,8 @@ export const instrument3 = {
                         util.setValue('i5', "--");
                     }
                     else {
-                        const serviciu = util.keystring(services[institution_code]);
-                        institution_name = '' + serviciu['name_' + lang];
+                        const serviciu = services[institution_code];
+                        institution_name = serviciu['name_' + lang as keyof DI.Institution];
                         util.setValue('i3', serviciu.address ? serviciu.address : "--");
                         util.setValue("i4a", serviciu.region);
                         util.setValue("i4b", serviciu.district);
