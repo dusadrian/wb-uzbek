@@ -659,17 +659,6 @@ util.listen(lk3sa1, "myChange", () => {
     }
 })
 
-util.listen("sch2", "myChange", () => {
-    const sch2 = util.htmlElement("sch2").value;
-    const message = "SCH2 <= 9";
-    errorHandler.removeError("sch2", message);
-    if (Number(sch2) > 9) {
-        errorHandler.addError("sch2", message);
-        instrument.questions["sch2"].value = "-9";
-    }
-});
-
-
 
 const qfam2 = [
     'qfam2_1', 'qfam2_2', 'qfam2_3', 'qfam2_4', 'qfam2_5',
