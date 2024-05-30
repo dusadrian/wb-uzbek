@@ -16,7 +16,7 @@ window.require('jquery-ui-dist/jquery-ui');
 import "jquery-ui/ui/i18n/datepicker-ru";
 import "jquery-ui/ui/i18n/datepicker-uz";
 
-import { KeyString, KeyStringNumber, regions, districts, settlements, mahallas } from "../../libraries/administrative";
+import { KeyString, regions, districts, settlements, mahallas } from "../../libraries/administrative";
 
 import * as en from "../../locales/en.json";
 import * as uz from "../../locales/uz.json";
@@ -297,21 +297,21 @@ export const instrument1 = {
                     let institution_name = "--";
 
                     if (inson_user) {
-                        const inson = { ...insons[args.userData.institution_code] } as KeyStringNumber;
-                        institution_name = "" + inson['name_' + lang];
-                        util.setValue("reg", inson['region'].toString());
-                        util.setValue("dis", inson['district'].toString());
+                        const inson = util.keystring(insons[args.userData.institution_code]);
+                        institution_name = inson['name_' + lang];
+                        util.setValue("reg", inson.region);
+                        util.setValue("dis", inson.district);
                         util.setValue("sh5", serviceCode);
                         util.setValue("sh5s", "--");
                         util.setValue('omr8a', "2");
                     }
                     else {
-                        const serviciu = { ...services[institution_code] } as KeyStringNumber;
-                        institution_name = '' + serviciu['name_' + lang];
-                        util.setValue("reg", serviciu['region'].toString());
-                        util.setValue("dis", serviciu['district'].toString());
+                        const serviciu = util.keystring(services[institution_code]);
+                        institution_name = serviciu['name_' + lang];
+                        util.setValue("reg", serviciu.region);
+                        util.setValue("dis", serviciu.district);
                         util.setValue("sh5", institution_code);
-                        util.setValue("sh5s", serviciu['settlement'].toString());
+                        util.setValue("sh5s", serviciu.settlement);
                         util.setValue('omr8a', "1");
                         serviceCode = institution_code;
                     }
@@ -471,18 +471,17 @@ for (let x = 0; x < regElements.length; x++) {
             util.resetSelect(institutie, "-9", translations['t_choose']);
 
             if (Number(selectedDistrict) > 0) {
-
                 for (let i = 0; i < servicesCodes.length; i++) {
                     const code = servicesCodes[i];
                     if (services[code].district == selectedDistrict) {
-                        if (Number(services[code].type) < 20) {
+                        if (Number(services[code].type) < 20) { // Only childcare residential services
                             let service_included = true;
                             if (insons[institution_code]) {
                                 service_included = insons[institution_code].services.includes(code);
                             }
 
                             if (service_included) {
-                                const serviciu = { ...services[code] } as KeyStringNumber;
+                                const serviciu = util.keystring(services[code]);
                                 util.addOption(
                                     institutie,
                                     code,

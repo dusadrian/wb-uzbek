@@ -16,7 +16,7 @@ window.require('jquery-ui-dist/jquery-ui');
 import "jquery-ui/ui/i18n/datepicker-ru";
 import "jquery-ui/ui/i18n/datepicker-uz";
 
-import { KeyString, KeyStringNumber, regions, districts, settlements, mahallas } from "../../libraries/administrative";
+import { KeyString, regions, districts, settlements, mahallas } from "../../libraries/administrative";
 import * as en from "../../locales/en.json";
 import * as uz from "../../locales/uz.json";
 import * as ru from "../../locales/ru.json";
@@ -148,15 +148,15 @@ export const instrument5 = {
                     let institution_name = "--";
 
                     if (inson_user) {
-                        const inson = { ...insons[args.userData.institution_code] } as KeyStringNumber;
-                        institution_name = inson['name_' + lang].toString();
-                        util.setValue("reg", inson['region'].toString());
-                        util.setValue("dis", inson['district'].toString());
+                        const inson = util.keystring(insons[args.userData.institution_code]);
+                        institution_name = inson['name_' + lang];
+                        util.setValue("reg", inson.region);
+                        util.setValue("dis", inson.district);
                     } else {
-                        const serviciu = { ...services[institution_code] } as KeyStringNumber;
-                        institution_name = serviciu['name_' + lang].toString();
-                        util.setValue("reg", serviciu['region'].toString());
-                        util.setValue("dis", serviciu['district'].toString());
+                        const serviciu = util.keystring(services[institution_code]);
+                        institution_name = serviciu['name_' + lang];
+                        util.setValue("reg", serviciu.region);
+                        util.setValue("dis", serviciu.district);
                     }
 
                     util.setValue("omr9", institution_name);
@@ -304,7 +304,7 @@ for (let x = 0; x < regElements.length; x++) {
                     if (services[code].district == selectedDistrict) {
                         const type = Number(services[code].type);
                         if ((type >= 12 && type <= 15) || (type >= 21 && type <= 28)) {
-                            const serviciu = { ...services[code] } as KeyStringNumber;
+                            const serviciu = util.keystring(services[code]);
                             util.addOption(
                                 "pi6i",
                                 code,

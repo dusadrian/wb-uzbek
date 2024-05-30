@@ -17,7 +17,7 @@ window.require('jquery-ui-dist/jquery-ui');
 import "jquery-ui/ui/i18n/datepicker-ru";
 import "jquery-ui/ui/i18n/datepicker-uz";
 
-import { KeyString, KeyStringNumber, regions, districts, settlements } from "../../libraries/administrative";
+import { KeyString, regions, districts, settlements } from "../../libraries/administrative";
 
 import * as en from "../../locales/en.json";
 import * as uz from "../../locales/uz.json";
@@ -180,29 +180,28 @@ export const instrument3 = {
                     util.setValue('i2', "" + institution_code);
 
                     if (inson_user) {
-                        const inson = { ...insons[args.userData.institution_code] } as KeyStringNumber;
+                        const inson = util.keystring(insons[args.userData.institution_code]);
                         institution_name = "" + inson['name_' + lang];
                         util.setValue('i3', "--"); // address
-                        util.setValue("i4", inson['district'].toString());
-                        util.setValue("i4a", inson['region'].toString());
-                        util.setValue("i4b", inson['district'].toString());
+                        util.setValue("i4", inson.district);
+                        util.setValue("i4a", inson.region);
+                        util.setValue("i4b", inson.district);
                         util.setValue('i4c', "--"); // settlement
                         util.setValue('i4d', "31"); // district type
                         util.setValue('i5', "--");
                     }
                     else {
-                        const serviciu = { ...services[institution_code] } as KeyStringNumber;
+                        const serviciu = util.keystring(services[institution_code]);
                         institution_name = '' + serviciu['name_' + lang];
-                        util.setValue('i3', serviciu['address'] ? serviciu['address'].toString() : "--");
-                        util.setValue("i4a", serviciu['region'].toString());
-                        util.setValue("i4b", serviciu['district'].toString());
+                        util.setValue('i3', serviciu.address ? serviciu.address : "--");
+                        util.setValue("i4a", serviciu.region);
+                        util.setValue("i4b", serviciu.district);
 
-                        const settlement = serviciu['settlement'].toString();
-                        util.setValue('i4', settlement);
-                        util.setValue('i4c', settlement);
-                        util.setValue('i4d', settlements[settlement].type);
+                        util.setValue('i4', serviciu.settlement);
+                        util.setValue('i4c', serviciu.settlement);
+                        util.setValue('i4d', settlements[serviciu.settlement].type);
 
-                        const type = serviciu['type'].toString();
+                        const type = serviciu['type'];
                         util.setValue(
                             'i5',
                             util.selectValues("i5").indexOf(type) >= 0 ? type : "--"

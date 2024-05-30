@@ -16,7 +16,7 @@ window.require('jquery-ui-dist/jquery-ui');
 import "jquery-ui/ui/i18n/datepicker-ru";
 import "jquery-ui/ui/i18n/datepicker-uz";
 
-import { KeyString, KeyStringNumber, regions, districts, settlements, mahallas } from "../../libraries/administrative";
+import { KeyString, regions, districts, settlements, mahallas } from "../../libraries/administrative";
 
 import * as en from "../../locales/en.json";
 import * as uz from "../../locales/uz.json";
@@ -293,28 +293,27 @@ export const instrument4 = {
                 // set default values, if new instrument
                 if (!args.questions) {
                     let institution_name = "--";
-                    util.setValue('i2', "" + institution_code);
+                    util.setValue('i2', institution_code);
 
                     if (inson_user) {
-                        const inson = { ...insons[args.userData.institution_code] } as KeyStringNumber;
-                        institution_name = "" + inson['name_' + lang];
-                        util.setValue('i3', "--"); // Alex: inson-urile nu au adresa
-                        util.setValue("i4a", inson['region'].toString());
-                        util.setValue("i4b", inson['district'].toString());
-                        util.setValue('i4c', "--");
+                        const inson = util.keystring(insons[args.userData.institution_code]);
+                        institution_name = inson['name_' + lang];
+                        util.setValue('i3', "--"); // inson-urile nu au adresa
+                        util.setValue("i4a", inson.region);
+                        util.setValue("i4b", inson.district);
+                        util.setValue('i4c', "--"); // inson-urile nu au settlement
                         util.setValue('i4d', "31"); // district type
                         util.setValue('i9', "--");
                     } else {
-                        const serviciu = { ...services[institution_code] } as KeyStringNumber;
-                        institution_name = serviciu['name_' + lang].toString();
-                        util.setValue('i3', serviciu['address'] ? serviciu['address'].toString() : "--");
-                        util.setValue("i4a", serviciu['region'].toString());
-                        util.setValue("i4b", serviciu['district'].toString());
+                        const serviciu = util.keystring(services[institution_code]);
+                        institution_name = serviciu['name_' + lang];
+                        util.setValue('i3', serviciu.address ? serviciu.address : "--");
+                        util.setValue("i4a", serviciu.region);
+                        util.setValue("i4b", serviciu.district);
 
-                        const settlement = serviciu['settlement'].toString();
-                        util.setValue('i4c', settlement);
-                        util.setValue('i4d', settlements[settlement].type);
-                        util.setValue('i9', serviciu['type'] ? serviciu['type'].toString() : "--");
+                        util.setValue('i4c', serviciu.settlement);
+                        util.setValue('i4d', settlements[serviciu.settlement].type);
+                        util.setValue('i9', serviciu.type ? serviciu.type : "--");
                     }
 
                     util.setValue('i1', institution_name);

@@ -16,7 +16,7 @@ window.require('jquery-ui-dist/jquery-ui');
 import "jquery-ui/ui/i18n/datepicker-ru";
 import "jquery-ui/ui/i18n/datepicker-uz";
 
-import { KeyString, KeyStringNumber, regions, districts, settlements, mahallas } from "../../libraries/administrative";
+import { KeyString, regions, districts, settlements, mahallas } from "../../libraries/administrative";
 import * as en from "../../locales/en.json";
 import * as uz from "../../locales/uz.json";
 import * as ru from "../../locales/ru.json";
@@ -148,21 +148,20 @@ export const instrument5a = {
                     util.setValue("str1", institution_code);
 
                     if (inson_user) {
-                        const inson = { ...insons[args.userData.institution_code] } as KeyStringNumber;
+                        const inson = util.keystring(insons[args.userData.institution_code]);
                         institution_name = "" + inson['name_' + lang];
-                        util.setValue("str3a", inson['region'].toString());
-                        util.setValue("str3b", inson['district'].toString());
+                        util.setValue("str3a", inson.region);
+                        util.setValue("str3b", inson.district);
                         util.setValue("str3c", "--");
                         util.setValue("str3e", "31"); // district type
                     } else {
-                        const serviciu = { ...services[institution_code] } as KeyStringNumber;
+                        const serviciu = util.keystring(services[institution_code]);
                         institution_name = '' + serviciu['name_' + lang];
-                        util.setValue("str3a", serviciu['region'].toString());
-                        util.setValue("str3b", serviciu['district'].toString());
+                        util.setValue("str3a", serviciu.region);
+                        util.setValue("str3b", serviciu.district);
 
-                        const settlement = serviciu['settlement'].toString();
-                        util.setValue("str3c", settlement);
-                        util.setValue("str3e", settlements[settlement].type);
+                        util.setValue("str3c", serviciu.settlement);
+                        util.setValue("str3e", settlements[serviciu.settlement].type);
                     }
 
                     util.setValue("str2", institution_name);

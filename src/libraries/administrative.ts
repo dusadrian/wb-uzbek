@@ -35,7 +35,6 @@ interface Code_Names {
 }
 
 export type KeyString = { [key: string]: string | string[] };
-export type KeyStringNumber = { [key: string]: string | number };
 
 export const regions: Code_Names = {
     "1703": {
