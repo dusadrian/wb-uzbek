@@ -7,6 +7,7 @@ interface ValidationHelpers {
 
 
 interface UtilHelpersInterface {
+    keystring: (obj: object) => { [key: string]: string };
     makeSum: (array: number[]) => number;
     makeSumFromElements: (array: string[]) => number;
     makeSumDecimal: (array: number[]) => string;
@@ -217,6 +218,16 @@ export const validate: ValidationHelpers = {
 }
 // Util functions
 export const util: UtilHelpersInterface = {
+    keystring: (obj) => {
+        const x = {...obj} as { [key: string]: string|number };
+        const keys = Object.keys(x);
+        for (let i = 0; i < keys.length; i++) {
+            if (x[keys[i]] != null) {
+                x[keys[i]] = x[keys[i]].toString();
+            }
+        }
+        return({...x} as { [key: string]: string });
+    },
     makeSum: (array: number[]) => {
         return array.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
     },
