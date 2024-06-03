@@ -159,7 +159,6 @@ export const instrument5a = {
                         institution_name = serviciu['name_' + lang as keyof DI.Institution];
                         util.setValue("str3a", serviciu.region);
                         util.setValue("str3b", serviciu.district);
-
                         util.setValue("str3c", serviciu.settlement);
                         util.setValue("str3e", settlements[serviciu.settlement].type);
                     }
@@ -262,8 +261,13 @@ for (let x = 0; x < regElements.length; x++) {
         const selectedDistrict = util.htmlElement(disElements[x]).value;
 
         if (setElements[x] != "") {
-            util.resetSelect(setElements[x], "-9", translations['t_choose']);
-            instrument.questions[setElements[x]].value = "-9";
+            if (setElements[x] == "str3c") {
+                util.resetSelect(setElements[x], "--", "--");
+                instrument.questions[setElements[x]].value = "--";
+            } else {
+                util.resetSelect(setElements[x], "-9", translations['t_choose']);
+                instrument.questions[setElements[x]].value = "-9";
+            }
 
             if (!instrument.questions[setElements[x]].readonly) {
                 instrument.questions[setElements[x]].skip = false;
@@ -302,7 +306,6 @@ for (let x = 0; x < regElements.length; x++) {
 
     if (setElements[x] != "") {
         util.listen(setElements[x], "change", () => {
-            console.log(setElements[x]);
             const selectedSettlement = util.htmlElement(setElements[x]).value;
 
             if (Number(selectedSettlement) > 0 && typeElements[x] != "") {
