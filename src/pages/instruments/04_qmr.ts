@@ -226,10 +226,25 @@ export const instrument4 = {
                             );
                         }
                     }
+
+                    if (setElements[x] != "") {
+                        if (instrument.questions[setElements[x]].readonly) {
+                            util.resetSelect(setElements[x], "--", "--");
+                        } else {
+                            util.resetSelect(setElements[x], "-9", translations['t_choose']);
+                        }
+                        instrument.questions[setElements[x]].value = "-7";
+                    }
                 })
 
                 util.listen(disElements[x], "change", function () {
-                    util.resetSelect(setElements[x], "--", "--");
+                    if (instrument.questions[setElements[x]].readonly) {
+                        util.resetSelect(setElements[x], "--", "--");
+                        instrument.questions[setElements[x]].value = "--";
+                    } else {
+                        util.resetSelect(setElements[x], "-9", translations['t_choose']);
+                        instrument.questions[setElements[x]].value = "-9";
+                    }
 
                     const selectedDistrict = util.htmlElement(disElements[x]).value;
                     if (Number(selectedDistrict) > 0) {

@@ -22,6 +22,7 @@ import { KeyString, regions, districts, settlements } from "../../libraries/admi
 import * as en from "../../locales/en.json";
 import * as uz from "../../locales/uz.json";
 import * as ru from "../../locales/ru.json";
+// import { set } from "lodash";
 // import { error } from "jquery";
 const locales: { [key: string]: typeof en | typeof uz | typeof ru } = {
     'en': en,
@@ -133,7 +134,13 @@ export const instrument3 = {
                 })
 
                 util.listen(disElements[x], "change", function () {
-                    util.resetSelect(setElements[x], "--", "--");
+                    if (instrument.questions[setElements[x]].readonly) {
+                        util.resetSelect(setElements[x], "--", "--");
+                        instrument.questions[setElements[x]].value = "--";
+                    } else {
+                        util.resetSelect(setElements[x], "-9", translations['t_choose']);
+                        instrument.questions[setElements[x]].value = "-9";
+                    }
 
                     const selectedDistrict = util.htmlElement(disElements[x]).value;
                     if (Number(selectedDistrict) > 0) {

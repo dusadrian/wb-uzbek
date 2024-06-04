@@ -246,7 +246,11 @@ for (let x = 0; x < regElements.length; x++) {
         }
 
         if (setElements[x] != "") {
-            util.resetSelect(setElements[x], "-9", translations['t_choose']);
+            if (instrument.questions[setElements[x]].readonly) {
+                util.resetSelect(setElements[x], "--", "--");
+            } else {
+                util.resetSelect(setElements[x], "-9", translations['t_choose']);
+            }
             instrument.questions[setElements[x]].value = "-7";
         }
 
@@ -261,7 +265,7 @@ for (let x = 0; x < regElements.length; x++) {
         const selectedDistrict = util.htmlElement(disElements[x]).value;
 
         if (setElements[x] != "") {
-            if (setElements[x] == "str3c") {
+            if (instrument.questions[setElements[x]].readonly) {
                 util.resetSelect(setElements[x], "--", "--");
                 instrument.questions[setElements[x]].value = "--";
             } else {
