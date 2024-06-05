@@ -34,9 +34,9 @@ let insons: { [key: string]: DI.INSON };
 
 const regElements  = ["reg", "pi4b", "pi6r", "pi9c"];
 const disElements  = ["dis", "pi4c", "pi6d", "pi9d"];
-const setElements  = ["",    "pi4d", "",     "pi9h"];
-const mahElements  = ["",    "pi4m", "",     "pi9m"];
-const typeElements = ["",    "pi4e", "",     "pi9i"];
+const setElements  = ["",    "",     "",     "pi9h"];
+const mahElements  = ["",    "",     "",     "pi9m"];
+const typeElements = ["",    "",     "",     "pi9i"];
 
 const nonemptysets: string[] = [];
 for (let i = 0; i < setElements.length; i++) {

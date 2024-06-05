@@ -93,8 +93,14 @@ const e02Array = ['e2_1', 'e2_2'];
 const e02ArrayFull = [...e02Array, 'e02'];
 const e21Array = ['e2_1_1', 'e2_1_2', 'e2_1_3', 'e2_1_4'];
 const e21ArrayFull = [...e21Array, 'e2_1'];
-const rooms = ["ac1a1", "ac1b1", "ac1c1", "ac1d1", "ac1e1", "ac1f1", "ac1g1"];
-const areas = ["ac1a2", "ac1b2", "ac1c2", "ac1d2", "ac1e2", "ac1f2", "ac1g2"];
+const rooms = [
+    "ac1a1", "ac1b1", "ac1c1", "ac1d1", "ac1e1", "ac1f1", "ac1g1",
+    "ac1i1", "ac1j1", "ac1k1" // astea nu sunt camere dar au aceeasi regula de validare
+];
+const areas = [
+    "ac1a2", "ac1b2", "ac1c2", "ac1d2", "ac1e2", "ac1f2", "ac1g2",
+    "ac1i2", "ac1j2", "ac1k2" // astea nu sunt arii dar au aceeasi regula de validare
+];
 const rce6 = ["rce61", "rce62"];
 const ac14a = util.radioIDs("ac14a");
 
@@ -905,7 +911,6 @@ start_dates.forEach((start) => {
     util.listen(start, "myChange", check);
     util.listen(end, "myChange", check);
 });
-
 
 
 rooms.forEach((room) => {

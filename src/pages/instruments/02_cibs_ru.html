@@ -91,13 +91,15 @@
             </div>
 
             <div class="grid grid-cols-2 gap-4 items-start mt-4">
-                <div>ОМR6. Телефон </div><div>
+                <div>ОМR6. Телефон </div>
+                <div>
                     <input type="text" id="omr6" name="omr6" class="border-gray-400 bg-white border text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 disabled:bg-gray-100 read-only:bg-gray-100 p-2.5 block w-full" />
                 </div>
             </div>
 
             <div class="grid grid-cols-2 gap-4 items-start mt-4">
-                <div>ОМR7. Электронная почта </div><div>
+                <div>ОМR7. Электронная почта </div>
+                <div>
                     <input type="text" id="omr7" name="omr7" class="border-gray-400 bg-white border text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 disabled:bg-gray-100 read-only:bg-gray-100 p-2.5 block w-full" />
                 </div>
             </div>
@@ -221,26 +223,6 @@
                     </select>
                 </div>
             </div>
-            <div class="grid grid-cols-2 gap-4 items-start mt-6">
-                <div>LK14d. Населённый пункт</div>
-                <div>
-                    <select id="lk14d" name="lk14d" class="border-gray-400 border text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
-                        <option value="-9">--- выбрать ---</option>
-                    </select>
-
-                </div>
-            </div>
-
-            <div class="grid grid-cols-2 gap-4 items-start mt-6">
-                <div>LK14m. Махалли</div>
-                <div>
-                    <select id="lk14m" name="lk14m" class="border-gray-400 border text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
-                        <option value="-9">--- выбрать ---</option>
-                    </select>
-                </div>
-            </div>
-
-            <input type="hidden" id="lk14e" name="lk14e" />
 
 
             <div class="grid grid-cols-2 gap-4 items-start mt-6">
@@ -374,7 +356,8 @@
                         <label for="qfam2_9" class="ms-2 text-sm text-gray-900">9. Другие лица</label>
                     </div>
                     <div class="flex items-center">
-                        <input id="qfam2_90" type="checkbox" value="1" name="qfam2_90" class="border-gray-400 w-4 h-4 text-blue-600 focus:ring-blue-500 disabled:bg-gray-200" />
+                        <input id="qfam2_90" type="checkbox" value="1" name="qfam2_90"
+                            class="border-gray-400 w-4 h-4 text-blue-600 focus:ring-blue-500 disabled:bg-gray-200" />
                         <label for="qfam2_90" class="ms-2 text-sm text-gray-900">90. Не указано/Неизвестно</label>
                     </div>
                 </div>
@@ -764,26 +747,6 @@
             </div>
 
             <div class="grid grid-cols-2 gap-4 items-start mt-6">
-                <div>CM3d. Населённый пункт</div>
-                <div>
-                    <select id="cm3d" name="cm3d" class="border-gray-400 border text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
-                        <option value="-9">--- выбрать ---</option>
-                    </select>
-                </div>
-            </div>
-
-            <div class="grid grid-cols-2 gap-4 items-start mt-6">
-                <div>CM3m. Махалли</div>
-                <div>
-                    <select id="cm3m" name="cm3m" class="border-gray-400 border text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
-                        <option value="-9">--- выбрать ---</option>
-                    </select>
-                </div>
-            </div>
-
-            <input type="hidden" id="cm3e" name="cm3e" />
-
-            <div class="grid grid-cols-2 gap-4 items-start mt-6">
                 <div>CM4. Этническая принадлежность матери (национальность)</div>
                 <div>
                     <select id="cm4" name="cm4" class="border-gray-400 border text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
@@ -845,7 +808,8 @@
                 </div>
             </div>
             <div class="grid grid-cols-2 gap-4 items-start mt-10">
-                <div>CM6b. Текущее здоровье матери </div><div class="col-span-1 flex flex-col gap-2">
+                <div>CM6b. Текущее здоровье матери </div>
+                <div class="col-span-1 flex flex-col gap-2">
                     <div class="flex items-center">
                         <input id="cm6b-1" type="radio" value="0" name="cm6b" class="border-gray-400 w-4 h-4 text-blue-600 focus:ring-blue-500 disabled:bg-gray-200" />
                         <label for="cm6b-1" class="ms-2 text-sm text-gray-900">0. Мать внешне здорова</label>
@@ -873,7 +837,8 @@
                 </div>
             </div>
             <div class="grid grid-cols-2 gap-4 items-start mt-10">
-                <div>CM6c. Какая группа инвалидности у матери?</div><div class="col-span-1 flex flex-col gap-2">
+                <div>CM6c. Какая группа инвалидности у матери?</div>
+                <div class="col-span-1 flex flex-col gap-2">
                     <div class="flex items-center">
                         <input id="cm6c-1" type="radio" value="0" name="cm6c" class="border-gray-400 w-4 h-4 text-blue-600 focus:ring-blue-500 disabled:bg-gray-200" />
                         <label for="cm6c-1" class="ms-2 text-sm text-gray-900">1. Инвалид с детства</label>
@@ -1177,7 +1142,8 @@
             </div>
 
             <div class="grid grid-cols-2 gap-4 items-start mt-10">
-                <div>CT1d. Лишен ли на данный момент отец родительских прав?</div><div class="col-span-1 flex flex-col gap-2">
+                <div>CT1d. Лишен ли на данный момент отец родительских прав?</div>
+                <div class="col-span-1 flex flex-col gap-2">
                     <div class="flex items-center">
                         <input id="ct1d-1" type="radio" value="1" name="ct1d" class="border-gray-400 w-4 h-4 text-blue-600 focus:ring-blue-500 disabled:bg-gray-200" />
                         <label for="ct1d-1" class="ms-2 text-sm text-gray-900">1. Лишен родительских прав</label>
@@ -1197,7 +1163,8 @@
                 </div>
             </div>
             <div class="grid grid-cols-2 gap-4 items-start mt-10">
-                <div>CT1dw. Почему отца лишили родительских прав или почему его права были временно ограничены?</div><div class="col-span-1 flex flex-col gap-2">
+                <div>CT1dw. Почему отца лишили родительских прав или почему его права были временно ограничены?</div>
+                <div class="col-span-1 flex flex-col gap-2">
                     <div class="flex items-center">
                         <input id="ct1dw-1" type="radio" value="1" name="ct1dw" class="border-gray-400 w-4 h-4 text-blue-600 focus:ring-blue-500 disabled:bg-gray-200" />
                         <label for="ct1dw-1" class="ms-2 text-sm text-gray-900">1. Отец жестоко обращался с ребенком или пренебрегал им.</label>
@@ -1288,26 +1255,6 @@
                     </select>
                 </div>
             </div>
-
-            <div class="grid grid-cols-2 gap-4 items-start mt-6">
-                <div>CT3d. Населённый пункт</div>
-                <div>
-                    <select id="ct3d" name="ct3d" class="border-gray-400 border text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
-                        <option value="-9">--- выбрать ---</option>
-                    </select>
-                </div>
-            </div>
-
-            <div class="grid grid-cols-2 gap-4 items-start mt-6">
-                <div>CT3m. Махалли</div>
-                <div>
-                    <select id="ct3m" name="ct3m" class="border-gray-400 border text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
-                        <option value="-9">--- выбрать ---</option>
-                    </select>
-                </div>
-            </div>
-
-            <input type="hidden" id="ct3e" name="ct3e" />
 
 
             <div class="grid grid-cols-2 gap-4 items-start mt-6">
@@ -1459,7 +1406,8 @@
                 </div>
             </div>
             <div class="grid grid-cols-2 gap-4 items-start mt-10">
-                <div>CT8b. Текущая трудовая занятость отца</div><div class="col-span-1 flex flex-col gap-2">
+                <div>CT8b. Текущая трудовая занятость отца</div>
+                <div class="col-span-1 flex flex-col gap-2">
                     <div class="flex items-center">
                         <input id="ct8b-1" type="radio" value="1" name="ct8b" class="border-gray-400 w-4 h-4 text-blue-600 focus:ring-blue-500 disabled:bg-gray-200" />
                         <label for="ct8b-1" class="ms-2 text-sm text-gray-900">1. Занятый, на постоянной основе</label>
@@ -2234,7 +2182,7 @@
                 </div>
             </div>
 
-            <small class="my-2 block italic text-red-500 mt-6">ЕСЛИ РЕБЕНОК ПОСЕЩАЛ МНОГОПРОФИЛЬНУЮ СПЕЦИАЛИЗИРОВАННУЮ ДОШКОЛЬНУЮ ОБРАЗОВАТЕЛЬНУЮ ОРГАНИЗАЦИЮ /ДЕТСКИЙ САД</small>
+            <p>Какую многопрофильную специализированную дошкольную образовательную организацию/детский сад он/она посещал/посещала?</p>
 
             <div class="grid grid-cols-2 gap-4 items-start mt-6">
                 <div>1ar. Область</div>
@@ -2255,7 +2203,7 @@
             </div>
 
             <div class="grid grid-cols-2 gap-4 items-start mt-2">
-                <div>1а1. Введите код из реестра последнего специализированного дошкольного учреждения, из которого поступил ребенок</div>
+                <div>1a1. Название дошкольного учреждения</div>
                 <div>
                     <select id="qeduc1a1" name="qeduc1a1" class="border-gray-400 border text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
                         <option value="-9">--- выбрать ---</option>
@@ -2278,11 +2226,13 @@
                         <label for="qeduc2-1" class="ms-2 text-sm text-gray-900">1. Да</label>
                     </div>
                     <div class="flex items-center">
-                        <input id="qeduc2-2" type="radio" value="2" name="qeduc2" disabled class="border-gray-400 w-4 h-4 text-blue-600 focus:ring-blue-500 disabled:bg-gray-200" />
+                        <input id="qeduc2-2" type="radio" value="2" name="qeduc2" disabled
+                            class="border-gray-400 w-4 h-4 text-blue-600 focus:ring-blue-500 disabled:bg-gray-200" />
                         <label for="qeduc2-2" class="ms-2 text-sm text-gray-900">2. Нет</label>
                     </div>
                     <div class="flex items-center">
-                        <input id="qeduc2-3" type="radio" value="7" name="qeduc2" disabled class="border-gray-400 w-4 h-4 text-blue-600 focus:ring-blue-500 disabled:bg-gray-200" />
+                        <input id="qeduc2-3" type="radio" value="7" name="qeduc2" disabled
+                            class="border-gray-400 w-4 h-4 text-blue-600 focus:ring-blue-500 disabled:bg-gray-200" />
                         <label for="qeduc2-3" class="ms-2 text-sm text-gray-900">7. Не применимо, ребенок младше 7 лет</label>
                     </div>
                 </div>
@@ -2305,7 +2255,7 @@
                     </div>
                     <div class="flex items-center">
                         <input id="qeduc2a-4" type="radio" value="4" name="qeduc2a" class="border-gray-400 w-4 h-4 text-blue-600 focus:ring-blue-500 disabled:bg-gray-200" />
-                        <label for="qeduc2a-4" class="ms-2 text-sm text-gray-900">4. Профессиональный колледж</label>
+                        <label for="qeduc2a-4" class="ms-2 text-sm text-gray-900">4. Республиканский специализированный колледж для лиц с ограниченными возможностями</label>
                     </div>
                     <div class="flex items-center">
                         <input id="qeduc2a-5" type="radio" value="5" name="qeduc2a" class="border-gray-400 w-4 h-4 text-blue-600 focus:ring-blue-500 disabled:bg-gray-200" />
@@ -2336,9 +2286,10 @@
                 </div>
             </div>
 
-            <small class="my-2 block italic text-red-500 mt-6">ЕСЛИ РЕБЕНОК ОБУЧАЛСЯ В СПЕЦИАЛИЗИРОВАННОМ ОБРАЗОВАТЕЛЬНОМ УЧРЕЖДЕНИИ</small>
+            <p>Какое специализированное учебное заведение он/она посещал/посещала?</p>
+
             <div class="grid grid-cols-2 gap-4 items-start mt-2">
-                <div>2а1. Введите код из реестра последнего учебного заведения, из которого поступил ребенок</div>
+                <div>2a1. Название учебного заведения</div>
                 <div>
                     <select id="qeduc2a1" name="qeduc2a1" class="border-gray-400 border text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block disabled:bg-gray-100 p-2.5 w-full">
                         <option value="-9">--- выбрать ---</option>
@@ -2585,46 +2536,57 @@
                 </div>
                 <div class="col-span-1 flex flex-col gap-2">
                     <div class="flex items-center">
-                        <input id="prehealth5a1" type="checkbox" value="1" name="prehealth5a1" class="border-gray-400 w-4 h-4 text-blue-600 focus:ring-blue-500 disabled:bg-gray-200" />
+                        <input id="prehealth5a1" type="checkbox" value="1" name="prehealth5a1"
+                            class="border-gray-400 w-4 h-4 text-blue-600 focus:ring-blue-500 disabled:bg-gray-200" />
                         <label for="prehealth5a1" class="ms-2 text-sm text-gray-900">1. Задержка интеллектуального развития</label>
                     </div>
                     <div class="flex items-center">
-                        <input id="prehealth5a2" type="checkbox" value="2" name="prehealth5a2" class="border-gray-400 w-4 h-4 text-blue-600 focus:ring-blue-500 disabled:bg-gray-200" />
+                        <input id="prehealth5a2" type="checkbox" value="2" name="prehealth5a2"
+                            class="border-gray-400 w-4 h-4 text-blue-600 focus:ring-blue-500 disabled:bg-gray-200" />
                         <label for="prehealth5a2" class="ms-2 text-sm text-gray-900">2. Задержка физического развития</label>
                     </div>
                     <div class="flex items-center">
-                        <input id="prehealth5a3" type="checkbox" value="3" name="prehealth5a3" class="border-gray-400 w-4 h-4 text-blue-600 focus:ring-blue-500 disabled:bg-gray-200" />
+                        <input id="prehealth5a3" type="checkbox" value="3" name="prehealth5a3"
+                            class="border-gray-400 w-4 h-4 text-blue-600 focus:ring-blue-500 disabled:bg-gray-200" />
                         <label for="prehealth5a3" class="ms-2 text-sm text-gray-900">3. Психофизическая отсталость</label>
                     </div>
                     <div class="flex items-center">
-                        <input id="prehealth5a4" type="checkbox" value="4" name="prehealth5a4" class="border-gray-400 w-4 h-4 text-blue-600 focus:ring-blue-500 disabled:bg-gray-200" />
+                        <input id="prehealth5a4" type="checkbox" value="4" name="prehealth5a4"
+                            class="border-gray-400 w-4 h-4 text-blue-600 focus:ring-blue-500 disabled:bg-gray-200" />
                         <label for="prehealth5a4" class="ms-2 text-sm text-gray-900">4. Тяжелые нарушения речи</label>
                     </div>
                     <div class="flex items-center">
-                        <input id="prehealth5a5" type="checkbox" value="5" name="prehealth5a5" class="border-gray-400 w-4 h-4 text-blue-600 focus:ring-blue-500 disabled:bg-gray-200" />
+                        <input id="prehealth5a5" type="checkbox" value="5" name="prehealth5a5"
+                            class="border-gray-400 w-4 h-4 text-blue-600 focus:ring-blue-500 disabled:bg-gray-200" />
                         <label for="prehealth5a5" class="ms-2 text-sm text-gray-900">5. Задержка развития моторики</label>
                     </div>
                     <div class="flex items-center">
-                        <input id="prehealth5a6" type="checkbox" value="6" name="prehealth5a6" class="border-gray-400 w-4 h-4 text-blue-600 focus:ring-blue-500 disabled:bg-gray-200" />
+                        <input id="prehealth5a6" type="checkbox" value="6" name="prehealth5a6"
+                            class="border-gray-400 w-4 h-4 text-blue-600 focus:ring-blue-500 disabled:bg-gray-200" />
                         <label for="prehealth5a6" class="ms-2 text-sm text-gray-900">6. Задержка когнитивных навыков</label>
                     </div>
                     <div class="flex items-center">
-                        <input id="prehealth5a7" type="checkbox" value="7" name="prehealth5a7" class="border-gray-400 w-4 h-4 text-blue-600 focus:ring-blue-500 disabled:bg-gray-200" />
+                        <input id="prehealth5a7" type="checkbox" value="7" name="prehealth5a7"
+                            class="border-gray-400 w-4 h-4 text-blue-600 focus:ring-blue-500 disabled:bg-gray-200" />
                         <label for="prehealth5a7" class="ms-2 text-sm text-gray-900">7. Задержка социальных, эмоциональных и коммуникативных навыков</label>
                     </div>
                     <div class="flex items-center">
-                        <input id="prehealth5a8" type="checkbox" value="8" name="prehealth5a8" class="border-gray-400 w-4 h-4 text-blue-600 focus:ring-blue-500 disabled:bg-gray-200" />
+                        <input id="prehealth5a8" type="checkbox" value="8" name="prehealth5a8"
+                            class="border-gray-400 w-4 h-4 text-blue-600 focus:ring-blue-500 disabled:bg-gray-200" />
                         <label for="prehealth5a8" class="ms-2 text-sm text-gray-900">8. Задержка общего развития</label>
                     </div>
                     <div class="flex items-center">
-                        <input id="prehealth5a9" type="checkbox" value="9" name="prehealth5a9" class="border-gray-400 w-4 h-4 text-blue-600 focus:ring-blue-500 disabled:bg-gray-200" />
+                        <input id="prehealth5a9" type="checkbox" value="9" name="prehealth5a9"
+                            class="border-gray-400 w-4 h-4 text-blue-600 focus:ring-blue-500 disabled:bg-gray-200" />
                         <label for="prehealth5a9" class="ms-2 text-sm text-gray-900">9. Если другое, уточните:  …</label>
                     </div>
                     <div class="flex items-center">
-                        <input type="text" id="prehealth5a9_other" name="prehealth5a9_other" class="border-gray-400 bg-white border text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 disabled:bg-gray-100 read-only:bg-gray-100 p-2.5 block w-full" />
+                        <input type="text" id="prehealth5a9_other" name="prehealth5a9_other"
+                            class="border-gray-400 bg-white border text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 disabled:bg-gray-100 read-only:bg-gray-100 p-2.5 block w-full" />
                     </div>
                     <div class="flex items-center">
-                        <input id="prehealth5a90" type="checkbox" value="90" name="prehealth5a90" class="border-gray-400 w-4 h-4 text-blue-600 focus:ring-blue-500 disabled:bg-gray-200" />
+                        <input id="prehealth5a90" type="checkbox" value="90" name="prehealth5a90"
+                            class="border-gray-400 w-4 h-4 text-blue-600 focus:ring-blue-500 disabled:bg-gray-200" />
                         <label for="prehealth5a90" class="ms-2 text-sm text-gray-900">90. Неизвестно</label>
                     </div>
                 </div>
@@ -2637,34 +2599,42 @@
                 </div>
                 <div class="flex flex-col gap-2">
                     <div class="flex items-center">
-                        <input id="prehealth5b-1" type="radio" value="1" name="prehealth5b" class="border-gray-400 w-4 h-4 text-blue-600 focus:ring-blue-500 disabled:bg-gray-200" />
+                        <input id="prehealth5b-1" type="radio" value="1" name="prehealth5b"
+                            class="border-gray-400 w-4 h-4 text-blue-600 focus:ring-blue-500 disabled:bg-gray-200" />
                         <label for="prehealth5b-1" class="ms-2 text-sm text-gray-900">1. Развитие в норме</label>
                     </div>
                     <div class="flex items-center">
-                        <input id="prehealth5b-2" type="radio" value="2" name="prehealth5b" class="border-gray-400 w-4 h-4 text-blue-600 focus:ring-blue-500 disabled:bg-gray-200" />
+                        <input id="prehealth5b-2" type="radio" value="2" name="prehealth5b"
+                            class="border-gray-400 w-4 h-4 text-blue-600 focus:ring-blue-500 disabled:bg-gray-200" />
                         <label for="prehealth5b-2" class="ms-2 text-sm text-gray-900">2. Легкая задержка интеллектуального развития</label>
                     </div>
                     <div class="flex items-center">
-                        <input id="prehealth5b-3" type="radio" value="3" name="prehealth5b" class="border-gray-400 w-4 h-4 text-blue-600 focus:ring-blue-500 disabled:bg-gray-200" />
+                        <input id="prehealth5b-3" type="radio" value="3" name="prehealth5b"
+                            class="border-gray-400 w-4 h-4 text-blue-600 focus:ring-blue-500 disabled:bg-gray-200" />
                         <label for="prehealth5b-3" class="ms-2 text-sm text-gray-900">3. Умеренная задержка интеллектуального развития</label>
                     </div>
                     <div class="flex items-center">
-                        <input id="prehealth5b-4" type="radio" value="4" name="prehealth5b" class="border-gray-400 w-4 h-4 text-blue-600 focus:ring-blue-500 disabled:bg-gray-200" />
+                        <input id="prehealth5b-4" type="radio" value="4" name="prehealth5b"
+                            class="border-gray-400 w-4 h-4 text-blue-600 focus:ring-blue-500 disabled:bg-gray-200" />
                         <label for="prehealth5b-4" class="ms-2 text-sm text-gray-900">4. Тяжелая задержка интеллектуального развития</label>
                     </div>
                     <div class="flex items-center">
-                        <input id="prehealth5b-5" type="radio" value="5" name="prehealth5b" class="border-gray-400 w-4 h-4 text-blue-600 focus:ring-blue-500 disabled:bg-gray-200" />
+                        <input id="prehealth5b-5" type="radio" value="5" name="prehealth5b"
+                            class="border-gray-400 w-4 h-4 text-blue-600 focus:ring-blue-500 disabled:bg-gray-200" />
                         <label for="prehealth5b-5" class="ms-2 text-sm text-gray-900">5. Глубокая задержка интеллектуального развития</label>
                     </div>
                     <div class="flex items-center">
-                        <input id="prehealth5b-6" type="radio" value="6" name="prehealth5b" class="border-gray-400 w-4 h-4 text-blue-600 focus:ring-blue-500 disabled:bg-gray-200" />
+                        <input id="prehealth5b-6" type="radio" value="6" name="prehealth5b"
+                            class="border-gray-400 w-4 h-4 text-blue-600 focus:ring-blue-500 disabled:bg-gray-200" />
                         <label for="prehealth5b-6" class="ms-2 text-sm text-gray-900">6. Если другое, уточните:  …</label>
                     </div>
                     <div class="flex items-center">
-                        <input type="text" id="prehealth5b_other" name="prehealth5b_other" class="border-gray-400 bg-white border text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 disabled:bg-gray-100 read-only:bg-gray-100 p-2.5 block w-full" />
+                        <input type="text" id="prehealth5b_other" name="prehealth5b_other"
+                            class="border-gray-400 bg-white border text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 disabled:bg-gray-100 read-only:bg-gray-100 p-2.5 block w-full" />
                     </div>
                     <div class="flex items-center">
-                        <input id="prehealth5b-7" type="radio" value="90" name="prehealth5b" class="border-gray-400 w-4 h-4 text-blue-600 focus:ring-blue-500 disabled:bg-gray-200" />
+                        <input id="prehealth5b-7" type="radio" value="90" name="prehealth5b"
+                            class="border-gray-400 w-4 h-4 text-blue-600 focus:ring-blue-500 disabled:bg-gray-200" />
                         <label for="prehealth5b-7" class="ms-2 text-sm text-gray-900">90. Неизвестно</label>
                     </div>
                 </div>
@@ -2676,30 +2646,37 @@
                 </div>
                 <div class="flex flex-col gap-2">
                     <div class="flex items-center">
-                        <input id="prehealth5c-1" type="radio" value="1" name="prehealth5c" class="border-gray-400 w-4 h-4 text-blue-600 focus:ring-blue-500 disabled:bg-gray-200" />
+                        <input id="prehealth5c-1" type="radio" value="1" name="prehealth5c"
+                            class="border-gray-400 w-4 h-4 text-blue-600 focus:ring-blue-500 disabled:bg-gray-200" />
                         <label for="prehealth5c-1" class="ms-2 text-sm text-gray-900">1. Здоров</label>
                     </div>
                     <div class="flex items-center">
-                        <input id="prehealth5c-2" type="radio" value="2" name="prehealth5c" class="border-gray-400 w-4 h-4 text-blue-600 focus:ring-blue-500 disabled:bg-gray-200" />
+                        <input id="prehealth5c-2" type="radio" value="2" name="prehealth5c"
+                            class="border-gray-400 w-4 h-4 text-blue-600 focus:ring-blue-500 disabled:bg-gray-200" />
                         <label for="prehealth5c-2" class="ms-2 text-sm text-gray-900">2. Глухой</label>
                     </div>
                     <div class="flex items-center">
-                        <input id="prehealth5c-3" type="radio" value="3" name="prehealth5c" class="border-gray-400 w-4 h-4 text-blue-600 focus:ring-blue-500 disabled:bg-gray-200" />
+                        <input id="prehealth5c-3" type="radio" value="3" name="prehealth5c"
+                            class="border-gray-400 w-4 h-4 text-blue-600 focus:ring-blue-500 disabled:bg-gray-200" />
                         <label for="prehealth5c-3" class="ms-2 text-sm text-gray-900">3. Слабослышащий</label>
                     </div>
                     <div class="flex items-center">
-                        <input id="prehealth5c-4" type="radio" value="4" name="prehealth5c" class="border-gray-400 w-4 h-4 text-blue-600 focus:ring-blue-500 disabled:bg-gray-200" />
+                        <input id="prehealth5c-4" type="radio" value="4" name="prehealth5c"
+                            class="border-gray-400 w-4 h-4 text-blue-600 focus:ring-blue-500 disabled:bg-gray-200" />
                         <label for="prehealth5c-4" class="ms-2 text-sm text-gray-900">4. Тугоухость, переходящая в глухоту</label>
                     </div>
                     <div class="flex items-center">
-                        <input id="prehealth5c-5" type="radio" value="5" name="prehealth5c" class="border-gray-400 w-4 h-4 text-blue-600 focus:ring-blue-500 disabled:bg-gray-200" />
+                        <input id="prehealth5c-5" type="radio" value="5" name="prehealth5c"
+                            class="border-gray-400 w-4 h-4 text-blue-600 focus:ring-blue-500 disabled:bg-gray-200" />
                         <label for="prehealth5c-5" class="ms-2 text-sm text-gray-900">5. Если другое, уточните:  …</label>
                     </div>
                     <div class="flex items-center">
-                        <input type="text" id="prehealth5c_other" name="prehealth5c_other" class="border-gray-400 bg-white border text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 disabled:bg-gray-100 read-only:bg-gray-100 p-2.5 block w-full" />
+                        <input type="text" id="prehealth5c_other" name="prehealth5c_other"
+                            class="border-gray-400 bg-white border text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 disabled:bg-gray-100 read-only:bg-gray-100 p-2.5 block w-full" />
                     </div>
                     <div class="flex items-center">
-                        <input id="prehealth5c-6" type="radio" value="6" name="prehealth5c" class="border-gray-400 w-4 h-4 text-blue-600 focus:ring-blue-500 disabled:bg-gray-200" />
+                        <input id="prehealth5c-6" type="radio" value="6" name="prehealth5c"
+                            class="border-gray-400 w-4 h-4 text-blue-600 focus:ring-blue-500 disabled:bg-gray-200" />
                         <label for="prehealth5c-6" class="ms-2 text-sm text-gray-900">90. Неизвестно</label>
                     </div>
                 </div>
@@ -2711,30 +2688,37 @@
                 </div>
                 <div class="flex flex-col gap-2">
                     <div class="flex items-center">
-                        <input id="prehealth5d-1" type="radio" value="1" name="prehealth5d" class="border-gray-400 w-4 h-4 text-blue-600 focus:ring-blue-500 disabled:bg-gray-200" />
+                        <input id="prehealth5d-1" type="radio" value="1" name="prehealth5d"
+                            class="border-gray-400 w-4 h-4 text-blue-600 focus:ring-blue-500 disabled:bg-gray-200" />
                         <label for="prehealth5d-1" class="ms-2 text-sm text-gray-900">1. Здоров</label>
                     </div>
                     <div class="flex items-center">
-                        <input id="prehealth5d-2" type="radio" value="2" name="prehealth5d" class="border-gray-400 w-4 h-4 text-blue-600 focus:ring-blue-500 disabled:bg-gray-200" />
+                        <input id="prehealth5d-2" type="radio" value="2" name="prehealth5d"
+                            class="border-gray-400 w-4 h-4 text-blue-600 focus:ring-blue-500 disabled:bg-gray-200" />
                         <label for="prehealth5d-2" class="ms-2 text-sm text-gray-900">2. Слепой</label>
                     </div>
                     <div class="flex items-center">
-                        <input id="prehealth5d-3" type="radio" value="3" name="prehealth5d" class="border-gray-400 w-4 h-4 text-blue-600 focus:ring-blue-500 disabled:bg-gray-200" />
+                        <input id="prehealth5d-3" type="radio" value="3" name="prehealth5d"
+                            class="border-gray-400 w-4 h-4 text-blue-600 focus:ring-blue-500 disabled:bg-gray-200" />
                         <label for="prehealth5d-3" class="ms-2 text-sm text-gray-900">3. Слабовидящий</label>
                     </div>
                     <div class="flex items-center">
-                        <input id="prehealth5d-4" type="radio" value="4" name="prehealth5d" class="border-gray-400 w-4 h-4 text-blue-600 focus:ring-blue-500 disabled:bg-gray-200" />
+                        <input id="prehealth5d-4" type="radio" value="4" name="prehealth5d"
+                            class="border-gray-400 w-4 h-4 text-blue-600 focus:ring-blue-500 disabled:bg-gray-200" />
                         <label for="prehealth5d-4" class="ms-2 text-sm text-gray-900">4. Нарушение зрения, прогрессирующее до слепоты</label>
                     </div>
                     <div class="flex items-center">
-                        <input id="prehealth5d-5" type="radio" value="5" name="prehealth5d" class="border-gray-400 w-4 h-4 text-blue-600 focus:ring-blue-500 disabled:bg-gray-200" />
+                        <input id="prehealth5d-5" type="radio" value="5" name="prehealth5d"
+                            class="border-gray-400 w-4 h-4 text-blue-600 focus:ring-blue-500 disabled:bg-gray-200" />
                         <label for="prehealth5d-5" class="ms-2 text-sm text-gray-900">5. Если другое, уточните:  …</label>
                     </div>
                     <div class="flex items-center">
-                        <input type="text" id="prehealth5d_other" name="prehealth5d_other" class="border-gray-400 bg-white border text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 disabled:bg-gray-100 read-only:bg-gray-100 p-2.5 block w-full" />
+                        <input type="text" id="prehealth5d_other" name="prehealth5d_other"
+                            class="border-gray-400 bg-white border text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 disabled:bg-gray-100 read-only:bg-gray-100 p-2.5 block w-full" />
                     </div>
                     <div class="flex items-center">
-                        <input id="prehealth5d-6" type="radio" value="6" name="prehealth5d" class="border-gray-400 w-4 h-4 text-blue-600 focus:ring-blue-500 disabled:bg-gray-200" />
+                        <input id="prehealth5d-6" type="radio" value="6" name="prehealth5d"
+                            class="border-gray-400 w-4 h-4 text-blue-600 focus:ring-blue-500 disabled:bg-gray-200" />
                         <label for="prehealth5d-6" class="ms-2 text-sm text-gray-900">90. Неизвестно</label>
                     </div>
                 </div>
@@ -2746,46 +2730,57 @@
                 </div>
                 <div class="flex flex-col gap-2">
                     <div class="flex items-center">
-                        <input id="prehealth5e-1" type="radio" value="1" name="prehealth5e" class="border-gray-400 w-4 h-4 text-blue-600 focus:ring-blue-500 disabled:bg-gray-200" />
+                        <input id="prehealth5e-1" type="radio" value="1" name="prehealth5e"
+                            class="border-gray-400 w-4 h-4 text-blue-600 focus:ring-blue-500 disabled:bg-gray-200" />
                         <label for="prehealth5e-1" class="ms-2 text-sm text-gray-900">1. Здоров</label>
                     </div>
                     <div class="flex items-center">
-                        <input id="prehealth5e-2" type="radio" value="2" name="prehealth5e" class="border-gray-400 w-4 h-4 text-blue-600 focus:ring-blue-500 disabled:bg-gray-200" />
+                        <input id="prehealth5e-2" type="radio" value="2" name="prehealth5e"
+                            class="border-gray-400 w-4 h-4 text-blue-600 focus:ring-blue-500 disabled:bg-gray-200" />
                         <label for="prehealth5e-2" class="ms-2 text-sm text-gray-900">2. Последствия ДЦП</label>
                     </div>
                     <div class="flex items-center">
-                        <input id="prehealth5e-3" type="radio" value="3" name="prehealth5e" class="border-gray-400 w-4 h-4 text-blue-600 focus:ring-blue-500 disabled:bg-gray-200" />
+                        <input id="prehealth5e-3" type="radio" value="3" name="prehealth5e"
+                            class="border-gray-400 w-4 h-4 text-blue-600 focus:ring-blue-500 disabled:bg-gray-200" />
                         <label for="prehealth5e-3" class="ms-2 text-sm text-gray-900">3. Сколиоз</label>
                     </div>
                     <div class="flex items-center">
-                        <input id="prehealth5e-4" type="radio" value="4" name="prehealth5e" class="border-gray-400 w-4 h-4 text-blue-600 focus:ring-blue-500 disabled:bg-gray-200" />
+                        <input id="prehealth5e-4" type="radio" value="4" name="prehealth5e"
+                            class="border-gray-400 w-4 h-4 text-blue-600 focus:ring-blue-500 disabled:bg-gray-200" />
                         <label for="prehealth5e-4" class="ms-2 text-sm text-gray-900">4. Последствия полиомиелита</label>
                     </div>
                     <div class="flex items-center">
-                        <input id="prehealth5e-5" type="radio" value="5" name="prehealth5e" class="border-gray-400 w-4 h-4 text-blue-600 focus:ring-blue-500 disabled:bg-gray-200" />
+                        <input id="prehealth5e-5" type="radio" value="5" name="prehealth5e"
+                            class="border-gray-400 w-4 h-4 text-blue-600 focus:ring-blue-500 disabled:bg-gray-200" />
                         <label for="prehealth5e-5" class="ms-2 text-sm text-gray-900">5. Последствия миопатии</label>
                     </div>
                     <div class="flex items-center">
-                        <input id="prehealth5e-6" type="radio" value="6" name="prehealth5e" class="border-gray-400 w-4 h-4 text-blue-600 focus:ring-blue-500 disabled:bg-gray-200" />
+                        <input id="prehealth5e-6" type="radio" value="6" name="prehealth5e"
+                            class="border-gray-400 w-4 h-4 text-blue-600 focus:ring-blue-500 disabled:bg-gray-200" />
                         <label for="prehealth5e-6" class="ms-2 text-sm text-gray-900">6. Последствия остеомиелита</label>
                     </div>
                     <div class="flex items-center">
-                        <input id="prehealth5e-7" type="radio" value="7" name="prehealth5e" class="border-gray-400 w-4 h-4 text-blue-600 focus:ring-blue-500 disabled:bg-gray-200" />
+                        <input id="prehealth5e-7" type="radio" value="7" name="prehealth5e"
+                            class="border-gray-400 w-4 h-4 text-blue-600 focus:ring-blue-500 disabled:bg-gray-200" />
                         <label for="prehealth5e-7" class="ms-2 text-sm text-gray-900">7. Ампутация</label>
                     </div>
                     <div class="flex items-center">
-                        <input id="prehealth5e-8" type="radio" value="8" name="prehealth5e" class="border-gray-400 w-4 h-4 text-blue-600 focus:ring-blue-500 disabled:bg-gray-200" />
+                        <input id="prehealth5e-8" type="radio" value="8" name="prehealth5e"
+                            class="border-gray-400 w-4 h-4 text-blue-600 focus:ring-blue-500 disabled:bg-gray-200" />
                         <label for="prehealth5e-8" class="ms-2 text-sm text-gray-900">8. Задержка роста</label>
                     </div>
                     <div class="flex items-center">
-                        <input id="prehealth5e-9" type="radio" value="9" name="prehealth5e" class="border-gray-400 w-4 h-4 text-blue-600 focus:ring-blue-500 disabled:bg-gray-200" />
+                        <input id="prehealth5e-9" type="radio" value="9" name="prehealth5e"
+                            class="border-gray-400 w-4 h-4 text-blue-600 focus:ring-blue-500 disabled:bg-gray-200" />
                         <label for="prehealth5e-9" class="ms-2 text-sm text-gray-900">9. Если другое, уточните:  …</label>
                     </div>
                     <div class="flex items-center">
-                        <input type="text" id="prehealth5e_other" name="prehealth5e_other" class="border-gray-400 bg-white border text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 disabled:bg-gray-100 read-only:bg-gray-100 p-2.5 block w-full" />
+                        <input type="text" id="prehealth5e_other" name="prehealth5e_other"
+                            class="border-gray-400 bg-white border text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 disabled:bg-gray-100 read-only:bg-gray-100 p-2.5 block w-full" />
                     </div>
                     <div class="flex items-center">
-                        <input id="prehealth5e-10" type="radio" value="90" name="prehealth5e" class="border-gray-400 w-4 h-4 text-blue-600 focus:ring-blue-500 disabled:bg-gray-200" />
+                        <input id="prehealth5e-10" type="radio" value="90" name="prehealth5e"
+                            class="border-gray-400 w-4 h-4 text-blue-600 focus:ring-blue-500 disabled:bg-gray-200" />
                         <label for="prehealth5e-10" class="ms-2 text-sm text-gray-900">90. Неизвестно</label>
                     </div>
                 </div>
@@ -2979,10 +2974,12 @@
                     <table border="0">
                         <tr>
                             <td>
-                                <input id="predif7_cb" type="checkbox" value="1" name="predif7_cb" class="border-gray-400 w-4 h-4 text-blue-600 focus:ring-blue-500 disabled:bg-gray-200" />
+                                <input id="predif7_cb" type="checkbox" value="1" name="predif7_cb"
+                                    class="border-gray-400 w-4 h-4 text-blue-600 focus:ring-blue-500 disabled:bg-gray-200" />
                             </td>
                             <td>
-                                <input type="text" id="predif7_other" name="predif7_other" class="border-gray-400 bg-white border text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 disabled:bg-gray-100 read-only:bg-gray-100 p-2.5 block w-full" />
+                                <input type="text" id="predif7_other" name="predif7_other"
+                                    class="border-gray-400 bg-white border text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 disabled:bg-gray-100 read-only:bg-gray-100 p-2.5 block w-full" />
                             </td>
                         </tr>
                     </table>
@@ -3039,51 +3036,63 @@
                 </div>
                 <div class="col-span-1 flex flex-col gap-2">
                     <div class="flex items-center">
-                        <input id="preduc6b1" type="checkbox" value="1" name="preduc6b1" class="border-gray-400 w-4 h-4 text-blue-600 focus:ring-blue-500 disabled:bg-gray-200" />
+                        <input id="preduc6b1" type="checkbox" value="1" name="preduc6b1"
+                            class="border-gray-400 w-4 h-4 text-blue-600 focus:ring-blue-500 disabled:bg-gray-200" />
                         <label for="prehealth5a1" class="ms-2 text-sm text-gray-900">1. Физиотерапия</label>
                     </div>
                     <div class="flex items-center">
-                        <input id="preduc6b2" type="checkbox" value="2" name="preduc6b2" class="border-gray-400 w-4 h-4 text-blue-600 focus:ring-blue-500 disabled:bg-gray-200" />
+                        <input id="preduc6b2" type="checkbox" value="2" name="preduc6b2"
+                            class="border-gray-400 w-4 h-4 text-blue-600 focus:ring-blue-500 disabled:bg-gray-200" />
                         <label for="prehealth5a2" class="ms-2 text-sm text-gray-900">2. Логопедия</label>
                     </div>
                     <div class="flex items-center">
-                        <input id="preduc6b3" type="checkbox" value="3" name="preduc6b3" class="border-gray-400 w-4 h-4 text-blue-600 focus:ring-blue-500 disabled:bg-gray-200" />
+                        <input id="preduc6b3" type="checkbox" value="3" name="preduc6b3"
+                            class="border-gray-400 w-4 h-4 text-blue-600 focus:ring-blue-500 disabled:bg-gray-200" />
                         <label for="prehealth5a3" class="ms-2 text-sm text-gray-900">3. Помощь специального педагога (дефектолога)</label>
                     </div>
                     <div class="flex items-center">
-                        <input id="preduc6b4" type="checkbox" value="4" name="preduc6b4" class="border-gray-400 w-4 h-4 text-blue-600 focus:ring-blue-500 disabled:bg-gray-200" />
+                        <input id="preduc6b4" type="checkbox" value="4" name="preduc6b4"
+                            class="border-gray-400 w-4 h-4 text-blue-600 focus:ring-blue-500 disabled:bg-gray-200" />
                         <label for="prehealth5a4" class="ms-2 text-sm text-gray-900">4. Психотерапия</label>
                     </div>
                     <div class="flex items-center">
-                        <input id="preduc6b5" type="checkbox" value="5" name="preduc6b5" class="border-gray-400 w-4 h-4 text-blue-600 focus:ring-blue-500 disabled:bg-gray-200" />
+                        <input id="preduc6b5" type="checkbox" value="5" name="preduc6b5"
+                            class="border-gray-400 w-4 h-4 text-blue-600 focus:ring-blue-500 disabled:bg-gray-200" />
                         <label for="prehealth5a5" class="ms-2 text-sm text-gray-900">5. Сенсорная стимуляция</label>
                     </div>
                     <div class="flex items-center">
-                        <input id="preduc6b6" type="checkbox" value="6" name="preduc6b6" class="border-gray-400 w-4 h-4 text-blue-600 focus:ring-blue-500 disabled:bg-gray-200" />
+                        <input id="preduc6b6" type="checkbox" value="6" name="preduc6b6"
+                            class="border-gray-400 w-4 h-4 text-blue-600 focus:ring-blue-500 disabled:bg-gray-200" />
                         <label for="prehealth5a6" class="ms-2 text-sm text-gray-900">6. Поведенческая терапия</label>
                     </div>
                     <div class="flex items-center">
-                        <input id="preduc6b7" type="checkbox" value="7" name="preduc6b7" class="border-gray-400 w-4 h-4 text-blue-600 focus:ring-blue-500 disabled:bg-gray-200" />
+                        <input id="preduc6b7" type="checkbox" value="7" name="preduc6b7"
+                            class="border-gray-400 w-4 h-4 text-blue-600 focus:ring-blue-500 disabled:bg-gray-200" />
                         <label for="prehealth5a7" class="ms-2 text-sm text-gray-900">7. Медикаментозное лечение</label>
                     </div>
                     <div class="flex items-center">
-                        <input id="preduc6b8" type="checkbox" value="8" name="preduc6b8" class="border-gray-400 w-4 h-4 text-blue-600 focus:ring-blue-500 disabled:bg-gray-200" />
+                        <input id="preduc6b8" type="checkbox" value="8" name="preduc6b8"
+                            class="border-gray-400 w-4 h-4 text-blue-600 focus:ring-blue-500 disabled:bg-gray-200" />
                         <label for="prehealth5a8" class="ms-2 text-sm text-gray-900">8. Медицинские процедуры</label>
                     </div>
                     <div class="flex items-center">
-                        <input id="preduc6b9" type="checkbox" value="9" name="preduc6b9" class="border-gray-400 w-4 h-4 text-blue-600 focus:ring-blue-500 disabled:bg-gray-200" />
+                        <input id="preduc6b9" type="checkbox" value="9" name="preduc6b9"
+                            class="border-gray-400 w-4 h-4 text-blue-600 focus:ring-blue-500 disabled:bg-gray-200" />
                         <label for="prehealth5a9" class="ms-2 text-sm text-gray-900">9. Индивидуальное образовательное обучение</label>
                     </div>
                     <div class="flex items-center">
-                        <input id="preduc6b10" type="checkbox" value="10" name="preduc6b10" class="border-gray-400 w-4 h-4 text-blue-600 focus:ring-blue-500 disabled:bg-gray-200" />
+                        <input id="preduc6b10" type="checkbox" value="10" name="preduc6b10"
+                            class="border-gray-400 w-4 h-4 text-blue-600 focus:ring-blue-500 disabled:bg-gray-200" />
                         <label for="prehealth5a90" class="ms-2 text-sm text-gray-900">10. Коррекционно-педагогическая реабилитационная (медицинская, социальная, физическая) поддержка</label>
                     </div>
                     <div class="flex items-center">
-                        <input id="preduc6b11" type="checkbox" value="11" name="preduc6b11" class="border-gray-400 w-4 h-4 text-blue-600 focus:ring-blue-500 disabled:bg-gray-200" />
+                        <input id="preduc6b11" type="checkbox" value="11" name="preduc6b11"
+                            class="border-gray-400 w-4 h-4 text-blue-600 focus:ring-blue-500 disabled:bg-gray-200" />
                         <label for="prehealth5a90" class="ms-2 text-sm text-gray-900">11. Другая поддержка, укажите: …</label>
                     </div>
                     <div class="flex items-center">
-                        <textarea id="preduc6b11_other" name="preduc6b11_other" class="border-gray-400 bg-white border text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 disabled:bg-gray-100 read-only:bg-gray-100 p-2.5 block w-full"></textarea>
+                        <textarea id="preduc6b11_other" name="preduc6b11_other"
+                            class="border-gray-400 bg-white border text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 disabled:bg-gray-100 read-only:bg-gray-100 p-2.5 block w-full"></textarea>
                     </div>
                 </div>
             </div>
@@ -3111,23 +3120,28 @@
                 <div>6д. Какой психотропный препарат был назначен ребенку?</div>
                 <div class="col-span-1 flex flex-col gap-2">
                     <div class="flex items-center">
-                        <input id="preduc6d1" type="checkbox" value="1" name="preduc6d1" class="border-gray-400 w-4 h-4 text-blue-600 focus:ring-blue-500 disabled:bg-gray-200" />
+                        <input id="preduc6d1" type="checkbox" value="1" name="preduc6d1"
+                            class="border-gray-400 w-4 h-4 text-blue-600 focus:ring-blue-500 disabled:bg-gray-200" />
                         <label for="prehealth5a1" class="ms-2 text-sm text-gray-900">1. Антидепрессанты</label>
                     </div>
                     <div class="flex items-center">
-                        <input id="preduc6d2" type="checkbox" value="2" name="preduc6d2" class="border-gray-400 w-4 h-4 text-blue-600 focus:ring-blue-500 disabled:bg-gray-200" />
+                        <input id="preduc6d2" type="checkbox" value="2" name="preduc6d2"
+                            class="border-gray-400 w-4 h-4 text-blue-600 focus:ring-blue-500 disabled:bg-gray-200" />
                         <label for="prehealth5a2" class="ms-2 text-sm text-gray-900">2. Противотревожные препараты</label>
                     </div>
                     <div class="flex items-center">
-                        <input id="preduc6d3" type="checkbox" value="3" name="preduc6d3" class="border-gray-400 w-4 h-4 text-blue-600 focus:ring-blue-500 disabled:bg-gray-200" />
+                        <input id="preduc6d3" type="checkbox" value="3" name="preduc6d3"
+                            class="border-gray-400 w-4 h-4 text-blue-600 focus:ring-blue-500 disabled:bg-gray-200" />
                         <label for="prehealth5a3" class="ms-2 text-sm text-gray-900">3. Нейролептики</label>
                     </div>
                     <div class="flex items-center">
-                        <input id="preduc6d4" type="checkbox" value="4" name="preduc6d4" class="border-gray-400 w-4 h-4 text-blue-600 focus:ring-blue-500 disabled:bg-gray-200" />
+                        <input id="preduc6d4" type="checkbox" value="4" name="preduc6d4"
+                            class="border-gray-400 w-4 h-4 text-blue-600 focus:ring-blue-500 disabled:bg-gray-200" />
                         <label for="prehealth5a90" class="ms-2 text-sm text-gray-900">4. Если другое, уточните:  …</label>
                     </div>
                     <div class="flex items-center">
-                        <input type="text" id="preduc6d4_other" name="preduc6d4_other" class="border-gray-400 bg-white border text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 disabled:bg-gray-100 read-only:bg-gray-100 p-2.5 block w-full" />
+                        <input type="text" id="preduc6d4_other" name="preduc6d4_other"
+                            class="border-gray-400 bg-white border text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 disabled:bg-gray-100 read-only:bg-gray-100 p-2.5 block w-full" />
                     </div>
                 </div>
             </div>
@@ -4158,23 +4172,28 @@
                 <div>LK22_2. Какой вид инвалидности имеет ребенок согласно справке? <small class="mt-2 my-2 block italic text-red-500">НУЖНОЕ ОТМЕТИТЬ</small></div>
                 <div class="col-span-1 flex flex-col gap-2">
                     <div class="flex items-center">
-                        <input id="lk22_2_1" type="checkbox" value="1" name="lk22_2_1" class="border-gray-400 w-4 h-4 text-blue-600 focus:ring-blue-500 disabled:bg-gray-200" />
+                        <input id="lk22_2_1" type="checkbox" value="1" name="lk22_2_1"
+                            class="border-gray-400 w-4 h-4 text-blue-600 focus:ring-blue-500 disabled:bg-gray-200" />
                         <label for="lk22_2_1" class="ms-2 text-sm text-gray-900">Опорно-двигательная инвалидность</label>
                     </div>
                     <div class="flex items-center">
-                        <input id="lk22_2_2" type="checkbox" value="2" name="lk22_2_2" class="border-gray-400 w-4 h-4 text-blue-600 focus:ring-blue-500 disabled:bg-gray-200" />
+                        <input id="lk22_2_2" type="checkbox" value="2" name="lk22_2_2"
+                            class="border-gray-400 w-4 h-4 text-blue-600 focus:ring-blue-500 disabled:bg-gray-200" />
                         <label for="lk22_2_2" class="ms-2 text-sm text-gray-900">Нарушение слуха и/или зрения</label>
                     </div>
                     <div class="flex items-center">
-                        <input id="lk22_2_3" type="checkbox" value="3" name="lk22_2_3" class="border-gray-400 w-4 h-4 text-blue-600 focus:ring-blue-500 disabled:bg-gray-200" />
+                        <input id="lk22_2_3" type="checkbox" value="3" name="lk22_2_3"
+                            class="border-gray-400 w-4 h-4 text-blue-600 focus:ring-blue-500 disabled:bg-gray-200" />
                         <label for="lk22_2_3" class="ms-2 text-sm text-gray-900">Психическое расстройство</label>
                     </div>
                     <div class="flex items-center">
-                        <input id="lk22_2_4" type="checkbox" value="4" name="lk22_2_4" class="border-gray-400 w-4 h-4 text-blue-600 focus:ring-blue-500 disabled:bg-gray-200" />
+                        <input id="lk22_2_4" type="checkbox" value="4" name="lk22_2_4"
+                            class="border-gray-400 w-4 h-4 text-blue-600 focus:ring-blue-500 disabled:bg-gray-200" />
                         <label for="lk22_2_4" class="ms-2 text-sm text-gray-900">Нейро-психическая инвалидность</label>
                     </div>
                     <div class="flex items-center">
-                        <input id="lk22_2_5" type="checkbox" value="5" name="lk22_2_5" class="border-gray-400 w-4 h-4 text-blue-600 focus:ring-blue-500 disabled:bg-gray-200" />
+                        <input id="lk22_2_5" type="checkbox" value="5" name="lk22_2_5"
+                            class="border-gray-400 w-4 h-4 text-blue-600 focus:ring-blue-500 disabled:bg-gray-200" />
                         <label for="lk22_2_5" class="ms-2 text-sm text-gray-900">Другое, пожалуйста уточните</label>
                     </div>
                     <div>
@@ -4214,7 +4233,8 @@
             <small class="mt-10 my-2 block italic text-red-500">ДЛЯ ЛЮБОГО РЕБЕНКА, НЕЗАВИСИМО ОТ НАЛИЧИЯ СПРАВКИ ПО  ИНВАЛИДНОСТИ</small>
 
             <div class="grid grid-cols-2 gap-4 items-start mt-10">
-                <div>LK22_3_1. Есть ли у ребенка нарушения зрения?</div><div class="col-span-1 flex gap-4 items-center">
+                <div>LK22_3_1. Есть ли у ребенка нарушения зрения?</div>
+                <div class="col-span-1 flex gap-4 items-center">
                     <div class="flex items-center">
                         <input id="lk22_3_1-1" type="radio" value="1" name="lk22_3_1" class="border-gray-400 w-4 h-4 text-blue-600 focus:ring-blue-500 disabled:bg-gray-200" />
                         <label for="lk22_3_1-1" class="ms-2 text-sm text-gray-900">1. Да</label>
@@ -4410,19 +4430,23 @@
                 </div>
                 <div class="col-span-1 flex flex-col gap-2">
                     <div class="flex items-center">
-                        <input id="qhealthp3-1" type="radio" value="1" name="qhealthp3" class="border-gray-400 w-4 h-4 text-blue-600 focus:ring-blue-500 disabled:bg-gray-200" />
+                        <input id="qhealthp3-1" type="radio" value="1" name="qhealthp3"
+                            class="border-gray-400 w-4 h-4 text-blue-600 focus:ring-blue-500 disabled:bg-gray-200" />
                         <label for="qhealthp3-1" class="ms-2 text-sm text-gray-900">1. Автономный</label>
                     </div>
                     <div class="flex items-center">
-                        <input id="qhealthp3-2" type="radio" value="2" name="qhealthp3" class="border-gray-400 w-4 h-4 text-blue-600 focus:ring-blue-500 disabled:bg-gray-200" />
+                        <input id="qhealthp3-2" type="radio" value="2" name="qhealthp3"
+                            class="border-gray-400 w-4 h-4 text-blue-600 focus:ring-blue-500 disabled:bg-gray-200" />
                         <label for="qhealthp3-2" class="ms-2 text-sm text-gray-900">2. Нуждается в поддержке</label>
                     </div>
                     <div class="flex items-center">
-                        <input id="qhealthp3-3" type="radio" value="3" name="qhealthp3" class="border-gray-400 w-4 h-4 text-blue-600 focus:ring-blue-500 disabled:bg-gray-200" />
+                        <input id="qhealthp3-3" type="radio" value="3" name="qhealthp3"
+                            class="border-gray-400 w-4 h-4 text-blue-600 focus:ring-blue-500 disabled:bg-gray-200" />
                         <label for="qhealthp3-3" class="ms-2 text-sm text-gray-900">3. Полностью зависим от других по причине возраста</label>
                     </div>
                     <div class="flex items-center">
-                        <input id="qhealthp3-4" type="radio" value="4" name="qhealthp3" class="border-gray-400 w-4 h-4 text-blue-600 focus:ring-blue-500 disabled:bg-gray-200" />
+                        <input id="qhealthp3-4" type="radio" value="4" name="qhealthp3"
+                            class="border-gray-400 w-4 h-4 text-blue-600 focus:ring-blue-500 disabled:bg-gray-200" />
                         <label for="qhealthp3-4" class="ms-2 text-sm text-gray-900">4. Полностью зависим от других по причине инвалидности</label>
                     </div>
                 </div>
@@ -4596,10 +4620,12 @@
                     <table border="0">
                         <tr>
                             <td>
-                                <input id="todif7_cb" type="checkbox" value="1" name="todif7_cb" class="border-gray-400 w-4 h-4 text-blue-600 focus:ring-blue-500 disabled:bg-gray-200" />
+                                <input id="todif7_cb" type="checkbox" value="1" name="todif7_cb"
+                                    class="border-gray-400 w-4 h-4 text-blue-600 focus:ring-blue-500 disabled:bg-gray-200" />
                             </td>
                             <td>
-                                <input type="text" id="todif7_other" name="todif7_other" class="border-gray-400 bg-white border text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 disabled:bg-gray-100 read-only:bg-gray-100 p-2.5 block w-full" />
+                                <input type="text" id="todif7_other" name="todif7_other"
+                                    class="border-gray-400 bg-white border text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 disabled:bg-gray-100 read-only:bg-gray-100 p-2.5 block w-full" />
                             </td>
                         </tr>
                     </table>

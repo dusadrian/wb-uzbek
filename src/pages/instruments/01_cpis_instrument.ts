@@ -49,9 +49,9 @@ const sh3_end_dates = [
 
 const regElements =  ["reg", "lk14b", "cm3b", "cm10c", "cm11c", "ct3b", "ct10c", "ct11c", "cg10c", "cg11c", "sa3a", "sa5r"];
 const disElements =  ["dis", "lk14c", "cm3c", "cm10d", "cm11d", "ct3c", "ct10d", "ct11d", "cg10d", "cg11d", "sa3b", "sa5d"];
-const setElements =  ["",    "lk14d", "cm3d", "cm10e", "cm11e", "ct3d", "ct10e", "ct11e", "cg10e", "cg11e", "sa3c", ""    ];
-const mahElements =  ["",    "lk14m", "cm3m", "cm10m", "cm11m", "ct3m", "ct10m", "ct11m", "cg10m", "cg11m", "sa3m", ""    ];
-const typeElements = ["",    "lk14e", "cm3e", "cm10f", "cm11f", "ct3e", "ct10f", "ct11f", "cg10f", "cg11f", "sa3d", ""];
+const setElements =  ["",    ""     , ""    , "cm10e", "cm11e", ""    , "ct10e", "ct11e", "cg10e", "cg11e", "sa3c", ""    ];
+const mahElements =  ["",    ""     , ""    , "cm10m", "cm11m", ""    , "ct10m", "ct11m", "cg10m", "cg11m", "sa3m", ""    ];
+const typeElements = ["",    ""     , ""    , "cm10f", "cm11f", ""    , "ct10f", "ct11f", "cg10f", "cg11f", "sa3d", ""];
 
 // variabile cu reguli de validare
 const lk22_2 = ['lk22_2_1', 'lk22_2_2', 'lk22_2_3', 'lk22_2_4', 'lk22_2_5'];
@@ -1025,7 +1025,7 @@ util.listen(lk3cm3, "myChange", () => {
         const mother = util.htmlElement("cm3").value;
         const child = util.htmlElement("lk3").value;
 
-        const message = translations['must_be_later_or_equal'].replace("X", "CM3").replace("Y", "LK3");
+        const message = translations['must_be_earlier'].replace("X", "CM3").replace("Y", "LK3");
 
         errorHandler.removeError(lk3cm3, message);
         if (util.standardDate(mother) >= util.standardDate(child)) {
@@ -1039,7 +1039,7 @@ util.listen(lk3ct3, "myChange", () => {
         const father = util.htmlElement("ct3").value;
         const child = util.htmlElement("lk3").value;
 
-        const message = translations['must_be_later_or_equal'].replace("X", "CT3").replace("Y", "LK3");
+        const message = translations['must_be_earlier'].replace("X", "CT3").replace("Y", "LK3");
 
         errorHandler.removeError(lk3ct3, message);
         if (util.standardDate(father) >= util.standardDate(child)) {

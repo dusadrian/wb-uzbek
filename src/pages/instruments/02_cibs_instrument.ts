@@ -41,9 +41,9 @@ const general_dates = [
 
 const regElements =  ["reg", "lk14b", "sa3a", "sa5r", "cm3b", "cm11c", "ct3b", "ct11c", "cg11c", "qeduc1ar", "qeduc2ar"];
 const disElements =  ["dis", "lk14c", "sa3b", "sa5d", "cm3c", "cm11d", "ct3c", "ct11d", "cg11d", "qeduc1ad", "qeduc2ad"];
-const setElements =  ["",    "lk14d", "sa3c", "",     "cm3d", "cm11e", "ct3d", "ct11e", "cg11e", "",         ""        ];
-const mahElements =  ["",    "lk14m", "sa3m", "",     "cm3m", "cm11m", "ct3m", "ct11m", "cg11m", "",         ""        ];
-const typeElements = ["",    "lk14e", "sa3d", "",     "cm3e", "cm11f", "ct3e", "ct11f", "cg11f", "",         ""        ];
+const setElements =  ["",    "",      "sa3c", "",     ""    , "cm11e", ""    , "ct11e", "cg11e", "",         ""        ];
+const mahElements =  ["",    "",      "sa3m", "",     ""    , "cm11m", ""    , "ct11m", "cg11m", "",         ""        ];
+const typeElements = ["",    "",      "sa3d", "",     ""    , "cm11f", ""    , "ct11f", "cg11f", "",         ""        ];
 
 const nonemptysets: string[] = [];
 for (let i = 0; i < setElements.length; i++) {

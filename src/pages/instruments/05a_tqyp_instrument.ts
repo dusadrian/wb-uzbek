@@ -39,9 +39,9 @@ const general_dates = [
 ];
 const regElements =  ["str3a", "ptr5b", "ptr8e"];
 const disElements =  ["str3b", "ptr5c", "ptr8f"];
-const setElements =  ["str3c", "ptr5d", "ptr8g"];
-const mahElements =  ["",      "ptr5m", "ptr8m"];
-const typeElements = ["str3e", "ptr5e", "ptr8h"];
+const setElements =  ["str3c", ""     , "ptr8g"];
+const mahElements =  ["",      ""     , "ptr8m"];
+const typeElements = ["str3e", ""     , "ptr8h"];
 
 // regiunea este intotdeauna inaintea districtului
 // un event de change pe regiune populeaza districtul, iar un event

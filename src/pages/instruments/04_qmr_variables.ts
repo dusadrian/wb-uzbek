@@ -2580,12 +2580,12 @@ export const questions: QuestionObjectType = {
     'cc7a': {
         name: 'cc7a',
         type: 'double',
-        value: '-9',
-        disabled: false,
+        value: '-7',
+        disabled: true,
         hidden: false,
         readonly: false,
         order: 231,
-        active: function() {return(true)},
+        active: function() {return(Number(instrument.questions.i9.value) >= 11 && Number(instrument.questions.i9.value) <= 14)},
         skip: false
     },
     'cc7b': {
