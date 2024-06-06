@@ -1781,7 +1781,6 @@ ipcMain.on('importData', (_event, _args) => {
                     title: i18n.__('Info'),
                     message: i18n.__('Import finished.')
                 }).then(() => {
-                    mainWindow.webContents.send("clearLoader");
                     if (appSession.userData.role_code === constant.ROLE_REGIONAL) {
                         goToRegionalDashboard();
                     } else if (appSession.userData.role_code === constant.ROLE_NATIONAL) {
@@ -1791,6 +1790,7 @@ ipcMain.on('importData', (_event, _args) => {
                     }
                 });
             }
+            mainWindow.webContents.send("clearLoader");
         });
 
         fs.unlinkSync(decryptedFile);
