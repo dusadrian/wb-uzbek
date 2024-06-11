@@ -279,39 +279,6 @@ export const questions: QuestionObjectType = {
         active: function() {return(Number(instrument.questions.ptr5b.value) > 0)},
         skip: false
     },
-    'ptr5d': {
-        name: 'ptr5d',
-        type: 'select',
-        value: '-7',
-        disabled: true,
-        hidden: false,
-        readonly: false,
-        order: 25,
-        active: function() {return(Number(instrument.questions.ptr5c.value) > 0)},
-        skip: false
-    },
-    'ptr5m': {
-        name: 'ptr5m',
-        type: 'select',
-        value: '-7',
-        disabled: true,
-        hidden: false,
-        readonly: false,
-        order: 26,
-        active: function() {return(Number(instrument.questions.ptr5d.value) > 0)},
-        skip: false
-    },
-    'ptr5e': {
-        name: 'ptr5e',
-        type: 'input',
-        value: '-9',
-        disabled: false,
-        hidden: true,
-        readonly: true,
-        order: 27,
-        active: function() {return(true)},
-        skip: false
-    },
     'ptr6': {
         name: 'ptr6',
         type: 'input',
@@ -319,7 +286,7 @@ export const questions: QuestionObjectType = {
         disabled: false,
         hidden: false,
         readonly: false,
-        order: 28,
+        order: 25,
         active: function() {return(true)},
         skip: false
     },
@@ -330,7 +297,7 @@ export const questions: QuestionObjectType = {
         disabled: false,
         hidden: false,
         readonly: false,
-        order: 29,
+        order: 26,
         active: function() {return(true)},
         skip: false
     },
@@ -341,7 +308,7 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 30,
+        order: 27,
         active: function() {return(Number(instrument.questions.ptr7.value) == 7)},
         skip: false
     },
@@ -352,7 +319,7 @@ export const questions: QuestionObjectType = {
         disabled: false,
         hidden: false,
         readonly: false,
-        order: 31,
+        order: 28,
         active: function() {return(true)},
         skip: false
     },
@@ -363,7 +330,7 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 32,
+        order: 29,
         active: function() {return(Number(instrument.questions.ptr8.value) == 5)},
         skip: false
     },
@@ -374,7 +341,7 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 33,
+        order: 30,
         active: function() {return(Number(instrument.questions.ptr8.value) == 2)},
         skip: false
     },
@@ -385,7 +352,7 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 34,
+        order: 31,
         active: function() {return(Number(instrument.questions.ptr8.value) == 1 || Number(instrument.questions.ptr8.value) == 2)},
         skip: false
     },
@@ -396,7 +363,7 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 35,
+        order: 32,
         active: function() {return(Number(instrument.questions.ptr8.value) == 1 || Number(instrument.questions.ptr8.value) == 2)},
         skip: false
     },
@@ -407,7 +374,7 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 36,
+        order: 33,
         active: function() {return(Number(instrument.questions.ptr8.value) == 1 || Number(instrument.questions.ptr8.value) == 2)},
         skip: false
     },
@@ -418,7 +385,7 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 37,
+        order: 34,
         active: function() {return(Number(instrument.questions.ptr8e.value) > 0)},
         skip: false
     },
@@ -429,7 +396,7 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 38,
+        order: 35,
         active: function() {return(Number(instrument.questions.ptr8f.value) > 0)},
         skip: false
     },
@@ -440,7 +407,7 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 39,
+        order: 36,
         active: function() {return(Number(instrument.questions.ptr8g.value) > 0)},
         skip: false
     },
@@ -451,7 +418,7 @@ export const questions: QuestionObjectType = {
         disabled: false,
         hidden: true,
         readonly: true,
-        order: 40,
+        order: 37,
         active: function() {return(true)},
         skip: false
     },
@@ -462,7 +429,7 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 41,
+        order: 38,
         active: function() {return(Number(instrument.questions.ptr8.value) == 1 || Number(instrument.questions.ptr8.value) == 2 || Number(instrument.questions.ptr8.value) == 5 || Number(instrument.questions.ptr8.value) == 8)},
         skip: false
     },
@@ -473,7 +440,7 @@ export const questions: QuestionObjectType = {
         disabled: true,
         hidden: false,
         readonly: false,
-        order: 42,
+        order: 39,
         active: function() {return(Number(instrument.questions.ptr8.value) == 1 || Number(instrument.questions.ptr8.value) == 2 || Number(instrument.questions.ptr8.value) == 5 || Number(instrument.questions.ptr8.value) == 8)},
         skip: false
     },
@@ -484,7 +451,7 @@ export const questions: QuestionObjectType = {
         disabled: false,
         hidden: false,
         readonly: false,
-        order: 43,
+        order: 40,
         active: function() {return(true)},
         skip: true
     },
@@ -493,8 +460,8 @@ export const questions: QuestionObjectType = {
 export const questionsOrder: Array<string> = [
     'str1', 'str2', 'str3a', 'str3b', 'str3c', 'str3e', 'str4', 'data', 'omr1', 'omr2', 'omr3', 'omr4', 'omr5',
     'omr6', 'omr7', 'ptr1', 'ptr2a', 'ptr2b', 'ptr2c', 'ptr3', 'ptr4', 'ptr4a', 'ptr5a_dk', 'ptr5b', 'ptr5c',
-    'ptr5d', 'ptr5m', 'ptr5e', 'ptr6', 'ptr7', 'ptr7_other', 'ptr8', 'ptr8_other', 'ptr8a', 'ptr8b', 'ptr8c',
-    'ptr8e', 'ptr8f', 'ptr8g', 'ptr8m', 'ptr8h', 'ptr9', 'ptr10', 'obs'
+    'ptr6', 'ptr7', 'ptr7_other', 'ptr8', 'ptr8_other', 'ptr8a', 'ptr8b', 'ptr8c', 'ptr8e', 'ptr8f', 'ptr8g',
+    'ptr8m', 'ptr8h', 'ptr9', 'ptr10', 'obs'
 ];
 
 export const exportHeader: Array<{ id: string; title: string }> = [
@@ -523,9 +490,6 @@ export const exportHeader: Array<{ id: string; title: string }> = [
     {'id': 'ptr5a_dk', 'title': 'PTR5A_DK'},
     {'id': 'ptr5b', 'title': 'PTR5B'},
     {'id': 'ptr5c', 'title': 'PTR5C'},
-    {'id': 'ptr5d', 'title': 'PTR5D'},
-    {'id': 'ptr5m', 'title': 'PTR5M'},
-    {'id': 'ptr5e', 'title': 'PTR5E'},
     {'id': 'ptr6', 'title': 'PTR6'},
     {'id': 'ptr7', 'title': 'PTR7'},
     {'id': 'ptr7_other', 'title': 'PTR7_OTHER'},
