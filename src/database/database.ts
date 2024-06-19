@@ -143,7 +143,13 @@ export const database = {
     },
     getQMRInstrumentForInstitution: async (institution_code: string, regionCode: string) => {
         const connection = new Promise<Array<DI.InstrumentInterface>>((resolve) => {
-            db.all(`SELECT * FROM instrument_qmr WHERE institution_code = '${institution_code}' AND region_code = '${regionCode}'`, (error, result) => {
+
+            let sql = `SELECT * FROM instrument_qmr WHERE institution_code = '${institution_code}'`;
+            if (regionCode && regionCode !== '17') {
+                sql += ` AND region_code = '${regionCode}'`;
+            }
+
+            db.all(sql, (error, result) => {
                 if (error) {
                     console.log(error);
                 }
@@ -154,7 +160,12 @@ export const database = {
     },
     getDSEEInstrumentForInstitution: async (institution_code: string, regionCode: string) => {
         const connection = new Promise<Array<DI.InstrumentInterface>>((resolve) => {
-            db.all(`SELECT * FROM instrument_dsee WHERE institution_code = '${institution_code}' AND region_code = '${regionCode}'`, (error, result) => {
+
+            let sql = `SELECT * FROM instrument_dsee WHERE institution_code = '${institution_code}'`;
+            if (regionCode && regionCode !== '17') {
+                sql += ` AND region_code = '${regionCode}'`;
+            }
+            db.all(sql, (error, result) => {
                 if (error) {
                     console.log(error);
                 }

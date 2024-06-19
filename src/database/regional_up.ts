@@ -562,10 +562,10 @@ export const getFilledInstitutions = async (db: DuckDB.Database, instrument: str
 // select instrument
 export const getInstitutionsByTypeAndRegion = async (db: DuckDB.Database, instrument: string, region: string, type: string, insonCode: string) => {
 
-    console.log('instrument', instrument);
-    console.log('region', region);
-    console.log('type', type);
-    console.log('insonCode', insonCode);
+    // console.log('instrument', instrument);
+    // console.log('region', region);
+    // console.log('type', type);
+    // console.log('insonCode', insonCode);
 
     if (instrument === '8') {
         const connection = new Promise((resolve) => {
