@@ -1725,7 +1725,7 @@ ipcMain.on('importData', (_event, _args) => {
                 if (dateDinFisier[instrument] && instrument !== 'institutions') { // there is data
                     for (const itemUUID in dateDinFisier[instrument].data) {
                         const item = dateDinFisier[instrument].data[itemUUID];
-                        const instrumentID = await database.getInstrumentIdFromUUId(instrument, itemUUID);
+                        const instrumentID = await database.getInstrumentIdFromUUId(instrument, itemUUID, item.institution_code);
 
                         type extras = {
                             uuid: string,

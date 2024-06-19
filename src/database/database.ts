@@ -752,9 +752,21 @@ export const database = {
         return await connection;
     },
 
-    getInstrumentIdFromUUId: async (table: string, uuid: string) => {
+    getInstrumentIdFromUUId: async (table: string, uuid: string, institution_code?: string) => {
         const connection = new Promise<DI.DataExportInterface[]>((resolve) => {
-            db.all(`SELECT id FROM instrument_${table} WHERE uuid = '${uuid}'`, (error, result) => {
+
+            let sql = `SELECT id FROM instrument_${table} WHERE uuid = '${uuid}'`;
+            
+            // instrument 4 - QMR
+            if(table === 'qmr' && institution_code){
+                sql = `SELECT id FROM instrument_${table} WHERE institution_code = '${institution_code}'`;
+            }
+            // instrument 6 - DSEE
+            if(table === 'dsee' && institution_code){
+                sql = `SELECT id FROM instrument_${table} WHERE institution_code = '${institution_code}'`;
+            }
+
+            db.all(sql, (error, result) => {
                 if (error) {
                     console.log(error);
                 }
