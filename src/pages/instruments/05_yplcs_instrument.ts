@@ -429,7 +429,7 @@ util.listen(ls, "change", () => {
 util.listen("pi8", "myChange", () => {
     const message = "PI8 <= 230";
     errorHandler.removeError("pi8", message);
-    if (Number(instrument.questions.pi8.value) > 230) {
+    if (Number(util.htmlElement("pi8").value) > 230) {
         errorHandler.addError("pi8", message);
     }
 })
