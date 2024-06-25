@@ -7,7 +7,7 @@ export const getRegionalInstitutions = async (db: DuckDB.Database, region: strin
     const connection = new Promise<Array<DI.Institution>>((resolve) => {
 
         let sql = `SELECT * FROM institutions WHERE CAST(type AS INTEGER) < 30`;
-        if(region) {
+        if (region) {
             sql += ` AND region = '${region}'`;
         }
 
@@ -24,7 +24,7 @@ export const getRegionalInsons = async (db: DuckDB.Database, region: string) => 
     const connection = new Promise<Array<DI.INSON>>((resolve) => {
 
         let sql = `SELECT * FROM inson`;
-        if(region) {
+        if (region) {
             sql += ` WHERE region = '${region}'`;
         }
 
@@ -70,7 +70,7 @@ export const filledInstrumentsR = async (db: DuckDB.Database, region?: string, t
     }
 
     // console.log('filledInstrumentsR', where);
-    
+
 
     const i1 = new Promise<DI.StatusInterface[]>((resolve) => {
         const sql = `SELECT status, COUNT(*) AS total FROM instrument_cpis ${where} GROUP BY status`;
@@ -249,7 +249,7 @@ export const getInstrumentsToBeFilledBy = async (db: DuckDB.Database, region: st
             localType = constant.CHILD_CARE.join(',');
         } else if (typeOfInstitution === '20') {
             localType = constant.SPECIALIZED.join(',');
-        } else if(typeOfInstitution === '91') {
+        } else if (typeOfInstitution === '91') {
             localType = constant.INSON_SERVICE.join(',')
         } else {
             localType = constant.CHILD_CARE.concat(constant.SPECIALIZED).concat(constant.INSON_SERVICE).join(',')
@@ -364,18 +364,16 @@ export const getFilledInstitutions = async (db: DuckDB.Database, instrument: str
 
                 let sql = `SELECT COUNT(*) AS total FROM instrument_cpis WHERE institution_code = '${code}'`;
                 if (inst.inson) {
-                    sql = `SELECT COUNT(*) AS total FROM instrument_cpis WHERE service_code = '${code}'`;
+                    sql = `SELECT COUNT(*) AS total FROM instrument_cpis WHERE service_code = '${code}' and institution_code = '${inst.inson}'`;
                 }
 
                 if (region) {
                     sql += ` AND region_code = '${region}'`;
                 }
 
-                // console.log('getFilledInstitutions', sql);
-
                 db.all(sql, (error, result) => {
                     if (error) { console.log(error); }
-                    resolve(Number(result[0].total) ?? 0);
+                    resolve(Number(result[0].total ?? 0));
                 });
             });
             response[code] = await connection;
@@ -394,7 +392,7 @@ export const getFilledInstitutions = async (db: DuckDB.Database, instrument: str
 
                 db.all(sql, (error, result) => {
                     if (error) { console.log(error); }
-                    resolve(Number(result[0].total) ?? 0);
+                    resolve(Number(result[0].total ?? 0));
                 });
             });
             response[code] = await connection;
@@ -413,7 +411,7 @@ export const getFilledInstitutions = async (db: DuckDB.Database, instrument: str
 
                 db.all(sql, (error, result) => {
                     if (error) { console.log(error); }
-                    resolve(Number(result[0].total) ?? 0);
+                    resolve(Number(result[0].total ?? 0));
                 });
             });
             response[code] = await connection;
@@ -432,7 +430,7 @@ export const getFilledInstitutions = async (db: DuckDB.Database, instrument: str
 
                 db.all(sql, (error, result) => {
                     if (error) { console.log(error); }
-                    resolve(Number(result[0].total) ?? 0);
+                    resolve(Number(result[0].total ?? 0));
                 });
             });
             response[code] = await connection;
@@ -451,7 +449,7 @@ export const getFilledInstitutions = async (db: DuckDB.Database, instrument: str
 
                 db.all(sql, (error, result) => {
                     if (error) { console.log(error); }
-                    resolve(Number(result[0].total) ?? 0);
+                    resolve(Number(result[0].total ?? 0));
                 });
             });
             response[code] = await connection;
@@ -470,7 +468,7 @@ export const getFilledInstitutions = async (db: DuckDB.Database, instrument: str
 
                 db.all(sql, (error, result) => {
                     if (error) { console.log(error); }
-                    resolve(Number(result[0].total) ?? 0);
+                    resolve(Number(result[0].total ?? 0));
                 });
             });
             response[code] = await connection;
@@ -489,7 +487,7 @@ export const getFilledInstitutions = async (db: DuckDB.Database, instrument: str
 
                 db.all(sql, (error, result) => {
                     if (error) { console.log(error); }
-                    resolve(Number(result[0].total) ?? 0);
+                    resolve(Number(result[0].total ?? 0));
                 });
             });
             response[code] = await connection;
@@ -513,7 +511,7 @@ export const getFilledInstitutions = async (db: DuckDB.Database, instrument: str
 
                 db.all(sql, (error, result) => {
                     if (error) { console.log(error); }
-                    resolve(Number(result[0].total) ?? 0);
+                    resolve(Number(result[0].total ?? 0));
                 });
             });
             response[code] = await connection;
@@ -532,7 +530,7 @@ export const getFilledInstitutions = async (db: DuckDB.Database, instrument: str
 
                 db.all(sql, (error, result) => {
                     if (error) { console.log(error); }
-                    resolve(Number(result[0].total) ?? 0);
+                    resolve(Number(result[0].total ?? 0));
                 });
             });
             response[code] = await connection;
@@ -551,7 +549,7 @@ export const getFilledInstitutions = async (db: DuckDB.Database, instrument: str
 
                 db.all(sql, (error, result) => {
                     if (error) { console.log(error); }
-                    resolve(Number(result[0].total) ?? 0);
+                    resolve(Number(result[0].total ?? 0));
                 });
             });
             response[code] = await connection;
@@ -567,7 +565,7 @@ export const getInstitutionsByTypeAndRegion = async (db: DuckDB.Database, instru
     // console.log('type', type);
     // console.log('insonCode', insonCode);
 
-    if (instrument === '8') {
+    if (instrument === '8' || instrument === '5') {
         const connection = new Promise((resolve) => {
 
             let sql = `SELECT * FROM inson`;
@@ -624,9 +622,9 @@ export const getInstitutionsByTypeAndRegion = async (db: DuckDB.Database, instru
                     instType = constant.CHILD_CARE.concat(constant.SPECIALIZED).concat(constant.INSON_SERVICE).join("','");
                 }
             }
-            if (instrument === '5') {
-                instType = constant.INSON_SERVICE.join("','");
-            }
+            // if (instrument === '5') {
+            //     instType = constant.INSON_SERVICE.join("','");
+            // }
             if (instrument === '7' || instrument === '8') {
                 instType = constant.INSON_SERVICE.join("','");
             }
@@ -674,13 +672,13 @@ export const cpisListALL = async (db: DuckDB.Database, region: string, instituti
         if (institution_code && !service_code) {
             sql += " AND c.institution_code = '" + institution_code + "'";
         } else if (service_code) {
-            sql += " AND c.service_code = '" + service_code + "'";
+            // this should be inson
+            sql += " AND c.service_code = '" + service_code + "'" + " AND c.institution_type = '" + constant.INSON[0] + "'";
         }
 
         sql += " GROUP BY c.id, c.uuid, c.status;";
 
-        console.log(sql);
-
+        // console.log(sql);
 
         db.all(sql, (error, result) => {
             if (error) {

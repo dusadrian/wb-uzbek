@@ -451,7 +451,7 @@ export const database = {
         return await connection;
     },
 
-    filledInstruments: async (role_code: string, user_uuid: string, institution_code: string, region?: string, typeOfInstitution?: string, institution?: string) => {
+    filledInstruments: async (role_code: string, user_uuid: string, institution_code: string, region?: string, typeOfInstitution?: string, institution?: string) => {        
 
         let where = '';
 

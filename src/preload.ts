@@ -217,6 +217,7 @@ const index = () => {
     (document.getElementById("login") as HTMLInputElement).innerText = i18n.__("login");
     (document.getElementById("login_message") as HTMLInputElement).innerText = i18n.__("login_message");
 
+    sessionStorage.clear(); // delete all session data
     sessionStorage.removeItem('appSession');
     if (!localStorage.getItem('language')) {
         localStorage.setItem('language', 'en');

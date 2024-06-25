@@ -382,6 +382,7 @@ const goToListaInstrumente = (instrument: string, institution: string) => {
     }
 }
 const regionalViewInstrument = (filters: DI.FiltersInterface) => {
+console.log(filters);
 
     if ((filters.institutionType == '10' || filters.institutionType == '20') && filters.institution !== '') {
         goToListaInstrumente(filters.instrument, filters.institution);
@@ -579,6 +580,8 @@ const goToYPLCSList = () => {
 };
 ipcMain.on('getYPLCS', (_event, args) => {
     if (appSession.userData.role_code === constant.ROLE_REGIONAL || appSession.userData.role_code === constant.ROLE_NATIONAL) {
+        console.log(args);
+        
         database.yplcsListALL(db, args.filters.region, args.filters.institution).then((result) => {
             mainWindow.webContents.send("yplcs", result);
         });
