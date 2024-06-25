@@ -269,7 +269,7 @@ export const getInstrumentsToBeFilledBy = async (db: DuckDB.Database, region: st
             localWhere += ` AND inson = '${institution}'`;
         }
 
-        db.all(`SELECT SUM(leavers) AS total FROM institutions WHERE leavers IS NOT NULL ${localWhere}`, (error, result) => {
+        db.all(`SELECT SUM(leavers) AS total FROM institutions WHERE leavers IS NOT NULL AND inson IS NOT NULL ${localWhere}`, (error, result) => {
             if (error) { console.log(error); }
             resolve(result[0] as DI.StatusInterface);
         });
@@ -457,15 +457,14 @@ export const getFilledInstitutions = async (db: DuckDB.Database, instrument: str
     }
     if (instrument === '5') {
         for (const inst of institutionCodes) {
-            const code = inst.code;
+            const code = inst.inson ?? inst.code;
             const connection = new Promise<number>((resolve) => {
 
-                let sql = `SELECT COUNT(*) AS total FROM instrument_yplcs WHERE institution_code = '${code}'`;
+                let sql = `SELECT COUNT(*) AS total FROM instrument_yplcs WHERE institution_type = '${constant.INSON[0]}' AND institution_code = '${code}' AND status = 'completed'`;
 
                 if (region) {
                     sql += ` AND region_code = '${region}'`;
-                }
-
+                }                
                 db.all(sql, (error, result) => {
                     if (error) { console.log(error); }
                     resolve(Number(result[0].total ?? 0));
@@ -568,7 +567,7 @@ export const getInstitutionsByTypeAndRegion = async (db: DuckDB.Database, instru
     if (instrument === '8' || instrument === '5') {
         const connection = new Promise((resolve) => {
 
-            let sql = `SELECT * FROM inson`;
+            let sql = `SELECT *, (SELECT SUM(leavers) FROM institutions WHERE inson=inson.code) as leavers FROM inson`;
             if (region) {
                 sql += ` WHERE region = '${region}'`;
             }

@@ -33,7 +33,7 @@ const getNumber = (instrument: string, service: any) => {
     } else if (instrument === '4' || instrument === '6') {
         return '1';
     } else if (instrument === '5' || instrument === '5a') {
-        return service.leavers ?? '-';
+        return Number(service.leavers) ?? '-';
     } else if (instrument === '8') {
         return service.pf ?? '-';
     }
@@ -116,7 +116,7 @@ const viewInstruments = function (code: string, inson: string, type: string) {
         if (constant.SPECIALIZED.includes(type)) {
             institutionType = '20';
         }
-        if (constant.INSON_SERVICE.includes(type) || sessionFilters.instrument == '8') {
+        if (constant.INSON_SERVICE.includes(type) || sessionFilters.instrument == '8' || sessionFilters.instrument == '5') {
             institutionType = '91';
         }
     }    
@@ -125,7 +125,7 @@ const viewInstruments = function (code: string, inson: string, type: string) {
         institutionType: institutionType,
         instrument: sessionFilters.instrument,
         institution: inson ? inson : code,
-        service_code: inson ? code : (sessionFilters.instrument == '8' ? code : ''),
+        service_code: inson ? code : (sessionFilters.instrument == '8' || sessionFilters.instrument == '5' ? code : ''),
         region: sessionFilters.region,
         dashboard: false,
     };
