@@ -4,7 +4,7 @@ import * as DI from "../interfaces/database";
 import { save as instrumentSave, get as instrumentGet, getExisting, cpisList, deleteCPIS, cibsList, deleteCIBS, csrList, deleteStaff, ftchList, deleteFTCH, pfqList, deletePFQ, eefList, deleteEEF, yplcsList, deleteYPLCS, tqypList, deleteTQYP } from "./instruments";
 import { filledInstrumentsR, getInstrumentsToBeFilledBy, getFilledInstitutions, getRegionalInstitutions, getRegionalInsons, getInstitutionsByTypeAndRegion, cpisListALL, cibsListALL, csrListALL, yplcsListALL, tqypListALL, ftchListALL, pfqListALL, eefListALL } from "./regional_up";
 import constant from '../libraries/constants'
-import { get } from "lodash";
+
 
 const duckdbOptions: {
     access_mode: 'READ_WRITE' | 'READ_ONLY',
@@ -24,13 +24,6 @@ if (process.env.NODE_ENV == 'production') {
 }
 
 const dbFile = path.join(dbDir, "uzbek.duckdb");
-
-// TODO function to export (transposed) tables into parquet files for R:
-// `
-//  COPY (PIVOT values_qmr ON variable USING MAX(value) GROUP BY instrument_id)
-//  TO '${path.join(dbDir, "qmr.parquet")}'
-//  (FORMAT 'parquet')
-// `
 
 export const db = new DuckDB.Database(dbFile, duckdbOptions,
     (error) => {
@@ -451,7 +444,7 @@ export const database = {
         return await connection;
     },
 
-    filledInstruments: async (role_code: string, user_uuid: string, institution_code: string, region?: string, typeOfInstitution?: string, institution?: string) => {        
+    filledInstruments: async (role_code: string, user_uuid: string, institution_code: string, region?: string, typeOfInstitution?: string, institution?: string) => {
 
         let where = '';
 
@@ -675,7 +668,7 @@ export const database = {
                 employees = ${data.employees ?? 0},
                 inson = ${data.inson ?? null},
                 changed = true
-                WHERE uuid = '${data.uuid}'`;                
+                WHERE uuid = '${data.uuid}'`;
                 db.run(sql,
                     (error) => {
                         if (error) {
@@ -767,7 +760,7 @@ export const database = {
         const connection = new Promise<DI.DataExportInterface[]>((resolve) => {
 
             let sql = `SELECT id FROM instrument_${table} WHERE uuid = '${uuid}'`;
-            
+
             // instrument 4 - QMR
             if(table === 'qmr' && institution_code){
                 sql = `SELECT id FROM instrument_${table} WHERE institution_code = '${institution_code}'`;
@@ -882,6 +875,66 @@ export const database = {
             response[srv] = await connection;
         }
         return response;
+    },
+
+    exportParquet: async (filters: {
+        region: string;
+        type: string;
+        institution: string;
+    }) => {
+
+// TODO function to export (transposed) tables into parquet files for R:
+// `
+//  COPY (PIVOT values_qmr ON variable USING MAX(value) GROUP BY instrument_id)
+//  TO '${path.join(dbDir, "qmr.parquet")}'
+//  (FORMAT 'parquet')
+// `
+        const instruments = ['cpis', 'cibs', 'csr', 'qmr', 'tqyp', 'yplcs', 'dsee', 'ftch', 'pfq'];
+        for (let i = 0; i < instruments.length; i++) {
+            let sqlSelect = 'SELECT id FROM instrument_' + instruments[i];
+            if (filters.region != '' || filters.type != '' || filters.institution != '') {
+                sqlSelect += ' WHERE ';
+                let prev = false;
+                if (filters.region != '') {
+                    sqlSelect += `region_code = '${filters.region}'`;
+                    prev = true;
+                }
+                if (filters.type != '') {
+                    if (prev) {
+                        sqlSelect += ' AND ';
+                    }
+                    sqlSelect += `institution_type = '${filters.type}'`;
+                    prev
+                }
+                if (filters.institution != '') {
+                    if (prev) {
+                        sqlSelect += ' AND ';
+                    }
+                    sqlSelect += `institution_code = '${filters.institution}'`;
+                }
+            }
+
+            sqlSelect = `SELECT * FROM values_` + instruments[i] + ` WHERE instrument_id IN (` + sqlSelect + `)`;
+
+            const sql = `COPY (PIVOT (` + sqlSelect + `)
+                ON variable USING MAX(value) GROUP BY instrument_id)
+                TO '${path.join(dbDir, instruments[i] + ".parquet")}'
+                (FORMAT 'parquet');
+            `;
+
+            const connection = new Promise<boolean>((resolve) => {
+                db.run(sql, (error) => {
+                    if (error) {
+                        console.log(error);
+                        resolve(false);
+                    }
+                    resolve(true);
+                });
+            });
+
+            await connection;
+        }
+
     },
 
     // Instruments

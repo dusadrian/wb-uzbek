@@ -121,11 +121,38 @@ export const nationalDashboard = {
             });
         });
 
-        // Export data
-        (<HTMLButtonElement>document.getElementById('exportData')).addEventListener('click', () => {
-            ipcRenderer.send('exportData', {
-                'userRoleCode': user.role_code,
-                'userServiceTypeCode': user.service_type_code,
+        // // Export data
+        // (<HTMLButtonElement>document.getElementById('exportData')).addEventListener('click', () => {
+        //     ipcRenderer.send('exportData', {
+        //         'userRoleCode': user.role_code,
+        //         'userServiceTypeCode': user.service_type_code,
+        //     });
+        // });
+
+        // Export Excel
+        (<HTMLButtonElement>document.getElementById('exportExcel')).addEventListener('click', () => {
+            ipcRenderer.send('exportExcel', {
+                region: region.options[region.selectedIndex].value,
+                type: institutionType.options[institutionType.selectedIndex].value,
+                institution: inst.options[inst.selectedIndex].value
+            });
+        });
+
+        // Export SPSS
+        (<HTMLButtonElement>document.getElementById('exportSPSS')).addEventListener('click', () => {
+            ipcRenderer.send('exportSPSS', {
+                region: region.options[region.selectedIndex].value,
+                type: institutionType.options[institutionType.selectedIndex].value,
+                institution: inst.options[inst.selectedIndex].value
+            });
+        });
+
+        // Export Stata
+        (<HTMLButtonElement>document.getElementById('exportStata')).addEventListener('click', () => {
+            ipcRenderer.send('exportStata', {
+                region: region.options[region.selectedIndex].value,
+                type: institutionType.options[institutionType.selectedIndex].value,
+                institution: inst.options[inst.selectedIndex].value
             });
         });
         // Import data

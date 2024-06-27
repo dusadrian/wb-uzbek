@@ -14,7 +14,7 @@
 
 <body class="relative">
 
-    <div class="hidden fixed z-[1050] text-white font-bold text-5xl left-[calc(50%-230px)] top-[calc(50%-50px)]" id="loader">
+    <div class="hidden fixed z-[1050] text-white font-bold text-5xl left-[calc(50%-270px)] top-[calc(50%-50px)]" id="loader">
         <span class="t_working">Working...</span>
     </div>
     <div class="hidden top-0 fixed w-full h-full bg-black/80 z-[1040]" id="cover"></div>
@@ -23,7 +23,7 @@
     <div class="relative w-full mt-14 pb-1 h-[calc(100vh-9.3rem)] overflow-y-auto">
 
         <h1 class="px-5 text-xl flex items-center mt-5">
-            <span class="t_regionalCoordinator_level_view_regionalCoordinators">Regional coordinator</span>
+            <span class="t_national_level_view">National coordinator</span>
         </h1>
         <div class="flex gap-10 mt-5 px-5">
             <div class="flex gap-4 items-center">
@@ -339,7 +339,7 @@
     </div>
     <footer>
         <div class="flex gap-10 px-4 py-4 border-t border-gray-100">
-            <button class="bg-gray-200 hover:bg-gray-300 px-4 py-3 rounded w-44 flex items-center justify-center gap-4"
+            <button class="bg-gray-200 hover:bg-gray-300 px-4 py-3 rounded flex items-center justify-center gap-4 w-44"
                 id="importData">
                 <svg class="h-8 fill-slate-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
                     <!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
@@ -348,14 +348,17 @@
                 </svg>
                 <span class="t_import"></span>
             </button>
-            <button class="bg-gray-200 hover:bg-gray-300 px-4 py-3 rounded flex items-center justify-center gap-4 w-72"
-                id="exportData">
-                <svg class="h-8 fill-green-700" xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 384 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
-                    <path
-                        d="M64 0C28.7 0 0 28.7 0 64V448c0 35.3 28.7 64 64 64H320c35.3 0 64-28.7 64-64V160H256c-17.7 0-32-14.3-32-32V0H64zM256 0V128H384L256 0zM216 232V334.1l31-31c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9l-72 72c-9.4 9.4-24.6 9.4-33.9 0l-72-72c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l31 31V232c0-13.3 10.7-24 24-24s24 10.7 24 24z" />
-                </svg>
-                <span class="t_export_data"></span>
+            <button class="bg-gray-200 hover:bg-gray-300 px-4 py-3 rounded flex items-center justify-center gap-4 w-44"
+                id="exportExcel">
+                <img src="../../assets/Excel.svg" alt="Excel" class="h-8">
+            </button>
+            <button class="bg-gray-200 hover:bg-gray-300 px-4 py-3 rounded flex items-center justify-center gap-4 w-44"
+                id="exportSPSS">
+                <img src="../../assets/SPSS.svg" alt="SPSS" class="h-8">
+            </button>
+            <button class="bg-gray-200 hover:bg-gray-300 px-4 py-3 rounded flex items-center justify-center gap-4 w-44"
+                id="exportStata">
+                <img src="../../assets/Stata.svg" alt="Stata" class="h-4">
             </button>
             <button id="institutions"
                 class="bg-gray-200 hover:bg-gray-300 px-4 py-3 rounded flex items-center justify-center gap-4 w-44">

@@ -10,12 +10,11 @@ import { db, database } from "./database/database";
 import * as DI from "./interfaces/database";
 import * as fs from 'fs';
 import { crypt } from './libraries/crypt';
+import * as child_process from "child_process";
 // import build_templates from "./libraries/build_templates";
 import constant from "./libraries/constants";
 
-// if (process.env.NODE_ENV === "development") {
-//     build_templates();
-// }
+const OS_Windows = process.platform == 'win32';
 
 // language
 import { I18n } from "i18n";
@@ -24,7 +23,7 @@ const i18n = new I18n({
     directory: path.join(__dirname, '../src/locales'),
     defaultLocale: 'en',
 });
-
+let lang = "en"; // for the R export language
 
 // import * as en from "./locales/en.json";
 
@@ -132,6 +131,7 @@ ipcMain.on('login', (_event, args) => {
         } else {
 
             appSession.language = args.language;
+            lang = args.language;
             i18n.setLocale(args.language);
 
             appSession.userData = result[0]; // user data
@@ -382,7 +382,6 @@ const goToListaInstrumente = (instrument: string, institution: string) => {
     }
 }
 const regionalViewInstrument = (filters: DI.FiltersInterface) => {
-console.log(filters);
 
     if ((filters.institutionType == '10' || filters.institutionType == '20') && filters.institution !== '') {
         goToListaInstrumente(filters.instrument, filters.institution);
@@ -580,8 +579,6 @@ const goToYPLCSList = () => {
 };
 ipcMain.on('getYPLCS', (_event, args) => {
     if (appSession.userData.role_code === constant.ROLE_REGIONAL || appSession.userData.role_code === constant.ROLE_NATIONAL) {
-        console.log(args);
-        
         database.yplcsListALL(db, args.filters.region, args.filters.institution).then((result) => {
             mainWindow.webContents.send("yplcs", result);
         });
@@ -1730,6 +1727,7 @@ ipcMain.on('importData', (_event, _args) => {
                         const item = dateDinFisier[instrument].data[itemUUID];
                         const instrumentID = await database.getInstrumentIdFromUUId(instrument, itemUUID, item.institution_code);
 
+
                         type extras = {
                             uuid: string,
                             region_code: string,
@@ -1838,6 +1836,204 @@ const getLisOfInstrumentsToExport = (roleCode: string, serviceType: string) => {
         return ['cpis', 'cibs', 'csr', 'qmr', 'tqyp', 'dsee', 'yplcs', 'ftch', 'pfq', 'eef'];
     }
 }
+
+
+
+let Rscript = "";
+let dbDir = "";
+
+if (process.env.NODE_ENV === 'production') {
+    Rscript += path.join(__dirname, '../../R_Portable/bin/Rscript');
+    dbDir = path.join(path.resolve(__dirname), '../../');
+} else {
+    Rscript += path.join(__dirname, '../R_Portable/bin/Rscript');
+    dbDir = path.join(path.resolve(__dirname), '../src/database/');
+}
+
+if (OS_Windows) {
+    Rscript += '.exe';
+    dbDir = dbDir.replace(/\\/g, '/');
+}
+
+const send2R = function (
+    Rscript: string,
+    type: string,
+    lang: string,
+    destination: string,
+    dbDir: string
+) {
+    let Response = "";
+    try {
+        Response = child_process.execSync(
+            Rscript +
+            ` -e "uzbek::export('` +
+            type + `', '` +
+            lang + `', '` +
+            destination + `', '` +
+            dbDir + `')"`,
+            {
+                stdio: "pipe",
+                encoding: "utf-8",
+                maxBuffer: 10486750
+            }
+        )
+    }
+    catch(error) {
+        Response = error;
+    }
+
+    return Response;
+}
+
+ipcMain.on('exportSPSS', (event, filters) => {
+
+    const folderPath = dialog.showOpenDialogSync(mainWindow, {
+        title: i18n.__('main._chooseFolder'),
+        properties: ['openDirectory', 'createDirectory', 'promptToCreate']
+    });
+
+    if (folderPath !== void 0) {
+
+        if (OS_Windows) {
+            folderPath[0] = folderPath[0].replace(/\\/g, '/');
+        }
+
+        mainWindow.webContents.send('startLoader');
+
+        database.exportParquet(filters).then(() => {
+            // const Response = send2R(Rscript, 'SPSS', lang, folderPath[0], dbDir);
+            send2R(Rscript, 'SPSS', lang, folderPath[0], dbDir);
+
+            // console.log("-----")
+            // console.log(Response);
+            // console.log("-----");
+
+            // if (Response == "OK") {
+                dialog.showMessageBox(mainWindow, {
+                    type: 'info',
+                    title: i18n.__('main.success'),
+                    message: i18n.__('main._dataDownloaded')
+                });
+            // } else {
+            //     dialog.showMessageBox(mainWindow, {
+            //         type: 'error',
+            //         title: i18n.__('Error'),
+            //         message: i18n.__(Response)
+            //     });
+            // }
+
+            mainWindow.webContents.send("clearLoader");
+
+        });
+    } else {
+        dialog.showMessageBox(mainWindow, {
+            type: 'error',
+            title: i18n.__('Error'),
+            message: i18n.__('main._dataDownloadedError')
+        });
+    }
+})
+
+ipcMain.on('exportStata', (event, filters) => {
+
+
+    const folderPath = dialog.showOpenDialogSync(mainWindow, {
+        title: i18n.__('main._chooseFolder'),
+        properties: ['openDirectory', 'createDirectory', 'promptToCreate']
+    });
+
+
+    if (folderPath !== void 0) {
+
+        if (OS_Windows) {
+            folderPath[0] = folderPath[0].replace(/\\/g, '/');
+        }
+
+        mainWindow.webContents.send('startLoader');
+
+        database.exportParquet(filters).then(() => {
+            // const Response = send2R(Rscript, 'SPSS', lang, folderPath[0], dbDir);
+            send2R(Rscript, 'Stata', lang, folderPath[0], dbDir);
+
+            // console.log("-----")
+            // console.log(Response);
+            // console.log("-----");
+
+            // if (Response == "OK") {
+                dialog.showMessageBox(mainWindow, {
+                    type: 'info',
+                    title: i18n.__('main.success'),
+                    message: i18n.__('main._dataDownloaded')
+                });
+            // } else {
+            //     dialog.showMessageBox(mainWindow, {
+            //         type: 'error',
+            //         title: i18n.__('Error'),
+            //         message: i18n.__(Response)
+            //     });
+            // }
+
+            mainWindow.webContents.send("clearLoader");
+
+        });
+    } else {
+        dialog.showMessageBox(mainWindow, {
+            type: 'error',
+            title: i18n.__('Error'),
+            message: i18n.__('main._dataDownloadedError')
+        });
+    }
+})
+
+ipcMain.on('exportExcel', (event, filters) => {
+
+    const folderPath = dialog.showOpenDialogSync(mainWindow, {
+        title: i18n.__('main._chooseFolder'),
+        properties: ['openDirectory', 'createDirectory', 'promptToCreate']
+    });
+
+
+    if (folderPath !== void 0) {
+
+        if (OS_Windows) {
+            folderPath[0] = folderPath[0].replace(/\\/g, '/');
+        }
+
+        mainWindow.webContents.send('startLoader');
+
+        database.exportParquet(filters).then(() => {
+            // const Response = send2R(Rscript, 'SPSS', lang, folderPath[0], dbDir);
+            send2R(Rscript, 'Excel', lang, folderPath[0], dbDir);
+
+            // console.log("-----")
+            // console.log(Response);
+            // console.log("-----");
+
+            // if (Response == "OK") {
+                dialog.showMessageBox(mainWindow, {
+                    type: 'info',
+                    title: i18n.__('main.success'),
+                    message: i18n.__('main._dataDownloaded')
+                });
+            // } else {
+            //     dialog.showMessageBox(mainWindow, {
+            //         type: 'error',
+            //         title: i18n.__('Error'),
+            //         message: i18n.__(Response)
+            //     });
+            // }
+
+            mainWindow.webContents.send("clearLoader");
+
+        });
+    } else {
+        dialog.showMessageBox(mainWindow, {
+            type: 'error',
+            title: i18n.__('Error'),
+            message: i18n.__('main._dataDownloadedError')
+        });
+    }
+})
 
 // download instrument data
 ipcMain.on('exportData', function exportData(_event, args) {
