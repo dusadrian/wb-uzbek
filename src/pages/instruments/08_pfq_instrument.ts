@@ -116,7 +116,7 @@ export const instrument8 = {
             insons = args.insons;
 
 
-            const institution_code = (filters && filters.institution) ? filters.institution : args.userData.institution_code;
+            const institution_code = filters?.institution ?? args.userData.institution_code;
 
             const inson_user = Object.keys(insons).indexOf(institution_code) >= 0;
 

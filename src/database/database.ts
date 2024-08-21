@@ -762,11 +762,11 @@ export const database = {
             let sql = `SELECT id FROM instrument_${table} WHERE uuid = '${uuid}'`;
 
             // instrument 4 - QMR
-            if(table === 'qmr' && institution_code){
+            if (table === 'qmr' && institution_code) {
                 sql = `SELECT id FROM instrument_${table} WHERE institution_code = '${institution_code}'`;
             }
             // instrument 6 - DSEE
-            if(table === 'dsee' && institution_code){
+            if (table === 'dsee' && institution_code) {
                 sql = `SELECT id FROM instrument_${table} WHERE institution_code = '${institution_code}'`;
             }
 
@@ -841,6 +841,11 @@ export const database = {
         if (!services) {
             return [];
         }
+
+        if(services.length !== 0 && services.includes('.')) {
+            services = services.split('.').join(',');
+        }
+
         const connection = new Promise<Array<DI.Institution>>((resolve) => {
             db.all(`SELECT * FROM institutions WHERE code IN (${services}) AND inson ='${inson}'`, (error, result) => {
                 if (error) {
@@ -855,7 +860,17 @@ export const database = {
         if (!services && typeof services !== 'string') {
             return {};
         }
-        const serviceList = services.split(',');
+
+        let serviceList: string[] = [];
+
+        if (services.length !== 0) {
+            if (!services.includes('.')) {
+                serviceList = services.split(',');
+            } else {
+                serviceList = services.split('.');
+            }
+        }
+
         const response: { [key: string]: string } = {};
 
         for (const srv of serviceList) {
@@ -883,12 +898,12 @@ export const database = {
         institution: string;
     }) => {
 
-// TODO function to export (transposed) tables into parquet files for R:
-// `
-//  COPY (PIVOT values_qmr ON variable USING MAX(value) GROUP BY instrument_id)
-//  TO '${path.join(dbDir, "qmr.parquet")}'
-//  (FORMAT 'parquet')
-// `
+        // TODO function to export (transposed) tables into parquet files for R:
+        // `
+        //  COPY (PIVOT values_qmr ON variable USING MAX(value) GROUP BY instrument_id)
+        //  TO '${path.join(dbDir, "qmr.parquet")}'
+        //  (FORMAT 'parquet')
+        // `
         const instruments = ['cpis', 'cibs', 'csr', 'qmr', 'tqyp', 'yplcs', 'dsee', 'ftch', 'pfq'];
         for (let i = 0; i < instruments.length; i++) {
             let sqlSelect = 'SELECT id FROM instrument_' + instruments[i];
