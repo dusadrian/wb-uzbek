@@ -44,36 +44,41 @@
     }
   },
   "devDependencies": {
-    "@tailwindcss/forms": "^0.5.7",
-    "@types/i18n": "^0.13.10",
-    "@types/jquery": "^3.5.29",
-    "@types/jqueryui": "^1.12.22",
-    "@types/lodash": "^4.17.0",
-    "@types/uuid": "^9.0.8",
-    "@typescript-eslint/eslint-plugin": "^6.21.0",
-    "@typescript-eslint/parser": "^6.21.0",
-    "autoprefixer": "^10.4.17",
-    "electron": "^22.3.27",
-    "electron-builder": "^24.13.3",
-    "electron-rebuild": "^3.2.9",
-    "eslint": "^8.56.0",
-    "postcss": "^8.4.34",
-    "tailwindcss": "^3.4.1",
-    "typescript": "^5.3.3"
+    "@electron/rebuild": "^4.0.1",
+    "@tailwindcss/forms": "^0.5.10",
+    "@types/i18n": "^0.13.12",
+    "@types/jquery": "^3.5.33",
+    "@types/jqueryui": "^1.12.24",
+    "@types/lodash": "^4.17.20",
+    "@types/uuid": "^10.0.0",
+    "@typescript-eslint/eslint-plugin": "^8.46.3",
+    "@typescript-eslint/parser": "^8.46.3",
+    "autoprefixer": "^10.4.21",
+    "concurrently": "^9.2.1",
+    "electron": "^39.1.1",
+    "electron-builder": "^26.1.0",
+    "eslint": "^9.39.1",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^4.1.17",
+    "typescript": "^5.9.3",
+    "wait-on": "^9.0.1"
   },
   "dependencies": {
-    "datatables.net": "^2.0.0",
-    "datatables.net-dt": "^2.0.0",
-    "datatables.net-responsive-dt": "^3.0.0",
-    "duckdb": "^1.0.0",
-    "eta": "^3.2.0",
+    "datatables.net": "^2.3.4",
+    "datatables.net-dt": "^2.3.4",
+    "datatables.net-responsive-dt": "^3.0.7",
+    "duckdb": "^1.4.1",
+    "eta": "^4.0.1",
     "flatpickr": "^4.6.13",
-    "i18n": "^0.15.1",
-    "jquery-ui": "^1.13.3",
-    "jquery-ui-dist": "^1.13.2",
+    "i18n": "^0.15.3",
+    "jquery-ui": "^1.14.1",
+    "jquery-ui-dist": "^1.13.3",
     "lodash": "^4.17.21",
     "tippy.js": "^6.3.7",
-    "uuid": "^9.0.1"
+    "uuid": "^13.0.0"
   },
-  "postinstall": "electron-builder install-app-deps"
+  "postinstall": "electron-builder install-app-deps",
+  "engines": {
+    "node": ">=22.12.0"
+  }
 }
