@@ -6,12 +6,20 @@ process.env.DEBBUG_BUTTON = "true";
 
 import { app, BrowserWindow, dialog, ipcMain } from "electron";
 import * as path from "path";
+
+// Performance monitoring for development
+// const startTime = Date.now();
+// if (process.env.NODE_ENV === "development") {
+//     console.log('🚀 Starting Electron app...');
+//     console.time('Total startup time');
+//     console.time('Module imports');
+// }
+
 import { db, database } from "./database/database";
 import * as DI from "./interfaces/database";
 import * as fs from 'fs';
 import { crypt } from './libraries/crypt';
 import * as child_process from "child_process";
-// import build_templates from "./libraries/build_templates";
 import constant from "./libraries/constants";
 
 const OS_Windows = process.platform == 'win32';
@@ -23,7 +31,12 @@ const i18n = new I18n({
     directory: path.join(__dirname, '../src/locales'),
     defaultLocale: 'en',
 });
-let lang = "en"; // for the R export language
+let lang = "en";
+
+// if (process.env.NODE_ENV === "development") {
+//     console.timeEnd('Module imports');
+//     console.log(`📦 All modules loaded in ${Date.now() - startTime}ms`);
+// }
 
 // import * as en from "./locales/en.json";
 
@@ -52,16 +65,37 @@ function createWindow() {
         minHeight: 768,
         icon: iconPath,
         backgroundColor: "#fff",
+        show: false, // Don't show until ready-to-show
         webPreferences: {
             nodeIntegration: true,
             contextIsolation: process.env.NODE_ENV !== "development",
-            preload: path.join(__dirname, "./preload.js"),
+            preload: path.join(__dirname, "./preload.js")
         },
     });
 
+    // Show window when ready to prevent white flash
+    mainWindow.once('ready-to-show', () => {
+        mainWindow.show();
+        if (process.env.NODE_ENV === "development") {
+            console.log('✅ Window visible to user');
+        }
+    });
 
     // and load the index.html of the app.
     mainWindow.loadFile(path.join(__dirname, "../src/index.html"));
+
+    // Preload database in background after window is shown
+    if (process.env.NODE_ENV === "development") {
+        setTimeout(() => {
+            console.log('🔄 Pre-warming database connection...');
+            // Access db to trigger initialization
+            try {
+                db.prepare("SELECT 1").run();
+            } catch (e) {
+                // Ignore errors, just trigger initialization
+            }
+        }, 100);
+    }
 
     if (process.env.NODE_ENV !== "development") {
         mainWindow.removeMenu();
@@ -86,7 +120,14 @@ if (!gotTheLock) {
         }
     });
     app.whenReady().then(() => {
+        // if (process.env.NODE_ENV === "development") {
+        //     console.time('Window creation');
+        // }
         createWindow();
+        // if (process.env.NODE_ENV === "development") {
+        //     console.timeEnd('Window creation');
+        //     console.timeEnd('Total startup time');
+        // }
     });
 }
 // Quit when all windows are closed.
